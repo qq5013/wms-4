@@ -1,0 +1,48 @@
+﻿<#@ template language="C#" debug="True" #>
+<#@ output extension="txt" #>
+<#@ assembly name="$(SolutionDir)..\dddml-dotnet-tools\Dddml.Core\bin\Debug\Dddml.Core.dll" #>
+<#@ assembly name="$(SolutionDir)..\dddml-dotnet-tools\Dddml.Serialization\bin\Debug\Dddml.Serialization.dll" #>
+<#@ assembly name="$(SolutionDir)..\dddml-dotnet-tools\Dddml.T4\bin\Debug\Dddml.T4.dll" #>
+<#@ assembly name="$(SolutionDir)..\dddml-dotnet-tools\packages\YamlDotNet.3.8.0\lib\net35\YamlDotNet.dll" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="Dddml.Core.Domain" #>
+<#@ import namespace="Dddml.Serialization" #>
+<#@ import namespace="Dddml.T4" #>
+<#@ import namespace="Dddml.T4.Extensions" #>
+<#@ include file="T4Toolbox.tt" #>
+<#
+    TemplatingContext.Current.CurrentAssembly = "Dddml.Wms.Common";
+    TemplatingContext.Current.SpecializationNamespace = "Dddml.Wms.Specialization";
+
+    var boundedContext = LoadBoundedContext();
+	boundedContext.DefaultUserIdType = "string";
+
+	boundedContext.IsUsingSeparatedDomainAggregateNamespace = false;
+
+	boundedContext.IsGenericTypeAsType = true;
+
+	boundedContext.Refresh();
+
+	foreach (var agg in boundedContext.Aggregates.Values)
+	{
+		agg.GenerateAggregateStateEventIdValueObject();
+		agg.GenerateAllEntityStateEventIdValueObjects();
+	}
+
+	boundedContext.Refresh();
+	boundedContext.ReplacePropertyEnumTypeWithBaseType();	
+
+#>
+<#+
+    private BoundedContext LoadBoundedContext()
+    {
+        string projectFile = TransformationContext.Current.GetPropertyValue("MSBuildProjectFullPath");
+		string projectDir = System.IO.Path.GetDirectoryName(projectFile);
+        string filePath1 = System.IO.Path.Combine(projectDir, "../dddml/AttributeSet.yaml");
+		string filePath2 = System.IO.Path.Combine(projectDir, "../dddml/AttributeSetInstance.yaml");
+        BoundedContext boundedContext = BoundedContextUtils.LoadFromFiles(new string[]{ filePath1, filePath2});
+        boundedContext.DefaultModule = "Dddml.Wms";
+        return boundedContext;
+    }
+#>

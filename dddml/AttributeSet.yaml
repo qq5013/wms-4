@@ -1,0 +1,122 @@
+#%DDDML 0.1
+
+---
+
+# ------------------------------
+aggregates:
+
+
+    # --------------- aggregate ---------------
+    Attribute:
+
+      id:
+        name: AttributeId
+        type: string
+
+      properties:  
+      
+        Name:
+          type: string
+
+        Description:
+          type: string
+
+        IsMandatory:
+          type: bool
+
+
+        # <summary>
+        # The product attribute is specific to the instance (like Serial No, Lot or Guarantee Date)
+        # [If true, the individual instance of the product has this attribute - 
+        # like the individual Serial or Lot Numbers or Guarantee Date of a product instance. 
+        # If not selected, all instances of the product share the attribute (e.g. color=green). ]
+        # </summary>
+        IsInstanceAttribute:
+          type: bool
+
+        AttributeValueType:
+          type: string
+          
+        FieldName:
+          type: string
+
+        AttributeValues:
+          itemType: AttributeValue
+
+          
+      uniqueConstraints:
+        UniqueFieldName: [FieldName]
+
+        
+      entities:
+        
+        AttributeValue:
+
+          id:
+            name: Value
+            type: string
+
+          properties:
+
+            Name:
+              type: string
+
+            Description:
+              type: string
+
+            ReferenceId:
+              type: string
+
+              
+    AttributeSet:
+
+      id:
+        name: AttributeSetId
+        type: string
+              
+
+      properties:  
+        
+        Name: 
+          type: string
+
+        Description:
+          type: string
+        
+        SerialNumberAttributeId:
+          type: string
+
+        LotAttributeId:
+          type: string
+           
+        # bool HasSerialNumber
+        # bool HasLot
+        # bool HasGuaranteeDate
+        
+        # bool IsInstanceAttributeSet
+        # string MandatoryType
+
+        # bool IsGuaranteeDateMandatory
+        # bool IsLotMandatory
+        # bool IsSerialNumberMandatory
+          
+        AttributeUses:
+          itemType: AttributeUse
+
+            
+      entities:
+          
+        AttributeUse:
+          
+          id: 
+            name: AttributeId
+            type: string
+              
+          properties:  
+
+            SequenceNumber:
+              type: int
+                
+
+                
+                

@@ -1,0 +1,18 @@
+﻿
+
+
+
+
+  <!-- Can copy this to App.config -->
+
+  <spring>
+
+    <context>
+      <resource uri="assembly://Dddml.Wms.Services/Dddml.Wms.Services.Config/AttributeAggregateConfig.xml"/>
+      <resource uri="assembly://Dddml.Wms.Services/Dddml.Wms.Services.Config/AttributeSetAggregateConfig.xml"/>
+      <resource uri="assembly://Dddml.Wms.Services/Dddml.Wms.Services.Config/AttributeSetInstanceAggregateConfig.xml"/>
+
+    </context>
+
+  </spring>
+

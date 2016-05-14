@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using Dddml.Wms.Domain;
+
 using Dddml.Wms.Specialization;
 
 namespace Dddml.Wms.Domain
@@ -175,6 +176,13346 @@ namespace Dddml.Wms.Domain
             set 
             {
                 this._state.Description = value;
+            }
+        }
+
+		public virtual bool? _F_B_0_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_0_"))
+                {
+                    return _state._F_B_0_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_0_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_0_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_0_;
+            }
+            set 
+            {
+                this._state._F_B_0_ = value;
+            }
+        }
+
+		public virtual int? _F_I_0_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_0_"))
+                {
+                    return _state._F_I_0_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_0_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_0_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_0_;
+            }
+            set 
+            {
+                this._state._F_I_0_ = value;
+            }
+        }
+
+		public virtual long? _F_L_0_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_0_"))
+                {
+                    return _state._F_L_0_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_0_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_0_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_0_;
+            }
+            set 
+            {
+                this._state._F_L_0_ = value;
+            }
+        }
+
+		public virtual DateTime? _F_DT_0_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_DT_0_"))
+                {
+                    return _state._F_DT_0_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_DT_0_ = value.Value;
+                }
+            }
+        }
+
+        DateTime IAttributeSetInstanceStateProperties._F_DT_0_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_DT_0_;
+            }
+            set 
+            {
+                this._state._F_DT_0_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_0_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_0_"))
+                {
+                    return _state._F_N_0_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_0_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_0_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_0_;
+            }
+            set 
+            {
+                this._state._F_N_0_ = value;
+            }
+        }
+
+		public virtual string _F_C5_0_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_0_"))
+                {
+                    return _state._F_C5_0_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_0_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_0_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_0_;
+            }
+            set 
+            {
+                this._state._F_C5_0_ = value;
+            }
+        }
+
+		public virtual string _F_C10_0_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_0_"))
+                {
+                    return _state._F_C10_0_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_0_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_0_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_0_;
+            }
+            set 
+            {
+                this._state._F_C10_0_ = value;
+            }
+        }
+
+		public virtual string _F_C20_0_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_0_"))
+                {
+                    return _state._F_C20_0_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_0_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_0_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_0_;
+            }
+            set 
+            {
+                this._state._F_C20_0_ = value;
+            }
+        }
+
+		public virtual string _F_C50_0_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_0_"))
+                {
+                    return _state._F_C50_0_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_0_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_0_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_0_;
+            }
+            set 
+            {
+                this._state._F_C50_0_ = value;
+            }
+        }
+
+		public virtual string _F_C100_0_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C100_0_"))
+                {
+                    return _state._F_C100_0_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C100_0_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C100_0_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C100_0_;
+            }
+            set 
+            {
+                this._state._F_C100_0_ = value;
+            }
+        }
+
+		public virtual string _F_C200_0_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C200_0_"))
+                {
+                    return _state._F_C200_0_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C200_0_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C200_0_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C200_0_;
+            }
+            set 
+            {
+                this._state._F_C200_0_ = value;
+            }
+        }
+
+		public virtual string _F_C500_0_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C500_0_"))
+                {
+                    return _state._F_C500_0_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C500_0_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C500_0_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C500_0_;
+            }
+            set 
+            {
+                this._state._F_C500_0_ = value;
+            }
+        }
+
+		public virtual string _F_C1000_0_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C1000_0_"))
+                {
+                    return _state._F_C1000_0_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C1000_0_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C1000_0_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C1000_0_;
+            }
+            set 
+            {
+                this._state._F_C1000_0_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_1_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_1_"))
+                {
+                    return _state._F_B_1_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_1_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_1_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_1_;
+            }
+            set 
+            {
+                this._state._F_B_1_ = value;
+            }
+        }
+
+		public virtual int? _F_I_1_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_1_"))
+                {
+                    return _state._F_I_1_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_1_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_1_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_1_;
+            }
+            set 
+            {
+                this._state._F_I_1_ = value;
+            }
+        }
+
+		public virtual long? _F_L_1_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_1_"))
+                {
+                    return _state._F_L_1_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_1_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_1_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_1_;
+            }
+            set 
+            {
+                this._state._F_L_1_ = value;
+            }
+        }
+
+		public virtual DateTime? _F_DT_1_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_DT_1_"))
+                {
+                    return _state._F_DT_1_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_DT_1_ = value.Value;
+                }
+            }
+        }
+
+        DateTime IAttributeSetInstanceStateProperties._F_DT_1_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_DT_1_;
+            }
+            set 
+            {
+                this._state._F_DT_1_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_1_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_1_"))
+                {
+                    return _state._F_N_1_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_1_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_1_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_1_;
+            }
+            set 
+            {
+                this._state._F_N_1_ = value;
+            }
+        }
+
+		public virtual string _F_C5_1_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_1_"))
+                {
+                    return _state._F_C5_1_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_1_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_1_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_1_;
+            }
+            set 
+            {
+                this._state._F_C5_1_ = value;
+            }
+        }
+
+		public virtual string _F_C10_1_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_1_"))
+                {
+                    return _state._F_C10_1_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_1_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_1_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_1_;
+            }
+            set 
+            {
+                this._state._F_C10_1_ = value;
+            }
+        }
+
+		public virtual string _F_C20_1_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_1_"))
+                {
+                    return _state._F_C20_1_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_1_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_1_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_1_;
+            }
+            set 
+            {
+                this._state._F_C20_1_ = value;
+            }
+        }
+
+		public virtual string _F_C50_1_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_1_"))
+                {
+                    return _state._F_C50_1_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_1_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_1_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_1_;
+            }
+            set 
+            {
+                this._state._F_C50_1_ = value;
+            }
+        }
+
+		public virtual string _F_C100_1_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C100_1_"))
+                {
+                    return _state._F_C100_1_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C100_1_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C100_1_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C100_1_;
+            }
+            set 
+            {
+                this._state._F_C100_1_ = value;
+            }
+        }
+
+		public virtual string _F_C200_1_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C200_1_"))
+                {
+                    return _state._F_C200_1_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C200_1_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C200_1_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C200_1_;
+            }
+            set 
+            {
+                this._state._F_C200_1_ = value;
+            }
+        }
+
+		public virtual string _F_C500_1_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C500_1_"))
+                {
+                    return _state._F_C500_1_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C500_1_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C500_1_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C500_1_;
+            }
+            set 
+            {
+                this._state._F_C500_1_ = value;
+            }
+        }
+
+		public virtual string _F_C1000_1_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C1000_1_"))
+                {
+                    return _state._F_C1000_1_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C1000_1_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C1000_1_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C1000_1_;
+            }
+            set 
+            {
+                this._state._F_C1000_1_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_2_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_2_"))
+                {
+                    return _state._F_B_2_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_2_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_2_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_2_;
+            }
+            set 
+            {
+                this._state._F_B_2_ = value;
+            }
+        }
+
+		public virtual int? _F_I_2_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_2_"))
+                {
+                    return _state._F_I_2_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_2_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_2_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_2_;
+            }
+            set 
+            {
+                this._state._F_I_2_ = value;
+            }
+        }
+
+		public virtual long? _F_L_2_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_2_"))
+                {
+                    return _state._F_L_2_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_2_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_2_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_2_;
+            }
+            set 
+            {
+                this._state._F_L_2_ = value;
+            }
+        }
+
+		public virtual DateTime? _F_DT_2_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_DT_2_"))
+                {
+                    return _state._F_DT_2_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_DT_2_ = value.Value;
+                }
+            }
+        }
+
+        DateTime IAttributeSetInstanceStateProperties._F_DT_2_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_DT_2_;
+            }
+            set 
+            {
+                this._state._F_DT_2_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_2_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_2_"))
+                {
+                    return _state._F_N_2_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_2_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_2_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_2_;
+            }
+            set 
+            {
+                this._state._F_N_2_ = value;
+            }
+        }
+
+		public virtual string _F_C5_2_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_2_"))
+                {
+                    return _state._F_C5_2_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_2_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_2_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_2_;
+            }
+            set 
+            {
+                this._state._F_C5_2_ = value;
+            }
+        }
+
+		public virtual string _F_C10_2_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_2_"))
+                {
+                    return _state._F_C10_2_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_2_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_2_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_2_;
+            }
+            set 
+            {
+                this._state._F_C10_2_ = value;
+            }
+        }
+
+		public virtual string _F_C20_2_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_2_"))
+                {
+                    return _state._F_C20_2_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_2_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_2_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_2_;
+            }
+            set 
+            {
+                this._state._F_C20_2_ = value;
+            }
+        }
+
+		public virtual string _F_C50_2_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_2_"))
+                {
+                    return _state._F_C50_2_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_2_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_2_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_2_;
+            }
+            set 
+            {
+                this._state._F_C50_2_ = value;
+            }
+        }
+
+		public virtual string _F_C100_2_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C100_2_"))
+                {
+                    return _state._F_C100_2_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C100_2_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C100_2_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C100_2_;
+            }
+            set 
+            {
+                this._state._F_C100_2_ = value;
+            }
+        }
+
+		public virtual string _F_C200_2_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C200_2_"))
+                {
+                    return _state._F_C200_2_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C200_2_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C200_2_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C200_2_;
+            }
+            set 
+            {
+                this._state._F_C200_2_ = value;
+            }
+        }
+
+		public virtual string _F_C500_2_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C500_2_"))
+                {
+                    return _state._F_C500_2_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C500_2_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C500_2_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C500_2_;
+            }
+            set 
+            {
+                this._state._F_C500_2_ = value;
+            }
+        }
+
+		public virtual string _F_C1000_2_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C1000_2_"))
+                {
+                    return _state._F_C1000_2_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C1000_2_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C1000_2_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C1000_2_;
+            }
+            set 
+            {
+                this._state._F_C1000_2_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_3_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_3_"))
+                {
+                    return _state._F_B_3_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_3_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_3_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_3_;
+            }
+            set 
+            {
+                this._state._F_B_3_ = value;
+            }
+        }
+
+		public virtual int? _F_I_3_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_3_"))
+                {
+                    return _state._F_I_3_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_3_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_3_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_3_;
+            }
+            set 
+            {
+                this._state._F_I_3_ = value;
+            }
+        }
+
+		public virtual long? _F_L_3_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_3_"))
+                {
+                    return _state._F_L_3_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_3_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_3_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_3_;
+            }
+            set 
+            {
+                this._state._F_L_3_ = value;
+            }
+        }
+
+		public virtual DateTime? _F_DT_3_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_DT_3_"))
+                {
+                    return _state._F_DT_3_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_DT_3_ = value.Value;
+                }
+            }
+        }
+
+        DateTime IAttributeSetInstanceStateProperties._F_DT_3_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_DT_3_;
+            }
+            set 
+            {
+                this._state._F_DT_3_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_3_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_3_"))
+                {
+                    return _state._F_N_3_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_3_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_3_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_3_;
+            }
+            set 
+            {
+                this._state._F_N_3_ = value;
+            }
+        }
+
+		public virtual string _F_C5_3_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_3_"))
+                {
+                    return _state._F_C5_3_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_3_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_3_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_3_;
+            }
+            set 
+            {
+                this._state._F_C5_3_ = value;
+            }
+        }
+
+		public virtual string _F_C10_3_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_3_"))
+                {
+                    return _state._F_C10_3_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_3_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_3_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_3_;
+            }
+            set 
+            {
+                this._state._F_C10_3_ = value;
+            }
+        }
+
+		public virtual string _F_C20_3_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_3_"))
+                {
+                    return _state._F_C20_3_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_3_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_3_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_3_;
+            }
+            set 
+            {
+                this._state._F_C20_3_ = value;
+            }
+        }
+
+		public virtual string _F_C50_3_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_3_"))
+                {
+                    return _state._F_C50_3_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_3_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_3_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_3_;
+            }
+            set 
+            {
+                this._state._F_C50_3_ = value;
+            }
+        }
+
+		public virtual string _F_C100_3_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C100_3_"))
+                {
+                    return _state._F_C100_3_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C100_3_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C100_3_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C100_3_;
+            }
+            set 
+            {
+                this._state._F_C100_3_ = value;
+            }
+        }
+
+		public virtual string _F_C200_3_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C200_3_"))
+                {
+                    return _state._F_C200_3_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C200_3_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C200_3_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C200_3_;
+            }
+            set 
+            {
+                this._state._F_C200_3_ = value;
+            }
+        }
+
+		public virtual string _F_C500_3_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C500_3_"))
+                {
+                    return _state._F_C500_3_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C500_3_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C500_3_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C500_3_;
+            }
+            set 
+            {
+                this._state._F_C500_3_ = value;
+            }
+        }
+
+		public virtual string _F_C1000_3_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C1000_3_"))
+                {
+                    return _state._F_C1000_3_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C1000_3_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C1000_3_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C1000_3_;
+            }
+            set 
+            {
+                this._state._F_C1000_3_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_4_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_4_"))
+                {
+                    return _state._F_B_4_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_4_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_4_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_4_;
+            }
+            set 
+            {
+                this._state._F_B_4_ = value;
+            }
+        }
+
+		public virtual int? _F_I_4_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_4_"))
+                {
+                    return _state._F_I_4_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_4_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_4_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_4_;
+            }
+            set 
+            {
+                this._state._F_I_4_ = value;
+            }
+        }
+
+		public virtual long? _F_L_4_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_4_"))
+                {
+                    return _state._F_L_4_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_4_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_4_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_4_;
+            }
+            set 
+            {
+                this._state._F_L_4_ = value;
+            }
+        }
+
+		public virtual DateTime? _F_DT_4_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_DT_4_"))
+                {
+                    return _state._F_DT_4_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_DT_4_ = value.Value;
+                }
+            }
+        }
+
+        DateTime IAttributeSetInstanceStateProperties._F_DT_4_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_DT_4_;
+            }
+            set 
+            {
+                this._state._F_DT_4_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_4_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_4_"))
+                {
+                    return _state._F_N_4_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_4_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_4_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_4_;
+            }
+            set 
+            {
+                this._state._F_N_4_ = value;
+            }
+        }
+
+		public virtual string _F_C5_4_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_4_"))
+                {
+                    return _state._F_C5_4_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_4_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_4_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_4_;
+            }
+            set 
+            {
+                this._state._F_C5_4_ = value;
+            }
+        }
+
+		public virtual string _F_C10_4_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_4_"))
+                {
+                    return _state._F_C10_4_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_4_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_4_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_4_;
+            }
+            set 
+            {
+                this._state._F_C10_4_ = value;
+            }
+        }
+
+		public virtual string _F_C20_4_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_4_"))
+                {
+                    return _state._F_C20_4_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_4_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_4_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_4_;
+            }
+            set 
+            {
+                this._state._F_C20_4_ = value;
+            }
+        }
+
+		public virtual string _F_C50_4_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_4_"))
+                {
+                    return _state._F_C50_4_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_4_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_4_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_4_;
+            }
+            set 
+            {
+                this._state._F_C50_4_ = value;
+            }
+        }
+
+		public virtual string _F_C100_4_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C100_4_"))
+                {
+                    return _state._F_C100_4_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C100_4_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C100_4_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C100_4_;
+            }
+            set 
+            {
+                this._state._F_C100_4_ = value;
+            }
+        }
+
+		public virtual string _F_C200_4_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C200_4_"))
+                {
+                    return _state._F_C200_4_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C200_4_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C200_4_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C200_4_;
+            }
+            set 
+            {
+                this._state._F_C200_4_ = value;
+            }
+        }
+
+		public virtual string _F_C500_4_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C500_4_"))
+                {
+                    return _state._F_C500_4_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C500_4_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C500_4_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C500_4_;
+            }
+            set 
+            {
+                this._state._F_C500_4_ = value;
+            }
+        }
+
+		public virtual string _F_C1000_4_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C1000_4_"))
+                {
+                    return _state._F_C1000_4_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C1000_4_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C1000_4_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C1000_4_;
+            }
+            set 
+            {
+                this._state._F_C1000_4_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_5_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_5_"))
+                {
+                    return _state._F_B_5_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_5_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_5_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_5_;
+            }
+            set 
+            {
+                this._state._F_B_5_ = value;
+            }
+        }
+
+		public virtual int? _F_I_5_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_5_"))
+                {
+                    return _state._F_I_5_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_5_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_5_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_5_;
+            }
+            set 
+            {
+                this._state._F_I_5_ = value;
+            }
+        }
+
+		public virtual long? _F_L_5_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_5_"))
+                {
+                    return _state._F_L_5_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_5_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_5_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_5_;
+            }
+            set 
+            {
+                this._state._F_L_5_ = value;
+            }
+        }
+
+		public virtual DateTime? _F_DT_5_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_DT_5_"))
+                {
+                    return _state._F_DT_5_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_DT_5_ = value.Value;
+                }
+            }
+        }
+
+        DateTime IAttributeSetInstanceStateProperties._F_DT_5_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_DT_5_;
+            }
+            set 
+            {
+                this._state._F_DT_5_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_5_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_5_"))
+                {
+                    return _state._F_N_5_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_5_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_5_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_5_;
+            }
+            set 
+            {
+                this._state._F_N_5_ = value;
+            }
+        }
+
+		public virtual string _F_C5_5_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_5_"))
+                {
+                    return _state._F_C5_5_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_5_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_5_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_5_;
+            }
+            set 
+            {
+                this._state._F_C5_5_ = value;
+            }
+        }
+
+		public virtual string _F_C10_5_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_5_"))
+                {
+                    return _state._F_C10_5_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_5_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_5_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_5_;
+            }
+            set 
+            {
+                this._state._F_C10_5_ = value;
+            }
+        }
+
+		public virtual string _F_C20_5_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_5_"))
+                {
+                    return _state._F_C20_5_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_5_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_5_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_5_;
+            }
+            set 
+            {
+                this._state._F_C20_5_ = value;
+            }
+        }
+
+		public virtual string _F_C50_5_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_5_"))
+                {
+                    return _state._F_C50_5_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_5_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_5_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_5_;
+            }
+            set 
+            {
+                this._state._F_C50_5_ = value;
+            }
+        }
+
+		public virtual string _F_C100_5_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C100_5_"))
+                {
+                    return _state._F_C100_5_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C100_5_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C100_5_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C100_5_;
+            }
+            set 
+            {
+                this._state._F_C100_5_ = value;
+            }
+        }
+
+		public virtual string _F_C200_5_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C200_5_"))
+                {
+                    return _state._F_C200_5_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C200_5_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C200_5_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C200_5_;
+            }
+            set 
+            {
+                this._state._F_C200_5_ = value;
+            }
+        }
+
+		public virtual string _F_C500_5_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C500_5_"))
+                {
+                    return _state._F_C500_5_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C500_5_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C500_5_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C500_5_;
+            }
+            set 
+            {
+                this._state._F_C500_5_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_6_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_6_"))
+                {
+                    return _state._F_B_6_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_6_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_6_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_6_;
+            }
+            set 
+            {
+                this._state._F_B_6_ = value;
+            }
+        }
+
+		public virtual int? _F_I_6_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_6_"))
+                {
+                    return _state._F_I_6_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_6_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_6_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_6_;
+            }
+            set 
+            {
+                this._state._F_I_6_ = value;
+            }
+        }
+
+		public virtual long? _F_L_6_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_6_"))
+                {
+                    return _state._F_L_6_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_6_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_6_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_6_;
+            }
+            set 
+            {
+                this._state._F_L_6_ = value;
+            }
+        }
+
+		public virtual DateTime? _F_DT_6_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_DT_6_"))
+                {
+                    return _state._F_DT_6_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_DT_6_ = value.Value;
+                }
+            }
+        }
+
+        DateTime IAttributeSetInstanceStateProperties._F_DT_6_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_DT_6_;
+            }
+            set 
+            {
+                this._state._F_DT_6_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_6_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_6_"))
+                {
+                    return _state._F_N_6_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_6_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_6_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_6_;
+            }
+            set 
+            {
+                this._state._F_N_6_ = value;
+            }
+        }
+
+		public virtual string _F_C5_6_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_6_"))
+                {
+                    return _state._F_C5_6_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_6_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_6_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_6_;
+            }
+            set 
+            {
+                this._state._F_C5_6_ = value;
+            }
+        }
+
+		public virtual string _F_C10_6_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_6_"))
+                {
+                    return _state._F_C10_6_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_6_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_6_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_6_;
+            }
+            set 
+            {
+                this._state._F_C10_6_ = value;
+            }
+        }
+
+		public virtual string _F_C20_6_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_6_"))
+                {
+                    return _state._F_C20_6_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_6_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_6_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_6_;
+            }
+            set 
+            {
+                this._state._F_C20_6_ = value;
+            }
+        }
+
+		public virtual string _F_C50_6_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_6_"))
+                {
+                    return _state._F_C50_6_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_6_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_6_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_6_;
+            }
+            set 
+            {
+                this._state._F_C50_6_ = value;
+            }
+        }
+
+		public virtual string _F_C100_6_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C100_6_"))
+                {
+                    return _state._F_C100_6_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C100_6_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C100_6_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C100_6_;
+            }
+            set 
+            {
+                this._state._F_C100_6_ = value;
+            }
+        }
+
+		public virtual string _F_C200_6_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C200_6_"))
+                {
+                    return _state._F_C200_6_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C200_6_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C200_6_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C200_6_;
+            }
+            set 
+            {
+                this._state._F_C200_6_ = value;
+            }
+        }
+
+		public virtual string _F_C500_6_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C500_6_"))
+                {
+                    return _state._F_C500_6_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C500_6_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C500_6_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C500_6_;
+            }
+            set 
+            {
+                this._state._F_C500_6_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_7_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_7_"))
+                {
+                    return _state._F_B_7_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_7_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_7_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_7_;
+            }
+            set 
+            {
+                this._state._F_B_7_ = value;
+            }
+        }
+
+		public virtual int? _F_I_7_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_7_"))
+                {
+                    return _state._F_I_7_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_7_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_7_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_7_;
+            }
+            set 
+            {
+                this._state._F_I_7_ = value;
+            }
+        }
+
+		public virtual long? _F_L_7_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_7_"))
+                {
+                    return _state._F_L_7_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_7_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_7_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_7_;
+            }
+            set 
+            {
+                this._state._F_L_7_ = value;
+            }
+        }
+
+		public virtual DateTime? _F_DT_7_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_DT_7_"))
+                {
+                    return _state._F_DT_7_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_DT_7_ = value.Value;
+                }
+            }
+        }
+
+        DateTime IAttributeSetInstanceStateProperties._F_DT_7_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_DT_7_;
+            }
+            set 
+            {
+                this._state._F_DT_7_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_7_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_7_"))
+                {
+                    return _state._F_N_7_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_7_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_7_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_7_;
+            }
+            set 
+            {
+                this._state._F_N_7_ = value;
+            }
+        }
+
+		public virtual string _F_C5_7_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_7_"))
+                {
+                    return _state._F_C5_7_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_7_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_7_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_7_;
+            }
+            set 
+            {
+                this._state._F_C5_7_ = value;
+            }
+        }
+
+		public virtual string _F_C10_7_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_7_"))
+                {
+                    return _state._F_C10_7_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_7_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_7_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_7_;
+            }
+            set 
+            {
+                this._state._F_C10_7_ = value;
+            }
+        }
+
+		public virtual string _F_C20_7_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_7_"))
+                {
+                    return _state._F_C20_7_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_7_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_7_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_7_;
+            }
+            set 
+            {
+                this._state._F_C20_7_ = value;
+            }
+        }
+
+		public virtual string _F_C50_7_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_7_"))
+                {
+                    return _state._F_C50_7_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_7_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_7_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_7_;
+            }
+            set 
+            {
+                this._state._F_C50_7_ = value;
+            }
+        }
+
+		public virtual string _F_C100_7_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C100_7_"))
+                {
+                    return _state._F_C100_7_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C100_7_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C100_7_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C100_7_;
+            }
+            set 
+            {
+                this._state._F_C100_7_ = value;
+            }
+        }
+
+		public virtual string _F_C200_7_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C200_7_"))
+                {
+                    return _state._F_C200_7_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C200_7_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C200_7_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C200_7_;
+            }
+            set 
+            {
+                this._state._F_C200_7_ = value;
+            }
+        }
+
+		public virtual string _F_C500_7_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C500_7_"))
+                {
+                    return _state._F_C500_7_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C500_7_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C500_7_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C500_7_;
+            }
+            set 
+            {
+                this._state._F_C500_7_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_8_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_8_"))
+                {
+                    return _state._F_B_8_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_8_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_8_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_8_;
+            }
+            set 
+            {
+                this._state._F_B_8_ = value;
+            }
+        }
+
+		public virtual int? _F_I_8_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_8_"))
+                {
+                    return _state._F_I_8_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_8_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_8_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_8_;
+            }
+            set 
+            {
+                this._state._F_I_8_ = value;
+            }
+        }
+
+		public virtual long? _F_L_8_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_8_"))
+                {
+                    return _state._F_L_8_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_8_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_8_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_8_;
+            }
+            set 
+            {
+                this._state._F_L_8_ = value;
+            }
+        }
+
+		public virtual DateTime? _F_DT_8_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_DT_8_"))
+                {
+                    return _state._F_DT_8_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_DT_8_ = value.Value;
+                }
+            }
+        }
+
+        DateTime IAttributeSetInstanceStateProperties._F_DT_8_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_DT_8_;
+            }
+            set 
+            {
+                this._state._F_DT_8_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_8_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_8_"))
+                {
+                    return _state._F_N_8_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_8_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_8_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_8_;
+            }
+            set 
+            {
+                this._state._F_N_8_ = value;
+            }
+        }
+
+		public virtual string _F_C5_8_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_8_"))
+                {
+                    return _state._F_C5_8_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_8_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_8_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_8_;
+            }
+            set 
+            {
+                this._state._F_C5_8_ = value;
+            }
+        }
+
+		public virtual string _F_C10_8_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_8_"))
+                {
+                    return _state._F_C10_8_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_8_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_8_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_8_;
+            }
+            set 
+            {
+                this._state._F_C10_8_ = value;
+            }
+        }
+
+		public virtual string _F_C20_8_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_8_"))
+                {
+                    return _state._F_C20_8_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_8_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_8_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_8_;
+            }
+            set 
+            {
+                this._state._F_C20_8_ = value;
+            }
+        }
+
+		public virtual string _F_C50_8_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_8_"))
+                {
+                    return _state._F_C50_8_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_8_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_8_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_8_;
+            }
+            set 
+            {
+                this._state._F_C50_8_ = value;
+            }
+        }
+
+		public virtual string _F_C100_8_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C100_8_"))
+                {
+                    return _state._F_C100_8_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C100_8_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C100_8_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C100_8_;
+            }
+            set 
+            {
+                this._state._F_C100_8_ = value;
+            }
+        }
+
+		public virtual string _F_C200_8_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C200_8_"))
+                {
+                    return _state._F_C200_8_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C200_8_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C200_8_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C200_8_;
+            }
+            set 
+            {
+                this._state._F_C200_8_ = value;
+            }
+        }
+
+		public virtual string _F_C500_8_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C500_8_"))
+                {
+                    return _state._F_C500_8_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C500_8_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C500_8_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C500_8_;
+            }
+            set 
+            {
+                this._state._F_C500_8_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_9_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_9_"))
+                {
+                    return _state._F_B_9_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_9_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_9_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_9_;
+            }
+            set 
+            {
+                this._state._F_B_9_ = value;
+            }
+        }
+
+		public virtual int? _F_I_9_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_9_"))
+                {
+                    return _state._F_I_9_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_9_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_9_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_9_;
+            }
+            set 
+            {
+                this._state._F_I_9_ = value;
+            }
+        }
+
+		public virtual long? _F_L_9_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_9_"))
+                {
+                    return _state._F_L_9_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_9_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_9_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_9_;
+            }
+            set 
+            {
+                this._state._F_L_9_ = value;
+            }
+        }
+
+		public virtual DateTime? _F_DT_9_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_DT_9_"))
+                {
+                    return _state._F_DT_9_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_DT_9_ = value.Value;
+                }
+            }
+        }
+
+        DateTime IAttributeSetInstanceStateProperties._F_DT_9_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_DT_9_;
+            }
+            set 
+            {
+                this._state._F_DT_9_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_9_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_9_"))
+                {
+                    return _state._F_N_9_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_9_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_9_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_9_;
+            }
+            set 
+            {
+                this._state._F_N_9_ = value;
+            }
+        }
+
+		public virtual string _F_C5_9_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_9_"))
+                {
+                    return _state._F_C5_9_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_9_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_9_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_9_;
+            }
+            set 
+            {
+                this._state._F_C5_9_ = value;
+            }
+        }
+
+		public virtual string _F_C10_9_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_9_"))
+                {
+                    return _state._F_C10_9_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_9_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_9_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_9_;
+            }
+            set 
+            {
+                this._state._F_C10_9_ = value;
+            }
+        }
+
+		public virtual string _F_C20_9_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_9_"))
+                {
+                    return _state._F_C20_9_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_9_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_9_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_9_;
+            }
+            set 
+            {
+                this._state._F_C20_9_ = value;
+            }
+        }
+
+		public virtual string _F_C50_9_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_9_"))
+                {
+                    return _state._F_C50_9_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_9_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_9_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_9_;
+            }
+            set 
+            {
+                this._state._F_C50_9_ = value;
+            }
+        }
+
+		public virtual string _F_C100_9_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C100_9_"))
+                {
+                    return _state._F_C100_9_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C100_9_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C100_9_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C100_9_;
+            }
+            set 
+            {
+                this._state._F_C100_9_ = value;
+            }
+        }
+
+		public virtual string _F_C200_9_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C200_9_"))
+                {
+                    return _state._F_C200_9_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C200_9_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C200_9_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C200_9_;
+            }
+            set 
+            {
+                this._state._F_C200_9_ = value;
+            }
+        }
+
+		public virtual string _F_C500_9_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C500_9_"))
+                {
+                    return _state._F_C500_9_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C500_9_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C500_9_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C500_9_;
+            }
+            set 
+            {
+                this._state._F_C500_9_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_10_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_10_"))
+                {
+                    return _state._F_B_10_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_10_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_10_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_10_;
+            }
+            set 
+            {
+                this._state._F_B_10_ = value;
+            }
+        }
+
+		public virtual int? _F_I_10_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_10_"))
+                {
+                    return _state._F_I_10_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_10_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_10_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_10_;
+            }
+            set 
+            {
+                this._state._F_I_10_ = value;
+            }
+        }
+
+		public virtual long? _F_L_10_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_10_"))
+                {
+                    return _state._F_L_10_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_10_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_10_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_10_;
+            }
+            set 
+            {
+                this._state._F_L_10_ = value;
+            }
+        }
+
+		public virtual DateTime? _F_DT_10_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_DT_10_"))
+                {
+                    return _state._F_DT_10_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_DT_10_ = value.Value;
+                }
+            }
+        }
+
+        DateTime IAttributeSetInstanceStateProperties._F_DT_10_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_DT_10_;
+            }
+            set 
+            {
+                this._state._F_DT_10_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_10_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_10_"))
+                {
+                    return _state._F_N_10_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_10_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_10_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_10_;
+            }
+            set 
+            {
+                this._state._F_N_10_ = value;
+            }
+        }
+
+		public virtual string _F_C5_10_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_10_"))
+                {
+                    return _state._F_C5_10_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_10_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_10_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_10_;
+            }
+            set 
+            {
+                this._state._F_C5_10_ = value;
+            }
+        }
+
+		public virtual string _F_C10_10_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_10_"))
+                {
+                    return _state._F_C10_10_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_10_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_10_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_10_;
+            }
+            set 
+            {
+                this._state._F_C10_10_ = value;
+            }
+        }
+
+		public virtual string _F_C20_10_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_10_"))
+                {
+                    return _state._F_C20_10_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_10_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_10_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_10_;
+            }
+            set 
+            {
+                this._state._F_C20_10_ = value;
+            }
+        }
+
+		public virtual string _F_C50_10_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_10_"))
+                {
+                    return _state._F_C50_10_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_10_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_10_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_10_;
+            }
+            set 
+            {
+                this._state._F_C50_10_ = value;
+            }
+        }
+
+		public virtual string _F_C100_10_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C100_10_"))
+                {
+                    return _state._F_C100_10_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C100_10_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C100_10_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C100_10_;
+            }
+            set 
+            {
+                this._state._F_C100_10_ = value;
+            }
+        }
+
+		public virtual string _F_C200_10_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C200_10_"))
+                {
+                    return _state._F_C200_10_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C200_10_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C200_10_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C200_10_;
+            }
+            set 
+            {
+                this._state._F_C200_10_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_11_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_11_"))
+                {
+                    return _state._F_B_11_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_11_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_11_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_11_;
+            }
+            set 
+            {
+                this._state._F_B_11_ = value;
+            }
+        }
+
+		public virtual int? _F_I_11_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_11_"))
+                {
+                    return _state._F_I_11_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_11_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_11_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_11_;
+            }
+            set 
+            {
+                this._state._F_I_11_ = value;
+            }
+        }
+
+		public virtual long? _F_L_11_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_11_"))
+                {
+                    return _state._F_L_11_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_11_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_11_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_11_;
+            }
+            set 
+            {
+                this._state._F_L_11_ = value;
+            }
+        }
+
+		public virtual DateTime? _F_DT_11_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_DT_11_"))
+                {
+                    return _state._F_DT_11_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_DT_11_ = value.Value;
+                }
+            }
+        }
+
+        DateTime IAttributeSetInstanceStateProperties._F_DT_11_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_DT_11_;
+            }
+            set 
+            {
+                this._state._F_DT_11_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_11_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_11_"))
+                {
+                    return _state._F_N_11_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_11_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_11_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_11_;
+            }
+            set 
+            {
+                this._state._F_N_11_ = value;
+            }
+        }
+
+		public virtual string _F_C5_11_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_11_"))
+                {
+                    return _state._F_C5_11_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_11_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_11_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_11_;
+            }
+            set 
+            {
+                this._state._F_C5_11_ = value;
+            }
+        }
+
+		public virtual string _F_C10_11_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_11_"))
+                {
+                    return _state._F_C10_11_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_11_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_11_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_11_;
+            }
+            set 
+            {
+                this._state._F_C10_11_ = value;
+            }
+        }
+
+		public virtual string _F_C20_11_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_11_"))
+                {
+                    return _state._F_C20_11_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_11_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_11_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_11_;
+            }
+            set 
+            {
+                this._state._F_C20_11_ = value;
+            }
+        }
+
+		public virtual string _F_C50_11_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_11_"))
+                {
+                    return _state._F_C50_11_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_11_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_11_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_11_;
+            }
+            set 
+            {
+                this._state._F_C50_11_ = value;
+            }
+        }
+
+		public virtual string _F_C100_11_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C100_11_"))
+                {
+                    return _state._F_C100_11_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C100_11_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C100_11_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C100_11_;
+            }
+            set 
+            {
+                this._state._F_C100_11_ = value;
+            }
+        }
+
+		public virtual string _F_C200_11_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C200_11_"))
+                {
+                    return _state._F_C200_11_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C200_11_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C200_11_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C200_11_;
+            }
+            set 
+            {
+                this._state._F_C200_11_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_12_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_12_"))
+                {
+                    return _state._F_B_12_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_12_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_12_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_12_;
+            }
+            set 
+            {
+                this._state._F_B_12_ = value;
+            }
+        }
+
+		public virtual int? _F_I_12_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_12_"))
+                {
+                    return _state._F_I_12_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_12_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_12_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_12_;
+            }
+            set 
+            {
+                this._state._F_I_12_ = value;
+            }
+        }
+
+		public virtual long? _F_L_12_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_12_"))
+                {
+                    return _state._F_L_12_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_12_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_12_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_12_;
+            }
+            set 
+            {
+                this._state._F_L_12_ = value;
+            }
+        }
+
+		public virtual DateTime? _F_DT_12_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_DT_12_"))
+                {
+                    return _state._F_DT_12_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_DT_12_ = value.Value;
+                }
+            }
+        }
+
+        DateTime IAttributeSetInstanceStateProperties._F_DT_12_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_DT_12_;
+            }
+            set 
+            {
+                this._state._F_DT_12_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_12_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_12_"))
+                {
+                    return _state._F_N_12_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_12_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_12_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_12_;
+            }
+            set 
+            {
+                this._state._F_N_12_ = value;
+            }
+        }
+
+		public virtual string _F_C5_12_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_12_"))
+                {
+                    return _state._F_C5_12_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_12_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_12_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_12_;
+            }
+            set 
+            {
+                this._state._F_C5_12_ = value;
+            }
+        }
+
+		public virtual string _F_C10_12_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_12_"))
+                {
+                    return _state._F_C10_12_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_12_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_12_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_12_;
+            }
+            set 
+            {
+                this._state._F_C10_12_ = value;
+            }
+        }
+
+		public virtual string _F_C20_12_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_12_"))
+                {
+                    return _state._F_C20_12_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_12_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_12_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_12_;
+            }
+            set 
+            {
+                this._state._F_C20_12_ = value;
+            }
+        }
+
+		public virtual string _F_C50_12_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_12_"))
+                {
+                    return _state._F_C50_12_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_12_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_12_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_12_;
+            }
+            set 
+            {
+                this._state._F_C50_12_ = value;
+            }
+        }
+
+		public virtual string _F_C100_12_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C100_12_"))
+                {
+                    return _state._F_C100_12_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C100_12_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C100_12_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C100_12_;
+            }
+            set 
+            {
+                this._state._F_C100_12_ = value;
+            }
+        }
+
+		public virtual string _F_C200_12_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C200_12_"))
+                {
+                    return _state._F_C200_12_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C200_12_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C200_12_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C200_12_;
+            }
+            set 
+            {
+                this._state._F_C200_12_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_13_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_13_"))
+                {
+                    return _state._F_B_13_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_13_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_13_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_13_;
+            }
+            set 
+            {
+                this._state._F_B_13_ = value;
+            }
+        }
+
+		public virtual int? _F_I_13_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_13_"))
+                {
+                    return _state._F_I_13_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_13_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_13_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_13_;
+            }
+            set 
+            {
+                this._state._F_I_13_ = value;
+            }
+        }
+
+		public virtual long? _F_L_13_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_13_"))
+                {
+                    return _state._F_L_13_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_13_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_13_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_13_;
+            }
+            set 
+            {
+                this._state._F_L_13_ = value;
+            }
+        }
+
+		public virtual DateTime? _F_DT_13_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_DT_13_"))
+                {
+                    return _state._F_DT_13_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_DT_13_ = value.Value;
+                }
+            }
+        }
+
+        DateTime IAttributeSetInstanceStateProperties._F_DT_13_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_DT_13_;
+            }
+            set 
+            {
+                this._state._F_DT_13_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_13_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_13_"))
+                {
+                    return _state._F_N_13_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_13_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_13_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_13_;
+            }
+            set 
+            {
+                this._state._F_N_13_ = value;
+            }
+        }
+
+		public virtual string _F_C5_13_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_13_"))
+                {
+                    return _state._F_C5_13_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_13_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_13_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_13_;
+            }
+            set 
+            {
+                this._state._F_C5_13_ = value;
+            }
+        }
+
+		public virtual string _F_C10_13_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_13_"))
+                {
+                    return _state._F_C10_13_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_13_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_13_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_13_;
+            }
+            set 
+            {
+                this._state._F_C10_13_ = value;
+            }
+        }
+
+		public virtual string _F_C20_13_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_13_"))
+                {
+                    return _state._F_C20_13_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_13_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_13_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_13_;
+            }
+            set 
+            {
+                this._state._F_C20_13_ = value;
+            }
+        }
+
+		public virtual string _F_C50_13_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_13_"))
+                {
+                    return _state._F_C50_13_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_13_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_13_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_13_;
+            }
+            set 
+            {
+                this._state._F_C50_13_ = value;
+            }
+        }
+
+		public virtual string _F_C100_13_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C100_13_"))
+                {
+                    return _state._F_C100_13_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C100_13_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C100_13_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C100_13_;
+            }
+            set 
+            {
+                this._state._F_C100_13_ = value;
+            }
+        }
+
+		public virtual string _F_C200_13_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C200_13_"))
+                {
+                    return _state._F_C200_13_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C200_13_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C200_13_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C200_13_;
+            }
+            set 
+            {
+                this._state._F_C200_13_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_14_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_14_"))
+                {
+                    return _state._F_B_14_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_14_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_14_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_14_;
+            }
+            set 
+            {
+                this._state._F_B_14_ = value;
+            }
+        }
+
+		public virtual int? _F_I_14_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_14_"))
+                {
+                    return _state._F_I_14_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_14_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_14_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_14_;
+            }
+            set 
+            {
+                this._state._F_I_14_ = value;
+            }
+        }
+
+		public virtual long? _F_L_14_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_14_"))
+                {
+                    return _state._F_L_14_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_14_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_14_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_14_;
+            }
+            set 
+            {
+                this._state._F_L_14_ = value;
+            }
+        }
+
+		public virtual DateTime? _F_DT_14_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_DT_14_"))
+                {
+                    return _state._F_DT_14_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_DT_14_ = value.Value;
+                }
+            }
+        }
+
+        DateTime IAttributeSetInstanceStateProperties._F_DT_14_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_DT_14_;
+            }
+            set 
+            {
+                this._state._F_DT_14_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_14_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_14_"))
+                {
+                    return _state._F_N_14_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_14_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_14_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_14_;
+            }
+            set 
+            {
+                this._state._F_N_14_ = value;
+            }
+        }
+
+		public virtual string _F_C5_14_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_14_"))
+                {
+                    return _state._F_C5_14_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_14_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_14_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_14_;
+            }
+            set 
+            {
+                this._state._F_C5_14_ = value;
+            }
+        }
+
+		public virtual string _F_C10_14_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_14_"))
+                {
+                    return _state._F_C10_14_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_14_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_14_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_14_;
+            }
+            set 
+            {
+                this._state._F_C10_14_ = value;
+            }
+        }
+
+		public virtual string _F_C20_14_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_14_"))
+                {
+                    return _state._F_C20_14_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_14_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_14_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_14_;
+            }
+            set 
+            {
+                this._state._F_C20_14_ = value;
+            }
+        }
+
+		public virtual string _F_C50_14_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_14_"))
+                {
+                    return _state._F_C50_14_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_14_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_14_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_14_;
+            }
+            set 
+            {
+                this._state._F_C50_14_ = value;
+            }
+        }
+
+		public virtual string _F_C100_14_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C100_14_"))
+                {
+                    return _state._F_C100_14_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C100_14_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C100_14_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C100_14_;
+            }
+            set 
+            {
+                this._state._F_C100_14_ = value;
+            }
+        }
+
+		public virtual string _F_C200_14_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C200_14_"))
+                {
+                    return _state._F_C200_14_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C200_14_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C200_14_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C200_14_;
+            }
+            set 
+            {
+                this._state._F_C200_14_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_15_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_15_"))
+                {
+                    return _state._F_B_15_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_15_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_15_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_15_;
+            }
+            set 
+            {
+                this._state._F_B_15_ = value;
+            }
+        }
+
+		public virtual int? _F_I_15_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_15_"))
+                {
+                    return _state._F_I_15_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_15_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_15_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_15_;
+            }
+            set 
+            {
+                this._state._F_I_15_ = value;
+            }
+        }
+
+		public virtual long? _F_L_15_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_15_"))
+                {
+                    return _state._F_L_15_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_15_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_15_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_15_;
+            }
+            set 
+            {
+                this._state._F_L_15_ = value;
+            }
+        }
+
+		public virtual DateTime? _F_DT_15_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_DT_15_"))
+                {
+                    return _state._F_DT_15_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_DT_15_ = value.Value;
+                }
+            }
+        }
+
+        DateTime IAttributeSetInstanceStateProperties._F_DT_15_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_DT_15_;
+            }
+            set 
+            {
+                this._state._F_DT_15_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_15_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_15_"))
+                {
+                    return _state._F_N_15_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_15_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_15_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_15_;
+            }
+            set 
+            {
+                this._state._F_N_15_ = value;
+            }
+        }
+
+		public virtual string _F_C5_15_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_15_"))
+                {
+                    return _state._F_C5_15_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_15_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_15_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_15_;
+            }
+            set 
+            {
+                this._state._F_C5_15_ = value;
+            }
+        }
+
+		public virtual string _F_C10_15_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_15_"))
+                {
+                    return _state._F_C10_15_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_15_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_15_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_15_;
+            }
+            set 
+            {
+                this._state._F_C10_15_ = value;
+            }
+        }
+
+		public virtual string _F_C20_15_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_15_"))
+                {
+                    return _state._F_C20_15_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_15_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_15_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_15_;
+            }
+            set 
+            {
+                this._state._F_C20_15_ = value;
+            }
+        }
+
+		public virtual string _F_C50_15_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_15_"))
+                {
+                    return _state._F_C50_15_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_15_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_15_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_15_;
+            }
+            set 
+            {
+                this._state._F_C50_15_ = value;
+            }
+        }
+
+		public virtual string _F_C100_15_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C100_15_"))
+                {
+                    return _state._F_C100_15_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C100_15_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C100_15_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C100_15_;
+            }
+            set 
+            {
+                this._state._F_C100_15_ = value;
+            }
+        }
+
+		public virtual string _F_C200_15_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C200_15_"))
+                {
+                    return _state._F_C200_15_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C200_15_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C200_15_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C200_15_;
+            }
+            set 
+            {
+                this._state._F_C200_15_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_16_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_16_"))
+                {
+                    return _state._F_B_16_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_16_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_16_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_16_;
+            }
+            set 
+            {
+                this._state._F_B_16_ = value;
+            }
+        }
+
+		public virtual int? _F_I_16_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_16_"))
+                {
+                    return _state._F_I_16_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_16_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_16_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_16_;
+            }
+            set 
+            {
+                this._state._F_I_16_ = value;
+            }
+        }
+
+		public virtual long? _F_L_16_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_16_"))
+                {
+                    return _state._F_L_16_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_16_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_16_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_16_;
+            }
+            set 
+            {
+                this._state._F_L_16_ = value;
+            }
+        }
+
+		public virtual DateTime? _F_DT_16_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_DT_16_"))
+                {
+                    return _state._F_DT_16_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_DT_16_ = value.Value;
+                }
+            }
+        }
+
+        DateTime IAttributeSetInstanceStateProperties._F_DT_16_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_DT_16_;
+            }
+            set 
+            {
+                this._state._F_DT_16_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_16_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_16_"))
+                {
+                    return _state._F_N_16_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_16_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_16_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_16_;
+            }
+            set 
+            {
+                this._state._F_N_16_ = value;
+            }
+        }
+
+		public virtual string _F_C5_16_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_16_"))
+                {
+                    return _state._F_C5_16_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_16_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_16_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_16_;
+            }
+            set 
+            {
+                this._state._F_C5_16_ = value;
+            }
+        }
+
+		public virtual string _F_C10_16_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_16_"))
+                {
+                    return _state._F_C10_16_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_16_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_16_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_16_;
+            }
+            set 
+            {
+                this._state._F_C10_16_ = value;
+            }
+        }
+
+		public virtual string _F_C20_16_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_16_"))
+                {
+                    return _state._F_C20_16_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_16_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_16_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_16_;
+            }
+            set 
+            {
+                this._state._F_C20_16_ = value;
+            }
+        }
+
+		public virtual string _F_C50_16_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_16_"))
+                {
+                    return _state._F_C50_16_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_16_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_16_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_16_;
+            }
+            set 
+            {
+                this._state._F_C50_16_ = value;
+            }
+        }
+
+		public virtual string _F_C100_16_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C100_16_"))
+                {
+                    return _state._F_C100_16_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C100_16_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C100_16_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C100_16_;
+            }
+            set 
+            {
+                this._state._F_C100_16_ = value;
+            }
+        }
+
+		public virtual string _F_C200_16_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C200_16_"))
+                {
+                    return _state._F_C200_16_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C200_16_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C200_16_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C200_16_;
+            }
+            set 
+            {
+                this._state._F_C200_16_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_17_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_17_"))
+                {
+                    return _state._F_B_17_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_17_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_17_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_17_;
+            }
+            set 
+            {
+                this._state._F_B_17_ = value;
+            }
+        }
+
+		public virtual int? _F_I_17_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_17_"))
+                {
+                    return _state._F_I_17_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_17_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_17_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_17_;
+            }
+            set 
+            {
+                this._state._F_I_17_ = value;
+            }
+        }
+
+		public virtual long? _F_L_17_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_17_"))
+                {
+                    return _state._F_L_17_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_17_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_17_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_17_;
+            }
+            set 
+            {
+                this._state._F_L_17_ = value;
+            }
+        }
+
+		public virtual DateTime? _F_DT_17_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_DT_17_"))
+                {
+                    return _state._F_DT_17_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_DT_17_ = value.Value;
+                }
+            }
+        }
+
+        DateTime IAttributeSetInstanceStateProperties._F_DT_17_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_DT_17_;
+            }
+            set 
+            {
+                this._state._F_DT_17_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_17_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_17_"))
+                {
+                    return _state._F_N_17_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_17_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_17_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_17_;
+            }
+            set 
+            {
+                this._state._F_N_17_ = value;
+            }
+        }
+
+		public virtual string _F_C5_17_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_17_"))
+                {
+                    return _state._F_C5_17_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_17_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_17_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_17_;
+            }
+            set 
+            {
+                this._state._F_C5_17_ = value;
+            }
+        }
+
+		public virtual string _F_C10_17_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_17_"))
+                {
+                    return _state._F_C10_17_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_17_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_17_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_17_;
+            }
+            set 
+            {
+                this._state._F_C10_17_ = value;
+            }
+        }
+
+		public virtual string _F_C20_17_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_17_"))
+                {
+                    return _state._F_C20_17_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_17_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_17_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_17_;
+            }
+            set 
+            {
+                this._state._F_C20_17_ = value;
+            }
+        }
+
+		public virtual string _F_C50_17_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_17_"))
+                {
+                    return _state._F_C50_17_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_17_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_17_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_17_;
+            }
+            set 
+            {
+                this._state._F_C50_17_ = value;
+            }
+        }
+
+		public virtual string _F_C100_17_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C100_17_"))
+                {
+                    return _state._F_C100_17_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C100_17_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C100_17_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C100_17_;
+            }
+            set 
+            {
+                this._state._F_C100_17_ = value;
+            }
+        }
+
+		public virtual string _F_C200_17_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C200_17_"))
+                {
+                    return _state._F_C200_17_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C200_17_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C200_17_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C200_17_;
+            }
+            set 
+            {
+                this._state._F_C200_17_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_18_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_18_"))
+                {
+                    return _state._F_B_18_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_18_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_18_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_18_;
+            }
+            set 
+            {
+                this._state._F_B_18_ = value;
+            }
+        }
+
+		public virtual int? _F_I_18_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_18_"))
+                {
+                    return _state._F_I_18_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_18_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_18_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_18_;
+            }
+            set 
+            {
+                this._state._F_I_18_ = value;
+            }
+        }
+
+		public virtual long? _F_L_18_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_18_"))
+                {
+                    return _state._F_L_18_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_18_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_18_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_18_;
+            }
+            set 
+            {
+                this._state._F_L_18_ = value;
+            }
+        }
+
+		public virtual DateTime? _F_DT_18_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_DT_18_"))
+                {
+                    return _state._F_DT_18_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_DT_18_ = value.Value;
+                }
+            }
+        }
+
+        DateTime IAttributeSetInstanceStateProperties._F_DT_18_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_DT_18_;
+            }
+            set 
+            {
+                this._state._F_DT_18_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_18_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_18_"))
+                {
+                    return _state._F_N_18_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_18_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_18_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_18_;
+            }
+            set 
+            {
+                this._state._F_N_18_ = value;
+            }
+        }
+
+		public virtual string _F_C5_18_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_18_"))
+                {
+                    return _state._F_C5_18_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_18_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_18_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_18_;
+            }
+            set 
+            {
+                this._state._F_C5_18_ = value;
+            }
+        }
+
+		public virtual string _F_C10_18_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_18_"))
+                {
+                    return _state._F_C10_18_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_18_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_18_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_18_;
+            }
+            set 
+            {
+                this._state._F_C10_18_ = value;
+            }
+        }
+
+		public virtual string _F_C20_18_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_18_"))
+                {
+                    return _state._F_C20_18_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_18_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_18_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_18_;
+            }
+            set 
+            {
+                this._state._F_C20_18_ = value;
+            }
+        }
+
+		public virtual string _F_C50_18_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_18_"))
+                {
+                    return _state._F_C50_18_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_18_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_18_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_18_;
+            }
+            set 
+            {
+                this._state._F_C50_18_ = value;
+            }
+        }
+
+		public virtual string _F_C100_18_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C100_18_"))
+                {
+                    return _state._F_C100_18_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C100_18_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C100_18_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C100_18_;
+            }
+            set 
+            {
+                this._state._F_C100_18_ = value;
+            }
+        }
+
+		public virtual string _F_C200_18_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C200_18_"))
+                {
+                    return _state._F_C200_18_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C200_18_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C200_18_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C200_18_;
+            }
+            set 
+            {
+                this._state._F_C200_18_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_19_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_19_"))
+                {
+                    return _state._F_B_19_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_19_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_19_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_19_;
+            }
+            set 
+            {
+                this._state._F_B_19_ = value;
+            }
+        }
+
+		public virtual int? _F_I_19_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_19_"))
+                {
+                    return _state._F_I_19_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_19_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_19_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_19_;
+            }
+            set 
+            {
+                this._state._F_I_19_ = value;
+            }
+        }
+
+		public virtual long? _F_L_19_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_19_"))
+                {
+                    return _state._F_L_19_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_19_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_19_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_19_;
+            }
+            set 
+            {
+                this._state._F_L_19_ = value;
+            }
+        }
+
+		public virtual DateTime? _F_DT_19_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_DT_19_"))
+                {
+                    return _state._F_DT_19_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_DT_19_ = value.Value;
+                }
+            }
+        }
+
+        DateTime IAttributeSetInstanceStateProperties._F_DT_19_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_DT_19_;
+            }
+            set 
+            {
+                this._state._F_DT_19_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_19_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_19_"))
+                {
+                    return _state._F_N_19_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_19_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_19_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_19_;
+            }
+            set 
+            {
+                this._state._F_N_19_ = value;
+            }
+        }
+
+		public virtual string _F_C5_19_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_19_"))
+                {
+                    return _state._F_C5_19_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_19_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_19_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_19_;
+            }
+            set 
+            {
+                this._state._F_C5_19_ = value;
+            }
+        }
+
+		public virtual string _F_C10_19_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_19_"))
+                {
+                    return _state._F_C10_19_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_19_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_19_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_19_;
+            }
+            set 
+            {
+                this._state._F_C10_19_ = value;
+            }
+        }
+
+		public virtual string _F_C20_19_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_19_"))
+                {
+                    return _state._F_C20_19_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_19_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_19_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_19_;
+            }
+            set 
+            {
+                this._state._F_C20_19_ = value;
+            }
+        }
+
+		public virtual string _F_C50_19_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_19_"))
+                {
+                    return _state._F_C50_19_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_19_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_19_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_19_;
+            }
+            set 
+            {
+                this._state._F_C50_19_ = value;
+            }
+        }
+
+		public virtual string _F_C100_19_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C100_19_"))
+                {
+                    return _state._F_C100_19_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C100_19_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C100_19_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C100_19_;
+            }
+            set 
+            {
+                this._state._F_C100_19_ = value;
+            }
+        }
+
+		public virtual string _F_C200_19_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C200_19_"))
+                {
+                    return _state._F_C200_19_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C200_19_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C200_19_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C200_19_;
+            }
+            set 
+            {
+                this._state._F_C200_19_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_20_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_20_"))
+                {
+                    return _state._F_B_20_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_20_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_20_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_20_;
+            }
+            set 
+            {
+                this._state._F_B_20_ = value;
+            }
+        }
+
+		public virtual int? _F_I_20_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_20_"))
+                {
+                    return _state._F_I_20_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_20_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_20_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_20_;
+            }
+            set 
+            {
+                this._state._F_I_20_ = value;
+            }
+        }
+
+		public virtual long? _F_L_20_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_20_"))
+                {
+                    return _state._F_L_20_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_20_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_20_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_20_;
+            }
+            set 
+            {
+                this._state._F_L_20_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_20_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_20_"))
+                {
+                    return _state._F_N_20_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_20_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_20_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_20_;
+            }
+            set 
+            {
+                this._state._F_N_20_ = value;
+            }
+        }
+
+		public virtual string _F_C5_20_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_20_"))
+                {
+                    return _state._F_C5_20_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_20_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_20_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_20_;
+            }
+            set 
+            {
+                this._state._F_C5_20_ = value;
+            }
+        }
+
+		public virtual string _F_C10_20_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_20_"))
+                {
+                    return _state._F_C10_20_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_20_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_20_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_20_;
+            }
+            set 
+            {
+                this._state._F_C10_20_ = value;
+            }
+        }
+
+		public virtual string _F_C20_20_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_20_"))
+                {
+                    return _state._F_C20_20_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_20_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_20_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_20_;
+            }
+            set 
+            {
+                this._state._F_C20_20_ = value;
+            }
+        }
+
+		public virtual string _F_C50_20_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_20_"))
+                {
+                    return _state._F_C50_20_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_20_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_20_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_20_;
+            }
+            set 
+            {
+                this._state._F_C50_20_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_21_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_21_"))
+                {
+                    return _state._F_B_21_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_21_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_21_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_21_;
+            }
+            set 
+            {
+                this._state._F_B_21_ = value;
+            }
+        }
+
+		public virtual int? _F_I_21_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_21_"))
+                {
+                    return _state._F_I_21_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_21_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_21_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_21_;
+            }
+            set 
+            {
+                this._state._F_I_21_ = value;
+            }
+        }
+
+		public virtual long? _F_L_21_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_21_"))
+                {
+                    return _state._F_L_21_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_21_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_21_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_21_;
+            }
+            set 
+            {
+                this._state._F_L_21_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_21_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_21_"))
+                {
+                    return _state._F_N_21_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_21_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_21_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_21_;
+            }
+            set 
+            {
+                this._state._F_N_21_ = value;
+            }
+        }
+
+		public virtual string _F_C5_21_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_21_"))
+                {
+                    return _state._F_C5_21_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_21_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_21_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_21_;
+            }
+            set 
+            {
+                this._state._F_C5_21_ = value;
+            }
+        }
+
+		public virtual string _F_C10_21_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_21_"))
+                {
+                    return _state._F_C10_21_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_21_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_21_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_21_;
+            }
+            set 
+            {
+                this._state._F_C10_21_ = value;
+            }
+        }
+
+		public virtual string _F_C20_21_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_21_"))
+                {
+                    return _state._F_C20_21_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_21_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_21_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_21_;
+            }
+            set 
+            {
+                this._state._F_C20_21_ = value;
+            }
+        }
+
+		public virtual string _F_C50_21_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_21_"))
+                {
+                    return _state._F_C50_21_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_21_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_21_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_21_;
+            }
+            set 
+            {
+                this._state._F_C50_21_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_22_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_22_"))
+                {
+                    return _state._F_B_22_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_22_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_22_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_22_;
+            }
+            set 
+            {
+                this._state._F_B_22_ = value;
+            }
+        }
+
+		public virtual int? _F_I_22_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_22_"))
+                {
+                    return _state._F_I_22_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_22_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_22_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_22_;
+            }
+            set 
+            {
+                this._state._F_I_22_ = value;
+            }
+        }
+
+		public virtual long? _F_L_22_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_22_"))
+                {
+                    return _state._F_L_22_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_22_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_22_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_22_;
+            }
+            set 
+            {
+                this._state._F_L_22_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_22_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_22_"))
+                {
+                    return _state._F_N_22_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_22_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_22_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_22_;
+            }
+            set 
+            {
+                this._state._F_N_22_ = value;
+            }
+        }
+
+		public virtual string _F_C5_22_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_22_"))
+                {
+                    return _state._F_C5_22_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_22_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_22_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_22_;
+            }
+            set 
+            {
+                this._state._F_C5_22_ = value;
+            }
+        }
+
+		public virtual string _F_C10_22_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_22_"))
+                {
+                    return _state._F_C10_22_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_22_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_22_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_22_;
+            }
+            set 
+            {
+                this._state._F_C10_22_ = value;
+            }
+        }
+
+		public virtual string _F_C20_22_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_22_"))
+                {
+                    return _state._F_C20_22_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_22_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_22_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_22_;
+            }
+            set 
+            {
+                this._state._F_C20_22_ = value;
+            }
+        }
+
+		public virtual string _F_C50_22_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_22_"))
+                {
+                    return _state._F_C50_22_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_22_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_22_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_22_;
+            }
+            set 
+            {
+                this._state._F_C50_22_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_23_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_23_"))
+                {
+                    return _state._F_B_23_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_23_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_23_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_23_;
+            }
+            set 
+            {
+                this._state._F_B_23_ = value;
+            }
+        }
+
+		public virtual int? _F_I_23_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_23_"))
+                {
+                    return _state._F_I_23_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_23_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_23_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_23_;
+            }
+            set 
+            {
+                this._state._F_I_23_ = value;
+            }
+        }
+
+		public virtual long? _F_L_23_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_23_"))
+                {
+                    return _state._F_L_23_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_23_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_23_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_23_;
+            }
+            set 
+            {
+                this._state._F_L_23_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_23_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_23_"))
+                {
+                    return _state._F_N_23_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_23_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_23_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_23_;
+            }
+            set 
+            {
+                this._state._F_N_23_ = value;
+            }
+        }
+
+		public virtual string _F_C5_23_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_23_"))
+                {
+                    return _state._F_C5_23_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_23_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_23_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_23_;
+            }
+            set 
+            {
+                this._state._F_C5_23_ = value;
+            }
+        }
+
+		public virtual string _F_C10_23_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_23_"))
+                {
+                    return _state._F_C10_23_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_23_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_23_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_23_;
+            }
+            set 
+            {
+                this._state._F_C10_23_ = value;
+            }
+        }
+
+		public virtual string _F_C20_23_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_23_"))
+                {
+                    return _state._F_C20_23_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_23_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_23_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_23_;
+            }
+            set 
+            {
+                this._state._F_C20_23_ = value;
+            }
+        }
+
+		public virtual string _F_C50_23_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_23_"))
+                {
+                    return _state._F_C50_23_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_23_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_23_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_23_;
+            }
+            set 
+            {
+                this._state._F_C50_23_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_24_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_24_"))
+                {
+                    return _state._F_B_24_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_24_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_24_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_24_;
+            }
+            set 
+            {
+                this._state._F_B_24_ = value;
+            }
+        }
+
+		public virtual int? _F_I_24_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_24_"))
+                {
+                    return _state._F_I_24_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_24_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_24_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_24_;
+            }
+            set 
+            {
+                this._state._F_I_24_ = value;
+            }
+        }
+
+		public virtual long? _F_L_24_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_24_"))
+                {
+                    return _state._F_L_24_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_24_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_24_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_24_;
+            }
+            set 
+            {
+                this._state._F_L_24_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_24_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_24_"))
+                {
+                    return _state._F_N_24_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_24_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_24_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_24_;
+            }
+            set 
+            {
+                this._state._F_N_24_ = value;
+            }
+        }
+
+		public virtual string _F_C5_24_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_24_"))
+                {
+                    return _state._F_C5_24_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_24_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_24_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_24_;
+            }
+            set 
+            {
+                this._state._F_C5_24_ = value;
+            }
+        }
+
+		public virtual string _F_C10_24_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_24_"))
+                {
+                    return _state._F_C10_24_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_24_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_24_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_24_;
+            }
+            set 
+            {
+                this._state._F_C10_24_ = value;
+            }
+        }
+
+		public virtual string _F_C20_24_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_24_"))
+                {
+                    return _state._F_C20_24_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_24_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_24_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_24_;
+            }
+            set 
+            {
+                this._state._F_C20_24_ = value;
+            }
+        }
+
+		public virtual string _F_C50_24_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_24_"))
+                {
+                    return _state._F_C50_24_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_24_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_24_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_24_;
+            }
+            set 
+            {
+                this._state._F_C50_24_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_25_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_25_"))
+                {
+                    return _state._F_B_25_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_25_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_25_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_25_;
+            }
+            set 
+            {
+                this._state._F_B_25_ = value;
+            }
+        }
+
+		public virtual int? _F_I_25_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_25_"))
+                {
+                    return _state._F_I_25_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_25_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_25_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_25_;
+            }
+            set 
+            {
+                this._state._F_I_25_ = value;
+            }
+        }
+
+		public virtual long? _F_L_25_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_25_"))
+                {
+                    return _state._F_L_25_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_25_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_25_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_25_;
+            }
+            set 
+            {
+                this._state._F_L_25_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_25_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_25_"))
+                {
+                    return _state._F_N_25_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_25_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_25_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_25_;
+            }
+            set 
+            {
+                this._state._F_N_25_ = value;
+            }
+        }
+
+		public virtual string _F_C5_25_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_25_"))
+                {
+                    return _state._F_C5_25_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_25_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_25_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_25_;
+            }
+            set 
+            {
+                this._state._F_C5_25_ = value;
+            }
+        }
+
+		public virtual string _F_C10_25_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_25_"))
+                {
+                    return _state._F_C10_25_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_25_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_25_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_25_;
+            }
+            set 
+            {
+                this._state._F_C10_25_ = value;
+            }
+        }
+
+		public virtual string _F_C20_25_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_25_"))
+                {
+                    return _state._F_C20_25_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_25_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_25_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_25_;
+            }
+            set 
+            {
+                this._state._F_C20_25_ = value;
+            }
+        }
+
+		public virtual string _F_C50_25_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_25_"))
+                {
+                    return _state._F_C50_25_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_25_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_25_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_25_;
+            }
+            set 
+            {
+                this._state._F_C50_25_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_26_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_26_"))
+                {
+                    return _state._F_B_26_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_26_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_26_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_26_;
+            }
+            set 
+            {
+                this._state._F_B_26_ = value;
+            }
+        }
+
+		public virtual int? _F_I_26_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_26_"))
+                {
+                    return _state._F_I_26_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_26_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_26_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_26_;
+            }
+            set 
+            {
+                this._state._F_I_26_ = value;
+            }
+        }
+
+		public virtual long? _F_L_26_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_26_"))
+                {
+                    return _state._F_L_26_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_26_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_26_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_26_;
+            }
+            set 
+            {
+                this._state._F_L_26_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_26_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_26_"))
+                {
+                    return _state._F_N_26_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_26_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_26_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_26_;
+            }
+            set 
+            {
+                this._state._F_N_26_ = value;
+            }
+        }
+
+		public virtual string _F_C5_26_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_26_"))
+                {
+                    return _state._F_C5_26_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_26_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_26_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_26_;
+            }
+            set 
+            {
+                this._state._F_C5_26_ = value;
+            }
+        }
+
+		public virtual string _F_C10_26_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_26_"))
+                {
+                    return _state._F_C10_26_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_26_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_26_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_26_;
+            }
+            set 
+            {
+                this._state._F_C10_26_ = value;
+            }
+        }
+
+		public virtual string _F_C20_26_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_26_"))
+                {
+                    return _state._F_C20_26_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_26_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_26_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_26_;
+            }
+            set 
+            {
+                this._state._F_C20_26_ = value;
+            }
+        }
+
+		public virtual string _F_C50_26_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_26_"))
+                {
+                    return _state._F_C50_26_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_26_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_26_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_26_;
+            }
+            set 
+            {
+                this._state._F_C50_26_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_27_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_27_"))
+                {
+                    return _state._F_B_27_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_27_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_27_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_27_;
+            }
+            set 
+            {
+                this._state._F_B_27_ = value;
+            }
+        }
+
+		public virtual int? _F_I_27_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_27_"))
+                {
+                    return _state._F_I_27_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_27_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_27_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_27_;
+            }
+            set 
+            {
+                this._state._F_I_27_ = value;
+            }
+        }
+
+		public virtual long? _F_L_27_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_27_"))
+                {
+                    return _state._F_L_27_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_27_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_27_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_27_;
+            }
+            set 
+            {
+                this._state._F_L_27_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_27_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_27_"))
+                {
+                    return _state._F_N_27_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_27_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_27_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_27_;
+            }
+            set 
+            {
+                this._state._F_N_27_ = value;
+            }
+        }
+
+		public virtual string _F_C5_27_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_27_"))
+                {
+                    return _state._F_C5_27_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_27_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_27_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_27_;
+            }
+            set 
+            {
+                this._state._F_C5_27_ = value;
+            }
+        }
+
+		public virtual string _F_C10_27_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_27_"))
+                {
+                    return _state._F_C10_27_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_27_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_27_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_27_;
+            }
+            set 
+            {
+                this._state._F_C10_27_ = value;
+            }
+        }
+
+		public virtual string _F_C20_27_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_27_"))
+                {
+                    return _state._F_C20_27_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_27_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_27_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_27_;
+            }
+            set 
+            {
+                this._state._F_C20_27_ = value;
+            }
+        }
+
+		public virtual string _F_C50_27_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_27_"))
+                {
+                    return _state._F_C50_27_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_27_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_27_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_27_;
+            }
+            set 
+            {
+                this._state._F_C50_27_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_28_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_28_"))
+                {
+                    return _state._F_B_28_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_28_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_28_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_28_;
+            }
+            set 
+            {
+                this._state._F_B_28_ = value;
+            }
+        }
+
+		public virtual int? _F_I_28_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_28_"))
+                {
+                    return _state._F_I_28_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_28_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_28_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_28_;
+            }
+            set 
+            {
+                this._state._F_I_28_ = value;
+            }
+        }
+
+		public virtual long? _F_L_28_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_28_"))
+                {
+                    return _state._F_L_28_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_28_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_28_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_28_;
+            }
+            set 
+            {
+                this._state._F_L_28_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_28_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_28_"))
+                {
+                    return _state._F_N_28_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_28_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_28_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_28_;
+            }
+            set 
+            {
+                this._state._F_N_28_ = value;
+            }
+        }
+
+		public virtual string _F_C5_28_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_28_"))
+                {
+                    return _state._F_C5_28_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_28_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_28_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_28_;
+            }
+            set 
+            {
+                this._state._F_C5_28_ = value;
+            }
+        }
+
+		public virtual string _F_C10_28_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_28_"))
+                {
+                    return _state._F_C10_28_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_28_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_28_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_28_;
+            }
+            set 
+            {
+                this._state._F_C10_28_ = value;
+            }
+        }
+
+		public virtual string _F_C20_28_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_28_"))
+                {
+                    return _state._F_C20_28_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_28_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_28_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_28_;
+            }
+            set 
+            {
+                this._state._F_C20_28_ = value;
+            }
+        }
+
+		public virtual string _F_C50_28_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_28_"))
+                {
+                    return _state._F_C50_28_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_28_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_28_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_28_;
+            }
+            set 
+            {
+                this._state._F_C50_28_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_29_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_29_"))
+                {
+                    return _state._F_B_29_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_29_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_29_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_29_;
+            }
+            set 
+            {
+                this._state._F_B_29_ = value;
+            }
+        }
+
+		public virtual int? _F_I_29_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_29_"))
+                {
+                    return _state._F_I_29_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_29_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_29_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_29_;
+            }
+            set 
+            {
+                this._state._F_I_29_ = value;
+            }
+        }
+
+		public virtual long? _F_L_29_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_L_29_"))
+                {
+                    return _state._F_L_29_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_L_29_ = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceStateProperties._F_L_29_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_L_29_;
+            }
+            set 
+            {
+                this._state._F_L_29_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_29_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_29_"))
+                {
+                    return _state._F_N_29_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_29_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_29_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_29_;
+            }
+            set 
+            {
+                this._state._F_N_29_ = value;
+            }
+        }
+
+		public virtual string _F_C5_29_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_29_"))
+                {
+                    return _state._F_C5_29_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_29_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_29_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_29_;
+            }
+            set 
+            {
+                this._state._F_C5_29_ = value;
+            }
+        }
+
+		public virtual string _F_C10_29_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_29_"))
+                {
+                    return _state._F_C10_29_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_29_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_29_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_29_;
+            }
+            set 
+            {
+                this._state._F_C10_29_ = value;
+            }
+        }
+
+		public virtual string _F_C20_29_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_29_"))
+                {
+                    return _state._F_C20_29_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_29_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_29_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_29_;
+            }
+            set 
+            {
+                this._state._F_C20_29_ = value;
+            }
+        }
+
+		public virtual string _F_C50_29_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_29_"))
+                {
+                    return _state._F_C50_29_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_29_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_29_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_29_;
+            }
+            set 
+            {
+                this._state._F_C50_29_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_30_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_30_"))
+                {
+                    return _state._F_B_30_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_30_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_30_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_30_;
+            }
+            set 
+            {
+                this._state._F_B_30_ = value;
+            }
+        }
+
+		public virtual int? _F_I_30_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_30_"))
+                {
+                    return _state._F_I_30_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_30_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_30_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_30_;
+            }
+            set 
+            {
+                this._state._F_I_30_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_30_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_30_"))
+                {
+                    return _state._F_N_30_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_30_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_30_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_30_;
+            }
+            set 
+            {
+                this._state._F_N_30_ = value;
+            }
+        }
+
+		public virtual string _F_C5_30_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_30_"))
+                {
+                    return _state._F_C5_30_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_30_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_30_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_30_;
+            }
+            set 
+            {
+                this._state._F_C5_30_ = value;
+            }
+        }
+
+		public virtual string _F_C10_30_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_30_"))
+                {
+                    return _state._F_C10_30_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_30_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_30_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_30_;
+            }
+            set 
+            {
+                this._state._F_C10_30_ = value;
+            }
+        }
+
+		public virtual string _F_C20_30_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_30_"))
+                {
+                    return _state._F_C20_30_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_30_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_30_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_30_;
+            }
+            set 
+            {
+                this._state._F_C20_30_ = value;
+            }
+        }
+
+		public virtual string _F_C50_30_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_30_"))
+                {
+                    return _state._F_C50_30_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_30_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_30_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_30_;
+            }
+            set 
+            {
+                this._state._F_C50_30_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_31_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_31_"))
+                {
+                    return _state._F_B_31_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_31_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_31_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_31_;
+            }
+            set 
+            {
+                this._state._F_B_31_ = value;
+            }
+        }
+
+		public virtual int? _F_I_31_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_31_"))
+                {
+                    return _state._F_I_31_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_31_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_31_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_31_;
+            }
+            set 
+            {
+                this._state._F_I_31_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_31_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_31_"))
+                {
+                    return _state._F_N_31_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_31_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_31_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_31_;
+            }
+            set 
+            {
+                this._state._F_N_31_ = value;
+            }
+        }
+
+		public virtual string _F_C5_31_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_31_"))
+                {
+                    return _state._F_C5_31_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_31_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_31_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_31_;
+            }
+            set 
+            {
+                this._state._F_C5_31_ = value;
+            }
+        }
+
+		public virtual string _F_C10_31_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_31_"))
+                {
+                    return _state._F_C10_31_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_31_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_31_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_31_;
+            }
+            set 
+            {
+                this._state._F_C10_31_ = value;
+            }
+        }
+
+		public virtual string _F_C20_31_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_31_"))
+                {
+                    return _state._F_C20_31_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_31_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_31_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_31_;
+            }
+            set 
+            {
+                this._state._F_C20_31_ = value;
+            }
+        }
+
+		public virtual string _F_C50_31_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_31_"))
+                {
+                    return _state._F_C50_31_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_31_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_31_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_31_;
+            }
+            set 
+            {
+                this._state._F_C50_31_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_32_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_32_"))
+                {
+                    return _state._F_B_32_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_32_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_32_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_32_;
+            }
+            set 
+            {
+                this._state._F_B_32_ = value;
+            }
+        }
+
+		public virtual int? _F_I_32_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_32_"))
+                {
+                    return _state._F_I_32_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_32_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_32_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_32_;
+            }
+            set 
+            {
+                this._state._F_I_32_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_32_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_32_"))
+                {
+                    return _state._F_N_32_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_32_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_32_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_32_;
+            }
+            set 
+            {
+                this._state._F_N_32_ = value;
+            }
+        }
+
+		public virtual string _F_C5_32_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_32_"))
+                {
+                    return _state._F_C5_32_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_32_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_32_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_32_;
+            }
+            set 
+            {
+                this._state._F_C5_32_ = value;
+            }
+        }
+
+		public virtual string _F_C10_32_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_32_"))
+                {
+                    return _state._F_C10_32_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_32_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_32_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_32_;
+            }
+            set 
+            {
+                this._state._F_C10_32_ = value;
+            }
+        }
+
+		public virtual string _F_C20_32_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_32_"))
+                {
+                    return _state._F_C20_32_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_32_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_32_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_32_;
+            }
+            set 
+            {
+                this._state._F_C20_32_ = value;
+            }
+        }
+
+		public virtual string _F_C50_32_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_32_"))
+                {
+                    return _state._F_C50_32_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_32_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_32_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_32_;
+            }
+            set 
+            {
+                this._state._F_C50_32_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_33_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_33_"))
+                {
+                    return _state._F_B_33_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_33_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_33_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_33_;
+            }
+            set 
+            {
+                this._state._F_B_33_ = value;
+            }
+        }
+
+		public virtual int? _F_I_33_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_33_"))
+                {
+                    return _state._F_I_33_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_33_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_33_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_33_;
+            }
+            set 
+            {
+                this._state._F_I_33_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_33_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_33_"))
+                {
+                    return _state._F_N_33_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_33_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_33_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_33_;
+            }
+            set 
+            {
+                this._state._F_N_33_ = value;
+            }
+        }
+
+		public virtual string _F_C5_33_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_33_"))
+                {
+                    return _state._F_C5_33_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_33_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_33_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_33_;
+            }
+            set 
+            {
+                this._state._F_C5_33_ = value;
+            }
+        }
+
+		public virtual string _F_C10_33_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_33_"))
+                {
+                    return _state._F_C10_33_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_33_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_33_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_33_;
+            }
+            set 
+            {
+                this._state._F_C10_33_ = value;
+            }
+        }
+
+		public virtual string _F_C20_33_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_33_"))
+                {
+                    return _state._F_C20_33_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_33_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_33_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_33_;
+            }
+            set 
+            {
+                this._state._F_C20_33_ = value;
+            }
+        }
+
+		public virtual string _F_C50_33_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_33_"))
+                {
+                    return _state._F_C50_33_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_33_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_33_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_33_;
+            }
+            set 
+            {
+                this._state._F_C50_33_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_34_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_34_"))
+                {
+                    return _state._F_B_34_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_34_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_34_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_34_;
+            }
+            set 
+            {
+                this._state._F_B_34_ = value;
+            }
+        }
+
+		public virtual int? _F_I_34_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_34_"))
+                {
+                    return _state._F_I_34_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_34_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_34_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_34_;
+            }
+            set 
+            {
+                this._state._F_I_34_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_34_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_34_"))
+                {
+                    return _state._F_N_34_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_34_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_34_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_34_;
+            }
+            set 
+            {
+                this._state._F_N_34_ = value;
+            }
+        }
+
+		public virtual string _F_C5_34_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_34_"))
+                {
+                    return _state._F_C5_34_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_34_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_34_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_34_;
+            }
+            set 
+            {
+                this._state._F_C5_34_ = value;
+            }
+        }
+
+		public virtual string _F_C10_34_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_34_"))
+                {
+                    return _state._F_C10_34_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_34_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_34_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_34_;
+            }
+            set 
+            {
+                this._state._F_C10_34_ = value;
+            }
+        }
+
+		public virtual string _F_C20_34_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_34_"))
+                {
+                    return _state._F_C20_34_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_34_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_34_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_34_;
+            }
+            set 
+            {
+                this._state._F_C20_34_ = value;
+            }
+        }
+
+		public virtual string _F_C50_34_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_34_"))
+                {
+                    return _state._F_C50_34_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_34_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_34_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_34_;
+            }
+            set 
+            {
+                this._state._F_C50_34_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_35_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_35_"))
+                {
+                    return _state._F_B_35_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_35_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_35_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_35_;
+            }
+            set 
+            {
+                this._state._F_B_35_ = value;
+            }
+        }
+
+		public virtual int? _F_I_35_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_35_"))
+                {
+                    return _state._F_I_35_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_35_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_35_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_35_;
+            }
+            set 
+            {
+                this._state._F_I_35_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_35_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_35_"))
+                {
+                    return _state._F_N_35_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_35_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_35_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_35_;
+            }
+            set 
+            {
+                this._state._F_N_35_ = value;
+            }
+        }
+
+		public virtual string _F_C5_35_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_35_"))
+                {
+                    return _state._F_C5_35_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_35_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_35_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_35_;
+            }
+            set 
+            {
+                this._state._F_C5_35_ = value;
+            }
+        }
+
+		public virtual string _F_C10_35_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_35_"))
+                {
+                    return _state._F_C10_35_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_35_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_35_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_35_;
+            }
+            set 
+            {
+                this._state._F_C10_35_ = value;
+            }
+        }
+
+		public virtual string _F_C20_35_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_35_"))
+                {
+                    return _state._F_C20_35_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_35_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_35_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_35_;
+            }
+            set 
+            {
+                this._state._F_C20_35_ = value;
+            }
+        }
+
+		public virtual string _F_C50_35_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_35_"))
+                {
+                    return _state._F_C50_35_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_35_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_35_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_35_;
+            }
+            set 
+            {
+                this._state._F_C50_35_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_36_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_36_"))
+                {
+                    return _state._F_B_36_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_36_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_36_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_36_;
+            }
+            set 
+            {
+                this._state._F_B_36_ = value;
+            }
+        }
+
+		public virtual int? _F_I_36_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_36_"))
+                {
+                    return _state._F_I_36_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_36_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_36_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_36_;
+            }
+            set 
+            {
+                this._state._F_I_36_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_36_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_36_"))
+                {
+                    return _state._F_N_36_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_36_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_36_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_36_;
+            }
+            set 
+            {
+                this._state._F_N_36_ = value;
+            }
+        }
+
+		public virtual string _F_C5_36_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_36_"))
+                {
+                    return _state._F_C5_36_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_36_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_36_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_36_;
+            }
+            set 
+            {
+                this._state._F_C5_36_ = value;
+            }
+        }
+
+		public virtual string _F_C10_36_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_36_"))
+                {
+                    return _state._F_C10_36_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_36_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_36_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_36_;
+            }
+            set 
+            {
+                this._state._F_C10_36_ = value;
+            }
+        }
+
+		public virtual string _F_C20_36_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_36_"))
+                {
+                    return _state._F_C20_36_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_36_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_36_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_36_;
+            }
+            set 
+            {
+                this._state._F_C20_36_ = value;
+            }
+        }
+
+		public virtual string _F_C50_36_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_36_"))
+                {
+                    return _state._F_C50_36_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_36_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_36_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_36_;
+            }
+            set 
+            {
+                this._state._F_C50_36_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_37_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_37_"))
+                {
+                    return _state._F_B_37_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_37_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_37_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_37_;
+            }
+            set 
+            {
+                this._state._F_B_37_ = value;
+            }
+        }
+
+		public virtual int? _F_I_37_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_37_"))
+                {
+                    return _state._F_I_37_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_37_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_37_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_37_;
+            }
+            set 
+            {
+                this._state._F_I_37_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_37_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_37_"))
+                {
+                    return _state._F_N_37_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_37_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_37_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_37_;
+            }
+            set 
+            {
+                this._state._F_N_37_ = value;
+            }
+        }
+
+		public virtual string _F_C5_37_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_37_"))
+                {
+                    return _state._F_C5_37_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_37_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_37_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_37_;
+            }
+            set 
+            {
+                this._state._F_C5_37_ = value;
+            }
+        }
+
+		public virtual string _F_C10_37_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_37_"))
+                {
+                    return _state._F_C10_37_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_37_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_37_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_37_;
+            }
+            set 
+            {
+                this._state._F_C10_37_ = value;
+            }
+        }
+
+		public virtual string _F_C20_37_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_37_"))
+                {
+                    return _state._F_C20_37_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_37_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_37_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_37_;
+            }
+            set 
+            {
+                this._state._F_C20_37_ = value;
+            }
+        }
+
+		public virtual string _F_C50_37_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_37_"))
+                {
+                    return _state._F_C50_37_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_37_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_37_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_37_;
+            }
+            set 
+            {
+                this._state._F_C50_37_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_38_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_38_"))
+                {
+                    return _state._F_B_38_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_38_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_38_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_38_;
+            }
+            set 
+            {
+                this._state._F_B_38_ = value;
+            }
+        }
+
+		public virtual int? _F_I_38_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_38_"))
+                {
+                    return _state._F_I_38_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_38_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_38_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_38_;
+            }
+            set 
+            {
+                this._state._F_I_38_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_38_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_38_"))
+                {
+                    return _state._F_N_38_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_38_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_38_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_38_;
+            }
+            set 
+            {
+                this._state._F_N_38_ = value;
+            }
+        }
+
+		public virtual string _F_C5_38_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_38_"))
+                {
+                    return _state._F_C5_38_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_38_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_38_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_38_;
+            }
+            set 
+            {
+                this._state._F_C5_38_ = value;
+            }
+        }
+
+		public virtual string _F_C10_38_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_38_"))
+                {
+                    return _state._F_C10_38_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_38_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_38_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_38_;
+            }
+            set 
+            {
+                this._state._F_C10_38_ = value;
+            }
+        }
+
+		public virtual string _F_C20_38_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_38_"))
+                {
+                    return _state._F_C20_38_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_38_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_38_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_38_;
+            }
+            set 
+            {
+                this._state._F_C20_38_ = value;
+            }
+        }
+
+		public virtual string _F_C50_38_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_38_"))
+                {
+                    return _state._F_C50_38_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_38_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_38_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_38_;
+            }
+            set 
+            {
+                this._state._F_C50_38_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_39_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_39_"))
+                {
+                    return _state._F_B_39_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_39_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_39_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_39_;
+            }
+            set 
+            {
+                this._state._F_B_39_ = value;
+            }
+        }
+
+		public virtual int? _F_I_39_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_39_"))
+                {
+                    return _state._F_I_39_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_39_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_39_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_39_;
+            }
+            set 
+            {
+                this._state._F_I_39_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_39_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_39_"))
+                {
+                    return _state._F_N_39_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_39_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_39_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_39_;
+            }
+            set 
+            {
+                this._state._F_N_39_ = value;
+            }
+        }
+
+		public virtual string _F_C5_39_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_39_"))
+                {
+                    return _state._F_C5_39_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_39_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_39_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_39_;
+            }
+            set 
+            {
+                this._state._F_C5_39_ = value;
+            }
+        }
+
+		public virtual string _F_C10_39_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_39_"))
+                {
+                    return _state._F_C10_39_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_39_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_39_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_39_;
+            }
+            set 
+            {
+                this._state._F_C10_39_ = value;
+            }
+        }
+
+		public virtual string _F_C20_39_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_39_"))
+                {
+                    return _state._F_C20_39_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_39_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_39_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_39_;
+            }
+            set 
+            {
+                this._state._F_C20_39_ = value;
+            }
+        }
+
+		public virtual string _F_C50_39_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_39_"))
+                {
+                    return _state._F_C50_39_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_39_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_39_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_39_;
+            }
+            set 
+            {
+                this._state._F_C50_39_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_40_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_40_"))
+                {
+                    return _state._F_B_40_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_40_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_40_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_40_;
+            }
+            set 
+            {
+                this._state._F_B_40_ = value;
+            }
+        }
+
+		public virtual int? _F_I_40_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_40_"))
+                {
+                    return _state._F_I_40_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_40_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_40_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_40_;
+            }
+            set 
+            {
+                this._state._F_I_40_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_40_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_40_"))
+                {
+                    return _state._F_N_40_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_40_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_40_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_40_;
+            }
+            set 
+            {
+                this._state._F_N_40_ = value;
+            }
+        }
+
+		public virtual string _F_C5_40_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_40_"))
+                {
+                    return _state._F_C5_40_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_40_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_40_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_40_;
+            }
+            set 
+            {
+                this._state._F_C5_40_ = value;
+            }
+        }
+
+		public virtual string _F_C10_40_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_40_"))
+                {
+                    return _state._F_C10_40_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_40_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_40_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_40_;
+            }
+            set 
+            {
+                this._state._F_C10_40_ = value;
+            }
+        }
+
+		public virtual string _F_C20_40_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_40_"))
+                {
+                    return _state._F_C20_40_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_40_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_40_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_40_;
+            }
+            set 
+            {
+                this._state._F_C20_40_ = value;
+            }
+        }
+
+		public virtual string _F_C50_40_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_40_"))
+                {
+                    return _state._F_C50_40_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_40_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_40_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_40_;
+            }
+            set 
+            {
+                this._state._F_C50_40_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_41_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_41_"))
+                {
+                    return _state._F_B_41_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_41_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_41_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_41_;
+            }
+            set 
+            {
+                this._state._F_B_41_ = value;
+            }
+        }
+
+		public virtual int? _F_I_41_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_41_"))
+                {
+                    return _state._F_I_41_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_41_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_41_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_41_;
+            }
+            set 
+            {
+                this._state._F_I_41_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_41_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_41_"))
+                {
+                    return _state._F_N_41_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_41_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_41_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_41_;
+            }
+            set 
+            {
+                this._state._F_N_41_ = value;
+            }
+        }
+
+		public virtual string _F_C5_41_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_41_"))
+                {
+                    return _state._F_C5_41_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_41_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_41_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_41_;
+            }
+            set 
+            {
+                this._state._F_C5_41_ = value;
+            }
+        }
+
+		public virtual string _F_C10_41_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_41_"))
+                {
+                    return _state._F_C10_41_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_41_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_41_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_41_;
+            }
+            set 
+            {
+                this._state._F_C10_41_ = value;
+            }
+        }
+
+		public virtual string _F_C20_41_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_41_"))
+                {
+                    return _state._F_C20_41_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_41_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_41_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_41_;
+            }
+            set 
+            {
+                this._state._F_C20_41_ = value;
+            }
+        }
+
+		public virtual string _F_C50_41_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_41_"))
+                {
+                    return _state._F_C50_41_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_41_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_41_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_41_;
+            }
+            set 
+            {
+                this._state._F_C50_41_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_42_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_42_"))
+                {
+                    return _state._F_B_42_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_42_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_42_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_42_;
+            }
+            set 
+            {
+                this._state._F_B_42_ = value;
+            }
+        }
+
+		public virtual int? _F_I_42_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_42_"))
+                {
+                    return _state._F_I_42_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_42_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_42_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_42_;
+            }
+            set 
+            {
+                this._state._F_I_42_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_42_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_42_"))
+                {
+                    return _state._F_N_42_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_42_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_42_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_42_;
+            }
+            set 
+            {
+                this._state._F_N_42_ = value;
+            }
+        }
+
+		public virtual string _F_C5_42_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_42_"))
+                {
+                    return _state._F_C5_42_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_42_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_42_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_42_;
+            }
+            set 
+            {
+                this._state._F_C5_42_ = value;
+            }
+        }
+
+		public virtual string _F_C10_42_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_42_"))
+                {
+                    return _state._F_C10_42_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_42_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_42_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_42_;
+            }
+            set 
+            {
+                this._state._F_C10_42_ = value;
+            }
+        }
+
+		public virtual string _F_C20_42_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_42_"))
+                {
+                    return _state._F_C20_42_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_42_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_42_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_42_;
+            }
+            set 
+            {
+                this._state._F_C20_42_ = value;
+            }
+        }
+
+		public virtual string _F_C50_42_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_42_"))
+                {
+                    return _state._F_C50_42_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_42_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_42_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_42_;
+            }
+            set 
+            {
+                this._state._F_C50_42_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_43_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_43_"))
+                {
+                    return _state._F_B_43_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_43_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_43_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_43_;
+            }
+            set 
+            {
+                this._state._F_B_43_ = value;
+            }
+        }
+
+		public virtual int? _F_I_43_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_43_"))
+                {
+                    return _state._F_I_43_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_43_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_43_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_43_;
+            }
+            set 
+            {
+                this._state._F_I_43_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_43_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_43_"))
+                {
+                    return _state._F_N_43_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_43_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_43_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_43_;
+            }
+            set 
+            {
+                this._state._F_N_43_ = value;
+            }
+        }
+
+		public virtual string _F_C5_43_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_43_"))
+                {
+                    return _state._F_C5_43_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_43_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_43_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_43_;
+            }
+            set 
+            {
+                this._state._F_C5_43_ = value;
+            }
+        }
+
+		public virtual string _F_C10_43_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_43_"))
+                {
+                    return _state._F_C10_43_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_43_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_43_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_43_;
+            }
+            set 
+            {
+                this._state._F_C10_43_ = value;
+            }
+        }
+
+		public virtual string _F_C20_43_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_43_"))
+                {
+                    return _state._F_C20_43_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_43_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_43_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_43_;
+            }
+            set 
+            {
+                this._state._F_C20_43_ = value;
+            }
+        }
+
+		public virtual string _F_C50_43_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_43_"))
+                {
+                    return _state._F_C50_43_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_43_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_43_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_43_;
+            }
+            set 
+            {
+                this._state._F_C50_43_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_44_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_44_"))
+                {
+                    return _state._F_B_44_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_44_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_44_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_44_;
+            }
+            set 
+            {
+                this._state._F_B_44_ = value;
+            }
+        }
+
+		public virtual int? _F_I_44_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_44_"))
+                {
+                    return _state._F_I_44_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_44_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_44_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_44_;
+            }
+            set 
+            {
+                this._state._F_I_44_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_44_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_44_"))
+                {
+                    return _state._F_N_44_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_44_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_44_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_44_;
+            }
+            set 
+            {
+                this._state._F_N_44_ = value;
+            }
+        }
+
+		public virtual string _F_C5_44_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_44_"))
+                {
+                    return _state._F_C5_44_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_44_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_44_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_44_;
+            }
+            set 
+            {
+                this._state._F_C5_44_ = value;
+            }
+        }
+
+		public virtual string _F_C10_44_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_44_"))
+                {
+                    return _state._F_C10_44_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_44_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_44_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_44_;
+            }
+            set 
+            {
+                this._state._F_C10_44_ = value;
+            }
+        }
+
+		public virtual string _F_C20_44_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_44_"))
+                {
+                    return _state._F_C20_44_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_44_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_44_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_44_;
+            }
+            set 
+            {
+                this._state._F_C20_44_ = value;
+            }
+        }
+
+		public virtual string _F_C50_44_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_44_"))
+                {
+                    return _state._F_C50_44_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_44_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_44_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_44_;
+            }
+            set 
+            {
+                this._state._F_C50_44_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_45_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_45_"))
+                {
+                    return _state._F_B_45_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_45_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_45_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_45_;
+            }
+            set 
+            {
+                this._state._F_B_45_ = value;
+            }
+        }
+
+		public virtual int? _F_I_45_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_45_"))
+                {
+                    return _state._F_I_45_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_45_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_45_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_45_;
+            }
+            set 
+            {
+                this._state._F_I_45_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_45_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_45_"))
+                {
+                    return _state._F_N_45_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_45_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_45_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_45_;
+            }
+            set 
+            {
+                this._state._F_N_45_ = value;
+            }
+        }
+
+		public virtual string _F_C5_45_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_45_"))
+                {
+                    return _state._F_C5_45_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_45_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_45_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_45_;
+            }
+            set 
+            {
+                this._state._F_C5_45_ = value;
+            }
+        }
+
+		public virtual string _F_C10_45_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_45_"))
+                {
+                    return _state._F_C10_45_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_45_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_45_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_45_;
+            }
+            set 
+            {
+                this._state._F_C10_45_ = value;
+            }
+        }
+
+		public virtual string _F_C20_45_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_45_"))
+                {
+                    return _state._F_C20_45_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_45_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_45_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_45_;
+            }
+            set 
+            {
+                this._state._F_C20_45_ = value;
+            }
+        }
+
+		public virtual string _F_C50_45_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_45_"))
+                {
+                    return _state._F_C50_45_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_45_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_45_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_45_;
+            }
+            set 
+            {
+                this._state._F_C50_45_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_46_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_46_"))
+                {
+                    return _state._F_B_46_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_46_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_46_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_46_;
+            }
+            set 
+            {
+                this._state._F_B_46_ = value;
+            }
+        }
+
+		public virtual int? _F_I_46_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_46_"))
+                {
+                    return _state._F_I_46_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_46_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_46_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_46_;
+            }
+            set 
+            {
+                this._state._F_I_46_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_46_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_46_"))
+                {
+                    return _state._F_N_46_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_46_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_46_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_46_;
+            }
+            set 
+            {
+                this._state._F_N_46_ = value;
+            }
+        }
+
+		public virtual string _F_C5_46_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_46_"))
+                {
+                    return _state._F_C5_46_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_46_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_46_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_46_;
+            }
+            set 
+            {
+                this._state._F_C5_46_ = value;
+            }
+        }
+
+		public virtual string _F_C10_46_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_46_"))
+                {
+                    return _state._F_C10_46_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_46_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_46_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_46_;
+            }
+            set 
+            {
+                this._state._F_C10_46_ = value;
+            }
+        }
+
+		public virtual string _F_C20_46_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_46_"))
+                {
+                    return _state._F_C20_46_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_46_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_46_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_46_;
+            }
+            set 
+            {
+                this._state._F_C20_46_ = value;
+            }
+        }
+
+		public virtual string _F_C50_46_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_46_"))
+                {
+                    return _state._F_C50_46_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_46_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_46_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_46_;
+            }
+            set 
+            {
+                this._state._F_C50_46_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_47_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_47_"))
+                {
+                    return _state._F_B_47_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_47_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_47_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_47_;
+            }
+            set 
+            {
+                this._state._F_B_47_ = value;
+            }
+        }
+
+		public virtual int? _F_I_47_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_47_"))
+                {
+                    return _state._F_I_47_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_47_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_47_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_47_;
+            }
+            set 
+            {
+                this._state._F_I_47_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_47_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_47_"))
+                {
+                    return _state._F_N_47_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_47_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_47_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_47_;
+            }
+            set 
+            {
+                this._state._F_N_47_ = value;
+            }
+        }
+
+		public virtual string _F_C5_47_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_47_"))
+                {
+                    return _state._F_C5_47_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_47_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_47_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_47_;
+            }
+            set 
+            {
+                this._state._F_C5_47_ = value;
+            }
+        }
+
+		public virtual string _F_C10_47_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_47_"))
+                {
+                    return _state._F_C10_47_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_47_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_47_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_47_;
+            }
+            set 
+            {
+                this._state._F_C10_47_ = value;
+            }
+        }
+
+		public virtual string _F_C20_47_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_47_"))
+                {
+                    return _state._F_C20_47_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_47_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_47_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_47_;
+            }
+            set 
+            {
+                this._state._F_C20_47_ = value;
+            }
+        }
+
+		public virtual string _F_C50_47_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_47_"))
+                {
+                    return _state._F_C50_47_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_47_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_47_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_47_;
+            }
+            set 
+            {
+                this._state._F_C50_47_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_48_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_48_"))
+                {
+                    return _state._F_B_48_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_48_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_48_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_48_;
+            }
+            set 
+            {
+                this._state._F_B_48_ = value;
+            }
+        }
+
+		public virtual int? _F_I_48_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_48_"))
+                {
+                    return _state._F_I_48_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_48_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_48_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_48_;
+            }
+            set 
+            {
+                this._state._F_I_48_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_48_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_48_"))
+                {
+                    return _state._F_N_48_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_48_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_48_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_48_;
+            }
+            set 
+            {
+                this._state._F_N_48_ = value;
+            }
+        }
+
+		public virtual string _F_C5_48_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_48_"))
+                {
+                    return _state._F_C5_48_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_48_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_48_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_48_;
+            }
+            set 
+            {
+                this._state._F_C5_48_ = value;
+            }
+        }
+
+		public virtual string _F_C10_48_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_48_"))
+                {
+                    return _state._F_C10_48_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_48_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_48_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_48_;
+            }
+            set 
+            {
+                this._state._F_C10_48_ = value;
+            }
+        }
+
+		public virtual string _F_C20_48_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_48_"))
+                {
+                    return _state._F_C20_48_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_48_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_48_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_48_;
+            }
+            set 
+            {
+                this._state._F_C20_48_ = value;
+            }
+        }
+
+		public virtual string _F_C50_48_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_48_"))
+                {
+                    return _state._F_C50_48_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_48_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_48_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_48_;
+            }
+            set 
+            {
+                this._state._F_C50_48_ = value;
+            }
+        }
+
+		public virtual bool? _F_B_49_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_B_49_"))
+                {
+                    return _state._F_B_49_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_B_49_ = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeSetInstanceStateProperties._F_B_49_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_B_49_;
+            }
+            set 
+            {
+                this._state._F_B_49_ = value;
+            }
+        }
+
+		public virtual int? _F_I_49_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_I_49_"))
+                {
+                    return _state._F_I_49_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_I_49_ = value.Value;
+                }
+            }
+        }
+
+        int IAttributeSetInstanceStateProperties._F_I_49_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_I_49_;
+            }
+            set 
+            {
+                this._state._F_I_49_ = value;
+            }
+        }
+
+		public virtual decimal? _F_N_49_
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_N_49_"))
+                {
+                    return _state._F_N_49_;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state._F_N_49_ = value.Value;
+                }
+            }
+        }
+
+        decimal IAttributeSetInstanceStateProperties._F_N_49_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_N_49_;
+            }
+            set 
+            {
+                this._state._F_N_49_ = value;
+            }
+        }
+
+		public virtual string _F_C5_49_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C5_49_"))
+                {
+                    return _state._F_C5_49_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C5_49_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C5_49_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C5_49_;
+            }
+            set 
+            {
+                this._state._F_C5_49_ = value;
+            }
+        }
+
+		public virtual string _F_C10_49_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C10_49_"))
+                {
+                    return _state._F_C10_49_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C10_49_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C10_49_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C10_49_;
+            }
+            set 
+            {
+                this._state._F_C10_49_ = value;
+            }
+        }
+
+		public virtual string _F_C20_49_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C20_49_"))
+                {
+                    return _state._F_C20_49_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C20_49_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C20_49_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C20_49_;
+            }
+            set 
+            {
+                this._state._F_C20_49_ = value;
+            }
+        }
+
+		public virtual string _F_C50_49_
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("_F_C50_49_"))
+                {
+                    return _state._F_C50_49_;
+                }
+                return null;
+            }
+            set
+            {
+                _state._F_C50_49_ = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties._F_C50_49_
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties)._F_C50_49_;
+            }
+            set 
+            {
+                this._state._F_C50_49_ = value;
             }
         }
 

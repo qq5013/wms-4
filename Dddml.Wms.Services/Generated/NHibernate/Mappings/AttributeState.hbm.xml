@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+				   assembly="Dddml.Wms.Common" 
+				   namespace="Dddml.Wms.Domain">
+  
+  <class name="Dddml.Wms.Domain.AttributeState" table="Attributes">
+
+	<id name="AttributeId" length="50">
+		<generator class="assigned"/>
+	</id>
+
+	<version name="Version" type="long" unsaved-value="0"/>
+
+	<property name="Name"  />
+
+	<property name="Description"  />
+
+	<property name="IsMandatory"  />
+
+	<property name="IsInstanceAttribute"  />
+
+	<property name="AttributeValueType"  />
+
+	<property name="FieldName"  />
+
+	<property name="CreatedBy"  />
+
+	<property name="CreatedAt"  />
+
+	<property name="UpdatedBy"  />
+
+	<property name="UpdatedAt"  />
+
+	<property name="Active"  />
+
+	<property name="Deleted"  />
+
+
+  </class>
+  
+</hibernate-mapping>
+

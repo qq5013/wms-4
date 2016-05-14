@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+                   assembly="Dddml.Wms.Common" 
+                   namespace="Dddml.Wms.Domain">
+  
+  <class name="AttributeValueStateEventBase" table="AttributeValueStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="StateEventId" class="Dddml.Wms.Domain.AttributeValueStateEventId">
+		<key-property name="AttributeId" column="StateEventIdAttributeId" length="50"/>
+		<key-property name="AttributeValueValue" column="StateEventIdAttributeValueValue" length="50"/>
+		<key-property name="AttributeVersion" column="StateEventIdAttributeVersion" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="String" />
+
+	<property name="Name"  />
+
+	<property name="Description"  />
+
+	<property name="ReferenceId"  />
+
+	<property name="Active"  />
+
+
+    <property name="CreatedBy" />
+
+    <property name="CreatedAt" />
+
+    <property name="CommandId" /><!-- TODO CommandId 太特殊了？？？ -->
+
+
+    <subclass name="AttributeValueStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="AttributeValueStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="IsPropertyNameRemoved" />
+
+        <property name="IsPropertyDescriptionRemoved" />
+
+        <property name="IsPropertyReferenceIdRemoved" />
+
+        <property name="IsPropertyActiveRemoved" />
+
+
+    </subclass>
+
+    <subclass name="AttributeValueStateRemoved"  discriminator-value="Removed">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

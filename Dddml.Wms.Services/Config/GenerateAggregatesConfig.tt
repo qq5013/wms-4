@@ -1,0 +1,36 @@
+<#@ template language="C#" debug="True" #>
+<#@ output extension="txt" #>
+<#@ import namespace="Dddml.Core.Domain" #>
+<#@ include file="T4Toolbox.tt" #>
+<#@ include file="%DddmlDotNetToolsSolutionDir%\Dddml.T4.Templates\NHibernate\Spring\AggregateSpringConfigGenerator.tt" #>
+<#@ include file="..\LoadBoundedContext.tt" #>
+<#
+
+
+	foreach (var aggregate in boundedContext.Aggregates.Values)
+	{
+	    var generator = new AggregateSpringConfigGenerator(aggregate);
+
+	    generator.Run();
+	}
+
+#>
+  <!-- Can copy this to App.config -->
+
+  <spring>
+
+    <context>
+<# 
+	foreach (var aggregate in boundedContext.Aggregates.Values)
+	{
+	    var generator = new AggregateSpringConfigGenerator(aggregate);
+#>
+      <resource uri="assembly://<#= TemplatingContext.Current.CurrentAssembly #>/<#= boundedContext.DefaultModule #>.Services.Config/<#= aggregate.Name #>AggregateConfig.xml"/>
+<#
+	}
+#>
+
+    </context>
+
+  </spring>
+

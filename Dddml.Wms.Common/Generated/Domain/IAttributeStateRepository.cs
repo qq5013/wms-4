@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using Dddml.Wms.Domain;
 
+
 namespace Dddml.Wms.Domain
 {
 	public interface IAttributeStateRepository

@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.0.4000\lib\net40\Iesi.Collections.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Generated\Domain\AttributeAggregate.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -319,6 +322,16 @@
     <Compile Include="Generated\Domain\IAttributeValueStates.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Support\AttributeAttribute.cs" />
+    <Compile Include="Support\AttributeGroupAttribute.cs" />
+    <Compile Include="Support\AttributeIgnoreAttribute.cs" />
+    <Compile Include="Support\AttributeSetBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Support\AttributeValueListAttribute.cs" />
+    <Compile Include="Support\AttributeValueTypeUtils.cs" />
+    <Compile Include="Support\NullableUtils.cs" />
+    <None Include="Generated\AttributeSetInstanceExtensionFields.ttinclude" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Specialization\ApplicationContext.cs" />
     <Compile Include="Specialization\CollectionUtils.cs" />
@@ -348,12 +361,16 @@
     <Compile Include="Specialization\ReflectUtils.cs" />
     <Compile Include="Specialization\StateDtoBase.cs" />
     <Compile Include="Specialization\StateDtoCollectionBase.cs" />
+    <None Include="Generated\GenerateAttributeSetInstanceDddml.yaml">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenerateAttributeSetInstanceDddml.tt</DependentUpon>
+    </None>
+    <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Generated\Domain\GenerateBoundedContextDomainAggregates.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>GenerateBoundedContextDomainAggregates.txt</LastGenOutput>
       <LastOutputs>
 .\AttributeAggregate.cs
 .\AttributeApplicationServiceBase.cs
@@ -450,6 +467,7 @@
 .\IAttributeValueStateProperties.cs
 .\IAttributeValueStates.cs
 </LastOutputs>
+      <LastGenOutput>GenerateBoundedContextDomainAggregates.txt</LastGenOutput>
     </Content>
     <Content Include="Generated\Domain\GenerateBoundedContextDomain.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -466,6 +484,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="Generated\GenerateAttributeSetInstanceDddml.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastOutputs>.\GenerateAttributeSetInstanceDddml.yaml</LastOutputs>
+      <LastGenOutput>GenerateAttributeSetInstanceDddml.yaml</LastGenOutput>
+    </Content>
     <Content Include="Generated\LoadBoundedContext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>LoadBoundedContext.txt</LastGenOutput>
@@ -480,6 +503,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

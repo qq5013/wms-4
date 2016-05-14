@@ -1,0 +1,84 @@
+﻿<#@ import namespace="System.Collections.Generic" #>
+
+<#+
+
+    public static class AttributeSetInstanceExtensionFields
+    {
+
+        public class ExtensionField
+        {
+            public string Name { get; set; }
+
+            public string Type { get; set; }
+
+            public int? Length { get; set; }
+
+            public ExtensionField(string name, string type, int? length)
+            {
+                this.Name = name;
+                this.Type = type;
+                this.Length = length;
+            }
+        }
+
+        public class ExtensionFieldGroup 
+        {
+            public string NamePrefix { get; set; }
+            
+            public string NameSuffix { get; set; }
+            
+            public string FieldType { get; set; }
+
+            public int? FieldLength { get; set; }
+
+            public int FieldCount { get; set; }
+
+            public ExtensionFieldGroup(string namePrefix, string nameSuffix, string fieldType, int fieldCount, int? fieldLenght)
+            {
+                this.NamePrefix = namePrefix;
+                this.NameSuffix = nameSuffix;
+                this.FieldType = fieldType;
+                this.FieldCount = fieldCount;
+                this.FieldLength = fieldLenght;
+            }
+
+        }
+
+        public static IList<ExtensionField> CreateExtensionFields()
+        {
+            var extensionFieldGroups = new ExtensionFieldGroup[] {
+                new ExtensionFieldGroup("_F_B_", "_", "bool", 50, null),
+                new ExtensionFieldGroup("_F_I_", "_", "int", 50, null),
+                new ExtensionFieldGroup("_F_L_", "_", "long", 30, null),
+                new ExtensionFieldGroup("_F_DT_", "_", "DateTime", 20, null),
+                new ExtensionFieldGroup("_F_N_", "_", "decimal", 50, null),
+                new ExtensionFieldGroup("_F_C5_", "_", "string", 50, 5),
+                new ExtensionFieldGroup("_F_C10_", "_", "string", 50, 10),
+                new ExtensionFieldGroup("_F_C20_", "_", "string", 50, 20),
+                new ExtensionFieldGroup("_F_C50_", "_", "string", 50, 50),
+                new ExtensionFieldGroup("_F_C100_", "_", "string", 20, 100),
+                new ExtensionFieldGroup("_F_C200_", "_", "string", 20, 200),
+                new ExtensionFieldGroup("_F_C500_", "_", "string", 10, 500),
+                new ExtensionFieldGroup("_F_C1000_", "_", "string", 5, 1000)
+            };
+
+            var fields = new List<ExtensionField>();
+
+            for (int i = 0; i < 1000; i++)
+            {
+                for (int iG = 0; iG < extensionFieldGroups.Length; iG++)
+                {
+                    var group = extensionFieldGroups[iG];
+                    if (i < group.FieldCount)
+                    {
+                        fields.Add(new ExtensionField(group.NamePrefix + i.ToString() + group.NameSuffix, group.FieldType, group.FieldLength));
+                    }
+                }
+            }
+
+            return fields;
+
+        }
+
+    }
+#>

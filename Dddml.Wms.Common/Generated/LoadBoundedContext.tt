@@ -22,6 +22,8 @@
 
 	boundedContext.IsGenericTypeAsType = true;
 
+	boundedContext.Metadata[Dddml.T4.Extensions.BoundedContextExtension.MetadataKeyDomainAssembly] = "Dddml.Wms.Common";
+
 	boundedContext.Refresh();
 
 	foreach (var agg in boundedContext.Aggregates.Values)

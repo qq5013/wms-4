@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+
+  <object id="attributeSetInstanceStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeSetInstanceStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="attributeSetInstanceEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeSetInstanceEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="attributeSetInstanceApplicationService" type="Dddml.Wms.Domain.NHibernate.AttributeSetInstanceApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="attributeSetInstanceEventStore"/>
+    <constructor-arg ref="attributeSetInstanceStateRepository"/>
+  </object>
+
+</objects>
+

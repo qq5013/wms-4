@@ -1,0 +1,55 @@
+<#@ template language="C#" debug="True" #>
+<#@ output extension="yaml" #>
+<#@ include file="T4Toolbox.tt" #>
+<#@ include file="AttributeSetInstanceExtensionFields.ttinclude" #>
+<#
+// <copyright file="GenerateAttributeSetInstanceDddml.tt" company="dddml.org">
+//  Copyright © . All Rights Reserved.
+// </copyright>
+
+	var extensionFields = AttributeSetInstanceExtensionFields.CreateExtensionFields();
+
+#>
+#%DDDML 0.1
+
+---
+
+# ------------------------------
+aggregates:
+
+
+    # --------------- aggregate ---------------
+    AttributeSetInstance:
+    
+      id:
+        name: AttributeSetInstanceId
+        type: string
+      
+            
+      properties:
+
+        AttributeSetId:
+          type: string
+        
+        SerialNumber:
+          type: string
+
+        Lot:
+          type: string
+
+        Description:
+          type: string
+
+        #DateTime? GuaranteeDate
+<#
+	foreach (var f in extensionFields)
+	{
+#>
+        <#= f.Name #>:
+          type: <#= f.Type #>
+          <#= (f.Length != null) ? "length: " + f.Length : String.Empty #>
+
+<#
+	}
+#>
+        

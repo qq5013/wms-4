@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+				   assembly="Dddml.Wms.Common" 
+				   namespace="Dddml.Wms.Domain">
+  
+  <class name="Dddml.Wms.Domain.AttributeValueState" table="AttributeValues">
+
+	<composite-id name="AttributeValueId" class="Dddml.Wms.Domain.AttributeValueId">
+		<key-property name="AttributeId" column="AttributeValueIdAttributeId" length="50"/>
+		<key-property name="AttributeValueValue" column="AttributeValueIdAttributeValueValue" length="50"/>
+	</composite-id>
+
+	<version name="Version" type="long" unsaved-value="0"/>
+
+	<property name="Name"  />
+
+	<property name="Description"  />
+
+	<property name="ReferenceId"  />
+
+	<property name="CreatedBy"  />
+
+	<property name="CreatedAt"  />
+
+	<property name="UpdatedBy"  />
+
+	<property name="UpdatedAt"  />
+
+	<property name="Active"  />
+
+
+  </class>
+  
+</hibernate-mapping>
+

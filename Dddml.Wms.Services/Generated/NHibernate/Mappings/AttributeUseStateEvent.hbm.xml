@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+                   assembly="Dddml.Wms.Common" 
+                   namespace="Dddml.Wms.Domain">
+  
+  <class name="AttributeUseStateEventBase" table="AttributeUseStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="StateEventId" class="Dddml.Wms.Domain.AttributeUseStateEventId">
+		<key-property name="AttributeSetId" column="StateEventIdAttributeSetId" length="50"/>
+		<key-property name="AttributeUseAttributeId" column="StateEventIdAttributeUseAttributeId" length="50"/>
+		<key-property name="AttributeSetVersion" column="StateEventIdAttributeSetVersion" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="String" />
+
+	<property name="SequenceNumber"  />
+
+	<property name="Active"  />
+
+
+    <property name="CreatedBy" />
+
+    <property name="CreatedAt" />
+
+    <property name="CommandId" /><!-- TODO CommandId 太特殊了？？？ -->
+
+
+    <subclass name="AttributeUseStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="AttributeUseStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="IsPropertySequenceNumberRemoved" />
+
+        <property name="IsPropertyActiveRemoved" />
+
+
+    </subclass>
+
+    <subclass name="AttributeUseStateRemoved"  discriminator-value="Removed">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

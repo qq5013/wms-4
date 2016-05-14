@@ -7,6 +7,7 @@ using System;
 using Dddml.Wms.Domain;
 using Dddml.Wms.Specialization;
 
+
 namespace Dddml.Wms.Domain
 {
 

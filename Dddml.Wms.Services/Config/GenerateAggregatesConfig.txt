@@ -3,16 +3,27 @@
 
 
 
-  <!-- Can copy this to App.config -->
 
   <spring>
 
     <context>
+      <resource uri="config://spring/objects" />
+      <resource uri="assembly://Dddml.Wms.Services/Dddml.Wms.Services.Config/DatabaseConfig.xml" />
+
+      <!-- Can copy this to App.config/spring/context -->
+
       <resource uri="assembly://Dddml.Wms.Services/Dddml.Wms.Services.Config/AttributeAggregateConfig.xml"/>
       <resource uri="assembly://Dddml.Wms.Services/Dddml.Wms.Services.Config/AttributeSetAggregateConfig.xml"/>
       <resource uri="assembly://Dddml.Wms.Services/Dddml.Wms.Services.Config/AttributeSetInstanceAggregateConfig.xml"/>
 
     </context>
+
+    <objects xmlns="http://www.springframework.net">
+      <!-- Property placeholder configurer for database settings -->
+      <object type="Spring.Objects.Factory.Config.PropertyPlaceholderConfigurer, Spring.Core">
+        <property name="ConfigSections" value="databaseSettings" />
+      </object>
+    </objects>
 
   </spring>
 

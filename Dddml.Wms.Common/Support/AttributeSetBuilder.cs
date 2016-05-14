@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 namespace Dddml.Wms.Support
 {
 
+
     /// <summary>
     /// 物料属性工具。
     /// </summary>
@@ -17,25 +18,24 @@ namespace Dddml.Wms.Support
     /// <typeparam name="TAttributeValue">物料属性值类型</typeparam>
     /// <typeparam name="TAttributeSet">物料属性集合类型</typeparam>
     /// <typeparam name="TAttributeUse">“物料属性使用”类型</typeparam>
-    public class AttributeSetBuilder<TUser, TAttribute, TAttributeValue, TAttributeSet, TAttributeUse>
+    public class AttributeSetBuilder<TAttributeSet, TAttribute, TAttributeValue, TAttributeUse>
+        where TAttributeSet : ICreateAttributeSet, new()
         where TAttribute : ICreateAttribute, new()
         where TAttributeValue : ICreateAttributeValue
-        where TAttributeSet : ICreateAttributeSet, new()
         where TAttributeUse : ICreateAttributeUse
     {
 
-        private class AttributeGroupDictionary : Dictionary<string, IList<TAttribute>>
+        public interface IdGenerator
         {
-            public void Add(string groupName, TAttribute attribute)
-            {
-                if (!ContainsKey(groupName))
-                {
-                    Add(groupName, new List<TAttribute>());
-                }
-                this[groupName].Add(attribute);
-            }
+
+            string GenerateAttributeSetId(TAttributeSet attributeSet);
+
+            string GenerateAttributeId(TAttribute attribute);
+
         }
 
+
+        public IdGenerator _theIdGenerator;
 
         private ICollection<string> _ignoredMembers = new List<string>(new string[] { 
                 "IsActive", "Active",
@@ -60,6 +60,12 @@ namespace Dddml.Wms.Support
             set { _ignoredMembers = value; }
         }
 
+        public AttributeSetBuilder(IdGenerator idGenerator)
+        {
+            this._theIdGenerator = idGenerator;
+
+        }
+
         /// <summary>
         /// 从实体类（的成员中）中提取物料属性信息。
         /// </summary>
@@ -68,7 +74,7 @@ namespace Dddml.Wms.Support
         /// <param name="attributes">物料属性</param>
         /// <param name="attributeValues">物料属性值</param>
         /// <param name="attributeUses">“物料属性使用”</param>
-        public void BuildAttributeSetsFromEntityType(Type entityType, out IList<TAttributeSet> attributeSets, out IList<TAttribute> attributes, out IList<TAttributeValue> attributeValues, out IList<TAttributeUse> attributeUses)
+        public void BuildAttributeSetsFromEntityType(Type entityType,out IList<TAttributeSet> attributeSets, out IList<TAttribute> attributes, out IList<TAttributeValue> attributeValues, out IList<TAttributeUse> attributeUses)
         {
 
             AttributeGroupDictionary groupDictionary;
@@ -118,6 +124,7 @@ namespace Dddml.Wms.Support
             attrSet.Name = attributeSetName;
             attrSet.Description = attributeSetName;
             attrSet.Active = true;
+            attrSet.AttributeSetId = this._theIdGenerator.GenerateAttributeSetId(attrSet);
             attributeUses = GetAttributeUses(attrSet, attributes);
             return attrSet;
         }
@@ -360,6 +367,7 @@ namespace Dddml.Wms.Support
             a.IsInstanceAttribute = true;
             SetAttributeByAttributeAttribute(memberInfo, a);
             SetAttributeByDescriptionAttribute(memberInfo, a);
+            a.AttributeId = this._theIdGenerator.GenerateAttributeId(a);
             attribute = a;
             return true;
         }
@@ -451,6 +459,7 @@ namespace Dddml.Wms.Support
             attributeSet.Name = entityType.Name;
             attributeSet.Description = entityType.Name;
             attributeSet.Active = true;
+            attributeSet.AttributeSetId = this._theIdGenerator.GenerateAttributeSetId(attributeSet);
             return attributeSet;
         }
 
@@ -474,5 +483,20 @@ namespace Dddml.Wms.Support
                 throw new ArgumentException();
             }
         }
+
+
+        private class AttributeGroupDictionary : Dictionary<string, IList<TAttribute>>
+        {
+            public void Add(string groupName, TAttribute attribute)
+            {
+                if (!ContainsKey(groupName))
+                {
+                    Add(groupName, new List<TAttribute>());
+                }
+                this[groupName].Add(attribute);
+            }
+        }
+
+
     }
 }

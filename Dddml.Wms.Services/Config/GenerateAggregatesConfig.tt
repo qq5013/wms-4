@@ -15,11 +15,15 @@
 	}
 
 #>
-  <!-- Can copy this to App.config -->
 
   <spring>
 
     <context>
+      <resource uri="config://spring/objects" />
+      <resource uri="assembly://<#= TemplatingContext.Current.CurrentAssembly #>/<#= boundedContext.DefaultModule #>.Services.Config/DatabaseConfig.xml" />
+
+      <!-- Can copy this to App.config/spring/context -->
+
 <# 
 	foreach (var aggregate in boundedContext.Aggregates.Values)
 	{
@@ -31,6 +35,13 @@
 #>
 
     </context>
+
+    <objects xmlns="http://www.springframework.net">
+      <!-- Property placeholder configurer for database settings -->
+      <object type="Spring.Objects.Factory.Config.PropertyPlaceholderConfigurer, Spring.Core">
+        <property name="ConfigSections" value="databaseSettings" />
+      </object>
+    </objects>
 
   </spring>
 

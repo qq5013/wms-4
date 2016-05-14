@@ -21,6 +21,8 @@ namespace Dddml.Wms.Services.Tests
         {
             Setup();
 
+            AttributeSetBuilderTests.TestAttributeSetBuilder();
+
             IAttributeSetInstanceApplicationService attributeSetInstanceApplicationService = ApplicationContext.Current["attributeSetInstanceApplicationService"] as IAttributeSetInstanceApplicationService;
 
             Console.WriteLine(attributeSetInstanceApplicationService.GetAll(0, int.MaxValue));

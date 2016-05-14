@@ -6,11 +6,11 @@
 <#@ include file="..\LoadBoundedContext.tt" #>
 <#
 
-	//foreach (var aggregate in boundedContext.Aggregates.Values)
-	//{
-		//var generator = new AggregateDomainGenerator(aggregate);
-//
-	    //generator.Run();
-	//}
+	foreach (var aggregate in boundedContext.Aggregates.Values)
+	{
+		var generator = new AggregateDomainGenerator(aggregate);
+
+	    generator.Run();
+	}
 
 #>

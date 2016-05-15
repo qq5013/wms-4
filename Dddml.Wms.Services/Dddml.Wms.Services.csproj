@@ -119,34 +119,34 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeSetInstanceStateEvent.hbm.xml">
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeStateEvent.hbm.xml">
       <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeSetInstanceState.hbm.xml">
-      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeUseStateEvent.hbm.xml">
-      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeUseState.hbm.xml">
-      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeSetStateEvent.hbm.xml">
-      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeSetState.hbm.xml">
-      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeValueStateEvent.hbm.xml">
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeState.hbm.xml">
       <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeValueState.hbm.xml">
       <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeStateEvent.hbm.xml">
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeValueStateEvent.hbm.xml">
       <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeState.hbm.xml">
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeSetState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeSetStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeUseState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeUseStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeSetInstanceState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeSetInstanceStateEvent.hbm.xml">
       <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
     </EmbeddedResource>
     <Content Include="Generated\NHibernate\Mappings\GenerateAggregatesHbm.tt">

@@ -23,7 +23,7 @@
 
 	<property name="IsList"  />
 
-	<property name="FieldName"  />
+	<property name="FieldName" unique-key="UniqueFieldName" />
 
 	<property name="ReferenceId"  />
 

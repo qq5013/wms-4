@@ -221,10 +221,25 @@ namespace Dddml.Wms.Support
                 {
                     attributeValues = new List<TAttributeValue>(aValues);
                     attribute.IsList = true;//attribute.AttributeValueType = AttributeValueTypeUtils.ListAttributeValueTypeName;
+                    if (String.Equals("string", attribute.AttributeValueType, StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        attribute.AttributeValueLength = GetMaxLengthOfAttributeValues(aValues);
+                    }
                 }
                 return true;
             }
             return false;
+        }
+
+
+        private static int GetMaxLengthOfAttributeValues(IEnumerable<TAttributeValue> attributeValues)
+        {
+            int len = 0;
+            foreach (var av in attributeValues)
+            {
+                if (av.Value.Length > len) { len = av.Value.Length; }
+            }
+            return len;
         }
 
         /// <summary>
@@ -262,6 +277,20 @@ namespace Dddml.Wms.Support
 
                 }
                 return allValues;
+            }
+            else
+            {
+                Type memberType = GetMemberType(memberInfo);
+                if (memberType.IsEnum)
+                {
+                    List<TAttributeValue> allValues = new List<TAttributeValue>();
+                    IList<TAttributeValue> avs = GetAttributeValuesFromEnum(attribute, memberType, null);
+                    if (avs != null)
+                    {
+                        allValues.AddRange(avs);
+                    }
+                    return allValues;
+                }
             }
             return null;
         }
@@ -318,7 +347,7 @@ namespace Dddml.Wms.Support
             List<TAttributeValue> aValues = new List<TAttributeValue>();
             Array arr = Enum.GetValues(enumType);
             Regex regex = null;
-            if (!String.IsNullOrEmpty(listAttribute.NamePattern))
+            if (listAttribute!= null && !String.IsNullOrEmpty(listAttribute.NamePattern))
             {
                 regex = new Regex(listAttribute.NamePattern);
             }
@@ -470,7 +499,7 @@ namespace Dddml.Wms.Support
         /// </summary>
         /// <param name="memberInfo"></param>
         /// <returns></returns>
-        private Type GetMemberType(MemberInfo memberInfo)
+        private static Type GetMemberType(MemberInfo memberInfo)
         {
             if (memberInfo is PropertyInfo)
             {

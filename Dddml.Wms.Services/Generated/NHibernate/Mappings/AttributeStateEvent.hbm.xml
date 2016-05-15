@@ -22,6 +22,8 @@
 
 	<property name="AttributeValueType"  />
 
+	<property name="AttributeValueLength"  />
+
 	<property name="IsList"  />
 
 	<property name="FieldName"  />
@@ -53,6 +55,8 @@
         <property name="IsPropertyIsInstanceAttributeRemoved" />
 
         <property name="IsPropertyAttributeValueTypeRemoved" />
+
+        <property name="IsPropertyAttributeValueLengthRemoved" />
 
         <property name="IsPropertyIsListRemoved" />
 

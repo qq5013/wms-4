@@ -22,6 +22,8 @@ namespace Dddml.Wms.Domain
 
 		string AttributeValueType { get; set; }
 
+		int? AttributeValueLength { get; set; }
+
 		bool IsList { get; set; }
 
 		string FieldName { get; set; }

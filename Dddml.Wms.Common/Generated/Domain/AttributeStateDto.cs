@@ -213,6 +213,34 @@ namespace Dddml.Wms.Domain
             }
         }
 
+		public virtual int? AttributeValueLength
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("AttributeValueLength"))
+                {
+                    return _state.AttributeValueLength;
+                }
+                return null;
+            }
+            set
+            {
+                _state.AttributeValueLength = value;
+            }
+        }
+
+        int? IAttributeStateProperties.AttributeValueLength
+        {
+            get 
+            {
+                return (this._state as IAttributeStateProperties).AttributeValueLength;
+            }
+            set 
+            {
+                this._state.AttributeValueLength = value;
+            }
+        }
+
 		public virtual bool? IsList
         {
             get

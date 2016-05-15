@@ -174,6 +174,7 @@ namespace Dddml.Wms.Domain
 			this.IsMandatory = e.IsMandatory;
 			this.IsInstanceAttribute = e.IsInstanceAttribute;
 			this.AttributeValueType = e.AttributeValueType;
+			this.AttributeValueLength = e.AttributeValueLength;
 			this.IsList = e.IsList;
 			this.FieldName = e.FieldName;
 			this.ReferenceId = e.ReferenceId;
@@ -246,6 +247,17 @@ namespace Dddml.Wms.Domain
 				if (e.AttributeValueType != null)
 				{
 					this.AttributeValueType = e.AttributeValueType;
+				}
+			}
+			if (e.IsPropertyAttributeValueLengthRemoved)
+			{
+				this.AttributeValueLength = default(int?);
+			}
+			else
+			{
+				if (e.AttributeValueLength != null)
+				{
+					this.AttributeValueLength = e.AttributeValueLength;
 				}
 			}
 			if (e.IsPropertyIsListRemoved)

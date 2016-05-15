@@ -112,6 +112,8 @@ namespace Dddml.Wms.Domain
 
             e.AttributeValueType = c.AttributeValueType;
 
+            e.AttributeValueLength = c.AttributeValueLength;
+
             e.IsList = c.IsList;
 
             e.FieldName = c.FieldName;
@@ -154,6 +156,8 @@ namespace Dddml.Wms.Domain
 
             e.AttributeValueType = c.AttributeValueType;
 
+            e.AttributeValueLength = c.AttributeValueLength;
+
             e.IsList = c.IsList;
 
             e.FieldName = c.FieldName;
@@ -171,6 +175,8 @@ namespace Dddml.Wms.Domain
             e.IsPropertyIsInstanceAttributeRemoved = c.IsPropertyIsInstanceAttributeRemoved;
 
             e.IsPropertyAttributeValueTypeRemoved = c.IsPropertyAttributeValueTypeRemoved;
+
+            e.IsPropertyAttributeValueLengthRemoved = c.IsPropertyAttributeValueLengthRemoved;
 
             e.IsPropertyIsListRemoved = c.IsPropertyIsListRemoved;
 

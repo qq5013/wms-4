@@ -36,6 +36,9 @@ aggregates:
 
         AttributeValueType:
           type: string
+
+        AttributeValueLength:
+          type: int?
         
         IsList:
           type: bool

@@ -98,6 +98,25 @@ namespace Dddml.Wms.Services.Tests
 
             ////////////////////////////////////////////
 
+            attributeSetBuilder.BuildAttributeSetsFromEntityType(typeof(AttributeSetInstanceTestClass4), out attrSets, out attrs, out attrVals, out attrUses);
+
+            Assert.AreEqual(1, attrSets.Count); //System.Console.WriteLine(attrSets);
+            Assert.AreEqual(1, attrs.Count); //System.Console.WriteLine(attrs);
+            Assert.IsTrue(attrs[0].IsList);
+            Assert.AreEqual((typeof(int)).Name, attrs[0].AttributeValueType);
+            Assert.AreEqual(7, attrVals.Count); //System.Console.WriteLine(attrVals);
+
+            foreach (var a in attrs)
+            {
+                attributeApplicationService.When(a);
+            }
+            foreach (var attrSet in attrSets)
+            {
+                attributeSetApplicationService.When(attrSet);
+            }
+
+            ////////////////////////////////////////////
+
             System.Console.WriteLine(attributeSetApplicationService.GetAll(0, int.MaxValue));
 
         }
@@ -120,6 +139,23 @@ namespace Dddml.Wms.Services.Tests
             {
                 return attribute.Name + System.DateTime.Now.Ticks;
             }
+        }
+
+
+        class AttributeSetInstanceTestClass4
+        {
+            public WhatDay WhatDay { get; set; }
+        }
+
+        enum WhatDay
+        {
+            Monday, 
+            Tuesday, 
+            Wednesday, 
+            Thursday, 
+            Friday, 
+            Saturday, 
+            Sunday 
         }
 
         class AttributeSetInstanceTestClass3

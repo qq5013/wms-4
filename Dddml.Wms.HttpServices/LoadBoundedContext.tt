@@ -1,0 +1,6 @@
+﻿<#@ template language="C#" debug="True" #>
+<#@ output extension="txt" #>
+<#@ include file="$(SolutionDir)Dddml.Wms.Common\Generated\LoadBoundedContext.tt" #>
+<#
+    TemplatingContext.Current.CurrentAssembly = "Dddml.Wms.HttpServices";
+#>

@@ -101,7 +101,11 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool IsPropertyAttributeValueTypeRemoved { get; set; }
 
+		public virtual bool IsPropertyIsListRemoved { get; set; }
+
 		public virtual bool IsPropertyFieldNameRemoved { get; set; }
+
+		public virtual bool IsPropertyReferenceIdRemoved { get; set; }
 
 		public virtual bool IsPropertyActiveRemoved { get; set; }
 

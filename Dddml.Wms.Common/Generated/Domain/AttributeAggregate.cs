@@ -102,19 +102,23 @@ namespace Dddml.Wms.Domain
 			var stateEventId = new AttributeStateEventId(c.AttributeId, c.Version);
             IAttributeStateCreated e = NewAttributeStateCreated(stateEventId);
 		
-            ReflectUtils.CopyPropertyValue("Name", c, e);
+            e.Name = c.Name;
 
-            ReflectUtils.CopyPropertyValue("Description", c, e);
+            e.Description = c.Description;
 
-            ReflectUtils.CopyPropertyValue("IsMandatory", c, e);
+            e.IsMandatory = c.IsMandatory;
 
-            ReflectUtils.CopyPropertyValue("IsInstanceAttribute", c, e);
+            e.IsInstanceAttribute = c.IsInstanceAttribute;
 
-            ReflectUtils.CopyPropertyValue("AttributeValueType", c, e);
+            e.AttributeValueType = c.AttributeValueType;
 
-            ReflectUtils.CopyPropertyValue("FieldName", c, e);
+            e.IsList = c.IsList;
 
-            ReflectUtils.CopyPropertyValue("Active", c, e);
+            e.FieldName = c.FieldName;
+
+            e.ReferenceId = c.ReferenceId;
+
+            e.Active = c.Active;
 
             ReflectUtils.CopyPropertyValue("CommandId", c, e);//TODO CommandId 太特殊了！！！
 
@@ -140,33 +144,41 @@ namespace Dddml.Wms.Domain
 			var stateEventId = new AttributeStateEventId(c.AttributeId, c.Version);
             IAttributeStateMergePatched e = NewAttributeStateMergePatched(stateEventId);
 
-            ReflectUtils.CopyPropertyValue("Name", c, e);
+            e.Name = c.Name;
 
-            ReflectUtils.CopyPropertyValue("Description", c, e);
+            e.Description = c.Description;
 
-            ReflectUtils.CopyPropertyValue("IsMandatory", c, e);
+            e.IsMandatory = c.IsMandatory;
 
-            ReflectUtils.CopyPropertyValue("IsInstanceAttribute", c, e);
+            e.IsInstanceAttribute = c.IsInstanceAttribute;
 
-            ReflectUtils.CopyPropertyValue("AttributeValueType", c, e);
+            e.AttributeValueType = c.AttributeValueType;
 
-            ReflectUtils.CopyPropertyValue("FieldName", c, e);
+            e.IsList = c.IsList;
 
-            ReflectUtils.CopyPropertyValue("Active", c, e);
+            e.FieldName = c.FieldName;
 
-            ReflectUtils.CopyPropertyValue("IsPropertyNameRemoved", c, e);
+            e.ReferenceId = c.ReferenceId;
 
-            ReflectUtils.CopyPropertyValue("IsPropertyDescriptionRemoved", c, e);
+            e.Active = c.Active;
 
-            ReflectUtils.CopyPropertyValue("IsPropertyIsMandatoryRemoved", c, e);
+            e.IsPropertyNameRemoved = c.IsPropertyNameRemoved;
 
-            ReflectUtils.CopyPropertyValue("IsPropertyIsInstanceAttributeRemoved", c, e);
+            e.IsPropertyDescriptionRemoved = c.IsPropertyDescriptionRemoved;
 
-            ReflectUtils.CopyPropertyValue("IsPropertyAttributeValueTypeRemoved", c, e);
+            e.IsPropertyIsMandatoryRemoved = c.IsPropertyIsMandatoryRemoved;
 
-            ReflectUtils.CopyPropertyValue("IsPropertyFieldNameRemoved", c, e);
+            e.IsPropertyIsInstanceAttributeRemoved = c.IsPropertyIsInstanceAttributeRemoved;
 
-            ReflectUtils.CopyPropertyValue("IsPropertyActiveRemoved", c, e);
+            e.IsPropertyAttributeValueTypeRemoved = c.IsPropertyAttributeValueTypeRemoved;
+
+            e.IsPropertyIsListRemoved = c.IsPropertyIsListRemoved;
+
+            e.IsPropertyFieldNameRemoved = c.IsPropertyFieldNameRemoved;
+
+            e.IsPropertyReferenceIdRemoved = c.IsPropertyReferenceIdRemoved;
+
+            e.IsPropertyActiveRemoved = c.IsPropertyActiveRemoved;
 
 
             ReflectUtils.CopyPropertyValue("CommandId", c, e);//TODO CommandId 太特殊了！！！
@@ -248,13 +260,13 @@ namespace Dddml.Wms.Domain
 			var stateEventId = new AttributeValueStateEventId(c.AttributeId, c.Value, attributeVersion);
             IAttributeValueStateCreated e = NewAttributeValueStateCreated(stateEventId);
 
-            ReflectUtils.CopyPropertyValue("Name", c, e);
+            e.Name = c.Name;
 
-            ReflectUtils.CopyPropertyValue("Description", c, e);
+            e.Description = c.Description;
 
-            ReflectUtils.CopyPropertyValue("ReferenceId", c, e);
+            e.ReferenceId = c.ReferenceId;
 
-            ReflectUtils.CopyPropertyValue("Active", c, e);
+            e.Active = c.Active;
 
 
             (e as AttributeValueStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
@@ -271,18 +283,18 @@ namespace Dddml.Wms.Domain
 			var stateEventId = new AttributeValueStateEventId(c.AttributeId, c.Value, attributeVersion);
             IAttributeValueStateMergePatched e = NewAttributeValueStateMergePatched(stateEventId);
 
-            ReflectUtils.CopyPropertyValue("Name", c, e);
+            e.Name = c.Name;
 
-            ReflectUtils.CopyPropertyValue("Description", c, e);
+            e.Description = c.Description;
 
-            ReflectUtils.CopyPropertyValue("ReferenceId", c, e);
+            e.ReferenceId = c.ReferenceId;
 
-            ReflectUtils.CopyPropertyValue("Active", c, e);
+            e.Active = c.Active;
 
-            ReflectUtils.CopyPropertyValue("IsPropertyNameRemoved", c, e);
-            ReflectUtils.CopyPropertyValue("IsPropertyDescriptionRemoved", c, e);
-            ReflectUtils.CopyPropertyValue("IsPropertyReferenceIdRemoved", c, e);
-            ReflectUtils.CopyPropertyValue("IsPropertyActiveRemoved", c, e);
+            e.IsPropertyNameRemoved = c.IsPropertyNameRemoved;
+            e.IsPropertyDescriptionRemoved = c.IsPropertyDescriptionRemoved;
+            e.IsPropertyReferenceIdRemoved = c.IsPropertyReferenceIdRemoved;
+            e.IsPropertyActiveRemoved = c.IsPropertyActiveRemoved;
 
             (e as AttributeValueStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
             (e as AttributeValueStateEventBase).CreatedAt = DateTime.Now;

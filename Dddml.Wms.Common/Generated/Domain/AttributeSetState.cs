@@ -169,13 +169,14 @@ namespace Dddml.Wms.Domain
 		public virtual void When(IAttributeSetStateCreated e)
 		{
 			ThrowOnWrongEvent(e);
-			ReflectUtils.CopyPropertyValue("Name", e, this);
-			ReflectUtils.CopyPropertyValue("Description", e, this);
-			ReflectUtils.CopyPropertyValue("SerialNumberAttributeId", e, this);
-			ReflectUtils.CopyPropertyValue("LotAttributeId", e, this);
-			ReflectUtils.CopyPropertyValue("Active", e, this);
-			ReflectUtils.SetPropertyValue("CreatedBy", this, e.CreatedBy);
-			ReflectUtils.SetPropertyValue("CreatedAt", this, e.CreatedAt);
+			this.Name = e.Name;
+			this.Description = e.Description;
+			this.SerialNumberAttributeId = e.SerialNumberAttributeId;
+			this.LotAttributeId = e.LotAttributeId;
+			this.ReferenceId = e.ReferenceId;
+			this.Active = e.Active;
+			this.CreatedBy = e.CreatedBy;
+			this.CreatedAt = e.CreatedAt;
 
 			foreach (IAttributeUseStateCreated innerEvent in e.AttributeUseEvents) {
 				IAttributeUseState innerState = this.AttributeUses.Get(innerEvent.GlobalId.AttributeUseAttributeId);
@@ -191,62 +192,73 @@ namespace Dddml.Wms.Domain
 
 			if (e.IsPropertyNameRemoved)
 			{
-				ReflectUtils.SetPropertyValue("Name", this, default(string));
+				this.Name = default(string);
 			}
 			else
 			{
 				if (e.Name != null)
 				{
-					ReflectUtils.CopyPropertyValue("Name", e, this);
+					this.Name = e.Name;
 				}
 			}
 			if (e.IsPropertyDescriptionRemoved)
 			{
-				ReflectUtils.SetPropertyValue("Description", this, default(string));
+				this.Description = default(string);
 			}
 			else
 			{
 				if (e.Description != null)
 				{
-					ReflectUtils.CopyPropertyValue("Description", e, this);
+					this.Description = e.Description;
 				}
 			}
 			if (e.IsPropertySerialNumberAttributeIdRemoved)
 			{
-				ReflectUtils.SetPropertyValue("SerialNumberAttributeId", this, default(string));
+				this.SerialNumberAttributeId = default(string);
 			}
 			else
 			{
 				if (e.SerialNumberAttributeId != null)
 				{
-					ReflectUtils.CopyPropertyValue("SerialNumberAttributeId", e, this);
+					this.SerialNumberAttributeId = e.SerialNumberAttributeId;
 				}
 			}
 			if (e.IsPropertyLotAttributeIdRemoved)
 			{
-				ReflectUtils.SetPropertyValue("LotAttributeId", this, default(string));
+				this.LotAttributeId = default(string);
 			}
 			else
 			{
 				if (e.LotAttributeId != null)
 				{
-					ReflectUtils.CopyPropertyValue("LotAttributeId", e, this);
+					this.LotAttributeId = e.LotAttributeId;
+				}
+			}
+			if (e.IsPropertyReferenceIdRemoved)
+			{
+				this.ReferenceId = default(string);
+			}
+			else
+			{
+				if (e.ReferenceId != null)
+				{
+					this.ReferenceId = e.ReferenceId;
 				}
 			}
 			if (e.IsPropertyActiveRemoved)
 			{
-				ReflectUtils.SetPropertyValue("Active", this, default(bool));
+				this.Active = default(bool);
 			}
 			else
 			{
 				if (e.Active != null)
 				{
-					ReflectUtils.CopyPropertyValue("Active", e, this);
+					this.Active = e.Active;
 				}
 			}
 
-			ReflectUtils.SetPropertyValue("UpdatedBy", this, e.CreatedBy);
-			ReflectUtils.SetPropertyValue("UpdatedAt", this, e.CreatedAt);
+			this.UpdatedBy = e.CreatedBy;
+			this.UpdatedAt = e.CreatedAt;
 
 
 			foreach (IAttributeUseStateEvent innerEvent in e.AttributeUseEvents)
@@ -270,9 +282,9 @@ namespace Dddml.Wms.Domain
 		{
 			ThrowOnWrongEvent(e);
 
-			ReflectUtils.SetPropertyValue("Deleted", this, true);
-			ReflectUtils.SetPropertyValue("UpdatedBy", this, e.CreatedBy);
-			ReflectUtils.SetPropertyValue("UpdatedAt", this, e.CreatedAt);
+			this.Deleted = true;
+			this.UpdatedBy = e.CreatedBy;
+			this.UpdatedAt = e.CreatedAt;
 		}
 
 

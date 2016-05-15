@@ -68,11 +68,15 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool IsPropertyAttributeSetIdRemoved { get; set; }
 
+		public virtual bool IsPropertyReferenceIdRemoved { get; set; }
+
 		public virtual bool IsPropertySerialNumberRemoved { get; set; }
 
 		public virtual bool IsPropertyLotRemoved { get; set; }
 
 		public virtual bool IsPropertyDescriptionRemoved { get; set; }
+
+		public virtual bool IsPropertyHashRemoved { get; set; }
 
 		public virtual bool IsProperty_F_B_0_Removed { get; set; }
 

@@ -169,15 +169,17 @@ namespace Dddml.Wms.Domain
 		public virtual void When(IAttributeStateCreated e)
 		{
 			ThrowOnWrongEvent(e);
-			ReflectUtils.CopyPropertyValue("Name", e, this);
-			ReflectUtils.CopyPropertyValue("Description", e, this);
-			ReflectUtils.CopyPropertyValue("IsMandatory", e, this);
-			ReflectUtils.CopyPropertyValue("IsInstanceAttribute", e, this);
-			ReflectUtils.CopyPropertyValue("AttributeValueType", e, this);
-			ReflectUtils.CopyPropertyValue("FieldName", e, this);
-			ReflectUtils.CopyPropertyValue("Active", e, this);
-			ReflectUtils.SetPropertyValue("CreatedBy", this, e.CreatedBy);
-			ReflectUtils.SetPropertyValue("CreatedAt", this, e.CreatedAt);
+			this.Name = e.Name;
+			this.Description = e.Description;
+			this.IsMandatory = e.IsMandatory;
+			this.IsInstanceAttribute = e.IsInstanceAttribute;
+			this.AttributeValueType = e.AttributeValueType;
+			this.IsList = e.IsList;
+			this.FieldName = e.FieldName;
+			this.ReferenceId = e.ReferenceId;
+			this.Active = e.Active;
+			this.CreatedBy = e.CreatedBy;
+			this.CreatedAt = e.CreatedAt;
 
 			foreach (IAttributeValueStateCreated innerEvent in e.AttributeValueEvents) {
 				IAttributeValueState innerState = this.AttributeValues.Get(innerEvent.GlobalId.AttributeValueValue);
@@ -193,84 +195,106 @@ namespace Dddml.Wms.Domain
 
 			if (e.IsPropertyNameRemoved)
 			{
-				ReflectUtils.SetPropertyValue("Name", this, default(string));
+				this.Name = default(string);
 			}
 			else
 			{
 				if (e.Name != null)
 				{
-					ReflectUtils.CopyPropertyValue("Name", e, this);
+					this.Name = e.Name;
 				}
 			}
 			if (e.IsPropertyDescriptionRemoved)
 			{
-				ReflectUtils.SetPropertyValue("Description", this, default(string));
+				this.Description = default(string);
 			}
 			else
 			{
 				if (e.Description != null)
 				{
-					ReflectUtils.CopyPropertyValue("Description", e, this);
+					this.Description = e.Description;
 				}
 			}
 			if (e.IsPropertyIsMandatoryRemoved)
 			{
-				ReflectUtils.SetPropertyValue("IsMandatory", this, default(bool));
+				this.IsMandatory = default(bool);
 			}
 			else
 			{
 				if (e.IsMandatory != null)
 				{
-					ReflectUtils.CopyPropertyValue("IsMandatory", e, this);
+					this.IsMandatory = e.IsMandatory;
 				}
 			}
 			if (e.IsPropertyIsInstanceAttributeRemoved)
 			{
-				ReflectUtils.SetPropertyValue("IsInstanceAttribute", this, default(bool));
+				this.IsInstanceAttribute = default(bool);
 			}
 			else
 			{
 				if (e.IsInstanceAttribute != null)
 				{
-					ReflectUtils.CopyPropertyValue("IsInstanceAttribute", e, this);
+					this.IsInstanceAttribute = e.IsInstanceAttribute;
 				}
 			}
 			if (e.IsPropertyAttributeValueTypeRemoved)
 			{
-				ReflectUtils.SetPropertyValue("AttributeValueType", this, default(string));
+				this.AttributeValueType = default(string);
 			}
 			else
 			{
 				if (e.AttributeValueType != null)
 				{
-					ReflectUtils.CopyPropertyValue("AttributeValueType", e, this);
+					this.AttributeValueType = e.AttributeValueType;
+				}
+			}
+			if (e.IsPropertyIsListRemoved)
+			{
+				this.IsList = default(bool);
+			}
+			else
+			{
+				if (e.IsList != null)
+				{
+					this.IsList = e.IsList;
 				}
 			}
 			if (e.IsPropertyFieldNameRemoved)
 			{
-				ReflectUtils.SetPropertyValue("FieldName", this, default(string));
+				this.FieldName = default(string);
 			}
 			else
 			{
 				if (e.FieldName != null)
 				{
-					ReflectUtils.CopyPropertyValue("FieldName", e, this);
+					this.FieldName = e.FieldName;
+				}
+			}
+			if (e.IsPropertyReferenceIdRemoved)
+			{
+				this.ReferenceId = default(string);
+			}
+			else
+			{
+				if (e.ReferenceId != null)
+				{
+					this.ReferenceId = e.ReferenceId;
 				}
 			}
 			if (e.IsPropertyActiveRemoved)
 			{
-				ReflectUtils.SetPropertyValue("Active", this, default(bool));
+				this.Active = default(bool);
 			}
 			else
 			{
 				if (e.Active != null)
 				{
-					ReflectUtils.CopyPropertyValue("Active", e, this);
+					this.Active = e.Active;
 				}
 			}
 
-			ReflectUtils.SetPropertyValue("UpdatedBy", this, e.CreatedBy);
-			ReflectUtils.SetPropertyValue("UpdatedAt", this, e.CreatedAt);
+			this.UpdatedBy = e.CreatedBy;
+			this.UpdatedAt = e.CreatedAt;
 
 
 			foreach (IAttributeValueStateEvent innerEvent in e.AttributeValueEvents)
@@ -294,9 +318,9 @@ namespace Dddml.Wms.Domain
 		{
 			ThrowOnWrongEvent(e);
 
-			ReflectUtils.SetPropertyValue("Deleted", this, true);
-			ReflectUtils.SetPropertyValue("UpdatedBy", this, e.CreatedBy);
-			ReflectUtils.SetPropertyValue("UpdatedAt", this, e.CreatedAt);
+			this.Deleted = true;
+			this.UpdatedBy = e.CreatedBy;
+			this.UpdatedAt = e.CreatedAt;
 		}
 
 

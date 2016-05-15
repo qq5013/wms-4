@@ -92,6 +92,7 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool IsPropertyActiveRemoved { get; set; }
 
+
 		public AttributeUseStateMergePatched ()
 		{
 		}

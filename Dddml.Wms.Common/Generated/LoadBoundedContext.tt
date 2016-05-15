@@ -24,6 +24,8 @@
 
 	boundedContext.Metadata[Dddml.T4.Extensions.BoundedContextExtension.MetadataKeyDomainAssembly] = "Dddml.Wms.Common";
 
+	boundedContext.Aggregates["AttributeSetInstance"].Metadata[Dddml.T4.Extensions.EntityBaseExtension.MetadataKeyPersistingStateEventRemovedPropertiesAsSet] = true;
+
 	boundedContext.Refresh();
 
 	foreach (var agg in boundedContext.Aggregates.Values)

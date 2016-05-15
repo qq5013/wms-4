@@ -36,6 +36,8 @@ namespace Dddml.Wms.Domain
 
 		bool IsPropertyLotAttributeIdRemoved { get; set; }
 
+		bool IsPropertyReferenceIdRemoved { get; set; }
+
 		bool IsPropertyActiveRemoved { get; set; }
 
         IAttributeUseCommands AttributeUseCommands { get; }

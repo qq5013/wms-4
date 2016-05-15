@@ -158,10 +158,10 @@ namespace Dddml.Wms.Domain
 		public virtual void When(IAttributeUseStateCreated e)
 		{
 			ThrowOnWrongEvent(e);
-			ReflectUtils.CopyPropertyValue("SequenceNumber", e, this);
-			ReflectUtils.CopyPropertyValue("Active", e, this);
-			ReflectUtils.SetPropertyValue("CreatedBy", this, e.CreatedBy);
-			ReflectUtils.SetPropertyValue("CreatedAt", this, e.CreatedAt);
+			this.SequenceNumber = e.SequenceNumber;
+			this.Active = e.Active;
+			this.CreatedBy = e.CreatedBy;
+			this.CreatedAt = e.CreatedAt;
 
 
 		}
@@ -173,29 +173,29 @@ namespace Dddml.Wms.Domain
 
 			if (e.IsPropertySequenceNumberRemoved)
 			{
-				ReflectUtils.SetPropertyValue("SequenceNumber", this, default(int));
+				this.SequenceNumber = default(int);
 			}
 			else
 			{
 				if (e.SequenceNumber != null)
 				{
-					ReflectUtils.CopyPropertyValue("SequenceNumber", e, this);
+					this.SequenceNumber = e.SequenceNumber;
 				}
 			}
 			if (e.IsPropertyActiveRemoved)
 			{
-				ReflectUtils.SetPropertyValue("Active", this, default(bool));
+				this.Active = default(bool);
 			}
 			else
 			{
 				if (e.Active != null)
 				{
-					ReflectUtils.CopyPropertyValue("Active", e, this);
+					this.Active = e.Active;
 				}
 			}
 
-			ReflectUtils.SetPropertyValue("UpdatedBy", this, e.CreatedBy);
-			ReflectUtils.SetPropertyValue("UpdatedAt", this, e.CreatedAt);
+			this.UpdatedBy = e.CreatedBy;
+			this.UpdatedAt = e.CreatedAt;
 
 
 		}

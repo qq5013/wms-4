@@ -95,6 +95,34 @@ namespace Dddml.Wms.Domain
             }
         }
 
+		public virtual string ReferenceId
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("ReferenceId"))
+                {
+                    return _state.ReferenceId;
+                }
+                return null;
+            }
+            set
+            {
+                _state.ReferenceId = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties.ReferenceId
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties).ReferenceId;
+            }
+            set 
+            {
+                this._state.ReferenceId = value;
+            }
+        }
+
 		public virtual string SerialNumber
 		{
             get
@@ -179,8 +207,36 @@ namespace Dddml.Wms.Domain
             }
         }
 
-		public virtual bool? _F_B_0_
+		public virtual string Hash
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("Hash"))
+                {
+                    return _state.Hash;
+                }
+                return null;
+            }
+            set
+            {
+                _state.Hash = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties.Hash
         {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties).Hash;
+            }
+            set 
+            {
+                this._state.Hash = value;
+            }
+        }
+
+		public virtual bool? _F_B_0_
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_0_"))
@@ -191,14 +247,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_0_ = value.Value;
-                }
+                _state._F_B_0_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_0_
+        bool? IAttributeSetInstanceStateProperties._F_B_0_
         {
             get 
             {
@@ -211,7 +264,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_0_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_0_"))
@@ -222,14 +275,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_0_ = value.Value;
-                }
+                _state._F_I_0_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_0_
+        int? IAttributeSetInstanceStateProperties._F_I_0_
         {
             get 
             {
@@ -242,7 +292,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_0_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_0_"))
@@ -253,14 +303,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_0_ = value.Value;
-                }
+                _state._F_L_0_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_0_
+        long? IAttributeSetInstanceStateProperties._F_L_0_
         {
             get 
             {
@@ -273,7 +320,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual DateTime? _F_DT_0_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_DT_0_"))
@@ -284,14 +331,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_DT_0_ = value.Value;
-                }
+                _state._F_DT_0_ = value;
             }
         }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_0_
+        DateTime? IAttributeSetInstanceStateProperties._F_DT_0_
         {
             get 
             {
@@ -304,7 +348,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_0_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_0_"))
@@ -315,14 +359,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_0_ = value.Value;
-                }
+                _state._F_N_0_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_0_
+        decimal? IAttributeSetInstanceStateProperties._F_N_0_
         {
             get 
             {
@@ -559,7 +600,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_1_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_1_"))
@@ -570,14 +611,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_1_ = value.Value;
-                }
+                _state._F_B_1_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_1_
+        bool? IAttributeSetInstanceStateProperties._F_B_1_
         {
             get 
             {
@@ -590,7 +628,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_1_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_1_"))
@@ -601,14 +639,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_1_ = value.Value;
-                }
+                _state._F_I_1_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_1_
+        int? IAttributeSetInstanceStateProperties._F_I_1_
         {
             get 
             {
@@ -621,7 +656,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_1_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_1_"))
@@ -632,14 +667,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_1_ = value.Value;
-                }
+                _state._F_L_1_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_1_
+        long? IAttributeSetInstanceStateProperties._F_L_1_
         {
             get 
             {
@@ -652,7 +684,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual DateTime? _F_DT_1_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_DT_1_"))
@@ -663,14 +695,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_DT_1_ = value.Value;
-                }
+                _state._F_DT_1_ = value;
             }
         }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_1_
+        DateTime? IAttributeSetInstanceStateProperties._F_DT_1_
         {
             get 
             {
@@ -683,7 +712,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_1_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_1_"))
@@ -694,14 +723,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_1_ = value.Value;
-                }
+                _state._F_N_1_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_1_
+        decimal? IAttributeSetInstanceStateProperties._F_N_1_
         {
             get 
             {
@@ -938,7 +964,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_2_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_2_"))
@@ -949,14 +975,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_2_ = value.Value;
-                }
+                _state._F_B_2_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_2_
+        bool? IAttributeSetInstanceStateProperties._F_B_2_
         {
             get 
             {
@@ -969,7 +992,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_2_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_2_"))
@@ -980,14 +1003,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_2_ = value.Value;
-                }
+                _state._F_I_2_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_2_
+        int? IAttributeSetInstanceStateProperties._F_I_2_
         {
             get 
             {
@@ -1000,7 +1020,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_2_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_2_"))
@@ -1011,14 +1031,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_2_ = value.Value;
-                }
+                _state._F_L_2_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_2_
+        long? IAttributeSetInstanceStateProperties._F_L_2_
         {
             get 
             {
@@ -1031,7 +1048,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual DateTime? _F_DT_2_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_DT_2_"))
@@ -1042,14 +1059,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_DT_2_ = value.Value;
-                }
+                _state._F_DT_2_ = value;
             }
         }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_2_
+        DateTime? IAttributeSetInstanceStateProperties._F_DT_2_
         {
             get 
             {
@@ -1062,7 +1076,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_2_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_2_"))
@@ -1073,14 +1087,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_2_ = value.Value;
-                }
+                _state._F_N_2_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_2_
+        decimal? IAttributeSetInstanceStateProperties._F_N_2_
         {
             get 
             {
@@ -1317,7 +1328,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_3_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_3_"))
@@ -1328,14 +1339,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_3_ = value.Value;
-                }
+                _state._F_B_3_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_3_
+        bool? IAttributeSetInstanceStateProperties._F_B_3_
         {
             get 
             {
@@ -1348,7 +1356,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_3_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_3_"))
@@ -1359,14 +1367,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_3_ = value.Value;
-                }
+                _state._F_I_3_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_3_
+        int? IAttributeSetInstanceStateProperties._F_I_3_
         {
             get 
             {
@@ -1379,7 +1384,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_3_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_3_"))
@@ -1390,14 +1395,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_3_ = value.Value;
-                }
+                _state._F_L_3_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_3_
+        long? IAttributeSetInstanceStateProperties._F_L_3_
         {
             get 
             {
@@ -1410,7 +1412,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual DateTime? _F_DT_3_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_DT_3_"))
@@ -1421,14 +1423,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_DT_3_ = value.Value;
-                }
+                _state._F_DT_3_ = value;
             }
         }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_3_
+        DateTime? IAttributeSetInstanceStateProperties._F_DT_3_
         {
             get 
             {
@@ -1441,7 +1440,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_3_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_3_"))
@@ -1452,14 +1451,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_3_ = value.Value;
-                }
+                _state._F_N_3_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_3_
+        decimal? IAttributeSetInstanceStateProperties._F_N_3_
         {
             get 
             {
@@ -1696,7 +1692,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_4_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_4_"))
@@ -1707,14 +1703,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_4_ = value.Value;
-                }
+                _state._F_B_4_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_4_
+        bool? IAttributeSetInstanceStateProperties._F_B_4_
         {
             get 
             {
@@ -1727,7 +1720,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_4_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_4_"))
@@ -1738,14 +1731,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_4_ = value.Value;
-                }
+                _state._F_I_4_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_4_
+        int? IAttributeSetInstanceStateProperties._F_I_4_
         {
             get 
             {
@@ -1758,7 +1748,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_4_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_4_"))
@@ -1769,14 +1759,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_4_ = value.Value;
-                }
+                _state._F_L_4_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_4_
+        long? IAttributeSetInstanceStateProperties._F_L_4_
         {
             get 
             {
@@ -1789,7 +1776,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual DateTime? _F_DT_4_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_DT_4_"))
@@ -1800,14 +1787,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_DT_4_ = value.Value;
-                }
+                _state._F_DT_4_ = value;
             }
         }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_4_
+        DateTime? IAttributeSetInstanceStateProperties._F_DT_4_
         {
             get 
             {
@@ -1820,7 +1804,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_4_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_4_"))
@@ -1831,14 +1815,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_4_ = value.Value;
-                }
+                _state._F_N_4_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_4_
+        decimal? IAttributeSetInstanceStateProperties._F_N_4_
         {
             get 
             {
@@ -2075,7 +2056,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_5_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_5_"))
@@ -2086,14 +2067,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_5_ = value.Value;
-                }
+                _state._F_B_5_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_5_
+        bool? IAttributeSetInstanceStateProperties._F_B_5_
         {
             get 
             {
@@ -2106,7 +2084,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_5_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_5_"))
@@ -2117,14 +2095,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_5_ = value.Value;
-                }
+                _state._F_I_5_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_5_
+        int? IAttributeSetInstanceStateProperties._F_I_5_
         {
             get 
             {
@@ -2137,7 +2112,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_5_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_5_"))
@@ -2148,14 +2123,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_5_ = value.Value;
-                }
+                _state._F_L_5_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_5_
+        long? IAttributeSetInstanceStateProperties._F_L_5_
         {
             get 
             {
@@ -2168,7 +2140,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual DateTime? _F_DT_5_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_DT_5_"))
@@ -2179,14 +2151,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_DT_5_ = value.Value;
-                }
+                _state._F_DT_5_ = value;
             }
         }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_5_
+        DateTime? IAttributeSetInstanceStateProperties._F_DT_5_
         {
             get 
             {
@@ -2199,7 +2168,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_5_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_5_"))
@@ -2210,14 +2179,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_5_ = value.Value;
-                }
+                _state._F_N_5_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_5_
+        decimal? IAttributeSetInstanceStateProperties._F_N_5_
         {
             get 
             {
@@ -2426,7 +2392,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_6_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_6_"))
@@ -2437,14 +2403,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_6_ = value.Value;
-                }
+                _state._F_B_6_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_6_
+        bool? IAttributeSetInstanceStateProperties._F_B_6_
         {
             get 
             {
@@ -2457,7 +2420,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_6_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_6_"))
@@ -2468,14 +2431,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_6_ = value.Value;
-                }
+                _state._F_I_6_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_6_
+        int? IAttributeSetInstanceStateProperties._F_I_6_
         {
             get 
             {
@@ -2488,7 +2448,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_6_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_6_"))
@@ -2499,14 +2459,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_6_ = value.Value;
-                }
+                _state._F_L_6_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_6_
+        long? IAttributeSetInstanceStateProperties._F_L_6_
         {
             get 
             {
@@ -2519,7 +2476,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual DateTime? _F_DT_6_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_DT_6_"))
@@ -2530,14 +2487,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_DT_6_ = value.Value;
-                }
+                _state._F_DT_6_ = value;
             }
         }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_6_
+        DateTime? IAttributeSetInstanceStateProperties._F_DT_6_
         {
             get 
             {
@@ -2550,7 +2504,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_6_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_6_"))
@@ -2561,14 +2515,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_6_ = value.Value;
-                }
+                _state._F_N_6_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_6_
+        decimal? IAttributeSetInstanceStateProperties._F_N_6_
         {
             get 
             {
@@ -2777,7 +2728,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_7_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_7_"))
@@ -2788,14 +2739,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_7_ = value.Value;
-                }
+                _state._F_B_7_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_7_
+        bool? IAttributeSetInstanceStateProperties._F_B_7_
         {
             get 
             {
@@ -2808,7 +2756,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_7_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_7_"))
@@ -2819,14 +2767,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_7_ = value.Value;
-                }
+                _state._F_I_7_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_7_
+        int? IAttributeSetInstanceStateProperties._F_I_7_
         {
             get 
             {
@@ -2839,7 +2784,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_7_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_7_"))
@@ -2850,14 +2795,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_7_ = value.Value;
-                }
+                _state._F_L_7_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_7_
+        long? IAttributeSetInstanceStateProperties._F_L_7_
         {
             get 
             {
@@ -2870,7 +2812,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual DateTime? _F_DT_7_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_DT_7_"))
@@ -2881,14 +2823,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_DT_7_ = value.Value;
-                }
+                _state._F_DT_7_ = value;
             }
         }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_7_
+        DateTime? IAttributeSetInstanceStateProperties._F_DT_7_
         {
             get 
             {
@@ -2901,7 +2840,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_7_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_7_"))
@@ -2912,14 +2851,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_7_ = value.Value;
-                }
+                _state._F_N_7_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_7_
+        decimal? IAttributeSetInstanceStateProperties._F_N_7_
         {
             get 
             {
@@ -3128,7 +3064,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_8_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_8_"))
@@ -3139,14 +3075,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_8_ = value.Value;
-                }
+                _state._F_B_8_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_8_
+        bool? IAttributeSetInstanceStateProperties._F_B_8_
         {
             get 
             {
@@ -3159,7 +3092,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_8_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_8_"))
@@ -3170,14 +3103,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_8_ = value.Value;
-                }
+                _state._F_I_8_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_8_
+        int? IAttributeSetInstanceStateProperties._F_I_8_
         {
             get 
             {
@@ -3190,7 +3120,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_8_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_8_"))
@@ -3201,14 +3131,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_8_ = value.Value;
-                }
+                _state._F_L_8_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_8_
+        long? IAttributeSetInstanceStateProperties._F_L_8_
         {
             get 
             {
@@ -3221,7 +3148,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual DateTime? _F_DT_8_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_DT_8_"))
@@ -3232,14 +3159,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_DT_8_ = value.Value;
-                }
+                _state._F_DT_8_ = value;
             }
         }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_8_
+        DateTime? IAttributeSetInstanceStateProperties._F_DT_8_
         {
             get 
             {
@@ -3252,7 +3176,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_8_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_8_"))
@@ -3263,14 +3187,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_8_ = value.Value;
-                }
+                _state._F_N_8_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_8_
+        decimal? IAttributeSetInstanceStateProperties._F_N_8_
         {
             get 
             {
@@ -3479,7 +3400,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_9_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_9_"))
@@ -3490,14 +3411,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_9_ = value.Value;
-                }
+                _state._F_B_9_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_9_
+        bool? IAttributeSetInstanceStateProperties._F_B_9_
         {
             get 
             {
@@ -3510,7 +3428,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_9_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_9_"))
@@ -3521,14 +3439,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_9_ = value.Value;
-                }
+                _state._F_I_9_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_9_
+        int? IAttributeSetInstanceStateProperties._F_I_9_
         {
             get 
             {
@@ -3541,7 +3456,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_9_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_9_"))
@@ -3552,14 +3467,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_9_ = value.Value;
-                }
+                _state._F_L_9_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_9_
+        long? IAttributeSetInstanceStateProperties._F_L_9_
         {
             get 
             {
@@ -3572,7 +3484,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual DateTime? _F_DT_9_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_DT_9_"))
@@ -3583,14 +3495,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_DT_9_ = value.Value;
-                }
+                _state._F_DT_9_ = value;
             }
         }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_9_
+        DateTime? IAttributeSetInstanceStateProperties._F_DT_9_
         {
             get 
             {
@@ -3603,7 +3512,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_9_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_9_"))
@@ -3614,14 +3523,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_9_ = value.Value;
-                }
+                _state._F_N_9_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_9_
+        decimal? IAttributeSetInstanceStateProperties._F_N_9_
         {
             get 
             {
@@ -3830,7 +3736,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_10_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_10_"))
@@ -3841,14 +3747,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_10_ = value.Value;
-                }
+                _state._F_B_10_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_10_
+        bool? IAttributeSetInstanceStateProperties._F_B_10_
         {
             get 
             {
@@ -3861,7 +3764,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_10_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_10_"))
@@ -3872,14 +3775,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_10_ = value.Value;
-                }
+                _state._F_I_10_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_10_
+        int? IAttributeSetInstanceStateProperties._F_I_10_
         {
             get 
             {
@@ -3892,7 +3792,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_10_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_10_"))
@@ -3903,14 +3803,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_10_ = value.Value;
-                }
+                _state._F_L_10_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_10_
+        long? IAttributeSetInstanceStateProperties._F_L_10_
         {
             get 
             {
@@ -3923,7 +3820,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual DateTime? _F_DT_10_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_DT_10_"))
@@ -3934,14 +3831,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_DT_10_ = value.Value;
-                }
+                _state._F_DT_10_ = value;
             }
         }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_10_
+        DateTime? IAttributeSetInstanceStateProperties._F_DT_10_
         {
             get 
             {
@@ -3954,7 +3848,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_10_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_10_"))
@@ -3965,14 +3859,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_10_ = value.Value;
-                }
+                _state._F_N_10_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_10_
+        decimal? IAttributeSetInstanceStateProperties._F_N_10_
         {
             get 
             {
@@ -4153,7 +4044,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_11_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_11_"))
@@ -4164,14 +4055,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_11_ = value.Value;
-                }
+                _state._F_B_11_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_11_
+        bool? IAttributeSetInstanceStateProperties._F_B_11_
         {
             get 
             {
@@ -4184,7 +4072,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_11_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_11_"))
@@ -4195,14 +4083,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_11_ = value.Value;
-                }
+                _state._F_I_11_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_11_
+        int? IAttributeSetInstanceStateProperties._F_I_11_
         {
             get 
             {
@@ -4215,7 +4100,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_11_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_11_"))
@@ -4226,14 +4111,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_11_ = value.Value;
-                }
+                _state._F_L_11_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_11_
+        long? IAttributeSetInstanceStateProperties._F_L_11_
         {
             get 
             {
@@ -4246,7 +4128,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual DateTime? _F_DT_11_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_DT_11_"))
@@ -4257,14 +4139,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_DT_11_ = value.Value;
-                }
+                _state._F_DT_11_ = value;
             }
         }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_11_
+        DateTime? IAttributeSetInstanceStateProperties._F_DT_11_
         {
             get 
             {
@@ -4277,7 +4156,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_11_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_11_"))
@@ -4288,14 +4167,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_11_ = value.Value;
-                }
+                _state._F_N_11_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_11_
+        decimal? IAttributeSetInstanceStateProperties._F_N_11_
         {
             get 
             {
@@ -4476,7 +4352,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_12_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_12_"))
@@ -4487,14 +4363,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_12_ = value.Value;
-                }
+                _state._F_B_12_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_12_
+        bool? IAttributeSetInstanceStateProperties._F_B_12_
         {
             get 
             {
@@ -4507,7 +4380,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_12_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_12_"))
@@ -4518,14 +4391,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_12_ = value.Value;
-                }
+                _state._F_I_12_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_12_
+        int? IAttributeSetInstanceStateProperties._F_I_12_
         {
             get 
             {
@@ -4538,7 +4408,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_12_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_12_"))
@@ -4549,14 +4419,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_12_ = value.Value;
-                }
+                _state._F_L_12_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_12_
+        long? IAttributeSetInstanceStateProperties._F_L_12_
         {
             get 
             {
@@ -4569,7 +4436,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual DateTime? _F_DT_12_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_DT_12_"))
@@ -4580,14 +4447,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_DT_12_ = value.Value;
-                }
+                _state._F_DT_12_ = value;
             }
         }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_12_
+        DateTime? IAttributeSetInstanceStateProperties._F_DT_12_
         {
             get 
             {
@@ -4600,7 +4464,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_12_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_12_"))
@@ -4611,14 +4475,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_12_ = value.Value;
-                }
+                _state._F_N_12_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_12_
+        decimal? IAttributeSetInstanceStateProperties._F_N_12_
         {
             get 
             {
@@ -4799,7 +4660,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_13_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_13_"))
@@ -4810,14 +4671,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_13_ = value.Value;
-                }
+                _state._F_B_13_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_13_
+        bool? IAttributeSetInstanceStateProperties._F_B_13_
         {
             get 
             {
@@ -4830,7 +4688,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_13_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_13_"))
@@ -4841,14 +4699,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_13_ = value.Value;
-                }
+                _state._F_I_13_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_13_
+        int? IAttributeSetInstanceStateProperties._F_I_13_
         {
             get 
             {
@@ -4861,7 +4716,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_13_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_13_"))
@@ -4872,14 +4727,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_13_ = value.Value;
-                }
+                _state._F_L_13_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_13_
+        long? IAttributeSetInstanceStateProperties._F_L_13_
         {
             get 
             {
@@ -4892,7 +4744,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual DateTime? _F_DT_13_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_DT_13_"))
@@ -4903,14 +4755,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_DT_13_ = value.Value;
-                }
+                _state._F_DT_13_ = value;
             }
         }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_13_
+        DateTime? IAttributeSetInstanceStateProperties._F_DT_13_
         {
             get 
             {
@@ -4923,7 +4772,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_13_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_13_"))
@@ -4934,14 +4783,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_13_ = value.Value;
-                }
+                _state._F_N_13_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_13_
+        decimal? IAttributeSetInstanceStateProperties._F_N_13_
         {
             get 
             {
@@ -5122,7 +4968,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_14_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_14_"))
@@ -5133,14 +4979,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_14_ = value.Value;
-                }
+                _state._F_B_14_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_14_
+        bool? IAttributeSetInstanceStateProperties._F_B_14_
         {
             get 
             {
@@ -5153,7 +4996,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_14_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_14_"))
@@ -5164,14 +5007,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_14_ = value.Value;
-                }
+                _state._F_I_14_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_14_
+        int? IAttributeSetInstanceStateProperties._F_I_14_
         {
             get 
             {
@@ -5184,7 +5024,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_14_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_14_"))
@@ -5195,14 +5035,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_14_ = value.Value;
-                }
+                _state._F_L_14_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_14_
+        long? IAttributeSetInstanceStateProperties._F_L_14_
         {
             get 
             {
@@ -5215,7 +5052,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual DateTime? _F_DT_14_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_DT_14_"))
@@ -5226,14 +5063,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_DT_14_ = value.Value;
-                }
+                _state._F_DT_14_ = value;
             }
         }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_14_
+        DateTime? IAttributeSetInstanceStateProperties._F_DT_14_
         {
             get 
             {
@@ -5246,7 +5080,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_14_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_14_"))
@@ -5257,14 +5091,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_14_ = value.Value;
-                }
+                _state._F_N_14_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_14_
+        decimal? IAttributeSetInstanceStateProperties._F_N_14_
         {
             get 
             {
@@ -5445,7 +5276,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_15_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_15_"))
@@ -5456,14 +5287,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_15_ = value.Value;
-                }
+                _state._F_B_15_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_15_
+        bool? IAttributeSetInstanceStateProperties._F_B_15_
         {
             get 
             {
@@ -5476,7 +5304,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_15_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_15_"))
@@ -5487,14 +5315,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_15_ = value.Value;
-                }
+                _state._F_I_15_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_15_
+        int? IAttributeSetInstanceStateProperties._F_I_15_
         {
             get 
             {
@@ -5507,7 +5332,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_15_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_15_"))
@@ -5518,14 +5343,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_15_ = value.Value;
-                }
+                _state._F_L_15_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_15_
+        long? IAttributeSetInstanceStateProperties._F_L_15_
         {
             get 
             {
@@ -5538,7 +5360,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual DateTime? _F_DT_15_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_DT_15_"))
@@ -5549,14 +5371,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_DT_15_ = value.Value;
-                }
+                _state._F_DT_15_ = value;
             }
         }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_15_
+        DateTime? IAttributeSetInstanceStateProperties._F_DT_15_
         {
             get 
             {
@@ -5569,7 +5388,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_15_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_15_"))
@@ -5580,14 +5399,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_15_ = value.Value;
-                }
+                _state._F_N_15_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_15_
+        decimal? IAttributeSetInstanceStateProperties._F_N_15_
         {
             get 
             {
@@ -5768,7 +5584,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_16_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_16_"))
@@ -5779,14 +5595,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_16_ = value.Value;
-                }
+                _state._F_B_16_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_16_
+        bool? IAttributeSetInstanceStateProperties._F_B_16_
         {
             get 
             {
@@ -5799,7 +5612,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_16_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_16_"))
@@ -5810,14 +5623,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_16_ = value.Value;
-                }
+                _state._F_I_16_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_16_
+        int? IAttributeSetInstanceStateProperties._F_I_16_
         {
             get 
             {
@@ -5830,7 +5640,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_16_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_16_"))
@@ -5841,14 +5651,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_16_ = value.Value;
-                }
+                _state._F_L_16_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_16_
+        long? IAttributeSetInstanceStateProperties._F_L_16_
         {
             get 
             {
@@ -5861,7 +5668,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual DateTime? _F_DT_16_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_DT_16_"))
@@ -5872,14 +5679,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_DT_16_ = value.Value;
-                }
+                _state._F_DT_16_ = value;
             }
         }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_16_
+        DateTime? IAttributeSetInstanceStateProperties._F_DT_16_
         {
             get 
             {
@@ -5892,7 +5696,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_16_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_16_"))
@@ -5903,14 +5707,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_16_ = value.Value;
-                }
+                _state._F_N_16_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_16_
+        decimal? IAttributeSetInstanceStateProperties._F_N_16_
         {
             get 
             {
@@ -6091,7 +5892,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_17_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_17_"))
@@ -6102,14 +5903,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_17_ = value.Value;
-                }
+                _state._F_B_17_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_17_
+        bool? IAttributeSetInstanceStateProperties._F_B_17_
         {
             get 
             {
@@ -6122,7 +5920,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_17_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_17_"))
@@ -6133,14 +5931,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_17_ = value.Value;
-                }
+                _state._F_I_17_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_17_
+        int? IAttributeSetInstanceStateProperties._F_I_17_
         {
             get 
             {
@@ -6153,7 +5948,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_17_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_17_"))
@@ -6164,14 +5959,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_17_ = value.Value;
-                }
+                _state._F_L_17_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_17_
+        long? IAttributeSetInstanceStateProperties._F_L_17_
         {
             get 
             {
@@ -6184,7 +5976,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual DateTime? _F_DT_17_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_DT_17_"))
@@ -6195,14 +5987,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_DT_17_ = value.Value;
-                }
+                _state._F_DT_17_ = value;
             }
         }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_17_
+        DateTime? IAttributeSetInstanceStateProperties._F_DT_17_
         {
             get 
             {
@@ -6215,7 +6004,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_17_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_17_"))
@@ -6226,14 +6015,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_17_ = value.Value;
-                }
+                _state._F_N_17_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_17_
+        decimal? IAttributeSetInstanceStateProperties._F_N_17_
         {
             get 
             {
@@ -6414,7 +6200,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_18_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_18_"))
@@ -6425,14 +6211,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_18_ = value.Value;
-                }
+                _state._F_B_18_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_18_
+        bool? IAttributeSetInstanceStateProperties._F_B_18_
         {
             get 
             {
@@ -6445,7 +6228,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_18_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_18_"))
@@ -6456,14 +6239,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_18_ = value.Value;
-                }
+                _state._F_I_18_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_18_
+        int? IAttributeSetInstanceStateProperties._F_I_18_
         {
             get 
             {
@@ -6476,7 +6256,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_18_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_18_"))
@@ -6487,14 +6267,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_18_ = value.Value;
-                }
+                _state._F_L_18_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_18_
+        long? IAttributeSetInstanceStateProperties._F_L_18_
         {
             get 
             {
@@ -6507,7 +6284,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual DateTime? _F_DT_18_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_DT_18_"))
@@ -6518,14 +6295,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_DT_18_ = value.Value;
-                }
+                _state._F_DT_18_ = value;
             }
         }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_18_
+        DateTime? IAttributeSetInstanceStateProperties._F_DT_18_
         {
             get 
             {
@@ -6538,7 +6312,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_18_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_18_"))
@@ -6549,14 +6323,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_18_ = value.Value;
-                }
+                _state._F_N_18_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_18_
+        decimal? IAttributeSetInstanceStateProperties._F_N_18_
         {
             get 
             {
@@ -6737,7 +6508,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_19_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_19_"))
@@ -6748,14 +6519,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_19_ = value.Value;
-                }
+                _state._F_B_19_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_19_
+        bool? IAttributeSetInstanceStateProperties._F_B_19_
         {
             get 
             {
@@ -6768,7 +6536,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_19_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_19_"))
@@ -6779,14 +6547,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_19_ = value.Value;
-                }
+                _state._F_I_19_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_19_
+        int? IAttributeSetInstanceStateProperties._F_I_19_
         {
             get 
             {
@@ -6799,7 +6564,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_19_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_19_"))
@@ -6810,14 +6575,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_19_ = value.Value;
-                }
+                _state._F_L_19_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_19_
+        long? IAttributeSetInstanceStateProperties._F_L_19_
         {
             get 
             {
@@ -6830,7 +6592,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual DateTime? _F_DT_19_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_DT_19_"))
@@ -6841,14 +6603,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_DT_19_ = value.Value;
-                }
+                _state._F_DT_19_ = value;
             }
         }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_19_
+        DateTime? IAttributeSetInstanceStateProperties._F_DT_19_
         {
             get 
             {
@@ -6861,7 +6620,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_19_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_19_"))
@@ -6872,14 +6631,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_19_ = value.Value;
-                }
+                _state._F_N_19_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_19_
+        decimal? IAttributeSetInstanceStateProperties._F_N_19_
         {
             get 
             {
@@ -7060,7 +6816,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_20_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_20_"))
@@ -7071,14 +6827,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_20_ = value.Value;
-                }
+                _state._F_B_20_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_20_
+        bool? IAttributeSetInstanceStateProperties._F_B_20_
         {
             get 
             {
@@ -7091,7 +6844,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_20_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_20_"))
@@ -7102,14 +6855,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_20_ = value.Value;
-                }
+                _state._F_I_20_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_20_
+        int? IAttributeSetInstanceStateProperties._F_I_20_
         {
             get 
             {
@@ -7122,7 +6872,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_20_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_20_"))
@@ -7133,14 +6883,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_20_ = value.Value;
-                }
+                _state._F_L_20_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_20_
+        long? IAttributeSetInstanceStateProperties._F_L_20_
         {
             get 
             {
@@ -7153,7 +6900,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_20_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_20_"))
@@ -7164,14 +6911,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_20_ = value.Value;
-                }
+                _state._F_N_20_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_20_
+        decimal? IAttributeSetInstanceStateProperties._F_N_20_
         {
             get 
             {
@@ -7296,7 +7040,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_21_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_21_"))
@@ -7307,14 +7051,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_21_ = value.Value;
-                }
+                _state._F_B_21_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_21_
+        bool? IAttributeSetInstanceStateProperties._F_B_21_
         {
             get 
             {
@@ -7327,7 +7068,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_21_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_21_"))
@@ -7338,14 +7079,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_21_ = value.Value;
-                }
+                _state._F_I_21_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_21_
+        int? IAttributeSetInstanceStateProperties._F_I_21_
         {
             get 
             {
@@ -7358,7 +7096,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_21_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_21_"))
@@ -7369,14 +7107,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_21_ = value.Value;
-                }
+                _state._F_L_21_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_21_
+        long? IAttributeSetInstanceStateProperties._F_L_21_
         {
             get 
             {
@@ -7389,7 +7124,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_21_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_21_"))
@@ -7400,14 +7135,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_21_ = value.Value;
-                }
+                _state._F_N_21_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_21_
+        decimal? IAttributeSetInstanceStateProperties._F_N_21_
         {
             get 
             {
@@ -7532,7 +7264,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_22_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_22_"))
@@ -7543,14 +7275,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_22_ = value.Value;
-                }
+                _state._F_B_22_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_22_
+        bool? IAttributeSetInstanceStateProperties._F_B_22_
         {
             get 
             {
@@ -7563,7 +7292,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_22_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_22_"))
@@ -7574,14 +7303,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_22_ = value.Value;
-                }
+                _state._F_I_22_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_22_
+        int? IAttributeSetInstanceStateProperties._F_I_22_
         {
             get 
             {
@@ -7594,7 +7320,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_22_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_22_"))
@@ -7605,14 +7331,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_22_ = value.Value;
-                }
+                _state._F_L_22_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_22_
+        long? IAttributeSetInstanceStateProperties._F_L_22_
         {
             get 
             {
@@ -7625,7 +7348,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_22_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_22_"))
@@ -7636,14 +7359,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_22_ = value.Value;
-                }
+                _state._F_N_22_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_22_
+        decimal? IAttributeSetInstanceStateProperties._F_N_22_
         {
             get 
             {
@@ -7768,7 +7488,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_23_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_23_"))
@@ -7779,14 +7499,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_23_ = value.Value;
-                }
+                _state._F_B_23_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_23_
+        bool? IAttributeSetInstanceStateProperties._F_B_23_
         {
             get 
             {
@@ -7799,7 +7516,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_23_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_23_"))
@@ -7810,14 +7527,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_23_ = value.Value;
-                }
+                _state._F_I_23_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_23_
+        int? IAttributeSetInstanceStateProperties._F_I_23_
         {
             get 
             {
@@ -7830,7 +7544,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_23_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_23_"))
@@ -7841,14 +7555,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_23_ = value.Value;
-                }
+                _state._F_L_23_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_23_
+        long? IAttributeSetInstanceStateProperties._F_L_23_
         {
             get 
             {
@@ -7861,7 +7572,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_23_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_23_"))
@@ -7872,14 +7583,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_23_ = value.Value;
-                }
+                _state._F_N_23_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_23_
+        decimal? IAttributeSetInstanceStateProperties._F_N_23_
         {
             get 
             {
@@ -8004,7 +7712,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_24_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_24_"))
@@ -8015,14 +7723,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_24_ = value.Value;
-                }
+                _state._F_B_24_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_24_
+        bool? IAttributeSetInstanceStateProperties._F_B_24_
         {
             get 
             {
@@ -8035,7 +7740,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_24_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_24_"))
@@ -8046,14 +7751,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_24_ = value.Value;
-                }
+                _state._F_I_24_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_24_
+        int? IAttributeSetInstanceStateProperties._F_I_24_
         {
             get 
             {
@@ -8066,7 +7768,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_24_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_24_"))
@@ -8077,14 +7779,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_24_ = value.Value;
-                }
+                _state._F_L_24_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_24_
+        long? IAttributeSetInstanceStateProperties._F_L_24_
         {
             get 
             {
@@ -8097,7 +7796,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_24_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_24_"))
@@ -8108,14 +7807,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_24_ = value.Value;
-                }
+                _state._F_N_24_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_24_
+        decimal? IAttributeSetInstanceStateProperties._F_N_24_
         {
             get 
             {
@@ -8240,7 +7936,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_25_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_25_"))
@@ -8251,14 +7947,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_25_ = value.Value;
-                }
+                _state._F_B_25_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_25_
+        bool? IAttributeSetInstanceStateProperties._F_B_25_
         {
             get 
             {
@@ -8271,7 +7964,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_25_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_25_"))
@@ -8282,14 +7975,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_25_ = value.Value;
-                }
+                _state._F_I_25_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_25_
+        int? IAttributeSetInstanceStateProperties._F_I_25_
         {
             get 
             {
@@ -8302,7 +7992,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_25_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_25_"))
@@ -8313,14 +8003,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_25_ = value.Value;
-                }
+                _state._F_L_25_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_25_
+        long? IAttributeSetInstanceStateProperties._F_L_25_
         {
             get 
             {
@@ -8333,7 +8020,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_25_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_25_"))
@@ -8344,14 +8031,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_25_ = value.Value;
-                }
+                _state._F_N_25_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_25_
+        decimal? IAttributeSetInstanceStateProperties._F_N_25_
         {
             get 
             {
@@ -8476,7 +8160,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_26_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_26_"))
@@ -8487,14 +8171,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_26_ = value.Value;
-                }
+                _state._F_B_26_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_26_
+        bool? IAttributeSetInstanceStateProperties._F_B_26_
         {
             get 
             {
@@ -8507,7 +8188,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_26_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_26_"))
@@ -8518,14 +8199,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_26_ = value.Value;
-                }
+                _state._F_I_26_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_26_
+        int? IAttributeSetInstanceStateProperties._F_I_26_
         {
             get 
             {
@@ -8538,7 +8216,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_26_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_26_"))
@@ -8549,14 +8227,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_26_ = value.Value;
-                }
+                _state._F_L_26_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_26_
+        long? IAttributeSetInstanceStateProperties._F_L_26_
         {
             get 
             {
@@ -8569,7 +8244,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_26_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_26_"))
@@ -8580,14 +8255,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_26_ = value.Value;
-                }
+                _state._F_N_26_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_26_
+        decimal? IAttributeSetInstanceStateProperties._F_N_26_
         {
             get 
             {
@@ -8712,7 +8384,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_27_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_27_"))
@@ -8723,14 +8395,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_27_ = value.Value;
-                }
+                _state._F_B_27_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_27_
+        bool? IAttributeSetInstanceStateProperties._F_B_27_
         {
             get 
             {
@@ -8743,7 +8412,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_27_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_27_"))
@@ -8754,14 +8423,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_27_ = value.Value;
-                }
+                _state._F_I_27_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_27_
+        int? IAttributeSetInstanceStateProperties._F_I_27_
         {
             get 
             {
@@ -8774,7 +8440,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_27_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_27_"))
@@ -8785,14 +8451,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_27_ = value.Value;
-                }
+                _state._F_L_27_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_27_
+        long? IAttributeSetInstanceStateProperties._F_L_27_
         {
             get 
             {
@@ -8805,7 +8468,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_27_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_27_"))
@@ -8816,14 +8479,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_27_ = value.Value;
-                }
+                _state._F_N_27_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_27_
+        decimal? IAttributeSetInstanceStateProperties._F_N_27_
         {
             get 
             {
@@ -8948,7 +8608,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_28_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_28_"))
@@ -8959,14 +8619,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_28_ = value.Value;
-                }
+                _state._F_B_28_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_28_
+        bool? IAttributeSetInstanceStateProperties._F_B_28_
         {
             get 
             {
@@ -8979,7 +8636,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_28_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_28_"))
@@ -8990,14 +8647,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_28_ = value.Value;
-                }
+                _state._F_I_28_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_28_
+        int? IAttributeSetInstanceStateProperties._F_I_28_
         {
             get 
             {
@@ -9010,7 +8664,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_28_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_28_"))
@@ -9021,14 +8675,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_28_ = value.Value;
-                }
+                _state._F_L_28_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_28_
+        long? IAttributeSetInstanceStateProperties._F_L_28_
         {
             get 
             {
@@ -9041,7 +8692,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_28_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_28_"))
@@ -9052,14 +8703,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_28_ = value.Value;
-                }
+                _state._F_N_28_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_28_
+        decimal? IAttributeSetInstanceStateProperties._F_N_28_
         {
             get 
             {
@@ -9184,7 +8832,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_29_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_29_"))
@@ -9195,14 +8843,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_29_ = value.Value;
-                }
+                _state._F_B_29_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_29_
+        bool? IAttributeSetInstanceStateProperties._F_B_29_
         {
             get 
             {
@@ -9215,7 +8860,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_29_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_29_"))
@@ -9226,14 +8871,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_29_ = value.Value;
-                }
+                _state._F_I_29_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_29_
+        int? IAttributeSetInstanceStateProperties._F_I_29_
         {
             get 
             {
@@ -9246,7 +8888,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual long? _F_L_29_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_L_29_"))
@@ -9257,14 +8899,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_L_29_ = value.Value;
-                }
+                _state._F_L_29_ = value;
             }
         }
 
-        long IAttributeSetInstanceStateProperties._F_L_29_
+        long? IAttributeSetInstanceStateProperties._F_L_29_
         {
             get 
             {
@@ -9277,7 +8916,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_29_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_29_"))
@@ -9288,14 +8927,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_29_ = value.Value;
-                }
+                _state._F_N_29_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_29_
+        decimal? IAttributeSetInstanceStateProperties._F_N_29_
         {
             get 
             {
@@ -9420,7 +9056,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_30_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_30_"))
@@ -9431,14 +9067,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_30_ = value.Value;
-                }
+                _state._F_B_30_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_30_
+        bool? IAttributeSetInstanceStateProperties._F_B_30_
         {
             get 
             {
@@ -9451,7 +9084,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_30_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_30_"))
@@ -9462,14 +9095,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_30_ = value.Value;
-                }
+                _state._F_I_30_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_30_
+        int? IAttributeSetInstanceStateProperties._F_I_30_
         {
             get 
             {
@@ -9482,7 +9112,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_30_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_30_"))
@@ -9493,14 +9123,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_30_ = value.Value;
-                }
+                _state._F_N_30_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_30_
+        decimal? IAttributeSetInstanceStateProperties._F_N_30_
         {
             get 
             {
@@ -9625,7 +9252,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_31_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_31_"))
@@ -9636,14 +9263,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_31_ = value.Value;
-                }
+                _state._F_B_31_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_31_
+        bool? IAttributeSetInstanceStateProperties._F_B_31_
         {
             get 
             {
@@ -9656,7 +9280,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_31_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_31_"))
@@ -9667,14 +9291,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_31_ = value.Value;
-                }
+                _state._F_I_31_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_31_
+        int? IAttributeSetInstanceStateProperties._F_I_31_
         {
             get 
             {
@@ -9687,7 +9308,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_31_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_31_"))
@@ -9698,14 +9319,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_31_ = value.Value;
-                }
+                _state._F_N_31_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_31_
+        decimal? IAttributeSetInstanceStateProperties._F_N_31_
         {
             get 
             {
@@ -9830,7 +9448,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_32_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_32_"))
@@ -9841,14 +9459,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_32_ = value.Value;
-                }
+                _state._F_B_32_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_32_
+        bool? IAttributeSetInstanceStateProperties._F_B_32_
         {
             get 
             {
@@ -9861,7 +9476,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_32_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_32_"))
@@ -9872,14 +9487,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_32_ = value.Value;
-                }
+                _state._F_I_32_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_32_
+        int? IAttributeSetInstanceStateProperties._F_I_32_
         {
             get 
             {
@@ -9892,7 +9504,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_32_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_32_"))
@@ -9903,14 +9515,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_32_ = value.Value;
-                }
+                _state._F_N_32_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_32_
+        decimal? IAttributeSetInstanceStateProperties._F_N_32_
         {
             get 
             {
@@ -10035,7 +9644,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_33_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_33_"))
@@ -10046,14 +9655,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_33_ = value.Value;
-                }
+                _state._F_B_33_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_33_
+        bool? IAttributeSetInstanceStateProperties._F_B_33_
         {
             get 
             {
@@ -10066,7 +9672,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_33_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_33_"))
@@ -10077,14 +9683,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_33_ = value.Value;
-                }
+                _state._F_I_33_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_33_
+        int? IAttributeSetInstanceStateProperties._F_I_33_
         {
             get 
             {
@@ -10097,7 +9700,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_33_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_33_"))
@@ -10108,14 +9711,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_33_ = value.Value;
-                }
+                _state._F_N_33_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_33_
+        decimal? IAttributeSetInstanceStateProperties._F_N_33_
         {
             get 
             {
@@ -10240,7 +9840,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_34_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_34_"))
@@ -10251,14 +9851,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_34_ = value.Value;
-                }
+                _state._F_B_34_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_34_
+        bool? IAttributeSetInstanceStateProperties._F_B_34_
         {
             get 
             {
@@ -10271,7 +9868,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_34_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_34_"))
@@ -10282,14 +9879,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_34_ = value.Value;
-                }
+                _state._F_I_34_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_34_
+        int? IAttributeSetInstanceStateProperties._F_I_34_
         {
             get 
             {
@@ -10302,7 +9896,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_34_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_34_"))
@@ -10313,14 +9907,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_34_ = value.Value;
-                }
+                _state._F_N_34_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_34_
+        decimal? IAttributeSetInstanceStateProperties._F_N_34_
         {
             get 
             {
@@ -10445,7 +10036,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_35_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_35_"))
@@ -10456,14 +10047,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_35_ = value.Value;
-                }
+                _state._F_B_35_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_35_
+        bool? IAttributeSetInstanceStateProperties._F_B_35_
         {
             get 
             {
@@ -10476,7 +10064,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_35_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_35_"))
@@ -10487,14 +10075,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_35_ = value.Value;
-                }
+                _state._F_I_35_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_35_
+        int? IAttributeSetInstanceStateProperties._F_I_35_
         {
             get 
             {
@@ -10507,7 +10092,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_35_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_35_"))
@@ -10518,14 +10103,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_35_ = value.Value;
-                }
+                _state._F_N_35_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_35_
+        decimal? IAttributeSetInstanceStateProperties._F_N_35_
         {
             get 
             {
@@ -10650,7 +10232,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_36_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_36_"))
@@ -10661,14 +10243,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_36_ = value.Value;
-                }
+                _state._F_B_36_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_36_
+        bool? IAttributeSetInstanceStateProperties._F_B_36_
         {
             get 
             {
@@ -10681,7 +10260,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_36_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_36_"))
@@ -10692,14 +10271,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_36_ = value.Value;
-                }
+                _state._F_I_36_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_36_
+        int? IAttributeSetInstanceStateProperties._F_I_36_
         {
             get 
             {
@@ -10712,7 +10288,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_36_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_36_"))
@@ -10723,14 +10299,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_36_ = value.Value;
-                }
+                _state._F_N_36_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_36_
+        decimal? IAttributeSetInstanceStateProperties._F_N_36_
         {
             get 
             {
@@ -10855,7 +10428,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_37_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_37_"))
@@ -10866,14 +10439,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_37_ = value.Value;
-                }
+                _state._F_B_37_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_37_
+        bool? IAttributeSetInstanceStateProperties._F_B_37_
         {
             get 
             {
@@ -10886,7 +10456,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_37_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_37_"))
@@ -10897,14 +10467,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_37_ = value.Value;
-                }
+                _state._F_I_37_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_37_
+        int? IAttributeSetInstanceStateProperties._F_I_37_
         {
             get 
             {
@@ -10917,7 +10484,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_37_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_37_"))
@@ -10928,14 +10495,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_37_ = value.Value;
-                }
+                _state._F_N_37_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_37_
+        decimal? IAttributeSetInstanceStateProperties._F_N_37_
         {
             get 
             {
@@ -11060,7 +10624,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_38_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_38_"))
@@ -11071,14 +10635,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_38_ = value.Value;
-                }
+                _state._F_B_38_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_38_
+        bool? IAttributeSetInstanceStateProperties._F_B_38_
         {
             get 
             {
@@ -11091,7 +10652,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_38_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_38_"))
@@ -11102,14 +10663,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_38_ = value.Value;
-                }
+                _state._F_I_38_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_38_
+        int? IAttributeSetInstanceStateProperties._F_I_38_
         {
             get 
             {
@@ -11122,7 +10680,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_38_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_38_"))
@@ -11133,14 +10691,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_38_ = value.Value;
-                }
+                _state._F_N_38_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_38_
+        decimal? IAttributeSetInstanceStateProperties._F_N_38_
         {
             get 
             {
@@ -11265,7 +10820,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_39_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_39_"))
@@ -11276,14 +10831,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_39_ = value.Value;
-                }
+                _state._F_B_39_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_39_
+        bool? IAttributeSetInstanceStateProperties._F_B_39_
         {
             get 
             {
@@ -11296,7 +10848,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_39_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_39_"))
@@ -11307,14 +10859,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_39_ = value.Value;
-                }
+                _state._F_I_39_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_39_
+        int? IAttributeSetInstanceStateProperties._F_I_39_
         {
             get 
             {
@@ -11327,7 +10876,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_39_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_39_"))
@@ -11338,14 +10887,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_39_ = value.Value;
-                }
+                _state._F_N_39_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_39_
+        decimal? IAttributeSetInstanceStateProperties._F_N_39_
         {
             get 
             {
@@ -11470,7 +11016,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_40_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_40_"))
@@ -11481,14 +11027,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_40_ = value.Value;
-                }
+                _state._F_B_40_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_40_
+        bool? IAttributeSetInstanceStateProperties._F_B_40_
         {
             get 
             {
@@ -11501,7 +11044,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_40_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_40_"))
@@ -11512,14 +11055,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_40_ = value.Value;
-                }
+                _state._F_I_40_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_40_
+        int? IAttributeSetInstanceStateProperties._F_I_40_
         {
             get 
             {
@@ -11532,7 +11072,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_40_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_40_"))
@@ -11543,14 +11083,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_40_ = value.Value;
-                }
+                _state._F_N_40_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_40_
+        decimal? IAttributeSetInstanceStateProperties._F_N_40_
         {
             get 
             {
@@ -11675,7 +11212,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_41_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_41_"))
@@ -11686,14 +11223,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_41_ = value.Value;
-                }
+                _state._F_B_41_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_41_
+        bool? IAttributeSetInstanceStateProperties._F_B_41_
         {
             get 
             {
@@ -11706,7 +11240,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_41_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_41_"))
@@ -11717,14 +11251,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_41_ = value.Value;
-                }
+                _state._F_I_41_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_41_
+        int? IAttributeSetInstanceStateProperties._F_I_41_
         {
             get 
             {
@@ -11737,7 +11268,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_41_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_41_"))
@@ -11748,14 +11279,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_41_ = value.Value;
-                }
+                _state._F_N_41_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_41_
+        decimal? IAttributeSetInstanceStateProperties._F_N_41_
         {
             get 
             {
@@ -11880,7 +11408,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_42_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_42_"))
@@ -11891,14 +11419,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_42_ = value.Value;
-                }
+                _state._F_B_42_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_42_
+        bool? IAttributeSetInstanceStateProperties._F_B_42_
         {
             get 
             {
@@ -11911,7 +11436,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_42_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_42_"))
@@ -11922,14 +11447,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_42_ = value.Value;
-                }
+                _state._F_I_42_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_42_
+        int? IAttributeSetInstanceStateProperties._F_I_42_
         {
             get 
             {
@@ -11942,7 +11464,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_42_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_42_"))
@@ -11953,14 +11475,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_42_ = value.Value;
-                }
+                _state._F_N_42_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_42_
+        decimal? IAttributeSetInstanceStateProperties._F_N_42_
         {
             get 
             {
@@ -12085,7 +11604,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_43_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_43_"))
@@ -12096,14 +11615,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_43_ = value.Value;
-                }
+                _state._F_B_43_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_43_
+        bool? IAttributeSetInstanceStateProperties._F_B_43_
         {
             get 
             {
@@ -12116,7 +11632,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_43_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_43_"))
@@ -12127,14 +11643,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_43_ = value.Value;
-                }
+                _state._F_I_43_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_43_
+        int? IAttributeSetInstanceStateProperties._F_I_43_
         {
             get 
             {
@@ -12147,7 +11660,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_43_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_43_"))
@@ -12158,14 +11671,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_43_ = value.Value;
-                }
+                _state._F_N_43_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_43_
+        decimal? IAttributeSetInstanceStateProperties._F_N_43_
         {
             get 
             {
@@ -12290,7 +11800,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_44_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_44_"))
@@ -12301,14 +11811,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_44_ = value.Value;
-                }
+                _state._F_B_44_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_44_
+        bool? IAttributeSetInstanceStateProperties._F_B_44_
         {
             get 
             {
@@ -12321,7 +11828,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_44_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_44_"))
@@ -12332,14 +11839,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_44_ = value.Value;
-                }
+                _state._F_I_44_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_44_
+        int? IAttributeSetInstanceStateProperties._F_I_44_
         {
             get 
             {
@@ -12352,7 +11856,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_44_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_44_"))
@@ -12363,14 +11867,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_44_ = value.Value;
-                }
+                _state._F_N_44_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_44_
+        decimal? IAttributeSetInstanceStateProperties._F_N_44_
         {
             get 
             {
@@ -12495,7 +11996,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_45_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_45_"))
@@ -12506,14 +12007,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_45_ = value.Value;
-                }
+                _state._F_B_45_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_45_
+        bool? IAttributeSetInstanceStateProperties._F_B_45_
         {
             get 
             {
@@ -12526,7 +12024,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_45_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_45_"))
@@ -12537,14 +12035,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_45_ = value.Value;
-                }
+                _state._F_I_45_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_45_
+        int? IAttributeSetInstanceStateProperties._F_I_45_
         {
             get 
             {
@@ -12557,7 +12052,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_45_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_45_"))
@@ -12568,14 +12063,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_45_ = value.Value;
-                }
+                _state._F_N_45_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_45_
+        decimal? IAttributeSetInstanceStateProperties._F_N_45_
         {
             get 
             {
@@ -12700,7 +12192,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_46_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_46_"))
@@ -12711,14 +12203,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_46_ = value.Value;
-                }
+                _state._F_B_46_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_46_
+        bool? IAttributeSetInstanceStateProperties._F_B_46_
         {
             get 
             {
@@ -12731,7 +12220,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_46_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_46_"))
@@ -12742,14 +12231,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_46_ = value.Value;
-                }
+                _state._F_I_46_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_46_
+        int? IAttributeSetInstanceStateProperties._F_I_46_
         {
             get 
             {
@@ -12762,7 +12248,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_46_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_46_"))
@@ -12773,14 +12259,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_46_ = value.Value;
-                }
+                _state._F_N_46_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_46_
+        decimal? IAttributeSetInstanceStateProperties._F_N_46_
         {
             get 
             {
@@ -12905,7 +12388,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_47_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_47_"))
@@ -12916,14 +12399,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_47_ = value.Value;
-                }
+                _state._F_B_47_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_47_
+        bool? IAttributeSetInstanceStateProperties._F_B_47_
         {
             get 
             {
@@ -12936,7 +12416,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_47_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_47_"))
@@ -12947,14 +12427,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_47_ = value.Value;
-                }
+                _state._F_I_47_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_47_
+        int? IAttributeSetInstanceStateProperties._F_I_47_
         {
             get 
             {
@@ -12967,7 +12444,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_47_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_47_"))
@@ -12978,14 +12455,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_47_ = value.Value;
-                }
+                _state._F_N_47_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_47_
+        decimal? IAttributeSetInstanceStateProperties._F_N_47_
         {
             get 
             {
@@ -13110,7 +12584,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_48_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_48_"))
@@ -13121,14 +12595,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_48_ = value.Value;
-                }
+                _state._F_B_48_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_48_
+        bool? IAttributeSetInstanceStateProperties._F_B_48_
         {
             get 
             {
@@ -13141,7 +12612,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_48_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_48_"))
@@ -13152,14 +12623,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_48_ = value.Value;
-                }
+                _state._F_I_48_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_48_
+        int? IAttributeSetInstanceStateProperties._F_I_48_
         {
             get 
             {
@@ -13172,7 +12640,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_48_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_48_"))
@@ -13183,14 +12651,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_48_ = value.Value;
-                }
+                _state._F_N_48_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_48_
+        decimal? IAttributeSetInstanceStateProperties._F_N_48_
         {
             get 
             {
@@ -13315,7 +12780,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual bool? _F_B_49_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_B_49_"))
@@ -13326,14 +12791,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_B_49_ = value.Value;
-                }
+                _state._F_B_49_ = value;
             }
         }
 
-        bool IAttributeSetInstanceStateProperties._F_B_49_
+        bool? IAttributeSetInstanceStateProperties._F_B_49_
         {
             get 
             {
@@ -13346,7 +12808,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual int? _F_I_49_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_I_49_"))
@@ -13357,14 +12819,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_I_49_ = value.Value;
-                }
+                _state._F_I_49_ = value;
             }
         }
 
-        int IAttributeSetInstanceStateProperties._F_I_49_
+        int? IAttributeSetInstanceStateProperties._F_I_49_
         {
             get 
             {
@@ -13377,7 +12836,7 @@ namespace Dddml.Wms.Domain
         }
 
 		public virtual decimal? _F_N_49_
-        {
+		{
             get
             {
                 if ((this as IStateDto).ReturnedFieldsContains("_F_N_49_"))
@@ -13388,14 +12847,11 @@ namespace Dddml.Wms.Domain
             }
             set
             {
-                if (value != null && value.HasValue)
-                {
-                    _state._F_N_49_ = value.Value;
-                }
+                _state._F_N_49_ = value;
             }
         }
 
-        decimal IAttributeSetInstanceStateProperties._F_N_49_
+        decimal? IAttributeSetInstanceStateProperties._F_N_49_
         {
             get 
             {

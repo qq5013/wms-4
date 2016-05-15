@@ -99,6 +99,8 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool IsPropertyLotAttributeIdRemoved { get; set; }
 
+		public virtual bool IsPropertyReferenceIdRemoved { get; set; }
+
 		public virtual bool IsPropertyActiveRemoved { get; set; }
 
 

@@ -28,15 +28,17 @@ namespace Dddml.Wms.Domain
 
 	public interface IAttributeSetStateMergePatched : IAttributeSetStateEvent, IAttributeSetStateProperties
 	{
-		bool IsPropertyNameRemoved { get; }
+		bool IsPropertyNameRemoved { get; set; }
 
-		bool IsPropertyDescriptionRemoved { get; }
+		bool IsPropertyDescriptionRemoved { get; set; }
 
-		bool IsPropertySerialNumberAttributeIdRemoved { get; }
+		bool IsPropertySerialNumberAttributeIdRemoved { get; set; }
 
-		bool IsPropertyLotAttributeIdRemoved { get; }
+		bool IsPropertyLotAttributeIdRemoved { get; set; }
 
-		bool IsPropertyActiveRemoved { get; }
+		bool IsPropertyReferenceIdRemoved { get; set; }
+
+		bool IsPropertyActiveRemoved { get; set; }
 
 		IEnumerable<IAttributeUseStateEvent> AttributeUseEvents { get; }
 		

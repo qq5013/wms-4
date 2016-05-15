@@ -7,7 +7,7 @@
 //  Copyright © . All Rights Reserved.
 // </copyright>
 
-	var extensionFields = AttributeSetInstanceExtensionFields.CreateExtensionFields();
+    var extensionFields = AttributeSetInstanceExtensionFields.CreateExtensionFields();
 
 #>
 #%DDDML 0.1
@@ -21,6 +21,8 @@ aggregates:
     # --------------- aggregate ---------------
     AttributeSetInstance:
     
+      isDynamic: true
+      
       id:
         name: AttributeSetInstanceId
         type: string
@@ -31,6 +33,9 @@ aggregates:
         AttributeSetId:
           type: string
         
+        ReferenceId:
+          type: string
+
         SerialNumber:
           type: string
 
@@ -41,15 +46,20 @@ aggregates:
           type: string
 
         #DateTime? GuaranteeDate
+        
+        Hash:
+          type: string
+          isDerived: true
+        
 <#
-	foreach (var f in extensionFields)
-	{
+    foreach (var f in extensionFields)
+    {
 #>
         <#= f.Name #>:
           type: <#= f.Type #>
           <#= (f.Length != null) ? "length: " + f.Length : String.Empty #>
 
 <#
-	}
+    }
 #>
         

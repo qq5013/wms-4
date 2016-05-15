@@ -21,7 +21,11 @@
 
 	<property name="AttributeValueType"  />
 
+	<property name="IsList"  />
+
 	<property name="FieldName"  />
+
+	<property name="ReferenceId"  />
 
 	<property name="CreatedBy"  />
 

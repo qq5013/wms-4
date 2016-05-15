@@ -14,21 +14,25 @@ namespace Dddml.Wms.Domain
 
 		string AttributeSetId { get; set; }
 
+		string ReferenceId { get; set; }
+
 		string SerialNumber { get; set; }
 
 		string Lot { get; set; }
 
 		string Description { get; set; }
 
-		bool _F_B_0_ { get; set; }
+		string Hash { get; set; }
 
-		int _F_I_0_ { get; set; }
+		bool? _F_B_0_ { get; set; }
 
-		long _F_L_0_ { get; set; }
+		int? _F_I_0_ { get; set; }
 
-		DateTime _F_DT_0_ { get; set; }
+		long? _F_L_0_ { get; set; }
 
-		decimal _F_N_0_ { get; set; }
+		DateTime? _F_DT_0_ { get; set; }
+
+		decimal? _F_N_0_ { get; set; }
 
 		string _F_C5_0_ { get; set; }
 
@@ -46,15 +50,15 @@ namespace Dddml.Wms.Domain
 
 		string _F_C1000_0_ { get; set; }
 
-		bool _F_B_1_ { get; set; }
+		bool? _F_B_1_ { get; set; }
 
-		int _F_I_1_ { get; set; }
+		int? _F_I_1_ { get; set; }
 
-		long _F_L_1_ { get; set; }
+		long? _F_L_1_ { get; set; }
 
-		DateTime _F_DT_1_ { get; set; }
+		DateTime? _F_DT_1_ { get; set; }
 
-		decimal _F_N_1_ { get; set; }
+		decimal? _F_N_1_ { get; set; }
 
 		string _F_C5_1_ { get; set; }
 
@@ -72,15 +76,15 @@ namespace Dddml.Wms.Domain
 
 		string _F_C1000_1_ { get; set; }
 
-		bool _F_B_2_ { get; set; }
+		bool? _F_B_2_ { get; set; }
 
-		int _F_I_2_ { get; set; }
+		int? _F_I_2_ { get; set; }
 
-		long _F_L_2_ { get; set; }
+		long? _F_L_2_ { get; set; }
 
-		DateTime _F_DT_2_ { get; set; }
+		DateTime? _F_DT_2_ { get; set; }
 
-		decimal _F_N_2_ { get; set; }
+		decimal? _F_N_2_ { get; set; }
 
 		string _F_C5_2_ { get; set; }
 
@@ -98,15 +102,15 @@ namespace Dddml.Wms.Domain
 
 		string _F_C1000_2_ { get; set; }
 
-		bool _F_B_3_ { get; set; }
+		bool? _F_B_3_ { get; set; }
 
-		int _F_I_3_ { get; set; }
+		int? _F_I_3_ { get; set; }
 
-		long _F_L_3_ { get; set; }
+		long? _F_L_3_ { get; set; }
 
-		DateTime _F_DT_3_ { get; set; }
+		DateTime? _F_DT_3_ { get; set; }
 
-		decimal _F_N_3_ { get; set; }
+		decimal? _F_N_3_ { get; set; }
 
 		string _F_C5_3_ { get; set; }
 
@@ -124,15 +128,15 @@ namespace Dddml.Wms.Domain
 
 		string _F_C1000_3_ { get; set; }
 
-		bool _F_B_4_ { get; set; }
+		bool? _F_B_4_ { get; set; }
 
-		int _F_I_4_ { get; set; }
+		int? _F_I_4_ { get; set; }
 
-		long _F_L_4_ { get; set; }
+		long? _F_L_4_ { get; set; }
 
-		DateTime _F_DT_4_ { get; set; }
+		DateTime? _F_DT_4_ { get; set; }
 
-		decimal _F_N_4_ { get; set; }
+		decimal? _F_N_4_ { get; set; }
 
 		string _F_C5_4_ { get; set; }
 
@@ -150,15 +154,15 @@ namespace Dddml.Wms.Domain
 
 		string _F_C1000_4_ { get; set; }
 
-		bool _F_B_5_ { get; set; }
+		bool? _F_B_5_ { get; set; }
 
-		int _F_I_5_ { get; set; }
+		int? _F_I_5_ { get; set; }
 
-		long _F_L_5_ { get; set; }
+		long? _F_L_5_ { get; set; }
 
-		DateTime _F_DT_5_ { get; set; }
+		DateTime? _F_DT_5_ { get; set; }
 
-		decimal _F_N_5_ { get; set; }
+		decimal? _F_N_5_ { get; set; }
 
 		string _F_C5_5_ { get; set; }
 
@@ -174,15 +178,15 @@ namespace Dddml.Wms.Domain
 
 		string _F_C500_5_ { get; set; }
 
-		bool _F_B_6_ { get; set; }
+		bool? _F_B_6_ { get; set; }
 
-		int _F_I_6_ { get; set; }
+		int? _F_I_6_ { get; set; }
 
-		long _F_L_6_ { get; set; }
+		long? _F_L_6_ { get; set; }
 
-		DateTime _F_DT_6_ { get; set; }
+		DateTime? _F_DT_6_ { get; set; }
 
-		decimal _F_N_6_ { get; set; }
+		decimal? _F_N_6_ { get; set; }
 
 		string _F_C5_6_ { get; set; }
 
@@ -198,15 +202,15 @@ namespace Dddml.Wms.Domain
 
 		string _F_C500_6_ { get; set; }
 
-		bool _F_B_7_ { get; set; }
+		bool? _F_B_7_ { get; set; }
 
-		int _F_I_7_ { get; set; }
+		int? _F_I_7_ { get; set; }
 
-		long _F_L_7_ { get; set; }
+		long? _F_L_7_ { get; set; }
 
-		DateTime _F_DT_7_ { get; set; }
+		DateTime? _F_DT_7_ { get; set; }
 
-		decimal _F_N_7_ { get; set; }
+		decimal? _F_N_7_ { get; set; }
 
 		string _F_C5_7_ { get; set; }
 
@@ -222,15 +226,15 @@ namespace Dddml.Wms.Domain
 
 		string _F_C500_7_ { get; set; }
 
-		bool _F_B_8_ { get; set; }
+		bool? _F_B_8_ { get; set; }
 
-		int _F_I_8_ { get; set; }
+		int? _F_I_8_ { get; set; }
 
-		long _F_L_8_ { get; set; }
+		long? _F_L_8_ { get; set; }
 
-		DateTime _F_DT_8_ { get; set; }
+		DateTime? _F_DT_8_ { get; set; }
 
-		decimal _F_N_8_ { get; set; }
+		decimal? _F_N_8_ { get; set; }
 
 		string _F_C5_8_ { get; set; }
 
@@ -246,15 +250,15 @@ namespace Dddml.Wms.Domain
 
 		string _F_C500_8_ { get; set; }
 
-		bool _F_B_9_ { get; set; }
+		bool? _F_B_9_ { get; set; }
 
-		int _F_I_9_ { get; set; }
+		int? _F_I_9_ { get; set; }
 
-		long _F_L_9_ { get; set; }
+		long? _F_L_9_ { get; set; }
 
-		DateTime _F_DT_9_ { get; set; }
+		DateTime? _F_DT_9_ { get; set; }
 
-		decimal _F_N_9_ { get; set; }
+		decimal? _F_N_9_ { get; set; }
 
 		string _F_C5_9_ { get; set; }
 
@@ -270,15 +274,15 @@ namespace Dddml.Wms.Domain
 
 		string _F_C500_9_ { get; set; }
 
-		bool _F_B_10_ { get; set; }
+		bool? _F_B_10_ { get; set; }
 
-		int _F_I_10_ { get; set; }
+		int? _F_I_10_ { get; set; }
 
-		long _F_L_10_ { get; set; }
+		long? _F_L_10_ { get; set; }
 
-		DateTime _F_DT_10_ { get; set; }
+		DateTime? _F_DT_10_ { get; set; }
 
-		decimal _F_N_10_ { get; set; }
+		decimal? _F_N_10_ { get; set; }
 
 		string _F_C5_10_ { get; set; }
 
@@ -292,15 +296,15 @@ namespace Dddml.Wms.Domain
 
 		string _F_C200_10_ { get; set; }
 
-		bool _F_B_11_ { get; set; }
+		bool? _F_B_11_ { get; set; }
 
-		int _F_I_11_ { get; set; }
+		int? _F_I_11_ { get; set; }
 
-		long _F_L_11_ { get; set; }
+		long? _F_L_11_ { get; set; }
 
-		DateTime _F_DT_11_ { get; set; }
+		DateTime? _F_DT_11_ { get; set; }
 
-		decimal _F_N_11_ { get; set; }
+		decimal? _F_N_11_ { get; set; }
 
 		string _F_C5_11_ { get; set; }
 
@@ -314,15 +318,15 @@ namespace Dddml.Wms.Domain
 
 		string _F_C200_11_ { get; set; }
 
-		bool _F_B_12_ { get; set; }
+		bool? _F_B_12_ { get; set; }
 
-		int _F_I_12_ { get; set; }
+		int? _F_I_12_ { get; set; }
 
-		long _F_L_12_ { get; set; }
+		long? _F_L_12_ { get; set; }
 
-		DateTime _F_DT_12_ { get; set; }
+		DateTime? _F_DT_12_ { get; set; }
 
-		decimal _F_N_12_ { get; set; }
+		decimal? _F_N_12_ { get; set; }
 
 		string _F_C5_12_ { get; set; }
 
@@ -336,15 +340,15 @@ namespace Dddml.Wms.Domain
 
 		string _F_C200_12_ { get; set; }
 
-		bool _F_B_13_ { get; set; }
+		bool? _F_B_13_ { get; set; }
 
-		int _F_I_13_ { get; set; }
+		int? _F_I_13_ { get; set; }
 
-		long _F_L_13_ { get; set; }
+		long? _F_L_13_ { get; set; }
 
-		DateTime _F_DT_13_ { get; set; }
+		DateTime? _F_DT_13_ { get; set; }
 
-		decimal _F_N_13_ { get; set; }
+		decimal? _F_N_13_ { get; set; }
 
 		string _F_C5_13_ { get; set; }
 
@@ -358,15 +362,15 @@ namespace Dddml.Wms.Domain
 
 		string _F_C200_13_ { get; set; }
 
-		bool _F_B_14_ { get; set; }
+		bool? _F_B_14_ { get; set; }
 
-		int _F_I_14_ { get; set; }
+		int? _F_I_14_ { get; set; }
 
-		long _F_L_14_ { get; set; }
+		long? _F_L_14_ { get; set; }
 
-		DateTime _F_DT_14_ { get; set; }
+		DateTime? _F_DT_14_ { get; set; }
 
-		decimal _F_N_14_ { get; set; }
+		decimal? _F_N_14_ { get; set; }
 
 		string _F_C5_14_ { get; set; }
 
@@ -380,15 +384,15 @@ namespace Dddml.Wms.Domain
 
 		string _F_C200_14_ { get; set; }
 
-		bool _F_B_15_ { get; set; }
+		bool? _F_B_15_ { get; set; }
 
-		int _F_I_15_ { get; set; }
+		int? _F_I_15_ { get; set; }
 
-		long _F_L_15_ { get; set; }
+		long? _F_L_15_ { get; set; }
 
-		DateTime _F_DT_15_ { get; set; }
+		DateTime? _F_DT_15_ { get; set; }
 
-		decimal _F_N_15_ { get; set; }
+		decimal? _F_N_15_ { get; set; }
 
 		string _F_C5_15_ { get; set; }
 
@@ -402,15 +406,15 @@ namespace Dddml.Wms.Domain
 
 		string _F_C200_15_ { get; set; }
 
-		bool _F_B_16_ { get; set; }
+		bool? _F_B_16_ { get; set; }
 
-		int _F_I_16_ { get; set; }
+		int? _F_I_16_ { get; set; }
 
-		long _F_L_16_ { get; set; }
+		long? _F_L_16_ { get; set; }
 
-		DateTime _F_DT_16_ { get; set; }
+		DateTime? _F_DT_16_ { get; set; }
 
-		decimal _F_N_16_ { get; set; }
+		decimal? _F_N_16_ { get; set; }
 
 		string _F_C5_16_ { get; set; }
 
@@ -424,15 +428,15 @@ namespace Dddml.Wms.Domain
 
 		string _F_C200_16_ { get; set; }
 
-		bool _F_B_17_ { get; set; }
+		bool? _F_B_17_ { get; set; }
 
-		int _F_I_17_ { get; set; }
+		int? _F_I_17_ { get; set; }
 
-		long _F_L_17_ { get; set; }
+		long? _F_L_17_ { get; set; }
 
-		DateTime _F_DT_17_ { get; set; }
+		DateTime? _F_DT_17_ { get; set; }
 
-		decimal _F_N_17_ { get; set; }
+		decimal? _F_N_17_ { get; set; }
 
 		string _F_C5_17_ { get; set; }
 
@@ -446,15 +450,15 @@ namespace Dddml.Wms.Domain
 
 		string _F_C200_17_ { get; set; }
 
-		bool _F_B_18_ { get; set; }
+		bool? _F_B_18_ { get; set; }
 
-		int _F_I_18_ { get; set; }
+		int? _F_I_18_ { get; set; }
 
-		long _F_L_18_ { get; set; }
+		long? _F_L_18_ { get; set; }
 
-		DateTime _F_DT_18_ { get; set; }
+		DateTime? _F_DT_18_ { get; set; }
 
-		decimal _F_N_18_ { get; set; }
+		decimal? _F_N_18_ { get; set; }
 
 		string _F_C5_18_ { get; set; }
 
@@ -468,15 +472,15 @@ namespace Dddml.Wms.Domain
 
 		string _F_C200_18_ { get; set; }
 
-		bool _F_B_19_ { get; set; }
+		bool? _F_B_19_ { get; set; }
 
-		int _F_I_19_ { get; set; }
+		int? _F_I_19_ { get; set; }
 
-		long _F_L_19_ { get; set; }
+		long? _F_L_19_ { get; set; }
 
-		DateTime _F_DT_19_ { get; set; }
+		DateTime? _F_DT_19_ { get; set; }
 
-		decimal _F_N_19_ { get; set; }
+		decimal? _F_N_19_ { get; set; }
 
 		string _F_C5_19_ { get; set; }
 
@@ -490,13 +494,13 @@ namespace Dddml.Wms.Domain
 
 		string _F_C200_19_ { get; set; }
 
-		bool _F_B_20_ { get; set; }
+		bool? _F_B_20_ { get; set; }
 
-		int _F_I_20_ { get; set; }
+		int? _F_I_20_ { get; set; }
 
-		long _F_L_20_ { get; set; }
+		long? _F_L_20_ { get; set; }
 
-		decimal _F_N_20_ { get; set; }
+		decimal? _F_N_20_ { get; set; }
 
 		string _F_C5_20_ { get; set; }
 
@@ -506,13 +510,13 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_20_ { get; set; }
 
-		bool _F_B_21_ { get; set; }
+		bool? _F_B_21_ { get; set; }
 
-		int _F_I_21_ { get; set; }
+		int? _F_I_21_ { get; set; }
 
-		long _F_L_21_ { get; set; }
+		long? _F_L_21_ { get; set; }
 
-		decimal _F_N_21_ { get; set; }
+		decimal? _F_N_21_ { get; set; }
 
 		string _F_C5_21_ { get; set; }
 
@@ -522,13 +526,13 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_21_ { get; set; }
 
-		bool _F_B_22_ { get; set; }
+		bool? _F_B_22_ { get; set; }
 
-		int _F_I_22_ { get; set; }
+		int? _F_I_22_ { get; set; }
 
-		long _F_L_22_ { get; set; }
+		long? _F_L_22_ { get; set; }
 
-		decimal _F_N_22_ { get; set; }
+		decimal? _F_N_22_ { get; set; }
 
 		string _F_C5_22_ { get; set; }
 
@@ -538,13 +542,13 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_22_ { get; set; }
 
-		bool _F_B_23_ { get; set; }
+		bool? _F_B_23_ { get; set; }
 
-		int _F_I_23_ { get; set; }
+		int? _F_I_23_ { get; set; }
 
-		long _F_L_23_ { get; set; }
+		long? _F_L_23_ { get; set; }
 
-		decimal _F_N_23_ { get; set; }
+		decimal? _F_N_23_ { get; set; }
 
 		string _F_C5_23_ { get; set; }
 
@@ -554,13 +558,13 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_23_ { get; set; }
 
-		bool _F_B_24_ { get; set; }
+		bool? _F_B_24_ { get; set; }
 
-		int _F_I_24_ { get; set; }
+		int? _F_I_24_ { get; set; }
 
-		long _F_L_24_ { get; set; }
+		long? _F_L_24_ { get; set; }
 
-		decimal _F_N_24_ { get; set; }
+		decimal? _F_N_24_ { get; set; }
 
 		string _F_C5_24_ { get; set; }
 
@@ -570,13 +574,13 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_24_ { get; set; }
 
-		bool _F_B_25_ { get; set; }
+		bool? _F_B_25_ { get; set; }
 
-		int _F_I_25_ { get; set; }
+		int? _F_I_25_ { get; set; }
 
-		long _F_L_25_ { get; set; }
+		long? _F_L_25_ { get; set; }
 
-		decimal _F_N_25_ { get; set; }
+		decimal? _F_N_25_ { get; set; }
 
 		string _F_C5_25_ { get; set; }
 
@@ -586,13 +590,13 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_25_ { get; set; }
 
-		bool _F_B_26_ { get; set; }
+		bool? _F_B_26_ { get; set; }
 
-		int _F_I_26_ { get; set; }
+		int? _F_I_26_ { get; set; }
 
-		long _F_L_26_ { get; set; }
+		long? _F_L_26_ { get; set; }
 
-		decimal _F_N_26_ { get; set; }
+		decimal? _F_N_26_ { get; set; }
 
 		string _F_C5_26_ { get; set; }
 
@@ -602,13 +606,13 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_26_ { get; set; }
 
-		bool _F_B_27_ { get; set; }
+		bool? _F_B_27_ { get; set; }
 
-		int _F_I_27_ { get; set; }
+		int? _F_I_27_ { get; set; }
 
-		long _F_L_27_ { get; set; }
+		long? _F_L_27_ { get; set; }
 
-		decimal _F_N_27_ { get; set; }
+		decimal? _F_N_27_ { get; set; }
 
 		string _F_C5_27_ { get; set; }
 
@@ -618,13 +622,13 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_27_ { get; set; }
 
-		bool _F_B_28_ { get; set; }
+		bool? _F_B_28_ { get; set; }
 
-		int _F_I_28_ { get; set; }
+		int? _F_I_28_ { get; set; }
 
-		long _F_L_28_ { get; set; }
+		long? _F_L_28_ { get; set; }
 
-		decimal _F_N_28_ { get; set; }
+		decimal? _F_N_28_ { get; set; }
 
 		string _F_C5_28_ { get; set; }
 
@@ -634,13 +638,13 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_28_ { get; set; }
 
-		bool _F_B_29_ { get; set; }
+		bool? _F_B_29_ { get; set; }
 
-		int _F_I_29_ { get; set; }
+		int? _F_I_29_ { get; set; }
 
-		long _F_L_29_ { get; set; }
+		long? _F_L_29_ { get; set; }
 
-		decimal _F_N_29_ { get; set; }
+		decimal? _F_N_29_ { get; set; }
 
 		string _F_C5_29_ { get; set; }
 
@@ -650,11 +654,11 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_29_ { get; set; }
 
-		bool _F_B_30_ { get; set; }
+		bool? _F_B_30_ { get; set; }
 
-		int _F_I_30_ { get; set; }
+		int? _F_I_30_ { get; set; }
 
-		decimal _F_N_30_ { get; set; }
+		decimal? _F_N_30_ { get; set; }
 
 		string _F_C5_30_ { get; set; }
 
@@ -664,11 +668,11 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_30_ { get; set; }
 
-		bool _F_B_31_ { get; set; }
+		bool? _F_B_31_ { get; set; }
 
-		int _F_I_31_ { get; set; }
+		int? _F_I_31_ { get; set; }
 
-		decimal _F_N_31_ { get; set; }
+		decimal? _F_N_31_ { get; set; }
 
 		string _F_C5_31_ { get; set; }
 
@@ -678,11 +682,11 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_31_ { get; set; }
 
-		bool _F_B_32_ { get; set; }
+		bool? _F_B_32_ { get; set; }
 
-		int _F_I_32_ { get; set; }
+		int? _F_I_32_ { get; set; }
 
-		decimal _F_N_32_ { get; set; }
+		decimal? _F_N_32_ { get; set; }
 
 		string _F_C5_32_ { get; set; }
 
@@ -692,11 +696,11 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_32_ { get; set; }
 
-		bool _F_B_33_ { get; set; }
+		bool? _F_B_33_ { get; set; }
 
-		int _F_I_33_ { get; set; }
+		int? _F_I_33_ { get; set; }
 
-		decimal _F_N_33_ { get; set; }
+		decimal? _F_N_33_ { get; set; }
 
 		string _F_C5_33_ { get; set; }
 
@@ -706,11 +710,11 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_33_ { get; set; }
 
-		bool _F_B_34_ { get; set; }
+		bool? _F_B_34_ { get; set; }
 
-		int _F_I_34_ { get; set; }
+		int? _F_I_34_ { get; set; }
 
-		decimal _F_N_34_ { get; set; }
+		decimal? _F_N_34_ { get; set; }
 
 		string _F_C5_34_ { get; set; }
 
@@ -720,11 +724,11 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_34_ { get; set; }
 
-		bool _F_B_35_ { get; set; }
+		bool? _F_B_35_ { get; set; }
 
-		int _F_I_35_ { get; set; }
+		int? _F_I_35_ { get; set; }
 
-		decimal _F_N_35_ { get; set; }
+		decimal? _F_N_35_ { get; set; }
 
 		string _F_C5_35_ { get; set; }
 
@@ -734,11 +738,11 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_35_ { get; set; }
 
-		bool _F_B_36_ { get; set; }
+		bool? _F_B_36_ { get; set; }
 
-		int _F_I_36_ { get; set; }
+		int? _F_I_36_ { get; set; }
 
-		decimal _F_N_36_ { get; set; }
+		decimal? _F_N_36_ { get; set; }
 
 		string _F_C5_36_ { get; set; }
 
@@ -748,11 +752,11 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_36_ { get; set; }
 
-		bool _F_B_37_ { get; set; }
+		bool? _F_B_37_ { get; set; }
 
-		int _F_I_37_ { get; set; }
+		int? _F_I_37_ { get; set; }
 
-		decimal _F_N_37_ { get; set; }
+		decimal? _F_N_37_ { get; set; }
 
 		string _F_C5_37_ { get; set; }
 
@@ -762,11 +766,11 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_37_ { get; set; }
 
-		bool _F_B_38_ { get; set; }
+		bool? _F_B_38_ { get; set; }
 
-		int _F_I_38_ { get; set; }
+		int? _F_I_38_ { get; set; }
 
-		decimal _F_N_38_ { get; set; }
+		decimal? _F_N_38_ { get; set; }
 
 		string _F_C5_38_ { get; set; }
 
@@ -776,11 +780,11 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_38_ { get; set; }
 
-		bool _F_B_39_ { get; set; }
+		bool? _F_B_39_ { get; set; }
 
-		int _F_I_39_ { get; set; }
+		int? _F_I_39_ { get; set; }
 
-		decimal _F_N_39_ { get; set; }
+		decimal? _F_N_39_ { get; set; }
 
 		string _F_C5_39_ { get; set; }
 
@@ -790,11 +794,11 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_39_ { get; set; }
 
-		bool _F_B_40_ { get; set; }
+		bool? _F_B_40_ { get; set; }
 
-		int _F_I_40_ { get; set; }
+		int? _F_I_40_ { get; set; }
 
-		decimal _F_N_40_ { get; set; }
+		decimal? _F_N_40_ { get; set; }
 
 		string _F_C5_40_ { get; set; }
 
@@ -804,11 +808,11 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_40_ { get; set; }
 
-		bool _F_B_41_ { get; set; }
+		bool? _F_B_41_ { get; set; }
 
-		int _F_I_41_ { get; set; }
+		int? _F_I_41_ { get; set; }
 
-		decimal _F_N_41_ { get; set; }
+		decimal? _F_N_41_ { get; set; }
 
 		string _F_C5_41_ { get; set; }
 
@@ -818,11 +822,11 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_41_ { get; set; }
 
-		bool _F_B_42_ { get; set; }
+		bool? _F_B_42_ { get; set; }
 
-		int _F_I_42_ { get; set; }
+		int? _F_I_42_ { get; set; }
 
-		decimal _F_N_42_ { get; set; }
+		decimal? _F_N_42_ { get; set; }
 
 		string _F_C5_42_ { get; set; }
 
@@ -832,11 +836,11 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_42_ { get; set; }
 
-		bool _F_B_43_ { get; set; }
+		bool? _F_B_43_ { get; set; }
 
-		int _F_I_43_ { get; set; }
+		int? _F_I_43_ { get; set; }
 
-		decimal _F_N_43_ { get; set; }
+		decimal? _F_N_43_ { get; set; }
 
 		string _F_C5_43_ { get; set; }
 
@@ -846,11 +850,11 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_43_ { get; set; }
 
-		bool _F_B_44_ { get; set; }
+		bool? _F_B_44_ { get; set; }
 
-		int _F_I_44_ { get; set; }
+		int? _F_I_44_ { get; set; }
 
-		decimal _F_N_44_ { get; set; }
+		decimal? _F_N_44_ { get; set; }
 
 		string _F_C5_44_ { get; set; }
 
@@ -860,11 +864,11 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_44_ { get; set; }
 
-		bool _F_B_45_ { get; set; }
+		bool? _F_B_45_ { get; set; }
 
-		int _F_I_45_ { get; set; }
+		int? _F_I_45_ { get; set; }
 
-		decimal _F_N_45_ { get; set; }
+		decimal? _F_N_45_ { get; set; }
 
 		string _F_C5_45_ { get; set; }
 
@@ -874,11 +878,11 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_45_ { get; set; }
 
-		bool _F_B_46_ { get; set; }
+		bool? _F_B_46_ { get; set; }
 
-		int _F_I_46_ { get; set; }
+		int? _F_I_46_ { get; set; }
 
-		decimal _F_N_46_ { get; set; }
+		decimal? _F_N_46_ { get; set; }
 
 		string _F_C5_46_ { get; set; }
 
@@ -888,11 +892,11 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_46_ { get; set; }
 
-		bool _F_B_47_ { get; set; }
+		bool? _F_B_47_ { get; set; }
 
-		int _F_I_47_ { get; set; }
+		int? _F_I_47_ { get; set; }
 
-		decimal _F_N_47_ { get; set; }
+		decimal? _F_N_47_ { get; set; }
 
 		string _F_C5_47_ { get; set; }
 
@@ -902,11 +906,11 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_47_ { get; set; }
 
-		bool _F_B_48_ { get; set; }
+		bool? _F_B_48_ { get; set; }
 
-		int _F_I_48_ { get; set; }
+		int? _F_I_48_ { get; set; }
 
-		decimal _F_N_48_ { get; set; }
+		decimal? _F_N_48_ { get; set; }
 
 		string _F_C5_48_ { get; set; }
 
@@ -916,11 +920,11 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_48_ { get; set; }
 
-		bool _F_B_49_ { get; set; }
+		bool? _F_B_49_ { get; set; }
 
-		int _F_I_49_ { get; set; }
+		int? _F_I_49_ { get; set; }
 
-		decimal _F_N_49_ { get; set; }
+		decimal? _F_N_49_ { get; set; }
 
 		string _F_C5_49_ { get; set; }
 

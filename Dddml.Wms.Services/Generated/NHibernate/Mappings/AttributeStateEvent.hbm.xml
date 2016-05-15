@@ -22,7 +22,11 @@
 
 	<property name="AttributeValueType"  />
 
+	<property name="IsList"  />
+
 	<property name="FieldName"  />
+
+	<property name="ReferenceId"  />
 
 	<property name="Active"  />
 
@@ -50,7 +54,11 @@
 
         <property name="IsPropertyAttributeValueTypeRemoved" />
 
+        <property name="IsPropertyIsListRemoved" />
+
         <property name="IsPropertyFieldNameRemoved" />
+
+        <property name="IsPropertyReferenceIdRemoved" />
 
         <property name="IsPropertyActiveRemoved" />
 

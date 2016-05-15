@@ -24,9 +24,9 @@ namespace Dddml.Wms.Domain
 
 	public interface IAttributeUseStateMergePatched : IAttributeUseStateEvent, IAttributeUseStateProperties
 	{
-		bool IsPropertySequenceNumberRemoved { get; }
+		bool IsPropertySequenceNumberRemoved { get; set; }
 
-		bool IsPropertyActiveRemoved { get; }
+		bool IsPropertyActiveRemoved { get; set; }
 
 
 	}

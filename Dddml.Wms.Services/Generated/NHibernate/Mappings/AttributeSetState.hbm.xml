@@ -19,6 +19,8 @@
 
 	<property name="LotAttributeId"  />
 
+	<property name="ReferenceId"  />
+
 	<property name="CreatedBy"  />
 
 	<property name="CreatedAt"  />

@@ -36,8 +36,14 @@ aggregates:
 
         AttributeValueType:
           type: string
-          
+        
+        IsList:
+          type: bool
+        
         FieldName:
+          type: string
+
+        ReferenceId:
           type: string
 
         AttributeValues:
@@ -89,6 +95,9 @@ aggregates:
         LotAttributeId:
           type: string
            
+        ReferenceId:
+          type: string
+          
         # bool HasSerialNumber
         # bool HasLot
         # bool HasGuaranteeDate

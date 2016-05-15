@@ -220,7 +220,7 @@ namespace Dddml.Wms.Support
                 if (aValues != null)
                 {
                     attributeValues = new List<TAttributeValue>(aValues);
-                    attribute.AttributeValueType = AttributeValueTypeUtils.ListAttributeValueTypeName;
+                    attribute.IsList = true;//attribute.AttributeValueType = AttributeValueTypeUtils.ListAttributeValueTypeName;
                 }
                 return true;
             }
@@ -354,7 +354,8 @@ namespace Dddml.Wms.Support
             attribute = default(TAttribute);
             Type memberType = GetMemberType(memberInfo);
             string aValueType;
-            if (!AttributeValueTypeUtils.TryGetAttributeValueType(memberType, out aValueType))
+            bool isList;
+            if (!AttributeValueTypeUtils.TryGetAttributeValueType(memberType, out aValueType, out isList))
             {
                 //如果没法取得属性类型（成员类型不在支持之列），返回
                 return false;
@@ -363,6 +364,7 @@ namespace Dddml.Wms.Support
             a.Name = memberInfo.Name;
             a.Description = memberInfo.Name;
             a.AttributeValueType = aValueType;
+            a.IsList = isList;
             a.Active = true;
             a.IsInstanceAttribute = true;
             SetAttributeByAttributeAttribute(memberInfo, a);

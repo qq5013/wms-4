@@ -102,925 +102,929 @@ namespace Dddml.Wms.Domain
 			var stateEventId = new AttributeSetInstanceStateEventId(c.AttributeSetInstanceId, c.Version);
             IAttributeSetInstanceStateCreated e = NewAttributeSetInstanceStateCreated(stateEventId);
 		
-            ReflectUtils.CopyPropertyValue("AttributeSetId", c, e);
+            e.AttributeSetId = c.AttributeSetId;
 
-            ReflectUtils.CopyPropertyValue("SerialNumber", c, e);
+            e.ReferenceId = c.ReferenceId;
 
-            ReflectUtils.CopyPropertyValue("Lot", c, e);
+            e.SerialNumber = c.SerialNumber;
 
-            ReflectUtils.CopyPropertyValue("Description", c, e);
+            e.Lot = c.Lot;
 
-            ReflectUtils.CopyPropertyValue("_F_B_0_", c, e);
+            e.Description = c.Description;
 
-            ReflectUtils.CopyPropertyValue("_F_I_0_", c, e);
+            e.Hash = c.Hash;
 
-            ReflectUtils.CopyPropertyValue("_F_L_0_", c, e);
+            e._F_B_0_ = c._F_B_0_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_0_", c, e);
+            e._F_I_0_ = c._F_I_0_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_0_", c, e);
+            e._F_L_0_ = c._F_L_0_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_0_", c, e);
+            e._F_DT_0_ = c._F_DT_0_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_0_", c, e);
+            e._F_N_0_ = c._F_N_0_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_0_", c, e);
+            e._F_C5_0_ = c._F_C5_0_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_0_", c, e);
+            e._F_C10_0_ = c._F_C10_0_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_0_", c, e);
+            e._F_C20_0_ = c._F_C20_0_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_0_", c, e);
+            e._F_C50_0_ = c._F_C50_0_;
 
-            ReflectUtils.CopyPropertyValue("_F_C500_0_", c, e);
+            e._F_C100_0_ = c._F_C100_0_;
 
-            ReflectUtils.CopyPropertyValue("_F_C1000_0_", c, e);
+            e._F_C200_0_ = c._F_C200_0_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_1_", c, e);
+            e._F_C500_0_ = c._F_C500_0_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_1_", c, e);
+            e._F_C1000_0_ = c._F_C1000_0_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_1_", c, e);
+            e._F_B_1_ = c._F_B_1_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_1_", c, e);
+            e._F_I_1_ = c._F_I_1_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_1_", c, e);
+            e._F_L_1_ = c._F_L_1_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_1_", c, e);
+            e._F_DT_1_ = c._F_DT_1_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_1_", c, e);
+            e._F_N_1_ = c._F_N_1_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_1_", c, e);
+            e._F_C5_1_ = c._F_C5_1_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_1_", c, e);
+            e._F_C10_1_ = c._F_C10_1_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_1_", c, e);
+            e._F_C20_1_ = c._F_C20_1_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_1_", c, e);
+            e._F_C50_1_ = c._F_C50_1_;
 
-            ReflectUtils.CopyPropertyValue("_F_C500_1_", c, e);
+            e._F_C100_1_ = c._F_C100_1_;
 
-            ReflectUtils.CopyPropertyValue("_F_C1000_1_", c, e);
+            e._F_C200_1_ = c._F_C200_1_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_2_", c, e);
+            e._F_C500_1_ = c._F_C500_1_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_2_", c, e);
+            e._F_C1000_1_ = c._F_C1000_1_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_2_", c, e);
+            e._F_B_2_ = c._F_B_2_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_2_", c, e);
+            e._F_I_2_ = c._F_I_2_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_2_", c, e);
+            e._F_L_2_ = c._F_L_2_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_2_", c, e);
+            e._F_DT_2_ = c._F_DT_2_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_2_", c, e);
+            e._F_N_2_ = c._F_N_2_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_2_", c, e);
+            e._F_C5_2_ = c._F_C5_2_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_2_", c, e);
+            e._F_C10_2_ = c._F_C10_2_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_2_", c, e);
+            e._F_C20_2_ = c._F_C20_2_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_2_", c, e);
+            e._F_C50_2_ = c._F_C50_2_;
 
-            ReflectUtils.CopyPropertyValue("_F_C500_2_", c, e);
+            e._F_C100_2_ = c._F_C100_2_;
 
-            ReflectUtils.CopyPropertyValue("_F_C1000_2_", c, e);
+            e._F_C200_2_ = c._F_C200_2_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_3_", c, e);
+            e._F_C500_2_ = c._F_C500_2_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_3_", c, e);
+            e._F_C1000_2_ = c._F_C1000_2_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_3_", c, e);
+            e._F_B_3_ = c._F_B_3_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_3_", c, e);
+            e._F_I_3_ = c._F_I_3_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_3_", c, e);
+            e._F_L_3_ = c._F_L_3_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_3_", c, e);
+            e._F_DT_3_ = c._F_DT_3_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_3_", c, e);
+            e._F_N_3_ = c._F_N_3_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_3_", c, e);
+            e._F_C5_3_ = c._F_C5_3_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_3_", c, e);
+            e._F_C10_3_ = c._F_C10_3_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_3_", c, e);
+            e._F_C20_3_ = c._F_C20_3_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_3_", c, e);
+            e._F_C50_3_ = c._F_C50_3_;
 
-            ReflectUtils.CopyPropertyValue("_F_C500_3_", c, e);
+            e._F_C100_3_ = c._F_C100_3_;
 
-            ReflectUtils.CopyPropertyValue("_F_C1000_3_", c, e);
+            e._F_C200_3_ = c._F_C200_3_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_4_", c, e);
+            e._F_C500_3_ = c._F_C500_3_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_4_", c, e);
+            e._F_C1000_3_ = c._F_C1000_3_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_4_", c, e);
+            e._F_B_4_ = c._F_B_4_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_4_", c, e);
+            e._F_I_4_ = c._F_I_4_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_4_", c, e);
+            e._F_L_4_ = c._F_L_4_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_4_", c, e);
+            e._F_DT_4_ = c._F_DT_4_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_4_", c, e);
+            e._F_N_4_ = c._F_N_4_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_4_", c, e);
+            e._F_C5_4_ = c._F_C5_4_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_4_", c, e);
+            e._F_C10_4_ = c._F_C10_4_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_4_", c, e);
+            e._F_C20_4_ = c._F_C20_4_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_4_", c, e);
+            e._F_C50_4_ = c._F_C50_4_;
 
-            ReflectUtils.CopyPropertyValue("_F_C500_4_", c, e);
+            e._F_C100_4_ = c._F_C100_4_;
 
-            ReflectUtils.CopyPropertyValue("_F_C1000_4_", c, e);
+            e._F_C200_4_ = c._F_C200_4_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_5_", c, e);
+            e._F_C500_4_ = c._F_C500_4_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_5_", c, e);
+            e._F_C1000_4_ = c._F_C1000_4_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_5_", c, e);
+            e._F_B_5_ = c._F_B_5_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_5_", c, e);
+            e._F_I_5_ = c._F_I_5_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_5_", c, e);
+            e._F_L_5_ = c._F_L_5_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_5_", c, e);
+            e._F_DT_5_ = c._F_DT_5_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_5_", c, e);
+            e._F_N_5_ = c._F_N_5_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_5_", c, e);
+            e._F_C5_5_ = c._F_C5_5_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_5_", c, e);
+            e._F_C10_5_ = c._F_C10_5_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_5_", c, e);
+            e._F_C20_5_ = c._F_C20_5_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_5_", c, e);
+            e._F_C50_5_ = c._F_C50_5_;
 
-            ReflectUtils.CopyPropertyValue("_F_C500_5_", c, e);
+            e._F_C100_5_ = c._F_C100_5_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_6_", c, e);
+            e._F_C200_5_ = c._F_C200_5_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_6_", c, e);
+            e._F_C500_5_ = c._F_C500_5_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_6_", c, e);
+            e._F_B_6_ = c._F_B_6_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_6_", c, e);
+            e._F_I_6_ = c._F_I_6_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_6_", c, e);
+            e._F_L_6_ = c._F_L_6_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_6_", c, e);
+            e._F_DT_6_ = c._F_DT_6_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_6_", c, e);
+            e._F_N_6_ = c._F_N_6_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_6_", c, e);
+            e._F_C5_6_ = c._F_C5_6_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_6_", c, e);
+            e._F_C10_6_ = c._F_C10_6_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_6_", c, e);
+            e._F_C20_6_ = c._F_C20_6_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_6_", c, e);
+            e._F_C50_6_ = c._F_C50_6_;
 
-            ReflectUtils.CopyPropertyValue("_F_C500_6_", c, e);
+            e._F_C100_6_ = c._F_C100_6_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_7_", c, e);
+            e._F_C200_6_ = c._F_C200_6_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_7_", c, e);
+            e._F_C500_6_ = c._F_C500_6_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_7_", c, e);
+            e._F_B_7_ = c._F_B_7_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_7_", c, e);
+            e._F_I_7_ = c._F_I_7_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_7_", c, e);
+            e._F_L_7_ = c._F_L_7_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_7_", c, e);
+            e._F_DT_7_ = c._F_DT_7_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_7_", c, e);
+            e._F_N_7_ = c._F_N_7_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_7_", c, e);
+            e._F_C5_7_ = c._F_C5_7_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_7_", c, e);
+            e._F_C10_7_ = c._F_C10_7_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_7_", c, e);
+            e._F_C20_7_ = c._F_C20_7_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_7_", c, e);
+            e._F_C50_7_ = c._F_C50_7_;
 
-            ReflectUtils.CopyPropertyValue("_F_C500_7_", c, e);
+            e._F_C100_7_ = c._F_C100_7_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_8_", c, e);
+            e._F_C200_7_ = c._F_C200_7_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_8_", c, e);
+            e._F_C500_7_ = c._F_C500_7_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_8_", c, e);
+            e._F_B_8_ = c._F_B_8_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_8_", c, e);
+            e._F_I_8_ = c._F_I_8_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_8_", c, e);
+            e._F_L_8_ = c._F_L_8_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_8_", c, e);
+            e._F_DT_8_ = c._F_DT_8_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_8_", c, e);
+            e._F_N_8_ = c._F_N_8_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_8_", c, e);
+            e._F_C5_8_ = c._F_C5_8_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_8_", c, e);
+            e._F_C10_8_ = c._F_C10_8_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_8_", c, e);
+            e._F_C20_8_ = c._F_C20_8_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_8_", c, e);
+            e._F_C50_8_ = c._F_C50_8_;
 
-            ReflectUtils.CopyPropertyValue("_F_C500_8_", c, e);
+            e._F_C100_8_ = c._F_C100_8_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_9_", c, e);
+            e._F_C200_8_ = c._F_C200_8_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_9_", c, e);
+            e._F_C500_8_ = c._F_C500_8_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_9_", c, e);
+            e._F_B_9_ = c._F_B_9_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_9_", c, e);
+            e._F_I_9_ = c._F_I_9_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_9_", c, e);
+            e._F_L_9_ = c._F_L_9_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_9_", c, e);
+            e._F_DT_9_ = c._F_DT_9_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_9_", c, e);
+            e._F_N_9_ = c._F_N_9_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_9_", c, e);
+            e._F_C5_9_ = c._F_C5_9_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_9_", c, e);
+            e._F_C10_9_ = c._F_C10_9_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_9_", c, e);
+            e._F_C20_9_ = c._F_C20_9_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_9_", c, e);
+            e._F_C50_9_ = c._F_C50_9_;
 
-            ReflectUtils.CopyPropertyValue("_F_C500_9_", c, e);
+            e._F_C100_9_ = c._F_C100_9_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_10_", c, e);
+            e._F_C200_9_ = c._F_C200_9_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_10_", c, e);
+            e._F_C500_9_ = c._F_C500_9_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_10_", c, e);
+            e._F_B_10_ = c._F_B_10_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_10_", c, e);
+            e._F_I_10_ = c._F_I_10_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_10_", c, e);
+            e._F_L_10_ = c._F_L_10_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_10_", c, e);
+            e._F_DT_10_ = c._F_DT_10_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_10_", c, e);
+            e._F_N_10_ = c._F_N_10_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_10_", c, e);
+            e._F_C5_10_ = c._F_C5_10_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_10_", c, e);
+            e._F_C10_10_ = c._F_C10_10_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_10_", c, e);
+            e._F_C20_10_ = c._F_C20_10_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_10_", c, e);
+            e._F_C50_10_ = c._F_C50_10_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_11_", c, e);
+            e._F_C100_10_ = c._F_C100_10_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_11_", c, e);
+            e._F_C200_10_ = c._F_C200_10_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_11_", c, e);
+            e._F_B_11_ = c._F_B_11_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_11_", c, e);
+            e._F_I_11_ = c._F_I_11_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_11_", c, e);
+            e._F_L_11_ = c._F_L_11_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_11_", c, e);
+            e._F_DT_11_ = c._F_DT_11_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_11_", c, e);
+            e._F_N_11_ = c._F_N_11_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_11_", c, e);
+            e._F_C5_11_ = c._F_C5_11_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_11_", c, e);
+            e._F_C10_11_ = c._F_C10_11_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_11_", c, e);
+            e._F_C20_11_ = c._F_C20_11_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_11_", c, e);
+            e._F_C50_11_ = c._F_C50_11_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_12_", c, e);
+            e._F_C100_11_ = c._F_C100_11_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_12_", c, e);
+            e._F_C200_11_ = c._F_C200_11_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_12_", c, e);
+            e._F_B_12_ = c._F_B_12_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_12_", c, e);
+            e._F_I_12_ = c._F_I_12_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_12_", c, e);
+            e._F_L_12_ = c._F_L_12_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_12_", c, e);
+            e._F_DT_12_ = c._F_DT_12_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_12_", c, e);
+            e._F_N_12_ = c._F_N_12_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_12_", c, e);
+            e._F_C5_12_ = c._F_C5_12_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_12_", c, e);
+            e._F_C10_12_ = c._F_C10_12_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_12_", c, e);
+            e._F_C20_12_ = c._F_C20_12_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_12_", c, e);
+            e._F_C50_12_ = c._F_C50_12_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_13_", c, e);
+            e._F_C100_12_ = c._F_C100_12_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_13_", c, e);
+            e._F_C200_12_ = c._F_C200_12_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_13_", c, e);
+            e._F_B_13_ = c._F_B_13_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_13_", c, e);
+            e._F_I_13_ = c._F_I_13_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_13_", c, e);
+            e._F_L_13_ = c._F_L_13_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_13_", c, e);
+            e._F_DT_13_ = c._F_DT_13_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_13_", c, e);
+            e._F_N_13_ = c._F_N_13_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_13_", c, e);
+            e._F_C5_13_ = c._F_C5_13_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_13_", c, e);
+            e._F_C10_13_ = c._F_C10_13_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_13_", c, e);
+            e._F_C20_13_ = c._F_C20_13_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_13_", c, e);
+            e._F_C50_13_ = c._F_C50_13_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_14_", c, e);
+            e._F_C100_13_ = c._F_C100_13_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_14_", c, e);
+            e._F_C200_13_ = c._F_C200_13_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_14_", c, e);
+            e._F_B_14_ = c._F_B_14_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_14_", c, e);
+            e._F_I_14_ = c._F_I_14_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_14_", c, e);
+            e._F_L_14_ = c._F_L_14_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_14_", c, e);
+            e._F_DT_14_ = c._F_DT_14_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_14_", c, e);
+            e._F_N_14_ = c._F_N_14_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_14_", c, e);
+            e._F_C5_14_ = c._F_C5_14_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_14_", c, e);
+            e._F_C10_14_ = c._F_C10_14_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_14_", c, e);
+            e._F_C20_14_ = c._F_C20_14_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_14_", c, e);
+            e._F_C50_14_ = c._F_C50_14_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_15_", c, e);
+            e._F_C100_14_ = c._F_C100_14_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_15_", c, e);
+            e._F_C200_14_ = c._F_C200_14_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_15_", c, e);
+            e._F_B_15_ = c._F_B_15_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_15_", c, e);
+            e._F_I_15_ = c._F_I_15_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_15_", c, e);
+            e._F_L_15_ = c._F_L_15_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_15_", c, e);
+            e._F_DT_15_ = c._F_DT_15_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_15_", c, e);
+            e._F_N_15_ = c._F_N_15_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_15_", c, e);
+            e._F_C5_15_ = c._F_C5_15_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_15_", c, e);
+            e._F_C10_15_ = c._F_C10_15_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_15_", c, e);
+            e._F_C20_15_ = c._F_C20_15_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_15_", c, e);
+            e._F_C50_15_ = c._F_C50_15_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_16_", c, e);
+            e._F_C100_15_ = c._F_C100_15_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_16_", c, e);
+            e._F_C200_15_ = c._F_C200_15_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_16_", c, e);
+            e._F_B_16_ = c._F_B_16_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_16_", c, e);
+            e._F_I_16_ = c._F_I_16_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_16_", c, e);
+            e._F_L_16_ = c._F_L_16_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_16_", c, e);
+            e._F_DT_16_ = c._F_DT_16_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_16_", c, e);
+            e._F_N_16_ = c._F_N_16_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_16_", c, e);
+            e._F_C5_16_ = c._F_C5_16_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_16_", c, e);
+            e._F_C10_16_ = c._F_C10_16_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_16_", c, e);
+            e._F_C20_16_ = c._F_C20_16_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_16_", c, e);
+            e._F_C50_16_ = c._F_C50_16_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_17_", c, e);
+            e._F_C100_16_ = c._F_C100_16_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_17_", c, e);
+            e._F_C200_16_ = c._F_C200_16_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_17_", c, e);
+            e._F_B_17_ = c._F_B_17_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_17_", c, e);
+            e._F_I_17_ = c._F_I_17_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_17_", c, e);
+            e._F_L_17_ = c._F_L_17_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_17_", c, e);
+            e._F_DT_17_ = c._F_DT_17_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_17_", c, e);
+            e._F_N_17_ = c._F_N_17_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_17_", c, e);
+            e._F_C5_17_ = c._F_C5_17_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_17_", c, e);
+            e._F_C10_17_ = c._F_C10_17_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_17_", c, e);
+            e._F_C20_17_ = c._F_C20_17_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_17_", c, e);
+            e._F_C50_17_ = c._F_C50_17_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_18_", c, e);
+            e._F_C100_17_ = c._F_C100_17_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_18_", c, e);
+            e._F_C200_17_ = c._F_C200_17_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_18_", c, e);
+            e._F_B_18_ = c._F_B_18_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_18_", c, e);
+            e._F_I_18_ = c._F_I_18_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_18_", c, e);
+            e._F_L_18_ = c._F_L_18_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_18_", c, e);
+            e._F_DT_18_ = c._F_DT_18_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_18_", c, e);
+            e._F_N_18_ = c._F_N_18_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_18_", c, e);
+            e._F_C5_18_ = c._F_C5_18_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_18_", c, e);
+            e._F_C10_18_ = c._F_C10_18_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_18_", c, e);
+            e._F_C20_18_ = c._F_C20_18_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_18_", c, e);
+            e._F_C50_18_ = c._F_C50_18_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_19_", c, e);
+            e._F_C100_18_ = c._F_C100_18_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_19_", c, e);
+            e._F_C200_18_ = c._F_C200_18_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_19_", c, e);
+            e._F_B_19_ = c._F_B_19_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_19_", c, e);
+            e._F_I_19_ = c._F_I_19_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_19_", c, e);
+            e._F_L_19_ = c._F_L_19_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_19_", c, e);
+            e._F_DT_19_ = c._F_DT_19_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_19_", c, e);
+            e._F_N_19_ = c._F_N_19_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_19_", c, e);
+            e._F_C5_19_ = c._F_C5_19_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_19_", c, e);
+            e._F_C10_19_ = c._F_C10_19_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_19_", c, e);
+            e._F_C20_19_ = c._F_C20_19_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_19_", c, e);
+            e._F_C50_19_ = c._F_C50_19_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_20_", c, e);
+            e._F_C100_19_ = c._F_C100_19_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_20_", c, e);
+            e._F_C200_19_ = c._F_C200_19_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_20_", c, e);
+            e._F_B_20_ = c._F_B_20_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_20_", c, e);
+            e._F_I_20_ = c._F_I_20_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_20_", c, e);
+            e._F_L_20_ = c._F_L_20_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_20_", c, e);
+            e._F_N_20_ = c._F_N_20_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_20_", c, e);
+            e._F_C5_20_ = c._F_C5_20_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_20_", c, e);
+            e._F_C10_20_ = c._F_C10_20_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_21_", c, e);
+            e._F_C20_20_ = c._F_C20_20_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_21_", c, e);
+            e._F_C50_20_ = c._F_C50_20_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_21_", c, e);
+            e._F_B_21_ = c._F_B_21_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_21_", c, e);
+            e._F_I_21_ = c._F_I_21_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_21_", c, e);
+            e._F_L_21_ = c._F_L_21_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_21_", c, e);
+            e._F_N_21_ = c._F_N_21_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_21_", c, e);
+            e._F_C5_21_ = c._F_C5_21_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_21_", c, e);
+            e._F_C10_21_ = c._F_C10_21_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_22_", c, e);
+            e._F_C20_21_ = c._F_C20_21_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_22_", c, e);
+            e._F_C50_21_ = c._F_C50_21_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_22_", c, e);
+            e._F_B_22_ = c._F_B_22_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_22_", c, e);
+            e._F_I_22_ = c._F_I_22_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_22_", c, e);
+            e._F_L_22_ = c._F_L_22_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_22_", c, e);
+            e._F_N_22_ = c._F_N_22_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_22_", c, e);
+            e._F_C5_22_ = c._F_C5_22_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_22_", c, e);
+            e._F_C10_22_ = c._F_C10_22_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_23_", c, e);
+            e._F_C20_22_ = c._F_C20_22_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_23_", c, e);
+            e._F_C50_22_ = c._F_C50_22_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_23_", c, e);
+            e._F_B_23_ = c._F_B_23_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_23_", c, e);
+            e._F_I_23_ = c._F_I_23_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_23_", c, e);
+            e._F_L_23_ = c._F_L_23_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_23_", c, e);
+            e._F_N_23_ = c._F_N_23_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_23_", c, e);
+            e._F_C5_23_ = c._F_C5_23_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_23_", c, e);
+            e._F_C10_23_ = c._F_C10_23_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_24_", c, e);
+            e._F_C20_23_ = c._F_C20_23_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_24_", c, e);
+            e._F_C50_23_ = c._F_C50_23_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_24_", c, e);
+            e._F_B_24_ = c._F_B_24_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_24_", c, e);
+            e._F_I_24_ = c._F_I_24_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_24_", c, e);
+            e._F_L_24_ = c._F_L_24_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_24_", c, e);
+            e._F_N_24_ = c._F_N_24_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_24_", c, e);
+            e._F_C5_24_ = c._F_C5_24_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_24_", c, e);
+            e._F_C10_24_ = c._F_C10_24_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_25_", c, e);
+            e._F_C20_24_ = c._F_C20_24_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_25_", c, e);
+            e._F_C50_24_ = c._F_C50_24_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_25_", c, e);
+            e._F_B_25_ = c._F_B_25_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_25_", c, e);
+            e._F_I_25_ = c._F_I_25_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_25_", c, e);
+            e._F_L_25_ = c._F_L_25_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_25_", c, e);
+            e._F_N_25_ = c._F_N_25_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_25_", c, e);
+            e._F_C5_25_ = c._F_C5_25_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_25_", c, e);
+            e._F_C10_25_ = c._F_C10_25_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_26_", c, e);
+            e._F_C20_25_ = c._F_C20_25_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_26_", c, e);
+            e._F_C50_25_ = c._F_C50_25_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_26_", c, e);
+            e._F_B_26_ = c._F_B_26_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_26_", c, e);
+            e._F_I_26_ = c._F_I_26_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_26_", c, e);
+            e._F_L_26_ = c._F_L_26_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_26_", c, e);
+            e._F_N_26_ = c._F_N_26_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_26_", c, e);
+            e._F_C5_26_ = c._F_C5_26_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_26_", c, e);
+            e._F_C10_26_ = c._F_C10_26_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_27_", c, e);
+            e._F_C20_26_ = c._F_C20_26_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_27_", c, e);
+            e._F_C50_26_ = c._F_C50_26_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_27_", c, e);
+            e._F_B_27_ = c._F_B_27_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_27_", c, e);
+            e._F_I_27_ = c._F_I_27_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_27_", c, e);
+            e._F_L_27_ = c._F_L_27_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_27_", c, e);
+            e._F_N_27_ = c._F_N_27_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_27_", c, e);
+            e._F_C5_27_ = c._F_C5_27_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_27_", c, e);
+            e._F_C10_27_ = c._F_C10_27_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_28_", c, e);
+            e._F_C20_27_ = c._F_C20_27_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_28_", c, e);
+            e._F_C50_27_ = c._F_C50_27_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_28_", c, e);
+            e._F_B_28_ = c._F_B_28_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_28_", c, e);
+            e._F_I_28_ = c._F_I_28_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_28_", c, e);
+            e._F_L_28_ = c._F_L_28_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_28_", c, e);
+            e._F_N_28_ = c._F_N_28_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_28_", c, e);
+            e._F_C5_28_ = c._F_C5_28_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_28_", c, e);
+            e._F_C10_28_ = c._F_C10_28_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_29_", c, e);
+            e._F_C20_28_ = c._F_C20_28_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_29_", c, e);
+            e._F_C50_28_ = c._F_C50_28_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_29_", c, e);
+            e._F_B_29_ = c._F_B_29_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_29_", c, e);
+            e._F_I_29_ = c._F_I_29_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_29_", c, e);
+            e._F_L_29_ = c._F_L_29_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_29_", c, e);
+            e._F_N_29_ = c._F_N_29_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_29_", c, e);
+            e._F_C5_29_ = c._F_C5_29_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_29_", c, e);
+            e._F_C10_29_ = c._F_C10_29_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_30_", c, e);
+            e._F_C20_29_ = c._F_C20_29_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_30_", c, e);
+            e._F_C50_29_ = c._F_C50_29_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_30_", c, e);
+            e._F_B_30_ = c._F_B_30_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_30_", c, e);
+            e._F_I_30_ = c._F_I_30_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_30_", c, e);
+            e._F_N_30_ = c._F_N_30_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_30_", c, e);
+            e._F_C5_30_ = c._F_C5_30_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_30_", c, e);
+            e._F_C10_30_ = c._F_C10_30_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_31_", c, e);
+            e._F_C20_30_ = c._F_C20_30_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_31_", c, e);
+            e._F_C50_30_ = c._F_C50_30_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_31_", c, e);
+            e._F_B_31_ = c._F_B_31_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_31_", c, e);
+            e._F_I_31_ = c._F_I_31_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_31_", c, e);
+            e._F_N_31_ = c._F_N_31_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_31_", c, e);
+            e._F_C5_31_ = c._F_C5_31_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_31_", c, e);
+            e._F_C10_31_ = c._F_C10_31_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_32_", c, e);
+            e._F_C20_31_ = c._F_C20_31_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_32_", c, e);
+            e._F_C50_31_ = c._F_C50_31_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_32_", c, e);
+            e._F_B_32_ = c._F_B_32_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_32_", c, e);
+            e._F_I_32_ = c._F_I_32_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_32_", c, e);
+            e._F_N_32_ = c._F_N_32_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_32_", c, e);
+            e._F_C5_32_ = c._F_C5_32_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_32_", c, e);
+            e._F_C10_32_ = c._F_C10_32_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_33_", c, e);
+            e._F_C20_32_ = c._F_C20_32_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_33_", c, e);
+            e._F_C50_32_ = c._F_C50_32_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_33_", c, e);
+            e._F_B_33_ = c._F_B_33_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_33_", c, e);
+            e._F_I_33_ = c._F_I_33_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_33_", c, e);
+            e._F_N_33_ = c._F_N_33_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_33_", c, e);
+            e._F_C5_33_ = c._F_C5_33_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_33_", c, e);
+            e._F_C10_33_ = c._F_C10_33_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_34_", c, e);
+            e._F_C20_33_ = c._F_C20_33_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_34_", c, e);
+            e._F_C50_33_ = c._F_C50_33_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_34_", c, e);
+            e._F_B_34_ = c._F_B_34_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_34_", c, e);
+            e._F_I_34_ = c._F_I_34_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_34_", c, e);
+            e._F_N_34_ = c._F_N_34_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_34_", c, e);
+            e._F_C5_34_ = c._F_C5_34_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_34_", c, e);
+            e._F_C10_34_ = c._F_C10_34_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_35_", c, e);
+            e._F_C20_34_ = c._F_C20_34_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_35_", c, e);
+            e._F_C50_34_ = c._F_C50_34_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_35_", c, e);
+            e._F_B_35_ = c._F_B_35_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_35_", c, e);
+            e._F_I_35_ = c._F_I_35_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_35_", c, e);
+            e._F_N_35_ = c._F_N_35_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_35_", c, e);
+            e._F_C5_35_ = c._F_C5_35_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_35_", c, e);
+            e._F_C10_35_ = c._F_C10_35_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_36_", c, e);
+            e._F_C20_35_ = c._F_C20_35_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_36_", c, e);
+            e._F_C50_35_ = c._F_C50_35_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_36_", c, e);
+            e._F_B_36_ = c._F_B_36_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_36_", c, e);
+            e._F_I_36_ = c._F_I_36_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_36_", c, e);
+            e._F_N_36_ = c._F_N_36_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_36_", c, e);
+            e._F_C5_36_ = c._F_C5_36_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_36_", c, e);
+            e._F_C10_36_ = c._F_C10_36_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_37_", c, e);
+            e._F_C20_36_ = c._F_C20_36_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_37_", c, e);
+            e._F_C50_36_ = c._F_C50_36_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_37_", c, e);
+            e._F_B_37_ = c._F_B_37_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_37_", c, e);
+            e._F_I_37_ = c._F_I_37_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_37_", c, e);
+            e._F_N_37_ = c._F_N_37_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_37_", c, e);
+            e._F_C5_37_ = c._F_C5_37_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_37_", c, e);
+            e._F_C10_37_ = c._F_C10_37_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_38_", c, e);
+            e._F_C20_37_ = c._F_C20_37_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_38_", c, e);
+            e._F_C50_37_ = c._F_C50_37_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_38_", c, e);
+            e._F_B_38_ = c._F_B_38_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_38_", c, e);
+            e._F_I_38_ = c._F_I_38_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_38_", c, e);
+            e._F_N_38_ = c._F_N_38_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_38_", c, e);
+            e._F_C5_38_ = c._F_C5_38_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_38_", c, e);
+            e._F_C10_38_ = c._F_C10_38_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_39_", c, e);
+            e._F_C20_38_ = c._F_C20_38_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_39_", c, e);
+            e._F_C50_38_ = c._F_C50_38_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_39_", c, e);
+            e._F_B_39_ = c._F_B_39_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_39_", c, e);
+            e._F_I_39_ = c._F_I_39_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_39_", c, e);
+            e._F_N_39_ = c._F_N_39_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_39_", c, e);
+            e._F_C5_39_ = c._F_C5_39_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_39_", c, e);
+            e._F_C10_39_ = c._F_C10_39_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_40_", c, e);
+            e._F_C20_39_ = c._F_C20_39_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_40_", c, e);
+            e._F_C50_39_ = c._F_C50_39_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_40_", c, e);
+            e._F_B_40_ = c._F_B_40_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_40_", c, e);
+            e._F_I_40_ = c._F_I_40_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_40_", c, e);
+            e._F_N_40_ = c._F_N_40_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_40_", c, e);
+            e._F_C5_40_ = c._F_C5_40_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_40_", c, e);
+            e._F_C10_40_ = c._F_C10_40_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_41_", c, e);
+            e._F_C20_40_ = c._F_C20_40_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_41_", c, e);
+            e._F_C50_40_ = c._F_C50_40_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_41_", c, e);
+            e._F_B_41_ = c._F_B_41_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_41_", c, e);
+            e._F_I_41_ = c._F_I_41_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_41_", c, e);
+            e._F_N_41_ = c._F_N_41_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_41_", c, e);
+            e._F_C5_41_ = c._F_C5_41_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_41_", c, e);
+            e._F_C10_41_ = c._F_C10_41_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_42_", c, e);
+            e._F_C20_41_ = c._F_C20_41_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_42_", c, e);
+            e._F_C50_41_ = c._F_C50_41_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_42_", c, e);
+            e._F_B_42_ = c._F_B_42_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_42_", c, e);
+            e._F_I_42_ = c._F_I_42_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_42_", c, e);
+            e._F_N_42_ = c._F_N_42_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_42_", c, e);
+            e._F_C5_42_ = c._F_C5_42_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_42_", c, e);
+            e._F_C10_42_ = c._F_C10_42_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_43_", c, e);
+            e._F_C20_42_ = c._F_C20_42_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_43_", c, e);
+            e._F_C50_42_ = c._F_C50_42_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_43_", c, e);
+            e._F_B_43_ = c._F_B_43_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_43_", c, e);
+            e._F_I_43_ = c._F_I_43_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_43_", c, e);
+            e._F_N_43_ = c._F_N_43_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_43_", c, e);
+            e._F_C5_43_ = c._F_C5_43_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_43_", c, e);
+            e._F_C10_43_ = c._F_C10_43_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_44_", c, e);
+            e._F_C20_43_ = c._F_C20_43_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_44_", c, e);
+            e._F_C50_43_ = c._F_C50_43_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_44_", c, e);
+            e._F_B_44_ = c._F_B_44_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_44_", c, e);
+            e._F_I_44_ = c._F_I_44_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_44_", c, e);
+            e._F_N_44_ = c._F_N_44_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_44_", c, e);
+            e._F_C5_44_ = c._F_C5_44_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_44_", c, e);
+            e._F_C10_44_ = c._F_C10_44_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_45_", c, e);
+            e._F_C20_44_ = c._F_C20_44_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_45_", c, e);
+            e._F_C50_44_ = c._F_C50_44_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_45_", c, e);
+            e._F_B_45_ = c._F_B_45_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_45_", c, e);
+            e._F_I_45_ = c._F_I_45_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_45_", c, e);
+            e._F_N_45_ = c._F_N_45_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_45_", c, e);
+            e._F_C5_45_ = c._F_C5_45_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_45_", c, e);
+            e._F_C10_45_ = c._F_C10_45_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_46_", c, e);
+            e._F_C20_45_ = c._F_C20_45_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_46_", c, e);
+            e._F_C50_45_ = c._F_C50_45_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_46_", c, e);
+            e._F_B_46_ = c._F_B_46_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_46_", c, e);
+            e._F_I_46_ = c._F_I_46_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_46_", c, e);
+            e._F_N_46_ = c._F_N_46_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_46_", c, e);
+            e._F_C5_46_ = c._F_C5_46_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_46_", c, e);
+            e._F_C10_46_ = c._F_C10_46_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_47_", c, e);
+            e._F_C20_46_ = c._F_C20_46_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_47_", c, e);
+            e._F_C50_46_ = c._F_C50_46_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_47_", c, e);
+            e._F_B_47_ = c._F_B_47_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_47_", c, e);
+            e._F_I_47_ = c._F_I_47_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_47_", c, e);
+            e._F_N_47_ = c._F_N_47_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_47_", c, e);
+            e._F_C5_47_ = c._F_C5_47_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_47_", c, e);
+            e._F_C10_47_ = c._F_C10_47_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_48_", c, e);
+            e._F_C20_47_ = c._F_C20_47_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_48_", c, e);
+            e._F_C50_47_ = c._F_C50_47_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_48_", c, e);
+            e._F_B_48_ = c._F_B_48_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_48_", c, e);
+            e._F_I_48_ = c._F_I_48_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_48_", c, e);
+            e._F_N_48_ = c._F_N_48_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_48_", c, e);
+            e._F_C5_48_ = c._F_C5_48_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_48_", c, e);
+            e._F_C10_48_ = c._F_C10_48_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_49_", c, e);
+            e._F_C20_48_ = c._F_C20_48_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_49_", c, e);
+            e._F_C50_48_ = c._F_C50_48_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_49_", c, e);
+            e._F_B_49_ = c._F_B_49_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_49_", c, e);
+            e._F_I_49_ = c._F_I_49_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_49_", c, e);
+            e._F_N_49_ = c._F_N_49_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_49_", c, e);
+            e._F_C5_49_ = c._F_C5_49_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_49_", c, e);
+            e._F_C10_49_ = c._F_C10_49_;
 
-            ReflectUtils.CopyPropertyValue("Active", c, e);
+            e._F_C20_49_ = c._F_C20_49_;
+
+            e._F_C50_49_ = c._F_C50_49_;
+
+            e.Active = c.Active;
 
             ReflectUtils.CopyPropertyValue("CommandId", c, e);//TODO CommandId 太特殊了！！！
 
@@ -1038,1845 +1042,1853 @@ namespace Dddml.Wms.Domain
 			var stateEventId = new AttributeSetInstanceStateEventId(c.AttributeSetInstanceId, c.Version);
             IAttributeSetInstanceStateMergePatched e = NewAttributeSetInstanceStateMergePatched(stateEventId);
 
-            ReflectUtils.CopyPropertyValue("AttributeSetId", c, e);
+            e.AttributeSetId = c.AttributeSetId;
 
-            ReflectUtils.CopyPropertyValue("SerialNumber", c, e);
+            e.ReferenceId = c.ReferenceId;
 
-            ReflectUtils.CopyPropertyValue("Lot", c, e);
+            e.SerialNumber = c.SerialNumber;
 
-            ReflectUtils.CopyPropertyValue("Description", c, e);
+            e.Lot = c.Lot;
 
-            ReflectUtils.CopyPropertyValue("_F_B_0_", c, e);
+            e.Description = c.Description;
 
-            ReflectUtils.CopyPropertyValue("_F_I_0_", c, e);
+            e.Hash = c.Hash;
 
-            ReflectUtils.CopyPropertyValue("_F_L_0_", c, e);
+            e._F_B_0_ = c._F_B_0_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_0_", c, e);
+            e._F_I_0_ = c._F_I_0_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_0_", c, e);
+            e._F_L_0_ = c._F_L_0_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_0_", c, e);
+            e._F_DT_0_ = c._F_DT_0_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_0_", c, e);
+            e._F_N_0_ = c._F_N_0_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_0_", c, e);
+            e._F_C5_0_ = c._F_C5_0_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_0_", c, e);
+            e._F_C10_0_ = c._F_C10_0_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_0_", c, e);
+            e._F_C20_0_ = c._F_C20_0_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_0_", c, e);
+            e._F_C50_0_ = c._F_C50_0_;
 
-            ReflectUtils.CopyPropertyValue("_F_C500_0_", c, e);
+            e._F_C100_0_ = c._F_C100_0_;
 
-            ReflectUtils.CopyPropertyValue("_F_C1000_0_", c, e);
+            e._F_C200_0_ = c._F_C200_0_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_1_", c, e);
+            e._F_C500_0_ = c._F_C500_0_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_1_", c, e);
+            e._F_C1000_0_ = c._F_C1000_0_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_1_", c, e);
+            e._F_B_1_ = c._F_B_1_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_1_", c, e);
+            e._F_I_1_ = c._F_I_1_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_1_", c, e);
+            e._F_L_1_ = c._F_L_1_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_1_", c, e);
+            e._F_DT_1_ = c._F_DT_1_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_1_", c, e);
+            e._F_N_1_ = c._F_N_1_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_1_", c, e);
+            e._F_C5_1_ = c._F_C5_1_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_1_", c, e);
+            e._F_C10_1_ = c._F_C10_1_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_1_", c, e);
+            e._F_C20_1_ = c._F_C20_1_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_1_", c, e);
+            e._F_C50_1_ = c._F_C50_1_;
 
-            ReflectUtils.CopyPropertyValue("_F_C500_1_", c, e);
+            e._F_C100_1_ = c._F_C100_1_;
 
-            ReflectUtils.CopyPropertyValue("_F_C1000_1_", c, e);
+            e._F_C200_1_ = c._F_C200_1_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_2_", c, e);
+            e._F_C500_1_ = c._F_C500_1_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_2_", c, e);
+            e._F_C1000_1_ = c._F_C1000_1_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_2_", c, e);
+            e._F_B_2_ = c._F_B_2_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_2_", c, e);
+            e._F_I_2_ = c._F_I_2_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_2_", c, e);
+            e._F_L_2_ = c._F_L_2_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_2_", c, e);
+            e._F_DT_2_ = c._F_DT_2_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_2_", c, e);
+            e._F_N_2_ = c._F_N_2_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_2_", c, e);
+            e._F_C5_2_ = c._F_C5_2_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_2_", c, e);
+            e._F_C10_2_ = c._F_C10_2_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_2_", c, e);
+            e._F_C20_2_ = c._F_C20_2_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_2_", c, e);
+            e._F_C50_2_ = c._F_C50_2_;
 
-            ReflectUtils.CopyPropertyValue("_F_C500_2_", c, e);
+            e._F_C100_2_ = c._F_C100_2_;
 
-            ReflectUtils.CopyPropertyValue("_F_C1000_2_", c, e);
+            e._F_C200_2_ = c._F_C200_2_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_3_", c, e);
+            e._F_C500_2_ = c._F_C500_2_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_3_", c, e);
+            e._F_C1000_2_ = c._F_C1000_2_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_3_", c, e);
+            e._F_B_3_ = c._F_B_3_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_3_", c, e);
+            e._F_I_3_ = c._F_I_3_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_3_", c, e);
+            e._F_L_3_ = c._F_L_3_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_3_", c, e);
+            e._F_DT_3_ = c._F_DT_3_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_3_", c, e);
+            e._F_N_3_ = c._F_N_3_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_3_", c, e);
+            e._F_C5_3_ = c._F_C5_3_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_3_", c, e);
+            e._F_C10_3_ = c._F_C10_3_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_3_", c, e);
+            e._F_C20_3_ = c._F_C20_3_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_3_", c, e);
+            e._F_C50_3_ = c._F_C50_3_;
 
-            ReflectUtils.CopyPropertyValue("_F_C500_3_", c, e);
+            e._F_C100_3_ = c._F_C100_3_;
 
-            ReflectUtils.CopyPropertyValue("_F_C1000_3_", c, e);
+            e._F_C200_3_ = c._F_C200_3_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_4_", c, e);
+            e._F_C500_3_ = c._F_C500_3_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_4_", c, e);
+            e._F_C1000_3_ = c._F_C1000_3_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_4_", c, e);
+            e._F_B_4_ = c._F_B_4_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_4_", c, e);
+            e._F_I_4_ = c._F_I_4_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_4_", c, e);
+            e._F_L_4_ = c._F_L_4_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_4_", c, e);
+            e._F_DT_4_ = c._F_DT_4_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_4_", c, e);
+            e._F_N_4_ = c._F_N_4_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_4_", c, e);
+            e._F_C5_4_ = c._F_C5_4_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_4_", c, e);
+            e._F_C10_4_ = c._F_C10_4_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_4_", c, e);
+            e._F_C20_4_ = c._F_C20_4_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_4_", c, e);
+            e._F_C50_4_ = c._F_C50_4_;
 
-            ReflectUtils.CopyPropertyValue("_F_C500_4_", c, e);
+            e._F_C100_4_ = c._F_C100_4_;
 
-            ReflectUtils.CopyPropertyValue("_F_C1000_4_", c, e);
+            e._F_C200_4_ = c._F_C200_4_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_5_", c, e);
+            e._F_C500_4_ = c._F_C500_4_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_5_", c, e);
+            e._F_C1000_4_ = c._F_C1000_4_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_5_", c, e);
+            e._F_B_5_ = c._F_B_5_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_5_", c, e);
+            e._F_I_5_ = c._F_I_5_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_5_", c, e);
+            e._F_L_5_ = c._F_L_5_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_5_", c, e);
+            e._F_DT_5_ = c._F_DT_5_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_5_", c, e);
+            e._F_N_5_ = c._F_N_5_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_5_", c, e);
+            e._F_C5_5_ = c._F_C5_5_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_5_", c, e);
+            e._F_C10_5_ = c._F_C10_5_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_5_", c, e);
+            e._F_C20_5_ = c._F_C20_5_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_5_", c, e);
+            e._F_C50_5_ = c._F_C50_5_;
 
-            ReflectUtils.CopyPropertyValue("_F_C500_5_", c, e);
+            e._F_C100_5_ = c._F_C100_5_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_6_", c, e);
+            e._F_C200_5_ = c._F_C200_5_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_6_", c, e);
+            e._F_C500_5_ = c._F_C500_5_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_6_", c, e);
+            e._F_B_6_ = c._F_B_6_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_6_", c, e);
+            e._F_I_6_ = c._F_I_6_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_6_", c, e);
+            e._F_L_6_ = c._F_L_6_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_6_", c, e);
+            e._F_DT_6_ = c._F_DT_6_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_6_", c, e);
+            e._F_N_6_ = c._F_N_6_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_6_", c, e);
+            e._F_C5_6_ = c._F_C5_6_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_6_", c, e);
+            e._F_C10_6_ = c._F_C10_6_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_6_", c, e);
+            e._F_C20_6_ = c._F_C20_6_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_6_", c, e);
+            e._F_C50_6_ = c._F_C50_6_;
 
-            ReflectUtils.CopyPropertyValue("_F_C500_6_", c, e);
+            e._F_C100_6_ = c._F_C100_6_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_7_", c, e);
+            e._F_C200_6_ = c._F_C200_6_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_7_", c, e);
+            e._F_C500_6_ = c._F_C500_6_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_7_", c, e);
+            e._F_B_7_ = c._F_B_7_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_7_", c, e);
+            e._F_I_7_ = c._F_I_7_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_7_", c, e);
+            e._F_L_7_ = c._F_L_7_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_7_", c, e);
+            e._F_DT_7_ = c._F_DT_7_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_7_", c, e);
+            e._F_N_7_ = c._F_N_7_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_7_", c, e);
+            e._F_C5_7_ = c._F_C5_7_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_7_", c, e);
+            e._F_C10_7_ = c._F_C10_7_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_7_", c, e);
+            e._F_C20_7_ = c._F_C20_7_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_7_", c, e);
+            e._F_C50_7_ = c._F_C50_7_;
 
-            ReflectUtils.CopyPropertyValue("_F_C500_7_", c, e);
+            e._F_C100_7_ = c._F_C100_7_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_8_", c, e);
+            e._F_C200_7_ = c._F_C200_7_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_8_", c, e);
+            e._F_C500_7_ = c._F_C500_7_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_8_", c, e);
+            e._F_B_8_ = c._F_B_8_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_8_", c, e);
+            e._F_I_8_ = c._F_I_8_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_8_", c, e);
+            e._F_L_8_ = c._F_L_8_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_8_", c, e);
+            e._F_DT_8_ = c._F_DT_8_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_8_", c, e);
+            e._F_N_8_ = c._F_N_8_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_8_", c, e);
+            e._F_C5_8_ = c._F_C5_8_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_8_", c, e);
+            e._F_C10_8_ = c._F_C10_8_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_8_", c, e);
+            e._F_C20_8_ = c._F_C20_8_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_8_", c, e);
+            e._F_C50_8_ = c._F_C50_8_;
 
-            ReflectUtils.CopyPropertyValue("_F_C500_8_", c, e);
+            e._F_C100_8_ = c._F_C100_8_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_9_", c, e);
+            e._F_C200_8_ = c._F_C200_8_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_9_", c, e);
+            e._F_C500_8_ = c._F_C500_8_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_9_", c, e);
+            e._F_B_9_ = c._F_B_9_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_9_", c, e);
+            e._F_I_9_ = c._F_I_9_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_9_", c, e);
+            e._F_L_9_ = c._F_L_9_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_9_", c, e);
+            e._F_DT_9_ = c._F_DT_9_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_9_", c, e);
+            e._F_N_9_ = c._F_N_9_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_9_", c, e);
+            e._F_C5_9_ = c._F_C5_9_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_9_", c, e);
+            e._F_C10_9_ = c._F_C10_9_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_9_", c, e);
+            e._F_C20_9_ = c._F_C20_9_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_9_", c, e);
+            e._F_C50_9_ = c._F_C50_9_;
 
-            ReflectUtils.CopyPropertyValue("_F_C500_9_", c, e);
+            e._F_C100_9_ = c._F_C100_9_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_10_", c, e);
+            e._F_C200_9_ = c._F_C200_9_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_10_", c, e);
+            e._F_C500_9_ = c._F_C500_9_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_10_", c, e);
+            e._F_B_10_ = c._F_B_10_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_10_", c, e);
+            e._F_I_10_ = c._F_I_10_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_10_", c, e);
+            e._F_L_10_ = c._F_L_10_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_10_", c, e);
+            e._F_DT_10_ = c._F_DT_10_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_10_", c, e);
+            e._F_N_10_ = c._F_N_10_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_10_", c, e);
+            e._F_C5_10_ = c._F_C5_10_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_10_", c, e);
+            e._F_C10_10_ = c._F_C10_10_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_10_", c, e);
+            e._F_C20_10_ = c._F_C20_10_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_10_", c, e);
+            e._F_C50_10_ = c._F_C50_10_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_11_", c, e);
+            e._F_C100_10_ = c._F_C100_10_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_11_", c, e);
+            e._F_C200_10_ = c._F_C200_10_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_11_", c, e);
+            e._F_B_11_ = c._F_B_11_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_11_", c, e);
+            e._F_I_11_ = c._F_I_11_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_11_", c, e);
+            e._F_L_11_ = c._F_L_11_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_11_", c, e);
+            e._F_DT_11_ = c._F_DT_11_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_11_", c, e);
+            e._F_N_11_ = c._F_N_11_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_11_", c, e);
+            e._F_C5_11_ = c._F_C5_11_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_11_", c, e);
+            e._F_C10_11_ = c._F_C10_11_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_11_", c, e);
+            e._F_C20_11_ = c._F_C20_11_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_11_", c, e);
+            e._F_C50_11_ = c._F_C50_11_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_12_", c, e);
+            e._F_C100_11_ = c._F_C100_11_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_12_", c, e);
+            e._F_C200_11_ = c._F_C200_11_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_12_", c, e);
+            e._F_B_12_ = c._F_B_12_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_12_", c, e);
+            e._F_I_12_ = c._F_I_12_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_12_", c, e);
+            e._F_L_12_ = c._F_L_12_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_12_", c, e);
+            e._F_DT_12_ = c._F_DT_12_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_12_", c, e);
+            e._F_N_12_ = c._F_N_12_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_12_", c, e);
+            e._F_C5_12_ = c._F_C5_12_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_12_", c, e);
+            e._F_C10_12_ = c._F_C10_12_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_12_", c, e);
+            e._F_C20_12_ = c._F_C20_12_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_12_", c, e);
+            e._F_C50_12_ = c._F_C50_12_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_13_", c, e);
+            e._F_C100_12_ = c._F_C100_12_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_13_", c, e);
+            e._F_C200_12_ = c._F_C200_12_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_13_", c, e);
+            e._F_B_13_ = c._F_B_13_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_13_", c, e);
+            e._F_I_13_ = c._F_I_13_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_13_", c, e);
+            e._F_L_13_ = c._F_L_13_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_13_", c, e);
+            e._F_DT_13_ = c._F_DT_13_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_13_", c, e);
+            e._F_N_13_ = c._F_N_13_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_13_", c, e);
+            e._F_C5_13_ = c._F_C5_13_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_13_", c, e);
+            e._F_C10_13_ = c._F_C10_13_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_13_", c, e);
+            e._F_C20_13_ = c._F_C20_13_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_13_", c, e);
+            e._F_C50_13_ = c._F_C50_13_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_14_", c, e);
+            e._F_C100_13_ = c._F_C100_13_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_14_", c, e);
+            e._F_C200_13_ = c._F_C200_13_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_14_", c, e);
+            e._F_B_14_ = c._F_B_14_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_14_", c, e);
+            e._F_I_14_ = c._F_I_14_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_14_", c, e);
+            e._F_L_14_ = c._F_L_14_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_14_", c, e);
+            e._F_DT_14_ = c._F_DT_14_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_14_", c, e);
+            e._F_N_14_ = c._F_N_14_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_14_", c, e);
+            e._F_C5_14_ = c._F_C5_14_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_14_", c, e);
+            e._F_C10_14_ = c._F_C10_14_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_14_", c, e);
+            e._F_C20_14_ = c._F_C20_14_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_14_", c, e);
+            e._F_C50_14_ = c._F_C50_14_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_15_", c, e);
+            e._F_C100_14_ = c._F_C100_14_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_15_", c, e);
+            e._F_C200_14_ = c._F_C200_14_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_15_", c, e);
+            e._F_B_15_ = c._F_B_15_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_15_", c, e);
+            e._F_I_15_ = c._F_I_15_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_15_", c, e);
+            e._F_L_15_ = c._F_L_15_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_15_", c, e);
+            e._F_DT_15_ = c._F_DT_15_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_15_", c, e);
+            e._F_N_15_ = c._F_N_15_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_15_", c, e);
+            e._F_C5_15_ = c._F_C5_15_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_15_", c, e);
+            e._F_C10_15_ = c._F_C10_15_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_15_", c, e);
+            e._F_C20_15_ = c._F_C20_15_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_15_", c, e);
+            e._F_C50_15_ = c._F_C50_15_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_16_", c, e);
+            e._F_C100_15_ = c._F_C100_15_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_16_", c, e);
+            e._F_C200_15_ = c._F_C200_15_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_16_", c, e);
+            e._F_B_16_ = c._F_B_16_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_16_", c, e);
+            e._F_I_16_ = c._F_I_16_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_16_", c, e);
+            e._F_L_16_ = c._F_L_16_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_16_", c, e);
+            e._F_DT_16_ = c._F_DT_16_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_16_", c, e);
+            e._F_N_16_ = c._F_N_16_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_16_", c, e);
+            e._F_C5_16_ = c._F_C5_16_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_16_", c, e);
+            e._F_C10_16_ = c._F_C10_16_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_16_", c, e);
+            e._F_C20_16_ = c._F_C20_16_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_16_", c, e);
+            e._F_C50_16_ = c._F_C50_16_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_17_", c, e);
+            e._F_C100_16_ = c._F_C100_16_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_17_", c, e);
+            e._F_C200_16_ = c._F_C200_16_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_17_", c, e);
+            e._F_B_17_ = c._F_B_17_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_17_", c, e);
+            e._F_I_17_ = c._F_I_17_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_17_", c, e);
+            e._F_L_17_ = c._F_L_17_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_17_", c, e);
+            e._F_DT_17_ = c._F_DT_17_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_17_", c, e);
+            e._F_N_17_ = c._F_N_17_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_17_", c, e);
+            e._F_C5_17_ = c._F_C5_17_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_17_", c, e);
+            e._F_C10_17_ = c._F_C10_17_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_17_", c, e);
+            e._F_C20_17_ = c._F_C20_17_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_17_", c, e);
+            e._F_C50_17_ = c._F_C50_17_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_18_", c, e);
+            e._F_C100_17_ = c._F_C100_17_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_18_", c, e);
+            e._F_C200_17_ = c._F_C200_17_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_18_", c, e);
+            e._F_B_18_ = c._F_B_18_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_18_", c, e);
+            e._F_I_18_ = c._F_I_18_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_18_", c, e);
+            e._F_L_18_ = c._F_L_18_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_18_", c, e);
+            e._F_DT_18_ = c._F_DT_18_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_18_", c, e);
+            e._F_N_18_ = c._F_N_18_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_18_", c, e);
+            e._F_C5_18_ = c._F_C5_18_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_18_", c, e);
+            e._F_C10_18_ = c._F_C10_18_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_18_", c, e);
+            e._F_C20_18_ = c._F_C20_18_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_18_", c, e);
+            e._F_C50_18_ = c._F_C50_18_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_19_", c, e);
+            e._F_C100_18_ = c._F_C100_18_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_19_", c, e);
+            e._F_C200_18_ = c._F_C200_18_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_19_", c, e);
+            e._F_B_19_ = c._F_B_19_;
 
-            ReflectUtils.CopyPropertyValue("_F_DT_19_", c, e);
+            e._F_I_19_ = c._F_I_19_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_19_", c, e);
+            e._F_L_19_ = c._F_L_19_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_19_", c, e);
+            e._F_DT_19_ = c._F_DT_19_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_19_", c, e);
+            e._F_N_19_ = c._F_N_19_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_19_", c, e);
+            e._F_C5_19_ = c._F_C5_19_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_19_", c, e);
+            e._F_C10_19_ = c._F_C10_19_;
 
-            ReflectUtils.CopyPropertyValue("_F_C100_19_", c, e);
+            e._F_C20_19_ = c._F_C20_19_;
 
-            ReflectUtils.CopyPropertyValue("_F_C200_19_", c, e);
+            e._F_C50_19_ = c._F_C50_19_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_20_", c, e);
+            e._F_C100_19_ = c._F_C100_19_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_20_", c, e);
+            e._F_C200_19_ = c._F_C200_19_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_20_", c, e);
+            e._F_B_20_ = c._F_B_20_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_20_", c, e);
+            e._F_I_20_ = c._F_I_20_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_20_", c, e);
+            e._F_L_20_ = c._F_L_20_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_20_", c, e);
+            e._F_N_20_ = c._F_N_20_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_20_", c, e);
+            e._F_C5_20_ = c._F_C5_20_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_20_", c, e);
+            e._F_C10_20_ = c._F_C10_20_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_21_", c, e);
+            e._F_C20_20_ = c._F_C20_20_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_21_", c, e);
+            e._F_C50_20_ = c._F_C50_20_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_21_", c, e);
+            e._F_B_21_ = c._F_B_21_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_21_", c, e);
+            e._F_I_21_ = c._F_I_21_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_21_", c, e);
+            e._F_L_21_ = c._F_L_21_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_21_", c, e);
+            e._F_N_21_ = c._F_N_21_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_21_", c, e);
+            e._F_C5_21_ = c._F_C5_21_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_21_", c, e);
+            e._F_C10_21_ = c._F_C10_21_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_22_", c, e);
+            e._F_C20_21_ = c._F_C20_21_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_22_", c, e);
+            e._F_C50_21_ = c._F_C50_21_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_22_", c, e);
+            e._F_B_22_ = c._F_B_22_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_22_", c, e);
+            e._F_I_22_ = c._F_I_22_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_22_", c, e);
+            e._F_L_22_ = c._F_L_22_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_22_", c, e);
+            e._F_N_22_ = c._F_N_22_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_22_", c, e);
+            e._F_C5_22_ = c._F_C5_22_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_22_", c, e);
+            e._F_C10_22_ = c._F_C10_22_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_23_", c, e);
+            e._F_C20_22_ = c._F_C20_22_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_23_", c, e);
+            e._F_C50_22_ = c._F_C50_22_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_23_", c, e);
+            e._F_B_23_ = c._F_B_23_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_23_", c, e);
+            e._F_I_23_ = c._F_I_23_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_23_", c, e);
+            e._F_L_23_ = c._F_L_23_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_23_", c, e);
+            e._F_N_23_ = c._F_N_23_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_23_", c, e);
+            e._F_C5_23_ = c._F_C5_23_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_23_", c, e);
+            e._F_C10_23_ = c._F_C10_23_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_24_", c, e);
+            e._F_C20_23_ = c._F_C20_23_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_24_", c, e);
+            e._F_C50_23_ = c._F_C50_23_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_24_", c, e);
+            e._F_B_24_ = c._F_B_24_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_24_", c, e);
+            e._F_I_24_ = c._F_I_24_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_24_", c, e);
+            e._F_L_24_ = c._F_L_24_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_24_", c, e);
+            e._F_N_24_ = c._F_N_24_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_24_", c, e);
+            e._F_C5_24_ = c._F_C5_24_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_24_", c, e);
+            e._F_C10_24_ = c._F_C10_24_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_25_", c, e);
+            e._F_C20_24_ = c._F_C20_24_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_25_", c, e);
+            e._F_C50_24_ = c._F_C50_24_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_25_", c, e);
+            e._F_B_25_ = c._F_B_25_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_25_", c, e);
+            e._F_I_25_ = c._F_I_25_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_25_", c, e);
+            e._F_L_25_ = c._F_L_25_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_25_", c, e);
+            e._F_N_25_ = c._F_N_25_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_25_", c, e);
+            e._F_C5_25_ = c._F_C5_25_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_25_", c, e);
+            e._F_C10_25_ = c._F_C10_25_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_26_", c, e);
+            e._F_C20_25_ = c._F_C20_25_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_26_", c, e);
+            e._F_C50_25_ = c._F_C50_25_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_26_", c, e);
+            e._F_B_26_ = c._F_B_26_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_26_", c, e);
+            e._F_I_26_ = c._F_I_26_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_26_", c, e);
+            e._F_L_26_ = c._F_L_26_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_26_", c, e);
+            e._F_N_26_ = c._F_N_26_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_26_", c, e);
+            e._F_C5_26_ = c._F_C5_26_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_26_", c, e);
+            e._F_C10_26_ = c._F_C10_26_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_27_", c, e);
+            e._F_C20_26_ = c._F_C20_26_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_27_", c, e);
+            e._F_C50_26_ = c._F_C50_26_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_27_", c, e);
+            e._F_B_27_ = c._F_B_27_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_27_", c, e);
+            e._F_I_27_ = c._F_I_27_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_27_", c, e);
+            e._F_L_27_ = c._F_L_27_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_27_", c, e);
+            e._F_N_27_ = c._F_N_27_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_27_", c, e);
+            e._F_C5_27_ = c._F_C5_27_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_27_", c, e);
+            e._F_C10_27_ = c._F_C10_27_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_28_", c, e);
+            e._F_C20_27_ = c._F_C20_27_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_28_", c, e);
+            e._F_C50_27_ = c._F_C50_27_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_28_", c, e);
+            e._F_B_28_ = c._F_B_28_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_28_", c, e);
+            e._F_I_28_ = c._F_I_28_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_28_", c, e);
+            e._F_L_28_ = c._F_L_28_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_28_", c, e);
+            e._F_N_28_ = c._F_N_28_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_28_", c, e);
+            e._F_C5_28_ = c._F_C5_28_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_28_", c, e);
+            e._F_C10_28_ = c._F_C10_28_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_29_", c, e);
+            e._F_C20_28_ = c._F_C20_28_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_29_", c, e);
+            e._F_C50_28_ = c._F_C50_28_;
 
-            ReflectUtils.CopyPropertyValue("_F_L_29_", c, e);
+            e._F_B_29_ = c._F_B_29_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_29_", c, e);
+            e._F_I_29_ = c._F_I_29_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_29_", c, e);
+            e._F_L_29_ = c._F_L_29_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_29_", c, e);
+            e._F_N_29_ = c._F_N_29_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_29_", c, e);
+            e._F_C5_29_ = c._F_C5_29_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_29_", c, e);
+            e._F_C10_29_ = c._F_C10_29_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_30_", c, e);
+            e._F_C20_29_ = c._F_C20_29_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_30_", c, e);
+            e._F_C50_29_ = c._F_C50_29_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_30_", c, e);
+            e._F_B_30_ = c._F_B_30_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_30_", c, e);
+            e._F_I_30_ = c._F_I_30_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_30_", c, e);
+            e._F_N_30_ = c._F_N_30_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_30_", c, e);
+            e._F_C5_30_ = c._F_C5_30_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_30_", c, e);
+            e._F_C10_30_ = c._F_C10_30_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_31_", c, e);
+            e._F_C20_30_ = c._F_C20_30_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_31_", c, e);
+            e._F_C50_30_ = c._F_C50_30_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_31_", c, e);
+            e._F_B_31_ = c._F_B_31_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_31_", c, e);
+            e._F_I_31_ = c._F_I_31_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_31_", c, e);
+            e._F_N_31_ = c._F_N_31_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_31_", c, e);
+            e._F_C5_31_ = c._F_C5_31_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_31_", c, e);
+            e._F_C10_31_ = c._F_C10_31_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_32_", c, e);
+            e._F_C20_31_ = c._F_C20_31_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_32_", c, e);
+            e._F_C50_31_ = c._F_C50_31_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_32_", c, e);
+            e._F_B_32_ = c._F_B_32_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_32_", c, e);
+            e._F_I_32_ = c._F_I_32_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_32_", c, e);
+            e._F_N_32_ = c._F_N_32_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_32_", c, e);
+            e._F_C5_32_ = c._F_C5_32_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_32_", c, e);
+            e._F_C10_32_ = c._F_C10_32_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_33_", c, e);
+            e._F_C20_32_ = c._F_C20_32_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_33_", c, e);
+            e._F_C50_32_ = c._F_C50_32_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_33_", c, e);
+            e._F_B_33_ = c._F_B_33_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_33_", c, e);
+            e._F_I_33_ = c._F_I_33_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_33_", c, e);
+            e._F_N_33_ = c._F_N_33_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_33_", c, e);
+            e._F_C5_33_ = c._F_C5_33_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_33_", c, e);
+            e._F_C10_33_ = c._F_C10_33_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_34_", c, e);
+            e._F_C20_33_ = c._F_C20_33_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_34_", c, e);
+            e._F_C50_33_ = c._F_C50_33_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_34_", c, e);
+            e._F_B_34_ = c._F_B_34_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_34_", c, e);
+            e._F_I_34_ = c._F_I_34_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_34_", c, e);
+            e._F_N_34_ = c._F_N_34_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_34_", c, e);
+            e._F_C5_34_ = c._F_C5_34_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_34_", c, e);
+            e._F_C10_34_ = c._F_C10_34_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_35_", c, e);
+            e._F_C20_34_ = c._F_C20_34_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_35_", c, e);
+            e._F_C50_34_ = c._F_C50_34_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_35_", c, e);
+            e._F_B_35_ = c._F_B_35_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_35_", c, e);
+            e._F_I_35_ = c._F_I_35_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_35_", c, e);
+            e._F_N_35_ = c._F_N_35_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_35_", c, e);
+            e._F_C5_35_ = c._F_C5_35_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_35_", c, e);
+            e._F_C10_35_ = c._F_C10_35_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_36_", c, e);
+            e._F_C20_35_ = c._F_C20_35_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_36_", c, e);
+            e._F_C50_35_ = c._F_C50_35_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_36_", c, e);
+            e._F_B_36_ = c._F_B_36_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_36_", c, e);
+            e._F_I_36_ = c._F_I_36_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_36_", c, e);
+            e._F_N_36_ = c._F_N_36_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_36_", c, e);
+            e._F_C5_36_ = c._F_C5_36_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_36_", c, e);
+            e._F_C10_36_ = c._F_C10_36_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_37_", c, e);
+            e._F_C20_36_ = c._F_C20_36_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_37_", c, e);
+            e._F_C50_36_ = c._F_C50_36_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_37_", c, e);
+            e._F_B_37_ = c._F_B_37_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_37_", c, e);
+            e._F_I_37_ = c._F_I_37_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_37_", c, e);
+            e._F_N_37_ = c._F_N_37_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_37_", c, e);
+            e._F_C5_37_ = c._F_C5_37_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_37_", c, e);
+            e._F_C10_37_ = c._F_C10_37_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_38_", c, e);
+            e._F_C20_37_ = c._F_C20_37_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_38_", c, e);
+            e._F_C50_37_ = c._F_C50_37_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_38_", c, e);
+            e._F_B_38_ = c._F_B_38_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_38_", c, e);
+            e._F_I_38_ = c._F_I_38_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_38_", c, e);
+            e._F_N_38_ = c._F_N_38_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_38_", c, e);
+            e._F_C5_38_ = c._F_C5_38_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_38_", c, e);
+            e._F_C10_38_ = c._F_C10_38_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_39_", c, e);
+            e._F_C20_38_ = c._F_C20_38_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_39_", c, e);
+            e._F_C50_38_ = c._F_C50_38_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_39_", c, e);
+            e._F_B_39_ = c._F_B_39_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_39_", c, e);
+            e._F_I_39_ = c._F_I_39_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_39_", c, e);
+            e._F_N_39_ = c._F_N_39_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_39_", c, e);
+            e._F_C5_39_ = c._F_C5_39_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_39_", c, e);
+            e._F_C10_39_ = c._F_C10_39_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_40_", c, e);
+            e._F_C20_39_ = c._F_C20_39_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_40_", c, e);
+            e._F_C50_39_ = c._F_C50_39_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_40_", c, e);
+            e._F_B_40_ = c._F_B_40_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_40_", c, e);
+            e._F_I_40_ = c._F_I_40_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_40_", c, e);
+            e._F_N_40_ = c._F_N_40_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_40_", c, e);
+            e._F_C5_40_ = c._F_C5_40_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_40_", c, e);
+            e._F_C10_40_ = c._F_C10_40_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_41_", c, e);
+            e._F_C20_40_ = c._F_C20_40_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_41_", c, e);
+            e._F_C50_40_ = c._F_C50_40_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_41_", c, e);
+            e._F_B_41_ = c._F_B_41_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_41_", c, e);
+            e._F_I_41_ = c._F_I_41_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_41_", c, e);
+            e._F_N_41_ = c._F_N_41_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_41_", c, e);
+            e._F_C5_41_ = c._F_C5_41_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_41_", c, e);
+            e._F_C10_41_ = c._F_C10_41_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_42_", c, e);
+            e._F_C20_41_ = c._F_C20_41_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_42_", c, e);
+            e._F_C50_41_ = c._F_C50_41_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_42_", c, e);
+            e._F_B_42_ = c._F_B_42_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_42_", c, e);
+            e._F_I_42_ = c._F_I_42_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_42_", c, e);
+            e._F_N_42_ = c._F_N_42_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_42_", c, e);
+            e._F_C5_42_ = c._F_C5_42_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_42_", c, e);
+            e._F_C10_42_ = c._F_C10_42_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_43_", c, e);
+            e._F_C20_42_ = c._F_C20_42_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_43_", c, e);
+            e._F_C50_42_ = c._F_C50_42_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_43_", c, e);
+            e._F_B_43_ = c._F_B_43_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_43_", c, e);
+            e._F_I_43_ = c._F_I_43_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_43_", c, e);
+            e._F_N_43_ = c._F_N_43_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_43_", c, e);
+            e._F_C5_43_ = c._F_C5_43_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_43_", c, e);
+            e._F_C10_43_ = c._F_C10_43_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_44_", c, e);
+            e._F_C20_43_ = c._F_C20_43_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_44_", c, e);
+            e._F_C50_43_ = c._F_C50_43_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_44_", c, e);
+            e._F_B_44_ = c._F_B_44_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_44_", c, e);
+            e._F_I_44_ = c._F_I_44_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_44_", c, e);
+            e._F_N_44_ = c._F_N_44_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_44_", c, e);
+            e._F_C5_44_ = c._F_C5_44_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_44_", c, e);
+            e._F_C10_44_ = c._F_C10_44_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_45_", c, e);
+            e._F_C20_44_ = c._F_C20_44_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_45_", c, e);
+            e._F_C50_44_ = c._F_C50_44_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_45_", c, e);
+            e._F_B_45_ = c._F_B_45_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_45_", c, e);
+            e._F_I_45_ = c._F_I_45_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_45_", c, e);
+            e._F_N_45_ = c._F_N_45_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_45_", c, e);
+            e._F_C5_45_ = c._F_C5_45_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_45_", c, e);
+            e._F_C10_45_ = c._F_C10_45_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_46_", c, e);
+            e._F_C20_45_ = c._F_C20_45_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_46_", c, e);
+            e._F_C50_45_ = c._F_C50_45_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_46_", c, e);
+            e._F_B_46_ = c._F_B_46_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_46_", c, e);
+            e._F_I_46_ = c._F_I_46_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_46_", c, e);
+            e._F_N_46_ = c._F_N_46_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_46_", c, e);
+            e._F_C5_46_ = c._F_C5_46_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_46_", c, e);
+            e._F_C10_46_ = c._F_C10_46_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_47_", c, e);
+            e._F_C20_46_ = c._F_C20_46_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_47_", c, e);
+            e._F_C50_46_ = c._F_C50_46_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_47_", c, e);
+            e._F_B_47_ = c._F_B_47_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_47_", c, e);
+            e._F_I_47_ = c._F_I_47_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_47_", c, e);
+            e._F_N_47_ = c._F_N_47_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_47_", c, e);
+            e._F_C5_47_ = c._F_C5_47_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_47_", c, e);
+            e._F_C10_47_ = c._F_C10_47_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_48_", c, e);
+            e._F_C20_47_ = c._F_C20_47_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_48_", c, e);
+            e._F_C50_47_ = c._F_C50_47_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_48_", c, e);
+            e._F_B_48_ = c._F_B_48_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_48_", c, e);
+            e._F_I_48_ = c._F_I_48_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_48_", c, e);
+            e._F_N_48_ = c._F_N_48_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_48_", c, e);
+            e._F_C5_48_ = c._F_C5_48_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_48_", c, e);
+            e._F_C10_48_ = c._F_C10_48_;
 
-            ReflectUtils.CopyPropertyValue("_F_B_49_", c, e);
+            e._F_C20_48_ = c._F_C20_48_;
 
-            ReflectUtils.CopyPropertyValue("_F_I_49_", c, e);
+            e._F_C50_48_ = c._F_C50_48_;
 
-            ReflectUtils.CopyPropertyValue("_F_N_49_", c, e);
+            e._F_B_49_ = c._F_B_49_;
 
-            ReflectUtils.CopyPropertyValue("_F_C5_49_", c, e);
+            e._F_I_49_ = c._F_I_49_;
 
-            ReflectUtils.CopyPropertyValue("_F_C10_49_", c, e);
+            e._F_N_49_ = c._F_N_49_;
 
-            ReflectUtils.CopyPropertyValue("_F_C20_49_", c, e);
+            e._F_C5_49_ = c._F_C5_49_;
 
-            ReflectUtils.CopyPropertyValue("_F_C50_49_", c, e);
+            e._F_C10_49_ = c._F_C10_49_;
 
-            ReflectUtils.CopyPropertyValue("Active", c, e);
+            e._F_C20_49_ = c._F_C20_49_;
 
-            ReflectUtils.CopyPropertyValue("IsPropertyAttributeSetIdRemoved", c, e);
+            e._F_C50_49_ = c._F_C50_49_;
 
-            ReflectUtils.CopyPropertyValue("IsPropertySerialNumberRemoved", c, e);
+            e.Active = c.Active;
 
-            ReflectUtils.CopyPropertyValue("IsPropertyLotRemoved", c, e);
+            e.IsPropertyAttributeSetIdRemoved = c.IsPropertyAttributeSetIdRemoved;
 
-            ReflectUtils.CopyPropertyValue("IsPropertyDescriptionRemoved", c, e);
+            e.IsPropertyReferenceIdRemoved = c.IsPropertyReferenceIdRemoved;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_0_Removed", c, e);
+            e.IsPropertySerialNumberRemoved = c.IsPropertySerialNumberRemoved;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_0_Removed", c, e);
+            e.IsPropertyLotRemoved = c.IsPropertyLotRemoved;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_0_Removed", c, e);
+            e.IsPropertyDescriptionRemoved = c.IsPropertyDescriptionRemoved;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_DT_0_Removed", c, e);
+            e.IsPropertyHashRemoved = c.IsPropertyHashRemoved;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_0_Removed", c, e);
+            e.IsProperty_F_B_0_Removed = c.IsProperty_F_B_0_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_0_Removed", c, e);
+            e.IsProperty_F_I_0_Removed = c.IsProperty_F_I_0_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_0_Removed", c, e);
+            e.IsProperty_F_L_0_Removed = c.IsProperty_F_L_0_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_0_Removed", c, e);
+            e.IsProperty_F_DT_0_Removed = c.IsProperty_F_DT_0_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_0_Removed", c, e);
+            e.IsProperty_F_N_0_Removed = c.IsProperty_F_N_0_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C100_0_Removed", c, e);
+            e.IsProperty_F_C5_0_Removed = c.IsProperty_F_C5_0_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C200_0_Removed", c, e);
+            e.IsProperty_F_C10_0_Removed = c.IsProperty_F_C10_0_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C500_0_Removed", c, e);
+            e.IsProperty_F_C20_0_Removed = c.IsProperty_F_C20_0_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C1000_0_Removed", c, e);
+            e.IsProperty_F_C50_0_Removed = c.IsProperty_F_C50_0_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_1_Removed", c, e);
+            e.IsProperty_F_C100_0_Removed = c.IsProperty_F_C100_0_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_1_Removed", c, e);
+            e.IsProperty_F_C200_0_Removed = c.IsProperty_F_C200_0_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_1_Removed", c, e);
+            e.IsProperty_F_C500_0_Removed = c.IsProperty_F_C500_0_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_DT_1_Removed", c, e);
+            e.IsProperty_F_C1000_0_Removed = c.IsProperty_F_C1000_0_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_1_Removed", c, e);
+            e.IsProperty_F_B_1_Removed = c.IsProperty_F_B_1_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_1_Removed", c, e);
+            e.IsProperty_F_I_1_Removed = c.IsProperty_F_I_1_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_1_Removed", c, e);
+            e.IsProperty_F_L_1_Removed = c.IsProperty_F_L_1_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_1_Removed", c, e);
+            e.IsProperty_F_DT_1_Removed = c.IsProperty_F_DT_1_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_1_Removed", c, e);
+            e.IsProperty_F_N_1_Removed = c.IsProperty_F_N_1_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C100_1_Removed", c, e);
+            e.IsProperty_F_C5_1_Removed = c.IsProperty_F_C5_1_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C200_1_Removed", c, e);
+            e.IsProperty_F_C10_1_Removed = c.IsProperty_F_C10_1_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C500_1_Removed", c, e);
+            e.IsProperty_F_C20_1_Removed = c.IsProperty_F_C20_1_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C1000_1_Removed", c, e);
+            e.IsProperty_F_C50_1_Removed = c.IsProperty_F_C50_1_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_2_Removed", c, e);
+            e.IsProperty_F_C100_1_Removed = c.IsProperty_F_C100_1_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_2_Removed", c, e);
+            e.IsProperty_F_C200_1_Removed = c.IsProperty_F_C200_1_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_2_Removed", c, e);
+            e.IsProperty_F_C500_1_Removed = c.IsProperty_F_C500_1_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_DT_2_Removed", c, e);
+            e.IsProperty_F_C1000_1_Removed = c.IsProperty_F_C1000_1_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_2_Removed", c, e);
+            e.IsProperty_F_B_2_Removed = c.IsProperty_F_B_2_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_2_Removed", c, e);
+            e.IsProperty_F_I_2_Removed = c.IsProperty_F_I_2_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_2_Removed", c, e);
+            e.IsProperty_F_L_2_Removed = c.IsProperty_F_L_2_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_2_Removed", c, e);
+            e.IsProperty_F_DT_2_Removed = c.IsProperty_F_DT_2_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_2_Removed", c, e);
+            e.IsProperty_F_N_2_Removed = c.IsProperty_F_N_2_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C100_2_Removed", c, e);
+            e.IsProperty_F_C5_2_Removed = c.IsProperty_F_C5_2_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C200_2_Removed", c, e);
+            e.IsProperty_F_C10_2_Removed = c.IsProperty_F_C10_2_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C500_2_Removed", c, e);
+            e.IsProperty_F_C20_2_Removed = c.IsProperty_F_C20_2_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C1000_2_Removed", c, e);
+            e.IsProperty_F_C50_2_Removed = c.IsProperty_F_C50_2_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_3_Removed", c, e);
+            e.IsProperty_F_C100_2_Removed = c.IsProperty_F_C100_2_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_3_Removed", c, e);
+            e.IsProperty_F_C200_2_Removed = c.IsProperty_F_C200_2_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_3_Removed", c, e);
+            e.IsProperty_F_C500_2_Removed = c.IsProperty_F_C500_2_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_DT_3_Removed", c, e);
+            e.IsProperty_F_C1000_2_Removed = c.IsProperty_F_C1000_2_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_3_Removed", c, e);
+            e.IsProperty_F_B_3_Removed = c.IsProperty_F_B_3_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_3_Removed", c, e);
+            e.IsProperty_F_I_3_Removed = c.IsProperty_F_I_3_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_3_Removed", c, e);
+            e.IsProperty_F_L_3_Removed = c.IsProperty_F_L_3_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_3_Removed", c, e);
+            e.IsProperty_F_DT_3_Removed = c.IsProperty_F_DT_3_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_3_Removed", c, e);
+            e.IsProperty_F_N_3_Removed = c.IsProperty_F_N_3_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C100_3_Removed", c, e);
+            e.IsProperty_F_C5_3_Removed = c.IsProperty_F_C5_3_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C200_3_Removed", c, e);
+            e.IsProperty_F_C10_3_Removed = c.IsProperty_F_C10_3_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C500_3_Removed", c, e);
+            e.IsProperty_F_C20_3_Removed = c.IsProperty_F_C20_3_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C1000_3_Removed", c, e);
+            e.IsProperty_F_C50_3_Removed = c.IsProperty_F_C50_3_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_4_Removed", c, e);
+            e.IsProperty_F_C100_3_Removed = c.IsProperty_F_C100_3_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_4_Removed", c, e);
+            e.IsProperty_F_C200_3_Removed = c.IsProperty_F_C200_3_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_4_Removed", c, e);
+            e.IsProperty_F_C500_3_Removed = c.IsProperty_F_C500_3_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_DT_4_Removed", c, e);
+            e.IsProperty_F_C1000_3_Removed = c.IsProperty_F_C1000_3_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_4_Removed", c, e);
+            e.IsProperty_F_B_4_Removed = c.IsProperty_F_B_4_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_4_Removed", c, e);
+            e.IsProperty_F_I_4_Removed = c.IsProperty_F_I_4_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_4_Removed", c, e);
+            e.IsProperty_F_L_4_Removed = c.IsProperty_F_L_4_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_4_Removed", c, e);
+            e.IsProperty_F_DT_4_Removed = c.IsProperty_F_DT_4_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_4_Removed", c, e);
+            e.IsProperty_F_N_4_Removed = c.IsProperty_F_N_4_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C100_4_Removed", c, e);
+            e.IsProperty_F_C5_4_Removed = c.IsProperty_F_C5_4_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C200_4_Removed", c, e);
+            e.IsProperty_F_C10_4_Removed = c.IsProperty_F_C10_4_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C500_4_Removed", c, e);
+            e.IsProperty_F_C20_4_Removed = c.IsProperty_F_C20_4_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C1000_4_Removed", c, e);
+            e.IsProperty_F_C50_4_Removed = c.IsProperty_F_C50_4_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_5_Removed", c, e);
+            e.IsProperty_F_C100_4_Removed = c.IsProperty_F_C100_4_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_5_Removed", c, e);
+            e.IsProperty_F_C200_4_Removed = c.IsProperty_F_C200_4_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_5_Removed", c, e);
+            e.IsProperty_F_C500_4_Removed = c.IsProperty_F_C500_4_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_DT_5_Removed", c, e);
+            e.IsProperty_F_C1000_4_Removed = c.IsProperty_F_C1000_4_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_5_Removed", c, e);
+            e.IsProperty_F_B_5_Removed = c.IsProperty_F_B_5_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_5_Removed", c, e);
+            e.IsProperty_F_I_5_Removed = c.IsProperty_F_I_5_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_5_Removed", c, e);
+            e.IsProperty_F_L_5_Removed = c.IsProperty_F_L_5_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_5_Removed", c, e);
+            e.IsProperty_F_DT_5_Removed = c.IsProperty_F_DT_5_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_5_Removed", c, e);
+            e.IsProperty_F_N_5_Removed = c.IsProperty_F_N_5_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C100_5_Removed", c, e);
+            e.IsProperty_F_C5_5_Removed = c.IsProperty_F_C5_5_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C200_5_Removed", c, e);
+            e.IsProperty_F_C10_5_Removed = c.IsProperty_F_C10_5_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C500_5_Removed", c, e);
+            e.IsProperty_F_C20_5_Removed = c.IsProperty_F_C20_5_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_6_Removed", c, e);
+            e.IsProperty_F_C50_5_Removed = c.IsProperty_F_C50_5_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_6_Removed", c, e);
+            e.IsProperty_F_C100_5_Removed = c.IsProperty_F_C100_5_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_6_Removed", c, e);
+            e.IsProperty_F_C200_5_Removed = c.IsProperty_F_C200_5_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_DT_6_Removed", c, e);
+            e.IsProperty_F_C500_5_Removed = c.IsProperty_F_C500_5_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_6_Removed", c, e);
+            e.IsProperty_F_B_6_Removed = c.IsProperty_F_B_6_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_6_Removed", c, e);
+            e.IsProperty_F_I_6_Removed = c.IsProperty_F_I_6_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_6_Removed", c, e);
+            e.IsProperty_F_L_6_Removed = c.IsProperty_F_L_6_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_6_Removed", c, e);
+            e.IsProperty_F_DT_6_Removed = c.IsProperty_F_DT_6_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_6_Removed", c, e);
+            e.IsProperty_F_N_6_Removed = c.IsProperty_F_N_6_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C100_6_Removed", c, e);
+            e.IsProperty_F_C5_6_Removed = c.IsProperty_F_C5_6_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C200_6_Removed", c, e);
+            e.IsProperty_F_C10_6_Removed = c.IsProperty_F_C10_6_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C500_6_Removed", c, e);
+            e.IsProperty_F_C20_6_Removed = c.IsProperty_F_C20_6_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_7_Removed", c, e);
+            e.IsProperty_F_C50_6_Removed = c.IsProperty_F_C50_6_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_7_Removed", c, e);
+            e.IsProperty_F_C100_6_Removed = c.IsProperty_F_C100_6_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_7_Removed", c, e);
+            e.IsProperty_F_C200_6_Removed = c.IsProperty_F_C200_6_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_DT_7_Removed", c, e);
+            e.IsProperty_F_C500_6_Removed = c.IsProperty_F_C500_6_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_7_Removed", c, e);
+            e.IsProperty_F_B_7_Removed = c.IsProperty_F_B_7_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_7_Removed", c, e);
+            e.IsProperty_F_I_7_Removed = c.IsProperty_F_I_7_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_7_Removed", c, e);
+            e.IsProperty_F_L_7_Removed = c.IsProperty_F_L_7_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_7_Removed", c, e);
+            e.IsProperty_F_DT_7_Removed = c.IsProperty_F_DT_7_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_7_Removed", c, e);
+            e.IsProperty_F_N_7_Removed = c.IsProperty_F_N_7_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C100_7_Removed", c, e);
+            e.IsProperty_F_C5_7_Removed = c.IsProperty_F_C5_7_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C200_7_Removed", c, e);
+            e.IsProperty_F_C10_7_Removed = c.IsProperty_F_C10_7_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C500_7_Removed", c, e);
+            e.IsProperty_F_C20_7_Removed = c.IsProperty_F_C20_7_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_8_Removed", c, e);
+            e.IsProperty_F_C50_7_Removed = c.IsProperty_F_C50_7_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_8_Removed", c, e);
+            e.IsProperty_F_C100_7_Removed = c.IsProperty_F_C100_7_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_8_Removed", c, e);
+            e.IsProperty_F_C200_7_Removed = c.IsProperty_F_C200_7_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_DT_8_Removed", c, e);
+            e.IsProperty_F_C500_7_Removed = c.IsProperty_F_C500_7_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_8_Removed", c, e);
+            e.IsProperty_F_B_8_Removed = c.IsProperty_F_B_8_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_8_Removed", c, e);
+            e.IsProperty_F_I_8_Removed = c.IsProperty_F_I_8_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_8_Removed", c, e);
+            e.IsProperty_F_L_8_Removed = c.IsProperty_F_L_8_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_8_Removed", c, e);
+            e.IsProperty_F_DT_8_Removed = c.IsProperty_F_DT_8_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_8_Removed", c, e);
+            e.IsProperty_F_N_8_Removed = c.IsProperty_F_N_8_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C100_8_Removed", c, e);
+            e.IsProperty_F_C5_8_Removed = c.IsProperty_F_C5_8_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C200_8_Removed", c, e);
+            e.IsProperty_F_C10_8_Removed = c.IsProperty_F_C10_8_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C500_8_Removed", c, e);
+            e.IsProperty_F_C20_8_Removed = c.IsProperty_F_C20_8_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_9_Removed", c, e);
+            e.IsProperty_F_C50_8_Removed = c.IsProperty_F_C50_8_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_9_Removed", c, e);
+            e.IsProperty_F_C100_8_Removed = c.IsProperty_F_C100_8_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_9_Removed", c, e);
+            e.IsProperty_F_C200_8_Removed = c.IsProperty_F_C200_8_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_DT_9_Removed", c, e);
+            e.IsProperty_F_C500_8_Removed = c.IsProperty_F_C500_8_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_9_Removed", c, e);
+            e.IsProperty_F_B_9_Removed = c.IsProperty_F_B_9_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_9_Removed", c, e);
+            e.IsProperty_F_I_9_Removed = c.IsProperty_F_I_9_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_9_Removed", c, e);
+            e.IsProperty_F_L_9_Removed = c.IsProperty_F_L_9_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_9_Removed", c, e);
+            e.IsProperty_F_DT_9_Removed = c.IsProperty_F_DT_9_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_9_Removed", c, e);
+            e.IsProperty_F_N_9_Removed = c.IsProperty_F_N_9_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C100_9_Removed", c, e);
+            e.IsProperty_F_C5_9_Removed = c.IsProperty_F_C5_9_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C200_9_Removed", c, e);
+            e.IsProperty_F_C10_9_Removed = c.IsProperty_F_C10_9_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C500_9_Removed", c, e);
+            e.IsProperty_F_C20_9_Removed = c.IsProperty_F_C20_9_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_10_Removed", c, e);
+            e.IsProperty_F_C50_9_Removed = c.IsProperty_F_C50_9_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_10_Removed", c, e);
+            e.IsProperty_F_C100_9_Removed = c.IsProperty_F_C100_9_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_10_Removed", c, e);
+            e.IsProperty_F_C200_9_Removed = c.IsProperty_F_C200_9_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_DT_10_Removed", c, e);
+            e.IsProperty_F_C500_9_Removed = c.IsProperty_F_C500_9_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_10_Removed", c, e);
+            e.IsProperty_F_B_10_Removed = c.IsProperty_F_B_10_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_10_Removed", c, e);
+            e.IsProperty_F_I_10_Removed = c.IsProperty_F_I_10_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_10_Removed", c, e);
+            e.IsProperty_F_L_10_Removed = c.IsProperty_F_L_10_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_10_Removed", c, e);
+            e.IsProperty_F_DT_10_Removed = c.IsProperty_F_DT_10_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_10_Removed", c, e);
+            e.IsProperty_F_N_10_Removed = c.IsProperty_F_N_10_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C100_10_Removed", c, e);
+            e.IsProperty_F_C5_10_Removed = c.IsProperty_F_C5_10_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C200_10_Removed", c, e);
+            e.IsProperty_F_C10_10_Removed = c.IsProperty_F_C10_10_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_11_Removed", c, e);
+            e.IsProperty_F_C20_10_Removed = c.IsProperty_F_C20_10_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_11_Removed", c, e);
+            e.IsProperty_F_C50_10_Removed = c.IsProperty_F_C50_10_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_11_Removed", c, e);
+            e.IsProperty_F_C100_10_Removed = c.IsProperty_F_C100_10_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_DT_11_Removed", c, e);
+            e.IsProperty_F_C200_10_Removed = c.IsProperty_F_C200_10_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_11_Removed", c, e);
+            e.IsProperty_F_B_11_Removed = c.IsProperty_F_B_11_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_11_Removed", c, e);
+            e.IsProperty_F_I_11_Removed = c.IsProperty_F_I_11_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_11_Removed", c, e);
+            e.IsProperty_F_L_11_Removed = c.IsProperty_F_L_11_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_11_Removed", c, e);
+            e.IsProperty_F_DT_11_Removed = c.IsProperty_F_DT_11_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_11_Removed", c, e);
+            e.IsProperty_F_N_11_Removed = c.IsProperty_F_N_11_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C100_11_Removed", c, e);
+            e.IsProperty_F_C5_11_Removed = c.IsProperty_F_C5_11_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C200_11_Removed", c, e);
+            e.IsProperty_F_C10_11_Removed = c.IsProperty_F_C10_11_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_12_Removed", c, e);
+            e.IsProperty_F_C20_11_Removed = c.IsProperty_F_C20_11_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_12_Removed", c, e);
+            e.IsProperty_F_C50_11_Removed = c.IsProperty_F_C50_11_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_12_Removed", c, e);
+            e.IsProperty_F_C100_11_Removed = c.IsProperty_F_C100_11_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_DT_12_Removed", c, e);
+            e.IsProperty_F_C200_11_Removed = c.IsProperty_F_C200_11_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_12_Removed", c, e);
+            e.IsProperty_F_B_12_Removed = c.IsProperty_F_B_12_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_12_Removed", c, e);
+            e.IsProperty_F_I_12_Removed = c.IsProperty_F_I_12_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_12_Removed", c, e);
+            e.IsProperty_F_L_12_Removed = c.IsProperty_F_L_12_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_12_Removed", c, e);
+            e.IsProperty_F_DT_12_Removed = c.IsProperty_F_DT_12_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_12_Removed", c, e);
+            e.IsProperty_F_N_12_Removed = c.IsProperty_F_N_12_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C100_12_Removed", c, e);
+            e.IsProperty_F_C5_12_Removed = c.IsProperty_F_C5_12_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C200_12_Removed", c, e);
+            e.IsProperty_F_C10_12_Removed = c.IsProperty_F_C10_12_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_13_Removed", c, e);
+            e.IsProperty_F_C20_12_Removed = c.IsProperty_F_C20_12_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_13_Removed", c, e);
+            e.IsProperty_F_C50_12_Removed = c.IsProperty_F_C50_12_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_13_Removed", c, e);
+            e.IsProperty_F_C100_12_Removed = c.IsProperty_F_C100_12_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_DT_13_Removed", c, e);
+            e.IsProperty_F_C200_12_Removed = c.IsProperty_F_C200_12_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_13_Removed", c, e);
+            e.IsProperty_F_B_13_Removed = c.IsProperty_F_B_13_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_13_Removed", c, e);
+            e.IsProperty_F_I_13_Removed = c.IsProperty_F_I_13_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_13_Removed", c, e);
+            e.IsProperty_F_L_13_Removed = c.IsProperty_F_L_13_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_13_Removed", c, e);
+            e.IsProperty_F_DT_13_Removed = c.IsProperty_F_DT_13_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_13_Removed", c, e);
+            e.IsProperty_F_N_13_Removed = c.IsProperty_F_N_13_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C100_13_Removed", c, e);
+            e.IsProperty_F_C5_13_Removed = c.IsProperty_F_C5_13_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C200_13_Removed", c, e);
+            e.IsProperty_F_C10_13_Removed = c.IsProperty_F_C10_13_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_14_Removed", c, e);
+            e.IsProperty_F_C20_13_Removed = c.IsProperty_F_C20_13_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_14_Removed", c, e);
+            e.IsProperty_F_C50_13_Removed = c.IsProperty_F_C50_13_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_14_Removed", c, e);
+            e.IsProperty_F_C100_13_Removed = c.IsProperty_F_C100_13_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_DT_14_Removed", c, e);
+            e.IsProperty_F_C200_13_Removed = c.IsProperty_F_C200_13_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_14_Removed", c, e);
+            e.IsProperty_F_B_14_Removed = c.IsProperty_F_B_14_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_14_Removed", c, e);
+            e.IsProperty_F_I_14_Removed = c.IsProperty_F_I_14_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_14_Removed", c, e);
+            e.IsProperty_F_L_14_Removed = c.IsProperty_F_L_14_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_14_Removed", c, e);
+            e.IsProperty_F_DT_14_Removed = c.IsProperty_F_DT_14_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_14_Removed", c, e);
+            e.IsProperty_F_N_14_Removed = c.IsProperty_F_N_14_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C100_14_Removed", c, e);
+            e.IsProperty_F_C5_14_Removed = c.IsProperty_F_C5_14_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C200_14_Removed", c, e);
+            e.IsProperty_F_C10_14_Removed = c.IsProperty_F_C10_14_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_15_Removed", c, e);
+            e.IsProperty_F_C20_14_Removed = c.IsProperty_F_C20_14_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_15_Removed", c, e);
+            e.IsProperty_F_C50_14_Removed = c.IsProperty_F_C50_14_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_15_Removed", c, e);
+            e.IsProperty_F_C100_14_Removed = c.IsProperty_F_C100_14_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_DT_15_Removed", c, e);
+            e.IsProperty_F_C200_14_Removed = c.IsProperty_F_C200_14_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_15_Removed", c, e);
+            e.IsProperty_F_B_15_Removed = c.IsProperty_F_B_15_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_15_Removed", c, e);
+            e.IsProperty_F_I_15_Removed = c.IsProperty_F_I_15_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_15_Removed", c, e);
+            e.IsProperty_F_L_15_Removed = c.IsProperty_F_L_15_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_15_Removed", c, e);
+            e.IsProperty_F_DT_15_Removed = c.IsProperty_F_DT_15_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_15_Removed", c, e);
+            e.IsProperty_F_N_15_Removed = c.IsProperty_F_N_15_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C100_15_Removed", c, e);
+            e.IsProperty_F_C5_15_Removed = c.IsProperty_F_C5_15_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C200_15_Removed", c, e);
+            e.IsProperty_F_C10_15_Removed = c.IsProperty_F_C10_15_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_16_Removed", c, e);
+            e.IsProperty_F_C20_15_Removed = c.IsProperty_F_C20_15_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_16_Removed", c, e);
+            e.IsProperty_F_C50_15_Removed = c.IsProperty_F_C50_15_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_16_Removed", c, e);
+            e.IsProperty_F_C100_15_Removed = c.IsProperty_F_C100_15_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_DT_16_Removed", c, e);
+            e.IsProperty_F_C200_15_Removed = c.IsProperty_F_C200_15_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_16_Removed", c, e);
+            e.IsProperty_F_B_16_Removed = c.IsProperty_F_B_16_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_16_Removed", c, e);
+            e.IsProperty_F_I_16_Removed = c.IsProperty_F_I_16_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_16_Removed", c, e);
+            e.IsProperty_F_L_16_Removed = c.IsProperty_F_L_16_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_16_Removed", c, e);
+            e.IsProperty_F_DT_16_Removed = c.IsProperty_F_DT_16_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_16_Removed", c, e);
+            e.IsProperty_F_N_16_Removed = c.IsProperty_F_N_16_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C100_16_Removed", c, e);
+            e.IsProperty_F_C5_16_Removed = c.IsProperty_F_C5_16_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C200_16_Removed", c, e);
+            e.IsProperty_F_C10_16_Removed = c.IsProperty_F_C10_16_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_17_Removed", c, e);
+            e.IsProperty_F_C20_16_Removed = c.IsProperty_F_C20_16_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_17_Removed", c, e);
+            e.IsProperty_F_C50_16_Removed = c.IsProperty_F_C50_16_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_17_Removed", c, e);
+            e.IsProperty_F_C100_16_Removed = c.IsProperty_F_C100_16_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_DT_17_Removed", c, e);
+            e.IsProperty_F_C200_16_Removed = c.IsProperty_F_C200_16_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_17_Removed", c, e);
+            e.IsProperty_F_B_17_Removed = c.IsProperty_F_B_17_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_17_Removed", c, e);
+            e.IsProperty_F_I_17_Removed = c.IsProperty_F_I_17_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_17_Removed", c, e);
+            e.IsProperty_F_L_17_Removed = c.IsProperty_F_L_17_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_17_Removed", c, e);
+            e.IsProperty_F_DT_17_Removed = c.IsProperty_F_DT_17_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_17_Removed", c, e);
+            e.IsProperty_F_N_17_Removed = c.IsProperty_F_N_17_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C100_17_Removed", c, e);
+            e.IsProperty_F_C5_17_Removed = c.IsProperty_F_C5_17_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C200_17_Removed", c, e);
+            e.IsProperty_F_C10_17_Removed = c.IsProperty_F_C10_17_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_18_Removed", c, e);
+            e.IsProperty_F_C20_17_Removed = c.IsProperty_F_C20_17_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_18_Removed", c, e);
+            e.IsProperty_F_C50_17_Removed = c.IsProperty_F_C50_17_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_18_Removed", c, e);
+            e.IsProperty_F_C100_17_Removed = c.IsProperty_F_C100_17_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_DT_18_Removed", c, e);
+            e.IsProperty_F_C200_17_Removed = c.IsProperty_F_C200_17_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_18_Removed", c, e);
+            e.IsProperty_F_B_18_Removed = c.IsProperty_F_B_18_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_18_Removed", c, e);
+            e.IsProperty_F_I_18_Removed = c.IsProperty_F_I_18_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_18_Removed", c, e);
+            e.IsProperty_F_L_18_Removed = c.IsProperty_F_L_18_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_18_Removed", c, e);
+            e.IsProperty_F_DT_18_Removed = c.IsProperty_F_DT_18_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_18_Removed", c, e);
+            e.IsProperty_F_N_18_Removed = c.IsProperty_F_N_18_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C100_18_Removed", c, e);
+            e.IsProperty_F_C5_18_Removed = c.IsProperty_F_C5_18_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C200_18_Removed", c, e);
+            e.IsProperty_F_C10_18_Removed = c.IsProperty_F_C10_18_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_19_Removed", c, e);
+            e.IsProperty_F_C20_18_Removed = c.IsProperty_F_C20_18_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_19_Removed", c, e);
+            e.IsProperty_F_C50_18_Removed = c.IsProperty_F_C50_18_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_19_Removed", c, e);
+            e.IsProperty_F_C100_18_Removed = c.IsProperty_F_C100_18_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_DT_19_Removed", c, e);
+            e.IsProperty_F_C200_18_Removed = c.IsProperty_F_C200_18_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_19_Removed", c, e);
+            e.IsProperty_F_B_19_Removed = c.IsProperty_F_B_19_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_19_Removed", c, e);
+            e.IsProperty_F_I_19_Removed = c.IsProperty_F_I_19_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_19_Removed", c, e);
+            e.IsProperty_F_L_19_Removed = c.IsProperty_F_L_19_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_19_Removed", c, e);
+            e.IsProperty_F_DT_19_Removed = c.IsProperty_F_DT_19_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_19_Removed", c, e);
+            e.IsProperty_F_N_19_Removed = c.IsProperty_F_N_19_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C100_19_Removed", c, e);
+            e.IsProperty_F_C5_19_Removed = c.IsProperty_F_C5_19_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C200_19_Removed", c, e);
+            e.IsProperty_F_C10_19_Removed = c.IsProperty_F_C10_19_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_20_Removed", c, e);
+            e.IsProperty_F_C20_19_Removed = c.IsProperty_F_C20_19_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_20_Removed", c, e);
+            e.IsProperty_F_C50_19_Removed = c.IsProperty_F_C50_19_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_20_Removed", c, e);
+            e.IsProperty_F_C100_19_Removed = c.IsProperty_F_C100_19_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_20_Removed", c, e);
+            e.IsProperty_F_C200_19_Removed = c.IsProperty_F_C200_19_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_20_Removed", c, e);
+            e.IsProperty_F_B_20_Removed = c.IsProperty_F_B_20_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_20_Removed", c, e);
+            e.IsProperty_F_I_20_Removed = c.IsProperty_F_I_20_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_20_Removed", c, e);
+            e.IsProperty_F_L_20_Removed = c.IsProperty_F_L_20_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_20_Removed", c, e);
+            e.IsProperty_F_N_20_Removed = c.IsProperty_F_N_20_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_21_Removed", c, e);
+            e.IsProperty_F_C5_20_Removed = c.IsProperty_F_C5_20_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_21_Removed", c, e);
+            e.IsProperty_F_C10_20_Removed = c.IsProperty_F_C10_20_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_21_Removed", c, e);
+            e.IsProperty_F_C20_20_Removed = c.IsProperty_F_C20_20_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_21_Removed", c, e);
+            e.IsProperty_F_C50_20_Removed = c.IsProperty_F_C50_20_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_21_Removed", c, e);
+            e.IsProperty_F_B_21_Removed = c.IsProperty_F_B_21_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_21_Removed", c, e);
+            e.IsProperty_F_I_21_Removed = c.IsProperty_F_I_21_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_21_Removed", c, e);
+            e.IsProperty_F_L_21_Removed = c.IsProperty_F_L_21_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_21_Removed", c, e);
+            e.IsProperty_F_N_21_Removed = c.IsProperty_F_N_21_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_22_Removed", c, e);
+            e.IsProperty_F_C5_21_Removed = c.IsProperty_F_C5_21_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_22_Removed", c, e);
+            e.IsProperty_F_C10_21_Removed = c.IsProperty_F_C10_21_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_22_Removed", c, e);
+            e.IsProperty_F_C20_21_Removed = c.IsProperty_F_C20_21_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_22_Removed", c, e);
+            e.IsProperty_F_C50_21_Removed = c.IsProperty_F_C50_21_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_22_Removed", c, e);
+            e.IsProperty_F_B_22_Removed = c.IsProperty_F_B_22_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_22_Removed", c, e);
+            e.IsProperty_F_I_22_Removed = c.IsProperty_F_I_22_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_22_Removed", c, e);
+            e.IsProperty_F_L_22_Removed = c.IsProperty_F_L_22_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_22_Removed", c, e);
+            e.IsProperty_F_N_22_Removed = c.IsProperty_F_N_22_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_23_Removed", c, e);
+            e.IsProperty_F_C5_22_Removed = c.IsProperty_F_C5_22_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_23_Removed", c, e);
+            e.IsProperty_F_C10_22_Removed = c.IsProperty_F_C10_22_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_23_Removed", c, e);
+            e.IsProperty_F_C20_22_Removed = c.IsProperty_F_C20_22_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_23_Removed", c, e);
+            e.IsProperty_F_C50_22_Removed = c.IsProperty_F_C50_22_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_23_Removed", c, e);
+            e.IsProperty_F_B_23_Removed = c.IsProperty_F_B_23_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_23_Removed", c, e);
+            e.IsProperty_F_I_23_Removed = c.IsProperty_F_I_23_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_23_Removed", c, e);
+            e.IsProperty_F_L_23_Removed = c.IsProperty_F_L_23_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_23_Removed", c, e);
+            e.IsProperty_F_N_23_Removed = c.IsProperty_F_N_23_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_24_Removed", c, e);
+            e.IsProperty_F_C5_23_Removed = c.IsProperty_F_C5_23_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_24_Removed", c, e);
+            e.IsProperty_F_C10_23_Removed = c.IsProperty_F_C10_23_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_24_Removed", c, e);
+            e.IsProperty_F_C20_23_Removed = c.IsProperty_F_C20_23_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_24_Removed", c, e);
+            e.IsProperty_F_C50_23_Removed = c.IsProperty_F_C50_23_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_24_Removed", c, e);
+            e.IsProperty_F_B_24_Removed = c.IsProperty_F_B_24_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_24_Removed", c, e);
+            e.IsProperty_F_I_24_Removed = c.IsProperty_F_I_24_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_24_Removed", c, e);
+            e.IsProperty_F_L_24_Removed = c.IsProperty_F_L_24_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_24_Removed", c, e);
+            e.IsProperty_F_N_24_Removed = c.IsProperty_F_N_24_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_25_Removed", c, e);
+            e.IsProperty_F_C5_24_Removed = c.IsProperty_F_C5_24_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_25_Removed", c, e);
+            e.IsProperty_F_C10_24_Removed = c.IsProperty_F_C10_24_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_25_Removed", c, e);
+            e.IsProperty_F_C20_24_Removed = c.IsProperty_F_C20_24_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_25_Removed", c, e);
+            e.IsProperty_F_C50_24_Removed = c.IsProperty_F_C50_24_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_25_Removed", c, e);
+            e.IsProperty_F_B_25_Removed = c.IsProperty_F_B_25_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_25_Removed", c, e);
+            e.IsProperty_F_I_25_Removed = c.IsProperty_F_I_25_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_25_Removed", c, e);
+            e.IsProperty_F_L_25_Removed = c.IsProperty_F_L_25_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_25_Removed", c, e);
+            e.IsProperty_F_N_25_Removed = c.IsProperty_F_N_25_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_26_Removed", c, e);
+            e.IsProperty_F_C5_25_Removed = c.IsProperty_F_C5_25_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_26_Removed", c, e);
+            e.IsProperty_F_C10_25_Removed = c.IsProperty_F_C10_25_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_26_Removed", c, e);
+            e.IsProperty_F_C20_25_Removed = c.IsProperty_F_C20_25_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_26_Removed", c, e);
+            e.IsProperty_F_C50_25_Removed = c.IsProperty_F_C50_25_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_26_Removed", c, e);
+            e.IsProperty_F_B_26_Removed = c.IsProperty_F_B_26_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_26_Removed", c, e);
+            e.IsProperty_F_I_26_Removed = c.IsProperty_F_I_26_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_26_Removed", c, e);
+            e.IsProperty_F_L_26_Removed = c.IsProperty_F_L_26_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_26_Removed", c, e);
+            e.IsProperty_F_N_26_Removed = c.IsProperty_F_N_26_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_27_Removed", c, e);
+            e.IsProperty_F_C5_26_Removed = c.IsProperty_F_C5_26_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_27_Removed", c, e);
+            e.IsProperty_F_C10_26_Removed = c.IsProperty_F_C10_26_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_27_Removed", c, e);
+            e.IsProperty_F_C20_26_Removed = c.IsProperty_F_C20_26_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_27_Removed", c, e);
+            e.IsProperty_F_C50_26_Removed = c.IsProperty_F_C50_26_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_27_Removed", c, e);
+            e.IsProperty_F_B_27_Removed = c.IsProperty_F_B_27_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_27_Removed", c, e);
+            e.IsProperty_F_I_27_Removed = c.IsProperty_F_I_27_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_27_Removed", c, e);
+            e.IsProperty_F_L_27_Removed = c.IsProperty_F_L_27_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_27_Removed", c, e);
+            e.IsProperty_F_N_27_Removed = c.IsProperty_F_N_27_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_28_Removed", c, e);
+            e.IsProperty_F_C5_27_Removed = c.IsProperty_F_C5_27_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_28_Removed", c, e);
+            e.IsProperty_F_C10_27_Removed = c.IsProperty_F_C10_27_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_28_Removed", c, e);
+            e.IsProperty_F_C20_27_Removed = c.IsProperty_F_C20_27_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_28_Removed", c, e);
+            e.IsProperty_F_C50_27_Removed = c.IsProperty_F_C50_27_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_28_Removed", c, e);
+            e.IsProperty_F_B_28_Removed = c.IsProperty_F_B_28_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_28_Removed", c, e);
+            e.IsProperty_F_I_28_Removed = c.IsProperty_F_I_28_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_28_Removed", c, e);
+            e.IsProperty_F_L_28_Removed = c.IsProperty_F_L_28_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_28_Removed", c, e);
+            e.IsProperty_F_N_28_Removed = c.IsProperty_F_N_28_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_29_Removed", c, e);
+            e.IsProperty_F_C5_28_Removed = c.IsProperty_F_C5_28_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_29_Removed", c, e);
+            e.IsProperty_F_C10_28_Removed = c.IsProperty_F_C10_28_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_L_29_Removed", c, e);
+            e.IsProperty_F_C20_28_Removed = c.IsProperty_F_C20_28_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_29_Removed", c, e);
+            e.IsProperty_F_C50_28_Removed = c.IsProperty_F_C50_28_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_29_Removed", c, e);
+            e.IsProperty_F_B_29_Removed = c.IsProperty_F_B_29_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_29_Removed", c, e);
+            e.IsProperty_F_I_29_Removed = c.IsProperty_F_I_29_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_29_Removed", c, e);
+            e.IsProperty_F_L_29_Removed = c.IsProperty_F_L_29_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_29_Removed", c, e);
+            e.IsProperty_F_N_29_Removed = c.IsProperty_F_N_29_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_30_Removed", c, e);
+            e.IsProperty_F_C5_29_Removed = c.IsProperty_F_C5_29_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_30_Removed", c, e);
+            e.IsProperty_F_C10_29_Removed = c.IsProperty_F_C10_29_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_30_Removed", c, e);
+            e.IsProperty_F_C20_29_Removed = c.IsProperty_F_C20_29_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_30_Removed", c, e);
+            e.IsProperty_F_C50_29_Removed = c.IsProperty_F_C50_29_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_30_Removed", c, e);
+            e.IsProperty_F_B_30_Removed = c.IsProperty_F_B_30_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_30_Removed", c, e);
+            e.IsProperty_F_I_30_Removed = c.IsProperty_F_I_30_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_30_Removed", c, e);
+            e.IsProperty_F_N_30_Removed = c.IsProperty_F_N_30_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_31_Removed", c, e);
+            e.IsProperty_F_C5_30_Removed = c.IsProperty_F_C5_30_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_31_Removed", c, e);
+            e.IsProperty_F_C10_30_Removed = c.IsProperty_F_C10_30_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_31_Removed", c, e);
+            e.IsProperty_F_C20_30_Removed = c.IsProperty_F_C20_30_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_31_Removed", c, e);
+            e.IsProperty_F_C50_30_Removed = c.IsProperty_F_C50_30_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_31_Removed", c, e);
+            e.IsProperty_F_B_31_Removed = c.IsProperty_F_B_31_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_31_Removed", c, e);
+            e.IsProperty_F_I_31_Removed = c.IsProperty_F_I_31_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_31_Removed", c, e);
+            e.IsProperty_F_N_31_Removed = c.IsProperty_F_N_31_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_32_Removed", c, e);
+            e.IsProperty_F_C5_31_Removed = c.IsProperty_F_C5_31_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_32_Removed", c, e);
+            e.IsProperty_F_C10_31_Removed = c.IsProperty_F_C10_31_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_32_Removed", c, e);
+            e.IsProperty_F_C20_31_Removed = c.IsProperty_F_C20_31_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_32_Removed", c, e);
+            e.IsProperty_F_C50_31_Removed = c.IsProperty_F_C50_31_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_32_Removed", c, e);
+            e.IsProperty_F_B_32_Removed = c.IsProperty_F_B_32_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_32_Removed", c, e);
+            e.IsProperty_F_I_32_Removed = c.IsProperty_F_I_32_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_32_Removed", c, e);
+            e.IsProperty_F_N_32_Removed = c.IsProperty_F_N_32_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_33_Removed", c, e);
+            e.IsProperty_F_C5_32_Removed = c.IsProperty_F_C5_32_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_33_Removed", c, e);
+            e.IsProperty_F_C10_32_Removed = c.IsProperty_F_C10_32_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_33_Removed", c, e);
+            e.IsProperty_F_C20_32_Removed = c.IsProperty_F_C20_32_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_33_Removed", c, e);
+            e.IsProperty_F_C50_32_Removed = c.IsProperty_F_C50_32_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_33_Removed", c, e);
+            e.IsProperty_F_B_33_Removed = c.IsProperty_F_B_33_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_33_Removed", c, e);
+            e.IsProperty_F_I_33_Removed = c.IsProperty_F_I_33_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_33_Removed", c, e);
+            e.IsProperty_F_N_33_Removed = c.IsProperty_F_N_33_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_34_Removed", c, e);
+            e.IsProperty_F_C5_33_Removed = c.IsProperty_F_C5_33_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_34_Removed", c, e);
+            e.IsProperty_F_C10_33_Removed = c.IsProperty_F_C10_33_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_34_Removed", c, e);
+            e.IsProperty_F_C20_33_Removed = c.IsProperty_F_C20_33_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_34_Removed", c, e);
+            e.IsProperty_F_C50_33_Removed = c.IsProperty_F_C50_33_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_34_Removed", c, e);
+            e.IsProperty_F_B_34_Removed = c.IsProperty_F_B_34_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_34_Removed", c, e);
+            e.IsProperty_F_I_34_Removed = c.IsProperty_F_I_34_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_34_Removed", c, e);
+            e.IsProperty_F_N_34_Removed = c.IsProperty_F_N_34_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_35_Removed", c, e);
+            e.IsProperty_F_C5_34_Removed = c.IsProperty_F_C5_34_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_35_Removed", c, e);
+            e.IsProperty_F_C10_34_Removed = c.IsProperty_F_C10_34_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_35_Removed", c, e);
+            e.IsProperty_F_C20_34_Removed = c.IsProperty_F_C20_34_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_35_Removed", c, e);
+            e.IsProperty_F_C50_34_Removed = c.IsProperty_F_C50_34_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_35_Removed", c, e);
+            e.IsProperty_F_B_35_Removed = c.IsProperty_F_B_35_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_35_Removed", c, e);
+            e.IsProperty_F_I_35_Removed = c.IsProperty_F_I_35_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_35_Removed", c, e);
+            e.IsProperty_F_N_35_Removed = c.IsProperty_F_N_35_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_36_Removed", c, e);
+            e.IsProperty_F_C5_35_Removed = c.IsProperty_F_C5_35_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_36_Removed", c, e);
+            e.IsProperty_F_C10_35_Removed = c.IsProperty_F_C10_35_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_36_Removed", c, e);
+            e.IsProperty_F_C20_35_Removed = c.IsProperty_F_C20_35_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_36_Removed", c, e);
+            e.IsProperty_F_C50_35_Removed = c.IsProperty_F_C50_35_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_36_Removed", c, e);
+            e.IsProperty_F_B_36_Removed = c.IsProperty_F_B_36_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_36_Removed", c, e);
+            e.IsProperty_F_I_36_Removed = c.IsProperty_F_I_36_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_36_Removed", c, e);
+            e.IsProperty_F_N_36_Removed = c.IsProperty_F_N_36_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_37_Removed", c, e);
+            e.IsProperty_F_C5_36_Removed = c.IsProperty_F_C5_36_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_37_Removed", c, e);
+            e.IsProperty_F_C10_36_Removed = c.IsProperty_F_C10_36_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_37_Removed", c, e);
+            e.IsProperty_F_C20_36_Removed = c.IsProperty_F_C20_36_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_37_Removed", c, e);
+            e.IsProperty_F_C50_36_Removed = c.IsProperty_F_C50_36_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_37_Removed", c, e);
+            e.IsProperty_F_B_37_Removed = c.IsProperty_F_B_37_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_37_Removed", c, e);
+            e.IsProperty_F_I_37_Removed = c.IsProperty_F_I_37_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_37_Removed", c, e);
+            e.IsProperty_F_N_37_Removed = c.IsProperty_F_N_37_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_38_Removed", c, e);
+            e.IsProperty_F_C5_37_Removed = c.IsProperty_F_C5_37_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_38_Removed", c, e);
+            e.IsProperty_F_C10_37_Removed = c.IsProperty_F_C10_37_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_38_Removed", c, e);
+            e.IsProperty_F_C20_37_Removed = c.IsProperty_F_C20_37_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_38_Removed", c, e);
+            e.IsProperty_F_C50_37_Removed = c.IsProperty_F_C50_37_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_38_Removed", c, e);
+            e.IsProperty_F_B_38_Removed = c.IsProperty_F_B_38_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_38_Removed", c, e);
+            e.IsProperty_F_I_38_Removed = c.IsProperty_F_I_38_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_38_Removed", c, e);
+            e.IsProperty_F_N_38_Removed = c.IsProperty_F_N_38_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_39_Removed", c, e);
+            e.IsProperty_F_C5_38_Removed = c.IsProperty_F_C5_38_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_39_Removed", c, e);
+            e.IsProperty_F_C10_38_Removed = c.IsProperty_F_C10_38_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_39_Removed", c, e);
+            e.IsProperty_F_C20_38_Removed = c.IsProperty_F_C20_38_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_39_Removed", c, e);
+            e.IsProperty_F_C50_38_Removed = c.IsProperty_F_C50_38_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_39_Removed", c, e);
+            e.IsProperty_F_B_39_Removed = c.IsProperty_F_B_39_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_39_Removed", c, e);
+            e.IsProperty_F_I_39_Removed = c.IsProperty_F_I_39_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_39_Removed", c, e);
+            e.IsProperty_F_N_39_Removed = c.IsProperty_F_N_39_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_40_Removed", c, e);
+            e.IsProperty_F_C5_39_Removed = c.IsProperty_F_C5_39_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_40_Removed", c, e);
+            e.IsProperty_F_C10_39_Removed = c.IsProperty_F_C10_39_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_40_Removed", c, e);
+            e.IsProperty_F_C20_39_Removed = c.IsProperty_F_C20_39_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_40_Removed", c, e);
+            e.IsProperty_F_C50_39_Removed = c.IsProperty_F_C50_39_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_40_Removed", c, e);
+            e.IsProperty_F_B_40_Removed = c.IsProperty_F_B_40_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_40_Removed", c, e);
+            e.IsProperty_F_I_40_Removed = c.IsProperty_F_I_40_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_40_Removed", c, e);
+            e.IsProperty_F_N_40_Removed = c.IsProperty_F_N_40_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_41_Removed", c, e);
+            e.IsProperty_F_C5_40_Removed = c.IsProperty_F_C5_40_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_41_Removed", c, e);
+            e.IsProperty_F_C10_40_Removed = c.IsProperty_F_C10_40_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_41_Removed", c, e);
+            e.IsProperty_F_C20_40_Removed = c.IsProperty_F_C20_40_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_41_Removed", c, e);
+            e.IsProperty_F_C50_40_Removed = c.IsProperty_F_C50_40_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_41_Removed", c, e);
+            e.IsProperty_F_B_41_Removed = c.IsProperty_F_B_41_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_41_Removed", c, e);
+            e.IsProperty_F_I_41_Removed = c.IsProperty_F_I_41_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_41_Removed", c, e);
+            e.IsProperty_F_N_41_Removed = c.IsProperty_F_N_41_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_42_Removed", c, e);
+            e.IsProperty_F_C5_41_Removed = c.IsProperty_F_C5_41_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_42_Removed", c, e);
+            e.IsProperty_F_C10_41_Removed = c.IsProperty_F_C10_41_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_42_Removed", c, e);
+            e.IsProperty_F_C20_41_Removed = c.IsProperty_F_C20_41_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_42_Removed", c, e);
+            e.IsProperty_F_C50_41_Removed = c.IsProperty_F_C50_41_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_42_Removed", c, e);
+            e.IsProperty_F_B_42_Removed = c.IsProperty_F_B_42_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_42_Removed", c, e);
+            e.IsProperty_F_I_42_Removed = c.IsProperty_F_I_42_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_42_Removed", c, e);
+            e.IsProperty_F_N_42_Removed = c.IsProperty_F_N_42_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_43_Removed", c, e);
+            e.IsProperty_F_C5_42_Removed = c.IsProperty_F_C5_42_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_43_Removed", c, e);
+            e.IsProperty_F_C10_42_Removed = c.IsProperty_F_C10_42_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_43_Removed", c, e);
+            e.IsProperty_F_C20_42_Removed = c.IsProperty_F_C20_42_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_43_Removed", c, e);
+            e.IsProperty_F_C50_42_Removed = c.IsProperty_F_C50_42_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_43_Removed", c, e);
+            e.IsProperty_F_B_43_Removed = c.IsProperty_F_B_43_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_43_Removed", c, e);
+            e.IsProperty_F_I_43_Removed = c.IsProperty_F_I_43_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_43_Removed", c, e);
+            e.IsProperty_F_N_43_Removed = c.IsProperty_F_N_43_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_44_Removed", c, e);
+            e.IsProperty_F_C5_43_Removed = c.IsProperty_F_C5_43_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_44_Removed", c, e);
+            e.IsProperty_F_C10_43_Removed = c.IsProperty_F_C10_43_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_44_Removed", c, e);
+            e.IsProperty_F_C20_43_Removed = c.IsProperty_F_C20_43_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_44_Removed", c, e);
+            e.IsProperty_F_C50_43_Removed = c.IsProperty_F_C50_43_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_44_Removed", c, e);
+            e.IsProperty_F_B_44_Removed = c.IsProperty_F_B_44_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_44_Removed", c, e);
+            e.IsProperty_F_I_44_Removed = c.IsProperty_F_I_44_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_44_Removed", c, e);
+            e.IsProperty_F_N_44_Removed = c.IsProperty_F_N_44_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_45_Removed", c, e);
+            e.IsProperty_F_C5_44_Removed = c.IsProperty_F_C5_44_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_45_Removed", c, e);
+            e.IsProperty_F_C10_44_Removed = c.IsProperty_F_C10_44_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_45_Removed", c, e);
+            e.IsProperty_F_C20_44_Removed = c.IsProperty_F_C20_44_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_45_Removed", c, e);
+            e.IsProperty_F_C50_44_Removed = c.IsProperty_F_C50_44_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_45_Removed", c, e);
+            e.IsProperty_F_B_45_Removed = c.IsProperty_F_B_45_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_45_Removed", c, e);
+            e.IsProperty_F_I_45_Removed = c.IsProperty_F_I_45_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_45_Removed", c, e);
+            e.IsProperty_F_N_45_Removed = c.IsProperty_F_N_45_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_46_Removed", c, e);
+            e.IsProperty_F_C5_45_Removed = c.IsProperty_F_C5_45_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_46_Removed", c, e);
+            e.IsProperty_F_C10_45_Removed = c.IsProperty_F_C10_45_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_46_Removed", c, e);
+            e.IsProperty_F_C20_45_Removed = c.IsProperty_F_C20_45_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_46_Removed", c, e);
+            e.IsProperty_F_C50_45_Removed = c.IsProperty_F_C50_45_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_46_Removed", c, e);
+            e.IsProperty_F_B_46_Removed = c.IsProperty_F_B_46_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_46_Removed", c, e);
+            e.IsProperty_F_I_46_Removed = c.IsProperty_F_I_46_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_46_Removed", c, e);
+            e.IsProperty_F_N_46_Removed = c.IsProperty_F_N_46_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_47_Removed", c, e);
+            e.IsProperty_F_C5_46_Removed = c.IsProperty_F_C5_46_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_47_Removed", c, e);
+            e.IsProperty_F_C10_46_Removed = c.IsProperty_F_C10_46_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_47_Removed", c, e);
+            e.IsProperty_F_C20_46_Removed = c.IsProperty_F_C20_46_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_47_Removed", c, e);
+            e.IsProperty_F_C50_46_Removed = c.IsProperty_F_C50_46_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_47_Removed", c, e);
+            e.IsProperty_F_B_47_Removed = c.IsProperty_F_B_47_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_47_Removed", c, e);
+            e.IsProperty_F_I_47_Removed = c.IsProperty_F_I_47_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_47_Removed", c, e);
+            e.IsProperty_F_N_47_Removed = c.IsProperty_F_N_47_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_48_Removed", c, e);
+            e.IsProperty_F_C5_47_Removed = c.IsProperty_F_C5_47_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_48_Removed", c, e);
+            e.IsProperty_F_C10_47_Removed = c.IsProperty_F_C10_47_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_48_Removed", c, e);
+            e.IsProperty_F_C20_47_Removed = c.IsProperty_F_C20_47_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_48_Removed", c, e);
+            e.IsProperty_F_C50_47_Removed = c.IsProperty_F_C50_47_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_48_Removed", c, e);
+            e.IsProperty_F_B_48_Removed = c.IsProperty_F_B_48_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_48_Removed", c, e);
+            e.IsProperty_F_I_48_Removed = c.IsProperty_F_I_48_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_48_Removed", c, e);
+            e.IsProperty_F_N_48_Removed = c.IsProperty_F_N_48_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_B_49_Removed", c, e);
+            e.IsProperty_F_C5_48_Removed = c.IsProperty_F_C5_48_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_I_49_Removed", c, e);
+            e.IsProperty_F_C10_48_Removed = c.IsProperty_F_C10_48_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_N_49_Removed", c, e);
+            e.IsProperty_F_C20_48_Removed = c.IsProperty_F_C20_48_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C5_49_Removed", c, e);
+            e.IsProperty_F_C50_48_Removed = c.IsProperty_F_C50_48_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C10_49_Removed", c, e);
+            e.IsProperty_F_B_49_Removed = c.IsProperty_F_B_49_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C20_49_Removed", c, e);
+            e.IsProperty_F_I_49_Removed = c.IsProperty_F_I_49_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsProperty_F_C50_49_Removed", c, e);
+            e.IsProperty_F_N_49_Removed = c.IsProperty_F_N_49_Removed;
 
-            ReflectUtils.CopyPropertyValue("IsPropertyActiveRemoved", c, e);
+            e.IsProperty_F_C5_49_Removed = c.IsProperty_F_C5_49_Removed;
+
+            e.IsProperty_F_C10_49_Removed = c.IsProperty_F_C10_49_Removed;
+
+            e.IsProperty_F_C20_49_Removed = c.IsProperty_F_C20_49_Removed;
+
+            e.IsProperty_F_C50_49_Removed = c.IsProperty_F_C50_49_Removed;
+
+            e.IsPropertyActiveRemoved = c.IsPropertyActiveRemoved;
 
 
             ReflectUtils.CopyPropertyValue("CommandId", c, e);//TODO CommandId 太特殊了！！！

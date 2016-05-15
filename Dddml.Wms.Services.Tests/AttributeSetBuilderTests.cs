@@ -1,46 +1,106 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
+﻿using Dddml.Wms.Domain;
+using Dddml.Wms.Specialization;
+using Dddml.Wms.Specialization.Spring;
 using Dddml.Wms.Support;
-using Dddml.Wms.Domain;
+using NUnit.Framework;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace Dddml.Wms.Services.Tests
 {
+    [TestFixture]
     public class AttributeSetBuilderTests
     {
-        public static void TestAttributeSetBuilder()
+
+        IAttributeSetApplicationService attributeSetApplicationService;
+
+        IAttributeApplicationService attributeApplicationService;
+        
+
+        [SetUp]
+        public void SetUp()
+        {
+            ApplicationContext.Current = SpringApplicationContext.Instance;
+            attributeSetApplicationService = ApplicationContext.Current["attributeSetApplicationService"] as IAttributeSetApplicationService;
+            attributeApplicationService = ApplicationContext.Current["attributeApplicationService"] as IAttributeApplicationService;
+
+        }
+
+        [Test]
+        public void TestAttributeSetBuilder()
         {
             var attributeSetBuilder = new AttributeSetBuilder<CreateAttributeSet, CreateAttribute, CreateAttributeValue, CreateAttributeUse>(new IdGenerator());
-            
-            
+
+
             IList<CreateAttribute> attrs;
             IList<CreateAttributeValue> attrVals;
             IList<CreateAttributeSet> attrSets;
             IList<CreateAttributeUse> attrUses;
 
+            ////////////////////////////////////////////
+
             attributeSetBuilder.BuildAttributeSetsFromEntityType(typeof(AttributeSetInstanceTestClass1), out attrSets, out attrs, out attrVals, out attrUses);
 
-            System.Console.WriteLine(attrSets);
+            Assert.AreEqual(3, attrSets.Count);//System.Console.WriteLine(attrSets);
             System.Console.WriteLine(attrs);
             System.Console.WriteLine(attrVals);
             System.Console.WriteLine(attrUses);
+
+            foreach (var a in attrs)
+            {
+                attributeApplicationService.When(a);
+            }
+            foreach (var attrSet in attrSets)
+            {
+                attributeSetApplicationService.When(attrSet);
+            }
+
+            ////////////////////////////////////////////
 
             attributeSetBuilder.BuildAttributeSetsFromEntityType(typeof(AttributeSetInstanceTestClass2), out attrSets, out attrs, out attrVals, out attrUses);
 
-            System.Console.WriteLine(attrSets);
+            Assert.AreEqual(1, attrSets.Count);//System.Console.WriteLine(attrSets);
             System.Console.WriteLine(attrs);
+            Assert.AreEqual(1, attrs.Count);
+            Assert.IsTrue(attrs[0].IsList); 
+            Assert.AreEqual((typeof(int)).Name, attrs[0].AttributeValueType);
             System.Console.WriteLine(attrVals);
             System.Console.WriteLine(attrUses);
+
+            foreach (var a in attrs)
+            {
+                attributeApplicationService.When(a);
+            }
+            foreach (var attrSet in attrSets)
+            {
+                attributeSetApplicationService.When(attrSet);
+            }
+
+            ////////////////////////////////////////////
 
             attributeSetBuilder.BuildAttributeSetsFromEntityType(typeof(AttributeSetInstanceTestClass3), out attrSets, out attrs, out attrVals, out attrUses);
 
-            System.Console.WriteLine(attrSets);
-            System.Console.WriteLine(attrs);
-            System.Console.WriteLine(attrVals);
+            Assert.AreEqual(1, attrSets.Count); //System.Console.WriteLine(attrSets);
+            Assert.AreEqual(1, attrs.Count); //System.Console.WriteLine(attrs);
+            Assert.IsTrue(attrs[0].IsList);
+            Assert.AreEqual((typeof(string)).Name, attrs[0].AttributeValueType);
+            Assert.AreEqual(3, attrVals.Count); //System.Console.WriteLine(attrVals);
             System.Console.WriteLine(attrUses);
 
-       }
+            foreach (var a in attrs)
+            {
+                attributeApplicationService.When(a);
+            }
+            foreach (var attrSet in attrSets)
+            {
+                attributeSetApplicationService.When(attrSet);
+            }
+
+            ////////////////////////////////////////////
+
+            System.Console.WriteLine(attributeSetApplicationService.GetAll(0, int.MaxValue));
+
+        }
 
         class IdGenerator : AttributeSetBuilder<CreateAttributeSet, CreateAttribute, CreateAttributeValue, CreateAttributeUse>.IdGenerator
         {

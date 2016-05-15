@@ -28,19 +28,23 @@ namespace Dddml.Wms.Domain
 
 	public interface IAttributeStateMergePatched : IAttributeStateEvent, IAttributeStateProperties
 	{
-		bool IsPropertyNameRemoved { get; }
+		bool IsPropertyNameRemoved { get; set; }
 
-		bool IsPropertyDescriptionRemoved { get; }
+		bool IsPropertyDescriptionRemoved { get; set; }
 
-		bool IsPropertyIsMandatoryRemoved { get; }
+		bool IsPropertyIsMandatoryRemoved { get; set; }
 
-		bool IsPropertyIsInstanceAttributeRemoved { get; }
+		bool IsPropertyIsInstanceAttributeRemoved { get; set; }
 
-		bool IsPropertyAttributeValueTypeRemoved { get; }
+		bool IsPropertyAttributeValueTypeRemoved { get; set; }
 
-		bool IsPropertyFieldNameRemoved { get; }
+		bool IsPropertyIsListRemoved { get; set; }
 
-		bool IsPropertyActiveRemoved { get; }
+		bool IsPropertyFieldNameRemoved { get; set; }
+
+		bool IsPropertyReferenceIdRemoved { get; set; }
+
+		bool IsPropertyActiveRemoved { get; set; }
 
 		IEnumerable<IAttributeValueStateEvent> AttributeValueEvents { get; }
 		

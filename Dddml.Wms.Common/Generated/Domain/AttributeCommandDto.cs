@@ -96,7 +96,28 @@ namespace Dddml.Wms.Domain
 
 		public virtual string AttributeValueType { get; set; }
 
+		public virtual bool? IsList { get; set; }
+
+        bool IAttributeStateProperties.IsList
+        {
+            get 
+            {
+                var b = this.IsList;
+                if (b != null && b.HasValue)
+                {
+                    return b.Value;
+                }
+                return default(bool);
+            }
+            set 
+            {
+                this.IsList = value;
+            }
+        }
+
 		public virtual string FieldName { get; set; }
+
+		public virtual string ReferenceId { get; set; }
 
 		public virtual bool? Active { get; set; }
 
@@ -212,6 +233,25 @@ namespace Dddml.Wms.Domain
             }
         }
 
+		public virtual bool? IsPropertyIsListRemoved { get; set; }
+
+        bool IMergePatchAttribute.IsPropertyIsListRemoved
+        {
+            get
+            {
+                var b = this.IsPropertyIsListRemoved;
+                if (b != null && b.HasValue)
+                {
+                    return b.Value;
+                }
+                return false;
+            }
+            set
+            {
+                this.IsPropertyIsListRemoved = value;
+            }
+        }
+
 		public virtual bool? IsPropertyFieldNameRemoved { get; set; }
 
         bool IMergePatchAttribute.IsPropertyFieldNameRemoved
@@ -228,6 +268,25 @@ namespace Dddml.Wms.Domain
             set
             {
                 this.IsPropertyFieldNameRemoved = value;
+            }
+        }
+
+		public virtual bool? IsPropertyReferenceIdRemoved { get; set; }
+
+        bool IMergePatchAttribute.IsPropertyReferenceIdRemoved
+        {
+            get
+            {
+                var b = this.IsPropertyReferenceIdRemoved;
+                if (b != null && b.HasValue)
+                {
+                    return b.Value;
+                }
+                return false;
+            }
+            set
+            {
+                this.IsPropertyReferenceIdRemoved = value;
             }
         }
 
@@ -385,7 +444,9 @@ namespace Dddml.Wms.Domain
             cmd.IsMandatory = (this as IAttributeStateProperties).IsMandatory;
             cmd.IsInstanceAttribute = (this as IAttributeStateProperties).IsInstanceAttribute;
             cmd.AttributeValueType = (this as IAttributeStateProperties).AttributeValueType;
+            cmd.IsList = (this as IAttributeStateProperties).IsList;
             cmd.FieldName = (this as IAttributeStateProperties).FieldName;
+            cmd.ReferenceId = (this as IAttributeStateProperties).ReferenceId;
             cmd.Active = (this as IAttributeStateProperties).Active;
             
             cmd.IsPropertyNameRemoved = (this as IMergePatchAttribute).IsPropertyNameRemoved;
@@ -393,7 +454,9 @@ namespace Dddml.Wms.Domain
             cmd.IsPropertyIsMandatoryRemoved = (this as IMergePatchAttribute).IsPropertyIsMandatoryRemoved;
             cmd.IsPropertyIsInstanceAttributeRemoved = (this as IMergePatchAttribute).IsPropertyIsInstanceAttributeRemoved;
             cmd.IsPropertyAttributeValueTypeRemoved = (this as IMergePatchAttribute).IsPropertyAttributeValueTypeRemoved;
+            cmd.IsPropertyIsListRemoved = (this as IMergePatchAttribute).IsPropertyIsListRemoved;
             cmd.IsPropertyFieldNameRemoved = (this as IMergePatchAttribute).IsPropertyFieldNameRemoved;
+            cmd.IsPropertyReferenceIdRemoved = (this as IMergePatchAttribute).IsPropertyReferenceIdRemoved;
             cmd.IsPropertyActiveRemoved = (this as IMergePatchAttribute).IsPropertyActiveRemoved;
             foreach (var d in (IEnumerable<CreateOrMergePatchOrRemoveAttributeValueDto>)_attributeValues)
             {
@@ -417,7 +480,9 @@ namespace Dddml.Wms.Domain
             cmd.IsMandatory = (this as IAttributeStateProperties).IsMandatory;
             cmd.IsInstanceAttribute = (this as IAttributeStateProperties).IsInstanceAttribute;
             cmd.AttributeValueType = (this as IAttributeStateProperties).AttributeValueType;
+            cmd.IsList = (this as IAttributeStateProperties).IsList;
             cmd.FieldName = (this as IAttributeStateProperties).FieldName;
+            cmd.ReferenceId = (this as IAttributeStateProperties).ReferenceId;
             cmd.Active = (this as IAttributeStateProperties).Active;
             foreach (var d in (IEnumerable<CreateOrMergePatchOrRemoveAttributeValueDto>)_attributeValues)
             {

@@ -20,6 +20,8 @@ namespace Dddml.Wms.Domain
 
 		string LotAttributeId { get; set; }
 
+		string ReferenceId { get; set; }
+
 		bool Active { get; set; }
 
 

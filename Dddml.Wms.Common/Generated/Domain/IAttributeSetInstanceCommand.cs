@@ -26,11 +26,15 @@ namespace Dddml.Wms.Domain
 
 		bool IsPropertyAttributeSetIdRemoved { get; set; }
 
+		bool IsPropertyReferenceIdRemoved { get; set; }
+
 		bool IsPropertySerialNumberRemoved { get; set; }
 
 		bool IsPropertyLotRemoved { get; set; }
 
 		bool IsPropertyDescriptionRemoved { get; set; }
+
+		bool IsPropertyHashRemoved { get; set; }
 
 		bool IsProperty_F_B_0_Removed { get; set; }
 

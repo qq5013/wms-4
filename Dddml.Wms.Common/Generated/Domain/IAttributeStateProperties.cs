@@ -22,7 +22,11 @@ namespace Dddml.Wms.Domain
 
 		string AttributeValueType { get; set; }
 
+		bool IsList { get; set; }
+
 		string FieldName { get; set; }
+
+		string ReferenceId { get; set; }
 
 		bool Active { get; set; }
 

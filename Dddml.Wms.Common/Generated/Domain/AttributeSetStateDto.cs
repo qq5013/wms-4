@@ -179,6 +179,34 @@ namespace Dddml.Wms.Domain
             }
         }
 
+		public virtual string ReferenceId
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("ReferenceId"))
+                {
+                    return _state.ReferenceId;
+                }
+                return null;
+            }
+            set
+            {
+                _state.ReferenceId = value;
+            }
+        }
+
+        string IAttributeSetStateProperties.ReferenceId
+        {
+            get 
+            {
+                return (this._state as IAttributeSetStateProperties).ReferenceId;
+            }
+            set 
+            {
+                this._state.ReferenceId = value;
+            }
+        }
+
 		public virtual bool? Active
         {
             get

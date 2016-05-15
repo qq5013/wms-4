@@ -213,6 +213,37 @@ namespace Dddml.Wms.Domain
             }
         }
 
+		public virtual bool? IsList
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("IsList"))
+                {
+                    return _state.IsList;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state.IsList = value.Value;
+                }
+            }
+        }
+
+        bool IAttributeStateProperties.IsList
+        {
+            get 
+            {
+                return (this._state as IAttributeStateProperties).IsList;
+            }
+            set 
+            {
+                this._state.IsList = value;
+            }
+        }
+
 		public virtual string FieldName
 		{
             get
@@ -238,6 +269,34 @@ namespace Dddml.Wms.Domain
             set 
             {
                 this._state.FieldName = value;
+            }
+        }
+
+		public virtual string ReferenceId
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("ReferenceId"))
+                {
+                    return _state.ReferenceId;
+                }
+                return null;
+            }
+            set
+            {
+                _state.ReferenceId = value;
+            }
+        }
+
+        string IAttributeStateProperties.ReferenceId
+        {
+            get 
+            {
+                return (this._state as IAttributeStateProperties).ReferenceId;
+            }
+            set 
+            {
+                this._state.ReferenceId = value;
             }
         }
 

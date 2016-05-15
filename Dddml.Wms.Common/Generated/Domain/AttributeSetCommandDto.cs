@@ -60,6 +60,8 @@ namespace Dddml.Wms.Domain
 
 		public virtual string LotAttributeId { get; set; }
 
+		public virtual string ReferenceId { get; set; }
+
 		public virtual bool? Active { get; set; }
 
         bool IAttributeSetStateProperties.Active
@@ -152,6 +154,25 @@ namespace Dddml.Wms.Domain
             set
             {
                 this.IsPropertyLotAttributeIdRemoved = value;
+            }
+        }
+
+		public virtual bool? IsPropertyReferenceIdRemoved { get; set; }
+
+        bool IMergePatchAttributeSet.IsPropertyReferenceIdRemoved
+        {
+            get
+            {
+                var b = this.IsPropertyReferenceIdRemoved;
+                if (b != null && b.HasValue)
+                {
+                    return b.Value;
+                }
+                return false;
+            }
+            set
+            {
+                this.IsPropertyReferenceIdRemoved = value;
             }
         }
 
@@ -308,12 +329,14 @@ namespace Dddml.Wms.Domain
             cmd.Description = (this as IAttributeSetStateProperties).Description;
             cmd.SerialNumberAttributeId = (this as IAttributeSetStateProperties).SerialNumberAttributeId;
             cmd.LotAttributeId = (this as IAttributeSetStateProperties).LotAttributeId;
+            cmd.ReferenceId = (this as IAttributeSetStateProperties).ReferenceId;
             cmd.Active = (this as IAttributeSetStateProperties).Active;
             
             cmd.IsPropertyNameRemoved = (this as IMergePatchAttributeSet).IsPropertyNameRemoved;
             cmd.IsPropertyDescriptionRemoved = (this as IMergePatchAttributeSet).IsPropertyDescriptionRemoved;
             cmd.IsPropertySerialNumberAttributeIdRemoved = (this as IMergePatchAttributeSet).IsPropertySerialNumberAttributeIdRemoved;
             cmd.IsPropertyLotAttributeIdRemoved = (this as IMergePatchAttributeSet).IsPropertyLotAttributeIdRemoved;
+            cmd.IsPropertyReferenceIdRemoved = (this as IMergePatchAttributeSet).IsPropertyReferenceIdRemoved;
             cmd.IsPropertyActiveRemoved = (this as IMergePatchAttributeSet).IsPropertyActiveRemoved;
             foreach (var d in (IEnumerable<CreateOrMergePatchOrRemoveAttributeUseDto>)_attributeUses)
             {
@@ -336,6 +359,7 @@ namespace Dddml.Wms.Domain
             cmd.Description = (this as IAttributeSetStateProperties).Description;
             cmd.SerialNumberAttributeId = (this as IAttributeSetStateProperties).SerialNumberAttributeId;
             cmd.LotAttributeId = (this as IAttributeSetStateProperties).LotAttributeId;
+            cmd.ReferenceId = (this as IAttributeSetStateProperties).ReferenceId;
             cmd.Active = (this as IAttributeSetStateProperties).Active;
             foreach (var d in (IEnumerable<CreateOrMergePatchOrRemoveAttributeUseDto>)_attributeUses)
             {

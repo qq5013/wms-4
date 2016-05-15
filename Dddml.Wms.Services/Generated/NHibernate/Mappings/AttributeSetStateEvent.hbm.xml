@@ -20,6 +20,8 @@
 
 	<property name="LotAttributeId"  />
 
+	<property name="ReferenceId"  />
+
 	<property name="Active"  />
 
 
@@ -43,6 +45,8 @@
         <property name="IsPropertySerialNumberAttributeIdRemoved" />
 
         <property name="IsPropertyLotAttributeIdRemoved" />
+
+        <property name="IsPropertyReferenceIdRemoved" />
 
         <property name="IsPropertyActiveRemoved" />
 

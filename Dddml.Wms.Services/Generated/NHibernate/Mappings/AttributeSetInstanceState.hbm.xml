@@ -13,11 +13,15 @@
 
 	<property name="AttributeSetId"  />
 
+	<property name="ReferenceId"  />
+
 	<property name="SerialNumber"  />
 
 	<property name="Lot"  />
 
 	<property name="Description"  />
+
+	<property name="Hash"  />
 
 	<property name="_F_B_0_"  />
 

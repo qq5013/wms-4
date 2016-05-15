@@ -6,22 +6,29 @@ using System.Text;
 
 namespace Dddml.Wms.Support
 {
-    public static class AttributeValueTypeUtils
+
+    internal static class AttributeValueTypeUtils
     {
 
-        public const string ListAttributeValueTypeName = "List";
+        //public const string ListAttributeValueTypeName = "List";
 
         /// <summary>
         /// 尝试获取物料属性值类型。注意这里不返回List类型。
         /// </summary>
         /// <param name="attributeValueType">属性值类型</param>
         /// <returns></returns>
-        public static bool TryGetAttributeValueType(Type type, out string attributeValueType)
+        public static bool TryGetAttributeValueType(Type type, out string attributeValueType, out bool isList)
         {
             attributeValueType = null;
+            isList = false;
             if (IsBasicType(type))
             {
                 attributeValueType = type.Name;
+                if (type.IsEnum)
+                {
+                    isList = true;
+                    attributeValueType = type.GetEnumUnderlyingType().Name;
+                }
                 return true;
             }
             if (NullableUtils.IsNullableType(type))
@@ -36,6 +43,7 @@ namespace Dddml.Wms.Support
             return false;
         }
 
+
         /// <summary>
         /// 当前认为是“基本类型”的包括：
         /// System.Type.IsPrimitive为true的类型；
@@ -45,7 +53,7 @@ namespace Dddml.Wms.Support
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static bool IsBasicType(System.Type type)
+        private static bool IsBasicType(System.Type type)
         {
             if (type.IsPrimitive || type.IsEnum || type == typeof(string) || type == typeof(DateTime)
                 || type == typeof(decimal))

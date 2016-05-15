@@ -158,12 +158,12 @@ namespace Dddml.Wms.Domain
 		public virtual void When(IAttributeValueStateCreated e)
 		{
 			ThrowOnWrongEvent(e);
-			ReflectUtils.CopyPropertyValue("Name", e, this);
-			ReflectUtils.CopyPropertyValue("Description", e, this);
-			ReflectUtils.CopyPropertyValue("ReferenceId", e, this);
-			ReflectUtils.CopyPropertyValue("Active", e, this);
-			ReflectUtils.SetPropertyValue("CreatedBy", this, e.CreatedBy);
-			ReflectUtils.SetPropertyValue("CreatedAt", this, e.CreatedAt);
+			this.Name = e.Name;
+			this.Description = e.Description;
+			this.ReferenceId = e.ReferenceId;
+			this.Active = e.Active;
+			this.CreatedBy = e.CreatedBy;
+			this.CreatedAt = e.CreatedAt;
 
 
 		}
@@ -175,51 +175,51 @@ namespace Dddml.Wms.Domain
 
 			if (e.IsPropertyNameRemoved)
 			{
-				ReflectUtils.SetPropertyValue("Name", this, default(string));
+				this.Name = default(string);
 			}
 			else
 			{
 				if (e.Name != null)
 				{
-					ReflectUtils.CopyPropertyValue("Name", e, this);
+					this.Name = e.Name;
 				}
 			}
 			if (e.IsPropertyDescriptionRemoved)
 			{
-				ReflectUtils.SetPropertyValue("Description", this, default(string));
+				this.Description = default(string);
 			}
 			else
 			{
 				if (e.Description != null)
 				{
-					ReflectUtils.CopyPropertyValue("Description", e, this);
+					this.Description = e.Description;
 				}
 			}
 			if (e.IsPropertyReferenceIdRemoved)
 			{
-				ReflectUtils.SetPropertyValue("ReferenceId", this, default(string));
+				this.ReferenceId = default(string);
 			}
 			else
 			{
 				if (e.ReferenceId != null)
 				{
-					ReflectUtils.CopyPropertyValue("ReferenceId", e, this);
+					this.ReferenceId = e.ReferenceId;
 				}
 			}
 			if (e.IsPropertyActiveRemoved)
 			{
-				ReflectUtils.SetPropertyValue("Active", this, default(bool));
+				this.Active = default(bool);
 			}
 			else
 			{
 				if (e.Active != null)
 				{
-					ReflectUtils.CopyPropertyValue("Active", e, this);
+					this.Active = e.Active;
 				}
 			}
 
-			ReflectUtils.SetPropertyValue("UpdatedBy", this, e.CreatedBy);
-			ReflectUtils.SetPropertyValue("UpdatedAt", this, e.CreatedAt);
+			this.UpdatedBy = e.CreatedBy;
+			this.UpdatedAt = e.CreatedAt;
 
 
 		}

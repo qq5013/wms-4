@@ -47,11 +47,11 @@
         public static IList<ExtensionField> CreateExtensionFields()
         {
             var extensionFieldGroups = new ExtensionFieldGroup[] {
-                new ExtensionFieldGroup("_F_B_", "_", "bool", 50, null),
-                new ExtensionFieldGroup("_F_I_", "_", "int", 50, null),
-                new ExtensionFieldGroup("_F_L_", "_", "long", 30, null),
-                new ExtensionFieldGroup("_F_DT_", "_", "DateTime", 20, null),
-                new ExtensionFieldGroup("_F_N_", "_", "decimal", 50, null),
+                new ExtensionFieldGroup("_F_B_", "_", "bool?", 50, null),
+                new ExtensionFieldGroup("_F_I_", "_", "int?", 50, null),
+                new ExtensionFieldGroup("_F_L_", "_", "long?", 30, null),
+                new ExtensionFieldGroup("_F_DT_", "_", "DateTime?", 20, null),
+                new ExtensionFieldGroup("_F_N_", "_", "decimal?", 50, null),
                 new ExtensionFieldGroup("_F_C5_", "_", "string", 50, 5),
                 new ExtensionFieldGroup("_F_C10_", "_", "string", 50, 10),
                 new ExtensionFieldGroup("_F_C20_", "_", "string", 50, 20),

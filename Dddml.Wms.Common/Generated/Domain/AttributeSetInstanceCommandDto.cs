@@ -54,106 +54,25 @@ namespace Dddml.Wms.Domain
 
 		public virtual string AttributeSetId { get; set; }
 
+		public virtual string ReferenceId { get; set; }
+
 		public virtual string SerialNumber { get; set; }
 
 		public virtual string Lot { get; set; }
 
 		public virtual string Description { get; set; }
 
-		public virtual bool? _F_B_0_ { get; set; }
+		public virtual string Hash { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_0_
-        {
-            get 
-            {
-                var b = this._F_B_0_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_0_ = value;
-            }
-        }
+		public virtual bool? _F_B_0_ { get; set; }
 
 		public virtual int? _F_I_0_ { get; set; }
 
-        int IAttributeSetInstanceStateProperties._F_I_0_
-        {
-            get 
-            {
-                var b = this._F_I_0_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_0_ = value;
-            }
-        }
-
 		public virtual long? _F_L_0_ { get; set; }
-
-        long IAttributeSetInstanceStateProperties._F_L_0_
-        {
-            get 
-            {
-                var b = this._F_L_0_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_0_ = value;
-            }
-        }
 
 		public virtual DateTime? _F_DT_0_ { get; set; }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_0_
-        {
-            get 
-            {
-                var b = this._F_DT_0_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(DateTime);
-            }
-            set 
-            {
-                this._F_DT_0_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_0_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_0_
-        {
-            get 
-            {
-                var b = this._F_N_0_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_0_ = value;
-            }
-        }
 
 		public virtual string _F_C5_0_ { get; set; }
 
@@ -173,98 +92,13 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_1_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_1_
-        {
-            get 
-            {
-                var b = this._F_B_1_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_1_ = value;
-            }
-        }
-
 		public virtual int? _F_I_1_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_1_
-        {
-            get 
-            {
-                var b = this._F_I_1_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_1_ = value;
-            }
-        }
 
 		public virtual long? _F_L_1_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_1_
-        {
-            get 
-            {
-                var b = this._F_L_1_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_1_ = value;
-            }
-        }
-
 		public virtual DateTime? _F_DT_1_ { get; set; }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_1_
-        {
-            get 
-            {
-                var b = this._F_DT_1_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(DateTime);
-            }
-            set 
-            {
-                this._F_DT_1_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_1_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_1_
-        {
-            get 
-            {
-                var b = this._F_N_1_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_1_ = value;
-            }
-        }
 
 		public virtual string _F_C5_1_ { get; set; }
 
@@ -284,98 +118,13 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_2_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_2_
-        {
-            get 
-            {
-                var b = this._F_B_2_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_2_ = value;
-            }
-        }
-
 		public virtual int? _F_I_2_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_2_
-        {
-            get 
-            {
-                var b = this._F_I_2_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_2_ = value;
-            }
-        }
 
 		public virtual long? _F_L_2_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_2_
-        {
-            get 
-            {
-                var b = this._F_L_2_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_2_ = value;
-            }
-        }
-
 		public virtual DateTime? _F_DT_2_ { get; set; }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_2_
-        {
-            get 
-            {
-                var b = this._F_DT_2_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(DateTime);
-            }
-            set 
-            {
-                this._F_DT_2_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_2_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_2_
-        {
-            get 
-            {
-                var b = this._F_N_2_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_2_ = value;
-            }
-        }
 
 		public virtual string _F_C5_2_ { get; set; }
 
@@ -395,98 +144,13 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_3_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_3_
-        {
-            get 
-            {
-                var b = this._F_B_3_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_3_ = value;
-            }
-        }
-
 		public virtual int? _F_I_3_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_3_
-        {
-            get 
-            {
-                var b = this._F_I_3_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_3_ = value;
-            }
-        }
 
 		public virtual long? _F_L_3_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_3_
-        {
-            get 
-            {
-                var b = this._F_L_3_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_3_ = value;
-            }
-        }
-
 		public virtual DateTime? _F_DT_3_ { get; set; }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_3_
-        {
-            get 
-            {
-                var b = this._F_DT_3_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(DateTime);
-            }
-            set 
-            {
-                this._F_DT_3_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_3_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_3_
-        {
-            get 
-            {
-                var b = this._F_N_3_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_3_ = value;
-            }
-        }
 
 		public virtual string _F_C5_3_ { get; set; }
 
@@ -506,98 +170,13 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_4_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_4_
-        {
-            get 
-            {
-                var b = this._F_B_4_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_4_ = value;
-            }
-        }
-
 		public virtual int? _F_I_4_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_4_
-        {
-            get 
-            {
-                var b = this._F_I_4_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_4_ = value;
-            }
-        }
 
 		public virtual long? _F_L_4_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_4_
-        {
-            get 
-            {
-                var b = this._F_L_4_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_4_ = value;
-            }
-        }
-
 		public virtual DateTime? _F_DT_4_ { get; set; }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_4_
-        {
-            get 
-            {
-                var b = this._F_DT_4_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(DateTime);
-            }
-            set 
-            {
-                this._F_DT_4_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_4_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_4_
-        {
-            get 
-            {
-                var b = this._F_N_4_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_4_ = value;
-            }
-        }
 
 		public virtual string _F_C5_4_ { get; set; }
 
@@ -617,98 +196,13 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_5_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_5_
-        {
-            get 
-            {
-                var b = this._F_B_5_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_5_ = value;
-            }
-        }
-
 		public virtual int? _F_I_5_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_5_
-        {
-            get 
-            {
-                var b = this._F_I_5_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_5_ = value;
-            }
-        }
 
 		public virtual long? _F_L_5_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_5_
-        {
-            get 
-            {
-                var b = this._F_L_5_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_5_ = value;
-            }
-        }
-
 		public virtual DateTime? _F_DT_5_ { get; set; }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_5_
-        {
-            get 
-            {
-                var b = this._F_DT_5_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(DateTime);
-            }
-            set 
-            {
-                this._F_DT_5_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_5_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_5_
-        {
-            get 
-            {
-                var b = this._F_N_5_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_5_ = value;
-            }
-        }
 
 		public virtual string _F_C5_5_ { get; set; }
 
@@ -726,98 +220,13 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_6_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_6_
-        {
-            get 
-            {
-                var b = this._F_B_6_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_6_ = value;
-            }
-        }
-
 		public virtual int? _F_I_6_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_6_
-        {
-            get 
-            {
-                var b = this._F_I_6_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_6_ = value;
-            }
-        }
 
 		public virtual long? _F_L_6_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_6_
-        {
-            get 
-            {
-                var b = this._F_L_6_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_6_ = value;
-            }
-        }
-
 		public virtual DateTime? _F_DT_6_ { get; set; }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_6_
-        {
-            get 
-            {
-                var b = this._F_DT_6_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(DateTime);
-            }
-            set 
-            {
-                this._F_DT_6_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_6_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_6_
-        {
-            get 
-            {
-                var b = this._F_N_6_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_6_ = value;
-            }
-        }
 
 		public virtual string _F_C5_6_ { get; set; }
 
@@ -835,98 +244,13 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_7_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_7_
-        {
-            get 
-            {
-                var b = this._F_B_7_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_7_ = value;
-            }
-        }
-
 		public virtual int? _F_I_7_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_7_
-        {
-            get 
-            {
-                var b = this._F_I_7_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_7_ = value;
-            }
-        }
 
 		public virtual long? _F_L_7_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_7_
-        {
-            get 
-            {
-                var b = this._F_L_7_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_7_ = value;
-            }
-        }
-
 		public virtual DateTime? _F_DT_7_ { get; set; }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_7_
-        {
-            get 
-            {
-                var b = this._F_DT_7_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(DateTime);
-            }
-            set 
-            {
-                this._F_DT_7_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_7_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_7_
-        {
-            get 
-            {
-                var b = this._F_N_7_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_7_ = value;
-            }
-        }
 
 		public virtual string _F_C5_7_ { get; set; }
 
@@ -944,98 +268,13 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_8_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_8_
-        {
-            get 
-            {
-                var b = this._F_B_8_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_8_ = value;
-            }
-        }
-
 		public virtual int? _F_I_8_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_8_
-        {
-            get 
-            {
-                var b = this._F_I_8_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_8_ = value;
-            }
-        }
 
 		public virtual long? _F_L_8_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_8_
-        {
-            get 
-            {
-                var b = this._F_L_8_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_8_ = value;
-            }
-        }
-
 		public virtual DateTime? _F_DT_8_ { get; set; }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_8_
-        {
-            get 
-            {
-                var b = this._F_DT_8_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(DateTime);
-            }
-            set 
-            {
-                this._F_DT_8_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_8_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_8_
-        {
-            get 
-            {
-                var b = this._F_N_8_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_8_ = value;
-            }
-        }
 
 		public virtual string _F_C5_8_ { get; set; }
 
@@ -1053,98 +292,13 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_9_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_9_
-        {
-            get 
-            {
-                var b = this._F_B_9_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_9_ = value;
-            }
-        }
-
 		public virtual int? _F_I_9_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_9_
-        {
-            get 
-            {
-                var b = this._F_I_9_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_9_ = value;
-            }
-        }
 
 		public virtual long? _F_L_9_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_9_
-        {
-            get 
-            {
-                var b = this._F_L_9_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_9_ = value;
-            }
-        }
-
 		public virtual DateTime? _F_DT_9_ { get; set; }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_9_
-        {
-            get 
-            {
-                var b = this._F_DT_9_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(DateTime);
-            }
-            set 
-            {
-                this._F_DT_9_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_9_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_9_
-        {
-            get 
-            {
-                var b = this._F_N_9_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_9_ = value;
-            }
-        }
 
 		public virtual string _F_C5_9_ { get; set; }
 
@@ -1162,98 +316,13 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_10_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_10_
-        {
-            get 
-            {
-                var b = this._F_B_10_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_10_ = value;
-            }
-        }
-
 		public virtual int? _F_I_10_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_10_
-        {
-            get 
-            {
-                var b = this._F_I_10_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_10_ = value;
-            }
-        }
 
 		public virtual long? _F_L_10_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_10_
-        {
-            get 
-            {
-                var b = this._F_L_10_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_10_ = value;
-            }
-        }
-
 		public virtual DateTime? _F_DT_10_ { get; set; }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_10_
-        {
-            get 
-            {
-                var b = this._F_DT_10_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(DateTime);
-            }
-            set 
-            {
-                this._F_DT_10_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_10_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_10_
-        {
-            get 
-            {
-                var b = this._F_N_10_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_10_ = value;
-            }
-        }
 
 		public virtual string _F_C5_10_ { get; set; }
 
@@ -1269,98 +338,13 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_11_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_11_
-        {
-            get 
-            {
-                var b = this._F_B_11_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_11_ = value;
-            }
-        }
-
 		public virtual int? _F_I_11_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_11_
-        {
-            get 
-            {
-                var b = this._F_I_11_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_11_ = value;
-            }
-        }
 
 		public virtual long? _F_L_11_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_11_
-        {
-            get 
-            {
-                var b = this._F_L_11_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_11_ = value;
-            }
-        }
-
 		public virtual DateTime? _F_DT_11_ { get; set; }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_11_
-        {
-            get 
-            {
-                var b = this._F_DT_11_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(DateTime);
-            }
-            set 
-            {
-                this._F_DT_11_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_11_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_11_
-        {
-            get 
-            {
-                var b = this._F_N_11_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_11_ = value;
-            }
-        }
 
 		public virtual string _F_C5_11_ { get; set; }
 
@@ -1376,98 +360,13 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_12_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_12_
-        {
-            get 
-            {
-                var b = this._F_B_12_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_12_ = value;
-            }
-        }
-
 		public virtual int? _F_I_12_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_12_
-        {
-            get 
-            {
-                var b = this._F_I_12_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_12_ = value;
-            }
-        }
 
 		public virtual long? _F_L_12_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_12_
-        {
-            get 
-            {
-                var b = this._F_L_12_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_12_ = value;
-            }
-        }
-
 		public virtual DateTime? _F_DT_12_ { get; set; }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_12_
-        {
-            get 
-            {
-                var b = this._F_DT_12_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(DateTime);
-            }
-            set 
-            {
-                this._F_DT_12_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_12_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_12_
-        {
-            get 
-            {
-                var b = this._F_N_12_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_12_ = value;
-            }
-        }
 
 		public virtual string _F_C5_12_ { get; set; }
 
@@ -1483,98 +382,13 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_13_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_13_
-        {
-            get 
-            {
-                var b = this._F_B_13_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_13_ = value;
-            }
-        }
-
 		public virtual int? _F_I_13_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_13_
-        {
-            get 
-            {
-                var b = this._F_I_13_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_13_ = value;
-            }
-        }
 
 		public virtual long? _F_L_13_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_13_
-        {
-            get 
-            {
-                var b = this._F_L_13_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_13_ = value;
-            }
-        }
-
 		public virtual DateTime? _F_DT_13_ { get; set; }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_13_
-        {
-            get 
-            {
-                var b = this._F_DT_13_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(DateTime);
-            }
-            set 
-            {
-                this._F_DT_13_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_13_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_13_
-        {
-            get 
-            {
-                var b = this._F_N_13_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_13_ = value;
-            }
-        }
 
 		public virtual string _F_C5_13_ { get; set; }
 
@@ -1590,98 +404,13 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_14_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_14_
-        {
-            get 
-            {
-                var b = this._F_B_14_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_14_ = value;
-            }
-        }
-
 		public virtual int? _F_I_14_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_14_
-        {
-            get 
-            {
-                var b = this._F_I_14_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_14_ = value;
-            }
-        }
 
 		public virtual long? _F_L_14_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_14_
-        {
-            get 
-            {
-                var b = this._F_L_14_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_14_ = value;
-            }
-        }
-
 		public virtual DateTime? _F_DT_14_ { get; set; }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_14_
-        {
-            get 
-            {
-                var b = this._F_DT_14_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(DateTime);
-            }
-            set 
-            {
-                this._F_DT_14_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_14_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_14_
-        {
-            get 
-            {
-                var b = this._F_N_14_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_14_ = value;
-            }
-        }
 
 		public virtual string _F_C5_14_ { get; set; }
 
@@ -1697,98 +426,13 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_15_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_15_
-        {
-            get 
-            {
-                var b = this._F_B_15_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_15_ = value;
-            }
-        }
-
 		public virtual int? _F_I_15_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_15_
-        {
-            get 
-            {
-                var b = this._F_I_15_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_15_ = value;
-            }
-        }
 
 		public virtual long? _F_L_15_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_15_
-        {
-            get 
-            {
-                var b = this._F_L_15_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_15_ = value;
-            }
-        }
-
 		public virtual DateTime? _F_DT_15_ { get; set; }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_15_
-        {
-            get 
-            {
-                var b = this._F_DT_15_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(DateTime);
-            }
-            set 
-            {
-                this._F_DT_15_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_15_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_15_
-        {
-            get 
-            {
-                var b = this._F_N_15_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_15_ = value;
-            }
-        }
 
 		public virtual string _F_C5_15_ { get; set; }
 
@@ -1804,98 +448,13 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_16_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_16_
-        {
-            get 
-            {
-                var b = this._F_B_16_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_16_ = value;
-            }
-        }
-
 		public virtual int? _F_I_16_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_16_
-        {
-            get 
-            {
-                var b = this._F_I_16_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_16_ = value;
-            }
-        }
 
 		public virtual long? _F_L_16_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_16_
-        {
-            get 
-            {
-                var b = this._F_L_16_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_16_ = value;
-            }
-        }
-
 		public virtual DateTime? _F_DT_16_ { get; set; }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_16_
-        {
-            get 
-            {
-                var b = this._F_DT_16_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(DateTime);
-            }
-            set 
-            {
-                this._F_DT_16_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_16_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_16_
-        {
-            get 
-            {
-                var b = this._F_N_16_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_16_ = value;
-            }
-        }
 
 		public virtual string _F_C5_16_ { get; set; }
 
@@ -1911,98 +470,13 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_17_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_17_
-        {
-            get 
-            {
-                var b = this._F_B_17_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_17_ = value;
-            }
-        }
-
 		public virtual int? _F_I_17_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_17_
-        {
-            get 
-            {
-                var b = this._F_I_17_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_17_ = value;
-            }
-        }
 
 		public virtual long? _F_L_17_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_17_
-        {
-            get 
-            {
-                var b = this._F_L_17_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_17_ = value;
-            }
-        }
-
 		public virtual DateTime? _F_DT_17_ { get; set; }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_17_
-        {
-            get 
-            {
-                var b = this._F_DT_17_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(DateTime);
-            }
-            set 
-            {
-                this._F_DT_17_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_17_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_17_
-        {
-            get 
-            {
-                var b = this._F_N_17_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_17_ = value;
-            }
-        }
 
 		public virtual string _F_C5_17_ { get; set; }
 
@@ -2018,98 +492,13 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_18_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_18_
-        {
-            get 
-            {
-                var b = this._F_B_18_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_18_ = value;
-            }
-        }
-
 		public virtual int? _F_I_18_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_18_
-        {
-            get 
-            {
-                var b = this._F_I_18_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_18_ = value;
-            }
-        }
 
 		public virtual long? _F_L_18_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_18_
-        {
-            get 
-            {
-                var b = this._F_L_18_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_18_ = value;
-            }
-        }
-
 		public virtual DateTime? _F_DT_18_ { get; set; }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_18_
-        {
-            get 
-            {
-                var b = this._F_DT_18_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(DateTime);
-            }
-            set 
-            {
-                this._F_DT_18_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_18_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_18_
-        {
-            get 
-            {
-                var b = this._F_N_18_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_18_ = value;
-            }
-        }
 
 		public virtual string _F_C5_18_ { get; set; }
 
@@ -2125,98 +514,13 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_19_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_19_
-        {
-            get 
-            {
-                var b = this._F_B_19_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_19_ = value;
-            }
-        }
-
 		public virtual int? _F_I_19_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_19_
-        {
-            get 
-            {
-                var b = this._F_I_19_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_19_ = value;
-            }
-        }
 
 		public virtual long? _F_L_19_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_19_
-        {
-            get 
-            {
-                var b = this._F_L_19_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_19_ = value;
-            }
-        }
-
 		public virtual DateTime? _F_DT_19_ { get; set; }
 
-        DateTime IAttributeSetInstanceStateProperties._F_DT_19_
-        {
-            get 
-            {
-                var b = this._F_DT_19_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(DateTime);
-            }
-            set 
-            {
-                this._F_DT_19_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_19_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_19_
-        {
-            get 
-            {
-                var b = this._F_N_19_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_19_ = value;
-            }
-        }
 
 		public virtual string _F_C5_19_ { get; set; }
 
@@ -2232,79 +536,11 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_20_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_20_
-        {
-            get 
-            {
-                var b = this._F_B_20_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_20_ = value;
-            }
-        }
-
 		public virtual int? _F_I_20_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_20_
-        {
-            get 
-            {
-                var b = this._F_I_20_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_20_ = value;
-            }
-        }
 
 		public virtual long? _F_L_20_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_20_
-        {
-            get 
-            {
-                var b = this._F_L_20_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_20_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_20_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_20_
-        {
-            get 
-            {
-                var b = this._F_N_20_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_20_ = value;
-            }
-        }
 
 		public virtual string _F_C5_20_ { get; set; }
 
@@ -2316,79 +552,11 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_21_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_21_
-        {
-            get 
-            {
-                var b = this._F_B_21_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_21_ = value;
-            }
-        }
-
 		public virtual int? _F_I_21_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_21_
-        {
-            get 
-            {
-                var b = this._F_I_21_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_21_ = value;
-            }
-        }
 
 		public virtual long? _F_L_21_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_21_
-        {
-            get 
-            {
-                var b = this._F_L_21_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_21_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_21_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_21_
-        {
-            get 
-            {
-                var b = this._F_N_21_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_21_ = value;
-            }
-        }
 
 		public virtual string _F_C5_21_ { get; set; }
 
@@ -2400,79 +568,11 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_22_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_22_
-        {
-            get 
-            {
-                var b = this._F_B_22_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_22_ = value;
-            }
-        }
-
 		public virtual int? _F_I_22_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_22_
-        {
-            get 
-            {
-                var b = this._F_I_22_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_22_ = value;
-            }
-        }
 
 		public virtual long? _F_L_22_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_22_
-        {
-            get 
-            {
-                var b = this._F_L_22_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_22_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_22_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_22_
-        {
-            get 
-            {
-                var b = this._F_N_22_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_22_ = value;
-            }
-        }
 
 		public virtual string _F_C5_22_ { get; set; }
 
@@ -2484,79 +584,11 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_23_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_23_
-        {
-            get 
-            {
-                var b = this._F_B_23_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_23_ = value;
-            }
-        }
-
 		public virtual int? _F_I_23_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_23_
-        {
-            get 
-            {
-                var b = this._F_I_23_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_23_ = value;
-            }
-        }
 
 		public virtual long? _F_L_23_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_23_
-        {
-            get 
-            {
-                var b = this._F_L_23_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_23_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_23_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_23_
-        {
-            get 
-            {
-                var b = this._F_N_23_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_23_ = value;
-            }
-        }
 
 		public virtual string _F_C5_23_ { get; set; }
 
@@ -2568,79 +600,11 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_24_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_24_
-        {
-            get 
-            {
-                var b = this._F_B_24_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_24_ = value;
-            }
-        }
-
 		public virtual int? _F_I_24_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_24_
-        {
-            get 
-            {
-                var b = this._F_I_24_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_24_ = value;
-            }
-        }
 
 		public virtual long? _F_L_24_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_24_
-        {
-            get 
-            {
-                var b = this._F_L_24_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_24_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_24_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_24_
-        {
-            get 
-            {
-                var b = this._F_N_24_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_24_ = value;
-            }
-        }
 
 		public virtual string _F_C5_24_ { get; set; }
 
@@ -2652,79 +616,11 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_25_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_25_
-        {
-            get 
-            {
-                var b = this._F_B_25_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_25_ = value;
-            }
-        }
-
 		public virtual int? _F_I_25_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_25_
-        {
-            get 
-            {
-                var b = this._F_I_25_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_25_ = value;
-            }
-        }
 
 		public virtual long? _F_L_25_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_25_
-        {
-            get 
-            {
-                var b = this._F_L_25_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_25_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_25_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_25_
-        {
-            get 
-            {
-                var b = this._F_N_25_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_25_ = value;
-            }
-        }
 
 		public virtual string _F_C5_25_ { get; set; }
 
@@ -2736,79 +632,11 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_26_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_26_
-        {
-            get 
-            {
-                var b = this._F_B_26_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_26_ = value;
-            }
-        }
-
 		public virtual int? _F_I_26_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_26_
-        {
-            get 
-            {
-                var b = this._F_I_26_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_26_ = value;
-            }
-        }
 
 		public virtual long? _F_L_26_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_26_
-        {
-            get 
-            {
-                var b = this._F_L_26_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_26_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_26_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_26_
-        {
-            get 
-            {
-                var b = this._F_N_26_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_26_ = value;
-            }
-        }
 
 		public virtual string _F_C5_26_ { get; set; }
 
@@ -2820,79 +648,11 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_27_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_27_
-        {
-            get 
-            {
-                var b = this._F_B_27_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_27_ = value;
-            }
-        }
-
 		public virtual int? _F_I_27_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_27_
-        {
-            get 
-            {
-                var b = this._F_I_27_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_27_ = value;
-            }
-        }
 
 		public virtual long? _F_L_27_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_27_
-        {
-            get 
-            {
-                var b = this._F_L_27_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_27_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_27_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_27_
-        {
-            get 
-            {
-                var b = this._F_N_27_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_27_ = value;
-            }
-        }
 
 		public virtual string _F_C5_27_ { get; set; }
 
@@ -2904,79 +664,11 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_28_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_28_
-        {
-            get 
-            {
-                var b = this._F_B_28_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_28_ = value;
-            }
-        }
-
 		public virtual int? _F_I_28_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_28_
-        {
-            get 
-            {
-                var b = this._F_I_28_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_28_ = value;
-            }
-        }
 
 		public virtual long? _F_L_28_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_28_
-        {
-            get 
-            {
-                var b = this._F_L_28_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_28_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_28_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_28_
-        {
-            get 
-            {
-                var b = this._F_N_28_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_28_ = value;
-            }
-        }
 
 		public virtual string _F_C5_28_ { get; set; }
 
@@ -2988,79 +680,11 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_29_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_29_
-        {
-            get 
-            {
-                var b = this._F_B_29_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_29_ = value;
-            }
-        }
-
 		public virtual int? _F_I_29_ { get; set; }
-
-        int IAttributeSetInstanceStateProperties._F_I_29_
-        {
-            get 
-            {
-                var b = this._F_I_29_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_29_ = value;
-            }
-        }
 
 		public virtual long? _F_L_29_ { get; set; }
 
-        long IAttributeSetInstanceStateProperties._F_L_29_
-        {
-            get 
-            {
-                var b = this._F_L_29_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(long);
-            }
-            set 
-            {
-                this._F_L_29_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_29_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_29_
-        {
-            get 
-            {
-                var b = this._F_N_29_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_29_ = value;
-            }
-        }
 
 		public virtual string _F_C5_29_ { get; set; }
 
@@ -3072,60 +696,9 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_30_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_30_
-        {
-            get 
-            {
-                var b = this._F_B_30_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_30_ = value;
-            }
-        }
-
 		public virtual int? _F_I_30_ { get; set; }
 
-        int IAttributeSetInstanceStateProperties._F_I_30_
-        {
-            get 
-            {
-                var b = this._F_I_30_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_30_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_30_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_30_
-        {
-            get 
-            {
-                var b = this._F_N_30_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_30_ = value;
-            }
-        }
 
 		public virtual string _F_C5_30_ { get; set; }
 
@@ -3137,60 +710,9 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_31_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_31_
-        {
-            get 
-            {
-                var b = this._F_B_31_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_31_ = value;
-            }
-        }
-
 		public virtual int? _F_I_31_ { get; set; }
 
-        int IAttributeSetInstanceStateProperties._F_I_31_
-        {
-            get 
-            {
-                var b = this._F_I_31_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_31_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_31_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_31_
-        {
-            get 
-            {
-                var b = this._F_N_31_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_31_ = value;
-            }
-        }
 
 		public virtual string _F_C5_31_ { get; set; }
 
@@ -3202,60 +724,9 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_32_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_32_
-        {
-            get 
-            {
-                var b = this._F_B_32_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_32_ = value;
-            }
-        }
-
 		public virtual int? _F_I_32_ { get; set; }
 
-        int IAttributeSetInstanceStateProperties._F_I_32_
-        {
-            get 
-            {
-                var b = this._F_I_32_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_32_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_32_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_32_
-        {
-            get 
-            {
-                var b = this._F_N_32_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_32_ = value;
-            }
-        }
 
 		public virtual string _F_C5_32_ { get; set; }
 
@@ -3267,60 +738,9 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_33_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_33_
-        {
-            get 
-            {
-                var b = this._F_B_33_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_33_ = value;
-            }
-        }
-
 		public virtual int? _F_I_33_ { get; set; }
 
-        int IAttributeSetInstanceStateProperties._F_I_33_
-        {
-            get 
-            {
-                var b = this._F_I_33_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_33_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_33_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_33_
-        {
-            get 
-            {
-                var b = this._F_N_33_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_33_ = value;
-            }
-        }
 
 		public virtual string _F_C5_33_ { get; set; }
 
@@ -3332,60 +752,9 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_34_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_34_
-        {
-            get 
-            {
-                var b = this._F_B_34_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_34_ = value;
-            }
-        }
-
 		public virtual int? _F_I_34_ { get; set; }
 
-        int IAttributeSetInstanceStateProperties._F_I_34_
-        {
-            get 
-            {
-                var b = this._F_I_34_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_34_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_34_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_34_
-        {
-            get 
-            {
-                var b = this._F_N_34_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_34_ = value;
-            }
-        }
 
 		public virtual string _F_C5_34_ { get; set; }
 
@@ -3397,60 +766,9 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_35_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_35_
-        {
-            get 
-            {
-                var b = this._F_B_35_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_35_ = value;
-            }
-        }
-
 		public virtual int? _F_I_35_ { get; set; }
 
-        int IAttributeSetInstanceStateProperties._F_I_35_
-        {
-            get 
-            {
-                var b = this._F_I_35_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_35_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_35_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_35_
-        {
-            get 
-            {
-                var b = this._F_N_35_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_35_ = value;
-            }
-        }
 
 		public virtual string _F_C5_35_ { get; set; }
 
@@ -3462,60 +780,9 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_36_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_36_
-        {
-            get 
-            {
-                var b = this._F_B_36_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_36_ = value;
-            }
-        }
-
 		public virtual int? _F_I_36_ { get; set; }
 
-        int IAttributeSetInstanceStateProperties._F_I_36_
-        {
-            get 
-            {
-                var b = this._F_I_36_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_36_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_36_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_36_
-        {
-            get 
-            {
-                var b = this._F_N_36_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_36_ = value;
-            }
-        }
 
 		public virtual string _F_C5_36_ { get; set; }
 
@@ -3527,60 +794,9 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_37_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_37_
-        {
-            get 
-            {
-                var b = this._F_B_37_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_37_ = value;
-            }
-        }
-
 		public virtual int? _F_I_37_ { get; set; }
 
-        int IAttributeSetInstanceStateProperties._F_I_37_
-        {
-            get 
-            {
-                var b = this._F_I_37_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_37_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_37_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_37_
-        {
-            get 
-            {
-                var b = this._F_N_37_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_37_ = value;
-            }
-        }
 
 		public virtual string _F_C5_37_ { get; set; }
 
@@ -3592,60 +808,9 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_38_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_38_
-        {
-            get 
-            {
-                var b = this._F_B_38_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_38_ = value;
-            }
-        }
-
 		public virtual int? _F_I_38_ { get; set; }
 
-        int IAttributeSetInstanceStateProperties._F_I_38_
-        {
-            get 
-            {
-                var b = this._F_I_38_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_38_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_38_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_38_
-        {
-            get 
-            {
-                var b = this._F_N_38_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_38_ = value;
-            }
-        }
 
 		public virtual string _F_C5_38_ { get; set; }
 
@@ -3657,60 +822,9 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_39_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_39_
-        {
-            get 
-            {
-                var b = this._F_B_39_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_39_ = value;
-            }
-        }
-
 		public virtual int? _F_I_39_ { get; set; }
 
-        int IAttributeSetInstanceStateProperties._F_I_39_
-        {
-            get 
-            {
-                var b = this._F_I_39_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_39_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_39_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_39_
-        {
-            get 
-            {
-                var b = this._F_N_39_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_39_ = value;
-            }
-        }
 
 		public virtual string _F_C5_39_ { get; set; }
 
@@ -3722,60 +836,9 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_40_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_40_
-        {
-            get 
-            {
-                var b = this._F_B_40_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_40_ = value;
-            }
-        }
-
 		public virtual int? _F_I_40_ { get; set; }
 
-        int IAttributeSetInstanceStateProperties._F_I_40_
-        {
-            get 
-            {
-                var b = this._F_I_40_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_40_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_40_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_40_
-        {
-            get 
-            {
-                var b = this._F_N_40_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_40_ = value;
-            }
-        }
 
 		public virtual string _F_C5_40_ { get; set; }
 
@@ -3787,60 +850,9 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_41_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_41_
-        {
-            get 
-            {
-                var b = this._F_B_41_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_41_ = value;
-            }
-        }
-
 		public virtual int? _F_I_41_ { get; set; }
 
-        int IAttributeSetInstanceStateProperties._F_I_41_
-        {
-            get 
-            {
-                var b = this._F_I_41_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_41_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_41_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_41_
-        {
-            get 
-            {
-                var b = this._F_N_41_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_41_ = value;
-            }
-        }
 
 		public virtual string _F_C5_41_ { get; set; }
 
@@ -3852,60 +864,9 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_42_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_42_
-        {
-            get 
-            {
-                var b = this._F_B_42_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_42_ = value;
-            }
-        }
-
 		public virtual int? _F_I_42_ { get; set; }
 
-        int IAttributeSetInstanceStateProperties._F_I_42_
-        {
-            get 
-            {
-                var b = this._F_I_42_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_42_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_42_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_42_
-        {
-            get 
-            {
-                var b = this._F_N_42_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_42_ = value;
-            }
-        }
 
 		public virtual string _F_C5_42_ { get; set; }
 
@@ -3917,60 +878,9 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_43_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_43_
-        {
-            get 
-            {
-                var b = this._F_B_43_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_43_ = value;
-            }
-        }
-
 		public virtual int? _F_I_43_ { get; set; }
 
-        int IAttributeSetInstanceStateProperties._F_I_43_
-        {
-            get 
-            {
-                var b = this._F_I_43_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_43_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_43_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_43_
-        {
-            get 
-            {
-                var b = this._F_N_43_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_43_ = value;
-            }
-        }
 
 		public virtual string _F_C5_43_ { get; set; }
 
@@ -3982,60 +892,9 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_44_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_44_
-        {
-            get 
-            {
-                var b = this._F_B_44_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_44_ = value;
-            }
-        }
-
 		public virtual int? _F_I_44_ { get; set; }
 
-        int IAttributeSetInstanceStateProperties._F_I_44_
-        {
-            get 
-            {
-                var b = this._F_I_44_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_44_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_44_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_44_
-        {
-            get 
-            {
-                var b = this._F_N_44_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_44_ = value;
-            }
-        }
 
 		public virtual string _F_C5_44_ { get; set; }
 
@@ -4047,60 +906,9 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_45_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_45_
-        {
-            get 
-            {
-                var b = this._F_B_45_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_45_ = value;
-            }
-        }
-
 		public virtual int? _F_I_45_ { get; set; }
 
-        int IAttributeSetInstanceStateProperties._F_I_45_
-        {
-            get 
-            {
-                var b = this._F_I_45_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_45_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_45_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_45_
-        {
-            get 
-            {
-                var b = this._F_N_45_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_45_ = value;
-            }
-        }
 
 		public virtual string _F_C5_45_ { get; set; }
 
@@ -4112,60 +920,9 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_46_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_46_
-        {
-            get 
-            {
-                var b = this._F_B_46_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_46_ = value;
-            }
-        }
-
 		public virtual int? _F_I_46_ { get; set; }
 
-        int IAttributeSetInstanceStateProperties._F_I_46_
-        {
-            get 
-            {
-                var b = this._F_I_46_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_46_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_46_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_46_
-        {
-            get 
-            {
-                var b = this._F_N_46_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_46_ = value;
-            }
-        }
 
 		public virtual string _F_C5_46_ { get; set; }
 
@@ -4177,60 +934,9 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_47_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_47_
-        {
-            get 
-            {
-                var b = this._F_B_47_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_47_ = value;
-            }
-        }
-
 		public virtual int? _F_I_47_ { get; set; }
 
-        int IAttributeSetInstanceStateProperties._F_I_47_
-        {
-            get 
-            {
-                var b = this._F_I_47_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_47_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_47_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_47_
-        {
-            get 
-            {
-                var b = this._F_N_47_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_47_ = value;
-            }
-        }
 
 		public virtual string _F_C5_47_ { get; set; }
 
@@ -4242,60 +948,9 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_48_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_48_
-        {
-            get 
-            {
-                var b = this._F_B_48_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_48_ = value;
-            }
-        }
-
 		public virtual int? _F_I_48_ { get; set; }
 
-        int IAttributeSetInstanceStateProperties._F_I_48_
-        {
-            get 
-            {
-                var b = this._F_I_48_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_48_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_48_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_48_
-        {
-            get 
-            {
-                var b = this._F_N_48_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_48_ = value;
-            }
-        }
 
 		public virtual string _F_C5_48_ { get; set; }
 
@@ -4307,60 +962,9 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? _F_B_49_ { get; set; }
 
-        bool IAttributeSetInstanceStateProperties._F_B_49_
-        {
-            get 
-            {
-                var b = this._F_B_49_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this._F_B_49_ = value;
-            }
-        }
-
 		public virtual int? _F_I_49_ { get; set; }
 
-        int IAttributeSetInstanceStateProperties._F_I_49_
-        {
-            get 
-            {
-                var b = this._F_I_49_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this._F_I_49_ = value;
-            }
-        }
-
 		public virtual decimal? _F_N_49_ { get; set; }
-
-        decimal IAttributeSetInstanceStateProperties._F_N_49_
-        {
-            get 
-            {
-                var b = this._F_N_49_;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(decimal);
-            }
-            set 
-            {
-                this._F_N_49_ = value;
-            }
-        }
 
 		public virtual string _F_C5_49_ { get; set; }
 
@@ -4405,6 +1009,25 @@ namespace Dddml.Wms.Domain
             set
             {
                 this.IsPropertyAttributeSetIdRemoved = value;
+            }
+        }
+
+		public virtual bool? IsPropertyReferenceIdRemoved { get; set; }
+
+        bool IMergePatchAttributeSetInstance.IsPropertyReferenceIdRemoved
+        {
+            get
+            {
+                var b = this.IsPropertyReferenceIdRemoved;
+                if (b != null && b.HasValue)
+                {
+                    return b.Value;
+                }
+                return false;
+            }
+            set
+            {
+                this.IsPropertyReferenceIdRemoved = value;
             }
         }
 
@@ -4462,6 +1085,25 @@ namespace Dddml.Wms.Domain
             set
             {
                 this.IsPropertyDescriptionRemoved = value;
+            }
+        }
+
+		public virtual bool? IsPropertyHashRemoved { get; set; }
+
+        bool IMergePatchAttributeSetInstance.IsPropertyHashRemoved
+        {
+            get
+            {
+                var b = this.IsPropertyHashRemoved;
+                if (b != null && b.HasValue)
+                {
+                    return b.Value;
+                }
+                return false;
+            }
+            set
+            {
+                this.IsPropertyHashRemoved = value;
             }
         }
 
@@ -13185,9 +9827,11 @@ namespace Dddml.Wms.Domain
 
             cmd.AttributeSetInstanceId = (this as IAttributeSetInstanceStateProperties).AttributeSetInstanceId;
             cmd.AttributeSetId = (this as IAttributeSetInstanceStateProperties).AttributeSetId;
+            cmd.ReferenceId = (this as IAttributeSetInstanceStateProperties).ReferenceId;
             cmd.SerialNumber = (this as IAttributeSetInstanceStateProperties).SerialNumber;
             cmd.Lot = (this as IAttributeSetInstanceStateProperties).Lot;
             cmd.Description = (this as IAttributeSetInstanceStateProperties).Description;
+            cmd.Hash = (this as IAttributeSetInstanceStateProperties).Hash;
             cmd._F_B_0_ = (this as IAttributeSetInstanceStateProperties)._F_B_0_;
             cmd._F_I_0_ = (this as IAttributeSetInstanceStateProperties)._F_I_0_;
             cmd._F_L_0_ = (this as IAttributeSetInstanceStateProperties)._F_L_0_;
@@ -13646,9 +10290,11 @@ namespace Dddml.Wms.Domain
             cmd.Active = (this as IAttributeSetInstanceStateProperties).Active;
             
             cmd.IsPropertyAttributeSetIdRemoved = (this as IMergePatchAttributeSetInstance).IsPropertyAttributeSetIdRemoved;
+            cmd.IsPropertyReferenceIdRemoved = (this as IMergePatchAttributeSetInstance).IsPropertyReferenceIdRemoved;
             cmd.IsPropertySerialNumberRemoved = (this as IMergePatchAttributeSetInstance).IsPropertySerialNumberRemoved;
             cmd.IsPropertyLotRemoved = (this as IMergePatchAttributeSetInstance).IsPropertyLotRemoved;
             cmd.IsPropertyDescriptionRemoved = (this as IMergePatchAttributeSetInstance).IsPropertyDescriptionRemoved;
+            cmd.IsPropertyHashRemoved = (this as IMergePatchAttributeSetInstance).IsPropertyHashRemoved;
             cmd.IsProperty_F_B_0_Removed = (this as IMergePatchAttributeSetInstance).IsProperty_F_B_0_Removed;
             cmd.IsProperty_F_I_0_Removed = (this as IMergePatchAttributeSetInstance).IsProperty_F_I_0_Removed;
             cmd.IsProperty_F_L_0_Removed = (this as IMergePatchAttributeSetInstance).IsProperty_F_L_0_Removed;
@@ -14118,9 +10764,11 @@ namespace Dddml.Wms.Domain
 
             cmd.AttributeSetInstanceId = (this as IAttributeSetInstanceStateProperties).AttributeSetInstanceId;
             cmd.AttributeSetId = (this as IAttributeSetInstanceStateProperties).AttributeSetId;
+            cmd.ReferenceId = (this as IAttributeSetInstanceStateProperties).ReferenceId;
             cmd.SerialNumber = (this as IAttributeSetInstanceStateProperties).SerialNumber;
             cmd.Lot = (this as IAttributeSetInstanceStateProperties).Lot;
             cmd.Description = (this as IAttributeSetInstanceStateProperties).Description;
+            cmd.Hash = (this as IAttributeSetInstanceStateProperties).Hash;
             cmd._F_B_0_ = (this as IAttributeSetInstanceStateProperties)._F_B_0_;
             cmd._F_I_0_ = (this as IAttributeSetInstanceStateProperties)._F_I_0_;
             cmd._F_L_0_ = (this as IAttributeSetInstanceStateProperties)._F_L_0_;

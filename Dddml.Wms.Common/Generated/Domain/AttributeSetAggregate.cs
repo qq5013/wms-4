@@ -102,15 +102,17 @@ namespace Dddml.Wms.Domain
 			var stateEventId = new AttributeSetStateEventId(c.AttributeSetId, c.Version);
             IAttributeSetStateCreated e = NewAttributeSetStateCreated(stateEventId);
 		
-            ReflectUtils.CopyPropertyValue("Name", c, e);
+            e.Name = c.Name;
 
-            ReflectUtils.CopyPropertyValue("Description", c, e);
+            e.Description = c.Description;
 
-            ReflectUtils.CopyPropertyValue("SerialNumberAttributeId", c, e);
+            e.SerialNumberAttributeId = c.SerialNumberAttributeId;
 
-            ReflectUtils.CopyPropertyValue("LotAttributeId", c, e);
+            e.LotAttributeId = c.LotAttributeId;
 
-            ReflectUtils.CopyPropertyValue("Active", c, e);
+            e.ReferenceId = c.ReferenceId;
+
+            e.Active = c.Active;
 
             ReflectUtils.CopyPropertyValue("CommandId", c, e);//TODO CommandId 太特殊了！！！
 
@@ -136,25 +138,29 @@ namespace Dddml.Wms.Domain
 			var stateEventId = new AttributeSetStateEventId(c.AttributeSetId, c.Version);
             IAttributeSetStateMergePatched e = NewAttributeSetStateMergePatched(stateEventId);
 
-            ReflectUtils.CopyPropertyValue("Name", c, e);
+            e.Name = c.Name;
 
-            ReflectUtils.CopyPropertyValue("Description", c, e);
+            e.Description = c.Description;
 
-            ReflectUtils.CopyPropertyValue("SerialNumberAttributeId", c, e);
+            e.SerialNumberAttributeId = c.SerialNumberAttributeId;
 
-            ReflectUtils.CopyPropertyValue("LotAttributeId", c, e);
+            e.LotAttributeId = c.LotAttributeId;
 
-            ReflectUtils.CopyPropertyValue("Active", c, e);
+            e.ReferenceId = c.ReferenceId;
 
-            ReflectUtils.CopyPropertyValue("IsPropertyNameRemoved", c, e);
+            e.Active = c.Active;
 
-            ReflectUtils.CopyPropertyValue("IsPropertyDescriptionRemoved", c, e);
+            e.IsPropertyNameRemoved = c.IsPropertyNameRemoved;
 
-            ReflectUtils.CopyPropertyValue("IsPropertySerialNumberAttributeIdRemoved", c, e);
+            e.IsPropertyDescriptionRemoved = c.IsPropertyDescriptionRemoved;
 
-            ReflectUtils.CopyPropertyValue("IsPropertyLotAttributeIdRemoved", c, e);
+            e.IsPropertySerialNumberAttributeIdRemoved = c.IsPropertySerialNumberAttributeIdRemoved;
 
-            ReflectUtils.CopyPropertyValue("IsPropertyActiveRemoved", c, e);
+            e.IsPropertyLotAttributeIdRemoved = c.IsPropertyLotAttributeIdRemoved;
+
+            e.IsPropertyReferenceIdRemoved = c.IsPropertyReferenceIdRemoved;
+
+            e.IsPropertyActiveRemoved = c.IsPropertyActiveRemoved;
 
 
             ReflectUtils.CopyPropertyValue("CommandId", c, e);//TODO CommandId 太特殊了！！！
@@ -236,9 +242,9 @@ namespace Dddml.Wms.Domain
 			var stateEventId = new AttributeUseStateEventId(c.AttributeSetId, c.AttributeId, attributeSetVersion);
             IAttributeUseStateCreated e = NewAttributeUseStateCreated(stateEventId);
 
-            ReflectUtils.CopyPropertyValue("SequenceNumber", c, e);
+            e.SequenceNumber = c.SequenceNumber;
 
-            ReflectUtils.CopyPropertyValue("Active", c, e);
+            e.Active = c.Active;
 
 
             (e as AttributeUseStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
@@ -255,12 +261,12 @@ namespace Dddml.Wms.Domain
 			var stateEventId = new AttributeUseStateEventId(c.AttributeSetId, c.AttributeId, attributeSetVersion);
             IAttributeUseStateMergePatched e = NewAttributeUseStateMergePatched(stateEventId);
 
-            ReflectUtils.CopyPropertyValue("SequenceNumber", c, e);
+            e.SequenceNumber = c.SequenceNumber;
 
-            ReflectUtils.CopyPropertyValue("Active", c, e);
+            e.Active = c.Active;
 
-            ReflectUtils.CopyPropertyValue("IsPropertySequenceNumberRemoved", c, e);
-            ReflectUtils.CopyPropertyValue("IsPropertyActiveRemoved", c, e);
+            e.IsPropertySequenceNumberRemoved = c.IsPropertySequenceNumberRemoved;
+            e.IsPropertyActiveRemoved = c.IsPropertyActiveRemoved;
 
             (e as AttributeUseStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
             (e as AttributeUseStateEventBase).CreatedAt = DateTime.Now;

@@ -24,13 +24,13 @@ namespace Dddml.Wms.Domain
 
 	public interface IAttributeValueStateMergePatched : IAttributeValueStateEvent, IAttributeValueStateProperties
 	{
-		bool IsPropertyNameRemoved { get; }
+		bool IsPropertyNameRemoved { get; set; }
 
-		bool IsPropertyDescriptionRemoved { get; }
+		bool IsPropertyDescriptionRemoved { get; set; }
 
-		bool IsPropertyReferenceIdRemoved { get; }
+		bool IsPropertyReferenceIdRemoved { get; set; }
 
-		bool IsPropertyActiveRemoved { get; }
+		bool IsPropertyActiveRemoved { get; set; }
 
 
 	}

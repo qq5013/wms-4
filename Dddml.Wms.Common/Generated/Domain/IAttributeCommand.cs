@@ -38,7 +38,11 @@ namespace Dddml.Wms.Domain
 
 		bool IsPropertyAttributeValueTypeRemoved { get; set; }
 
+		bool IsPropertyIsListRemoved { get; set; }
+
 		bool IsPropertyFieldNameRemoved { get; set; }
+
+		bool IsPropertyReferenceIdRemoved { get; set; }
 
 		bool IsPropertyActiveRemoved { get; set; }
 

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+                   assembly="Dddml.Wms.Common" 
+                   namespace="Dddml.Wms.Domain">
+  
+  <class name="AttributeSetInstanceExtensionFieldGroupStateEventBase" table="AttributeSetInstanceExtensionFieldGroupStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="StateEventId" class="Dddml.Wms.Domain.AttributeSetInstanceExtensionFieldGroupStateEventId">
+		<key-property name="AttributeSetInstanceExtensionFieldGroupId" column="AttributeSetInstanceExtensionFieldGroupId" length="50"/>
+		<key-property name="AttributeSetInstanceExtensionFieldGroupVersion" column="AttributeSetInstanceExtensionFieldGroupVersion" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="String" />
+
+	<property name="FieldType"  />
+
+	<property name="FieldLength"  />
+
+	<property name="FieldCount"  />
+
+	<property name="NameFormat"  />
+
+	<property name="Description"  />
+
+	<property name="Active"  />
+
+
+    <property name="CreatedBy" />
+
+    <property name="CreatedAt" />
+
+    <property name="CommandId" /><!-- TODO CommandId 太特殊了？？？ -->
+
+
+    <subclass name="AttributeSetInstanceExtensionFieldGroupStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="AttributeSetInstanceExtensionFieldGroupStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="IsPropertyFieldTypeRemoved" />
+
+        <property name="IsPropertyFieldLengthRemoved" />
+
+        <property name="IsPropertyFieldCountRemoved" />
+
+        <property name="IsPropertyNameFormatRemoved" />
+
+        <property name="IsPropertyDescriptionRemoved" />
+
+        <property name="IsPropertyActiveRemoved" />
+
+
+    </subclass>
+
+    <subclass name="AttributeSetInstanceExtensionFieldGroupStateDeleted"  discriminator-value="Deleted">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

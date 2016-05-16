@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+				   assembly="Dddml.Wms.Common" 
+				   namespace="Dddml.Wms.Domain">
+  
+  <class name="Dddml.Wms.Domain.AttributeSetInstanceExtensionFieldState" table="AttributeSetInstanceExtensionFields">
+
+	<composite-id name="AttributeSetInstanceExtensionFieldId" class="Dddml.Wms.Domain.AttributeSetInstanceExtensionFieldId">
+		<key-property name="GroupId" column="GroupId" length="50"/>
+		<key-property name="AttributeSetInstanceExtensionFieldIndex" column="AttributeSetInstanceExtensionFieldIndex" length="50"/>
+	</composite-id>
+
+	<version name="Version" type="long" unsaved-value="0"/>
+
+	<property name="Name" unique-key="UniqueName" />
+
+	<property name="Type"  />
+
+	<property name="Length"  />
+
+	<property name="Alias" unique-key="UniqueAlias" />
+
+	<property name="Description"  />
+
+	<property name="CreatedBy"  />
+
+	<property name="CreatedAt"  />
+
+	<property name="UpdatedBy"  />
+
+	<property name="UpdatedAt"  />
+
+	<property name="Active"  />
+
+
+  </class>
+  
+</hibernate-mapping>
+

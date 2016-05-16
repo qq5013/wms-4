@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dddml.Wms.Services.Tests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dddml.Wms.HttpServices", "Dddml.Wms.HttpServices\Dddml.Wms.HttpServices.csproj", "{175EDE6A-70FB-4055-ACAE-77B741B4F166}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dddml.Wms.Metadata", "Dddml.Wms.Metadata\Dddml.Wms.Metadata.csproj", "{755FB4F8-BE74-4313-BBAD-8C907472C7AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{175EDE6A-70FB-4055-ACAE-77B741B4F166}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{175EDE6A-70FB-4055-ACAE-77B741B4F166}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{175EDE6A-70FB-4055-ACAE-77B741B4F166}.Release|Any CPU.Build.0 = Release|Any CPU
+		{755FB4F8-BE74-4313-BBAD-8C907472C7AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{755FB4F8-BE74-4313-BBAD-8C907472C7AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{755FB4F8-BE74-4313-BBAD-8C907472C7AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{755FB4F8-BE74-4313-BBAD-8C907472C7AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

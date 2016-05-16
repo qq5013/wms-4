@@ -1,13 +1,13 @@
 <#@ template language="C#" debug="True" #>
 <#@ output extension="yaml" #>
 <#@ include file="T4Toolbox.tt" #>
-<#@ include file="AttributeSetInstanceExtensionFields.ttinclude" #>
+<#@ include file="Templates\AttributeSetInstanceExtensionFieldMetadataUtils.ttinclude" #>
 <#
-// <copyright file="GenerateAttributeSetInstanceDddml.tt" company="dddml.org">
+// <copyright file="AttributeSetInstanceDddml.tt" company="dddml.org">
 //  Copyright © . All Rights Reserved.
 // </copyright>
 
-    var extensionFields = AttributeSetInstanceExtensionFields.CreateExtensionFields();
+    var extensionFields = AttributeSetInstanceExtensionFieldMetadataUtils.GetAllExtensionFields();
 
 #>
 #%DDDML 0.1

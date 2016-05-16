@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+  <object id="attributeSetInstanceExtensionFieldStateDao" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeSetInstanceExtensionFieldStateDao, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="attributeSetInstanceExtensionFieldStateEventDao" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeSetInstanceExtensionFieldStateEventDao, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+
+  <object id="attributeSetInstanceExtensionFieldGroupStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeSetInstanceExtensionFieldGroupStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="attributeSetInstanceExtensionFieldGroupEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeSetInstanceExtensionFieldGroupEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="attributeSetInstanceExtensionFieldGroupApplicationService" type="Dddml.Wms.Domain.NHibernate.AttributeSetInstanceExtensionFieldGroupApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="attributeSetInstanceExtensionFieldGroupEventStore"/>
+    <constructor-arg ref="attributeSetInstanceExtensionFieldGroupStateRepository"/>
+  </object>
+
+</objects>
+

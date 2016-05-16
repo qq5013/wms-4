@@ -6,8 +6,8 @@
   <class name="Dddml.Wms.Domain.AttributeUseState" table="AttributeUses">
 
 	<composite-id name="AttributeSetAttributeUseId" class="Dddml.Wms.Domain.AttributeSetAttributeUseId">
-		<key-property name="AttributeSetId" column="AttributeSetAttributeUseIdAttributeSetId" length="50"/>
-		<key-property name="AttributeUseAttributeId" column="AttributeSetAttributeUseIdAttributeUseAttributeId" length="50"/>
+		<key-property name="AttributeSetId" column="AttributeSetId" length="50"/>
+		<key-property name="AttributeUseAttributeId" column="AttributeUseAttributeId" length="50"/>
 	</composite-id>
 
 	<version name="Version" type="long" unsaved-value="0"/>

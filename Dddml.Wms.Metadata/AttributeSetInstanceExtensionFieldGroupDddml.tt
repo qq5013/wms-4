@@ -1,0 +1,85 @@
+<#@ template language="C#" debug="True" #>
+<#@ output extension="yaml" #>
+<#@ include file="T4Toolbox.tt" #>
+<#@ include file="Templates\AttributeSetInstanceExtensionFieldMetadataUtils.ttinclude" #>
+<#
+// <copyright file="AttributeSetInstanceExtensionFieldGroupDddml.tt" company="dddml.org">
+//  Copyright © . All Rights Reserved.
+// </copyright>
+
+    //var extensionFields = AttributeSetInstanceExtensionFieldMetadataUtils.GetAllExtensionFields();
+ 
+#>
+
+#%DDDML 0.1
+
+---
+
+# ------------------------------
+aggregates:
+
+
+    # --------------- aggregate ---------------
+    AttributeSetInstanceExtensionFieldGroup:
+
+      id:
+        name: Id
+        type: string
+      
+            
+      properties:
+
+        FieldType:
+          type: string
+          
+        FieldLength:
+          type: int?
+
+        FieldCount:
+          type: int
+          
+        NameFormat:
+          type: string
+
+        Description:
+          type: string
+          
+        Fields:
+          itemType: AttributeSetInstanceExtensionField
+      
+      entities:
+        
+        AttributeSetInstanceExtensionField:
+          
+          id:
+            name: Index
+          
+          outerId:
+            name: GroupId
+
+          globalId:
+            name: AttributeSetInstanceExtensionFieldId
+
+          properties: 
+          
+            Name:
+              type: string
+              
+            Type: 
+              type: string
+              
+            Length:
+              type: int?
+            
+            Alias:
+              type: string
+            
+            Description:
+              type: string
+          
+            
+          uniqueConstraints:
+            UniqueName: [Name]
+            UniqueAlias: [Alias]
+
+            

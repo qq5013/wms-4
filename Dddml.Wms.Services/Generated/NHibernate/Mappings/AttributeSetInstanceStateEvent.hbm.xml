@@ -6,8 +6,8 @@
   <class name="AttributeSetInstanceStateEventBase" table="AttributeSetInstanceStateEvents" mutable="false" abstract="true">
 
 	<composite-id name="StateEventId" class="Dddml.Wms.Domain.AttributeSetInstanceStateEventId">
-		<key-property name="AttributeSetInstanceId" column="StateEventIdAttributeSetInstanceId" length="50"/>
-		<key-property name="AttributeSetInstanceVersion" column="StateEventIdAttributeSetInstanceVersion" />
+		<key-property name="AttributeSetInstanceId" column="AttributeSetInstanceId" length="50"/>
+		<key-property name="AttributeSetInstanceVersion" column="AttributeSetInstanceVersion" />
 	</composite-id>
 
     <discriminator column="StateEventType" type="String" />

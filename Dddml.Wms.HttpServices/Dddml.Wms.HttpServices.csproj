@@ -262,6 +262,9 @@
     <Compile Include="Controllers\AttributesController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\AttributeSetInstanceExtensionFieldGroupsController.cs">
+      <DependentUpon>GenerateControllers.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AttributeSetInstancesController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
@@ -294,6 +297,7 @@
       <LastGenOutput>GenerateControllers.txt</LastGenOutput>
       <LastOutputs>
 .\AttributesController.cs
+.\AttributeSetInstanceExtensionFieldGroupsController.cs
 .\AttributeSetInstancesController.cs
 .\AttributeSetsController.cs
 .\GenerateControllers.txt

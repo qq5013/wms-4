@@ -15,6 +15,7 @@
       <resource uri="assembly://Dddml.Wms.Services/Dddml.Wms.Services.Config/AttributeAggregateConfig.xml"/>
       <resource uri="assembly://Dddml.Wms.Services/Dddml.Wms.Services.Config/AttributeSetAggregateConfig.xml"/>
       <resource uri="assembly://Dddml.Wms.Services/Dddml.Wms.Services.Config/AttributeSetInstanceAggregateConfig.xml"/>
+      <resource uri="assembly://Dddml.Wms.Services/Dddml.Wms.Services.Config/AttributeSetInstanceExtensionFieldGroupAggregateConfig.xml"/>
 
     </context>
 

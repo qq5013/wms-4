@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Dddml.Wms.Domain;
 using NUnit.Framework;
+using Dddml.Wms.Support;
 
 namespace Dddml.Wms.Services.Tests
 {
@@ -16,9 +17,15 @@ namespace Dddml.Wms.Services.Tests
 
         static void Main(string[] args)
         {
-            Console.ReadKey();
 
+            
+            
+            
+
+            Console.ReadKey();
+            
         }
 
+ 
     }
 }

@@ -94,6 +94,72 @@
     <Compile Include="Generated\Domain\AttributeSetInstanceCommandDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldCommandDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroupAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroupApplicationServiceBase.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroupApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroupCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroupCommandDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroupState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroupStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroupStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroupStateEventId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroupStateEventIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroupStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldStateEventId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldStateEventIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldStates.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\AttributeSetInstanceState.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -244,6 +310,51 @@
     <Compile Include="Generated\Domain\IAttributeSetInstanceCommand.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\IAttributeSetInstanceExtensionFieldCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeSetInstanceExtensionFieldGroupAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeSetInstanceExtensionFieldGroupApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeSetInstanceExtensionFieldGroupApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeSetInstanceExtensionFieldGroupCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeSetInstanceExtensionFieldGroupState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeSetInstanceExtensionFieldGroupStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeSetInstanceExtensionFieldGroupStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeSetInstanceExtensionFieldGroupStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeSetInstanceExtensionFieldState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeSetInstanceExtensionFieldStateDao.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeSetInstanceExtensionFieldStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeSetInstanceExtensionFieldStateEventDao.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeSetInstanceExtensionFieldStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeSetInstanceExtensionFieldStates.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\IAttributeSetInstanceState.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -328,10 +439,12 @@
     <Compile Include="Support\AttributeSetBuilder.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Support\AttributeSetInstanceExtensionFieldUtils.cs">
+      <DependentUpon>GenerateAttributeSetInstanceExtensionFieldUtils.tt</DependentUpon>
+    </Compile>
     <Compile Include="Support\AttributeValueListAttribute.cs" />
     <Compile Include="Support\AttributeValueTypeUtils.cs" />
     <Compile Include="Support\NullableUtils.cs" />
-    <None Include="Generated\AttributeSetInstanceExtensionFields.ttinclude" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Specialization\ApplicationContext.cs" />
     <Compile Include="Specialization\CollectionUtils.cs" />
@@ -361,11 +474,6 @@
     <Compile Include="Specialization\ReflectUtils.cs" />
     <Compile Include="Specialization\StateDtoBase.cs" />
     <Compile Include="Specialization\StateDtoCollectionBase.cs" />
-    <None Include="Generated\GenerateAttributeSetInstanceDddml.yaml">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GenerateAttributeSetInstanceDddml.tt</DependentUpon>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -389,6 +497,28 @@
 .\AttributeSetInstanceApplicationServiceFactory.cs
 .\AttributeSetInstanceCommand.cs
 .\AttributeSetInstanceCommandDto.cs
+.\AttributeSetInstanceExtensionFieldCommand.cs
+.\AttributeSetInstanceExtensionFieldCommandDto.cs
+.\AttributeSetInstanceExtensionFieldGroupAggregate.cs
+.\AttributeSetInstanceExtensionFieldGroupApplicationServiceBase.cs
+.\AttributeSetInstanceExtensionFieldGroupApplicationServiceFactory.cs
+.\AttributeSetInstanceExtensionFieldGroupCommand.cs
+.\AttributeSetInstanceExtensionFieldGroupCommandDto.cs
+.\AttributeSetInstanceExtensionFieldGroupState.cs
+.\AttributeSetInstanceExtensionFieldGroupStateDto.cs
+.\AttributeSetInstanceExtensionFieldGroupStateEvent.cs
+.\AttributeSetInstanceExtensionFieldGroupStateEventId.cs
+.\AttributeSetInstanceExtensionFieldGroupStateEventIdDto.cs
+.\AttributeSetInstanceExtensionFieldGroupStateProperties.cs
+.\AttributeSetInstanceExtensionFieldId.cs
+.\AttributeSetInstanceExtensionFieldIdDto.cs
+.\AttributeSetInstanceExtensionFieldState.cs
+.\AttributeSetInstanceExtensionFieldStateDto.cs
+.\AttributeSetInstanceExtensionFieldStateEvent.cs
+.\AttributeSetInstanceExtensionFieldStateEventId.cs
+.\AttributeSetInstanceExtensionFieldStateEventIdDto.cs
+.\AttributeSetInstanceExtensionFieldStateProperties.cs
+.\AttributeSetInstanceExtensionFieldStates.cs
 .\AttributeSetInstanceState.cs
 .\AttributeSetInstanceStateDto.cs
 .\AttributeSetInstanceStateEvent.cs
@@ -440,6 +570,21 @@
 .\IAttributeSetInstanceApplicationService.cs
 .\IAttributeSetInstanceApplicationServiceFactory.cs
 .\IAttributeSetInstanceCommand.cs
+.\IAttributeSetInstanceExtensionFieldCommand.cs
+.\IAttributeSetInstanceExtensionFieldGroupAggregate.cs
+.\IAttributeSetInstanceExtensionFieldGroupApplicationService.cs
+.\IAttributeSetInstanceExtensionFieldGroupApplicationServiceFactory.cs
+.\IAttributeSetInstanceExtensionFieldGroupCommand.cs
+.\IAttributeSetInstanceExtensionFieldGroupState.cs
+.\IAttributeSetInstanceExtensionFieldGroupStateEvent.cs
+.\IAttributeSetInstanceExtensionFieldGroupStateProperties.cs
+.\IAttributeSetInstanceExtensionFieldGroupStateRepository.cs
+.\IAttributeSetInstanceExtensionFieldState.cs
+.\IAttributeSetInstanceExtensionFieldStateDao.cs
+.\IAttributeSetInstanceExtensionFieldStateEvent.cs
+.\IAttributeSetInstanceExtensionFieldStateEventDao.cs
+.\IAttributeSetInstanceExtensionFieldStateProperties.cs
+.\IAttributeSetInstanceExtensionFieldStates.cs
 .\IAttributeSetInstanceState.cs
 .\IAttributeSetInstanceStateEvent.cs
 .\IAttributeSetInstanceStateProperties.cs
@@ -484,11 +629,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
-    <Content Include="Generated\GenerateAttributeSetInstanceDddml.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastOutputs>.\GenerateAttributeSetInstanceDddml.yaml</LastOutputs>
-      <LastGenOutput>GenerateAttributeSetInstanceDddml.yaml</LastGenOutput>
-    </Content>
     <Content Include="Generated\LoadBoundedContext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>LoadBoundedContext.txt</LastGenOutput>
@@ -498,6 +638,19 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LoadBoundedContext.tt</DependentUpon>
+    </Content>
+    <Content Include="Support\GenerateAttributeSetInstanceExtensionFieldUtils.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GenerateAttributeSetInstanceExtensionFieldUtils.txt</LastGenOutput>
+      <LastOutputs>
+.\AttributeSetInstanceExtensionFieldUtils.cs
+.\GenerateAttributeSetInstanceExtensionFieldUtils.txt
+</LastOutputs>
+    </Content>
+    <Content Include="Support\GenerateAttributeSetInstanceExtensionFieldUtils.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenerateAttributeSetInstanceExtensionFieldUtils.tt</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>

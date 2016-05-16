@@ -1,0 +1,75 @@
+﻿
+
+
+#%DDDML 0.1
+
+---
+
+# ------------------------------
+aggregates:
+
+
+    # --------------- aggregate ---------------
+    AttributeSetInstanceExtensionFieldGroup:
+
+      id:
+        name: Id
+        type: string
+      
+            
+      properties:
+
+        FieldType:
+          type: string
+          
+        FieldLength:
+          type: int?
+
+        FieldCount:
+          type: int
+          
+        NameFormat:
+          type: string
+
+        Description:
+          type: string
+          
+        Fields:
+          itemType: AttributeSetInstanceExtensionField
+      
+      entities:
+        
+        AttributeSetInstanceExtensionField:
+          
+          id:
+            name: Index
+          
+          outerId:
+            name: GroupId
+
+          globalId:
+            name: AttributeSetInstanceExtensionFieldId
+
+          properties: 
+          
+            Name:
+              type: string
+              
+            Type: 
+              type: string
+              
+            Length:
+              type: int?
+            
+            Alias:
+              type: string
+            
+            Description:
+              type: string
+          
+            
+          uniqueConstraints:
+            UniqueName: [Name]
+            UniqueAlias: [Alias]
+
+            

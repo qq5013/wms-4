@@ -1,0 +1,78 @@
+﻿<#@ template language="C#" debug="True" #>
+<#@ include file="T4Toolbox.tt" #>
+<#@ include file="AttributeSetInstanceExtensionFieldMetadataUtils.ttinclude" #>
+<#+
+// <copyright file="AttributeSetInstanceExtensionFieldUtilsTemplate.tt" company="">
+//  Copyright © . All Rights Reserved.
+// </copyright>
+
+public class AttributeSetInstanceExtensionFieldUtilsTemplate : CSharpTemplate
+{
+	public override string TransformText()
+	{
+		base.TransformText();
+
+		var extensionFieldGroups = AttributeSetInstanceExtensionFieldMetadataUtils.GetExtensionFieldGroups();
+
+#>
+using Dddml.Wms.Specialization;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Dddml.Wms.Domain;
+
+namespace Dddml.Wms.Support
+{
+    public static class AttributeSetInstanceExtensionFieldUtils
+    {
+
+        public static CreateAttributeSetInstanceExtensionFieldGroup[] CreateAttributeSetInstanceExtensionFieldGroups()
+        {
+            var groups = new CreateAttributeSetInstanceExtensionFieldGroup[]{
+<#+ 
+		foreach (var gMeta in extensionFieldGroups)
+		{
+#>
+                new CreateAttributeSetInstanceExtensionFieldGroup
+                {
+                    Id = "<#= gMeta.NamePrefix #>",
+                    FieldType = typeof(<#= gMeta.FieldType.EndsWith("?") ? gMeta.FieldType.Substring(0, gMeta.FieldType.Length-1) : gMeta.FieldType #>).Name,
+                    FieldLength = <#= gMeta.FieldLength == null ? "null" : gMeta.FieldLength.ToString() #>,
+                    FieldCount = <#= gMeta.FieldCount #>,
+                    NameFormat = "<#= gMeta.NameFormat #>",
+                    Active = true
+                },
+<#+ 
+		}
+#>
+            };
+
+            foreach (var g in groups)
+            {
+                for (int i = 0; i < g.FieldCount; i++)
+                {
+                    var field = g.NewCreateAttributeSetInstanceExtensionField();
+                    field.Index = i.ToString();
+                    field.Name = String.Format(g.NameFormat, i);
+                    field.Type = g.FieldType;
+                    field.Length = g.FieldLength;
+                    field.Active = true;
+                    g.Fields.Add(field);
+                }
+            }
+
+            return groups;
+
+        }
+
+    }
+}
+
+
+<#+
+        return this.GenerationEnvironment.ToString();
+	}
+}
+#>

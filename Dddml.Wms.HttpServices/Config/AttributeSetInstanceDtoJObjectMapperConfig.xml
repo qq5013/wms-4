@@ -3,6 +3,7 @@
 
 
   <object id="attributeSetInstanceDtoJObjectMapper" type="Dddml.Wms.HttpServices.ApiControllers.AttributeSetInstanceDtoJObjectMapper, Dddml.Wms.HttpServices">
+    <property name="AttributeSetService" ref="attributeSetService"/>
   </object>
 
 </objects>

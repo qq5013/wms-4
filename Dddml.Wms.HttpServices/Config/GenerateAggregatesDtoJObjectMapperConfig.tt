@@ -1,5 +1,6 @@
 <#@ template language="C#" debug="True" #>
 <#@ output extension="txt" #>
+<#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="Dddml.Core.Domain" #>
 <#@ include file="T4Toolbox.tt" #>
 <#@ include file="%DddmlDotNetToolsSolutionDir%\Dddml.T4.Templates\WebApi\Spring\AggregateDtoJObjectMapperSpringConfigGenerator.tt" #>
@@ -11,7 +12,12 @@
 	{
 		if (aggregate.IsDynamic)
 		{
-			var generator = new AggregateDtoJObjectMapperSpringConfigGenerator(aggregate);
+			var propertyRefs = new Dictionary<string, string>();
+			if (aggregate.Name == "AttributeSetInstance")
+			{
+				propertyRefs.Add("AttributeSetService", "attributeSetService");
+			}
+			var generator = new AggregateDtoJObjectMapperSpringConfigGenerator(aggregate, propertyRefs);
 		    generator.Run();
 		}
 	}

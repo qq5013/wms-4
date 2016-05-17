@@ -1,0 +1,19 @@
+<#@ template language="C#" debug="True" #>
+<#@ output extension="txt" #>
+<#@ import namespace="Dddml.Core.Domain" #>
+<#@ include file="T4Toolbox.tt" #>
+<#@ include file="%DddmlDotNetToolsSolutionDir%\Dddml.T4.Templates\WebApi\RamlClient\RamlClientBoundedContextAggregateApplicationServicesProxiesGenerator.tt" #>
+<#@ include file="$(SolutionDir)Dddml.Wms.Common\Generated\LoadBoundedContext.tt" #>
+<#
+    TemplatingContext.Current.CurrentAssembly = "Dddml.Wms.HttpServices.ClientProxies";
+
+    boundedContext.BaseUri = "/api";
+	boundedContext.Metadata["ramlVersion"] = "0.8";
+	boundedContext.Metadata["ramlClientNamespace"] = boundedContext.GetHttpServicesClientProxiesNamespace() + ".Raml";
+	boundedContext.Metadata["ramlClientMainClassName"] = "DddmlWmsRamlClient";
+
+    var generator = new RamlClientBoundedContextAggregateApplicationServicesProxiesGenerator(boundedContext);
+
+    generator.Run();
+
+#>

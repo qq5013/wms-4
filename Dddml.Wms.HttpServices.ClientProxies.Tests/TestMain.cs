@@ -1,27 +1,24 @@
-﻿using Dddml.Wms.Specialization;
-using Dddml.Wms.Specialization.Spring;
+﻿using Dddml.Wms.Domain;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Formatting;
 using System.Text;
 using System.Threading.Tasks;
-using Dddml.Wms.Domain;
-using NUnit.Framework;
-using Dddml.Wms.Support;
 
-namespace Dddml.Wms.Services.Tests
+namespace Dddml.Wms.HttpServices.ClientProxies.Tests
 {
-    
     class TestMain
     {
-
         static void Main(string[] args)
         {
 
             Console.ReadKey();
-            
+
         }
 
- 
+    
     }
 }

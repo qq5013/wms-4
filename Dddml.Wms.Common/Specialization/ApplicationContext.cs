@@ -5,8 +5,8 @@ namespace Dddml.Wms.Specialization
 {
     public abstract class ApplicationContext : IApplicationContext
     {
-        [ThreadStatic]
-        private static ApplicationContext _current;
+
+        private static volatile ApplicationContext _current;
 
 
         public static ApplicationContext Current

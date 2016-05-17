@@ -262,6 +262,7 @@
     <Compile Include="Controllers\AttributesController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\AttributeSetInstanceDtoJObjectMapper.cs" />
     <Compile Include="Controllers\AttributeSetInstanceExtensionFieldGroupsController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
@@ -288,6 +289,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <EmbeddedResource Include="Config\AttributeSetInstanceDtoJObjectMapperConfig.xml">
+      <DependentUpon>GenerateAggregatesDtoJObjectMapperConfig.tt</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Config\GenerateAggregatesDtoJObjectMapperConfig.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenerateAggregatesDtoJObjectMapperConfig.tt</DependentUpon>
+    </Content>
+    <Content Include="Config\GenerateAggregatesDtoJObjectMapperConfig.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GenerateAggregatesDtoJObjectMapperConfig.txt</LastGenOutput>
+      <LastOutputs>
+.\AttributeSetInstanceDtoJObjectMapperConfig.xml
+.\GenerateAggregatesDtoJObjectMapperConfig.txt
+</LastOutputs>
+    </Content>
     <Content Include="Content\apiconsole.css" />
     <Content Include="Content\apiconsole.min.css" />
     <Content Include="Content\bootstrap.css" />

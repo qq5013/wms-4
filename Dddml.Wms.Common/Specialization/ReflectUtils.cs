@@ -28,7 +28,7 @@ namespace Dddml.Wms.Specialization
             var dstProp = obj.GetType().GetProperty(propertyName);
             if (dstProp != null)
             {
-                dstProp.GetValue(obj);
+                return dstProp.GetValue(obj); 
             }
             return null;
         }

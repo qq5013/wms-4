@@ -1,0 +1,26 @@
+﻿
+
+
+
+
+
+  <spring>
+
+    <context>
+      <resource uri="config://spring/objects" />
+
+      <!-- Can copy this to App.config/spring/context -->
+
+      <resource uri="assembly://Dddml.Wms.HttpServices/Dddml.Wms.HttpServices.Config/AttributeSetInstanceDtoJObjectMapperConfig.xml"/>
+
+    </context>
+
+    <objects xmlns="http://www.springframework.net">
+      <!-- Property placeholder configurer for database settings -->
+      <object type="Spring.Objects.Factory.Config.PropertyPlaceholderConfigurer, Spring.Core">
+        <property name="ConfigSections" value="databaseSettings" />
+      </object>
+    </objects>
+
+  </spring>
+

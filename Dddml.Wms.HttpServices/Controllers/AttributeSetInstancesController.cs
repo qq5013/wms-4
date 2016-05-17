@@ -12,6 +12,7 @@ using System.Web.Http;
 using Dddml.Wms.Domain;
 
 using Dddml.Wms.Specialization;
+using Newtonsoft.Json.Linq;
 
 namespace Dddml.Wms.HttpServices.ApiControllers
 {
@@ -19,45 +20,49 @@ namespace Dddml.Wms.HttpServices.ApiControllers
     public partial class AttributeSetInstancesController : ApiController
     {
 
+        DynamicObjectMapperBase<JObject, AttributeSetInstanceStateDto, CreateAttributeSetInstanceDto, MergePatchAttributeSetInstanceDto> _attributeSetInstanceDtoJObjectMapper = ApplicationContext.Current["AttributeSetInstanceDtoJObjectMapper"] as DynamicObjectMapperBase<JObject, AttributeSetInstanceStateDto, CreateAttributeSetInstanceDto, MergePatchAttributeSetInstanceDto>;
+
         IAttributeSetInstanceApplicationService _attributeSetInstanceApplicationService = ApplicationContext.Current["AttributeSetInstanceApplicationService"] as IAttributeSetInstanceApplicationService;
 
         [HttpGet]
-        public IEnumerable<AttributeSetInstanceStateDto> GetAll(int firstResult = 0, int maxResults = int.MaxValue)
+        public JArray GetAll(int firstResult = 0, int maxResults = int.MaxValue)
         {
             var states = _attributeSetInstanceApplicationService.GetAll(firstResult, maxResults);
-            var stateDtos = new List<AttributeSetInstanceStateDto>();
+            JArray dynamicArray = new JArray(); 
             foreach (var s in states)
             {
-                stateDtos.Add(new AttributeSetInstanceStateDto((AttributeSetInstanceState)s));
+                dynamicArray.Add(_attributeSetInstanceDtoJObjectMapper.MapState(new AttributeSetInstanceStateDto((AttributeSetInstanceState)s)));
             }
-            return stateDtos;
+            return dynamicArray; 
         }
 
         [HttpGet]
-        public AttributeSetInstanceStateDto Get(string id)
+        public JObject Get(string id)
         {
             var idObj = id;
             var state = (AttributeSetInstanceState)_attributeSetInstanceApplicationService.Get(idObj);
             var stateDto = new AttributeSetInstanceStateDto(state);
             stateDto.AllFieldsReturned = true;
-            return stateDto;
+            return _attributeSetInstanceDtoJObjectMapper.MapState(stateDto);
         }
 
         [HttpPut]
-        public void Put(string id, [FromBody]CreateAttributeSetInstanceDto value)
+        public void Put(string id, [FromBody]JObject dynamicObject)
         {
+            CreateAttributeSetInstanceDto value = _attributeSetInstanceDtoJObjectMapper.ToCommandCreate(dynamicObject);
             SetNullIdOrThrowOnInconsistentIds(id, value);
             _attributeSetInstanceApplicationService.When(value.ToCommand() as ICreateAttributeSetInstance);
         }
 
         [HttpPatch]
-        public void Patch(string id, [FromBody]MergePatchAttributeSetInstanceDto value)
+        public void Patch(string id, [FromBody]JObject dynamicObject)
         {
+            MergePatchAttributeSetInstanceDto value = _attributeSetInstanceDtoJObjectMapper.ToCommandMergePatch(dynamicObject);
             SetNullIdOrThrowOnInconsistentIds(id, value);
             _attributeSetInstanceApplicationService.When(value.ToCommand() as IMergePatchAttributeSetInstance);
         }
 
-       [HttpDelete]
+        [HttpDelete]
         public void Delete(string id, string commandId, string requesterId = default(string))
         {
             var value = new DeleteAttributeSetInstanceDto();
@@ -72,12 +77,11 @@ namespace Dddml.Wms.HttpServices.ApiControllers
         protected static void SetNullIdOrThrowOnInconsistentIds(string id, CreateOrMergePatchOrDeleteAttributeSetInstanceDto value)
         {
             var idObj = id;
-            
             if (value.AttributeSetInstanceId == null)
             {
                 value.AttributeSetInstanceId = idObj;
             }
-            else if ((value as IAttributeSetInstanceStateProperties).AttributeSetInstanceId != idObj)
+            else if (!(value as IAttributeSetInstanceStateProperties).AttributeSetInstanceId.Equals(idObj))
             {
                 throw DomainError.Named("inconsistentId", "Argument Id {0} NOT equals body Id {1}", id, value.AttributeSetInstanceId);
             }
@@ -85,6 +89,58 @@ namespace Dddml.Wms.HttpServices.ApiControllers
 
 
     }
+
+
+    public abstract partial class AttributeSetInstanceDtoJObjectMapperBase : DynamicObjectMapperBase<JObject, AttributeSetInstanceStateDto, CreateAttributeSetInstanceDto, MergePatchAttributeSetInstanceDto>
+    {
+        public override JObject MapState(AttributeSetInstanceStateDto state)
+        {
+            var dynamicObject = NewJObject(state);
+            MapExtensionProperties(state, dynamicObject);
+            return dynamicObject;
+        }
+
+        public override CreateAttributeSetInstanceDto ToCommandCreate(JObject dynamicObject)
+        {
+            CreateAttributeSetInstanceDto command = NewCreateAttributeSetInstanceDto(dynamicObject);
+            MapExtensionProperties(dynamicObject, command);
+            return command;
+        }
+
+        public override MergePatchAttributeSetInstanceDto ToCommandMergePatch(JObject dynamicObject)
+        {
+            MergePatchAttributeSetInstanceDto command = NewMergePatchAttributeSetInstanceDto(dynamicObject);
+            MapExtensionProperties(dynamicObject, command);
+            return command;
+        }
+
+        protected virtual CreateAttributeSetInstanceDto NewCreateAttributeSetInstanceDto(JObject dynamicObject)
+        {
+            CreateAttributeSetInstanceDto command = dynamicObject.ToObject<CreateAttributeSetInstanceDto>();
+            return command;
+        }
+
+        protected virtual MergePatchAttributeSetInstanceDto NewMergePatchAttributeSetInstanceDto(JObject dynamicObject)
+        {
+            MergePatchAttributeSetInstanceDto command = dynamicObject.ToObject<MergePatchAttributeSetInstanceDto>();
+            return command;
+        }
+
+        protected virtual JObject NewJObject(AttributeSetInstanceStateDto state)
+        {
+            var dynamicObject = JObject.FromObject(state);
+            return dynamicObject;
+        }
+
+        protected abstract void MapExtensionProperties(AttributeSetInstanceStateDto state, JObject dynamicObject);
+
+        protected abstract void MapExtensionProperties(JObject dynamicObject, CreateAttributeSetInstanceDto command);
+
+        protected abstract void MapExtensionProperties(JObject dynamicObject, MergePatchAttributeSetInstanceDto command);
+
+
+    }
+
 
 
 }

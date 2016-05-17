@@ -36,6 +36,10 @@ namespace Dddml.Wms.Specialization
             foreach (var f in value.FieldNames)
             {
                 var fVal = value.GetFieldValue(f);
+                if (!String.IsNullOrWhiteSpace(sb.ToString()))
+                {
+                    sb.Append(FieldSeparator);
+                }
                 sb.Append(TypeDescriptor.GetConverter(fVal).ConvertToString(fVal));
             }
             return sb.ToString();

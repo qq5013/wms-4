@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Dddml.Wms.Specialization;
+using Dddml.Wms.Specialization.Spring;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -18,6 +16,8 @@ namespace Dddml.Wms.HttpServices
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            ApplicationContext.Current = SpringApplicationContext.Instance;
         }
     }
 }

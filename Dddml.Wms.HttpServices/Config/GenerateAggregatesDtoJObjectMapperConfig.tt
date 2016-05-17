@@ -2,16 +2,18 @@
 <#@ output extension="txt" #>
 <#@ import namespace="Dddml.Core.Domain" #>
 <#@ include file="T4Toolbox.tt" #>
-<#@ include file="%DddmlDotNetToolsSolutionDir%\Dddml.T4.Templates\NHibernate\Spring\AggregateNHibernateSpringConfigGenerator.tt" #>
+<#@ include file="%DddmlDotNetToolsSolutionDir%\Dddml.T4.Templates\WebApi\Spring\AggregateDtoJObjectMapperSpringConfigGenerator.tt" #>
 <#@ include file="..\LoadBoundedContext.tt" #>
 <#
 
 
 	foreach (var aggregate in boundedContext.Aggregates.Values)
 	{
-	    var generator = new AggregateNHibernateSpringConfigGenerator(aggregate);
-
-	    generator.Run();
+		if (aggregate.IsDynamic)
+		{
+			var generator = new AggregateDtoJObjectMapperSpringConfigGenerator(aggregate);
+		    generator.Run();
+		}
 	}
 
 #>
@@ -20,16 +22,18 @@
 
     <context>
       <resource uri="config://spring/objects" />
-      <resource uri="assembly://<#= TemplatingContext.Current.CurrentAssembly #>/<#= boundedContext.DefaultModule #>.Services.Config/DatabaseConfig.xml" />
 
       <!-- Can copy this to App.config/spring/context -->
 
 <# 
 	foreach (var aggregate in boundedContext.Aggregates.Values)
 	{
+		if (aggregate.IsDynamic)
+		{
 #>
-      <resource uri="assembly://<#= TemplatingContext.Current.CurrentAssembly #>/<#= boundedContext.DefaultModule #>.Services.Config/<#= aggregate.Name #>AggregateConfig.xml"/>
+      <resource uri="assembly://<#= TemplatingContext.Current.CurrentAssembly #>/<#= boundedContext.DefaultModule #>.HttpServices.Config/<#= aggregate.Name #>DtoJObjectMapperConfig.xml"/>
 <#
+		}
 	}
 #>
 

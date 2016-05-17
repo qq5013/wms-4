@@ -19,6 +19,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
     public partial class AttributeSetsController : ApiController
     {
 
+
         IAttributeSetApplicationService _attributeSetApplicationService = ApplicationContext.Current["AttributeSetApplicationService"] as IAttributeSetApplicationService;
 
         [HttpGet]
@@ -57,7 +58,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             _attributeSetApplicationService.When(value.ToCommand() as IMergePatchAttributeSet);
         }
 
-       [HttpDelete]
+        [HttpDelete]
         public void Delete(string id, string commandId, string requesterId = default(string))
         {
             var value = new DeleteAttributeSetDto();
@@ -72,12 +73,11 @@ namespace Dddml.Wms.HttpServices.ApiControllers
         protected static void SetNullIdOrThrowOnInconsistentIds(string id, CreateOrMergePatchOrDeleteAttributeSetDto value)
         {
             var idObj = id;
-            
             if (value.AttributeSetId == null)
             {
                 value.AttributeSetId = idObj;
             }
-            else if ((value as IAttributeSetStateProperties).AttributeSetId != idObj)
+            else if (!(value as IAttributeSetStateProperties).AttributeSetId.Equals(idObj))
             {
                 throw DomainError.Named("inconsistentId", "Argument Id {0} NOT equals body Id {1}", id, value.AttributeSetId);
             }
@@ -85,6 +85,8 @@ namespace Dddml.Wms.HttpServices.ApiControllers
 
 
     }
+
+
 
 
 }

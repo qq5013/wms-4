@@ -10,12 +10,14 @@ aggregates:
 
     # --------------- aggregate ---------------
     AttributeSetInstance:
-    
+      immutable: true    
       isDynamic: true
-      
+
+
       id:
         name: AttributeSetInstanceId
         type: string
+        arbitrary: true
       
             
       properties:
@@ -40,6 +42,7 @@ aggregates:
         Hash:
           type: string
           isDerived: true
+          isTransient: false
         
         _F_B_0_:
           type: bool?

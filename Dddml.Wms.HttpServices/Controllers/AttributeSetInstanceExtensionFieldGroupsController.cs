@@ -19,6 +19,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
     public partial class AttributeSetInstanceExtensionFieldGroupsController : ApiController
     {
 
+
         IAttributeSetInstanceExtensionFieldGroupApplicationService _attributeSetInstanceExtensionFieldGroupApplicationService = ApplicationContext.Current["AttributeSetInstanceExtensionFieldGroupApplicationService"] as IAttributeSetInstanceExtensionFieldGroupApplicationService;
 
         [HttpGet]
@@ -57,7 +58,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             _attributeSetInstanceExtensionFieldGroupApplicationService.When(value.ToCommand() as IMergePatchAttributeSetInstanceExtensionFieldGroup);
         }
 
-       [HttpDelete]
+        [HttpDelete]
         public void Delete(string id, string commandId, string requesterId = default(string))
         {
             var value = new DeleteAttributeSetInstanceExtensionFieldGroupDto();
@@ -72,12 +73,11 @@ namespace Dddml.Wms.HttpServices.ApiControllers
         protected static void SetNullIdOrThrowOnInconsistentIds(string id, CreateOrMergePatchOrDeleteAttributeSetInstanceExtensionFieldGroupDto value)
         {
             var idObj = id;
-            
             if (value.Id == null)
             {
                 value.Id = idObj;
             }
-            else if ((value as IAttributeSetInstanceExtensionFieldGroupStateProperties).Id != idObj)
+            else if (!(value as IAttributeSetInstanceExtensionFieldGroupStateProperties).Id.Equals(idObj))
             {
                 throw DomainError.Named("inconsistentId", "Argument Id {0} NOT equals body Id {1}", id, value.Id);
             }
@@ -85,6 +85,8 @@ namespace Dddml.Wms.HttpServices.ApiControllers
 
 
     }
+
+
 
 
 }

@@ -95,6 +95,34 @@ namespace Dddml.Wms.Domain
             }
         }
 
+		public virtual string OrganizationId
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("OrganizationId"))
+                {
+                    return _state.OrganizationId;
+                }
+                return null;
+            }
+            set
+            {
+                _state.OrganizationId = value;
+            }
+        }
+
+        string IAttributeSetInstanceStateProperties.OrganizationId
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceStateProperties).OrganizationId;
+            }
+            set 
+            {
+                this._state.OrganizationId = value;
+            }
+        }
+
 		public virtual string ReferenceId
 		{
             get

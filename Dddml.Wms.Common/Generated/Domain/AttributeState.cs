@@ -170,6 +170,7 @@ namespace Dddml.Wms.Domain
 		{
 			ThrowOnWrongEvent(e);
 			this.Name = e.Name;
+			this.OrganizationId = e.OrganizationId;
 			this.Description = e.Description;
 			this.IsMandatory = e.IsMandatory;
 			this.IsInstanceAttribute = e.IsInstanceAttribute;
@@ -203,6 +204,17 @@ namespace Dddml.Wms.Domain
 				if (e.Name != null)
 				{
 					this.Name = e.Name;
+				}
+			}
+			if (e.IsPropertyOrganizationIdRemoved)
+			{
+				this.OrganizationId = default(string);
+			}
+			else
+			{
+				if (e.OrganizationId != null)
+				{
+					this.OrganizationId = e.OrganizationId;
 				}
 			}
 			if (e.IsPropertyDescriptionRemoved)

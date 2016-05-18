@@ -104,6 +104,8 @@ namespace Dddml.Wms.Domain
 		
             e.Name = c.Name;
 
+            e.OrganizationId = c.OrganizationId;
+
             e.Description = c.Description;
 
             e.IsMandatory = c.IsMandatory;
@@ -148,6 +150,8 @@ namespace Dddml.Wms.Domain
 
             e.Name = c.Name;
 
+            e.OrganizationId = c.OrganizationId;
+
             e.Description = c.Description;
 
             e.IsMandatory = c.IsMandatory;
@@ -167,6 +171,8 @@ namespace Dddml.Wms.Domain
             e.Active = c.Active;
 
             e.IsPropertyNameRemoved = c.IsPropertyNameRemoved;
+
+            e.IsPropertyOrganizationIdRemoved = c.IsPropertyOrganizationIdRemoved;
 
             e.IsPropertyDescriptionRemoved = c.IsPropertyDescriptionRemoved;
 

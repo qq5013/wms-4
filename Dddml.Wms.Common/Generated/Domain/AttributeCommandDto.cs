@@ -54,6 +54,8 @@ namespace Dddml.Wms.Domain
 
 		public virtual string Name { get; set; }
 
+		public virtual string OrganizationId { get; set; }
+
 		public virtual string Description { get; set; }
 
 		public virtual bool? IsMandatory { get; set; }
@@ -156,6 +158,25 @@ namespace Dddml.Wms.Domain
             set
             {
                 this.IsPropertyNameRemoved = value;
+            }
+        }
+
+		public virtual bool? IsPropertyOrganizationIdRemoved { get; set; }
+
+        bool IMergePatchAttribute.IsPropertyOrganizationIdRemoved
+        {
+            get
+            {
+                var b = this.IsPropertyOrganizationIdRemoved;
+                if (b != null && b.HasValue)
+                {
+                    return b.Value;
+                }
+                return false;
+            }
+            set
+            {
+                this.IsPropertyOrganizationIdRemoved = value;
             }
         }
 
@@ -461,6 +482,7 @@ namespace Dddml.Wms.Domain
 
             cmd.AttributeId = (this as IAttributeStateProperties).AttributeId;
             cmd.Name = (this as IAttributeStateProperties).Name;
+            cmd.OrganizationId = (this as IAttributeStateProperties).OrganizationId;
             cmd.Description = (this as IAttributeStateProperties).Description;
             cmd.IsMandatory = (this as IAttributeStateProperties).IsMandatory;
             cmd.IsInstanceAttribute = (this as IAttributeStateProperties).IsInstanceAttribute;
@@ -472,6 +494,7 @@ namespace Dddml.Wms.Domain
             cmd.Active = (this as IAttributeStateProperties).Active;
             
             cmd.IsPropertyNameRemoved = (this as IMergePatchAttribute).IsPropertyNameRemoved;
+            cmd.IsPropertyOrganizationIdRemoved = (this as IMergePatchAttribute).IsPropertyOrganizationIdRemoved;
             cmd.IsPropertyDescriptionRemoved = (this as IMergePatchAttribute).IsPropertyDescriptionRemoved;
             cmd.IsPropertyIsMandatoryRemoved = (this as IMergePatchAttribute).IsPropertyIsMandatoryRemoved;
             cmd.IsPropertyIsInstanceAttributeRemoved = (this as IMergePatchAttribute).IsPropertyIsInstanceAttributeRemoved;
@@ -499,6 +522,7 @@ namespace Dddml.Wms.Domain
 
             cmd.AttributeId = (this as IAttributeStateProperties).AttributeId;
             cmd.Name = (this as IAttributeStateProperties).Name;
+            cmd.OrganizationId = (this as IAttributeStateProperties).OrganizationId;
             cmd.Description = (this as IAttributeStateProperties).Description;
             cmd.IsMandatory = (this as IAttributeStateProperties).IsMandatory;
             cmd.IsInstanceAttribute = (this as IAttributeStateProperties).IsInstanceAttribute;

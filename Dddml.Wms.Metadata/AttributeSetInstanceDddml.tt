@@ -35,6 +35,9 @@ aggregates:
         AttributeSetId:
           type: string
         
+        OrganizationId:
+          type: string
+          
         ReferenceId:
           type: string
 

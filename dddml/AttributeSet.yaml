@@ -18,6 +18,9 @@ aggregates:
         Name:
           type: string
 
+        OrganizationId:
+          type: string
+          
         Description:
           type: string
 
@@ -87,6 +90,9 @@ aggregates:
       properties:  
         
         Name: 
+          type: string
+
+        OrganizationId:
           type: string
 
         Description:

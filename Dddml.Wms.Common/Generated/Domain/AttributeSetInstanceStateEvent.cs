@@ -102,6 +102,12 @@ namespace Dddml.Wms.Domain
             set { if (value) { _removedPropertyNames.Add("AttributeSetId"); } else { _removedPropertyNames.Remove("AttributeSetId"); } }
         }
 
+        public virtual bool IsPropertyOrganizationIdRemoved
+        {
+            get { return _removedPropertyNames.Contains("OrganizationId"); }
+            set { if (value) { _removedPropertyNames.Add("OrganizationId"); } else { _removedPropertyNames.Remove("OrganizationId"); } }
+        }
+
         public virtual bool IsPropertyReferenceIdRemoved
         {
             get { return _removedPropertyNames.Contains("ReferenceId"); }

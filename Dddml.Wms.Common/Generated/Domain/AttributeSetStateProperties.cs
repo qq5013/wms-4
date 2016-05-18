@@ -14,6 +14,8 @@ namespace Dddml.Wms.Domain
 
 		public virtual string Name { get; set; }
 
+		public virtual string OrganizationId { get; set; }
+
 		public virtual string Description { get; set; }
 
 		public virtual string SerialNumberAttributeId { get; set; }

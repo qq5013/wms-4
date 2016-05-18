@@ -14,6 +14,8 @@ namespace Dddml.Wms.Domain
 
 		string AttributeSetId { get; set; }
 
+		string OrganizationId { get; set; }
+
 		string ReferenceId { get; set; }
 
 		string SerialNumber { get; set; }

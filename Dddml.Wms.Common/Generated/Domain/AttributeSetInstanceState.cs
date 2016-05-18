@@ -139,6 +139,7 @@ namespace Dddml.Wms.Domain
 		{
 			ThrowOnWrongEvent(e);
 			this.AttributeSetId = e.AttributeSetId;
+			this.OrganizationId = e.OrganizationId;
 			this.ReferenceId = e.ReferenceId;
 			this.SerialNumber = e.SerialNumber;
 			this.Lot = e.Lot;
@@ -620,6 +621,17 @@ namespace Dddml.Wms.Domain
 				if (e.AttributeSetId != null)
 				{
 					this.AttributeSetId = e.AttributeSetId;
+				}
+			}
+			if (e.IsPropertyOrganizationIdRemoved)
+			{
+				this.OrganizationId = default(string);
+			}
+			else
+			{
+				if (e.OrganizationId != null)
+				{
+					this.OrganizationId = e.OrganizationId;
 				}
 			}
 			if (e.IsPropertyReferenceIdRemoved)

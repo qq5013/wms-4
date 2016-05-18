@@ -30,6 +30,8 @@ namespace Dddml.Wms.Domain
 	{
 		bool IsPropertyNameRemoved { get; set; }
 
+		bool IsPropertyOrganizationIdRemoved { get; set; }
+
 		bool IsPropertyDescriptionRemoved { get; set; }
 
 		bool IsPropertySerialNumberAttributeIdRemoved { get; set; }

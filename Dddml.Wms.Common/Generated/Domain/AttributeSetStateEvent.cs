@@ -132,6 +132,8 @@ namespace Dddml.Wms.Domain
 	{
 		public virtual bool IsPropertyNameRemoved { get; set; }
 
+		public virtual bool IsPropertyOrganizationIdRemoved { get; set; }
+
 		public virtual bool IsPropertyDescriptionRemoved { get; set; }
 
 		public virtual bool IsPropertySerialNumberAttributeIdRemoved { get; set; }

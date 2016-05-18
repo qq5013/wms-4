@@ -14,6 +14,8 @@
 
 	<property name="Name"  />
 
+	<property name="OrganizationId"  />
+
 	<property name="Description"  />
 
 	<property name="IsMandatory"  />
@@ -47,6 +49,8 @@
     <subclass name="AttributeStateMergePatched"  discriminator-value="MergePatched">
 
         <property name="IsPropertyNameRemoved" />
+
+        <property name="IsPropertyOrganizationIdRemoved" />
 
         <property name="IsPropertyDescriptionRemoved" />
 

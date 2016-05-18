@@ -104,6 +104,8 @@ namespace Dddml.Wms.Domain
 		
             e.AttributeSetId = c.AttributeSetId;
 
+            e.OrganizationId = c.OrganizationId;
+
             e.ReferenceId = c.ReferenceId;
 
             e.SerialNumber = c.SerialNumber;
@@ -1044,6 +1046,8 @@ namespace Dddml.Wms.Domain
 
             e.AttributeSetId = c.AttributeSetId;
 
+            e.OrganizationId = c.OrganizationId;
+
             e.ReferenceId = c.ReferenceId;
 
             e.SerialNumber = c.SerialNumber;
@@ -1967,6 +1971,8 @@ namespace Dddml.Wms.Domain
             e.Active = c.Active;
 
             e.IsPropertyAttributeSetIdRemoved = c.IsPropertyAttributeSetIdRemoved;
+
+            e.IsPropertyOrganizationIdRemoved = c.IsPropertyOrganizationIdRemoved;
 
             e.IsPropertyReferenceIdRemoved = c.IsPropertyReferenceIdRemoved;
 

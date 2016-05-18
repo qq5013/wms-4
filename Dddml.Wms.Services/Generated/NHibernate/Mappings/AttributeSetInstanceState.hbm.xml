@@ -13,6 +13,8 @@
 
 	<property name="AttributeSetId"  />
 
+	<property name="OrganizationId"  />
+
 	<property name="ReferenceId"  />
 
 	<property name="SerialNumber"  />

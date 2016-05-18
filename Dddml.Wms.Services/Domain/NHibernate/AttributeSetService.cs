@@ -1,4 +1,5 @@
 ﻿using Dddml.Wms.Domain;
+using Dddml.Wms.Domain.Services;
 using Dddml.Wms.Specialization;
 using Spring.Transaction.Interceptor;
 using System;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dddml.Wms.Services.NHibernate
+namespace Dddml.Wms.Domain.Services.NHibernate
 {
 
     public class AttributeSetService : IAttributeSetService

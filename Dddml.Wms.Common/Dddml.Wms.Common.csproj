@@ -433,7 +433,7 @@
     <Compile Include="Generated\Domain\IAttributeValueStates.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
-    <Compile Include="Services\IAttributeSetService.cs" />
+    <Compile Include="Domain\Services\IAttributeSetService.cs" />
     <Compile Include="Specialization\DynamicObjectMapperBase.cs" />
     <Compile Include="Support\AttributeAttribute.cs" />
     <Compile Include="Support\AttributeGroupAttribute.cs" />

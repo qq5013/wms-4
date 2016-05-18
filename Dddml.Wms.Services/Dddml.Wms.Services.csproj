@@ -125,7 +125,7 @@
     <Compile Include="Generated\Domain\NHibernate\NHibernateAttributeValueStateEventDao.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
-    <Compile Include="NHibernate\AttributeSetService.cs" />
+    <Compile Include="Domain\NHibernate\AttributeSetService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Specialization\NHibernate\EventStoreAggregateId.cs" />
     <Compile Include="Specialization\NHibernate\NHibernateEventStoreBase.cs" />

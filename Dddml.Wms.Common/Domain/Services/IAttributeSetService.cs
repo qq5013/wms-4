@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Dddml.Wms.Services
+namespace Dddml.Wms.Domain.Services
 {
     public interface IAttributeSetService
     {

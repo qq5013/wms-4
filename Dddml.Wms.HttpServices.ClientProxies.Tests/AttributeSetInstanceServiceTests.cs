@@ -40,10 +40,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
 
             var client = new HttpClient { BaseAddress = new Uri(_endpointUrl) };
             var attrSetInstId = Guid.NewGuid().ToString();
-            string idStr = attrSetInstId;
 
             var url = "AttributeSetInstances/{id}";
-            url = url.Replace("{id}", idStr);
+            url = url.Replace("{id}", attrSetInstId);
 
             var attrSetInst = new CreateAttributeSetInstanceDto();
             attrSetInst.AttributeSetId = IdGenerator._lastAttributeSetId;
@@ -62,7 +61,64 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
             Console.WriteLine(response.StatusCode);
             Console.WriteLine(response.ReasonPhrase);
 
+            dynamic resultObj = TestGetAttributeSetInstance(attrSetInstId);
+
+            Assert.AreEqual("R", resultObj.Color);
+
+            // 如果 AttributeSetInstance 是“可变的”，那么可以 Patch：
+            TestMergePatchAttributeSetInstance(attrSetInstId);
+            TestGetAttributeSetInstance(attrSetInstId);
+
         }
+
+        private JObject TestGetAttributeSetInstance(string attrSetInstId)
+        {
+            var client = new HttpClient { BaseAddress = new Uri(_endpointUrl) };
+            string idStr = attrSetInstId;
+
+            var url = "AttributeSetInstances/{id}";
+            url = url.Replace("{id}", idStr);
+
+            var req = new HttpRequestMessage(HttpMethod.Get, url);
+            var response = client.SendAsync(req).GetAwaiter().GetResult();
+
+            var jObject = response.Content.ReadAsAsync<JObject>().GetAwaiter().GetResult();
+            Console.WriteLine(jObject);
+            Console.WriteLine(response.Headers);
+            Console.WriteLine(response.StatusCode);
+            Console.WriteLine(response.ReasonPhrase);
+
+            return jObject;
+        }
+
+        private void TestMergePatchAttributeSetInstance(string attrSetInstId)
+        {
+            var client = new HttpClient { BaseAddress = new Uri(_endpointUrl) };
+            //var attrSetInstId = Guid.NewGuid().ToString();
+
+            var url = "AttributeSetInstances/{id}";
+            url = url.Replace("{id}", attrSetInstId);
+
+            var attrSetInst = new MergePatchAttributeSetInstanceDto();
+            attrSetInst.AttributeSetId = IdGenerator._lastAttributeSetId;
+            attrSetInst.SerialNumber = attrSetInstId;
+            attrSetInst.Lot = DateTime.Today.ToString();
+            attrSetInst.Version = 1;
+
+            dynamic jObject = JObject.FromObject(attrSetInst);
+            jObject.IsPropertyColorRemoved = true;
+
+            var req = new HttpRequestMessage(new HttpMethod("PATCH"), url);
+            req.Content = new ObjectContent(typeof(JObject), jObject, new JsonMediaTypeFormatter());
+            var response = client.SendAsync(req).GetAwaiter().GetResult();
+
+            Console.WriteLine(response.Content);
+            Console.WriteLine(response.Headers);
+            Console.WriteLine(response.StatusCode);
+            Console.WriteLine(response.ReasonPhrase);
+
+        }
+
 
 
         private void InitAttrbuteSet()

@@ -58,7 +58,7 @@
     <Compile Include="Generated\Domain\AttributeCommandDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Domain\AttributeMetadata.cs">
+    <Compile Include="Generated\Domain\Metadata\AttributeMetadata.cs">
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeSetAggregate.cs">
@@ -118,7 +118,7 @@
     <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroupCommandDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroupMetadata.cs">
+    <Compile Include="Generated\Domain\Metadata\AttributeSetInstanceExtensionFieldGroupMetadata.cs">
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroupState.cs">
@@ -145,7 +145,7 @@
     <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldIdDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldMetadata.cs">
+    <Compile Include="Generated\Domain\Metadata\AttributeSetInstanceExtensionFieldMetadata.cs">
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldState.cs">
@@ -169,7 +169,7 @@
     <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldStates.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Domain\AttributeSetInstanceMetadata.cs">
+    <Compile Include="Generated\Domain\Metadata\AttributeSetInstanceMetadata.cs">
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeSetInstanceState.cs">
@@ -190,7 +190,7 @@
     <Compile Include="Generated\Domain\AttributeSetInstanceStateProperties.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Domain\AttributeSetMetadata.cs">
+    <Compile Include="Generated\Domain\Metadata\AttributeSetMetadata.cs">
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeSetState.cs">
@@ -235,7 +235,7 @@
     <Compile Include="Generated\Domain\AttributeUseCommandDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Domain\AttributeUseMetadata.cs">
+    <Compile Include="Generated\Domain\Metadata\AttributeUseMetadata.cs">
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeUseState.cs">
@@ -271,7 +271,7 @@
     <Compile Include="Generated\Domain\AttributeValueIdDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Domain\AttributeValueMetadata.cs">
+    <Compile Include="Generated\Domain\Metadata\AttributeValueMetadata.cs">
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeValueState.cs">
@@ -653,7 +653,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
-    <Content Include="Generated\Domain\GenerateDomainMetadata.tt">
+    <Content Include="Generated\Domain\Metadata\GenerateDomainMetadata.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GenerateDomainMetadata.txt</LastGenOutput>
       <LastOutputs>
@@ -667,7 +667,7 @@
 .\GenerateDomainMetadata.txt
 </LastOutputs>
     </Content>
-    <Content Include="Generated\Domain\GenerateDomainMetadata.txt">
+    <Content Include="Generated\Domain\Metadata\GenerateDomainMetadata.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>

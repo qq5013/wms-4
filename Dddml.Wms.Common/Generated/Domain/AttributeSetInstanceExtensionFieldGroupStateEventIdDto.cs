@@ -30,14 +30,14 @@ namespace Dddml.Wms.Domain
             return this._value;
         }
 
-		public virtual string AttributeSetInstanceExtensionFieldGroupId { 
-			get { return _value.AttributeSetInstanceExtensionFieldGroupId; } 
-			set { _value.AttributeSetInstanceExtensionFieldGroupId = value; } 
+		public virtual string Id { 
+			get { return _value.Id; } 
+			set { _value.Id = value; } 
 		}
 
-		public virtual long AttributeSetInstanceExtensionFieldGroupVersion { 
-			get { return _value.AttributeSetInstanceExtensionFieldGroupVersion; } 
-			set { _value.AttributeSetInstanceExtensionFieldGroupVersion = value; } 
+		public virtual long Version { 
+			get { return _value.Version; } 
+			set { _value.Version = value; } 
 		}
 
 

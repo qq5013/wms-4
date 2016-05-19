@@ -35,14 +35,14 @@ namespace Dddml.Wms.Domain
 			set { _value.AttributeId = value; } 
 		}
 
-		public virtual string AttributeValueValue { 
-			get { return _value.AttributeValueValue; } 
-			set { _value.AttributeValueValue = value; } 
+		public virtual string Value { 
+			get { return _value.Value; } 
+			set { _value.Value = value; } 
 		}
 
-		public virtual long AttributeVersion { 
-			get { return _value.AttributeVersion; } 
-			set { _value.AttributeVersion = value; } 
+		public virtual long Version { 
+			get { return _value.Version; } 
+			set { _value.Version = value; } 
 		}
 
 

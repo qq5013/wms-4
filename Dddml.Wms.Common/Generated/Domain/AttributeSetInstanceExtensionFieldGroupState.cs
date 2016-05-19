@@ -179,7 +179,7 @@ namespace Dddml.Wms.Domain
 			this.CreatedAt = e.CreatedAt;
 
 			foreach (IAttributeSetInstanceExtensionFieldStateCreated innerEvent in e.AttributeSetInstanceExtensionFieldEvents) {
-				IAttributeSetInstanceExtensionFieldState innerState = this.Fields.Get(innerEvent.GlobalId.AttributeSetInstanceExtensionFieldIndex);
+				IAttributeSetInstanceExtensionFieldState innerState = this.Fields.Get(innerEvent.GlobalId.Index);
 				innerState.Mutate (innerEvent);
 			}
 
@@ -263,7 +263,7 @@ namespace Dddml.Wms.Domain
 
 			foreach (IAttributeSetInstanceExtensionFieldStateEvent innerEvent in e.AttributeSetInstanceExtensionFieldEvents)
             {
-                IAttributeSetInstanceExtensionFieldState innerState = this.Fields.Get(innerEvent.GlobalId.AttributeSetInstanceExtensionFieldIndex);
+                IAttributeSetInstanceExtensionFieldState innerState = this.Fields.Get(innerEvent.GlobalId.Index);
 
                 var removed = innerEvent as IAttributeSetInstanceExtensionFieldStateRemoved;
                 if (removed != null)
@@ -296,13 +296,13 @@ namespace Dddml.Wms.Domain
 		protected void ThrowOnWrongEvent(IAttributeSetInstanceExtensionFieldGroupStateEvent stateEvent)
 		{
 			var stateEntityId = this.Id; // Aggregate Id
-			var eventEntityId = stateEvent.StateEventId.AttributeSetInstanceExtensionFieldGroupId;
+			var eventEntityId = stateEvent.StateEventId.Id; // EntityBase.Aggregate.GetStateEventIdPropertyIdName();
 			if (stateEntityId != eventEntityId)
 			{
 				DomainError.Named("mutateWrongEntity", "Entity Id {0} in state but entity id {1} in event", stateEntityId, eventEntityId);
 			}
 			var stateVersion = this.Version;
-			var eventVersion = stateEvent.StateEventId.AttributeSetInstanceExtensionFieldGroupVersion;
+			var eventVersion = stateEvent.StateEventId.Version;//EntityBase.Aggregate.GetStateEventIdPropertyVersionName()
 			if (stateVersion != eventVersion)
 			{
 				throw DomainError.Named("concurrencyConflict", "Conflict between state version {0} and event version {1}", stateVersion, eventVersion);

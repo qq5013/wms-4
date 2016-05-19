@@ -180,7 +180,7 @@ namespace Dddml.Wms.Domain
 			this.CreatedAt = e.CreatedAt;
 
 			foreach (IAttributeUseStateCreated innerEvent in e.AttributeUseEvents) {
-				IAttributeUseState innerState = this.AttributeUses.Get(innerEvent.GlobalId.AttributeUseAttributeId);
+				IAttributeUseState innerState = this.AttributeUses.Get(innerEvent.GlobalId.AttributeId);
 				innerState.Mutate (innerEvent);
 			}
 
@@ -275,7 +275,7 @@ namespace Dddml.Wms.Domain
 
 			foreach (IAttributeUseStateEvent innerEvent in e.AttributeUseEvents)
             {
-                IAttributeUseState innerState = this.AttributeUses.Get(innerEvent.GlobalId.AttributeUseAttributeId);
+                IAttributeUseState innerState = this.AttributeUses.Get(innerEvent.GlobalId.AttributeId);
 
                 var removed = innerEvent as IAttributeUseStateRemoved;
                 if (removed != null)
@@ -308,13 +308,13 @@ namespace Dddml.Wms.Domain
 		protected void ThrowOnWrongEvent(IAttributeSetStateEvent stateEvent)
 		{
 			var stateEntityId = this.AttributeSetId; // Aggregate Id
-			var eventEntityId = stateEvent.StateEventId.AttributeSetId;
+			var eventEntityId = stateEvent.StateEventId.AttributeSetId; // EntityBase.Aggregate.GetStateEventIdPropertyIdName();
 			if (stateEntityId != eventEntityId)
 			{
 				DomainError.Named("mutateWrongEntity", "Entity Id {0} in state but entity id {1} in event", stateEntityId, eventEntityId);
 			}
 			var stateVersion = this.Version;
-			var eventVersion = stateEvent.StateEventId.AttributeSetVersion;
+			var eventVersion = stateEvent.StateEventId.Version;//EntityBase.Aggregate.GetStateEventIdPropertyVersionName()
 			if (stateVersion != eventVersion)
 			{
 				throw DomainError.Named("concurrencyConflict", "Conflict between state version {0} and event version {1}", stateVersion, eventVersion);

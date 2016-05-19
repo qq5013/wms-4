@@ -21,11 +21,11 @@ namespace Dddml.Wms.Domain
 			internal set { _attributeSetId = value; } 
 		}
 
-		private long _attributeSetVersion;
+		private long _version;
 
-		public virtual long AttributeSetVersion { 
-			get { return this._attributeSetVersion; } 
-			internal set { _attributeSetVersion = value; } 
+		public virtual long Version { 
+			get { return this._version; } 
+			internal set { _version = value; } 
 		}
 
 
@@ -38,10 +38,10 @@ namespace Dddml.Wms.Domain
 		{
 		}
 
-		public AttributeSetStateEventId (string attributeSetId, long attributeSetVersion)
+		public AttributeSetStateEventId (string attributeSetId, long version)
 		{
 			this._attributeSetId = attributeSetId;
-			this._attributeSetVersion = attributeSetVersion;
+			this._version = version;
 
 		}
 
@@ -59,7 +59,7 @@ namespace Dddml.Wms.Domain
 
 			return true 
 				&& Object.Equals (this.AttributeSetId, other.AttributeSetId)
-				&& Object.Equals (this.AttributeSetVersion, other.AttributeSetVersion)
+				&& Object.Equals (this.Version, other.Version)
 				;
 		}
 
@@ -69,8 +69,8 @@ namespace Dddml.Wms.Domain
 			if (this.AttributeSetId != null) {
 				hash += 13 * this.AttributeSetId.GetHashCode ();
 			}
-			if (this.AttributeSetVersion != null) {
-				hash += 13 * this.AttributeSetVersion.GetHashCode ();
+			if (this.Version != null) {
+				hash += 13 * this.Version.GetHashCode ();
 			}
 			return hash;
 		}

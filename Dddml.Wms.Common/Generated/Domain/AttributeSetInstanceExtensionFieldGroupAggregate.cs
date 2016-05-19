@@ -119,13 +119,13 @@ namespace Dddml.Wms.Domain
 
             (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
             (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedAt = DateTime.Now;
-			var attributeSetInstanceExtensionFieldGroupVersion = c.Version;
+			var version = c.Version;
 
             foreach (ICreateAttributeSetInstanceExtensionField innerCommand in c.Fields)
             {
                 ThrowOnInconsistentCommands(c, innerCommand);
 
-                IAttributeSetInstanceExtensionFieldStateCreated innerEvent = MapCreate(innerCommand, c, attributeSetInstanceExtensionFieldGroupVersion);
+                IAttributeSetInstanceExtensionFieldStateCreated innerEvent = MapCreate(innerCommand, c, version);
                 e.AddAttributeSetInstanceExtensionFieldEvent(innerEvent);
             }
 
@@ -169,13 +169,13 @@ namespace Dddml.Wms.Domain
             (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
             (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedAt = DateTime.Now;
 
-			var attributeSetInstanceExtensionFieldGroupVersion = c.Version;
+			var version = c.Version;
 
             foreach (IAttributeSetInstanceExtensionFieldCommand innerCommand in c.AttributeSetInstanceExtensionFieldCommands)
             {
                 ThrowOnInconsistentCommands(c, innerCommand);
 
-                IAttributeSetInstanceExtensionFieldStateEvent innerEvent = Map(innerCommand, c, attributeSetInstanceExtensionFieldGroupVersion);
+                IAttributeSetInstanceExtensionFieldStateEvent innerEvent = Map(innerCommand, c, version);
                 e.AddAttributeSetInstanceExtensionFieldEvent(innerEvent);
             }
 
@@ -213,33 +213,33 @@ namespace Dddml.Wms.Domain
         }// END ThrowOnInconsistentCommands /////////////////////
 
 
-        protected virtual IAttributeSetInstanceExtensionFieldStateEvent Map(IAttributeSetInstanceExtensionFieldCommand c, IAttributeSetInstanceExtensionFieldGroupCommand outerCommand, long attributeSetInstanceExtensionFieldGroupVersion)
+        protected virtual IAttributeSetInstanceExtensionFieldStateEvent Map(IAttributeSetInstanceExtensionFieldCommand c, IAttributeSetInstanceExtensionFieldGroupCommand outerCommand, long version)
         {
             var create = c as ICreateAttributeSetInstanceExtensionField;
             if(create != null)
             {
-                return MapCreate(create, outerCommand, attributeSetInstanceExtensionFieldGroupVersion);
+                return MapCreate(create, outerCommand, version);
             }
 
             var merge = c as IMergePatchAttributeSetInstanceExtensionField;
             if(merge != null)
             {
-                return MapMergePatch(merge, outerCommand, attributeSetInstanceExtensionFieldGroupVersion);
+                return MapMergePatch(merge, outerCommand, version);
             }
 
             var remove = c as IRemoveAttributeSetInstanceExtensionField;
             if (remove != null)
             {
-                return MapRemove(remove, outerCommand, attributeSetInstanceExtensionFieldGroupVersion);
+                return MapRemove(remove, outerCommand, version);
             }
             throw new NotSupportedException();
         }
 
 
-        protected virtual IAttributeSetInstanceExtensionFieldStateCreated MapCreate(ICreateAttributeSetInstanceExtensionField c, IAttributeSetInstanceExtensionFieldGroupCommand outerCommand, long attributeSetInstanceExtensionFieldGroupVersion)
+        protected virtual IAttributeSetInstanceExtensionFieldStateCreated MapCreate(ICreateAttributeSetInstanceExtensionField c, IAttributeSetInstanceExtensionFieldGroupCommand outerCommand, long version)
         {
             (c as AttributeSetInstanceExtensionFieldCommandBase).RequesterId = (outerCommand as AttributeSetInstanceExtensionFieldGroupCommandBase).RequesterId;
-			var stateEventId = new AttributeSetInstanceExtensionFieldStateEventId(c.GroupId, c.Index, attributeSetInstanceExtensionFieldGroupVersion);
+			var stateEventId = new AttributeSetInstanceExtensionFieldStateEventId(c.GroupId, c.Index, version);
             IAttributeSetInstanceExtensionFieldStateCreated e = NewAttributeSetInstanceExtensionFieldStateCreated(stateEventId);
 
             e.Name = c.Name;
@@ -263,10 +263,10 @@ namespace Dddml.Wms.Domain
 
 
 
-        protected virtual IAttributeSetInstanceExtensionFieldStateMergePatched MapMergePatch(IMergePatchAttributeSetInstanceExtensionField c, IAttributeSetInstanceExtensionFieldGroupCommand outerCommand, long attributeSetInstanceExtensionFieldGroupVersion)
+        protected virtual IAttributeSetInstanceExtensionFieldStateMergePatched MapMergePatch(IMergePatchAttributeSetInstanceExtensionField c, IAttributeSetInstanceExtensionFieldGroupCommand outerCommand, long version)
         {
             (c as AttributeSetInstanceExtensionFieldCommandBase).RequesterId = (outerCommand as AttributeSetInstanceExtensionFieldGroupCommandBase).RequesterId;
-			var stateEventId = new AttributeSetInstanceExtensionFieldStateEventId(c.GroupId, c.Index, attributeSetInstanceExtensionFieldGroupVersion);
+			var stateEventId = new AttributeSetInstanceExtensionFieldStateEventId(c.GroupId, c.Index, version);
             IAttributeSetInstanceExtensionFieldStateMergePatched e = NewAttributeSetInstanceExtensionFieldStateMergePatched(stateEventId);
 
             e.Name = c.Name;
@@ -295,10 +295,10 @@ namespace Dddml.Wms.Domain
         }// END Map(IMergePatch... ////////////////////////////
 
 
-        protected virtual IAttributeSetInstanceExtensionFieldStateRemoved MapRemove(IRemoveAttributeSetInstanceExtensionField c, IAttributeSetInstanceExtensionFieldGroupCommand outerCommand, long attributeSetInstanceExtensionFieldGroupVersion)
+        protected virtual IAttributeSetInstanceExtensionFieldStateRemoved MapRemove(IRemoveAttributeSetInstanceExtensionField c, IAttributeSetInstanceExtensionFieldGroupCommand outerCommand, long version)
         {
             (c as AttributeSetInstanceExtensionFieldCommandBase).RequesterId = (outerCommand as AttributeSetInstanceExtensionFieldGroupCommandBase).RequesterId;
-			var stateEventId = new AttributeSetInstanceExtensionFieldStateEventId(c.GroupId, c.Index, attributeSetInstanceExtensionFieldGroupVersion);
+			var stateEventId = new AttributeSetInstanceExtensionFieldStateEventId(c.GroupId, c.Index, version);
             IAttributeSetInstanceExtensionFieldStateRemoved e = NewAttributeSetInstanceExtensionFieldStateRemoved(stateEventId);
 
 

@@ -7,7 +7,7 @@
 
 	<composite-id name="StateEventId" class="Dddml.Wms.Domain.AttributeSetInstanceStateEventId">
 		<key-property name="AttributeSetInstanceId" column="AttributeSetInstanceId" length="50"/>
-		<key-property name="AttributeSetInstanceVersion" column="AttributeSetInstanceVersion" />
+		<key-property name="Version" column="Version" />
 	</composite-id>
 
     <discriminator column="StateEventType" type="String" />
@@ -954,8 +954,8 @@
 
       <set name="RemovedPropertyNames" table="AttributeSetInstanceStateEventRemovedProperties">
         <key>
-          <column name="StateEventIdAttributeSetInstanceId" length="50"/>
-          <column name="StateEventIdAttributeSetInstanceVersion" />
+          <column name="AttributeSetInstanceId" length="50"/>
+          <column name="Version" />
         </key>
         <element column="RemovedPropertyName" type="string" not-null="true" />
       </set>

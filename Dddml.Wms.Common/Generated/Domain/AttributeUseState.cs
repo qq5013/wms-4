@@ -63,10 +63,10 @@ namespace Dddml.Wms.Domain
 
         public override string AttributeId {
 			get {
-				return this.AttributeSetAttributeUseId.AttributeUseAttributeId;
+				return this.AttributeSetAttributeUseId.AttributeId;
 			}
 			set {
-				this.AttributeSetAttributeUseId.AttributeUseAttributeId = value;
+				this.AttributeSetAttributeUseId.AttributeId = value;
 			}
 		}
 
@@ -214,11 +214,11 @@ namespace Dddml.Wms.Domain
 				{
 					DomainError.Named("mutateWrongEntity", "Entity Id AttributeSetId {0} in state but entity id AttributeSetId {1} in event", stateEntityIdAttributeSetId, eventEntityIdAttributeSetId);
 				}
-				var stateEntityIdAttributeUseAttributeId = (this as IGlobalIdentity<AttributeSetAttributeUseId>).GlobalId.AttributeUseAttributeId;
-				var eventEntityIdAttributeUseAttributeId = stateEvent.StateEventId.AttributeUseAttributeId;
-				if (stateEntityIdAttributeUseAttributeId != eventEntityIdAttributeUseAttributeId)
+				var stateEntityIdAttributeId = (this as IGlobalIdentity<AttributeSetAttributeUseId>).GlobalId.AttributeId;
+				var eventEntityIdAttributeId = stateEvent.StateEventId.AttributeId;
+				if (stateEntityIdAttributeId != eventEntityIdAttributeId)
 				{
-					DomainError.Named("mutateWrongEntity", "Entity Id AttributeUseAttributeId {0} in state but entity id AttributeUseAttributeId {1} in event", stateEntityIdAttributeUseAttributeId, eventEntityIdAttributeUseAttributeId);
+					DomainError.Named("mutateWrongEntity", "Entity Id AttributeId {0} in state but entity id AttributeId {1} in event", stateEntityIdAttributeId, eventEntityIdAttributeId);
 				}
 		}
 	}

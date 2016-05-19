@@ -7,7 +7,7 @@
 
 	<composite-id name="StateEventId" class="Dddml.Wms.Domain.AttributeSetStateEventId">
 		<key-property name="AttributeSetId" column="AttributeSetId" length="50"/>
-		<key-property name="AttributeSetVersion" column="AttributeSetVersion" />
+		<key-property name="Version" column="Version" />
 	</composite-id>
 
     <discriminator column="StateEventType" type="String" />

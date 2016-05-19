@@ -10,6 +10,7 @@ using Dddml.Wms.Domain;
 using Dddml.Wms.Specialization;
 using Dddml.Wms.Specialization.NHibernate;
 using NHibernate;
+using NHibernate.Criterion;
 using Spring.Transaction.Interceptor;
 
 namespace Dddml.Wms.Domain.NHibernate
@@ -57,6 +58,58 @@ namespace Dddml.Wms.Domain.NHibernate
 				saveable.Save ();
 			}
 		}
+
+        [Transaction(ReadOnly = true)]
+        public virtual IEnumerable<IAttributeSetInstanceExtensionFieldGroupState> Get(IDictionary<string, object> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
+        {
+
+            var criteria = CurrentSession.CreateCriteria<AttributeSetInstanceExtensionFieldGroupState>();
+
+            if (filter != null)
+            {
+                SetCriteriaFilter(criteria, filter);
+            }
+            if (orders != null)
+            {
+                SetCriteriaOrders(criteria, orders);
+            }
+
+            criteria.SetFirstResult(firstResult);
+            criteria.SetMaxResults(maxResults);
+            return criteria.List<AttributeSetInstanceExtensionFieldGroupState>();
+        }
+
+
+        protected void SetCriteriaFilter(ICriteria criteria, IDictionary<string, object> filter)
+        {
+            foreach (KeyValuePair<string, object> p in filter)
+            {
+                SetCriteriaFilterPair(criteria, p);
+            }
+        }
+
+        protected void SetCriteriaFilterPair(ICriteria criteria, KeyValuePair<string, object> filterPair)
+        {
+            if (filterPair.Value == null)
+            {
+                criteria.Add(Expression.IsNull(filterPair.Key));
+            }
+            else
+            {
+                criteria.Add(Expression.Eq(filterPair.Key, filterPair.Value));
+            }
+        }
+
+        protected void SetCriteriaOrders(ICriteria criteria, IList<string> orders)
+        {
+            foreach (var order in orders)
+            {
+                bool isDesc = order.StartsWith("-");
+                var pName = isDesc ? order.Substring(1) : order;
+                criteria.AddOrder(isDesc ? Order.Desc(pName) : Order.Asc(pName));
+            }
+        }
+
 	}
 }
 

@@ -21,18 +21,18 @@ namespace Dddml.Wms.Domain
 			internal set { _attributeId = value; } 
 		}
 
-		private string _attributeValueValue;
+		private string _value;
 
-		public virtual string AttributeValueValue { 
-			get { return this._attributeValueValue; } 
-			internal set { _attributeValueValue = value; } 
+		public virtual string Value { 
+			get { return this._value; } 
+			internal set { _value = value; } 
 		}
 
-		private long _attributeVersion;
+		private long _version;
 
-		public virtual long AttributeVersion { 
-			get { return this._attributeVersion; } 
-			internal set { _attributeVersion = value; } 
+		public virtual long Version { 
+			get { return this._version; } 
+			internal set { _version = value; } 
 		}
 
 
@@ -45,11 +45,11 @@ namespace Dddml.Wms.Domain
 		{
 		}
 
-		public AttributeValueStateEventId (string attributeId, string attributeValueValue, long attributeVersion)
+		public AttributeValueStateEventId (string attributeId, string value, long version)
 		{
 			this._attributeId = attributeId;
-			this._attributeValueValue = attributeValueValue;
-			this._attributeVersion = attributeVersion;
+			this._value = value;
+			this._version = version;
 
 		}
 
@@ -67,8 +67,8 @@ namespace Dddml.Wms.Domain
 
 			return true 
 				&& Object.Equals (this.AttributeId, other.AttributeId)
-				&& Object.Equals (this.AttributeValueValue, other.AttributeValueValue)
-				&& Object.Equals (this.AttributeVersion, other.AttributeVersion)
+				&& Object.Equals (this.Value, other.Value)
+				&& Object.Equals (this.Version, other.Version)
 				;
 		}
 
@@ -78,11 +78,11 @@ namespace Dddml.Wms.Domain
 			if (this.AttributeId != null) {
 				hash += 13 * this.AttributeId.GetHashCode ();
 			}
-			if (this.AttributeValueValue != null) {
-				hash += 13 * this.AttributeValueValue.GetHashCode ();
+			if (this.Value != null) {
+				hash += 13 * this.Value.GetHashCode ();
 			}
-			if (this.AttributeVersion != null) {
-				hash += 13 * this.AttributeVersion.GetHashCode ();
+			if (this.Version != null) {
+				hash += 13 * this.Version.GetHashCode ();
 			}
 			return hash;
 		}

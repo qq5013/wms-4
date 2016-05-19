@@ -1033,7 +1033,7 @@ namespace Dddml.Wms.Domain
 
             (e as AttributeSetInstanceStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
             (e as AttributeSetInstanceStateEventBase).CreatedAt = DateTime.Now;
-			var attributeSetInstanceVersion = c.Version;
+			var version = c.Version;
 
 
             return e;
@@ -2903,7 +2903,7 @@ namespace Dddml.Wms.Domain
             (e as AttributeSetInstanceStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
             (e as AttributeSetInstanceStateEventBase).CreatedAt = DateTime.Now;
 
-			var attributeSetInstanceVersion = c.Version;
+			var version = c.Version;
 
 
             return e;

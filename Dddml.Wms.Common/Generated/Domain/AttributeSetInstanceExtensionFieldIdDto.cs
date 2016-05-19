@@ -35,9 +35,9 @@ namespace Dddml.Wms.Domain
 			set { _value.GroupId = value; } 
 		}
 
-		public virtual string AttributeSetInstanceExtensionFieldIndex { 
-			get { return _value.AttributeSetInstanceExtensionFieldIndex; } 
-			set { _value.AttributeSetInstanceExtensionFieldIndex = value; } 
+		public virtual string Index { 
+			get { return _value.Index; } 
+			set { _value.Index = value; } 
 		}
 
 

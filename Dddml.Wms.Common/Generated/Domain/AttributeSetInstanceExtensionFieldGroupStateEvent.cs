@@ -31,7 +31,7 @@ namespace Dddml.Wms.Domain
 
 		public override string Id {
 			get {
-				return StateEventId.AttributeSetInstanceExtensionFieldGroupId;
+				return StateEventId.Id;//EntityBase.Aggregate.GetStateEventIdPropertyIdName()
 			}
 			set {
 				throw new NotSupportedException ();
@@ -40,7 +40,7 @@ namespace Dddml.Wms.Domain
 
 		public virtual long Version {
 			get {
-				return StateEventId.AttributeSetInstanceExtensionFieldGroupVersion;
+				return StateEventId.Version;//EntityBase.Aggregate.GetStateEventIdPropertyVersionName()
 			}
 			set {
 				throw new NotSupportedException ();
@@ -71,16 +71,16 @@ namespace Dddml.Wms.Domain
 
         protected AttributeSetInstanceExtensionFieldStateEventId NewAttributeSetInstanceExtensionFieldStateEventId(string index)
         {
-            var stateEventId = new AttributeSetInstanceExtensionFieldStateEventId(this.StateEventId.AttributeSetInstanceExtensionFieldGroupId, index, this.StateEventId.AttributeSetInstanceExtensionFieldGroupVersion);
+            var stateEventId = new AttributeSetInstanceExtensionFieldStateEventId(this.StateEventId.Id, index, this.StateEventId.Version);
             return stateEventId;
         }
 
 		protected void ThrowOnInconsistentEventIds(IAttributeSetInstanceExtensionFieldStateEvent e)
 		{
-			if (this.StateEventId.AttributeSetInstanceExtensionFieldGroupId != e.StateEventId.GroupId) 
+			if (this.StateEventId.Id != e.StateEventId.GroupId) 
 			{ 
-				DomainError.Named("inconsistentEventIds", "Outer Id AttributeSetInstanceExtensionFieldGroupId {0} but inner id GroupId {1}", 
-					this.StateEventId.AttributeSetInstanceExtensionFieldGroupId, e.StateEventId.GroupId);
+				DomainError.Named("inconsistentEventIds", "Outer Id Id {0} but inner id GroupId {1}", 
+					this.StateEventId.Id, e.StateEventId.GroupId);
 			}
 		}
 

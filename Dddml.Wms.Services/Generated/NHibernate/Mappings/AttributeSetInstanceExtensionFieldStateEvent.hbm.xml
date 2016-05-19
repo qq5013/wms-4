@@ -6,20 +6,20 @@
   <class name="AttributeSetInstanceExtensionFieldStateEventBase" table="AttributeSetInstanceExtensionFieldStateEvents" mutable="false" abstract="true">
 
 	<composite-id name="StateEventId" class="Dddml.Wms.Domain.AttributeSetInstanceExtensionFieldStateEventId">
-		<key-property name="GroupId" column="GroupId" length="50"/>
-		<key-property name="AttributeSetInstanceExtensionFieldIndex" column="AttributeSetInstanceExtensionFieldIndex" length="50"/>
-		<key-property name="AttributeSetInstanceExtensionFieldGroupVersion" column="AttributeSetInstanceExtensionFieldGroupVersion" />
+		<key-property name="GroupId" column="AttributeSetInstanceExtensionFieldIdGroupId" length="50"/>
+		<key-property name="Index" column="AttributeSetInstanceExtensionFieldIdIndex" length="50"/>
+		<key-property name="Version" column="AttributeSetInstanceExtensionFieldIdVersion" />
 	</composite-id>
 
     <discriminator column="StateEventType" type="String" />
 
-	<property name="Name"  />
+	<property name="Name" unique-key="UniqueName" />
 
 	<property name="Type"  />
 
 	<property name="Length"  />
 
-	<property name="Alias"  />
+	<property name="Alias" unique-key="UniqueAlias" />
 
 	<property name="Description"  />
 

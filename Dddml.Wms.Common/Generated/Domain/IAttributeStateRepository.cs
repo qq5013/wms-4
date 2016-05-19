@@ -12,11 +12,13 @@ namespace Dddml.Wms.Domain
 {
 	public interface IAttributeStateRepository
 	{
-		IAttributeState Get(string id);
+        IAttributeState Get(string id);
 
         IEnumerable<IAttributeState> GetAll(int firstResult, int maxResults);
-
-		void Save(IAttributeState state);
+        
+        void Save(IAttributeState state);
+        
+        IEnumerable<IAttributeState> Get(IDictionary<string, object> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue);
 
 	}
 

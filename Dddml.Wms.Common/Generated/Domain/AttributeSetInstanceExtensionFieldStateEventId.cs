@@ -21,18 +21,18 @@ namespace Dddml.Wms.Domain
 			internal set { _groupId = value; } 
 		}
 
-		private string _attributeSetInstanceExtensionFieldIndex;
+		private string _index;
 
-		public virtual string AttributeSetInstanceExtensionFieldIndex { 
-			get { return this._attributeSetInstanceExtensionFieldIndex; } 
-			internal set { _attributeSetInstanceExtensionFieldIndex = value; } 
+		public virtual string Index { 
+			get { return this._index; } 
+			internal set { _index = value; } 
 		}
 
-		private long _attributeSetInstanceExtensionFieldGroupVersion;
+		private long _version;
 
-		public virtual long AttributeSetInstanceExtensionFieldGroupVersion { 
-			get { return this._attributeSetInstanceExtensionFieldGroupVersion; } 
-			internal set { _attributeSetInstanceExtensionFieldGroupVersion = value; } 
+		public virtual long Version { 
+			get { return this._version; } 
+			internal set { _version = value; } 
 		}
 
 
@@ -45,11 +45,11 @@ namespace Dddml.Wms.Domain
 		{
 		}
 
-		public AttributeSetInstanceExtensionFieldStateEventId (string groupId, string attributeSetInstanceExtensionFieldIndex, long attributeSetInstanceExtensionFieldGroupVersion)
+		public AttributeSetInstanceExtensionFieldStateEventId (string groupId, string index, long version)
 		{
 			this._groupId = groupId;
-			this._attributeSetInstanceExtensionFieldIndex = attributeSetInstanceExtensionFieldIndex;
-			this._attributeSetInstanceExtensionFieldGroupVersion = attributeSetInstanceExtensionFieldGroupVersion;
+			this._index = index;
+			this._version = version;
 
 		}
 
@@ -67,8 +67,8 @@ namespace Dddml.Wms.Domain
 
 			return true 
 				&& Object.Equals (this.GroupId, other.GroupId)
-				&& Object.Equals (this.AttributeSetInstanceExtensionFieldIndex, other.AttributeSetInstanceExtensionFieldIndex)
-				&& Object.Equals (this.AttributeSetInstanceExtensionFieldGroupVersion, other.AttributeSetInstanceExtensionFieldGroupVersion)
+				&& Object.Equals (this.Index, other.Index)
+				&& Object.Equals (this.Version, other.Version)
 				;
 		}
 
@@ -78,11 +78,11 @@ namespace Dddml.Wms.Domain
 			if (this.GroupId != null) {
 				hash += 13 * this.GroupId.GetHashCode ();
 			}
-			if (this.AttributeSetInstanceExtensionFieldIndex != null) {
-				hash += 13 * this.AttributeSetInstanceExtensionFieldIndex.GetHashCode ();
+			if (this.Index != null) {
+				hash += 13 * this.Index.GetHashCode ();
 			}
-			if (this.AttributeSetInstanceExtensionFieldGroupVersion != null) {
-				hash += 13 * this.AttributeSetInstanceExtensionFieldGroupVersion.GetHashCode ();
+			if (this.Version != null) {
+				hash += 13 * this.Version.GetHashCode ();
 			}
 			return hash;
 		}

@@ -121,13 +121,13 @@ namespace Dddml.Wms.Domain
 
             (e as AttributeSetStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
             (e as AttributeSetStateEventBase).CreatedAt = DateTime.Now;
-			var attributeSetVersion = c.Version;
+			var version = c.Version;
 
             foreach (ICreateAttributeUse innerCommand in c.AttributeUses)
             {
                 ThrowOnInconsistentCommands(c, innerCommand);
 
-                IAttributeUseStateCreated innerEvent = MapCreate(innerCommand, c, attributeSetVersion);
+                IAttributeUseStateCreated innerEvent = MapCreate(innerCommand, c, version);
                 e.AddAttributeUseEvent(innerEvent);
             }
 
@@ -175,13 +175,13 @@ namespace Dddml.Wms.Domain
             (e as AttributeSetStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
             (e as AttributeSetStateEventBase).CreatedAt = DateTime.Now;
 
-			var attributeSetVersion = c.Version;
+			var version = c.Version;
 
             foreach (IAttributeUseCommand innerCommand in c.AttributeUseCommands)
             {
                 ThrowOnInconsistentCommands(c, innerCommand);
 
-                IAttributeUseStateEvent innerEvent = Map(innerCommand, c, attributeSetVersion);
+                IAttributeUseStateEvent innerEvent = Map(innerCommand, c, version);
                 e.AddAttributeUseEvent(innerEvent);
             }
 
@@ -219,33 +219,33 @@ namespace Dddml.Wms.Domain
         }// END ThrowOnInconsistentCommands /////////////////////
 
 
-        protected virtual IAttributeUseStateEvent Map(IAttributeUseCommand c, IAttributeSetCommand outerCommand, long attributeSetVersion)
+        protected virtual IAttributeUseStateEvent Map(IAttributeUseCommand c, IAttributeSetCommand outerCommand, long version)
         {
             var create = c as ICreateAttributeUse;
             if(create != null)
             {
-                return MapCreate(create, outerCommand, attributeSetVersion);
+                return MapCreate(create, outerCommand, version);
             }
 
             var merge = c as IMergePatchAttributeUse;
             if(merge != null)
             {
-                return MapMergePatch(merge, outerCommand, attributeSetVersion);
+                return MapMergePatch(merge, outerCommand, version);
             }
 
             var remove = c as IRemoveAttributeUse;
             if (remove != null)
             {
-                return MapRemove(remove, outerCommand, attributeSetVersion);
+                return MapRemove(remove, outerCommand, version);
             }
             throw new NotSupportedException();
         }
 
 
-        protected virtual IAttributeUseStateCreated MapCreate(ICreateAttributeUse c, IAttributeSetCommand outerCommand, long attributeSetVersion)
+        protected virtual IAttributeUseStateCreated MapCreate(ICreateAttributeUse c, IAttributeSetCommand outerCommand, long version)
         {
             (c as AttributeUseCommandBase).RequesterId = (outerCommand as AttributeSetCommandBase).RequesterId;
-			var stateEventId = new AttributeUseStateEventId(c.AttributeSetId, c.AttributeId, attributeSetVersion);
+			var stateEventId = new AttributeUseStateEventId(c.AttributeSetId, c.AttributeId, version);
             IAttributeUseStateCreated e = NewAttributeUseStateCreated(stateEventId);
 
             e.SequenceNumber = c.SequenceNumber;
@@ -261,10 +261,10 @@ namespace Dddml.Wms.Domain
 
 
 
-        protected virtual IAttributeUseStateMergePatched MapMergePatch(IMergePatchAttributeUse c, IAttributeSetCommand outerCommand, long attributeSetVersion)
+        protected virtual IAttributeUseStateMergePatched MapMergePatch(IMergePatchAttributeUse c, IAttributeSetCommand outerCommand, long version)
         {
             (c as AttributeUseCommandBase).RequesterId = (outerCommand as AttributeSetCommandBase).RequesterId;
-			var stateEventId = new AttributeUseStateEventId(c.AttributeSetId, c.AttributeId, attributeSetVersion);
+			var stateEventId = new AttributeUseStateEventId(c.AttributeSetId, c.AttributeId, version);
             IAttributeUseStateMergePatched e = NewAttributeUseStateMergePatched(stateEventId);
 
             e.SequenceNumber = c.SequenceNumber;
@@ -281,10 +281,10 @@ namespace Dddml.Wms.Domain
         }// END Map(IMergePatch... ////////////////////////////
 
 
-        protected virtual IAttributeUseStateRemoved MapRemove(IRemoveAttributeUse c, IAttributeSetCommand outerCommand, long attributeSetVersion)
+        protected virtual IAttributeUseStateRemoved MapRemove(IRemoveAttributeUse c, IAttributeSetCommand outerCommand, long version)
         {
             (c as AttributeUseCommandBase).RequesterId = (outerCommand as AttributeSetCommandBase).RequesterId;
-			var stateEventId = new AttributeUseStateEventId(c.AttributeSetId, c.AttributeId, attributeSetVersion);
+			var stateEventId = new AttributeUseStateEventId(c.AttributeSetId, c.AttributeId, version);
             IAttributeUseStateRemoved e = NewAttributeUseStateRemoved(stateEventId);
 
 

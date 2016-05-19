@@ -21,11 +21,11 @@ namespace Dddml.Wms.Domain
 			internal set { _groupId = value; } 
 		}
 
-		private string _attributeSetInstanceExtensionFieldIndex;
+		private string _index;
 
-		public virtual string AttributeSetInstanceExtensionFieldIndex { 
-			get { return this._attributeSetInstanceExtensionFieldIndex; } 
-			internal set { _attributeSetInstanceExtensionFieldIndex = value; } 
+		public virtual string Index { 
+			get { return this._index; } 
+			internal set { _index = value; } 
 		}
 
 
@@ -38,10 +38,10 @@ namespace Dddml.Wms.Domain
 		{
 		}
 
-		public AttributeSetInstanceExtensionFieldId (string groupId, string attributeSetInstanceExtensionFieldIndex)
+		public AttributeSetInstanceExtensionFieldId (string groupId, string index)
 		{
 			this._groupId = groupId;
-			this._attributeSetInstanceExtensionFieldIndex = attributeSetInstanceExtensionFieldIndex;
+			this._index = index;
 
 		}
 
@@ -59,7 +59,7 @@ namespace Dddml.Wms.Domain
 
 			return true 
 				&& Object.Equals (this.GroupId, other.GroupId)
-				&& Object.Equals (this.AttributeSetInstanceExtensionFieldIndex, other.AttributeSetInstanceExtensionFieldIndex)
+				&& Object.Equals (this.Index, other.Index)
 				;
 		}
 
@@ -69,8 +69,8 @@ namespace Dddml.Wms.Domain
 			if (this.GroupId != null) {
 				hash += 13 * this.GroupId.GetHashCode ();
 			}
-			if (this.AttributeSetInstanceExtensionFieldIndex != null) {
-				hash += 13 * this.AttributeSetInstanceExtensionFieldIndex.GetHashCode ();
+			if (this.Index != null) {
+				hash += 13 * this.Index.GetHashCode ();
 			}
 			return hash;
 		}

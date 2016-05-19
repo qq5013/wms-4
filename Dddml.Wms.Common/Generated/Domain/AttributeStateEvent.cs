@@ -31,7 +31,7 @@ namespace Dddml.Wms.Domain
 
 		public override string AttributeId {
 			get {
-				return StateEventId.AttributeId;
+				return StateEventId.AttributeId;//EntityBase.Aggregate.GetStateEventIdPropertyIdName()
 			}
 			set {
 				throw new NotSupportedException ();
@@ -40,7 +40,7 @@ namespace Dddml.Wms.Domain
 
 		public virtual long Version {
 			get {
-				return StateEventId.AttributeVersion;
+				return StateEventId.Version;//EntityBase.Aggregate.GetStateEventIdPropertyVersionName()
 			}
 			set {
 				throw new NotSupportedException ();
@@ -71,7 +71,7 @@ namespace Dddml.Wms.Domain
 
         protected AttributeValueStateEventId NewAttributeValueStateEventId(string value)
         {
-            var stateEventId = new AttributeValueStateEventId(this.StateEventId.AttributeId, value, this.StateEventId.AttributeVersion);
+            var stateEventId = new AttributeValueStateEventId(this.StateEventId.AttributeId, value, this.StateEventId.Version);
             return stateEventId;
         }
 

@@ -21,18 +21,18 @@ namespace Dddml.Wms.Domain
 			internal set { _attributeSetId = value; } 
 		}
 
-		private string _attributeUseAttributeId;
+		private string _attributeId;
 
-		public virtual string AttributeUseAttributeId { 
-			get { return this._attributeUseAttributeId; } 
-			internal set { _attributeUseAttributeId = value; } 
+		public virtual string AttributeId { 
+			get { return this._attributeId; } 
+			internal set { _attributeId = value; } 
 		}
 
-		private long _attributeSetVersion;
+		private long _version;
 
-		public virtual long AttributeSetVersion { 
-			get { return this._attributeSetVersion; } 
-			internal set { _attributeSetVersion = value; } 
+		public virtual long Version { 
+			get { return this._version; } 
+			internal set { _version = value; } 
 		}
 
 
@@ -45,11 +45,11 @@ namespace Dddml.Wms.Domain
 		{
 		}
 
-		public AttributeUseStateEventId (string attributeSetId, string attributeUseAttributeId, long attributeSetVersion)
+		public AttributeUseStateEventId (string attributeSetId, string attributeId, long version)
 		{
 			this._attributeSetId = attributeSetId;
-			this._attributeUseAttributeId = attributeUseAttributeId;
-			this._attributeSetVersion = attributeSetVersion;
+			this._attributeId = attributeId;
+			this._version = version;
 
 		}
 
@@ -67,8 +67,8 @@ namespace Dddml.Wms.Domain
 
 			return true 
 				&& Object.Equals (this.AttributeSetId, other.AttributeSetId)
-				&& Object.Equals (this.AttributeUseAttributeId, other.AttributeUseAttributeId)
-				&& Object.Equals (this.AttributeSetVersion, other.AttributeSetVersion)
+				&& Object.Equals (this.AttributeId, other.AttributeId)
+				&& Object.Equals (this.Version, other.Version)
 				;
 		}
 
@@ -78,11 +78,11 @@ namespace Dddml.Wms.Domain
 			if (this.AttributeSetId != null) {
 				hash += 13 * this.AttributeSetId.GetHashCode ();
 			}
-			if (this.AttributeUseAttributeId != null) {
-				hash += 13 * this.AttributeUseAttributeId.GetHashCode ();
+			if (this.AttributeId != null) {
+				hash += 13 * this.AttributeId.GetHashCode ();
 			}
-			if (this.AttributeSetVersion != null) {
-				hash += 13 * this.AttributeSetVersion.GetHashCode ();
+			if (this.Version != null) {
+				hash += 13 * this.Version.GetHashCode ();
 			}
 			return hash;
 		}

@@ -6,8 +6,8 @@
   <class name="Dddml.Wms.Domain.AttributeSetInstanceExtensionFieldState" table="AttributeSetInstanceExtensionFields">
 
 	<composite-id name="AttributeSetInstanceExtensionFieldId" class="Dddml.Wms.Domain.AttributeSetInstanceExtensionFieldId">
-		<key-property name="GroupId" column="GroupId" length="50"/>
-		<key-property name="AttributeSetInstanceExtensionFieldIndex" column="AttributeSetInstanceExtensionFieldIndex" length="50"/>
+		<key-property name="GroupId" column="AttributeSetInstanceExtensionFieldIdGroupId" length="50"/>
+		<key-property name="Index" column="AttributeSetInstanceExtensionFieldIdIndex" length="50"/>
 	</composite-id>
 
 	<version name="Version" type="long" unsaved-value="0"/>

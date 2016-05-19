@@ -63,10 +63,10 @@ namespace Dddml.Wms.Domain
 
         public override string Index {
 			get {
-				return this.AttributeSetInstanceExtensionFieldId.AttributeSetInstanceExtensionFieldIndex;
+				return this.AttributeSetInstanceExtensionFieldId.Index;
 			}
 			set {
-				this.AttributeSetInstanceExtensionFieldId.AttributeSetInstanceExtensionFieldIndex = value;
+				this.AttributeSetInstanceExtensionFieldId.Index = value;
 			}
 		}
 
@@ -262,11 +262,11 @@ namespace Dddml.Wms.Domain
 				{
 					DomainError.Named("mutateWrongEntity", "Entity Id GroupId {0} in state but entity id GroupId {1} in event", stateEntityIdGroupId, eventEntityIdGroupId);
 				}
-				var stateEntityIdAttributeSetInstanceExtensionFieldIndex = (this as IGlobalIdentity<AttributeSetInstanceExtensionFieldId>).GlobalId.AttributeSetInstanceExtensionFieldIndex;
-				var eventEntityIdAttributeSetInstanceExtensionFieldIndex = stateEvent.StateEventId.AttributeSetInstanceExtensionFieldIndex;
-				if (stateEntityIdAttributeSetInstanceExtensionFieldIndex != eventEntityIdAttributeSetInstanceExtensionFieldIndex)
+				var stateEntityIdIndex = (this as IGlobalIdentity<AttributeSetInstanceExtensionFieldId>).GlobalId.Index;
+				var eventEntityIdIndex = stateEvent.StateEventId.Index;
+				if (stateEntityIdIndex != eventEntityIdIndex)
 				{
-					DomainError.Named("mutateWrongEntity", "Entity Id AttributeSetInstanceExtensionFieldIndex {0} in state but entity id AttributeSetInstanceExtensionFieldIndex {1} in event", stateEntityIdAttributeSetInstanceExtensionFieldIndex, eventEntityIdAttributeSetInstanceExtensionFieldIndex);
+					DomainError.Named("mutateWrongEntity", "Entity Id Index {0} in state but entity id Index {1} in event", stateEntityIdIndex, eventEntityIdIndex);
 				}
 		}
 	}

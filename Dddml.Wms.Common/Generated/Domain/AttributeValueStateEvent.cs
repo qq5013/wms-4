@@ -40,7 +40,7 @@ namespace Dddml.Wms.Domain
 
 		public override string Value {
 			get {
-				return StateEventId.AttributeValueValue;
+				return StateEventId.Value;
 			}
 			set {
 				throw new NotSupportedException ();

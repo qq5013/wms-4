@@ -12,11 +12,13 @@ namespace Dddml.Wms.Domain
 {
 	public interface IAttributeSetInstanceExtensionFieldGroupStateRepository
 	{
-		IAttributeSetInstanceExtensionFieldGroupState Get(string id);
+        IAttributeSetInstanceExtensionFieldGroupState Get(string id);
 
         IEnumerable<IAttributeSetInstanceExtensionFieldGroupState> GetAll(int firstResult, int maxResults);
-
-		void Save(IAttributeSetInstanceExtensionFieldGroupState state);
+        
+        void Save(IAttributeSetInstanceExtensionFieldGroupState state);
+        
+        IEnumerable<IAttributeSetInstanceExtensionFieldGroupState> Get(IDictionary<string, object> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue);
 
 	}
 

@@ -6,8 +6,8 @@
   <class name="Dddml.Wms.Domain.AttributeValueState" table="AttributeValues">
 
 	<composite-id name="AttributeValueId" class="Dddml.Wms.Domain.AttributeValueId">
-		<key-property name="AttributeId" column="AttributeId" length="50"/>
-		<key-property name="AttributeValueValue" column="AttributeValueValue" length="50"/>
+		<key-property name="AttributeId" column="AttributeValueIdAttributeId" length="50"/>
+		<key-property name="Value" column="AttributeValueIdValue" length="50"/>
 	</composite-id>
 
 	<version name="Version" type="long" unsaved-value="0"/>

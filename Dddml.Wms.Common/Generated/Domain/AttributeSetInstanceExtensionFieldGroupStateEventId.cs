@@ -14,18 +14,18 @@ namespace Dddml.Wms.Domain
 	public class AttributeSetInstanceExtensionFieldGroupStateEventId
 	{
 
-		private string _attributeSetInstanceExtensionFieldGroupId;
+		private string _id;
 
-		public virtual string AttributeSetInstanceExtensionFieldGroupId { 
-			get { return this._attributeSetInstanceExtensionFieldGroupId; } 
-			internal set { _attributeSetInstanceExtensionFieldGroupId = value; } 
+		public virtual string Id { 
+			get { return this._id; } 
+			internal set { _id = value; } 
 		}
 
-		private long _attributeSetInstanceExtensionFieldGroupVersion;
+		private long _version;
 
-		public virtual long AttributeSetInstanceExtensionFieldGroupVersion { 
-			get { return this._attributeSetInstanceExtensionFieldGroupVersion; } 
-			internal set { _attributeSetInstanceExtensionFieldGroupVersion = value; } 
+		public virtual long Version { 
+			get { return this._version; } 
+			internal set { _version = value; } 
 		}
 
 
@@ -38,10 +38,10 @@ namespace Dddml.Wms.Domain
 		{
 		}
 
-		public AttributeSetInstanceExtensionFieldGroupStateEventId (string attributeSetInstanceExtensionFieldGroupId, long attributeSetInstanceExtensionFieldGroupVersion)
+		public AttributeSetInstanceExtensionFieldGroupStateEventId (string id, long version)
 		{
-			this._attributeSetInstanceExtensionFieldGroupId = attributeSetInstanceExtensionFieldGroupId;
-			this._attributeSetInstanceExtensionFieldGroupVersion = attributeSetInstanceExtensionFieldGroupVersion;
+			this._id = id;
+			this._version = version;
 
 		}
 
@@ -58,19 +58,19 @@ namespace Dddml.Wms.Domain
 			}
 
 			return true 
-				&& Object.Equals (this.AttributeSetInstanceExtensionFieldGroupId, other.AttributeSetInstanceExtensionFieldGroupId)
-				&& Object.Equals (this.AttributeSetInstanceExtensionFieldGroupVersion, other.AttributeSetInstanceExtensionFieldGroupVersion)
+				&& Object.Equals (this.Id, other.Id)
+				&& Object.Equals (this.Version, other.Version)
 				;
 		}
 
 		public override int GetHashCode ()
 		{
 			int hash = 0;
-			if (this.AttributeSetInstanceExtensionFieldGroupId != null) {
-				hash += 13 * this.AttributeSetInstanceExtensionFieldGroupId.GetHashCode ();
+			if (this.Id != null) {
+				hash += 13 * this.Id.GetHashCode ();
 			}
-			if (this.AttributeSetInstanceExtensionFieldGroupVersion != null) {
-				hash += 13 * this.AttributeSetInstanceExtensionFieldGroupVersion.GetHashCode ();
+			if (this.Version != null) {
+				hash += 13 * this.Version.GetHashCode ();
 			}
 			return hash;
 		}

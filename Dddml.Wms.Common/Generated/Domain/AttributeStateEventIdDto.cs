@@ -35,9 +35,9 @@ namespace Dddml.Wms.Domain
 			set { _value.AttributeId = value; } 
 		}
 
-		public virtual long AttributeVersion { 
-			get { return _value.AttributeVersion; } 
-			set { _value.AttributeVersion = value; } 
+		public virtual long Version { 
+			get { return _value.Version; } 
+			set { _value.Version = value; } 
 		}
 
 

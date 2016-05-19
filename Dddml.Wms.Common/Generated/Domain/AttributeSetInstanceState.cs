@@ -5730,13 +5730,13 @@ namespace Dddml.Wms.Domain
 		protected void ThrowOnWrongEvent(IAttributeSetInstanceStateEvent stateEvent)
 		{
 			var stateEntityId = this.AttributeSetInstanceId; // Aggregate Id
-			var eventEntityId = stateEvent.StateEventId.AttributeSetInstanceId;
+			var eventEntityId = stateEvent.StateEventId.AttributeSetInstanceId; // EntityBase.Aggregate.GetStateEventIdPropertyIdName();
 			if (stateEntityId != eventEntityId)
 			{
 				DomainError.Named("mutateWrongEntity", "Entity Id {0} in state but entity id {1} in event", stateEntityId, eventEntityId);
 			}
 			var stateVersion = this.Version;
-			var eventVersion = stateEvent.StateEventId.AttributeSetInstanceVersion;
+			var eventVersion = stateEvent.StateEventId.Version;//EntityBase.Aggregate.GetStateEventIdPropertyVersionName()
 			if (stateVersion != eventVersion)
 			{
 				throw DomainError.Named("concurrencyConflict", "Conflict between state version {0} and event version {1}", stateVersion, eventVersion);

@@ -21,11 +21,11 @@ namespace Dddml.Wms.Domain
 			internal set { _attributeId = value; } 
 		}
 
-		private string _attributeValueValue;
+		private string _value;
 
-		public virtual string AttributeValueValue { 
-			get { return this._attributeValueValue; } 
-			internal set { _attributeValueValue = value; } 
+		public virtual string Value { 
+			get { return this._value; } 
+			internal set { _value = value; } 
 		}
 
 
@@ -38,10 +38,10 @@ namespace Dddml.Wms.Domain
 		{
 		}
 
-		public AttributeValueId (string attributeId, string attributeValueValue)
+		public AttributeValueId (string attributeId, string value)
 		{
 			this._attributeId = attributeId;
-			this._attributeValueValue = attributeValueValue;
+			this._value = value;
 
 		}
 
@@ -59,7 +59,7 @@ namespace Dddml.Wms.Domain
 
 			return true 
 				&& Object.Equals (this.AttributeId, other.AttributeId)
-				&& Object.Equals (this.AttributeValueValue, other.AttributeValueValue)
+				&& Object.Equals (this.Value, other.Value)
 				;
 		}
 
@@ -69,8 +69,8 @@ namespace Dddml.Wms.Domain
 			if (this.AttributeId != null) {
 				hash += 13 * this.AttributeId.GetHashCode ();
 			}
-			if (this.AttributeValueValue != null) {
-				hash += 13 * this.AttributeValueValue.GetHashCode ();
+			if (this.Value != null) {
+				hash += 13 * this.Value.GetHashCode ();
 			}
 			return hash;
 		}

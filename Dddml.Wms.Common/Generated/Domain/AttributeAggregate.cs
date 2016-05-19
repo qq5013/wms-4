@@ -129,13 +129,13 @@ namespace Dddml.Wms.Domain
 
             (e as AttributeStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
             (e as AttributeStateEventBase).CreatedAt = DateTime.Now;
-			var attributeVersion = c.Version;
+			var version = c.Version;
 
             foreach (ICreateAttributeValue innerCommand in c.AttributeValues)
             {
                 ThrowOnInconsistentCommands(c, innerCommand);
 
-                IAttributeValueStateCreated innerEvent = MapCreate(innerCommand, c, attributeVersion);
+                IAttributeValueStateCreated innerEvent = MapCreate(innerCommand, c, version);
                 e.AddAttributeValueEvent(innerEvent);
             }
 
@@ -199,13 +199,13 @@ namespace Dddml.Wms.Domain
             (e as AttributeStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
             (e as AttributeStateEventBase).CreatedAt = DateTime.Now;
 
-			var attributeVersion = c.Version;
+			var version = c.Version;
 
             foreach (IAttributeValueCommand innerCommand in c.AttributeValueCommands)
             {
                 ThrowOnInconsistentCommands(c, innerCommand);
 
-                IAttributeValueStateEvent innerEvent = Map(innerCommand, c, attributeVersion);
+                IAttributeValueStateEvent innerEvent = Map(innerCommand, c, version);
                 e.AddAttributeValueEvent(innerEvent);
             }
 
@@ -243,33 +243,33 @@ namespace Dddml.Wms.Domain
         }// END ThrowOnInconsistentCommands /////////////////////
 
 
-        protected virtual IAttributeValueStateEvent Map(IAttributeValueCommand c, IAttributeCommand outerCommand, long attributeVersion)
+        protected virtual IAttributeValueStateEvent Map(IAttributeValueCommand c, IAttributeCommand outerCommand, long version)
         {
             var create = c as ICreateAttributeValue;
             if(create != null)
             {
-                return MapCreate(create, outerCommand, attributeVersion);
+                return MapCreate(create, outerCommand, version);
             }
 
             var merge = c as IMergePatchAttributeValue;
             if(merge != null)
             {
-                return MapMergePatch(merge, outerCommand, attributeVersion);
+                return MapMergePatch(merge, outerCommand, version);
             }
 
             var remove = c as IRemoveAttributeValue;
             if (remove != null)
             {
-                return MapRemove(remove, outerCommand, attributeVersion);
+                return MapRemove(remove, outerCommand, version);
             }
             throw new NotSupportedException();
         }
 
 
-        protected virtual IAttributeValueStateCreated MapCreate(ICreateAttributeValue c, IAttributeCommand outerCommand, long attributeVersion)
+        protected virtual IAttributeValueStateCreated MapCreate(ICreateAttributeValue c, IAttributeCommand outerCommand, long version)
         {
             (c as AttributeValueCommandBase).RequesterId = (outerCommand as AttributeCommandBase).RequesterId;
-			var stateEventId = new AttributeValueStateEventId(c.AttributeId, c.Value, attributeVersion);
+			var stateEventId = new AttributeValueStateEventId(c.AttributeId, c.Value, version);
             IAttributeValueStateCreated e = NewAttributeValueStateCreated(stateEventId);
 
             e.Name = c.Name;
@@ -289,10 +289,10 @@ namespace Dddml.Wms.Domain
 
 
 
-        protected virtual IAttributeValueStateMergePatched MapMergePatch(IMergePatchAttributeValue c, IAttributeCommand outerCommand, long attributeVersion)
+        protected virtual IAttributeValueStateMergePatched MapMergePatch(IMergePatchAttributeValue c, IAttributeCommand outerCommand, long version)
         {
             (c as AttributeValueCommandBase).RequesterId = (outerCommand as AttributeCommandBase).RequesterId;
-			var stateEventId = new AttributeValueStateEventId(c.AttributeId, c.Value, attributeVersion);
+			var stateEventId = new AttributeValueStateEventId(c.AttributeId, c.Value, version);
             IAttributeValueStateMergePatched e = NewAttributeValueStateMergePatched(stateEventId);
 
             e.Name = c.Name;
@@ -315,10 +315,10 @@ namespace Dddml.Wms.Domain
         }// END Map(IMergePatch... ////////////////////////////
 
 
-        protected virtual IAttributeValueStateRemoved MapRemove(IRemoveAttributeValue c, IAttributeCommand outerCommand, long attributeVersion)
+        protected virtual IAttributeValueStateRemoved MapRemove(IRemoveAttributeValue c, IAttributeCommand outerCommand, long version)
         {
             (c as AttributeValueCommandBase).RequesterId = (outerCommand as AttributeCommandBase).RequesterId;
-			var stateEventId = new AttributeValueStateEventId(c.AttributeId, c.Value, attributeVersion);
+			var stateEventId = new AttributeValueStateEventId(c.AttributeId, c.Value, version);
             IAttributeValueStateRemoved e = NewAttributeValueStateRemoved(stateEventId);
 
 

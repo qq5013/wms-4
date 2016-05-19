@@ -40,7 +40,7 @@ namespace Dddml.Wms.Domain
 
 		public override string Index {
 			get {
-				return StateEventId.AttributeSetInstanceExtensionFieldIndex;
+				return StateEventId.Index;
 			}
 			set {
 				throw new NotSupportedException ();

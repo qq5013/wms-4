@@ -132,6 +132,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return states;
         }
 
+        public IEnumerable<IAttributeSetInstanceState> Get(IDictionary<string, object> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
+        {//////////////////// todo ///////////////////////////
+            IEnumerable<IAttributeSetInstanceState> states = null;
+            //Action act = async () =>
+            //{
+			var q = new AttributeSetInstancesGetQuery();
+			q.FirstResult = firstResult;
+			q.MaxResults = maxResults;
+            var req = new AttributeSetInstancesGetRequest();
+            req.Query = q;
+            var resp = _ramlClient.AttributeSetInstances.Get(req).GetAwaiter().GetResult();;
+            states = resp.Content;
+            //};
+            //act();
+            return states;
+        }
+
         public virtual void Execute(object command)
         {
             ((dynamic)this).When((dynamic)command);

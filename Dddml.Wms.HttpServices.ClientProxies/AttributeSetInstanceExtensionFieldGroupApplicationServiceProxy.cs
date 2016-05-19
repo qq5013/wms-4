@@ -132,6 +132,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return states;
         }
 
+        public IEnumerable<IAttributeSetInstanceExtensionFieldGroupState> Get(IDictionary<string, object> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
+        {//////////////////// todo ///////////////////////////
+            IEnumerable<IAttributeSetInstanceExtensionFieldGroupState> states = null;
+            //Action act = async () =>
+            //{
+			var q = new AttributeSetInstanceExtensionFieldGroupsGetQuery();
+			q.FirstResult = firstResult;
+			q.MaxResults = maxResults;
+            var req = new AttributeSetInstanceExtensionFieldGroupsGetRequest();
+            req.Query = q;
+            var resp = _ramlClient.AttributeSetInstanceExtensionFieldGroups.Get(req).GetAwaiter().GetResult();;
+            states = resp.Content;
+            //};
+            //act();
+            return states;
+        }
+
         public virtual void Execute(object command)
         {
             ((dynamic)this).When((dynamic)command);

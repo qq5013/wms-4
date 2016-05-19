@@ -7,12 +7,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.ComponentModel;
 using System.Net.Http;
 using System.Web.Http;
 using Dddml.Wms.Domain;
 
 using Dddml.Wms.Specialization;
 using Newtonsoft.Json.Linq;
+using Dddml.Wms.Domain.Metadata;
+
 
 namespace Dddml.Wms.HttpServices.ApiControllers
 {
@@ -25,24 +28,37 @@ namespace Dddml.Wms.HttpServices.ApiControllers
         IAttributeSetInstanceApplicationService _attributeSetInstanceApplicationService = ApplicationContext.Current["AttributeSetInstanceApplicationService"] as IAttributeSetInstanceApplicationService;
 
         [HttpGet]
-        public JArray GetAll(int firstResult = 0, int maxResults = int.MaxValue)
+        public JArray GetAll(string sort = null, string fields = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
-            var states = _attributeSetInstanceApplicationService.GetAll(firstResult, maxResults);
+            var states = _attributeSetInstanceApplicationService.Get(GetQueryFilterDictionary(this.Request.GetQueryNameValuePairs())
+                , GetQueryOrders(sort), firstResult, maxResults);
             JArray dynamicArray = new JArray(); 
             foreach (var s in states)
             {
-                dynamicArray.Add(_attributeSetInstanceDtoJObjectMapper.MapState(new AttributeSetInstanceStateDto((AttributeSetInstanceState)s)));
+                var dto = new AttributeSetInstanceStateDto((AttributeSetInstanceState)s);
+                if (!String.IsNullOrWhiteSpace(fields))
+                {
+                    dto.ReturnedFieldsString = fields;
+                }
+                dynamicArray.Add(_attributeSetInstanceDtoJObjectMapper.MapState(dto));
             }
             return dynamicArray; 
         }
 
         [HttpGet]
-        public JObject Get(string id)
+        public JObject Get(string id, string fields = null)
         {
             var idObj = id;
             var state = (AttributeSetInstanceState)_attributeSetInstanceApplicationService.Get(idObj);
             var stateDto = new AttributeSetInstanceStateDto(state);
-            stateDto.AllFieldsReturned = true;
+            if (String.IsNullOrWhiteSpace(fields))
+            {
+                stateDto.AllFieldsReturned = true;
+            }
+            else
+            {
+                stateDto.ReturnedFieldsString = fields;
+            }
             return _attributeSetInstanceDtoJObjectMapper.MapState(stateDto);
         }
 
@@ -85,6 +101,78 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             {
                 throw DomainError.Named("inconsistentId", "Argument Id {0} NOT equals body Id {1}", id, value.AttributeSetInstanceId);
             }
+        }
+
+
+        protected virtual string GetFilterPropertyName(string fieldName)
+        {
+            if (String.Equals(fieldName, "sort", StringComparison.InvariantCultureIgnoreCase)
+                || String.Equals(fieldName, "firstResult", StringComparison.InvariantCultureIgnoreCase)
+                || String.Equals(fieldName, "maxResults", StringComparison.InvariantCultureIgnoreCase)
+                || String.Equals(fieldName, "fields", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return null;
+            }
+            if (AttributeSetInstanceMetadata.Instance.PropertyMetadataDictionary.ContainsKey(fieldName))
+            {
+                var p = AttributeSetInstanceMetadata.Instance.PropertyMetadataDictionary[fieldName];
+                if (!p.IsCollectionProperty && !p.IsTransient && p.IsBasicType)
+                {
+                    var propertyName = fieldName;
+                    if (p.IsDerived)
+                    {
+                        propertyName = p.DerivedFrom;
+                    }
+                    return propertyName;
+                }
+            }
+            return null;
+        }
+
+        protected virtual Type GetFilterPropertyType(string propertyName)
+        {
+            if (AttributeSetInstanceMetadata.Instance.PropertyMetadataDictionary.ContainsKey(propertyName))
+            {
+                return AttributeSetInstanceMetadata.Instance.PropertyMetadataDictionary[propertyName].Type;
+            }
+            return typeof(string);
+        }
+
+        private IDictionary<string, object> GetQueryFilterDictionary(IEnumerable<KeyValuePair<string, string>> queryNameValuePairs)
+        {
+            var filter = new Dictionary<string, object>();
+            foreach (var p in queryNameValuePairs)
+            {
+                var pName = GetFilterPropertyName(p.Key);
+                if (!String.IsNullOrWhiteSpace(pName))
+                {
+                    Type type = GetFilterPropertyType(pName);
+                    var converter = TypeDescriptor.GetConverter(type);
+                    var pValue = converter.ConvertFromString(p.Value);
+                    filter.Add(pName, pValue);
+                }
+            }
+            return filter;
+        }
+
+        private IList<string> GetQueryOrders(string str)
+        {
+            if (String.IsNullOrWhiteSpace(str))
+            {
+                return new string[0];
+            }
+            var arr = str.Split(new string[] { QueryOrderSeparator }, StringSplitOptions.RemoveEmptyEntries);
+            var orders = new List<string>();
+            foreach (var a in arr)
+            {
+                orders.Add(a.Trim());
+            }
+            return orders;
+        }
+
+        protected virtual string QueryOrderSeparator
+        {
+            get { return ","; }
         }
 
 

@@ -87,6 +87,13 @@ namespace Dddml.Wms.Domain
 			return states;
 		}
 
+        public virtual IEnumerable<IAttributeSetState> Get(IDictionary<string, object> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
+		{
+            var states = StateRepository.Get(filter, orders, firstResult, maxResults);
+			return states;
+		}
+
+
 		public abstract IAttributeSetAggregate GetAttributeSetAggregate(IAttributeSetState state);
 
 		public abstract IEventStoreAggregateId ToEventStoreAaggregateId(string aggregateId);

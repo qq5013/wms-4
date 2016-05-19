@@ -425,6 +425,7 @@ namespace Dddml.Wms.Domain
             }
             set 
             {
+                if (value == null) { return; }
                 var states = new List<AttributeSetInstanceExtensionFieldState>();
                 foreach (var s in value)
                 {

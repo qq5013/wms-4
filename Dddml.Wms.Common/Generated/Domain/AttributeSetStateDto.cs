@@ -450,6 +450,7 @@ namespace Dddml.Wms.Domain
             }
             set 
             {
+                if (value == null) { return; }
                 var states = new List<AttributeUseState>();
                 foreach (var s in value)
                 {

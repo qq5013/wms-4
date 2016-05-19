@@ -14,6 +14,9 @@ using Dddml.Wms.Domain;
 using Dddml.Wms.Specialization;
 using Dddml.Wms.HttpServices.ClientProxies.Raml;
 using Dddml.Wms.HttpServices.ClientProxies.Raml.Models;
+using System.Text;
+using System.ComponentModel;
+
 
 namespace Dddml.Wms.HttpServices.ClientProxies
 {
@@ -117,12 +120,19 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public IEnumerable<IAttributeSetInstanceExtensionFieldGroupState> GetAll(int firstResult, int maxResults)
         {
+            return Get(null, null, firstResult, maxResults);
+        }
+
+        public IEnumerable<IAttributeSetInstanceExtensionFieldGroupState> Get(IDictionary<string, object> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
+        {
             IEnumerable<IAttributeSetInstanceExtensionFieldGroupState> states = null;
             //Action act = async () =>
             //{
 			var q = new AttributeSetInstanceExtensionFieldGroupsGetQuery();
 			q.FirstResult = firstResult;
 			q.MaxResults = maxResults;
+            q.Sort = GetOrdersQueryValueString(orders);
+            q.FilterTag = GetFilterTagQueryValueString(filter);
             var req = new AttributeSetInstanceExtensionFieldGroupsGetRequest();
             req.Query = q;
             var resp = _ramlClient.AttributeSetInstanceExtensionFieldGroups.Get(req).GetAwaiter().GetResult();;
@@ -132,22 +142,6 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return states;
         }
 
-        public IEnumerable<IAttributeSetInstanceExtensionFieldGroupState> Get(IDictionary<string, object> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
-        {//////////////////// todo ///////////////////////////
-            IEnumerable<IAttributeSetInstanceExtensionFieldGroupState> states = null;
-            //Action act = async () =>
-            //{
-			var q = new AttributeSetInstanceExtensionFieldGroupsGetQuery();
-			q.FirstResult = firstResult;
-			q.MaxResults = maxResults;
-            var req = new AttributeSetInstanceExtensionFieldGroupsGetRequest();
-            req.Query = q;
-            var resp = _ramlClient.AttributeSetInstanceExtensionFieldGroups.Get(req).GetAwaiter().GetResult();;
-            states = resp.Content;
-            //};
-            //act();
-            return states;
-        }
 
         public virtual void Execute(object command)
         {
@@ -155,6 +149,46 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         }
 
 
+
+        protected virtual string GetFilterTagQueryValueString(IDictionary<string, object> filter)
+        {
+            if (filter == null) { return null; }
+            StringBuilder sb = new StringBuilder();
+            sb.Append(DateTime.Now.Ticks);
+            foreach (var p in filter)
+            {
+                var k = p.Key;
+                var v = p.Value;
+                sb.Append("&");
+                sb.Append(k);
+                sb.Append("=");
+                if (v != null)
+                {
+                    var converter = TypeDescriptor.GetConverter(v.GetType());
+                    string valStr = converter.ConvertToString(v);
+                    sb.Append(WebUtility.UrlEncode(valStr));
+                }
+
+            }
+            return sb.ToString();
+        }
+
+        protected virtual string GetOrdersQueryValueString(IList<string> orders)
+        {
+            if (orders == null) { return null; }
+            StringBuilder sb = new StringBuilder();
+            foreach (var ord in orders)
+            {
+                sb.Append(WebUtility.UrlEncode(ord));
+                sb.Append(",");
+            }
+            return sb.ToString();
+        }
+
+        protected virtual string QueryOrderSeparator
+        {
+            get { return ","; }
+        }
 
     }
 

@@ -47,6 +47,12 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
 				throw new InvalidOperationException("Uri Parameter Id cannot be null");
 
             url = url.Replace("{id}", request.UriParameters.Id.ToString());
+            if(request.Query != null)
+            {
+                url += "?";
+                if(request.Query.Fields != null)
+                    url += "&fields=" + request.Query.Fields;
+            }
 
             url = url.Replace("?&", "?");
 
@@ -225,6 +231,12 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                     url += "&firstResult=" + request.Query.FirstResult;
                 if(request.Query.MaxResults != null)
                     url += "&maxResults=" + request.Query.MaxResults;
+                if(request.Query.Sort != null)
+                    url += "&sort=" + request.Query.Sort;
+                if(request.Query.Fields != null)
+                    url += "&fields=" + request.Query.Fields;
+                if(request.Query.FilterTag != null)
+                    url += "&filterTag=" + request.Query.FilterTag;
             }
 
             url = url.Replace("?&", "?");
@@ -282,6 +294,12 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
 				throw new InvalidOperationException("Uri Parameter Id cannot be null");
 
             url = url.Replace("{id}", request.UriParameters.Id.ToString());
+            if(request.Query != null)
+            {
+                url += "?";
+                if(request.Query.Fields != null)
+                    url += "&fields=" + request.Query.Fields;
+            }
 
             url = url.Replace("?&", "?");
 
@@ -460,6 +478,12 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                     url += "&firstResult=" + request.Query.FirstResult;
                 if(request.Query.MaxResults != null)
                     url += "&maxResults=" + request.Query.MaxResults;
+                if(request.Query.Sort != null)
+                    url += "&sort=" + request.Query.Sort;
+                if(request.Query.Fields != null)
+                    url += "&fields=" + request.Query.Fields;
+                if(request.Query.FilterTag != null)
+                    url += "&filterTag=" + request.Query.FilterTag;
             }
 
             url = url.Replace("?&", "?");
@@ -517,6 +541,12 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
 				throw new InvalidOperationException("Uri Parameter Id cannot be null");
 
             url = url.Replace("{id}", request.UriParameters.Id.ToString());
+            if(request.Query != null)
+            {
+                url += "?";
+                if(request.Query.Fields != null)
+                    url += "&fields=" + request.Query.Fields;
+            }
 
             url = url.Replace("?&", "?");
 
@@ -695,6 +725,12 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                     url += "&firstResult=" + request.Query.FirstResult;
                 if(request.Query.MaxResults != null)
                     url += "&maxResults=" + request.Query.MaxResults;
+                if(request.Query.Sort != null)
+                    url += "&sort=" + request.Query.Sort;
+                if(request.Query.Fields != null)
+                    url += "&fields=" + request.Query.Fields;
+                if(request.Query.FilterTag != null)
+                    url += "&filterTag=" + request.Query.FilterTag;
             }
 
             url = url.Replace("?&", "?");
@@ -752,6 +788,12 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
 				throw new InvalidOperationException("Uri Parameter Id cannot be null");
 
             url = url.Replace("{id}", request.UriParameters.Id.ToString());
+            if(request.Query != null)
+            {
+                url += "?";
+                if(request.Query.Fields != null)
+                    url += "&fields=" + request.Query.Fields;
+            }
 
             url = url.Replace("?&", "?");
 
@@ -930,6 +972,12 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                     url += "&firstResult=" + request.Query.FirstResult;
                 if(request.Query.MaxResults != null)
                     url += "&maxResults=" + request.Query.MaxResults;
+                if(request.Query.Sort != null)
+                    url += "&sort=" + request.Query.Sort;
+                if(request.Query.Fields != null)
+                    url += "&fields=" + request.Query.Fields;
+                if(request.Query.FilterTag != null)
+                    url += "&filterTag=" + request.Query.FilterTag;
             }
 
             url = url.Replace("?&", "?");
@@ -1097,6 +1145,14 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
 
 namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 {
+    public partial class  AttributeGetQuery 
+    {
+		[JsonProperty("fields")]
+        public string Fields { get; set; }
+
+
+    } // end class
+
     public partial class  AttributeDeleteQuery 
     {
 		[JsonProperty("commandId")]
@@ -1115,6 +1171,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 
 		[JsonProperty("maxResults")]
         public int? MaxResults { get; set; }
+
+		[JsonProperty("sort")]
+        public string Sort { get; set; }
+
+		[JsonProperty("fields")]
+        public string Fields { get; set; }
+
+		[JsonProperty("filterTag")]
+        public string FilterTag { get; set; }
+
+
+    } // end class
+
+    public partial class  AttributeSetGetQuery 
+    {
+		[JsonProperty("fields")]
+        public string Fields { get; set; }
 
 
     } // end class
@@ -1138,6 +1211,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 		[JsonProperty("maxResults")]
         public int? MaxResults { get; set; }
 
+		[JsonProperty("sort")]
+        public string Sort { get; set; }
+
+		[JsonProperty("fields")]
+        public string Fields { get; set; }
+
+		[JsonProperty("filterTag")]
+        public string FilterTag { get; set; }
+
+
+    } // end class
+
+    public partial class  AttributeSetInstanceGetQuery 
+    {
+		[JsonProperty("fields")]
+        public string Fields { get; set; }
+
 
     } // end class
 
@@ -1160,6 +1250,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 		[JsonProperty("maxResults")]
         public int? MaxResults { get; set; }
 
+		[JsonProperty("sort")]
+        public string Sort { get; set; }
+
+		[JsonProperty("fields")]
+        public string Fields { get; set; }
+
+		[JsonProperty("filterTag")]
+        public string FilterTag { get; set; }
+
+
+    } // end class
+
+    public partial class  AttributeSetInstanceExtensionFieldGroupGetQuery 
+    {
+		[JsonProperty("fields")]
+        public string Fields { get; set; }
+
 
     } // end class
 
@@ -1181,6 +1288,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 
 		[JsonProperty("maxResults")]
         public int? MaxResults { get; set; }
+
+		[JsonProperty("sort")]
+        public string Sort { get; set; }
+
+		[JsonProperty("fields")]
+        public string Fields { get; set; }
+
+		[JsonProperty("filterTag")]
+        public string FilterTag { get; set; }
 
 
     } // end class
@@ -1234,11 +1350,16 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     /// </summary>
     public partial class AttributeGetRequest : ApiRequest
     {
-        public AttributeGetRequest(AttributeUriParameters UriParameters)
+        public AttributeGetRequest(AttributeUriParameters UriParameters, AttributeGetQuery Query = null)
         {
+            this.Query = Query;
             this.UriParameters = UriParameters;
         }
 
+        /// <summary>
+        /// Request query string properties
+        /// </summary>
+        public AttributeGetQuery Query { get; set; }
         /// <summary>
         /// Request Uri Parameters
         /// </summary>
@@ -1344,11 +1465,16 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     /// </summary>
     public partial class AttributeSetGetRequest : ApiRequest
     {
-        public AttributeSetGetRequest(AttributeSetUriParameters UriParameters)
+        public AttributeSetGetRequest(AttributeSetUriParameters UriParameters, AttributeSetGetQuery Query = null)
         {
+            this.Query = Query;
             this.UriParameters = UriParameters;
         }
 
+        /// <summary>
+        /// Request query string properties
+        /// </summary>
+        public AttributeSetGetQuery Query { get; set; }
         /// <summary>
         /// Request Uri Parameters
         /// </summary>
@@ -1454,11 +1580,16 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     /// </summary>
     public partial class AttributeSetInstanceGetRequest : ApiRequest
     {
-        public AttributeSetInstanceGetRequest(AttributeSetInstanceUriParameters UriParameters)
+        public AttributeSetInstanceGetRequest(AttributeSetInstanceUriParameters UriParameters, AttributeSetInstanceGetQuery Query = null)
         {
+            this.Query = Query;
             this.UriParameters = UriParameters;
         }
 
+        /// <summary>
+        /// Request query string properties
+        /// </summary>
+        public AttributeSetInstanceGetQuery Query { get; set; }
         /// <summary>
         /// Request Uri Parameters
         /// </summary>
@@ -1564,11 +1695,16 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     /// </summary>
     public partial class AttributeSetInstanceExtensionFieldGroupGetRequest : ApiRequest
     {
-        public AttributeSetInstanceExtensionFieldGroupGetRequest(AttributeSetInstanceExtensionFieldGroupUriParameters UriParameters)
+        public AttributeSetInstanceExtensionFieldGroupGetRequest(AttributeSetInstanceExtensionFieldGroupUriParameters UriParameters, AttributeSetInstanceExtensionFieldGroupGetQuery Query = null)
         {
+            this.Query = Query;
             this.UriParameters = UriParameters;
         }
 
+        /// <summary>
+        /// Request query string properties
+        /// </summary>
+        public AttributeSetInstanceExtensionFieldGroupGetQuery Query { get; set; }
         /// <summary>
         /// Request Uri Parameters
         /// </summary>

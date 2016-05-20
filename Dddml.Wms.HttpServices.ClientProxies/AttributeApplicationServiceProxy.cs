@@ -125,6 +125,11 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public IEnumerable<IAttributeState> Get(IDictionary<string, object> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
+            return Get(filter, orders, firstResult, maxResults, null);
+        }
+
+        public IEnumerable<IAttributeState> Get(IDictionary<string, object> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
             IEnumerable<IAttributeState> states = null;
             //Action act = async () =>
             //{
@@ -132,6 +137,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 			q.FirstResult = firstResult;
 			q.MaxResults = maxResults;
             q.Sort = GetOrdersQueryValueString(orders);
+            q.Fields = GetReturnedFieldsQueryValueString(fields);
             q.FilterTag = GetFilterTagQueryValueString(filter);
             var req = new AttributesGetRequest();
             req.Query = q;
@@ -173,6 +179,18 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return sb.ToString();
         }
 
+        protected virtual string GetReturnedFieldsQueryValueString(IList<string> fields)
+        {
+            if (fields == null) { return null; }
+            StringBuilder sb = new StringBuilder();
+            foreach (var f in fields)
+            {
+                sb.Append(WebUtility.UrlEncode(f));
+                sb.Append(QueryFieldValueSeparator);
+            }
+            return sb.ToString();
+        }
+
         protected virtual string GetOrdersQueryValueString(IList<string> orders)
         {
             if (orders == null) { return null; }
@@ -183,6 +201,12 @@ namespace Dddml.Wms.HttpServices.ClientProxies
                 sb.Append(",");
             }
             return sb.ToString();
+        }
+
+
+        protected virtual string QueryFieldValueSeparator
+        {
+            get { return ","; }
         }
 
         protected virtual string QueryOrderSeparator

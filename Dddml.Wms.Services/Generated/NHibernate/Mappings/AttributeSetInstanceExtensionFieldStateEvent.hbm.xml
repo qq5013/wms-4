@@ -8,7 +8,7 @@
 	<composite-id name="StateEventId" class="Dddml.Wms.Domain.AttributeSetInstanceExtensionFieldStateEventId">
 		<key-property name="GroupId" column="AttributeSetInstanceExtensionFieldIdGroupId" length="50"/>
 		<key-property name="Index" column="AttributeSetInstanceExtensionFieldIdIndex" length="50"/>
-		<key-property name="Version" column="AttributeSetInstanceExtensionFieldIdVersion" />
+		<key-property name="Version" column="Version" />
 	</composite-id>
 
     <discriminator column="StateEventType" type="String" />

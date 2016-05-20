@@ -34,7 +34,11 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             foreach (var s in states)
             {
                 var dto = new AttributeStateDto((AttributeState)s);
-                if (!String.IsNullOrWhiteSpace(fields))
+                if (String.IsNullOrWhiteSpace(fields))
+                {
+                    dto.AllFieldsReturned = true;
+                }
+                else
                 {
                     dto.ReturnedFieldsString = fields;
                 }

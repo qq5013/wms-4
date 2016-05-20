@@ -38,6 +38,7 @@
 		{
 #>
       <resource uri="assembly://<#= TemplatingContext.Current.CurrentAssembly #>/<#= boundedContext.DefaultModule #>.HttpServices.Config/<#= aggregate.Name #>DtoJObjectMapperConfig.xml"/>
+
 <#
 		}
 	}
@@ -50,6 +51,24 @@
       <object type="Spring.Objects.Factory.Config.PropertyPlaceholderConfigurer, Spring.Core">
         <property name="ConfigSections" value="databaseSettings" />
       </object>
+
+<#
+	foreach (var aggregate in boundedContext.Aggregates.Values)
+	{
+		if (aggregate.IsDynamic)
+		{
+			bool httpPostCreationEnabled = aggregate.Id.Arbitrary && aggregate.GetHttpPostCreationEnabled();
+			if (httpPostCreationEnabled)
+			{
+#>
+      <!-- YOU NEED A <#= aggregate.Name #>IdGenerator! -->
+
+<#
+			}
+		}
+	}
+#>
+
     </objects>
 
   </spring>

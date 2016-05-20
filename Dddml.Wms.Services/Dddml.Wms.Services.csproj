@@ -7,7 +7,7 @@
     <ProjectGuid>{26BA5188-B72D-4ECE-9984-4F76A3EB74C3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Dddml.Wms.Services</RootNamespace>
+    <RootNamespace>Dddml.Wms</RootNamespace>
     <AssemblyName>Dddml.Wms.Services</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -125,7 +125,7 @@
     <Compile Include="Generated\Domain\NHibernate\NHibernateAttributeValueStateEventDao.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
-    <Compile Include="Domain\NHibernate\AttributeSetService.cs" />
+    <Compile Include="Domain\Services\NHibernate\AttributeSetService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Specialization\NHibernate\EventStoreAggregateId.cs" />
     <Compile Include="Specialization\NHibernate\NHibernateEventStoreBase.cs" />

@@ -33,6 +33,14 @@ namespace Dddml.Wms.Domain
 
 	}
 
+    public abstract class AttributeUseIdGeneratorBase : IIdGenerator<string, ICreateAttributeUse>
+    {
+        public abstract string GenerateId(ICreateAttributeUse command);
+
+        public abstract string GetNextId();
+
+    }
+
 	public class CreateAttributeUse : AttributeUseCommandBase, ICreateAttributeUse
 	{
 		

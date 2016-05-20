@@ -23,6 +23,8 @@ namespace Dddml.Wms.HttpServices.ApiControllers
     public partial class AttributeSetInstancesController : ApiController
     {
 
+        IIdGenerator<string, ICreateAttributeSetInstance> _attributeSetInstanceIdGenerator = ApplicationContext.Current["AttributeSetInstanceIdGenerator"] as IIdGenerator<string, ICreateAttributeSetInstance>;
+
         DynamicObjectMapperBase<JObject, AttributeSetInstanceStateDto, CreateAttributeSetInstanceDto, MergePatchAttributeSetInstanceDto> _attributeSetInstanceDtoJObjectMapper = ApplicationContext.Current["AttributeSetInstanceDtoJObjectMapper"] as DynamicObjectMapperBase<JObject, AttributeSetInstanceStateDto, CreateAttributeSetInstanceDto, MergePatchAttributeSetInstanceDto>;
 
         IAttributeSetInstanceApplicationService _attributeSetInstanceApplicationService = ApplicationContext.Current["AttributeSetInstanceApplicationService"] as IAttributeSetInstanceApplicationService;
@@ -64,6 +66,15 @@ namespace Dddml.Wms.HttpServices.ApiControllers
                 stateDto.ReturnedFieldsString = fields;
             }
             return _attributeSetInstanceDtoJObjectMapper.MapState(stateDto);
+        }
+
+        [HttpPost]
+        public void Post([FromBody]JObject dynamicObject)
+        {
+            CreateAttributeSetInstanceDto value = _attributeSetInstanceDtoJObjectMapper.ToCommandCreate(dynamicObject);
+            string idObj = _attributeSetInstanceIdGenerator.GenerateId(value); 
+            (value as IAttributeSetInstanceStateProperties).AttributeSetInstanceId = idObj;
+            _attributeSetInstanceApplicationService.When(value.ToCommand() as ICreateAttributeSetInstance);
         }
 
         [HttpPut]

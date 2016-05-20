@@ -24,7 +24,6 @@ namespace Dddml.Wms.Domain
 
 	}
 
-
 	public interface IMergePatchAttributeSetInstanceExtensionFieldGroup : IAttributeSetInstanceExtensionFieldGroupCommand, IAttributeSetInstanceExtensionFieldGroupStateProperties
 	{
 

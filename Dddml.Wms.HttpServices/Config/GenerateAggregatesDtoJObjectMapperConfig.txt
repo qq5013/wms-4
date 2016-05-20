@@ -13,6 +13,7 @@
 
       <resource uri="assembly://Dddml.Wms.HttpServices/Dddml.Wms.HttpServices.Config/AttributeSetInstanceDtoJObjectMapperConfig.xml"/>
 
+
     </context>
 
     <objects xmlns="http://www.springframework.net">
@@ -20,6 +21,10 @@
       <object type="Spring.Objects.Factory.Config.PropertyPlaceholderConfigurer, Spring.Core">
         <property name="ConfigSections" value="databaseSettings" />
       </object>
+
+      <!-- YOU NEED A AttributeSetInstanceIdGenerator! -->
+
+
     </objects>
 
   </spring>

@@ -18,7 +18,11 @@ namespace Dddml.Wms.Domain
         
         void Save(IAttributeSetState state);
         
-        IEnumerable<IAttributeSetState> Get(IDictionary<string, object> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue);
+        IEnumerable<IAttributeSetState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue);
+
+        IAttributeSetState GetFirst(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null);
+
+        IAttributeSetState GetFirst(KeyValuePair<string, object> keyValue, IList<string> orders = null);
 
 	}
 

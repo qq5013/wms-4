@@ -456,6 +456,7 @@
     </Compile>
     <Compile Include="Domain\Services\IAttributeSetService.cs" />
     <Compile Include="Specialization\DynamicObjectMapperBase.cs" />
+    <Compile Include="Specialization\IIdGenerator.cs" />
     <Compile Include="Specialization\PropertyMetadata.cs" />
     <Compile Include="Support\AttributeAttribute.cs" />
     <Compile Include="Support\AttributeGroupAttribute.cs" />

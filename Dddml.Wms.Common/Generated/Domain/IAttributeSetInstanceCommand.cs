@@ -20,7 +20,6 @@ namespace Dddml.Wms.Domain
 	{
 	}
 
-
 	public interface IMergePatchAttributeSetInstance : IAttributeSetInstanceCommand, IAttributeSetInstanceStateProperties
 	{
 

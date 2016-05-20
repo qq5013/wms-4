@@ -52,6 +52,14 @@ namespace Dddml.Wms.Domain
 
 	}
 
+    public abstract class AttributeIdGeneratorBase : IIdGenerator<string, ICreateAttribute>
+    {
+        public abstract string GenerateId(ICreateAttribute command);
+
+        public abstract string GetNextId();
+
+    }
+
 	public class CreateAttribute : AttributeCommandBase, ICreateAttribute
 	{
 		

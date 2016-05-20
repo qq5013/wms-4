@@ -52,6 +52,14 @@ namespace Dddml.Wms.Domain
 
 	}
 
+    public abstract class AttributeSetInstanceExtensionFieldGroupIdGeneratorBase : IIdGenerator<string, ICreateAttributeSetInstanceExtensionFieldGroup>
+    {
+        public abstract string GenerateId(ICreateAttributeSetInstanceExtensionFieldGroup command);
+
+        public abstract string GetNextId();
+
+    }
+
 	public class CreateAttributeSetInstanceExtensionFieldGroup : AttributeSetInstanceExtensionFieldGroupCommandBase, ICreateAttributeSetInstanceExtensionFieldGroup
 	{
 		

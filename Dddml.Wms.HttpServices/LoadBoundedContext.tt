@@ -2,5 +2,8 @@
 <#@ output extension="txt" #>
 <#@ include file="$(SolutionDir)Dddml.Wms.Common\Generated\LoadBoundedContext.tt" #>
 <#
-    TemplatingContext.Current.CurrentAssembly = "Dddml.Wms.HttpServices";
+	TemplatingContext.Current.CurrentAssembly = "Dddml.Wms.HttpServices";
+	
+	boundedContext.Aggregates["AttributeSetInstance"].Metadata["httpPostCreationEnabled"] = true;
+
 #>

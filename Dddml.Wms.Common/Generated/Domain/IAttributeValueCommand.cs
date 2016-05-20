@@ -19,7 +19,6 @@ namespace Dddml.Wms.Domain
 	{
 	}
 
-
 	public interface IMergePatchAttributeValue : IAttributeValueCommand, IAttributeValueStateProperties
 	{
 

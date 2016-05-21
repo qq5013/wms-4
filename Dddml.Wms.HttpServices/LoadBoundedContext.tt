@@ -6,4 +6,6 @@
 	
 	boundedContext.Aggregates["AttributeSetInstance"].Metadata["httpPostCreationEnabled"] = true;
 
+	//boundedContext.Aggregates["AttributeSet"].Metadata["httpPostCreationEnabled"] = true;
+
 #>

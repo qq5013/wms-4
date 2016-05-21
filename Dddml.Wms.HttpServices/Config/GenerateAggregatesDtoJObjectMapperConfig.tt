@@ -57,7 +57,7 @@
 	{
 		if (aggregate.IsDynamic)
 		{
-			bool httpPostCreationEnabled = aggregate.Id.Arbitrary && aggregate.GetHttpPostCreationEnabled();
+			bool httpPostCreationEnabled = aggregate.GetHttpPostCreationEnabled();
 			if (httpPostCreationEnabled)
 			{
 #>

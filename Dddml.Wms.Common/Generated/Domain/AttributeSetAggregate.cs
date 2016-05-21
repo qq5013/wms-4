@@ -12,7 +12,7 @@ using Dddml.Wms.Specialization;
 namespace Dddml.Wms.Domain
 {
 
-    public partial class AttributeSetAggregate : IAttributeSetAggregate
+    public partial class AttributeSetAggregate : AggregateBase, IAttributeSetAggregate
     {
 
         readonly IAttributeSetState _state;
@@ -74,6 +74,7 @@ namespace Dddml.Wms.Domain
 
         protected virtual void Apply(IEvent e)
         {
+            BeforeApply(e);
             _state.Mutate(e);
             _changes.Add(e);
         }

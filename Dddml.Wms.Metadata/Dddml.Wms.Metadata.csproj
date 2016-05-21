@@ -50,6 +50,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AttributeSetInstanceExtensionFieldGroupDddml.yaml</LastGenOutput>
     </Content>
+    <Content Include="Templates\AttributeSetInstancePropertyUtilsTemplate.tt" />
     <Content Include="Templates\AttributeSetInstanceExtensionFieldUtilsTemplate.tt" />
   </ItemGroup>
   <ItemGroup>

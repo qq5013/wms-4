@@ -44,13 +44,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
             var url = "AttributeSetInstances/{id}";
             url = url.Replace("{id}", attrSetInstId);
 
-            var attrSetInst = new CreateAttributeSetInstanceDto();
-            attrSetInst.AttributeSetId = IdGenerator._lastAttributeSetId;
-            attrSetInst.SerialNumber = attrSetInstId;
-            attrSetInst.Lot = DateTime.Today.ToString();
-
-            dynamic jObject = JObject.FromObject(attrSetInst);
-            jObject.Color = "R";
+            dynamic jObject = GetTestColorAttributeSetInstance(attrSetInstId);
 
             var req = new HttpRequestMessage(HttpMethod.Put, url);
             req.Content = new ObjectContent(typeof(JObject), jObject, new JsonMediaTypeFormatter());
@@ -63,12 +57,42 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
 
             dynamic resultObj = TestGetAttributeSetInstance(attrSetInstId);
 
-            Assert.AreEqual("R", resultObj.Color);
+            Assert.AreEqual("R", resultObj.Color.ToString());
 
-            // 如果 AttributeSetInstance 是“可变的”，那么可以 Patch：
-            TestMergePatchAttributeSetInstance(attrSetInstId);
+            TestPostAttributeSetInstance(client, jObject, url);
+            TestPostAttributeSetInstance(client, jObject, url);
+
             TestGetAttributeSetInstance(attrSetInstId);
 
+            //// 如果 AttributeSetInstance 是“可变的”，那么可以 Patch：
+            //TestMergePatchAttributeSetInstance(attrSetInstId);
+            
+        }
+
+        private void TestPostAttributeSetInstance(HttpClient client, dynamic jObject, string url)
+        {
+            var req = new HttpRequestMessage(HttpMethod.Post, url);
+            req.Content = new ObjectContent(typeof(JObject), jObject, new JsonMediaTypeFormatter());
+            var response = client.SendAsync(req).GetAwaiter().GetResult();
+
+            var respContent = response.Content.ReadAsAsync<string>().GetAwaiter().GetResult();
+            Console.WriteLine(respContent);
+            Console.WriteLine(response.Headers);
+            Console.WriteLine(response.StatusCode);
+            Console.WriteLine(response.ReasonPhrase);
+        }
+
+        private static dynamic GetTestColorAttributeSetInstance(string attrSetInstId)
+        {
+            var attrSetInst = new CreateAttributeSetInstanceDto();
+            attrSetInst.SerialNumber = attrSetInstId;
+            attrSetInst.Lot = DateTime.Today.ToString();
+
+            attrSetInst.AttributeSetId = IdGenerator._lastAttributeSetId;
+
+            dynamic jObject = JObject.FromObject(attrSetInst);
+            jObject.Color = "R";
+            return jObject;
         }
 
         private JObject TestGetAttributeSetInstance(string attrSetInstId)
@@ -82,13 +106,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
             var req = new HttpRequestMessage(HttpMethod.Get, url);
             var response = client.SendAsync(req).GetAwaiter().GetResult();
 
-            var jObject = response.Content.ReadAsAsync<JObject>().GetAwaiter().GetResult();
-            Console.WriteLine(jObject);
+            var respContent = response.Content.ReadAsAsync<JObject>().GetAwaiter().GetResult();
+            Console.WriteLine(respContent);
             Console.WriteLine(response.Headers);
             Console.WriteLine(response.StatusCode);
             Console.WriteLine(response.ReasonPhrase);
 
-            return jObject;
+            return respContent;
         }
 
         private void TestMergePatchAttributeSetInstance(string attrSetInstId)

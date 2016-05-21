@@ -1,0 +1,115 @@
+﻿<#@ template language="C#" debug="True" #>
+<#@ include file="T4Toolbox.tt" #>
+<#@ include file="AttributeSetInstanceExtensionFieldMetadataUtils.ttinclude" #>
+<#+
+// <copyright file="AttributeSetInstanceExtensionFieldUtilsTemplate.tt" company="">
+//  Copyright © . All Rights Reserved.
+// </copyright>
+
+public class AttributeSetInstancePropertyUtilsTemplate : CSharpTemplate
+{
+	public override string TransformText()
+	{
+		base.TransformText();
+
+		var extensionFields = AttributeSetInstanceExtensionFieldMetadataUtils.GetAllExtensionFields();
+
+#>
+using Dddml.Wms.Domain;
+using System;
+using System.Collections.Generic;
+using System.Security.Cryptography;
+using System.Text;
+
+
+namespace Dddml.Wms.Support
+{
+    public static class AttributeSetInstancePropertyUtils
+    {
+
+        private static string GetSafeStringValue(string str)
+        {
+            if (str == null) { return "[null]"; }
+            return str;
+        }
+
+        private static string GetMD5HashString(MD5 md5Hash, string input)
+        {
+            byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
+            StringBuilder sBuilder = new StringBuilder();
+            for (int i = 0; i < data.Length; i++)
+            {
+                sBuilder.Append(data[i].ToString("x2"));
+            }
+            return sBuilder.ToString();
+        }
+
+        public static string GetHash(IAttributeSetInstanceStateProperties state)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append("AttributeSetId").Append("=").Append(GetSafeStringValue(state.AttributeSetId)).Append("|");
+            sb.Append("OrganizationId").Append("=").Append(GetSafeStringValue(state.OrganizationId)).Append("|");
+            sb.Append("ReferenceId").Append("=").Append(GetSafeStringValue(state.ReferenceId)).Append("|");
+            sb.Append("SerialNumber").Append("=").Append(GetSafeStringValue(state.SerialNumber)).Append("|");
+            sb.Append("Lot").Append("=").Append(GetSafeStringValue(state.Lot)).Append("|");
+            sb.Append("Description").Append("=").Append(GetSafeStringValue(state.Description)).Append("|");
+            sb.Append("Active").Append("=").Append(state.Active).Append("|");
+<#+ 
+		foreach (var fMeta in extensionFields)
+		{
+			if (fMeta.Type.Equals("string", StringComparison.InvariantCultureIgnoreCase))
+            { 
+#>
+            sb.Append("<#= fMeta.Name #>").Append("=").Append(GetSafeStringValue(state.<#= fMeta.Name #>)).Append("|");
+<#+
+			} else {
+#>
+            sb.Append("<#= fMeta.Name #>").Append("=").Append(state.<#= fMeta.Name #>).Append("|");
+<#+ 
+            }
+		}
+#>
+
+            using (MD5 md5Hash = MD5.Create())
+            {
+                string hash = GetMD5HashString(md5Hash, sb.ToString());
+                return hash;
+            }
+        }
+
+        public static bool Equals(IAttributeSetInstanceStateProperties state1, IAttributeSetInstanceStateProperties state2)
+        {
+            if (!Object.Equals(state1.AttributeSetId, state2.AttributeSetId)
+                || !Object.Equals(state1.OrganizationId, state2.OrganizationId)
+                || !Object.Equals(state1.ReferenceId, state2.ReferenceId)
+                || !Object.Equals(state1.SerialNumber, state2.SerialNumber)
+                || !Object.Equals(state1.Lot, state2.Lot)
+                || !Object.Equals(state1.Description, state2.Description)
+                || !Object.Equals(state1.Active, state2.Active)
+<#+ 
+		foreach (var fMeta in extensionFields)
+		{
+#>
+                || !Object.Equals(state1.<#= fMeta.Name #>, state2.<#= fMeta.Name #>)
+<#+ 
+		}
+#>
+                )
+            {
+                return false;
+            }
+            return true;
+        }
+
+
+    }
+
+}
+
+
+<#+
+        return this.GenerationEnvironment.ToString();
+	}
+}
+#>

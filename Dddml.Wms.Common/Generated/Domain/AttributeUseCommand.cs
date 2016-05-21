@@ -39,6 +39,11 @@ namespace Dddml.Wms.Domain
 
         public abstract string GetNextId();
 
+        public virtual string GetOrGenerateId(ICreateAttributeUse command, out bool reused)
+        {
+            throw new NotSupportedException();
+        }
+
     }
 
 	public class CreateAttributeUse : AttributeUseCommandBase, ICreateAttributeUse

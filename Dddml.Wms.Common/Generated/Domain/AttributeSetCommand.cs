@@ -58,6 +58,11 @@ namespace Dddml.Wms.Domain
 
         public abstract string GetNextId();
 
+        public virtual string GetOrGenerateId(ICreateAttributeSet command, out bool reused)
+        {
+            throw new NotSupportedException();
+        }
+
     }
 
 	public class CreateAttributeSet : AttributeSetCommandBase, ICreateAttributeSet

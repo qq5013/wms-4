@@ -1,0 +1,12 @@
+﻿<#@ template language="C#" debug="True" #>
+<#@ output extension="txt" #>
+<#@ include file="T4Toolbox.tt" #>
+<#@ include file="$(SolutionDir)Dddml.Wms.Metadata\Templates\AttributeSetInstancePropertyUtilsTemplate.tt" #><#
+// <copyright file="GenerateAttributeSetInstancePropertyUtils.tt" company="dddml.org">
+//  Copyright © . All Rights Reserved.
+// </copyright>
+	
+	var attributeSetInstancePropertyUtilsTemplate = new AttributeSetInstancePropertyUtilsTemplate();
+	attributeSetInstancePropertyUtilsTemplate.RenderToFile("AttributeSetInstancePropertyUtils.cs");
+
+#>

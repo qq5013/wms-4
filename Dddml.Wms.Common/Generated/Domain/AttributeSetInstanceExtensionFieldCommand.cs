@@ -39,6 +39,11 @@ namespace Dddml.Wms.Domain
 
         public abstract string GetNextId();
 
+        public virtual string GetOrGenerateId(ICreateAttributeSetInstanceExtensionField command, out bool reused)
+        {
+            throw new NotSupportedException();
+        }
+
     }
 
 	public class CreateAttributeSetInstanceExtensionField : AttributeSetInstanceExtensionFieldCommandBase, ICreateAttributeSetInstanceExtensionField

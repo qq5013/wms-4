@@ -69,12 +69,18 @@ namespace Dddml.Wms.HttpServices.ApiControllers
         }
 
         [HttpPost]
-        public void Post([FromBody]JObject dynamicObject)
+        public HttpResponseMessage Post([FromBody]JObject dynamicObject)
         {
             CreateAttributeSetInstanceDto value = _attributeSetInstanceDtoJObjectMapper.ToCommandCreate(dynamicObject);
-            string idObj = _attributeSetInstanceIdGenerator.GenerateId(value); 
-            (value as IAttributeSetInstanceStateProperties).AttributeSetInstanceId = idObj;
-            _attributeSetInstanceApplicationService.When(value.ToCommand() as ICreateAttributeSetInstance);
+            bool reused;
+            string idObj = _attributeSetInstanceIdGenerator.GetOrGenerateId(value, out reused);
+            if (!reused)
+            {
+                (value as IAttributeSetInstanceStateProperties).AttributeSetInstanceId = idObj;
+                _attributeSetInstanceApplicationService.When(value.ToCommand() as ICreateAttributeSetInstance);
+            }
+
+            return Request.CreateResponse<string>(HttpStatusCode.Created, idObj);
         }
 
         [HttpPut]

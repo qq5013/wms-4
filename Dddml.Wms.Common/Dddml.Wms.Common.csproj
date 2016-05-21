@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\AttributeSetInstanceAggregate.cs" />
     <Compile Include="Generated\Domain\AttributeAggregate.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -455,6 +456,7 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Domain\Services\IAttributeSetService.cs" />
+    <Compile Include="Specialization\AggregateBase.cs" />
     <Compile Include="Specialization\DynamicObjectMapperBase.cs" />
     <Compile Include="Specialization\IIdGenerator.cs" />
     <Compile Include="Specialization\PropertyMetadata.cs" />
@@ -466,6 +468,17 @@
     </Compile>
     <Compile Include="Support\AttributeSetInstanceExtensionFieldUtils.cs">
       <DependentUpon>GenerateAttributeSetInstanceExtensionFieldUtils.tt</DependentUpon>
+    </Compile>
+    <Content Include="Support\GenerateAttributeSetInstancePropertyUtils.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GenerateAttributeSetInstancePropertyUtils.txt</LastGenOutput>
+      <LastOutputs>
+.\AttributeSetInstancePropertyUtils.cs
+.\GenerateAttributeSetInstancePropertyUtils.txt
+</LastOutputs>
+    </Content>
+    <Compile Include="Support\AttributeSetInstancePropertyUtils.cs">
+      <DependentUpon>GenerateAttributeSetInstancePropertyUtils.tt</DependentUpon>
     </Compile>
     <Compile Include="Support\AttributeValueListAttribute.cs" />
     <Compile Include="Support\AttributeValueTypeUtils.cs" />
@@ -499,6 +512,11 @@
     <Compile Include="Specialization\ReflectUtils.cs" />
     <Compile Include="Specialization\StateDtoBase.cs" />
     <Compile Include="Specialization\StateDtoCollectionBase.cs" />
+    <Content Include="Support\GenerateAttributeSetInstancePropertyUtils.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenerateAttributeSetInstancePropertyUtils.tt</DependentUpon>
+    </Content>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

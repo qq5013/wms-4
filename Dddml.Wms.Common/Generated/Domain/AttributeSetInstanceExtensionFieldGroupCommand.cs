@@ -58,6 +58,11 @@ namespace Dddml.Wms.Domain
 
         public abstract string GetNextId();
 
+        public virtual string GetOrGenerateId(ICreateAttributeSetInstanceExtensionFieldGroup command, out bool reused)
+        {
+            throw new NotSupportedException();
+        }
+
     }
 
 	public class CreateAttributeSetInstanceExtensionFieldGroup : AttributeSetInstanceExtensionFieldGroupCommandBase, ICreateAttributeSetInstanceExtensionFieldGroup

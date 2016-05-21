@@ -8,6 +8,9 @@ namespace Dddml.Wms.Specialization
         TId GenerateId(TCommand command);
 
         TId GetNextId();
+
+        TId GetOrGenerateId(TCommand command, out bool reused);
+
     }
 
 }

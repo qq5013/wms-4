@@ -12,6 +12,8 @@ aggregates:
       id:
         name: AttributeId
         type: string
+        arbitrary: true
+        isServerSideGenerated: true
 
       properties:  
       

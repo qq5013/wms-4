@@ -4,6 +4,10 @@
 
 
 
+
+
+ 
+
   <spring>
 
     <context>
@@ -17,6 +21,8 @@
       <resource uri="assembly://Dddml.Wms.Services/Dddml.Wms.Services.Config/AttributeSetInstanceAggregateConfig.xml"/>
       <resource uri="assembly://Dddml.Wms.Services/Dddml.Wms.Services.Config/AttributeSetInstanceExtensionFieldGroupAggregateConfig.xml"/>
 
+      <resource uri="assembly://Dddml.Wms.Services/Dddml.Wms.Services.Config/AggregatesIdGeneratorConfig.xml"/>
+
     </context>
 
     <objects xmlns="http://www.springframework.net">
@@ -24,6 +30,8 @@
       <object type="Spring.Objects.Factory.Config.PropertyPlaceholderConfigurer, Spring.Core">
         <property name="ConfigSections" value="databaseSettings" />
       </object>
+
+
     </objects>
 
   </spring>

@@ -76,6 +76,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
             var response = client.SendAsync(req).GetAwaiter().GetResult();
 
             var respContent = response.Content.ReadAsAsync<string>().GetAwaiter().GetResult();
+            Assert.NotNull(respContent);
             Console.WriteLine(respContent);
             Console.WriteLine(response.Headers);
             Console.WriteLine(response.StatusCode);

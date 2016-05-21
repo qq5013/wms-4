@@ -20,6 +20,7 @@ using Dddml.Wms.Domain.Metadata;
 namespace Dddml.Wms.HttpServices.ApiControllers
 {
 
+    [RoutePrefix("api/AttributeSetInstances")]
     public partial class AttributeSetInstancesController : ApiController
     {
 
@@ -109,6 +110,23 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             _attributeSetInstanceApplicationService.When(value.ToCommand() as IDeleteAttributeSetInstance);
         }
 
+
+        [Route("_metadata/filteringFields")]
+        [HttpGet]
+        public IEnumerable<PropertyMetadata> GetMetadataFilteringFields()
+        {
+            var filtering = new List<PropertyMetadata>();
+            foreach (var p in AttributeSetInstanceMetadata.Instance.Properties)
+            {
+                if (PropertyMetadata.IsFilteringProperty(p))
+                {
+                    filtering.Add(p);
+                }
+            }
+            return filtering;
+        }
+
+
 		// /////////////////////////////////////////////////
 
         protected static void SetNullIdOrThrowOnInconsistentIds(string id, CreateOrMergePatchOrDeleteAttributeSetInstanceDto value)
@@ -137,7 +155,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             if (AttributeSetInstanceMetadata.Instance.PropertyMetadataDictionary.ContainsKey(fieldName))
             {
                 var p = AttributeSetInstanceMetadata.Instance.PropertyMetadataDictionary[fieldName];
-                if (!p.IsCollectionProperty && !p.IsTransient && p.IsBasicType)
+                if (PropertyMetadata.IsFilteringProperty(p))
                 {
                     var propertyName = fieldName;
                     if (p.IsDerived)

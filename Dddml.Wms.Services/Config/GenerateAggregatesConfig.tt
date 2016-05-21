@@ -3,6 +3,7 @@
 <#@ import namespace="Dddml.Core.Domain" #>
 <#@ include file="T4Toolbox.tt" #>
 <#@ include file="%DddmlDotNetToolsSolutionDir%\Dddml.T4.Templates\NHibernate\Spring\AggregateNHibernateSpringConfigGenerator.tt" #>
+<#@ include file="%DddmlDotNetToolsSolutionDir%\Dddml.T4.Templates\Spring\AggregatesArbitraryStringIdGeneratorSpringConfigGenerator.tt" #>
 <#@ include file="..\LoadBoundedContext.tt" #>
 <#
 
@@ -13,8 +14,11 @@
 
 	    generator.Run();
 	}
+	
+	var AggregatesArbitraryStringIdGeneratorSpringConfigGenerator = new AggregatesArbitraryStringIdGeneratorSpringConfigGenerator(boundedContext.Aggregates.Values);
+	AggregatesArbitraryStringIdGeneratorSpringConfigGenerator.Run();
 
-#>
+#> 
 
   <spring>
 
@@ -33,6 +37,8 @@
 	}
 #>
 
+      <resource uri="assembly://<#= TemplatingContext.Current.CurrentAssembly #>/<#= boundedContext.DefaultModule #>.Services.Config/AggregatesIdGeneratorConfig.xml"/>
+
     </context>
 
     <objects xmlns="http://www.springframework.net">
@@ -40,6 +46,21 @@
       <object type="Spring.Objects.Factory.Config.PropertyPlaceholderConfigurer, Spring.Core">
         <property name="ConfigSections" value="databaseSettings" />
       </object>
+
+<#
+	foreach (var aggregate in boundedContext.Aggregates.Values)
+	{
+		bool httpPostCreationEnabled = aggregate.GetHttpPostCreationEnabled();
+		if (httpPostCreationEnabled || (aggregate.Id.IsServerSideGenerated && !aggregate.Id.Arbitrary))
+		{
+#>
+      <!-- You maybe NEED a custom <#= aggregate.Name #>IdGenerator! -->
+
+<#
+		}
+	}
+#>
+
     </objects>
 
   </spring>

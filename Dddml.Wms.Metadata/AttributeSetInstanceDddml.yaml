@@ -17,7 +17,6 @@ aggregates:
       id:
         name: AttributeSetInstanceId
         type: string
-        arbitrary: true
       
             
       properties:

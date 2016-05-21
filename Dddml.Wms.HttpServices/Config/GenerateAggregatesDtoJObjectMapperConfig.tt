@@ -52,22 +52,6 @@
         <property name="ConfigSections" value="databaseSettings" />
       </object>
 
-<#
-	foreach (var aggregate in boundedContext.Aggregates.Values)
-	{
-		if (aggregate.IsDynamic)
-		{
-			bool httpPostCreationEnabled = aggregate.GetHttpPostCreationEnabled();
-			if (httpPostCreationEnabled)
-			{
-#>
-      <!-- YOU NEED A <#= aggregate.Name #>IdGenerator! -->
-
-<#
-			}
-		}
-	}
-#>
 
     </objects>
 

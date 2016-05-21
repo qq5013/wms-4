@@ -19,9 +19,9 @@ using Dddml.Wms.Domain.Metadata;
 namespace Dddml.Wms.HttpServices.ApiControllers
 {
 
+    [RoutePrefix("api/AttributeSetInstanceExtensionFieldGroups")]
     public partial class AttributeSetInstanceExtensionFieldGroupsController : ApiController
     {
-
 
         IAttributeSetInstanceExtensionFieldGroupApplicationService _attributeSetInstanceExtensionFieldGroupApplicationService = ApplicationContext.Current["AttributeSetInstanceExtensionFieldGroupApplicationService"] as IAttributeSetInstanceExtensionFieldGroupApplicationService;
 
@@ -88,6 +88,23 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             _attributeSetInstanceExtensionFieldGroupApplicationService.When(value.ToCommand() as IDeleteAttributeSetInstanceExtensionFieldGroup);
         }
 
+
+        [Route("_metadata/filteringFields")]
+        [HttpGet]
+        public IEnumerable<PropertyMetadata> GetMetadataFilteringFields()
+        {
+            var filtering = new List<PropertyMetadata>();
+            foreach (var p in AttributeSetInstanceExtensionFieldGroupMetadata.Instance.Properties)
+            {
+                if (PropertyMetadata.IsFilteringProperty(p))
+                {
+                    filtering.Add(p);
+                }
+            }
+            return filtering;
+        }
+
+
 		// /////////////////////////////////////////////////
 
         protected static void SetNullIdOrThrowOnInconsistentIds(string id, CreateOrMergePatchOrDeleteAttributeSetInstanceExtensionFieldGroupDto value)
@@ -116,7 +133,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             if (AttributeSetInstanceExtensionFieldGroupMetadata.Instance.PropertyMetadataDictionary.ContainsKey(fieldName))
             {
                 var p = AttributeSetInstanceExtensionFieldGroupMetadata.Instance.PropertyMetadataDictionary[fieldName];
-                if (!p.IsCollectionProperty && !p.IsTransient && p.IsBasicType)
+                if (PropertyMetadata.IsFilteringProperty(p))
                 {
                     var propertyName = fieldName;
                     if (p.IsDerived)

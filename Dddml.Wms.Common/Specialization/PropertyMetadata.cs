@@ -2,12 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Dddml.Wms.Specialization
 {
     public partial class PropertyMetadata
     {
+
+        public static bool IsFilteringProperty(PropertyMetadata p)
+        {
+            if (!p.IsCollectionProperty && !p.IsTransient && p.IsBasicType)
+            {
+                if (p.IsDerived)
+                {
+                    return !String.IsNullOrWhiteSpace(p.DerivedFrom);
+                }
+                return true;
+            }
+            return false;
+        }
 
         public virtual string Name { get; set; }
 

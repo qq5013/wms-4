@@ -192,6 +192,9 @@
       <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Config\CustomIdGeneratorsConfig.xml" />
+    <EmbeddedResource Include="Config\AggregatesIdGeneratorConfig.xml">
+      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
+    </EmbeddedResource>
     <Content Include="Generated\NHibernate\Mappings\GenerateAggregatesHbm.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GenerateAggregatesHbm.txt</LastGenOutput>
@@ -232,6 +235,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GenerateAggregatesConfig.txt</LastGenOutput>
       <LastOutputs>
+.\AggregatesIdGeneratorConfig.xml
 .\AttributeAggregateConfig.xml
 .\AttributeSetAggregateConfig.xml
 .\AttributeSetInstanceAggregateConfig.xml

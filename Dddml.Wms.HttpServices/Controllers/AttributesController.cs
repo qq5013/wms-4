@@ -19,9 +19,11 @@ using Dddml.Wms.Domain.Metadata;
 namespace Dddml.Wms.HttpServices.ApiControllers
 {
 
+    [RoutePrefix("api/Attributes")]
     public partial class AttributesController : ApiController
     {
 
+        IIdGenerator<string, ICreateAttribute> _attributeIdGenerator = ApplicationContext.Current["AttributeIdGenerator"] as IIdGenerator<string, ICreateAttribute>;
 
         IAttributeApplicationService _attributeApplicationService = ApplicationContext.Current["AttributeApplicationService"] as IAttributeApplicationService;
 
@@ -64,6 +66,13 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             return stateDto;
         }
 
+        [Route("_nextId")]
+        [HttpGet]
+        public string GetNextId()
+        {
+            return _attributeIdGenerator.GetNextId();
+        }
+
         [HttpPut]
         public void Put(string id, [FromBody]CreateAttributeDto value)
         {
@@ -87,6 +96,23 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             SetNullIdOrThrowOnInconsistentIds(id, value);
             _attributeApplicationService.When(value.ToCommand() as IDeleteAttribute);
         }
+
+
+        [Route("_metadata/filteringFields")]
+        [HttpGet]
+        public IEnumerable<PropertyMetadata> GetMetadataFilteringFields()
+        {
+            var filtering = new List<PropertyMetadata>();
+            foreach (var p in AttributeMetadata.Instance.Properties)
+            {
+                if (PropertyMetadata.IsFilteringProperty(p))
+                {
+                    filtering.Add(p);
+                }
+            }
+            return filtering;
+        }
+
 
 		// /////////////////////////////////////////////////
 
@@ -116,7 +142,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             if (AttributeMetadata.Instance.PropertyMetadataDictionary.ContainsKey(fieldName))
             {
                 var p = AttributeMetadata.Instance.PropertyMetadataDictionary[fieldName];
-                if (!p.IsCollectionProperty && !p.IsTransient && p.IsBasicType)
+                if (PropertyMetadata.IsFilteringProperty(p))
                 {
                     var propertyName = fieldName;
                     if (p.IsDerived)

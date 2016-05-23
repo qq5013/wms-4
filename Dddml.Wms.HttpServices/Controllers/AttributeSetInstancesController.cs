@@ -9,6 +9,7 @@ using System.Linq;
 using System.Net;
 using System.ComponentModel;
 using System.Net.Http;
+using System.Net.Http.Formatting;
 using System.Web.Http;
 using Dddml.Wms.Domain;
 
@@ -33,6 +34,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
         [HttpGet]
         public JArray GetAll(string sort = null, string fields = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
+          try {
             var states = _attributeSetInstanceApplicationService.Get(GetQueryFilterDictionary(this.Request.GetQueryNameValuePairs())
                 , GetQueryOrders(sort), firstResult, maxResults);
             JArray dynamicArray = new JArray(); 
@@ -50,11 +52,13 @@ namespace Dddml.Wms.HttpServices.ApiControllers
                 dynamicArray.Add(_attributeSetInstanceDtoJObjectMapper.MapState(dto));
             }
             return dynamicArray; 
+          } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
         [HttpGet]
         public JObject Get(string id, string fields = null)
         {
+          try {
             var idObj = id;
             var state = (AttributeSetInstanceState)_attributeSetInstanceApplicationService.Get(idObj);
             var stateDto = new AttributeSetInstanceStateDto(state);
@@ -67,11 +71,13 @@ namespace Dddml.Wms.HttpServices.ApiControllers
                 stateDto.ReturnedFieldsString = fields;
             }
             return _attributeSetInstanceDtoJObjectMapper.MapState(stateDto);
+          } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
         [HttpPost]
         public HttpResponseMessage Post([FromBody]JObject dynamicObject)
         {
+          try {
             CreateAttributeSetInstanceDto value = _attributeSetInstanceDtoJObjectMapper.ToCommandCreate(dynamicObject);
             bool reused;
             string idObj = _attributeSetInstanceIdGenerator.GetOrGenerateId(value, out reused);
@@ -82,32 +88,39 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             }
 
             return Request.CreateResponse<string>(HttpStatusCode.Created, idObj);
+          } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
         [HttpPut]
         public void Put(string id, [FromBody]JObject dynamicObject)
         {
+          try {
             CreateAttributeSetInstanceDto value = _attributeSetInstanceDtoJObjectMapper.ToCommandCreate(dynamicObject);
             SetNullIdOrThrowOnInconsistentIds(id, value);
             _attributeSetInstanceApplicationService.When(value.ToCommand() as ICreateAttributeSetInstance);
+          } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
         [HttpPatch]
         public void Patch(string id, [FromBody]JObject dynamicObject)
         {
+          try {
             MergePatchAttributeSetInstanceDto value = _attributeSetInstanceDtoJObjectMapper.ToCommandMergePatch(dynamicObject);
             SetNullIdOrThrowOnInconsistentIds(id, value);
             _attributeSetInstanceApplicationService.When(value.ToCommand() as IMergePatchAttributeSetInstance);
+          } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
         [HttpDelete]
         public void Delete(string id, string commandId, string requesterId = default(string))
         {
+          try {
             var value = new DeleteAttributeSetInstanceDto();
             value.CommandId = commandId;
             value.RequesterId = requesterId;
             SetNullIdOrThrowOnInconsistentIds(id, value);
             _attributeSetInstanceApplicationService.When(value.ToCommand() as IDeleteAttributeSetInstance);
+          } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
 
@@ -115,6 +128,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
         [HttpGet]
         public IEnumerable<PropertyMetadata> GetMetadataFilteringFields()
         {
+          try {
             var filtering = new List<PropertyMetadata>();
             foreach (var p in AttributeSetInstanceMetadata.Instance.Properties)
             {
@@ -124,10 +138,47 @@ namespace Dddml.Wms.HttpServices.ApiControllers
                 }
             }
             return filtering;
+          } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
+        }
+
+        [Route("{id}/_stateEvents/{version}")]
+        [HttpGet]
+        public IAttributeSetInstanceStateEvent GetStateEvent(string id, long version)
+        {
+          try {
+            var idObj = id;
+            return _attributeSetInstanceApplicationService.GetStateEvent(idObj, version);
+          } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
 
 		// /////////////////////////////////////////////////
+
+        protected virtual HttpResponseMessage GetErrorHttpResponseMessage(Exception ex)
+        {
+            var errorName = ex.GetType().Name;
+            var errorMessage = ex.Message;
+            if (ex is DomainError)
+            {
+                DomainError de = ex as DomainError;
+                errorName = de.Name;
+                errorMessage = de.Message;
+            }
+            else
+            {
+                //改进??
+                errorMessage = String.IsNullOrWhiteSpace(ex.Message) ? String.Empty : ex.Message.Substring(0, (ex.Message.Length > 140) ? 140 : ex.Message.Length);
+            }
+            dynamic content = new JObject();
+            content.ErrorName = errorName;
+            content.ErrorMessage = errorMessage;
+            var response = new HttpResponseMessage(HttpStatusCode.InternalServerError)
+            {
+                Content = new ObjectContent<JObject>(content as JObject, new JsonMediaTypeFormatter()),
+                ReasonPhrase = "Server Error"
+            };
+            return response;
+        }
 
         protected static void SetNullIdOrThrowOnInconsistentIds(string id, CreateOrMergePatchOrDeleteAttributeSetInstanceDto value)
         {

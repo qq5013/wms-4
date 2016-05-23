@@ -14,6 +14,8 @@ namespace Dddml.Wms.Domain
 	public interface IAttributeValueStateEvent : IEvent, IGlobalIdentity<AttributeValueStateEventId>, ICreated<string>
 	{
 		AttributeValueStateEventId StateEventId { get; }
+
+        bool ReadOnly { get; set; }
 	}
 
 	public interface IAttributeValueStateCreated : IAttributeValueStateEvent, IAttributeValueStateProperties

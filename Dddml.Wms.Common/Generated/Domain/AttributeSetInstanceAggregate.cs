@@ -1029,7 +1029,7 @@ namespace Dddml.Wms.Domain
 
             e.Active = c.Active;
 
-            ReflectUtils.CopyPropertyValue("CommandId", c, e);//TODO CommandId 太特殊了！！！
+            ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
 
             (e as AttributeSetInstanceStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
@@ -2898,7 +2898,7 @@ namespace Dddml.Wms.Domain
             e.IsPropertyActiveRemoved = c.IsPropertyActiveRemoved;
 
 
-            ReflectUtils.CopyPropertyValue("CommandId", c, e);//TODO CommandId 太特殊了！！！
+            ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
 
             (e as AttributeSetInstanceStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
@@ -2915,7 +2915,7 @@ namespace Dddml.Wms.Domain
 			var stateEventId = new AttributeSetInstanceStateEventId(c.AttributeSetInstanceId, c.Version);
             IAttributeSetInstanceStateDeleted e = NewAttributeSetInstanceStateDeleted(stateEventId);
 			
-            ReflectUtils.CopyPropertyValue("CommandId", c, e);//TODO CommandId 太特殊了！！！
+            ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
 
             (e as AttributeSetInstanceStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？

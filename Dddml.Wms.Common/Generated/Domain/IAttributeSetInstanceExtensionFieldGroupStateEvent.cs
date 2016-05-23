@@ -14,6 +14,8 @@ namespace Dddml.Wms.Domain
 	public interface IAttributeSetInstanceExtensionFieldGroupStateEvent : IEvent, IGlobalIdentity<AttributeSetInstanceExtensionFieldGroupStateEventId>, ICreated<string>
 	{
 		AttributeSetInstanceExtensionFieldGroupStateEventId StateEventId { get; }
+
+        bool ReadOnly { get; set; }
 	}
 
 	public interface IAttributeSetInstanceExtensionFieldGroupStateCreated : IAttributeSetInstanceExtensionFieldGroupStateEvent, IAttributeSetInstanceExtensionFieldGroupStateProperties

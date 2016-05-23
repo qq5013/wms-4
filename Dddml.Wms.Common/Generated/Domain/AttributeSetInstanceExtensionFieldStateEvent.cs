@@ -21,13 +21,28 @@ namespace Dddml.Wms.Domain
 
 		public virtual DateTime CreatedAt { get; set; }
 
-        public virtual string CommandId { get; set; }//TODO CommandId 太特殊了！！！
+        public virtual string CommandId { get; set; }
 
 		AttributeSetInstanceExtensionFieldStateEventId IGlobalIdentity<AttributeSetInstanceExtensionFieldStateEventId>.GlobalId {
 			get {
 				return this.StateEventId;
 			}
 		}
+
+        public virtual bool StateEventReadOnly { get; set; }
+
+        bool IAttributeSetInstanceExtensionFieldStateEvent.ReadOnly
+        {
+            get
+            {
+                return this.StateEventReadOnly;
+            }
+            set
+            {
+                this.StateEventReadOnly = value;
+            }
+        }
+
 
 		public override string GroupId {
 			get {

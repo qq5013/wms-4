@@ -9,10 +9,12 @@ using System.Linq;
 using System.Net;
 using System.ComponentModel;
 using System.Net.Http;
+using System.Net.Http.Formatting;
 using System.Web.Http;
 using Dddml.Wms.Domain;
 
 using Dddml.Wms.Specialization;
+using Newtonsoft.Json.Linq;
 using Dddml.Wms.Domain.Metadata;
 
 
@@ -30,6 +32,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
         [HttpGet]
         public IEnumerable<AttributeStateDto> GetAll(string sort = null, string fields = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
+          try {
             var states = _attributeApplicationService.Get(GetQueryFilterDictionary(this.Request.GetQueryNameValuePairs())
                 , GetQueryOrders(sort), firstResult, maxResults);
             var stateDtos = new List<AttributeStateDto>();
@@ -47,11 +50,13 @@ namespace Dddml.Wms.HttpServices.ApiControllers
                 stateDtos.Add(dto);
             }
             return stateDtos;
+          } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
         [HttpGet]
         public AttributeStateDto Get(string id, string fields = null)
         {
+          try {
             var idObj = id;
             var state = (AttributeState)_attributeApplicationService.Get(idObj);
             var stateDto = new AttributeStateDto(state);
@@ -64,37 +69,46 @@ namespace Dddml.Wms.HttpServices.ApiControllers
                 stateDto.ReturnedFieldsString = fields;
             }
             return stateDto;
+          } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
         [Route("_nextId")]
         [HttpGet]
         public string GetNextId()
         {
+          try {
             return _attributeIdGenerator.GetNextId();
+          } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
         [HttpPut]
         public void Put(string id, [FromBody]CreateAttributeDto value)
         {
+          try {
             SetNullIdOrThrowOnInconsistentIds(id, value);
             _attributeApplicationService.When(value.ToCommand() as ICreateAttribute);
+          } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
         [HttpPatch]
         public void Patch(string id, [FromBody]MergePatchAttributeDto value)
         {
+          try {
             SetNullIdOrThrowOnInconsistentIds(id, value);
             _attributeApplicationService.When(value.ToCommand() as IMergePatchAttribute);
+          } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
         [HttpDelete]
         public void Delete(string id, string commandId, string requesterId = default(string))
         {
+          try {
             var value = new DeleteAttributeDto();
             value.CommandId = commandId;
             value.RequesterId = requesterId;
             SetNullIdOrThrowOnInconsistentIds(id, value);
             _attributeApplicationService.When(value.ToCommand() as IDeleteAttribute);
+          } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
 
@@ -102,6 +116,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
         [HttpGet]
         public IEnumerable<PropertyMetadata> GetMetadataFilteringFields()
         {
+          try {
             var filtering = new List<PropertyMetadata>();
             foreach (var p in AttributeMetadata.Instance.Properties)
             {
@@ -111,10 +126,47 @@ namespace Dddml.Wms.HttpServices.ApiControllers
                 }
             }
             return filtering;
+          } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
+        }
+
+        [Route("{id}/_stateEvents/{version}")]
+        [HttpGet]
+        public IAttributeStateEvent GetStateEvent(string id, long version)
+        {
+          try {
+            var idObj = id;
+            return _attributeApplicationService.GetStateEvent(idObj, version);
+          } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
 
 		// /////////////////////////////////////////////////
+
+        protected virtual HttpResponseMessage GetErrorHttpResponseMessage(Exception ex)
+        {
+            var errorName = ex.GetType().Name;
+            var errorMessage = ex.Message;
+            if (ex is DomainError)
+            {
+                DomainError de = ex as DomainError;
+                errorName = de.Name;
+                errorMessage = de.Message;
+            }
+            else
+            {
+                //改进??
+                errorMessage = String.IsNullOrWhiteSpace(ex.Message) ? String.Empty : ex.Message.Substring(0, (ex.Message.Length > 140) ? 140 : ex.Message.Length);
+            }
+            dynamic content = new JObject();
+            content.ErrorName = errorName;
+            content.ErrorMessage = errorMessage;
+            var response = new HttpResponseMessage(HttpStatusCode.InternalServerError)
+            {
+                Content = new ObjectContent<JObject>(content as JObject, new JsonMediaTypeFormatter()),
+                ReasonPhrase = "Server Error"
+            };
+            return response;
+        }
 
         protected static void SetNullIdOrThrowOnInconsistentIds(string id, CreateOrMergePatchOrDeleteAttributeDto value)
         {

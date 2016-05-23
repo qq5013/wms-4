@@ -26,6 +26,8 @@ namespace Dddml.Wms.Domain
 
         IEnumerable<IAttributeSetInstanceState> Get(IDictionary<string, object> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue);
 
+        IAttributeSetInstanceStateEvent GetStateEvent(string aggregateId, long version);
+
 	}
 
 }

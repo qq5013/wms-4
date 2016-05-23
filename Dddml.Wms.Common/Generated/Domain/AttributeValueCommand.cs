@@ -15,9 +15,9 @@ namespace Dddml.Wms.Domain
 	public abstract class AttributeValueCommandBase : AttributeValueStateProperties, IAttributeValueCommand
 	{
 
-		public virtual string RequesterId { get; set; }//TODO RequesterId 应该是可以支持自定义名称
+		public virtual string RequesterId { get; set; }
 
-		public virtual string CommandId { get; set; }//TODO CommandId 太特殊了！！！应该可以支持自定义名称（即不一定要叫 CommandId）
+		public virtual string CommandId { get; set; }
 
         object ICommand.RequesterId
         {

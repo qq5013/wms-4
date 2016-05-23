@@ -58,6 +58,13 @@ namespace Dddml.Wms.Specialization.NHibernate
             return CurrentSession.Get(eventType, eventId) as IEvent;
         }
 
+        [Transaction(ReadOnly = true)]
+        public virtual IEvent GetStateEvent(IEventStoreAggregateId eventStoreAaggregateId, long version)
+        {
+            object eventId = GetEventId(eventStoreAaggregateId, version);
+            return CurrentSession.Get(GetSupportedStateEventType(), eventId) as IEvent;
+        }
+
         #endregion
 
         public abstract Type GetSupportedStateEventType();

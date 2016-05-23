@@ -12,6 +12,7 @@ namespace Dddml.Wms.Specialization
 
         IEvent FindLastEvent(Type eventType, IEventStoreAggregateId eventStoreAaggregateId, long version);
 
+        IEvent GetStateEvent(IEventStoreAggregateId eventStoreAaggregateId, long version);
     }
 }
 

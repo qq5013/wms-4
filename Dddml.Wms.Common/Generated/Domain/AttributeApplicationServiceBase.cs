@@ -45,7 +45,7 @@ namespace Dddml.Wms.Domain
 			if (state.Version > command.AggregateVersion)
 			{
 				var lastEvent = EventStore.FindLastEvent(typeof(IAttributeStateEvent), eventStoreAaggregateId, command.AggregateVersion);
-				if (lastEvent != null && lastEvent.CommandId == command.CommandId)////TODO CommandId 太特殊了！！！
+				if (lastEvent != null && lastEvent.CommandId == command.CommandId)
 				{
 					repeated = true;
 				}
@@ -92,6 +92,11 @@ namespace Dddml.Wms.Domain
             var states = StateRepository.Get(filter, orders, firstResult, maxResults);
 			return states;
 		}
+
+	    public virtual IAttributeStateEvent GetStateEvent(string aggregateId, long version)
+        {
+            return (IAttributeStateEvent)EventStore.GetStateEvent(ToEventStoreAaggregateId(aggregateId), version);
+        }
 
 
 		public abstract IAttributeAggregate GetAttributeAggregate(IAttributeState state);

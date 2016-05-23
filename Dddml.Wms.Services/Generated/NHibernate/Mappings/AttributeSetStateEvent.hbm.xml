@@ -31,7 +31,7 @@
 
     <property name="CreatedAt" />
 
-    <property name="CommandId" /><!-- TODO CommandId 太特殊了？？？ -->
+    <property name="CommandId" />
 
 
     <subclass name="AttributeSetStateCreated" discriminator-value="Created">

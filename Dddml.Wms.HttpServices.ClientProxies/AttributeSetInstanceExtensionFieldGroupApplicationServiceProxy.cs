@@ -16,6 +16,8 @@ using Dddml.Wms.HttpServices.ClientProxies.Raml;
 using Dddml.Wms.HttpServices.ClientProxies.Raml.Models;
 using System.Text;
 using System.ComponentModel;
+using RAML.Api.Core;
+using Newtonsoft.Json.Linq;
 
 
 namespace Dddml.Wms.HttpServices.ClientProxies
@@ -47,7 +49,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             var req = new AttributeSetInstanceExtensionFieldGroupPutRequest(uriParameters, (CreateAttributeSetInstanceExtensionFieldGroupDto)c);
                 
-            var resp = _ramlClient.AttributeSetInstanceExtensionFieldGroup.Put(req).GetAwaiter().GetResult();;
+            var resp = _ramlClient.AttributeSetInstanceExtensionFieldGroup.Put(req).GetAwaiter().GetResult();
+            ThrowOnHttpResponseError(resp);
             //};
             //act();
         }
@@ -61,7 +64,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             uriParameters.Id = idObj;
 
             var req = new AttributeSetInstanceExtensionFieldGroupPatchRequest(uriParameters, (MergePatchAttributeSetInstanceExtensionFieldGroupDto)c);
-            var resp = _ramlClient.AttributeSetInstanceExtensionFieldGroup.Patch(req).GetAwaiter().GetResult();;
+            var resp = _ramlClient.AttributeSetInstanceExtensionFieldGroup.Patch(req).GetAwaiter().GetResult();
+            ThrowOnHttpResponseError(resp);
             //};
             //act();
         }
@@ -80,7 +84,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             var req = new AttributeSetInstanceExtensionFieldGroupDeleteRequest(uriParameters);
             req.Query = q;
 
-            var resp = _ramlClient.AttributeSetInstanceExtensionFieldGroup.Delete(req).GetAwaiter().GetResult();;
+            var resp = _ramlClient.AttributeSetInstanceExtensionFieldGroup.Delete(req).GetAwaiter().GetResult();
+            ThrowOnHttpResponseError(resp);
             //};
             //act();
         }
@@ -112,6 +117,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             var req = new AttributeSetInstanceExtensionFieldGroupGetRequest(uriParameters);
 
             var resp = _ramlClient.AttributeSetInstanceExtensionFieldGroup.Get(req).GetAwaiter().GetResult();
+            ThrowOnHttpResponseError(resp);
             state = resp.Content;
             //};
             //act();
@@ -141,7 +147,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.FilterTag = GetFilterTagQueryValueString(filter);
             var req = new AttributeSetInstanceExtensionFieldGroupsGetRequest();
             req.Query = q;
-            var resp = _ramlClient.AttributeSetInstanceExtensionFieldGroups.Get(req).GetAwaiter().GetResult();;
+            var resp = _ramlClient.AttributeSetInstanceExtensionFieldGroups.Get(req).GetAwaiter().GetResult();
+            ThrowOnHttpResponseError(resp);
             states = resp.Content;
             //};
             //act();
@@ -154,6 +161,10 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             ((dynamic)this).When((dynamic)command);
         }
 
+        public IAttributeSetInstanceExtensionFieldGroupStateEvent GetStateEvent(string aggregateId, long version)
+        {
+            throw new NotImplementedException(); // TODO
+        }
 
 
         protected virtual string GetFilterTagQueryValueString(IDictionary<string, object> filter)
@@ -212,6 +223,41 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         protected virtual string QueryOrderSeparator
         {
             get { return ","; }
+        }
+
+        protected virtual void ThrowOnHttpResponseError(ApiResponse resp)
+        {
+            var httpResponseMessage = new HttpResponseMessage()
+            {
+                StatusCode = resp.StatusCode,
+                Content = resp.RawContent,
+                ReasonPhrase = resp.ReasonPhrase
+            };
+            if (httpResponseMessage.IsSuccessStatusCode)
+            {
+                return;
+            }
+            try
+            {
+                if (resp.StatusCode == HttpStatusCode.InternalServerError)
+                {
+                    IEnumerable<string> headerValues = new List<string>();
+                    if (resp.RawContent != null && resp.RawContent.Headers != null)
+                        resp.RawContent.Headers.TryGetValues("Content-Type", out headerValues);
+                    if (headerValues.Any(hv => hv.ToLowerInvariant().Contains("json")))
+                    {
+                        JObject jObj = JObject.Parse(httpResponseMessage.Content.ReadAsStringAsync().GetAwaiter().GetResult());
+                        var errorName = jObj.GetValue("ErrorName").ToObject<string>();
+                        var errorMessage = jObj.GetValue("ErrorMessage").ToObject<string>();
+                        throw DomainError.Named(errorName, errorMessage);
+                    }
+                }
+                throw new HttpResponseException(httpResponseMessage);
+            }
+            catch
+            {
+                throw new HttpResponseException(httpResponseMessage);
+            }
         }
 
     }

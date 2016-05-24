@@ -161,7 +161,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             ((dynamic)this).When((dynamic)command);
         }
 
-        public IAttributeSetStateEvent GetStateEvent(string aggregateId, long version)
+        public IAttributeSetStateEvent GetStateEvent(string attributeSetId, long version)
         {
             throw new NotImplementedException(); // TODO
         }

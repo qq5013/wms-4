@@ -93,9 +93,9 @@ namespace Dddml.Wms.Domain
 			return states;
 		}
 
-	    public virtual IAttributeSetStateEvent GetStateEvent(string aggregateId, long version)
+	    public virtual IAttributeSetStateEvent GetStateEvent(string attributeSetId, long version)
         {
-            return (IAttributeSetStateEvent)EventStore.GetStateEvent(ToEventStoreAaggregateId(aggregateId), version);
+            return (IAttributeSetStateEvent)EventStore.GetStateEvent(ToEventStoreAaggregateId(attributeSetId), version);
         }
 
 

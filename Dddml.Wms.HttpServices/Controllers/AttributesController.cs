@@ -225,8 +225,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
                 if (!String.IsNullOrWhiteSpace(pName))
                 {
                     Type type = GetFilterPropertyType(pName);
-                    var converter = TypeDescriptor.GetConverter(type);
-                    var pValue = converter.ConvertFromString(p.Value);
+                    var pValue = ApplicationContext.Current.TypeConverter.ConvertFromString(type, p.Value);
                     filter.Add(pName, pValue);
                 }
             }

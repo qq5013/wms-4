@@ -181,8 +181,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
                 sb.Append("=");
                 if (v != null)
                 {
-                    var converter = TypeDescriptor.GetConverter(v.GetType());
-                    string valStr = converter.ConvertToString(v);
+                    string valStr = ApplicationContext.Current.TypeConverter.ConvertToString(v.GetType(), v);
                     sb.Append(WebUtility.UrlEncode(valStr));
                 }
 

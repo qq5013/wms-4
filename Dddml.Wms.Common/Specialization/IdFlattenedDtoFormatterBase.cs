@@ -23,8 +23,7 @@ namespace Dddml.Wms.Specialization
             {
                 var fieldName = fieldNames[i];
                 var strVal = strValues[i].Trim();
-                var converter = TypeDescriptor.GetConverter(obj.GetFieldType(fieldName));
-                var val = converter.ConvertFromString(strVal);
+                var val = ApplicationContext.Current.TypeConverter.ConvertFromString(obj.GetFieldType(fieldName), strVal);
                 obj.SetFieldValue(fieldName, val);
             }
             return obj;
@@ -40,7 +39,8 @@ namespace Dddml.Wms.Specialization
                 {
                     sb.Append(FieldSeparator);
                 }
-                sb.Append(TypeDescriptor.GetConverter(fVal).ConvertToString(fVal));
+                var type = fVal.GetType();
+                sb.Append(ApplicationContext.Current.TypeConverter.ConvertToString(type, fVal));
             }
             return sb.ToString();
         }

@@ -158,11 +158,6 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             ((dynamic)this).When((dynamic)command);
         }
 
-        public IAttributeSetInstanceStateEvent GetStateEvent(string attributeSetInstanceId, long version)
-        {
-            throw new NotImplementedException(); // TODO
-        }
-
         public IEnumerable<IAttributeSetInstanceState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
             return Get(filter, orders, firstResult, maxResults, null);
@@ -186,6 +181,21 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
+        }
+
+        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+		{
+            throw new NotImplementedException(); // TODO
+		}
+
+        public virtual long GetCount(ICriterion filter)
+		{
+            throw new NotImplementedException(); // TODO
+		}
+
+        public IAttributeSetInstanceStateEvent GetStateEvent(string attributeSetInstanceId, long version)
+        {
+            throw new NotImplementedException(); // TODO
         }
 
 

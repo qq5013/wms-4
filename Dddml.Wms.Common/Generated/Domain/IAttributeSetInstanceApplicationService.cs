@@ -29,6 +29,10 @@ namespace Dddml.Wms.Domain
 
         IEnumerable<IAttributeSetInstanceState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue);
 
+        long GetCount(IEnumerable<KeyValuePair<string, object>> filter);
+
+        long GetCount(ICriterion filter);
+
         IAttributeSetInstanceStateEvent GetStateEvent(string attributeSetInstanceId, long version);
 
 	}

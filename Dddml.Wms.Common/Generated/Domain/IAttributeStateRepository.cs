@@ -27,6 +27,9 @@ namespace Dddml.Wms.Domain
 
         IAttributeState GetFirst(KeyValuePair<string, object> keyValue, IList<string> orders = null);
 
+        long GetCount(IEnumerable<KeyValuePair<string, object>> filter);
+
+        long GetCount(ICriterion filter);
 	}
 
 }

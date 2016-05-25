@@ -79,6 +79,26 @@ namespace Dddml.Wms.HttpServices.ApiControllers
           } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
+
+        [Route("_count")]
+        [HttpGet]
+        public long GetCount(string filter = null)
+        {
+          try
+          {
+            long count = 0;
+            if (!String.IsNullOrWhiteSpace(filter))
+            {
+                count = _attributeSetInstanceExtensionFieldGroupApplicationService.GetCount(CriterionDto.ToSubclass(JObject.Parse(filter).ToObject<CriterionDto>(),new ApiControllerTypeConverter(), new PropertyTypeResolver()));
+            }
+            else 
+            {
+                count = _attributeSetInstanceExtensionFieldGroupApplicationService.GetCount(GetQueryFilterDictionary(this.Request.GetQueryNameValuePairs()));
+            }
+            return count;
+          } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
+        }
+
         [HttpPut]
         public void Put(string id, [FromBody]CreateAttributeSetInstanceExtensionFieldGroupDto value)
         {

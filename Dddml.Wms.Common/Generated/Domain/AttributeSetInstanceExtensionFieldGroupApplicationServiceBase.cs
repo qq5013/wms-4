@@ -100,6 +100,16 @@ namespace Dddml.Wms.Domain
 			return states;
 		}
 
+        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+		{
+            return StateRepository.GetCount(filter);
+		}
+
+        public virtual long GetCount(ICriterion filter)
+		{
+            return StateRepository.GetCount(filter);
+		}
+
 	    public virtual IAttributeSetInstanceExtensionFieldGroupStateEvent GetStateEvent(string id, long version)
         {
             return (IAttributeSetInstanceExtensionFieldGroupStateEvent)EventStore.GetStateEvent(ToEventStoreAaggregateId(id), version);

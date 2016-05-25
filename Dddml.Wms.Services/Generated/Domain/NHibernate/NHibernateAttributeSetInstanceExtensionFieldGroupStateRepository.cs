@@ -118,6 +118,28 @@ namespace Dddml.Wms.Domain.NHibernate
             return GetFirst(new KeyValuePair<string, object>[] { keyValue }, orders);
         }
 
+        [Transaction(ReadOnly = true)]
+        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+        {
+            var criteria = CurrentSession.CreateCriteria<AttributeSetInstanceExtensionFieldGroupState>();
+            criteria.SetProjection(Projections.RowCountInt64());
+            SetCriteriaFilter(criteria, filter);
+            return criteria.UniqueResult<long>();
+        }
+
+        [Transaction(ReadOnly = true)]
+        public virtual long GetCount(Dddml.Support.Criterion.ICriterion filter)
+        {
+            var criteria = CurrentSession.CreateCriteria<AttributeSetInstanceExtensionFieldGroupState>();
+            criteria.SetProjection(Projections.RowCountInt64());
+            if (filter != null)
+            {
+                NHibernateICriterion hc = CriterionUtils.ToNHibernateCriterion(filter);
+                criteria.Add(hc);
+            }
+            return criteria.UniqueResult<long>();
+        }
+
         protected void SetCriteriaFilter(ICriteria criteria, IEnumerable<KeyValuePair<string, object>> filter)
         {
             foreach (KeyValuePair<string, object> p in filter)

@@ -235,6 +235,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                     url += "&sort=" + request.Query.Sort;
                 if(request.Query.Fields != null)
                     url += "&fields=" + request.Query.Fields;
+                if(request.Query.Filter != null)
+                    url += "&filter=" + request.Query.Filter;
                 if(request.Query.FilterTag != null)
                     url += "&filterTag=" + request.Query.FilterTag;
             }
@@ -482,6 +484,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                     url += "&sort=" + request.Query.Sort;
                 if(request.Query.Fields != null)
                     url += "&fields=" + request.Query.Fields;
+                if(request.Query.Filter != null)
+                    url += "&filter=" + request.Query.Filter;
                 if(request.Query.FilterTag != null)
                     url += "&filterTag=" + request.Query.FilterTag;
             }
@@ -729,6 +733,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                     url += "&sort=" + request.Query.Sort;
                 if(request.Query.Fields != null)
                     url += "&fields=" + request.Query.Fields;
+                if(request.Query.Filter != null)
+                    url += "&filter=" + request.Query.Filter;
                 if(request.Query.FilterTag != null)
                     url += "&filterTag=" + request.Query.FilterTag;
             }
@@ -976,6 +982,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                     url += "&sort=" + request.Query.Sort;
                 if(request.Query.Fields != null)
                     url += "&fields=" + request.Query.Fields;
+                if(request.Query.Filter != null)
+                    url += "&filter=" + request.Query.Filter;
                 if(request.Query.FilterTag != null)
                     url += "&filterTag=" + request.Query.FilterTag;
             }
@@ -1178,6 +1186,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 		[JsonProperty("fields")]
         public string Fields { get; set; }
 
+		[JsonProperty("filter")]
+        public string Filter { get; set; }
+
 		[JsonProperty("filterTag")]
         public string FilterTag { get; set; }
 
@@ -1216,6 +1227,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 
 		[JsonProperty("fields")]
         public string Fields { get; set; }
+
+		[JsonProperty("filter")]
+        public string Filter { get; set; }
 
 		[JsonProperty("filterTag")]
         public string FilterTag { get; set; }
@@ -1256,6 +1270,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 		[JsonProperty("fields")]
         public string Fields { get; set; }
 
+		[JsonProperty("filter")]
+        public string Filter { get; set; }
+
 		[JsonProperty("filterTag")]
         public string FilterTag { get; set; }
 
@@ -1294,6 +1311,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 
 		[JsonProperty("fields")]
         public string Fields { get; set; }
+
+		[JsonProperty("filter")]
+        public string Filter { get; set; }
 
 		[JsonProperty("filterTag")]
         public string FilterTag { get; set; }

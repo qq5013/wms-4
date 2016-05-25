@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using Dddml.Support.Criterion;
 using Dddml.Wms.Domain;
 
 
@@ -19,6 +20,8 @@ namespace Dddml.Wms.Domain
         void Save(IAttributeSetState state);
         
         IEnumerable<IAttributeSetState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue);
+
+        IEnumerable<IAttributeSetState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue);
 
         IAttributeSetState GetFirst(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null);
 

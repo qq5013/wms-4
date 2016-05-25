@@ -721,7 +721,12 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\dddml-dotnet-tools\Dddml.Support.Criterion\Dddml.Support.Criterion.csproj">
+      <Project>{5c91ecad-6c35-45aa-ace7-e8f156922658}</Project>
+      <Name>Dddml.Support.Criterion</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

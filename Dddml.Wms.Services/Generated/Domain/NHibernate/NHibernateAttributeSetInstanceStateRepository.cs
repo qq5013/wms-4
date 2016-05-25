@@ -12,6 +12,8 @@ using Dddml.Wms.Specialization.NHibernate;
 using NHibernate;
 using NHibernate.Criterion;
 using Spring.Transaction.Interceptor;
+using Dddml.Support.Criterion;
+using NHibernateICriterion = NHibernate.Criterion.ICriterion;
 
 namespace Dddml.Wms.Domain.NHibernate
 {
@@ -77,6 +79,27 @@ namespace Dddml.Wms.Domain.NHibernate
             criteria.SetMaxResults(maxResults);
             return criteria.List<AttributeSetInstanceState>();
         }
+
+        [Transaction(ReadOnly = true)]
+        public virtual IEnumerable<IAttributeSetInstanceState> Get(Dddml.Support.Criterion.ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
+        {
+            var criteria = CurrentSession.CreateCriteria<AttributeSetInstanceState>();
+
+            if (filter != null)
+            {
+                NHibernateICriterion hc = CriterionUtils.ToNHibernateCriterion(filter);
+                criteria.Add(hc);
+            }
+            if (orders != null)
+            {
+                SetCriteriaOrders(criteria, orders);
+            }
+
+            criteria.SetFirstResult(firstResult);
+            criteria.SetMaxResults(maxResults);
+            return criteria.List<AttributeSetInstanceState>();
+        }
+
 
         [Transaction(ReadOnly = true)]
         public virtual IAttributeSetInstanceState GetFirst(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null)

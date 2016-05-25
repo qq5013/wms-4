@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using Dddml.Support.Criterion;
 using Dddml.Wms.Domain;
 
 using Dddml.Wms.Specialization;
@@ -25,6 +26,8 @@ namespace Dddml.Wms.Domain
         IEnumerable<IAttributeSetInstanceState> GetAll(int firstResult, int maxResults);
 
         IEnumerable<IAttributeSetInstanceState> Get(IDictionary<string, object> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue);
+
+        IEnumerable<IAttributeSetInstanceState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue);
 
         IAttributeSetInstanceStateEvent GetStateEvent(string attributeSetInstanceId, long version);
 

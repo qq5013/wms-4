@@ -16,7 +16,7 @@ using Dddml.Wms.Domain;
 using Dddml.Wms.Specialization;
 using Newtonsoft.Json.Linq;
 using Dddml.Wms.Domain.Metadata;
-
+using Dddml.Support.Criterion;
 
 namespace Dddml.Wms.HttpServices.ApiControllers
 {
@@ -28,11 +28,20 @@ namespace Dddml.Wms.HttpServices.ApiControllers
         IAttributeSetInstanceExtensionFieldGroupApplicationService _attributeSetInstanceExtensionFieldGroupApplicationService = ApplicationContext.Current["AttributeSetInstanceExtensionFieldGroupApplicationService"] as IAttributeSetInstanceExtensionFieldGroupApplicationService;
 
         [HttpGet]
-        public IEnumerable<AttributeSetInstanceExtensionFieldGroupStateDto> GetAll(string sort = null, string fields = null, int firstResult = 0, int maxResults = int.MaxValue)
+        public IEnumerable<AttributeSetInstanceExtensionFieldGroupStateDto> GetAll(string sort = null, string fields = null, int firstResult = 0, int maxResults = int.MaxValue, string filter = null)
         {
           try {
-            var states = _attributeSetInstanceExtensionFieldGroupApplicationService.Get(GetQueryFilterDictionary(this.Request.GetQueryNameValuePairs())
-                , GetQueryOrders(sort), firstResult, maxResults);
+            IEnumerable<IAttributeSetInstanceExtensionFieldGroupState> states = null; 
+            if (!String.IsNullOrWhiteSpace(filter))
+            {
+                states = _attributeSetInstanceExtensionFieldGroupApplicationService.Get(CriterionDto.ToSubclass(JObject.Parse(filter).ToObject<CriterionDto>(),new ApiControllerTypeConverter(), new PropertyTypeResolver())
+                    , GetQueryOrders(sort), firstResult, maxResults);
+            }
+            else 
+            {
+                states = _attributeSetInstanceExtensionFieldGroupApplicationService.Get(GetQueryFilterDictionary(this.Request.GetQueryNameValuePairs())
+                    , GetQueryOrders(sort), firstResult, maxResults);
+            }
             var stateDtos = new List<AttributeSetInstanceExtensionFieldGroupStateDto>();
             foreach (var s in states)
             {
@@ -196,7 +205,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             return null;
         }
 
-        protected virtual Type GetFilterPropertyType(string propertyName)
+        protected static Type GetFilterPropertyType(string propertyName)
         {
             if (AttributeSetInstanceExtensionFieldGroupMetadata.Instance.PropertyMetadataDictionary.ContainsKey(propertyName))
             {
@@ -242,8 +251,46 @@ namespace Dddml.Wms.HttpServices.ApiControllers
         }
 
 
-    }
+        // ////////////////////////////////
 
+        private class ApiControllerTypeConverter : Dddml.Support.Criterion.ITypeConverter
+        {
+            public T ConvertFromString<T>(string text)
+            {
+                return (T)ApplicationContext.Current.TypeConverter.ConvertFromString(typeof(T), text);
+            }
+
+            public object ConvertFromString(Type type, string text)
+            {
+                return ApplicationContext.Current.TypeConverter.ConvertFromString(type, text);
+            }
+
+            public string ConvertToString<T>(T value)
+            {
+                return ApplicationContext.Current.TypeConverter.ConvertToString(typeof(T), value);
+            }
+
+            public string ConvertToString(object value)
+            {
+                return ApplicationContext.Current.TypeConverter.ConvertToString(value.GetType(), value);
+            }
+
+            public string[] ConvertToStringArray(object[] values)
+            {
+                throw new NotSupportedException();
+            }
+        }
+
+        private class PropertyTypeResolver : IPropertyTypeResolver
+        {
+
+            public Type ResolveTypeByPropertyName(string propertyName)
+            {
+                return GetFilterPropertyType(propertyName);
+            }
+        }
+
+    }
 
 
 

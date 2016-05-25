@@ -18,6 +18,7 @@ using System.Text;
 using System.ComponentModel;
 using RAML.Api.Core;
 using Newtonsoft.Json.Linq;
+using Dddml.Support.Criterion;
 
 
 namespace Dddml.Wms.HttpServices.ClientProxies
@@ -126,7 +127,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public IEnumerable<IAttributeSetInstanceExtensionFieldGroupState> GetAll(int firstResult, int maxResults)
         {
-            return Get(null, null, firstResult, maxResults);
+            return Get((IDictionary<string, object>)null, null, firstResult, maxResults);
         }
 
         public IEnumerable<IAttributeSetInstanceExtensionFieldGroupState> Get(IDictionary<string, object> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
@@ -137,8 +138,6 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         public IEnumerable<IAttributeSetInstanceExtensionFieldGroupState> Get(IDictionary<string, object> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IAttributeSetInstanceExtensionFieldGroupState> states = null;
-            //Action act = async () =>
-            //{
 			var q = new AttributeSetInstanceExtensionFieldGroupsGetQuery();
 			q.FirstResult = firstResult;
 			q.MaxResults = maxResults;
@@ -150,8 +149,6 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             var resp = _ramlClient.AttributeSetInstanceExtensionFieldGroups.Get(req).GetAwaiter().GetResult();
             ThrowOnHttpResponseError(resp);
             states = resp.Content;
-            //};
-            //act();
             return states;
         }
 
@@ -164,6 +161,31 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         public IAttributeSetInstanceExtensionFieldGroupStateEvent GetStateEvent(string id, long version)
         {
             throw new NotImplementedException(); // TODO
+        }
+
+        public IEnumerable<IAttributeSetInstanceExtensionFieldGroupState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
+        {
+            return Get(filter, orders, firstResult, maxResults, null);
+        }
+
+        public IEnumerable<IAttributeSetInstanceExtensionFieldGroupState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            IEnumerable<IAttributeSetInstanceExtensionFieldGroupState> states = null;
+			var q = new AttributeSetInstanceExtensionFieldGroupsGetQuery();
+			q.FirstResult = firstResult;
+			q.MaxResults = maxResults;
+            q.Sort = GetOrdersQueryValueString(orders);
+            q.Fields = GetReturnedFieldsQueryValueString(fields);
+            if (filter != null)
+            {
+                q.Filter = WebUtility.UrlEncode(JObject.FromObject(new CriterionDto(filter, new ProxyTypeConverter())).ToString());
+            }
+            var req = new AttributeSetInstanceExtensionFieldGroupsGetRequest();
+            req.Query = q;
+            var resp = _ramlClient.AttributeSetInstanceExtensionFieldGroups.Get(req).GetAwaiter().GetResult();
+            ThrowOnHttpResponseError(resp);
+            states = resp.Content;
+            return states;
         }
 
 
@@ -256,6 +278,35 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             catch
             {
                 throw new HttpResponseException(httpResponseMessage);
+            }
+        }
+
+
+        private class ProxyTypeConverter : Dddml.Support.Criterion.ITypeConverter
+        {
+            public T ConvertFromString<T>(string text)
+            {
+                throw new NotSupportedException();
+            }
+
+            public object ConvertFromString(Type type, string text)
+            {
+                throw new NotSupportedException();
+            }
+
+            public string ConvertToString<T>(T value)
+            {
+                return ApplicationContext.Current.TypeConverter.ConvertToString(typeof(T), value);
+            }
+
+            public string ConvertToString(object value)
+            {
+                return ApplicationContext.Current.TypeConverter.ConvertToString(value.GetType(), value);
+            }
+
+            public string[] ConvertToStringArray(object[] values)
+            {
+                throw new NotSupportedException();
             }
         }
 

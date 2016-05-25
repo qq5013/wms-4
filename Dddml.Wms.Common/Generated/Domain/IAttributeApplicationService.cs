@@ -25,7 +25,7 @@ namespace Dddml.Wms.Domain
 
         IEnumerable<IAttributeState> GetAll(int firstResult, int maxResults);
 
-        IEnumerable<IAttributeState> Get(IDictionary<string, object> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue);
+        IEnumerable<IAttributeState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue);
 
         IEnumerable<IAttributeState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue);
 

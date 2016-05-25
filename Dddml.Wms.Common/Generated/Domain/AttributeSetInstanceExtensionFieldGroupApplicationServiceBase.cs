@@ -88,7 +88,7 @@ namespace Dddml.Wms.Domain
 			return states;
 		}
 
-        public virtual IEnumerable<IAttributeSetInstanceExtensionFieldGroupState> Get(IDictionary<string, object> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
+        public virtual IEnumerable<IAttributeSetInstanceExtensionFieldGroupState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
 		{
             var states = StateRepository.Get(filter, orders, firstResult, maxResults);
 			return states;

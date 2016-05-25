@@ -130,12 +130,12 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return Get((IDictionary<string, object>)null, null, firstResult, maxResults);
         }
 
-        public IEnumerable<IAttributeSetInstanceState> Get(IDictionary<string, object> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
+        public IEnumerable<IAttributeSetInstanceState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
             return Get(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IAttributeSetInstanceState> Get(IDictionary<string, object> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public IEnumerable<IAttributeSetInstanceState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IAttributeSetInstanceState> states = null;
 			var q = new AttributeSetInstancesGetQuery();
@@ -185,12 +185,27 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
 		{
-            throw new NotImplementedException(); // TODO
+			var q = new AttributeSetInstancesCountGetQuery();
+            q.FilterTag = GetFilterTagQueryValueString(filter);
+            var req = new AttributeSetInstancesCountGetRequest();
+            req.Query = q;
+            var resp = _ramlClient.AttributeSetInstancesCount.Get(req).GetAwaiter().GetResult();
+            ThrowOnHttpResponseError(resp);
+            return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
 		}
 
         public virtual long GetCount(ICriterion filter)
 		{
-            throw new NotImplementedException(); // TODO
+			var q = new AttributeSetInstancesCountGetQuery();
+            if (filter != null)
+            {
+                q.Filter = WebUtility.UrlEncode(JObject.FromObject(new CriterionDto(filter, new ProxyTypeConverter())).ToString());
+            }
+            var req = new AttributeSetInstancesCountGetRequest();
+            req.Query = q;
+            var resp = _ramlClient.AttributeSetInstancesCount.Get(req).GetAwaiter().GetResult();
+            ThrowOnHttpResponseError(resp);
+            return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
 		}
 
         public IAttributeSetInstanceStateEvent GetStateEvent(string attributeSetInstanceId, long version)
@@ -199,7 +214,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         }
 
 
-        protected virtual string GetFilterTagQueryValueString(IDictionary<string, object> filter)
+        protected virtual string GetFilterTagQueryValueString(IEnumerable<KeyValuePair<string, object>> filter)
         {
             if (filter == null) { return null; }
             StringBuilder sb = new StringBuilder();

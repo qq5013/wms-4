@@ -274,6 +274,53 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
 
     }
 
+    public partial class AttributesCount
+    {
+        private readonly DddmlWmsRamlClient proxy;
+
+        internal AttributesCount(DddmlWmsRamlClient proxy)
+        {
+            this.proxy = proxy;
+        }
+
+        		/// <param name="request">Models.AttributesCountGetRequest</param>
+        public virtual async Task<ApiResponse> Get(Models.AttributesCountGetRequest request)
+        {
+
+            var url = "Attributes/_count";
+            if(request.Query != null)
+            {
+                url += "?";
+                if(request.Query.Filter != null)
+                    url += "&filter=" + request.Query.Filter;
+                if(request.Query.FilterTag != null)
+                    url += "&filterTag=" + request.Query.FilterTag;
+            }
+
+            url = url.Replace("?&", "?");
+
+            var req = new HttpRequestMessage(HttpMethod.Get, url);
+
+            if(request.RawHeaders != null)
+            {
+                foreach(var header in request.RawHeaders)
+                {
+                    req.Headers.TryAddWithoutValidation(header.Key, string.Join(",", header.Value));
+                }
+            }
+	        var response = await proxy.Client.SendAsync(req);
+            return new ApiResponse  
+                                            {
+                                                RawContent = response.Content,
+                                                RawHeaders = response.Headers,
+                                                StatusCode = response.StatusCode,
+                                                ReasonPhrase = response.ReasonPhrase,
+												SchemaValidation = new Lazy<SchemaValidationResults>(() => new SchemaValidationResults(true), true)
+                                            };
+        }
+
+    }
+
     public partial class AttributeSet
     {
         private readonly DddmlWmsRamlClient proxy;
@@ -515,6 +562,53 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                                                 RawContent = response.Content,
                                                 RawHeaders = response.Headers,
 	                                            Formatters = responseFormatters,
+                                                StatusCode = response.StatusCode,
+                                                ReasonPhrase = response.ReasonPhrase,
+												SchemaValidation = new Lazy<SchemaValidationResults>(() => new SchemaValidationResults(true), true)
+                                            };
+        }
+
+    }
+
+    public partial class AttributeSetsCount
+    {
+        private readonly DddmlWmsRamlClient proxy;
+
+        internal AttributeSetsCount(DddmlWmsRamlClient proxy)
+        {
+            this.proxy = proxy;
+        }
+
+        		/// <param name="request">Models.AttributeSetsCountGetRequest</param>
+        public virtual async Task<ApiResponse> Get(Models.AttributeSetsCountGetRequest request)
+        {
+
+            var url = "AttributeSets/_count";
+            if(request.Query != null)
+            {
+                url += "?";
+                if(request.Query.Filter != null)
+                    url += "&filter=" + request.Query.Filter;
+                if(request.Query.FilterTag != null)
+                    url += "&filterTag=" + request.Query.FilterTag;
+            }
+
+            url = url.Replace("?&", "?");
+
+            var req = new HttpRequestMessage(HttpMethod.Get, url);
+
+            if(request.RawHeaders != null)
+            {
+                foreach(var header in request.RawHeaders)
+                {
+                    req.Headers.TryAddWithoutValidation(header.Key, string.Join(",", header.Value));
+                }
+            }
+	        var response = await proxy.Client.SendAsync(req);
+            return new ApiResponse  
+                                            {
+                                                RawContent = response.Content,
+                                                RawHeaders = response.Headers,
                                                 StatusCode = response.StatusCode,
                                                 ReasonPhrase = response.ReasonPhrase,
 												SchemaValidation = new Lazy<SchemaValidationResults>(() => new SchemaValidationResults(true), true)
@@ -772,6 +866,53 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
 
     }
 
+    public partial class AttributeSetInstancesCount
+    {
+        private readonly DddmlWmsRamlClient proxy;
+
+        internal AttributeSetInstancesCount(DddmlWmsRamlClient proxy)
+        {
+            this.proxy = proxy;
+        }
+
+        		/// <param name="request">Models.AttributeSetInstancesCountGetRequest</param>
+        public virtual async Task<ApiResponse> Get(Models.AttributeSetInstancesCountGetRequest request)
+        {
+
+            var url = "AttributeSetInstances/_count";
+            if(request.Query != null)
+            {
+                url += "?";
+                if(request.Query.Filter != null)
+                    url += "&filter=" + request.Query.Filter;
+                if(request.Query.FilterTag != null)
+                    url += "&filterTag=" + request.Query.FilterTag;
+            }
+
+            url = url.Replace("?&", "?");
+
+            var req = new HttpRequestMessage(HttpMethod.Get, url);
+
+            if(request.RawHeaders != null)
+            {
+                foreach(var header in request.RawHeaders)
+                {
+                    req.Headers.TryAddWithoutValidation(header.Key, string.Join(",", header.Value));
+                }
+            }
+	        var response = await proxy.Client.SendAsync(req);
+            return new ApiResponse  
+                                            {
+                                                RawContent = response.Content,
+                                                RawHeaders = response.Headers,
+                                                StatusCode = response.StatusCode,
+                                                ReasonPhrase = response.ReasonPhrase,
+												SchemaValidation = new Lazy<SchemaValidationResults>(() => new SchemaValidationResults(true), true)
+                                            };
+        }
+
+    }
+
     public partial class AttributeSetInstanceExtensionFieldGroup
     {
         private readonly DddmlWmsRamlClient proxy;
@@ -1021,6 +1162,53 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
 
     }
 
+    public partial class AttributeSetInstanceExtensionFieldGroupsCount
+    {
+        private readonly DddmlWmsRamlClient proxy;
+
+        internal AttributeSetInstanceExtensionFieldGroupsCount(DddmlWmsRamlClient proxy)
+        {
+            this.proxy = proxy;
+        }
+
+        		/// <param name="request">Models.AttributeSetInstanceExtensionFieldGroupsCountGetRequest</param>
+        public virtual async Task<ApiResponse> Get(Models.AttributeSetInstanceExtensionFieldGroupsCountGetRequest request)
+        {
+
+            var url = "AttributeSetInstanceExtensionFieldGroups/_count";
+            if(request.Query != null)
+            {
+                url += "?";
+                if(request.Query.Filter != null)
+                    url += "&filter=" + request.Query.Filter;
+                if(request.Query.FilterTag != null)
+                    url += "&filterTag=" + request.Query.FilterTag;
+            }
+
+            url = url.Replace("?&", "?");
+
+            var req = new HttpRequestMessage(HttpMethod.Get, url);
+
+            if(request.RawHeaders != null)
+            {
+                foreach(var header in request.RawHeaders)
+                {
+                    req.Headers.TryAddWithoutValidation(header.Key, string.Join(",", header.Value));
+                }
+            }
+	        var response = await proxy.Client.SendAsync(req);
+            return new ApiResponse  
+                                            {
+                                                RawContent = response.Content,
+                                                RawHeaders = response.Headers,
+                                                StatusCode = response.StatusCode,
+                                                ReasonPhrase = response.ReasonPhrase,
+												SchemaValidation = new Lazy<SchemaValidationResults>(() => new SchemaValidationResults(true), true)
+                                            };
+        }
+
+    }
+
     /// <summary>
     /// Main class for grouping root resources. Nested resources are defined as properties. The constructor can optionally receive an URL and HttpClient instance to override the default ones.
     /// </summary>
@@ -1127,6 +1315,30 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
         }
                 
 
+        public virtual AttributesCount AttributesCount
+        {
+            get { return new AttributesCount(this); }
+        }
+                
+
+        public virtual AttributeSetsCount AttributeSetsCount
+        {
+            get { return new AttributeSetsCount(this); }
+        }
+                
+
+        public virtual AttributeSetInstancesCount AttributeSetInstancesCount
+        {
+            get { return new AttributeSetInstancesCount(this); }
+        }
+                
+
+        public virtual AttributeSetInstanceExtensionFieldGroupsCount AttributeSetInstanceExtensionFieldGroupsCount
+        {
+            get { return new AttributeSetInstanceExtensionFieldGroupsCount(this); }
+        }
+                
+
 
 		public void AddDefaultRequestHeader(string name, string value)
 		{
@@ -1195,6 +1407,17 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 
     } // end class
 
+    public partial class  AttributesCountGetQuery 
+    {
+		[JsonProperty("filter")]
+        public string Filter { get; set; }
+
+		[JsonProperty("filterTag")]
+        public string FilterTag { get; set; }
+
+
+    } // end class
+
     public partial class  AttributeSetGetQuery 
     {
 		[JsonProperty("fields")]
@@ -1228,6 +1451,17 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 		[JsonProperty("fields")]
         public string Fields { get; set; }
 
+		[JsonProperty("filter")]
+        public string Filter { get; set; }
+
+		[JsonProperty("filterTag")]
+        public string FilterTag { get; set; }
+
+
+    } // end class
+
+    public partial class  AttributeSetsCountGetQuery 
+    {
 		[JsonProperty("filter")]
         public string Filter { get; set; }
 
@@ -1279,6 +1513,17 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 
     } // end class
 
+    public partial class  AttributeSetInstancesCountGetQuery 
+    {
+		[JsonProperty("filter")]
+        public string Filter { get; set; }
+
+		[JsonProperty("filterTag")]
+        public string FilterTag { get; set; }
+
+
+    } // end class
+
     public partial class  AttributeSetInstanceExtensionFieldGroupGetQuery 
     {
 		[JsonProperty("fields")]
@@ -1312,6 +1557,17 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 		[JsonProperty("fields")]
         public string Fields { get; set; }
 
+		[JsonProperty("filter")]
+        public string Filter { get; set; }
+
+		[JsonProperty("filterTag")]
+        public string FilterTag { get; set; }
+
+
+    } // end class
+
+    public partial class  AttributeSetInstanceExtensionFieldGroupsCountGetQuery 
+    {
 		[JsonProperty("filter")]
         public string Filter { get; set; }
 
@@ -1481,6 +1737,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     } // end class
 
     /// <summary>
+    /// Request object for method Get of class AttributesCount
+    /// </summary>
+    public partial class AttributesCountGetRequest : ApiRequest
+    {
+        public AttributesCountGetRequest(AttributesCountGetQuery Query = null)
+        {
+            this.Query = Query;
+        }
+
+        /// <summary>
+        /// Request query string properties
+        /// </summary>
+        public AttributesCountGetQuery Query { get; set; }
+
+    } // end class
+
+    /// <summary>
     /// Request object for method Get of class AttributeSet
     /// </summary>
     public partial class AttributeSetGetRequest : ApiRequest
@@ -1592,6 +1865,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
         /// Request query string properties
         /// </summary>
         public AttributeSetsGetQuery Query { get; set; }
+
+    } // end class
+
+    /// <summary>
+    /// Request object for method Get of class AttributeSetsCount
+    /// </summary>
+    public partial class AttributeSetsCountGetRequest : ApiRequest
+    {
+        public AttributeSetsCountGetRequest(AttributeSetsCountGetQuery Query = null)
+        {
+            this.Query = Query;
+        }
+
+        /// <summary>
+        /// Request query string properties
+        /// </summary>
+        public AttributeSetsCountGetQuery Query { get; set; }
 
     } // end class
 
@@ -1711,6 +2001,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     } // end class
 
     /// <summary>
+    /// Request object for method Get of class AttributeSetInstancesCount
+    /// </summary>
+    public partial class AttributeSetInstancesCountGetRequest : ApiRequest
+    {
+        public AttributeSetInstancesCountGetRequest(AttributeSetInstancesCountGetQuery Query = null)
+        {
+            this.Query = Query;
+        }
+
+        /// <summary>
+        /// Request query string properties
+        /// </summary>
+        public AttributeSetInstancesCountGetQuery Query { get; set; }
+
+    } // end class
+
+    /// <summary>
     /// Request object for method Get of class AttributeSetInstanceExtensionFieldGroup
     /// </summary>
     public partial class AttributeSetInstanceExtensionFieldGroupGetRequest : ApiRequest
@@ -1822,6 +2129,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
         /// Request query string properties
         /// </summary>
         public AttributeSetInstanceExtensionFieldGroupsGetQuery Query { get; set; }
+
+    } // end class
+
+    /// <summary>
+    /// Request object for method Get of class AttributeSetInstanceExtensionFieldGroupsCount
+    /// </summary>
+    public partial class AttributeSetInstanceExtensionFieldGroupsCountGetRequest : ApiRequest
+    {
+        public AttributeSetInstanceExtensionFieldGroupsCountGetRequest(AttributeSetInstanceExtensionFieldGroupsCountGetQuery Query = null)
+        {
+            this.Query = Query;
+        }
+
+        /// <summary>
+        /// Request query string properties
+        /// </summary>
+        public AttributeSetInstanceExtensionFieldGroupsCountGetQuery Query { get; set; }
 
     } // end class
 

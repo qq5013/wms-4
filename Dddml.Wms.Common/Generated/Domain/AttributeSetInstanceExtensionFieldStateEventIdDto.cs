@@ -40,9 +40,9 @@ namespace Dddml.Wms.Domain
 			set { _value.Index = value; } 
 		}
 
-		public virtual long Version { 
-			get { return _value.Version; } 
-			set { _value.Version = value; } 
+		public virtual long AttributeSetInstanceExtensionFieldGroupVersion { 
+			get { return _value.AttributeSetInstanceExtensionFieldGroupVersion; } 
+			set { _value.AttributeSetInstanceExtensionFieldGroupVersion = value; } 
 		}
 
 

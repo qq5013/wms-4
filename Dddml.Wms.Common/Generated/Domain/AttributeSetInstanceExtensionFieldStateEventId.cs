@@ -28,11 +28,11 @@ namespace Dddml.Wms.Domain
 			internal set { _index = value; } 
 		}
 
-		private long _version;
+		private long _attributeSetInstanceExtensionFieldGroupVersion;
 
-		public virtual long Version { 
-			get { return this._version; } 
-			internal set { _version = value; } 
+		public virtual long AttributeSetInstanceExtensionFieldGroupVersion { 
+			get { return this._attributeSetInstanceExtensionFieldGroupVersion; } 
+			internal set { _attributeSetInstanceExtensionFieldGroupVersion = value; } 
 		}
 
 
@@ -45,11 +45,11 @@ namespace Dddml.Wms.Domain
 		{
 		}
 
-		public AttributeSetInstanceExtensionFieldStateEventId (string groupId, string index, long version)
+		public AttributeSetInstanceExtensionFieldStateEventId (string groupId, string index, long attributeSetInstanceExtensionFieldGroupVersion)
 		{
 			this._groupId = groupId;
 			this._index = index;
-			this._version = version;
+			this._attributeSetInstanceExtensionFieldGroupVersion = attributeSetInstanceExtensionFieldGroupVersion;
 
 		}
 
@@ -68,7 +68,7 @@ namespace Dddml.Wms.Domain
 			return true 
 				&& Object.Equals (this.GroupId, other.GroupId)
 				&& Object.Equals (this.Index, other.Index)
-				&& Object.Equals (this.Version, other.Version)
+				&& Object.Equals (this.AttributeSetInstanceExtensionFieldGroupVersion, other.AttributeSetInstanceExtensionFieldGroupVersion)
 				;
 		}
 
@@ -81,8 +81,8 @@ namespace Dddml.Wms.Domain
 			if (this.Index != null) {
 				hash += 13 * this.Index.GetHashCode ();
 			}
-			if (this.Version != null) {
-				hash += 13 * this.Version.GetHashCode ();
+			if (this.AttributeSetInstanceExtensionFieldGroupVersion != null) {
+				hash += 13 * this.AttributeSetInstanceExtensionFieldGroupVersion.GetHashCode ();
 			}
 			return hash;
 		}

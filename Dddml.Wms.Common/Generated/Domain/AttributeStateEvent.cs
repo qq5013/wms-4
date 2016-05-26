@@ -114,11 +114,30 @@ namespace Dddml.Wms.Domain
 
 		private Dictionary<AttributeValueStateEventId, IAttributeValueStateCreated> _attributeValueEvents = new Dictionary<AttributeValueStateEventId, IAttributeValueStateCreated>();
 		
-		public virtual IEnumerable<IAttributeValueStateCreated> AttributeValueEvents {
-			get {
-				return this._attributeValueEvents.Values;
-			}
-		}
+        private IEnumerable<IAttributeValueStateCreated> _readOnlyAttributeValueEvents;
+
+        public virtual IEnumerable<IAttributeValueStateCreated> AttributeValueEvents
+        {
+            get
+            {
+                if (!StateEventReadOnly)
+                {
+					return this._attributeValueEvents.Values;
+                }
+                else
+                {
+                    if (_readOnlyAttributeValueEvents != null) { return _readOnlyAttributeValueEvents; }
+                    var eventDao = ApplicationContext.Current["AttributeValueStateEventDao"] as IAttributeValueStateEventDao;
+                    var eL = new List<IAttributeValueStateCreated>();
+                    foreach (var e in eventDao.FindByAttributeStateEventId(this.StateEventId))
+                    {
+                        e.ReadOnly = true;
+                        eL.Add((IAttributeValueStateCreated)e);
+                    }
+                    return (_readOnlyAttributeValueEvents = eL);
+                }
+            }
+        }
 	
 		public virtual void AddAttributeValueEvent(IAttributeValueStateCreated e)
 		{
@@ -176,13 +195,32 @@ namespace Dddml.Wms.Domain
 		}
 
 		private Dictionary<AttributeValueStateEventId, IAttributeValueStateEvent> _attributeValueEvents = new Dictionary<AttributeValueStateEventId, IAttributeValueStateEvent>();
+
+	    private IEnumerable<IAttributeValueStateEvent> _readOnlyAttributeValueEvents;
 		
-		public virtual IEnumerable<IAttributeValueStateEvent> AttributeValueEvents {
-			get {
-				return this._attributeValueEvents.Values;
-			}
-		}
-	
+        public virtual IEnumerable<IAttributeValueStateEvent> AttributeValueEvents
+        {
+            get
+            {
+                if (!StateEventReadOnly)
+                {
+					return this._attributeValueEvents.Values;
+                }
+                else
+                {
+                    if (_readOnlyAttributeValueEvents != null) { return _readOnlyAttributeValueEvents; }
+                    var eventDao = ApplicationContext.Current["AttributeValueStateEventDao"] as IAttributeValueStateEventDao;
+                    var eL = new List<IAttributeValueStateEvent>();
+                    foreach (var e in eventDao.FindByAttributeStateEventId(this.StateEventId))
+                    {
+                        e.ReadOnly = true;
+                        eL.Add((IAttributeValueStateEvent)e);
+                    }
+                    return (_readOnlyAttributeValueEvents = eL);
+                }
+            }
+        }
+
 		public virtual void AddAttributeValueEvent(IAttributeValueStateEvent e)
 		{
 			ThrowOnInconsistentEventIds(e);

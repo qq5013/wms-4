@@ -112,7 +112,12 @@ namespace Dddml.Wms.Domain
 
 	    public virtual IAttributeSetInstanceExtensionFieldGroupStateEvent GetStateEvent(string id, long version)
         {
-            return (IAttributeSetInstanceExtensionFieldGroupStateEvent)EventStore.GetStateEvent(ToEventStoreAaggregateId(id), version);
+            var e = (IAttributeSetInstanceExtensionFieldGroupStateEvent)EventStore.GetStateEvent(ToEventStoreAaggregateId(id), version);
+            if (e != null)
+            {
+                e.ReadOnly = true;
+            }
+            return e;
         }
 
 

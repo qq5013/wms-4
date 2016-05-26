@@ -114,11 +114,30 @@ namespace Dddml.Wms.Domain
 
 		private Dictionary<AttributeSetInstanceExtensionFieldStateEventId, IAttributeSetInstanceExtensionFieldStateCreated> _attributeSetInstanceExtensionFieldEvents = new Dictionary<AttributeSetInstanceExtensionFieldStateEventId, IAttributeSetInstanceExtensionFieldStateCreated>();
 		
-		public virtual IEnumerable<IAttributeSetInstanceExtensionFieldStateCreated> AttributeSetInstanceExtensionFieldEvents {
-			get {
-				return this._attributeSetInstanceExtensionFieldEvents.Values;
-			}
-		}
+        private IEnumerable<IAttributeSetInstanceExtensionFieldStateCreated> _readOnlyAttributeSetInstanceExtensionFieldEvents;
+
+        public virtual IEnumerable<IAttributeSetInstanceExtensionFieldStateCreated> AttributeSetInstanceExtensionFieldEvents
+        {
+            get
+            {
+                if (!StateEventReadOnly)
+                {
+					return this._attributeSetInstanceExtensionFieldEvents.Values;
+                }
+                else
+                {
+                    if (_readOnlyAttributeSetInstanceExtensionFieldEvents != null) { return _readOnlyAttributeSetInstanceExtensionFieldEvents; }
+                    var eventDao = ApplicationContext.Current["AttributeSetInstanceExtensionFieldStateEventDao"] as IAttributeSetInstanceExtensionFieldStateEventDao;
+                    var eL = new List<IAttributeSetInstanceExtensionFieldStateCreated>();
+                    foreach (var e in eventDao.FindByAttributeSetInstanceExtensionFieldGroupStateEventId(this.StateEventId))
+                    {
+                        e.ReadOnly = true;
+                        eL.Add((IAttributeSetInstanceExtensionFieldStateCreated)e);
+                    }
+                    return (_readOnlyAttributeSetInstanceExtensionFieldEvents = eL);
+                }
+            }
+        }
 	
 		public virtual void AddAttributeSetInstanceExtensionFieldEvent(IAttributeSetInstanceExtensionFieldStateCreated e)
 		{
@@ -166,13 +185,32 @@ namespace Dddml.Wms.Domain
 		}
 
 		private Dictionary<AttributeSetInstanceExtensionFieldStateEventId, IAttributeSetInstanceExtensionFieldStateEvent> _attributeSetInstanceExtensionFieldEvents = new Dictionary<AttributeSetInstanceExtensionFieldStateEventId, IAttributeSetInstanceExtensionFieldStateEvent>();
+
+	    private IEnumerable<IAttributeSetInstanceExtensionFieldStateEvent> _readOnlyAttributeSetInstanceExtensionFieldEvents;
 		
-		public virtual IEnumerable<IAttributeSetInstanceExtensionFieldStateEvent> AttributeSetInstanceExtensionFieldEvents {
-			get {
-				return this._attributeSetInstanceExtensionFieldEvents.Values;
-			}
-		}
-	
+        public virtual IEnumerable<IAttributeSetInstanceExtensionFieldStateEvent> AttributeSetInstanceExtensionFieldEvents
+        {
+            get
+            {
+                if (!StateEventReadOnly)
+                {
+					return this._attributeSetInstanceExtensionFieldEvents.Values;
+                }
+                else
+                {
+                    if (_readOnlyAttributeSetInstanceExtensionFieldEvents != null) { return _readOnlyAttributeSetInstanceExtensionFieldEvents; }
+                    var eventDao = ApplicationContext.Current["AttributeSetInstanceExtensionFieldStateEventDao"] as IAttributeSetInstanceExtensionFieldStateEventDao;
+                    var eL = new List<IAttributeSetInstanceExtensionFieldStateEvent>();
+                    foreach (var e in eventDao.FindByAttributeSetInstanceExtensionFieldGroupStateEventId(this.StateEventId))
+                    {
+                        e.ReadOnly = true;
+                        eL.Add((IAttributeSetInstanceExtensionFieldStateEvent)e);
+                    }
+                    return (_readOnlyAttributeSetInstanceExtensionFieldEvents = eL);
+                }
+            }
+        }
+
 		public virtual void AddAttributeSetInstanceExtensionFieldEvent(IAttributeSetInstanceExtensionFieldStateEvent e)
 		{
 			ThrowOnInconsistentEventIds(e);

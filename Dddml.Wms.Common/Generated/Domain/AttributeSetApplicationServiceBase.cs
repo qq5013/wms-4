@@ -112,7 +112,12 @@ namespace Dddml.Wms.Domain
 
 	    public virtual IAttributeSetStateEvent GetStateEvent(string attributeSetId, long version)
         {
-            return (IAttributeSetStateEvent)EventStore.GetStateEvent(ToEventStoreAaggregateId(attributeSetId), version);
+            var e = (IAttributeSetStateEvent)EventStore.GetStateEvent(ToEventStoreAaggregateId(attributeSetId), version);
+            if (e != null)
+            {
+                e.ReadOnly = true;
+            }
+            return e;
         }
 
 

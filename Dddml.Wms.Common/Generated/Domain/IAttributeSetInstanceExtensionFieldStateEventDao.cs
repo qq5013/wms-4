@@ -14,6 +14,9 @@ namespace Dddml.Wms.Domain
 	public interface IAttributeSetInstanceExtensionFieldStateEventDao
 	{
 		void Save(IAttributeSetInstanceExtensionFieldStateEvent e);
+
+        IEnumerable<IAttributeSetInstanceExtensionFieldStateEvent> FindByAttributeSetInstanceExtensionFieldGroupStateEventId(AttributeSetInstanceExtensionFieldGroupStateEventId attributeSetInstanceExtensionFieldGroupStateEventId);
+
 	}
 
 }

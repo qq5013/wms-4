@@ -14,6 +14,9 @@ namespace Dddml.Wms.Domain
 	public interface IAttributeUseStateEventDao
 	{
 		void Save(IAttributeUseStateEvent e);
+
+        IEnumerable<IAttributeUseStateEvent> FindByAttributeSetStateEventId(AttributeSetStateEventId attributeSetStateEventId);
+
 	}
 
 }

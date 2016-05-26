@@ -11270,7 +11270,6 @@ namespace Dddml.Wms.Domain
 
         public virtual string CommandType
         {
-            //TODO (Command Type）的名称应该允许自定义
             get { return _commandType; }
             set { _commandType = value; }
         }
@@ -11291,7 +11290,7 @@ namespace Dddml.Wms.Domain
         {
             get { return this.GetCommandType(); }
             set { 
-				//base.CommandType = value; 
+				// do nothing
             }
         }
 
@@ -11310,7 +11309,7 @@ namespace Dddml.Wms.Domain
         {
             get { return this.GetCommandType(); }
             set { 
-				//base.CommandType = value; 
+				// do nothing
             }
         }
 
@@ -11333,7 +11332,7 @@ namespace Dddml.Wms.Domain
         {
             get { return this.GetCommandType(); }
             set { 
-				//base.CommandType = value; 
+				// do nothing
             }
         }
 

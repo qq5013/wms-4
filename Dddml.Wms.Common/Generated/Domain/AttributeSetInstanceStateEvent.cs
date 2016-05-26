@@ -48,7 +48,7 @@ namespace Dddml.Wms.Domain
 				return StateEventId.AttributeSetInstanceId;//EntityBase.Aggregate.GetStateEventIdPropertyIdName()
 			}
 			set {
-				throw new NotSupportedException ();
+				StateEventId.AttributeSetInstanceId = value;
 			}
 		}
 
@@ -57,7 +57,7 @@ namespace Dddml.Wms.Domain
 				return StateEventId.Version;//EntityBase.Aggregate.GetStateEventIdPropertyVersionName()
 			}
 			set {
-				throw new NotSupportedException ();
+				StateEventId.Version = value;
 			}
 		}
 

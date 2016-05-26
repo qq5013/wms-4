@@ -50,7 +50,7 @@ namespace Dddml.Wms.Domain
 				return StateEventId.AttributeSetId;
 			}
 			set {
-				throw new NotSupportedException ();
+				StateEventId.AttributeSetId = value;
 			}
 		}
 
@@ -59,7 +59,7 @@ namespace Dddml.Wms.Domain
 				return StateEventId.AttributeId;
 			}
 			set {
-				throw new NotSupportedException ();
+				StateEventId.AttributeId = value;
 			}
 		}
 

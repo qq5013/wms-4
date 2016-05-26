@@ -50,7 +50,7 @@ namespace Dddml.Wms.Domain
 				return StateEventId.GroupId;
 			}
 			set {
-				throw new NotSupportedException ();
+				StateEventId.GroupId = value;
 			}
 		}
 
@@ -59,7 +59,7 @@ namespace Dddml.Wms.Domain
 				return StateEventId.Index;
 			}
 			set {
-				throw new NotSupportedException ();
+				StateEventId.Index = value;
 			}
 		}
 

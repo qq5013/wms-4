@@ -48,7 +48,7 @@ namespace Dddml.Wms.Domain
 				return StateEventId.AttributeId;//EntityBase.Aggregate.GetStateEventIdPropertyIdName()
 			}
 			set {
-				throw new NotSupportedException ();
+				StateEventId.AttributeId = value;
 			}
 		}
 
@@ -57,7 +57,7 @@ namespace Dddml.Wms.Domain
 				return StateEventId.Version;//EntityBase.Aggregate.GetStateEventIdPropertyVersionName()
 			}
 			set {
-				throw new NotSupportedException ();
+				StateEventId.Version = value;
 			}
 		}
 
@@ -135,6 +135,16 @@ namespace Dddml.Wms.Domain
                         eL.Add((IAttributeValueStateCreated)e);
                     }
                     return (_readOnlyAttributeValueEvents = eL);
+                }
+            }
+            set 
+            {
+                if (value != null)
+                {
+                    foreach (var e in value)
+                    {
+                        AddAttributeValueEvent(e);
+                    }
                 }
             }
         }
@@ -217,6 +227,16 @@ namespace Dddml.Wms.Domain
                         eL.Add((IAttributeValueStateEvent)e);
                     }
                     return (_readOnlyAttributeValueEvents = eL);
+                }
+            }
+            set 
+            {
+                if (value != null)
+                {
+                    foreach (var e in value)
+                    {
+                        AddAttributeValueEvent(e);
+                    }
                 }
             }
         }

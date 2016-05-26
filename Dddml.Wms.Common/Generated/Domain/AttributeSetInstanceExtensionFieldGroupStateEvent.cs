@@ -43,7 +43,6 @@ namespace Dddml.Wms.Domain
             }
         }
 
-
 		public override string Id {
 			get {
 				return StateEventId.Id;//EntityBase.Aggregate.GetStateEventIdPropertyIdName()

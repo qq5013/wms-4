@@ -16,6 +16,9 @@ namespace Dddml.Wms.Domain
 		AttributeValueStateEventId StateEventId { get; }
 
         bool ReadOnly { get; set; }
+
+		long Version { get; set; }
+
 	}
 
 	public interface IAttributeValueStateCreated : IAttributeValueStateEvent, IAttributeValueStateProperties

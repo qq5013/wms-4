@@ -16,6 +16,7 @@ namespace Dddml.Wms.Domain
 		AttributeSetInstanceStateEventId StateEventId { get; }
 
         bool ReadOnly { get; set; }
+
 	}
 
 	public interface IAttributeSetInstanceStateCreated : IAttributeSetInstanceStateEvent, IAttributeSetInstanceStateProperties

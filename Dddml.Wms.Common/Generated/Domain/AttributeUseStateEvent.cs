@@ -43,6 +43,7 @@ namespace Dddml.Wms.Domain
             }
         }
 
+		public virtual long Version { get; set; }
 
 		public override string AttributeSetId {
 			get {

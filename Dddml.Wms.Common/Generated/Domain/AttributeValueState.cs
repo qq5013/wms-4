@@ -238,12 +238,25 @@ namespace Dddml.Wms.Domain
 				{
 					DomainError.Named("mutateWrongEntity", "Entity Id AttributeId {0} in state but entity id AttributeId {1} in event", stateEntityIdAttributeId, eventEntityIdAttributeId);
 				}
+
 				var stateEntityIdValue = (this as IGlobalIdentity<AttributeValueId>).GlobalId.Value;
 				var eventEntityIdValue = stateEvent.StateEventId.Value;
 				if (stateEntityIdValue != eventEntityIdValue)
 				{
 					DomainError.Named("mutateWrongEntity", "Entity Id Value {0} in state but entity id Value {1} in event", stateEntityIdValue, eventEntityIdValue);
 				}
+
+			var stateVersion = this.Version;
+			var eventVersion = stateEvent.Version;
+			if (AttributeValueState.VersionZero == eventVersion)
+			{
+				eventVersion = stateEvent.Version = stateVersion;
+			}
+			if (stateVersion != eventVersion)
+			{
+				throw DomainError.Named("concurrencyConflict", "Conflict between state version {0} and event version {1}", stateVersion, eventVersion);
+			}
+
 		}
 	}
 

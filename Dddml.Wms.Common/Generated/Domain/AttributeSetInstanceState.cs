@@ -5735,8 +5735,9 @@ namespace Dddml.Wms.Domain
 			{
 				DomainError.Named("mutateWrongEntity", "Entity Id {0} in state but entity id {1} in event", stateEntityId, eventEntityId);
 			}
+
 			var stateVersion = this.Version;
-			var eventVersion = stateEvent.StateEventId.Version;//EntityBase.Aggregate.GetStateEventIdPropertyVersionName()
+			var eventVersion = stateEvent.StateEventId.Version;
 			if (stateVersion != eventVersion)
 			{
 				throw DomainError.Named("concurrencyConflict", "Conflict between state version {0} and event version {1}", stateVersion, eventVersion);

@@ -24,6 +24,8 @@
 
     <property name="CommandId" />
 
+    <property name="Version" not-null="true" />
+
 
     <subclass name="AttributeUseStateCreated" discriminator-value="Created">
     	

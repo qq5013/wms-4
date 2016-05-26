@@ -263,17 +263,17 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AttributesController.cs">
+    <Compile Include="Generated\Controllers\AttributesController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AttributeSetInstanceDtoJObjectMapper.cs" />
-    <Compile Include="Controllers\AttributeSetInstanceExtensionFieldGroupsController.cs">
+    <Compile Include="Generated\Controllers\AttributeSetInstanceExtensionFieldGroupsController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\AttributeSetInstancesController.cs">
+    <Compile Include="Generated\Controllers\AttributeSetInstancesController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\AttributeSetsController.cs">
+    <Compile Include="Generated\Controllers\AttributeSetsController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\HomeController.cs" />
@@ -313,7 +313,7 @@
     <Content Include="Content\apiconsole.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Controllers\GenerateControllers.tt">
+    <Content Include="Generated\Controllers\GenerateControllers.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GenerateControllers.txt</LastGenOutput>
       <LastOutputs>
@@ -324,7 +324,7 @@
 .\GenerateControllers.txt
 </LastOutputs>
     </Content>
-    <Content Include="Controllers\GenerateControllers.txt">
+    <Content Include="Generated\Controllers\GenerateControllers.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GenerateControllers.tt</DependentUpon>

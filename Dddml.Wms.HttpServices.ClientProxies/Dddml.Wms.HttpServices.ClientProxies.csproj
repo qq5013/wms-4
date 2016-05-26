@@ -65,25 +65,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AttributeApplicationServiceProxy.cs">
+    <Compile Include="Generated\AttributeApplicationServiceProxy.cs">
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
-    <Compile Include="AttributeSetApplicationServiceProxy.cs">
+    <Compile Include="Generated\AttributeSetApplicationServiceProxy.cs">
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
-    <Compile Include="AttributeSetInstanceApplicationServiceProxy.cs">
+    <Compile Include="Generated\AttributeSetInstanceApplicationServiceProxy.cs">
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
-    <Compile Include="AttributeSetInstanceExtensionFieldGroupApplicationServiceProxy.cs">
+    <Compile Include="Generated\AttributeSetInstanceExtensionFieldGroupApplicationServiceProxy.cs">
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
-    <Compile Include="DddmlWmsRamlClient.cs">
+    <Compile Include="Generated\DddmlWmsRamlClient.cs">
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GenerateRamlClientProxies.tt">
+    <Content Include="Generated\GenerateRamlClientProxies.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GenerateRamlClientProxies.txt</LastGenOutput>
       <LastOutputs>
@@ -92,9 +92,10 @@
 .\AttributeSetInstanceApplicationServiceProxy.cs
 .\AttributeSetInstanceExtensionFieldGroupApplicationServiceProxy.cs
 .\DddmlWmsRamlClient.cs
+.\GenerateRamlClientProxies.txt
 </LastOutputs>
     </Content>
-    <Content Include="GenerateRamlClientProxies.txt">
+    <Content Include="Generated\GenerateRamlClientProxies.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>

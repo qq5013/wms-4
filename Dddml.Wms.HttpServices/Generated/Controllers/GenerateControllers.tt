@@ -3,7 +3,7 @@
 <#@ import namespace="Dddml.Core.Domain" #>
 <#@ include file="T4Toolbox.tt" #>
 <#@ include file="%DddmlDotNetToolsSolutionDir%\Dddml.T4.Templates\WebApi\BoundedContextAggregateApplicationServicesControllersGenerator.tt" #>
-<#@ include file="..\LoadBoundedContext.tt" #>
+<#@ include file="..\..\LoadBoundedContext.tt" #>
 <#
 
     var generator = new BoundedContextAggregateApplicationServicesControllersGenerator(boundedContext);

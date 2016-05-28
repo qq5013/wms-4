@@ -12,10 +12,23 @@ using Dddml.Wms.Specialization;
 namespace Dddml.Wms.Domain
 {
 
-	public abstract class AttributeSetInstanceExtensionFieldStateEventBase : AttributeSetInstanceExtensionFieldStateProperties, IAttributeSetInstanceExtensionFieldStateEvent
+	public abstract class AttributeSetInstanceExtensionFieldStateEventBase : IAttributeSetInstanceExtensionFieldStateEvent
 	{
 
 		public virtual AttributeSetInstanceExtensionFieldStateEventId StateEventId { get; set; }
+
+		public virtual string Name { get; set; }
+
+		public virtual string Type { get; set; }
+
+		public virtual int? Length { get; set; }
+
+		public virtual string Alias { get; set; }
+
+		public virtual string Description { get; set; }
+
+		public virtual bool? Active { get; set; }
+
 
 		public virtual string CreatedBy { get; set; }
 
@@ -45,7 +58,7 @@ namespace Dddml.Wms.Domain
 
 		public virtual long Version { get; set; }
 
-		public override string GroupId {
+		public virtual string GroupId {
 			get {
 				return StateEventId.GroupId;
 			}
@@ -54,7 +67,7 @@ namespace Dddml.Wms.Domain
 			}
 		}
 
-		public override string Index {
+		public virtual string Index {
 			get {
 				return StateEventId.Index;
 			}

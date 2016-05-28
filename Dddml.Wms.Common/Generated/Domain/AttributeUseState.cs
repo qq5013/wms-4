@@ -158,8 +158,10 @@ namespace Dddml.Wms.Domain
 		public virtual void When(IAttributeUseStateCreated e)
 		{
 			ThrowOnWrongEvent(e);
-			this.SequenceNumber = e.SequenceNumber;
-			this.Active = e.Active;
+            this.SequenceNumber = (e.SequenceNumber != null && e.SequenceNumber.HasValue) ? e.SequenceNumber.Value : default(int);
+
+            this.Active = (e.Active != null && e.Active.HasValue) ? e.Active.Value : default(bool);
+
 			this.CreatedBy = e.CreatedBy;
 			this.CreatedAt = e.CreatedAt;
 
@@ -171,33 +173,39 @@ namespace Dddml.Wms.Domain
 		{
 			ThrowOnWrongEvent(e);
 
-			if (e.IsPropertySequenceNumberRemoved)
+			if (e.SequenceNumber == null)
 			{
-				this.SequenceNumber = default(int);
+				if (e.IsPropertySequenceNumberRemoved)
+				{
+					this.SequenceNumber = default(int);
+				}
 			}
 			else
 			{
-				if (e.SequenceNumber != null)
-				{
-					this.SequenceNumber = e.SequenceNumber;
-				}
+				this.SequenceNumber = (e.SequenceNumber != null && e.SequenceNumber.HasValue) ? e.SequenceNumber.Value : default(int);
 			}
-			if (e.IsPropertyActiveRemoved)
+
+			if (e.Active == null)
 			{
-				this.Active = default(bool);
+				if (e.IsPropertyActiveRemoved)
+				{
+					this.Active = default(bool);
+				}
 			}
 			else
 			{
-				if (e.Active != null)
-				{
-					this.Active = e.Active;
-				}
+				this.Active = (e.Active != null && e.Active.HasValue) ? e.Active.Value : default(bool);
 			}
+
 
 			this.UpdatedBy = e.CreatedBy;
 			this.UpdatedAt = e.CreatedAt;
 
 
+		}
+
+		public virtual void When(IAttributeUseStateRemoved e)
+		{
 		}
 
 

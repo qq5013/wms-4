@@ -45,23 +45,6 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? Active { get; set; }
 
-        bool IAttributeSetInstanceExtensionFieldStateProperties.Active
-        {
-            get 
-            {
-                var b = this.Active;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this.Active = value;
-            }
-        }
-
 		public virtual string GroupId { get; set; }
 
 		public virtual bool? IsPropertyNameRemoved { get; set; }
@@ -218,7 +201,7 @@ namespace Dddml.Wms.Domain
             cmd.CommandId = this.CommandId;
             cmd.RequesterId = this.RequesterId;
 
-            cmd.Index = (this as IAttributeSetInstanceExtensionFieldStateProperties).Index;
+            cmd.Index = ((ICreateOrMergePatchOrRemoveAttributeSetInstanceExtensionField)this).Index;
             return cmd;
         }
 
@@ -228,14 +211,14 @@ namespace Dddml.Wms.Domain
             cmd.CommandId = this.CommandId;
             cmd.RequesterId = this.RequesterId;
 
-            cmd.Index = (this as IAttributeSetInstanceExtensionFieldStateProperties).Index;
-            cmd.Name = (this as IAttributeSetInstanceExtensionFieldStateProperties).Name;
-            cmd.Type = (this as IAttributeSetInstanceExtensionFieldStateProperties).Type;
-            cmd.Length = (this as IAttributeSetInstanceExtensionFieldStateProperties).Length;
-            cmd.Alias = (this as IAttributeSetInstanceExtensionFieldStateProperties).Alias;
-            cmd.Description = (this as IAttributeSetInstanceExtensionFieldStateProperties).Description;
-            cmd.Active = (this as IAttributeSetInstanceExtensionFieldStateProperties).Active;
-            cmd.GroupId = (this as IAttributeSetInstanceExtensionFieldStateProperties).GroupId;
+            cmd.Index = ((ICreateOrMergePatchOrRemoveAttributeSetInstanceExtensionField)this).Index;
+            cmd.Name = ((ICreateOrMergePatchOrRemoveAttributeSetInstanceExtensionField)this).Name;
+            cmd.Type = ((ICreateOrMergePatchOrRemoveAttributeSetInstanceExtensionField)this).Type;
+            cmd.Length = ((ICreateOrMergePatchOrRemoveAttributeSetInstanceExtensionField)this).Length;
+            cmd.Alias = ((ICreateOrMergePatchOrRemoveAttributeSetInstanceExtensionField)this).Alias;
+            cmd.Description = ((ICreateOrMergePatchOrRemoveAttributeSetInstanceExtensionField)this).Description;
+            cmd.Active = ((ICreateOrMergePatchOrRemoveAttributeSetInstanceExtensionField)this).Active;
+            cmd.GroupId = ((ICreateOrMergePatchOrRemoveAttributeSetInstanceExtensionField)this).GroupId;
             
             cmd.IsPropertyNameRemoved = (this as IMergePatchAttributeSetInstanceExtensionField).IsPropertyNameRemoved;
             cmd.IsPropertyTypeRemoved = (this as IMergePatchAttributeSetInstanceExtensionField).IsPropertyTypeRemoved;
@@ -252,14 +235,14 @@ namespace Dddml.Wms.Domain
             cmd.CommandId = this.CommandId;
             cmd.RequesterId = this.RequesterId;
 
-            cmd.Index = (this as IAttributeSetInstanceExtensionFieldStateProperties).Index;
-            cmd.Name = (this as IAttributeSetInstanceExtensionFieldStateProperties).Name;
-            cmd.Type = (this as IAttributeSetInstanceExtensionFieldStateProperties).Type;
-            cmd.Length = (this as IAttributeSetInstanceExtensionFieldStateProperties).Length;
-            cmd.Alias = (this as IAttributeSetInstanceExtensionFieldStateProperties).Alias;
-            cmd.Description = (this as IAttributeSetInstanceExtensionFieldStateProperties).Description;
-            cmd.Active = (this as IAttributeSetInstanceExtensionFieldStateProperties).Active;
-            cmd.GroupId = (this as IAttributeSetInstanceExtensionFieldStateProperties).GroupId;
+            cmd.Index = ((ICreateOrMergePatchOrRemoveAttributeSetInstanceExtensionField)this).Index;
+            cmd.Name = ((ICreateOrMergePatchOrRemoveAttributeSetInstanceExtensionField)this).Name;
+            cmd.Type = ((ICreateOrMergePatchOrRemoveAttributeSetInstanceExtensionField)this).Type;
+            cmd.Length = ((ICreateOrMergePatchOrRemoveAttributeSetInstanceExtensionField)this).Length;
+            cmd.Alias = ((ICreateOrMergePatchOrRemoveAttributeSetInstanceExtensionField)this).Alias;
+            cmd.Description = ((ICreateOrMergePatchOrRemoveAttributeSetInstanceExtensionField)this).Description;
+            cmd.Active = ((ICreateOrMergePatchOrRemoveAttributeSetInstanceExtensionField)this).Active;
+            cmd.GroupId = ((ICreateOrMergePatchOrRemoveAttributeSetInstanceExtensionField)this).GroupId;
             return cmd;
         }
 

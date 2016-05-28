@@ -24,7 +24,7 @@ namespace Dddml.Wms.Domain
 
 		void When(IAttributeUseStateMergePatched e);
 
-		//void When(IAttributeUseStateRemoved e);
+		void When(IAttributeUseStateRemoved e);
 
 		void Mutate(IEvent e);
 

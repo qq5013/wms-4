@@ -170,11 +170,17 @@ namespace Dddml.Wms.Domain
 		{
 			ThrowOnWrongEvent(e);
 			this.FieldType = e.FieldType;
+
 			this.FieldLength = e.FieldLength;
-			this.FieldCount = e.FieldCount;
+
+            this.FieldCount = (e.FieldCount != null && e.FieldCount.HasValue) ? e.FieldCount.Value : default(int);
+
 			this.NameFormat = e.NameFormat;
+
 			this.Description = e.Description;
-			this.Active = e.Active;
+
+            this.Active = (e.Active != null && e.Active.HasValue) ? e.Active.Value : default(bool);
+
 			this.CreatedBy = e.CreatedBy;
 			this.CreatedAt = e.CreatedAt;
 
@@ -190,72 +196,78 @@ namespace Dddml.Wms.Domain
 		{
 			ThrowOnWrongEvent(e);
 
-			if (e.IsPropertyFieldTypeRemoved)
+			if (e.FieldType == null)
 			{
-				this.FieldType = default(string);
+				if (e.IsPropertyFieldTypeRemoved)
+				{
+					this.FieldType = default(string);
+				}
 			}
 			else
 			{
-				if (e.FieldType != null)
-				{
-					this.FieldType = e.FieldType;
-				}
+				this.FieldType = e.FieldType;
 			}
-			if (e.IsPropertyFieldLengthRemoved)
+
+			if (e.FieldLength == null)
 			{
-				this.FieldLength = default(int?);
+				if (e.IsPropertyFieldLengthRemoved)
+				{
+					this.FieldLength = default(int?);
+				}
 			}
 			else
 			{
-				if (e.FieldLength != null)
-				{
-					this.FieldLength = e.FieldLength;
-				}
+				this.FieldLength = e.FieldLength;
 			}
-			if (e.IsPropertyFieldCountRemoved)
+
+			if (e.FieldCount == null)
 			{
-				this.FieldCount = default(int);
+				if (e.IsPropertyFieldCountRemoved)
+				{
+					this.FieldCount = default(int);
+				}
 			}
 			else
 			{
-				if (e.FieldCount != null)
-				{
-					this.FieldCount = e.FieldCount;
-				}
+				this.FieldCount = (e.FieldCount != null && e.FieldCount.HasValue) ? e.FieldCount.Value : default(int);
 			}
-			if (e.IsPropertyNameFormatRemoved)
+
+			if (e.NameFormat == null)
 			{
-				this.NameFormat = default(string);
+				if (e.IsPropertyNameFormatRemoved)
+				{
+					this.NameFormat = default(string);
+				}
 			}
 			else
 			{
-				if (e.NameFormat != null)
-				{
-					this.NameFormat = e.NameFormat;
-				}
+				this.NameFormat = e.NameFormat;
 			}
-			if (e.IsPropertyDescriptionRemoved)
+
+			if (e.Description == null)
 			{
-				this.Description = default(string);
+				if (e.IsPropertyDescriptionRemoved)
+				{
+					this.Description = default(string);
+				}
 			}
 			else
 			{
-				if (e.Description != null)
-				{
-					this.Description = e.Description;
-				}
+				this.Description = e.Description;
 			}
-			if (e.IsPropertyActiveRemoved)
+
+			if (e.Active == null)
 			{
-				this.Active = default(bool);
+				if (e.IsPropertyActiveRemoved)
+				{
+					this.Active = default(bool);
+				}
 			}
 			else
 			{
-				if (e.Active != null)
-				{
-					this.Active = e.Active;
-				}
+				this.Active = (e.Active != null && e.Active.HasValue) ? e.Active.Value : default(bool);
 			}
+
 
 			this.UpdatedBy = e.CreatedBy;
 			this.UpdatedAt = e.CreatedAt;
@@ -265,14 +277,12 @@ namespace Dddml.Wms.Domain
             {
                 IAttributeSetInstanceExtensionFieldState innerState = this.Fields.Get(innerEvent.GlobalId.Index);
 
+                innerState.Mutate(innerEvent);
+
                 var removed = innerEvent as IAttributeSetInstanceExtensionFieldStateRemoved;
                 if (removed != null)
                 {
                     this.Fields.Remove(innerState);
-                }
-                else
-                {
-                    innerState.Mutate(innerEvent);
                 }
             }
 

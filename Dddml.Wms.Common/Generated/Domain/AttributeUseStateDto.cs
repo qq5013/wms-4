@@ -318,6 +318,11 @@ namespace Dddml.Wms.Domain
             throw new NotSupportedException();
 		}
 
+		void IAttributeUseState.When(IAttributeUseStateRemoved e)
+		{
+            throw new NotSupportedException();
+		}
+
 
 		void IAttributeUseState.Mutate(IEvent e)
 		{

@@ -12,8 +12,10 @@ using Dddml.Wms.Specialization;
 namespace Dddml.Wms.Domain
 {
 
-	public abstract class AttributeUseCommandBase : AttributeUseStateProperties, IAttributeUseCommand
+	public abstract class AttributeUseCommandBase : IAttributeUseCommand
 	{
+		public virtual string AttributeId { get; set; }
+
 
 		public virtual string RequesterId { get; set; }
 
@@ -31,7 +33,17 @@ namespace Dddml.Wms.Domain
             set { this.CommandId = value; }
         }
 
+		public virtual int? SequenceNumber { get; set; }
+
+		public virtual bool? Active { get; set; }
+
+		// Outer Id:
+
+		public virtual string AttributeSetId { get; set; }
+
+
 	}
+
 
     public abstract class AttributeUseIdGeneratorBase : IIdGenerator<string, ICreateAttributeUse>
     {

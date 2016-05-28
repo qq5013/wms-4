@@ -12,8 +12,10 @@ using Dddml.Wms.Specialization;
 namespace Dddml.Wms.Domain
 {
 
-	public abstract class AttributeValueCommandBase : AttributeValueStateProperties, IAttributeValueCommand
+	public abstract class AttributeValueCommandBase : IAttributeValueCommand
 	{
+		public virtual string Value { get; set; }
+
 
 		public virtual string RequesterId { get; set; }
 
@@ -31,7 +33,21 @@ namespace Dddml.Wms.Domain
             set { this.CommandId = value; }
         }
 
+		public virtual string Name { get; set; }
+
+		public virtual string Description { get; set; }
+
+		public virtual string ReferenceId { get; set; }
+
+		public virtual bool? Active { get; set; }
+
+		// Outer Id:
+
+		public virtual string AttributeId { get; set; }
+
+
 	}
+
 
     public abstract class AttributeValueIdGeneratorBase : IIdGenerator<string, ICreateAttributeValue>
     {

@@ -19,15 +19,28 @@ namespace Dddml.Wms.Domain
 
 		long Version { get; set; }
 
+		string Name { get; set; }
+
+		string Description { get; set; }
+
+		string ReferenceId { get; set; }
+
+		bool? Active { get; set; }
+
+		// Outer Id:
+
+		string AttributeId { get; set; }
+
+
 	}
 
-	public interface IAttributeValueStateCreated : IAttributeValueStateEvent, IAttributeValueStateProperties
+	public interface IAttributeValueStateCreated : IAttributeValueStateEvent//, IAttributeValueStateProperties
 	{
 	
 	}
 
 
-	public interface IAttributeValueStateMergePatched : IAttributeValueStateEvent, IAttributeValueStateProperties
+	public interface IAttributeValueStateMergePatched : IAttributeValueStateEvent//, IAttributeValueStateProperties
 	{
 		bool IsPropertyNameRemoved { get; set; }
 

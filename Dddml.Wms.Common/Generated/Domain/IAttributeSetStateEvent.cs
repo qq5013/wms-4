@@ -17,9 +17,24 @@ namespace Dddml.Wms.Domain
 
         bool ReadOnly { get; set; }
 
+		string Name { get; set; }
+
+		string OrganizationId { get; set; }
+
+		string Description { get; set; }
+
+		string SerialNumberAttributeId { get; set; }
+
+		string LotAttributeId { get; set; }
+
+		string ReferenceId { get; set; }
+
+		bool? Active { get; set; }
+
+
 	}
 
-	public interface IAttributeSetStateCreated : IAttributeSetStateEvent, IAttributeSetStateProperties
+	public interface IAttributeSetStateCreated : IAttributeSetStateEvent//, IAttributeSetStateProperties
 	{
 		IEnumerable<IAttributeUseStateCreated> AttributeUseEvents { get; }
 		
@@ -29,7 +44,7 @@ namespace Dddml.Wms.Domain
 	}
 
 
-	public interface IAttributeSetStateMergePatched : IAttributeSetStateEvent, IAttributeSetStateProperties
+	public interface IAttributeSetStateMergePatched : IAttributeSetStateEvent//, IAttributeSetStateProperties
 	{
 		bool IsPropertyNameRemoved { get; set; }
 

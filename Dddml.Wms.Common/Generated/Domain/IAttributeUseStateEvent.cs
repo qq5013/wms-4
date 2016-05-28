@@ -19,15 +19,24 @@ namespace Dddml.Wms.Domain
 
 		long Version { get; set; }
 
+		int? SequenceNumber { get; set; }
+
+		bool? Active { get; set; }
+
+		// Outer Id:
+
+		string AttributeSetId { get; set; }
+
+
 	}
 
-	public interface IAttributeUseStateCreated : IAttributeUseStateEvent, IAttributeUseStateProperties
+	public interface IAttributeUseStateCreated : IAttributeUseStateEvent//, IAttributeUseStateProperties
 	{
 	
 	}
 
 
-	public interface IAttributeUseStateMergePatched : IAttributeUseStateEvent, IAttributeUseStateProperties
+	public interface IAttributeUseStateMergePatched : IAttributeUseStateEvent//, IAttributeUseStateProperties
 	{
 		bool IsPropertySequenceNumberRemoved { get; set; }
 

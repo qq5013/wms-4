@@ -371,6 +371,11 @@ namespace Dddml.Wms.Domain
             throw new NotSupportedException();
 		}
 
+		void IAttributeValueState.When(IAttributeValueStateRemoved e)
+		{
+            throw new NotSupportedException();
+		}
+
 
 		void IAttributeValueState.Mutate(IEvent e)
 		{

@@ -12,10 +12,15 @@ using Dddml.Wms.Specialization;
 namespace Dddml.Wms.Domain
 {
 
-	public abstract class AttributeUseStateEventBase : AttributeUseStateProperties, IAttributeUseStateEvent
+	public abstract class AttributeUseStateEventBase : IAttributeUseStateEvent
 	{
 
 		public virtual AttributeUseStateEventId StateEventId { get; set; }
+
+		public virtual int? SequenceNumber { get; set; }
+
+		public virtual bool? Active { get; set; }
+
 
 		public virtual string CreatedBy { get; set; }
 
@@ -45,7 +50,7 @@ namespace Dddml.Wms.Domain
 
 		public virtual long Version { get; set; }
 
-		public override string AttributeSetId {
+		public virtual string AttributeSetId {
 			get {
 				return StateEventId.AttributeSetId;
 			}
@@ -54,7 +59,7 @@ namespace Dddml.Wms.Domain
 			}
 		}
 
-		public override string AttributeId {
+		public virtual string AttributeId {
 			get {
 				return StateEventId.AttributeId;
 			}

@@ -13,10 +13,31 @@ namespace Dddml.Wms.Domain
 {
 	public interface IAttributeSetInstanceExtensionFieldGroupCommand : IAggregateCommand<string, long>
 	{
+		string Id { get; set; }
+
 		long Version { get; set; }
+
 	}
 
-	public interface ICreateAttributeSetInstanceExtensionFieldGroup : IAttributeSetInstanceExtensionFieldGroupCommand, IAttributeSetInstanceExtensionFieldGroupStateProperties
+
+	public interface ICreateOrMergePatchOrDeleteAttributeSetInstanceExtensionFieldGroup : IAttributeSetInstanceExtensionFieldGroupCommand
+	{
+		string FieldType { get; set; }
+
+		int? FieldLength { get; set; }
+
+		int? FieldCount { get; set; }
+
+		string NameFormat { get; set; }
+
+		string Description { get; set; }
+
+		bool? Active { get; set; }
+
+
+	}
+
+	public interface ICreateAttributeSetInstanceExtensionFieldGroup : ICreateOrMergePatchOrDeleteAttributeSetInstanceExtensionFieldGroup
 	{
         ICreateAttributeSetInstanceExtensionFieldCommands Fields { get; }
 
@@ -24,7 +45,7 @@ namespace Dddml.Wms.Domain
 
 	}
 
-	public interface IMergePatchAttributeSetInstanceExtensionFieldGroup : IAttributeSetInstanceExtensionFieldGroupCommand, IAttributeSetInstanceExtensionFieldGroupStateProperties
+	public interface IMergePatchAttributeSetInstanceExtensionFieldGroup : ICreateOrMergePatchOrDeleteAttributeSetInstanceExtensionFieldGroup
 	{
 
 		bool IsPropertyFieldTypeRemoved { get; set; }
@@ -50,7 +71,7 @@ namespace Dddml.Wms.Domain
 
 	}
 
-	public interface IDeleteAttributeSetInstanceExtensionFieldGroup : IAttributeSetInstanceExtensionFieldGroupCommand, IAttributeSetInstanceExtensionFieldGroupStateProperties
+	public interface IDeleteAttributeSetInstanceExtensionFieldGroup : ICreateOrMergePatchOrDeleteAttributeSetInstanceExtensionFieldGroup
 	{
 	}
 

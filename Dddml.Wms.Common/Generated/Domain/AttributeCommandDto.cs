@@ -19,7 +19,7 @@ namespace Dddml.Wms.Domain
 		{
 			get
 			{
-				return (this as IAttributeStateProperties).AttributeId;
+				return ((ICreateOrMergePatchOrDeleteAttribute)this).AttributeId;
 			}
 		}
 
@@ -60,41 +60,7 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? IsMandatory { get; set; }
 
-        bool IAttributeStateProperties.IsMandatory
-        {
-            get 
-            {
-                var b = this.IsMandatory;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this.IsMandatory = value;
-            }
-        }
-
 		public virtual bool? IsInstanceAttribute { get; set; }
-
-        bool IAttributeStateProperties.IsInstanceAttribute
-        {
-            get 
-            {
-                var b = this.IsInstanceAttribute;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this.IsInstanceAttribute = value;
-            }
-        }
 
 		public virtual string AttributeValueType { get; set; }
 
@@ -102,45 +68,11 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? IsList { get; set; }
 
-        bool IAttributeStateProperties.IsList
-        {
-            get 
-            {
-                var b = this.IsList;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this.IsList = value;
-            }
-        }
-
 		public virtual string FieldName { get; set; }
 
 		public virtual string ReferenceId { get; set; }
 
 		public virtual bool? Active { get; set; }
-
-        bool IAttributeStateProperties.Active
-        {
-            get 
-            {
-                var b = this.Active;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this.Active = value;
-            }
-        }
 
 		public virtual bool? IsPropertyNameRemoved { get; set; }
 
@@ -466,7 +398,7 @@ namespace Dddml.Wms.Domain
             cmd.CommandId = this.CommandId;
             cmd.RequesterId = this.RequesterId;
 
-            cmd.AttributeId = (this as IAttributeStateProperties).AttributeId;
+            cmd.AttributeId = ((ICreateOrMergePatchOrDeleteAttribute)this).AttributeId;
             cmd.Version = this.Version;
 
             return cmd;
@@ -480,18 +412,18 @@ namespace Dddml.Wms.Domain
 
             cmd.Version = this.Version;
 
-            cmd.AttributeId = (this as IAttributeStateProperties).AttributeId;
-            cmd.Name = (this as IAttributeStateProperties).Name;
-            cmd.OrganizationId = (this as IAttributeStateProperties).OrganizationId;
-            cmd.Description = (this as IAttributeStateProperties).Description;
-            cmd.IsMandatory = (this as IAttributeStateProperties).IsMandatory;
-            cmd.IsInstanceAttribute = (this as IAttributeStateProperties).IsInstanceAttribute;
-            cmd.AttributeValueType = (this as IAttributeStateProperties).AttributeValueType;
-            cmd.AttributeValueLength = (this as IAttributeStateProperties).AttributeValueLength;
-            cmd.IsList = (this as IAttributeStateProperties).IsList;
-            cmd.FieldName = (this as IAttributeStateProperties).FieldName;
-            cmd.ReferenceId = (this as IAttributeStateProperties).ReferenceId;
-            cmd.Active = (this as IAttributeStateProperties).Active;
+            cmd.AttributeId = ((ICreateOrMergePatchOrDeleteAttribute)this).AttributeId;
+            cmd.Name = ((ICreateOrMergePatchOrDeleteAttribute)this).Name;
+            cmd.OrganizationId = ((ICreateOrMergePatchOrDeleteAttribute)this).OrganizationId;
+            cmd.Description = ((ICreateOrMergePatchOrDeleteAttribute)this).Description;
+            cmd.IsMandatory = ((ICreateOrMergePatchOrDeleteAttribute)this).IsMandatory;
+            cmd.IsInstanceAttribute = ((ICreateOrMergePatchOrDeleteAttribute)this).IsInstanceAttribute;
+            cmd.AttributeValueType = ((ICreateOrMergePatchOrDeleteAttribute)this).AttributeValueType;
+            cmd.AttributeValueLength = ((ICreateOrMergePatchOrDeleteAttribute)this).AttributeValueLength;
+            cmd.IsList = ((ICreateOrMergePatchOrDeleteAttribute)this).IsList;
+            cmd.FieldName = ((ICreateOrMergePatchOrDeleteAttribute)this).FieldName;
+            cmd.ReferenceId = ((ICreateOrMergePatchOrDeleteAttribute)this).ReferenceId;
+            cmd.Active = ((ICreateOrMergePatchOrDeleteAttribute)this).Active;
             
             cmd.IsPropertyNameRemoved = (this as IMergePatchAttribute).IsPropertyNameRemoved;
             cmd.IsPropertyOrganizationIdRemoved = (this as IMergePatchAttribute).IsPropertyOrganizationIdRemoved;
@@ -520,18 +452,18 @@ namespace Dddml.Wms.Domain
 
             cmd.Version = this.Version;
 
-            cmd.AttributeId = (this as IAttributeStateProperties).AttributeId;
-            cmd.Name = (this as IAttributeStateProperties).Name;
-            cmd.OrganizationId = (this as IAttributeStateProperties).OrganizationId;
-            cmd.Description = (this as IAttributeStateProperties).Description;
-            cmd.IsMandatory = (this as IAttributeStateProperties).IsMandatory;
-            cmd.IsInstanceAttribute = (this as IAttributeStateProperties).IsInstanceAttribute;
-            cmd.AttributeValueType = (this as IAttributeStateProperties).AttributeValueType;
-            cmd.AttributeValueLength = (this as IAttributeStateProperties).AttributeValueLength;
-            cmd.IsList = (this as IAttributeStateProperties).IsList;
-            cmd.FieldName = (this as IAttributeStateProperties).FieldName;
-            cmd.ReferenceId = (this as IAttributeStateProperties).ReferenceId;
-            cmd.Active = (this as IAttributeStateProperties).Active;
+            cmd.AttributeId = ((ICreateOrMergePatchOrDeleteAttribute)this).AttributeId;
+            cmd.Name = ((ICreateOrMergePatchOrDeleteAttribute)this).Name;
+            cmd.OrganizationId = ((ICreateOrMergePatchOrDeleteAttribute)this).OrganizationId;
+            cmd.Description = ((ICreateOrMergePatchOrDeleteAttribute)this).Description;
+            cmd.IsMandatory = ((ICreateOrMergePatchOrDeleteAttribute)this).IsMandatory;
+            cmd.IsInstanceAttribute = ((ICreateOrMergePatchOrDeleteAttribute)this).IsInstanceAttribute;
+            cmd.AttributeValueType = ((ICreateOrMergePatchOrDeleteAttribute)this).AttributeValueType;
+            cmd.AttributeValueLength = ((ICreateOrMergePatchOrDeleteAttribute)this).AttributeValueLength;
+            cmd.IsList = ((ICreateOrMergePatchOrDeleteAttribute)this).IsList;
+            cmd.FieldName = ((ICreateOrMergePatchOrDeleteAttribute)this).FieldName;
+            cmd.ReferenceId = ((ICreateOrMergePatchOrDeleteAttribute)this).ReferenceId;
+            cmd.Active = ((ICreateOrMergePatchOrDeleteAttribute)this).Active;
             foreach (var d in (IEnumerable<CreateOrMergePatchOrRemoveAttributeValueDto>)_attributeValues)
             {
                 var c = d.ToCreateAttributeValue();

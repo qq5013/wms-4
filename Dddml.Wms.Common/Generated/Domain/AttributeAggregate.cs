@@ -232,8 +232,9 @@ namespace Dddml.Wms.Domain
 
         protected void ThrowOnInconsistentCommands(IAttributeCommand command, IAttributeValueCommand innerCommand)
         {
-            IAttributeStateProperties properties =  command as IAttributeStateProperties ;
-            IAttributeValueStateProperties innerProperties = innerCommand as IAttributeValueStateProperties;
+
+            var properties =  command as ICreateOrMergePatchOrDeleteAttribute;
+            var innerProperties = innerCommand as ICreateOrMergePatchOrRemoveAttributeValue;
             if (properties == null || innerProperties == null) { return; }
             var outerAttributeIdName = "AttributeId";
             var outerAttributeIdValue = properties.AttributeId;

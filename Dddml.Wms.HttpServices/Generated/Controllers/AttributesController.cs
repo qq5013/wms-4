@@ -204,7 +204,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             {
                 value.AttributeId = idObj;
             }
-            else if (!(value as IAttributeStateProperties).AttributeId.Equals(idObj))
+            else if (!((IAttributeCommand)value).AttributeId.Equals(idObj))
             {
                 throw DomainError.Named("inconsistentId", "Argument Id {0} NOT equals body Id {1}", id, value.AttributeId);
             }

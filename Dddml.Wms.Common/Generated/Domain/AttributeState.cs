@@ -170,16 +170,27 @@ namespace Dddml.Wms.Domain
 		{
 			ThrowOnWrongEvent(e);
 			this.Name = e.Name;
+
 			this.OrganizationId = e.OrganizationId;
+
 			this.Description = e.Description;
-			this.IsMandatory = e.IsMandatory;
-			this.IsInstanceAttribute = e.IsInstanceAttribute;
+
+            this.IsMandatory = (e.IsMandatory != null && e.IsMandatory.HasValue) ? e.IsMandatory.Value : default(bool);
+
+            this.IsInstanceAttribute = (e.IsInstanceAttribute != null && e.IsInstanceAttribute.HasValue) ? e.IsInstanceAttribute.Value : default(bool);
+
 			this.AttributeValueType = e.AttributeValueType;
+
 			this.AttributeValueLength = e.AttributeValueLength;
-			this.IsList = e.IsList;
+
+            this.IsList = (e.IsList != null && e.IsList.HasValue) ? e.IsList.Value : default(bool);
+
 			this.FieldName = e.FieldName;
+
 			this.ReferenceId = e.ReferenceId;
-			this.Active = e.Active;
+
+            this.Active = (e.Active != null && e.Active.HasValue) ? e.Active.Value : default(bool);
+
 			this.CreatedBy = e.CreatedBy;
 			this.CreatedAt = e.CreatedAt;
 
@@ -195,127 +206,138 @@ namespace Dddml.Wms.Domain
 		{
 			ThrowOnWrongEvent(e);
 
-			if (e.IsPropertyNameRemoved)
+			if (e.Name == null)
 			{
-				this.Name = default(string);
+				if (e.IsPropertyNameRemoved)
+				{
+					this.Name = default(string);
+				}
 			}
 			else
 			{
-				if (e.Name != null)
-				{
-					this.Name = e.Name;
-				}
+				this.Name = e.Name;
 			}
-			if (e.IsPropertyOrganizationIdRemoved)
+
+			if (e.OrganizationId == null)
 			{
-				this.OrganizationId = default(string);
+				if (e.IsPropertyOrganizationIdRemoved)
+				{
+					this.OrganizationId = default(string);
+				}
 			}
 			else
 			{
-				if (e.OrganizationId != null)
-				{
-					this.OrganizationId = e.OrganizationId;
-				}
+				this.OrganizationId = e.OrganizationId;
 			}
-			if (e.IsPropertyDescriptionRemoved)
+
+			if (e.Description == null)
 			{
-				this.Description = default(string);
+				if (e.IsPropertyDescriptionRemoved)
+				{
+					this.Description = default(string);
+				}
 			}
 			else
 			{
-				if (e.Description != null)
-				{
-					this.Description = e.Description;
-				}
+				this.Description = e.Description;
 			}
-			if (e.IsPropertyIsMandatoryRemoved)
+
+			if (e.IsMandatory == null)
 			{
-				this.IsMandatory = default(bool);
+				if (e.IsPropertyIsMandatoryRemoved)
+				{
+					this.IsMandatory = default(bool);
+				}
 			}
 			else
 			{
-				if (e.IsMandatory != null)
-				{
-					this.IsMandatory = e.IsMandatory;
-				}
+				this.IsMandatory = (e.IsMandatory != null && e.IsMandatory.HasValue) ? e.IsMandatory.Value : default(bool);
 			}
-			if (e.IsPropertyIsInstanceAttributeRemoved)
+
+			if (e.IsInstanceAttribute == null)
 			{
-				this.IsInstanceAttribute = default(bool);
+				if (e.IsPropertyIsInstanceAttributeRemoved)
+				{
+					this.IsInstanceAttribute = default(bool);
+				}
 			}
 			else
 			{
-				if (e.IsInstanceAttribute != null)
-				{
-					this.IsInstanceAttribute = e.IsInstanceAttribute;
-				}
+				this.IsInstanceAttribute = (e.IsInstanceAttribute != null && e.IsInstanceAttribute.HasValue) ? e.IsInstanceAttribute.Value : default(bool);
 			}
-			if (e.IsPropertyAttributeValueTypeRemoved)
+
+			if (e.AttributeValueType == null)
 			{
-				this.AttributeValueType = default(string);
+				if (e.IsPropertyAttributeValueTypeRemoved)
+				{
+					this.AttributeValueType = default(string);
+				}
 			}
 			else
 			{
-				if (e.AttributeValueType != null)
-				{
-					this.AttributeValueType = e.AttributeValueType;
-				}
+				this.AttributeValueType = e.AttributeValueType;
 			}
-			if (e.IsPropertyAttributeValueLengthRemoved)
+
+			if (e.AttributeValueLength == null)
 			{
-				this.AttributeValueLength = default(int?);
+				if (e.IsPropertyAttributeValueLengthRemoved)
+				{
+					this.AttributeValueLength = default(int?);
+				}
 			}
 			else
 			{
-				if (e.AttributeValueLength != null)
-				{
-					this.AttributeValueLength = e.AttributeValueLength;
-				}
+				this.AttributeValueLength = e.AttributeValueLength;
 			}
-			if (e.IsPropertyIsListRemoved)
+
+			if (e.IsList == null)
 			{
-				this.IsList = default(bool);
+				if (e.IsPropertyIsListRemoved)
+				{
+					this.IsList = default(bool);
+				}
 			}
 			else
 			{
-				if (e.IsList != null)
-				{
-					this.IsList = e.IsList;
-				}
+				this.IsList = (e.IsList != null && e.IsList.HasValue) ? e.IsList.Value : default(bool);
 			}
-			if (e.IsPropertyFieldNameRemoved)
+
+			if (e.FieldName == null)
 			{
-				this.FieldName = default(string);
+				if (e.IsPropertyFieldNameRemoved)
+				{
+					this.FieldName = default(string);
+				}
 			}
 			else
 			{
-				if (e.FieldName != null)
-				{
-					this.FieldName = e.FieldName;
-				}
+				this.FieldName = e.FieldName;
 			}
-			if (e.IsPropertyReferenceIdRemoved)
+
+			if (e.ReferenceId == null)
 			{
-				this.ReferenceId = default(string);
+				if (e.IsPropertyReferenceIdRemoved)
+				{
+					this.ReferenceId = default(string);
+				}
 			}
 			else
 			{
-				if (e.ReferenceId != null)
-				{
-					this.ReferenceId = e.ReferenceId;
-				}
+				this.ReferenceId = e.ReferenceId;
 			}
-			if (e.IsPropertyActiveRemoved)
+
+			if (e.Active == null)
 			{
-				this.Active = default(bool);
+				if (e.IsPropertyActiveRemoved)
+				{
+					this.Active = default(bool);
+				}
 			}
 			else
 			{
-				if (e.Active != null)
-				{
-					this.Active = e.Active;
-				}
+				this.Active = (e.Active != null && e.Active.HasValue) ? e.Active.Value : default(bool);
 			}
+
 
 			this.UpdatedBy = e.CreatedBy;
 			this.UpdatedAt = e.CreatedAt;
@@ -325,14 +347,12 @@ namespace Dddml.Wms.Domain
             {
                 IAttributeValueState innerState = this.AttributeValues.Get(innerEvent.GlobalId.Value);
 
+                innerState.Mutate(innerEvent);
+
                 var removed = innerEvent as IAttributeValueStateRemoved;
                 if (removed != null)
                 {
                     this.AttributeValues.Remove(innerState);
-                }
-                else
-                {
-                    innerState.Mutate(innerEvent);
                 }
             }
 

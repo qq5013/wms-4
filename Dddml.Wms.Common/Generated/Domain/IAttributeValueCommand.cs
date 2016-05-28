@@ -13,13 +13,34 @@ namespace Dddml.Wms.Domain
 {
 	public interface IAttributeValueCommand : ICommand
 	{
+		string Value { get; set; }
+
+
 	}
 
-	public interface ICreateAttributeValue : IAttributeValueCommand, IAttributeValueStateProperties
+
+	public interface ICreateOrMergePatchOrRemoveAttributeValue : IAttributeValueCommand
+	{
+		string Name { get; set; }
+
+		string Description { get; set; }
+
+		string ReferenceId { get; set; }
+
+		bool? Active { get; set; }
+
+		// Outer Id:
+
+		string AttributeId { get; set; }
+
+
+	}
+
+	public interface ICreateAttributeValue : ICreateOrMergePatchOrRemoveAttributeValue
 	{
 	}
 
-	public interface IMergePatchAttributeValue : IAttributeValueCommand, IAttributeValueStateProperties
+	public interface IMergePatchAttributeValue : ICreateOrMergePatchOrRemoveAttributeValue
 	{
 
 		bool IsPropertyNameRemoved { get; set; }
@@ -33,7 +54,7 @@ namespace Dddml.Wms.Domain
 
 	}
 
-	public interface IRemoveAttributeValue : IAttributeValueCommand, IAttributeValueStateProperties
+	public interface IRemoveAttributeValue : ICreateOrMergePatchOrRemoveAttributeValue
 	{
 	}
 

@@ -13,13 +13,30 @@ namespace Dddml.Wms.Domain
 {
 	public interface IAttributeUseCommand : ICommand
 	{
+		string AttributeId { get; set; }
+
+
 	}
 
-	public interface ICreateAttributeUse : IAttributeUseCommand, IAttributeUseStateProperties
+
+	public interface ICreateOrMergePatchOrRemoveAttributeUse : IAttributeUseCommand
+	{
+		int? SequenceNumber { get; set; }
+
+		bool? Active { get; set; }
+
+		// Outer Id:
+
+		string AttributeSetId { get; set; }
+
+
+	}
+
+	public interface ICreateAttributeUse : ICreateOrMergePatchOrRemoveAttributeUse
 	{
 	}
 
-	public interface IMergePatchAttributeUse : IAttributeUseCommand, IAttributeUseStateProperties
+	public interface IMergePatchAttributeUse : ICreateOrMergePatchOrRemoveAttributeUse
 	{
 
 		bool IsPropertySequenceNumberRemoved { get; set; }
@@ -29,7 +46,7 @@ namespace Dddml.Wms.Domain
 
 	}
 
-	public interface IRemoveAttributeUse : IAttributeUseCommand, IAttributeUseStateProperties
+	public interface IRemoveAttributeUse : ICreateOrMergePatchOrRemoveAttributeUse
 	{
 	}
 

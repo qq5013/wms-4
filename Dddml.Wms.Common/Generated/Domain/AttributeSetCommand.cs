@@ -12,8 +12,10 @@ using Dddml.Wms.Specialization;
 namespace Dddml.Wms.Domain
 {
 
-	public abstract class AttributeSetCommandBase : AttributeSetStateProperties, IAttributeSetCommand
+	public abstract class AttributeSetCommandBase : IAttributeSetCommand
 	{
+		public virtual string AttributeSetId { get; set; }
+
 
 		string IAggregateCommand<string, long>.AggregateId
 		{
@@ -50,7 +52,23 @@ namespace Dddml.Wms.Domain
             set { this.CommandId = value; }
         }
 
+		public virtual string Name { get; set; }
+
+		public virtual string OrganizationId { get; set; }
+
+		public virtual string Description { get; set; }
+
+		public virtual string SerialNumberAttributeId { get; set; }
+
+		public virtual string LotAttributeId { get; set; }
+
+		public virtual string ReferenceId { get; set; }
+
+		public virtual bool? Active { get; set; }
+
+
 	}
+
 
     public abstract class AttributeSetIdGeneratorBase : IIdGenerator<string, ICreateAttributeSet>
     {

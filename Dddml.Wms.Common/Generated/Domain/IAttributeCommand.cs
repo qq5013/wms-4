@@ -13,10 +13,41 @@ namespace Dddml.Wms.Domain
 {
 	public interface IAttributeCommand : IAggregateCommand<string, long>
 	{
+		string AttributeId { get; set; }
+
 		long Version { get; set; }
+
 	}
 
-	public interface ICreateAttribute : IAttributeCommand, IAttributeStateProperties
+
+	public interface ICreateOrMergePatchOrDeleteAttribute : IAttributeCommand
+	{
+		string Name { get; set; }
+
+		string OrganizationId { get; set; }
+
+		string Description { get; set; }
+
+		bool? IsMandatory { get; set; }
+
+		bool? IsInstanceAttribute { get; set; }
+
+		string AttributeValueType { get; set; }
+
+		int? AttributeValueLength { get; set; }
+
+		bool? IsList { get; set; }
+
+		string FieldName { get; set; }
+
+		string ReferenceId { get; set; }
+
+		bool? Active { get; set; }
+
+
+	}
+
+	public interface ICreateAttribute : ICreateOrMergePatchOrDeleteAttribute
 	{
         ICreateAttributeValueCommands AttributeValues { get; }
 
@@ -24,7 +55,7 @@ namespace Dddml.Wms.Domain
 
 	}
 
-	public interface IMergePatchAttribute : IAttributeCommand, IAttributeStateProperties
+	public interface IMergePatchAttribute : ICreateOrMergePatchOrDeleteAttribute
 	{
 
 		bool IsPropertyNameRemoved { get; set; }
@@ -60,7 +91,7 @@ namespace Dddml.Wms.Domain
 
 	}
 
-	public interface IDeleteAttribute : IAttributeCommand, IAttributeStateProperties
+	public interface IDeleteAttribute : ICreateOrMergePatchOrDeleteAttribute
 	{
 	}
 

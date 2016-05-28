@@ -13,13 +13,38 @@ namespace Dddml.Wms.Domain
 {
 	public interface IAttributeSetInstanceExtensionFieldCommand : ICommand
 	{
+		string Index { get; set; }
+
+
 	}
 
-	public interface ICreateAttributeSetInstanceExtensionField : IAttributeSetInstanceExtensionFieldCommand, IAttributeSetInstanceExtensionFieldStateProperties
+
+	public interface ICreateOrMergePatchOrRemoveAttributeSetInstanceExtensionField : IAttributeSetInstanceExtensionFieldCommand
+	{
+		string Name { get; set; }
+
+		string Type { get; set; }
+
+		int? Length { get; set; }
+
+		string Alias { get; set; }
+
+		string Description { get; set; }
+
+		bool? Active { get; set; }
+
+		// Outer Id:
+
+		string GroupId { get; set; }
+
+
+	}
+
+	public interface ICreateAttributeSetInstanceExtensionField : ICreateOrMergePatchOrRemoveAttributeSetInstanceExtensionField
 	{
 	}
 
-	public interface IMergePatchAttributeSetInstanceExtensionField : IAttributeSetInstanceExtensionFieldCommand, IAttributeSetInstanceExtensionFieldStateProperties
+	public interface IMergePatchAttributeSetInstanceExtensionField : ICreateOrMergePatchOrRemoveAttributeSetInstanceExtensionField
 	{
 
 		bool IsPropertyNameRemoved { get; set; }
@@ -37,7 +62,7 @@ namespace Dddml.Wms.Domain
 
 	}
 
-	public interface IRemoveAttributeSetInstanceExtensionField : IAttributeSetInstanceExtensionFieldCommand, IAttributeSetInstanceExtensionFieldStateProperties
+	public interface IRemoveAttributeSetInstanceExtensionField : ICreateOrMergePatchOrRemoveAttributeSetInstanceExtensionField
 	{
 	}
 

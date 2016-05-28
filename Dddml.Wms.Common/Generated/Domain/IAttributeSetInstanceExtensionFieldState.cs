@@ -24,7 +24,7 @@ namespace Dddml.Wms.Domain
 
 		void When(IAttributeSetInstanceExtensionFieldStateMergePatched e);
 
-		//void When(IAttributeSetInstanceExtensionFieldStateRemoved e);
+		void When(IAttributeSetInstanceExtensionFieldStateRemoved e);
 
 		void Mutate(IEvent e);
 

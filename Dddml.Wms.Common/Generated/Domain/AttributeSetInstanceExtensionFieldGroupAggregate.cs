@@ -202,8 +202,9 @@ namespace Dddml.Wms.Domain
 
         protected void ThrowOnInconsistentCommands(IAttributeSetInstanceExtensionFieldGroupCommand command, IAttributeSetInstanceExtensionFieldCommand innerCommand)
         {
-            IAttributeSetInstanceExtensionFieldGroupStateProperties properties =  command as IAttributeSetInstanceExtensionFieldGroupStateProperties ;
-            IAttributeSetInstanceExtensionFieldStateProperties innerProperties = innerCommand as IAttributeSetInstanceExtensionFieldStateProperties;
+
+            var properties =  command as ICreateOrMergePatchOrDeleteAttributeSetInstanceExtensionFieldGroup;
+            var innerProperties = innerCommand as ICreateOrMergePatchOrRemoveAttributeSetInstanceExtensionField;
             if (properties == null || innerProperties == null) { return; }
             var outerIdName = "Id";
             var outerIdValue = properties.Id;

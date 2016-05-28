@@ -159,9 +159,13 @@ namespace Dddml.Wms.Domain
 		{
 			ThrowOnWrongEvent(e);
 			this.Name = e.Name;
+
 			this.Description = e.Description;
+
 			this.ReferenceId = e.ReferenceId;
-			this.Active = e.Active;
+
+            this.Active = (e.Active != null && e.Active.HasValue) ? e.Active.Value : default(bool);
+
 			this.CreatedBy = e.CreatedBy;
 			this.CreatedAt = e.CreatedAt;
 
@@ -173,55 +177,63 @@ namespace Dddml.Wms.Domain
 		{
 			ThrowOnWrongEvent(e);
 
-			if (e.IsPropertyNameRemoved)
+			if (e.Name == null)
 			{
-				this.Name = default(string);
+				if (e.IsPropertyNameRemoved)
+				{
+					this.Name = default(string);
+				}
 			}
 			else
 			{
-				if (e.Name != null)
-				{
-					this.Name = e.Name;
-				}
+				this.Name = e.Name;
 			}
-			if (e.IsPropertyDescriptionRemoved)
+
+			if (e.Description == null)
 			{
-				this.Description = default(string);
+				if (e.IsPropertyDescriptionRemoved)
+				{
+					this.Description = default(string);
+				}
 			}
 			else
 			{
-				if (e.Description != null)
-				{
-					this.Description = e.Description;
-				}
+				this.Description = e.Description;
 			}
-			if (e.IsPropertyReferenceIdRemoved)
+
+			if (e.ReferenceId == null)
 			{
-				this.ReferenceId = default(string);
+				if (e.IsPropertyReferenceIdRemoved)
+				{
+					this.ReferenceId = default(string);
+				}
 			}
 			else
 			{
-				if (e.ReferenceId != null)
-				{
-					this.ReferenceId = e.ReferenceId;
-				}
+				this.ReferenceId = e.ReferenceId;
 			}
-			if (e.IsPropertyActiveRemoved)
+
+			if (e.Active == null)
 			{
-				this.Active = default(bool);
+				if (e.IsPropertyActiveRemoved)
+				{
+					this.Active = default(bool);
+				}
 			}
 			else
 			{
-				if (e.Active != null)
-				{
-					this.Active = e.Active;
-				}
+				this.Active = (e.Active != null && e.Active.HasValue) ? e.Active.Value : default(bool);
 			}
+
 
 			this.UpdatedBy = e.CreatedBy;
 			this.UpdatedAt = e.CreatedAt;
 
 
+		}
+
+		public virtual void When(IAttributeValueStateRemoved e)
+		{
 		}
 
 

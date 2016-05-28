@@ -19,7 +19,7 @@ namespace Dddml.Wms.Domain
 		{
 			get
 			{
-				return (this as IAttributeSetStateProperties).AttributeSetId;
+				return ((ICreateOrMergePatchOrDeleteAttributeSet)this).AttributeSetId;
 			}
 		}
 
@@ -65,23 +65,6 @@ namespace Dddml.Wms.Domain
 		public virtual string ReferenceId { get; set; }
 
 		public virtual bool? Active { get; set; }
-
-        bool IAttributeSetStateProperties.Active
-        {
-            get 
-            {
-                var b = this.Active;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this.Active = value;
-            }
-        }
 
 		public virtual bool? IsPropertyNameRemoved { get; set; }
 
@@ -331,7 +314,7 @@ namespace Dddml.Wms.Domain
             cmd.CommandId = this.CommandId;
             cmd.RequesterId = this.RequesterId;
 
-            cmd.AttributeSetId = (this as IAttributeSetStateProperties).AttributeSetId;
+            cmd.AttributeSetId = ((ICreateOrMergePatchOrDeleteAttributeSet)this).AttributeSetId;
             cmd.Version = this.Version;
 
             return cmd;
@@ -345,14 +328,14 @@ namespace Dddml.Wms.Domain
 
             cmd.Version = this.Version;
 
-            cmd.AttributeSetId = (this as IAttributeSetStateProperties).AttributeSetId;
-            cmd.Name = (this as IAttributeSetStateProperties).Name;
-            cmd.OrganizationId = (this as IAttributeSetStateProperties).OrganizationId;
-            cmd.Description = (this as IAttributeSetStateProperties).Description;
-            cmd.SerialNumberAttributeId = (this as IAttributeSetStateProperties).SerialNumberAttributeId;
-            cmd.LotAttributeId = (this as IAttributeSetStateProperties).LotAttributeId;
-            cmd.ReferenceId = (this as IAttributeSetStateProperties).ReferenceId;
-            cmd.Active = (this as IAttributeSetStateProperties).Active;
+            cmd.AttributeSetId = ((ICreateOrMergePatchOrDeleteAttributeSet)this).AttributeSetId;
+            cmd.Name = ((ICreateOrMergePatchOrDeleteAttributeSet)this).Name;
+            cmd.OrganizationId = ((ICreateOrMergePatchOrDeleteAttributeSet)this).OrganizationId;
+            cmd.Description = ((ICreateOrMergePatchOrDeleteAttributeSet)this).Description;
+            cmd.SerialNumberAttributeId = ((ICreateOrMergePatchOrDeleteAttributeSet)this).SerialNumberAttributeId;
+            cmd.LotAttributeId = ((ICreateOrMergePatchOrDeleteAttributeSet)this).LotAttributeId;
+            cmd.ReferenceId = ((ICreateOrMergePatchOrDeleteAttributeSet)this).ReferenceId;
+            cmd.Active = ((ICreateOrMergePatchOrDeleteAttributeSet)this).Active;
             
             cmd.IsPropertyNameRemoved = (this as IMergePatchAttributeSet).IsPropertyNameRemoved;
             cmd.IsPropertyOrganizationIdRemoved = (this as IMergePatchAttributeSet).IsPropertyOrganizationIdRemoved;
@@ -377,14 +360,14 @@ namespace Dddml.Wms.Domain
 
             cmd.Version = this.Version;
 
-            cmd.AttributeSetId = (this as IAttributeSetStateProperties).AttributeSetId;
-            cmd.Name = (this as IAttributeSetStateProperties).Name;
-            cmd.OrganizationId = (this as IAttributeSetStateProperties).OrganizationId;
-            cmd.Description = (this as IAttributeSetStateProperties).Description;
-            cmd.SerialNumberAttributeId = (this as IAttributeSetStateProperties).SerialNumberAttributeId;
-            cmd.LotAttributeId = (this as IAttributeSetStateProperties).LotAttributeId;
-            cmd.ReferenceId = (this as IAttributeSetStateProperties).ReferenceId;
-            cmd.Active = (this as IAttributeSetStateProperties).Active;
+            cmd.AttributeSetId = ((ICreateOrMergePatchOrDeleteAttributeSet)this).AttributeSetId;
+            cmd.Name = ((ICreateOrMergePatchOrDeleteAttributeSet)this).Name;
+            cmd.OrganizationId = ((ICreateOrMergePatchOrDeleteAttributeSet)this).OrganizationId;
+            cmd.Description = ((ICreateOrMergePatchOrDeleteAttributeSet)this).Description;
+            cmd.SerialNumberAttributeId = ((ICreateOrMergePatchOrDeleteAttributeSet)this).SerialNumberAttributeId;
+            cmd.LotAttributeId = ((ICreateOrMergePatchOrDeleteAttributeSet)this).LotAttributeId;
+            cmd.ReferenceId = ((ICreateOrMergePatchOrDeleteAttributeSet)this).ReferenceId;
+            cmd.Active = ((ICreateOrMergePatchOrDeleteAttributeSet)this).Active;
             foreach (var d in (IEnumerable<CreateOrMergePatchOrRemoveAttributeUseDto>)_attributeUses)
             {
                 var c = d.ToCreateAttributeUse();

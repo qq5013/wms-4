@@ -19,7 +19,7 @@ namespace Dddml.Wms.Domain
 		{
 			get
 			{
-				return (this as IAttributeSetInstanceExtensionFieldGroupStateProperties).Id;
+				return ((ICreateOrMergePatchOrDeleteAttributeSetInstanceExtensionFieldGroup)this).Id;
 			}
 		}
 
@@ -58,45 +58,11 @@ namespace Dddml.Wms.Domain
 
 		public virtual int? FieldCount { get; set; }
 
-        int IAttributeSetInstanceExtensionFieldGroupStateProperties.FieldCount
-        {
-            get 
-            {
-                var b = this.FieldCount;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this.FieldCount = value;
-            }
-        }
-
 		public virtual string NameFormat { get; set; }
 
 		public virtual string Description { get; set; }
 
 		public virtual bool? Active { get; set; }
-
-        bool IAttributeSetInstanceExtensionFieldGroupStateProperties.Active
-        {
-            get 
-            {
-                var b = this.Active;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this.Active = value;
-            }
-        }
 
 		public virtual bool? IsPropertyFieldTypeRemoved { get; set; }
 
@@ -327,7 +293,7 @@ namespace Dddml.Wms.Domain
             cmd.CommandId = this.CommandId;
             cmd.RequesterId = this.RequesterId;
 
-            cmd.Id = (this as IAttributeSetInstanceExtensionFieldGroupStateProperties).Id;
+            cmd.Id = ((ICreateOrMergePatchOrDeleteAttributeSetInstanceExtensionFieldGroup)this).Id;
             cmd.Version = this.Version;
 
             return cmd;
@@ -341,13 +307,13 @@ namespace Dddml.Wms.Domain
 
             cmd.Version = this.Version;
 
-            cmd.Id = (this as IAttributeSetInstanceExtensionFieldGroupStateProperties).Id;
-            cmd.FieldType = (this as IAttributeSetInstanceExtensionFieldGroupStateProperties).FieldType;
-            cmd.FieldLength = (this as IAttributeSetInstanceExtensionFieldGroupStateProperties).FieldLength;
-            cmd.FieldCount = (this as IAttributeSetInstanceExtensionFieldGroupStateProperties).FieldCount;
-            cmd.NameFormat = (this as IAttributeSetInstanceExtensionFieldGroupStateProperties).NameFormat;
-            cmd.Description = (this as IAttributeSetInstanceExtensionFieldGroupStateProperties).Description;
-            cmd.Active = (this as IAttributeSetInstanceExtensionFieldGroupStateProperties).Active;
+            cmd.Id = ((ICreateOrMergePatchOrDeleteAttributeSetInstanceExtensionFieldGroup)this).Id;
+            cmd.FieldType = ((ICreateOrMergePatchOrDeleteAttributeSetInstanceExtensionFieldGroup)this).FieldType;
+            cmd.FieldLength = ((ICreateOrMergePatchOrDeleteAttributeSetInstanceExtensionFieldGroup)this).FieldLength;
+            cmd.FieldCount = ((ICreateOrMergePatchOrDeleteAttributeSetInstanceExtensionFieldGroup)this).FieldCount;
+            cmd.NameFormat = ((ICreateOrMergePatchOrDeleteAttributeSetInstanceExtensionFieldGroup)this).NameFormat;
+            cmd.Description = ((ICreateOrMergePatchOrDeleteAttributeSetInstanceExtensionFieldGroup)this).Description;
+            cmd.Active = ((ICreateOrMergePatchOrDeleteAttributeSetInstanceExtensionFieldGroup)this).Active;
             
             cmd.IsPropertyFieldTypeRemoved = (this as IMergePatchAttributeSetInstanceExtensionFieldGroup).IsPropertyFieldTypeRemoved;
             cmd.IsPropertyFieldLengthRemoved = (this as IMergePatchAttributeSetInstanceExtensionFieldGroup).IsPropertyFieldLengthRemoved;
@@ -371,13 +337,13 @@ namespace Dddml.Wms.Domain
 
             cmd.Version = this.Version;
 
-            cmd.Id = (this as IAttributeSetInstanceExtensionFieldGroupStateProperties).Id;
-            cmd.FieldType = (this as IAttributeSetInstanceExtensionFieldGroupStateProperties).FieldType;
-            cmd.FieldLength = (this as IAttributeSetInstanceExtensionFieldGroupStateProperties).FieldLength;
-            cmd.FieldCount = (this as IAttributeSetInstanceExtensionFieldGroupStateProperties).FieldCount;
-            cmd.NameFormat = (this as IAttributeSetInstanceExtensionFieldGroupStateProperties).NameFormat;
-            cmd.Description = (this as IAttributeSetInstanceExtensionFieldGroupStateProperties).Description;
-            cmd.Active = (this as IAttributeSetInstanceExtensionFieldGroupStateProperties).Active;
+            cmd.Id = ((ICreateOrMergePatchOrDeleteAttributeSetInstanceExtensionFieldGroup)this).Id;
+            cmd.FieldType = ((ICreateOrMergePatchOrDeleteAttributeSetInstanceExtensionFieldGroup)this).FieldType;
+            cmd.FieldLength = ((ICreateOrMergePatchOrDeleteAttributeSetInstanceExtensionFieldGroup)this).FieldLength;
+            cmd.FieldCount = ((ICreateOrMergePatchOrDeleteAttributeSetInstanceExtensionFieldGroup)this).FieldCount;
+            cmd.NameFormat = ((ICreateOrMergePatchOrDeleteAttributeSetInstanceExtensionFieldGroup)this).NameFormat;
+            cmd.Description = ((ICreateOrMergePatchOrDeleteAttributeSetInstanceExtensionFieldGroup)this).Description;
+            cmd.Active = ((ICreateOrMergePatchOrDeleteAttributeSetInstanceExtensionFieldGroup)this).Active;
             foreach (var d in (IEnumerable<CreateOrMergePatchOrRemoveAttributeSetInstanceExtensionFieldDto>)_fields)
             {
                 var c = d.ToCreateAttributeSetInstanceExtensionField();

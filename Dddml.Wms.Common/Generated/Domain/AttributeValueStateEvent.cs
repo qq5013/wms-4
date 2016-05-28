@@ -12,10 +12,19 @@ using Dddml.Wms.Specialization;
 namespace Dddml.Wms.Domain
 {
 
-	public abstract class AttributeValueStateEventBase : AttributeValueStateProperties, IAttributeValueStateEvent
+	public abstract class AttributeValueStateEventBase : IAttributeValueStateEvent
 	{
 
 		public virtual AttributeValueStateEventId StateEventId { get; set; }
+
+		public virtual string Name { get; set; }
+
+		public virtual string Description { get; set; }
+
+		public virtual string ReferenceId { get; set; }
+
+		public virtual bool? Active { get; set; }
+
 
 		public virtual string CreatedBy { get; set; }
 
@@ -45,7 +54,7 @@ namespace Dddml.Wms.Domain
 
 		public virtual long Version { get; set; }
 
-		public override string AttributeId {
+		public virtual string AttributeId {
 			get {
 				return StateEventId.AttributeId;
 			}
@@ -54,7 +63,7 @@ namespace Dddml.Wms.Domain
 			}
 		}
 
-		public override string Value {
+		public virtual string Value {
 			get {
 				return StateEventId.Value;
 			}

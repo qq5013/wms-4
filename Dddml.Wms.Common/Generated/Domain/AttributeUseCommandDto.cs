@@ -35,41 +35,7 @@ namespace Dddml.Wms.Domain
 
 		public virtual int? SequenceNumber { get; set; }
 
-        int IAttributeUseStateProperties.SequenceNumber
-        {
-            get 
-            {
-                var b = this.SequenceNumber;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(int);
-            }
-            set 
-            {
-                this.SequenceNumber = value;
-            }
-        }
-
 		public virtual bool? Active { get; set; }
-
-        bool IAttributeUseStateProperties.Active
-        {
-            get 
-            {
-                var b = this.Active;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this.Active = value;
-            }
-        }
 
 		public virtual string AttributeSetId { get; set; }
 
@@ -151,7 +117,7 @@ namespace Dddml.Wms.Domain
             cmd.CommandId = this.CommandId;
             cmd.RequesterId = this.RequesterId;
 
-            cmd.AttributeId = (this as IAttributeUseStateProperties).AttributeId;
+            cmd.AttributeId = ((ICreateOrMergePatchOrRemoveAttributeUse)this).AttributeId;
             return cmd;
         }
 
@@ -161,10 +127,10 @@ namespace Dddml.Wms.Domain
             cmd.CommandId = this.CommandId;
             cmd.RequesterId = this.RequesterId;
 
-            cmd.AttributeId = (this as IAttributeUseStateProperties).AttributeId;
-            cmd.SequenceNumber = (this as IAttributeUseStateProperties).SequenceNumber;
-            cmd.Active = (this as IAttributeUseStateProperties).Active;
-            cmd.AttributeSetId = (this as IAttributeUseStateProperties).AttributeSetId;
+            cmd.AttributeId = ((ICreateOrMergePatchOrRemoveAttributeUse)this).AttributeId;
+            cmd.SequenceNumber = ((ICreateOrMergePatchOrRemoveAttributeUse)this).SequenceNumber;
+            cmd.Active = ((ICreateOrMergePatchOrRemoveAttributeUse)this).Active;
+            cmd.AttributeSetId = ((ICreateOrMergePatchOrRemoveAttributeUse)this).AttributeSetId;
             
             cmd.IsPropertySequenceNumberRemoved = (this as IMergePatchAttributeUse).IsPropertySequenceNumberRemoved;
             cmd.IsPropertyActiveRemoved = (this as IMergePatchAttributeUse).IsPropertyActiveRemoved;
@@ -177,10 +143,10 @@ namespace Dddml.Wms.Domain
             cmd.CommandId = this.CommandId;
             cmd.RequesterId = this.RequesterId;
 
-            cmd.AttributeId = (this as IAttributeUseStateProperties).AttributeId;
-            cmd.SequenceNumber = (this as IAttributeUseStateProperties).SequenceNumber;
-            cmd.Active = (this as IAttributeUseStateProperties).Active;
-            cmd.AttributeSetId = (this as IAttributeUseStateProperties).AttributeSetId;
+            cmd.AttributeId = ((ICreateOrMergePatchOrRemoveAttributeUse)this).AttributeId;
+            cmd.SequenceNumber = ((ICreateOrMergePatchOrRemoveAttributeUse)this).SequenceNumber;
+            cmd.Active = ((ICreateOrMergePatchOrRemoveAttributeUse)this).Active;
+            cmd.AttributeSetId = ((ICreateOrMergePatchOrRemoveAttributeUse)this).AttributeSetId;
             return cmd;
         }
 

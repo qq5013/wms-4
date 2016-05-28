@@ -41,23 +41,6 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? Active { get; set; }
 
-        bool IAttributeValueStateProperties.Active
-        {
-            get 
-            {
-                var b = this.Active;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return default(bool);
-            }
-            set 
-            {
-                this.Active = value;
-            }
-        }
-
 		public virtual string AttributeId { get; set; }
 
 		public virtual bool? IsPropertyNameRemoved { get; set; }
@@ -176,7 +159,7 @@ namespace Dddml.Wms.Domain
             cmd.CommandId = this.CommandId;
             cmd.RequesterId = this.RequesterId;
 
-            cmd.Value = (this as IAttributeValueStateProperties).Value;
+            cmd.Value = ((ICreateOrMergePatchOrRemoveAttributeValue)this).Value;
             return cmd;
         }
 
@@ -186,12 +169,12 @@ namespace Dddml.Wms.Domain
             cmd.CommandId = this.CommandId;
             cmd.RequesterId = this.RequesterId;
 
-            cmd.Value = (this as IAttributeValueStateProperties).Value;
-            cmd.Name = (this as IAttributeValueStateProperties).Name;
-            cmd.Description = (this as IAttributeValueStateProperties).Description;
-            cmd.ReferenceId = (this as IAttributeValueStateProperties).ReferenceId;
-            cmd.Active = (this as IAttributeValueStateProperties).Active;
-            cmd.AttributeId = (this as IAttributeValueStateProperties).AttributeId;
+            cmd.Value = ((ICreateOrMergePatchOrRemoveAttributeValue)this).Value;
+            cmd.Name = ((ICreateOrMergePatchOrRemoveAttributeValue)this).Name;
+            cmd.Description = ((ICreateOrMergePatchOrRemoveAttributeValue)this).Description;
+            cmd.ReferenceId = ((ICreateOrMergePatchOrRemoveAttributeValue)this).ReferenceId;
+            cmd.Active = ((ICreateOrMergePatchOrRemoveAttributeValue)this).Active;
+            cmd.AttributeId = ((ICreateOrMergePatchOrRemoveAttributeValue)this).AttributeId;
             
             cmd.IsPropertyNameRemoved = (this as IMergePatchAttributeValue).IsPropertyNameRemoved;
             cmd.IsPropertyDescriptionRemoved = (this as IMergePatchAttributeValue).IsPropertyDescriptionRemoved;
@@ -206,12 +189,12 @@ namespace Dddml.Wms.Domain
             cmd.CommandId = this.CommandId;
             cmd.RequesterId = this.RequesterId;
 
-            cmd.Value = (this as IAttributeValueStateProperties).Value;
-            cmd.Name = (this as IAttributeValueStateProperties).Name;
-            cmd.Description = (this as IAttributeValueStateProperties).Description;
-            cmd.ReferenceId = (this as IAttributeValueStateProperties).ReferenceId;
-            cmd.Active = (this as IAttributeValueStateProperties).Active;
-            cmd.AttributeId = (this as IAttributeValueStateProperties).AttributeId;
+            cmd.Value = ((ICreateOrMergePatchOrRemoveAttributeValue)this).Value;
+            cmd.Name = ((ICreateOrMergePatchOrRemoveAttributeValue)this).Name;
+            cmd.Description = ((ICreateOrMergePatchOrRemoveAttributeValue)this).Description;
+            cmd.ReferenceId = ((ICreateOrMergePatchOrRemoveAttributeValue)this).ReferenceId;
+            cmd.Active = ((ICreateOrMergePatchOrRemoveAttributeValue)this).Active;
+            cmd.AttributeId = ((ICreateOrMergePatchOrRemoveAttributeValue)this).AttributeId;
             return cmd;
         }
 

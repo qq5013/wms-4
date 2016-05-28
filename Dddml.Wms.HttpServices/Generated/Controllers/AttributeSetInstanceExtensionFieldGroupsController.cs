@@ -193,7 +193,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             {
                 value.Id = idObj;
             }
-            else if (!(value as IAttributeSetInstanceExtensionFieldGroupStateProperties).Id.Equals(idObj))
+            else if (!((IAttributeSetInstanceExtensionFieldGroupCommand)value).Id.Equals(idObj))
             {
                 throw DomainError.Named("inconsistentId", "Argument Id {0} NOT equals body Id {1}", id, value.Id);
             }

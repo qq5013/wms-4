@@ -427,6 +427,11 @@ namespace Dddml.Wms.Domain
             throw new NotSupportedException();
 		}
 
+		void IAttributeSetInstanceExtensionFieldState.When(IAttributeSetInstanceExtensionFieldStateRemoved e)
+		{
+            throw new NotSupportedException();
+		}
+
 
 		void IAttributeSetInstanceExtensionFieldState.Mutate(IEvent e)
 		{

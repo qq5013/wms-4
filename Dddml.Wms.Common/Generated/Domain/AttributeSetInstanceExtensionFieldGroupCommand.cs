@@ -12,8 +12,10 @@ using Dddml.Wms.Specialization;
 namespace Dddml.Wms.Domain
 {
 
-	public abstract class AttributeSetInstanceExtensionFieldGroupCommandBase : AttributeSetInstanceExtensionFieldGroupStateProperties, IAttributeSetInstanceExtensionFieldGroupCommand
+	public abstract class AttributeSetInstanceExtensionFieldGroupCommandBase : IAttributeSetInstanceExtensionFieldGroupCommand
 	{
+		public virtual string Id { get; set; }
+
 
 		string IAggregateCommand<string, long>.AggregateId
 		{
@@ -50,7 +52,21 @@ namespace Dddml.Wms.Domain
             set { this.CommandId = value; }
         }
 
+		public virtual string FieldType { get; set; }
+
+		public virtual int? FieldLength { get; set; }
+
+		public virtual int? FieldCount { get; set; }
+
+		public virtual string NameFormat { get; set; }
+
+		public virtual string Description { get; set; }
+
+		public virtual bool? Active { get; set; }
+
+
 	}
+
 
     public abstract class AttributeSetInstanceExtensionFieldGroupIdGeneratorBase : IIdGenerator<string, ICreateAttributeSetInstanceExtensionFieldGroup>
     {

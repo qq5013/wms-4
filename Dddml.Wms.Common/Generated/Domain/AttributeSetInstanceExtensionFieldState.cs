@@ -159,11 +159,17 @@ namespace Dddml.Wms.Domain
 		{
 			ThrowOnWrongEvent(e);
 			this.Name = e.Name;
+
 			this.Type = e.Type;
+
 			this.Length = e.Length;
+
 			this.Alias = e.Alias;
+
 			this.Description = e.Description;
-			this.Active = e.Active;
+
+            this.Active = (e.Active != null && e.Active.HasValue) ? e.Active.Value : default(bool);
+
 			this.CreatedBy = e.CreatedBy;
 			this.CreatedAt = e.CreatedAt;
 
@@ -175,77 +181,87 @@ namespace Dddml.Wms.Domain
 		{
 			ThrowOnWrongEvent(e);
 
-			if (e.IsPropertyNameRemoved)
+			if (e.Name == null)
 			{
-				this.Name = default(string);
+				if (e.IsPropertyNameRemoved)
+				{
+					this.Name = default(string);
+				}
 			}
 			else
 			{
-				if (e.Name != null)
-				{
-					this.Name = e.Name;
-				}
+				this.Name = e.Name;
 			}
-			if (e.IsPropertyTypeRemoved)
+
+			if (e.Type == null)
 			{
-				this.Type = default(string);
+				if (e.IsPropertyTypeRemoved)
+				{
+					this.Type = default(string);
+				}
 			}
 			else
 			{
-				if (e.Type != null)
-				{
-					this.Type = e.Type;
-				}
+				this.Type = e.Type;
 			}
-			if (e.IsPropertyLengthRemoved)
+
+			if (e.Length == null)
 			{
-				this.Length = default(int?);
+				if (e.IsPropertyLengthRemoved)
+				{
+					this.Length = default(int?);
+				}
 			}
 			else
 			{
-				if (e.Length != null)
-				{
-					this.Length = e.Length;
-				}
+				this.Length = e.Length;
 			}
-			if (e.IsPropertyAliasRemoved)
+
+			if (e.Alias == null)
 			{
-				this.Alias = default(string);
+				if (e.IsPropertyAliasRemoved)
+				{
+					this.Alias = default(string);
+				}
 			}
 			else
 			{
-				if (e.Alias != null)
-				{
-					this.Alias = e.Alias;
-				}
+				this.Alias = e.Alias;
 			}
-			if (e.IsPropertyDescriptionRemoved)
+
+			if (e.Description == null)
 			{
-				this.Description = default(string);
+				if (e.IsPropertyDescriptionRemoved)
+				{
+					this.Description = default(string);
+				}
 			}
 			else
 			{
-				if (e.Description != null)
-				{
-					this.Description = e.Description;
-				}
+				this.Description = e.Description;
 			}
-			if (e.IsPropertyActiveRemoved)
+
+			if (e.Active == null)
 			{
-				this.Active = default(bool);
+				if (e.IsPropertyActiveRemoved)
+				{
+					this.Active = default(bool);
+				}
 			}
 			else
 			{
-				if (e.Active != null)
-				{
-					this.Active = e.Active;
-				}
+				this.Active = (e.Active != null && e.Active.HasValue) ? e.Active.Value : default(bool);
 			}
+
 
 			this.UpdatedBy = e.CreatedBy;
 			this.UpdatedAt = e.CreatedAt;
 
 
+		}
+
+		public virtual void When(IAttributeSetInstanceExtensionFieldStateRemoved e)
+		{
 		}
 
 

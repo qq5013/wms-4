@@ -104,7 +104,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
         {
           try {
             SetNullIdOrThrowOnInconsistentIds(id, value);
-            _attributeSetApplicationService.When(value.ToCommand() as ICreateAttributeSet);
+            _attributeSetApplicationService.When(value as ICreateAttributeSet);
           } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
@@ -113,7 +113,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
         {
           try {
             SetNullIdOrThrowOnInconsistentIds(id, value);
-            _attributeSetApplicationService.When(value.ToCommand() as IMergePatchAttributeSet);
+            _attributeSetApplicationService.When(value as IMergePatchAttributeSet);
           } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
@@ -125,7 +125,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             value.CommandId = commandId;
             value.RequesterId = requesterId;
             SetNullIdOrThrowOnInconsistentIds(id, value);
-            _attributeSetApplicationService.When(value.ToCommand() as IDeleteAttributeSet);
+            _attributeSetApplicationService.When(value as IDeleteAttributeSet);
           } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 

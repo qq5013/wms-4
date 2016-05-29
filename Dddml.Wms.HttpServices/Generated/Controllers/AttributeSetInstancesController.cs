@@ -113,7 +113,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             if (!reused)
             {
                 ((IAttributeSetInstanceCommand)value).AttributeSetInstanceId = idObj;
-                _attributeSetInstanceApplicationService.When(value.ToCommand() as ICreateAttributeSetInstance);
+                _attributeSetInstanceApplicationService.When(value as ICreateAttributeSetInstance);
             }
 
             return Request.CreateResponse<string>(HttpStatusCode.Created, idObj);
@@ -126,7 +126,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
           try {
             CreateAttributeSetInstanceDto value = _attributeSetInstanceDtoJObjectMapper.ToCommandCreate(dynamicObject);
             SetNullIdOrThrowOnInconsistentIds(id, value);
-            _attributeSetInstanceApplicationService.When(value.ToCommand() as ICreateAttributeSetInstance);
+            _attributeSetInstanceApplicationService.When(value as ICreateAttributeSetInstance);
           } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
@@ -136,7 +136,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
           try {
             MergePatchAttributeSetInstanceDto value = _attributeSetInstanceDtoJObjectMapper.ToCommandMergePatch(dynamicObject);
             SetNullIdOrThrowOnInconsistentIds(id, value);
-            _attributeSetInstanceApplicationService.When(value.ToCommand() as IMergePatchAttributeSetInstance);
+            _attributeSetInstanceApplicationService.When(value as IMergePatchAttributeSetInstance);
           } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
@@ -148,7 +148,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             value.CommandId = commandId;
             value.RequesterId = requesterId;
             SetNullIdOrThrowOnInconsistentIds(id, value);
-            _attributeSetInstanceApplicationService.When(value.ToCommand() as IDeleteAttributeSetInstance);
+            _attributeSetInstanceApplicationService.When(value as IDeleteAttributeSetInstance);
           } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 

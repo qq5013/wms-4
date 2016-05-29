@@ -59,6 +59,27 @@
     <Compile Include="Generated\Domain\AttributeCommandDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroupStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeUseStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeValueStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\Metadata\AttributeMetadata.cs">
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
     </Compile>
@@ -461,8 +482,10 @@
     <Compile Include="Specialization\DynamicObjectMapperBase.cs" />
     <Compile Include="Specialization\GuidStringIdGenerator.cs" />
     <Compile Include="Specialization\IIdGenerator.cs" />
+    <Compile Include="Specialization\IStateEventDto.cs" />
     <Compile Include="Specialization\ITypeConverter.cs" />
     <Compile Include="Specialization\PropertyMetadata.cs" />
+    <Compile Include="Specialization\StateEventType.cs" />
     <Compile Include="Support\AttributeAttribute.cs" />
     <Compile Include="Support\AttributeGroupAttribute.cs" />
     <Compile Include="Support\AttributeIgnoreAttribute.cs" />
@@ -553,6 +576,7 @@
 .\AttributeSetInstanceExtensionFieldGroupState.cs
 .\AttributeSetInstanceExtensionFieldGroupStateDto.cs
 .\AttributeSetInstanceExtensionFieldGroupStateEvent.cs
+.\AttributeSetInstanceExtensionFieldGroupStateEventDto.cs
 .\AttributeSetInstanceExtensionFieldGroupStateEventId.cs
 .\AttributeSetInstanceExtensionFieldGroupStateEventIdDto.cs
 .\AttributeSetInstanceExtensionFieldGroupStateProperties.cs
@@ -561,6 +585,7 @@
 .\AttributeSetInstanceExtensionFieldState.cs
 .\AttributeSetInstanceExtensionFieldStateDto.cs
 .\AttributeSetInstanceExtensionFieldStateEvent.cs
+.\AttributeSetInstanceExtensionFieldStateEventDto.cs
 .\AttributeSetInstanceExtensionFieldStateEventId.cs
 .\AttributeSetInstanceExtensionFieldStateEventIdDto.cs
 .\AttributeSetInstanceExtensionFieldStateProperties.cs
@@ -568,18 +593,21 @@
 .\AttributeSetInstanceState.cs
 .\AttributeSetInstanceStateDto.cs
 .\AttributeSetInstanceStateEvent.cs
+.\AttributeSetInstanceStateEventDto.cs
 .\AttributeSetInstanceStateEventId.cs
 .\AttributeSetInstanceStateEventIdDto.cs
 .\AttributeSetInstanceStateProperties.cs
 .\AttributeSetState.cs
 .\AttributeSetStateDto.cs
 .\AttributeSetStateEvent.cs
+.\AttributeSetStateEventDto.cs
 .\AttributeSetStateEventId.cs
 .\AttributeSetStateEventIdDto.cs
 .\AttributeSetStateProperties.cs
 .\AttributeState.cs
 .\AttributeStateDto.cs
 .\AttributeStateEvent.cs
+.\AttributeStateEventDto.cs
 .\AttributeStateEventId.cs
 .\AttributeStateEventIdDto.cs
 .\AttributeStateProperties.cs
@@ -588,6 +616,7 @@
 .\AttributeUseState.cs
 .\AttributeUseStateDto.cs
 .\AttributeUseStateEvent.cs
+.\AttributeUseStateEventDto.cs
 .\AttributeUseStateEventId.cs
 .\AttributeUseStateEventIdDto.cs
 .\AttributeUseStateProperties.cs
@@ -599,6 +628,7 @@
 .\AttributeValueState.cs
 .\AttributeValueStateDto.cs
 .\AttributeValueStateEvent.cs
+.\AttributeValueStateEventDto.cs
 .\AttributeValueStateEventId.cs
 .\AttributeValueStateEventIdDto.cs
 .\AttributeValueStateProperties.cs

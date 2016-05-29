@@ -384,11 +384,13 @@ namespace Dddml.Wms.Domain
 		string ICreated<string>.CreatedBy
 		{
             get { return (_state as IAttributeSetState).CreatedBy; }
+            set { (_state as IAttributeSetState).CreatedBy = value; }
 		}
 
 		DateTime ICreated<string>.CreatedAt
 		{
             get { return (_state as IAttributeSetState).CreatedAt; }
+            set { (_state as IAttributeSetState).CreatedAt = value; }
 		}
 
 		#endregion

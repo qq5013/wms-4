@@ -359,11 +359,13 @@ namespace Dddml.Wms.Domain
 		string ICreated<string>.CreatedBy
 		{
             get { return (_state as IAttributeSetInstanceExtensionFieldGroupState).CreatedBy; }
+            set { (_state as IAttributeSetInstanceExtensionFieldGroupState).CreatedBy = value; }
 		}
 
 		DateTime ICreated<string>.CreatedAt
 		{
             get { return (_state as IAttributeSetInstanceExtensionFieldGroupState).CreatedAt; }
+            set { (_state as IAttributeSetInstanceExtensionFieldGroupState).CreatedAt = value; }
 		}
 
 		#endregion

@@ -4,9 +4,9 @@ namespace Dddml.Wms.Specialization
 {
 	public interface ICreated<TUserId>
 	{
-		TUserId CreatedBy { get; }
+        TUserId CreatedBy { get; set; }
 
-		DateTime CreatedAt { get; }
+        DateTime CreatedAt { get; set; }
 
 	}
 }

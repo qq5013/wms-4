@@ -58,7 +58,7 @@ namespace Dddml.Wms.Domain
         {
             if (_state.Version == AttributeSetInstanceExtensionFieldGroupState.VersionZero)
             {
-                if (c is ICreateAttributeSetInstanceExtensionFieldGroup)
+                if (IsCommandCreate((IAttributeSetInstanceExtensionFieldGroupCommand)c))
                 {
                     return;
                 }
@@ -68,8 +68,13 @@ namespace Dddml.Wms.Domain
             {
                 throw DomainError.Named("zombie", "Can't do anything to deleted aggregate.");
             }
-            if (c is ICreateAttributeSetInstanceExtensionFieldGroup)
+            if (IsCommandCreate((IAttributeSetInstanceExtensionFieldGroupCommand)c))
                 throw DomainError.Named("rebirth", "Can't create aggregate that already exists");
+        }
+
+        private static bool IsCommandCreate(IAttributeSetInstanceExtensionFieldGroupCommand c)
+        {
+            return c.Version == AttributeSetInstanceExtensionFieldGroupState.VersionZero;
         }
 
         protected virtual void Apply(IEvent e)
@@ -118,8 +123,8 @@ namespace Dddml.Wms.Domain
             ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
 
-            (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedBy = (string)c.RequesterId;
-            (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)c.RequesterId;
+            e.CreatedAt = DateTime.Now;
 			var version = c.Version;
 
             foreach (ICreateAttributeSetInstanceExtensionField innerCommand in c.Fields)
@@ -167,8 +172,8 @@ namespace Dddml.Wms.Domain
             ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
 
-            (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedBy = (string)c.RequesterId;
-            (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)c.RequesterId;
+            e.CreatedAt = DateTime.Now;
 
 			var version = c.Version;
 
@@ -192,8 +197,8 @@ namespace Dddml.Wms.Domain
             ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
 
-            (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedBy = (string)c.RequesterId;
-            (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)c.RequesterId;
+            e.CreatedAt = DateTime.Now;
 
 
             return e;
@@ -240,7 +245,7 @@ namespace Dddml.Wms.Domain
 
         protected virtual IAttributeSetInstanceExtensionFieldStateCreated MapCreate(ICreateAttributeSetInstanceExtensionField c, IAttributeSetInstanceExtensionFieldGroupCommand outerCommand, long version)
         {
-            (c as AttributeSetInstanceExtensionFieldCommandBase).RequesterId = (outerCommand as AttributeSetInstanceExtensionFieldGroupCommandBase).RequesterId;
+            c.RequesterId = outerCommand.RequesterId;
 			var stateEventId = new AttributeSetInstanceExtensionFieldStateEventId(c.GroupId, c.Index, version);
             IAttributeSetInstanceExtensionFieldStateCreated e = NewAttributeSetInstanceExtensionFieldStateCreated(stateEventId);
 
@@ -257,8 +262,8 @@ namespace Dddml.Wms.Domain
             e.Active = c.Active;
 
 
-            (e as AttributeSetInstanceExtensionFieldStateEventBase).CreatedBy = (string)c.RequesterId;
-            (e as AttributeSetInstanceExtensionFieldStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)c.RequesterId;
+            e.CreatedAt = DateTime.Now;
             return e;
 
         }// END Map(ICreate... ////////////////////////////
@@ -267,7 +272,7 @@ namespace Dddml.Wms.Domain
 
         protected virtual IAttributeSetInstanceExtensionFieldStateMergePatched MapMergePatch(IMergePatchAttributeSetInstanceExtensionField c, IAttributeSetInstanceExtensionFieldGroupCommand outerCommand, long version)
         {
-            (c as AttributeSetInstanceExtensionFieldCommandBase).RequesterId = (outerCommand as AttributeSetInstanceExtensionFieldGroupCommandBase).RequesterId;
+            c.RequesterId = outerCommand.RequesterId;
 			var stateEventId = new AttributeSetInstanceExtensionFieldStateEventId(c.GroupId, c.Index, version);
             IAttributeSetInstanceExtensionFieldStateMergePatched e = NewAttributeSetInstanceExtensionFieldStateMergePatched(stateEventId);
 
@@ -290,8 +295,8 @@ namespace Dddml.Wms.Domain
             e.IsPropertyDescriptionRemoved = c.IsPropertyDescriptionRemoved;
             e.IsPropertyActiveRemoved = c.IsPropertyActiveRemoved;
 
-            (e as AttributeSetInstanceExtensionFieldStateEventBase).CreatedBy = (string)c.RequesterId;
-            (e as AttributeSetInstanceExtensionFieldStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)c.RequesterId;
+            e.CreatedAt = DateTime.Now;
             return e;
 
         }// END Map(IMergePatch... ////////////////////////////
@@ -299,13 +304,13 @@ namespace Dddml.Wms.Domain
 
         protected virtual IAttributeSetInstanceExtensionFieldStateRemoved MapRemove(IRemoveAttributeSetInstanceExtensionField c, IAttributeSetInstanceExtensionFieldGroupCommand outerCommand, long version)
         {
-            (c as AttributeSetInstanceExtensionFieldCommandBase).RequesterId = (outerCommand as AttributeSetInstanceExtensionFieldGroupCommandBase).RequesterId;
+            c.RequesterId = outerCommand.RequesterId;
 			var stateEventId = new AttributeSetInstanceExtensionFieldStateEventId(c.GroupId, c.Index, version);
             IAttributeSetInstanceExtensionFieldStateRemoved e = NewAttributeSetInstanceExtensionFieldStateRemoved(stateEventId);
 
 
-            (e as AttributeSetInstanceExtensionFieldStateEventBase).CreatedBy = (string)c.RequesterId;
-            (e as AttributeSetInstanceExtensionFieldStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)c.RequesterId;
+            e.CreatedAt = DateTime.Now;
 
             return e;
 
@@ -338,8 +343,8 @@ namespace Dddml.Wms.Domain
 
             e.CommandId = commandId;
 
-            (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedBy = (string)requesterId;
-            (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)requesterId;
+            e.CreatedAt = DateTime.Now;
 
             return e;
         }
@@ -351,8 +356,8 @@ namespace Dddml.Wms.Domain
 
             e.CommandId = commandId;
 
-            (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedBy = (string)requesterId;
-            (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)requesterId;
+            e.CreatedAt = DateTime.Now;
 
             return e;
         }
@@ -365,8 +370,8 @@ namespace Dddml.Wms.Domain
 
             e.CommandId = commandId;
 
-            (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedBy = (string)requesterId;
-            (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)requesterId;
+            e.CreatedAt = DateTime.Now;
 
             return e;
         }

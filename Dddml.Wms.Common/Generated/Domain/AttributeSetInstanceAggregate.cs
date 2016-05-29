@@ -58,7 +58,7 @@ namespace Dddml.Wms.Domain
         {
             if (_state.Version == AttributeSetInstanceState.VersionZero)
             {
-                if (c is ICreateAttributeSetInstance)
+                if (IsCommandCreate((IAttributeSetInstanceCommand)c))
                 {
                     return;
                 }
@@ -68,8 +68,13 @@ namespace Dddml.Wms.Domain
             {
                 throw DomainError.Named("zombie", "Can't do anything to deleted aggregate.");
             }
-            if (c is ICreateAttributeSetInstance)
+            if (IsCommandCreate((IAttributeSetInstanceCommand)c))
                 throw DomainError.Named("rebirth", "Can't create aggregate that already exists");
+        }
+
+        private static bool IsCommandCreate(IAttributeSetInstanceCommand c)
+        {
+            return c.Version == AttributeSetInstanceState.VersionZero;
         }
 
         protected virtual void Apply(IEvent e)
@@ -1032,8 +1037,8 @@ namespace Dddml.Wms.Domain
             ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
 
-            (e as AttributeSetInstanceStateEventBase).CreatedBy = (string)c.RequesterId;
-            (e as AttributeSetInstanceStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)c.RequesterId;
+            e.CreatedAt = DateTime.Now;
 			var version = c.Version;
 
 
@@ -2901,8 +2906,8 @@ namespace Dddml.Wms.Domain
             ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
 
-            (e as AttributeSetInstanceStateEventBase).CreatedBy = (string)c.RequesterId;
-            (e as AttributeSetInstanceStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)c.RequesterId;
+            e.CreatedAt = DateTime.Now;
 
 			var version = c.Version;
 
@@ -2918,8 +2923,8 @@ namespace Dddml.Wms.Domain
             ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
 
-            (e as AttributeSetInstanceStateEventBase).CreatedBy = (string)c.RequesterId;
-            (e as AttributeSetInstanceStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)c.RequesterId;
+            e.CreatedAt = DateTime.Now;
 
 
             return e;
@@ -2951,8 +2956,8 @@ namespace Dddml.Wms.Domain
 
             e.CommandId = commandId;
 
-            (e as AttributeSetInstanceStateEventBase).CreatedBy = (string)requesterId;
-            (e as AttributeSetInstanceStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)requesterId;
+            e.CreatedAt = DateTime.Now;
 
             return e;
         }
@@ -2964,8 +2969,8 @@ namespace Dddml.Wms.Domain
 
             e.CommandId = commandId;
 
-            (e as AttributeSetInstanceStateEventBase).CreatedBy = (string)requesterId;
-            (e as AttributeSetInstanceStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)requesterId;
+            e.CreatedAt = DateTime.Now;
 
             return e;
         }
@@ -2978,8 +2983,8 @@ namespace Dddml.Wms.Domain
 
             e.CommandId = commandId;
 
-            (e as AttributeSetInstanceStateEventBase).CreatedBy = (string)requesterId;
-            (e as AttributeSetInstanceStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)requesterId;
+            e.CreatedAt = DateTime.Now;
 
             return e;
         }

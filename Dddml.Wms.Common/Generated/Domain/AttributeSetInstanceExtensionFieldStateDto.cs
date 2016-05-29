@@ -381,11 +381,13 @@ namespace Dddml.Wms.Domain
 		string ICreated<string>.CreatedBy
 		{
             get { return (_state as IAttributeSetInstanceExtensionFieldState).CreatedBy; }
+            set { (_state as IAttributeSetInstanceExtensionFieldState).CreatedBy = value; }
 		}
 
 		DateTime ICreated<string>.CreatedAt
 		{
             get { return (_state as IAttributeSetInstanceExtensionFieldState).CreatedAt; }
+            set { (_state as IAttributeSetInstanceExtensionFieldState).CreatedAt = value; }
 		}
 
 		#endregion

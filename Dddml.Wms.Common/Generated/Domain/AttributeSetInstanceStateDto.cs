@@ -13152,11 +13152,13 @@ namespace Dddml.Wms.Domain
 		string ICreated<string>.CreatedBy
 		{
             get { return (_state as IAttributeSetInstanceState).CreatedBy; }
+            set { (_state as IAttributeSetInstanceState).CreatedBy = value; }
 		}
 
 		DateTime ICreated<string>.CreatedAt
 		{
             get { return (_state as IAttributeSetInstanceState).CreatedAt; }
+            set { (_state as IAttributeSetInstanceState).CreatedAt = value; }
 		}
 
 		#endregion

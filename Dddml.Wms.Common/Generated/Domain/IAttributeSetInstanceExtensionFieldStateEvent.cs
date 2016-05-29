@@ -32,8 +32,7 @@ namespace Dddml.Wms.Domain
 		bool? Active { get; set; }
 
 		// Outer Id:
-
-		string GroupId { get; set; }
+		//string GroupId { get; set; }
 
 
 	}

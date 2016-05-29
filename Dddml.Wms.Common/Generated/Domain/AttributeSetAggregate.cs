@@ -58,7 +58,7 @@ namespace Dddml.Wms.Domain
         {
             if (_state.Version == AttributeSetState.VersionZero)
             {
-                if (c is ICreateAttributeSet)
+                if (IsCommandCreate((IAttributeSetCommand)c))
                 {
                     return;
                 }
@@ -68,8 +68,13 @@ namespace Dddml.Wms.Domain
             {
                 throw DomainError.Named("zombie", "Can't do anything to deleted aggregate.");
             }
-            if (c is ICreateAttributeSet)
+            if (IsCommandCreate((IAttributeSetCommand)c))
                 throw DomainError.Named("rebirth", "Can't create aggregate that already exists");
+        }
+
+        private static bool IsCommandCreate(IAttributeSetCommand c)
+        {
+            return c.Version == AttributeSetState.VersionZero;
         }
 
         protected virtual void Apply(IEvent e)
@@ -120,8 +125,8 @@ namespace Dddml.Wms.Domain
             ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
 
-            (e as AttributeSetStateEventBase).CreatedBy = (string)c.RequesterId;
-            (e as AttributeSetStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)c.RequesterId;
+            e.CreatedAt = DateTime.Now;
 			var version = c.Version;
 
             foreach (ICreateAttributeUse innerCommand in c.AttributeUses)
@@ -173,8 +178,8 @@ namespace Dddml.Wms.Domain
             ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
 
-            (e as AttributeSetStateEventBase).CreatedBy = (string)c.RequesterId;
-            (e as AttributeSetStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)c.RequesterId;
+            e.CreatedAt = DateTime.Now;
 
 			var version = c.Version;
 
@@ -198,8 +203,8 @@ namespace Dddml.Wms.Domain
             ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
 
-            (e as AttributeSetStateEventBase).CreatedBy = (string)c.RequesterId;
-            (e as AttributeSetStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)c.RequesterId;
+            e.CreatedAt = DateTime.Now;
 
 
             return e;
@@ -246,7 +251,7 @@ namespace Dddml.Wms.Domain
 
         protected virtual IAttributeUseStateCreated MapCreate(ICreateAttributeUse c, IAttributeSetCommand outerCommand, long version)
         {
-            (c as AttributeUseCommandBase).RequesterId = (outerCommand as AttributeSetCommandBase).RequesterId;
+            c.RequesterId = outerCommand.RequesterId;
 			var stateEventId = new AttributeUseStateEventId(c.AttributeSetId, c.AttributeId, version);
             IAttributeUseStateCreated e = NewAttributeUseStateCreated(stateEventId);
 
@@ -255,8 +260,8 @@ namespace Dddml.Wms.Domain
             e.Active = c.Active;
 
 
-            (e as AttributeUseStateEventBase).CreatedBy = (string)c.RequesterId;
-            (e as AttributeUseStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)c.RequesterId;
+            e.CreatedAt = DateTime.Now;
             return e;
 
         }// END Map(ICreate... ////////////////////////////
@@ -265,7 +270,7 @@ namespace Dddml.Wms.Domain
 
         protected virtual IAttributeUseStateMergePatched MapMergePatch(IMergePatchAttributeUse c, IAttributeSetCommand outerCommand, long version)
         {
-            (c as AttributeUseCommandBase).RequesterId = (outerCommand as AttributeSetCommandBase).RequesterId;
+            c.RequesterId = outerCommand.RequesterId;
 			var stateEventId = new AttributeUseStateEventId(c.AttributeSetId, c.AttributeId, version);
             IAttributeUseStateMergePatched e = NewAttributeUseStateMergePatched(stateEventId);
 
@@ -276,8 +281,8 @@ namespace Dddml.Wms.Domain
             e.IsPropertySequenceNumberRemoved = c.IsPropertySequenceNumberRemoved;
             e.IsPropertyActiveRemoved = c.IsPropertyActiveRemoved;
 
-            (e as AttributeUseStateEventBase).CreatedBy = (string)c.RequesterId;
-            (e as AttributeUseStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)c.RequesterId;
+            e.CreatedAt = DateTime.Now;
             return e;
 
         }// END Map(IMergePatch... ////////////////////////////
@@ -285,13 +290,13 @@ namespace Dddml.Wms.Domain
 
         protected virtual IAttributeUseStateRemoved MapRemove(IRemoveAttributeUse c, IAttributeSetCommand outerCommand, long version)
         {
-            (c as AttributeUseCommandBase).RequesterId = (outerCommand as AttributeSetCommandBase).RequesterId;
+            c.RequesterId = outerCommand.RequesterId;
 			var stateEventId = new AttributeUseStateEventId(c.AttributeSetId, c.AttributeId, version);
             IAttributeUseStateRemoved e = NewAttributeUseStateRemoved(stateEventId);
 
 
-            (e as AttributeUseStateEventBase).CreatedBy = (string)c.RequesterId;
-            (e as AttributeUseStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)c.RequesterId;
+            e.CreatedAt = DateTime.Now;
 
             return e;
 
@@ -324,8 +329,8 @@ namespace Dddml.Wms.Domain
 
             e.CommandId = commandId;
 
-            (e as AttributeSetStateEventBase).CreatedBy = (string)requesterId;
-            (e as AttributeSetStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)requesterId;
+            e.CreatedAt = DateTime.Now;
 
             return e;
         }
@@ -337,8 +342,8 @@ namespace Dddml.Wms.Domain
 
             e.CommandId = commandId;
 
-            (e as AttributeSetStateEventBase).CreatedBy = (string)requesterId;
-            (e as AttributeSetStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)requesterId;
+            e.CreatedAt = DateTime.Now;
 
             return e;
         }
@@ -351,8 +356,8 @@ namespace Dddml.Wms.Domain
 
             e.CommandId = commandId;
 
-            (e as AttributeSetStateEventBase).CreatedBy = (string)requesterId;
-            (e as AttributeSetStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)requesterId;
+            e.CreatedAt = DateTime.Now;
 
             return e;
         }

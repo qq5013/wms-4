@@ -58,7 +58,7 @@ namespace Dddml.Wms.Domain
         {
             if (_state.Version == AttributeState.VersionZero)
             {
-                if (c is ICreateAttribute)
+                if (IsCommandCreate((IAttributeCommand)c))
                 {
                     return;
                 }
@@ -68,8 +68,13 @@ namespace Dddml.Wms.Domain
             {
                 throw DomainError.Named("zombie", "Can't do anything to deleted aggregate.");
             }
-            if (c is ICreateAttribute)
+            if (IsCommandCreate((IAttributeCommand)c))
                 throw DomainError.Named("rebirth", "Can't create aggregate that already exists");
+        }
+
+        private static bool IsCommandCreate(IAttributeCommand c)
+        {
+            return c.Version == AttributeState.VersionZero;
         }
 
         protected virtual void Apply(IEvent e)
@@ -128,8 +133,8 @@ namespace Dddml.Wms.Domain
             ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
 
-            (e as AttributeStateEventBase).CreatedBy = (string)c.RequesterId;
-            (e as AttributeStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)c.RequesterId;
+            e.CreatedAt = DateTime.Now;
 			var version = c.Version;
 
             foreach (ICreateAttributeValue innerCommand in c.AttributeValues)
@@ -197,8 +202,8 @@ namespace Dddml.Wms.Domain
             ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
 
-            (e as AttributeStateEventBase).CreatedBy = (string)c.RequesterId;
-            (e as AttributeStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)c.RequesterId;
+            e.CreatedAt = DateTime.Now;
 
 			var version = c.Version;
 
@@ -222,8 +227,8 @@ namespace Dddml.Wms.Domain
             ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
 
-            (e as AttributeStateEventBase).CreatedBy = (string)c.RequesterId;
-            (e as AttributeStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)c.RequesterId;
+            e.CreatedAt = DateTime.Now;
 
 
             return e;
@@ -270,7 +275,7 @@ namespace Dddml.Wms.Domain
 
         protected virtual IAttributeValueStateCreated MapCreate(ICreateAttributeValue c, IAttributeCommand outerCommand, long version)
         {
-            (c as AttributeValueCommandBase).RequesterId = (outerCommand as AttributeCommandBase).RequesterId;
+            c.RequesterId = outerCommand.RequesterId;
 			var stateEventId = new AttributeValueStateEventId(c.AttributeId, c.Value, version);
             IAttributeValueStateCreated e = NewAttributeValueStateCreated(stateEventId);
 
@@ -283,8 +288,8 @@ namespace Dddml.Wms.Domain
             e.Active = c.Active;
 
 
-            (e as AttributeValueStateEventBase).CreatedBy = (string)c.RequesterId;
-            (e as AttributeValueStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)c.RequesterId;
+            e.CreatedAt = DateTime.Now;
             return e;
 
         }// END Map(ICreate... ////////////////////////////
@@ -293,7 +298,7 @@ namespace Dddml.Wms.Domain
 
         protected virtual IAttributeValueStateMergePatched MapMergePatch(IMergePatchAttributeValue c, IAttributeCommand outerCommand, long version)
         {
-            (c as AttributeValueCommandBase).RequesterId = (outerCommand as AttributeCommandBase).RequesterId;
+            c.RequesterId = outerCommand.RequesterId;
 			var stateEventId = new AttributeValueStateEventId(c.AttributeId, c.Value, version);
             IAttributeValueStateMergePatched e = NewAttributeValueStateMergePatched(stateEventId);
 
@@ -310,8 +315,8 @@ namespace Dddml.Wms.Domain
             e.IsPropertyReferenceIdRemoved = c.IsPropertyReferenceIdRemoved;
             e.IsPropertyActiveRemoved = c.IsPropertyActiveRemoved;
 
-            (e as AttributeValueStateEventBase).CreatedBy = (string)c.RequesterId;
-            (e as AttributeValueStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)c.RequesterId;
+            e.CreatedAt = DateTime.Now;
             return e;
 
         }// END Map(IMergePatch... ////////////////////////////
@@ -319,13 +324,13 @@ namespace Dddml.Wms.Domain
 
         protected virtual IAttributeValueStateRemoved MapRemove(IRemoveAttributeValue c, IAttributeCommand outerCommand, long version)
         {
-            (c as AttributeValueCommandBase).RequesterId = (outerCommand as AttributeCommandBase).RequesterId;
+            c.RequesterId = outerCommand.RequesterId;
 			var stateEventId = new AttributeValueStateEventId(c.AttributeId, c.Value, version);
             IAttributeValueStateRemoved e = NewAttributeValueStateRemoved(stateEventId);
 
 
-            (e as AttributeValueStateEventBase).CreatedBy = (string)c.RequesterId;
-            (e as AttributeValueStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)c.RequesterId;
+            e.CreatedAt = DateTime.Now;
 
             return e;
 
@@ -358,8 +363,8 @@ namespace Dddml.Wms.Domain
 
             e.CommandId = commandId;
 
-            (e as AttributeStateEventBase).CreatedBy = (string)requesterId;
-            (e as AttributeStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)requesterId;
+            e.CreatedAt = DateTime.Now;
 
             return e;
         }
@@ -371,8 +376,8 @@ namespace Dddml.Wms.Domain
 
             e.CommandId = commandId;
 
-            (e as AttributeStateEventBase).CreatedBy = (string)requesterId;
-            (e as AttributeStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)requesterId;
+            e.CreatedAt = DateTime.Now;
 
             return e;
         }
@@ -385,8 +390,8 @@ namespace Dddml.Wms.Domain
 
             e.CommandId = commandId;
 
-            (e as AttributeStateEventBase).CreatedBy = (string)requesterId;
-            (e as AttributeStateEventBase).CreatedAt = DateTime.Now;
+            e.CreatedBy = (string)requesterId;
+            e.CreatedAt = DateTime.Now;
 
             return e;
         }

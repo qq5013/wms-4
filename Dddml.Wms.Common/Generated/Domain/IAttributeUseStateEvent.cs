@@ -24,8 +24,7 @@ namespace Dddml.Wms.Domain
 		bool? Active { get; set; }
 
 		// Outer Id:
-
-		string AttributeSetId { get; set; }
+		//string AttributeSetId { get; set; }
 
 
 	}

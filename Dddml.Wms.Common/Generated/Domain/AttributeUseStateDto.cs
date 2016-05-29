@@ -272,11 +272,13 @@ namespace Dddml.Wms.Domain
 		string ICreated<string>.CreatedBy
 		{
             get { return (_state as IAttributeUseState).CreatedBy; }
+            set { (_state as IAttributeUseState).CreatedBy = value; }
 		}
 
 		DateTime ICreated<string>.CreatedAt
 		{
             get { return (_state as IAttributeUseState).CreatedAt; }
+            set { (_state as IAttributeUseState).CreatedAt = value; }
 		}
 
 		#endregion

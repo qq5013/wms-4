@@ -166,7 +166,7 @@ namespace Dddml.Wms.Domain
 
         private IAttributeSetInstanceExtensionFieldCommand _innerCommand;
 
-        public virtual ICommand ToCommand()
+        internal ICommand ToCommand()//public virtual
         {
             //if (this._innerCommand != null)
             //{

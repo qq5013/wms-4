@@ -75,6 +75,10 @@ namespace Dddml.Wms.Domain
 			{
 				return this.CreatedBy;
 			}
+			set
+			{
+				this.CreatedBy = value;
+			}
 		}
 
 		DateTime ICreated<string>.CreatedAt
@@ -82,6 +86,10 @@ namespace Dddml.Wms.Domain
 			get
 			{
 				return this.CreatedAt;
+			}
+			set
+			{
+				this.CreatedAt = value;
 			}
 		}
 

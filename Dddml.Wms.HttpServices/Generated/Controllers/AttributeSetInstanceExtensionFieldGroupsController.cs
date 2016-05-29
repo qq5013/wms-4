@@ -104,7 +104,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
         {
           try {
             SetNullIdOrThrowOnInconsistentIds(id, value);
-            _attributeSetInstanceExtensionFieldGroupApplicationService.When(value.ToCommand() as ICreateAttributeSetInstanceExtensionFieldGroup);
+            _attributeSetInstanceExtensionFieldGroupApplicationService.When(value as ICreateAttributeSetInstanceExtensionFieldGroup);
           } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
@@ -113,7 +113,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
         {
           try {
             SetNullIdOrThrowOnInconsistentIds(id, value);
-            _attributeSetInstanceExtensionFieldGroupApplicationService.When(value.ToCommand() as IMergePatchAttributeSetInstanceExtensionFieldGroup);
+            _attributeSetInstanceExtensionFieldGroupApplicationService.When(value as IMergePatchAttributeSetInstanceExtensionFieldGroup);
           } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
@@ -125,7 +125,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             value.CommandId = commandId;
             value.RequesterId = requesterId;
             SetNullIdOrThrowOnInconsistentIds(id, value);
-            _attributeSetInstanceExtensionFieldGroupApplicationService.When(value.ToCommand() as IDeleteAttributeSetInstanceExtensionFieldGroup);
+            _attributeSetInstanceExtensionFieldGroupApplicationService.When(value as IDeleteAttributeSetInstanceExtensionFieldGroup);
           } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 

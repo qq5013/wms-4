@@ -40,6 +40,8 @@ namespace Dddml.Wms.Domain
 		
 		void AddAttributeUseEvent(IAttributeUseStateCreated e);
 
+		IAttributeUseStateCreated NewAttributeUseStateCreated(string attributeId);
+
 	
 	}
 
@@ -63,6 +65,12 @@ namespace Dddml.Wms.Domain
 		IEnumerable<IAttributeUseStateEvent> AttributeUseEvents { get; }
 		
 		void AddAttributeUseEvent(IAttributeUseStateEvent e);
+
+		IAttributeUseStateCreated NewAttributeUseStateCreated(string attributeId);
+
+		IAttributeUseStateMergePatched NewAttributeUseStateMergePatched(string attributeId);
+
+		IAttributeUseStateRemoved NewAttributeUseStateRemoved(string attributeId);
 
 
 	}

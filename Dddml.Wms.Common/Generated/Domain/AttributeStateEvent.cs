@@ -68,7 +68,7 @@ namespace Dddml.Wms.Domain
 
 		public virtual string AttributeId {
 			get {
-				return StateEventId.AttributeId;//EntityBase.Aggregate.GetStateEventIdPropertyIdName()
+				return StateEventId.AttributeId;
 			}
 			set {
 				StateEventId.AttributeId = value;
@@ -77,7 +77,7 @@ namespace Dddml.Wms.Domain
 
 		public virtual long Version {
 			get {
-				return StateEventId.Version;//EntityBase.Aggregate.GetStateEventIdPropertyVersionName()
+				return StateEventId.Version;
 			}
 			set {
 				StateEventId.Version = value;
@@ -178,7 +178,7 @@ namespace Dddml.Wms.Domain
 			this._attributeValueEvents[e.StateEventId] = e;
 		}
 
-        public virtual AttributeValueStateCreated NewAttributeValueStateCreated(string value)
+        public virtual IAttributeValueStateCreated NewAttributeValueStateCreated(string value)
         {
             var stateEvent = new AttributeValueStateCreated(NewAttributeValueStateEventId(value));
             return stateEvent;
@@ -270,19 +270,19 @@ namespace Dddml.Wms.Domain
 			this._attributeValueEvents[e.StateEventId] = e;
 		}
 
-        public virtual AttributeValueStateCreated NewAttributeValueStateCreated(string value)
+        public virtual IAttributeValueStateCreated NewAttributeValueStateCreated(string value)
         {
             var stateEvent = new AttributeValueStateCreated(NewAttributeValueStateEventId(value));
             return stateEvent;
         }
 
-        public virtual AttributeValueStateMergePatched NewAttributeValueStateMergePatched(string value)
+        public virtual IAttributeValueStateMergePatched NewAttributeValueStateMergePatched(string value)
         {
             var stateEvent = new AttributeValueStateMergePatched(NewAttributeValueStateEventId(value));
             return stateEvent;
         }
 
-        public virtual AttributeValueStateRemoved NewAttributeValueStateRemoved(string value)
+        public virtual IAttributeValueStateRemoved NewAttributeValueStateRemoved(string value)
         {
             var stateEvent = new AttributeValueStateRemoved(NewAttributeValueStateEventId(value));
             return stateEvent;

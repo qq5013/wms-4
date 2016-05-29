@@ -1032,7 +1032,7 @@ namespace Dddml.Wms.Domain
             ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
 
-            (e as AttributeSetInstanceStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
+            (e as AttributeSetInstanceStateEventBase).CreatedBy = (string)c.RequesterId;
             (e as AttributeSetInstanceStateEventBase).CreatedAt = DateTime.Now;
 			var version = c.Version;
 
@@ -2901,7 +2901,7 @@ namespace Dddml.Wms.Domain
             ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
 
-            (e as AttributeSetInstanceStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
+            (e as AttributeSetInstanceStateEventBase).CreatedBy = (string)c.RequesterId;
             (e as AttributeSetInstanceStateEventBase).CreatedAt = DateTime.Now;
 
 			var version = c.Version;
@@ -2918,7 +2918,7 @@ namespace Dddml.Wms.Domain
             ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
 
-            (e as AttributeSetInstanceStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
+            (e as AttributeSetInstanceStateEventBase).CreatedBy = (string)c.RequesterId;
             (e as AttributeSetInstanceStateEventBase).CreatedAt = DateTime.Now;
 
 
@@ -2951,7 +2951,7 @@ namespace Dddml.Wms.Domain
 
             e.CommandId = commandId;
 
-            (e as AttributeSetInstanceStateEventBase).CreatedBy = (string)requesterId;//TODO RequestId 是不是太特殊了？？？
+            (e as AttributeSetInstanceStateEventBase).CreatedBy = (string)requesterId;
             (e as AttributeSetInstanceStateEventBase).CreatedAt = DateTime.Now;
 
             return e;
@@ -2964,7 +2964,7 @@ namespace Dddml.Wms.Domain
 
             e.CommandId = commandId;
 
-            (e as AttributeSetInstanceStateEventBase).CreatedBy = (string)requesterId;//TODO RequestId 是不是太特殊了？？？
+            (e as AttributeSetInstanceStateEventBase).CreatedBy = (string)requesterId;
             (e as AttributeSetInstanceStateEventBase).CreatedAt = DateTime.Now;
 
             return e;
@@ -2978,7 +2978,7 @@ namespace Dddml.Wms.Domain
 
             e.CommandId = commandId;
 
-            (e as AttributeSetInstanceStateEventBase).CreatedBy = (string)requesterId;//TODO RequestId 是不是太特殊了？？？
+            (e as AttributeSetInstanceStateEventBase).CreatedBy = (string)requesterId;
             (e as AttributeSetInstanceStateEventBase).CreatedAt = DateTime.Now;
 
             return e;

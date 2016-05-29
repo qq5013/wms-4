@@ -234,6 +234,7 @@ namespace Dddml.Wms.Domain
 
 		public virtual void When(IAttributeValueStateRemoved e)
 		{
+			ThrowOnWrongEvent(e);
 		}
 
 

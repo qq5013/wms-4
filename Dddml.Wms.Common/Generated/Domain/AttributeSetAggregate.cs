@@ -120,7 +120,7 @@ namespace Dddml.Wms.Domain
             ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
 
-            (e as AttributeSetStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
+            (e as AttributeSetStateEventBase).CreatedBy = (string)c.RequesterId;
             (e as AttributeSetStateEventBase).CreatedAt = DateTime.Now;
 			var version = c.Version;
 
@@ -173,7 +173,7 @@ namespace Dddml.Wms.Domain
             ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
 
-            (e as AttributeSetStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
+            (e as AttributeSetStateEventBase).CreatedBy = (string)c.RequesterId;
             (e as AttributeSetStateEventBase).CreatedAt = DateTime.Now;
 
 			var version = c.Version;
@@ -198,7 +198,7 @@ namespace Dddml.Wms.Domain
             ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
 
-            (e as AttributeSetStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
+            (e as AttributeSetStateEventBase).CreatedBy = (string)c.RequesterId;
             (e as AttributeSetStateEventBase).CreatedAt = DateTime.Now;
 
 
@@ -255,7 +255,7 @@ namespace Dddml.Wms.Domain
             e.Active = c.Active;
 
 
-            (e as AttributeUseStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
+            (e as AttributeUseStateEventBase).CreatedBy = (string)c.RequesterId;
             (e as AttributeUseStateEventBase).CreatedAt = DateTime.Now;
             return e;
 
@@ -276,7 +276,7 @@ namespace Dddml.Wms.Domain
             e.IsPropertySequenceNumberRemoved = c.IsPropertySequenceNumberRemoved;
             e.IsPropertyActiveRemoved = c.IsPropertyActiveRemoved;
 
-            (e as AttributeUseStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
+            (e as AttributeUseStateEventBase).CreatedBy = (string)c.RequesterId;
             (e as AttributeUseStateEventBase).CreatedAt = DateTime.Now;
             return e;
 
@@ -290,7 +290,7 @@ namespace Dddml.Wms.Domain
             IAttributeUseStateRemoved e = NewAttributeUseStateRemoved(stateEventId);
 
 
-            (e as AttributeUseStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
+            (e as AttributeUseStateEventBase).CreatedBy = (string)c.RequesterId;
             (e as AttributeUseStateEventBase).CreatedAt = DateTime.Now;
 
             return e;
@@ -324,7 +324,7 @@ namespace Dddml.Wms.Domain
 
             e.CommandId = commandId;
 
-            (e as AttributeSetStateEventBase).CreatedBy = (string)requesterId;//TODO RequestId 是不是太特殊了？？？
+            (e as AttributeSetStateEventBase).CreatedBy = (string)requesterId;
             (e as AttributeSetStateEventBase).CreatedAt = DateTime.Now;
 
             return e;
@@ -337,7 +337,7 @@ namespace Dddml.Wms.Domain
 
             e.CommandId = commandId;
 
-            (e as AttributeSetStateEventBase).CreatedBy = (string)requesterId;//TODO RequestId 是不是太特殊了？？？
+            (e as AttributeSetStateEventBase).CreatedBy = (string)requesterId;
             (e as AttributeSetStateEventBase).CreatedAt = DateTime.Now;
 
             return e;
@@ -351,7 +351,7 @@ namespace Dddml.Wms.Domain
 
             e.CommandId = commandId;
 
-            (e as AttributeSetStateEventBase).CreatedBy = (string)requesterId;//TODO RequestId 是不是太特殊了？？？
+            (e as AttributeSetStateEventBase).CreatedBy = (string)requesterId;
             (e as AttributeSetStateEventBase).CreatedAt = DateTime.Now;
 
             return e;

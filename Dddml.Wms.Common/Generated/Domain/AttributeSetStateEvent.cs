@@ -60,7 +60,7 @@ namespace Dddml.Wms.Domain
 
 		public virtual string AttributeSetId {
 			get {
-				return StateEventId.AttributeSetId;//EntityBase.Aggregate.GetStateEventIdPropertyIdName()
+				return StateEventId.AttributeSetId;
 			}
 			set {
 				StateEventId.AttributeSetId = value;
@@ -69,7 +69,7 @@ namespace Dddml.Wms.Domain
 
 		public virtual long Version {
 			get {
-				return StateEventId.Version;//EntityBase.Aggregate.GetStateEventIdPropertyVersionName()
+				return StateEventId.Version;
 			}
 			set {
 				StateEventId.Version = value;
@@ -170,7 +170,7 @@ namespace Dddml.Wms.Domain
 			this._attributeUseEvents[e.StateEventId] = e;
 		}
 
-        public virtual AttributeUseStateCreated NewAttributeUseStateCreated(string attributeId)
+        public virtual IAttributeUseStateCreated NewAttributeUseStateCreated(string attributeId)
         {
             var stateEvent = new AttributeUseStateCreated(NewAttributeUseStateEventId(attributeId));
             return stateEvent;
@@ -254,19 +254,19 @@ namespace Dddml.Wms.Domain
 			this._attributeUseEvents[e.StateEventId] = e;
 		}
 
-        public virtual AttributeUseStateCreated NewAttributeUseStateCreated(string attributeId)
+        public virtual IAttributeUseStateCreated NewAttributeUseStateCreated(string attributeId)
         {
             var stateEvent = new AttributeUseStateCreated(NewAttributeUseStateEventId(attributeId));
             return stateEvent;
         }
 
-        public virtual AttributeUseStateMergePatched NewAttributeUseStateMergePatched(string attributeId)
+        public virtual IAttributeUseStateMergePatched NewAttributeUseStateMergePatched(string attributeId)
         {
             var stateEvent = new AttributeUseStateMergePatched(NewAttributeUseStateEventId(attributeId));
             return stateEvent;
         }
 
-        public virtual AttributeUseStateRemoved NewAttributeUseStateRemoved(string attributeId)
+        public virtual IAttributeUseStateRemoved NewAttributeUseStateRemoved(string attributeId)
         {
             var stateEvent = new AttributeUseStateRemoved(NewAttributeUseStateEventId(attributeId));
             return stateEvent;

@@ -118,7 +118,7 @@ namespace Dddml.Wms.Domain
             ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
 
-            (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
+            (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedBy = (string)c.RequesterId;
             (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedAt = DateTime.Now;
 			var version = c.Version;
 
@@ -167,7 +167,7 @@ namespace Dddml.Wms.Domain
             ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
 
-            (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
+            (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedBy = (string)c.RequesterId;
             (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedAt = DateTime.Now;
 
 			var version = c.Version;
@@ -192,7 +192,7 @@ namespace Dddml.Wms.Domain
             ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
 
-            (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
+            (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedBy = (string)c.RequesterId;
             (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedAt = DateTime.Now;
 
 
@@ -257,7 +257,7 @@ namespace Dddml.Wms.Domain
             e.Active = c.Active;
 
 
-            (e as AttributeSetInstanceExtensionFieldStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
+            (e as AttributeSetInstanceExtensionFieldStateEventBase).CreatedBy = (string)c.RequesterId;
             (e as AttributeSetInstanceExtensionFieldStateEventBase).CreatedAt = DateTime.Now;
             return e;
 
@@ -290,7 +290,7 @@ namespace Dddml.Wms.Domain
             e.IsPropertyDescriptionRemoved = c.IsPropertyDescriptionRemoved;
             e.IsPropertyActiveRemoved = c.IsPropertyActiveRemoved;
 
-            (e as AttributeSetInstanceExtensionFieldStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
+            (e as AttributeSetInstanceExtensionFieldStateEventBase).CreatedBy = (string)c.RequesterId;
             (e as AttributeSetInstanceExtensionFieldStateEventBase).CreatedAt = DateTime.Now;
             return e;
 
@@ -304,7 +304,7 @@ namespace Dddml.Wms.Domain
             IAttributeSetInstanceExtensionFieldStateRemoved e = NewAttributeSetInstanceExtensionFieldStateRemoved(stateEventId);
 
 
-            (e as AttributeSetInstanceExtensionFieldStateEventBase).CreatedBy = (string)c.RequesterId;//TODO RequestId 是不是太特殊了？？？
+            (e as AttributeSetInstanceExtensionFieldStateEventBase).CreatedBy = (string)c.RequesterId;
             (e as AttributeSetInstanceExtensionFieldStateEventBase).CreatedAt = DateTime.Now;
 
             return e;
@@ -338,7 +338,7 @@ namespace Dddml.Wms.Domain
 
             e.CommandId = commandId;
 
-            (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedBy = (string)requesterId;//TODO RequestId 是不是太特殊了？？？
+            (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedBy = (string)requesterId;
             (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedAt = DateTime.Now;
 
             return e;
@@ -351,7 +351,7 @@ namespace Dddml.Wms.Domain
 
             e.CommandId = commandId;
 
-            (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedBy = (string)requesterId;//TODO RequestId 是不是太特殊了？？？
+            (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedBy = (string)requesterId;
             (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedAt = DateTime.Now;
 
             return e;
@@ -365,7 +365,7 @@ namespace Dddml.Wms.Domain
 
             e.CommandId = commandId;
 
-            (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedBy = (string)requesterId;//TODO RequestId 是不是太特殊了？？？
+            (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedBy = (string)requesterId;
             (e as AttributeSetInstanceExtensionFieldGroupStateEventBase).CreatedAt = DateTime.Now;
 
             return e;

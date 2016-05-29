@@ -972,7 +972,7 @@ namespace Dddml.Wms.Domain
 
 		public virtual string AttributeSetInstanceId {
 			get {
-				return StateEventId.AttributeSetInstanceId;//EntityBase.Aggregate.GetStateEventIdPropertyIdName()
+				return StateEventId.AttributeSetInstanceId;
 			}
 			set {
 				StateEventId.AttributeSetInstanceId = value;
@@ -981,7 +981,7 @@ namespace Dddml.Wms.Domain
 
 		public virtual long Version {
 			get {
-				return StateEventId.Version;//EntityBase.Aggregate.GetStateEventIdPropertyVersionName()
+				return StateEventId.Version;
 			}
 			set {
 				StateEventId.Version = value;

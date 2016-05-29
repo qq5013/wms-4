@@ -58,7 +58,7 @@ namespace Dddml.Wms.Domain
 
 		public virtual string Id {
 			get {
-				return StateEventId.Id;//EntityBase.Aggregate.GetStateEventIdPropertyIdName()
+				return StateEventId.Id;
 			}
 			set {
 				StateEventId.Id = value;
@@ -67,7 +67,7 @@ namespace Dddml.Wms.Domain
 
 		public virtual long Version {
 			get {
-				return StateEventId.Version;//EntityBase.Aggregate.GetStateEventIdPropertyVersionName()
+				return StateEventId.Version;
 			}
 			set {
 				StateEventId.Version = value;
@@ -168,7 +168,7 @@ namespace Dddml.Wms.Domain
 			this._attributeSetInstanceExtensionFieldEvents[e.StateEventId] = e;
 		}
 
-        public virtual AttributeSetInstanceExtensionFieldStateCreated NewAttributeSetInstanceExtensionFieldStateCreated(string index)
+        public virtual IAttributeSetInstanceExtensionFieldStateCreated NewAttributeSetInstanceExtensionFieldStateCreated(string index)
         {
             var stateEvent = new AttributeSetInstanceExtensionFieldStateCreated(NewAttributeSetInstanceExtensionFieldStateEventId(index));
             return stateEvent;
@@ -250,19 +250,19 @@ namespace Dddml.Wms.Domain
 			this._attributeSetInstanceExtensionFieldEvents[e.StateEventId] = e;
 		}
 
-        public virtual AttributeSetInstanceExtensionFieldStateCreated NewAttributeSetInstanceExtensionFieldStateCreated(string index)
+        public virtual IAttributeSetInstanceExtensionFieldStateCreated NewAttributeSetInstanceExtensionFieldStateCreated(string index)
         {
             var stateEvent = new AttributeSetInstanceExtensionFieldStateCreated(NewAttributeSetInstanceExtensionFieldStateEventId(index));
             return stateEvent;
         }
 
-        public virtual AttributeSetInstanceExtensionFieldStateMergePatched NewAttributeSetInstanceExtensionFieldStateMergePatched(string index)
+        public virtual IAttributeSetInstanceExtensionFieldStateMergePatched NewAttributeSetInstanceExtensionFieldStateMergePatched(string index)
         {
             var stateEvent = new AttributeSetInstanceExtensionFieldStateMergePatched(NewAttributeSetInstanceExtensionFieldStateEventId(index));
             return stateEvent;
         }
 
-        public virtual AttributeSetInstanceExtensionFieldStateRemoved NewAttributeSetInstanceExtensionFieldStateRemoved(string index)
+        public virtual IAttributeSetInstanceExtensionFieldStateRemoved NewAttributeSetInstanceExtensionFieldStateRemoved(string index)
         {
             var stateEvent = new AttributeSetInstanceExtensionFieldStateRemoved(NewAttributeSetInstanceExtensionFieldStateEventId(index));
             return stateEvent;

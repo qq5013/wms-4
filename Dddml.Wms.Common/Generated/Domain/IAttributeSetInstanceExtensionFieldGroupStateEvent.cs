@@ -38,6 +38,8 @@ namespace Dddml.Wms.Domain
 		
 		void AddAttributeSetInstanceExtensionFieldEvent(IAttributeSetInstanceExtensionFieldStateCreated e);
 
+		IAttributeSetInstanceExtensionFieldStateCreated NewAttributeSetInstanceExtensionFieldStateCreated(string index);
+
 	
 	}
 
@@ -59,6 +61,12 @@ namespace Dddml.Wms.Domain
 		IEnumerable<IAttributeSetInstanceExtensionFieldStateEvent> AttributeSetInstanceExtensionFieldEvents { get; }
 		
 		void AddAttributeSetInstanceExtensionFieldEvent(IAttributeSetInstanceExtensionFieldStateEvent e);
+
+		IAttributeSetInstanceExtensionFieldStateCreated NewAttributeSetInstanceExtensionFieldStateCreated(string index);
+
+		IAttributeSetInstanceExtensionFieldStateMergePatched NewAttributeSetInstanceExtensionFieldStateMergePatched(string index);
+
+		IAttributeSetInstanceExtensionFieldStateRemoved NewAttributeSetInstanceExtensionFieldStateRemoved(string index);
 
 
 	}

@@ -48,6 +48,8 @@ namespace Dddml.Wms.Domain
 		
 		void AddAttributeValueEvent(IAttributeValueStateCreated e);
 
+		IAttributeValueStateCreated NewAttributeValueStateCreated(string value);
+
 	
 	}
 
@@ -79,6 +81,12 @@ namespace Dddml.Wms.Domain
 		IEnumerable<IAttributeValueStateEvent> AttributeValueEvents { get; }
 		
 		void AddAttributeValueEvent(IAttributeValueStateEvent e);
+
+		IAttributeValueStateCreated NewAttributeValueStateCreated(string value);
+
+		IAttributeValueStateMergePatched NewAttributeValueStateMergePatched(string value);
+
+		IAttributeValueStateRemoved NewAttributeValueStateRemoved(string value);
 
 
 	}

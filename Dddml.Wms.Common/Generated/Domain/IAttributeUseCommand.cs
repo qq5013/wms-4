@@ -13,14 +13,14 @@ namespace Dddml.Wms.Domain
 {
 	public interface IAttributeUseCommand : ICommand
 	{
-		string AttributeId { get; set; }
-
 
 	}
 
 
 	public interface ICreateOrMergePatchOrRemoveAttributeUse : IAttributeUseCommand
 	{
+		string AttributeId { get; set; }
+
 		int? SequenceNumber { get; set; }
 
 		bool? Active { get; set; }

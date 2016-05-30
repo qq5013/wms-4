@@ -112,7 +112,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             string idObj = _attributeSetInstanceIdGenerator.GetOrGenerateId(value, out reused);
             if (!reused)
             {
-                ((IAttributeSetInstanceCommand)value).AttributeSetInstanceId = idObj;
+                ((ICreateOrMergePatchOrDeleteAttributeSetInstance)value).AttributeSetInstanceId = idObj;
                 _attributeSetInstanceApplicationService.When(value as ICreateAttributeSetInstance);
             }
 
@@ -216,7 +216,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             {
                 value.AttributeSetInstanceId = idObj;
             }
-            else if (!((IAttributeSetInstanceCommand)value).AttributeSetInstanceId.Equals(idObj))
+            else if (!((ICreateOrMergePatchOrDeleteAttributeSetInstance)value).AttributeSetInstanceId.Equals(idObj))
             {
                 throw DomainError.Named("inconsistentId", "Argument Id {0} NOT equals body Id {1}", id, value.AttributeSetInstanceId);
             }

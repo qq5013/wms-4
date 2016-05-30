@@ -11,7 +11,7 @@ using Dddml.Wms.Specialization;
 
 namespace Dddml.Wms.Domain
 {
-	public interface IAttributeSetInstanceStateEvent : IEvent, IGlobalIdentity<AttributeSetInstanceStateEventId>, ICreated<string>
+	public interface IAttributeSetInstanceStateEvent : IEvent, IStateEventDto, IGlobalIdentity<AttributeSetInstanceStateEventId>, ICreated<string>
 	{
 		AttributeSetInstanceStateEventId StateEventId { get; }
 

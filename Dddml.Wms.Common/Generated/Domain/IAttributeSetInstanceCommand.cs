@@ -13,8 +13,6 @@ namespace Dddml.Wms.Domain
 {
 	public interface IAttributeSetInstanceCommand : IAggregateCommand<string, long>
 	{
-		string AttributeSetInstanceId { get; set; }
-
 		long Version { get; set; }
 
 	}
@@ -22,6 +20,8 @@ namespace Dddml.Wms.Domain
 
 	public interface ICreateOrMergePatchOrDeleteAttributeSetInstance : IAttributeSetInstanceCommand
 	{
+		string AttributeSetInstanceId { get; set; }
+
 		string AttributeSetId { get; set; }
 
 		string OrganizationId { get; set; }

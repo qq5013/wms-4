@@ -13,8 +13,6 @@ namespace Dddml.Wms.Domain
 {
 	public interface IAttributeSetInstanceExtensionFieldGroupCommand : IAggregateCommand<string, long>
 	{
-		string Id { get; set; }
-
 		long Version { get; set; }
 
 	}
@@ -22,6 +20,8 @@ namespace Dddml.Wms.Domain
 
 	public interface ICreateOrMergePatchOrDeleteAttributeSetInstanceExtensionFieldGroup : IAttributeSetInstanceExtensionFieldGroupCommand
 	{
+		string Id { get; set; }
+
 		string FieldType { get; set; }
 
 		int? FieldLength { get; set; }

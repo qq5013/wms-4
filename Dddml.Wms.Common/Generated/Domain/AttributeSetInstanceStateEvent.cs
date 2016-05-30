@@ -970,6 +970,7 @@ namespace Dddml.Wms.Domain
             }
         }
 
+/*
 		public virtual string AttributeSetInstanceId {
 			get {
 				return StateEventId.AttributeSetInstanceId;
@@ -987,7 +988,7 @@ namespace Dddml.Wms.Domain
 				StateEventId.Version = value;
 			}
 		}
-
+*/
 
 		string ICreated<string>.CreatedBy {
 			get {
@@ -1017,6 +1018,8 @@ namespace Dddml.Wms.Domain
         }
 
 
+        public abstract string StateEventType { get; }
+
 	}
 
 	public class AttributeSetInstanceStateCreated : AttributeSetInstanceStateEventBase, IAttributeSetInstanceStateCreated
@@ -1029,6 +1032,14 @@ namespace Dddml.Wms.Domain
 		{
 		}
 
+
+        public override string StateEventType
+        {
+            get
+            {
+                return Dddml.Wms.Specialization.StateEventType.Created;
+            }
+        }
 
 	}
 
@@ -3831,6 +3842,13 @@ namespace Dddml.Wms.Domain
 		}
 
 
+        public override string StateEventType
+        {
+            get
+            {
+                return Dddml.Wms.Specialization.StateEventType.MergePatched;
+            }
+        }
 
 	}
 
@@ -3844,6 +3862,14 @@ namespace Dddml.Wms.Domain
 		public AttributeSetInstanceStateDeleted (AttributeSetInstanceStateEventId stateEventId) : base(stateEventId)
 		{
 		}
+
+        public override string StateEventType
+        {
+            get
+            {
+                return Dddml.Wms.Specialization.StateEventType.Deleted;
+            }
+        }
 
 	}
 

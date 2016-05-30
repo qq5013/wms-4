@@ -56,6 +56,7 @@ namespace Dddml.Wms.Domain
             }
         }
 
+/*
 		public virtual string Id {
 			get {
 				return StateEventId.Id;
@@ -73,7 +74,7 @@ namespace Dddml.Wms.Domain
 				StateEventId.Version = value;
 			}
 		}
-
+*/
 
 		string ICreated<string>.CreatedBy {
 			get {
@@ -118,6 +119,8 @@ namespace Dddml.Wms.Domain
 		}
 
 
+
+        public abstract string StateEventType { get; }
 
 	}
 
@@ -186,6 +189,14 @@ namespace Dddml.Wms.Domain
 				(ApplicationContext.Current["AttributeSetInstanceExtensionFieldStateEventDao"] as IAttributeSetInstanceExtensionFieldStateEventDao).Save(e);
 			}
 		}
+
+        public override string StateEventType
+        {
+            get
+            {
+                return Dddml.Wms.Specialization.StateEventType.Created;
+            }
+        }
 
 	}
 
@@ -281,6 +292,13 @@ namespace Dddml.Wms.Domain
 			}
 		}
 
+        public override string StateEventType
+        {
+            get
+            {
+                return Dddml.Wms.Specialization.StateEventType.MergePatched;
+            }
+        }
 
 	}
 
@@ -294,6 +312,14 @@ namespace Dddml.Wms.Domain
 		public AttributeSetInstanceExtensionFieldGroupStateDeleted (AttributeSetInstanceExtensionFieldGroupStateEventId stateEventId) : base(stateEventId)
 		{
 		}
+
+        public override string StateEventType
+        {
+            get
+            {
+                return Dddml.Wms.Specialization.StateEventType.Deleted;
+            }
+        }
 
 	}
 

@@ -11,7 +11,7 @@ using Dddml.Wms.Specialization;
 
 namespace Dddml.Wms.Domain
 {
-	public interface IAttributeSetInstanceExtensionFieldGroupStateEvent : IEvent, IGlobalIdentity<AttributeSetInstanceExtensionFieldGroupStateEventId>, ICreated<string>
+	public interface IAttributeSetInstanceExtensionFieldGroupStateEvent : IEvent, IStateEventDto, IGlobalIdentity<AttributeSetInstanceExtensionFieldGroupStateEventId>, ICreated<string>
 	{
 		AttributeSetInstanceExtensionFieldGroupStateEventId StateEventId { get; }
 

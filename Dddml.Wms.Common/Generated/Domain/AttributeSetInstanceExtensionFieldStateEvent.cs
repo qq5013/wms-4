@@ -58,6 +58,7 @@ namespace Dddml.Wms.Domain
 
 		public virtual long Version { get; set; }
 
+/*
 		public virtual string GroupId {
 			get {
 				return StateEventId.GroupId;
@@ -66,7 +67,8 @@ namespace Dddml.Wms.Domain
 				StateEventId.GroupId = value;
 			}
 		}
-
+*/
+/*
 		public virtual string Index {
 			get {
 				return StateEventId.Index;
@@ -75,7 +77,7 @@ namespace Dddml.Wms.Domain
 				StateEventId.Index = value;
 			}
 		}
-
+*/
 
 		string ICreated<string>.CreatedBy {
 			get {
@@ -105,6 +107,8 @@ namespace Dddml.Wms.Domain
         }
 
 
+        public abstract string StateEventType { get; }
+
 	}
 
 	public class AttributeSetInstanceExtensionFieldStateCreated : AttributeSetInstanceExtensionFieldStateEventBase, IAttributeSetInstanceExtensionFieldStateCreated
@@ -117,6 +121,14 @@ namespace Dddml.Wms.Domain
 		{
 		}
 
+
+        public override string StateEventType
+        {
+            get
+            {
+                return Dddml.Wms.Specialization.StateEventType.Created;
+            }
+        }
 
 	}
 
@@ -145,6 +157,13 @@ namespace Dddml.Wms.Domain
 		}
 
 
+        public override string StateEventType
+        {
+            get
+            {
+                return Dddml.Wms.Specialization.StateEventType.MergePatched;
+            }
+        }
 
 	}
 
@@ -159,6 +178,14 @@ namespace Dddml.Wms.Domain
 		{
 		}
 
+
+        public override string StateEventType
+        {
+            get
+            {
+                return Dddml.Wms.Specialization.StateEventType.Removed;
+            }
+        }
 
 	}
 

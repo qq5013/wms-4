@@ -42,8 +42,6 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public void When(CreateAttributeSetInstanceExtensionFieldGroupDto c)
         {
-            //Action act = async () =>
-            //{
             var idObj = ((c as ICreateAttributeSetInstanceExtensionFieldGroup).Id);
             var uriParameters = new AttributeSetInstanceExtensionFieldGroupUriParameters();
             uriParameters.Id = idObj;
@@ -52,14 +50,10 @@ namespace Dddml.Wms.HttpServices.ClientProxies
                 
             var resp = _ramlClient.AttributeSetInstanceExtensionFieldGroup.Put(req).GetAwaiter().GetResult();
             ThrowOnHttpResponseError(resp);
-            //};
-            //act();
         }
 
         public void When(MergePatchAttributeSetInstanceExtensionFieldGroupDto c)
         {
-            //Action act = async () =>
-            //{
             var idObj = ((c as IMergePatchAttributeSetInstanceExtensionFieldGroup).Id);
             var uriParameters = new AttributeSetInstanceExtensionFieldGroupUriParameters();
             uriParameters.Id = idObj;
@@ -67,8 +61,6 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             var req = new AttributeSetInstanceExtensionFieldGroupPatchRequest(uriParameters, (MergePatchAttributeSetInstanceExtensionFieldGroupDto)c);
             var resp = _ramlClient.AttributeSetInstanceExtensionFieldGroup.Patch(req).GetAwaiter().GetResult();
             ThrowOnHttpResponseError(resp);
-            //};
-            //act();
         }
 
         public void When(DeleteAttributeSetInstanceExtensionFieldGroupDto c)
@@ -109,8 +101,6 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         public IAttributeSetInstanceExtensionFieldGroupState Get(string id)
         {
             IAttributeSetInstanceExtensionFieldGroupState state = null;
-            //Action act = async () =>
-            //{
             var idObj = (id);
             var uriParameters = new AttributeSetInstanceExtensionFieldGroupUriParameters();
             uriParameters.Id = idObj;
@@ -120,8 +110,6 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             var resp = _ramlClient.AttributeSetInstanceExtensionFieldGroup.Get(req).GetAwaiter().GetResult();
             ThrowOnHttpResponseError(resp);
             state = resp.Content;
-            //};
-            //act();
             return state;
         }
 
@@ -210,7 +198,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public IAttributeSetInstanceExtensionFieldGroupStateEvent GetStateEvent(string id, long version)
         {
-            throw new NotImplementedException(); // TODO
+            var idObj = (id);
+            var uriParameters = new AttributeSetInstanceExtensionFieldGroupStateEventUriParameters();
+            uriParameters.Id = idObj;
+            uriParameters.Version = version.ToString();
+
+            var req = new AttributeSetInstanceExtensionFieldGroupStateEventGetRequest(uriParameters);
+            var resp = _ramlClient.AttributeSetInstanceExtensionFieldGroupStateEvent.Get(req).GetAwaiter().GetResult();
+            ThrowOnHttpResponseError(resp);
+            return resp.Content;
         }
 
 

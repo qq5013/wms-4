@@ -255,14 +255,14 @@ namespace Dddml.Wms.Domain
 
 
         // //////////////////////////////////////////////
-
+/*
         private IAttributeSetInstanceExtensionFieldGroupCommand _innerCommand;
 
-        internal ICommand ToCommand()//public virtual
+        internal ICommand ToCommand()
         {
             //if (this._innerCommand != null)
             //{
-                //return this._innerCommand;
+            //    return this._innerCommand;
             //}
             var cmdType = GetCommandType();
             if (cmdType == CommandType.Create)
@@ -351,7 +351,7 @@ namespace Dddml.Wms.Domain
             }
             return cmd;
         }
-
+*/
         // //////////////////////////////////////////////////
 
         string ICommandDto.CommandType 

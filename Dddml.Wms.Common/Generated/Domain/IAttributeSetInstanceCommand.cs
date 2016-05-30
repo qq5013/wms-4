@@ -11,7 +11,7 @@ using Dddml.Wms.Specialization;
 
 namespace Dddml.Wms.Domain
 {
-	public interface IAttributeSetInstanceCommand : IAggregateCommand<string, long>
+	public interface IAttributeSetInstanceCommand : IAggregateCommand<string, long>, ICommandDto
 	{
 		long Version { get; set; }
 

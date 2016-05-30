@@ -79,14 +79,14 @@ namespace Dddml.Wms.Domain
 
 
         // //////////////////////////////////////////////
-
+/*
         private IAttributeUseCommand _innerCommand;
 
-        internal ICommand ToCommand()//public virtual
+        internal ICommand ToCommand()
         {
             //if (this._innerCommand != null)
             //{
-                //return this._innerCommand;
+            //    return this._innerCommand;
             //}
             var cmdType = GetCommandType();
             if (cmdType == CommandType.Create)
@@ -149,7 +149,7 @@ namespace Dddml.Wms.Domain
             cmd.AttributeSetId = ((ICreateOrMergePatchOrRemoveAttributeUse)this).AttributeSetId;
             return cmd;
         }
-
+*/
         // //////////////////////////////////////////////////
 
         string ICommandDto.CommandType 

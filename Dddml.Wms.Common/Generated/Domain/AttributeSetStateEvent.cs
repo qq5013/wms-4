@@ -122,7 +122,12 @@ namespace Dddml.Wms.Domain
 
 
 
-        public abstract string StateEventType { get; }
+        public virtual string StateEventType
+        {
+            get { return this.GetStateEventType(); }
+        }
+
+        protected abstract string GetStateEventType();
 
 	}
 
@@ -192,12 +197,9 @@ namespace Dddml.Wms.Domain
 			}
 		}
 
-        public override string StateEventType
+        protected override string GetStateEventType()
         {
-            get
-            {
-                return Dddml.Wms.Specialization.StateEventType.Created;
-            }
+            return Dddml.Wms.Specialization.StateEventType.Created;
         }
 
 	}
@@ -296,12 +298,9 @@ namespace Dddml.Wms.Domain
 			}
 		}
 
-        public override string StateEventType
+        protected override string GetStateEventType()
         {
-            get
-            {
-                return Dddml.Wms.Specialization.StateEventType.MergePatched;
-            }
+            return Dddml.Wms.Specialization.StateEventType.MergePatched;
         }
 
 	}
@@ -317,12 +316,9 @@ namespace Dddml.Wms.Domain
 		{
 		}
 
-        public override string StateEventType
+        protected override string GetStateEventType()
         {
-            get
-            {
-                return Dddml.Wms.Specialization.StateEventType.Deleted;
-            }
+            return Dddml.Wms.Specialization.StateEventType.Deleted;
         }
 
 	}

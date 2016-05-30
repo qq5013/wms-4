@@ -228,19 +228,19 @@ namespace Dddml.Wms.Domain
 
         protected virtual IAttributeUseStateEvent Map(IAttributeUseCommand c, IAttributeSetCommand outerCommand, long version)
         {
-            var create = c as ICreateAttributeUse;
+            var create = (c.CommandType == CommandType.Create) ? (c as ICreateAttributeUse) : null;
             if(create != null)
             {
                 return MapCreate(create, outerCommand, version);
             }
 
-            var merge = c as IMergePatchAttributeUse;
+            var merge = (c.CommandType == CommandType.MergePatch) ? (c as IMergePatchAttributeUse) : null;
             if(merge != null)
             {
                 return MapMergePatch(merge, outerCommand, version);
             }
 
-            var remove = c as IRemoveAttributeUse;
+            var remove = (c.CommandType == CommandType.Remove) ? (c as IRemoveAttributeUse) : null;
             if (remove != null)
             {
                 return MapRemove(remove, outerCommand, version);

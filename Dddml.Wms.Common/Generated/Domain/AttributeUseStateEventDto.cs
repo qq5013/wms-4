@@ -122,10 +122,6 @@ namespace Dddml.Wms.Domain
             this.StateEventId = stateEventId;
         }
 
-        //IEvent IStateEventDto.ToStateEvent()
-        //{
-        //}
-
         // //////////////////////////////////////////////////
 
         string IStateEventDto.StateEventType 
@@ -230,6 +226,20 @@ namespace Dddml.Wms.Domain
     {
         private List<AttributeUseStateCreatedOrMergePatchedOrRemovedDto> _innerStateEvents = new List<AttributeUseStateCreatedOrMergePatchedOrRemovedDto>();
 
+        public virtual AttributeUseStateCreatedOrMergePatchedOrRemovedDto[] ToArray()
+        {
+            return _innerStateEvents.ToArray();
+        }
+
+        public virtual void Clear()
+        {
+            _innerStateEvents.Clear();
+        }
+
+        public virtual void AddRange(IEnumerable<AttributeUseStateCreatedOrMergePatchedOrRemovedDto> es)
+        {
+            _innerStateEvents.AddRange(es);
+        }
 
         public IEnumerator<IAttributeUseStateCreated> GetEnumerator()
         {

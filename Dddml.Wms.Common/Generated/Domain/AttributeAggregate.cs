@@ -252,19 +252,19 @@ namespace Dddml.Wms.Domain
 
         protected virtual IAttributeValueStateEvent Map(IAttributeValueCommand c, IAttributeCommand outerCommand, long version)
         {
-            var create = c as ICreateAttributeValue;
+            var create = (c.CommandType == CommandType.Create) ? (c as ICreateAttributeValue) : null;
             if(create != null)
             {
                 return MapCreate(create, outerCommand, version);
             }
 
-            var merge = c as IMergePatchAttributeValue;
+            var merge = (c.CommandType == CommandType.MergePatch) ? (c as IMergePatchAttributeValue) : null;
             if(merge != null)
             {
                 return MapMergePatch(merge, outerCommand, version);
             }
 
-            var remove = c as IRemoveAttributeValue;
+            var remove = (c.CommandType == CommandType.Remove) ? (c as IRemoveAttributeValue) : null;
             if (remove != null)
             {
                 return MapRemove(remove, outerCommand, version);

@@ -42,8 +42,6 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public void When(CreateAttributeSetInstanceDto c)
         {
-            //Action act = async () =>
-            //{
             var idObj = ((c as ICreateAttributeSetInstance).AttributeSetInstanceId);
             var uriParameters = new AttributeSetInstanceUriParameters();
             uriParameters.Id = idObj;
@@ -52,14 +50,10 @@ namespace Dddml.Wms.HttpServices.ClientProxies
                 
             var resp = _ramlClient.AttributeSetInstance.Put(req).GetAwaiter().GetResult();
             ThrowOnHttpResponseError(resp);
-            //};
-            //act();
         }
 
         public void When(MergePatchAttributeSetInstanceDto c)
         {
-            //Action act = async () =>
-            //{
             var idObj = ((c as IMergePatchAttributeSetInstance).AttributeSetInstanceId);
             var uriParameters = new AttributeSetInstanceUriParameters();
             uriParameters.Id = idObj;
@@ -67,8 +61,6 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             var req = new AttributeSetInstancePatchRequest(uriParameters, (MergePatchAttributeSetInstanceDto)c);
             var resp = _ramlClient.AttributeSetInstance.Patch(req).GetAwaiter().GetResult();
             ThrowOnHttpResponseError(resp);
-            //};
-            //act();
         }
 
         public void When(DeleteAttributeSetInstanceDto c)
@@ -109,8 +101,6 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         public IAttributeSetInstanceState Get(string attributeSetInstanceId)
         {
             IAttributeSetInstanceState state = null;
-            //Action act = async () =>
-            //{
             var idObj = (attributeSetInstanceId);
             var uriParameters = new AttributeSetInstanceUriParameters();
             uriParameters.Id = idObj;
@@ -120,8 +110,6 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             var resp = _ramlClient.AttributeSetInstance.Get(req).GetAwaiter().GetResult();
             ThrowOnHttpResponseError(resp);
             state = resp.Content;
-            //};
-            //act();
             return state;
         }
 
@@ -210,7 +198,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public IAttributeSetInstanceStateEvent GetStateEvent(string attributeSetInstanceId, long version)
         {
-            throw new NotImplementedException(); // TODO
+            var idObj = (attributeSetInstanceId);
+            var uriParameters = new AttributeSetInstanceStateEventUriParameters();
+            uriParameters.Id = idObj;
+            uriParameters.Version = version.ToString();
+
+            var req = new AttributeSetInstanceStateEventGetRequest(uriParameters);
+            var resp = _ramlClient.AttributeSetInstanceStateEvent.Get(req).GetAwaiter().GetResult();
+            ThrowOnHttpResponseError(resp);
+            return resp.Content;
         }
 
 

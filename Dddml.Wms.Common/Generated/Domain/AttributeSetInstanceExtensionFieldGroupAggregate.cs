@@ -222,19 +222,19 @@ namespace Dddml.Wms.Domain
 
         protected virtual IAttributeSetInstanceExtensionFieldStateEvent Map(IAttributeSetInstanceExtensionFieldCommand c, IAttributeSetInstanceExtensionFieldGroupCommand outerCommand, long version)
         {
-            var create = c as ICreateAttributeSetInstanceExtensionField;
+            var create = (c.CommandType == CommandType.Create) ? (c as ICreateAttributeSetInstanceExtensionField) : null;
             if(create != null)
             {
                 return MapCreate(create, outerCommand, version);
             }
 
-            var merge = c as IMergePatchAttributeSetInstanceExtensionField;
+            var merge = (c.CommandType == CommandType.MergePatch) ? (c as IMergePatchAttributeSetInstanceExtensionField) : null;
             if(merge != null)
             {
                 return MapMergePatch(merge, outerCommand, version);
             }
 
-            var remove = c as IRemoveAttributeSetInstanceExtensionField;
+            var remove = (c.CommandType == CommandType.Remove) ? (c as IRemoveAttributeSetInstanceExtensionField) : null;
             if (remove != null)
             {
                 return MapRemove(remove, outerCommand, version);

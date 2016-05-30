@@ -9777,14 +9777,14 @@ namespace Dddml.Wms.Domain
 
 
         // //////////////////////////////////////////////
-
+/*
         private IAttributeSetInstanceCommand _innerCommand;
 
-        internal ICommand ToCommand()//public virtual
+        internal ICommand ToCommand()
         {
             //if (this._innerCommand != null)
             //{
-                //return this._innerCommand;
+            //    return this._innerCommand;
             //}
             var cmdType = GetCommandType();
             if (cmdType == CommandType.Create)
@@ -11234,7 +11234,7 @@ namespace Dddml.Wms.Domain
             cmd.Active = ((ICreateOrMergePatchOrDeleteAttributeSetInstance)this).Active;
             return cmd;
         }
-
+*/
         // //////////////////////////////////////////////////
 
         string ICommandDto.CommandType 

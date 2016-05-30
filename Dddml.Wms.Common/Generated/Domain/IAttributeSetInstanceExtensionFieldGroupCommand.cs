@@ -11,7 +11,7 @@ using Dddml.Wms.Specialization;
 
 namespace Dddml.Wms.Domain
 {
-	public interface IAttributeSetInstanceExtensionFieldGroupCommand : IAggregateCommand<string, long>
+	public interface IAttributeSetInstanceExtensionFieldGroupCommand : IAggregateCommand<string, long>, ICommandDto
 	{
 		long Version { get; set; }
 

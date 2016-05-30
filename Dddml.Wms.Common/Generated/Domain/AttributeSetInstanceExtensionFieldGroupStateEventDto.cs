@@ -189,7 +189,23 @@ namespace Dddml.Wms.Domain
 			}
 		}
 
+
         private AttributeSetInstanceExtensionFieldStateCreatedOrMergePatchedOrRemovedDtos _attributeSetInstanceExtensionFieldEvents = new AttributeSetInstanceExtensionFieldStateCreatedOrMergePatchedOrRemovedDtos();
+
+        public virtual AttributeSetInstanceExtensionFieldStateCreatedOrMergePatchedOrRemovedDto[] AttributeSetInstanceExtensionFieldEvents
+        {
+            get
+            {
+                return _attributeSetInstanceExtensionFieldEvents.ToArray();
+            }
+            set
+            {
+                _attributeSetInstanceExtensionFieldEvents.Clear();
+                _attributeSetInstanceExtensionFieldEvents.AddRange(value);
+            }
+        }
+
+
 
         private AttributeSetInstanceExtensionFieldStateEventIdDto NewAttributeSetInstanceExtensionFieldStateEventId(string index)
         {
@@ -264,6 +280,7 @@ namespace Dddml.Wms.Domain
             return NewAttributeSetInstanceExtensionFieldStateRemoved(index);
         }
 
+
         AttributeSetInstanceExtensionFieldGroupStateEventId IAttributeSetInstanceExtensionFieldGroupStateEvent.StateEventId
         {
             get { return this.StateEventId.ToAttributeSetInstanceExtensionFieldGroupStateEventId(); }
@@ -277,10 +294,6 @@ namespace Dddml.Wms.Domain
         {
             this.StateEventId = stateEventId;
         }
-
-        //IEvent IStateEventDto.ToStateEvent()
-        //{
-        //}
 
         // //////////////////////////////////////////////////
 
@@ -386,6 +399,20 @@ namespace Dddml.Wms.Domain
     {
         private List<AttributeSetInstanceExtensionFieldGroupStateCreatedOrMergePatchedOrDeletedDto> _innerStateEvents = new List<AttributeSetInstanceExtensionFieldGroupStateCreatedOrMergePatchedOrDeletedDto>();
 
+        public virtual AttributeSetInstanceExtensionFieldGroupStateCreatedOrMergePatchedOrDeletedDto[] ToArray()
+        {
+            return _innerStateEvents.ToArray();
+        }
+
+        public virtual void Clear()
+        {
+            _innerStateEvents.Clear();
+        }
+
+        public virtual void AddRange(IEnumerable<AttributeSetInstanceExtensionFieldGroupStateCreatedOrMergePatchedOrDeletedDto> es)
+        {
+            _innerStateEvents.AddRange(es);
+        }
 
         public IEnumerator<IAttributeSetInstanceExtensionFieldGroupStateCreated> GetEnumerator()
         {

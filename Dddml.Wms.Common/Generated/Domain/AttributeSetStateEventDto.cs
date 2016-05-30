@@ -210,7 +210,23 @@ namespace Dddml.Wms.Domain
 			}
 		}
 
+
         private AttributeUseStateCreatedOrMergePatchedOrRemovedDtos _attributeUseEvents = new AttributeUseStateCreatedOrMergePatchedOrRemovedDtos();
+
+        public virtual AttributeUseStateCreatedOrMergePatchedOrRemovedDto[] AttributeUseEvents
+        {
+            get
+            {
+                return _attributeUseEvents.ToArray();
+            }
+            set
+            {
+                _attributeUseEvents.Clear();
+                _attributeUseEvents.AddRange(value);
+            }
+        }
+
+
 
         private AttributeUseStateEventIdDto NewAttributeUseStateEventId(string attributeId)
         {
@@ -285,6 +301,7 @@ namespace Dddml.Wms.Domain
             return NewAttributeUseStateRemoved(attributeId);
         }
 
+
         AttributeSetStateEventId IAttributeSetStateEvent.StateEventId
         {
             get { return this.StateEventId.ToAttributeSetStateEventId(); }
@@ -298,10 +315,6 @@ namespace Dddml.Wms.Domain
         {
             this.StateEventId = stateEventId;
         }
-
-        //IEvent IStateEventDto.ToStateEvent()
-        //{
-        //}
 
         // //////////////////////////////////////////////////
 
@@ -407,6 +420,20 @@ namespace Dddml.Wms.Domain
     {
         private List<AttributeSetStateCreatedOrMergePatchedOrDeletedDto> _innerStateEvents = new List<AttributeSetStateCreatedOrMergePatchedOrDeletedDto>();
 
+        public virtual AttributeSetStateCreatedOrMergePatchedOrDeletedDto[] ToArray()
+        {
+            return _innerStateEvents.ToArray();
+        }
+
+        public virtual void Clear()
+        {
+            _innerStateEvents.Clear();
+        }
+
+        public virtual void AddRange(IEnumerable<AttributeSetStateCreatedOrMergePatchedOrDeletedDto> es)
+        {
+            _innerStateEvents.AddRange(es);
+        }
 
         public IEnumerator<IAttributeSetStateCreated> GetEnumerator()
         {

@@ -67,6 +67,16 @@ namespace Dddml.Wms.Domain
 		public virtual bool? Active { get; set; }
 
 
+		// //////////////////////////////////////////////////
+
+        string ICommandDto.CommandType 
+        {
+            get { return this.GetCommandType(); }
+        }
+
+        protected abstract string GetCommandType();
+
+
 	}
 
 
@@ -116,6 +126,10 @@ namespace Dddml.Wms.Domain
 
 
 
+        protected override string GetCommandType()
+        {
+            return Dddml.Wms.Specialization.CommandType.Create;
+        }
 	}
 
 
@@ -193,6 +207,10 @@ namespace Dddml.Wms.Domain
         }
 
 
+        protected override string GetCommandType()
+        {
+            return Dddml.Wms.Specialization.CommandType.MergePatch;
+        }
 
 	}
 
@@ -201,6 +219,12 @@ namespace Dddml.Wms.Domain
 		public DeleteAttributeSet ()
 		{
 		}
+
+        protected override string GetCommandType()
+        {
+            return Dddml.Wms.Specialization.CommandType.Delete;
+        }
+
 	}
 
 

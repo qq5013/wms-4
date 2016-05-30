@@ -11,7 +11,7 @@ using Dddml.Wms.Specialization;
 
 namespace Dddml.Wms.Domain
 {
-	public interface IAttributeSetInstanceExtensionFieldCommand : ICommand
+	public interface IAttributeSetInstanceExtensionFieldCommand : ICommand, ICommandDto
 	{
 
 	}

@@ -42,8 +42,6 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public void When(CreateAttributeDto c)
         {
-            //Action act = async () =>
-            //{
             var idObj = ((c as ICreateAttribute).AttributeId);
             var uriParameters = new AttributeUriParameters();
             uriParameters.Id = idObj;
@@ -52,14 +50,10 @@ namespace Dddml.Wms.HttpServices.ClientProxies
                 
             var resp = _ramlClient.Attribute.Put(req).GetAwaiter().GetResult();
             ThrowOnHttpResponseError(resp);
-            //};
-            //act();
         }
 
         public void When(MergePatchAttributeDto c)
         {
-            //Action act = async () =>
-            //{
             var idObj = ((c as IMergePatchAttribute).AttributeId);
             var uriParameters = new AttributeUriParameters();
             uriParameters.Id = idObj;
@@ -67,8 +61,6 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             var req = new AttributePatchRequest(uriParameters, (MergePatchAttributeDto)c);
             var resp = _ramlClient.Attribute.Patch(req).GetAwaiter().GetResult();
             ThrowOnHttpResponseError(resp);
-            //};
-            //act();
         }
 
         public void When(DeleteAttributeDto c)
@@ -109,8 +101,6 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         public IAttributeState Get(string attributeId)
         {
             IAttributeState state = null;
-            //Action act = async () =>
-            //{
             var idObj = (attributeId);
             var uriParameters = new AttributeUriParameters();
             uriParameters.Id = idObj;
@@ -120,8 +110,6 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             var resp = _ramlClient.Attribute.Get(req).GetAwaiter().GetResult();
             ThrowOnHttpResponseError(resp);
             state = resp.Content;
-            //};
-            //act();
             return state;
         }
 
@@ -210,7 +198,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public IAttributeStateEvent GetStateEvent(string attributeId, long version)
         {
-            throw new NotImplementedException(); // TODO
+            var idObj = (attributeId);
+            var uriParameters = new AttributeStateEventUriParameters();
+            uriParameters.Id = idObj;
+            uriParameters.Version = version.ToString();
+
+            var req = new AttributeStateEventGetRequest(uriParameters);
+            var resp = _ramlClient.AttributeStateEvent.Get(req).GetAwaiter().GetResult();
+            ThrowOnHttpResponseError(resp);
+            return resp.Content;
         }
 
 

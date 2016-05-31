@@ -5,10 +5,9 @@
 
 using System;
 using System.Collections.Generic;
-using Dddml.Support.Criterion;
-using Dddml.Wms.Domain;
-
 using Dddml.Wms.Specialization;
+using Dddml.Wms.Domain;
+using Dddml.Support.Criterion;
 
 namespace Dddml.Wms.Domain
 {

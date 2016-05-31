@@ -10,7 +10,6 @@ using Dddml.Wms.Domain;
 
 namespace Dddml.Wms.Domain
 {
-
     public partial class AttributeAggregate : AggregateBase, IAttributeAggregate
     {
 
@@ -55,7 +54,7 @@ namespace Dddml.Wms.Domain
 
         public virtual void ThrowOnInvalidStateTransition(ICommand c)
         {
-            if (_state.Version == AttributeState.VersionZero)
+            if (((IAttributeStateProperties)_state).Version == AttributeState.VersionZero)
             {
                 if (IsCommandCreate((IAttributeCommand)c))
                 {
@@ -357,7 +356,7 @@ namespace Dddml.Wms.Domain
 
         protected AttributeStateCreated NewAttributeStateCreated(string commandId, string requesterId)
         {
-            var stateEventId = new AttributeStateEventId(this._state.AttributeId, this._state.Version);
+            var stateEventId = new AttributeStateEventId(_state.AttributeId, ((IAttributeStateProperties)_state).Version);
             var e = NewAttributeStateCreated(stateEventId);
 
             e.CommandId = commandId;
@@ -370,7 +369,7 @@ namespace Dddml.Wms.Domain
 
         protected AttributeStateMergePatched NewAttributeStateMergePatched(string commandId, string requesterId)
         {
-            var stateEventId = new AttributeStateEventId(this._state.AttributeId, this._state.Version);
+            var stateEventId = new AttributeStateEventId(_state.AttributeId, ((IAttributeStateProperties)_state).Version);
             var e = NewAttributeStateMergePatched(stateEventId);
 
             e.CommandId = commandId;
@@ -384,7 +383,7 @@ namespace Dddml.Wms.Domain
 
         protected AttributeStateDeleted NewAttributeStateDeleted(string commandId, string requesterId)
         {
-            var stateEventId = new AttributeStateEventId(this._state.AttributeId, this._state.Version);
+            var stateEventId = new AttributeStateEventId(_state.AttributeId, ((IAttributeStateProperties)_state).Version);
             var e = NewAttributeStateDeleted(stateEventId);
 
             e.CommandId = commandId;

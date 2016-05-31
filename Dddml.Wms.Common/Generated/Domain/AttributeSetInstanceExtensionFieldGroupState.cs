@@ -14,7 +14,7 @@ namespace Dddml.Wms.Domain
 	public partial class AttributeSetInstanceExtensionFieldGroupState : AttributeSetInstanceExtensionFieldGroupStateProperties, IAttributeSetInstanceExtensionFieldGroupState, ISaveable
 	{
 
-		public virtual long Version { get; set; }
+		//public virtual long Version { get; set; }
 
 		public virtual string CreatedBy { get; set; }
 

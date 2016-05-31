@@ -283,6 +283,19 @@ namespace Dddml.Wms.Domain
                 }
             }
         }
+
+        long IAttributeSetStateProperties.Version
+        {
+            get 
+            {
+                return (this._state as IAttributeSetStateProperties).Version;
+            }
+            set 
+            {
+                this._state.Version = value;
+            }
+        }
+
 		public virtual string CreatedBy
 		{
             get
@@ -412,7 +425,7 @@ namespace Dddml.Wms.Domain
 
 		long IVersioned<long>.Version
 		{
-            get { return (_state as IAttributeSetState).Version; }
+            get { return _state.Version; }
 		}
 
 

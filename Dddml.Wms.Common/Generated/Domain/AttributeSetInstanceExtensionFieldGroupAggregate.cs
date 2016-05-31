@@ -10,7 +10,6 @@ using Dddml.Wms.Domain;
 
 namespace Dddml.Wms.Domain
 {
-
     public partial class AttributeSetInstanceExtensionFieldGroupAggregate : AggregateBase, IAttributeSetInstanceExtensionFieldGroupAggregate
     {
 
@@ -55,7 +54,7 @@ namespace Dddml.Wms.Domain
 
         public virtual void ThrowOnInvalidStateTransition(ICommand c)
         {
-            if (_state.Version == AttributeSetInstanceExtensionFieldGroupState.VersionZero)
+            if (((IAttributeSetInstanceExtensionFieldGroupStateProperties)_state).Version == AttributeSetInstanceExtensionFieldGroupState.VersionZero)
             {
                 if (IsCommandCreate((IAttributeSetInstanceExtensionFieldGroupCommand)c))
                 {
@@ -337,7 +336,7 @@ namespace Dddml.Wms.Domain
 
         protected AttributeSetInstanceExtensionFieldGroupStateCreated NewAttributeSetInstanceExtensionFieldGroupStateCreated(string commandId, string requesterId)
         {
-            var stateEventId = new AttributeSetInstanceExtensionFieldGroupStateEventId(this._state.Id, this._state.Version);
+            var stateEventId = new AttributeSetInstanceExtensionFieldGroupStateEventId(_state.Id, ((IAttributeSetInstanceExtensionFieldGroupStateProperties)_state).Version);
             var e = NewAttributeSetInstanceExtensionFieldGroupStateCreated(stateEventId);
 
             e.CommandId = commandId;
@@ -350,7 +349,7 @@ namespace Dddml.Wms.Domain
 
         protected AttributeSetInstanceExtensionFieldGroupStateMergePatched NewAttributeSetInstanceExtensionFieldGroupStateMergePatched(string commandId, string requesterId)
         {
-            var stateEventId = new AttributeSetInstanceExtensionFieldGroupStateEventId(this._state.Id, this._state.Version);
+            var stateEventId = new AttributeSetInstanceExtensionFieldGroupStateEventId(_state.Id, ((IAttributeSetInstanceExtensionFieldGroupStateProperties)_state).Version);
             var e = NewAttributeSetInstanceExtensionFieldGroupStateMergePatched(stateEventId);
 
             e.CommandId = commandId;
@@ -364,7 +363,7 @@ namespace Dddml.Wms.Domain
 
         protected AttributeSetInstanceExtensionFieldGroupStateDeleted NewAttributeSetInstanceExtensionFieldGroupStateDeleted(string commandId, string requesterId)
         {
-            var stateEventId = new AttributeSetInstanceExtensionFieldGroupStateEventId(this._state.Id, this._state.Version);
+            var stateEventId = new AttributeSetInstanceExtensionFieldGroupStateEventId(_state.Id, ((IAttributeSetInstanceExtensionFieldGroupStateProperties)_state).Version);
             var e = NewAttributeSetInstanceExtensionFieldGroupStateDeleted(stateEventId);
 
             e.CommandId = commandId;

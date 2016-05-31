@@ -17,6 +17,8 @@ namespace Dddml.Wms.Domain
 
 		int SequenceNumber { get; set; }
 
+		long Version { get; set; }
+
 		bool Active { get; set; }
 
 		// Outer Id:

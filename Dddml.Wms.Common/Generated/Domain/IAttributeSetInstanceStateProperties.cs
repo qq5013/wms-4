@@ -939,6 +939,8 @@ namespace Dddml.Wms.Domain
 
 		string _F_C50_49_ { get; set; }
 
+		long Version { get; set; }
+
 		bool Active { get; set; }
 
 

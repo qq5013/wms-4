@@ -27,6 +27,8 @@ namespace Dddml.Wms.Domain
 
 		string ReferenceId { get; set; }
 
+		long Version { get; set; }
+
 		bool Active { get; set; }
 
 

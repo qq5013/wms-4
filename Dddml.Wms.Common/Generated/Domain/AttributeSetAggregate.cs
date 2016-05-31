@@ -10,7 +10,6 @@ using Dddml.Wms.Domain;
 
 namespace Dddml.Wms.Domain
 {
-
     public partial class AttributeSetAggregate : AggregateBase, IAttributeSetAggregate
     {
 
@@ -55,7 +54,7 @@ namespace Dddml.Wms.Domain
 
         public virtual void ThrowOnInvalidStateTransition(ICommand c)
         {
-            if (_state.Version == AttributeSetState.VersionZero)
+            if (((IAttributeSetStateProperties)_state).Version == AttributeSetState.VersionZero)
             {
                 if (IsCommandCreate((IAttributeSetCommand)c))
                 {
@@ -323,7 +322,7 @@ namespace Dddml.Wms.Domain
 
         protected AttributeSetStateCreated NewAttributeSetStateCreated(string commandId, string requesterId)
         {
-            var stateEventId = new AttributeSetStateEventId(this._state.AttributeSetId, this._state.Version);
+            var stateEventId = new AttributeSetStateEventId(_state.AttributeSetId, ((IAttributeSetStateProperties)_state).Version);
             var e = NewAttributeSetStateCreated(stateEventId);
 
             e.CommandId = commandId;
@@ -336,7 +335,7 @@ namespace Dddml.Wms.Domain
 
         protected AttributeSetStateMergePatched NewAttributeSetStateMergePatched(string commandId, string requesterId)
         {
-            var stateEventId = new AttributeSetStateEventId(this._state.AttributeSetId, this._state.Version);
+            var stateEventId = new AttributeSetStateEventId(_state.AttributeSetId, ((IAttributeSetStateProperties)_state).Version);
             var e = NewAttributeSetStateMergePatched(stateEventId);
 
             e.CommandId = commandId;
@@ -350,7 +349,7 @@ namespace Dddml.Wms.Domain
 
         protected AttributeSetStateDeleted NewAttributeSetStateDeleted(string commandId, string requesterId)
         {
-            var stateEventId = new AttributeSetStateEventId(this._state.AttributeSetId, this._state.Version);
+            var stateEventId = new AttributeSetStateEventId(_state.AttributeSetId, ((IAttributeSetStateProperties)_state).Version);
             var e = NewAttributeSetStateDeleted(stateEventId);
 
             e.CommandId = commandId;

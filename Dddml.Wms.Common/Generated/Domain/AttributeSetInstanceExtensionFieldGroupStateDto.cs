@@ -258,6 +258,19 @@ namespace Dddml.Wms.Domain
                 }
             }
         }
+
+        long IAttributeSetInstanceExtensionFieldGroupStateProperties.Version
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceExtensionFieldGroupStateProperties).Version;
+            }
+            set 
+            {
+                this._state.Version = value;
+            }
+        }
+
 		public virtual string CreatedBy
 		{
             get
@@ -387,7 +400,7 @@ namespace Dddml.Wms.Domain
 
 		long IVersioned<long>.Version
 		{
-            get { return (_state as IAttributeSetInstanceExtensionFieldGroupState).Version; }
+            get { return _state.Version; }
 		}
 
 

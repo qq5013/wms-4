@@ -10,7 +10,6 @@ using Dddml.Wms.Domain;
 
 namespace Dddml.Wms.Domain
 {
-
     public partial class AttributeSetInstanceAggregate : AggregateBase, IAttributeSetInstanceAggregate
     {
 
@@ -55,7 +54,7 @@ namespace Dddml.Wms.Domain
 
         public virtual void ThrowOnInvalidStateTransition(ICommand c)
         {
-            if (_state.Version == AttributeSetInstanceState.VersionZero)
+            if (((IAttributeSetInstanceStateProperties)_state).Version == AttributeSetInstanceState.VersionZero)
             {
                 if (IsCommandCreate((IAttributeSetInstanceCommand)c))
                 {
@@ -2950,7 +2949,7 @@ namespace Dddml.Wms.Domain
 
         protected AttributeSetInstanceStateCreated NewAttributeSetInstanceStateCreated(string commandId, string requesterId)
         {
-            var stateEventId = new AttributeSetInstanceStateEventId(this._state.AttributeSetInstanceId, this._state.Version);
+            var stateEventId = new AttributeSetInstanceStateEventId(_state.AttributeSetInstanceId, ((IAttributeSetInstanceStateProperties)_state).Version);
             var e = NewAttributeSetInstanceStateCreated(stateEventId);
 
             e.CommandId = commandId;
@@ -2963,7 +2962,7 @@ namespace Dddml.Wms.Domain
 
         protected AttributeSetInstanceStateMergePatched NewAttributeSetInstanceStateMergePatched(string commandId, string requesterId)
         {
-            var stateEventId = new AttributeSetInstanceStateEventId(this._state.AttributeSetInstanceId, this._state.Version);
+            var stateEventId = new AttributeSetInstanceStateEventId(_state.AttributeSetInstanceId, ((IAttributeSetInstanceStateProperties)_state).Version);
             var e = NewAttributeSetInstanceStateMergePatched(stateEventId);
 
             e.CommandId = commandId;
@@ -2977,7 +2976,7 @@ namespace Dddml.Wms.Domain
 
         protected AttributeSetInstanceStateDeleted NewAttributeSetInstanceStateDeleted(string commandId, string requesterId)
         {
-            var stateEventId = new AttributeSetInstanceStateEventId(this._state.AttributeSetInstanceId, this._state.Version);
+            var stateEventId = new AttributeSetInstanceStateEventId(_state.AttributeSetInstanceId, ((IAttributeSetInstanceStateProperties)_state).Version);
             var e = NewAttributeSetInstanceStateDeleted(stateEventId);
 
             e.CommandId = commandId;

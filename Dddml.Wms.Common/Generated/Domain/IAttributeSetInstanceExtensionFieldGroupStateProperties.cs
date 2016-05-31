@@ -25,6 +25,8 @@ namespace Dddml.Wms.Domain
 
 		string Description { get; set; }
 
+		long Version { get; set; }
+
 		bool Active { get; set; }
 
 

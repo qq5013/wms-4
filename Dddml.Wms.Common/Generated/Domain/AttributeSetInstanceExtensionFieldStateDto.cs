@@ -237,6 +237,37 @@ namespace Dddml.Wms.Domain
             }
         }
 
+		public virtual long? Version
+        {
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("Version"))
+                {
+                    return _state.Version;
+                }
+                return null;
+            }
+            set
+            {
+                if (value != null && value.HasValue)
+                {
+                    _state.Version = value.Value;
+                }
+            }
+        }
+
+        long IAttributeSetInstanceExtensionFieldStateProperties.Version
+        {
+            get 
+            {
+                return (this._state as IAttributeSetInstanceExtensionFieldStateProperties).Version;
+            }
+            set 
+            {
+                this._state.Version = value;
+            }
+        }
+
 		public virtual string GroupId
 		{
             get
@@ -265,24 +296,6 @@ namespace Dddml.Wms.Domain
             }
         }
 
-		public virtual long? Version
-        {
-            get
-            {
-                if ((this as IStateDto).ReturnedFieldsContains("Version"))
-                {
-                    return _state.Version;
-                }
-                return null;
-            }
-            set
-            {
-                if (value != null && value.HasValue)
-                {
-                    _state.Version = value.Value;
-                }
-            }
-        }
 		public virtual string CreatedBy
 		{
             get
@@ -409,7 +422,7 @@ namespace Dddml.Wms.Domain
 
 		long IVersioned<long>.Version
 		{
-            get { return (_state as IAttributeSetInstanceExtensionFieldState).Version; }
+            get { return _state.Version; }
 		}
 
 

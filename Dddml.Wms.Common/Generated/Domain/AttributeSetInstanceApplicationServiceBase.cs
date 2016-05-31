@@ -11,7 +11,6 @@ using Dddml.Support.Criterion;
 
 namespace Dddml.Wms.Domain
 {
-
 	public abstract partial class AttributeSetInstanceApplicationServiceBase : IAttributeSetInstanceApplicationService, IApplicationService
 	{
 		protected abstract IEventStore EventStore { get; }
@@ -35,14 +34,14 @@ namespace Dddml.Wms.Domain
 
 			aggregate.ThrowOnInvalidStateTransition(c);
 			action(aggregate);
-			EventStore.AppendEvents(ToEventStoreAaggregateId(aggregateId), state.Version, aggregate.Changes, () => { StateRepository.Save(state); });
+			EventStore.AppendEvents(ToEventStoreAaggregateId(aggregateId), ((IAttributeSetInstanceStateProperties)state).Version, aggregate.Changes, () => { StateRepository.Save(state); });
 		}
 
 
 		protected bool IsRepeatedCommand(IAttributeSetInstanceCommand command, IEventStoreAggregateId eventStoreAaggregateId, IAttributeSetInstanceState state)
 		{
 			bool repeated = false;
-			if (state.Version > command.AggregateVersion)
+			if (((IAttributeSetInstanceStateProperties)state).Version > command.AggregateVersion)
 			{
 				var lastEvent = EventStore.FindLastEvent(typeof(IAttributeSetInstanceStateEvent), eventStoreAaggregateId, command.AggregateVersion);
 				if (lastEvent != null && lastEvent.CommandId == command.CommandId)

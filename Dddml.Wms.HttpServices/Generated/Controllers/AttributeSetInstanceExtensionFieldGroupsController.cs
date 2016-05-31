@@ -5,18 +5,17 @@
 
 using System;
 using System.Collections.Generic;
+using Dddml.Wms.Specialization;
+using Dddml.Wms.Domain;
 using System.Linq;
 using System.Net;
 using System.ComponentModel;
 using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Web.Http;
-using Dddml.Wms.Domain;
-
-using Dddml.Wms.Specialization;
 using Newtonsoft.Json.Linq;
-using Dddml.Wms.Domain.Metadata;
 using Dddml.Support.Criterion;
+using Dddml.Wms.Domain.Metadata;
 
 namespace Dddml.Wms.HttpServices.ApiControllers
 {

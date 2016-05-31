@@ -59,7 +59,19 @@
     <Compile Include="Generated\Domain\AttributeCommandDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\AttributeSetAttributeUseIdFlattenedDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetAttributeUseIdFlattenedDtoFormatter.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroupStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldIdFlattenedDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldIdFlattenedDtoFormatter.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldStateEventDto.cs">
@@ -75,6 +87,12 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeUseStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeValueIdFlattenedDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeValueIdFlattenedDtoFormatter.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeValueStateEventDto.cs">
@@ -559,6 +577,8 @@
 .\AttributeSetApplicationServiceFactory.cs
 .\AttributeSetAttributeUseId.cs
 .\AttributeSetAttributeUseIdDto.cs
+.\AttributeSetAttributeUseIdFlattenedDto.cs
+.\AttributeSetAttributeUseIdFlattenedDtoFormatter.cs
 .\AttributeSetCommand.cs
 .\AttributeSetCommandDto.cs
 .\AttributeSetInstanceAggregate.cs
@@ -582,6 +602,8 @@
 .\AttributeSetInstanceExtensionFieldGroupStateProperties.cs
 .\AttributeSetInstanceExtensionFieldId.cs
 .\AttributeSetInstanceExtensionFieldIdDto.cs
+.\AttributeSetInstanceExtensionFieldIdFlattenedDto.cs
+.\AttributeSetInstanceExtensionFieldIdFlattenedDtoFormatter.cs
 .\AttributeSetInstanceExtensionFieldState.cs
 .\AttributeSetInstanceExtensionFieldStateDto.cs
 .\AttributeSetInstanceExtensionFieldStateEvent.cs
@@ -625,6 +647,8 @@
 .\AttributeValueCommandDto.cs
 .\AttributeValueId.cs
 .\AttributeValueIdDto.cs
+.\AttributeValueIdFlattenedDto.cs
+.\AttributeValueIdFlattenedDtoFormatter.cs
 .\AttributeValueState.cs
 .\AttributeValueStateDto.cs
 .\AttributeValueStateEvent.cs

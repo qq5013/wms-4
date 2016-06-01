@@ -316,6 +316,19 @@ namespace Dddml.Wms.Domain
 			this.Deleted = true;
 			this.UpdatedBy = e.CreatedBy;
 			this.UpdatedAt = e.CreatedAt;
+
+            foreach (var innerState in this.AttributeUses)
+            {
+                this.AttributeUses.Remove(innerState);
+                
+                // 自动产生 inner 事件。有内部事件后面追溯起来更简单一些。
+                var innerE = e.NewAttributeUseStateRemoved(innerState.AttributeId);
+                ((AttributeUseStateEventBase)innerE).CreatedAt = e.CreatedAt;
+                ((AttributeUseStateEventBase)innerE).CreatedBy = e.CreatedBy;
+                innerState.When(innerE);
+                e.AddAttributeUseEvent(innerE);
+            }
+
 		}
 
 

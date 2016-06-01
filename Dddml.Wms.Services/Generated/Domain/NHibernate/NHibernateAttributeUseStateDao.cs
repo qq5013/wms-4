@@ -54,6 +54,11 @@ namespace Dddml.Wms.Domain.NHibernate
 
         public void Delete(IAttributeUseState state)
         {
+            var saveable = state as ISaveable;
+            if (saveable != null)
+            {
+                saveable.Save();
+            }
             CurrentSession.Delete(state);
         }
 

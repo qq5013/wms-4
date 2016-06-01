@@ -385,6 +385,22 @@ namespace Dddml.Wms.Domain
         }
 
 
+        IEnumerable<IAttributeValueStateRemoved> IAttributeStateDeleted.AttributeValueEvents
+        {
+            get { return this._attributeValueEvents; }
+        }
+
+        void IAttributeStateDeleted.AddAttributeValueEvent(IAttributeValueStateRemoved e)
+        {
+            this._attributeValueEvents.AddAttributeValueEvent(e);
+        }
+
+        IAttributeValueStateRemoved IAttributeStateDeleted.NewAttributeValueStateRemoved(string value)
+        {
+            return NewAttributeValueStateRemoved(value);
+        }
+
+
         AttributeStateEventId IAttributeStateEvent.StateEventId
         {
             get { return this.StateEventId.ToAttributeStateEventId(); }

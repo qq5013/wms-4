@@ -51,7 +51,6 @@ namespace Dddml.Wms.Domain
 
 	}
 
-
 	public interface IAttributeValueStateRemoved : IAttributeValueStateEvent
 	{
 	}

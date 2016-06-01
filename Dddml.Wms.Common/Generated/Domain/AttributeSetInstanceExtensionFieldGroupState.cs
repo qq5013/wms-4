@@ -302,6 +302,19 @@ namespace Dddml.Wms.Domain
 			this.Deleted = true;
 			this.UpdatedBy = e.CreatedBy;
 			this.UpdatedAt = e.CreatedAt;
+
+            foreach (var innerState in this.Fields)
+            {
+                this.Fields.Remove(innerState);
+                
+                // 自动产生 inner 事件。有内部事件后面追溯起来更简单一些。
+                var innerE = e.NewAttributeSetInstanceExtensionFieldStateRemoved(innerState.Index);
+                ((AttributeSetInstanceExtensionFieldStateEventBase)innerE).CreatedAt = e.CreatedAt;
+                ((AttributeSetInstanceExtensionFieldStateEventBase)innerE).CreatedBy = e.CreatedBy;
+                innerState.When(innerE);
+                e.AddAttributeSetInstanceExtensionFieldEvent(innerE);
+            }
+
 		}
 
 

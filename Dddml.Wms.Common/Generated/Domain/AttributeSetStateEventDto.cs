@@ -301,6 +301,22 @@ namespace Dddml.Wms.Domain
         }
 
 
+        IEnumerable<IAttributeUseStateRemoved> IAttributeSetStateDeleted.AttributeUseEvents
+        {
+            get { return this._attributeUseEvents; }
+        }
+
+        void IAttributeSetStateDeleted.AddAttributeUseEvent(IAttributeUseStateRemoved e)
+        {
+            this._attributeUseEvents.AddAttributeUseEvent(e);
+        }
+
+        IAttributeUseStateRemoved IAttributeSetStateDeleted.NewAttributeUseStateRemoved(string attributeId)
+        {
+            return NewAttributeUseStateRemoved(attributeId);
+        }
+
+
         AttributeSetStateEventId IAttributeSetStateEvent.StateEventId
         {
             get { return this.StateEventId.ToAttributeSetStateEventId(); }

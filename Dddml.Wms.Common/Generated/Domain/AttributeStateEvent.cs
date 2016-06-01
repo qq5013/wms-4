@@ -321,7 +321,7 @@ namespace Dddml.Wms.Domain
 	}
 
 
-	public class AttributeStateDeleted : AttributeStateEventBase, IAttributeStateDeleted
+	public class AttributeStateDeleted : AttributeStateEventBase, IAttributeStateDeleted, ISaveable
 	{
 		public AttributeStateDeleted ()
 		{
@@ -335,6 +335,63 @@ namespace Dddml.Wms.Domain
         {
             return Dddml.Wms.Specialization.StateEventType.Deleted;
         }
+
+		private Dictionary<AttributeValueStateEventId, IAttributeValueStateRemoved> _attributeValueEvents = new Dictionary<AttributeValueStateEventId, IAttributeValueStateRemoved>();
+		
+        private IEnumerable<IAttributeValueStateRemoved> _readOnlyAttributeValueEvents;
+
+        public virtual IEnumerable<IAttributeValueStateRemoved> AttributeValueEvents
+        {
+            get
+            {
+                if (!StateEventReadOnly)
+                {
+					return this._attributeValueEvents.Values;
+                }
+                else
+                {
+                    if (_readOnlyAttributeValueEvents != null) { return _readOnlyAttributeValueEvents; }
+                    var eventDao = ApplicationContext.Current["AttributeValueStateEventDao"] as IAttributeValueStateEventDao;
+                    var eL = new List<IAttributeValueStateRemoved>();
+                    foreach (var e in eventDao.FindByAttributeStateEventId(this.StateEventId))
+                    {
+                        e.ReadOnly = true;
+                        eL.Add((IAttributeValueStateRemoved)e);
+                    }
+                    return (_readOnlyAttributeValueEvents = eL);
+                }
+            }
+            set 
+            {
+                if (value != null)
+                {
+                    foreach (var e in value)
+                    {
+                        AddAttributeValueEvent(e);
+                    }
+                }
+            }
+        }
+	
+		public virtual void AddAttributeValueEvent(IAttributeValueStateRemoved e)
+		{
+			ThrowOnInconsistentEventIds(e);
+			this._attributeValueEvents[e.StateEventId] = e;
+		}
+
+        public virtual IAttributeValueStateRemoved NewAttributeValueStateRemoved(string value)
+        {
+            var stateEvent = new AttributeValueStateRemoved(NewAttributeValueStateEventId(value));
+            return stateEvent;
+        }
+
+		public virtual void Save ()
+		{
+			foreach (IAttributeValueStateRemoved e in this.AttributeValueEvents) {
+				(ApplicationContext.Current["AttributeValueStateEventDao"] as IAttributeValueStateEventDao).Save(e);
+			}
+		}
+
 
 	}
 

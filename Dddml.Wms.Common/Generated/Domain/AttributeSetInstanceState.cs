@@ -6652,6 +6652,7 @@ namespace Dddml.Wms.Domain
 			this.Deleted = true;
 			this.UpdatedBy = e.CreatedBy;
 			this.UpdatedAt = e.CreatedAt;
+
 		}
 
 

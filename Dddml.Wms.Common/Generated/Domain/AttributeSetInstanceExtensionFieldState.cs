@@ -270,6 +270,7 @@ namespace Dddml.Wms.Domain
 		public virtual void When(IAttributeSetInstanceExtensionFieldStateRemoved e)
 		{
 			ThrowOnWrongEvent(e);
+
 		}
 
 

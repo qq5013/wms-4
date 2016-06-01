@@ -214,6 +214,7 @@ namespace Dddml.Wms.Domain
 		public virtual void When(IAttributeUseStateRemoved e)
 		{
 			ThrowOnWrongEvent(e);
+
 		}
 
 

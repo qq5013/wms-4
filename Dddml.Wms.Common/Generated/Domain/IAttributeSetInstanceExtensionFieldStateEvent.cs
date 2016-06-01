@@ -59,7 +59,6 @@ namespace Dddml.Wms.Domain
 
 	}
 
-
 	public interface IAttributeSetInstanceExtensionFieldStateRemoved : IAttributeSetInstanceExtensionFieldStateEvent
 	{
 	}

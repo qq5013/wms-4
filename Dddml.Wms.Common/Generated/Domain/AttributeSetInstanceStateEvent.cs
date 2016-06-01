@@ -3866,6 +3866,8 @@ namespace Dddml.Wms.Domain
             return Dddml.Wms.Specialization.StateEventType.Deleted;
         }
 
+
+
 	}
 
 

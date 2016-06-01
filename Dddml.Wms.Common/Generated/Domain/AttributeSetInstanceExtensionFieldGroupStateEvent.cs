@@ -301,7 +301,7 @@ namespace Dddml.Wms.Domain
 	}
 
 
-	public class AttributeSetInstanceExtensionFieldGroupStateDeleted : AttributeSetInstanceExtensionFieldGroupStateEventBase, IAttributeSetInstanceExtensionFieldGroupStateDeleted
+	public class AttributeSetInstanceExtensionFieldGroupStateDeleted : AttributeSetInstanceExtensionFieldGroupStateEventBase, IAttributeSetInstanceExtensionFieldGroupStateDeleted, ISaveable
 	{
 		public AttributeSetInstanceExtensionFieldGroupStateDeleted ()
 		{
@@ -315,6 +315,63 @@ namespace Dddml.Wms.Domain
         {
             return Dddml.Wms.Specialization.StateEventType.Deleted;
         }
+
+		private Dictionary<AttributeSetInstanceExtensionFieldStateEventId, IAttributeSetInstanceExtensionFieldStateRemoved> _attributeSetInstanceExtensionFieldEvents = new Dictionary<AttributeSetInstanceExtensionFieldStateEventId, IAttributeSetInstanceExtensionFieldStateRemoved>();
+		
+        private IEnumerable<IAttributeSetInstanceExtensionFieldStateRemoved> _readOnlyAttributeSetInstanceExtensionFieldEvents;
+
+        public virtual IEnumerable<IAttributeSetInstanceExtensionFieldStateRemoved> AttributeSetInstanceExtensionFieldEvents
+        {
+            get
+            {
+                if (!StateEventReadOnly)
+                {
+					return this._attributeSetInstanceExtensionFieldEvents.Values;
+                }
+                else
+                {
+                    if (_readOnlyAttributeSetInstanceExtensionFieldEvents != null) { return _readOnlyAttributeSetInstanceExtensionFieldEvents; }
+                    var eventDao = ApplicationContext.Current["AttributeSetInstanceExtensionFieldStateEventDao"] as IAttributeSetInstanceExtensionFieldStateEventDao;
+                    var eL = new List<IAttributeSetInstanceExtensionFieldStateRemoved>();
+                    foreach (var e in eventDao.FindByAttributeSetInstanceExtensionFieldGroupStateEventId(this.StateEventId))
+                    {
+                        e.ReadOnly = true;
+                        eL.Add((IAttributeSetInstanceExtensionFieldStateRemoved)e);
+                    }
+                    return (_readOnlyAttributeSetInstanceExtensionFieldEvents = eL);
+                }
+            }
+            set 
+            {
+                if (value != null)
+                {
+                    foreach (var e in value)
+                    {
+                        AddAttributeSetInstanceExtensionFieldEvent(e);
+                    }
+                }
+            }
+        }
+	
+		public virtual void AddAttributeSetInstanceExtensionFieldEvent(IAttributeSetInstanceExtensionFieldStateRemoved e)
+		{
+			ThrowOnInconsistentEventIds(e);
+			this._attributeSetInstanceExtensionFieldEvents[e.StateEventId] = e;
+		}
+
+        public virtual IAttributeSetInstanceExtensionFieldStateRemoved NewAttributeSetInstanceExtensionFieldStateRemoved(string index)
+        {
+            var stateEvent = new AttributeSetInstanceExtensionFieldStateRemoved(NewAttributeSetInstanceExtensionFieldStateEventId(index));
+            return stateEvent;
+        }
+
+		public virtual void Save ()
+		{
+			foreach (IAttributeSetInstanceExtensionFieldStateRemoved e in this.AttributeSetInstanceExtensionFieldEvents) {
+				(ApplicationContext.Current["AttributeSetInstanceExtensionFieldStateEventDao"] as IAttributeSetInstanceExtensionFieldStateEventDao).Save(e);
+			}
+		}
+
 
 	}
 

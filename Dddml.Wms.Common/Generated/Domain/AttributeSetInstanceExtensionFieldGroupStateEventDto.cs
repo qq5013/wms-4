@@ -280,6 +280,22 @@ namespace Dddml.Wms.Domain
         }
 
 
+        IEnumerable<IAttributeSetInstanceExtensionFieldStateRemoved> IAttributeSetInstanceExtensionFieldGroupStateDeleted.AttributeSetInstanceExtensionFieldEvents
+        {
+            get { return this._attributeSetInstanceExtensionFieldEvents; }
+        }
+
+        void IAttributeSetInstanceExtensionFieldGroupStateDeleted.AddAttributeSetInstanceExtensionFieldEvent(IAttributeSetInstanceExtensionFieldStateRemoved e)
+        {
+            this._attributeSetInstanceExtensionFieldEvents.AddAttributeSetInstanceExtensionFieldEvent(e);
+        }
+
+        IAttributeSetInstanceExtensionFieldStateRemoved IAttributeSetInstanceExtensionFieldGroupStateDeleted.NewAttributeSetInstanceExtensionFieldStateRemoved(string index)
+        {
+            return NewAttributeSetInstanceExtensionFieldStateRemoved(index);
+        }
+
+
         AttributeSetInstanceExtensionFieldGroupStateEventId IAttributeSetInstanceExtensionFieldGroupStateEvent.StateEventId
         {
             get { return this.StateEventId.ToAttributeSetInstanceExtensionFieldGroupStateEventId(); }

@@ -160,11 +160,12 @@ namespace Dddml.Wms.Domain
 		{
 		}
 
-
         protected override string GetStateEventType()
         {
             return Dddml.Wms.Specialization.StateEventType.Removed;
         }
+
+
 
 	}
 

@@ -5,13 +5,12 @@
 
 using System;
 using System.Collections.Generic;
+using Dddml.Wms.Specialization;
+using Dddml.Wms.Domain;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using Dddml.Wms.Domain;
-
-using Dddml.Wms.Specialization;
 using Dddml.Wms.HttpServices.ClientProxies.Raml;
 using Dddml.Wms.HttpServices.ClientProxies.Raml.Models;
 using System.Text;

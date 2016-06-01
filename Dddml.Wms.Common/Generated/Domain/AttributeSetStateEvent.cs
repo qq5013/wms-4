@@ -305,7 +305,7 @@ namespace Dddml.Wms.Domain
 	}
 
 
-	public class AttributeSetStateDeleted : AttributeSetStateEventBase, IAttributeSetStateDeleted
+	public class AttributeSetStateDeleted : AttributeSetStateEventBase, IAttributeSetStateDeleted, ISaveable
 	{
 		public AttributeSetStateDeleted ()
 		{
@@ -319,6 +319,63 @@ namespace Dddml.Wms.Domain
         {
             return Dddml.Wms.Specialization.StateEventType.Deleted;
         }
+
+		private Dictionary<AttributeUseStateEventId, IAttributeUseStateRemoved> _attributeUseEvents = new Dictionary<AttributeUseStateEventId, IAttributeUseStateRemoved>();
+		
+        private IEnumerable<IAttributeUseStateRemoved> _readOnlyAttributeUseEvents;
+
+        public virtual IEnumerable<IAttributeUseStateRemoved> AttributeUseEvents
+        {
+            get
+            {
+                if (!StateEventReadOnly)
+                {
+					return this._attributeUseEvents.Values;
+                }
+                else
+                {
+                    if (_readOnlyAttributeUseEvents != null) { return _readOnlyAttributeUseEvents; }
+                    var eventDao = ApplicationContext.Current["AttributeUseStateEventDao"] as IAttributeUseStateEventDao;
+                    var eL = new List<IAttributeUseStateRemoved>();
+                    foreach (var e in eventDao.FindByAttributeSetStateEventId(this.StateEventId))
+                    {
+                        e.ReadOnly = true;
+                        eL.Add((IAttributeUseStateRemoved)e);
+                    }
+                    return (_readOnlyAttributeUseEvents = eL);
+                }
+            }
+            set 
+            {
+                if (value != null)
+                {
+                    foreach (var e in value)
+                    {
+                        AddAttributeUseEvent(e);
+                    }
+                }
+            }
+        }
+	
+		public virtual void AddAttributeUseEvent(IAttributeUseStateRemoved e)
+		{
+			ThrowOnInconsistentEventIds(e);
+			this._attributeUseEvents[e.StateEventId] = e;
+		}
+
+        public virtual IAttributeUseStateRemoved NewAttributeUseStateRemoved(string attributeId)
+        {
+            var stateEvent = new AttributeUseStateRemoved(NewAttributeUseStateEventId(attributeId));
+            return stateEvent;
+        }
+
+		public virtual void Save ()
+		{
+			foreach (IAttributeUseStateRemoved e in this.AttributeUseEvents) {
+				(ApplicationContext.Current["AttributeUseStateEventDao"] as IAttributeUseStateEventDao).Save(e);
+			}
+		}
+
 
 	}
 

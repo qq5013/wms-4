@@ -65,25 +65,6 @@ namespace Dddml.Wms.Domain
             }
         }
 
-/*
-		public virtual string AttributeId {
-			get {
-				return StateEventId.AttributeId;
-			}
-			set {
-				StateEventId.AttributeId = value;
-			}
-		}
-
-		public virtual long Version {
-			get {
-				return StateEventId.Version;
-			}
-			set {
-				StateEventId.Version = value;
-			}
-		}
-*/
 
 		string ICreated<string>.CreatedBy {
 			get {
@@ -118,12 +99,18 @@ namespace Dddml.Wms.Domain
             return stateEventId;
         }
 
-		protected void ThrowOnInconsistentEventIds(IAttributeValueStateEvent e)
+
+        protected void ThrowOnInconsistentEventIds(IAttributeValueStateEvent e)
+        {
+            ThrowOnInconsistentEventIds(this, e);
+        }
+
+		public static void ThrowOnInconsistentEventIds(IAttributeStateEvent oe, IAttributeValueStateEvent e)
 		{
-			if (this.StateEventId.AttributeId != e.StateEventId.AttributeId) 
+			if (!oe.StateEventId.AttributeId.Equals(e.StateEventId.AttributeId))
 			{ 
 				DomainError.Named("inconsistentEventIds", "Outer Id AttributeId {0} but inner id AttributeId {1}", 
-					this.StateEventId.AttributeId, e.StateEventId.AttributeId);
+					oe.StateEventId.AttributeId, e.StateEventId.AttributeId);
 			}
 		}
 

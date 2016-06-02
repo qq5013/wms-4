@@ -17,6 +17,8 @@ namespace Dddml.Wms.Domain
         IAttributeValueState Get(string value);
         
         void Remove(IAttributeValueState state);
+
+        void AddToSave(IAttributeValueState state);
         
     }
 

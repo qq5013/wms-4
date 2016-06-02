@@ -520,6 +520,11 @@ namespace Dddml.Wms.Domain
                 throw new NotSupportedException();
             }
 
+            public void AddToSave(IAttributeSetInstanceExtensionFieldState state)
+            {
+                throw new NotSupportedException();
+            }
+
             public void Save()
             {
                 throw new NotSupportedException();

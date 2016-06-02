@@ -24,6 +24,7 @@ namespace Dddml.Wms.Domain
 
 		public virtual DateTime UpdatedAt { get; set; }
 
+		public virtual bool Deleted { get; set; }
 
 
 		#region IIdentity implementation
@@ -85,6 +86,17 @@ namespace Dddml.Wms.Domain
 
 		#endregion
 
+		#region IDeleted implementation
+
+		bool IDeleted.Deleted
+		{
+			get
+			{
+				return this.Deleted;
+			}
+		}
+
+		#endregion
 
 		#region ICreated implementation
 
@@ -270,6 +282,10 @@ namespace Dddml.Wms.Domain
 		public virtual void When(IAttributeSetInstanceExtensionFieldStateRemoved e)
 		{
 			ThrowOnWrongEvent(e);
+
+			this.Deleted = true;
+			this.UpdatedBy = e.CreatedBy;
+			this.UpdatedAt = e.CreatedAt;
 
 		}
 

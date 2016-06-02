@@ -28,6 +28,8 @@
 
 	<property name="Active"  />
 
+	<property name="Deleted"  />
+
 
   </class>
   

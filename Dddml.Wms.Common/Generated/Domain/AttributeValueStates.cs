@@ -71,6 +71,11 @@ namespace Dddml.Wms.Domain
 			return state;
 		}
 
+        public virtual void AddToSave(IAttributeValueState state)
+        {
+            this._loadedAttributeValueStates[state.GlobalId] = state;
+        }
+
 		#region Saveable Implements
 
 		public virtual void Save ()

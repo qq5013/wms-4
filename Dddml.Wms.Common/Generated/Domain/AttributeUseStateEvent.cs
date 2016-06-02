@@ -49,26 +49,6 @@ namespace Dddml.Wms.Domain
 
 		public virtual long Version { get; set; }
 
-/*
-		public virtual string AttributeSetId {
-			get {
-				return StateEventId.AttributeSetId;
-			}
-			set {
-				StateEventId.AttributeSetId = value;
-			}
-		}
-*/
-/*
-		public virtual string AttributeId {
-			get {
-				return StateEventId.AttributeId;
-			}
-			set {
-				StateEventId.AttributeId = value;
-			}
-		}
-*/
 
 		string ICreated<string>.CreatedBy {
 			get {

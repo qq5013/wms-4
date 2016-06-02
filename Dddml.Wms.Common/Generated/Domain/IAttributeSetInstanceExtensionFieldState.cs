@@ -15,6 +15,7 @@ namespace Dddml.Wms.Domain
 		ILocalIdentity<string>, 
 		ICreated<string>, 
 		IUpdated<string>, 
+		IDeleted, 
 		IActive, 
 		IVersioned<long>
 	{

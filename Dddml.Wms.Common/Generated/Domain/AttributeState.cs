@@ -24,7 +24,6 @@ namespace Dddml.Wms.Domain
 
 		public virtual DateTime UpdatedAt { get; set; }
 
-
 		public virtual bool Deleted { get; set; }
 
 
@@ -355,12 +354,12 @@ namespace Dddml.Wms.Domain
                 IAttributeValueState innerState = this.AttributeValues.Get(innerEvent.GlobalId.Value);
 
                 innerState.Mutate(innerEvent);
-
                 var removed = innerEvent as IAttributeValueStateRemoved;
                 if (removed != null)
                 {
                     this.AttributeValues.Remove(innerState);
                 }
+          
             }
 
 		}
@@ -377,12 +376,12 @@ namespace Dddml.Wms.Domain
             {
                 this.AttributeValues.Remove(innerState);
                 
-                // 自动产生 inner 事件。有内部事件后面追溯起来更简单一些。
                 var innerE = e.NewAttributeValueStateRemoved(innerState.Value);
                 ((AttributeValueStateEventBase)innerE).CreatedAt = e.CreatedAt;
                 ((AttributeValueStateEventBase)innerE).CreatedBy = e.CreatedBy;
                 innerState.When(innerE);
-                e.AddAttributeValueEvent(innerE);
+                //e.AddAttributeValueEvent(innerE);
+
             }
 
 		}

@@ -331,6 +331,14 @@ namespace Dddml.Wms.Domain
 
 		#endregion
 
+		#region IDeleted implementation
+
+		bool IDeleted.Deleted
+		{
+            get { return (_state as IDeleted).Deleted; }
+		}
+
+		#endregion
 
 		#region ICreated implementation
 

@@ -53,26 +53,6 @@ namespace Dddml.Wms.Domain
 
 		public virtual long Version { get; set; }
 
-/*
-		public virtual string AttributeId {
-			get {
-				return StateEventId.AttributeId;
-			}
-			set {
-				StateEventId.AttributeId = value;
-			}
-		}
-*/
-/*
-		public virtual string Value {
-			get {
-				return StateEventId.Value;
-			}
-			set {
-				StateEventId.Value = value;
-			}
-		}
-*/
 
 		string ICreated<string>.CreatedBy {
 			get {

@@ -17,6 +17,8 @@ namespace Dddml.Wms.Domain
         IAttributeSetInstanceExtensionFieldState Get(string index);
         
         void Remove(IAttributeSetInstanceExtensionFieldState state);
+
+        void AddToSave(IAttributeSetInstanceExtensionFieldState state);
         
     }
 

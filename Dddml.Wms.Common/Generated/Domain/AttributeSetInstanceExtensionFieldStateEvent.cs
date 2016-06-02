@@ -57,26 +57,6 @@ namespace Dddml.Wms.Domain
 
 		public virtual long Version { get; set; }
 
-/*
-		public virtual string GroupId {
-			get {
-				return StateEventId.GroupId;
-			}
-			set {
-				StateEventId.GroupId = value;
-			}
-		}
-*/
-/*
-		public virtual string Index {
-			get {
-				return StateEventId.Index;
-			}
-			set {
-				StateEventId.Index = value;
-			}
-		}
-*/
 
 		string ICreated<string>.CreatedBy {
 			get {

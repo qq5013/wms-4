@@ -969,25 +969,6 @@ namespace Dddml.Wms.Domain
             }
         }
 
-/*
-		public virtual string AttributeSetInstanceId {
-			get {
-				return StateEventId.AttributeSetInstanceId;
-			}
-			set {
-				StateEventId.AttributeSetInstanceId = value;
-			}
-		}
-
-		public virtual long Version {
-			get {
-				return StateEventId.Version;
-			}
-			set {
-				StateEventId.Version = value;
-			}
-		}
-*/
 
 		string ICreated<string>.CreatedBy {
 			get {

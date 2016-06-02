@@ -24,7 +24,6 @@ namespace Dddml.Wms.Domain
 
 		public virtual DateTime UpdatedAt { get; set; }
 
-
 		public virtual bool Deleted { get; set; }
 
 

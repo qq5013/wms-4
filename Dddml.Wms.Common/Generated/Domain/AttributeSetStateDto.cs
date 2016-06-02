@@ -545,6 +545,11 @@ namespace Dddml.Wms.Domain
                 throw new NotSupportedException();
             }
 
+            public void AddToSave(IAttributeUseState state)
+            {
+                throw new NotSupportedException();
+            }
+
             public void Save()
             {
                 throw new NotSupportedException();

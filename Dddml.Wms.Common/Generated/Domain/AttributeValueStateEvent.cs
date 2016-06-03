@@ -82,7 +82,7 @@ namespace Dddml.Wms.Domain
         }
 
 
-        public virtual string StateEventType
+        string IStateEventDto.StateEventType
         {
             get { return this.GetStateEventType(); }
         }

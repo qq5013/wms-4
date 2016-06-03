@@ -187,6 +187,8 @@ namespace Dddml.Wms.Domain
 
             this.Active = (e.Active != null && e.Active.HasValue) ? e.Active.Value : default(bool);
 
+			this.Deleted = false;
+
 			this.CreatedBy = e.CreatedBy;
 			this.CreatedAt = e.CreatedAt;
 

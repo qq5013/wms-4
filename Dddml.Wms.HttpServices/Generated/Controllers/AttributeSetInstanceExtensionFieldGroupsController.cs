@@ -26,6 +26,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
 
         IAttributeSetInstanceExtensionFieldGroupApplicationService _attributeSetInstanceExtensionFieldGroupApplicationService = ApplicationContext.Current["AttributeSetInstanceExtensionFieldGroupApplicationService"] as IAttributeSetInstanceExtensionFieldGroupApplicationService;
 
+        [Route(Order = 1)]
         [HttpGet]
         public IEnumerable<AttributeSetInstanceExtensionFieldGroupStateDto> GetAll(string sort = null, string fields = null, int firstResult = 0, int maxResults = int.MaxValue, string filter = null)
         {

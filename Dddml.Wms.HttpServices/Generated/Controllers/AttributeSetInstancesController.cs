@@ -30,6 +30,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
 
         IAttributeSetInstanceApplicationService _attributeSetInstanceApplicationService = ApplicationContext.Current["AttributeSetInstanceApplicationService"] as IAttributeSetInstanceApplicationService;
 
+        [Route(Order = 1)]
         [HttpGet]
         public JArray GetAll(string sort = null, string fields = null, int firstResult = 0, int maxResults = int.MaxValue, string filter = null)
         {

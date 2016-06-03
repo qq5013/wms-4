@@ -26,6 +26,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
 
         IAttributeSetApplicationService _attributeSetApplicationService = ApplicationContext.Current["AttributeSetApplicationService"] as IAttributeSetApplicationService;
 
+        [Route(Order = 1)]
         [HttpGet]
         public IEnumerable<AttributeSetStateDto> GetAll(string sort = null, string fields = null, int firstResult = 0, int maxResults = int.MaxValue, string filter = null)
         {

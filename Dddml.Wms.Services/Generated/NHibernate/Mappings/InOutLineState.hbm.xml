@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+				   assembly="Dddml.Wms.Common" 
+				   namespace="Dddml.Wms.Domain">
+  
+  <class name="Dddml.Wms.Domain.InOutLineState" table="InOutLines">
+
+	<composite-id name="InOutLineId" class="Dddml.Wms.Domain.InOutLineId">
+		<key-property name="InOutDocumentNumber" column="InOutLineIdInOutDocumentNumber" length="50"/>
+		<key-property name="SkuIdProductId" column="InOutLineIdSkuIdProductId" />
+		<key-property name="SkuIdAttributeSetInstanceId" column="InOutLineIdSkuIdAttributeSetInstanceId" />
+	</composite-id>
+
+	<version name="Version" type="long" unsaved-value="0"/>
+
+	<property name="LineNumber"  />
+
+	<property name="Description"  />
+
+	<property name="LocatorId"  />
+
+	<property name="Product"  />
+
+	<property name="UomId"  />
+
+	<property name="MovementQuantity"  />
+
+	<property name="ConfirmedQuantity"  />
+
+	<property name="ScrappedQuantity"  />
+
+	<property name="TargetQuantity"  />
+
+	<property name="PickedQuantity"  />
+
+	<property name="IsInvoiced"  />
+
+	<property name="AttributeSetInstanceId"  />
+
+	<property name="IsDescription"  />
+
+	<property name="Processed"  />
+
+	<property name="QuantityEntered"  />
+
+	<property name="RmaLineNumber"  />
+
+	<property name="ReversalLineNumber"  />
+
+	<property name="CreatedBy"  />
+
+	<property name="CreatedAt"  />
+
+	<property name="UpdatedBy"  />
+
+	<property name="UpdatedAt"  />
+
+	<property name="Active"  />
+
+	<property name="Deleted"  />
+
+
+  </class>
+  
+</hibernate-mapping>
+

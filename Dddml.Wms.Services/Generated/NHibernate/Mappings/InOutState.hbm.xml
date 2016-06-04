@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+				   assembly="Dddml.Wms.Common" 
+				   namespace="Dddml.Wms.Domain">
+  
+  <class name="Dddml.Wms.Domain.InOutState" table="InOuts">
+
+	<id name="DocumentNumber" length="50">
+		<generator class="assigned"/>
+	</id>
+
+	<version name="Version" type="long" unsaved-value="0"/>
+
+	<property name="IsSOTransaction"  />
+
+	<property name="DocumentStatus"  />
+
+	<property name="Posted"  />
+
+	<property name="Processing"  />
+
+	<property name="Processed"  />
+
+	<property name="DocumentType"  />
+
+	<property name="Description"  />
+
+	<property name="OrderNumber"  />
+
+	<property name="DateOrdered"  />
+
+	<property name="IsPrinted"  />
+
+	<property name="MovementType"  />
+
+	<property name="MovementDate"  />
+
+	<property name="BusinessPartnerId"  />
+
+	<property name="WarehouseId"  />
+
+	<property name="POReference"  />
+
+	<property name="FreightAmount"  />
+
+	<property name="ShipperId"  />
+
+	<property name="ChargeAmount"  />
+
+	<property name="DatePrinted"  />
+
+	<property name="SalesRepresentative"  />
+
+	<property name="NumberOfPackages"  />
+
+	<property name="PickDate"  />
+
+	<property name="ShipDate"  />
+
+	<property name="TrackingNumber"  />
+
+	<property name="DateReceived"  />
+
+	<property name="IsInTransit"  />
+
+	<property name="IsApproved"  />
+
+	<property name="IsInDispute"  />
+
+	<property name="Volume"  />
+
+	<property name="Weight"  />
+
+	<property name="RmaNumber"  />
+
+	<property name="ReversalNumber"  />
+
+	<property name="IsDropShip"  />
+
+	<property name="DropShipBusinessPartnerId"  />
+
+	<property name="CreatedBy"  />
+
+	<property name="CreatedAt"  />
+
+	<property name="UpdatedBy"  />
+
+	<property name="UpdatedAt"  />
+
+	<property name="Active"  />
+
+	<property name="Deleted"  />
+
+
+  </class>
+  
+</hibernate-mapping>
+

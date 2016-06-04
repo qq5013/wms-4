@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+                   assembly="Dddml.Wms.Common" 
+                   namespace="Dddml.Wms.Domain">
+  
+  <class name="InOutStateEventBase" table="InOutStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="StateEventId" class="Dddml.Wms.Domain.InOutStateEventId">
+		<key-property name="DocumentNumber" column="DocumentNumber" length="50"/>
+		<key-property name="Version" column="Version" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="String" />
+
+	<property name="IsSOTransaction"  />
+
+	<property name="DocumentStatus"  />
+
+	<property name="Posted"  />
+
+	<property name="Processing"  />
+
+	<property name="Processed"  />
+
+	<property name="DocumentType"  />
+
+	<property name="Description"  />
+
+	<property name="OrderNumber"  />
+
+	<property name="DateOrdered"  />
+
+	<property name="IsPrinted"  />
+
+	<property name="MovementType"  />
+
+	<property name="MovementDate"  />
+
+	<property name="BusinessPartnerId"  />
+
+	<property name="WarehouseId"  />
+
+	<property name="POReference"  />
+
+	<property name="FreightAmount"  />
+
+	<property name="ShipperId"  />
+
+	<property name="ChargeAmount"  />
+
+	<property name="DatePrinted"  />
+
+	<property name="SalesRepresentative"  />
+
+	<property name="NumberOfPackages"  />
+
+	<property name="PickDate"  />
+
+	<property name="ShipDate"  />
+
+	<property name="TrackingNumber"  />
+
+	<property name="DateReceived"  />
+
+	<property name="IsInTransit"  />
+
+	<property name="IsApproved"  />
+
+	<property name="IsInDispute"  />
+
+	<property name="Volume"  />
+
+	<property name="Weight"  />
+
+	<property name="RmaNumber"  />
+
+	<property name="ReversalNumber"  />
+
+	<property name="IsDropShip"  />
+
+	<property name="DropShipBusinessPartnerId"  />
+
+	<property name="Active"  />
+
+
+    <property name="CreatedBy" />
+
+    <property name="CreatedAt" />
+
+    <property name="CommandId" />
+
+
+    <subclass name="InOutStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="InOutStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="IsPropertyIsSOTransactionRemoved" />
+
+        <property name="IsPropertyDocumentStatusRemoved" />
+
+        <property name="IsPropertyPostedRemoved" />
+
+        <property name="IsPropertyProcessingRemoved" />
+
+        <property name="IsPropertyProcessedRemoved" />
+
+        <property name="IsPropertyDocumentTypeRemoved" />
+
+        <property name="IsPropertyDescriptionRemoved" />
+
+        <property name="IsPropertyOrderNumberRemoved" />
+
+        <property name="IsPropertyDateOrderedRemoved" />
+
+        <property name="IsPropertyIsPrintedRemoved" />
+
+        <property name="IsPropertyMovementTypeRemoved" />
+
+        <property name="IsPropertyMovementDateRemoved" />
+
+        <property name="IsPropertyBusinessPartnerIdRemoved" />
+
+        <property name="IsPropertyWarehouseIdRemoved" />
+
+        <property name="IsPropertyPOReferenceRemoved" />
+
+        <property name="IsPropertyFreightAmountRemoved" />
+
+        <property name="IsPropertyShipperIdRemoved" />
+
+        <property name="IsPropertyChargeAmountRemoved" />
+
+        <property name="IsPropertyDatePrintedRemoved" />
+
+        <property name="IsPropertySalesRepresentativeRemoved" />
+
+        <property name="IsPropertyNumberOfPackagesRemoved" />
+
+        <property name="IsPropertyPickDateRemoved" />
+
+        <property name="IsPropertyShipDateRemoved" />
+
+        <property name="IsPropertyTrackingNumberRemoved" />
+
+        <property name="IsPropertyDateReceivedRemoved" />
+
+        <property name="IsPropertyIsInTransitRemoved" />
+
+        <property name="IsPropertyIsApprovedRemoved" />
+
+        <property name="IsPropertyIsInDisputeRemoved" />
+
+        <property name="IsPropertyVolumeRemoved" />
+
+        <property name="IsPropertyWeightRemoved" />
+
+        <property name="IsPropertyRmaNumberRemoved" />
+
+        <property name="IsPropertyReversalNumberRemoved" />
+
+        <property name="IsPropertyIsDropShipRemoved" />
+
+        <property name="IsPropertyDropShipBusinessPartnerIdRemoved" />
+
+        <property name="IsPropertyActiveRemoved" />
+
+
+    </subclass>
+
+    <subclass name="InOutStateDeleted"  discriminator-value="Deleted">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

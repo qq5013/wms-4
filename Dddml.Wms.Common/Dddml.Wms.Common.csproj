@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\AttributeSetInstanceAggregate.cs" />
+    <Compile Include="Domain\Services\IAttributeSetService.cs" />
     <Compile Include="Generated\Domain\AttributeAggregate.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -59,48 +60,6 @@
     <Compile Include="Generated\Domain\AttributeCommandDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Domain\AttributeSetAttributeUseIdFlattenedDto.cs">
-      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Generated\Domain\AttributeSetAttributeUseIdFlattenedDtoFormatter.cs">
-      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroupStateEventDto.cs">
-      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldIdFlattenedDto.cs">
-      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldIdFlattenedDtoFormatter.cs">
-      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldStateEventDto.cs">
-      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Generated\Domain\AttributeSetInstanceStateEventDto.cs">
-      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Generated\Domain\AttributeSetStateEventDto.cs">
-      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Generated\Domain\AttributeStateEventDto.cs">
-      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Generated\Domain\AttributeUseStateEventDto.cs">
-      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Generated\Domain\AttributeValueIdFlattenedDto.cs">
-      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Generated\Domain\AttributeValueIdFlattenedDtoFormatter.cs">
-      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Generated\Domain\AttributeValueStateEventDto.cs">
-      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Generated\Domain\Metadata\AttributeMetadata.cs">
-      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
-    </Compile>
     <Compile Include="Generated\Domain\AttributeSetAggregate.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -114,6 +73,12 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeSetAttributeUseIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetAttributeUseIdFlattenedDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetAttributeUseIdFlattenedDtoFormatter.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeSetCommand.cs">
@@ -158,9 +123,6 @@
     <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroupCommandDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Domain\Metadata\AttributeSetInstanceExtensionFieldGroupMetadata.cs">
-      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
-    </Compile>
     <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroupState.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -168,6 +130,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroupStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroupStateEventDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroupStateEventId.cs">
@@ -185,8 +150,11 @@
     <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldIdDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Domain\Metadata\AttributeSetInstanceExtensionFieldMetadata.cs">
-      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldIdFlattenedDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldIdFlattenedDtoFormatter.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldState.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
@@ -195,6 +163,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldStateEventDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldStateEventId.cs">
@@ -209,9 +180,6 @@
     <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldStates.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Domain\Metadata\AttributeSetInstanceMetadata.cs">
-      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
-    </Compile>
     <Compile Include="Generated\Domain\AttributeSetInstanceState.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -219,6 +187,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeSetInstanceStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceStateEventDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeSetInstanceStateEventId.cs">
@@ -230,9 +201,6 @@
     <Compile Include="Generated\Domain\AttributeSetInstanceStateProperties.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Domain\Metadata\AttributeSetMetadata.cs">
-      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
-    </Compile>
     <Compile Include="Generated\Domain\AttributeSetState.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -240,6 +208,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeSetStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetStateEventDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeSetStateEventId.cs">
@@ -260,6 +231,9 @@
     <Compile Include="Generated\Domain\AttributeStateEvent.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\AttributeStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\AttributeStateEventId.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -275,9 +249,6 @@
     <Compile Include="Generated\Domain\AttributeUseCommandDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Domain\Metadata\AttributeUseMetadata.cs">
-      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
-    </Compile>
     <Compile Include="Generated\Domain\AttributeUseState.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -285,6 +256,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeUseStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeUseStateEventDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeUseStateEventId.cs">
@@ -311,8 +285,11 @@
     <Compile Include="Generated\Domain\AttributeValueIdDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Domain\Metadata\AttributeValueMetadata.cs">
-      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    <Compile Include="Generated\Domain\AttributeValueIdFlattenedDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeValueIdFlattenedDtoFormatter.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeValueState.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
@@ -321,6 +298,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeValueStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeValueStateEventDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeValueStateEventId.cs">
@@ -494,7 +474,168 @@
     <Compile Include="Generated\Domain\IAttributeValueStates.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
-    <Compile Include="Domain\Services\IAttributeSetService.cs" />
+    <Compile Include="Generated\Domain\IInOutAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IInOutApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IInOutApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IInOutCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IInOutLineCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IInOutLineState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IInOutLineStateDao.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IInOutLineStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IInOutLineStateEventDao.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IInOutLineStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IInOutLineStates.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IInOutState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IInOutStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IInOutStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IInOutStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutApplicationServiceBase.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutCommandDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutLineCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutLineCommandDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutLineId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutLineIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutLineIdFlattenedDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutLineIdFlattenedDtoFormatter.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutLineState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutLineStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutLineStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutLineStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutLineStateEventId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutLineStateEventIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutLineStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutLineStates.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutStateEventId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutStateEventIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\Metadata\AttributeMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\Metadata\AttributeSetInstanceExtensionFieldGroupMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\Metadata\AttributeSetInstanceExtensionFieldMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\Metadata\AttributeSetInstanceMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\Metadata\AttributeSetMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\Metadata\AttributeUseMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\Metadata\AttributeValueMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\Metadata\InOutLineMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\Metadata\InOutMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\SkuId.cs">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\SkuIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\SkuIdFlattenedDto.cs">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\SkuIdFlattenedDtoFormatter.cs">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Compile>
     <Compile Include="Specialization\AggregateBase.cs" />
     <Compile Include="Specialization\DefaultTypeConverter.cs" />
     <Compile Include="Specialization\DynamicObjectMapperBase.cs" />
@@ -711,13 +852,60 @@
 .\IAttributeValueStateEventDao.cs
 .\IAttributeValueStateProperties.cs
 .\IAttributeValueStates.cs
+.\IInOutAggregate.cs
+.\IInOutApplicationService.cs
+.\IInOutApplicationServiceFactory.cs
+.\IInOutCommand.cs
+.\IInOutLineCommand.cs
+.\IInOutLineState.cs
+.\IInOutLineStateDao.cs
+.\IInOutLineStateEvent.cs
+.\IInOutLineStateEventDao.cs
+.\IInOutLineStateProperties.cs
+.\IInOutLineStates.cs
+.\IInOutState.cs
+.\IInOutStateEvent.cs
+.\IInOutStateProperties.cs
+.\IInOutStateRepository.cs
+.\InOutAggregate.cs
+.\InOutApplicationServiceBase.cs
+.\InOutApplicationServiceFactory.cs
+.\InOutCommand.cs
+.\InOutCommandDto.cs
+.\InOutLineCommand.cs
+.\InOutLineCommandDto.cs
+.\InOutLineId.cs
+.\InOutLineIdDto.cs
+.\InOutLineIdFlattenedDto.cs
+.\InOutLineIdFlattenedDtoFormatter.cs
+.\InOutLineState.cs
+.\InOutLineStateDto.cs
+.\InOutLineStateEvent.cs
+.\InOutLineStateEventDto.cs
+.\InOutLineStateEventId.cs
+.\InOutLineStateEventIdDto.cs
+.\InOutLineStateProperties.cs
+.\InOutLineStates.cs
+.\InOutState.cs
+.\InOutStateDto.cs
+.\InOutStateEvent.cs
+.\InOutStateEventDto.cs
+.\InOutStateEventId.cs
+.\InOutStateEventIdDto.cs
+.\InOutStateProperties.cs
 </LastOutputs>
       <LastGenOutput>GenerateBoundedContextDomainAggregates.txt</LastGenOutput>
     </Content>
     <Content Include="Generated\Domain\GenerateBoundedContextDomain.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GenerateBoundedContextDomain.txt</LastGenOutput>
-      <LastOutputs>.\GenerateBoundedContextDomain.txt</LastOutputs>
+      <LastOutputs>
+.\GenerateBoundedContextDomain.txt
+.\SkuId.cs
+.\SkuIdDto.cs
+.\SkuIdFlattenedDto.cs
+.\SkuIdFlattenedDtoFormatter.cs
+</LastOutputs>
     </Content>
     <Content Include="Generated\Domain\GenerateBoundedContextDomain.txt">
       <AutoGen>True</AutoGen>
@@ -741,6 +929,8 @@
 .\AttributeUseMetadata.cs
 .\AttributeValueMetadata.cs
 .\GenerateDomainMetadata.txt
+.\InOutLineMetadata.cs
+.\InOutMetadata.cs
 </LastOutputs>
     </Content>
     <Content Include="Generated\Domain\Metadata\GenerateDomainMetadata.txt">

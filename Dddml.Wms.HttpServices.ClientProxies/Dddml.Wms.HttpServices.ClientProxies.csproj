@@ -80,6 +80,9 @@
     <Compile Include="Generated\DddmlWmsRamlClient.cs">
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\InOutApplicationServiceProxy.cs">
+      <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -93,6 +96,7 @@
 .\AttributeSetInstanceExtensionFieldGroupApplicationServiceProxy.cs
 .\DddmlWmsRamlClient.cs
 .\GenerateRamlClientProxies.txt
+.\InOutApplicationServiceProxy.cs
 </LastOutputs>
     </Content>
     <Content Include="Generated\GenerateRamlClientProxies.txt">

@@ -46,8 +46,9 @@
         string filePath1 = System.IO.Path.Combine(projectDir, "../dddml/AttributeSet.yaml");
 		string filePath2 = System.IO.Path.Combine(projectDir, "../Dddml.Wms.Metadata/AttributeSetInstanceDddml.yaml");
 		string filePath3 = System.IO.Path.Combine(projectDir, "../Dddml.Wms.Metadata/AttributeSetInstanceExtensionFieldGroupDddml.yaml");
+        string filePath4 = System.IO.Path.Combine(projectDir, "../dddml/InOut.yaml");
 
-        BoundedContext boundedContext = BoundedContextUtils.LoadFromFiles(new string[]{ filePath1, filePath2, filePath3});
+        BoundedContext boundedContext = BoundedContextUtils.LoadFromFiles(new string[]{ filePath1, filePath2, filePath3,filePath4});
         boundedContext.DefaultModule = "Dddml.Wms";
         return boundedContext;
     }

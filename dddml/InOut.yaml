@@ -1,0 +1,261 @@
+#%DDDML 0.1
+
+---
+
+# ------------------------------
+
+valueObjects:
+    
+    SkuId:
+    
+      properties:
+        ProductId:
+          type: string
+        AttributeSetInstanceId:
+          type: string        
+    
+
+# ------------------------------
+aggregates:
+
+
+    # --------------- aggregate ---------------
+    InOut:
+
+      id:
+        name: DocumentNumber
+        type: string
+
+      properties:
+
+        IsSOTransaction:
+          type: bool
+
+        DocumentStatus:
+          type: string
+
+        Posted:
+          type: bool
+
+        Processing:
+          type: bool
+        
+        Processed:
+          type: bool 
+
+        DocumentType:
+          type: int
+
+        Description:
+          type: string
+
+        OrderNumber:
+          type: string
+
+        DateOrdered:
+          type: DateTime?
+
+        IsPrinted:
+          type: bool
+        
+        MovementType:
+          type: string
+
+        MovementDate:  
+          type: DateTime?
+
+        #dateacct timestamp without time zone NOT NULL,
+
+        BusinessPartnerId:
+          type: string
+
+        WarehouseId:
+          type: string
+
+        POReference:
+          type: string
+
+        #deliveryrule character(1) NOT NULL,
+
+        #freightcostrule character(1) NOT NULL,
+
+        FreightAmount:
+          type: decimal
+
+        #deliveryviarule character(1) NOT NULL,
+
+        ShipperId:
+          type: string
+          
+        ChargeAmount:
+          type: decimal
+
+        #priorityrule character(1) NOT NULL,
+        
+        DatePrinted:
+          type: DateTime?
+
+        #c_invoice_id numeric(10,0),
+
+        #CreatedFrom:
+        #  type: string
+
+        #string GenerateTo
+
+        #sendemail character(1) NOT NULL DEFAULT 'N'::bpchar,
+
+        #ad_user_id numeric(10,0),
+
+        SalesRepresentative:
+          type: string
+
+        NumberOfPackages:
+          type: int
+          
+        PickDate:
+          type: DateTime?
+          
+        ShipDate:
+          type: DateTime?
+          
+        TrackingNumber:
+          type: string
+
+        #ad_orgtrx_id numeric(10,0),
+        #c_project_id numeric(10,0),
+        #c_campaign_id numeric(10,0),
+        #c_activity_id numeric(10,0),
+        #user1_id numeric(10,0),
+        #user2_id numeric(10,0),
+        
+        DateReceived:
+          type: DateTime?
+          
+        IsInTransit:
+          type: bool
+
+        #ref_inout_id numeric(10,0),
+
+        #createconfirm character(1),
+
+        #createpackage character(1),
+
+        IsApproved:
+          type: bool 
+        
+        IsInDispute:
+          type: bool
+
+        Volume:
+          type: decimal
+          
+        Weight:
+          type: decimal
+
+        # m_rma_id numeric(10,0),
+        RmaNumber: 
+          type: string
+
+        ReversalNumber:
+          type: string
+          
+        IsDropShip:
+          type: bool
+          
+        DropShipBusinessPartnerId:
+          type: string
+
+        #dropship_location_id numeric(10,0),
+        #dropship_user_id numeric(10,0),
+        #processedon numeric,
+        
+        #string TerminalReference:
+        
+        InOutLines:
+          itemType: InOutLine
+        
+      entities:
+          
+        InOutLine:
+          
+          id: 
+            name: SkuId
+            type: SkuId
+              
+          properties:  
+
+            LineNumber:
+              type: long
+
+            Description:
+              type: string
+
+            #c_orderline_id numeric(10,0),
+
+            LocatorId:
+              type: string
+
+            Product:
+              type: string
+
+            UomId:
+              type: string
+
+            #TQuantity 
+            
+            # numeric NOT NULL DEFAULT 0,
+            MovementQuantity: 
+              type: decimal
+
+            # numeric DEFAULT 0,
+            ConfirmedQuantity: 
+              type: decimal
+
+            # numeric DEFAULT 0,
+            ScrappedQuantity: 
+              type: decimal
+
+            # numeric DEFAULT 0,
+            TargetQuantity: 
+              type: decimal
+
+            # numeric DEFAULT 0,
+            PickedQuantity: 
+              type: decimal
+
+            IsInvoiced: 
+              type: bool
+
+            AttributeSetInstanceId:
+              type: string
+
+            IsDescription:
+              type: bool
+
+            #ref_inoutline_id numeric(10,0),
+
+            Processed: 
+              type: bool
+
+            # numeric NOT NULL,
+            QuantityEntered: 
+              type: decimal
+
+            #c_charge_id numeric(10,0),
+            #c_project_id numeric(10,0),
+            #c_projectphase_id numeric(10,0),
+            #c_projecttask_id numeric(10,0),
+            #c_campaign_id numeric(10,0),
+            #c_activity_id numeric(10,0),
+            #user1_id numeric(10,0),
+            #user2_id numeric(10,0),
+            #ad_orgtrx_id numeric(10,0),
+
+            #m_rmaline_id numeric(10,0),
+            RmaLineNumber: 
+              type: long
+
+            ReversalLineNumber:
+              type: long
+                
+                

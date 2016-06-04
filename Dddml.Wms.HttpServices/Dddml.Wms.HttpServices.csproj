@@ -263,10 +263,13 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AttributeSetInstanceDtoJObjectMapper.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RamlController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Generated\Controllers\AttributesController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\AttributeSetInstanceDtoJObjectMapper.cs" />
     <Compile Include="Generated\Controllers\AttributeSetInstanceExtensionFieldGroupsController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
@@ -276,9 +279,9 @@
     <Compile Include="Generated\Controllers\AttributeSetsController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\RamlController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Generated\Controllers\InOutsController.cs">
+      <DependentUpon>GenerateControllers.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -322,6 +325,7 @@
 .\AttributeSetInstancesController.cs
 .\AttributeSetsController.cs
 .\GenerateControllers.txt
+.\InOutsController.cs
 </LastOutputs>
     </Content>
     <Content Include="Generated\Controllers\GenerateControllers.txt">

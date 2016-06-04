@@ -156,6 +156,7 @@ namespace Dddml.Wms.Domain
 		{
             _fields = new AttributeSetInstanceExtensionFieldStates(this);
 
+            InitializeProperties();
 		}
 
 

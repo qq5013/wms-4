@@ -170,6 +170,7 @@ namespace Dddml.Wms.Domain
 
 		public AttributeValueState ()
 		{
+            InitializeProperties();
 		}
 
 

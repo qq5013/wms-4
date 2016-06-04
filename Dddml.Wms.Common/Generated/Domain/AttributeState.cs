@@ -156,6 +156,7 @@ namespace Dddml.Wms.Domain
 		{
             _attributeValues = new AttributeValueStates(this);
 
+            InitializeProperties();
 		}
 
 

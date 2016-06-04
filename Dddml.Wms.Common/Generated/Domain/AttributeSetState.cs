@@ -156,6 +156,7 @@ namespace Dddml.Wms.Domain
 		{
             _attributeUses = new AttributeUseStates(this);
 
+            InitializeProperties();
 		}
 
 

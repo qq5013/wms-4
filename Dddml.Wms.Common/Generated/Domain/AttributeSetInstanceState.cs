@@ -137,6 +137,7 @@ namespace Dddml.Wms.Domain
 
 		public AttributeSetInstanceState ()
 		{
+            InitializeProperties();
 		}
 
 

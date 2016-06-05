@@ -107,17 +107,11 @@ namespace Dddml.Wms.Domain
             IAttributeSetInstanceExtensionFieldGroupStateCreated e = NewAttributeSetInstanceExtensionFieldGroupStateCreated(stateEventId);
 		
             e.FieldType = c.FieldType;
-
             e.FieldLength = c.FieldLength;
-
             e.FieldCount = c.FieldCount;
-
             e.NameFormat = c.NameFormat;
-
             e.Description = c.Description;
-
             e.Active = c.Active;
-
             ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
 
@@ -129,7 +123,7 @@ namespace Dddml.Wms.Domain
             {
                 ThrowOnInconsistentCommands(c, innerCommand);
 
-                IAttributeSetInstanceExtensionFieldStateCreated innerEvent = MapCreate(innerCommand, c, version);
+                IAttributeSetInstanceExtensionFieldStateCreated innerEvent = MapCreate(innerCommand, c, version, _state);
                 e.AddAttributeSetInstanceExtensionFieldEvent(innerEvent);
             }
 
@@ -143,29 +137,17 @@ namespace Dddml.Wms.Domain
             IAttributeSetInstanceExtensionFieldGroupStateMergePatched e = NewAttributeSetInstanceExtensionFieldGroupStateMergePatched(stateEventId);
 
             e.FieldType = c.FieldType;
-
             e.FieldLength = c.FieldLength;
-
             e.FieldCount = c.FieldCount;
-
             e.NameFormat = c.NameFormat;
-
             e.Description = c.Description;
-
             e.Active = c.Active;
-
             e.IsPropertyFieldTypeRemoved = c.IsPropertyFieldTypeRemoved;
-
             e.IsPropertyFieldLengthRemoved = c.IsPropertyFieldLengthRemoved;
-
             e.IsPropertyFieldCountRemoved = c.IsPropertyFieldCountRemoved;
-
             e.IsPropertyNameFormatRemoved = c.IsPropertyNameFormatRemoved;
-
             e.IsPropertyDescriptionRemoved = c.IsPropertyDescriptionRemoved;
-
             e.IsPropertyActiveRemoved = c.IsPropertyActiveRemoved;
-
 
             ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
@@ -179,7 +161,7 @@ namespace Dddml.Wms.Domain
             {
                 ThrowOnInconsistentCommands(c, innerCommand);
 
-                IAttributeSetInstanceExtensionFieldStateEvent innerEvent = Map(innerCommand, c, version);
+                IAttributeSetInstanceExtensionFieldStateEvent innerEvent = Map(innerCommand, c, version, _state);
                 e.AddAttributeSetInstanceExtensionFieldEvent(innerEvent);
             }
 
@@ -218,18 +200,18 @@ namespace Dddml.Wms.Domain
         }// END ThrowOnInconsistentCommands /////////////////////
 
 
-        protected virtual IAttributeSetInstanceExtensionFieldStateEvent Map(IAttributeSetInstanceExtensionFieldCommand c, IAttributeSetInstanceExtensionFieldGroupCommand outerCommand, long version)
+        protected virtual IAttributeSetInstanceExtensionFieldStateEvent Map(IAttributeSetInstanceExtensionFieldCommand c, IAttributeSetInstanceExtensionFieldGroupCommand outerCommand, long version, IAttributeSetInstanceExtensionFieldGroupState outerState)
         {
             var create = (c.CommandType == CommandType.Create) ? (c as ICreateAttributeSetInstanceExtensionField) : null;
             if(create != null)
             {
-                return MapCreate(create, outerCommand, version);
+                return MapCreate(create, outerCommand, version, outerState);
             }
 
             var merge = (c.CommandType == CommandType.MergePatch) ? (c as IMergePatchAttributeSetInstanceExtensionField) : null;
             if(merge != null)
             {
-                return MapMergePatch(merge, outerCommand, version);
+                return MapMergePatch(merge, outerCommand, version, outerState);
             }
 
             var remove = (c.CommandType == CommandType.Remove) ? (c as IRemoveAttributeSetInstanceExtensionField) : null;
@@ -241,24 +223,19 @@ namespace Dddml.Wms.Domain
         }
 
 
-        protected virtual IAttributeSetInstanceExtensionFieldStateCreated MapCreate(ICreateAttributeSetInstanceExtensionField c, IAttributeSetInstanceExtensionFieldGroupCommand outerCommand, long version)
+        protected virtual IAttributeSetInstanceExtensionFieldStateCreated MapCreate(ICreateAttributeSetInstanceExtensionField c, IAttributeSetInstanceExtensionFieldGroupCommand outerCommand, long version, IAttributeSetInstanceExtensionFieldGroupState outerState)
         {
             c.RequesterId = outerCommand.RequesterId;
 			var stateEventId = new AttributeSetInstanceExtensionFieldStateEventId(c.GroupId, c.Index, version);
             IAttributeSetInstanceExtensionFieldStateCreated e = NewAttributeSetInstanceExtensionFieldStateCreated(stateEventId);
+            var s = outerState.Fields.Get(c.Index);
 
             e.Name = c.Name;
-
             e.Type = c.Type;
-
             e.Length = c.Length;
-
             e.Alias = c.Alias;
-
             e.Description = c.Description;
-
             e.Active = c.Active;
-
 
             e.CreatedBy = (string)c.RequesterId;
             e.CreatedAt = DateTime.Now;
@@ -268,24 +245,19 @@ namespace Dddml.Wms.Domain
 
 
 
-        protected virtual IAttributeSetInstanceExtensionFieldStateMergePatched MapMergePatch(IMergePatchAttributeSetInstanceExtensionField c, IAttributeSetInstanceExtensionFieldGroupCommand outerCommand, long version)
+        protected virtual IAttributeSetInstanceExtensionFieldStateMergePatched MapMergePatch(IMergePatchAttributeSetInstanceExtensionField c, IAttributeSetInstanceExtensionFieldGroupCommand outerCommand, long version, IAttributeSetInstanceExtensionFieldGroupState outerState)
         {
             c.RequesterId = outerCommand.RequesterId;
 			var stateEventId = new AttributeSetInstanceExtensionFieldStateEventId(c.GroupId, c.Index, version);
             IAttributeSetInstanceExtensionFieldStateMergePatched e = NewAttributeSetInstanceExtensionFieldStateMergePatched(stateEventId);
+            var s = outerState.Fields.Get(c.Index);
 
             e.Name = c.Name;
-
             e.Type = c.Type;
-
             e.Length = c.Length;
-
             e.Alias = c.Alias;
-
             e.Description = c.Description;
-
             e.Active = c.Active;
-
             e.IsPropertyNameRemoved = c.IsPropertyNameRemoved;
             e.IsPropertyTypeRemoved = c.IsPropertyTypeRemoved;
             e.IsPropertyLengthRemoved = c.IsPropertyLengthRemoved;
@@ -313,8 +285,6 @@ namespace Dddml.Wms.Domain
             return e;
 
         }// END Map(IRemove... ////////////////////////////
-
-
 
         private void SetNullInnerIdOrThrowOnInconsistentIds(object innerObject, string innerIdName, object innerIdValue, string outerIdName, object outerIdValue)
         {

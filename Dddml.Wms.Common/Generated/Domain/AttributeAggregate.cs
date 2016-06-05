@@ -107,27 +107,16 @@ namespace Dddml.Wms.Domain
             IAttributeStateCreated e = NewAttributeStateCreated(stateEventId);
 		
             e.Name = c.Name;
-
             e.OrganizationId = c.OrganizationId;
-
             e.Description = c.Description;
-
             e.IsMandatory = c.IsMandatory;
-
             e.IsInstanceAttribute = c.IsInstanceAttribute;
-
             e.AttributeValueType = c.AttributeValueType;
-
             e.AttributeValueLength = c.AttributeValueLength;
-
             e.IsList = c.IsList;
-
             e.FieldName = c.FieldName;
-
             e.ReferenceId = c.ReferenceId;
-
             e.Active = c.Active;
-
             ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
 
@@ -139,7 +128,7 @@ namespace Dddml.Wms.Domain
             {
                 ThrowOnInconsistentCommands(c, innerCommand);
 
-                IAttributeValueStateCreated innerEvent = MapCreate(innerCommand, c, version);
+                IAttributeValueStateCreated innerEvent = MapCreate(innerCommand, c, version, _state);
                 e.AddAttributeValueEvent(innerEvent);
             }
 
@@ -153,49 +142,27 @@ namespace Dddml.Wms.Domain
             IAttributeStateMergePatched e = NewAttributeStateMergePatched(stateEventId);
 
             e.Name = c.Name;
-
             e.OrganizationId = c.OrganizationId;
-
             e.Description = c.Description;
-
             e.IsMandatory = c.IsMandatory;
-
             e.IsInstanceAttribute = c.IsInstanceAttribute;
-
             e.AttributeValueType = c.AttributeValueType;
-
             e.AttributeValueLength = c.AttributeValueLength;
-
             e.IsList = c.IsList;
-
             e.FieldName = c.FieldName;
-
             e.ReferenceId = c.ReferenceId;
-
             e.Active = c.Active;
-
             e.IsPropertyNameRemoved = c.IsPropertyNameRemoved;
-
             e.IsPropertyOrganizationIdRemoved = c.IsPropertyOrganizationIdRemoved;
-
             e.IsPropertyDescriptionRemoved = c.IsPropertyDescriptionRemoved;
-
             e.IsPropertyIsMandatoryRemoved = c.IsPropertyIsMandatoryRemoved;
-
             e.IsPropertyIsInstanceAttributeRemoved = c.IsPropertyIsInstanceAttributeRemoved;
-
             e.IsPropertyAttributeValueTypeRemoved = c.IsPropertyAttributeValueTypeRemoved;
-
             e.IsPropertyAttributeValueLengthRemoved = c.IsPropertyAttributeValueLengthRemoved;
-
             e.IsPropertyIsListRemoved = c.IsPropertyIsListRemoved;
-
             e.IsPropertyFieldNameRemoved = c.IsPropertyFieldNameRemoved;
-
             e.IsPropertyReferenceIdRemoved = c.IsPropertyReferenceIdRemoved;
-
             e.IsPropertyActiveRemoved = c.IsPropertyActiveRemoved;
-
 
             ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
@@ -209,7 +176,7 @@ namespace Dddml.Wms.Domain
             {
                 ThrowOnInconsistentCommands(c, innerCommand);
 
-                IAttributeValueStateEvent innerEvent = Map(innerCommand, c, version);
+                IAttributeValueStateEvent innerEvent = Map(innerCommand, c, version, _state);
                 e.AddAttributeValueEvent(innerEvent);
             }
 
@@ -248,18 +215,18 @@ namespace Dddml.Wms.Domain
         }// END ThrowOnInconsistentCommands /////////////////////
 
 
-        protected virtual IAttributeValueStateEvent Map(IAttributeValueCommand c, IAttributeCommand outerCommand, long version)
+        protected virtual IAttributeValueStateEvent Map(IAttributeValueCommand c, IAttributeCommand outerCommand, long version, IAttributeState outerState)
         {
             var create = (c.CommandType == CommandType.Create) ? (c as ICreateAttributeValue) : null;
             if(create != null)
             {
-                return MapCreate(create, outerCommand, version);
+                return MapCreate(create, outerCommand, version, outerState);
             }
 
             var merge = (c.CommandType == CommandType.MergePatch) ? (c as IMergePatchAttributeValue) : null;
             if(merge != null)
             {
-                return MapMergePatch(merge, outerCommand, version);
+                return MapMergePatch(merge, outerCommand, version, outerState);
             }
 
             var remove = (c.CommandType == CommandType.Remove) ? (c as IRemoveAttributeValue) : null;
@@ -271,20 +238,17 @@ namespace Dddml.Wms.Domain
         }
 
 
-        protected virtual IAttributeValueStateCreated MapCreate(ICreateAttributeValue c, IAttributeCommand outerCommand, long version)
+        protected virtual IAttributeValueStateCreated MapCreate(ICreateAttributeValue c, IAttributeCommand outerCommand, long version, IAttributeState outerState)
         {
             c.RequesterId = outerCommand.RequesterId;
 			var stateEventId = new AttributeValueStateEventId(c.AttributeId, c.Value, version);
             IAttributeValueStateCreated e = NewAttributeValueStateCreated(stateEventId);
+            var s = outerState.AttributeValues.Get(c.Value);
 
             e.Name = c.Name;
-
             e.Description = c.Description;
-
             e.ReferenceId = c.ReferenceId;
-
             e.Active = c.Active;
-
 
             e.CreatedBy = (string)c.RequesterId;
             e.CreatedAt = DateTime.Now;
@@ -294,20 +258,17 @@ namespace Dddml.Wms.Domain
 
 
 
-        protected virtual IAttributeValueStateMergePatched MapMergePatch(IMergePatchAttributeValue c, IAttributeCommand outerCommand, long version)
+        protected virtual IAttributeValueStateMergePatched MapMergePatch(IMergePatchAttributeValue c, IAttributeCommand outerCommand, long version, IAttributeState outerState)
         {
             c.RequesterId = outerCommand.RequesterId;
 			var stateEventId = new AttributeValueStateEventId(c.AttributeId, c.Value, version);
             IAttributeValueStateMergePatched e = NewAttributeValueStateMergePatched(stateEventId);
+            var s = outerState.AttributeValues.Get(c.Value);
 
             e.Name = c.Name;
-
             e.Description = c.Description;
-
             e.ReferenceId = c.ReferenceId;
-
             e.Active = c.Active;
-
             e.IsPropertyNameRemoved = c.IsPropertyNameRemoved;
             e.IsPropertyDescriptionRemoved = c.IsPropertyDescriptionRemoved;
             e.IsPropertyReferenceIdRemoved = c.IsPropertyReferenceIdRemoved;
@@ -333,8 +294,6 @@ namespace Dddml.Wms.Domain
             return e;
 
         }// END Map(IRemove... ////////////////////////////
-
-
 
         private void SetNullInnerIdOrThrowOnInconsistentIds(object innerObject, string innerIdName, object innerIdValue, string outerIdName, object outerIdValue)
         {

@@ -214,6 +214,7 @@
     <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeSetInstanceExtensionFieldStateEvent.hbm.xml">
       <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Config\DomainConfig.xml" />
     <Content Include="Generated\NHibernate\Mappings\GenerateAggregatesHbm.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GenerateAggregatesHbm.txt</LastGenOutput>

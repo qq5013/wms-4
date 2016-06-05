@@ -33,6 +33,7 @@ aggregates:
 
         DocumentStatus:
           type: string
+          commandContentType: string
 
         Posted:
           type: bool

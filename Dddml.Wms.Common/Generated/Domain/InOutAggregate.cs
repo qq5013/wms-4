@@ -107,75 +107,40 @@ namespace Dddml.Wms.Domain
             IInOutStateCreated e = NewInOutStateCreated(stateEventId);
 		
             e.IsSOTransaction = c.IsSOTransaction;
-
-            e.DocumentStatus = c.DocumentStatus;
-
+            NewInOutDocumentStatusCommandAndExecute(c, _state, e);
             e.Posted = c.Posted;
-
             e.Processing = c.Processing;
-
             e.Processed = c.Processed;
-
             e.DocumentType = c.DocumentType;
-
             e.Description = c.Description;
-
             e.OrderNumber = c.OrderNumber;
-
             e.DateOrdered = c.DateOrdered;
-
             e.IsPrinted = c.IsPrinted;
-
             e.MovementType = c.MovementType;
-
             e.MovementDate = c.MovementDate;
-
             e.BusinessPartnerId = c.BusinessPartnerId;
-
             e.WarehouseId = c.WarehouseId;
-
             e.POReference = c.POReference;
-
             e.FreightAmount = c.FreightAmount;
-
             e.ShipperId = c.ShipperId;
-
             e.ChargeAmount = c.ChargeAmount;
-
             e.DatePrinted = c.DatePrinted;
-
             e.SalesRepresentative = c.SalesRepresentative;
-
             e.NumberOfPackages = c.NumberOfPackages;
-
             e.PickDate = c.PickDate;
-
             e.ShipDate = c.ShipDate;
-
             e.TrackingNumber = c.TrackingNumber;
-
             e.DateReceived = c.DateReceived;
-
             e.IsInTransit = c.IsInTransit;
-
             e.IsApproved = c.IsApproved;
-
             e.IsInDispute = c.IsInDispute;
-
             e.Volume = c.Volume;
-
             e.Weight = c.Weight;
-
             e.RmaNumber = c.RmaNumber;
-
             e.ReversalNumber = c.ReversalNumber;
-
             e.IsDropShip = c.IsDropShip;
-
             e.DropShipBusinessPartnerId = c.DropShipBusinessPartnerId;
-
             e.Active = c.Active;
-
             ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
 
@@ -187,7 +152,7 @@ namespace Dddml.Wms.Domain
             {
                 ThrowOnInconsistentCommands(c, innerCommand);
 
-                IInOutLineStateCreated innerEvent = MapCreate(innerCommand, c, version);
+                IInOutLineStateCreated innerEvent = MapCreate(innerCommand, c, version, _state);
                 e.AddInOutLineEvent(innerEvent);
             }
 
@@ -201,145 +166,75 @@ namespace Dddml.Wms.Domain
             IInOutStateMergePatched e = NewInOutStateMergePatched(stateEventId);
 
             e.IsSOTransaction = c.IsSOTransaction;
-
-            e.DocumentStatus = c.DocumentStatus;
-
+            NewInOutDocumentStatusCommandAndExecute(c, _state, e);
             e.Posted = c.Posted;
-
             e.Processing = c.Processing;
-
             e.Processed = c.Processed;
-
             e.DocumentType = c.DocumentType;
-
             e.Description = c.Description;
-
             e.OrderNumber = c.OrderNumber;
-
             e.DateOrdered = c.DateOrdered;
-
             e.IsPrinted = c.IsPrinted;
-
             e.MovementType = c.MovementType;
-
             e.MovementDate = c.MovementDate;
-
             e.BusinessPartnerId = c.BusinessPartnerId;
-
             e.WarehouseId = c.WarehouseId;
-
             e.POReference = c.POReference;
-
             e.FreightAmount = c.FreightAmount;
-
             e.ShipperId = c.ShipperId;
-
             e.ChargeAmount = c.ChargeAmount;
-
             e.DatePrinted = c.DatePrinted;
-
             e.SalesRepresentative = c.SalesRepresentative;
-
             e.NumberOfPackages = c.NumberOfPackages;
-
             e.PickDate = c.PickDate;
-
             e.ShipDate = c.ShipDate;
-
             e.TrackingNumber = c.TrackingNumber;
-
             e.DateReceived = c.DateReceived;
-
             e.IsInTransit = c.IsInTransit;
-
             e.IsApproved = c.IsApproved;
-
             e.IsInDispute = c.IsInDispute;
-
             e.Volume = c.Volume;
-
             e.Weight = c.Weight;
-
             e.RmaNumber = c.RmaNumber;
-
             e.ReversalNumber = c.ReversalNumber;
-
             e.IsDropShip = c.IsDropShip;
-
             e.DropShipBusinessPartnerId = c.DropShipBusinessPartnerId;
-
             e.Active = c.Active;
-
             e.IsPropertyIsSOTransactionRemoved = c.IsPropertyIsSOTransactionRemoved;
-
             e.IsPropertyDocumentStatusRemoved = c.IsPropertyDocumentStatusRemoved;
-
             e.IsPropertyPostedRemoved = c.IsPropertyPostedRemoved;
-
             e.IsPropertyProcessingRemoved = c.IsPropertyProcessingRemoved;
-
             e.IsPropertyProcessedRemoved = c.IsPropertyProcessedRemoved;
-
             e.IsPropertyDocumentTypeRemoved = c.IsPropertyDocumentTypeRemoved;
-
             e.IsPropertyDescriptionRemoved = c.IsPropertyDescriptionRemoved;
-
             e.IsPropertyOrderNumberRemoved = c.IsPropertyOrderNumberRemoved;
-
             e.IsPropertyDateOrderedRemoved = c.IsPropertyDateOrderedRemoved;
-
             e.IsPropertyIsPrintedRemoved = c.IsPropertyIsPrintedRemoved;
-
             e.IsPropertyMovementTypeRemoved = c.IsPropertyMovementTypeRemoved;
-
             e.IsPropertyMovementDateRemoved = c.IsPropertyMovementDateRemoved;
-
             e.IsPropertyBusinessPartnerIdRemoved = c.IsPropertyBusinessPartnerIdRemoved;
-
             e.IsPropertyWarehouseIdRemoved = c.IsPropertyWarehouseIdRemoved;
-
             e.IsPropertyPOReferenceRemoved = c.IsPropertyPOReferenceRemoved;
-
             e.IsPropertyFreightAmountRemoved = c.IsPropertyFreightAmountRemoved;
-
             e.IsPropertyShipperIdRemoved = c.IsPropertyShipperIdRemoved;
-
             e.IsPropertyChargeAmountRemoved = c.IsPropertyChargeAmountRemoved;
-
             e.IsPropertyDatePrintedRemoved = c.IsPropertyDatePrintedRemoved;
-
             e.IsPropertySalesRepresentativeRemoved = c.IsPropertySalesRepresentativeRemoved;
-
             e.IsPropertyNumberOfPackagesRemoved = c.IsPropertyNumberOfPackagesRemoved;
-
             e.IsPropertyPickDateRemoved = c.IsPropertyPickDateRemoved;
-
             e.IsPropertyShipDateRemoved = c.IsPropertyShipDateRemoved;
-
             e.IsPropertyTrackingNumberRemoved = c.IsPropertyTrackingNumberRemoved;
-
             e.IsPropertyDateReceivedRemoved = c.IsPropertyDateReceivedRemoved;
-
             e.IsPropertyIsInTransitRemoved = c.IsPropertyIsInTransitRemoved;
-
             e.IsPropertyIsApprovedRemoved = c.IsPropertyIsApprovedRemoved;
-
             e.IsPropertyIsInDisputeRemoved = c.IsPropertyIsInDisputeRemoved;
-
             e.IsPropertyVolumeRemoved = c.IsPropertyVolumeRemoved;
-
             e.IsPropertyWeightRemoved = c.IsPropertyWeightRemoved;
-
             e.IsPropertyRmaNumberRemoved = c.IsPropertyRmaNumberRemoved;
-
             e.IsPropertyReversalNumberRemoved = c.IsPropertyReversalNumberRemoved;
-
             e.IsPropertyIsDropShipRemoved = c.IsPropertyIsDropShipRemoved;
-
             e.IsPropertyDropShipBusinessPartnerIdRemoved = c.IsPropertyDropShipBusinessPartnerIdRemoved;
-
             e.IsPropertyActiveRemoved = c.IsPropertyActiveRemoved;
-
 
             ReflectUtils.CopyPropertyValue("CommandId", c, e);
 
@@ -353,7 +248,7 @@ namespace Dddml.Wms.Domain
             {
                 ThrowOnInconsistentCommands(c, innerCommand);
 
-                IInOutLineStateEvent innerEvent = Map(innerCommand, c, version);
+                IInOutLineStateEvent innerEvent = Map(innerCommand, c, version, _state);
                 e.AddInOutLineEvent(innerEvent);
             }
 
@@ -392,18 +287,18 @@ namespace Dddml.Wms.Domain
         }// END ThrowOnInconsistentCommands /////////////////////
 
 
-        protected virtual IInOutLineStateEvent Map(IInOutLineCommand c, IInOutCommand outerCommand, long version)
+        protected virtual IInOutLineStateEvent Map(IInOutLineCommand c, IInOutCommand outerCommand, long version, IInOutState outerState)
         {
             var create = (c.CommandType == CommandType.Create) ? (c as ICreateInOutLine) : null;
             if(create != null)
             {
-                return MapCreate(create, outerCommand, version);
+                return MapCreate(create, outerCommand, version, outerState);
             }
 
             var merge = (c.CommandType == CommandType.MergePatch) ? (c as IMergePatchInOutLine) : null;
             if(merge != null)
             {
-                return MapMergePatch(merge, outerCommand, version);
+                return MapMergePatch(merge, outerCommand, version, outerState);
             }
 
             var remove = (c.CommandType == CommandType.Remove) ? (c as IRemoveInOutLine) : null;
@@ -415,48 +310,31 @@ namespace Dddml.Wms.Domain
         }
 
 
-        protected virtual IInOutLineStateCreated MapCreate(ICreateInOutLine c, IInOutCommand outerCommand, long version)
+        protected virtual IInOutLineStateCreated MapCreate(ICreateInOutLine c, IInOutCommand outerCommand, long version, IInOutState outerState)
         {
             c.RequesterId = outerCommand.RequesterId;
 			var stateEventId = new InOutLineStateEventId(c.InOutDocumentNumber, c.SkuId, version);
             IInOutLineStateCreated e = NewInOutLineStateCreated(stateEventId);
+            var s = outerState.InOutLines.Get(c.SkuId);
 
             e.LineNumber = c.LineNumber;
-
             e.Description = c.Description;
-
             e.LocatorId = c.LocatorId;
-
             e.Product = c.Product;
-
             e.UomId = c.UomId;
-
             e.MovementQuantity = c.MovementQuantity;
-
             e.ConfirmedQuantity = c.ConfirmedQuantity;
-
             e.ScrappedQuantity = c.ScrappedQuantity;
-
             e.TargetQuantity = c.TargetQuantity;
-
             e.PickedQuantity = c.PickedQuantity;
-
             e.IsInvoiced = c.IsInvoiced;
-
             e.AttributeSetInstanceId = c.AttributeSetInstanceId;
-
             e.IsDescription = c.IsDescription;
-
             e.Processed = c.Processed;
-
             e.QuantityEntered = c.QuantityEntered;
-
             e.RmaLineNumber = c.RmaLineNumber;
-
             e.ReversalLineNumber = c.ReversalLineNumber;
-
             e.Active = c.Active;
-
 
             e.CreatedBy = (string)c.RequesterId;
             e.CreatedAt = DateTime.Now;
@@ -466,48 +344,31 @@ namespace Dddml.Wms.Domain
 
 
 
-        protected virtual IInOutLineStateMergePatched MapMergePatch(IMergePatchInOutLine c, IInOutCommand outerCommand, long version)
+        protected virtual IInOutLineStateMergePatched MapMergePatch(IMergePatchInOutLine c, IInOutCommand outerCommand, long version, IInOutState outerState)
         {
             c.RequesterId = outerCommand.RequesterId;
 			var stateEventId = new InOutLineStateEventId(c.InOutDocumentNumber, c.SkuId, version);
             IInOutLineStateMergePatched e = NewInOutLineStateMergePatched(stateEventId);
+            var s = outerState.InOutLines.Get(c.SkuId);
 
             e.LineNumber = c.LineNumber;
-
             e.Description = c.Description;
-
             e.LocatorId = c.LocatorId;
-
             e.Product = c.Product;
-
             e.UomId = c.UomId;
-
             e.MovementQuantity = c.MovementQuantity;
-
             e.ConfirmedQuantity = c.ConfirmedQuantity;
-
             e.ScrappedQuantity = c.ScrappedQuantity;
-
             e.TargetQuantity = c.TargetQuantity;
-
             e.PickedQuantity = c.PickedQuantity;
-
             e.IsInvoiced = c.IsInvoiced;
-
             e.AttributeSetInstanceId = c.AttributeSetInstanceId;
-
             e.IsDescription = c.IsDescription;
-
             e.Processed = c.Processed;
-
             e.QuantityEntered = c.QuantityEntered;
-
             e.RmaLineNumber = c.RmaLineNumber;
-
             e.ReversalLineNumber = c.ReversalLineNumber;
-
             e.Active = c.Active;
-
             e.IsPropertyLineNumberRemoved = c.IsPropertyLineNumberRemoved;
             e.IsPropertyDescriptionRemoved = c.IsPropertyDescriptionRemoved;
             e.IsPropertyLocatorIdRemoved = c.IsPropertyLocatorIdRemoved;
@@ -548,7 +409,29 @@ namespace Dddml.Wms.Domain
 
         }// END Map(IRemove... ////////////////////////////
 
+        protected void NewInOutDocumentStatusCommandAndExecute(IMergePatchInOut c, IInOutState s, IInOutStateMergePatched e)
+        {
+            var pCommandHandler = this.InOutDocumentStatusCommandHandler;
+            var pCmdContent = c.DocumentStatus;
+            var pCmd = new PropertyCommand<string, string> { Content = pCmdContent, GetState = () => s.DocumentStatus, SetState = p => e.DocumentStatus = p, OutterCommandType = CommandType.MergePatch };
+            pCommandHandler.Execute(pCmd);
+        }
 
+        protected void NewInOutDocumentStatusCommandAndExecute(ICreateInOut c, IInOutState s, IInOutStateCreated e)
+        {
+            var pCommandHandler = this.InOutDocumentStatusCommandHandler;
+            var pCmdContent = c.DocumentStatus;
+            var pCmd = new PropertyCommand<string, string> { Content = pCmdContent, GetState = () => s.DocumentStatus, SetState = p => e.DocumentStatus = p, OutterCommandType = CommandType.Create };
+            pCommandHandler.Execute(pCmd);
+        }
+
+        protected IPropertyCommandHandler<string, string> InOutDocumentStatusCommandHandler
+        {
+            get
+            {
+                return ApplicationContext.Current["InOutDocumentStatusCommandHandler"] as IPropertyCommandHandler<string, string>;
+            }
+        }
 
         private void SetNullInnerIdOrThrowOnInconsistentIds(object innerObject, string innerIdName, object innerIdValue, string outerIdName, object outerIdValue)
         {

@@ -93,6 +93,11 @@ namespace Dddml.Wms.Domain
             this.StateEventId = stateEventId;
         }
 
+		protected IAttributeValueStateEventDao AttributeValueStateEventDao
+		{
+			get { return ApplicationContext.Current["AttributeValueStateEventDao"] as IAttributeValueStateEventDao; }
+		}
+
         protected AttributeValueStateEventId NewAttributeValueStateEventId(string value)
         {
             var stateEventId = new AttributeValueStateEventId(this.StateEventId.AttributeId, value, this.StateEventId.Version);
@@ -150,7 +155,7 @@ namespace Dddml.Wms.Domain
                 else
                 {
                     if (_readOnlyAttributeValueEvents != null) { return _readOnlyAttributeValueEvents; }
-                    var eventDao = ApplicationContext.Current["AttributeValueStateEventDao"] as IAttributeValueStateEventDao;
+                    var eventDao = AttributeValueStateEventDao;
                     var eL = new List<IAttributeValueStateCreated>();
                     foreach (var e in eventDao.FindByAttributeStateEventId(this.StateEventId))
                     {
@@ -187,7 +192,7 @@ namespace Dddml.Wms.Domain
 		public virtual void Save ()
 		{
 			foreach (IAttributeValueStateCreated e in this.AttributeValueEvents) {
-				(ApplicationContext.Current["AttributeValueStateEventDao"] as IAttributeValueStateEventDao).Save(e);
+				AttributeValueStateEventDao.Save(e);
 			}
 		}
 
@@ -247,7 +252,7 @@ namespace Dddml.Wms.Domain
                 else
                 {
                     if (_readOnlyAttributeValueEvents != null) { return _readOnlyAttributeValueEvents; }
-                    var eventDao = ApplicationContext.Current["AttributeValueStateEventDao"] as IAttributeValueStateEventDao;
+                    var eventDao = AttributeValueStateEventDao;
                     var eL = new List<IAttributeValueStateEvent>();
                     foreach (var e in eventDao.FindByAttributeStateEventId(this.StateEventId))
                     {
@@ -296,7 +301,7 @@ namespace Dddml.Wms.Domain
 		public virtual void Save ()
 		{
 			foreach (IAttributeValueStateEvent e in this.AttributeValueEvents) {
-				(ApplicationContext.Current["AttributeValueStateEventDao"] as IAttributeValueStateEventDao).Save(e);
+				AttributeValueStateEventDao.Save(e);
 			}
 		}
 
@@ -338,7 +343,7 @@ namespace Dddml.Wms.Domain
                 else
                 {
                     if (_readOnlyAttributeValueEvents != null) { return _readOnlyAttributeValueEvents; }
-                    var eventDao = ApplicationContext.Current["AttributeValueStateEventDao"] as IAttributeValueStateEventDao;
+                    var eventDao = AttributeValueStateEventDao;
                     var eL = new List<IAttributeValueStateRemoved>();
                     foreach (var e in eventDao.FindByAttributeStateEventId(this.StateEventId))
                     {
@@ -375,7 +380,7 @@ namespace Dddml.Wms.Domain
 		public virtual void Save ()
 		{
 			foreach (IAttributeValueStateRemoved e in this.AttributeValueEvents) {
-				(ApplicationContext.Current["AttributeValueStateEventDao"] as IAttributeValueStateEventDao).Save(e);
+				AttributeValueStateEventDao.Save(e);
 			}
 		}
 

@@ -14,6 +14,14 @@ namespace Dddml.Wms.Domain
     public class InOutLineStates : IInOutLineStates
     {
         
+		protected IInOutLineStateDao InOutLineStateDao
+		{
+			get
+			{
+				return ApplicationContext.Current["InOutLineStateDao"] as IInOutLineStateDao;
+			}
+		}
+
 		private Dictionary<InOutLineId, IInOutLineState> _loadedInOutLineStates = new Dictionary<InOutLineId, IInOutLineState>();
 
         private List<IInOutLineState> _removedInOutLineStates = new List<IInOutLineState>();
@@ -34,7 +42,7 @@ namespace Dddml.Wms.Domain
             {
                 if (_innerEnumerable == null)
                 {
-                    _innerEnumerable = (ApplicationContext.Current["InOutLineStateDao"] as IInOutLineStateDao).FindByInOutDocumentNumber(_inOutState.DocumentNumber);
+                    _innerEnumerable = InOutLineStateDao.FindByInOutDocumentNumber(_inOutState.DocumentNumber);
                 }
                 return _innerEnumerable;
             }
@@ -66,7 +74,7 @@ namespace Dddml.Wms.Domain
             if (_loadedInOutLineStates.ContainsKey(globalId)) {
                 return _loadedInOutLineStates[globalId];
             }
-            var state = (ApplicationContext.Current["InOutLineStateDao"] as IInOutLineStateDao).Get(globalId);
+            var state = InOutLineStateDao.Get(globalId);
 			_loadedInOutLineStates.Add (globalId, state);
 			return state;
 		}
@@ -81,11 +89,11 @@ namespace Dddml.Wms.Domain
 		public virtual void Save ()
 		{
 			foreach (IInOutLineState s in this.LoadedInOutLineStates) {
-                (ApplicationContext.Current["InOutLineStateDao"] as IInOutLineStateDao).Save(s);
+                InOutLineStateDao.Save(s);
 			}
             foreach(IInOutLineState s in this._removedInOutLineStates)
             {
-                (ApplicationContext.Current["InOutLineStateDao"] as IInOutLineStateDao).Delete(s);
+                InOutLineStateDao.Delete(s);
             }
 		}
 

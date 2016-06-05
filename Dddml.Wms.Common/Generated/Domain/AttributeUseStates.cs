@@ -14,6 +14,14 @@ namespace Dddml.Wms.Domain
     public class AttributeUseStates : IAttributeUseStates
     {
         
+		protected IAttributeUseStateDao AttributeUseStateDao
+		{
+			get
+			{
+				return ApplicationContext.Current["AttributeUseStateDao"] as IAttributeUseStateDao;
+			}
+		}
+
 		private Dictionary<AttributeSetAttributeUseId, IAttributeUseState> _loadedAttributeUseStates = new Dictionary<AttributeSetAttributeUseId, IAttributeUseState>();
 
         private List<IAttributeUseState> _removedAttributeUseStates = new List<IAttributeUseState>();
@@ -34,7 +42,7 @@ namespace Dddml.Wms.Domain
             {
                 if (_innerEnumerable == null)
                 {
-                    _innerEnumerable = (ApplicationContext.Current["AttributeUseStateDao"] as IAttributeUseStateDao).FindByAttributeSetId(_attributeSetState.AttributeSetId);
+                    _innerEnumerable = AttributeUseStateDao.FindByAttributeSetId(_attributeSetState.AttributeSetId);
                 }
                 return _innerEnumerable;
             }
@@ -66,7 +74,7 @@ namespace Dddml.Wms.Domain
             if (_loadedAttributeUseStates.ContainsKey(globalId)) {
                 return _loadedAttributeUseStates[globalId];
             }
-            var state = (ApplicationContext.Current["AttributeUseStateDao"] as IAttributeUseStateDao).Get(globalId);
+            var state = AttributeUseStateDao.Get(globalId);
 			_loadedAttributeUseStates.Add (globalId, state);
 			return state;
 		}
@@ -81,11 +89,11 @@ namespace Dddml.Wms.Domain
 		public virtual void Save ()
 		{
 			foreach (IAttributeUseState s in this.LoadedAttributeUseStates) {
-                (ApplicationContext.Current["AttributeUseStateDao"] as IAttributeUseStateDao).Save(s);
+                AttributeUseStateDao.Save(s);
 			}
             foreach(IAttributeUseState s in this._removedAttributeUseStates)
             {
-                (ApplicationContext.Current["AttributeUseStateDao"] as IAttributeUseStateDao).Delete(s);
+                AttributeUseStateDao.Delete(s);
             }
 		}
 

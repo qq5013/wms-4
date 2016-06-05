@@ -83,6 +83,11 @@ namespace Dddml.Wms.Domain
             this.StateEventId = stateEventId;
         }
 
+		protected IAttributeSetInstanceExtensionFieldStateEventDao AttributeSetInstanceExtensionFieldStateEventDao
+		{
+			get { return ApplicationContext.Current["AttributeSetInstanceExtensionFieldStateEventDao"] as IAttributeSetInstanceExtensionFieldStateEventDao; }
+		}
+
         protected AttributeSetInstanceExtensionFieldStateEventId NewAttributeSetInstanceExtensionFieldStateEventId(string index)
         {
             var stateEventId = new AttributeSetInstanceExtensionFieldStateEventId(this.StateEventId.Id, index, this.StateEventId.Version);
@@ -140,7 +145,7 @@ namespace Dddml.Wms.Domain
                 else
                 {
                     if (_readOnlyAttributeSetInstanceExtensionFieldEvents != null) { return _readOnlyAttributeSetInstanceExtensionFieldEvents; }
-                    var eventDao = ApplicationContext.Current["AttributeSetInstanceExtensionFieldStateEventDao"] as IAttributeSetInstanceExtensionFieldStateEventDao;
+                    var eventDao = AttributeSetInstanceExtensionFieldStateEventDao;
                     var eL = new List<IAttributeSetInstanceExtensionFieldStateCreated>();
                     foreach (var e in eventDao.FindByAttributeSetInstanceExtensionFieldGroupStateEventId(this.StateEventId))
                     {
@@ -177,7 +182,7 @@ namespace Dddml.Wms.Domain
 		public virtual void Save ()
 		{
 			foreach (IAttributeSetInstanceExtensionFieldStateCreated e in this.AttributeSetInstanceExtensionFieldEvents) {
-				(ApplicationContext.Current["AttributeSetInstanceExtensionFieldStateEventDao"] as IAttributeSetInstanceExtensionFieldStateEventDao).Save(e);
+				AttributeSetInstanceExtensionFieldStateEventDao.Save(e);
 			}
 		}
 
@@ -227,7 +232,7 @@ namespace Dddml.Wms.Domain
                 else
                 {
                     if (_readOnlyAttributeSetInstanceExtensionFieldEvents != null) { return _readOnlyAttributeSetInstanceExtensionFieldEvents; }
-                    var eventDao = ApplicationContext.Current["AttributeSetInstanceExtensionFieldStateEventDao"] as IAttributeSetInstanceExtensionFieldStateEventDao;
+                    var eventDao = AttributeSetInstanceExtensionFieldStateEventDao;
                     var eL = new List<IAttributeSetInstanceExtensionFieldStateEvent>();
                     foreach (var e in eventDao.FindByAttributeSetInstanceExtensionFieldGroupStateEventId(this.StateEventId))
                     {
@@ -276,7 +281,7 @@ namespace Dddml.Wms.Domain
 		public virtual void Save ()
 		{
 			foreach (IAttributeSetInstanceExtensionFieldStateEvent e in this.AttributeSetInstanceExtensionFieldEvents) {
-				(ApplicationContext.Current["AttributeSetInstanceExtensionFieldStateEventDao"] as IAttributeSetInstanceExtensionFieldStateEventDao).Save(e);
+				AttributeSetInstanceExtensionFieldStateEventDao.Save(e);
 			}
 		}
 
@@ -318,7 +323,7 @@ namespace Dddml.Wms.Domain
                 else
                 {
                     if (_readOnlyAttributeSetInstanceExtensionFieldEvents != null) { return _readOnlyAttributeSetInstanceExtensionFieldEvents; }
-                    var eventDao = ApplicationContext.Current["AttributeSetInstanceExtensionFieldStateEventDao"] as IAttributeSetInstanceExtensionFieldStateEventDao;
+                    var eventDao = AttributeSetInstanceExtensionFieldStateEventDao;
                     var eL = new List<IAttributeSetInstanceExtensionFieldStateRemoved>();
                     foreach (var e in eventDao.FindByAttributeSetInstanceExtensionFieldGroupStateEventId(this.StateEventId))
                     {
@@ -355,7 +360,7 @@ namespace Dddml.Wms.Domain
 		public virtual void Save ()
 		{
 			foreach (IAttributeSetInstanceExtensionFieldStateRemoved e in this.AttributeSetInstanceExtensionFieldEvents) {
-				(ApplicationContext.Current["AttributeSetInstanceExtensionFieldStateEventDao"] as IAttributeSetInstanceExtensionFieldStateEventDao).Save(e);
+				AttributeSetInstanceExtensionFieldStateEventDao.Save(e);
 			}
 		}
 

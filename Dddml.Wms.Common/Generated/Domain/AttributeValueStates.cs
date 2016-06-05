@@ -14,6 +14,14 @@ namespace Dddml.Wms.Domain
     public class AttributeValueStates : IAttributeValueStates
     {
         
+		protected IAttributeValueStateDao AttributeValueStateDao
+		{
+			get
+			{
+				return ApplicationContext.Current["AttributeValueStateDao"] as IAttributeValueStateDao;
+			}
+		}
+
 		private Dictionary<AttributeValueId, IAttributeValueState> _loadedAttributeValueStates = new Dictionary<AttributeValueId, IAttributeValueState>();
 
         private List<IAttributeValueState> _removedAttributeValueStates = new List<IAttributeValueState>();
@@ -34,7 +42,7 @@ namespace Dddml.Wms.Domain
             {
                 if (_innerEnumerable == null)
                 {
-                    _innerEnumerable = (ApplicationContext.Current["AttributeValueStateDao"] as IAttributeValueStateDao).FindByAttributeId(_attributeState.AttributeId);
+                    _innerEnumerable = AttributeValueStateDao.FindByAttributeId(_attributeState.AttributeId);
                 }
                 return _innerEnumerable;
             }
@@ -66,7 +74,7 @@ namespace Dddml.Wms.Domain
             if (_loadedAttributeValueStates.ContainsKey(globalId)) {
                 return _loadedAttributeValueStates[globalId];
             }
-            var state = (ApplicationContext.Current["AttributeValueStateDao"] as IAttributeValueStateDao).Get(globalId);
+            var state = AttributeValueStateDao.Get(globalId);
 			_loadedAttributeValueStates.Add (globalId, state);
 			return state;
 		}
@@ -81,11 +89,11 @@ namespace Dddml.Wms.Domain
 		public virtual void Save ()
 		{
 			foreach (IAttributeValueState s in this.LoadedAttributeValueStates) {
-                (ApplicationContext.Current["AttributeValueStateDao"] as IAttributeValueStateDao).Save(s);
+                AttributeValueStateDao.Save(s);
 			}
             foreach(IAttributeValueState s in this._removedAttributeValueStates)
             {
-                (ApplicationContext.Current["AttributeValueStateDao"] as IAttributeValueStateDao).Delete(s);
+                AttributeValueStateDao.Delete(s);
             }
 		}
 

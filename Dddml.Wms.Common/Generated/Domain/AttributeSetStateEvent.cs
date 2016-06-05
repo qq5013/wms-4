@@ -85,6 +85,11 @@ namespace Dddml.Wms.Domain
             this.StateEventId = stateEventId;
         }
 
+		protected IAttributeUseStateEventDao AttributeUseStateEventDao
+		{
+			get { return ApplicationContext.Current["AttributeUseStateEventDao"] as IAttributeUseStateEventDao; }
+		}
+
         protected AttributeUseStateEventId NewAttributeUseStateEventId(string attributeId)
         {
             var stateEventId = new AttributeUseStateEventId(this.StateEventId.AttributeSetId, attributeId, this.StateEventId.Version);
@@ -142,7 +147,7 @@ namespace Dddml.Wms.Domain
                 else
                 {
                     if (_readOnlyAttributeUseEvents != null) { return _readOnlyAttributeUseEvents; }
-                    var eventDao = ApplicationContext.Current["AttributeUseStateEventDao"] as IAttributeUseStateEventDao;
+                    var eventDao = AttributeUseStateEventDao;
                     var eL = new List<IAttributeUseStateCreated>();
                     foreach (var e in eventDao.FindByAttributeSetStateEventId(this.StateEventId))
                     {
@@ -179,7 +184,7 @@ namespace Dddml.Wms.Domain
 		public virtual void Save ()
 		{
 			foreach (IAttributeUseStateCreated e in this.AttributeUseEvents) {
-				(ApplicationContext.Current["AttributeUseStateEventDao"] as IAttributeUseStateEventDao).Save(e);
+				AttributeUseStateEventDao.Save(e);
 			}
 		}
 
@@ -231,7 +236,7 @@ namespace Dddml.Wms.Domain
                 else
                 {
                     if (_readOnlyAttributeUseEvents != null) { return _readOnlyAttributeUseEvents; }
-                    var eventDao = ApplicationContext.Current["AttributeUseStateEventDao"] as IAttributeUseStateEventDao;
+                    var eventDao = AttributeUseStateEventDao;
                     var eL = new List<IAttributeUseStateEvent>();
                     foreach (var e in eventDao.FindByAttributeSetStateEventId(this.StateEventId))
                     {
@@ -280,7 +285,7 @@ namespace Dddml.Wms.Domain
 		public virtual void Save ()
 		{
 			foreach (IAttributeUseStateEvent e in this.AttributeUseEvents) {
-				(ApplicationContext.Current["AttributeUseStateEventDao"] as IAttributeUseStateEventDao).Save(e);
+				AttributeUseStateEventDao.Save(e);
 			}
 		}
 
@@ -322,7 +327,7 @@ namespace Dddml.Wms.Domain
                 else
                 {
                     if (_readOnlyAttributeUseEvents != null) { return _readOnlyAttributeUseEvents; }
-                    var eventDao = ApplicationContext.Current["AttributeUseStateEventDao"] as IAttributeUseStateEventDao;
+                    var eventDao = AttributeUseStateEventDao;
                     var eL = new List<IAttributeUseStateRemoved>();
                     foreach (var e in eventDao.FindByAttributeSetStateEventId(this.StateEventId))
                     {
@@ -359,7 +364,7 @@ namespace Dddml.Wms.Domain
 		public virtual void Save ()
 		{
 			foreach (IAttributeUseStateRemoved e in this.AttributeUseEvents) {
-				(ApplicationContext.Current["AttributeUseStateEventDao"] as IAttributeUseStateEventDao).Save(e);
+				AttributeUseStateEventDao.Save(e);
 			}
 		}
 

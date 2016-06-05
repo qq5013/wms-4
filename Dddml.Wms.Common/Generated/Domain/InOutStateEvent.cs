@@ -141,6 +141,11 @@ namespace Dddml.Wms.Domain
             this.StateEventId = stateEventId;
         }
 
+		protected IInOutLineStateEventDao InOutLineStateEventDao
+		{
+			get { return ApplicationContext.Current["InOutLineStateEventDao"] as IInOutLineStateEventDao; }
+		}
+
         protected InOutLineStateEventId NewInOutLineStateEventId(SkuId skuId)
         {
             var stateEventId = new InOutLineStateEventId(this.StateEventId.DocumentNumber, skuId, this.StateEventId.Version);
@@ -198,7 +203,7 @@ namespace Dddml.Wms.Domain
                 else
                 {
                     if (_readOnlyInOutLineEvents != null) { return _readOnlyInOutLineEvents; }
-                    var eventDao = ApplicationContext.Current["InOutLineStateEventDao"] as IInOutLineStateEventDao;
+                    var eventDao = InOutLineStateEventDao;
                     var eL = new List<IInOutLineStateCreated>();
                     foreach (var e in eventDao.FindByInOutStateEventId(this.StateEventId))
                     {
@@ -235,7 +240,7 @@ namespace Dddml.Wms.Domain
 		public virtual void Save ()
 		{
 			foreach (IInOutLineStateCreated e in this.InOutLineEvents) {
-				(ApplicationContext.Current["InOutLineStateEventDao"] as IInOutLineStateEventDao).Save(e);
+				InOutLineStateEventDao.Save(e);
 			}
 		}
 
@@ -343,7 +348,7 @@ namespace Dddml.Wms.Domain
                 else
                 {
                     if (_readOnlyInOutLineEvents != null) { return _readOnlyInOutLineEvents; }
-                    var eventDao = ApplicationContext.Current["InOutLineStateEventDao"] as IInOutLineStateEventDao;
+                    var eventDao = InOutLineStateEventDao;
                     var eL = new List<IInOutLineStateEvent>();
                     foreach (var e in eventDao.FindByInOutStateEventId(this.StateEventId))
                     {
@@ -392,7 +397,7 @@ namespace Dddml.Wms.Domain
 		public virtual void Save ()
 		{
 			foreach (IInOutLineStateEvent e in this.InOutLineEvents) {
-				(ApplicationContext.Current["InOutLineStateEventDao"] as IInOutLineStateEventDao).Save(e);
+				InOutLineStateEventDao.Save(e);
 			}
 		}
 
@@ -434,7 +439,7 @@ namespace Dddml.Wms.Domain
                 else
                 {
                     if (_readOnlyInOutLineEvents != null) { return _readOnlyInOutLineEvents; }
-                    var eventDao = ApplicationContext.Current["InOutLineStateEventDao"] as IInOutLineStateEventDao;
+                    var eventDao = InOutLineStateEventDao;
                     var eL = new List<IInOutLineStateRemoved>();
                     foreach (var e in eventDao.FindByInOutStateEventId(this.StateEventId))
                     {
@@ -471,7 +476,7 @@ namespace Dddml.Wms.Domain
 		public virtual void Save ()
 		{
 			foreach (IInOutLineStateRemoved e in this.InOutLineEvents) {
-				(ApplicationContext.Current["InOutLineStateEventDao"] as IInOutLineStateEventDao).Save(e);
+				InOutLineStateEventDao.Save(e);
 			}
 		}
 

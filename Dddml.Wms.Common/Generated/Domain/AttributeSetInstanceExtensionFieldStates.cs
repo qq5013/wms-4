@@ -14,6 +14,14 @@ namespace Dddml.Wms.Domain
     public class AttributeSetInstanceExtensionFieldStates : IAttributeSetInstanceExtensionFieldStates
     {
         
+		protected IAttributeSetInstanceExtensionFieldStateDao AttributeSetInstanceExtensionFieldStateDao
+		{
+			get
+			{
+				return ApplicationContext.Current["AttributeSetInstanceExtensionFieldStateDao"] as IAttributeSetInstanceExtensionFieldStateDao;
+			}
+		}
+
 		private Dictionary<AttributeSetInstanceExtensionFieldId, IAttributeSetInstanceExtensionFieldState> _loadedAttributeSetInstanceExtensionFieldStates = new Dictionary<AttributeSetInstanceExtensionFieldId, IAttributeSetInstanceExtensionFieldState>();
 
         private List<IAttributeSetInstanceExtensionFieldState> _removedAttributeSetInstanceExtensionFieldStates = new List<IAttributeSetInstanceExtensionFieldState>();
@@ -34,7 +42,7 @@ namespace Dddml.Wms.Domain
             {
                 if (_innerEnumerable == null)
                 {
-                    _innerEnumerable = (ApplicationContext.Current["AttributeSetInstanceExtensionFieldStateDao"] as IAttributeSetInstanceExtensionFieldStateDao).FindByGroupId(_attributeSetInstanceExtensionFieldGroupState.Id);
+                    _innerEnumerable = AttributeSetInstanceExtensionFieldStateDao.FindByGroupId(_attributeSetInstanceExtensionFieldGroupState.Id);
                 }
                 return _innerEnumerable;
             }
@@ -66,7 +74,7 @@ namespace Dddml.Wms.Domain
             if (_loadedAttributeSetInstanceExtensionFieldStates.ContainsKey(globalId)) {
                 return _loadedAttributeSetInstanceExtensionFieldStates[globalId];
             }
-            var state = (ApplicationContext.Current["AttributeSetInstanceExtensionFieldStateDao"] as IAttributeSetInstanceExtensionFieldStateDao).Get(globalId);
+            var state = AttributeSetInstanceExtensionFieldStateDao.Get(globalId);
 			_loadedAttributeSetInstanceExtensionFieldStates.Add (globalId, state);
 			return state;
 		}
@@ -81,11 +89,11 @@ namespace Dddml.Wms.Domain
 		public virtual void Save ()
 		{
 			foreach (IAttributeSetInstanceExtensionFieldState s in this.LoadedAttributeSetInstanceExtensionFieldStates) {
-                (ApplicationContext.Current["AttributeSetInstanceExtensionFieldStateDao"] as IAttributeSetInstanceExtensionFieldStateDao).Save(s);
+                AttributeSetInstanceExtensionFieldStateDao.Save(s);
 			}
             foreach(IAttributeSetInstanceExtensionFieldState s in this._removedAttributeSetInstanceExtensionFieldStates)
             {
-                (ApplicationContext.Current["AttributeSetInstanceExtensionFieldStateDao"] as IAttributeSetInstanceExtensionFieldStateDao).Delete(s);
+                AttributeSetInstanceExtensionFieldStateDao.Delete(s);
             }
 		}
 

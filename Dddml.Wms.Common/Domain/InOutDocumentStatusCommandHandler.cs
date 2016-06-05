@@ -12,15 +12,15 @@ namespace Dddml.Wms.Domain
         [ThreadStatic]
         private static string _currentDocumentStatus;
 
-        [ThreadStatic]
-        private static string _nextDocumentStatus;
-
         private static StateMachine<string, string> _stateMachine;
 
         static InOutDocumentStatusCommandHandler()
         {
-            var tm = new StateMachine<string, string>(() => _currentDocumentStatus, s => _nextDocumentStatus = s);
-            
+            var tm = new StateMachine<string, string>(() => _currentDocumentStatus, s => _currentDocumentStatus = s);
+
+            tm.Configure(String.Empty)
+                .Permit(DocumentAction.Draft, DocumentStatus.Drafted);
+
             tm.Configure(DocumentStatus.Drafted)
                 .Permit(DocumentAction.Complete, DocumentStatus.Completed)
                 .Permit(DocumentAction.Void, DocumentStatus.Voided);
@@ -34,15 +34,15 @@ namespace Dddml.Wms.Domain
         
         public void Execute(IPropertyCommand<string, string> command)
         {
-            _nextDocumentStatus = null;
-
             _currentDocumentStatus = command.GetState();
+            if (String.IsNullOrWhiteSpace(_currentDocumentStatus)) 
+            {
+                _currentDocumentStatus = String.Empty;//todo 给一个名称？
+            }
 
             _stateMachine.Fire(command.Content);
 
-            _nextDocumentStatus = _stateMachine.State;
-
-            command.SetState(_nextDocumentStatus);
+            command.SetState(_currentDocumentStatus);
         }
     }
 }

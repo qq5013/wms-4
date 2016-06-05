@@ -8,6 +8,8 @@ namespace Dddml.Wms.Domain
     public static class DocumentAction
     {
 
+        public const string Draft = "Draft";
+
         public const string Complete = "Complete";
 
         public const string Void = "Void";

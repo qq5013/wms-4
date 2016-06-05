@@ -81,6 +81,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InOutTests.cs" />
     <Compile Include="AttributeSetBuilderTests.cs" />
     <Compile Include="AttributeSetInstanceExtensionFieldUtilsTests.cs" />
     <Compile Include="TestMain.cs" />
@@ -91,6 +92,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\dddml-dotnet-tools\Dddml.Support.Criterion\Dddml.Support.Criterion.csproj">
+      <Project>{5c91ecad-6c35-45aa-ace7-e8f156922658}</Project>
+      <Name>Dddml.Support.Criterion</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Dddml.Wms.Common\Dddml.Wms.Common.csproj">
       <Project>{31471bcf-d6c3-4bae-8ec5-2e9ac01edd5c}</Project>
       <Name>Dddml.Wms.Common</Name>

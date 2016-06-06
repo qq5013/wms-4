@@ -53,7 +53,7 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? IsSOTransaction { get; set; }
 
-		public virtual string DocumentStatus { get; set; }
+		public virtual DocumentAction DocumentAction { get; set; }
 
 		public virtual bool? Posted { get; set; }
 
@@ -192,8 +192,6 @@ namespace Dddml.Wms.Domain
 	{
 
 		public virtual bool IsPropertyIsSOTransactionRemoved { get; set; }
-
-		public virtual bool IsPropertyDocumentStatusRemoved { get; set; }
 
 		public virtual bool IsPropertyPostedRemoved { get; set; }
 

@@ -26,24 +26,25 @@ namespace Dddml.Wms.Services.Tests
         [Test]
         public void TestCreateAndVoidInout()
         {
-            CreateInOut inOut = new CreateInOut();
             var documentNumber = Guid.NewGuid().ToString();
+
+            CreateInOut inOut = new CreateInOut();
             inOut.DocumentNumber = documentNumber;
             inOut.CommandId = Guid.NewGuid().ToString();
-            inOut.DocumentStatus = DocumentAction.Draft;//todo 属性的命令和属性的状态不应该是一回事。且属性的命令的名称应该可以自己定义。
+            inOut.DocumentAction = new DocumentAction(DocumentActionName.Draft);// 不能这样写：inOut.DocumentStatus = DocumentStatus.Drafted
 
             inOutApplicationService.When(inOut);
 
             MergePatchInOut patchInOut = new MergePatchInOut();
             patchInOut.DocumentNumber = documentNumber;
-            patchInOut.DocumentStatus = DocumentAction.Void;//todo 未来这里应该设置属性的命令（名称应该可以自己定义），而不是设置属性的状态。
+            patchInOut.DocumentAction = new DocumentAction(DocumentActionName.Void);//不能这样写：patchInOut.DocumentStatus = DocumentStatus.Voided
             patchInOut.Version = 1;
             patchInOut.CommandId = Guid.NewGuid().ToString();
 
             inOutApplicationService.When(patchInOut);
 
             var inOutResult = inOutApplicationService.Get(inOut.DocumentNumber);
-            Console.WriteLine(inOutResult.DocumentNumber);
+            //Console.WriteLine(inOutResult.DocumentNumber);
             Assert.AreEqual(DocumentStatus.Voided, inOutResult.DocumentStatus);
         }
 

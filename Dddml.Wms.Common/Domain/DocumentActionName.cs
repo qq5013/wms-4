@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Dddml.Wms.Domain
 {
-    public static class DocumentAction
+    public static class DocumentActionName
     {
 
         public const string Draft = "Draft";

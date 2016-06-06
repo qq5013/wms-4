@@ -9,6 +9,8 @@ namespace Dddml.Wms.Domain
     public static class DocumentStatus
     {
 
+        public const string Initial = "";
+
         /// <summary>
         /// 草稿状态。可以添加行项。Drafted的单据可以撤销（Void）或完成（Complete）。
         /// </summary>

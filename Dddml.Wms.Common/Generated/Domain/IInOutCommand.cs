@@ -23,7 +23,7 @@ namespace Dddml.Wms.Domain
 
 		bool? IsSOTransaction { get; set; }
 
-		string DocumentStatus { get; set; }
+		DocumentAction DocumentAction { get; set; }
 
 		bool? Posted { get; set; }
 
@@ -106,8 +106,6 @@ namespace Dddml.Wms.Domain
 	{
 
 		bool IsPropertyIsSOTransactionRemoved { get; set; }
-
-		bool IsPropertyDocumentStatusRemoved { get; set; }
 
 		bool IsPropertyPostedRemoved { get; set; }
 

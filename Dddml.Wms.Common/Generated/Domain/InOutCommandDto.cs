@@ -53,7 +53,20 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? IsSOTransaction { get; set; }
 
-		public virtual string DocumentStatus { get; set; }
+
+		public virtual DocumentActionDto DocumentAction { get; set; }
+
+        DocumentAction ICreateOrMergePatchOrDeleteInOut.DocumentAction
+        {
+            get 
+            {
+                return this.DocumentAction.ToDocumentAction();
+            }
+            set 
+            {
+                this.DocumentAction = new DocumentActionDto(value);
+            }
+        }
 
 		public virtual bool? Posted { get; set; }
 
@@ -137,25 +150,6 @@ namespace Dddml.Wms.Domain
             set
             {
                 this.IsPropertyIsSOTransactionRemoved = value;
-            }
-        }
-
-		public virtual bool? IsPropertyDocumentStatusRemoved { get; set; }
-
-        bool IMergePatchInOut.IsPropertyDocumentStatusRemoved
-        {
-            get
-            {
-                var b = this.IsPropertyDocumentStatusRemoved;
-                if (b != null && b.HasValue)
-                {
-                    return b.Value;
-                }
-                return false;
-            }
-            set
-            {
-                this.IsPropertyDocumentStatusRemoved = value;
             }
         }
 

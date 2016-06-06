@@ -107,7 +107,7 @@ namespace Dddml.Wms.Domain
             IInOutStateCreated e = NewInOutStateCreated(stateEventId);
 		
             e.IsSOTransaction = c.IsSOTransaction;
-            NewInOutDocumentStatusCommandAndExecute(c, _state, e);
+            NewInOutDocumentActionCommandAndExecute(c, _state, e);
             e.Posted = c.Posted;
             e.Processing = c.Processing;
             e.Processed = c.Processed;
@@ -166,7 +166,7 @@ namespace Dddml.Wms.Domain
             IInOutStateMergePatched e = NewInOutStateMergePatched(stateEventId);
 
             e.IsSOTransaction = c.IsSOTransaction;
-            NewInOutDocumentStatusCommandAndExecute(c, _state, e);
+            NewInOutDocumentActionCommandAndExecute(c, _state, e);
             e.Posted = c.Posted;
             e.Processing = c.Processing;
             e.Processed = c.Processed;
@@ -201,7 +201,6 @@ namespace Dddml.Wms.Domain
             e.DropShipBusinessPartnerId = c.DropShipBusinessPartnerId;
             e.Active = c.Active;
             e.IsPropertyIsSOTransactionRemoved = c.IsPropertyIsSOTransactionRemoved;
-            e.IsPropertyDocumentStatusRemoved = c.IsPropertyDocumentStatusRemoved;
             e.IsPropertyPostedRemoved = c.IsPropertyPostedRemoved;
             e.IsPropertyProcessingRemoved = c.IsPropertyProcessingRemoved;
             e.IsPropertyProcessedRemoved = c.IsPropertyProcessedRemoved;
@@ -409,27 +408,27 @@ namespace Dddml.Wms.Domain
 
         }// END Map(IRemove... ////////////////////////////
 
-        protected void NewInOutDocumentStatusCommandAndExecute(IMergePatchInOut c, IInOutState s, IInOutStateMergePatched e)
+        protected void NewInOutDocumentActionCommandAndExecute(IMergePatchInOut c, IInOutState s, IInOutStateMergePatched e)
         {
-            var pCommandHandler = this.InOutDocumentStatusCommandHandler;
-            var pCmdContent = c.DocumentStatus;
-            var pCmd = new PropertyCommand<string, string> { Content = pCmdContent, GetState = () => s.DocumentStatus, SetState = p => e.DocumentStatus = p, OutterCommandType = CommandType.MergePatch };
+            var pCommandHandler = this.InOutDocumentActionCommandHandler;
+            var pCmdContent = c.DocumentAction;
+            var pCmd = new PropertyCommand<DocumentAction, string> { Content = pCmdContent, GetState = () => s.DocumentStatus, SetState = p => e.DocumentStatus = p, OutterCommandType = CommandType.MergePatch };
             pCommandHandler.Execute(pCmd);
         }
 
-        protected void NewInOutDocumentStatusCommandAndExecute(ICreateInOut c, IInOutState s, IInOutStateCreated e)
+        protected void NewInOutDocumentActionCommandAndExecute(ICreateInOut c, IInOutState s, IInOutStateCreated e)
         {
-            var pCommandHandler = this.InOutDocumentStatusCommandHandler;
-            var pCmdContent = c.DocumentStatus;
-            var pCmd = new PropertyCommand<string, string> { Content = pCmdContent, GetState = () => s.DocumentStatus, SetState = p => e.DocumentStatus = p, OutterCommandType = CommandType.Create };
+            var pCommandHandler = this.InOutDocumentActionCommandHandler;
+            var pCmdContent = c.DocumentAction;
+            var pCmd = new PropertyCommand<DocumentAction, string> { Content = pCmdContent, GetState = () => s.DocumentStatus, SetState = p => e.DocumentStatus = p, OutterCommandType = CommandType.Create };
             pCommandHandler.Execute(pCmd);
         }
 
-        protected IPropertyCommandHandler<string, string> InOutDocumentStatusCommandHandler
+        protected IPropertyCommandHandler<DocumentAction, string> InOutDocumentActionCommandHandler
         {
             get
             {
-                return ApplicationContext.Current["InOutDocumentStatusCommandHandler"] as IPropertyCommandHandler<string, string>;
+                return ApplicationContext.Current["InOutDocumentActionCommandHandler"] as IPropertyCommandHandler<DocumentAction, string>;
             }
         }
 

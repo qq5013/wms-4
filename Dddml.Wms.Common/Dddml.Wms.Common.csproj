@@ -48,9 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\AttributeSetInstanceAggregate.cs" />
-    <Compile Include="Domain\DocumentAction.cs" />
+    <Compile Include="Domain\DocumentActionName.cs" />
     <Compile Include="Domain\DocumentStatus.cs" />
-    <Compile Include="Domain\InOutDocumentStatusCommandHandler.cs" />
+    <Compile Include="Domain\InOutDocumentActionCommandHandler.cs" />
     <Compile Include="Domain\Services\IAttributeSetService.cs" />
     <Compile Include="Generated\Domain\AttributeAggregate.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
@@ -321,6 +321,12 @@
     </Compile>
     <Compile Include="Generated\Domain\AttributeValueStates.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DocumentAction.cs">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DocumentActionDto.cs">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\IAttributeAggregate.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
@@ -910,6 +916,8 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GenerateBoundedContextDomain.txt</LastGenOutput>
       <LastOutputs>
+.\DocumentAction.cs
+.\DocumentActionDto.cs
 .\GenerateBoundedContextDomain.txt
 .\SkuId.cs
 .\SkuIdDto.cs

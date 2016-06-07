@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\AttributeSetInstanceIdGenerator.cs" />
+    <Compile Include="Domain\NHibernate\NHibernateOrganizationTreeRepository.cs" />
     <Compile Include="Domain\Services\NHibernate\AttributeSetService.cs" />
     <Compile Include="Generated\Domain\NHibernate\AttributeApplicationService.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
@@ -155,7 +156,7 @@
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\NHibernate\NHibernateLocatorTreeRepository.cs">
-      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+      <DependentUpon>GenerateNHibernateTrees.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\NHibernate\NHibernateOrganizationEventStore.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
@@ -169,11 +170,17 @@
     <Compile Include="Generated\Domain\NHibernate\NHibernateOrganizationStructureStateRepository.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateOrganizationStructureStateRepositoryOrganizationTreeStructure.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\NHibernate\NHibernateOrganizationStructureTypeEventStore.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\NHibernate\NHibernateOrganizationStructureTypeStateRepository.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateOrganizationTreeRepository.cs">
+      <DependentUpon>GenerateNHibernateTrees.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\NHibernate\NHibernateWarehouseEventStore.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
@@ -297,6 +304,20 @@
     <EmbeddedResource Include="Config\OrganizationStructureAggregateConfig.xml">
       <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
     </EmbeddedResource>
+    <Content Include="Generated\Domain\NHibernate\GenerateNHibernateTrees.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenerateNHibernateTrees.tt</DependentUpon>
+    </Content>
+    <Content Include="Generated\Domain\NHibernate\GenerateNHibernateTrees.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GenerateNHibernateTrees.txt</LastGenOutput>
+      <LastOutputs>
+.\GenerateNHibernateTrees.txt
+.\NHibernateLocatorTreeRepository.cs
+.\NHibernateOrganizationTreeRepository.cs
+</LastOutputs>
+    </Content>
     <Content Include="Generated\NHibernate\Mappings\GenerateAggregatesHbm.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GenerateAggregatesHbm.txt</LastGenOutput>
@@ -444,11 +465,11 @@
 .\NHibernateLocatorEventStore.cs
 .\NHibernateLocatorStateRepository.cs
 .\NHibernateLocatorStateRepositoryLocatorTree.cs
-.\NHibernateLocatorTreeRepository.cs
 .\NHibernateOrganizationEventStore.cs
 .\NHibernateOrganizationStateRepository.cs
 .\NHibernateOrganizationStructureEventStore.cs
 .\NHibernateOrganizationStructureStateRepository.cs
+.\NHibernateOrganizationStructureStateRepositoryOrganizationTreeStructure.cs
 .\NHibernateOrganizationStructureTypeEventStore.cs
 .\NHibernateOrganizationStructureTypeStateRepository.cs
 .\NHibernateWarehouseEventStore.cs
@@ -478,9 +499,7 @@
       <Name>Dddml.Wms.Common</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Domain\NHibernate\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

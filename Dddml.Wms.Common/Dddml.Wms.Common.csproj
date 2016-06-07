@@ -688,6 +688,9 @@
     <Compile Include="Generated\Domain\IOrganizationStructureStateRepository.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\IOrganizationStructureStateRepositoryOrganizationTreeStructure.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\IOrganizationStructureTypeAggregate.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -711,6 +714,9 @@
     </Compile>
     <Compile Include="Generated\Domain\IOrganizationStructureTypeStateRepository.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IOrganizationTree.cs">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\IWarehouseAggregate.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
@@ -936,6 +942,9 @@
     </Compile>
     <Compile Include="Generated\Domain\OrganizationStructureTypeStateProperties.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationTree.cs">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\SkuId.cs">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
@@ -1272,6 +1281,7 @@
 .\IOrganizationStructureStateEvent.cs
 .\IOrganizationStructureStateProperties.cs
 .\IOrganizationStructureStateRepository.cs
+.\IOrganizationStructureStateRepositoryOrganizationTreeStructure.cs
 .\IOrganizationStructureTypeAggregate.cs
 .\IOrganizationStructureTypeApplicationService.cs
 .\IOrganizationStructureTypeApplicationServiceFactory.cs
@@ -1359,11 +1369,13 @@
 .\DocumentActionDto.cs
 .\GenerateBoundedContextDomain.txt
 .\ILocatorTree.cs
+.\IOrganizationTree.cs
 .\LocatorTree.cs
 .\OrganizationStructureId.cs
 .\OrganizationStructureIdDto.cs
 .\OrganizationStructureIdFlattenedDto.cs
 .\OrganizationStructureIdFlattenedDtoFormatter.cs
+.\OrganizationTree.cs
 .\SkuId.cs
 .\SkuIdDto.cs
 .\SkuIdFlattenedDto.cs

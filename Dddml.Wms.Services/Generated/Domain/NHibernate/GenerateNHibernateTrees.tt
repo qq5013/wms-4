@@ -1,0 +1,12 @@
+<#@ template language="C#" debug="True" #>
+<#@ output extension="txt" #>
+<#@ import namespace="Dddml.Core.Domain" #>
+<#@ include file="T4Toolbox.tt" #>
+<#@ include file="%DddmlDotNetToolsSolutionDir%\Dddml.T4.Templates\Domain\NHibernate\TreesNHibernateGenerator.tt" #>
+<#@ include file="..\..\..\LoadBoundedContext.tt" #>
+<#
+	
+	var treesNHibernateGenerator = new TreesNHibernateGenerator(boundedContext);
+	treesNHibernateGenerator.Run();
+
+#>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+  <object id="locatorTreeRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateLocatorTreeRepository, Dddml.Wms.Services">
+    <property name="LocatorStateRepository" ref="locatorStateRepository"/>
+  </object>
+
+
+
+</objects>
+

@@ -11,7 +11,7 @@ using Dddml.Support.Criterion;
 
 namespace Dddml.Wms.Domain
 {
-	public interface IInOutStateRepository
+	public partial interface IInOutStateRepository
 	{
         IInOutState Get(string id);
 

@@ -11,7 +11,7 @@ using Dddml.Support.Criterion;
 
 namespace Dddml.Wms.Domain
 {
-	public interface IAttributeSetInstanceExtensionFieldGroupStateRepository
+	public partial interface IAttributeSetInstanceExtensionFieldGroupStateRepository
 	{
         IAttributeSetInstanceExtensionFieldGroupState Get(string id);
 

@@ -88,6 +88,9 @@
     <Compile Include="Generated\Domain\NHibernate\InOutApplicationService.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\NHibernate\LocatorApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\NHibernate\NHibernateAttributeEventStore.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
@@ -142,6 +145,54 @@
     <Compile Include="Generated\Domain\NHibernate\NHibernateInOutStateRepository.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateLocatorEventStore.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateLocatorStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateLocatorStateRepositoryLocatorTree.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateLocatorTreeRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateOrganizationEventStore.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateOrganizationStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateOrganizationStructureEventStore.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateOrganizationStructureStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateOrganizationStructureTypeEventStore.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateOrganizationStructureTypeStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateWarehouseEventStore.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateWarehouseStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\OrganizationApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\OrganizationStructureApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\OrganizationStructureTypeApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\WarehouseApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Specialization\NHibernate\CriterionUtils.cs" />
     <Compile Include="Specialization\NHibernate\EventStoreAggregateId.cs" />
@@ -154,24 +205,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Config\NHibernateServicesConfig.xml" />
     <EmbeddedResource Include="Config\CustomIdGeneratorsConfig.xml" />
-    <EmbeddedResource Include="Config\AttributeAggregateConfig.xml">
-      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Config\AttributeSetAggregateConfig.xml">
-      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Config\AttributeSetInstanceAggregateConfig.xml">
-      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Config\AttributeSetInstanceExtensionFieldGroupAggregateConfig.xml">
-      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Config\InOutAggregateConfig.xml">
-      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Config\AggregatesIdGeneratorConfig.xml">
-      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeState.hbm.xml">
       <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +248,55 @@
       <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Config\DomainConfig.xml" />
+    <EmbeddedResource Include="Config\AttributeAggregateConfig.xml">
+      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\AttributeSetAggregateConfig.xml">
+      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\AttributeSetInstanceAggregateConfig.xml">
+      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\AttributeSetInstanceExtensionFieldGroupAggregateConfig.xml">
+      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\AggregatesIdGeneratorConfig.xml">
+      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Config\GenerateTreesConfig.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GenerateTreesConfig.txt</LastGenOutput>
+      <LastOutputs>
+.\GenerateTreesConfig.txt
+.\TreesConfig.xml
+</LastOutputs>
+    </Content>
+    <Content Include="Config\GenerateTreesConfig.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenerateTreesConfig.tt</DependentUpon>
+    </Content>
+    <EmbeddedResource Include="Config\TreesConfig.xml">
+      <DependentUpon>GenerateTreesConfig.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\InOutAggregateConfig.xml">
+      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\WarehouseAggregateConfig.xml">
+      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\LocatorAggregateConfig.xml">
+      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\OrganizationAggregateConfig.xml">
+      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\OrganizationStructureTypeAggregateConfig.xml">
+      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\OrganizationStructureAggregateConfig.xml">
+      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
+    </EmbeddedResource>
     <Content Include="Generated\NHibernate\Mappings\GenerateAggregatesHbm.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GenerateAggregatesHbm.txt</LastGenOutput>
@@ -238,6 +320,16 @@
 .\InOutLineStateEvent.hbm.xml
 .\InOutState.hbm.xml
 .\InOutStateEvent.hbm.xml
+.\LocatorState.hbm.xml
+.\LocatorStateEvent.hbm.xml
+.\OrganizationState.hbm.xml
+.\OrganizationStateEvent.hbm.xml
+.\OrganizationStructureState.hbm.xml
+.\OrganizationStructureStateEvent.hbm.xml
+.\OrganizationStructureTypeState.hbm.xml
+.\OrganizationStructureTypeStateEvent.hbm.xml
+.\WarehouseState.hbm.xml
+.\WarehouseStateEvent.hbm.xml
 </LastOutputs>
     </Content>
     <Content Include="Generated\NHibernate\Mappings\GenerateAggregatesHbm.txt">
@@ -256,6 +348,36 @@
       <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Generated\NHibernate\Mappings\InOutLineStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\WarehouseState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\WarehouseStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\LocatorState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\LocatorStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\OrganizationState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\OrganizationStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\OrganizationStructureTypeState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\OrganizationStructureTypeStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\OrganizationStructureState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\OrganizationStructureStateEvent.hbm.xml">
       <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
     </EmbeddedResource>
     <Content Include="LoadBoundedContext.tt">
@@ -278,6 +400,11 @@
 .\AttributeSetInstanceExtensionFieldGroupAggregateConfig.xml
 .\GenerateAggregatesConfig.txt
 .\InOutAggregateConfig.xml
+.\LocatorAggregateConfig.xml
+.\OrganizationAggregateConfig.xml
+.\OrganizationStructureAggregateConfig.xml
+.\OrganizationStructureTypeAggregateConfig.xml
+.\WarehouseAggregateConfig.xml
 </LastOutputs>
     </Content>
     <Content Include="Config\GenerateAggregatesConfig.txt">
@@ -295,6 +422,7 @@
 .\AttributeSetInstanceExtensionFieldGroupApplicationService.cs
 .\GenerateBoundedContextDomainNHibernateAggregates.txt
 .\InOutApplicationService.cs
+.\LocatorApplicationService.cs
 .\NHibernateAttributeEventStore.cs
 .\NHibernateAttributeSetEventStore.cs
 .\NHibernateAttributeSetInstanceEventStore.cs
@@ -313,6 +441,22 @@
 .\NHibernateInOutLineStateDao.cs
 .\NHibernateInOutLineStateEventDao.cs
 .\NHibernateInOutStateRepository.cs
+.\NHibernateLocatorEventStore.cs
+.\NHibernateLocatorStateRepository.cs
+.\NHibernateLocatorStateRepositoryLocatorTree.cs
+.\NHibernateLocatorTreeRepository.cs
+.\NHibernateOrganizationEventStore.cs
+.\NHibernateOrganizationStateRepository.cs
+.\NHibernateOrganizationStructureEventStore.cs
+.\NHibernateOrganizationStructureStateRepository.cs
+.\NHibernateOrganizationStructureTypeEventStore.cs
+.\NHibernateOrganizationStructureTypeStateRepository.cs
+.\NHibernateWarehouseEventStore.cs
+.\NHibernateWarehouseStateRepository.cs
+.\OrganizationApplicationService.cs
+.\OrganizationStructureApplicationService.cs
+.\OrganizationStructureTypeApplicationService.cs
+.\WarehouseApplicationService.cs
 </LastOutputs>
     </Content>
     <Content Include="Generated\Domain\NHibernate\GenerateBoundedContextDomainNHibernateAggregates.txt">
@@ -333,6 +477,9 @@
       <Project>{31471bcf-d6c3-4bae-8ec5-2e9ac01edd5c}</Project>
       <Name>Dddml.Wms.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Domain\NHibernate\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

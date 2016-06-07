@@ -11,7 +11,7 @@ using Dddml.Support.Criterion;
 
 namespace Dddml.Wms.Domain
 {
-	public interface IAttributeStateRepository
+	public partial interface IAttributeStateRepository
 	{
         IAttributeState Get(string id);
 

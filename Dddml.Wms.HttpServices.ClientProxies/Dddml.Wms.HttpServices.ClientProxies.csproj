@@ -83,6 +83,21 @@
     <Compile Include="Generated\InOutApplicationServiceProxy.cs">
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\LocatorApplicationServiceProxy.cs">
+      <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\OrganizationApplicationServiceProxy.cs">
+      <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\OrganizationStructureApplicationServiceProxy.cs">
+      <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\OrganizationStructureTypeApplicationServiceProxy.cs">
+      <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\WarehouseApplicationServiceProxy.cs">
+      <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +112,11 @@
 .\DddmlWmsRamlClient.cs
 .\GenerateRamlClientProxies.txt
 .\InOutApplicationServiceProxy.cs
+.\LocatorApplicationServiceProxy.cs
+.\OrganizationApplicationServiceProxy.cs
+.\OrganizationStructureApplicationServiceProxy.cs
+.\OrganizationStructureTypeApplicationServiceProxy.cs
+.\WarehouseApplicationServiceProxy.cs
 </LastOutputs>
     </Content>
     <Content Include="Generated\GenerateRamlClientProxies.txt">

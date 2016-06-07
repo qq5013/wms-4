@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+                   assembly="Dddml.Wms.Common" 
+                   namespace="Dddml.Wms.Domain">
+  
+  <class name="LocatorStateEventBase" table="LocatorStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="StateEventId" class="Dddml.Wms.Domain.LocatorStateEventId">
+		<key-property name="LocatorId" column="LocatorId" length="50"/>
+		<key-property name="Version" column="Version" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="String" />
+
+	<property name="WarehouseId"  />
+
+	<property name="ParentLocatorId"  />
+
+	<property name="LocatorType"  />
+
+	<property name="PriorityNumber"  />
+
+	<property name="IsDefault"  />
+
+	<property name="X"  />
+
+	<property name="Y"  />
+
+	<property name="Z"  />
+
+	<property name="Active"  />
+
+
+    <property name="CreatedBy" />
+
+    <property name="CreatedAt" />
+
+    <property name="CommandId" />
+
+
+    <subclass name="LocatorStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="LocatorStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="IsPropertyWarehouseIdRemoved" />
+
+        <property name="IsPropertyParentLocatorIdRemoved" />
+
+        <property name="IsPropertyLocatorTypeRemoved" />
+
+        <property name="IsPropertyPriorityNumberRemoved" />
+
+        <property name="IsPropertyIsDefaultRemoved" />
+
+        <property name="IsPropertyXRemoved" />
+
+        <property name="IsPropertyYRemoved" />
+
+        <property name="IsPropertyZRemoved" />
+
+        <property name="IsPropertyActiveRemoved" />
+
+
+    </subclass>
+
+    <subclass name="LocatorStateDeleted"  discriminator-value="Deleted">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

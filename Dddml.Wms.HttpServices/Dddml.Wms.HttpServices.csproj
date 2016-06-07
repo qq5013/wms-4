@@ -282,6 +282,21 @@
     <Compile Include="Generated\Controllers\InOutsController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Controllers\LocatorsController.cs">
+      <DependentUpon>GenerateControllers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Controllers\OrganizationsController.cs">
+      <DependentUpon>GenerateControllers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Controllers\OrganizationStructuresController.cs">
+      <DependentUpon>GenerateControllers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Controllers\OrganizationStructureTypesController.cs">
+      <DependentUpon>GenerateControllers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Controllers\WarehousesController.cs">
+      <DependentUpon>GenerateControllers.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -326,6 +341,11 @@
 .\AttributeSetsController.cs
 .\GenerateControllers.txt
 .\InOutsController.cs
+.\LocatorsController.cs
+.\OrganizationsController.cs
+.\OrganizationStructuresController.cs
+.\OrganizationStructureTypesController.cs
+.\WarehousesController.cs
 </LastOutputs>
     </Content>
     <Content Include="Generated\Controllers\GenerateControllers.txt">

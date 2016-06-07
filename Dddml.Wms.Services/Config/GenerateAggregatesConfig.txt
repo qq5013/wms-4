@@ -21,6 +21,11 @@
       <resource uri="assembly://Dddml.Wms.Services/Dddml.Wms.Services.Config/AttributeSetInstanceAggregateConfig.xml"/>
       <resource uri="assembly://Dddml.Wms.Services/Dddml.Wms.Services.Config/AttributeSetInstanceExtensionFieldGroupAggregateConfig.xml"/>
       <resource uri="assembly://Dddml.Wms.Services/Dddml.Wms.Services.Config/InOutAggregateConfig.xml"/>
+      <resource uri="assembly://Dddml.Wms.Services/Dddml.Wms.Services.Config/WarehouseAggregateConfig.xml"/>
+      <resource uri="assembly://Dddml.Wms.Services/Dddml.Wms.Services.Config/LocatorAggregateConfig.xml"/>
+      <resource uri="assembly://Dddml.Wms.Services/Dddml.Wms.Services.Config/OrganizationAggregateConfig.xml"/>
+      <resource uri="assembly://Dddml.Wms.Services/Dddml.Wms.Services.Config/OrganizationStructureTypeAggregateConfig.xml"/>
+      <resource uri="assembly://Dddml.Wms.Services/Dddml.Wms.Services.Config/OrganizationStructureAggregateConfig.xml"/>
 
       <resource uri="assembly://Dddml.Wms.Services/Dddml.Wms.Services.Config/AggregatesIdGeneratorConfig.xml"/>
 

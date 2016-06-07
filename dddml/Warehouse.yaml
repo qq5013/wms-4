@@ -9,7 +9,7 @@ aggregates:
     Warehouse:
       
       id:
-        name: WarehouseId;
+        name: WarehouseId
         type: string
 
       properties:
@@ -73,7 +73,7 @@ trees:
     
     LocatorTree:
     
-      nodeType: Locator
+      nodeContentType: Locator
       
       parentId: ParentLocatorId
       

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+                   assembly="Dddml.Wms.Common" 
+                   namespace="Dddml.Wms.Domain">
+  
+  <class name="OrganizationStructureStateEventBase" table="OrganizationStructureStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="StateEventId" class="Dddml.Wms.Domain.OrganizationStructureStateEventId">
+		<key-property name="IdOrganizationStructureTypeId" column="IdOrganizationStructureTypeId" />
+		<key-property name="IdParentId" column="IdParentId" />
+		<key-property name="IdSubsidiaryId" column="IdSubsidiaryId" />
+		<key-property name="Version" column="Version" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="String" />
+
+	<property name="Active"  />
+
+
+    <property name="CreatedBy" />
+
+    <property name="CreatedAt" />
+
+    <property name="CommandId" />
+
+
+    <subclass name="OrganizationStructureStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="OrganizationStructureStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="IsPropertyActiveRemoved" />
+
+
+    </subclass>
+
+    <subclass name="OrganizationStructureStateDeleted"  discriminator-value="Deleted">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

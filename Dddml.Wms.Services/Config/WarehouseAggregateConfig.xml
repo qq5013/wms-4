@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+
+  <object id="warehouseStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateWarehouseStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="warehouseEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateWarehouseEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="warehouseApplicationService" type="Dddml.Wms.Domain.NHibernate.WarehouseApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="warehouseEventStore"/>
+    <constructor-arg ref="warehouseStateRepository"/>
+  </object>
+
+</objects>
+

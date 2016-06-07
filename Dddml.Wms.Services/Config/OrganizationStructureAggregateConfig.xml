@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+
+  <object id="organizationStructureStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateOrganizationStructureStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="organizationStructureEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateOrganizationStructureEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="organizationStructureApplicationService" type="Dddml.Wms.Domain.NHibernate.OrganizationStructureApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="organizationStructureEventStore"/>
+    <constructor-arg ref="organizationStructureStateRepository"/>
+  </object>
+
+</objects>
+

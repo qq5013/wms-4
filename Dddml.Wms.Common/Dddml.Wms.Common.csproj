@@ -532,6 +532,36 @@
     <Compile Include="Generated\Domain\IInOutStateRepository.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\ILocatorAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\ILocatorApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\ILocatorApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\ILocatorCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\ILocatorState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\ILocatorStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\ILocatorStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\ILocatorStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\ILocatorStateRepositoryLocatorTree.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\ILocatorTree.cs">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\InOutAggregate.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -610,6 +640,141 @@
     <Compile Include="Generated\Domain\InOutStateProperties.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\IOrganizationAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IOrganizationApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IOrganizationApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IOrganizationCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IOrganizationState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IOrganizationStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IOrganizationStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IOrganizationStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IOrganizationStructureAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IOrganizationStructureApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IOrganizationStructureApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IOrganizationStructureCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IOrganizationStructureState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IOrganizationStructureStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IOrganizationStructureStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IOrganizationStructureStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IOrganizationStructureTypeAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IOrganizationStructureTypeApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IOrganizationStructureTypeApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IOrganizationStructureTypeCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IOrganizationStructureTypeState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IOrganizationStructureTypeStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IOrganizationStructureTypeStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IOrganizationStructureTypeStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IWarehouseAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IWarehouseApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IWarehouseApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IWarehouseCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IWarehouseState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IWarehouseStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IWarehouseStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IWarehouseStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\LocatorAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\LocatorApplicationServiceBase.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\LocatorApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\LocatorCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\LocatorCommandDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\LocatorState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\LocatorStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\LocatorStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\LocatorStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\LocatorStateEventId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\LocatorStateEventIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\LocatorStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\LocatorTree.cs">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\Metadata\AttributeMetadata.cs">
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
     </Compile>
@@ -637,6 +802,141 @@
     <Compile Include="Generated\Domain\Metadata\InOutMetadata.cs">
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\Metadata\LocatorMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\Metadata\OrganizationMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\Metadata\OrganizationStructureMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\Metadata\OrganizationStructureTypeMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\Metadata\WarehouseMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationApplicationServiceBase.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationCommandDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStateEventId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStateEventIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureApplicationServiceBase.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureCommandDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureId.cs">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureIdFlattenedDto.cs">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureIdFlattenedDtoFormatter.cs">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureStateEventId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureStateEventIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureTypeAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureTypeApplicationServiceBase.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureTypeApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureTypeCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureTypeCommandDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureTypeState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureTypeStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureTypeStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureTypeStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureTypeStateEventId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureTypeStateEventIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureTypeStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\SkuId.cs">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </Compile>
@@ -649,6 +949,42 @@
     <Compile Include="Generated\Domain\SkuIdFlattenedDtoFormatter.cs">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\WarehouseAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\WarehouseApplicationServiceBase.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\WarehouseApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\WarehouseCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\WarehouseCommandDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\WarehouseState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\WarehouseStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\WarehouseStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\WarehouseStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\WarehouseStateEventId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\WarehouseStateEventIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\WarehouseStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Specialization\AggregateBase.cs" />
     <Compile Include="Specialization\DefaultTypeConverter.cs" />
     <Compile Include="Specialization\DynamicObjectMapperBase.cs" />
@@ -657,6 +993,8 @@
     <Compile Include="Specialization\IPropertyCommand.cs" />
     <Compile Include="Specialization\IPropertyCommandHandler.cs" />
     <Compile Include="Specialization\IStateEventDto.cs" />
+    <Compile Include="Specialization\ITree.cs" />
+    <Compile Include="Specialization\ITreeRepository.cs" />
     <Compile Include="Specialization\ITypeConverter.cs" />
     <Compile Include="Specialization\PropertyCommand.cs" />
     <Compile Include="Specialization\PropertyMetadata.cs" />
@@ -883,6 +1221,15 @@
 .\IInOutStateEvent.cs
 .\IInOutStateProperties.cs
 .\IInOutStateRepository.cs
+.\ILocatorAggregate.cs
+.\ILocatorApplicationService.cs
+.\ILocatorApplicationServiceFactory.cs
+.\ILocatorCommand.cs
+.\ILocatorState.cs
+.\ILocatorStateEvent.cs
+.\ILocatorStateProperties.cs
+.\ILocatorStateRepository.cs
+.\ILocatorStateRepositoryLocatorTree.cs
 .\InOutAggregate.cs
 .\InOutApplicationServiceBase.cs
 .\InOutApplicationServiceFactory.cs
@@ -909,6 +1256,98 @@
 .\InOutStateEventId.cs
 .\InOutStateEventIdDto.cs
 .\InOutStateProperties.cs
+.\IOrganizationAggregate.cs
+.\IOrganizationApplicationService.cs
+.\IOrganizationApplicationServiceFactory.cs
+.\IOrganizationCommand.cs
+.\IOrganizationState.cs
+.\IOrganizationStateEvent.cs
+.\IOrganizationStateProperties.cs
+.\IOrganizationStateRepository.cs
+.\IOrganizationStructureAggregate.cs
+.\IOrganizationStructureApplicationService.cs
+.\IOrganizationStructureApplicationServiceFactory.cs
+.\IOrganizationStructureCommand.cs
+.\IOrganizationStructureState.cs
+.\IOrganizationStructureStateEvent.cs
+.\IOrganizationStructureStateProperties.cs
+.\IOrganizationStructureStateRepository.cs
+.\IOrganizationStructureTypeAggregate.cs
+.\IOrganizationStructureTypeApplicationService.cs
+.\IOrganizationStructureTypeApplicationServiceFactory.cs
+.\IOrganizationStructureTypeCommand.cs
+.\IOrganizationStructureTypeState.cs
+.\IOrganizationStructureTypeStateEvent.cs
+.\IOrganizationStructureTypeStateProperties.cs
+.\IOrganizationStructureTypeStateRepository.cs
+.\IWarehouseAggregate.cs
+.\IWarehouseApplicationService.cs
+.\IWarehouseApplicationServiceFactory.cs
+.\IWarehouseCommand.cs
+.\IWarehouseState.cs
+.\IWarehouseStateEvent.cs
+.\IWarehouseStateProperties.cs
+.\IWarehouseStateRepository.cs
+.\LocatorAggregate.cs
+.\LocatorApplicationServiceBase.cs
+.\LocatorApplicationServiceFactory.cs
+.\LocatorCommand.cs
+.\LocatorCommandDto.cs
+.\LocatorState.cs
+.\LocatorStateDto.cs
+.\LocatorStateEvent.cs
+.\LocatorStateEventDto.cs
+.\LocatorStateEventId.cs
+.\LocatorStateEventIdDto.cs
+.\LocatorStateProperties.cs
+.\OrganizationAggregate.cs
+.\OrganizationApplicationServiceBase.cs
+.\OrganizationApplicationServiceFactory.cs
+.\OrganizationCommand.cs
+.\OrganizationCommandDto.cs
+.\OrganizationState.cs
+.\OrganizationStateDto.cs
+.\OrganizationStateEvent.cs
+.\OrganizationStateEventDto.cs
+.\OrganizationStateEventId.cs
+.\OrganizationStateEventIdDto.cs
+.\OrganizationStateProperties.cs
+.\OrganizationStructureAggregate.cs
+.\OrganizationStructureApplicationServiceBase.cs
+.\OrganizationStructureApplicationServiceFactory.cs
+.\OrganizationStructureCommand.cs
+.\OrganizationStructureCommandDto.cs
+.\OrganizationStructureState.cs
+.\OrganizationStructureStateDto.cs
+.\OrganizationStructureStateEvent.cs
+.\OrganizationStructureStateEventDto.cs
+.\OrganizationStructureStateEventId.cs
+.\OrganizationStructureStateEventIdDto.cs
+.\OrganizationStructureStateProperties.cs
+.\OrganizationStructureTypeAggregate.cs
+.\OrganizationStructureTypeApplicationServiceBase.cs
+.\OrganizationStructureTypeApplicationServiceFactory.cs
+.\OrganizationStructureTypeCommand.cs
+.\OrganizationStructureTypeCommandDto.cs
+.\OrganizationStructureTypeState.cs
+.\OrganizationStructureTypeStateDto.cs
+.\OrganizationStructureTypeStateEvent.cs
+.\OrganizationStructureTypeStateEventDto.cs
+.\OrganizationStructureTypeStateEventId.cs
+.\OrganizationStructureTypeStateEventIdDto.cs
+.\OrganizationStructureTypeStateProperties.cs
+.\WarehouseAggregate.cs
+.\WarehouseApplicationServiceBase.cs
+.\WarehouseApplicationServiceFactory.cs
+.\WarehouseCommand.cs
+.\WarehouseCommandDto.cs
+.\WarehouseState.cs
+.\WarehouseStateDto.cs
+.\WarehouseStateEvent.cs
+.\WarehouseStateEventDto.cs
+.\WarehouseStateEventId.cs
+.\WarehouseStateEventIdDto.cs
+.\WarehouseStateProperties.cs
 </LastOutputs>
       <LastGenOutput>GenerateBoundedContextDomainAggregates.txt</LastGenOutput>
     </Content>
@@ -919,6 +1358,12 @@
 .\DocumentAction.cs
 .\DocumentActionDto.cs
 .\GenerateBoundedContextDomain.txt
+.\ILocatorTree.cs
+.\LocatorTree.cs
+.\OrganizationStructureId.cs
+.\OrganizationStructureIdDto.cs
+.\OrganizationStructureIdFlattenedDto.cs
+.\OrganizationStructureIdFlattenedDtoFormatter.cs
 .\SkuId.cs
 .\SkuIdDto.cs
 .\SkuIdFlattenedDto.cs
@@ -949,6 +1394,11 @@
 .\GenerateDomainMetadata.txt
 .\InOutLineMetadata.cs
 .\InOutMetadata.cs
+.\LocatorMetadata.cs
+.\OrganizationMetadata.cs
+.\OrganizationStructureMetadata.cs
+.\OrganizationStructureTypeMetadata.cs
+.\WarehouseMetadata.cs
 </LastOutputs>
     </Content>
     <Content Include="Generated\Domain\Metadata\GenerateDomainMetadata.txt">

@@ -13,11 +13,13 @@ using NHibernate.Criterion;
 using Spring.Transaction.Interceptor;
 using Dddml.Support.Criterion;
 using NHibernateICriterion = NHibernate.Criterion.ICriterion;
+using NHibernateRestrictions = NHibernate.Criterion.Restrictions;
+using NHibernateDisjunction = NHibernate.Criterion.Disjunction;
 
 namespace Dddml.Wms.Domain.NHibernate
 {
 
-	public class NHibernateAttributeSetInstanceStateRepository : IAttributeSetInstanceStateRepository
+	public partial class NHibernateAttributeSetInstanceStateRepository : IAttributeSetInstanceStateRepository
 	{
 		public ISessionFactory SessionFactory { get; set; }
 
@@ -67,11 +69,11 @@ namespace Dddml.Wms.Domain.NHibernate
 
             if (filter != null)
             {
-                SetCriteriaFilter(criteria, filter);
+                CriteriaAddFilter(criteria, filter);
             }
             if (orders != null)
             {
-                SetCriteriaOrders(criteria, orders);
+                CriteriaAddOrders(criteria, orders);
             }
 
             criteria.SetFirstResult(firstResult);
@@ -91,7 +93,7 @@ namespace Dddml.Wms.Domain.NHibernate
             }
             if (orders != null)
             {
-                SetCriteriaOrders(criteria, orders);
+                CriteriaAddOrders(criteria, orders);
             }
 
             criteria.SetFirstResult(firstResult);
@@ -122,7 +124,7 @@ namespace Dddml.Wms.Domain.NHibernate
         {
             var criteria = CurrentSession.CreateCriteria<AttributeSetInstanceState>();
             criteria.SetProjection(Projections.RowCountInt64());
-            SetCriteriaFilter(criteria, filter);
+            CriteriaAddFilter(criteria, filter);
             return criteria.UniqueResult<long>();
         }
 
@@ -139,27 +141,27 @@ namespace Dddml.Wms.Domain.NHibernate
             return criteria.UniqueResult<long>();
         }
 
-        protected void SetCriteriaFilter(ICriteria criteria, IEnumerable<KeyValuePair<string, object>> filter)
+        protected void CriteriaAddFilter(ICriteria criteria, IEnumerable<KeyValuePair<string, object>> filter)
         {
             foreach (KeyValuePair<string, object> p in filter)
             {
-                SetCriteriaFilterPair(criteria, p);
+                CriteriaAddFilterPair(criteria, p);
             }
         }
 
-        protected void SetCriteriaFilterPair(ICriteria criteria, KeyValuePair<string, object> filterPair)
+        protected void CriteriaAddFilterPair(ICriteria criteria, KeyValuePair<string, object> filterPair)
         {
             if (filterPair.Value == null)
             {
-                criteria.Add(Expression.IsNull(filterPair.Key));
+                criteria.Add(NHibernateRestrictions.IsNull(filterPair.Key));
             }
             else
             {
-                criteria.Add(Expression.Eq(filterPair.Key, filterPair.Value));
+                criteria.Add(NHibernateRestrictions.Eq(filterPair.Key, filterPair.Value));
             }
         }
 
-        protected void SetCriteriaOrders(ICriteria criteria, IList<string> orders)
+        protected void CriteriaAddOrders(ICriteria criteria, IList<string> orders)
         {
             foreach (var order in orders)
             {
@@ -167,6 +169,41 @@ namespace Dddml.Wms.Domain.NHibernate
                 var pName = isDesc ? order.Substring(1) : order;
                 criteria.AddOrder(isDesc ? Order.Desc(pName) : Order.Asc(pName));
             }
+        }
+
+        protected void DisjunctionAddCriterion(NHibernateDisjunction disjunction, string propertyName, object propertyValue)
+        {
+            if (propertyValue == null)
+            {
+                disjunction.Add(NHibernateRestrictions.IsNull(propertyName));
+            }
+            else
+            {
+                disjunction.Add(NHibernateRestrictions.Eq(propertyName, propertyValue));
+            }
+        }
+
+        protected void CriteriaAddCriterion(ICriteria criteria, string propertyName, object propertyValue)
+        {
+            if (propertyValue == null)
+            {
+                criteria.Add(NHibernateRestrictions.IsNull(propertyName));
+            }
+            else
+            {
+                criteria.Add(NHibernateRestrictions.Eq(propertyName, propertyValue));
+            }
+        }
+
+        private static void CriteriaAddFilterAndSetFirstResultAndMaxResults(ICriteria criteria, Dddml.Support.Criterion.ICriterion filter, int firstResult, int maxResults)
+        {
+            if (filter != null)
+            {
+                NHibernateICriterion hc = CriterionUtils.ToNHibernateCriterion(filter);
+                criteria.Add(hc);
+            }
+            criteria.SetFirstResult(firstResult);
+            criteria.SetMaxResults(maxResults);
         }
 
 	}

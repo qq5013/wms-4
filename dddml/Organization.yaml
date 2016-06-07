@@ -71,7 +71,7 @@ trees:
     
     OrganizationTree:
     
-      nodeType: Organization
+      nodeContentType: Organization
       
       structureType: OrganizationStructure
       

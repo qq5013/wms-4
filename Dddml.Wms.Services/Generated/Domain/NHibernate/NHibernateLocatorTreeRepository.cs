@@ -43,12 +43,13 @@ namespace Dddml.Wms.Domain.NHibernate
         private IEnumerable<ILocatorTree> ToLocatorTreeCollection(IEnumerable<ILocatorState> states)
         {
             var trees = new List<LocatorTree>();
-            foreach (var r in states)
+            foreach (var state in states)
             {
-                trees.Add(new LocatorTree(r, this));
+                trees.Add(new LocatorTree(state, this));
             }
             return trees;
         }
+
 
     }
 

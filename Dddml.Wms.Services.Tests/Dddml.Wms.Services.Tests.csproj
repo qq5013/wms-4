@@ -81,6 +81,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OrganizationTreeTests.cs" />
     <Compile Include="LocatorTreeTests.cs" />
     <Compile Include="InOutTests.cs" />
     <Compile Include="AttributeSetBuilderTests.cs" />

@@ -5,6 +5,10 @@
     <property name="LocatorStateRepository" ref="locatorStateRepository"/>
   </object>
 
+  <object id="organizationTreeRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateOrganizationTreeRepository, Dddml.Wms.Services">
+    <property name="OrganizationStateRepository" ref="organizationStateRepository"/>
+    <property name="OrganizationStructureStateRepository" ref="organizationStructureStateRepository"/>
+  </object>
 
 
 </objects>

@@ -72,7 +72,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\AttributeSetInstanceIdGenerator.cs" />
-    <Compile Include="Domain\NHibernate\NHibernateOrganizationTreeRepository.cs" />
     <Compile Include="Domain\Services\NHibernate\AttributeSetService.cs" />
     <Compile Include="Generated\Domain\NHibernate\AttributeApplicationService.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
@@ -499,7 +498,9 @@
       <Name>Dddml.Wms.Common</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Domain\NHibernate\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

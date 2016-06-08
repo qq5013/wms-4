@@ -81,6 +81,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DdlFix.cs" />
     <Compile Include="OrganizationTreeTests.cs" />
     <Compile Include="LocatorTreeTests.cs" />
     <Compile Include="InOutTests.cs" />
@@ -109,6 +110,50 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sql\AddStateIdForeignKeyConstraints.sql">
+      <DependentUpon>GenerateBoundedContextStateIdForeignKeyConstraints.tt</DependentUpon>
+    </Content>
+    <Content Include="Sql\CreateRViews.sql">
+      <DependentUpon>GenerateCreateRViews.tt</DependentUpon>
+    </Content>
+    <Content Include="Sql\DropRViewNameConflictedTables.sql">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DropRViewNameConflictedTables.tt</DependentUpon>
+    </Content>
+    <Content Include="Sql\DropRViewNameConflictedTables.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DropRViewNameConflictedTables.sql</LastGenOutput>
+      <LastOutputs>.\DropRViewNameConflictedTables.sql</LastOutputs>
+    </Content>
+    <Content Include="Sql\GenerateBoundedContextStateIdForeignKeyConstraints.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GenerateBoundedContextStateIdForeignKeyConstraints.txt</LastGenOutput>
+      <LastOutputs>
+.\AddStateIdForeignKeyConstraints.sql
+.\GenerateBoundedContextStateIdForeignKeyConstraints.txt
+</LastOutputs>
+    </Content>
+    <Content Include="Sql\GenerateBoundedContextStateIdForeignKeyConstraints.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenerateBoundedContextStateIdForeignKeyConstraints.tt</DependentUpon>
+    </Content>
+    <Content Include="Sql\GenerateCreateRViews.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GenerateCreateRViews.txt</LastGenOutput>
+      <LastOutputs>
+.\CreateRViews.sql
+.\GenerateCreateRViews.txt
+</LastOutputs>
+    </Content>
+    <Content Include="Sql\GenerateCreateRViews.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenerateCreateRViews.tt</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

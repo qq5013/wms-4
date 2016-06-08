@@ -35,7 +35,36 @@
 	}
 
 	boundedContext.Refresh();
-	boundedContext.ReplacePropertyEnumTypeWithBaseType();	
+	//boundedContext.ReplacePropertyEnumTypeWithBaseType();	
+
+// ////////////////////////////
+	foreach (var aggregate in boundedContext.Aggregates.Values)
+	{
+		var mvObjcts = aggregate.GenerateAllEntityMViewObjects();
+		foreach (var mvo in mvObjcts)
+		{
+			boundedContext.Aggregates.Add(mvo.Name, mvo);
+			mvo.GenerateAggregateStateEventIdValueObject();
+			mvo.SetAggregateDomainSubNamespaceName("MViews");
+			mvo.SetStateDatabaseTableNameFormat("{0}s");
+			mvo.SetUsingRViewAsMView(true);
+		} 
+	}
+
+	boundedContext.Refresh();
+	boundedContext.ReplacePropertyEnumTypeWithBaseType();
+
+	var mviewObjects = new List<Aggregate>();
+	foreach (var aggregate in boundedContext.Aggregates.Values)
+	{
+		if (aggregate.IsMViewObject())
+		{
+			mviewObjects.Add(aggregate);
+		}
+	}
+
+// ////////////////////////////
+
 
 #>
 <#+

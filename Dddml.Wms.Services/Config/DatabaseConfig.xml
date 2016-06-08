@@ -21,7 +21,7 @@
         <!--<entry key="connection.driver_class" value="NHibernate.Driver.MySqlDataDriver"/>-->
         <entry key="use_outer_join" value="true"/>
         <entry key="show_sql" value="true"/>
-        <entry key="hbm2ddl.auto" value="create"/>
+        <entry key="hbm2ddl.auto" value="none"/>
         <entry key="hibernate.current_session_context_class"
               value="Spring.Data.NHibernate.SpringSessionContext, Spring.Data.NHibernate4"/>
         <!--

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+				   assembly="Dddml.Wms.Common" 
+				   namespace="Dddml.Wms.Domain">
+  
+  <class name="Dddml.Wms.Domain.AttributeUseMvoState" table="AttributeUse_RV">
+
+	<composite-id name="AttributeSetAttributeUseId" class="Dddml.Wms.Domain.AttributeSetAttributeUseId">
+		<key-property name="AttributeSetId" column="AttributeSetAttributeUseIdAttributeSetId" length="50"/>
+		<key-property name="AttributeId" column="AttributeSetAttributeUseIdAttributeId" length="50"/>
+	</composite-id>
+
+	<version name="AttributeSetVersion" type="long" unsaved-value="0"/>
+
+	<property name="SequenceNumber"  />
+
+	<property name="Version"  />
+
+	<property name="CreatedBy"  />
+
+	<property name="CreatedAt"  />
+
+	<property name="UpdatedBy"  />
+
+	<property name="UpdatedAt"  />
+
+	<property name="Active"  />
+
+	<property name="Deleted"  />
+
+	<property name="AttributeSetName"  />
+
+	<property name="AttributeSetOrganizationId"  />
+
+	<property name="AttributeSetDescription"  />
+
+	<property name="AttributeSetSerialNumberAttributeId"  />
+
+	<property name="AttributeSetLotAttributeId"  />
+
+	<property name="AttributeSetReferenceId"  />
+
+	<property name="AttributeSetCreatedBy"  />
+
+	<property name="AttributeSetCreatedAt"  />
+
+	<property name="AttributeSetUpdatedBy"  />
+
+	<property name="AttributeSetUpdatedAt"  />
+
+	<property name="AttributeSetActive"  />
+
+	<property name="AttributeSetDeleted"  />
+
+
+  </class>
+  
+</hibernate-mapping>
+

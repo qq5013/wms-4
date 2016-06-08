@@ -85,7 +85,19 @@
     <Compile Include="Generated\Domain\NHibernate\AttributeSetInstanceExtensionFieldGroupApplicationService.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\NHibernate\AttributeSetInstanceExtensionFieldMvoApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\AttributeUseMvoApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\AttributeValueMvoApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\NHibernate\InOutApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\InOutLineMvoApplicationService.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\NHibernate\LocatorApplicationService.cs">
@@ -106,6 +118,12 @@
     <Compile Include="Generated\Domain\NHibernate\NHibernateAttributeSetInstanceExtensionFieldGroupStateRepository.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateAttributeSetInstanceExtensionFieldMvoEventStore.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateAttributeSetInstanceExtensionFieldMvoStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\NHibernate\NHibernateAttributeSetInstanceExtensionFieldStateDao.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
@@ -121,10 +139,22 @@
     <Compile Include="Generated\Domain\NHibernate\NHibernateAttributeStateRepository.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateAttributeUseMvoEventStore.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateAttributeUseMvoStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\NHibernate\NHibernateAttributeUseStateDao.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\NHibernate\NHibernateAttributeUseStateEventDao.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateAttributeValueMvoEventStore.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateAttributeValueMvoStateRepository.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\NHibernate\NHibernateAttributeValueStateDao.cs">
@@ -134,6 +164,12 @@
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\NHibernate\NHibernateInOutEventStore.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateInOutLineMvoEventStore.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateInOutLineMvoStateRepository.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\NHibernate\NHibernateInOutLineStateDao.cs">
@@ -269,6 +305,15 @@
     <EmbeddedResource Include="Config\AggregatesIdGeneratorConfig.xml">
       <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Config\AttributeValueMvoAggregateConfig.xml">
+      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\AttributeUseMvoAggregateConfig.xml">
+      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\AttributeSetInstanceExtensionFieldMvoAggregateConfig.xml">
+      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
+    </EmbeddedResource>
     <Content Include="Config\GenerateTreesConfig.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GenerateTreesConfig.txt</LastGenOutput>
@@ -303,6 +348,9 @@
     <EmbeddedResource Include="Config\OrganizationStructureAggregateConfig.xml">
       <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Config\InOutLineMvoAggregateConfig.xml">
+      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
+    </EmbeddedResource>
     <Content Include="Generated\Domain\NHibernate\GenerateNHibernateTrees.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -317,12 +365,32 @@
 .\NHibernateOrganizationTreeRepository.cs
 </LastOutputs>
     </Content>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeValueMvoState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeValueMvoStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeUseMvoState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeUseMvoStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeSetInstanceExtensionFieldMvoState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeSetInstanceExtensionFieldMvoStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
     <Content Include="Generated\NHibernate\Mappings\GenerateAggregatesHbm.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GenerateAggregatesHbm.txt</LastGenOutput>
       <LastOutputs>
 .\AttributeSetInstanceExtensionFieldGroupState.hbm.xml
 .\AttributeSetInstanceExtensionFieldGroupStateEvent.hbm.xml
+.\AttributeSetInstanceExtensionFieldMvoState.hbm.xml
+.\AttributeSetInstanceExtensionFieldMvoStateEvent.hbm.xml
 .\AttributeSetInstanceExtensionFieldState.hbm.xml
 .\AttributeSetInstanceExtensionFieldStateEvent.hbm.xml
 .\AttributeSetInstanceState.hbm.xml
@@ -331,11 +399,17 @@
 .\AttributeSetStateEvent.hbm.xml
 .\AttributeState.hbm.xml
 .\AttributeStateEvent.hbm.xml
+.\AttributeUseMvoState.hbm.xml
+.\AttributeUseMvoStateEvent.hbm.xml
 .\AttributeUseState.hbm.xml
 .\AttributeUseStateEvent.hbm.xml
+.\AttributeValueMvoState.hbm.xml
+.\AttributeValueMvoStateEvent.hbm.xml
 .\AttributeValueState.hbm.xml
 .\AttributeValueStateEvent.hbm.xml
 .\GenerateAggregatesHbm.txt
+.\InOutLineMvoState.hbm.xml
+.\InOutLineMvoStateEvent.hbm.xml
 .\InOutLineState.hbm.xml
 .\InOutLineStateEvent.hbm.xml
 .\InOutState.hbm.xml
@@ -400,6 +474,12 @@
     <EmbeddedResource Include="Generated\NHibernate\Mappings\OrganizationStructureStateEvent.hbm.xml">
       <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\InOutLineMvoState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\InOutLineMvoStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
     <Content Include="LoadBoundedContext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>LoadBoundedContext.txt</LastGenOutput>
@@ -418,8 +498,12 @@
 .\AttributeSetAggregateConfig.xml
 .\AttributeSetInstanceAggregateConfig.xml
 .\AttributeSetInstanceExtensionFieldGroupAggregateConfig.xml
+.\AttributeSetInstanceExtensionFieldMvoAggregateConfig.xml
+.\AttributeUseMvoAggregateConfig.xml
+.\AttributeValueMvoAggregateConfig.xml
 .\GenerateAggregatesConfig.txt
 .\InOutAggregateConfig.xml
+.\InOutLineMvoAggregateConfig.xml
 .\LocatorAggregateConfig.xml
 .\OrganizationAggregateConfig.xml
 .\OrganizationStructureAggregateConfig.xml
@@ -440,24 +524,36 @@
 .\AttributeSetApplicationService.cs
 .\AttributeSetInstanceApplicationService.cs
 .\AttributeSetInstanceExtensionFieldGroupApplicationService.cs
+.\AttributeSetInstanceExtensionFieldMvoApplicationService.cs
+.\AttributeUseMvoApplicationService.cs
+.\AttributeValueMvoApplicationService.cs
 .\GenerateBoundedContextDomainNHibernateAggregates.txt
 .\InOutApplicationService.cs
+.\InOutLineMvoApplicationService.cs
 .\LocatorApplicationService.cs
 .\NHibernateAttributeEventStore.cs
 .\NHibernateAttributeSetEventStore.cs
 .\NHibernateAttributeSetInstanceEventStore.cs
 .\NHibernateAttributeSetInstanceExtensionFieldGroupEventStore.cs
 .\NHibernateAttributeSetInstanceExtensionFieldGroupStateRepository.cs
+.\NHibernateAttributeSetInstanceExtensionFieldMvoEventStore.cs
+.\NHibernateAttributeSetInstanceExtensionFieldMvoStateRepository.cs
 .\NHibernateAttributeSetInstanceExtensionFieldStateDao.cs
 .\NHibernateAttributeSetInstanceExtensionFieldStateEventDao.cs
 .\NHibernateAttributeSetInstanceStateRepository.cs
 .\NHibernateAttributeSetStateRepository.cs
 .\NHibernateAttributeStateRepository.cs
+.\NHibernateAttributeUseMvoEventStore.cs
+.\NHibernateAttributeUseMvoStateRepository.cs
 .\NHibernateAttributeUseStateDao.cs
 .\NHibernateAttributeUseStateEventDao.cs
+.\NHibernateAttributeValueMvoEventStore.cs
+.\NHibernateAttributeValueMvoStateRepository.cs
 .\NHibernateAttributeValueStateDao.cs
 .\NHibernateAttributeValueStateEventDao.cs
 .\NHibernateInOutEventStore.cs
+.\NHibernateInOutLineMvoEventStore.cs
+.\NHibernateInOutLineMvoStateRepository.cs
 .\NHibernateInOutLineStateDao.cs
 .\NHibernateInOutLineStateEventDao.cs
 .\NHibernateInOutStateRepository.cs

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+
+  <object id="attributeUseMvoStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeUseMvoStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="attributeUseMvoEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeUseMvoEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="attributeUseMvoApplicationService" type="Dddml.Wms.Domain.NHibernate.AttributeUseMvoApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="attributeUseMvoEventStore"/>
+    <constructor-arg ref="attributeUseMvoStateRepository"/>
+  </object>
+
+</objects>
+

@@ -21,6 +21,7 @@ aggregates:
 
     # --------------- aggregate ---------------
     AttributeSetInstanceExtensionFieldGroup:
+      abbreviatedName: AttrSetInstEFGroup
 
       id:
         name: Id

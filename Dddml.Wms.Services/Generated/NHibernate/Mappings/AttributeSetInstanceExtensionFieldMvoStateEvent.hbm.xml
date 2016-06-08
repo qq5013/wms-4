@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+                   assembly="Dddml.Wms.Common" 
+                   namespace="Dddml.Wms.Domain">
+  
+  <class name="AttributeSetInstanceExtensionFieldMvoStateEventBase" table="AttributeSetInstanceExtensionFieldMvoStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="StateEventId" class="Dddml.Wms.Domain.AttributeSetInstanceExtensionFieldMvoStateEventId">
+		<key-property name="AttributeSetInstanceExtensionFieldIdGroupId" column="AttributeSetInstanceExtensionFieldIdGroupId" length="50"/>
+		<key-property name="AttributeSetInstanceExtensionFieldIdIndex" column="AttributeSetInstanceExtensionFieldIdIndex" length="50"/>
+		<key-property name="AttrSetInstEFGroupVersion" column="AttrSetInstEFGroupVersion" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="String" />
+
+	<property name="Name" unique-key="UniqueName" />
+
+	<property name="Type"  />
+
+	<property name="Length"  />
+
+	<property name="Alias" unique-key="UniqueAlias" />
+
+	<property name="Description"  />
+
+	<property name="Version"  />
+
+	<property name="Active"  />
+
+	<property name="AttrSetInstEFGroupFieldType"  />
+
+	<property name="AttrSetInstEFGroupFieldLength"  />
+
+	<property name="AttrSetInstEFGroupFieldCount"  />
+
+	<property name="AttrSetInstEFGroupNameFormat"  />
+
+	<property name="AttrSetInstEFGroupDescription"  />
+
+	<property name="AttrSetInstEFGroupCreatedBy"  />
+
+	<property name="AttrSetInstEFGroupCreatedAt"  />
+
+	<property name="AttrSetInstEFGroupUpdatedBy"  />
+
+	<property name="AttrSetInstEFGroupUpdatedAt"  />
+
+	<property name="AttrSetInstEFGroupActive"  />
+
+	<property name="AttrSetInstEFGroupDeleted"  />
+
+
+    <property name="CreatedBy" />
+
+    <property name="CreatedAt" />
+
+    <property name="CommandId" />
+
+
+    <subclass name="AttributeSetInstanceExtensionFieldMvoStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="AttributeSetInstanceExtensionFieldMvoStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="IsPropertyNameRemoved" />
+
+        <property name="IsPropertyTypeRemoved" />
+
+        <property name="IsPropertyLengthRemoved" />
+
+        <property name="IsPropertyAliasRemoved" />
+
+        <property name="IsPropertyDescriptionRemoved" />
+
+        <property name="IsPropertyVersionRemoved" />
+
+        <property name="IsPropertyActiveRemoved" />
+
+        <property name="IsPropertyAttrSetInstEFGroupFieldTypeRemoved" />
+
+        <property name="IsPropertyAttrSetInstEFGroupFieldLengthRemoved" />
+
+        <property name="IsPropertyAttrSetInstEFGroupFieldCountRemoved" />
+
+        <property name="IsPropertyAttrSetInstEFGroupNameFormatRemoved" />
+
+        <property name="IsPropertyAttrSetInstEFGroupDescriptionRemoved" />
+
+        <property name="IsPropertyAttrSetInstEFGroupCreatedByRemoved" />
+
+        <property name="IsPropertyAttrSetInstEFGroupCreatedAtRemoved" />
+
+        <property name="IsPropertyAttrSetInstEFGroupUpdatedByRemoved" />
+
+        <property name="IsPropertyAttrSetInstEFGroupUpdatedAtRemoved" />
+
+        <property name="IsPropertyAttrSetInstEFGroupActiveRemoved" />
+
+        <property name="IsPropertyAttrSetInstEFGroupDeletedRemoved" />
+
+
+    </subclass>
+
+    <subclass name="AttributeSetInstanceExtensionFieldMvoStateDeleted"  discriminator-value="Deleted">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

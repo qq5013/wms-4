@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+				   assembly="Dddml.Wms.Common" 
+				   namespace="Dddml.Wms.Domain">
+  
+  <class name="Dddml.Wms.Domain.AttributeValueMvoState" table="AttributeValue_RV">
+
+	<composite-id name="AttributeValueId" class="Dddml.Wms.Domain.AttributeValueId">
+		<key-property name="AttributeId" column="AttributeValueIdAttributeId" length="50"/>
+		<key-property name="Value" column="AttributeValueIdValue" length="50"/>
+	</composite-id>
+
+	<version name="AttributeVersion" type="long" unsaved-value="0"/>
+
+	<property name="Name"  />
+
+	<property name="Description"  />
+
+	<property name="ReferenceId"  />
+
+	<property name="Version"  />
+
+	<property name="CreatedBy"  />
+
+	<property name="CreatedAt"  />
+
+	<property name="UpdatedBy"  />
+
+	<property name="UpdatedAt"  />
+
+	<property name="Active"  />
+
+	<property name="Deleted"  />
+
+	<property name="AttributeName"  />
+
+	<property name="AttributeOrganizationId"  />
+
+	<property name="AttributeDescription"  />
+
+	<property name="AttributeIsMandatory"  />
+
+	<property name="AttributeIsInstanceAttribute"  />
+
+	<property name="AttributeAttributeValueType"  />
+
+	<property name="AttributeAttributeValueLength"  />
+
+	<property name="AttributeIsList"  />
+
+	<property name="AttributeFieldName"  />
+
+	<property name="AttributeReferenceId"  />
+
+	<property name="AttributeCreatedBy"  />
+
+	<property name="AttributeCreatedAt"  />
+
+	<property name="AttributeUpdatedBy"  />
+
+	<property name="AttributeUpdatedAt"  />
+
+	<property name="AttributeActive"  />
+
+	<property name="AttributeDeleted"  />
+
+
+  </class>
+  
+</hibernate-mapping>
+

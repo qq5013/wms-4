@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+                   assembly="Dddml.Wms.Common" 
+                   namespace="Dddml.Wms.Domain">
+  
+  <class name="AttributeValueMvoStateEventBase" table="AttributeValueMvoStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="StateEventId" class="Dddml.Wms.Domain.AttributeValueMvoStateEventId">
+		<key-property name="AttributeValueIdAttributeId" column="AttributeValueIdAttributeId" length="50"/>
+		<key-property name="AttributeValueIdValue" column="AttributeValueIdValue" length="50"/>
+		<key-property name="AttributeVersion" column="AttributeVersion" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="String" />
+
+	<property name="Name"  />
+
+	<property name="Description"  />
+
+	<property name="ReferenceId"  />
+
+	<property name="Version"  />
+
+	<property name="Active"  />
+
+	<property name="AttributeName"  />
+
+	<property name="AttributeOrganizationId"  />
+
+	<property name="AttributeDescription"  />
+
+	<property name="AttributeIsMandatory"  />
+
+	<property name="AttributeIsInstanceAttribute"  />
+
+	<property name="AttributeAttributeValueType"  />
+
+	<property name="AttributeAttributeValueLength"  />
+
+	<property name="AttributeIsList"  />
+
+	<property name="AttributeFieldName"  />
+
+	<property name="AttributeReferenceId"  />
+
+	<property name="AttributeCreatedBy"  />
+
+	<property name="AttributeCreatedAt"  />
+
+	<property name="AttributeUpdatedBy"  />
+
+	<property name="AttributeUpdatedAt"  />
+
+	<property name="AttributeActive"  />
+
+	<property name="AttributeDeleted"  />
+
+
+    <property name="CreatedBy" />
+
+    <property name="CreatedAt" />
+
+    <property name="CommandId" />
+
+
+    <subclass name="AttributeValueMvoStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="AttributeValueMvoStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="IsPropertyNameRemoved" />
+
+        <property name="IsPropertyDescriptionRemoved" />
+
+        <property name="IsPropertyReferenceIdRemoved" />
+
+        <property name="IsPropertyVersionRemoved" />
+
+        <property name="IsPropertyActiveRemoved" />
+
+        <property name="IsPropertyAttributeNameRemoved" />
+
+        <property name="IsPropertyAttributeOrganizationIdRemoved" />
+
+        <property name="IsPropertyAttributeDescriptionRemoved" />
+
+        <property name="IsPropertyAttributeIsMandatoryRemoved" />
+
+        <property name="IsPropertyAttributeIsInstanceAttributeRemoved" />
+
+        <property name="IsPropertyAttributeAttributeValueTypeRemoved" />
+
+        <property name="IsPropertyAttributeAttributeValueLengthRemoved" />
+
+        <property name="IsPropertyAttributeIsListRemoved" />
+
+        <property name="IsPropertyAttributeFieldNameRemoved" />
+
+        <property name="IsPropertyAttributeReferenceIdRemoved" />
+
+        <property name="IsPropertyAttributeCreatedByRemoved" />
+
+        <property name="IsPropertyAttributeCreatedAtRemoved" />
+
+        <property name="IsPropertyAttributeUpdatedByRemoved" />
+
+        <property name="IsPropertyAttributeUpdatedAtRemoved" />
+
+        <property name="IsPropertyAttributeActiveRemoved" />
+
+        <property name="IsPropertyAttributeDeletedRemoved" />
+
+
+    </subclass>
+
+    <subclass name="AttributeValueMvoStateDeleted"  discriminator-value="Deleted">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

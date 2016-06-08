@@ -1,0 +1,25 @@
+<#@ template language="C#" debug="True" #>
+<#@ output extension="sql" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="Dddml.Core.Domain" #>
+<#@ include file="T4Toolbox.tt" #>
+<#@ include file="$(SolutionDir)Dddml.Wms.Common\Generated\LoadBoundedContext.tt" #>
+<#
+
+ 	var aggregates = new List<Aggregate>();
+	foreach (var agg in mviewObjects)
+	{
+		aggregates.Add(agg);
+	} 
+	
+	foreach (var aggregate in aggregates)
+	{
+		var originEntity = aggregate.OriginEntity;
+		var rviewName = originEntity.GetDatabaseRViewName();
+#>
+DROP TABLE `<#= rviewName #>`;
+<#
+
+	}
+
+#>

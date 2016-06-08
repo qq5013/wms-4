@@ -77,10 +77,22 @@
     <Compile Include="Generated\AttributeSetInstanceExtensionFieldGroupApplicationServiceProxy.cs">
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\AttributeSetInstanceExtensionFieldMvoApplicationServiceProxy.cs">
+      <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\AttributeUseMvoApplicationServiceProxy.cs">
+      <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\AttributeValueMvoApplicationServiceProxy.cs">
+      <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\DddmlWmsRamlClient.cs">
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\InOutApplicationServiceProxy.cs">
+      <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\InOutLineMvoApplicationServiceProxy.cs">
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\LocatorApplicationServiceProxy.cs">
@@ -109,9 +121,13 @@
 .\AttributeSetApplicationServiceProxy.cs
 .\AttributeSetInstanceApplicationServiceProxy.cs
 .\AttributeSetInstanceExtensionFieldGroupApplicationServiceProxy.cs
+.\AttributeSetInstanceExtensionFieldMvoApplicationServiceProxy.cs
+.\AttributeUseMvoApplicationServiceProxy.cs
+.\AttributeValueMvoApplicationServiceProxy.cs
 .\DddmlWmsRamlClient.cs
 .\GenerateRamlClientProxies.txt
 .\InOutApplicationServiceProxy.cs
+.\InOutLineMvoApplicationServiceProxy.cs
 .\LocatorApplicationServiceProxy.cs
 .\OrganizationApplicationServiceProxy.cs
 .\OrganizationStructureApplicationServiceProxy.cs

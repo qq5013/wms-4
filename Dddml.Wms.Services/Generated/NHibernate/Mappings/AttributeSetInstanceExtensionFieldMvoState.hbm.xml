@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+				   assembly="Dddml.Wms.Common" 
+				   namespace="Dddml.Wms.Domain">
+  
+  <class name="Dddml.Wms.Domain.AttributeSetInstanceExtensionFieldMvoState" table="AttributeSetInstanceExtensionField_RV">
+
+	<composite-id name="AttributeSetInstanceExtensionFieldId" class="Dddml.Wms.Domain.AttributeSetInstanceExtensionFieldId">
+		<key-property name="GroupId" column="AttributeSetInstanceExtensionFieldIdGroupId" length="50"/>
+		<key-property name="Index" column="AttributeSetInstanceExtensionFieldIdIndex" length="50"/>
+	</composite-id>
+
+	<version name="AttrSetInstEFGroupVersion" type="long" unsaved-value="0"/>
+
+	<property name="Name" unique-key="UniqueName" />
+
+	<property name="Type"  />
+
+	<property name="Length"  />
+
+	<property name="Alias" unique-key="UniqueAlias" />
+
+	<property name="Description"  />
+
+	<property name="Version"  />
+
+	<property name="CreatedBy"  />
+
+	<property name="CreatedAt"  />
+
+	<property name="UpdatedBy"  />
+
+	<property name="UpdatedAt"  />
+
+	<property name="Active"  />
+
+	<property name="Deleted"  />
+
+	<property name="AttrSetInstEFGroupFieldType"  />
+
+	<property name="AttrSetInstEFGroupFieldLength"  />
+
+	<property name="AttrSetInstEFGroupFieldCount"  />
+
+	<property name="AttrSetInstEFGroupNameFormat"  />
+
+	<property name="AttrSetInstEFGroupDescription"  />
+
+	<property name="AttrSetInstEFGroupCreatedBy"  />
+
+	<property name="AttrSetInstEFGroupCreatedAt"  />
+
+	<property name="AttrSetInstEFGroupUpdatedBy"  />
+
+	<property name="AttrSetInstEFGroupUpdatedAt"  />
+
+	<property name="AttrSetInstEFGroupActive"  />
+
+	<property name="AttrSetInstEFGroupDeleted"  />
+
+
+  </class>
+  
+</hibernate-mapping>
+

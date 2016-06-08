@@ -163,6 +163,42 @@
     <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldIdFlattenedDtoFormatter.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldMvoAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldMvoApplicationServiceBase.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldMvoApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldMvoCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldMvoCommandDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldMvoState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldMvoStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldMvoStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldMvoStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldMvoStateEventId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldMvoStateEventIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldMvoStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldState.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -256,6 +292,42 @@
     <Compile Include="Generated\Domain\AttributeUseCommandDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\AttributeUseMvoAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeUseMvoApplicationServiceBase.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeUseMvoApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeUseMvoCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeUseMvoCommandDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeUseMvoState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeUseMvoStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeUseMvoStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeUseMvoStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeUseMvoStateEventId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeUseMvoStateEventIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeUseMvoStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\AttributeUseState.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -296,6 +368,42 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeValueIdFlattenedDtoFormatter.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeValueMvoAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeValueMvoApplicationServiceBase.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeValueMvoApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeValueMvoCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeValueMvoCommandDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeValueMvoState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeValueMvoStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeValueMvoStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeValueMvoStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeValueMvoStateEventId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeValueMvoStateEventIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeValueMvoStateProperties.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeValueState.cs">
@@ -391,6 +499,30 @@
     <Compile Include="Generated\Domain\IAttributeSetInstanceExtensionFieldGroupStateRepository.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\IAttributeSetInstanceExtensionFieldMvoAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeSetInstanceExtensionFieldMvoApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeSetInstanceExtensionFieldMvoApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeSetInstanceExtensionFieldMvoCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeSetInstanceExtensionFieldMvoState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeSetInstanceExtensionFieldMvoStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeSetInstanceExtensionFieldMvoStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeSetInstanceExtensionFieldMvoStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\IAttributeSetInstanceExtensionFieldState.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -448,6 +580,30 @@
     <Compile Include="Generated\Domain\IAttributeUseCommand.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\IAttributeUseMvoAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeUseMvoApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeUseMvoApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeUseMvoCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeUseMvoState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeUseMvoStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeUseMvoStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeUseMvoStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\IAttributeUseState.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -467,6 +623,30 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\IAttributeValueCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeValueMvoAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeValueMvoApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeValueMvoApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeValueMvoCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeValueMvoState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeValueMvoStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeValueMvoStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAttributeValueMvoStateRepository.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\IAttributeValueState.cs">
@@ -500,6 +680,30 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\IInOutLineCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IInOutLineMvoAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IInOutLineMvoApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IInOutLineMvoApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IInOutLineMvoCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IInOutLineMvoState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IInOutLineMvoStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IInOutLineMvoStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IInOutLineMvoStateRepository.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\IInOutLineState.cs">
@@ -593,6 +797,42 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\InOutLineIdFlattenedDtoFormatter.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutLineMvoAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutLineMvoApplicationServiceBase.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutLineMvoApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutLineMvoCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutLineMvoCommandDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutLineMvoState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutLineMvoStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutLineMvoStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutLineMvoStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutLineMvoStateEventId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutLineMvoStateEventIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutLineMvoStateProperties.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\InOutLineState.cs">
@@ -790,6 +1030,9 @@
     <Compile Include="Generated\Domain\Metadata\AttributeSetInstanceExtensionFieldMetadata.cs">
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\Metadata\AttributeSetInstanceExtensionFieldMvoMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\Metadata\AttributeSetInstanceMetadata.cs">
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
     </Compile>
@@ -799,10 +1042,19 @@
     <Compile Include="Generated\Domain\Metadata\AttributeUseMetadata.cs">
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\Metadata\AttributeUseMvoMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\Metadata\AttributeValueMetadata.cs">
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\Metadata\AttributeValueMvoMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\Metadata\InOutLineMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\Metadata\InOutLineMvoMetadata.cs">
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\Metadata\InOutMetadata.cs">
@@ -1108,6 +1360,18 @@
 .\AttributeSetInstanceExtensionFieldIdDto.cs
 .\AttributeSetInstanceExtensionFieldIdFlattenedDto.cs
 .\AttributeSetInstanceExtensionFieldIdFlattenedDtoFormatter.cs
+.\AttributeSetInstanceExtensionFieldMvoAggregate.cs
+.\AttributeSetInstanceExtensionFieldMvoApplicationServiceBase.cs
+.\AttributeSetInstanceExtensionFieldMvoApplicationServiceFactory.cs
+.\AttributeSetInstanceExtensionFieldMvoCommand.cs
+.\AttributeSetInstanceExtensionFieldMvoCommandDto.cs
+.\AttributeSetInstanceExtensionFieldMvoState.cs
+.\AttributeSetInstanceExtensionFieldMvoStateDto.cs
+.\AttributeSetInstanceExtensionFieldMvoStateEvent.cs
+.\AttributeSetInstanceExtensionFieldMvoStateEventDto.cs
+.\AttributeSetInstanceExtensionFieldMvoStateEventId.cs
+.\AttributeSetInstanceExtensionFieldMvoStateEventIdDto.cs
+.\AttributeSetInstanceExtensionFieldMvoStateProperties.cs
 .\AttributeSetInstanceExtensionFieldState.cs
 .\AttributeSetInstanceExtensionFieldStateDto.cs
 .\AttributeSetInstanceExtensionFieldStateEvent.cs
@@ -1139,6 +1403,18 @@
 .\AttributeStateProperties.cs
 .\AttributeUseCommand.cs
 .\AttributeUseCommandDto.cs
+.\AttributeUseMvoAggregate.cs
+.\AttributeUseMvoApplicationServiceBase.cs
+.\AttributeUseMvoApplicationServiceFactory.cs
+.\AttributeUseMvoCommand.cs
+.\AttributeUseMvoCommandDto.cs
+.\AttributeUseMvoState.cs
+.\AttributeUseMvoStateDto.cs
+.\AttributeUseMvoStateEvent.cs
+.\AttributeUseMvoStateEventDto.cs
+.\AttributeUseMvoStateEventId.cs
+.\AttributeUseMvoStateEventIdDto.cs
+.\AttributeUseMvoStateProperties.cs
 .\AttributeUseState.cs
 .\AttributeUseStateDto.cs
 .\AttributeUseStateEvent.cs
@@ -1153,6 +1429,18 @@
 .\AttributeValueIdDto.cs
 .\AttributeValueIdFlattenedDto.cs
 .\AttributeValueIdFlattenedDtoFormatter.cs
+.\AttributeValueMvoAggregate.cs
+.\AttributeValueMvoApplicationServiceBase.cs
+.\AttributeValueMvoApplicationServiceFactory.cs
+.\AttributeValueMvoCommand.cs
+.\AttributeValueMvoCommandDto.cs
+.\AttributeValueMvoState.cs
+.\AttributeValueMvoStateDto.cs
+.\AttributeValueMvoStateEvent.cs
+.\AttributeValueMvoStateEventDto.cs
+.\AttributeValueMvoStateEventId.cs
+.\AttributeValueMvoStateEventIdDto.cs
+.\AttributeValueMvoStateProperties.cs
 .\AttributeValueState.cs
 .\AttributeValueStateDto.cs
 .\AttributeValueStateEvent.cs
@@ -1183,6 +1471,14 @@
 .\IAttributeSetInstanceExtensionFieldGroupStateEvent.cs
 .\IAttributeSetInstanceExtensionFieldGroupStateProperties.cs
 .\IAttributeSetInstanceExtensionFieldGroupStateRepository.cs
+.\IAttributeSetInstanceExtensionFieldMvoAggregate.cs
+.\IAttributeSetInstanceExtensionFieldMvoApplicationService.cs
+.\IAttributeSetInstanceExtensionFieldMvoApplicationServiceFactory.cs
+.\IAttributeSetInstanceExtensionFieldMvoCommand.cs
+.\IAttributeSetInstanceExtensionFieldMvoState.cs
+.\IAttributeSetInstanceExtensionFieldMvoStateEvent.cs
+.\IAttributeSetInstanceExtensionFieldMvoStateProperties.cs
+.\IAttributeSetInstanceExtensionFieldMvoStateRepository.cs
 .\IAttributeSetInstanceExtensionFieldState.cs
 .\IAttributeSetInstanceExtensionFieldStateDao.cs
 .\IAttributeSetInstanceExtensionFieldStateEvent.cs
@@ -1202,6 +1498,14 @@
 .\IAttributeStateProperties.cs
 .\IAttributeStateRepository.cs
 .\IAttributeUseCommand.cs
+.\IAttributeUseMvoAggregate.cs
+.\IAttributeUseMvoApplicationService.cs
+.\IAttributeUseMvoApplicationServiceFactory.cs
+.\IAttributeUseMvoCommand.cs
+.\IAttributeUseMvoState.cs
+.\IAttributeUseMvoStateEvent.cs
+.\IAttributeUseMvoStateProperties.cs
+.\IAttributeUseMvoStateRepository.cs
 .\IAttributeUseState.cs
 .\IAttributeUseStateDao.cs
 .\IAttributeUseStateEvent.cs
@@ -1209,6 +1513,14 @@
 .\IAttributeUseStateProperties.cs
 .\IAttributeUseStates.cs
 .\IAttributeValueCommand.cs
+.\IAttributeValueMvoAggregate.cs
+.\IAttributeValueMvoApplicationService.cs
+.\IAttributeValueMvoApplicationServiceFactory.cs
+.\IAttributeValueMvoCommand.cs
+.\IAttributeValueMvoState.cs
+.\IAttributeValueMvoStateEvent.cs
+.\IAttributeValueMvoStateProperties.cs
+.\IAttributeValueMvoStateRepository.cs
 .\IAttributeValueState.cs
 .\IAttributeValueStateDao.cs
 .\IAttributeValueStateEvent.cs
@@ -1220,6 +1532,14 @@
 .\IInOutApplicationServiceFactory.cs
 .\IInOutCommand.cs
 .\IInOutLineCommand.cs
+.\IInOutLineMvoAggregate.cs
+.\IInOutLineMvoApplicationService.cs
+.\IInOutLineMvoApplicationServiceFactory.cs
+.\IInOutLineMvoCommand.cs
+.\IInOutLineMvoState.cs
+.\IInOutLineMvoStateEvent.cs
+.\IInOutLineMvoStateProperties.cs
+.\IInOutLineMvoStateRepository.cs
 .\IInOutLineState.cs
 .\IInOutLineStateDao.cs
 .\IInOutLineStateEvent.cs
@@ -1250,6 +1570,18 @@
 .\InOutLineIdDto.cs
 .\InOutLineIdFlattenedDto.cs
 .\InOutLineIdFlattenedDtoFormatter.cs
+.\InOutLineMvoAggregate.cs
+.\InOutLineMvoApplicationServiceBase.cs
+.\InOutLineMvoApplicationServiceFactory.cs
+.\InOutLineMvoCommand.cs
+.\InOutLineMvoCommandDto.cs
+.\InOutLineMvoState.cs
+.\InOutLineMvoStateDto.cs
+.\InOutLineMvoStateEvent.cs
+.\InOutLineMvoStateEventDto.cs
+.\InOutLineMvoStateEventId.cs
+.\InOutLineMvoStateEventIdDto.cs
+.\InOutLineMvoStateProperties.cs
 .\InOutLineState.cs
 .\InOutLineStateDto.cs
 .\InOutLineStateEvent.cs
@@ -1399,12 +1731,16 @@
 .\AttributeMetadata.cs
 .\AttributeSetInstanceExtensionFieldGroupMetadata.cs
 .\AttributeSetInstanceExtensionFieldMetadata.cs
+.\AttributeSetInstanceExtensionFieldMvoMetadata.cs
 .\AttributeSetInstanceMetadata.cs
 .\AttributeSetMetadata.cs
 .\AttributeUseMetadata.cs
+.\AttributeUseMvoMetadata.cs
 .\AttributeValueMetadata.cs
+.\AttributeValueMvoMetadata.cs
 .\GenerateDomainMetadata.txt
 .\InOutLineMetadata.cs
+.\InOutLineMvoMetadata.cs
 .\InOutMetadata.cs
 .\LocatorMetadata.cs
 .\OrganizationMetadata.cs

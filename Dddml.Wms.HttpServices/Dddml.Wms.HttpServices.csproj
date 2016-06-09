@@ -273,7 +273,7 @@
     <Compile Include="Generated\Controllers\AttributeSetInstanceExtensionFieldGroupsController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Controllers\AttributeSetInstanceExtensionFieldMvoesController.cs">
+    <Compile Include="Generated\Controllers\AttributeSetInstanceExtensionFieldMvosController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Controllers\AttributeSetInstancesController.cs">
@@ -282,13 +282,13 @@
     <Compile Include="Generated\Controllers\AttributeSetsController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Controllers\AttributeUseMvoesController.cs">
+    <Compile Include="Generated\Controllers\AttributeUseMvosController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Controllers\AttributeValueMvoesController.cs">
+    <Compile Include="Generated\Controllers\AttributeValueMvosController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Controllers\InOutLineMvoesController.cs">
+    <Compile Include="Generated\Controllers\InOutLineMvosController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Controllers\InOutsController.cs">
@@ -349,13 +349,13 @@
       <LastOutputs>
 .\AttributesController.cs
 .\AttributeSetInstanceExtensionFieldGroupsController.cs
-.\AttributeSetInstanceExtensionFieldMvoesController.cs
+.\AttributeSetInstanceExtensionFieldMvosController.cs
 .\AttributeSetInstancesController.cs
 .\AttributeSetsController.cs
-.\AttributeUseMvoesController.cs
-.\AttributeValueMvoesController.cs
+.\AttributeUseMvosController.cs
+.\AttributeValueMvosController.cs
 .\GenerateControllers.txt
-.\InOutLineMvoesController.cs
+.\InOutLineMvosController.cs
 .\InOutsController.cs
 .\LocatorsController.cs
 .\OrganizationsController.cs

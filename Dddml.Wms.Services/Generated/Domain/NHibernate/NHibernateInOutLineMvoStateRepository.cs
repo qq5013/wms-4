@@ -71,13 +71,7 @@ namespace Dddml.Wms.Domain.NHibernate
             {
                 CriteriaAddFilter(criteria, filter);
             }
-            if (orders != null)
-            {
-                CriteriaAddOrders(criteria, orders);
-            }
-
-            criteria.SetFirstResult(firstResult);
-            criteria.SetMaxResults(maxResults);
+            CriteriaAddOrdersAndSetFirstResultAndMaxResults(criteria, orders, firstResult, maxResults);
             return criteria.List<InOutLineMvoState>();
         }
 
@@ -86,18 +80,7 @@ namespace Dddml.Wms.Domain.NHibernate
         {
             var criteria = CurrentSession.CreateCriteria<InOutLineMvoState>();
 
-            if (filter != null)
-            {
-                NHibernateICriterion hc = CriterionUtils.ToNHibernateCriterion(filter);
-                criteria.Add(hc);
-            }
-            if (orders != null)
-            {
-                CriteriaAddOrders(criteria, orders);
-            }
-
-            criteria.SetFirstResult(firstResult);
-            criteria.SetMaxResults(maxResults);
+            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
             return criteria.List<InOutLineMvoState>();
         }
 
@@ -161,7 +144,7 @@ namespace Dddml.Wms.Domain.NHibernate
             }
         }
 
-        protected void CriteriaAddOrders(ICriteria criteria, IList<string> orders)
+        protected static void CriteriaAddOrders(ICriteria criteria, IList<string> orders)
         {
             foreach (var order in orders)
             {
@@ -193,6 +176,26 @@ namespace Dddml.Wms.Domain.NHibernate
             {
                 criteria.Add(NHibernateRestrictions.Eq(propertyName, propertyValue));
             }
+        }
+
+        private static void CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(ICriteria criteria, Dddml.Support.Criterion.ICriterion filter, IList<string> orders, int firstResult, int maxResults)
+        {
+            CriteriaAddFilterAndSetFirstResultAndMaxResults(criteria, filter, firstResult, maxResults);
+            if (orders != null)
+            {
+                CriteriaAddOrders(criteria, orders);
+            }
+        }
+		
+        private static void CriteriaAddOrdersAndSetFirstResultAndMaxResults(ICriteria criteria, IList<string> orders, int firstResult, int maxResults)
+        {
+            if (orders != null)
+            {
+                CriteriaAddOrders(criteria, orders);
+            }
+
+            criteria.SetFirstResult(firstResult);
+            criteria.SetMaxResults(maxResults);
         }
 
         private static void CriteriaAddFilterAndSetFirstResultAndMaxResults(ICriteria criteria, Dddml.Support.Criterion.ICriterion filter, int firstResult, int maxResults)

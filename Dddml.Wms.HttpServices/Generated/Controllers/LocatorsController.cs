@@ -45,7 +45,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             var stateDtos = new List<LocatorStateDto>();
             foreach (var s in states)
             {
-                var dto = new LocatorStateDto((LocatorState)s);
+                var dto = s is LocatorStateDto ? (LocatorStateDto)s : new LocatorStateDto((LocatorState)s);
                 if (String.IsNullOrWhiteSpace(fields))
                 {
                     dto.AllFieldsReturned = true;
@@ -315,6 +315,19 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             }
             return orders;
         }
+
+        public static IEnumerable<LocatorStateDto> ToLocatorStateDtoCollection(IEnumerable<string> ids)
+        {
+            var states = new List<LocatorStateDto>();
+            foreach (var id in ids)
+            {
+                var dto = new LocatorStateDto();
+                dto.LocatorId = id;
+                states.Add(dto);
+            }
+            return states;
+        }
+
     }
 
 }

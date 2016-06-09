@@ -45,7 +45,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             var stateDtos = new List<AttributeValueMvoStateDto>();
             foreach (var s in states)
             {
-                var dto = new AttributeValueMvoStateDto((AttributeValueMvoState)s);
+                var dto = s is AttributeValueMvoStateDto ? (AttributeValueMvoStateDto)s : new AttributeValueMvoStateDto((AttributeValueMvoState)s);
                 if (String.IsNullOrWhiteSpace(fields))
                 {
                     dto.AllFieldsReturned = true;
@@ -322,6 +322,19 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             }
             return orders;
         }
+
+        public static IEnumerable<AttributeValueMvoStateDto> ToAttributeValueMvoStateDtoCollection(IEnumerable<AttributeValueId> ids)
+        {
+            var states = new List<AttributeValueMvoStateDto>();
+            foreach (var id in ids)
+            {
+                var dto = new AttributeValueMvoStateDto();
+                dto.AttributeValueId = new AttributeValueIdDto(id);
+                states.Add(dto);
+            }
+            return states;
+        }
+
     }
 
 }

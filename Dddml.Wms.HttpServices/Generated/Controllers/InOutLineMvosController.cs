@@ -45,7 +45,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             var stateDtos = new List<InOutLineMvoStateDto>();
             foreach (var s in states)
             {
-                var dto = new InOutLineMvoStateDto((InOutLineMvoState)s);
+                var dto = s is InOutLineMvoStateDto ? (InOutLineMvoStateDto)s : new InOutLineMvoStateDto((InOutLineMvoState)s);
                 if (String.IsNullOrWhiteSpace(fields))
                 {
                     dto.AllFieldsReturned = true;
@@ -322,6 +322,19 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             }
             return orders;
         }
+
+        public static IEnumerable<InOutLineMvoStateDto> ToInOutLineMvoStateDtoCollection(IEnumerable<InOutLineId> ids)
+        {
+            var states = new List<InOutLineMvoStateDto>();
+            foreach (var id in ids)
+            {
+                var dto = new InOutLineMvoStateDto();
+                dto.InOutLineId = new InOutLineIdDto(id);
+                states.Add(dto);
+            }
+            return states;
+        }
+
     }
 
 }

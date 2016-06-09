@@ -45,7 +45,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             var stateDtos = new List<AttributeSetInstanceExtensionFieldMvoStateDto>();
             foreach (var s in states)
             {
-                var dto = new AttributeSetInstanceExtensionFieldMvoStateDto((AttributeSetInstanceExtensionFieldMvoState)s);
+                var dto = s is AttributeSetInstanceExtensionFieldMvoStateDto ? (AttributeSetInstanceExtensionFieldMvoStateDto)s : new AttributeSetInstanceExtensionFieldMvoStateDto((AttributeSetInstanceExtensionFieldMvoState)s);
                 if (String.IsNullOrWhiteSpace(fields))
                 {
                     dto.AllFieldsReturned = true;
@@ -322,6 +322,19 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             }
             return orders;
         }
+
+        public static IEnumerable<AttributeSetInstanceExtensionFieldMvoStateDto> ToAttributeSetInstanceExtensionFieldMvoStateDtoCollection(IEnumerable<AttributeSetInstanceExtensionFieldId> ids)
+        {
+            var states = new List<AttributeSetInstanceExtensionFieldMvoStateDto>();
+            foreach (var id in ids)
+            {
+                var dto = new AttributeSetInstanceExtensionFieldMvoStateDto();
+                dto.AttributeSetInstanceExtensionFieldId = new AttributeSetInstanceExtensionFieldIdDto(id);
+                states.Add(dto);
+            }
+            return states;
+        }
+
     }
 
 }

@@ -49,7 +49,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             JArray dynamicArray = new JArray(); 
             foreach (var s in states)
             {
-                var dto = new AttributeSetInstanceStateDto((AttributeSetInstanceState)s);
+                var dto = s is AttributeSetInstanceStateDto ? (AttributeSetInstanceStateDto)s : new AttributeSetInstanceStateDto((AttributeSetInstanceState)s);
                 if (String.IsNullOrWhiteSpace(fields))
                 {
                     dto.AllFieldsReturned = true;
@@ -387,6 +387,19 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             }
             return orders;
         }
+
+        public static IEnumerable<AttributeSetInstanceStateDto> ToAttributeSetInstanceStateDtoCollection(IEnumerable<string> ids)
+        {
+            var states = new List<AttributeSetInstanceStateDto>();
+            foreach (var id in ids)
+            {
+                var dto = new AttributeSetInstanceStateDto();
+                dto.AttributeSetInstanceId = id;
+                states.Add(dto);
+            }
+            return states;
+        }
+
     }
 
 }

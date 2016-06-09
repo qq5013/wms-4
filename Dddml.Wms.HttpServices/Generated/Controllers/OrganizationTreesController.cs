@@ -37,32 +37,68 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             {
                 if (parentIdObj == null)
                 {
-                    states = _organizationTreeApplicationService.GetRoots(CriterionDto.ToSubclass(JObject.Parse(filter).ToObject<CriterionDto>(),new ApiControllerTypeConverter(), new PropertyTypeResolver())
-                        , OrganizationsControllerUtils.GetQueryOrders(sort, QueryOrderSeparator), firstResult, maxResults);
+                    if (IsOnlyIdReturned(fields))
+                    {
+                        var ids = _organizationTreeApplicationService.GetRootIds(CriterionDto.ToSubclass(JObject.Parse(filter).ToObject<CriterionDto>(),new ApiControllerTypeConverter(), new PropertyTypeResolver())
+                            , OrganizationsControllerUtils.GetQueryOrders(sort, QueryOrderSeparator), firstResult, maxResults);
+                        states = OrganizationsControllerUtils.ToOrganizationStateDtoCollection(ids);
+                    }
+                    else
+                    {
+                        states = _organizationTreeApplicationService.GetRoots(CriterionDto.ToSubclass(JObject.Parse(filter).ToObject<CriterionDto>(),new ApiControllerTypeConverter(), new PropertyTypeResolver())
+                            , OrganizationsControllerUtils.GetQueryOrders(sort, QueryOrderSeparator), firstResult, maxResults);
+                    }
                 }
                 else
                 {
-                    states = _organizationTreeApplicationService.GetChildren(parentIdObj, CriterionDto.ToSubclass(JObject.Parse(filter).ToObject<CriterionDto>(),new ApiControllerTypeConverter(), new PropertyTypeResolver())
-                        , OrganizationsControllerUtils.GetQueryOrders(sort, QueryOrderSeparator), firstResult, maxResults);
+                    if (IsOnlyIdReturned(fields))
+                    {
+                        var ids = _organizationTreeApplicationService.GetChildIds(parentIdObj, CriterionDto.ToSubclass(JObject.Parse(filter).ToObject<CriterionDto>(),new ApiControllerTypeConverter(), new PropertyTypeResolver())
+                            , OrganizationsControllerUtils.GetQueryOrders(sort, QueryOrderSeparator), firstResult, maxResults);
+                        states = OrganizationsControllerUtils.ToOrganizationStateDtoCollection(ids);
+                    }
+                    else
+                    {
+                        states = _organizationTreeApplicationService.GetChildren(parentIdObj, CriterionDto.ToSubclass(JObject.Parse(filter).ToObject<CriterionDto>(),new ApiControllerTypeConverter(), new PropertyTypeResolver())
+                            , OrganizationsControllerUtils.GetQueryOrders(sort, QueryOrderSeparator), firstResult, maxResults);
+                    }
                 }
             }
             else 
             {
                 if (parentIdObj == null)
                 {
-                    states = _organizationTreeApplicationService.GetRoots(OrganizationsControllerUtils.GetQueryFilterDictionary(this.Request.GetQueryNameValuePairs())
-                        , OrganizationsControllerUtils.GetQueryOrders(sort, QueryOrderSeparator), firstResult, maxResults);
+                    if (IsOnlyIdReturned(fields))
+                    {
+                        var ids = _organizationTreeApplicationService.GetRootIds(OrganizationsControllerUtils.GetQueryFilterDictionary(this.Request.GetQueryNameValuePairs())
+                            , OrganizationsControllerUtils.GetQueryOrders(sort, QueryOrderSeparator), firstResult, maxResults);
+                        states = OrganizationsControllerUtils.ToOrganizationStateDtoCollection(ids);
+                    }
+                    else
+                    {
+                        states = _organizationTreeApplicationService.GetRoots(OrganizationsControllerUtils.GetQueryFilterDictionary(this.Request.GetQueryNameValuePairs())
+                            , OrganizationsControllerUtils.GetQueryOrders(sort, QueryOrderSeparator), firstResult, maxResults);
+                    }
                 }
                 else
                 {
-                    states = _organizationTreeApplicationService.GetChildren(parentIdObj, OrganizationsControllerUtils.GetQueryFilterDictionary(this.Request.GetQueryNameValuePairs())
-                        , OrganizationsControllerUtils.GetQueryOrders(sort, QueryOrderSeparator), firstResult, maxResults);
+                    if (IsOnlyIdReturned(fields))
+                    {
+                        var ids = _organizationTreeApplicationService.GetChildIds(parentIdObj, OrganizationsControllerUtils.GetQueryFilterDictionary(this.Request.GetQueryNameValuePairs())
+                            , OrganizationsControllerUtils.GetQueryOrders(sort, QueryOrderSeparator), firstResult, maxResults);
+                        states = OrganizationsControllerUtils.ToOrganizationStateDtoCollection(ids);
+                    }
+                    else
+                    {
+                        states = _organizationTreeApplicationService.GetChildren(parentIdObj, OrganizationsControllerUtils.GetQueryFilterDictionary(this.Request.GetQueryNameValuePairs())
+                            , OrganizationsControllerUtils.GetQueryOrders(sort, QueryOrderSeparator), firstResult, maxResults);
+                    }
                 }
             }
             var stateDtos = new List<OrganizationStateDto>();
             foreach (var s in states)
             {
-                var dto = new OrganizationStateDto((OrganizationState)s);
+                var dto = s is OrganizationStateDto ? (OrganizationStateDto)s : new OrganizationStateDto((OrganizationState)s);
                 if (String.IsNullOrWhiteSpace(fields))
                 {
                     dto.AllFieldsReturned = true;
@@ -78,6 +114,20 @@ namespace Dddml.Wms.HttpServices.ApiControllers
         }
 
 		// /////////////////////////////////////////////////
+
+        protected bool IsOnlyIdReturned(string fields)
+        {
+            if (String.Equals(fields, "OrganizationId", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return true;
+            }
+            if (String.Equals(fields, "Id.SubsidiaryId", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return true;
+            }
+            return false;
+        }
+
 
         protected virtual string QueryOrderSeparator
         {

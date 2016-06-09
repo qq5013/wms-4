@@ -45,7 +45,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             var stateDtos = new List<AttributeSetStateDto>();
             foreach (var s in states)
             {
-                var dto = new AttributeSetStateDto((AttributeSetState)s);
+                var dto = s is AttributeSetStateDto ? (AttributeSetStateDto)s : new AttributeSetStateDto((AttributeSetState)s);
                 if (String.IsNullOrWhiteSpace(fields))
                 {
                     dto.AllFieldsReturned = true;
@@ -315,6 +315,19 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             }
             return orders;
         }
+
+        public static IEnumerable<AttributeSetStateDto> ToAttributeSetStateDtoCollection(IEnumerable<string> ids)
+        {
+            var states = new List<AttributeSetStateDto>();
+            foreach (var id in ids)
+            {
+                var dto = new AttributeSetStateDto();
+                dto.AttributeSetId = id;
+                states.Add(dto);
+            }
+            return states;
+        }
+
     }
 
 }

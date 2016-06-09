@@ -45,7 +45,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             var stateDtos = new List<AttributeSetInstanceExtensionFieldGroupStateDto>();
             foreach (var s in states)
             {
-                var dto = new AttributeSetInstanceExtensionFieldGroupStateDto((AttributeSetInstanceExtensionFieldGroupState)s);
+                var dto = s is AttributeSetInstanceExtensionFieldGroupStateDto ? (AttributeSetInstanceExtensionFieldGroupStateDto)s : new AttributeSetInstanceExtensionFieldGroupStateDto((AttributeSetInstanceExtensionFieldGroupState)s);
                 if (String.IsNullOrWhiteSpace(fields))
                 {
                     dto.AllFieldsReturned = true;
@@ -315,6 +315,19 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             }
             return orders;
         }
+
+        public static IEnumerable<AttributeSetInstanceExtensionFieldGroupStateDto> ToAttributeSetInstanceExtensionFieldGroupStateDtoCollection(IEnumerable<string> ids)
+        {
+            var states = new List<AttributeSetInstanceExtensionFieldGroupStateDto>();
+            foreach (var id in ids)
+            {
+                var dto = new AttributeSetInstanceExtensionFieldGroupStateDto();
+                dto.Id = id;
+                states.Add(dto);
+            }
+            return states;
+        }
+
     }
 
 }

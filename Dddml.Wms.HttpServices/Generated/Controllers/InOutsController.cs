@@ -45,7 +45,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             var stateDtos = new List<InOutStateDto>();
             foreach (var s in states)
             {
-                var dto = new InOutStateDto((InOutState)s);
+                var dto = s is InOutStateDto ? (InOutStateDto)s : new InOutStateDto((InOutState)s);
                 if (String.IsNullOrWhiteSpace(fields))
                 {
                     dto.AllFieldsReturned = true;
@@ -315,6 +315,19 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             }
             return orders;
         }
+
+        public static IEnumerable<InOutStateDto> ToInOutStateDtoCollection(IEnumerable<string> ids)
+        {
+            var states = new List<InOutStateDto>();
+            foreach (var id in ids)
+            {
+                var dto = new InOutStateDto();
+                dto.DocumentNumber = id;
+                states.Add(dto);
+            }
+            return states;
+        }
+
     }
 
 }

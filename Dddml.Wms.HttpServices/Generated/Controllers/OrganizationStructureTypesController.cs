@@ -45,7 +45,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             var stateDtos = new List<OrganizationStructureTypeStateDto>();
             foreach (var s in states)
             {
-                var dto = new OrganizationStructureTypeStateDto((OrganizationStructureTypeState)s);
+                var dto = s is OrganizationStructureTypeStateDto ? (OrganizationStructureTypeStateDto)s : new OrganizationStructureTypeStateDto((OrganizationStructureTypeState)s);
                 if (String.IsNullOrWhiteSpace(fields))
                 {
                     dto.AllFieldsReturned = true;
@@ -315,6 +315,19 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             }
             return orders;
         }
+
+        public static IEnumerable<OrganizationStructureTypeStateDto> ToOrganizationStructureTypeStateDtoCollection(IEnumerable<string> ids)
+        {
+            var states = new List<OrganizationStructureTypeStateDto>();
+            foreach (var id in ids)
+            {
+                var dto = new OrganizationStructureTypeStateDto();
+                dto.Id = id;
+                states.Add(dto);
+            }
+            return states;
+        }
+
     }
 
 }

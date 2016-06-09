@@ -45,7 +45,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             var stateDtos = new List<WarehouseStateDto>();
             foreach (var s in states)
             {
-                var dto = new WarehouseStateDto((WarehouseState)s);
+                var dto = s is WarehouseStateDto ? (WarehouseStateDto)s : new WarehouseStateDto((WarehouseState)s);
                 if (String.IsNullOrWhiteSpace(fields))
                 {
                     dto.AllFieldsReturned = true;
@@ -315,6 +315,19 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             }
             return orders;
         }
+
+        public static IEnumerable<WarehouseStateDto> ToWarehouseStateDtoCollection(IEnumerable<string> ids)
+        {
+            var states = new List<WarehouseStateDto>();
+            foreach (var id in ids)
+            {
+                var dto = new WarehouseStateDto();
+                dto.WarehouseId = id;
+                states.Add(dto);
+            }
+            return states;
+        }
+
     }
 
 }

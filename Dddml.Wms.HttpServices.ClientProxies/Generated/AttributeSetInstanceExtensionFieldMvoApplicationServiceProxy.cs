@@ -125,15 +125,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         public IEnumerable<IAttributeSetInstanceExtensionFieldMvoState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IAttributeSetInstanceExtensionFieldMvoState> states = null;
-			var q = new AttributeSetInstanceExtensionFieldMvoesGetQuery();
+			var q = new AttributeSetInstanceExtensionFieldMvosGetQuery();
 			q.FirstResult = firstResult;
 			q.MaxResults = maxResults;
             q.Sort = GetOrdersQueryValueString(orders);
             q.Fields = GetReturnedFieldsQueryValueString(fields);
             q.FilterTag = GetFilterTagQueryValueString(filter);
-            var req = new AttributeSetInstanceExtensionFieldMvoesGetRequest();
+            var req = new AttributeSetInstanceExtensionFieldMvosGetRequest();
             req.Query = q;
-            var resp = _ramlClient.AttributeSetInstanceExtensionFieldMvoes.Get(req).GetAwaiter().GetResult();
+            var resp = _ramlClient.AttributeSetInstanceExtensionFieldMvos.Get(req).GetAwaiter().GetResult();
             ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
@@ -153,7 +153,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         public IEnumerable<IAttributeSetInstanceExtensionFieldMvoState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IAttributeSetInstanceExtensionFieldMvoState> states = null;
-			var q = new AttributeSetInstanceExtensionFieldMvoesGetQuery();
+			var q = new AttributeSetInstanceExtensionFieldMvosGetQuery();
 			q.FirstResult = firstResult;
 			q.MaxResults = maxResults;
             q.Sort = GetOrdersQueryValueString(orders);
@@ -162,9 +162,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             {
                 q.Filter = WebUtility.UrlEncode(JObject.FromObject(new CriterionDto(filter, new ProxyTypeConverter())).ToString());
             }
-            var req = new AttributeSetInstanceExtensionFieldMvoesGetRequest();
+            var req = new AttributeSetInstanceExtensionFieldMvosGetRequest();
             req.Query = q;
-            var resp = _ramlClient.AttributeSetInstanceExtensionFieldMvoes.Get(req).GetAwaiter().GetResult();
+            var resp = _ramlClient.AttributeSetInstanceExtensionFieldMvos.Get(req).GetAwaiter().GetResult();
             ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
@@ -172,25 +172,25 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
 		{
-			var q = new AttributeSetInstanceExtensionFieldMvoesCountGetQuery();
+			var q = new AttributeSetInstanceExtensionFieldMvosCountGetQuery();
             q.FilterTag = GetFilterTagQueryValueString(filter);
-            var req = new AttributeSetInstanceExtensionFieldMvoesCountGetRequest();
+            var req = new AttributeSetInstanceExtensionFieldMvosCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.AttributeSetInstanceExtensionFieldMvoesCount.Get(req).GetAwaiter().GetResult();
+            var resp = _ramlClient.AttributeSetInstanceExtensionFieldMvosCount.Get(req).GetAwaiter().GetResult();
             ThrowOnHttpResponseError(resp);
             return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
 		}
 
         public virtual long GetCount(ICriterion filter)
 		{
-			var q = new AttributeSetInstanceExtensionFieldMvoesCountGetQuery();
+			var q = new AttributeSetInstanceExtensionFieldMvosCountGetQuery();
             if (filter != null)
             {
                 q.Filter = WebUtility.UrlEncode(JObject.FromObject(new CriterionDto(filter, new ProxyTypeConverter())).ToString());
             }
-            var req = new AttributeSetInstanceExtensionFieldMvoesCountGetRequest();
+            var req = new AttributeSetInstanceExtensionFieldMvosCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.AttributeSetInstanceExtensionFieldMvoesCount.Get(req).GetAwaiter().GetResult();
+            var resp = _ramlClient.AttributeSetInstanceExtensionFieldMvosCount.Get(req).GetAwaiter().GetResult();
             ThrowOnHttpResponseError(resp);
             return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
 		}

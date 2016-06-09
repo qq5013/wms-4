@@ -3609,7 +3609,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
         public virtual async Task<Models.AttributeValueMvoGetResponse> Get(Models.AttributeValueMvoGetRequest request, IEnumerable<MediaTypeFormatter> responseFormatters = null)
         {
 
-            var url = "AttributeValueMvoes/{id}";
+            var url = "AttributeValueMvos/{id}";
 			if(request.UriParameters == null)
 				throw new InvalidOperationException("Uri Parameters cannot be null");               
 
@@ -3660,7 +3660,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
         public virtual async Task<ApiResponse> Put(Models.AttributeValueMvoPutRequest request)
         {
 
-            var url = "AttributeValueMvoes/{id}";
+            var url = "AttributeValueMvos/{id}";
 			if(request.UriParameters == null)
 				throw new InvalidOperationException("Uri Parameters cannot be null");               
 
@@ -3699,7 +3699,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
         public virtual async Task<ApiResponse> Patch(Models.AttributeValueMvoPatchRequest request)
         {
 
-            var url = "AttributeValueMvoes/{id}";
+            var url = "AttributeValueMvos/{id}";
 			if(request.UriParameters == null)
 				throw new InvalidOperationException("Uri Parameters cannot be null");               
 
@@ -3738,7 +3738,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
         public virtual async Task<ApiResponse> Delete(Models.AttributeValueMvoDeleteRequest request)
         {
 
-            var url = "AttributeValueMvoes/{id}";
+            var url = "AttributeValueMvos/{id}";
 			if(request.UriParameters == null)
 				throw new InvalidOperationException("Uri Parameters cannot be null");               
 
@@ -3779,21 +3779,21 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
 
     }
 
-    public partial class AttributeValueMvoes
+    public partial class AttributeValueMvos
     {
         private readonly DddmlWmsRamlClient proxy;
 
-        internal AttributeValueMvoes(DddmlWmsRamlClient proxy)
+        internal AttributeValueMvos(DddmlWmsRamlClient proxy)
         {
             this.proxy = proxy;
         }
 
-        		/// <param name="request">Models.AttributeValueMvoesGetRequest</param>
+        		/// <param name="request">Models.AttributeValueMvosGetRequest</param>
 		/// <param name="responseFormatters">response formatters</param>
-        public virtual async Task<Models.AttributeValueMvoesGetResponse> Get(Models.AttributeValueMvoesGetRequest request, IEnumerable<MediaTypeFormatter> responseFormatters = null)
+        public virtual async Task<Models.AttributeValueMvosGetResponse> Get(Models.AttributeValueMvosGetRequest request, IEnumerable<MediaTypeFormatter> responseFormatters = null)
         {
 
-            var url = "AttributeValueMvoes";
+            var url = "AttributeValueMvos";
             if(request.Query != null)
             {
                 url += "?";
@@ -3831,7 +3831,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
 				}
 				
             }
-            return new Models.AttributeValueMvoesGetResponse  
+            return new Models.AttributeValueMvosGetResponse  
                                             {
                                                 RawContent = response.Content,
                                                 RawHeaders = response.Headers,
@@ -3844,20 +3844,20 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
 
     }
 
-    public partial class AttributeValueMvoesCount
+    public partial class AttributeValueMvosCount
     {
         private readonly DddmlWmsRamlClient proxy;
 
-        internal AttributeValueMvoesCount(DddmlWmsRamlClient proxy)
+        internal AttributeValueMvosCount(DddmlWmsRamlClient proxy)
         {
             this.proxy = proxy;
         }
 
-        		/// <param name="request">Models.AttributeValueMvoesCountGetRequest</param>
-        public virtual async Task<ApiResponse> Get(Models.AttributeValueMvoesCountGetRequest request)
+        		/// <param name="request">Models.AttributeValueMvosCountGetRequest</param>
+        public virtual async Task<ApiResponse> Get(Models.AttributeValueMvosCountGetRequest request)
         {
 
-            var url = "AttributeValueMvoes/_count";
+            var url = "AttributeValueMvos/_count";
             if(request.Query != null)
             {
                 url += "?";
@@ -3905,7 +3905,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
         public virtual async Task<Models.AttributeValueMvoStateEventGetResponse> Get(Models.AttributeValueMvoStateEventGetRequest request, IEnumerable<MediaTypeFormatter> responseFormatters = null)
         {
 
-            var url = "AttributeValueMvoes/{id}/_stateEvents/{version}";
+            var url = "AttributeValueMvos/{id}/_stateEvents/{version}";
 			if(request.UriParameters == null)
 				throw new InvalidOperationException("Uri Parameters cannot be null");               
 
@@ -3966,7 +3966,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
         public virtual async Task<Models.AttributeUseMvoGetResponse> Get(Models.AttributeUseMvoGetRequest request, IEnumerable<MediaTypeFormatter> responseFormatters = null)
         {
 
-            var url = "AttributeUseMvoes/{id}";
+            var url = "AttributeUseMvos/{id}";
 			if(request.UriParameters == null)
 				throw new InvalidOperationException("Uri Parameters cannot be null");               
 
@@ -4017,7 +4017,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
         public virtual async Task<ApiResponse> Put(Models.AttributeUseMvoPutRequest request)
         {
 
-            var url = "AttributeUseMvoes/{id}";
+            var url = "AttributeUseMvos/{id}";
 			if(request.UriParameters == null)
 				throw new InvalidOperationException("Uri Parameters cannot be null");               
 
@@ -4056,7 +4056,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
         public virtual async Task<ApiResponse> Patch(Models.AttributeUseMvoPatchRequest request)
         {
 
-            var url = "AttributeUseMvoes/{id}";
+            var url = "AttributeUseMvos/{id}";
 			if(request.UriParameters == null)
 				throw new InvalidOperationException("Uri Parameters cannot be null");               
 
@@ -4095,7 +4095,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
         public virtual async Task<ApiResponse> Delete(Models.AttributeUseMvoDeleteRequest request)
         {
 
-            var url = "AttributeUseMvoes/{id}";
+            var url = "AttributeUseMvos/{id}";
 			if(request.UriParameters == null)
 				throw new InvalidOperationException("Uri Parameters cannot be null");               
 
@@ -4136,21 +4136,21 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
 
     }
 
-    public partial class AttributeUseMvoes
+    public partial class AttributeUseMvos
     {
         private readonly DddmlWmsRamlClient proxy;
 
-        internal AttributeUseMvoes(DddmlWmsRamlClient proxy)
+        internal AttributeUseMvos(DddmlWmsRamlClient proxy)
         {
             this.proxy = proxy;
         }
 
-        		/// <param name="request">Models.AttributeUseMvoesGetRequest</param>
+        		/// <param name="request">Models.AttributeUseMvosGetRequest</param>
 		/// <param name="responseFormatters">response formatters</param>
-        public virtual async Task<Models.AttributeUseMvoesGetResponse> Get(Models.AttributeUseMvoesGetRequest request, IEnumerable<MediaTypeFormatter> responseFormatters = null)
+        public virtual async Task<Models.AttributeUseMvosGetResponse> Get(Models.AttributeUseMvosGetRequest request, IEnumerable<MediaTypeFormatter> responseFormatters = null)
         {
 
-            var url = "AttributeUseMvoes";
+            var url = "AttributeUseMvos";
             if(request.Query != null)
             {
                 url += "?";
@@ -4188,7 +4188,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
 				}
 				
             }
-            return new Models.AttributeUseMvoesGetResponse  
+            return new Models.AttributeUseMvosGetResponse  
                                             {
                                                 RawContent = response.Content,
                                                 RawHeaders = response.Headers,
@@ -4201,20 +4201,20 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
 
     }
 
-    public partial class AttributeUseMvoesCount
+    public partial class AttributeUseMvosCount
     {
         private readonly DddmlWmsRamlClient proxy;
 
-        internal AttributeUseMvoesCount(DddmlWmsRamlClient proxy)
+        internal AttributeUseMvosCount(DddmlWmsRamlClient proxy)
         {
             this.proxy = proxy;
         }
 
-        		/// <param name="request">Models.AttributeUseMvoesCountGetRequest</param>
-        public virtual async Task<ApiResponse> Get(Models.AttributeUseMvoesCountGetRequest request)
+        		/// <param name="request">Models.AttributeUseMvosCountGetRequest</param>
+        public virtual async Task<ApiResponse> Get(Models.AttributeUseMvosCountGetRequest request)
         {
 
-            var url = "AttributeUseMvoes/_count";
+            var url = "AttributeUseMvos/_count";
             if(request.Query != null)
             {
                 url += "?";
@@ -4262,7 +4262,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
         public virtual async Task<Models.AttributeUseMvoStateEventGetResponse> Get(Models.AttributeUseMvoStateEventGetRequest request, IEnumerable<MediaTypeFormatter> responseFormatters = null)
         {
 
-            var url = "AttributeUseMvoes/{id}/_stateEvents/{version}";
+            var url = "AttributeUseMvos/{id}/_stateEvents/{version}";
 			if(request.UriParameters == null)
 				throw new InvalidOperationException("Uri Parameters cannot be null");               
 
@@ -4323,7 +4323,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
         public virtual async Task<Models.AttributeSetInstanceExtensionFieldMvoGetResponse> Get(Models.AttributeSetInstanceExtensionFieldMvoGetRequest request, IEnumerable<MediaTypeFormatter> responseFormatters = null)
         {
 
-            var url = "AttributeSetInstanceExtensionFieldMvoes/{id}";
+            var url = "AttributeSetInstanceExtensionFieldMvos/{id}";
 			if(request.UriParameters == null)
 				throw new InvalidOperationException("Uri Parameters cannot be null");               
 
@@ -4374,7 +4374,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
         public virtual async Task<ApiResponse> Put(Models.AttributeSetInstanceExtensionFieldMvoPutRequest request)
         {
 
-            var url = "AttributeSetInstanceExtensionFieldMvoes/{id}";
+            var url = "AttributeSetInstanceExtensionFieldMvos/{id}";
 			if(request.UriParameters == null)
 				throw new InvalidOperationException("Uri Parameters cannot be null");               
 
@@ -4413,7 +4413,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
         public virtual async Task<ApiResponse> Patch(Models.AttributeSetInstanceExtensionFieldMvoPatchRequest request)
         {
 
-            var url = "AttributeSetInstanceExtensionFieldMvoes/{id}";
+            var url = "AttributeSetInstanceExtensionFieldMvos/{id}";
 			if(request.UriParameters == null)
 				throw new InvalidOperationException("Uri Parameters cannot be null");               
 
@@ -4452,7 +4452,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
         public virtual async Task<ApiResponse> Delete(Models.AttributeSetInstanceExtensionFieldMvoDeleteRequest request)
         {
 
-            var url = "AttributeSetInstanceExtensionFieldMvoes/{id}";
+            var url = "AttributeSetInstanceExtensionFieldMvos/{id}";
 			if(request.UriParameters == null)
 				throw new InvalidOperationException("Uri Parameters cannot be null");               
 
@@ -4493,21 +4493,21 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
 
     }
 
-    public partial class AttributeSetInstanceExtensionFieldMvoes
+    public partial class AttributeSetInstanceExtensionFieldMvos
     {
         private readonly DddmlWmsRamlClient proxy;
 
-        internal AttributeSetInstanceExtensionFieldMvoes(DddmlWmsRamlClient proxy)
+        internal AttributeSetInstanceExtensionFieldMvos(DddmlWmsRamlClient proxy)
         {
             this.proxy = proxy;
         }
 
-        		/// <param name="request">Models.AttributeSetInstanceExtensionFieldMvoesGetRequest</param>
+        		/// <param name="request">Models.AttributeSetInstanceExtensionFieldMvosGetRequest</param>
 		/// <param name="responseFormatters">response formatters</param>
-        public virtual async Task<Models.AttributeSetInstanceExtensionFieldMvoesGetResponse> Get(Models.AttributeSetInstanceExtensionFieldMvoesGetRequest request, IEnumerable<MediaTypeFormatter> responseFormatters = null)
+        public virtual async Task<Models.AttributeSetInstanceExtensionFieldMvosGetResponse> Get(Models.AttributeSetInstanceExtensionFieldMvosGetRequest request, IEnumerable<MediaTypeFormatter> responseFormatters = null)
         {
 
-            var url = "AttributeSetInstanceExtensionFieldMvoes";
+            var url = "AttributeSetInstanceExtensionFieldMvos";
             if(request.Query != null)
             {
                 url += "?";
@@ -4545,7 +4545,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
 				}
 				
             }
-            return new Models.AttributeSetInstanceExtensionFieldMvoesGetResponse  
+            return new Models.AttributeSetInstanceExtensionFieldMvosGetResponse  
                                             {
                                                 RawContent = response.Content,
                                                 RawHeaders = response.Headers,
@@ -4558,20 +4558,20 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
 
     }
 
-    public partial class AttributeSetInstanceExtensionFieldMvoesCount
+    public partial class AttributeSetInstanceExtensionFieldMvosCount
     {
         private readonly DddmlWmsRamlClient proxy;
 
-        internal AttributeSetInstanceExtensionFieldMvoesCount(DddmlWmsRamlClient proxy)
+        internal AttributeSetInstanceExtensionFieldMvosCount(DddmlWmsRamlClient proxy)
         {
             this.proxy = proxy;
         }
 
-        		/// <param name="request">Models.AttributeSetInstanceExtensionFieldMvoesCountGetRequest</param>
-        public virtual async Task<ApiResponse> Get(Models.AttributeSetInstanceExtensionFieldMvoesCountGetRequest request)
+        		/// <param name="request">Models.AttributeSetInstanceExtensionFieldMvosCountGetRequest</param>
+        public virtual async Task<ApiResponse> Get(Models.AttributeSetInstanceExtensionFieldMvosCountGetRequest request)
         {
 
-            var url = "AttributeSetInstanceExtensionFieldMvoes/_count";
+            var url = "AttributeSetInstanceExtensionFieldMvos/_count";
             if(request.Query != null)
             {
                 url += "?";
@@ -4619,7 +4619,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
         public virtual async Task<Models.AttributeSetInstanceExtensionFieldMvoStateEventGetResponse> Get(Models.AttributeSetInstanceExtensionFieldMvoStateEventGetRequest request, IEnumerable<MediaTypeFormatter> responseFormatters = null)
         {
 
-            var url = "AttributeSetInstanceExtensionFieldMvoes/{id}/_stateEvents/{version}";
+            var url = "AttributeSetInstanceExtensionFieldMvos/{id}/_stateEvents/{version}";
 			if(request.UriParameters == null)
 				throw new InvalidOperationException("Uri Parameters cannot be null");               
 
@@ -4680,7 +4680,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
         public virtual async Task<Models.InOutLineMvoGetResponse> Get(Models.InOutLineMvoGetRequest request, IEnumerable<MediaTypeFormatter> responseFormatters = null)
         {
 
-            var url = "InOutLineMvoes/{id}";
+            var url = "InOutLineMvos/{id}";
 			if(request.UriParameters == null)
 				throw new InvalidOperationException("Uri Parameters cannot be null");               
 
@@ -4731,7 +4731,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
         public virtual async Task<ApiResponse> Put(Models.InOutLineMvoPutRequest request)
         {
 
-            var url = "InOutLineMvoes/{id}";
+            var url = "InOutLineMvos/{id}";
 			if(request.UriParameters == null)
 				throw new InvalidOperationException("Uri Parameters cannot be null");               
 
@@ -4770,7 +4770,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
         public virtual async Task<ApiResponse> Patch(Models.InOutLineMvoPatchRequest request)
         {
 
-            var url = "InOutLineMvoes/{id}";
+            var url = "InOutLineMvos/{id}";
 			if(request.UriParameters == null)
 				throw new InvalidOperationException("Uri Parameters cannot be null");               
 
@@ -4809,7 +4809,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
         public virtual async Task<ApiResponse> Delete(Models.InOutLineMvoDeleteRequest request)
         {
 
-            var url = "InOutLineMvoes/{id}";
+            var url = "InOutLineMvos/{id}";
 			if(request.UriParameters == null)
 				throw new InvalidOperationException("Uri Parameters cannot be null");               
 
@@ -4850,21 +4850,21 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
 
     }
 
-    public partial class InOutLineMvoes
+    public partial class InOutLineMvos
     {
         private readonly DddmlWmsRamlClient proxy;
 
-        internal InOutLineMvoes(DddmlWmsRamlClient proxy)
+        internal InOutLineMvos(DddmlWmsRamlClient proxy)
         {
             this.proxy = proxy;
         }
 
-        		/// <param name="request">Models.InOutLineMvoesGetRequest</param>
+        		/// <param name="request">Models.InOutLineMvosGetRequest</param>
 		/// <param name="responseFormatters">response formatters</param>
-        public virtual async Task<Models.InOutLineMvoesGetResponse> Get(Models.InOutLineMvoesGetRequest request, IEnumerable<MediaTypeFormatter> responseFormatters = null)
+        public virtual async Task<Models.InOutLineMvosGetResponse> Get(Models.InOutLineMvosGetRequest request, IEnumerable<MediaTypeFormatter> responseFormatters = null)
         {
 
-            var url = "InOutLineMvoes";
+            var url = "InOutLineMvos";
             if(request.Query != null)
             {
                 url += "?";
@@ -4902,7 +4902,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
 				}
 				
             }
-            return new Models.InOutLineMvoesGetResponse  
+            return new Models.InOutLineMvosGetResponse  
                                             {
                                                 RawContent = response.Content,
                                                 RawHeaders = response.Headers,
@@ -4915,20 +4915,20 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
 
     }
 
-    public partial class InOutLineMvoesCount
+    public partial class InOutLineMvosCount
     {
         private readonly DddmlWmsRamlClient proxy;
 
-        internal InOutLineMvoesCount(DddmlWmsRamlClient proxy)
+        internal InOutLineMvosCount(DddmlWmsRamlClient proxy)
         {
             this.proxy = proxy;
         }
 
-        		/// <param name="request">Models.InOutLineMvoesCountGetRequest</param>
-        public virtual async Task<ApiResponse> Get(Models.InOutLineMvoesCountGetRequest request)
+        		/// <param name="request">Models.InOutLineMvosCountGetRequest</param>
+        public virtual async Task<ApiResponse> Get(Models.InOutLineMvosCountGetRequest request)
         {
 
-            var url = "InOutLineMvoes/_count";
+            var url = "InOutLineMvos/_count";
             if(request.Query != null)
             {
                 url += "?";
@@ -4976,7 +4976,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
         public virtual async Task<Models.InOutLineMvoStateEventGetResponse> Get(Models.InOutLineMvoStateEventGetRequest request, IEnumerable<MediaTypeFormatter> responseFormatters = null)
         {
 
-            var url = "InOutLineMvoes/{id}/_stateEvents/{version}";
+            var url = "InOutLineMvos/{id}/_stateEvents/{version}";
 			if(request.UriParameters == null)
 				throw new InvalidOperationException("Uri Parameters cannot be null");               
 
@@ -5225,27 +5225,27 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
         }
                 
 
-        public virtual AttributeValueMvoes AttributeValueMvoes
+        public virtual AttributeValueMvos AttributeValueMvos
         {
-            get { return new AttributeValueMvoes(this); }
+            get { return new AttributeValueMvos(this); }
         }
                 
 
-        public virtual AttributeUseMvoes AttributeUseMvoes
+        public virtual AttributeUseMvos AttributeUseMvos
         {
-            get { return new AttributeUseMvoes(this); }
+            get { return new AttributeUseMvos(this); }
         }
                 
 
-        public virtual AttributeSetInstanceExtensionFieldMvoes AttributeSetInstanceExtensionFieldMvoes
+        public virtual AttributeSetInstanceExtensionFieldMvos AttributeSetInstanceExtensionFieldMvos
         {
-            get { return new AttributeSetInstanceExtensionFieldMvoes(this); }
+            get { return new AttributeSetInstanceExtensionFieldMvos(this); }
         }
                 
 
-        public virtual InOutLineMvoes InOutLineMvoes
+        public virtual InOutLineMvos InOutLineMvos
         {
-            get { return new InOutLineMvoes(this); }
+            get { return new InOutLineMvos(this); }
         }
                 
 
@@ -5309,27 +5309,27 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
         }
                 
 
-        public virtual AttributeValueMvoesCount AttributeValueMvoesCount
+        public virtual AttributeValueMvosCount AttributeValueMvosCount
         {
-            get { return new AttributeValueMvoesCount(this); }
+            get { return new AttributeValueMvosCount(this); }
         }
                 
 
-        public virtual AttributeUseMvoesCount AttributeUseMvoesCount
+        public virtual AttributeUseMvosCount AttributeUseMvosCount
         {
-            get { return new AttributeUseMvoesCount(this); }
+            get { return new AttributeUseMvosCount(this); }
         }
                 
 
-        public virtual AttributeSetInstanceExtensionFieldMvoesCount AttributeSetInstanceExtensionFieldMvoesCount
+        public virtual AttributeSetInstanceExtensionFieldMvosCount AttributeSetInstanceExtensionFieldMvosCount
         {
-            get { return new AttributeSetInstanceExtensionFieldMvoesCount(this); }
+            get { return new AttributeSetInstanceExtensionFieldMvosCount(this); }
         }
                 
 
-        public virtual InOutLineMvoesCount InOutLineMvoesCount
+        public virtual InOutLineMvosCount InOutLineMvosCount
         {
-            get { return new InOutLineMvoesCount(this); }
+            get { return new InOutLineMvosCount(this); }
         }
                 
 
@@ -5992,7 +5992,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 
     } // end class
 
-    public partial class  AttributeValueMvoesGetQuery 
+    public partial class  AttributeValueMvosGetQuery 
     {
 		[JsonProperty("firstResult")]
         public int? FirstResult { get; set; }
@@ -6015,7 +6015,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 
     } // end class
 
-    public partial class  AttributeValueMvoesCountGetQuery 
+    public partial class  AttributeValueMvosCountGetQuery 
     {
 		[JsonProperty("filter")]
         public string Filter { get; set; }
@@ -6045,7 +6045,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 
     } // end class
 
-    public partial class  AttributeUseMvoesGetQuery 
+    public partial class  AttributeUseMvosGetQuery 
     {
 		[JsonProperty("firstResult")]
         public int? FirstResult { get; set; }
@@ -6068,7 +6068,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 
     } // end class
 
-    public partial class  AttributeUseMvoesCountGetQuery 
+    public partial class  AttributeUseMvosCountGetQuery 
     {
 		[JsonProperty("filter")]
         public string Filter { get; set; }
@@ -6098,7 +6098,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 
     } // end class
 
-    public partial class  AttributeSetInstanceExtensionFieldMvoesGetQuery 
+    public partial class  AttributeSetInstanceExtensionFieldMvosGetQuery 
     {
 		[JsonProperty("firstResult")]
         public int? FirstResult { get; set; }
@@ -6121,7 +6121,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 
     } // end class
 
-    public partial class  AttributeSetInstanceExtensionFieldMvoesCountGetQuery 
+    public partial class  AttributeSetInstanceExtensionFieldMvosCountGetQuery 
     {
 		[JsonProperty("filter")]
         public string Filter { get; set; }
@@ -6151,7 +6151,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 
     } // end class
 
-    public partial class  InOutLineMvoesGetQuery 
+    public partial class  InOutLineMvosGetQuery 
     {
 		[JsonProperty("firstResult")]
         public int? FirstResult { get; set; }
@@ -6174,7 +6174,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 
     } // end class
 
-    public partial class  InOutLineMvoesCountGetQuery 
+    public partial class  InOutLineMvosCountGetQuery 
     {
 		[JsonProperty("filter")]
         public string Filter { get; set; }
@@ -6436,7 +6436,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     } // end class
 
     /// <summary>
-    /// Uri Parameters for resource /AttributeValueMvoes/{id}
+    /// Uri Parameters for resource /AttributeValueMvos/{id}
     /// </summary>
     public partial class  AttributeValueMvoUriParameters 
     {
@@ -6447,7 +6447,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     } // end class
 
     /// <summary>
-    /// Uri Parameters for resource /AttributeValueMvoes/{id}/_stateEvents/{version}
+    /// Uri Parameters for resource /AttributeValueMvos/{id}/_stateEvents/{version}
     /// </summary>
     public partial class  AttributeValueMvoStateEventUriParameters 
     {
@@ -6461,7 +6461,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     } // end class
 
     /// <summary>
-    /// Uri Parameters for resource /AttributeUseMvoes/{id}
+    /// Uri Parameters for resource /AttributeUseMvos/{id}
     /// </summary>
     public partial class  AttributeUseMvoUriParameters 
     {
@@ -6472,7 +6472,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     } // end class
 
     /// <summary>
-    /// Uri Parameters for resource /AttributeUseMvoes/{id}/_stateEvents/{version}
+    /// Uri Parameters for resource /AttributeUseMvos/{id}/_stateEvents/{version}
     /// </summary>
     public partial class  AttributeUseMvoStateEventUriParameters 
     {
@@ -6486,7 +6486,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     } // end class
 
     /// <summary>
-    /// Uri Parameters for resource /AttributeSetInstanceExtensionFieldMvoes/{id}
+    /// Uri Parameters for resource /AttributeSetInstanceExtensionFieldMvos/{id}
     /// </summary>
     public partial class  AttributeSetInstanceExtensionFieldMvoUriParameters 
     {
@@ -6497,7 +6497,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     } // end class
 
     /// <summary>
-    /// Uri Parameters for resource /AttributeSetInstanceExtensionFieldMvoes/{id}/_stateEvents/{version}
+    /// Uri Parameters for resource /AttributeSetInstanceExtensionFieldMvos/{id}/_stateEvents/{version}
     /// </summary>
     public partial class  AttributeSetInstanceExtensionFieldMvoStateEventUriParameters 
     {
@@ -6511,7 +6511,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     } // end class
 
     /// <summary>
-    /// Uri Parameters for resource /InOutLineMvoes/{id}
+    /// Uri Parameters for resource /InOutLineMvos/{id}
     /// </summary>
     public partial class  InOutLineMvoUriParameters 
     {
@@ -6522,7 +6522,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     } // end class
 
     /// <summary>
-    /// Uri Parameters for resource /InOutLineMvoes/{id}/_stateEvents/{version}
+    /// Uri Parameters for resource /InOutLineMvos/{id}/_stateEvents/{version}
     /// </summary>
     public partial class  InOutLineMvoStateEventUriParameters 
     {
@@ -8124,11 +8124,11 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     } // end class
 
     /// <summary>
-    /// Request object for method Get of class AttributeValueMvoes
+    /// Request object for method Get of class AttributeValueMvos
     /// </summary>
-    public partial class AttributeValueMvoesGetRequest : ApiRequest
+    public partial class AttributeValueMvosGetRequest : ApiRequest
     {
-        public AttributeValueMvoesGetRequest(AttributeValueMvoesGetQuery Query = null)
+        public AttributeValueMvosGetRequest(AttributeValueMvosGetQuery Query = null)
         {
             this.Query = Query;
         }
@@ -8136,16 +8136,16 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
         /// <summary>
         /// Request query string properties
         /// </summary>
-        public AttributeValueMvoesGetQuery Query { get; set; }
+        public AttributeValueMvosGetQuery Query { get; set; }
 
     } // end class
 
     /// <summary>
-    /// Request object for method Get of class AttributeValueMvoesCount
+    /// Request object for method Get of class AttributeValueMvosCount
     /// </summary>
-    public partial class AttributeValueMvoesCountGetRequest : ApiRequest
+    public partial class AttributeValueMvosCountGetRequest : ApiRequest
     {
-        public AttributeValueMvoesCountGetRequest(AttributeValueMvoesCountGetQuery Query = null)
+        public AttributeValueMvosCountGetRequest(AttributeValueMvosCountGetQuery Query = null)
         {
             this.Query = Query;
         }
@@ -8153,7 +8153,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
         /// <summary>
         /// Request query string properties
         /// </summary>
-        public AttributeValueMvoesCountGetQuery Query { get; set; }
+        public AttributeValueMvosCountGetQuery Query { get; set; }
 
     } // end class
 
@@ -8273,11 +8273,11 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     } // end class
 
     /// <summary>
-    /// Request object for method Get of class AttributeUseMvoes
+    /// Request object for method Get of class AttributeUseMvos
     /// </summary>
-    public partial class AttributeUseMvoesGetRequest : ApiRequest
+    public partial class AttributeUseMvosGetRequest : ApiRequest
     {
-        public AttributeUseMvoesGetRequest(AttributeUseMvoesGetQuery Query = null)
+        public AttributeUseMvosGetRequest(AttributeUseMvosGetQuery Query = null)
         {
             this.Query = Query;
         }
@@ -8285,16 +8285,16 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
         /// <summary>
         /// Request query string properties
         /// </summary>
-        public AttributeUseMvoesGetQuery Query { get; set; }
+        public AttributeUseMvosGetQuery Query { get; set; }
 
     } // end class
 
     /// <summary>
-    /// Request object for method Get of class AttributeUseMvoesCount
+    /// Request object for method Get of class AttributeUseMvosCount
     /// </summary>
-    public partial class AttributeUseMvoesCountGetRequest : ApiRequest
+    public partial class AttributeUseMvosCountGetRequest : ApiRequest
     {
-        public AttributeUseMvoesCountGetRequest(AttributeUseMvoesCountGetQuery Query = null)
+        public AttributeUseMvosCountGetRequest(AttributeUseMvosCountGetQuery Query = null)
         {
             this.Query = Query;
         }
@@ -8302,7 +8302,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
         /// <summary>
         /// Request query string properties
         /// </summary>
-        public AttributeUseMvoesCountGetQuery Query { get; set; }
+        public AttributeUseMvosCountGetQuery Query { get; set; }
 
     } // end class
 
@@ -8422,11 +8422,11 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     } // end class
 
     /// <summary>
-    /// Request object for method Get of class AttributeSetInstanceExtensionFieldMvoes
+    /// Request object for method Get of class AttributeSetInstanceExtensionFieldMvos
     /// </summary>
-    public partial class AttributeSetInstanceExtensionFieldMvoesGetRequest : ApiRequest
+    public partial class AttributeSetInstanceExtensionFieldMvosGetRequest : ApiRequest
     {
-        public AttributeSetInstanceExtensionFieldMvoesGetRequest(AttributeSetInstanceExtensionFieldMvoesGetQuery Query = null)
+        public AttributeSetInstanceExtensionFieldMvosGetRequest(AttributeSetInstanceExtensionFieldMvosGetQuery Query = null)
         {
             this.Query = Query;
         }
@@ -8434,16 +8434,16 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
         /// <summary>
         /// Request query string properties
         /// </summary>
-        public AttributeSetInstanceExtensionFieldMvoesGetQuery Query { get; set; }
+        public AttributeSetInstanceExtensionFieldMvosGetQuery Query { get; set; }
 
     } // end class
 
     /// <summary>
-    /// Request object for method Get of class AttributeSetInstanceExtensionFieldMvoesCount
+    /// Request object for method Get of class AttributeSetInstanceExtensionFieldMvosCount
     /// </summary>
-    public partial class AttributeSetInstanceExtensionFieldMvoesCountGetRequest : ApiRequest
+    public partial class AttributeSetInstanceExtensionFieldMvosCountGetRequest : ApiRequest
     {
-        public AttributeSetInstanceExtensionFieldMvoesCountGetRequest(AttributeSetInstanceExtensionFieldMvoesCountGetQuery Query = null)
+        public AttributeSetInstanceExtensionFieldMvosCountGetRequest(AttributeSetInstanceExtensionFieldMvosCountGetQuery Query = null)
         {
             this.Query = Query;
         }
@@ -8451,7 +8451,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
         /// <summary>
         /// Request query string properties
         /// </summary>
-        public AttributeSetInstanceExtensionFieldMvoesCountGetQuery Query { get; set; }
+        public AttributeSetInstanceExtensionFieldMvosCountGetQuery Query { get; set; }
 
     } // end class
 
@@ -8571,11 +8571,11 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     } // end class
 
     /// <summary>
-    /// Request object for method Get of class InOutLineMvoes
+    /// Request object for method Get of class InOutLineMvos
     /// </summary>
-    public partial class InOutLineMvoesGetRequest : ApiRequest
+    public partial class InOutLineMvosGetRequest : ApiRequest
     {
-        public InOutLineMvoesGetRequest(InOutLineMvoesGetQuery Query = null)
+        public InOutLineMvosGetRequest(InOutLineMvosGetQuery Query = null)
         {
             this.Query = Query;
         }
@@ -8583,16 +8583,16 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
         /// <summary>
         /// Request query string properties
         /// </summary>
-        public InOutLineMvoesGetQuery Query { get; set; }
+        public InOutLineMvosGetQuery Query { get; set; }
 
     } // end class
 
     /// <summary>
-    /// Request object for method Get of class InOutLineMvoesCount
+    /// Request object for method Get of class InOutLineMvosCount
     /// </summary>
-    public partial class InOutLineMvoesCountGetRequest : ApiRequest
+    public partial class InOutLineMvosCountGetRequest : ApiRequest
     {
-        public InOutLineMvoesCountGetRequest(InOutLineMvoesCountGetQuery Query = null)
+        public InOutLineMvosCountGetRequest(InOutLineMvosCountGetQuery Query = null)
         {
             this.Query = Query;
         }
@@ -8600,7 +8600,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
         /// <summary>
         /// Request query string properties
         /// </summary>
-        public InOutLineMvoesCountGetQuery Query { get; set; }
+        public InOutLineMvosCountGetQuery Query { get; set; }
 
     } // end class
 
@@ -10141,10 +10141,10 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     } // end class
 
     /// <summary>
-    /// Response object for method Get of class AttributeValueMvoes
+    /// Response object for method Get of class AttributeValueMvos
     /// </summary>
 
-    public partial class AttributeValueMvoesGetResponse : ApiResponse
+    public partial class AttributeValueMvosGetResponse : ApiResponse
     {
 
 
@@ -10288,10 +10288,10 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     } // end class
 
     /// <summary>
-    /// Response object for method Get of class AttributeUseMvoes
+    /// Response object for method Get of class AttributeUseMvos
     /// </summary>
 
-    public partial class AttributeUseMvoesGetResponse : ApiResponse
+    public partial class AttributeUseMvosGetResponse : ApiResponse
     {
 
 
@@ -10435,10 +10435,10 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     } // end class
 
     /// <summary>
-    /// Response object for method Get of class AttributeSetInstanceExtensionFieldMvoes
+    /// Response object for method Get of class AttributeSetInstanceExtensionFieldMvos
     /// </summary>
 
-    public partial class AttributeSetInstanceExtensionFieldMvoesGetResponse : ApiResponse
+    public partial class AttributeSetInstanceExtensionFieldMvosGetResponse : ApiResponse
     {
 
 
@@ -10582,10 +10582,10 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     } // end class
 
     /// <summary>
-    /// Response object for method Get of class InOutLineMvoes
+    /// Response object for method Get of class InOutLineMvos
     /// </summary>
 
-    public partial class InOutLineMvoesGetResponse : ApiResponse
+    public partial class InOutLineMvosGetResponse : ApiResponse
     {
 
 

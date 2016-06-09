@@ -20,32 +20,32 @@ using Dddml.Wms.Domain.Metadata;
 namespace Dddml.Wms.HttpServices.ApiControllers
 {
 
-    [RoutePrefix("api/InOutLineMvoes")]
-    public partial class InOutLineMvoesController : ApiController
+    [RoutePrefix("api/AttributeSetInstanceExtensionFieldMvos")]
+    public partial class AttributeSetInstanceExtensionFieldMvosController : ApiController
     {
 
-        IInOutLineMvoApplicationService _inOutLineMvoApplicationService = ApplicationContext.Current["InOutLineMvoApplicationService"] as IInOutLineMvoApplicationService;
+        IAttributeSetInstanceExtensionFieldMvoApplicationService _attributeSetInstanceExtensionFieldMvoApplicationService = ApplicationContext.Current["AttributeSetInstanceExtensionFieldMvoApplicationService"] as IAttributeSetInstanceExtensionFieldMvoApplicationService;
 
         [Route(Order = 1)]
         [HttpGet]
-        public IEnumerable<InOutLineMvoStateDto> GetAll(string sort = null, string fields = null, int firstResult = 0, int maxResults = int.MaxValue, string filter = null)
+        public IEnumerable<AttributeSetInstanceExtensionFieldMvoStateDto> GetAll(string sort = null, string fields = null, int firstResult = 0, int maxResults = int.MaxValue, string filter = null)
         {
           try {
-            IEnumerable<IInOutLineMvoState> states = null; 
+            IEnumerable<IAttributeSetInstanceExtensionFieldMvoState> states = null; 
             if (!String.IsNullOrWhiteSpace(filter))
             {
-                states = _inOutLineMvoApplicationService.Get(CriterionDto.ToSubclass(JObject.Parse(filter).ToObject<CriterionDto>(),new ApiControllerTypeConverter(), new PropertyTypeResolver())
+                states = _attributeSetInstanceExtensionFieldMvoApplicationService.Get(CriterionDto.ToSubclass(JObject.Parse(filter).ToObject<CriterionDto>(),new ApiControllerTypeConverter(), new PropertyTypeResolver())
                     , GetQueryOrders(sort), firstResult, maxResults);
             }
             else 
             {
-                states = _inOutLineMvoApplicationService.Get(GetQueryFilterDictionary(this.Request.GetQueryNameValuePairs())
+                states = _attributeSetInstanceExtensionFieldMvoApplicationService.Get(GetQueryFilterDictionary(this.Request.GetQueryNameValuePairs())
                     , GetQueryOrders(sort), firstResult, maxResults);
             }
-            var stateDtos = new List<InOutLineMvoStateDto>();
+            var stateDtos = new List<AttributeSetInstanceExtensionFieldMvoStateDto>();
             foreach (var s in states)
             {
-                var dto = new InOutLineMvoStateDto((InOutLineMvoState)s);
+                var dto = new AttributeSetInstanceExtensionFieldMvoStateDto((AttributeSetInstanceExtensionFieldMvoState)s);
                 if (String.IsNullOrWhiteSpace(fields))
                 {
                     dto.AllFieldsReturned = true;
@@ -61,12 +61,12 @@ namespace Dddml.Wms.HttpServices.ApiControllers
         }
 
         [HttpGet]
-        public InOutLineMvoStateDto Get(string id, string fields = null)
+        public AttributeSetInstanceExtensionFieldMvoStateDto Get(string id, string fields = null)
         {
           try {
             var idObj = ParseIdString(id);
-            var state = (InOutLineMvoState)_inOutLineMvoApplicationService.Get(idObj);
-            var stateDto = new InOutLineMvoStateDto(state);
+            var state = (AttributeSetInstanceExtensionFieldMvoState)_attributeSetInstanceExtensionFieldMvoApplicationService.Get(idObj);
+            var stateDto = new AttributeSetInstanceExtensionFieldMvoStateDto(state);
             if (String.IsNullOrWhiteSpace(fields))
             {
                 stateDto.AllFieldsReturned = true;
@@ -89,31 +89,31 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             long count = 0;
             if (!String.IsNullOrWhiteSpace(filter))
             {
-                count = _inOutLineMvoApplicationService.GetCount(CriterionDto.ToSubclass(JObject.Parse(filter).ToObject<CriterionDto>(),new ApiControllerTypeConverter(), new PropertyTypeResolver()));
+                count = _attributeSetInstanceExtensionFieldMvoApplicationService.GetCount(CriterionDto.ToSubclass(JObject.Parse(filter).ToObject<CriterionDto>(),new ApiControllerTypeConverter(), new PropertyTypeResolver()));
             }
             else 
             {
-                count = _inOutLineMvoApplicationService.GetCount(GetQueryFilterDictionary(this.Request.GetQueryNameValuePairs()));
+                count = _attributeSetInstanceExtensionFieldMvoApplicationService.GetCount(GetQueryFilterDictionary(this.Request.GetQueryNameValuePairs()));
             }
             return count;
           } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
         [HttpPut]
-        public void Put(string id, [FromBody]CreateInOutLineMvoDto value)
+        public void Put(string id, [FromBody]CreateAttributeSetInstanceExtensionFieldMvoDto value)
         {
           try {
             SetNullIdOrThrowOnInconsistentIds(id, value);
-            _inOutLineMvoApplicationService.When(value as ICreateInOutLineMvo);
+            _attributeSetInstanceExtensionFieldMvoApplicationService.When(value as ICreateAttributeSetInstanceExtensionFieldMvo);
           } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
         [HttpPatch]
-        public void Patch(string id, [FromBody]MergePatchInOutLineMvoDto value)
+        public void Patch(string id, [FromBody]MergePatchAttributeSetInstanceExtensionFieldMvoDto value)
         {
           try {
             SetNullIdOrThrowOnInconsistentIds(id, value);
-            _inOutLineMvoApplicationService.When(value as IMergePatchInOutLineMvo);
+            _attributeSetInstanceExtensionFieldMvoApplicationService.When(value as IMergePatchAttributeSetInstanceExtensionFieldMvo);
           } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
@@ -121,11 +121,11 @@ namespace Dddml.Wms.HttpServices.ApiControllers
         public void Delete(string id, string commandId, string requesterId = default(string))
         {
           try {
-            var value = new DeleteInOutLineMvoDto();
+            var value = new DeleteAttributeSetInstanceExtensionFieldMvoDto();
             value.CommandId = commandId;
             value.RequesterId = requesterId;
             SetNullIdOrThrowOnInconsistentIds(id, value);
-            _inOutLineMvoApplicationService.When(value as IDeleteInOutLineMvo);
+            _attributeSetInstanceExtensionFieldMvoApplicationService.When(value as IDeleteAttributeSetInstanceExtensionFieldMvo);
           } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
@@ -136,7 +136,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
         {
           try {
             var filtering = new List<PropertyMetadata>();
-            foreach (var p in InOutLineMvoMetadata.Instance.Properties)
+            foreach (var p in AttributeSetInstanceExtensionFieldMvoMetadata.Instance.Properties)
             {
                 if (PropertyMetadata.IsFilteringProperty(p))
                 {
@@ -149,11 +149,11 @@ namespace Dddml.Wms.HttpServices.ApiControllers
 
         [Route("{id}/_stateEvents/{version}")]
         [HttpGet]
-        public IInOutLineMvoStateEvent GetStateEvent(string id, long version)
+        public IAttributeSetInstanceExtensionFieldMvoStateEvent GetStateEvent(string id, long version)
         {
           try {
             var idObj = ParseIdString(id);
-            return _inOutLineMvoApplicationService.GetStateEvent(idObj, version);
+            return _attributeSetInstanceExtensionFieldMvoApplicationService.GetStateEvent(idObj, version);
           } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
@@ -186,24 +186,24 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             return response;
         }
 
-        protected static void SetNullIdOrThrowOnInconsistentIds(string id, CreateOrMergePatchOrDeleteInOutLineMvoDto value)
+        protected static void SetNullIdOrThrowOnInconsistentIds(string id, CreateOrMergePatchOrDeleteAttributeSetInstanceExtensionFieldMvoDto value)
         {
             var idObj = ParseIdString(id.IsNormalized() ? id : id.Normalize());
-            if (value.InOutLineId == null)
+            if (value.AttributeSetInstanceExtensionFieldId == null)
             {
-                value.InOutLineId = new InOutLineIdDto(idObj);
+                value.AttributeSetInstanceExtensionFieldId = new AttributeSetInstanceExtensionFieldIdDto(idObj);
             }
-            else if (!((ICreateOrMergePatchOrDeleteInOutLineMvo)value).InOutLineId.Equals(idObj))
+            else if (!((ICreateOrMergePatchOrDeleteAttributeSetInstanceExtensionFieldMvo)value).AttributeSetInstanceExtensionFieldId.Equals(idObj))
             {
-                throw DomainError.Named("inconsistentId", "Argument Id {0} NOT equals body Id {1}", id, value.InOutLineId);
+                throw DomainError.Named("inconsistentId", "Argument Id {0} NOT equals body Id {1}", id, value.AttributeSetInstanceExtensionFieldId);
             }
         }
 
-        protected static InOutLineId ParseIdString(string idString)
+        protected static AttributeSetInstanceExtensionFieldId ParseIdString(string idString)
         {
-            var formatter = new InOutLineIdFlattenedDtoFormatter();
+            var formatter = new AttributeSetInstanceExtensionFieldIdFlattenedDtoFormatter();
             var idDto = formatter.Parse(idString);
-            var rId = idDto.ToInOutLineId();
+            var rId = idDto.ToAttributeSetInstanceExtensionFieldId();
             return rId;
         }
 
@@ -216,9 +216,9 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             {
                 return null;
             }
-            if (InOutLineMvoMetadata.Instance.PropertyMetadataDictionary.ContainsKey(fieldName))
+            if (AttributeSetInstanceExtensionFieldMvoMetadata.Instance.PropertyMetadataDictionary.ContainsKey(fieldName))
             {
-                var p = InOutLineMvoMetadata.Instance.PropertyMetadataDictionary[fieldName];
+                var p = AttributeSetInstanceExtensionFieldMvoMetadata.Instance.PropertyMetadataDictionary[fieldName];
                 if (PropertyMetadata.IsFilteringProperty(p))
                 {
                     var propertyName = fieldName;
@@ -234,9 +234,9 @@ namespace Dddml.Wms.HttpServices.ApiControllers
 
         protected static Type GetFilterPropertyType(string propertyName)
         {
-            if (InOutLineMvoMetadata.Instance.PropertyMetadataDictionary.ContainsKey(propertyName))
+            if (AttributeSetInstanceExtensionFieldMvoMetadata.Instance.PropertyMetadataDictionary.ContainsKey(propertyName))
             {
-                return InOutLineMvoMetadata.Instance.PropertyMetadataDictionary[propertyName].Type;
+                return AttributeSetInstanceExtensionFieldMvoMetadata.Instance.PropertyMetadataDictionary[propertyName].Type;
             }
             return typeof(string);
         }

@@ -48,6 +48,7 @@
 			mvo.SetAggregateDomainSubNamespaceName("MViews");
 			mvo.SetStateDatabaseTableNameFormat("{0}s");
 			mvo.SetUsingRViewAsMView(true);
+			mvo.SetHttpServiceResourceCollectionNameFormat("{0}s");
 		} 
 	}
 

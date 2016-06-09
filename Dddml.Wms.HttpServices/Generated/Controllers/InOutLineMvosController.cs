@@ -20,32 +20,32 @@ using Dddml.Wms.Domain.Metadata;
 namespace Dddml.Wms.HttpServices.ApiControllers
 {
 
-    [RoutePrefix("api/AttributeValueMvoes")]
-    public partial class AttributeValueMvoesController : ApiController
+    [RoutePrefix("api/InOutLineMvos")]
+    public partial class InOutLineMvosController : ApiController
     {
 
-        IAttributeValueMvoApplicationService _attributeValueMvoApplicationService = ApplicationContext.Current["AttributeValueMvoApplicationService"] as IAttributeValueMvoApplicationService;
+        IInOutLineMvoApplicationService _inOutLineMvoApplicationService = ApplicationContext.Current["InOutLineMvoApplicationService"] as IInOutLineMvoApplicationService;
 
         [Route(Order = 1)]
         [HttpGet]
-        public IEnumerable<AttributeValueMvoStateDto> GetAll(string sort = null, string fields = null, int firstResult = 0, int maxResults = int.MaxValue, string filter = null)
+        public IEnumerable<InOutLineMvoStateDto> GetAll(string sort = null, string fields = null, int firstResult = 0, int maxResults = int.MaxValue, string filter = null)
         {
           try {
-            IEnumerable<IAttributeValueMvoState> states = null; 
+            IEnumerable<IInOutLineMvoState> states = null; 
             if (!String.IsNullOrWhiteSpace(filter))
             {
-                states = _attributeValueMvoApplicationService.Get(CriterionDto.ToSubclass(JObject.Parse(filter).ToObject<CriterionDto>(),new ApiControllerTypeConverter(), new PropertyTypeResolver())
+                states = _inOutLineMvoApplicationService.Get(CriterionDto.ToSubclass(JObject.Parse(filter).ToObject<CriterionDto>(),new ApiControllerTypeConverter(), new PropertyTypeResolver())
                     , GetQueryOrders(sort), firstResult, maxResults);
             }
             else 
             {
-                states = _attributeValueMvoApplicationService.Get(GetQueryFilterDictionary(this.Request.GetQueryNameValuePairs())
+                states = _inOutLineMvoApplicationService.Get(GetQueryFilterDictionary(this.Request.GetQueryNameValuePairs())
                     , GetQueryOrders(sort), firstResult, maxResults);
             }
-            var stateDtos = new List<AttributeValueMvoStateDto>();
+            var stateDtos = new List<InOutLineMvoStateDto>();
             foreach (var s in states)
             {
-                var dto = new AttributeValueMvoStateDto((AttributeValueMvoState)s);
+                var dto = new InOutLineMvoStateDto((InOutLineMvoState)s);
                 if (String.IsNullOrWhiteSpace(fields))
                 {
                     dto.AllFieldsReturned = true;
@@ -61,12 +61,12 @@ namespace Dddml.Wms.HttpServices.ApiControllers
         }
 
         [HttpGet]
-        public AttributeValueMvoStateDto Get(string id, string fields = null)
+        public InOutLineMvoStateDto Get(string id, string fields = null)
         {
           try {
             var idObj = ParseIdString(id);
-            var state = (AttributeValueMvoState)_attributeValueMvoApplicationService.Get(idObj);
-            var stateDto = new AttributeValueMvoStateDto(state);
+            var state = (InOutLineMvoState)_inOutLineMvoApplicationService.Get(idObj);
+            var stateDto = new InOutLineMvoStateDto(state);
             if (String.IsNullOrWhiteSpace(fields))
             {
                 stateDto.AllFieldsReturned = true;
@@ -89,31 +89,31 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             long count = 0;
             if (!String.IsNullOrWhiteSpace(filter))
             {
-                count = _attributeValueMvoApplicationService.GetCount(CriterionDto.ToSubclass(JObject.Parse(filter).ToObject<CriterionDto>(),new ApiControllerTypeConverter(), new PropertyTypeResolver()));
+                count = _inOutLineMvoApplicationService.GetCount(CriterionDto.ToSubclass(JObject.Parse(filter).ToObject<CriterionDto>(),new ApiControllerTypeConverter(), new PropertyTypeResolver()));
             }
             else 
             {
-                count = _attributeValueMvoApplicationService.GetCount(GetQueryFilterDictionary(this.Request.GetQueryNameValuePairs()));
+                count = _inOutLineMvoApplicationService.GetCount(GetQueryFilterDictionary(this.Request.GetQueryNameValuePairs()));
             }
             return count;
           } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
         [HttpPut]
-        public void Put(string id, [FromBody]CreateAttributeValueMvoDto value)
+        public void Put(string id, [FromBody]CreateInOutLineMvoDto value)
         {
           try {
             SetNullIdOrThrowOnInconsistentIds(id, value);
-            _attributeValueMvoApplicationService.When(value as ICreateAttributeValueMvo);
+            _inOutLineMvoApplicationService.When(value as ICreateInOutLineMvo);
           } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
         [HttpPatch]
-        public void Patch(string id, [FromBody]MergePatchAttributeValueMvoDto value)
+        public void Patch(string id, [FromBody]MergePatchInOutLineMvoDto value)
         {
           try {
             SetNullIdOrThrowOnInconsistentIds(id, value);
-            _attributeValueMvoApplicationService.When(value as IMergePatchAttributeValueMvo);
+            _inOutLineMvoApplicationService.When(value as IMergePatchInOutLineMvo);
           } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
@@ -121,11 +121,11 @@ namespace Dddml.Wms.HttpServices.ApiControllers
         public void Delete(string id, string commandId, string requesterId = default(string))
         {
           try {
-            var value = new DeleteAttributeValueMvoDto();
+            var value = new DeleteInOutLineMvoDto();
             value.CommandId = commandId;
             value.RequesterId = requesterId;
             SetNullIdOrThrowOnInconsistentIds(id, value);
-            _attributeValueMvoApplicationService.When(value as IDeleteAttributeValueMvo);
+            _inOutLineMvoApplicationService.When(value as IDeleteInOutLineMvo);
           } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
@@ -136,7 +136,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
         {
           try {
             var filtering = new List<PropertyMetadata>();
-            foreach (var p in AttributeValueMvoMetadata.Instance.Properties)
+            foreach (var p in InOutLineMvoMetadata.Instance.Properties)
             {
                 if (PropertyMetadata.IsFilteringProperty(p))
                 {
@@ -149,11 +149,11 @@ namespace Dddml.Wms.HttpServices.ApiControllers
 
         [Route("{id}/_stateEvents/{version}")]
         [HttpGet]
-        public IAttributeValueMvoStateEvent GetStateEvent(string id, long version)
+        public IInOutLineMvoStateEvent GetStateEvent(string id, long version)
         {
           try {
             var idObj = ParseIdString(id);
-            return _attributeValueMvoApplicationService.GetStateEvent(idObj, version);
+            return _inOutLineMvoApplicationService.GetStateEvent(idObj, version);
           } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
@@ -186,24 +186,24 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             return response;
         }
 
-        protected static void SetNullIdOrThrowOnInconsistentIds(string id, CreateOrMergePatchOrDeleteAttributeValueMvoDto value)
+        protected static void SetNullIdOrThrowOnInconsistentIds(string id, CreateOrMergePatchOrDeleteInOutLineMvoDto value)
         {
             var idObj = ParseIdString(id.IsNormalized() ? id : id.Normalize());
-            if (value.AttributeValueId == null)
+            if (value.InOutLineId == null)
             {
-                value.AttributeValueId = new AttributeValueIdDto(idObj);
+                value.InOutLineId = new InOutLineIdDto(idObj);
             }
-            else if (!((ICreateOrMergePatchOrDeleteAttributeValueMvo)value).AttributeValueId.Equals(idObj))
+            else if (!((ICreateOrMergePatchOrDeleteInOutLineMvo)value).InOutLineId.Equals(idObj))
             {
-                throw DomainError.Named("inconsistentId", "Argument Id {0} NOT equals body Id {1}", id, value.AttributeValueId);
+                throw DomainError.Named("inconsistentId", "Argument Id {0} NOT equals body Id {1}", id, value.InOutLineId);
             }
         }
 
-        protected static AttributeValueId ParseIdString(string idString)
+        protected static InOutLineId ParseIdString(string idString)
         {
-            var formatter = new AttributeValueIdFlattenedDtoFormatter();
+            var formatter = new InOutLineIdFlattenedDtoFormatter();
             var idDto = formatter.Parse(idString);
-            var rId = idDto.ToAttributeValueId();
+            var rId = idDto.ToInOutLineId();
             return rId;
         }
 
@@ -216,9 +216,9 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             {
                 return null;
             }
-            if (AttributeValueMvoMetadata.Instance.PropertyMetadataDictionary.ContainsKey(fieldName))
+            if (InOutLineMvoMetadata.Instance.PropertyMetadataDictionary.ContainsKey(fieldName))
             {
-                var p = AttributeValueMvoMetadata.Instance.PropertyMetadataDictionary[fieldName];
+                var p = InOutLineMvoMetadata.Instance.PropertyMetadataDictionary[fieldName];
                 if (PropertyMetadata.IsFilteringProperty(p))
                 {
                     var propertyName = fieldName;
@@ -234,9 +234,9 @@ namespace Dddml.Wms.HttpServices.ApiControllers
 
         protected static Type GetFilterPropertyType(string propertyName)
         {
-            if (AttributeValueMvoMetadata.Instance.PropertyMetadataDictionary.ContainsKey(propertyName))
+            if (InOutLineMvoMetadata.Instance.PropertyMetadataDictionary.ContainsKey(propertyName))
             {
-                return AttributeValueMvoMetadata.Instance.PropertyMetadataDictionary[propertyName].Type;
+                return InOutLineMvoMetadata.Instance.PropertyMetadataDictionary[propertyName].Type;
             }
             return typeof(string);
         }

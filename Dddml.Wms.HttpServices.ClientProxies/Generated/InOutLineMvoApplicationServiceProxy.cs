@@ -125,15 +125,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         public IEnumerable<IInOutLineMvoState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IInOutLineMvoState> states = null;
-			var q = new InOutLineMvoesGetQuery();
+			var q = new InOutLineMvosGetQuery();
 			q.FirstResult = firstResult;
 			q.MaxResults = maxResults;
             q.Sort = GetOrdersQueryValueString(orders);
             q.Fields = GetReturnedFieldsQueryValueString(fields);
             q.FilterTag = GetFilterTagQueryValueString(filter);
-            var req = new InOutLineMvoesGetRequest();
+            var req = new InOutLineMvosGetRequest();
             req.Query = q;
-            var resp = _ramlClient.InOutLineMvoes.Get(req).GetAwaiter().GetResult();
+            var resp = _ramlClient.InOutLineMvos.Get(req).GetAwaiter().GetResult();
             ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
@@ -153,7 +153,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         public IEnumerable<IInOutLineMvoState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IInOutLineMvoState> states = null;
-			var q = new InOutLineMvoesGetQuery();
+			var q = new InOutLineMvosGetQuery();
 			q.FirstResult = firstResult;
 			q.MaxResults = maxResults;
             q.Sort = GetOrdersQueryValueString(orders);
@@ -162,9 +162,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             {
                 q.Filter = WebUtility.UrlEncode(JObject.FromObject(new CriterionDto(filter, new ProxyTypeConverter())).ToString());
             }
-            var req = new InOutLineMvoesGetRequest();
+            var req = new InOutLineMvosGetRequest();
             req.Query = q;
-            var resp = _ramlClient.InOutLineMvoes.Get(req).GetAwaiter().GetResult();
+            var resp = _ramlClient.InOutLineMvos.Get(req).GetAwaiter().GetResult();
             ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
@@ -172,25 +172,25 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
 		{
-			var q = new InOutLineMvoesCountGetQuery();
+			var q = new InOutLineMvosCountGetQuery();
             q.FilterTag = GetFilterTagQueryValueString(filter);
-            var req = new InOutLineMvoesCountGetRequest();
+            var req = new InOutLineMvosCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.InOutLineMvoesCount.Get(req).GetAwaiter().GetResult();
+            var resp = _ramlClient.InOutLineMvosCount.Get(req).GetAwaiter().GetResult();
             ThrowOnHttpResponseError(resp);
             return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
 		}
 
         public virtual long GetCount(ICriterion filter)
 		{
-			var q = new InOutLineMvoesCountGetQuery();
+			var q = new InOutLineMvosCountGetQuery();
             if (filter != null)
             {
                 q.Filter = WebUtility.UrlEncode(JObject.FromObject(new CriterionDto(filter, new ProxyTypeConverter())).ToString());
             }
-            var req = new InOutLineMvoesCountGetRequest();
+            var req = new InOutLineMvosCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.InOutLineMvoesCount.Get(req).GetAwaiter().GetResult();
+            var resp = _ramlClient.InOutLineMvosCount.Get(req).GetAwaiter().GetResult();
             ThrowOnHttpResponseError(resp);
             return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
 		}

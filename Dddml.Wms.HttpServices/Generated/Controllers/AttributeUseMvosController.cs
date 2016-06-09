@@ -20,8 +20,8 @@ using Dddml.Wms.Domain.Metadata;
 namespace Dddml.Wms.HttpServices.ApiControllers
 {
 
-    [RoutePrefix("api/AttributeUseMvoes")]
-    public partial class AttributeUseMvoesController : ApiController
+    [RoutePrefix("api/AttributeUseMvos")]
+    public partial class AttributeUseMvosController : ApiController
     {
 
         IAttributeUseMvoApplicationService _attributeUseMvoApplicationService = ApplicationContext.Current["AttributeUseMvoApplicationService"] as IAttributeUseMvoApplicationService;

@@ -35,12 +35,12 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             if (!String.IsNullOrWhiteSpace(filter))
             {
                 states = _inOutApplicationService.Get(CriterionDto.ToSubclass(JObject.Parse(filter).ToObject<CriterionDto>(),new ApiControllerTypeConverter(), new PropertyTypeResolver())
-                    , GetQueryOrders(sort), firstResult, maxResults);
+                    , InOutsControllerUtils.GetQueryOrders(sort, QueryOrderSeparator), firstResult, maxResults);
             }
             else 
             {
-                states = _inOutApplicationService.Get(GetQueryFilterDictionary(this.Request.GetQueryNameValuePairs())
-                    , GetQueryOrders(sort), firstResult, maxResults);
+                states = _inOutApplicationService.Get(InOutsControllerUtils.GetQueryFilterDictionary(this.Request.GetQueryNameValuePairs())
+                    , InOutsControllerUtils.GetQueryOrders(sort, QueryOrderSeparator), firstResult, maxResults);
             }
             var stateDtos = new List<InOutStateDto>();
             foreach (var s in states)
@@ -57,7 +57,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
                 stateDtos.Add(dto);
             }
             return stateDtos;
-          } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
+          } catch (Exception ex) { var response = InOutsControllerUtils.GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
         [HttpGet]
@@ -76,7 +76,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
                 stateDto.ReturnedFieldsString = fields;
             }
             return stateDto;
-          } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
+          } catch (Exception ex) { var response = InOutsControllerUtils.GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
 
@@ -93,28 +93,28 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             }
             else 
             {
-                count = _inOutApplicationService.GetCount(GetQueryFilterDictionary(this.Request.GetQueryNameValuePairs()));
+                count = _inOutApplicationService.GetCount(InOutsControllerUtils.GetQueryFilterDictionary(this.Request.GetQueryNameValuePairs()));
             }
             return count;
-          } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
+          } catch (Exception ex) { var response = InOutsControllerUtils.GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
         [HttpPut]
         public void Put(string id, [FromBody]CreateInOutDto value)
         {
           try {
-            SetNullIdOrThrowOnInconsistentIds(id, value);
+            InOutsControllerUtils.SetNullIdOrThrowOnInconsistentIds(id, value);
             _inOutApplicationService.When(value as ICreateInOut);
-          } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
+          } catch (Exception ex) { var response = InOutsControllerUtils.GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
         [HttpPatch]
         public void Patch(string id, [FromBody]MergePatchInOutDto value)
         {
           try {
-            SetNullIdOrThrowOnInconsistentIds(id, value);
+            InOutsControllerUtils.SetNullIdOrThrowOnInconsistentIds(id, value);
             _inOutApplicationService.When(value as IMergePatchInOut);
-          } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
+          } catch (Exception ex) { var response = InOutsControllerUtils.GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
         [HttpDelete]
@@ -124,9 +124,9 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             var value = new DeleteInOutDto();
             value.CommandId = commandId;
             value.RequesterId = requesterId;
-            SetNullIdOrThrowOnInconsistentIds(id, value);
+            InOutsControllerUtils.SetNullIdOrThrowOnInconsistentIds(id, value);
             _inOutApplicationService.When(value as IDeleteInOut);
-          } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
+          } catch (Exception ex) { var response = InOutsControllerUtils.GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
 
@@ -144,7 +144,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
                 }
             }
             return filtering;
-          } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
+          } catch (Exception ex) { var response = InOutsControllerUtils.GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
         [Route("{id}/_stateEvents/{version}")]
@@ -154,116 +154,11 @@ namespace Dddml.Wms.HttpServices.ApiControllers
           try {
             var idObj = id;
             return _inOutApplicationService.GetStateEvent(idObj, version);
-          } catch (Exception ex) { var response = GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
+          } catch (Exception ex) { var response = InOutsControllerUtils.GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
 
 		// /////////////////////////////////////////////////
-
-        protected virtual HttpResponseMessage GetErrorHttpResponseMessage(Exception ex)
-        {
-            var errorName = ex.GetType().Name;
-            var errorMessage = ex.Message;
-            if (ex is DomainError)
-            {
-                DomainError de = ex as DomainError;
-                errorName = de.Name;
-                errorMessage = de.Message;
-            }
-            else
-            {
-                //改进??
-                errorMessage = String.IsNullOrWhiteSpace(ex.Message) ? String.Empty : ex.Message.Substring(0, (ex.Message.Length > 140) ? 140 : ex.Message.Length);
-            }
-            dynamic content = new JObject();
-            content.ErrorName = errorName;
-            content.ErrorMessage = errorMessage;
-            var response = new HttpResponseMessage(HttpStatusCode.InternalServerError)
-            {
-                Content = new ObjectContent<JObject>(content as JObject, new JsonMediaTypeFormatter()),
-                ReasonPhrase = "Server Error"
-            };
-            return response;
-        }
-
-        protected static void SetNullIdOrThrowOnInconsistentIds(string id, CreateOrMergePatchOrDeleteInOutDto value)
-        {
-            var idObj = id;
-            if (value.DocumentNumber == null)
-            {
-                value.DocumentNumber = idObj;
-            }
-            else if (!((ICreateOrMergePatchOrDeleteInOut)value).DocumentNumber.Equals(idObj))
-            {
-                throw DomainError.Named("inconsistentId", "Argument Id {0} NOT equals body Id {1}", id, value.DocumentNumber);
-            }
-        }
-
-
-        protected virtual string GetFilterPropertyName(string fieldName)
-        {
-            if (String.Equals(fieldName, "sort", StringComparison.InvariantCultureIgnoreCase)
-                || String.Equals(fieldName, "firstResult", StringComparison.InvariantCultureIgnoreCase)
-                || String.Equals(fieldName, "maxResults", StringComparison.InvariantCultureIgnoreCase)
-                || String.Equals(fieldName, "fields", StringComparison.InvariantCultureIgnoreCase))
-            {
-                return null;
-            }
-            if (InOutMetadata.Instance.PropertyMetadataDictionary.ContainsKey(fieldName))
-            {
-                var p = InOutMetadata.Instance.PropertyMetadataDictionary[fieldName];
-                if (PropertyMetadata.IsFilteringProperty(p))
-                {
-                    var propertyName = fieldName;
-                    if (p.IsDerived)
-                    {
-                        propertyName = p.DerivedFrom;
-                    }
-                    return propertyName;
-                }
-            }
-            return null;
-        }
-
-        protected static Type GetFilterPropertyType(string propertyName)
-        {
-            if (InOutMetadata.Instance.PropertyMetadataDictionary.ContainsKey(propertyName))
-            {
-                return InOutMetadata.Instance.PropertyMetadataDictionary[propertyName].Type;
-            }
-            return typeof(string);
-        }
-
-        private IDictionary<string, object> GetQueryFilterDictionary(IEnumerable<KeyValuePair<string, string>> queryNameValuePairs)
-        {
-            var filter = new Dictionary<string, object>();
-            foreach (var p in queryNameValuePairs)
-            {
-                var pName = GetFilterPropertyName(p.Key);
-                if (!String.IsNullOrWhiteSpace(pName))
-                {
-                    Type type = GetFilterPropertyType(pName);
-                    var pValue = ApplicationContext.Current.TypeConverter.ConvertFromString(type, p.Value);
-                    filter.Add(pName, pValue);
-                }
-            }
-            return filter;
-        }
-
-        private IList<string> GetQueryOrders(string str)
-        {
-            if (String.IsNullOrWhiteSpace(str))
-            {
-                return new string[0];
-            }
-            var arr = str.Split(new string[] { QueryOrderSeparator }, StringSplitOptions.RemoveEmptyEntries);
-            var orders = new List<string>();
-            foreach (var a in arr)
-            {
-                orders.Add(a.Trim());
-            }
-            return orders;
-        }
 
         protected virtual string QueryOrderSeparator
         {
@@ -306,13 +201,122 @@ namespace Dddml.Wms.HttpServices.ApiControllers
 
             public Type ResolveTypeByPropertyName(string propertyName)
             {
-                return GetFilterPropertyType(propertyName);
+                return InOutsControllerUtils.GetFilterPropertyType(propertyName);
             }
         }
 
     }
 
 
+    
+    public static class InOutsControllerUtils
+    {
+
+        public static HttpResponseMessage GetErrorHttpResponseMessage(Exception ex)
+        {
+            var errorName = ex.GetType().Name;
+            var errorMessage = ex.Message;
+            if (ex is DomainError)
+            {
+                DomainError de = ex as DomainError;
+                errorName = de.Name;
+                errorMessage = de.Message;
+            }
+            else
+            {
+                //改进??
+                errorMessage = String.IsNullOrWhiteSpace(ex.Message) ? String.Empty : ex.Message.Substring(0, (ex.Message.Length > 140) ? 140 : ex.Message.Length);
+            }
+            dynamic content = new JObject();
+            content.ErrorName = errorName;
+            content.ErrorMessage = errorMessage;
+            var response = new HttpResponseMessage(HttpStatusCode.InternalServerError)
+            {
+                Content = new ObjectContent<JObject>(content as JObject, new JsonMediaTypeFormatter()),
+                ReasonPhrase = "Server Error"
+            };
+            return response;
+        }
+
+        public static void SetNullIdOrThrowOnInconsistentIds(string id, CreateOrMergePatchOrDeleteInOutDto value)
+        {
+            var idObj = id;
+            if (value.DocumentNumber == null)
+            {
+                value.DocumentNumber = idObj;
+            }
+            else if (!((ICreateOrMergePatchOrDeleteInOut)value).DocumentNumber.Equals(idObj))
+            {
+                throw DomainError.Named("inconsistentId", "Argument Id {0} NOT equals body Id {1}", id, value.DocumentNumber);
+            }
+        }
+
+
+        public static string GetFilterPropertyName(string fieldName)
+        {
+            if (String.Equals(fieldName, "sort", StringComparison.InvariantCultureIgnoreCase)
+                || String.Equals(fieldName, "firstResult", StringComparison.InvariantCultureIgnoreCase)
+                || String.Equals(fieldName, "maxResults", StringComparison.InvariantCultureIgnoreCase)
+                || String.Equals(fieldName, "fields", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return null;
+            }
+            if (InOutMetadata.Instance.PropertyMetadataDictionary.ContainsKey(fieldName))
+            {
+                var p = InOutMetadata.Instance.PropertyMetadataDictionary[fieldName];
+                if (PropertyMetadata.IsFilteringProperty(p))
+                {
+                    var propertyName = fieldName;
+                    if (p.IsDerived)
+                    {
+                        propertyName = p.DerivedFrom;
+                    }
+                    return propertyName;
+                }
+            }
+            return null;
+        }
+
+        public static Type GetFilterPropertyType(string propertyName)
+        {
+            if (InOutMetadata.Instance.PropertyMetadataDictionary.ContainsKey(propertyName))
+            {
+                return InOutMetadata.Instance.PropertyMetadataDictionary[propertyName].Type;
+            }
+            return typeof(string);
+        }
+
+        public static IDictionary<string, object> GetQueryFilterDictionary(IEnumerable<KeyValuePair<string, string>> queryNameValuePairs)
+        {
+            var filter = new Dictionary<string, object>();
+            foreach (var p in queryNameValuePairs)
+            {
+                var pName = GetFilterPropertyName(p.Key);
+                if (!String.IsNullOrWhiteSpace(pName))
+                {
+                    Type type = GetFilterPropertyType(pName);
+                    var pValue = ApplicationContext.Current.TypeConverter.ConvertFromString(type, p.Value);
+                    filter.Add(pName, pValue);
+                }
+            }
+            return filter;
+        }
+
+        public static IList<string> GetQueryOrders(string str, string separator)
+        {
+            if (String.IsNullOrWhiteSpace(str))
+            {
+                return new string[0];
+            }
+            var arr = str.Split(new string[] { separator }, StringSplitOptions.RemoveEmptyEntries);
+            var orders = new List<string>();
+            foreach (var a in arr)
+            {
+                orders.Add(a.Trim());
+            }
+            return orders;
+        }
+    }
 
 }
 

@@ -13,9 +13,9 @@ namespace Dddml.Wms.Domain
 {
 	public partial interface ILocatorStateRepository
 	{
-        IEnumerable<ILocatorState> GetLocatorTreeRoots(ICriterion filter, int firstResult = 0, int maxResults = int.MaxValue);
+        IEnumerable<ILocatorState> GetLocatorTreeRoots(ICriterion filter, IList<string> orders, int firstResult = 0, int maxResults = int.MaxValue);
 
-        IEnumerable<ILocatorState> GetLocatorTreeChildren(string parentId, ICriterion filter, int firstResult = 0, int maxResults = int.MaxValue);
+        IEnumerable<ILocatorState> GetLocatorTreeChildren(string parentId, ICriterion filter, IList<string> orders, int firstResult = 0, int maxResults = int.MaxValue);
 
 	}
 

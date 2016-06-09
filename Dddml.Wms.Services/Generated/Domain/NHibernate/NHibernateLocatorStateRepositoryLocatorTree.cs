@@ -18,7 +18,7 @@ namespace Dddml.Wms.Domain.NHibernate
 	public partial class NHibernateLocatorStateRepository
 	{
         [Transaction(ReadOnly = true)]
-        public virtual IEnumerable<ILocatorState> GetLocatorTreeRoots(Dddml.Support.Criterion.ICriterion filter, int firstResult = 0, int maxResults = int.MaxValue)
+        public virtual IEnumerable<ILocatorState> GetLocatorTreeRoots(Dddml.Support.Criterion.ICriterion filter, IList<string> orders, int firstResult = 0, int maxResults = int.MaxValue)
         {
             IList<object> rootParentIdValues = new object[] { null, "" };
 
@@ -37,17 +37,17 @@ namespace Dddml.Wms.Domain.NHibernate
                 }
                 criteria.Add(j);
             }
-            CriteriaAddFilterAndSetFirstResultAndMaxResults(criteria, filter, firstResult, maxResults);
+            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
             return criteria.List<LocatorState>();
         }
 
         [Transaction(ReadOnly = true)]
-        public virtual IEnumerable<ILocatorState> GetLocatorTreeChildren(string parentId, Dddml.Support.Criterion.ICriterion filter, int firstResult = 0, int maxResults = int.MaxValue)
+        public virtual IEnumerable<ILocatorState> GetLocatorTreeChildren(string parentId, Dddml.Support.Criterion.ICriterion filter, IList<string> orders, int firstResult = 0, int maxResults = int.MaxValue)
         {
             var criteria = CurrentSession.CreateCriteria<LocatorState>();
 
             CriteriaAddCriterion(criteria, "ParentLocatorId", parentId);
-            CriteriaAddFilterAndSetFirstResultAndMaxResults(criteria, filter, firstResult, maxResults);
+            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
             return criteria.List<LocatorState>();
         }
 

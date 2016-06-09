@@ -61,7 +61,7 @@ namespace Dddml.Wms.Services.Tests
             orgStructure_1_2.Id = orgStructure_1_2_Id;
             organizationStructureApplicationService.When(orgStructure_1_2);
 
-            var roots = organizationTreeRepository.GetRoots(null).ToList();
+            var roots = organizationTreeRepository.GetRoots(null, null).ToList();
             Assert.GreaterOrEqual(roots.Count, 1);
             Console.WriteLine(roots[0].Content.OrganizationId);
             if (roots != null && roots.Count > 0)

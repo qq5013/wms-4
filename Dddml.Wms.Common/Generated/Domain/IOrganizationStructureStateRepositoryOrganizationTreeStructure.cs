@@ -13,9 +13,9 @@ namespace Dddml.Wms.Domain
 {
 	public partial interface IOrganizationStructureStateRepository
 	{
-        IEnumerable<IOrganizationStructureState> GetOrganizationTreeRoots(ICriterion filter, int firstResult = 0, int maxResults = int.MaxValue);
+        IEnumerable<IOrganizationStructureState> GetOrganizationTreeRoots(ICriterion filter, IList<string> orders, int firstResult = 0, int maxResults = int.MaxValue);
 
-        IEnumerable<IOrganizationStructureState> GetOrganizationTreeChildren(string parentId, ICriterion filter, int firstResult = 0, int maxResults = int.MaxValue);
+        IEnumerable<IOrganizationStructureState> GetOrganizationTreeChildren(string parentId, ICriterion filter, IList<string> orders, int firstResult = 0, int maxResults = int.MaxValue);
 
 	}
 

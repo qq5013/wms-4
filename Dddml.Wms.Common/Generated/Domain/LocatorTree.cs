@@ -27,7 +27,7 @@ namespace Dddml.Wms.Domain
         {
             get
             {
-                return _repository.GetChildren(this._state.LocatorId, null);
+                return _repository.GetChildren(this._state.LocatorId, null, null);
             }
         }
 

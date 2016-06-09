@@ -766,6 +766,9 @@
     <Compile Include="Generated\Domain\ILocatorTree.cs">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\ILocatorTreeApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\InOutAggregate.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -956,6 +959,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\IOrganizationTree.cs">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IOrganizationTreeApplicationService.cs">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\IWarehouseAggregate.cs">
@@ -1701,7 +1707,9 @@
 .\DocumentActionDto.cs
 .\GenerateBoundedContextDomain.txt
 .\ILocatorTree.cs
+.\ILocatorTreeApplicationService.cs
 .\IOrganizationTree.cs
+.\IOrganizationTreeApplicationService.cs
 .\LocatorTree.cs
 .\OrganizationStructureId.cs
 .\OrganizationStructureIdDto.cs

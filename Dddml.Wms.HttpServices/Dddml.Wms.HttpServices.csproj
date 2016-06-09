@@ -297,6 +297,9 @@
     <Compile Include="Generated\Controllers\LocatorsController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Controllers\LocatorTreesController.cs">
+      <DependentUpon>GenerateTreeControllers.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Controllers\OrganizationsController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
@@ -305,6 +308,9 @@
     </Compile>
     <Compile Include="Generated\Controllers\OrganizationStructureTypesController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Controllers\OrganizationTreesController.cs">
+      <DependentUpon>GenerateTreeControllers.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Controllers\WarehousesController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
@@ -343,6 +349,15 @@
     <Content Include="Content\apiconsole.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Generated\Controllers\GenerateTreeControllers.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GenerateTreeControllers.txt</LastGenOutput>
+      <LastOutputs>
+.\GenerateTreeControllers.txt
+.\LocatorTreesController.cs
+.\OrganizationTreesController.cs
+</LastOutputs>
+    </Content>
     <Content Include="Generated\Controllers\GenerateControllers.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GenerateControllers.txt</LastGenOutput>
@@ -385,6 +400,11 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\LICENSE-OpenSans.txt" />
+    <Content Include="Generated\Controllers\GenerateTreeControllers.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenerateTreeControllers.tt</DependentUpon>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="LoadBoundedContext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

@@ -20,10 +20,46 @@ namespace Dddml.Wms.Domain.NHibernate
         [Transaction(ReadOnly = true)]
         public virtual IEnumerable<IOrganizationStructureState> GetOrganizationTreeRoots(Dddml.Support.Criterion.ICriterion filter, IList<string> orders, int firstResult = 0, int maxResults = int.MaxValue)
         {
-            IList<object> rootParentIdValues = new object[] { "" };
-
             var criteria = CurrentSession.CreateCriteria<OrganizationStructureState>();
 
+            CriteriaAddRootParentIdCriterion(criteria);
+            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
+            return criteria.List<OrganizationStructureState>();
+        }
+
+        [Transaction(ReadOnly = true)]
+        public virtual IEnumerable<IOrganizationStructureState> GetOrganizationTreeChildren(string parentId, Dddml.Support.Criterion.ICriterion filter, IList<string> orders, int firstResult = 0, int maxResults = int.MaxValue)
+        {
+            var criteria = CurrentSession.CreateCriteria<OrganizationStructureState>();
+
+            CriteriaAddCriterion(criteria, "Id.ParentId", parentId);
+            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
+            return criteria.List<OrganizationStructureState>();
+        }
+
+        [Transaction(ReadOnly = true)]
+        public virtual IEnumerable<IOrganizationStructureState> GetOrganizationTreeRoots(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders, int firstResult = 0, int maxResults = int.MaxValue)
+        {
+            var criteria = CurrentSession.CreateCriteria<OrganizationStructureState>();
+
+            CriteriaAddRootParentIdCriterion(criteria);
+            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
+            return criteria.List<OrganizationStructureState>();
+        }
+
+        [Transaction(ReadOnly = true)]
+        public virtual IEnumerable<IOrganizationStructureState> GetOrganizationTreeChildren(string parentId, IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders, int firstResult = 0, int maxResults = int.MaxValue)
+        {
+            var criteria = CurrentSession.CreateCriteria<OrganizationStructureState>();
+
+            CriteriaAddCriterion(criteria, "Id.ParentId", parentId);
+            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
+            return criteria.List<OrganizationStructureState>();
+        }
+
+        private void CriteriaAddRootParentIdCriterion(ICriteria criteria)
+        {
+            IList<object> rootParentIdValues = new object[] { "" };
             if (rootParentIdValues.Count == 1)
             {
                 CriteriaAddCriterion(criteria, "Id.ParentId", rootParentIdValues[0]);
@@ -37,18 +73,6 @@ namespace Dddml.Wms.Domain.NHibernate
                 }
                 criteria.Add(j);
             }
-            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
-            return criteria.List<OrganizationStructureState>();
-        }
-
-        [Transaction(ReadOnly = true)]
-        public virtual IEnumerable<IOrganizationStructureState> GetOrganizationTreeChildren(string parentId, Dddml.Support.Criterion.ICriterion filter, IList<string> orders, int firstResult = 0, int maxResults = int.MaxValue)
-        {
-            var criteria = CurrentSession.CreateCriteria<OrganizationStructureState>();
-
-            CriteriaAddCriterion(criteria, "Id.ParentId", parentId);
-            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
-            return criteria.List<OrganizationStructureState>();
         }
 
 	}

@@ -1,13 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <objects xmlns="http://www.springframework.net">
 
-  <object id="locatorTreeRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateLocatorTreeRepository, Dddml.Wms.Services">
-    <property name="LocatorStateRepository" ref="locatorStateRepository"/>
+  <object id="locatorTreeApplicationService" type="Dddml.Wms.Domain.LocatorTreeApplicationService, Dddml.Wms.Services">
+    <property name="LocatorTreeRepository" ref="locatorTreeRepository"/>
   </object>
 
-  <object id="organizationTreeRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateOrganizationTreeRepository, Dddml.Wms.Services">
-    <property name="OrganizationStateRepository" ref="organizationStateRepository"/>
-    <property name="OrganizationStructureStateRepository" ref="organizationStructureStateRepository"/>
+  <object id="organizationTreeApplicationService" type="Dddml.Wms.Domain.OrganizationTreeApplicationService, Dddml.Wms.Services">
+    <property name="OrganizationTreeRepository" ref="organizationTreeRepository"/>
   </object>
 
 

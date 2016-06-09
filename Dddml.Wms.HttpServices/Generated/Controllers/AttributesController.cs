@@ -176,7 +176,6 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             get { return ","; }
         }
 
-
         // ////////////////////////////////
 
         private class ApiControllerTypeConverter : Dddml.Support.Criterion.ITypeConverter

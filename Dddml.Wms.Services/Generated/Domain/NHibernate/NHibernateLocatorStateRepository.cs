@@ -67,11 +67,7 @@ namespace Dddml.Wms.Domain.NHibernate
         {
             var criteria = CurrentSession.CreateCriteria<LocatorState>();
 
-            if (filter != null)
-            {
-                CriteriaAddFilter(criteria, filter);
-            }
-            CriteriaAddOrdersAndSetFirstResultAndMaxResults(criteria, orders, firstResult, maxResults);
+            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
             return criteria.List<LocatorState>();
         }
 
@@ -122,6 +118,15 @@ namespace Dddml.Wms.Domain.NHibernate
                 criteria.Add(hc);
             }
             return criteria.UniqueResult<long>();
+        }
+
+        protected void CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(ICriteria criteria, IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders, int firstResult, int maxResults)
+        {
+            if (filter != null)
+            {
+                CriteriaAddFilter(criteria, filter);
+            }
+            CriteriaAddOrdersAndSetFirstResultAndMaxResults(criteria, orders, firstResult, maxResults);
         }
 
         protected void CriteriaAddFilter(ICriteria criteria, IEnumerable<KeyValuePair<string, object>> filter)

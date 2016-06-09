@@ -20,10 +20,46 @@ namespace Dddml.Wms.Domain.NHibernate
         [Transaction(ReadOnly = true)]
         public virtual IEnumerable<ILocatorState> GetLocatorTreeRoots(Dddml.Support.Criterion.ICriterion filter, IList<string> orders, int firstResult = 0, int maxResults = int.MaxValue)
         {
-            IList<object> rootParentIdValues = new object[] { null, "" };
-
             var criteria = CurrentSession.CreateCriteria<LocatorState>();
 
+            CriteriaAddRootParentIdCriterion(criteria);
+            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
+            return criteria.List<LocatorState>();
+        }
+
+        [Transaction(ReadOnly = true)]
+        public virtual IEnumerable<ILocatorState> GetLocatorTreeChildren(string parentId, Dddml.Support.Criterion.ICriterion filter, IList<string> orders, int firstResult = 0, int maxResults = int.MaxValue)
+        {
+            var criteria = CurrentSession.CreateCriteria<LocatorState>();
+
+            CriteriaAddCriterion(criteria, "ParentLocatorId", parentId);
+            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
+            return criteria.List<LocatorState>();
+        }
+
+        [Transaction(ReadOnly = true)]
+        public virtual IEnumerable<ILocatorState> GetLocatorTreeRoots(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders, int firstResult = 0, int maxResults = int.MaxValue)
+        {
+            var criteria = CurrentSession.CreateCriteria<LocatorState>();
+
+            CriteriaAddRootParentIdCriterion(criteria);
+            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
+            return criteria.List<LocatorState>();
+        }
+
+        [Transaction(ReadOnly = true)]
+        public virtual IEnumerable<ILocatorState> GetLocatorTreeChildren(string parentId, IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders, int firstResult = 0, int maxResults = int.MaxValue)
+        {
+            var criteria = CurrentSession.CreateCriteria<LocatorState>();
+
+            CriteriaAddCriterion(criteria, "ParentLocatorId", parentId);
+            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
+            return criteria.List<LocatorState>();
+        }
+
+        private void CriteriaAddRootParentIdCriterion(ICriteria criteria)
+        {
+            IList<object> rootParentIdValues = new object[] { null, "" };
             if (rootParentIdValues.Count == 1)
             {
                 CriteriaAddCriterion(criteria, "ParentLocatorId", rootParentIdValues[0]);
@@ -37,18 +73,6 @@ namespace Dddml.Wms.Domain.NHibernate
                 }
                 criteria.Add(j);
             }
-            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
-            return criteria.List<LocatorState>();
-        }
-
-        [Transaction(ReadOnly = true)]
-        public virtual IEnumerable<ILocatorState> GetLocatorTreeChildren(string parentId, Dddml.Support.Criterion.ICriterion filter, IList<string> orders, int firstResult = 0, int maxResults = int.MaxValue)
-        {
-            var criteria = CurrentSession.CreateCriteria<LocatorState>();
-
-            CriteriaAddCriterion(criteria, "ParentLocatorId", parentId);
-            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
-            return criteria.List<LocatorState>();
         }
 
 	}

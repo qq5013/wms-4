@@ -17,6 +17,10 @@ namespace Dddml.Wms.Domain
 
         IEnumerable<ILocatorState> GetLocatorTreeChildren(string parentId, ICriterion filter, IList<string> orders, int firstResult = 0, int maxResults = int.MaxValue);
 
+        IEnumerable<ILocatorState> GetLocatorTreeRoots(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders, int firstResult = 0, int maxResults = int.MaxValue);
+
+        IEnumerable<ILocatorState> GetLocatorTreeChildren(string parentId, IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders, int firstResult = 0, int maxResults = int.MaxValue);
+
 	}
 
 }

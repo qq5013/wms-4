@@ -27,7 +27,7 @@ namespace Dddml.Wms.Domain
         {
             get
             {
-                return _repository.GetChildren(this._state.OrganizationId, null, null);
+                return _repository.GetChildren(this._state.OrganizationId, (IEnumerable<KeyValuePair<string, object>>)null, null);
             }
         }
 

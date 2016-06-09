@@ -3,11 +3,15 @@
 <#@ import namespace="Dddml.Core.Domain" #>
 <#@ include file="T4Toolbox.tt" #>
 <#@ include file="%DddmlDotNetToolsSolutionDir%\Dddml.T4.Templates\NHibernate\Spring\TreesNHibernateSpringConfigGenerator.tt" #>
+<#@ include file="%DddmlDotNetToolsSolutionDir%\Dddml.T4.Templates\Spring\TreesSpringConfigGenerator.tt" #>
 <#@ include file="..\LoadBoundedContext.tt" #>
 <#
 
 	var TreesNHibernateSpringConfigGenerator = new TreesNHibernateSpringConfigGenerator(boundedContext.Trees.Values);
 	TreesNHibernateSpringConfigGenerator.Run();  
+
+	var TreesSpringConfigGenerator = new TreesSpringConfigGenerator(boundedContext.Trees.Values);
+	TreesSpringConfigGenerator.Run();  
 
 #> 
 

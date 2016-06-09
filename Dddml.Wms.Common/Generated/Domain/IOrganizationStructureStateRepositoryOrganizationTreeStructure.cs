@@ -17,6 +17,10 @@ namespace Dddml.Wms.Domain
 
         IEnumerable<IOrganizationStructureState> GetOrganizationTreeChildren(string parentId, ICriterion filter, IList<string> orders, int firstResult = 0, int maxResults = int.MaxValue);
 
+        IEnumerable<IOrganizationStructureState> GetOrganizationTreeRoots(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders, int firstResult = 0, int maxResults = int.MaxValue);
+
+        IEnumerable<IOrganizationStructureState> GetOrganizationTreeChildren(string parentId, IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders, int firstResult = 0, int maxResults = int.MaxValue);
+
 	}
 
 }

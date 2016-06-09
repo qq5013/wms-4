@@ -42,7 +42,7 @@ namespace Dddml.Wms.Services.Tests
             locator2.Y = "2";
             locatorApplicationService.When(locator2);
 
-            var roots = locatorTreeRepository.GetRoots(null, null).ToList();
+            var roots = locatorTreeRepository.GetRoots((IEnumerable<KeyValuePair<string, object>>)null, null).ToList();
             Assert.GreaterOrEqual(roots.Count, 1);
             Console.WriteLine(roots[0].Content.LocatorId);
             if (roots != null && roots.Count > 0)

@@ -52,24 +52,6 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
             Console.WriteLine("==================== End Of Object [name = " + name + "] ====================");
         }
 
-        private void _test_test_test()
-        {
-            var client = new HttpClient { BaseAddress = new Uri(_endpointUrl) };
-            
-            var url = "LocatorTrees";
-
-            var req = new HttpRequestMessage(HttpMethod.Get, url);
-            var response = client.SendAsync(req).GetAwaiter().GetResult();
-
-            var respContent = response.Content.ReadAsAsync<JObject>().GetAwaiter().GetResult();
-            Console.WriteLine(respContent);
-            Console.WriteLine(response.Headers);
-            Console.WriteLine(response.StatusCode);
-            Console.WriteLine(response.ReasonPhrase);
-
-        }
-
-
 
       
     }

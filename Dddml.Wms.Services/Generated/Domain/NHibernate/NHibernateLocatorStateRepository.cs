@@ -48,6 +48,7 @@ namespace Dddml.Wms.Domain.NHibernate
             var criteria = CurrentSession.CreateCriteria<LocatorState>();
             criteria.SetFirstResult(firstResult);
             criteria.SetMaxResults(maxResults);
+            AddNotDeletedRestriction(criteria);
             return criteria.List<LocatorState>();
         }
 
@@ -68,6 +69,7 @@ namespace Dddml.Wms.Domain.NHibernate
             var criteria = CurrentSession.CreateCriteria<LocatorState>();
 
             CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
+            AddNotDeletedRestriction(criteria);
             return criteria.List<LocatorState>();
         }
 
@@ -77,6 +79,7 @@ namespace Dddml.Wms.Domain.NHibernate
             var criteria = CurrentSession.CreateCriteria<LocatorState>();
 
             CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
+            AddNotDeletedRestriction(criteria);
             return criteria.List<LocatorState>();
         }
 
@@ -104,6 +107,7 @@ namespace Dddml.Wms.Domain.NHibernate
             var criteria = CurrentSession.CreateCriteria<LocatorState>();
             criteria.SetProjection(Projections.RowCountInt64());
             CriteriaAddFilter(criteria, filter);
+            AddNotDeletedRestriction(criteria);
             return criteria.UniqueResult<long>();
         }
 
@@ -117,7 +121,13 @@ namespace Dddml.Wms.Domain.NHibernate
                 NHibernateICriterion hc = CriterionUtils.ToNHibernateCriterion(filter);
                 criteria.Add(hc);
             }
+            AddNotDeletedRestriction(criteria);
             return criteria.UniqueResult<long>();
+        }
+
+        protected static void AddNotDeletedRestriction(ICriteria criteria)
+        {
+            criteria.Add(NHibernateRestrictions.Eq("Deleted", false));
         }
 
         protected void CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(ICriteria criteria, IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders, int firstResult, int maxResults)

@@ -376,6 +376,17 @@ namespace Dddml.Wms.HttpServices.ClientProxies
                 throw new HttpResponseException(httpResponseMessage);
             }
         }
+
+        public static IEnumerable<AttributeSetInstanceExtensionFieldId> ToIdCollection(IEnumerable<IAttributeSetInstanceExtensionFieldMvoState> states)
+        {
+            var ids = new List<AttributeSetInstanceExtensionFieldId>();
+            foreach (var s in states)
+            {
+                ids.Add(s.AttributeSetInstanceExtensionFieldId);
+            }
+            return ids;
+        }
+
     }
 
 }

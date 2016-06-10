@@ -77,5 +77,16 @@ namespace Dddml.Wms.Domain
 
 	}
 
+	public partial class OrganizationTreeApplicationServiceFactory : IOrganizationTreeApplicationServiceFactory
+	{
+        public virtual IOrganizationTreeApplicationService OrganizationTreeApplicationService 
+        {
+		    get
+		    {
+			    return ApplicationContext.Current["OrganizationTreeApplicationService"] as IOrganizationTreeApplicationService;
+		    }
+        }
+	}
+
 }
 

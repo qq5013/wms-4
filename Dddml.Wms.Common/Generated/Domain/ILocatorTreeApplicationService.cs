@@ -32,5 +32,12 @@ namespace Dddml.Wms.Domain
 
 	}
 
+    public partial interface ILocatorTreeApplicationServiceFactory
+    {
+
+        ILocatorTreeApplicationService LocatorTreeApplicationService { get; }
+
+    }
+
 }
 

@@ -376,6 +376,17 @@ namespace Dddml.Wms.HttpServices.ClientProxies
                 throw new HttpResponseException(httpResponseMessage);
             }
         }
+
+        public static IEnumerable<InOutLineId> ToIdCollection(IEnumerable<IInOutLineMvoState> states)
+        {
+            var ids = new List<InOutLineId>();
+            foreach (var s in states)
+            {
+                ids.Add(s.InOutLineId);
+            }
+            return ids;
+        }
+
     }
 
 }

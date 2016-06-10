@@ -376,6 +376,17 @@ namespace Dddml.Wms.HttpServices.ClientProxies
                 throw new HttpResponseException(httpResponseMessage);
             }
         }
+
+        public static IEnumerable<OrganizationStructureId> ToIdCollection(IEnumerable<IOrganizationStructureState> states)
+        {
+            var ids = new List<OrganizationStructureId>();
+            foreach (var s in states)
+            {
+                ids.Add(s.Id);
+            }
+            return ids;
+        }
+
     }
 
 }

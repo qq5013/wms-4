@@ -98,6 +98,9 @@
     <Compile Include="Generated\LocatorApplicationServiceProxy.cs">
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\LocatorTreeApplicationServiceProxy.cs">
+      <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\OrganizationApplicationServiceProxy.cs">
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
@@ -105,6 +108,9 @@
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\OrganizationStructureTypeApplicationServiceProxy.cs">
+      <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\OrganizationTreeApplicationServiceProxy.cs">
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\WarehouseApplicationServiceProxy.cs">
@@ -129,9 +135,11 @@
 .\InOutApplicationServiceProxy.cs
 .\InOutLineMvoApplicationServiceProxy.cs
 .\LocatorApplicationServiceProxy.cs
+.\LocatorTreeApplicationServiceProxy.cs
 .\OrganizationApplicationServiceProxy.cs
 .\OrganizationStructureApplicationServiceProxy.cs
 .\OrganizationStructureTypeApplicationServiceProxy.cs
+.\OrganizationTreeApplicationServiceProxy.cs
 .\WarehouseApplicationServiceProxy.cs
 </LastOutputs>
     </Content>

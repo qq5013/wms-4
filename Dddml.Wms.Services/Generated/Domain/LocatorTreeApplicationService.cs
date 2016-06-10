@@ -77,5 +77,16 @@ namespace Dddml.Wms.Domain
 
 	}
 
+	public partial class LocatorTreeApplicationServiceFactory : ILocatorTreeApplicationServiceFactory
+	{
+        public virtual ILocatorTreeApplicationService LocatorTreeApplicationService 
+        {
+		    get
+		    {
+			    return ApplicationContext.Current["LocatorTreeApplicationService"] as ILocatorTreeApplicationService;
+		    }
+        }
+	}
+
 }
 

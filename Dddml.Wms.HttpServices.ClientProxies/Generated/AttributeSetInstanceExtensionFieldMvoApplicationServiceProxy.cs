@@ -41,32 +41,32 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public void When(CreateAttributeSetInstanceExtensionFieldMvoDto c)
         {
-            var idObj = ToIdString((c as ICreateAttributeSetInstanceExtensionFieldMvo).AttributeSetInstanceExtensionFieldId);
+            var idObj = AttributeSetInstanceExtensionFieldMvoProxyUtils.ToIdString((c as ICreateAttributeSetInstanceExtensionFieldMvo).AttributeSetInstanceExtensionFieldId);
             var uriParameters = new AttributeSetInstanceExtensionFieldMvoUriParameters();
             uriParameters.Id = idObj;
 
             var req = new AttributeSetInstanceExtensionFieldMvoPutRequest(uriParameters, (CreateAttributeSetInstanceExtensionFieldMvoDto)c);
                 
             var resp = _ramlClient.AttributeSetInstanceExtensionFieldMvo.Put(req).GetAwaiter().GetResult();
-            ThrowOnHttpResponseError(resp);
+            AttributeSetInstanceExtensionFieldMvoProxyUtils.ThrowOnHttpResponseError(resp);
         }
 
         public void When(MergePatchAttributeSetInstanceExtensionFieldMvoDto c)
         {
-            var idObj = ToIdString((c as IMergePatchAttributeSetInstanceExtensionFieldMvo).AttributeSetInstanceExtensionFieldId);
+            var idObj = AttributeSetInstanceExtensionFieldMvoProxyUtils.ToIdString((c as IMergePatchAttributeSetInstanceExtensionFieldMvo).AttributeSetInstanceExtensionFieldId);
             var uriParameters = new AttributeSetInstanceExtensionFieldMvoUriParameters();
             uriParameters.Id = idObj;
 
             var req = new AttributeSetInstanceExtensionFieldMvoPatchRequest(uriParameters, (MergePatchAttributeSetInstanceExtensionFieldMvoDto)c);
             var resp = _ramlClient.AttributeSetInstanceExtensionFieldMvo.Patch(req).GetAwaiter().GetResult();
-            ThrowOnHttpResponseError(resp);
+            AttributeSetInstanceExtensionFieldMvoProxyUtils.ThrowOnHttpResponseError(resp);
         }
 
         public void When(DeleteAttributeSetInstanceExtensionFieldMvoDto c)
         {
             //Action act = async () =>
             //{
-            var idObj = ToIdString((c as IDeleteAttributeSetInstanceExtensionFieldMvo).AttributeSetInstanceExtensionFieldId);
+            var idObj = AttributeSetInstanceExtensionFieldMvoProxyUtils.ToIdString((c as IDeleteAttributeSetInstanceExtensionFieldMvo).AttributeSetInstanceExtensionFieldId);
             var uriParameters = new AttributeSetInstanceExtensionFieldMvoUriParameters();
             uriParameters.Id = idObj;
 
@@ -77,7 +77,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             req.Query = q;
 
             var resp = _ramlClient.AttributeSetInstanceExtensionFieldMvo.Delete(req).GetAwaiter().GetResult();
-            ThrowOnHttpResponseError(resp);
+            AttributeSetInstanceExtensionFieldMvoProxyUtils.ThrowOnHttpResponseError(resp);
             //};
             //act();
         }
@@ -100,14 +100,14 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         public IAttributeSetInstanceExtensionFieldMvoState Get(AttributeSetInstanceExtensionFieldId attributeSetInstanceExtensionFieldId)
         {
             IAttributeSetInstanceExtensionFieldMvoState state = null;
-            var idObj = ToIdString(attributeSetInstanceExtensionFieldId);
+            var idObj = AttributeSetInstanceExtensionFieldMvoProxyUtils.ToIdString(attributeSetInstanceExtensionFieldId);
             var uriParameters = new AttributeSetInstanceExtensionFieldMvoUriParameters();
             uriParameters.Id = idObj;
 
             var req = new AttributeSetInstanceExtensionFieldMvoGetRequest(uriParameters);
 
             var resp = _ramlClient.AttributeSetInstanceExtensionFieldMvo.Get(req).GetAwaiter().GetResult();
-            ThrowOnHttpResponseError(resp);
+            AttributeSetInstanceExtensionFieldMvoProxyUtils.ThrowOnHttpResponseError(resp);
             state = resp.Content;
             return state;
         }
@@ -128,13 +128,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 			var q = new AttributeSetInstanceExtensionFieldMvosGetQuery();
 			q.FirstResult = firstResult;
 			q.MaxResults = maxResults;
-            q.Sort = GetOrdersQueryValueString(orders);
-            q.Fields = GetReturnedFieldsQueryValueString(fields);
-            q.FilterTag = GetFilterTagQueryValueString(filter);
+            q.Sort = AttributeSetInstanceExtensionFieldMvoProxyUtils.GetOrdersQueryValueString(orders);
+            q.Fields = AttributeSetInstanceExtensionFieldMvoProxyUtils.GetReturnedFieldsQueryValueString(fields, QueryFieldValueSeparator);
+            q.FilterTag = AttributeSetInstanceExtensionFieldMvoProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new AttributeSetInstanceExtensionFieldMvosGetRequest();
             req.Query = q;
             var resp = _ramlClient.AttributeSetInstanceExtensionFieldMvos.Get(req).GetAwaiter().GetResult();
-            ThrowOnHttpResponseError(resp);
+            AttributeSetInstanceExtensionFieldMvoProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
         }
@@ -156,16 +156,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 			var q = new AttributeSetInstanceExtensionFieldMvosGetQuery();
 			q.FirstResult = firstResult;
 			q.MaxResults = maxResults;
-            q.Sort = GetOrdersQueryValueString(orders);
-            q.Fields = GetReturnedFieldsQueryValueString(fields);
-            if (filter != null)
-            {
-                q.Filter = WebUtility.UrlEncode(JObject.FromObject(new CriterionDto(filter, new ProxyTypeConverter())).ToString());
-            }
+            q.Sort = AttributeSetInstanceExtensionFieldMvoProxyUtils.GetOrdersQueryValueString(orders);
+            q.Fields = AttributeSetInstanceExtensionFieldMvoProxyUtils.GetReturnedFieldsQueryValueString(fields, QueryFieldValueSeparator);
+            q.Filter = AttributeSetInstanceExtensionFieldMvoProxyUtils.GetFilterQueryValueString(filter);
             var req = new AttributeSetInstanceExtensionFieldMvosGetRequest();
             req.Query = q;
             var resp = _ramlClient.AttributeSetInstanceExtensionFieldMvos.Get(req).GetAwaiter().GetResult();
-            ThrowOnHttpResponseError(resp);
+            AttributeSetInstanceExtensionFieldMvoProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
         }
@@ -173,94 +170,36 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
 		{
 			var q = new AttributeSetInstanceExtensionFieldMvosCountGetQuery();
-            q.FilterTag = GetFilterTagQueryValueString(filter);
+            q.FilterTag = AttributeSetInstanceExtensionFieldMvoProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new AttributeSetInstanceExtensionFieldMvosCountGetRequest();
             req.Query = q;
             var resp = _ramlClient.AttributeSetInstanceExtensionFieldMvosCount.Get(req).GetAwaiter().GetResult();
-            ThrowOnHttpResponseError(resp);
+            AttributeSetInstanceExtensionFieldMvoProxyUtils.ThrowOnHttpResponseError(resp);
             return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
 		}
 
         public virtual long GetCount(ICriterion filter)
 		{
 			var q = new AttributeSetInstanceExtensionFieldMvosCountGetQuery();
-            if (filter != null)
-            {
-                q.Filter = WebUtility.UrlEncode(JObject.FromObject(new CriterionDto(filter, new ProxyTypeConverter())).ToString());
-            }
+            q.Filter = AttributeSetInstanceExtensionFieldMvoProxyUtils.GetFilterQueryValueString(filter);
             var req = new AttributeSetInstanceExtensionFieldMvosCountGetRequest();
             req.Query = q;
             var resp = _ramlClient.AttributeSetInstanceExtensionFieldMvosCount.Get(req).GetAwaiter().GetResult();
-            ThrowOnHttpResponseError(resp);
+            AttributeSetInstanceExtensionFieldMvoProxyUtils.ThrowOnHttpResponseError(resp);
             return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
 		}
 
         public IAttributeSetInstanceExtensionFieldMvoStateEvent GetStateEvent(AttributeSetInstanceExtensionFieldId attributeSetInstanceExtensionFieldId, long version)
         {
-            var idObj = ToIdString(attributeSetInstanceExtensionFieldId);
+            var idObj = AttributeSetInstanceExtensionFieldMvoProxyUtils.ToIdString(attributeSetInstanceExtensionFieldId);
             var uriParameters = new AttributeSetInstanceExtensionFieldMvoStateEventUriParameters();
             uriParameters.Id = idObj;
             uriParameters.Version = version.ToString();
 
             var req = new AttributeSetInstanceExtensionFieldMvoStateEventGetRequest(uriParameters);
             var resp = _ramlClient.AttributeSetInstanceExtensionFieldMvoStateEvent.Get(req).GetAwaiter().GetResult();
-            ThrowOnHttpResponseError(resp);
+            AttributeSetInstanceExtensionFieldMvoProxyUtils.ThrowOnHttpResponseError(resp);
             return resp.Content;
-        }
-
-        protected static string ToIdString(AttributeSetInstanceExtensionFieldId id)
-        {
-            var formatter = new AttributeSetInstanceExtensionFieldIdFlattenedDtoFormatter();
-            var idDto = new AttributeSetInstanceExtensionFieldIdFlattenedDto(id);
-            var idStr = formatter.ToString(idDto);
-            return idStr;
-        }
-
-
-        protected virtual string GetFilterTagQueryValueString(IEnumerable<KeyValuePair<string, object>> filter)
-        {
-            if (filter == null) { return null; }
-            StringBuilder sb = new StringBuilder();
-            sb.Append(DateTime.Now.Ticks);
-            foreach (var p in filter)
-            {
-                var k = p.Key;
-                var v = p.Value;
-                sb.Append("&");
-                sb.Append(k);
-                sb.Append("=");
-                if (v != null)
-                {
-                    string valStr = ApplicationContext.Current.TypeConverter.ConvertToString(v.GetType(), v);
-                    sb.Append(WebUtility.UrlEncode(valStr));
-                }
-
-            }
-            return sb.ToString();
-        }
-
-        protected virtual string GetReturnedFieldsQueryValueString(IList<string> fields)
-        {
-            if (fields == null) { return null; }
-            StringBuilder sb = new StringBuilder();
-            foreach (var f in fields)
-            {
-                sb.Append(WebUtility.UrlEncode(f));
-                sb.Append(QueryFieldValueSeparator);
-            }
-            return sb.ToString();
-        }
-
-        protected virtual string GetOrdersQueryValueString(IList<string> orders)
-        {
-            if (orders == null) { return null; }
-            StringBuilder sb = new StringBuilder();
-            foreach (var ord in orders)
-            {
-                sb.Append(WebUtility.UrlEncode(ord));
-                sb.Append(",");
-            }
-            return sb.ToString();
         }
 
 
@@ -272,70 +211,6 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         protected virtual string QueryOrderSeparator
         {
             get { return ","; }
-        }
-
-        protected virtual void ThrowOnHttpResponseError(ApiResponse resp)
-        {
-            var httpResponseMessage = new HttpResponseMessage()
-            {
-                StatusCode = resp.StatusCode,
-                Content = resp.RawContent,
-                ReasonPhrase = resp.ReasonPhrase
-            };
-            if (httpResponseMessage.IsSuccessStatusCode)
-            {
-                return;
-            }
-            try
-            {
-                if (resp.StatusCode == HttpStatusCode.InternalServerError)
-                {
-                    IEnumerable<string> headerValues = new List<string>();
-                    if (resp.RawContent != null && resp.RawContent.Headers != null)
-                        resp.RawContent.Headers.TryGetValues("Content-Type", out headerValues);
-                    if (headerValues.Any(hv => hv.ToLowerInvariant().Contains("json")))
-                    {
-                        JObject jObj = JObject.Parse(httpResponseMessage.Content.ReadAsStringAsync().GetAwaiter().GetResult());
-                        var errorName = jObj.GetValue("ErrorName").ToObject<string>();
-                        var errorMessage = jObj.GetValue("ErrorMessage").ToObject<string>();
-                        throw DomainError.Named(errorName, errorMessage);
-                    }
-                }
-                throw new HttpResponseException(httpResponseMessage);
-            }
-            catch
-            {
-                throw new HttpResponseException(httpResponseMessage);
-            }
-        }
-
-
-        private class ProxyTypeConverter : Dddml.Support.Criterion.ITypeConverter
-        {
-            public T ConvertFromString<T>(string text)
-            {
-                throw new NotSupportedException();
-            }
-
-            public object ConvertFromString(Type type, string text)
-            {
-                throw new NotSupportedException();
-            }
-
-            public string ConvertToString<T>(T value)
-            {
-                return ApplicationContext.Current.TypeConverter.ConvertToString(typeof(T), value);
-            }
-
-            public string ConvertToString(object value)
-            {
-                return ApplicationContext.Current.TypeConverter.ConvertToString(value.GetType(), value);
-            }
-
-            public string[] ConvertToStringArray(object[] values)
-            {
-                throw new NotSupportedException();
-            }
         }
 
     }
@@ -375,6 +250,133 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         }
     }
 
+    public static class AttributeSetInstanceExtensionFieldMvoProxyUtils
+    {
+
+        private class ProxyTypeConverter : Dddml.Support.Criterion.ITypeConverter
+        {
+            public T ConvertFromString<T>(string text)
+            {
+                throw new NotSupportedException();
+            }
+
+            public object ConvertFromString(Type type, string text)
+            {
+                throw new NotSupportedException();
+            }
+
+            public string ConvertToString<T>(T value)
+            {
+                return ApplicationContext.Current.TypeConverter.ConvertToString(typeof(T), value);
+            }
+
+            public string ConvertToString(object value)
+            {
+                return ApplicationContext.Current.TypeConverter.ConvertToString(value.GetType(), value);
+            }
+
+            public string[] ConvertToStringArray(object[] values)
+            {
+                throw new NotSupportedException();
+            }
+        }
+
+        public static string ToIdString(AttributeSetInstanceExtensionFieldId id)
+        {
+            var formatter = new AttributeSetInstanceExtensionFieldIdFlattenedDtoFormatter();
+            var idDto = new AttributeSetInstanceExtensionFieldIdFlattenedDto(id);
+            var idStr = formatter.ToString(idDto);
+            return idStr;
+        }
+
+
+        public static string GetFilterQueryValueString(ICriterion filter)
+        {
+            if (filter == null) { return null; }
+            return WebUtility.UrlEncode(JObject.FromObject(new CriterionDto(filter, new ProxyTypeConverter())).ToString());
+        }
+
+        public static string GetFilterTagQueryValueString(IEnumerable<KeyValuePair<string, object>> filter)
+        {
+            if (filter == null) { return null; }
+            StringBuilder sb = new StringBuilder();
+            sb.Append(DateTime.Now.Ticks);
+            foreach (var p in filter)
+            {
+                var k = p.Key;
+                var v = p.Value;
+                sb.Append("&");
+                sb.Append(k);
+                sb.Append("=");
+                if (v != null)
+                {
+                    string valStr = ApplicationContext.Current.TypeConverter.ConvertToString(v.GetType(), v);
+                    sb.Append(WebUtility.UrlEncode(valStr));
+                }
+
+            }
+            return sb.ToString();
+        }
+
+        public static string GetReturnedFieldsQueryValueString(IList<string> fields, string separator)
+        {
+            if (fields == null) { return null; }
+            StringBuilder sb = new StringBuilder();
+            foreach (var f in fields)
+            {
+                sb.Append(WebUtility.UrlEncode(f));
+                sb.Append(separator);
+            }
+            return sb.ToString();
+        }
+
+        public static string GetOrdersQueryValueString(IList<string> orders)
+        {
+            if (orders == null) { return null; }
+            StringBuilder sb = new StringBuilder();
+            foreach (var ord in orders)
+            {
+                sb.Append(WebUtility.UrlEncode(ord));
+                sb.Append(",");
+            }
+            return sb.ToString();
+        }
+
+        public static void ThrowOnHttpResponseError(ApiResponse resp)
+        {
+            var httpResponseMessage = new HttpResponseMessage()
+            {
+                StatusCode = resp.StatusCode,
+                Content = resp.RawContent,
+                ReasonPhrase = resp.ReasonPhrase
+            };
+            if (httpResponseMessage.IsSuccessStatusCode)
+            {
+                return;
+            }
+            try
+            {
+                if (resp.StatusCode == HttpStatusCode.InternalServerError)
+                {
+                    IEnumerable<string> headerValues = new List<string>();
+                    if (resp.RawContent != null && resp.RawContent.Headers != null)
+                        resp.RawContent.Headers.TryGetValues("Content-Type", out headerValues);
+                    if (headerValues.Any(hv => hv.ToLowerInvariant().Contains("json")))
+                    {
+                        JObject jObj = JObject.Parse(httpResponseMessage.Content.ReadAsStringAsync().GetAwaiter().GetResult());
+                        var errorName = jObj.GetValue("ErrorName").ToObject<string>();
+                        var errorMessage = jObj.GetValue("ErrorMessage").ToObject<string>();
+                        throw DomainError.Named(errorName, errorMessage);
+                    }
+                }
+                throw new HttpResponseException(httpResponseMessage);
+            }
+            catch
+            {
+                throw new HttpResponseException(httpResponseMessage);
+            }
+        }
+    }
 
 }
 

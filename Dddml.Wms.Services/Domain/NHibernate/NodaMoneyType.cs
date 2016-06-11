@@ -80,14 +80,14 @@ namespace Dddml.Wms.Services.Domain.NHibernate
         {
             if (value == null)
             {
-                if (settable[index]) { PropertyTypes[0].NullSafeSet(cmd, null, index, session); }
-                if (settable[index + 1]) { PropertyTypes[0].NullSafeSet(cmd, null, index + 1, session); }
+                if (settable[0]) { PropertyTypes[0].NullSafeSet(cmd, null, index, session); }
+                if (settable[1]) { PropertyTypes[0].NullSafeSet(cmd, null, index + 1, session); }
             }
             else 
             {
                 Money money = (Money)value;
-                if (settable[index]) { PropertyTypes[0].NullSafeSet(cmd, money.Amount, index, session); }
-                if (settable[index + 1]) { PropertyTypes[0].NullSafeSet(cmd, money.Currency.Code, index + 1, session); }
+                if (settable[0]) { PropertyTypes[0].NullSafeSet(cmd, money.Amount, index, session); }
+                if (settable[1]) { PropertyTypes[0].NullSafeSet(cmd, money.Currency.Code, index + 1, session); }
             }
 
         }

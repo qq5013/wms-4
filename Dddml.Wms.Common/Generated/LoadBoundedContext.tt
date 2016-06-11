@@ -26,6 +26,18 @@
 
 	boundedContext.Aggregates["AttributeSetInstance"].Metadata[Dddml.T4.Extensions.EntityBaseExtension.MetadataKeyPersistingStateEventRemovedPropertiesAsSet] = true;
 
+	var typeNamespaces = new Dictionary<string, string>();
+	typeNamespaces.Add("Money", "NodaMoney");
+	boundedContext.SetTypeNamespaces(typeNamespaces);
+
+	var clrValueTypes = new string[]{ "Money" };
+	boundedContext.SetClrValueTypes(clrValueTypes);
+
+	var nhibernateTypes = new Dictionary<string, string>();
+	nhibernateTypes.Add("Money", "Dddml.Wms.Services.Domain.NHibernate.NodaMoneyType, Dddml.Wms.Services");
+	boundedContext.SetNHibernateTypes(nhibernateTypes);
+
+
 	boundedContext.Refresh();
 
 	foreach (var agg in boundedContext.Aggregates.Values)

@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using Dddml.Wms.Specialization;
 using Dddml.Wms.Domain;
+using NodaMoney;
 
 namespace Dddml.Wms.Domain
 {
@@ -504,7 +505,7 @@ namespace Dddml.Wms.Domain
             }
         }
 
-		public virtual decimal? FreightAmount
+		public virtual Money? FreightAmount
         {
             get
             {
@@ -523,7 +524,7 @@ namespace Dddml.Wms.Domain
             }
         }
 
-        decimal IInOutStateProperties.FreightAmount
+        Money IInOutStateProperties.FreightAmount
         {
             get 
             {
@@ -563,7 +564,7 @@ namespace Dddml.Wms.Domain
             }
         }
 
-		public virtual decimal? ChargeAmount
+		public virtual Money? ChargeAmount
         {
             get
             {
@@ -582,7 +583,7 @@ namespace Dddml.Wms.Domain
             }
         }
 
-        decimal IInOutStateProperties.ChargeAmount
+        Money IInOutStateProperties.ChargeAmount
         {
             get 
             {

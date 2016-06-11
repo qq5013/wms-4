@@ -42,13 +42,19 @@
 
 	<property name="POReference"  />
 
-	<property name="FreightAmount"  />
+    <property name="FreightAmount" type="Dddml.Wms.Services.Domain.NHibernate.NodaMoneyType, Dddml.Wms.Services">
+      <column name="FreightAmount"></column>
+      <column name="FreightAmountCurrency"></column>
+    </property>
 
-	<property name="ShipperId"  />
+    <property name="ShipperId"  />
 
-	<property name="ChargeAmount"  />
+    <property name="ChargeAmount" type="Dddml.Wms.Services.Domain.NHibernate.NodaMoneyType, Dddml.Wms.Services">
+      <column name="ChargeAmount"></column>
+      <column name="ChargeAmountCurrency"></column>
+    </property>
 
-	<property name="DatePrinted"  />
+    <property name="DatePrinted"  />
 
 	<property name="SalesRepresentative"  />
 

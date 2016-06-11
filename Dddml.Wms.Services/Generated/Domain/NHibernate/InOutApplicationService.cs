@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using Dddml.Wms.Specialization;
 using Dddml.Wms.Domain;
+using NodaMoney;
 using Dddml.Wms.Specialization.NHibernate;
 using NHibernate;
 using Spring.Transaction.Interceptor;

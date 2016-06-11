@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using Dddml.Wms.Specialization;
 using Dddml.Wms.Domain;
+using NodaMoney;
 
 namespace Dddml.Wms.Domain
 {
@@ -213,11 +214,11 @@ namespace Dddml.Wms.Domain
 
 			this.InOutPOReference = e.InOutPOReference;
 
-            this.InOutFreightAmount = (e.InOutFreightAmount != null && e.InOutFreightAmount.HasValue) ? e.InOutFreightAmount.Value : default(decimal);
+            this.InOutFreightAmount = (e.InOutFreightAmount != null && e.InOutFreightAmount.HasValue) ? e.InOutFreightAmount.Value : default(Money);
 
 			this.InOutShipperId = e.InOutShipperId;
 
-            this.InOutChargeAmount = (e.InOutChargeAmount != null && e.InOutChargeAmount.HasValue) ? e.InOutChargeAmount.Value : default(decimal);
+            this.InOutChargeAmount = (e.InOutChargeAmount != null && e.InOutChargeAmount.HasValue) ? e.InOutChargeAmount.Value : default(Money);
 
 			this.InOutDatePrinted = e.InOutDatePrinted;
 
@@ -688,12 +689,12 @@ namespace Dddml.Wms.Domain
 			{
 				if (e.IsPropertyInOutFreightAmountRemoved)
 				{
-					this.InOutFreightAmount = default(decimal);
+					this.InOutFreightAmount = default(Money);
 				}
 			}
 			else
 			{
-				this.InOutFreightAmount = (e.InOutFreightAmount != null && e.InOutFreightAmount.HasValue) ? e.InOutFreightAmount.Value : default(decimal);
+				this.InOutFreightAmount = (e.InOutFreightAmount != null && e.InOutFreightAmount.HasValue) ? e.InOutFreightAmount.Value : default(Money);
 			}
 
 			if (e.InOutShipperId == null)
@@ -712,12 +713,12 @@ namespace Dddml.Wms.Domain
 			{
 				if (e.IsPropertyInOutChargeAmountRemoved)
 				{
-					this.InOutChargeAmount = default(decimal);
+					this.InOutChargeAmount = default(Money);
 				}
 			}
 			else
 			{
-				this.InOutChargeAmount = (e.InOutChargeAmount != null && e.InOutChargeAmount.HasValue) ? e.InOutChargeAmount.Value : default(decimal);
+				this.InOutChargeAmount = (e.InOutChargeAmount != null && e.InOutChargeAmount.HasValue) ? e.InOutChargeAmount.Value : default(Money);
 			}
 
 			if (e.InOutDatePrinted == null)

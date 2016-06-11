@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using Dddml.Wms.Specialization;
 using Dddml.Wms.Domain;
+using NodaMoney;
 
 namespace Dddml.Wms.Domain.Metadata
 {
@@ -496,8 +497,8 @@ namespace Dddml.Wms.Domain.Metadata
                 },
                 new PropertyMetadata {
                     Name = "FreightAmount",
-                    Type = typeof(decimal),
-                    TypeName = "decimal",
+                    Type = typeof(Money),
+                    TypeName = "Money",
                     IsBasicType = true,
                     IsNullableType = false,
                     DeclairingObjectName = "InOut",
@@ -556,8 +557,8 @@ namespace Dddml.Wms.Domain.Metadata
                 },
                 new PropertyMetadata {
                     Name = "ChargeAmount",
-                    Type = typeof(decimal),
-                    TypeName = "decimal",
+                    Type = typeof(Money),
+                    TypeName = "Money",
                     IsBasicType = true,
                     IsNullableType = false,
                     DeclairingObjectName = "InOut",

@@ -82,13 +82,19 @@
 
 	<property name="InOutPOReference"  />
 
-	<property name="InOutFreightAmount"  />
+    <property name="InOutFreightAmount" type="Dddml.Wms.Services.Domain.NHibernate.NodaMoneyType, Dddml.Wms.Services" >
+      <column name="InOutFreightAmount"></column>
+      <column name="InOutFreightAmountCurrency"></column>
+    </property>
 
-	<property name="InOutShipperId"  />
+    <property name="InOutShipperId"  />
 
-	<property name="InOutChargeAmount"  />
+    <property name="InOutChargeAmount" type="Dddml.Wms.Services.Domain.NHibernate.NodaMoneyType, Dddml.Wms.Services" >
+      <column name="InOutChargeAmount"></column>
+      <column name="InOutChargeAmountCurrency"></column>
+    </property>
 
-	<property name="InOutDatePrinted"  />
+    <property name="InOutDatePrinted"  />
 
 	<property name="InOutSalesRepresentative"  />
 

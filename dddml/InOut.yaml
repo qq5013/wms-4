@@ -88,7 +88,7 @@ aggregates:
         #freightcostrule character(1) NOT NULL,
 
         FreightAmount:
-          type: decimal
+          type: Money
 
         #deliveryviarule character(1) NOT NULL,
 
@@ -96,7 +96,7 @@ aggregates:
           type: string
           
         ChargeAmount:
-          type: decimal
+          type: Money
 
         #priorityrule character(1) NOT NULL,
         

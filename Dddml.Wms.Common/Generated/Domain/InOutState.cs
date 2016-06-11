@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using Dddml.Wms.Specialization;
 using Dddml.Wms.Domain;
+using NodaMoney;
 
 namespace Dddml.Wms.Domain
 {
@@ -206,11 +207,11 @@ namespace Dddml.Wms.Domain
 
 			this.POReference = e.POReference;
 
-            this.FreightAmount = (e.FreightAmount != null && e.FreightAmount.HasValue) ? e.FreightAmount.Value : default(decimal);
+            this.FreightAmount = (e.FreightAmount != null && e.FreightAmount.HasValue) ? e.FreightAmount.Value : default(Money);
 
 			this.ShipperId = e.ShipperId;
 
-            this.ChargeAmount = (e.ChargeAmount != null && e.ChargeAmount.HasValue) ? e.ChargeAmount.Value : default(decimal);
+            this.ChargeAmount = (e.ChargeAmount != null && e.ChargeAmount.HasValue) ? e.ChargeAmount.Value : default(Money);
 
 			this.DatePrinted = e.DatePrinted;
 
@@ -447,12 +448,12 @@ namespace Dddml.Wms.Domain
 			{
 				if (e.IsPropertyFreightAmountRemoved)
 				{
-					this.FreightAmount = default(decimal);
+					this.FreightAmount = default(Money);
 				}
 			}
 			else
 			{
-				this.FreightAmount = (e.FreightAmount != null && e.FreightAmount.HasValue) ? e.FreightAmount.Value : default(decimal);
+				this.FreightAmount = (e.FreightAmount != null && e.FreightAmount.HasValue) ? e.FreightAmount.Value : default(Money);
 			}
 
 			if (e.ShipperId == null)
@@ -471,12 +472,12 @@ namespace Dddml.Wms.Domain
 			{
 				if (e.IsPropertyChargeAmountRemoved)
 				{
-					this.ChargeAmount = default(decimal);
+					this.ChargeAmount = default(Money);
 				}
 			}
 			else
 			{
-				this.ChargeAmount = (e.ChargeAmount != null && e.ChargeAmount.HasValue) ? e.ChargeAmount.Value : default(decimal);
+				this.ChargeAmount = (e.ChargeAmount != null && e.ChargeAmount.HasValue) ? e.ChargeAmount.Value : default(Money);
 			}
 
 			if (e.DatePrinted == null)

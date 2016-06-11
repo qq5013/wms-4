@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using Dddml.Wms.Specialization;
 using Dddml.Wms.Domain;
+using NodaMoney;
 
 namespace Dddml.Wms.Domain
 {
@@ -45,11 +46,11 @@ namespace Dddml.Wms.Domain
 
 		public virtual string POReference { get; set; }
 
-		public virtual decimal FreightAmount { get; set; }
+		public virtual Money FreightAmount { get; set; }
 
 		public virtual string ShipperId { get; set; }
 
-		public virtual decimal ChargeAmount { get; set; }
+		public virtual Money ChargeAmount { get; set; }
 
 		public virtual DateTime? DatePrinted { get; set; }
 

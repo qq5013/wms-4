@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using Dddml.Wms.Specialization;
 using Dddml.Wms.Domain;
+using NodaMoney;
 
 namespace Dddml.Wms.Domain
 {
@@ -84,11 +85,11 @@ namespace Dddml.Wms.Domain
 
 		string InOutPOReference { get; set; }
 
-		decimal? InOutFreightAmount { get; set; }
+		Money? InOutFreightAmount { get; set; }
 
 		string InOutShipperId { get; set; }
 
-		decimal? InOutChargeAmount { get; set; }
+		Money? InOutChargeAmount { get; set; }
 
 		DateTime? InOutDatePrinted { get; set; }
 

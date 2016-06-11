@@ -11,27 +11,27 @@
 
 	<version name="Version" type="long" unsaved-value="0"/>
 
-	<property name="FieldType"  />
+	<property name="FieldType" ></property>
 
-	<property name="FieldLength"  />
+	<property name="FieldLength" ></property>
 
-	<property name="FieldCount"  />
+	<property name="FieldCount" ></property>
 
-	<property name="NameFormat"  />
+	<property name="NameFormat" ></property>
 
-	<property name="Description"  />
+	<property name="Description" ></property>
 
-	<property name="CreatedBy"  />
+	<property name="CreatedBy" ></property>
 
-	<property name="CreatedAt"  />
+	<property name="CreatedAt" ></property>
 
-	<property name="UpdatedBy"  />
+	<property name="UpdatedBy" ></property>
 
-	<property name="UpdatedAt"  />
+	<property name="UpdatedAt" ></property>
 
-	<property name="Active"  />
+	<property name="Active" ></property>
 
-	<property name="Deleted"  />
+	<property name="Deleted" ></property>
 
 
   </class>

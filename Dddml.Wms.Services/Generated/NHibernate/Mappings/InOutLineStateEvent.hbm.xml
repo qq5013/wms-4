@@ -14,41 +14,41 @@
 
     <discriminator column="StateEventType" type="String" />
 
-	<property name="LineNumber"  />
+	<property name="LineNumber" ></property>
 
-	<property name="Description"  />
+	<property name="Description" ></property>
 
-	<property name="LocatorId"  />
+	<property name="LocatorId" ></property>
 
-	<property name="Product"  />
+	<property name="Product" ></property>
 
-	<property name="UomId"  />
+	<property name="UomId" ></property>
 
-	<property name="MovementQuantity"  />
+	<property name="MovementQuantity" ></property>
 
-	<property name="ConfirmedQuantity"  />
+	<property name="ConfirmedQuantity" ></property>
 
-	<property name="ScrappedQuantity"  />
+	<property name="ScrappedQuantity" ></property>
 
-	<property name="TargetQuantity"  />
+	<property name="TargetQuantity" ></property>
 
-	<property name="PickedQuantity"  />
+	<property name="PickedQuantity" ></property>
 
-	<property name="IsInvoiced"  />
+	<property name="IsInvoiced" ></property>
 
-	<property name="AttributeSetInstanceId"  />
+	<property name="AttributeSetInstanceId" ></property>
 
-	<property name="IsDescription"  />
+	<property name="IsDescription" ></property>
 
-	<property name="Processed"  />
+	<property name="Processed" ></property>
 
-	<property name="QuantityEntered"  />
+	<property name="QuantityEntered" ></property>
 
-	<property name="RmaLineNumber"  />
+	<property name="RmaLineNumber" ></property>
 
-	<property name="ReversalLineNumber"  />
+	<property name="ReversalLineNumber" ></property>
 
-	<property name="Active"  />
+	<property name="Active" ></property>
 
 
     <property name="CreatedBy" />

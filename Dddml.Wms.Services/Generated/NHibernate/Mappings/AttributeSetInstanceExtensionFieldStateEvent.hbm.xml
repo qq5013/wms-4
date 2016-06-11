@@ -13,17 +13,17 @@
 
     <discriminator column="StateEventType" type="String" />
 
-	<property name="Name" unique-key="UniqueName" />
+	<property name="Name" unique-key="UniqueName"></property>
 
-	<property name="Type"  />
+	<property name="Type" ></property>
 
-	<property name="Length"  />
+	<property name="Length" ></property>
 
-	<property name="Alias" unique-key="UniqueAlias" />
+	<property name="Alias" unique-key="UniqueAlias"></property>
 
-	<property name="Description"  />
+	<property name="Description" ></property>
 
-	<property name="Active"  />
+	<property name="Active" ></property>
 
 
     <property name="CreatedBy" />

@@ -13,35 +13,35 @@
 
     <discriminator column="StateEventType" type="String" />
 
-	<property name="SequenceNumber"  />
+	<property name="SequenceNumber" ></property>
 
-	<property name="Version"  />
+	<property name="Version" ></property>
 
-	<property name="Active"  />
+	<property name="Active" ></property>
 
-	<property name="AttributeSetName"  />
+	<property name="AttributeSetName" ></property>
 
-	<property name="AttributeSetOrganizationId"  />
+	<property name="AttributeSetOrganizationId" ></property>
 
-	<property name="AttributeSetDescription"  />
+	<property name="AttributeSetDescription" ></property>
 
-	<property name="AttributeSetSerialNumberAttributeId"  />
+	<property name="AttributeSetSerialNumberAttributeId" ></property>
 
-	<property name="AttributeSetLotAttributeId"  />
+	<property name="AttributeSetLotAttributeId" ></property>
 
-	<property name="AttributeSetReferenceId"  />
+	<property name="AttributeSetReferenceId" ></property>
 
-	<property name="AttributeSetCreatedBy"  />
+	<property name="AttributeSetCreatedBy" ></property>
 
-	<property name="AttributeSetCreatedAt"  />
+	<property name="AttributeSetCreatedAt" ></property>
 
-	<property name="AttributeSetUpdatedBy"  />
+	<property name="AttributeSetUpdatedBy" ></property>
 
-	<property name="AttributeSetUpdatedAt"  />
+	<property name="AttributeSetUpdatedAt" ></property>
 
-	<property name="AttributeSetActive"  />
+	<property name="AttributeSetActive" ></property>
 
-	<property name="AttributeSetDeleted"  />
+	<property name="AttributeSetDeleted" ></property>
 
 
     <property name="CreatedBy" />

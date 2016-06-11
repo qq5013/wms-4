@@ -12,13 +12,13 @@
 
     <discriminator column="StateEventType" type="String" />
 
-	<property name="Name"  />
+	<property name="Name" ></property>
 
-	<property name="Description"  />
+	<property name="Description" ></property>
 
-	<property name="IsInTransit"  />
+	<property name="IsInTransit" ></property>
 
-	<property name="Active"  />
+	<property name="Active" ></property>
 
 
     <property name="CreatedBy" />

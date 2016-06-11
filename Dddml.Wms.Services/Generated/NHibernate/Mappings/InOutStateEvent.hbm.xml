@@ -12,81 +12,75 @@
 
     <discriminator column="StateEventType" type="String" />
 
-	<property name="IsSOTransaction"  />
+	<property name="IsSOTransaction" ></property>
 
-	<property name="DocumentStatus"  />
+	<property name="DocumentStatus" ></property>
 
-	<property name="Posted"  />
+	<property name="Posted" ></property>
 
-	<property name="Processing"  />
+	<property name="Processing" ></property>
 
-	<property name="Processed"  />
+	<property name="Processed" ></property>
 
-	<property name="DocumentType"  />
+	<property name="DocumentType" ></property>
 
-	<property name="Description"  />
+	<property name="Description" ></property>
 
-	<property name="OrderNumber"  />
+	<property name="OrderNumber" ></property>
 
-	<property name="DateOrdered"  />
+	<property name="DateOrdered" ></property>
 
-	<property name="IsPrinted"  />
+	<property name="IsPrinted" ></property>
 
-	<property name="MovementType"  />
+	<property name="MovementType" ></property>
 
-	<property name="MovementDate"  />
+	<property name="MovementDate" ></property>
 
-	<property name="BusinessPartnerId"  />
+	<property name="BusinessPartnerId" ></property>
 
-	<property name="WarehouseId"  />
+	<property name="WarehouseId" ></property>
 
-	<property name="POReference"  />
+	<property name="POReference" ></property>
 
-    <property name="FreightAmount" type="Dddml.Wms.Services.Domain.NHibernate.NodaMoneyType, Dddml.Wms.Services">
-      <column name="FreightAmount"></column>
-      <column name="FreightAmountCurrency"></column>
-    </property>
+	<property name="FreightAmount" type="Dddml.Wms.Services.Domain.NHibernate.NodaMoneyType, Dddml.Wms.Services"><column name="FreightAmountAmount" /><column name="FreightAmountCurrency" /></property>
 
-    <property name="ShipperId"  />
+	<property name="ShipperId" ></property>
 
-    <property name="ChargeAmount" type="Dddml.Wms.Services.Domain.NHibernate.NodaMoneyType, Dddml.Wms.Services">
-      <column name="ChargeAmount"></column>
-      <column name="ChargeAmountCurrency"></column>
-    </property>
+	<property name="ChargeAmount" type="Dddml.Wms.Services.Domain.NHibernate.NodaMoneyType, Dddml.Wms.Services"><column name="ChargeAmountAmount" /><column name="ChargeAmountCurrency" /></property>
 
-    <property name="DatePrinted"  />
+	<property name="DatePrinted" ></property>
 
-	<property name="SalesRepresentative"  />
+	<property name="SalesRepresentative" ></property>
 
-	<property name="NumberOfPackages"  />
+	<property name="NumberOfPackages" ></property>
 
-	<property name="PickDate"  />
+	<property name="PickDate" ></property>
 
-	<property name="ShipDate"  />
+	<property name="ShipDate" ></property>
 
-	<property name="TrackingNumber"  />
+	<property name="TrackingNumber" ></property>
 
-	<property name="DateReceived"  />
+	<property name="DateReceived" ></property>
 
-	<property name="IsInTransit"  />
+	<property name="IsInTransit" ></property>
 
-	<property name="IsApproved"  />
+	<property name="IsApproved" ></property>
 
-	<property name="IsInDispute"  />
+	<property name="IsInDispute" ></property>
 
-	<property name="Volume"  />
+	<property name="Volume" ></property>
 
-	<property name="Weight"  />
+	<property name="Weight" ></property>
 
-	<property name="RmaNumber"  />
+	<property name="RmaNumber" ></property>
 
-	<property name="ReversalNumber"  />
+	<property name="ReversalNumber" ></property>
 
-	<property name="IsDropShip"  />
+	<property name="IsDropShip" ></property>
 
-	<property name="DropShipBusinessPartnerId"  />
+	<property name="DropShipBusinessPartnerId" ></property>
 
-	<property name="Active"  />
+	<property name="Active" ></property>
 
 
     <property name="CreatedBy" />

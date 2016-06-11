@@ -14,129 +14,123 @@
 
     <discriminator column="StateEventType" type="String" />
 
-	<property name="LineNumber"  />
+	<property name="LineNumber" ></property>
 
-	<property name="Description"  />
+	<property name="Description" ></property>
 
-	<property name="LocatorId"  />
+	<property name="LocatorId" ></property>
 
-	<property name="Product"  />
+	<property name="Product" ></property>
 
-	<property name="UomId"  />
+	<property name="UomId" ></property>
 
-	<property name="MovementQuantity"  />
+	<property name="MovementQuantity" ></property>
 
-	<property name="ConfirmedQuantity"  />
+	<property name="ConfirmedQuantity" ></property>
 
-	<property name="ScrappedQuantity"  />
+	<property name="ScrappedQuantity" ></property>
 
-	<property name="TargetQuantity"  />
+	<property name="TargetQuantity" ></property>
 
-	<property name="PickedQuantity"  />
+	<property name="PickedQuantity" ></property>
 
-	<property name="IsInvoiced"  />
+	<property name="IsInvoiced" ></property>
 
-	<property name="AttributeSetInstanceId"  />
+	<property name="AttributeSetInstanceId" ></property>
 
-	<property name="IsDescription"  />
+	<property name="IsDescription" ></property>
 
-	<property name="Processed"  />
+	<property name="Processed" ></property>
 
-	<property name="QuantityEntered"  />
+	<property name="QuantityEntered" ></property>
 
-	<property name="RmaLineNumber"  />
+	<property name="RmaLineNumber" ></property>
 
-	<property name="ReversalLineNumber"  />
+	<property name="ReversalLineNumber" ></property>
 
-	<property name="Version"  />
+	<property name="Version" ></property>
 
-	<property name="Active"  />
+	<property name="Active" ></property>
 
-	<property name="InOutIsSOTransaction"  />
+	<property name="InOutIsSOTransaction" ></property>
 
-	<property name="InOutDocumentStatus"  />
+	<property name="InOutDocumentStatus" ></property>
 
-	<property name="InOutPosted"  />
+	<property name="InOutPosted" ></property>
 
-	<property name="InOutProcessing"  />
+	<property name="InOutProcessing" ></property>
 
-	<property name="InOutProcessed"  />
+	<property name="InOutProcessed" ></property>
 
-	<property name="InOutDocumentType"  />
+	<property name="InOutDocumentType" ></property>
 
-	<property name="InOutDescription"  />
+	<property name="InOutDescription" ></property>
 
-	<property name="InOutOrderNumber"  />
+	<property name="InOutOrderNumber" ></property>
 
-	<property name="InOutDateOrdered"  />
+	<property name="InOutDateOrdered" ></property>
 
-	<property name="InOutIsPrinted"  />
+	<property name="InOutIsPrinted" ></property>
 
-	<property name="InOutMovementType"  />
+	<property name="InOutMovementType" ></property>
 
-	<property name="InOutMovementDate"  />
+	<property name="InOutMovementDate" ></property>
 
-	<property name="InOutBusinessPartnerId"  />
+	<property name="InOutBusinessPartnerId" ></property>
 
-	<property name="InOutWarehouseId"  />
+	<property name="InOutWarehouseId" ></property>
 
-	<property name="InOutPOReference"  />
+	<property name="InOutPOReference" ></property>
 
-    <property name="InOutFreightAmount" type="Dddml.Wms.Services.Domain.NHibernate.NodaMoneyType, Dddml.Wms.Services" >
-      <column name="InOutFreightAmount"></column>
-      <column name="InOutFreightAmountCurrency"></column>
-    </property>
+	<property name="InOutFreightAmount" type="Dddml.Wms.Services.Domain.NHibernate.NodaMoneyType, Dddml.Wms.Services"><column name="InOutFreightAmountAmount" /><column name="InOutFreightAmountCurrency" /></property>
 
-    <property name="InOutShipperId"  />
+	<property name="InOutShipperId" ></property>
 
-    <property name="InOutChargeAmount" type="Dddml.Wms.Services.Domain.NHibernate.NodaMoneyType, Dddml.Wms.Services" >
-      <column name="InOutChargeAmount"></column>
-      <column name="InOutChargeAmountCurrency"></column>
-    </property>
+	<property name="InOutChargeAmount" type="Dddml.Wms.Services.Domain.NHibernate.NodaMoneyType, Dddml.Wms.Services"><column name="InOutChargeAmountAmount" /><column name="InOutChargeAmountCurrency" /></property>
 
-    <property name="InOutDatePrinted"  />
+	<property name="InOutDatePrinted" ></property>
 
-	<property name="InOutSalesRepresentative"  />
+	<property name="InOutSalesRepresentative" ></property>
 
-	<property name="InOutNumberOfPackages"  />
+	<property name="InOutNumberOfPackages" ></property>
 
-	<property name="InOutPickDate"  />
+	<property name="InOutPickDate" ></property>
 
-	<property name="InOutShipDate"  />
+	<property name="InOutShipDate" ></property>
 
-	<property name="InOutTrackingNumber"  />
+	<property name="InOutTrackingNumber" ></property>
 
-	<property name="InOutDateReceived"  />
+	<property name="InOutDateReceived" ></property>
 
-	<property name="InOutIsInTransit"  />
+	<property name="InOutIsInTransit" ></property>
 
-	<property name="InOutIsApproved"  />
+	<property name="InOutIsApproved" ></property>
 
-	<property name="InOutIsInDispute"  />
+	<property name="InOutIsInDispute" ></property>
 
-	<property name="InOutVolume"  />
+	<property name="InOutVolume" ></property>
 
-	<property name="InOutWeight"  />
+	<property name="InOutWeight" ></property>
 
-	<property name="InOutRmaNumber"  />
+	<property name="InOutRmaNumber" ></property>
 
-	<property name="InOutReversalNumber"  />
+	<property name="InOutReversalNumber" ></property>
 
-	<property name="InOutIsDropShip"  />
+	<property name="InOutIsDropShip" ></property>
 
-	<property name="InOutDropShipBusinessPartnerId"  />
+	<property name="InOutDropShipBusinessPartnerId" ></property>
 
-	<property name="InOutCreatedBy"  />
+	<property name="InOutCreatedBy" ></property>
 
-	<property name="InOutCreatedAt"  />
+	<property name="InOutCreatedAt" ></property>
 
-	<property name="InOutUpdatedBy"  />
+	<property name="InOutUpdatedBy" ></property>
 
-	<property name="InOutUpdatedAt"  />
+	<property name="InOutUpdatedAt" ></property>
 
-	<property name="InOutActive"  />
+	<property name="InOutActive" ></property>
 
-	<property name="InOutDeleted"  />
+	<property name="InOutDeleted" ></property>
 
 
     <property name="CreatedBy" />

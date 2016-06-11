@@ -33,8 +33,13 @@
 	var clrValueTypes = new string[]{ "Money" };
 	boundedContext.SetClrValueTypes(clrValueTypes);
 
-	var nhibernateTypes = new Dictionary<string, string>();
-	nhibernateTypes.Add("Money", "Dddml.Wms.Services.Domain.NHibernate.NodaMoneyType, Dddml.Wms.Services");
+	var nhibernateTypes = new Dictionary<string, NHibernateType>();
+	var nodaMoneyNHibernateType = new NHibernateType() {
+			ActualTypeName = "Money", 
+			AssemblyQualifiedName = "Dddml.Wms.Services.Domain.NHibernate.NodaMoneyType, Dddml.Wms.Services",
+			PropertyNames = new string[] { "Amount", "Currency" }
+		};
+	nhibernateTypes.Add(nodaMoneyNHibernateType.ActualTypeName, nodaMoneyNHibernateType);
 	boundedContext.SetNHibernateTypes(nhibernateTypes);
 
 

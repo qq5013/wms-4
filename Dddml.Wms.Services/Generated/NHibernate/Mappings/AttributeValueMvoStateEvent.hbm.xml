@@ -13,47 +13,47 @@
 
     <discriminator column="StateEventType" type="String" />
 
-	<property name="Name"  />
+	<property name="Name" ></property>
 
-	<property name="Description"  />
+	<property name="Description" ></property>
 
-	<property name="ReferenceId"  />
+	<property name="ReferenceId" ></property>
 
-	<property name="Version"  />
+	<property name="Version" ></property>
 
-	<property name="Active"  />
+	<property name="Active" ></property>
 
-	<property name="AttributeName"  />
+	<property name="AttributeName" ></property>
 
-	<property name="AttributeOrganizationId"  />
+	<property name="AttributeOrganizationId" ></property>
 
-	<property name="AttributeDescription"  />
+	<property name="AttributeDescription" ></property>
 
-	<property name="AttributeIsMandatory"  />
+	<property name="AttributeIsMandatory" ></property>
 
-	<property name="AttributeIsInstanceAttribute"  />
+	<property name="AttributeIsInstanceAttribute" ></property>
 
-	<property name="AttributeAttributeValueType"  />
+	<property name="AttributeAttributeValueType" ></property>
 
-	<property name="AttributeAttributeValueLength"  />
+	<property name="AttributeAttributeValueLength" ></property>
 
-	<property name="AttributeIsList"  />
+	<property name="AttributeIsList" ></property>
 
-	<property name="AttributeFieldName"  />
+	<property name="AttributeFieldName" ></property>
 
-	<property name="AttributeReferenceId"  />
+	<property name="AttributeReferenceId" ></property>
 
-	<property name="AttributeCreatedBy"  />
+	<property name="AttributeCreatedBy" ></property>
 
-	<property name="AttributeCreatedAt"  />
+	<property name="AttributeCreatedAt" ></property>
 
-	<property name="AttributeUpdatedBy"  />
+	<property name="AttributeUpdatedBy" ></property>
 
-	<property name="AttributeUpdatedAt"  />
+	<property name="AttributeUpdatedAt" ></property>
 
-	<property name="AttributeActive"  />
+	<property name="AttributeActive" ></property>
 
-	<property name="AttributeDeleted"  />
+	<property name="AttributeDeleted" ></property>
 
 
     <property name="CreatedBy" />

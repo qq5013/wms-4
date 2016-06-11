@@ -12,17 +12,17 @@
 
     <discriminator column="StateEventType" type="String" />
 
-	<property name="FieldType"  />
+	<property name="FieldType" ></property>
 
-	<property name="FieldLength"  />
+	<property name="FieldLength" ></property>
 
-	<property name="FieldCount"  />
+	<property name="FieldCount" ></property>
 
-	<property name="NameFormat"  />
+	<property name="NameFormat" ></property>
 
-	<property name="Description"  />
+	<property name="Description" ></property>
 
-	<property name="Active"  />
+	<property name="Active" ></property>
 
 
     <property name="CreatedBy" />

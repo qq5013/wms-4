@@ -13,9 +13,9 @@
 
     <discriminator column="StateEventType" type="String" />
 
-	<property name="SequenceNumber"  />
+	<property name="SequenceNumber" ></property>
 
-	<property name="Active"  />
+	<property name="Active" ></property>
 
 
     <property name="CreatedBy" />

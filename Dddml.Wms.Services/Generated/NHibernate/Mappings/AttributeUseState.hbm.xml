@@ -12,19 +12,19 @@
 
 	<version name="Version" type="long" unsaved-value="0"/>
 
-	<property name="SequenceNumber"  />
+	<property name="SequenceNumber" ></property>
 
-	<property name="CreatedBy"  />
+	<property name="CreatedBy" ></property>
 
-	<property name="CreatedAt"  />
+	<property name="CreatedAt" ></property>
 
-	<property name="UpdatedBy"  />
+	<property name="UpdatedBy" ></property>
 
-	<property name="UpdatedAt"  />
+	<property name="UpdatedAt" ></property>
 
-	<property name="Active"  />
+	<property name="Active" ></property>
 
-	<property name="Deleted"  />
+	<property name="Deleted" ></property>
 
 
   </class>

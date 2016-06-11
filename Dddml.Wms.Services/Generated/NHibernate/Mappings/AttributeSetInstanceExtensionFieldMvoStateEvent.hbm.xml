@@ -13,41 +13,41 @@
 
     <discriminator column="StateEventType" type="String" />
 
-	<property name="Name" unique-key="UniqueName" />
+	<property name="Name" unique-key="UniqueName"></property>
 
-	<property name="Type"  />
+	<property name="Type" ></property>
 
-	<property name="Length"  />
+	<property name="Length" ></property>
 
-	<property name="Alias" unique-key="UniqueAlias" />
+	<property name="Alias" unique-key="UniqueAlias"></property>
 
-	<property name="Description"  />
+	<property name="Description" ></property>
 
-	<property name="Version"  />
+	<property name="Version" ></property>
 
-	<property name="Active"  />
+	<property name="Active" ></property>
 
-	<property name="AttrSetInstEFGroupFieldType"  />
+	<property name="AttrSetInstEFGroupFieldType" ></property>
 
-	<property name="AttrSetInstEFGroupFieldLength"  />
+	<property name="AttrSetInstEFGroupFieldLength" ></property>
 
-	<property name="AttrSetInstEFGroupFieldCount"  />
+	<property name="AttrSetInstEFGroupFieldCount" ></property>
 
-	<property name="AttrSetInstEFGroupNameFormat"  />
+	<property name="AttrSetInstEFGroupNameFormat" ></property>
 
-	<property name="AttrSetInstEFGroupDescription"  />
+	<property name="AttrSetInstEFGroupDescription" ></property>
 
-	<property name="AttrSetInstEFGroupCreatedBy"  />
+	<property name="AttrSetInstEFGroupCreatedBy" ></property>
 
-	<property name="AttrSetInstEFGroupCreatedAt"  />
+	<property name="AttrSetInstEFGroupCreatedAt" ></property>
 
-	<property name="AttrSetInstEFGroupUpdatedBy"  />
+	<property name="AttrSetInstEFGroupUpdatedBy" ></property>
 
-	<property name="AttrSetInstEFGroupUpdatedAt"  />
+	<property name="AttrSetInstEFGroupUpdatedAt" ></property>
 
-	<property name="AttrSetInstEFGroupActive"  />
+	<property name="AttrSetInstEFGroupActive" ></property>
 
-	<property name="AttrSetInstEFGroupDeleted"  />
+	<property name="AttrSetInstEFGroupDeleted" ></property>
 
 
     <property name="CreatedBy" />

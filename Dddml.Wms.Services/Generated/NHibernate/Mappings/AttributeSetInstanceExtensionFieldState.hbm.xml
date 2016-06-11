@@ -12,27 +12,27 @@
 
 	<version name="Version" type="long" unsaved-value="0"/>
 
-	<property name="Name" unique-key="UniqueName" />
+	<property name="Name" unique-key="UniqueName"></property>
 
-	<property name="Type"  />
+	<property name="Type" ></property>
 
-	<property name="Length"  />
+	<property name="Length" ></property>
 
-	<property name="Alias" unique-key="UniqueAlias" />
+	<property name="Alias" unique-key="UniqueAlias"></property>
 
-	<property name="Description"  />
+	<property name="Description" ></property>
 
-	<property name="CreatedBy"  />
+	<property name="CreatedBy" ></property>
 
-	<property name="CreatedAt"  />
+	<property name="CreatedAt" ></property>
 
-	<property name="UpdatedBy"  />
+	<property name="UpdatedBy" ></property>
 
-	<property name="UpdatedAt"  />
+	<property name="UpdatedAt" ></property>
 
-	<property name="Active"  />
+	<property name="Active" ></property>
 
-	<property name="Deleted"  />
+	<property name="Deleted" ></property>
 
 
   </class>

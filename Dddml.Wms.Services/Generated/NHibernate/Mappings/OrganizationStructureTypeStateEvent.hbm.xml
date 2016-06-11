@@ -12,7 +12,7 @@
 
     <discriminator column="StateEventType" type="String" />
 
-	<property name="Active"  />
+	<property name="Active" ></property>
 
 
     <property name="CreatedBy" />

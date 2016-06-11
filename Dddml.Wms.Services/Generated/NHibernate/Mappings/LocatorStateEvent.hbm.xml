@@ -12,23 +12,23 @@
 
     <discriminator column="StateEventType" type="String" />
 
-	<property name="WarehouseId"  />
+	<property name="WarehouseId" ></property>
 
-	<property name="ParentLocatorId"  />
+	<property name="ParentLocatorId" ></property>
 
-	<property name="LocatorType"  />
+	<property name="LocatorType" ></property>
 
-	<property name="PriorityNumber"  />
+	<property name="PriorityNumber" ></property>
 
-	<property name="IsDefault"  />
+	<property name="IsDefault" ></property>
 
-	<property name="X"  />
+	<property name="X" ></property>
 
-	<property name="Y"  />
+	<property name="Y" ></property>
 
-	<property name="Z"  />
+	<property name="Z" ></property>
 
-	<property name="Active"  />
+	<property name="Active" ></property>
 
 
     <property name="CreatedBy" />

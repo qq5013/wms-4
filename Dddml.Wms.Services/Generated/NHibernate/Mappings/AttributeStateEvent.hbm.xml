@@ -12,27 +12,27 @@
 
     <discriminator column="StateEventType" type="String" />
 
-	<property name="Name"  />
+	<property name="Name" ></property>
 
-	<property name="OrganizationId"  />
+	<property name="OrganizationId" ></property>
 
-	<property name="Description"  />
+	<property name="Description" ></property>
 
-	<property name="IsMandatory"  />
+	<property name="IsMandatory" ></property>
 
-	<property name="IsInstanceAttribute"  />
+	<property name="IsInstanceAttribute" ></property>
 
-	<property name="AttributeValueType"  />
+	<property name="AttributeValueType" ></property>
 
-	<property name="AttributeValueLength"  />
+	<property name="AttributeValueLength" ></property>
 
-	<property name="IsList"  />
+	<property name="IsList" ></property>
 
-	<property name="FieldName" unique-key="UniqueFieldName" />
+	<property name="FieldName" unique-key="UniqueFieldName"></property>
 
-	<property name="ReferenceId"  />
+	<property name="ReferenceId" ></property>
 
-	<property name="Active"  />
+	<property name="Active" ></property>
 
 
     <property name="CreatedBy" />

@@ -19,7 +19,7 @@ namespace Dddml.Wms.HttpServices
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
 
-            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CustomContractResolver();
+            //config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CustomContractResolver();
 
             // Web API 路由
             config.MapHttpAttributeRoutes();
@@ -32,20 +32,23 @@ namespace Dddml.Wms.HttpServices
         }
     }
 
-    public class CustomContractResolver : DefaultContractResolver
-    {
-        private static readonly Type _moneyType = typeof(NodaMoney.Money);
+    // 这个不是必须的。因为 Noda Money 已经使用了相应的 JsonConverterAttribute ：
+    //[JsonConverter(typeof(MoneyJsonConverter))]
+    //public partial struct Money : IXmlSerializable
+    //{
 
-        private static readonly JsonConverter _moneyJsonConverter = new NodaMoney.Serialization.JsonNet.MoneyJsonConverter();
-
-        protected override JsonConverter ResolveContractConverter(Type objectType)
-        {
-            if (objectType != null && _moneyType.IsAssignableFrom(objectType))
-            {
-                return _moneyJsonConverter;
-            }
-            return base.ResolveContractConverter(objectType);
-        }
-    }
+    //public class CustomContractResolver : DefaultContractResolver
+    //{
+    //    private static readonly Type _moneyType = typeof(NodaMoney.Money);
+    //    private static readonly JsonConverter _moneyJsonConverter = new NodaMoney.Serialization.JsonNet.MoneyJsonConverter();
+    //    protected override JsonConverter ResolveContractConverter(Type objectType)
+    //    {
+    //        if (objectType != null && _moneyType.IsAssignableFrom(objectType))
+    //        {
+    //            return _moneyJsonConverter;
+    //        }
+    //        return base.ResolveContractConverter(objectType);
+    //    }
+    //}
 
 }

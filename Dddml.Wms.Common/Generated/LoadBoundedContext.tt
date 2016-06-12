@@ -37,7 +37,8 @@
 	var nodaMoneyNHibernateType = new NHibernateType() {
 			ActualTypeName = "Money", 
 			AssemblyQualifiedName = "Dddml.Wms.Services.Domain.NHibernate.NodaMoneyType, Dddml.Wms.Services",
-			PropertyNames = new string[] { "Amount", "Currency" }
+			PropertyNames = new string[] { "Amount", "Currency" }, 
+			PropertyClrTypes = new string[] { "decimal", "string" }
 		};
 	nhibernateTypes.Add(nodaMoneyNHibernateType.ActualTypeName, nodaMoneyNHibernateType);
 	boundedContext.SetNHibernateTypes(nhibernateTypes);

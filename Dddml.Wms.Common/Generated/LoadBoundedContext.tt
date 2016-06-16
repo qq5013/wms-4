@@ -26,6 +26,9 @@
 
 	boundedContext.Aggregates["AttributeSetInstance"].Metadata[Dddml.T4.Extensions.EntityBaseExtension.MetadataKeyPersistingStateEventRemovedPropertiesAsSet] = true;
 
+	//boundedContext.Aggregates["AttributeSetInstance"].AuthorizationEnabled = true;
+	//boundedContext.Aggregates["AttributeSetInstance"].AnonymousAllowed = true;
+
 	var typeNamespaces = new Dictionary<string, string>();
 	typeNamespaces.Add("Money", "NodaMoney");
 	boundedContext.SetTypeNamespaces(typeNamespaces);
@@ -97,8 +100,9 @@
         string filePath4 = System.IO.Path.Combine(projectDir, "../dddml/InOut.yaml");
 		string filePath5 = System.IO.Path.Combine(projectDir, "../dddml/Warehouse.yaml");
 		string filePath6 = System.IO.Path.Combine(projectDir, "../dddml/Organization.yaml");
+		string filePath7 = System.IO.Path.Combine(projectDir, "../dddml/AccessManagement.yaml");
 
-        BoundedContext boundedContext = BoundedContextUtils.LoadFromFiles(new string[]{ filePath1, filePath2, filePath3, filePath4, filePath5, filePath6});
+        BoundedContext boundedContext = BoundedContextUtils.LoadFromFiles(new string[]{ filePath1, filePath2, filePath3, filePath4, filePath5, filePath6, filePath7});
         boundedContext.DefaultModule = "Dddml.Wms";
         return boundedContext;
     }

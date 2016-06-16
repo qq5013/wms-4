@@ -10,6 +10,10 @@
     <property name="OrganizationStructureStateRepository" ref="organizationStructureStateRepository"/>
   </object>
 
+  <object id="permissionTreeRepository" type="Dddml.Wms.Domain.NHibernate.NHibernatePermissionTreeRepository, Dddml.Wms.Services">
+    <property name="PermissionStateRepository" ref="permissionStateRepository"/>
+  </object>
+
 
 </objects>
 

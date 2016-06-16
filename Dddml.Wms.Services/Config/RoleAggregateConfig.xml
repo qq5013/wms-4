@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+
+  <object id="roleStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateRoleStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="roleEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateRoleEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="roleApplicationService" type="Dddml.Wms.Domain.NHibernate.RoleApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="roleEventStore"/>
+    <constructor-arg ref="roleStateRepository"/>
+  </object>
+
+</objects>
+

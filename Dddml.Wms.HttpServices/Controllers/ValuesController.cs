@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dddml.Wms.HttpServices.Filters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -7,8 +8,8 @@ using System.Web.Http;
 
 namespace Dddml.Wms.HttpServices.Controllers
 {
-    [Authorize]
-    public class ValuesController : ApiController
+    [AllowAnonymous]
+    public partial class ValuesController : ApiController
     {
         // GET api/values
         public IEnumerable<string> Get()
@@ -17,11 +18,14 @@ namespace Dddml.Wms.HttpServices.Controllers
         }
 
         // GET api/values/5
+        //[SetRequesterId]
+        [Authorize]
         public string Get(int id)
         {
             return "value";
         }
 
+        //[Authorize(Roles = "")]
         // POST api/values
         public void Post([FromBody]string value)
         {

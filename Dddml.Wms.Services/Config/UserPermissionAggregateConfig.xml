@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+
+  <object id="userPermissionStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateUserPermissionStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="userPermissionEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateUserPermissionEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="userPermissionApplicationService" type="Dddml.Wms.Domain.NHibernate.UserPermissionApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="userPermissionEventStore"/>
+    <constructor-arg ref="userPermissionStateRepository"/>
+  </object>
+
+</objects>
+

@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dddml.Wms.HttpServices.Clie
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dddml.Support.Criterion", "..\dddml-dotnet-tools\Dddml.Support.Criterion\Dddml.Support.Criterion.csproj", "{5C91ECAD-6C35-45AA-ACE7-E8F156922658}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DummyOwinAuth", "..\DummyOwinAuth\DummyOwinAuth\DummyOwinAuth.csproj", "{C588F874-AB6D-44FB-8582-8F5903E61C2C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{5C91ECAD-6C35-45AA-ACE7-E8F156922658}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C91ECAD-6C35-45AA-ACE7-E8F156922658}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C91ECAD-6C35-45AA-ACE7-E8F156922658}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C588F874-AB6D-44FB-8582-8F5903E61C2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C588F874-AB6D-44FB-8582-8F5903E61C2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C588F874-AB6D-44FB-8582-8F5903E61C2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C588F874-AB6D-44FB-8582-8F5903E61C2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

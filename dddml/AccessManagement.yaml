@@ -1,0 +1,104 @@
+#%DDDML 0.1
+
+---
+
+# ------------------------------
+aggregates:
+
+    # --------------- aggregate ---------------
+    Role:
+
+      id:
+        name: RoleId
+        type: string
+
+      properties:
+      
+        Name:
+          type: string
+          
+        Description:
+          type: string
+
+    
+    # --------------- aggregate ---------------
+    Permission:
+      
+      id:
+        name: PermissionId
+        type: string
+
+      properties:
+
+        Name:
+          type: string
+          
+        ParentPermissionId:
+          type: string
+          
+        Description:
+          type: string
+
+          
+    # --------------- aggregate ---------------
+    RolePermission:
+      
+      id:
+        name: Id
+        type: RolePermissionId
+
+    # --------------- aggregate ---------------
+    UserRole:
+      
+      id:
+        name: Id
+        type: UserRoleId
+
+    # --------------- aggregate ---------------
+    UserPermission:
+      
+      id:
+        name: Id
+        type: UserPermissionId
+        
+# ------------------------------
+valueObjects:
+
+    # --------------- aggregate ---------------
+    RolePermissionId:
+      properties:
+        RoleId:
+          type: string
+        PermissionId:
+          type: string
+
+    # --------------- aggregate ---------------
+    UserRoleId:
+      properties:
+        UserId:
+          type: string
+        RoleId:
+          type: string
+
+    # --------------- aggregate ---------------
+    UserPermissionId:
+      properties:
+        UserId:
+          type: string
+        PermissionId:
+          type: string
+          
+# -------------------------------------
+
+trees:
+    
+    PermissionTree:
+    
+      nodeContentType: Permission
+      
+      parentId: ParentPermissionId
+      
+      rootParentIdValues: [null, ""]
+        
+        
+          

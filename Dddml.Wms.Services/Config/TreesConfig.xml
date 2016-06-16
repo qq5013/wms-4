@@ -9,6 +9,10 @@
     <property name="OrganizationTreeRepository" ref="organizationTreeRepository"/>
   </object>
 
+  <object id="permissionTreeApplicationService" type="Dddml.Wms.Domain.PermissionTreeApplicationService, Dddml.Wms.Services">
+    <property name="PermissionTreeRepository" ref="permissionTreeRepository"/>
+  </object>
+
 
 </objects>
 

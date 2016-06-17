@@ -90,6 +90,9 @@
     <Compile Include="Generated\AttributeValueMvoApplicationServiceProxy.cs">
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\AudienceApplicationServiceProxy.cs">
+      <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\DddmlWmsRamlClient.cs">
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
@@ -152,6 +155,7 @@
 .\AttributeSetInstanceExtensionFieldMvoApplicationServiceProxy.cs
 .\AttributeUseMvoApplicationServiceProxy.cs
 .\AttributeValueMvoApplicationServiceProxy.cs
+.\AudienceApplicationServiceProxy.cs
 .\DddmlWmsRamlClient.cs
 .\GenerateRamlClientProxies.txt
 .\InOutApplicationServiceProxy.cs

@@ -1,0 +1,23 @@
+#%DDDML 0.1
+
+---
+
+
+# ------------------------------
+aggregates:
+
+    # --------------- aggregate ---------------
+    Audience:
+      
+      id:
+        name: ClientId
+        type: string
+
+      properties:
+
+        Name:
+          type: string
+          
+        Base64Secret:
+          type: string
+          

@@ -106,6 +106,9 @@
     <Compile Include="Generated\Domain\NHibernate\AttributeValueMvoApplicationService.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\NHibernate\AudienceApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\NHibernate\InOutApplicationService.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
@@ -173,6 +176,12 @@
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\NHibernate\NHibernateAttributeValueStateEventDao.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateAudienceEventStore.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateAudienceStateRepository.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\NHibernate\NHibernateInOutEventStore.cs">
@@ -359,28 +368,10 @@
       <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Config\DomainConfig.xml" />
-    <EmbeddedResource Include="Config\AttributeAggregateConfig.xml">
-      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Config\AttributeSetAggregateConfig.xml">
-      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Config\AttributeSetInstanceAggregateConfig.xml">
-      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Config\AttributeSetInstanceExtensionFieldGroupAggregateConfig.xml">
-      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Config\AggregatesIdGeneratorConfig.xml">
       <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Config\AttributeValueMvoAggregateConfig.xml">
-      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Config\AttributeUseMvoAggregateConfig.xml">
-      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Config\AttributeSetInstanceExtensionFieldMvoAggregateConfig.xml">
+    <EmbeddedResource Include="Config\AggregatesNHibernateConfig.xml">
       <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
     </EmbeddedResource>
     <Content Include="Config\GenerateTreesConfig.tt">
@@ -400,44 +391,8 @@
     <EmbeddedResource Include="Config\TreesConfig.xml">
       <DependentUpon>GenerateTreesConfig.tt</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Config\InOutAggregateConfig.xml">
-      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Config\WarehouseAggregateConfig.xml">
-      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Config\LocatorAggregateConfig.xml">
-      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Config\OrganizationAggregateConfig.xml">
-      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Config\OrganizationStructureTypeAggregateConfig.xml">
-      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Config\OrganizationStructureAggregateConfig.xml">
-      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Config\InOutLineMvoAggregateConfig.xml">
-      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Config\TreesNHibernateConfig.xml">
       <DependentUpon>GenerateTreesConfig.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Config\RoleAggregateConfig.xml">
-      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Config\PermissionAggregateConfig.xml">
-      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Config\RolePermissionAggregateConfig.xml">
-      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Config\UserRoleAggregateConfig.xml">
-      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Config\UserPermissionAggregateConfig.xml">
-      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
     </EmbeddedResource>
     <Content Include="Generated\Domain\GenerateBoundedContextTreeApplicationServices.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -487,6 +442,12 @@
     <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeSetInstanceExtensionFieldMvoStateEvent.hbm.xml">
       <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\AudienceState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\AudienceStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
     <Content Include="Generated\NHibernate\Mappings\GenerateAggregatesHbm.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GenerateAggregatesHbm.txt</LastGenOutput>
@@ -511,6 +472,8 @@
 .\AttributeValueMvoStateEvent.hbm.xml
 .\AttributeValueState.hbm.xml
 .\AttributeValueStateEvent.hbm.xml
+.\AudienceState.hbm.xml
+.\AudienceStateEvent.hbm.xml
 .\GenerateAggregatesHbm.txt
 .\InOutLineMvoState.hbm.xml
 .\InOutLineMvoStateEvent.hbm.xml
@@ -640,26 +603,8 @@
       <LastGenOutput>GenerateAggregatesConfig.txt</LastGenOutput>
       <LastOutputs>
 .\AggregatesIdGeneratorConfig.xml
-.\AttributeAggregateConfig.xml
-.\AttributeSetAggregateConfig.xml
-.\AttributeSetInstanceAggregateConfig.xml
-.\AttributeSetInstanceExtensionFieldGroupAggregateConfig.xml
-.\AttributeSetInstanceExtensionFieldMvoAggregateConfig.xml
-.\AttributeUseMvoAggregateConfig.xml
-.\AttributeValueMvoAggregateConfig.xml
+.\AggregatesNHibernateConfig.xml
 .\GenerateAggregatesConfig.txt
-.\InOutAggregateConfig.xml
-.\InOutLineMvoAggregateConfig.xml
-.\LocatorAggregateConfig.xml
-.\OrganizationAggregateConfig.xml
-.\OrganizationStructureAggregateConfig.xml
-.\OrganizationStructureTypeAggregateConfig.xml
-.\PermissionAggregateConfig.xml
-.\RoleAggregateConfig.xml
-.\RolePermissionAggregateConfig.xml
-.\UserPermissionAggregateConfig.xml
-.\UserRoleAggregateConfig.xml
-.\WarehouseAggregateConfig.xml
 </LastOutputs>
     </Content>
     <Content Include="Config\GenerateAggregatesConfig.txt">
@@ -678,6 +623,7 @@
 .\AttributeSetInstanceExtensionFieldMvoApplicationService.cs
 .\AttributeUseMvoApplicationService.cs
 .\AttributeValueMvoApplicationService.cs
+.\AudienceApplicationService.cs
 .\GenerateBoundedContextDomainNHibernateAggregates.txt
 .\InOutApplicationService.cs
 .\InOutLineMvoApplicationService.cs
@@ -702,6 +648,8 @@
 .\NHibernateAttributeValueMvoStateRepository.cs
 .\NHibernateAttributeValueStateDao.cs
 .\NHibernateAttributeValueStateEventDao.cs
+.\NHibernateAudienceEventStore.cs
+.\NHibernateAudienceStateRepository.cs
 .\NHibernateInOutEventStore.cs
 .\NHibernateInOutLineMvoEventStore.cs
 .\NHibernateInOutLineMvoStateRepository.cs

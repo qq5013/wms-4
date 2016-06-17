@@ -2,18 +2,17 @@
 <#@ output extension="txt" #>
 <#@ import namespace="Dddml.Core.Domain" #>
 <#@ include file="T4Toolbox.tt" #>
-<#@ include file="%DddmlDotNetToolsSolutionDir%\Dddml.T4.Templates\NHibernate\Spring\AggregateNHibernateSpringConfigGenerator.tt" #>
+<#@ include file="%DddmlDotNetToolsSolutionDir%\Dddml.T4.Templates\NHibernate\Spring\AggregatesNHibernateSpringConfigGenerator.tt" #>
 <#@ include file="%DddmlDotNetToolsSolutionDir%\Dddml.T4.Templates\Spring\AggregatesArbitraryStringIdGeneratorSpringConfigGenerator.tt" #>
 <#@ include file="..\LoadBoundedContext.tt" #>
 <#
 
 
-	foreach (var aggregate in boundedContext.Aggregates.Values)
-	{
-	    var generator = new AggregateNHibernateSpringConfigGenerator(aggregate);
-
-	    generator.Run();
-	}
+	//foreach (var aggregate in boundedContext.Aggregates.Values)
+	//{
+    var generator = new AggregatesNHibernateSpringConfigGenerator(boundedContext.Aggregates.Values);
+    generator.Run();
+	//}
 	
 	var AggregatesArbitraryStringIdGeneratorSpringConfigGenerator = new AggregatesArbitraryStringIdGeneratorSpringConfigGenerator(boundedContext.Aggregates.Values);
 	AggregatesArbitraryStringIdGeneratorSpringConfigGenerator.Run();
@@ -31,11 +30,15 @@
 <# 
 	foreach (var aggregate in boundedContext.Aggregates.Values)
 	{
+	  if (false)
+	  {
 #>
       <resource uri="assembly://<#= TemplatingContext.Current.CurrentAssembly #>/<#= boundedContext.DefaultModule #>.Services.Config/<#= aggregate.Name #>AggregateConfig.xml"/>
 <#
+	  }
 	}
 #>
+      <resource uri="assembly://<#= TemplatingContext.Current.CurrentAssembly #>/<#= boundedContext.DefaultModule #>.Services.Config/AggregatesNHibernateConfig.xml"/>
 
       <resource uri="assembly://<#= TemplatingContext.Current.CurrentAssembly #>/<#= boundedContext.DefaultModule #>.Services.Config/AggregatesIdGeneratorConfig.xml"/>
 

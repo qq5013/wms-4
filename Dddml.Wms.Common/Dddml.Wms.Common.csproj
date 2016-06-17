@@ -441,6 +441,42 @@
     <Compile Include="Generated\Domain\AttributeValueStates.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\AudienceAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AudienceApplicationServiceBase.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AudienceApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AudienceCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AudienceCommandDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AudienceState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AudienceStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AudienceStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AudienceStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AudienceStateEventId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AudienceStateEventIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AudienceStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\DocumentAction.cs">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </Compile>
@@ -676,6 +712,30 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\IAttributeValueStates.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAudienceAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAudienceApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAudienceApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAudienceCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAudienceState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAudienceStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAudienceStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IAudienceStateRepository.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\IInOutAggregate.cs">
@@ -1195,6 +1255,9 @@
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\Metadata\AttributeValueMvoMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\Metadata\AudienceMetadata.cs">
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\Metadata\InOutLineMetadata.cs">
@@ -1831,6 +1894,18 @@
 .\AttributeValueStateEventIdDto.cs
 .\AttributeValueStateProperties.cs
 .\AttributeValueStates.cs
+.\AudienceAggregate.cs
+.\AudienceApplicationServiceBase.cs
+.\AudienceApplicationServiceFactory.cs
+.\AudienceCommand.cs
+.\AudienceCommandDto.cs
+.\AudienceState.cs
+.\AudienceStateDto.cs
+.\AudienceStateEvent.cs
+.\AudienceStateEventDto.cs
+.\AudienceStateEventId.cs
+.\AudienceStateEventIdDto.cs
+.\AudienceStateProperties.cs
 .\GenerateBoundedContextDomainAggregates.txt
 .\IAttributeAggregate.cs
 .\IAttributeApplicationService.cs
@@ -1909,6 +1984,14 @@
 .\IAttributeValueStateEventDao.cs
 .\IAttributeValueStateProperties.cs
 .\IAttributeValueStates.cs
+.\IAudienceAggregate.cs
+.\IAudienceApplicationService.cs
+.\IAudienceApplicationServiceFactory.cs
+.\IAudienceCommand.cs
+.\IAudienceState.cs
+.\IAudienceStateEvent.cs
+.\IAudienceStateProperties.cs
+.\IAudienceStateRepository.cs
 .\IInOutAggregate.cs
 .\IInOutApplicationService.cs
 .\IInOutApplicationServiceFactory.cs
@@ -2238,6 +2321,7 @@
 .\AttributeUseMvoMetadata.cs
 .\AttributeValueMetadata.cs
 .\AttributeValueMvoMetadata.cs
+.\AudienceMetadata.cs
 .\GenerateDomainMetadata.txt
 .\InOutLineMetadata.cs
 .\InOutLineMvoMetadata.cs

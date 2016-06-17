@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dddml.Support.Criterion", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DummyOwinAuth", "..\DummyOwinAuth\DummyOwinAuth\DummyOwinAuth.csproj", "{C588F874-AB6D-44FB-8582-8F5903E61C2C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorizationServer", "AuthorizationServer\AuthorizationServer.csproj", "{583C1001-7568-406E-9444-8CAD43DDA3EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorizationServer.Tests", "AuthorizationServer.Tests\AuthorizationServer.Tests.csproj", "{5EE9E787-A9D9-4DA7-8ED5-6CEE4AEE0836}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +67,14 @@ Global
 		{C588F874-AB6D-44FB-8582-8F5903E61C2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C588F874-AB6D-44FB-8582-8F5903E61C2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C588F874-AB6D-44FB-8582-8F5903E61C2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{583C1001-7568-406E-9444-8CAD43DDA3EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{583C1001-7568-406E-9444-8CAD43DDA3EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{583C1001-7568-406E-9444-8CAD43DDA3EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{583C1001-7568-406E-9444-8CAD43DDA3EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EE9E787-A9D9-4DA7-8ED5-6CEE4AEE0836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EE9E787-A9D9-4DA7-8ED5-6CEE4AEE0836}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EE9E787-A9D9-4DA7-8ED5-6CEE4AEE0836}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EE9E787-A9D9-4DA7-8ED5-6CEE4AEE0836}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

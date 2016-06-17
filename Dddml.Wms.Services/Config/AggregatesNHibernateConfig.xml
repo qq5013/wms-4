@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+  <object id="attributeValueStateDao" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeValueStateDao, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="attributeValueStateEventDao" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeValueStateEventDao, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+
+  <object id="attributeStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="attributeEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="attributeApplicationService" type="Dddml.Wms.Domain.NHibernate.AttributeApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="attributeEventStore"/>
+    <constructor-arg ref="attributeStateRepository"/>
+  </object>
+
+  <object id="attributeUseStateDao" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeUseStateDao, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="attributeUseStateEventDao" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeUseStateEventDao, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+
+  <object id="attributeSetStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeSetStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="attributeSetEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeSetEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="attributeSetApplicationService" type="Dddml.Wms.Domain.NHibernate.AttributeSetApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="attributeSetEventStore"/>
+    <constructor-arg ref="attributeSetStateRepository"/>
+  </object>
+
+
+  <object id="attributeSetInstanceStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeSetInstanceStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="attributeSetInstanceEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeSetInstanceEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="attributeSetInstanceApplicationService" type="Dddml.Wms.Domain.NHibernate.AttributeSetInstanceApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="attributeSetInstanceEventStore"/>
+    <constructor-arg ref="attributeSetInstanceStateRepository"/>
+  </object>
+
+  <object id="attributeSetInstanceExtensionFieldStateDao" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeSetInstanceExtensionFieldStateDao, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="attributeSetInstanceExtensionFieldStateEventDao" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeSetInstanceExtensionFieldStateEventDao, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+
+  <object id="attributeSetInstanceExtensionFieldGroupStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeSetInstanceExtensionFieldGroupStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="attributeSetInstanceExtensionFieldGroupEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeSetInstanceExtensionFieldGroupEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="attributeSetInstanceExtensionFieldGroupApplicationService" type="Dddml.Wms.Domain.NHibernate.AttributeSetInstanceExtensionFieldGroupApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="attributeSetInstanceExtensionFieldGroupEventStore"/>
+    <constructor-arg ref="attributeSetInstanceExtensionFieldGroupStateRepository"/>
+  </object>
+
+  <object id="inOutLineStateDao" type="Dddml.Wms.Domain.NHibernate.NHibernateInOutLineStateDao, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="inOutLineStateEventDao" type="Dddml.Wms.Domain.NHibernate.NHibernateInOutLineStateEventDao, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+
+  <object id="inOutStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateInOutStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="inOutEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateInOutEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="inOutApplicationService" type="Dddml.Wms.Domain.NHibernate.InOutApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="inOutEventStore"/>
+    <constructor-arg ref="inOutStateRepository"/>
+  </object>
+
+
+  <object id="warehouseStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateWarehouseStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="warehouseEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateWarehouseEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="warehouseApplicationService" type="Dddml.Wms.Domain.NHibernate.WarehouseApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="warehouseEventStore"/>
+    <constructor-arg ref="warehouseStateRepository"/>
+  </object>
+
+
+  <object id="locatorStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateLocatorStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="locatorEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateLocatorEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="locatorApplicationService" type="Dddml.Wms.Domain.NHibernate.LocatorApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="locatorEventStore"/>
+    <constructor-arg ref="locatorStateRepository"/>
+  </object>
+
+
+  <object id="organizationStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateOrganizationStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="organizationEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateOrganizationEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="organizationApplicationService" type="Dddml.Wms.Domain.NHibernate.OrganizationApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="organizationEventStore"/>
+    <constructor-arg ref="organizationStateRepository"/>
+  </object>
+
+
+  <object id="organizationStructureTypeStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateOrganizationStructureTypeStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="organizationStructureTypeEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateOrganizationStructureTypeEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="organizationStructureTypeApplicationService" type="Dddml.Wms.Domain.NHibernate.OrganizationStructureTypeApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="organizationStructureTypeEventStore"/>
+    <constructor-arg ref="organizationStructureTypeStateRepository"/>
+  </object>
+
+
+  <object id="organizationStructureStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateOrganizationStructureStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="organizationStructureEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateOrganizationStructureEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="organizationStructureApplicationService" type="Dddml.Wms.Domain.NHibernate.OrganizationStructureApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="organizationStructureEventStore"/>
+    <constructor-arg ref="organizationStructureStateRepository"/>
+  </object>
+
+
+  <object id="roleStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateRoleStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="roleEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateRoleEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="roleApplicationService" type="Dddml.Wms.Domain.NHibernate.RoleApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="roleEventStore"/>
+    <constructor-arg ref="roleStateRepository"/>
+  </object>
+
+
+  <object id="permissionStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernatePermissionStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="permissionEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernatePermissionEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="permissionApplicationService" type="Dddml.Wms.Domain.NHibernate.PermissionApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="permissionEventStore"/>
+    <constructor-arg ref="permissionStateRepository"/>
+  </object>
+
+
+  <object id="rolePermissionStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateRolePermissionStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="rolePermissionEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateRolePermissionEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="rolePermissionApplicationService" type="Dddml.Wms.Domain.NHibernate.RolePermissionApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="rolePermissionEventStore"/>
+    <constructor-arg ref="rolePermissionStateRepository"/>
+  </object>
+
+
+  <object id="userRoleStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateUserRoleStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="userRoleEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateUserRoleEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="userRoleApplicationService" type="Dddml.Wms.Domain.NHibernate.UserRoleApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="userRoleEventStore"/>
+    <constructor-arg ref="userRoleStateRepository"/>
+  </object>
+
+
+  <object id="userPermissionStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateUserPermissionStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="userPermissionEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateUserPermissionEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="userPermissionApplicationService" type="Dddml.Wms.Domain.NHibernate.UserPermissionApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="userPermissionEventStore"/>
+    <constructor-arg ref="userPermissionStateRepository"/>
+  </object>
+
+
+  <object id="audienceStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateAudienceStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="audienceEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateAudienceEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="audienceApplicationService" type="Dddml.Wms.Domain.NHibernate.AudienceApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="audienceEventStore"/>
+    <constructor-arg ref="audienceStateRepository"/>
+  </object>
+
+
+  <object id="attributeValueMvoStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeValueMvoStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="attributeValueMvoEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeValueMvoEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="attributeValueMvoApplicationService" type="Dddml.Wms.Domain.NHibernate.AttributeValueMvoApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="attributeValueMvoEventStore"/>
+    <constructor-arg ref="attributeValueMvoStateRepository"/>
+  </object>
+
+
+  <object id="attributeUseMvoStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeUseMvoStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="attributeUseMvoEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeUseMvoEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="attributeUseMvoApplicationService" type="Dddml.Wms.Domain.NHibernate.AttributeUseMvoApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="attributeUseMvoEventStore"/>
+    <constructor-arg ref="attributeUseMvoStateRepository"/>
+  </object>
+
+
+  <object id="attributeSetInstanceExtensionFieldMvoStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeSetInstanceExtensionFieldMvoStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="attributeSetInstanceExtensionFieldMvoEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeSetInstanceExtensionFieldMvoEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="attributeSetInstanceExtensionFieldMvoApplicationService" type="Dddml.Wms.Domain.NHibernate.AttributeSetInstanceExtensionFieldMvoApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="attributeSetInstanceExtensionFieldMvoEventStore"/>
+    <constructor-arg ref="attributeSetInstanceExtensionFieldMvoStateRepository"/>
+  </object>
+
+
+  <object id="inOutLineMvoStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateInOutLineMvoStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="inOutLineMvoEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateInOutLineMvoEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="inOutLineMvoApplicationService" type="Dddml.Wms.Domain.NHibernate.InOutLineMvoApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="inOutLineMvoEventStore"/>
+    <constructor-arg ref="inOutLineMvoStateRepository"/>
+  </object>
+
+</objects>
+

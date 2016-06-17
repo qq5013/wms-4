@@ -4,6 +4,7 @@ using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -20,6 +21,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
     {
         private string _endpointUrl = "http://localhost:63078/"; //注意，最后的斜杠是必须的！
 
+        private string _authzServerEndpointUrl = "http://localhost:58760/";
+
         [SetUp]
         public void SetUp()
         {
@@ -28,6 +31,10 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
         [Test]
         public void TestGetValue()
         {
+            var jwt = GetJwt("jyang", "jyang");
+            Console.WriteLine(jwt);
+            return;//todo
+
             var userNameAndPassword = RegisterTestUser();
 
             var accessToken = GetAccessToken(userNameAndPassword.Item1, userNameAndPassword.Item2);
@@ -89,6 +96,39 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
 
             return new Tuple<string, string>(email, password);
+        }
+
+
+        private string GetJwt(string loginId, string password)
+        {
+
+            var client = new HttpClient { BaseAddress = new Uri(_authzServerEndpointUrl) };
+            var url = "oauth2/token";
+
+            string client_id = ConfigurationManager.AppSettings["self.ClientId"];
+            Assert.IsNotNull(client_id);
+
+            var postContent = new Dictionary<string, string>();
+            
+            postContent["grant_type"] = "password";
+            postContent["username"] = loginId;
+            postContent["password"] = password;
+            postContent["client_id"] = client_id;
+
+            var req = new HttpRequestMessage(HttpMethod.Post, url);
+            req.Content = new FormUrlEncodedContent(postContent);
+            var response = client.SendAsync(req).GetAwaiter().GetResult();
+
+            dynamic result = response.Content.ReadAsAsync<JObject>(new MediaTypeFormatter[] { new JsonMediaTypeFormatter() }).GetAwaiter().GetResult();
+
+            Console.WriteLine(result);
+            Console.WriteLine(response.Headers);
+            Console.WriteLine(response.StatusCode);
+            Console.WriteLine(response.ReasonPhrase);
+            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
+            
+            return result.access_token;
+
         }
 
         private string GetAccessToken(string loginId, string password)

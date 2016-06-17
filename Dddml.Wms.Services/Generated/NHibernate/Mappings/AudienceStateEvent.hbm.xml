@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+                   assembly="Dddml.Wms.Common" 
+                   namespace="Dddml.Wms.Domain">
+  
+  <class name="AudienceStateEventBase" table="AudienceStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="StateEventId" class="Dddml.Wms.Domain.AudienceStateEventId">
+		<key-property name="ClientId" column="ClientId" length="50"/>
+		<key-property name="Version" column="Version" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="String" />
+
+	<property name="Name" ></property>
+
+	<property name="Base64Secret" ></property>
+
+	<property name="Active" ></property>
+
+
+    <property name="CreatedBy" />
+
+    <property name="CreatedAt" />
+
+    <property name="CommandId" />
+
+
+    <subclass name="AudienceStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="AudienceStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="IsPropertyNameRemoved" />
+
+        <property name="IsPropertyBase64SecretRemoved" />
+
+        <property name="IsPropertyActiveRemoved" />
+
+
+    </subclass>
+
+    <subclass name="AudienceStateDeleted"  discriminator-value="Deleted">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

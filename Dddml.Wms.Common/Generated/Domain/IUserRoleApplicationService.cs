@@ -28,6 +28,8 @@ namespace Dddml.Wms.Domain
 
         IEnumerable<IUserRoleState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue);
 
+        IEnumerable<IUserRoleState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue);
+
         long GetCount(IEnumerable<KeyValuePair<string, object>> filter);
 
         long GetCount(ICriterion filter);

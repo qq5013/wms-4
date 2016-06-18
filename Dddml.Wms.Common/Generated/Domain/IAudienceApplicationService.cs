@@ -28,6 +28,8 @@ namespace Dddml.Wms.Domain
 
         IEnumerable<IAudienceState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue);
 
+        IEnumerable<IAudienceState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue);
+
         long GetCount(IEnumerable<KeyValuePair<string, object>> filter);
 
         long GetCount(ICriterion filter);

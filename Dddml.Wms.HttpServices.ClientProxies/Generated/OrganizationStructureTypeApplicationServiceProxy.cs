@@ -139,6 +139,16 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return states;
         }
 
+        public IEnumerable<IOrganizationStructureTypeState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
+        {
+            return GetByProperty(propertyName, propertyValue, orders, firstResult, maxResults, null);
+        }
+
+        public IEnumerable<IOrganizationStructureTypeState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            var filter = Restrictions.Eq(propertyName, propertyValue);
+            return Get(filter, orders, firstResult, maxResults, fields);
+        }
 
         public virtual void Execute(object command)
         {

@@ -27,6 +27,8 @@ namespace Dddml.Wms.Domain
 
         IAttributeUseMvoState GetFirst(KeyValuePair<string, object> keyValue, IList<string> orders = null);
 
+        IEnumerable<IAttributeUseMvoState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue);
+
         long GetCount(IEnumerable<KeyValuePair<string, object>> filter);
 
         long GetCount(ICriterion filter);

@@ -98,6 +98,12 @@ namespace Dddml.Wms.Domain
 			return states;
 		}
 
+        public virtual IEnumerable<IOrganizationStructureTypeState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
+        {
+            var states = StateRepository.GetByProperty(propertyName, propertyValue, orders, firstResult, maxResults);
+			return states;
+        }
+
         public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
 		{
             return StateRepository.GetCount(filter);

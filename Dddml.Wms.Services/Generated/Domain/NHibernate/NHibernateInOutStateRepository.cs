@@ -103,6 +103,13 @@ namespace Dddml.Wms.Domain.NHibernate
         }
 
         [Transaction(ReadOnly = true)]
+        public virtual IEnumerable<IInOutState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
+        {
+            var filter = new KeyValuePair<string, object>[] { new KeyValuePair<string, object>(propertyName, propertyValue) };
+            return Get(filter, orders, firstResult, maxResults);
+        }
+
+        [Transaction(ReadOnly = true)]
         public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
         {
             var criteria = CurrentSession.CreateCriteria<InOutState>();

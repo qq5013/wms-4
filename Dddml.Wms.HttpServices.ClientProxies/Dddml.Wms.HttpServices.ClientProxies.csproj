@@ -132,10 +132,16 @@
     <Compile Include="Generated\RolePermissionApplicationServiceProxy.cs">
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generated\UserPermissionApplicationServiceProxy.cs">
+    <Compile Include="Generated\UserApplicationServiceProxy.cs">
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generated\UserRoleApplicationServiceProxy.cs">
+    <Compile Include="Generated\UserClaimMvoApplicationServiceProxy.cs">
+      <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\UserPermissionMvoApplicationServiceProxy.cs">
+      <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\UserRoleMvoApplicationServiceProxy.cs">
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\WarehouseApplicationServiceProxy.cs">
@@ -170,8 +176,10 @@
 .\PermissionTreeApplicationServiceProxy.cs
 .\RoleApplicationServiceProxy.cs
 .\RolePermissionApplicationServiceProxy.cs
-.\UserPermissionApplicationServiceProxy.cs
-.\UserRoleApplicationServiceProxy.cs
+.\UserApplicationServiceProxy.cs
+.\UserClaimMvoApplicationServiceProxy.cs
+.\UserPermissionMvoApplicationServiceProxy.cs
+.\UserRoleMvoApplicationServiceProxy.cs
 .\WarehouseApplicationServiceProxy.cs
 </LastOutputs>
     </Content>

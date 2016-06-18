@@ -11,27 +11,8 @@ using Dddml.Wms.Domain;
 namespace Dddml.Wms.Domain
 {
 
-	public abstract class UserRoleCommandDtoBase : ICommandDto, ICreateUserRole, IMergePatchUserRole, IDeleteUserRole
+	public abstract class UserRoleCommandDtoBase : ICommandDto, ICreateUserRole, IMergePatchUserRole, IRemoveUserRole
 	{
-
-		UserRoleId IAggregateCommand<UserRoleId, long>.AggregateId
-		{
-			get
-			{
-				return ((ICreateOrMergePatchOrDeleteUserRole)this).Id;
-			}
-		}
-
-
-		long IAggregateCommand<UserRoleId, long>.AggregateVersion
-		{
-			get
-			{
-				return this.Version;
-			}
-		}
-
-		public virtual long Version { get; set; }
 
 		public virtual string RequesterId { get; set; }
 
@@ -49,22 +30,11 @@ namespace Dddml.Wms.Domain
             set { this.CommandId = value; }
         }
 
-		public virtual UserRoleIdDto Id { get; set; }
+		public virtual string RoleId { get; set; }
 
 		public virtual bool? Active { get; set; }
 
-
-        UserRoleId ICreateOrMergePatchOrDeleteUserRole.Id
-        {
-            get 
-            {
-                return this.Id.ToUserRoleId();
-            }
-            set 
-            {
-                this.Id = new UserRoleIdDto(value);
-            }
-        }
+		public virtual string UserId { get; set; }
 
 		public virtual bool? IsPropertyActiveRemoved { get; set; }
 
@@ -107,9 +77,9 @@ namespace Dddml.Wms.Domain
                 var cmd = ToMergePatchUserRole();
                 this._innerCommand = cmd;
             }
-            else if (cmdType == CommandType.Delete)
+            else if (cmdType == CommandType.Remove)
             {
-                var cmd = ToDeleteUserRole();
+                var cmd = ToRemoveUserRole();
                 this._innerCommand = cmd;
             }
             else
@@ -119,15 +89,13 @@ namespace Dddml.Wms.Domain
             return this._innerCommand;
         }
 
-        internal DeleteUserRole ToDeleteUserRole()
+        private RemoveUserRole ToRemoveUserRole()
         {
-            var cmd = new DeleteUserRole();
+            var cmd = new RemoveUserRole();
             cmd.CommandId = this.CommandId;
             cmd.RequesterId = this.RequesterId;
 
-            cmd.Id = ((ICreateOrMergePatchOrDeleteUserRole)this).Id;
-            cmd.Version = this.Version;
-
+            cmd.RoleId = ((ICreateOrMergePatchOrRemoveUserRole)this).RoleId;
             return cmd;
         }
 
@@ -137,10 +105,9 @@ namespace Dddml.Wms.Domain
             cmd.CommandId = this.CommandId;
             cmd.RequesterId = this.RequesterId;
 
-            cmd.Version = this.Version;
-
-            cmd.Id = ((ICreateOrMergePatchOrDeleteUserRole)this).Id;
-            cmd.Active = ((ICreateOrMergePatchOrDeleteUserRole)this).Active;
+            cmd.RoleId = ((ICreateOrMergePatchOrRemoveUserRole)this).RoleId;
+            cmd.Active = ((ICreateOrMergePatchOrRemoveUserRole)this).Active;
+            cmd.UserId = ((ICreateOrMergePatchOrRemoveUserRole)this).UserId;
             
             cmd.IsPropertyActiveRemoved = (this as IMergePatchUserRole).IsPropertyActiveRemoved;
             return cmd;
@@ -152,10 +119,9 @@ namespace Dddml.Wms.Domain
             cmd.CommandId = this.CommandId;
             cmd.RequesterId = this.RequesterId;
 
-            cmd.Version = this.Version;
-
-            cmd.Id = ((ICreateOrMergePatchOrDeleteUserRole)this).Id;
-            cmd.Active = ((ICreateOrMergePatchOrDeleteUserRole)this).Active;
+            cmd.RoleId = ((ICreateOrMergePatchOrRemoveUserRole)this).RoleId;
+            cmd.Active = ((ICreateOrMergePatchOrRemoveUserRole)this).Active;
+            cmd.UserId = ((ICreateOrMergePatchOrRemoveUserRole)this).UserId;
             return cmd;
         }
 */
@@ -171,7 +137,7 @@ namespace Dddml.Wms.Domain
 	}
 
 
-    public class CreateOrMergePatchOrDeleteUserRoleDto : UserRoleCommandDtoBase
+    public class CreateOrMergePatchOrRemoveUserRoleDto : UserRoleCommandDtoBase
     {
         private string _commandType;
 
@@ -190,7 +156,7 @@ namespace Dddml.Wms.Domain
 
 
 
-	public class CreateUserRoleDto : CreateOrMergePatchOrDeleteUserRoleDto
+	public class CreateUserRoleDto : CreateOrMergePatchOrRemoveUserRoleDto
 	{
 
         public override string CommandType
@@ -209,7 +175,7 @@ namespace Dddml.Wms.Domain
 	}
 
 
-	public class MergePatchUserRoleDto : CreateOrMergePatchOrDeleteUserRoleDto
+	public class MergePatchUserRoleDto : CreateOrMergePatchOrRemoveUserRoleDto
 	{
 
         public override string CommandType
@@ -227,11 +193,11 @@ namespace Dddml.Wms.Domain
 
 	}
 
-	public class DeleteUserRoleDto : CreateOrMergePatchOrDeleteUserRoleDto
+	public class RemoveUserRoleDto : CreateOrMergePatchOrRemoveUserRoleDto
 	{
         protected override string GetCommandType()
         {
-            return Dddml.Wms.Specialization.CommandType.Delete;
+            return Dddml.Wms.Specialization.CommandType.Remove;
         }
 
 
@@ -244,6 +210,70 @@ namespace Dddml.Wms.Domain
         }
 
 	}
+
+
+    public partial class CreateOrMergePatchOrRemoveUserRoleDtos : IUserRoleCommands, ICreateUserRoleCommands, IEnumerable<CreateOrMergePatchOrRemoveUserRoleDto>
+    {
+        private List<CreateOrMergePatchOrRemoveUserRoleDto> _innerCommands = new List<CreateOrMergePatchOrRemoveUserRoleDto>();
+
+        public virtual CreateOrMergePatchOrRemoveUserRoleDto[] ToArray()
+        {
+            return _innerCommands.ToArray();
+        }
+
+        public virtual void Clear()
+        {
+            _innerCommands.Clear();
+        }
+
+        public virtual void AddRange(IEnumerable<CreateOrMergePatchOrRemoveUserRoleDto> cs)
+        {
+            _innerCommands.AddRange(cs);
+        }
+
+        void IUserRoleCommands.Add(IUserRoleCommand c)
+        {
+            _innerCommands.Add((CreateOrMergePatchOrRemoveUserRoleDto)c);
+        }
+
+        void IUserRoleCommands.Remove(IUserRoleCommand c)
+        {
+            _innerCommands.Remove((CreateOrMergePatchOrRemoveUserRoleDto)c);
+        }
+
+
+        IEnumerator<CreateOrMergePatchOrRemoveUserRoleDto> IEnumerable<CreateOrMergePatchOrRemoveUserRoleDto>.GetEnumerator()
+        {
+            return _innerCommands.GetEnumerator();
+        }
+
+        IEnumerator<IUserRoleCommand> IEnumerable<IUserRoleCommand>.GetEnumerator()
+        {
+            return _innerCommands.GetEnumerator();
+        }
+
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        {
+            return _innerCommands.GetEnumerator();
+        }
+
+        void ICreateUserRoleCommands.Add(ICreateUserRole c)
+        {
+            _innerCommands.Add((CreateUserRoleDto)c);
+        }
+
+        void ICreateUserRoleCommands.Remove(ICreateUserRole c)
+        {
+            _innerCommands.Remove((CreateUserRoleDto)c);
+        }
+
+        IEnumerator<ICreateUserRole> IEnumerable<ICreateUserRole>.GetEnumerator()
+        {
+            return _innerCommands.GetEnumerator();
+        }
+
+    }
+
 
 
 

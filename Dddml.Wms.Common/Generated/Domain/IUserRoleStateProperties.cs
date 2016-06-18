@@ -13,11 +13,15 @@ namespace Dddml.Wms.Domain
 
 	public interface IUserRoleStateProperties
 	{
-		UserRoleId Id { get; set; }
+		string RoleId { get; set; }
 
 		long Version { get; set; }
 
 		bool Active { get; set; }
+
+		// Outer Id:
+
+		string UserId { get; set; }
 
 
 	}

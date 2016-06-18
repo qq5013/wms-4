@@ -5,9 +5,9 @@
   
   <class name="Dddml.Wms.Domain.UserRoleState" table="UserRoles">
 
-	<composite-id name="Id" class="Dddml.Wms.Domain.UserRoleId">
-		<key-property name="UserId" column="IdUserId" />
-		<key-property name="RoleId" column="IdRoleId" />
+	<composite-id name="UserRoleId" class="Dddml.Wms.Domain.UserRoleId">
+		<key-property name="UserId" column="UserRoleIdUserId" length="50"/>
+		<key-property name="RoleId" column="UserRoleIdRoleId" length="50"/>
 	</composite-id>
 
 	<version name="Version" type="long" unsaved-value="0"/>

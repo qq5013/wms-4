@@ -29,11 +29,44 @@ namespace Dddml.Wms.Domain
 
 		#region IIdentity implementation
 
-		UserRoleId IGlobalIdentity<UserRoleId>.GlobalId
-		{
-			get
-			{
-				return this.Id;
+        private UserRoleId _userRoleId = new UserRoleId();
+
+        public virtual UserRoleId UserRoleId 
+        {
+            get { return this._userRoleId; }
+            set { this._userRoleId = value; }
+        }
+
+		UserRoleId IGlobalIdentity<UserRoleId>.GlobalId {
+			get {
+				return  this.UserRoleId;
+			}
+		}
+
+        string ILocalIdentity<string>.LocalId
+        {
+            get
+            {
+                return this.RoleId;
+            }
+        }
+
+
+        public override string UserId {
+			get {
+				return this.UserRoleId.UserId;
+			}
+			set {
+				this.UserRoleId.UserId = value;
+			}
+		}
+
+        public override string RoleId {
+			get {
+				return this.UserRoleId.RoleId;
+			}
+			set {
+				this.UserRoleId.RoleId = value;
 			}
 		}
 
@@ -179,7 +212,7 @@ namespace Dddml.Wms.Domain
 
 		}
 
-		public virtual void When(IUserRoleStateDeleted e)
+		public virtual void When(IUserRoleStateRemoved e)
 		{
 			ThrowOnWrongEvent(e);
 
@@ -197,15 +230,26 @@ namespace Dddml.Wms.Domain
 
 		protected void ThrowOnWrongEvent(IUserRoleStateEvent stateEvent)
 		{
-			var stateEntityId = this.Id; // Aggregate Id
-			var eventEntityId = stateEvent.StateEventId.Id; // EntityBase.Aggregate.GetStateEventIdPropertyIdName();
-			if (stateEntityId != eventEntityId)
-			{
-				DomainError.Named("mutateWrongEntity", "Entity Id {0} in state but entity id {1} in event", stateEntityId, eventEntityId);
-			}
+				var stateEntityIdUserId = (this as IGlobalIdentity<UserRoleId>).GlobalId.UserId;
+				var eventEntityIdUserId = stateEvent.StateEventId.UserId;
+				if (stateEntityIdUserId != eventEntityIdUserId)
+				{
+					DomainError.Named("mutateWrongEntity", "Entity Id UserId {0} in state but entity id UserId {1} in event", stateEntityIdUserId, eventEntityIdUserId);
+				}
+
+				var stateEntityIdRoleId = (this as IGlobalIdentity<UserRoleId>).GlobalId.RoleId;
+				var eventEntityIdRoleId = stateEvent.StateEventId.RoleId;
+				if (stateEntityIdRoleId != eventEntityIdRoleId)
+				{
+					DomainError.Named("mutateWrongEntity", "Entity Id RoleId {0} in state but entity id RoleId {1} in event", stateEntityIdRoleId, eventEntityIdRoleId);
+				}
 
 			var stateVersion = this.Version;
-			var eventVersion = stateEvent.StateEventId.Version;
+			var eventVersion = stateEvent.Version;
+			if (UserRoleState.VersionZero == eventVersion)
+			{
+				eventVersion = stateEvent.Version = stateVersion;
+			}
 			if (stateVersion != eventVersion)
 			{
 				throw DomainError.Named("concurrencyConflict", "Conflict between state version {0} and event version {1}", stateVersion, eventVersion);

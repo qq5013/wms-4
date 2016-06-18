@@ -13,11 +13,15 @@ namespace Dddml.Wms.Domain
 
 	public abstract class UserRoleStateProperties : IUserRoleStateProperties
 	{
-		public virtual UserRoleId Id { get; set; }
+		public virtual string RoleId { get; set; }
 
 		public virtual long Version { get; set; }
 
 		public virtual bool Active { get; set; }
+
+		// Outer Id:
+
+		public virtual string UserId { get; set; }
 
 
         protected virtual void InitializeProperties()

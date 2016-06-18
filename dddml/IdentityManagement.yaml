@@ -1,0 +1,113 @@
+#%DDDML 0.1
+
+---
+
+# ------------------------------
+aggregates:
+
+    # --------------- aggregate ---------------
+    User:
+
+      id:
+        name: UserId
+        type: string
+
+      properties:
+
+        #UserName
+      
+        AccessFailedCount:
+          type: int
+          
+        Email:
+          type: string
+
+        EmailConfirmed:
+          type: bool
+
+        LockoutEnabled:
+          type: bool
+
+        LockoutEndDateUtc:
+          type: DateTime?
+
+        PasswordHash:
+          type: string
+
+        PhoneNumber:
+          type: string
+
+        PhoneNumberConfirmed:
+          type: bool
+
+        TwoFactorEnabled:
+          type: bool
+
+        SecurityStamp:
+          type: string
+          
+        UserRoles:
+          itemType: UserRole
+          
+        UserClaims:
+          itemType: UserClaim
+          
+        UserPermissions:
+          itemType: UserPermission
+        
+        #UserLogins:
+        #  itemType: UserLogin
+        
+      
+      # ------------------------------
+      entities:
+
+        # ------------------------------
+        UserRole:
+          
+          id:
+            name: RoleId
+          
+          globalId:
+            name: UserRoleId
+            
+        # ------------------------------
+        UserClaim:
+        
+          id:
+            name: ClaimId
+            type: int
+            
+          globalId:
+            name: UserClaimId
+            
+          properties:
+            
+            ClaimType:
+              type: string
+
+            ClaimValue:
+              type: string
+
+        # ------------------------------
+        UserPermission:
+          
+          id:
+            name: PermissionId
+            
+          globalId:
+            name: UserPermissionId
+
+valueObjects:
+            
+    UserLogin:
+      
+      properties:
+      
+        LoginProvider:
+          type: string
+
+        ProviderKey:
+          type: string
+
+          

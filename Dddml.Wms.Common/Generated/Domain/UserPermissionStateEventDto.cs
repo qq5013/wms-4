@@ -11,7 +11,7 @@ using Dddml.Wms.Domain;
 namespace Dddml.Wms.Domain
 {
 
-	public abstract class UserPermissionStateEventDtoBase : IStateEventDto, IUserPermissionStateCreated, IUserPermissionStateMergePatched, IUserPermissionStateDeleted
+	public abstract class UserPermissionStateEventDtoBase : IStateEventDto, IUserPermissionStateCreated, IUserPermissionStateMergePatched, IUserPermissionStateRemoved
 	{
 
 		public virtual UserPermissionStateEventIdDto StateEventId { get; set; }
@@ -44,6 +44,8 @@ namespace Dddml.Wms.Domain
                 this.StateEventReadOnly = value;
             }
         }
+
+		public virtual long Version { get; set; }
 
 		public virtual bool? IsPropertyActiveRemoved { get; set; }
 
@@ -110,7 +112,7 @@ namespace Dddml.Wms.Domain
 	}
 
 
-    public class UserPermissionStateCreatedOrMergePatchedOrDeletedDto : UserPermissionStateEventDtoBase
+    public class UserPermissionStateCreatedOrMergePatchedOrRemovedDto : UserPermissionStateEventDtoBase
     {
         private string _stateEventType;
 
@@ -129,7 +131,7 @@ namespace Dddml.Wms.Domain
 
 
 
-	public class UserPermissionStateCreatedDto : UserPermissionStateCreatedOrMergePatchedOrDeletedDto
+	public class UserPermissionStateCreatedDto : UserPermissionStateCreatedOrMergePatchedOrRemovedDto
 	{
 		public UserPermissionStateCreatedDto()
 		{
@@ -152,7 +154,7 @@ namespace Dddml.Wms.Domain
 	}
 
 
-	public class UserPermissionStateMergePatchedDto : UserPermissionStateCreatedOrMergePatchedOrDeletedDto
+	public class UserPermissionStateMergePatchedDto : UserPermissionStateCreatedOrMergePatchedOrRemovedDto
 	{
 		public UserPermissionStateMergePatchedDto()
 		{
@@ -175,9 +177,9 @@ namespace Dddml.Wms.Domain
 	}
 
 
-	public class UserPermissionStateDeletedDto : UserPermissionStateCreatedOrMergePatchedOrDeletedDto
+	public class UserPermissionStateRemovedDto : UserPermissionStateCreatedOrMergePatchedOrRemovedDto
 	{
-		public UserPermissionStateDeletedDto()
+		public UserPermissionStateRemovedDto()
 		{
 		}
 
@@ -192,17 +194,17 @@ namespace Dddml.Wms.Domain
 
         protected override string GetStateEventType()
         {
-            return Dddml.Wms.Specialization.StateEventType.Deleted;
+            return Dddml.Wms.Specialization.StateEventType.Removed;
         }
 
 	}
 
 
-    public partial class UserPermissionStateCreatedOrMergePatchedOrDeletedDtos : IEnumerable<IUserPermissionStateCreated>, IEnumerable<IUserPermissionStateMergePatched>, IEnumerable<IUserPermissionStateDeleted>
+    public partial class UserPermissionStateCreatedOrMergePatchedOrRemovedDtos : IEnumerable<IUserPermissionStateCreated>, IEnumerable<IUserPermissionStateMergePatched>, IEnumerable<IUserPermissionStateRemoved>
     {
-        private List<UserPermissionStateCreatedOrMergePatchedOrDeletedDto> _innerStateEvents = new List<UserPermissionStateCreatedOrMergePatchedOrDeletedDto>();
+        private List<UserPermissionStateCreatedOrMergePatchedOrRemovedDto> _innerStateEvents = new List<UserPermissionStateCreatedOrMergePatchedOrRemovedDto>();
 
-        public virtual UserPermissionStateCreatedOrMergePatchedOrDeletedDto[] ToArray()
+        public virtual UserPermissionStateCreatedOrMergePatchedOrRemovedDto[] ToArray()
         {
             return _innerStateEvents.ToArray();
         }
@@ -212,7 +214,7 @@ namespace Dddml.Wms.Domain
             _innerStateEvents.Clear();
         }
 
-        public virtual void AddRange(IEnumerable<UserPermissionStateCreatedOrMergePatchedOrDeletedDto> es)
+        public virtual void AddRange(IEnumerable<UserPermissionStateCreatedOrMergePatchedOrRemovedDto> es)
         {
             _innerStateEvents.AddRange(es);
         }
@@ -232,7 +234,7 @@ namespace Dddml.Wms.Domain
             return _innerStateEvents.GetEnumerator();
         }
 
-        IEnumerator<IUserPermissionStateDeleted> IEnumerable<IUserPermissionStateDeleted>.GetEnumerator()
+        IEnumerator<IUserPermissionStateRemoved> IEnumerable<IUserPermissionStateRemoved>.GetEnumerator()
         {
             return _innerStateEvents.GetEnumerator();
         }
@@ -244,12 +246,12 @@ namespace Dddml.Wms.Domain
 
         public void AddUserPermissionEvent(IUserPermissionStateEvent e)
         {
-            _innerStateEvents.Add((UserPermissionStateCreatedOrMergePatchedOrDeletedDto)e);
+            _innerStateEvents.Add((UserPermissionStateCreatedOrMergePatchedOrRemovedDto)e);
         }
 
-        public void AddUserPermissionEvent(IUserPermissionStateDeleted e)
+        public void AddUserPermissionEvent(IUserPermissionStateRemoved e)
         {
-            _innerStateEvents.Add((UserPermissionStateDeletedDto)e);
+            _innerStateEvents.Add((UserPermissionStateRemovedDto)e);
         }
 
     }

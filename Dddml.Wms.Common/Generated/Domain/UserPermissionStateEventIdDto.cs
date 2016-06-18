@@ -30,14 +30,19 @@ namespace Dddml.Wms.Domain
             return this._value;
         }
 
-		public virtual UserPermissionIdDto Id { 
-			get { return new UserPermissionIdDto(_value.Id); } 
-			set { _value.Id = value.ToUserPermissionId(); } 
+		public virtual string UserId { 
+			get { return _value.UserId; } 
+			set { _value.UserId = value; } 
 		}
 
-		public virtual long Version { 
-			get { return _value.Version; } 
-			set { _value.Version = value; } 
+		public virtual string PermissionId { 
+			get { return _value.PermissionId; } 
+			set { _value.PermissionId = value; } 
+		}
+
+		public virtual long UserVersion { 
+			get { return _value.UserVersion; } 
+			set { _value.UserVersion = value; } 
 		}
 
 

@@ -38,33 +38,31 @@ namespace Dddml.Wms.Domain
 			return this._state;
 		}
 
-
-        public UserPermissionIdDto Id
-        {
+		public virtual string PermissionId
+		{
             get
             {
-                if ((this as IStateDto).ReturnedFieldsContains("Id"))
+                if ((this as IStateDto).ReturnedFieldsContains("PermissionId"))
                 {
-					return new UserPermissionIdDto(_state.Id);
+                    return _state.PermissionId;
                 }
                 return null;
             }
             set
             {
-                _state.Id = value.ToUserPermissionId();
+                _state.PermissionId = value;
             }
         }
 
-
-        UserPermissionId IUserPermissionStateProperties.Id
+        string IUserPermissionStateProperties.PermissionId
         {
             get 
             {
-                return (this._state as IUserPermissionStateProperties).Id;
+                return (this._state as IUserPermissionStateProperties).PermissionId;
             }
             set 
             {
-                this._state.Id = value;
+                this._state.PermissionId = value;
             }
         }
 
@@ -127,6 +125,34 @@ namespace Dddml.Wms.Domain
             set 
             {
                 this._state.Version = value;
+            }
+        }
+
+		public virtual string UserId
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("UserId"))
+                {
+                    return _state.UserId;
+                }
+                return null;
+            }
+            set
+            {
+                _state.UserId = value;
+            }
+        }
+
+        string IUserPermissionStateProperties.UserId
+        {
+            get 
+            {
+                return (this._state as IUserPermissionStateProperties).UserId;
+            }
+            set 
+            {
+                this._state.UserId = value;
             }
         }
 
@@ -199,10 +225,15 @@ namespace Dddml.Wms.Domain
 
 		#region IIdentity implementation
 
-		UserPermissionId IGlobalIdentity<UserPermissionId>.GlobalId
-		{
+
+		UserPermissionId IGlobalIdentity<UserPermissionId>.GlobalId {
 			get { return (_state as IUserPermissionState).GlobalId; }
 		}
+
+        string ILocalIdentity<string>.LocalId
+        {
+			get { return (_state as IUserPermissionState).LocalId; }
+        }
 
 		#endregion
 
@@ -278,7 +309,7 @@ namespace Dddml.Wms.Domain
             throw new NotSupportedException();
 		}
 
-		void IUserPermissionState.When(IUserPermissionStateDeleted e)
+		void IUserPermissionState.When(IUserPermissionStateRemoved e)
 		{
             throw new NotSupportedException();
 		}

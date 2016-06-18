@@ -29,11 +29,44 @@ namespace Dddml.Wms.Domain
 
 		#region IIdentity implementation
 
-		UserPermissionId IGlobalIdentity<UserPermissionId>.GlobalId
-		{
-			get
-			{
-				return this.Id;
+        private UserPermissionId _userPermissionId = new UserPermissionId();
+
+        public virtual UserPermissionId UserPermissionId 
+        {
+            get { return this._userPermissionId; }
+            set { this._userPermissionId = value; }
+        }
+
+		UserPermissionId IGlobalIdentity<UserPermissionId>.GlobalId {
+			get {
+				return  this.UserPermissionId;
+			}
+		}
+
+        string ILocalIdentity<string>.LocalId
+        {
+            get
+            {
+                return this.PermissionId;
+            }
+        }
+
+
+        public override string UserId {
+			get {
+				return this.UserPermissionId.UserId;
+			}
+			set {
+				this.UserPermissionId.UserId = value;
+			}
+		}
+
+        public override string PermissionId {
+			get {
+				return this.UserPermissionId.PermissionId;
+			}
+			set {
+				this.UserPermissionId.PermissionId = value;
 			}
 		}
 
@@ -179,7 +212,7 @@ namespace Dddml.Wms.Domain
 
 		}
 
-		public virtual void When(IUserPermissionStateDeleted e)
+		public virtual void When(IUserPermissionStateRemoved e)
 		{
 			ThrowOnWrongEvent(e);
 
@@ -197,15 +230,26 @@ namespace Dddml.Wms.Domain
 
 		protected void ThrowOnWrongEvent(IUserPermissionStateEvent stateEvent)
 		{
-			var stateEntityId = this.Id; // Aggregate Id
-			var eventEntityId = stateEvent.StateEventId.Id; // EntityBase.Aggregate.GetStateEventIdPropertyIdName();
-			if (stateEntityId != eventEntityId)
-			{
-				DomainError.Named("mutateWrongEntity", "Entity Id {0} in state but entity id {1} in event", stateEntityId, eventEntityId);
-			}
+				var stateEntityIdUserId = (this as IGlobalIdentity<UserPermissionId>).GlobalId.UserId;
+				var eventEntityIdUserId = stateEvent.StateEventId.UserId;
+				if (stateEntityIdUserId != eventEntityIdUserId)
+				{
+					DomainError.Named("mutateWrongEntity", "Entity Id UserId {0} in state but entity id UserId {1} in event", stateEntityIdUserId, eventEntityIdUserId);
+				}
+
+				var stateEntityIdPermissionId = (this as IGlobalIdentity<UserPermissionId>).GlobalId.PermissionId;
+				var eventEntityIdPermissionId = stateEvent.StateEventId.PermissionId;
+				if (stateEntityIdPermissionId != eventEntityIdPermissionId)
+				{
+					DomainError.Named("mutateWrongEntity", "Entity Id PermissionId {0} in state but entity id PermissionId {1} in event", stateEntityIdPermissionId, eventEntityIdPermissionId);
+				}
 
 			var stateVersion = this.Version;
-			var eventVersion = stateEvent.StateEventId.Version;
+			var eventVersion = stateEvent.Version;
+			if (UserPermissionState.VersionZero == eventVersion)
+			{
+				eventVersion = stateEvent.Version = stateVersion;
+			}
 			if (stateVersion != eventVersion)
 			{
 				throw DomainError.Named("concurrencyConflict", "Conflict between state version {0} and event version {1}", stateVersion, eventVersion);

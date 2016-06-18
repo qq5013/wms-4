@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+				   assembly="Dddml.Wms.Common" 
+				   namespace="Dddml.Wms.Domain">
+  
+  <class name="Dddml.Wms.Domain.UserState" table="Users">
+
+	<id name="UserId" length="50">
+		<generator class="assigned"/>
+	</id>
+
+	<version name="Version" type="long" unsaved-value="0"/>
+
+	<property name="AccessFailedCount" ></property>
+
+	<property name="Email" ></property>
+
+	<property name="EmailConfirmed" ></property>
+
+	<property name="LockoutEnabled" ></property>
+
+	<property name="LockoutEndDateUtc" ></property>
+
+	<property name="PasswordHash" ></property>
+
+	<property name="PhoneNumber" ></property>
+
+	<property name="PhoneNumberConfirmed" ></property>
+
+	<property name="TwoFactorEnabled" ></property>
+
+	<property name="SecurityStamp" ></property>
+
+	<property name="CreatedBy" ></property>
+
+	<property name="CreatedAt" ></property>
+
+	<property name="UpdatedBy" ></property>
+
+	<property name="UpdatedAt" ></property>
+
+	<property name="Active" ></property>
+
+	<property name="Deleted" ></property>
+
+
+  </class>
+  
+</hibernate-mapping>
+

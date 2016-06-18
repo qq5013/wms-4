@@ -16,7 +16,12 @@ namespace Dddml.Wms.Domain
 
         bool ReadOnly { get; set; }
 
+		long Version { get; set; }
+
 		bool? Active { get; set; }
+
+		// Outer Id:
+		//string UserId { get; set; }
 
 
 	}
@@ -34,8 +39,7 @@ namespace Dddml.Wms.Domain
 
 	}
 
-
-	public interface IUserRoleStateDeleted : IUserRoleStateEvent
+	public interface IUserRoleStateRemoved : IUserRoleStateEvent
 	{
 	}
 

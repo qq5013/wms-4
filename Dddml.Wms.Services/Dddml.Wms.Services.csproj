@@ -262,16 +262,46 @@
     <Compile Include="Generated\Domain\NHibernate\NHibernateRoleStateRepository.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Domain\NHibernate\NHibernateUserPermissionEventStore.cs">
+    <Compile Include="Generated\Domain\NHibernate\NHibernateUserClaimMvoEventStore.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Domain\NHibernate\NHibernateUserPermissionStateRepository.cs">
+    <Compile Include="Generated\Domain\NHibernate\NHibernateUserClaimMvoStateRepository.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Domain\NHibernate\NHibernateUserRoleEventStore.cs">
+    <Compile Include="Generated\Domain\NHibernate\NHibernateUserClaimStateDao.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Domain\NHibernate\NHibernateUserRoleStateRepository.cs">
+    <Compile Include="Generated\Domain\NHibernate\NHibernateUserClaimStateEventDao.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateUserEventStore.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateUserPermissionMvoEventStore.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateUserPermissionMvoStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateUserPermissionStateDao.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateUserPermissionStateEventDao.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateUserRoleMvoEventStore.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateUserRoleMvoStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateUserRoleStateDao.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateUserRoleStateEventDao.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateUserStateRepository.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\NHibernate\NHibernateWarehouseEventStore.cs">
@@ -298,10 +328,16 @@
     <Compile Include="Generated\Domain\NHibernate\RolePermissionApplicationService.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Domain\NHibernate\UserPermissionApplicationService.cs">
+    <Compile Include="Generated\Domain\NHibernate\UserApplicationService.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Domain\NHibernate\UserRoleApplicationService.cs">
+    <Compile Include="Generated\Domain\NHibernate\UserClaimMvoApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\UserPermissionMvoApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\UserRoleMvoApplicationService.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\NHibernate\WarehouseApplicationService.cs">
@@ -323,7 +359,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Config\NHibernateServicesConfig.xml" />
+    <EmbeddedResource Include="Config\NHibernateServicesConfig.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Config\CustomIdGeneratorsConfig.xml" />
     <EmbeddedResource Include="Generated\NHibernate\Mappings\AttributeState.hbm.xml">
       <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
@@ -495,10 +533,20 @@
 .\RolePermissionStateEvent.hbm.xml
 .\RoleState.hbm.xml
 .\RoleStateEvent.hbm.xml
+.\UserClaimMvoState.hbm.xml
+.\UserClaimMvoStateEvent.hbm.xml
+.\UserClaimState.hbm.xml
+.\UserClaimStateEvent.hbm.xml
+.\UserPermissionMvoState.hbm.xml
+.\UserPermissionMvoStateEvent.hbm.xml
 .\UserPermissionState.hbm.xml
 .\UserPermissionStateEvent.hbm.xml
+.\UserRoleMvoState.hbm.xml
+.\UserRoleMvoStateEvent.hbm.xml
 .\UserRoleState.hbm.xml
 .\UserRoleStateEvent.hbm.xml
+.\UserState.hbm.xml
+.\UserStateEvent.hbm.xml
 .\WarehouseState.hbm.xml
 .\WarehouseStateEvent.hbm.xml
 </LastOutputs>
@@ -589,6 +637,36 @@
     <EmbeddedResource Include="Generated\NHibernate\Mappings\UserPermissionStateEvent.hbm.xml">
       <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\UserState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\UserStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\UserRoleMvoState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\UserRoleMvoStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\UserPermissionMvoState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\UserPermissionMvoStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\UserClaimState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\UserClaimStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\UserClaimMvoState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\UserClaimMvoStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
     <Content Include="LoadBoundedContext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>LoadBoundedContext.txt</LastGenOutput>
@@ -673,10 +751,20 @@
 .\NHibernateRolePermissionEventStore.cs
 .\NHibernateRolePermissionStateRepository.cs
 .\NHibernateRoleStateRepository.cs
-.\NHibernateUserPermissionEventStore.cs
-.\NHibernateUserPermissionStateRepository.cs
-.\NHibernateUserRoleEventStore.cs
-.\NHibernateUserRoleStateRepository.cs
+.\NHibernateUserClaimMvoEventStore.cs
+.\NHibernateUserClaimMvoStateRepository.cs
+.\NHibernateUserClaimStateDao.cs
+.\NHibernateUserClaimStateEventDao.cs
+.\NHibernateUserEventStore.cs
+.\NHibernateUserPermissionMvoEventStore.cs
+.\NHibernateUserPermissionMvoStateRepository.cs
+.\NHibernateUserPermissionStateDao.cs
+.\NHibernateUserPermissionStateEventDao.cs
+.\NHibernateUserRoleMvoEventStore.cs
+.\NHibernateUserRoleMvoStateRepository.cs
+.\NHibernateUserRoleStateDao.cs
+.\NHibernateUserRoleStateEventDao.cs
+.\NHibernateUserStateRepository.cs
 .\NHibernateWarehouseEventStore.cs
 .\NHibernateWarehouseStateRepository.cs
 .\OrganizationApplicationService.cs
@@ -685,8 +773,10 @@
 .\PermissionApplicationService.cs
 .\RoleApplicationService.cs
 .\RolePermissionApplicationService.cs
-.\UserPermissionApplicationService.cs
-.\UserRoleApplicationService.cs
+.\UserApplicationService.cs
+.\UserClaimMvoApplicationService.cs
+.\UserPermissionMvoApplicationService.cs
+.\UserRoleMvoApplicationService.cs
 .\WarehouseApplicationService.cs
 </LastOutputs>
     </Content>

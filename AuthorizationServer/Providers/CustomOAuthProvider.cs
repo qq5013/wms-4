@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Web;
 using Dddml.Wms.Domain;
 using Dddml.Wms.Specialization;
+using Dddml.Wms.Domain.Services;
 
 namespace Dddml.Wms.AuthorizationServer.Providers
 {
@@ -22,7 +23,15 @@ namespace Dddml.Wms.AuthorizationServer.Providers
                 return ApplicationContext.Current["AudienceApplicationService"] as IAudienceApplicationService;
             }
         }
-                
+
+        IIdentityService IdentityService
+        {
+            get
+            {
+                return ApplicationContext.Current["IdentityService"] as IIdentityService;
+            }
+        }
+
         public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
             string clientId = string.Empty;
@@ -69,8 +78,17 @@ namespace Dddml.Wms.AuthorizationServer.Providers
 
             identity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));
             identity.AddClaim(new Claim("sub", context.UserName));
-            identity.AddClaim(new Claim(ClaimTypes.Role, "Manager"));
-            identity.AddClaim(new Claim(ClaimTypes.Role, "Supervisor"));
+
+            var roles = IdentityService.GetUserAllRoleIdsAndPermissionIds(context.UserName);
+            if (roles != null)
+            {
+                foreach (var role in roles)
+                {
+                    identity.AddClaim(new Claim(ClaimTypes.Role, role));
+                }
+            }
+            //identity.AddClaim(new Claim(ClaimTypes.Role, "Supervisor"));
+            //identity.AddClaim(new Claim(ClaimTypes.Role, "Manager"));
 
             var props = new AuthenticationProperties(new Dictionary<string, string>
                 {

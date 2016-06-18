@@ -13,11 +13,15 @@ namespace Dddml.Wms.Domain
 
 	public interface IUserPermissionStateProperties
 	{
-		UserPermissionId Id { get; set; }
+		string PermissionId { get; set; }
 
 		long Version { get; set; }
 
 		bool Active { get; set; }
+
+		// Outer Id:
+
+		string UserId { get; set; }
 
 
 	}

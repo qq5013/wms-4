@@ -6,9 +6,9 @@
   <class name="UserRoleStateEventBase" table="UserRoleStateEvents" mutable="false" abstract="true">
 
 	<composite-id name="StateEventId" class="Dddml.Wms.Domain.UserRoleStateEventId">
-		<key-property name="IdUserId" column="IdUserId" />
-		<key-property name="IdRoleId" column="IdRoleId" />
-		<key-property name="Version" column="Version" />
+		<key-property name="UserId" column="UserRoleIdUserId" length="50"/>
+		<key-property name="RoleId" column="UserRoleIdRoleId" length="50"/>
+		<key-property name="UserVersion" column="UserVersion" />
 	</composite-id>
 
     <discriminator column="StateEventType" type="String" />
@@ -22,6 +22,8 @@
 
     <property name="CommandId" />
 
+    <property name="Version" not-null="true" />
+
 
     <subclass name="UserRoleStateCreated" discriminator-value="Created">
     	
@@ -34,7 +36,7 @@
 
     </subclass>
 
-    <subclass name="UserRoleStateDeleted"  discriminator-value="Deleted">
+    <subclass name="UserRoleStateRemoved"  discriminator-value="Removed">
 
     </subclass>
 

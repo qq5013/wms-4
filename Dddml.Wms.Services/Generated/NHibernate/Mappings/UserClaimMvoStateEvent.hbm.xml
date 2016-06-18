@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+                   assembly="Dddml.Wms.Common" 
+                   namespace="Dddml.Wms.Domain">
+  
+  <class name="UserClaimMvoStateEventBase" table="UserClaimMvoStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="StateEventId" class="Dddml.Wms.Domain.UserClaimMvoStateEventId">
+		<key-property name="UserClaimIdUserId" column="UserClaimIdUserId" length="50"/>
+		<key-property name="UserClaimIdClaimId" column="UserClaimIdClaimId" />
+		<key-property name="UserVersion" column="UserVersion" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="String" />
+
+	<property name="ClaimType" ></property>
+
+	<property name="ClaimValue" ></property>
+
+	<property name="Version" ></property>
+
+	<property name="Active" ></property>
+
+	<property name="UserAccessFailedCount" ></property>
+
+	<property name="UserEmail" ></property>
+
+	<property name="UserEmailConfirmed" ></property>
+
+	<property name="UserLockoutEnabled" ></property>
+
+	<property name="UserLockoutEndDateUtc" ></property>
+
+	<property name="UserPasswordHash" ></property>
+
+	<property name="UserPhoneNumber" ></property>
+
+	<property name="UserPhoneNumberConfirmed" ></property>
+
+	<property name="UserTwoFactorEnabled" ></property>
+
+	<property name="UserSecurityStamp" ></property>
+
+	<property name="UserCreatedBy" ></property>
+
+	<property name="UserCreatedAt" ></property>
+
+	<property name="UserUpdatedBy" ></property>
+
+	<property name="UserUpdatedAt" ></property>
+
+	<property name="UserActive" ></property>
+
+	<property name="UserDeleted" ></property>
+
+
+    <property name="CreatedBy" />
+
+    <property name="CreatedAt" />
+
+    <property name="CommandId" />
+
+
+    <subclass name="UserClaimMvoStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="UserClaimMvoStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="IsPropertyClaimTypeRemoved" />
+
+        <property name="IsPropertyClaimValueRemoved" />
+
+        <property name="IsPropertyVersionRemoved" />
+
+        <property name="IsPropertyActiveRemoved" />
+
+        <property name="IsPropertyUserAccessFailedCountRemoved" />
+
+        <property name="IsPropertyUserEmailRemoved" />
+
+        <property name="IsPropertyUserEmailConfirmedRemoved" />
+
+        <property name="IsPropertyUserLockoutEnabledRemoved" />
+
+        <property name="IsPropertyUserLockoutEndDateUtcRemoved" />
+
+        <property name="IsPropertyUserPasswordHashRemoved" />
+
+        <property name="IsPropertyUserPhoneNumberRemoved" />
+
+        <property name="IsPropertyUserPhoneNumberConfirmedRemoved" />
+
+        <property name="IsPropertyUserTwoFactorEnabledRemoved" />
+
+        <property name="IsPropertyUserSecurityStampRemoved" />
+
+        <property name="IsPropertyUserCreatedByRemoved" />
+
+        <property name="IsPropertyUserCreatedAtRemoved" />
+
+        <property name="IsPropertyUserUpdatedByRemoved" />
+
+        <property name="IsPropertyUserUpdatedAtRemoved" />
+
+        <property name="IsPropertyUserActiveRemoved" />
+
+        <property name="IsPropertyUserDeletedRemoved" />
+
+
+    </subclass>
+
+    <subclass name="UserClaimMvoStateDeleted"  discriminator-value="Deleted">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

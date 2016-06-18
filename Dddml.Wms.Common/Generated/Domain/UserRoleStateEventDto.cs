@@ -11,7 +11,7 @@ using Dddml.Wms.Domain;
 namespace Dddml.Wms.Domain
 {
 
-	public abstract class UserRoleStateEventDtoBase : IStateEventDto, IUserRoleStateCreated, IUserRoleStateMergePatched, IUserRoleStateDeleted
+	public abstract class UserRoleStateEventDtoBase : IStateEventDto, IUserRoleStateCreated, IUserRoleStateMergePatched, IUserRoleStateRemoved
 	{
 
 		public virtual UserRoleStateEventIdDto StateEventId { get; set; }
@@ -44,6 +44,8 @@ namespace Dddml.Wms.Domain
                 this.StateEventReadOnly = value;
             }
         }
+
+		public virtual long Version { get; set; }
 
 		public virtual bool? IsPropertyActiveRemoved { get; set; }
 
@@ -110,7 +112,7 @@ namespace Dddml.Wms.Domain
 	}
 
 
-    public class UserRoleStateCreatedOrMergePatchedOrDeletedDto : UserRoleStateEventDtoBase
+    public class UserRoleStateCreatedOrMergePatchedOrRemovedDto : UserRoleStateEventDtoBase
     {
         private string _stateEventType;
 
@@ -129,7 +131,7 @@ namespace Dddml.Wms.Domain
 
 
 
-	public class UserRoleStateCreatedDto : UserRoleStateCreatedOrMergePatchedOrDeletedDto
+	public class UserRoleStateCreatedDto : UserRoleStateCreatedOrMergePatchedOrRemovedDto
 	{
 		public UserRoleStateCreatedDto()
 		{
@@ -152,7 +154,7 @@ namespace Dddml.Wms.Domain
 	}
 
 
-	public class UserRoleStateMergePatchedDto : UserRoleStateCreatedOrMergePatchedOrDeletedDto
+	public class UserRoleStateMergePatchedDto : UserRoleStateCreatedOrMergePatchedOrRemovedDto
 	{
 		public UserRoleStateMergePatchedDto()
 		{
@@ -175,9 +177,9 @@ namespace Dddml.Wms.Domain
 	}
 
 
-	public class UserRoleStateDeletedDto : UserRoleStateCreatedOrMergePatchedOrDeletedDto
+	public class UserRoleStateRemovedDto : UserRoleStateCreatedOrMergePatchedOrRemovedDto
 	{
-		public UserRoleStateDeletedDto()
+		public UserRoleStateRemovedDto()
 		{
 		}
 
@@ -192,17 +194,17 @@ namespace Dddml.Wms.Domain
 
         protected override string GetStateEventType()
         {
-            return Dddml.Wms.Specialization.StateEventType.Deleted;
+            return Dddml.Wms.Specialization.StateEventType.Removed;
         }
 
 	}
 
 
-    public partial class UserRoleStateCreatedOrMergePatchedOrDeletedDtos : IEnumerable<IUserRoleStateCreated>, IEnumerable<IUserRoleStateMergePatched>, IEnumerable<IUserRoleStateDeleted>
+    public partial class UserRoleStateCreatedOrMergePatchedOrRemovedDtos : IEnumerable<IUserRoleStateCreated>, IEnumerable<IUserRoleStateMergePatched>, IEnumerable<IUserRoleStateRemoved>
     {
-        private List<UserRoleStateCreatedOrMergePatchedOrDeletedDto> _innerStateEvents = new List<UserRoleStateCreatedOrMergePatchedOrDeletedDto>();
+        private List<UserRoleStateCreatedOrMergePatchedOrRemovedDto> _innerStateEvents = new List<UserRoleStateCreatedOrMergePatchedOrRemovedDto>();
 
-        public virtual UserRoleStateCreatedOrMergePatchedOrDeletedDto[] ToArray()
+        public virtual UserRoleStateCreatedOrMergePatchedOrRemovedDto[] ToArray()
         {
             return _innerStateEvents.ToArray();
         }
@@ -212,7 +214,7 @@ namespace Dddml.Wms.Domain
             _innerStateEvents.Clear();
         }
 
-        public virtual void AddRange(IEnumerable<UserRoleStateCreatedOrMergePatchedOrDeletedDto> es)
+        public virtual void AddRange(IEnumerable<UserRoleStateCreatedOrMergePatchedOrRemovedDto> es)
         {
             _innerStateEvents.AddRange(es);
         }
@@ -232,7 +234,7 @@ namespace Dddml.Wms.Domain
             return _innerStateEvents.GetEnumerator();
         }
 
-        IEnumerator<IUserRoleStateDeleted> IEnumerable<IUserRoleStateDeleted>.GetEnumerator()
+        IEnumerator<IUserRoleStateRemoved> IEnumerable<IUserRoleStateRemoved>.GetEnumerator()
         {
             return _innerStateEvents.GetEnumerator();
         }
@@ -244,12 +246,12 @@ namespace Dddml.Wms.Domain
 
         public void AddUserRoleEvent(IUserRoleStateEvent e)
         {
-            _innerStateEvents.Add((UserRoleStateCreatedOrMergePatchedOrDeletedDto)e);
+            _innerStateEvents.Add((UserRoleStateCreatedOrMergePatchedOrRemovedDto)e);
         }
 
-        public void AddUserRoleEvent(IUserRoleStateDeleted e)
+        public void AddUserRoleEvent(IUserRoleStateRemoved e)
         {
-            _innerStateEvents.Add((UserRoleStateDeletedDto)e);
+            _innerStateEvents.Add((UserRoleStateRemovedDto)e);
         }
 
     }

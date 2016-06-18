@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+				   assembly="Dddml.Wms.Common" 
+				   namespace="Dddml.Wms.Domain">
+  
+  <class name="Dddml.Wms.Domain.UserClaimMvoState" table="UserClaim_RV">
+
+	<composite-id name="UserClaimId" class="Dddml.Wms.Domain.UserClaimId">
+		<key-property name="UserId" column="UserClaimIdUserId" length="50"/>
+		<key-property name="ClaimId" column="UserClaimIdClaimId" />
+	</composite-id>
+
+	<version name="UserVersion" type="long" unsaved-value="0"/>
+
+	<property name="ClaimType" ></property>
+
+	<property name="ClaimValue" ></property>
+
+	<property name="Version" ></property>
+
+	<property name="CreatedBy" ></property>
+
+	<property name="CreatedAt" ></property>
+
+	<property name="UpdatedBy" ></property>
+
+	<property name="UpdatedAt" ></property>
+
+	<property name="Active" ></property>
+
+	<property name="Deleted" ></property>
+
+	<property name="UserAccessFailedCount" ></property>
+
+	<property name="UserEmail" ></property>
+
+	<property name="UserEmailConfirmed" ></property>
+
+	<property name="UserLockoutEnabled" ></property>
+
+	<property name="UserLockoutEndDateUtc" ></property>
+
+	<property name="UserPasswordHash" ></property>
+
+	<property name="UserPhoneNumber" ></property>
+
+	<property name="UserPhoneNumberConfirmed" ></property>
+
+	<property name="UserTwoFactorEnabled" ></property>
+
+	<property name="UserSecurityStamp" ></property>
+
+	<property name="UserCreatedBy" ></property>
+
+	<property name="UserCreatedAt" ></property>
+
+	<property name="UserUpdatedBy" ></property>
+
+	<property name="UserUpdatedAt" ></property>
+
+	<property name="UserActive" ></property>
+
+	<property name="UserDeleted" ></property>
+
+
+  </class>
+  
+</hibernate-mapping>
+

@@ -14,33 +14,30 @@ namespace Dddml.Wms.Domain
 	public class UserPermissionStateEventId
 	{
 
-		private UserPermissionId _id = new UserPermissionId();
+		private string _userId;
 
-		public virtual UserPermissionId Id { 
-			get { return this._id; } 
-			internal set { _id = value; } 
+		public virtual string UserId { 
+			get { return this._userId; } 
+			internal set { _userId = value; } 
 		}
 
-		private long _version;
+		private string _permissionId;
 
-		public virtual long Version { 
-			get { return this._version; } 
-			internal set { _version = value; } 
+		public virtual string PermissionId { 
+			get { return this._permissionId; } 
+			internal set { _permissionId = value; } 
+		}
+
+		private long _userVersion;
+
+		public virtual long UserVersion { 
+			get { return this._userVersion; } 
+			internal set { _userVersion = value; } 
 		}
 
 
         #region  Flattened Properties
 
-
-		public virtual string IdUserId {
-			get { return Id.UserId; }
-			internal set { Id.UserId = value; }
-		}
-
-		public virtual string IdPermissionId {
-			get { return Id.PermissionId; }
-			internal set { Id.PermissionId = value; }
-		}
 
         #endregion
 
@@ -48,10 +45,11 @@ namespace Dddml.Wms.Domain
 		{
 		}
 
-		public UserPermissionStateEventId (UserPermissionId id, long version)
+		public UserPermissionStateEventId (string userId, string permissionId, long userVersion)
 		{
-			this._id = id;
-			this._version = version;
+			this._userId = userId;
+			this._permissionId = permissionId;
+			this._userVersion = userVersion;
 
 		}
 
@@ -68,19 +66,23 @@ namespace Dddml.Wms.Domain
 			}
 
 			return true 
-				&& Object.Equals (this.Id, other.Id)
-				&& Object.Equals (this.Version, other.Version)
+				&& Object.Equals (this.UserId, other.UserId)
+				&& Object.Equals (this.PermissionId, other.PermissionId)
+				&& Object.Equals (this.UserVersion, other.UserVersion)
 				;
 		}
 
 		public override int GetHashCode ()
 		{
 			int hash = 0;
-			if (this.Id != null) {
-				hash += 13 * this.Id.GetHashCode ();
+			if (this.UserId != null) {
+				hash += 13 * this.UserId.GetHashCode ();
 			}
-			if (this.Version != null) {
-				hash += 13 * this.Version.GetHashCode ();
+			if (this.PermissionId != null) {
+				hash += 13 * this.PermissionId.GetHashCode ();
+			}
+			if (this.UserVersion != null) {
+				hash += 13 * this.UserVersion.GetHashCode ();
 			}
 			return hash;
 		}

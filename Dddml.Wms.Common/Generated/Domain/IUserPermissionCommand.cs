@@ -10,27 +10,30 @@ using Dddml.Wms.Domain;
 
 namespace Dddml.Wms.Domain
 {
-	public interface IUserPermissionCommand : IAggregateCommand<UserPermissionId, long>, ICommandDto
+	public interface IUserPermissionCommand : ICommand, ICommandDto
 	{
-		long Version { get; set; }
 
 	}
 
 
-	public interface ICreateOrMergePatchOrDeleteUserPermission : IUserPermissionCommand
+	public interface ICreateOrMergePatchOrRemoveUserPermission : IUserPermissionCommand
 	{
-		UserPermissionId Id { get; set; }
+		string PermissionId { get; set; }
 
 		bool? Active { get; set; }
 
+		// Outer Id:
+
+		string UserId { get; set; }
+
 
 	}
 
-	public interface ICreateUserPermission : ICreateOrMergePatchOrDeleteUserPermission
+	public interface ICreateUserPermission : ICreateOrMergePatchOrRemoveUserPermission
 	{
 	}
 
-	public interface IMergePatchUserPermission : ICreateOrMergePatchOrDeleteUserPermission
+	public interface IMergePatchUserPermission : ICreateOrMergePatchOrRemoveUserPermission
 	{
 
 		bool IsPropertyActiveRemoved { get; set; }
@@ -38,7 +41,7 @@ namespace Dddml.Wms.Domain
 
 	}
 
-	public interface IDeleteUserPermission : ICreateOrMergePatchOrDeleteUserPermission
+	public interface IRemoveUserPermission : ICreateOrMergePatchOrRemoveUserPermission
 	{
 	}
 

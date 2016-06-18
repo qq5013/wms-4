@@ -12,6 +12,7 @@ namespace Dddml.Wms.Domain
 {
 	public interface IUserPermissionState : IUserPermissionStateProperties, 
 		IGlobalIdentity<UserPermissionId>, 
+		ILocalIdentity<string>, 
 		ICreated<string>, 
 		IUpdated<string>, 
 		IDeleted, 
@@ -23,7 +24,7 @@ namespace Dddml.Wms.Domain
 
 		void When(IUserPermissionStateMergePatched e);
 
-		void When(IUserPermissionStateDeleted e);
+		void When(IUserPermissionStateRemoved e);
 
 		void Mutate(IEvent e);
 

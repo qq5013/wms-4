@@ -11,27 +11,8 @@ using Dddml.Wms.Domain;
 namespace Dddml.Wms.Domain
 {
 
-	public abstract class UserPermissionCommandDtoBase : ICommandDto, ICreateUserPermission, IMergePatchUserPermission, IDeleteUserPermission
+	public abstract class UserPermissionCommandDtoBase : ICommandDto, ICreateUserPermission, IMergePatchUserPermission, IRemoveUserPermission
 	{
-
-		UserPermissionId IAggregateCommand<UserPermissionId, long>.AggregateId
-		{
-			get
-			{
-				return ((ICreateOrMergePatchOrDeleteUserPermission)this).Id;
-			}
-		}
-
-
-		long IAggregateCommand<UserPermissionId, long>.AggregateVersion
-		{
-			get
-			{
-				return this.Version;
-			}
-		}
-
-		public virtual long Version { get; set; }
 
 		public virtual string RequesterId { get; set; }
 
@@ -49,22 +30,11 @@ namespace Dddml.Wms.Domain
             set { this.CommandId = value; }
         }
 
-		public virtual UserPermissionIdDto Id { get; set; }
+		public virtual string PermissionId { get; set; }
 
 		public virtual bool? Active { get; set; }
 
-
-        UserPermissionId ICreateOrMergePatchOrDeleteUserPermission.Id
-        {
-            get 
-            {
-                return this.Id.ToUserPermissionId();
-            }
-            set 
-            {
-                this.Id = new UserPermissionIdDto(value);
-            }
-        }
+		public virtual string UserId { get; set; }
 
 		public virtual bool? IsPropertyActiveRemoved { get; set; }
 
@@ -107,9 +77,9 @@ namespace Dddml.Wms.Domain
                 var cmd = ToMergePatchUserPermission();
                 this._innerCommand = cmd;
             }
-            else if (cmdType == CommandType.Delete)
+            else if (cmdType == CommandType.Remove)
             {
-                var cmd = ToDeleteUserPermission();
+                var cmd = ToRemoveUserPermission();
                 this._innerCommand = cmd;
             }
             else
@@ -119,15 +89,13 @@ namespace Dddml.Wms.Domain
             return this._innerCommand;
         }
 
-        internal DeleteUserPermission ToDeleteUserPermission()
+        private RemoveUserPermission ToRemoveUserPermission()
         {
-            var cmd = new DeleteUserPermission();
+            var cmd = new RemoveUserPermission();
             cmd.CommandId = this.CommandId;
             cmd.RequesterId = this.RequesterId;
 
-            cmd.Id = ((ICreateOrMergePatchOrDeleteUserPermission)this).Id;
-            cmd.Version = this.Version;
-
+            cmd.PermissionId = ((ICreateOrMergePatchOrRemoveUserPermission)this).PermissionId;
             return cmd;
         }
 
@@ -137,10 +105,9 @@ namespace Dddml.Wms.Domain
             cmd.CommandId = this.CommandId;
             cmd.RequesterId = this.RequesterId;
 
-            cmd.Version = this.Version;
-
-            cmd.Id = ((ICreateOrMergePatchOrDeleteUserPermission)this).Id;
-            cmd.Active = ((ICreateOrMergePatchOrDeleteUserPermission)this).Active;
+            cmd.PermissionId = ((ICreateOrMergePatchOrRemoveUserPermission)this).PermissionId;
+            cmd.Active = ((ICreateOrMergePatchOrRemoveUserPermission)this).Active;
+            cmd.UserId = ((ICreateOrMergePatchOrRemoveUserPermission)this).UserId;
             
             cmd.IsPropertyActiveRemoved = (this as IMergePatchUserPermission).IsPropertyActiveRemoved;
             return cmd;
@@ -152,10 +119,9 @@ namespace Dddml.Wms.Domain
             cmd.CommandId = this.CommandId;
             cmd.RequesterId = this.RequesterId;
 
-            cmd.Version = this.Version;
-
-            cmd.Id = ((ICreateOrMergePatchOrDeleteUserPermission)this).Id;
-            cmd.Active = ((ICreateOrMergePatchOrDeleteUserPermission)this).Active;
+            cmd.PermissionId = ((ICreateOrMergePatchOrRemoveUserPermission)this).PermissionId;
+            cmd.Active = ((ICreateOrMergePatchOrRemoveUserPermission)this).Active;
+            cmd.UserId = ((ICreateOrMergePatchOrRemoveUserPermission)this).UserId;
             return cmd;
         }
 */
@@ -171,7 +137,7 @@ namespace Dddml.Wms.Domain
 	}
 
 
-    public class CreateOrMergePatchOrDeleteUserPermissionDto : UserPermissionCommandDtoBase
+    public class CreateOrMergePatchOrRemoveUserPermissionDto : UserPermissionCommandDtoBase
     {
         private string _commandType;
 
@@ -190,7 +156,7 @@ namespace Dddml.Wms.Domain
 
 
 
-	public class CreateUserPermissionDto : CreateOrMergePatchOrDeleteUserPermissionDto
+	public class CreateUserPermissionDto : CreateOrMergePatchOrRemoveUserPermissionDto
 	{
 
         public override string CommandType
@@ -209,7 +175,7 @@ namespace Dddml.Wms.Domain
 	}
 
 
-	public class MergePatchUserPermissionDto : CreateOrMergePatchOrDeleteUserPermissionDto
+	public class MergePatchUserPermissionDto : CreateOrMergePatchOrRemoveUserPermissionDto
 	{
 
         public override string CommandType
@@ -227,11 +193,11 @@ namespace Dddml.Wms.Domain
 
 	}
 
-	public class DeleteUserPermissionDto : CreateOrMergePatchOrDeleteUserPermissionDto
+	public class RemoveUserPermissionDto : CreateOrMergePatchOrRemoveUserPermissionDto
 	{
         protected override string GetCommandType()
         {
-            return Dddml.Wms.Specialization.CommandType.Delete;
+            return Dddml.Wms.Specialization.CommandType.Remove;
         }
 
 
@@ -244,6 +210,70 @@ namespace Dddml.Wms.Domain
         }
 
 	}
+
+
+    public partial class CreateOrMergePatchOrRemoveUserPermissionDtos : IUserPermissionCommands, ICreateUserPermissionCommands, IEnumerable<CreateOrMergePatchOrRemoveUserPermissionDto>
+    {
+        private List<CreateOrMergePatchOrRemoveUserPermissionDto> _innerCommands = new List<CreateOrMergePatchOrRemoveUserPermissionDto>();
+
+        public virtual CreateOrMergePatchOrRemoveUserPermissionDto[] ToArray()
+        {
+            return _innerCommands.ToArray();
+        }
+
+        public virtual void Clear()
+        {
+            _innerCommands.Clear();
+        }
+
+        public virtual void AddRange(IEnumerable<CreateOrMergePatchOrRemoveUserPermissionDto> cs)
+        {
+            _innerCommands.AddRange(cs);
+        }
+
+        void IUserPermissionCommands.Add(IUserPermissionCommand c)
+        {
+            _innerCommands.Add((CreateOrMergePatchOrRemoveUserPermissionDto)c);
+        }
+
+        void IUserPermissionCommands.Remove(IUserPermissionCommand c)
+        {
+            _innerCommands.Remove((CreateOrMergePatchOrRemoveUserPermissionDto)c);
+        }
+
+
+        IEnumerator<CreateOrMergePatchOrRemoveUserPermissionDto> IEnumerable<CreateOrMergePatchOrRemoveUserPermissionDto>.GetEnumerator()
+        {
+            return _innerCommands.GetEnumerator();
+        }
+
+        IEnumerator<IUserPermissionCommand> IEnumerable<IUserPermissionCommand>.GetEnumerator()
+        {
+            return _innerCommands.GetEnumerator();
+        }
+
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        {
+            return _innerCommands.GetEnumerator();
+        }
+
+        void ICreateUserPermissionCommands.Add(ICreateUserPermission c)
+        {
+            _innerCommands.Add((CreateUserPermissionDto)c);
+        }
+
+        void ICreateUserPermissionCommands.Remove(ICreateUserPermission c)
+        {
+            _innerCommands.Remove((CreateUserPermissionDto)c);
+        }
+
+        IEnumerator<ICreateUserPermission> IEnumerable<ICreateUserPermission>.GetEnumerator()
+        {
+            return _innerCommands.GetEnumerator();
+        }
+
+    }
+
 
 
 

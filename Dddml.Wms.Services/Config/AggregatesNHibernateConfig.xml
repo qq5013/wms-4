@@ -173,6 +173,44 @@
     <constructor-arg ref="organizationStructureStateRepository"/>
   </object>
 
+  <object id="userRoleStateDao" type="Dddml.Wms.Domain.NHibernate.NHibernateUserRoleStateDao, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="userRoleStateEventDao" type="Dddml.Wms.Domain.NHibernate.NHibernateUserRoleStateEventDao, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="userClaimStateDao" type="Dddml.Wms.Domain.NHibernate.NHibernateUserClaimStateDao, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="userClaimStateEventDao" type="Dddml.Wms.Domain.NHibernate.NHibernateUserClaimStateEventDao, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="userPermissionStateDao" type="Dddml.Wms.Domain.NHibernate.NHibernateUserPermissionStateDao, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="userPermissionStateEventDao" type="Dddml.Wms.Domain.NHibernate.NHibernateUserPermissionStateEventDao, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+
+  <object id="userStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateUserStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="userEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateUserEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="userApplicationService" type="Dddml.Wms.Domain.NHibernate.UserApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="userEventStore"/>
+    <constructor-arg ref="userStateRepository"/>
+  </object>
+
 
   <object id="roleStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateRoleStateRepository, Dddml.Wms.Services">
     <property name="SessionFactory" ref="NHibernateSessionFactory"/>
@@ -213,34 +251,6 @@
   <object id="rolePermissionApplicationService" type="Dddml.Wms.Domain.NHibernate.RolePermissionApplicationService, Dddml.Wms.Services">
     <constructor-arg ref="rolePermissionEventStore"/>
     <constructor-arg ref="rolePermissionStateRepository"/>
-  </object>
-
-
-  <object id="userRoleStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateUserRoleStateRepository, Dddml.Wms.Services">
-    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
-  </object>
-
-  <object id="userRoleEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateUserRoleEventStore, Dddml.Wms.Services">
-    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
-  </object>
-
-  <object id="userRoleApplicationService" type="Dddml.Wms.Domain.NHibernate.UserRoleApplicationService, Dddml.Wms.Services">
-    <constructor-arg ref="userRoleEventStore"/>
-    <constructor-arg ref="userRoleStateRepository"/>
-  </object>
-
-
-  <object id="userPermissionStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateUserPermissionStateRepository, Dddml.Wms.Services">
-    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
-  </object>
-
-  <object id="userPermissionEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateUserPermissionEventStore, Dddml.Wms.Services">
-    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
-  </object>
-
-  <object id="userPermissionApplicationService" type="Dddml.Wms.Domain.NHibernate.UserPermissionApplicationService, Dddml.Wms.Services">
-    <constructor-arg ref="userPermissionEventStore"/>
-    <constructor-arg ref="userPermissionStateRepository"/>
   </object>
 
 
@@ -311,6 +321,48 @@
   <object id="inOutLineMvoApplicationService" type="Dddml.Wms.Domain.NHibernate.InOutLineMvoApplicationService, Dddml.Wms.Services">
     <constructor-arg ref="inOutLineMvoEventStore"/>
     <constructor-arg ref="inOutLineMvoStateRepository"/>
+  </object>
+
+
+  <object id="userRoleMvoStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateUserRoleMvoStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="userRoleMvoEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateUserRoleMvoEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="userRoleMvoApplicationService" type="Dddml.Wms.Domain.NHibernate.UserRoleMvoApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="userRoleMvoEventStore"/>
+    <constructor-arg ref="userRoleMvoStateRepository"/>
+  </object>
+
+
+  <object id="userClaimMvoStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateUserClaimMvoStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="userClaimMvoEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateUserClaimMvoEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="userClaimMvoApplicationService" type="Dddml.Wms.Domain.NHibernate.UserClaimMvoApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="userClaimMvoEventStore"/>
+    <constructor-arg ref="userClaimMvoStateRepository"/>
+  </object>
+
+
+  <object id="userPermissionMvoStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateUserPermissionMvoStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="userPermissionMvoEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateUserPermissionMvoEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="userPermissionMvoApplicationService" type="Dddml.Wms.Domain.NHibernate.UserPermissionMvoApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="userPermissionMvoEventStore"/>
+    <constructor-arg ref="userPermissionMvoStateRepository"/>
   </object>
 
 </objects>

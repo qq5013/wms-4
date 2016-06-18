@@ -47,19 +47,6 @@ aggregates:
         name: Id
         type: RolePermissionId
 
-    # --------------- aggregate ---------------
-    UserRole:
-      
-      id:
-        name: Id
-        type: UserRoleId
-
-    # --------------- aggregate ---------------
-    UserPermission:
-      
-      id:
-        name: Id
-        type: UserPermissionId
         
 # ------------------------------
 valueObjects:
@@ -72,21 +59,6 @@ valueObjects:
         PermissionId:
           type: string
 
-    # --------------- aggregate ---------------
-    UserRoleId:
-      properties:
-        UserId:
-          type: string
-        RoleId:
-          type: string
-
-    # --------------- aggregate ---------------
-    UserPermissionId:
-      properties:
-        UserId:
-          type: string
-        PermissionId:
-          type: string
           
 # -------------------------------------
 

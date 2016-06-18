@@ -6,9 +6,9 @@
   <class name="UserPermissionStateEventBase" table="UserPermissionStateEvents" mutable="false" abstract="true">
 
 	<composite-id name="StateEventId" class="Dddml.Wms.Domain.UserPermissionStateEventId">
-		<key-property name="IdUserId" column="IdUserId" />
-		<key-property name="IdPermissionId" column="IdPermissionId" />
-		<key-property name="Version" column="Version" />
+		<key-property name="UserId" column="UserPermissionIdUserId" length="50"/>
+		<key-property name="PermissionId" column="UserPermissionIdPermissionId" length="50"/>
+		<key-property name="UserVersion" column="UserVersion" />
 	</composite-id>
 
     <discriminator column="StateEventType" type="String" />
@@ -22,6 +22,8 @@
 
     <property name="CommandId" />
 
+    <property name="Version" not-null="true" />
+
 
     <subclass name="UserPermissionStateCreated" discriminator-value="Created">
     	
@@ -34,7 +36,7 @@
 
     </subclass>
 
-    <subclass name="UserPermissionStateDeleted"  discriminator-value="Deleted">
+    <subclass name="UserPermissionStateRemoved"  discriminator-value="Removed">
 
     </subclass>
 

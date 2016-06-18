@@ -13,27 +13,8 @@ namespace Dddml.Wms.Domain
 
 	public abstract class UserPermissionCommandBase : IUserPermissionCommand
 	{
-		public virtual UserPermissionId Id { get; set; }
+		public virtual string PermissionId { get; set; }
 
-
-		UserPermissionId IAggregateCommand<UserPermissionId, long>.AggregateId
-		{
-			get
-			{
-				return this.Id;
-			}
-		}
-
-
-		long IAggregateCommand<UserPermissionId, long>.AggregateVersion
-		{
-			get
-			{
-				return this.Version;
-			}
-		}
-
-		public virtual long Version { get; set; }
 
 		public virtual string RequesterId { get; set; }
 
@@ -53,6 +34,10 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? Active { get; set; }
 
+		// Outer Id:
+
+		public virtual string UserId { get; set; }
+
 
 		// //////////////////////////////////////////////////
 
@@ -67,13 +52,13 @@ namespace Dddml.Wms.Domain
 	}
 
 
-    public abstract class UserPermissionIdGeneratorBase : IIdGenerator<UserPermissionId, ICreateUserPermission>
+    public abstract class UserPermissionIdGeneratorBase : IIdGenerator<string, ICreateUserPermission>
     {
-        public abstract UserPermissionId GenerateId(ICreateUserPermission command);
+        public abstract string GenerateId(ICreateUserPermission command);
 
-        public abstract UserPermissionId GetNextId();
+        public abstract string GetNextId();
 
-        public virtual UserPermissionId GetOrGenerateId(ICreateUserPermission command, out bool reused)
+        public virtual string GetOrGenerateId(ICreateUserPermission command, out bool reused)
         {
             throw new NotSupportedException();
         }
@@ -112,17 +97,16 @@ namespace Dddml.Wms.Domain
 
 	}
 
-	public class DeleteUserPermission : UserPermissionCommandBase, IDeleteUserPermission
+	public class RemoveUserPermission : UserPermissionCommandBase, IRemoveUserPermission
 	{
-		public DeleteUserPermission ()
+		public RemoveUserPermission ()
 		{
 		}
 
         protected override string GetCommandType()
         {
-            return Dddml.Wms.Specialization.CommandType.Delete;
+            return Dddml.Wms.Specialization.CommandType.Remove;
         }
-
 	}
 
 

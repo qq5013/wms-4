@@ -3,5 +3,10 @@
   
   <object id="inOutDocumentActionCommandHandler" type="Dddml.Wms.Domain.InOutDocumentActionCommandHandler, Dddml.Wms.Common">
   </object>
-
+  
+  <object id="identityService" type="Dddml.Wms.Domain.Services.IdentityService, Dddml.Wms.Common">
+    <property name="RolePermissionApplicationService" ref="rolePermissionApplicationService"/>
+    <property name="UserApplicationService" ref="userApplicationService"/>
+  </object>
+  
 </objects>

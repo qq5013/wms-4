@@ -14,33 +14,30 @@ namespace Dddml.Wms.Domain
 	public class UserRoleStateEventId
 	{
 
-		private UserRoleId _id = new UserRoleId();
+		private string _userId;
 
-		public virtual UserRoleId Id { 
-			get { return this._id; } 
-			internal set { _id = value; } 
+		public virtual string UserId { 
+			get { return this._userId; } 
+			internal set { _userId = value; } 
 		}
 
-		private long _version;
+		private string _roleId;
 
-		public virtual long Version { 
-			get { return this._version; } 
-			internal set { _version = value; } 
+		public virtual string RoleId { 
+			get { return this._roleId; } 
+			internal set { _roleId = value; } 
+		}
+
+		private long _userVersion;
+
+		public virtual long UserVersion { 
+			get { return this._userVersion; } 
+			internal set { _userVersion = value; } 
 		}
 
 
         #region  Flattened Properties
 
-
-		public virtual string IdUserId {
-			get { return Id.UserId; }
-			internal set { Id.UserId = value; }
-		}
-
-		public virtual string IdRoleId {
-			get { return Id.RoleId; }
-			internal set { Id.RoleId = value; }
-		}
 
         #endregion
 
@@ -48,10 +45,11 @@ namespace Dddml.Wms.Domain
 		{
 		}
 
-		public UserRoleStateEventId (UserRoleId id, long version)
+		public UserRoleStateEventId (string userId, string roleId, long userVersion)
 		{
-			this._id = id;
-			this._version = version;
+			this._userId = userId;
+			this._roleId = roleId;
+			this._userVersion = userVersion;
 
 		}
 
@@ -68,19 +66,23 @@ namespace Dddml.Wms.Domain
 			}
 
 			return true 
-				&& Object.Equals (this.Id, other.Id)
-				&& Object.Equals (this.Version, other.Version)
+				&& Object.Equals (this.UserId, other.UserId)
+				&& Object.Equals (this.RoleId, other.RoleId)
+				&& Object.Equals (this.UserVersion, other.UserVersion)
 				;
 		}
 
 		public override int GetHashCode ()
 		{
 			int hash = 0;
-			if (this.Id != null) {
-				hash += 13 * this.Id.GetHashCode ();
+			if (this.UserId != null) {
+				hash += 13 * this.UserId.GetHashCode ();
 			}
-			if (this.Version != null) {
-				hash += 13 * this.Version.GetHashCode ();
+			if (this.RoleId != null) {
+				hash += 13 * this.RoleId.GetHashCode ();
+			}
+			if (this.UserVersion != null) {
+				hash += 13 * this.UserVersion.GetHashCode ();
 			}
 			return hash;
 		}

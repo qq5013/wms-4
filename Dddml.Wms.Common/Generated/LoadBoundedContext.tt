@@ -101,11 +101,12 @@
         string filePath4 = System.IO.Path.Combine(projectDir, "../dddml/InOut.yaml");
 		string filePath5 = System.IO.Path.Combine(projectDir, "../dddml/Warehouse.yaml");
 		string filePath6 = System.IO.Path.Combine(projectDir, "../dddml/Organization.yaml");
-		string filePath7 = System.IO.Path.Combine(projectDir, "../dddml/AccessManagement.yaml");
-		string filePath8 = System.IO.Path.Combine(projectDir, "../dddml/Audience.yaml");
+		string filePath7 = System.IO.Path.Combine(projectDir, "../dddml/IdentityManagement.yaml");
+		string filePath8 = System.IO.Path.Combine(projectDir, "../dddml/AccessManagement.yaml");
+		string filePath9 = System.IO.Path.Combine(projectDir, "../dddml/Audience.yaml");
 
-        BoundedContext boundedContext = BoundedContextUtils.LoadFromFiles(new string[]{ filePath1, filePath2, filePath3, filePath4, filePath5, filePath6, filePath7, filePath8});
+        BoundedContext boundedContext = BoundedContextUtils.LoadFromFiles(new string[]{ filePath1, filePath2, filePath3, filePath4, filePath5, filePath6, filePath7, filePath8, filePath9});
         boundedContext.DefaultModule = "Dddml.Wms";
-        return boundedContext;
+        return boundedContext; 
     }
 #>

@@ -5,9 +5,9 @@
   
   <class name="Dddml.Wms.Domain.UserPermissionState" table="UserPermissions">
 
-	<composite-id name="Id" class="Dddml.Wms.Domain.UserPermissionId">
-		<key-property name="UserId" column="IdUserId" />
-		<key-property name="PermissionId" column="IdPermissionId" />
+	<composite-id name="UserPermissionId" class="Dddml.Wms.Domain.UserPermissionId">
+		<key-property name="UserId" column="UserPermissionIdUserId" length="50"/>
+		<key-property name="PermissionId" column="UserPermissionIdPermissionId" length="50"/>
 	</composite-id>
 
 	<version name="Version" type="long" unsaved-value="0"/>

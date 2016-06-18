@@ -10,27 +10,30 @@ using Dddml.Wms.Domain;
 
 namespace Dddml.Wms.Domain
 {
-	public interface IUserRoleCommand : IAggregateCommand<UserRoleId, long>, ICommandDto
+	public interface IUserRoleCommand : ICommand, ICommandDto
 	{
-		long Version { get; set; }
 
 	}
 
 
-	public interface ICreateOrMergePatchOrDeleteUserRole : IUserRoleCommand
+	public interface ICreateOrMergePatchOrRemoveUserRole : IUserRoleCommand
 	{
-		UserRoleId Id { get; set; }
+		string RoleId { get; set; }
 
 		bool? Active { get; set; }
 
+		// Outer Id:
+
+		string UserId { get; set; }
+
 
 	}
 
-	public interface ICreateUserRole : ICreateOrMergePatchOrDeleteUserRole
+	public interface ICreateUserRole : ICreateOrMergePatchOrRemoveUserRole
 	{
 	}
 
-	public interface IMergePatchUserRole : ICreateOrMergePatchOrDeleteUserRole
+	public interface IMergePatchUserRole : ICreateOrMergePatchOrRemoveUserRole
 	{
 
 		bool IsPropertyActiveRemoved { get; set; }
@@ -38,7 +41,7 @@ namespace Dddml.Wms.Domain
 
 	}
 
-	public interface IDeleteUserRole : ICreateOrMergePatchOrDeleteUserRole
+	public interface IRemoveUserRole : ICreateOrMergePatchOrRemoveUserRole
 	{
 	}
 

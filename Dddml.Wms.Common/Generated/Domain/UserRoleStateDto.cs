@@ -38,33 +38,31 @@ namespace Dddml.Wms.Domain
 			return this._state;
 		}
 
-
-        public UserRoleIdDto Id
-        {
+		public virtual string RoleId
+		{
             get
             {
-                if ((this as IStateDto).ReturnedFieldsContains("Id"))
+                if ((this as IStateDto).ReturnedFieldsContains("RoleId"))
                 {
-					return new UserRoleIdDto(_state.Id);
+                    return _state.RoleId;
                 }
                 return null;
             }
             set
             {
-                _state.Id = value.ToUserRoleId();
+                _state.RoleId = value;
             }
         }
 
-
-        UserRoleId IUserRoleStateProperties.Id
+        string IUserRoleStateProperties.RoleId
         {
             get 
             {
-                return (this._state as IUserRoleStateProperties).Id;
+                return (this._state as IUserRoleStateProperties).RoleId;
             }
             set 
             {
-                this._state.Id = value;
+                this._state.RoleId = value;
             }
         }
 
@@ -127,6 +125,34 @@ namespace Dddml.Wms.Domain
             set 
             {
                 this._state.Version = value;
+            }
+        }
+
+		public virtual string UserId
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("UserId"))
+                {
+                    return _state.UserId;
+                }
+                return null;
+            }
+            set
+            {
+                _state.UserId = value;
+            }
+        }
+
+        string IUserRoleStateProperties.UserId
+        {
+            get 
+            {
+                return (this._state as IUserRoleStateProperties).UserId;
+            }
+            set 
+            {
+                this._state.UserId = value;
             }
         }
 
@@ -199,10 +225,15 @@ namespace Dddml.Wms.Domain
 
 		#region IIdentity implementation
 
-		UserRoleId IGlobalIdentity<UserRoleId>.GlobalId
-		{
+
+		UserRoleId IGlobalIdentity<UserRoleId>.GlobalId {
 			get { return (_state as IUserRoleState).GlobalId; }
 		}
+
+        string ILocalIdentity<string>.LocalId
+        {
+			get { return (_state as IUserRoleState).LocalId; }
+        }
 
 		#endregion
 
@@ -278,7 +309,7 @@ namespace Dddml.Wms.Domain
             throw new NotSupportedException();
 		}
 
-		void IUserRoleState.When(IUserRoleStateDeleted e)
+		void IUserRoleState.When(IUserRoleStateRemoved e)
 		{
             throw new NotSupportedException();
 		}

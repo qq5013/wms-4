@@ -45,6 +45,8 @@ namespace Dddml.Wms.Domain
             }
         }
 
+		public virtual long Version { get; set; }
+
 
 		string ICreated<string>.CreatedBy {
 			get {
@@ -124,19 +126,19 @@ namespace Dddml.Wms.Domain
 	}
 
 
-	public class UserPermissionStateDeleted : UserPermissionStateEventBase, IUserPermissionStateDeleted
+	public class UserPermissionStateRemoved : UserPermissionStateEventBase, IUserPermissionStateRemoved
 	{
-		public UserPermissionStateDeleted ()
+		public UserPermissionStateRemoved ()
 		{
 		}
 
-		public UserPermissionStateDeleted (UserPermissionStateEventId stateEventId) : base(stateEventId)
+		public UserPermissionStateRemoved (UserPermissionStateEventId stateEventId) : base(stateEventId)
 		{
 		}
 
         protected override string GetStateEventType()
         {
-            return Dddml.Wms.Specialization.StateEventType.Deleted;
+            return Dddml.Wms.Specialization.StateEventType.Removed;
         }
 
 

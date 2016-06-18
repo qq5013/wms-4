@@ -12,6 +12,7 @@ namespace Dddml.Wms.Domain
 {
 	public interface IUserRoleState : IUserRoleStateProperties, 
 		IGlobalIdentity<UserRoleId>, 
+		ILocalIdentity<string>, 
 		ICreated<string>, 
 		IUpdated<string>, 
 		IDeleted, 
@@ -23,7 +24,7 @@ namespace Dddml.Wms.Domain
 
 		void When(IUserRoleStateMergePatched e);
 
-		void When(IUserRoleStateDeleted e);
+		void When(IUserRoleStateRemoved e);
 
 		void Mutate(IEvent e);
 

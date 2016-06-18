@@ -13,27 +13,8 @@ namespace Dddml.Wms.Domain
 
 	public abstract class UserRoleCommandBase : IUserRoleCommand
 	{
-		public virtual UserRoleId Id { get; set; }
+		public virtual string RoleId { get; set; }
 
-
-		UserRoleId IAggregateCommand<UserRoleId, long>.AggregateId
-		{
-			get
-			{
-				return this.Id;
-			}
-		}
-
-
-		long IAggregateCommand<UserRoleId, long>.AggregateVersion
-		{
-			get
-			{
-				return this.Version;
-			}
-		}
-
-		public virtual long Version { get; set; }
 
 		public virtual string RequesterId { get; set; }
 
@@ -53,6 +34,10 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? Active { get; set; }
 
+		// Outer Id:
+
+		public virtual string UserId { get; set; }
+
 
 		// //////////////////////////////////////////////////
 
@@ -67,13 +52,13 @@ namespace Dddml.Wms.Domain
 	}
 
 
-    public abstract class UserRoleIdGeneratorBase : IIdGenerator<UserRoleId, ICreateUserRole>
+    public abstract class UserRoleIdGeneratorBase : IIdGenerator<string, ICreateUserRole>
     {
-        public abstract UserRoleId GenerateId(ICreateUserRole command);
+        public abstract string GenerateId(ICreateUserRole command);
 
-        public abstract UserRoleId GetNextId();
+        public abstract string GetNextId();
 
-        public virtual UserRoleId GetOrGenerateId(ICreateUserRole command, out bool reused)
+        public virtual string GetOrGenerateId(ICreateUserRole command, out bool reused)
         {
             throw new NotSupportedException();
         }
@@ -112,17 +97,16 @@ namespace Dddml.Wms.Domain
 
 	}
 
-	public class DeleteUserRole : UserRoleCommandBase, IDeleteUserRole
+	public class RemoveUserRole : UserRoleCommandBase, IRemoveUserRole
 	{
-		public DeleteUserRole ()
+		public RemoveUserRole ()
 		{
 		}
 
         protected override string GetCommandType()
         {
-            return Dddml.Wms.Specialization.CommandType.Delete;
+            return Dddml.Wms.Specialization.CommandType.Remove;
         }
-
 	}
 
 

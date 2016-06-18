@@ -86,7 +86,8 @@
 	}
 
 // ////////////////////////////
-
+	
+	boundedContext.SetHttpServicesAuthorizationEnabled(true);
 
 #>
 <#+

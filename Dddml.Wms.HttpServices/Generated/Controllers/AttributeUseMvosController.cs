@@ -20,7 +20,7 @@ using Dddml.Wms.Domain.Metadata;
 namespace Dddml.Wms.HttpServices.ApiControllers
 {
 
-    [RoutePrefix("api/AttributeUseMvos")]
+    [RoutePrefix("api/AttributeUseMvos")][Authorize]
     public partial class AttributeUseMvosController : ApiController
     {
 

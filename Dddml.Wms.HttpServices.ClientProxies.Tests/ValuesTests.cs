@@ -31,13 +31,12 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
         [Test]
         public void TestGetValue()
         {
-            var jwt = GetJwt("jyang", "jyang");
-            Console.WriteLine(jwt);
-            return;//todo
+            
+            //var userNameAndPassword = RegisterTestUser();
+            //var accessToken = GetJwtAccessToken(userNameAndPassword.Item1, userNameAndPassword.Item2);
 
-            var userNameAndPassword = RegisterTestUser();
-
-            var accessToken = GetAccessToken(userNameAndPassword.Item1, userNameAndPassword.Item2);
+            var accessToken = GetJwtAccessToken("jyang", "jyang");
+            Console.WriteLine(accessToken);
 
             var client = new HttpClient { BaseAddress = new Uri(_endpointUrl) };
             string valId = "1";
@@ -49,12 +48,12 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
             req.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", accessToken);
             //req.Content = new ObjectContent(typeof(JObject), jObject, new JsonMediaTypeFormatter());
             var response = client.SendAsync(req).GetAwaiter().GetResult();
+            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
 
             Console.WriteLine(response.Content);
             Console.WriteLine(response.Headers);
             Console.WriteLine(response.StatusCode);
             Console.WriteLine(response.ReasonPhrase);
-            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
         }
 
         private Tuple<string, string> RegisterTestUser()
@@ -88,18 +87,18 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
             var req = new HttpRequestMessage(HttpMethod.Post, url);
             req.Content = new ObjectContent(typeof(JObject), jObject, new JsonMediaTypeFormatter());
             var response = client.SendAsync(req).GetAwaiter().GetResult();
+            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
 
             Console.WriteLine(response.Content);
             Console.WriteLine(response.Headers);
             Console.WriteLine(response.StatusCode);
             Console.WriteLine(response.ReasonPhrase);
-            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
 
             return new Tuple<string, string>(email, password);
         }
 
 
-        private string GetJwt(string loginId, string password)
+        private string GetJwtAccessToken(string loginId, string password)
         {
 
             var client = new HttpClient { BaseAddress = new Uri(_authzServerEndpointUrl) };
@@ -118,6 +117,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
             var req = new HttpRequestMessage(HttpMethod.Post, url);
             req.Content = new FormUrlEncodedContent(postContent);
             var response = client.SendAsync(req).GetAwaiter().GetResult();
+            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
 
             dynamic result = response.Content.ReadAsAsync<JObject>(new MediaTypeFormatter[] { new JsonMediaTypeFormatter() }).GetAwaiter().GetResult();
 
@@ -125,13 +125,12 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
             Console.WriteLine(response.Headers);
             Console.WriteLine(response.StatusCode);
             Console.WriteLine(response.ReasonPhrase);
-            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
             
             return result.access_token;
 
         }
 
-        private string GetAccessToken(string loginId, string password)
+        private string _GetAccessToken(string loginId, string password)
         {
             //var loginData = {
             //    grant_type: 'password',
@@ -161,6 +160,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
             var req = new HttpRequestMessage(HttpMethod.Post, url);
             req.Content = new FormUrlEncodedContent(postContent);
             var response = client.SendAsync(req).GetAwaiter().GetResult();
+            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
 
             dynamic result = response.Content.ReadAsAsync<JObject>(new MediaTypeFormatter[] { new JsonMediaTypeFormatter() }).GetAwaiter().GetResult();
 
@@ -168,7 +168,6 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
             Console.WriteLine(response.Headers);
             Console.WriteLine(response.StatusCode);
             Console.WriteLine(response.ReasonPhrase);
-            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
             
             return result.access_token;
 

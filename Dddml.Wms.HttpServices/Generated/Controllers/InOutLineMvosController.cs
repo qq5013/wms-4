@@ -21,7 +21,7 @@ using Dddml.Wms.Domain.Metadata;
 namespace Dddml.Wms.HttpServices.ApiControllers
 {
 
-    [RoutePrefix("api/InOutLineMvos")]
+    [RoutePrefix("api/InOutLineMvos")][Authorize]
     public partial class InOutLineMvosController : ApiController
     {
 

@@ -1074,10 +1074,6 @@
       <Project>{5c91ecad-6c35-45aa-ace7-e8f156922658}</Project>
       <Name>Dddml.Support.Criterion</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\DummyOwinAuth\DummyOwinAuth\DummyOwinAuth.csproj">
-      <Project>{c588f874-ab6d-44fb-8582-8f5903e61c2c}</Project>
-      <Name>DummyOwinAuth</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Dddml.Wms.Common\Dddml.Wms.Common.csproj">
       <Project>{31471bcf-d6c3-4bae-8ec5-2e9ac01edd5c}</Project>
       <Name>Dddml.Wms.Common</Name>

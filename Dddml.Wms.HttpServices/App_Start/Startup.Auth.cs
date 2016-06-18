@@ -1,16 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Dddml.Wms.HttpServices.Models;
+using Dddml.Wms.HttpServices.Providers;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin;
+using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
+using Microsoft.Owin.Security.DataHandler.Encoder;
 using Microsoft.Owin.Security.Google;
+using Microsoft.Owin.Security.Jwt;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
-using Dddml.Wms.HttpServices.Providers;
-using Dddml.Wms.HttpServices.Models;
-using DummyOwinAuth;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Linq;
 
 namespace Dddml.Wms.HttpServices
 {
@@ -32,21 +35,27 @@ namespace Dddml.Wms.HttpServices
             app.UseCookieAuthentication(new CookieAuthenticationOptions());
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
-            // 针对基于 OAuth 的流配置应用程序
-            PublicClientId = "self";
-            OAuthOptions = new OAuthAuthorizationServerOptions
-            {
-                TokenEndpointPath = new PathString("/Token"),
-                Provider = new ApplicationOAuthProvider(PublicClientId),
-                AuthorizeEndpointPath = new PathString("/api/Account/ExternalLogin"),
-                AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
-                //在生产模式下设 AllowInsecureHttp = false
-                AllowInsecureHttp = true
-            };
+            //// 针对基于 OAuth 的流配置应用程序
+            //PublicClientId = "self";
+            //OAuthOptions = new OAuthAuthorizationServerOptions
+            //{
+            //    TokenEndpointPath = new PathString("/Token"),
+            //    Provider = new ApplicationOAuthProvider(PublicClientId),
+            //    AuthorizeEndpointPath = new PathString("/api/Account/ExternalLogin"),
+            //    AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
+            //    //在生产模式下设 AllowInsecureHttp = false
+            //    AllowInsecureHttp = true
+            //};
 
-            // 使应用程序可以使用不记名令牌来验证用户身份
-            app.UseOAuthBearerTokens(OAuthOptions);
-            //app.UseDummyAuthentication(new DummyAuthenticationOptions("Jeff Yang", "123456"));//ONLY FOR TESTS.
+            //// 使应用程序可以使用不记名令牌来验证用户身份
+            //app.UseOAuthBearerTokens(OAuthOptions);
+
+            //// Dummy Authentication ONLY FOR TESTS.
+            //app.UseDummyAuthentication(new DummyAuthenticationOptions("Jeff Yang", "123456"));
+
+
+            // Api controllers with an [Authorize] attribute will be validated with JWT
+            app.UseJwtBearerAuthentication(GetJwtBearerAuthenticationOptions());
 
 
             // 取消注释以下行可允许使用第三方登录提供程序登录
@@ -67,6 +76,24 @@ namespace Dddml.Wms.HttpServices
             //    ClientId = "",
             //    ClientSecret = ""
             //});
+        }
+
+        private static JwtBearerAuthenticationOptions GetJwtBearerAuthenticationOptions()
+        {
+            var issuer = "http://jwtauthzsrv.wms.dddml.org";
+
+            string audience = ConfigurationManager.AppSettings["self.ClientId"];
+            var secret = TextEncodings.Base64Url.Decode(ConfigurationManager.AppSettings["self.Base64Secret"]);
+            var jwtBearerAuthenticationOptions = new JwtBearerAuthenticationOptions
+            {
+                AuthenticationMode = AuthenticationMode.Active,
+                AllowedAudiences = new[] { audience },
+                IssuerSecurityTokenProviders = new IIssuerSecurityTokenProvider[]
+                    {
+                        new SymmetricKeyIssuerSecurityTokenProvider(issuer, secret)
+                    }
+            };
+            return jwtBearerAuthenticationOptions;
         }
     }
 }

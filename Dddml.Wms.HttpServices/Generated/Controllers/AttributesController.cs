@@ -20,7 +20,7 @@ using Dddml.Wms.Domain.Metadata;
 namespace Dddml.Wms.HttpServices.ApiControllers
 {
 
-    [RoutePrefix("api/Attributes")]
+    [RoutePrefix("api/Attributes")][Authorize]
     public partial class AttributesController : ApiController
     {
 

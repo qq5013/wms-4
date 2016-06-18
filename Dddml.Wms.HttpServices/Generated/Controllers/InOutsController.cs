@@ -21,7 +21,7 @@ using Dddml.Wms.Domain.Metadata;
 namespace Dddml.Wms.HttpServices.ApiControllers
 {
 
-    [RoutePrefix("api/InOuts")]
+    [RoutePrefix("api/InOuts")][Authorize]
     public partial class InOutsController : ApiController
     {
 

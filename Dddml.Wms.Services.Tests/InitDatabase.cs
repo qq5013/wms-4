@@ -56,7 +56,7 @@ namespace Dddml.Wms.Services.Tests
 
         //[Test]
         //[Category("InitDatabase_999")]
-        public void Fix()
+        public void Hbm2DdlFix()
         {
             string[] sqlFiles = new string[] 
             {

@@ -30,6 +30,8 @@
 
 	<property name="Deleted" ></property>
 
+	<property name="UserUserName" ></property>
+
 	<property name="UserAccessFailedCount" ></property>
 
 	<property name="UserEmail" ></property>

@@ -1,7 +1,6 @@
 ﻿using Dddml.Wms.HttpServices.Models;
 using Dddml.Wms.HttpServices.Providers;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
@@ -27,7 +26,7 @@ namespace Dddml.Wms.HttpServices
         public void ConfigureAuth(IAppBuilder app)
         {
             // 将数据库上下文和用户管理器配置为对每个请求使用单个实例
-            app.CreatePerOwinContext(ApplicationDbContext.Create);
+            //app.CreatePerOwinContext(ApplicationDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
 
             // 使应用程序可以使用 Cookie 来存储已登录用户的信息

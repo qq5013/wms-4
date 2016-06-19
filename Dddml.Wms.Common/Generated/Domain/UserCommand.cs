@@ -51,6 +51,8 @@ namespace Dddml.Wms.Domain
             set { this.CommandId = value; }
         }
 
+		public virtual string UserName { get; set; }
+
 		public virtual int? AccessFailedCount { get; set; }
 
 		public virtual string Email { get; set; }
@@ -192,6 +194,8 @@ namespace Dddml.Wms.Domain
 
 	public class MergePatchUser :UserCommandBase, IMergePatchUser
 	{
+
+		public virtual bool IsPropertyUserNameRemoved { get; set; }
 
 		public virtual bool IsPropertyAccessFailedCountRemoved { get; set; }
 

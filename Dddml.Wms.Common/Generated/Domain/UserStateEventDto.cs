@@ -16,6 +16,8 @@ namespace Dddml.Wms.Domain
 
 		public virtual UserStateEventIdDto StateEventId { get; set; }
 
+		public virtual string UserName { get; set; }
+
 		public virtual int? AccessFailedCount { get; set; }
 
 		public virtual string Email { get; set; }
@@ -62,6 +64,25 @@ namespace Dddml.Wms.Domain
             set
             {
                 this.StateEventReadOnly = value;
+            }
+        }
+
+		public virtual bool? IsPropertyUserNameRemoved { get; set; }
+
+        bool IUserStateMergePatched.IsPropertyUserNameRemoved
+        {
+            get 
+            {
+                var b = this.IsPropertyUserNameRemoved;
+                if (b != null && b.HasValue)
+                {
+                    return b.Value;
+                }
+                return default(bool);
+            }
+            set 
+            {
+                this.IsPropertyUserNameRemoved = value;
             }
         }
 

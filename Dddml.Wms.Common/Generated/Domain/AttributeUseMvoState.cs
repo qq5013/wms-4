@@ -14,8 +14,6 @@ namespace Dddml.Wms.Domain
 	public partial class AttributeUseMvoState : AttributeUseMvoStateProperties, IAttributeUseMvoState
 	{
 
-		//public virtual long AttributeSetVersion { get; set; }
-
 		public virtual string CreatedBy { get; set; }
 
 		public virtual DateTime CreatedAt { get; set; }
@@ -125,6 +123,11 @@ namespace Dddml.Wms.Domain
 
 
 		#endregion
+
+        bool IAttributeUseMvoState.IsUnsaved
+        {
+            get { return ((IVersioned<long>)this).Version == VersionZero; }
+        }
 
 		public static long VersionZero
 		{

@@ -32,6 +32,8 @@ namespace Dddml.Wms.Domain
 		IInOutLineStates InOutLines { get; }
 
 
+        bool IsUnsaved { get; }
+
 	}
 }
 

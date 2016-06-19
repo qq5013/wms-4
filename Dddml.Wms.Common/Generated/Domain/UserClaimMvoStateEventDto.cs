@@ -24,6 +24,8 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? Active { get; set; }
 
+		public virtual string UserUserName { get; set; }
+
 		public virtual int? UserAccessFailedCount { get; set; }
 
 		public virtual string UserEmail { get; set; }
@@ -156,6 +158,25 @@ namespace Dddml.Wms.Domain
             set 
             {
                 this.IsPropertyActiveRemoved = value;
+            }
+        }
+
+		public virtual bool? IsPropertyUserUserNameRemoved { get; set; }
+
+        bool IUserClaimMvoStateMergePatched.IsPropertyUserUserNameRemoved
+        {
+            get 
+            {
+                var b = this.IsPropertyUserUserNameRemoved;
+                if (b != null && b.HasValue)
+                {
+                    return b.Value;
+                }
+                return default(bool);
+            }
+            set 
+            {
+                this.IsPropertyUserUserNameRemoved = value;
             }
         }
 

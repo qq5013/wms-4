@@ -59,6 +59,8 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? Active { get; set; }
 
+		public virtual string UserUserName { get; set; }
+
 		public virtual int? UserAccessFailedCount { get; set; }
 
 		public virtual string UserEmail { get; set; }
@@ -177,6 +179,25 @@ namespace Dddml.Wms.Domain
             set
             {
                 this.IsPropertyActiveRemoved = value;
+            }
+        }
+
+		public virtual bool? IsPropertyUserUserNameRemoved { get; set; }
+
+        bool IMergePatchUserClaimMvo.IsPropertyUserUserNameRemoved
+        {
+            get
+            {
+                var b = this.IsPropertyUserUserNameRemoved;
+                if (b != null && b.HasValue)
+                {
+                    return b.Value;
+                }
+                return false;
+            }
+            set
+            {
+                this.IsPropertyUserUserNameRemoved = value;
             }
         }
 
@@ -484,138 +505,6 @@ namespace Dddml.Wms.Domain
             }
         }
 
-
-        // //////////////////////////////////////////////
-/*
-        private IUserClaimMvoCommand _innerCommand;
-
-        internal ICommand ToCommand()
-        {
-            //if (this._innerCommand != null)
-            //{
-            //    return this._innerCommand;
-            //}
-            var cmdType = GetCommandType();
-            if (cmdType == CommandType.Create)
-            {
-                var cmd = ToCreateUserClaimMvo();
-                this._innerCommand = cmd;
-            }
-            else if (cmdType == CommandType.MergePatch)
-            {
-                var cmd = ToMergePatchUserClaimMvo();
-                this._innerCommand = cmd;
-            }
-            else if (cmdType == CommandType.Delete)
-            {
-                var cmd = ToDeleteUserClaimMvo();
-                this._innerCommand = cmd;
-            }
-            else
-            {
-                throw DomainError.Named("invalidCommandType", String.Format("Invalid command type: {0}", cmdType));
-            }
-            return this._innerCommand;
-        }
-
-        internal DeleteUserClaimMvo ToDeleteUserClaimMvo()
-        {
-            var cmd = new DeleteUserClaimMvo();
-            cmd.CommandId = this.CommandId;
-            cmd.RequesterId = this.RequesterId;
-
-            cmd.UserClaimId = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserClaimId;
-            cmd.UserVersion = this.UserVersion;
-
-            return cmd;
-        }
-
-        internal MergePatchUserClaimMvo ToMergePatchUserClaimMvo()
-        {
-            var cmd = new MergePatchUserClaimMvo();
-            cmd.CommandId = this.CommandId;
-            cmd.RequesterId = this.RequesterId;
-
-            cmd.UserVersion = this.UserVersion;
-
-            cmd.UserClaimId = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserClaimId;
-            cmd.ClaimType = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).ClaimType;
-            cmd.ClaimValue = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).ClaimValue;
-            cmd.Version = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).Version;
-            cmd.Active = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).Active;
-            cmd.UserAccessFailedCount = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserAccessFailedCount;
-            cmd.UserEmail = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserEmail;
-            cmd.UserEmailConfirmed = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserEmailConfirmed;
-            cmd.UserLockoutEnabled = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserLockoutEnabled;
-            cmd.UserLockoutEndDateUtc = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserLockoutEndDateUtc;
-            cmd.UserPasswordHash = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserPasswordHash;
-            cmd.UserPhoneNumber = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserPhoneNumber;
-            cmd.UserPhoneNumberConfirmed = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserPhoneNumberConfirmed;
-            cmd.UserTwoFactorEnabled = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserTwoFactorEnabled;
-            cmd.UserSecurityStamp = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserSecurityStamp;
-            cmd.UserCreatedBy = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserCreatedBy;
-            cmd.UserCreatedAt = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserCreatedAt;
-            cmd.UserUpdatedBy = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserUpdatedBy;
-            cmd.UserUpdatedAt = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserUpdatedAt;
-            cmd.UserActive = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserActive;
-            cmd.UserDeleted = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserDeleted;
-            
-            cmd.IsPropertyClaimTypeRemoved = (this as IMergePatchUserClaimMvo).IsPropertyClaimTypeRemoved;
-            cmd.IsPropertyClaimValueRemoved = (this as IMergePatchUserClaimMvo).IsPropertyClaimValueRemoved;
-            cmd.IsPropertyVersionRemoved = (this as IMergePatchUserClaimMvo).IsPropertyVersionRemoved;
-            cmd.IsPropertyActiveRemoved = (this as IMergePatchUserClaimMvo).IsPropertyActiveRemoved;
-            cmd.IsPropertyUserAccessFailedCountRemoved = (this as IMergePatchUserClaimMvo).IsPropertyUserAccessFailedCountRemoved;
-            cmd.IsPropertyUserEmailRemoved = (this as IMergePatchUserClaimMvo).IsPropertyUserEmailRemoved;
-            cmd.IsPropertyUserEmailConfirmedRemoved = (this as IMergePatchUserClaimMvo).IsPropertyUserEmailConfirmedRemoved;
-            cmd.IsPropertyUserLockoutEnabledRemoved = (this as IMergePatchUserClaimMvo).IsPropertyUserLockoutEnabledRemoved;
-            cmd.IsPropertyUserLockoutEndDateUtcRemoved = (this as IMergePatchUserClaimMvo).IsPropertyUserLockoutEndDateUtcRemoved;
-            cmd.IsPropertyUserPasswordHashRemoved = (this as IMergePatchUserClaimMvo).IsPropertyUserPasswordHashRemoved;
-            cmd.IsPropertyUserPhoneNumberRemoved = (this as IMergePatchUserClaimMvo).IsPropertyUserPhoneNumberRemoved;
-            cmd.IsPropertyUserPhoneNumberConfirmedRemoved = (this as IMergePatchUserClaimMvo).IsPropertyUserPhoneNumberConfirmedRemoved;
-            cmd.IsPropertyUserTwoFactorEnabledRemoved = (this as IMergePatchUserClaimMvo).IsPropertyUserTwoFactorEnabledRemoved;
-            cmd.IsPropertyUserSecurityStampRemoved = (this as IMergePatchUserClaimMvo).IsPropertyUserSecurityStampRemoved;
-            cmd.IsPropertyUserCreatedByRemoved = (this as IMergePatchUserClaimMvo).IsPropertyUserCreatedByRemoved;
-            cmd.IsPropertyUserCreatedAtRemoved = (this as IMergePatchUserClaimMvo).IsPropertyUserCreatedAtRemoved;
-            cmd.IsPropertyUserUpdatedByRemoved = (this as IMergePatchUserClaimMvo).IsPropertyUserUpdatedByRemoved;
-            cmd.IsPropertyUserUpdatedAtRemoved = (this as IMergePatchUserClaimMvo).IsPropertyUserUpdatedAtRemoved;
-            cmd.IsPropertyUserActiveRemoved = (this as IMergePatchUserClaimMvo).IsPropertyUserActiveRemoved;
-            cmd.IsPropertyUserDeletedRemoved = (this as IMergePatchUserClaimMvo).IsPropertyUserDeletedRemoved;
-            return cmd;
-        }
-
-        internal CreateUserClaimMvo ToCreateUserClaimMvo()
-        {
-            var cmd = new CreateUserClaimMvo();
-            cmd.CommandId = this.CommandId;
-            cmd.RequesterId = this.RequesterId;
-
-            cmd.UserVersion = this.UserVersion;
-
-            cmd.UserClaimId = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserClaimId;
-            cmd.ClaimType = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).ClaimType;
-            cmd.ClaimValue = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).ClaimValue;
-            cmd.Version = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).Version;
-            cmd.Active = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).Active;
-            cmd.UserAccessFailedCount = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserAccessFailedCount;
-            cmd.UserEmail = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserEmail;
-            cmd.UserEmailConfirmed = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserEmailConfirmed;
-            cmd.UserLockoutEnabled = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserLockoutEnabled;
-            cmd.UserLockoutEndDateUtc = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserLockoutEndDateUtc;
-            cmd.UserPasswordHash = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserPasswordHash;
-            cmd.UserPhoneNumber = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserPhoneNumber;
-            cmd.UserPhoneNumberConfirmed = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserPhoneNumberConfirmed;
-            cmd.UserTwoFactorEnabled = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserTwoFactorEnabled;
-            cmd.UserSecurityStamp = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserSecurityStamp;
-            cmd.UserCreatedBy = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserCreatedBy;
-            cmd.UserCreatedAt = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserCreatedAt;
-            cmd.UserUpdatedBy = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserUpdatedBy;
-            cmd.UserUpdatedAt = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserUpdatedAt;
-            cmd.UserActive = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserActive;
-            cmd.UserDeleted = ((ICreateOrMergePatchOrDeleteUserClaimMvo)this).UserDeleted;
-            return cmd;
-        }
-*/
-        // //////////////////////////////////////////////////
 
         string ICommandDto.CommandType 
         {

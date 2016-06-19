@@ -15,8 +15,6 @@ namespace Dddml.Wms.Domain
 	public partial class InOutLineState : InOutLineStateProperties, IInOutLineState
 	{
 
-		//public virtual long Version { get; set; }
-
 		public virtual string CreatedBy { get; set; }
 
 		public virtual DateTime CreatedAt { get; set; }
@@ -159,6 +157,11 @@ namespace Dddml.Wms.Domain
 
 
 		#endregion
+
+        bool IInOutLineState.IsUnsaved
+        {
+            get { return ((IVersioned<long>)this).Version == VersionZero; }
+        }
 
 		public static long VersionZero
 		{

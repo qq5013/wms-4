@@ -55,6 +55,8 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? Active { get; set; }
 
+		public virtual string UserUserName { get; set; }
+
 		public virtual int? UserAccessFailedCount { get; set; }
 
 		public virtual string UserEmail { get; set; }
@@ -135,6 +137,25 @@ namespace Dddml.Wms.Domain
             set
             {
                 this.IsPropertyActiveRemoved = value;
+            }
+        }
+
+		public virtual bool? IsPropertyUserUserNameRemoved { get; set; }
+
+        bool IMergePatchUserPermissionMvo.IsPropertyUserUserNameRemoved
+        {
+            get
+            {
+                var b = this.IsPropertyUserUserNameRemoved;
+                if (b != null && b.HasValue)
+                {
+                    return b.Value;
+                }
+                return false;
+            }
+            set
+            {
+                this.IsPropertyUserUserNameRemoved = value;
             }
         }
 
@@ -442,132 +463,6 @@ namespace Dddml.Wms.Domain
             }
         }
 
-
-        // //////////////////////////////////////////////
-/*
-        private IUserPermissionMvoCommand _innerCommand;
-
-        internal ICommand ToCommand()
-        {
-            //if (this._innerCommand != null)
-            //{
-            //    return this._innerCommand;
-            //}
-            var cmdType = GetCommandType();
-            if (cmdType == CommandType.Create)
-            {
-                var cmd = ToCreateUserPermissionMvo();
-                this._innerCommand = cmd;
-            }
-            else if (cmdType == CommandType.MergePatch)
-            {
-                var cmd = ToMergePatchUserPermissionMvo();
-                this._innerCommand = cmd;
-            }
-            else if (cmdType == CommandType.Delete)
-            {
-                var cmd = ToDeleteUserPermissionMvo();
-                this._innerCommand = cmd;
-            }
-            else
-            {
-                throw DomainError.Named("invalidCommandType", String.Format("Invalid command type: {0}", cmdType));
-            }
-            return this._innerCommand;
-        }
-
-        internal DeleteUserPermissionMvo ToDeleteUserPermissionMvo()
-        {
-            var cmd = new DeleteUserPermissionMvo();
-            cmd.CommandId = this.CommandId;
-            cmd.RequesterId = this.RequesterId;
-
-            cmd.UserPermissionId = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserPermissionId;
-            cmd.UserVersion = this.UserVersion;
-
-            return cmd;
-        }
-
-        internal MergePatchUserPermissionMvo ToMergePatchUserPermissionMvo()
-        {
-            var cmd = new MergePatchUserPermissionMvo();
-            cmd.CommandId = this.CommandId;
-            cmd.RequesterId = this.RequesterId;
-
-            cmd.UserVersion = this.UserVersion;
-
-            cmd.UserPermissionId = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserPermissionId;
-            cmd.Version = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).Version;
-            cmd.Active = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).Active;
-            cmd.UserAccessFailedCount = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserAccessFailedCount;
-            cmd.UserEmail = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserEmail;
-            cmd.UserEmailConfirmed = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserEmailConfirmed;
-            cmd.UserLockoutEnabled = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserLockoutEnabled;
-            cmd.UserLockoutEndDateUtc = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserLockoutEndDateUtc;
-            cmd.UserPasswordHash = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserPasswordHash;
-            cmd.UserPhoneNumber = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserPhoneNumber;
-            cmd.UserPhoneNumberConfirmed = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserPhoneNumberConfirmed;
-            cmd.UserTwoFactorEnabled = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserTwoFactorEnabled;
-            cmd.UserSecurityStamp = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserSecurityStamp;
-            cmd.UserCreatedBy = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserCreatedBy;
-            cmd.UserCreatedAt = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserCreatedAt;
-            cmd.UserUpdatedBy = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserUpdatedBy;
-            cmd.UserUpdatedAt = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserUpdatedAt;
-            cmd.UserActive = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserActive;
-            cmd.UserDeleted = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserDeleted;
-            
-            cmd.IsPropertyVersionRemoved = (this as IMergePatchUserPermissionMvo).IsPropertyVersionRemoved;
-            cmd.IsPropertyActiveRemoved = (this as IMergePatchUserPermissionMvo).IsPropertyActiveRemoved;
-            cmd.IsPropertyUserAccessFailedCountRemoved = (this as IMergePatchUserPermissionMvo).IsPropertyUserAccessFailedCountRemoved;
-            cmd.IsPropertyUserEmailRemoved = (this as IMergePatchUserPermissionMvo).IsPropertyUserEmailRemoved;
-            cmd.IsPropertyUserEmailConfirmedRemoved = (this as IMergePatchUserPermissionMvo).IsPropertyUserEmailConfirmedRemoved;
-            cmd.IsPropertyUserLockoutEnabledRemoved = (this as IMergePatchUserPermissionMvo).IsPropertyUserLockoutEnabledRemoved;
-            cmd.IsPropertyUserLockoutEndDateUtcRemoved = (this as IMergePatchUserPermissionMvo).IsPropertyUserLockoutEndDateUtcRemoved;
-            cmd.IsPropertyUserPasswordHashRemoved = (this as IMergePatchUserPermissionMvo).IsPropertyUserPasswordHashRemoved;
-            cmd.IsPropertyUserPhoneNumberRemoved = (this as IMergePatchUserPermissionMvo).IsPropertyUserPhoneNumberRemoved;
-            cmd.IsPropertyUserPhoneNumberConfirmedRemoved = (this as IMergePatchUserPermissionMvo).IsPropertyUserPhoneNumberConfirmedRemoved;
-            cmd.IsPropertyUserTwoFactorEnabledRemoved = (this as IMergePatchUserPermissionMvo).IsPropertyUserTwoFactorEnabledRemoved;
-            cmd.IsPropertyUserSecurityStampRemoved = (this as IMergePatchUserPermissionMvo).IsPropertyUserSecurityStampRemoved;
-            cmd.IsPropertyUserCreatedByRemoved = (this as IMergePatchUserPermissionMvo).IsPropertyUserCreatedByRemoved;
-            cmd.IsPropertyUserCreatedAtRemoved = (this as IMergePatchUserPermissionMvo).IsPropertyUserCreatedAtRemoved;
-            cmd.IsPropertyUserUpdatedByRemoved = (this as IMergePatchUserPermissionMvo).IsPropertyUserUpdatedByRemoved;
-            cmd.IsPropertyUserUpdatedAtRemoved = (this as IMergePatchUserPermissionMvo).IsPropertyUserUpdatedAtRemoved;
-            cmd.IsPropertyUserActiveRemoved = (this as IMergePatchUserPermissionMvo).IsPropertyUserActiveRemoved;
-            cmd.IsPropertyUserDeletedRemoved = (this as IMergePatchUserPermissionMvo).IsPropertyUserDeletedRemoved;
-            return cmd;
-        }
-
-        internal CreateUserPermissionMvo ToCreateUserPermissionMvo()
-        {
-            var cmd = new CreateUserPermissionMvo();
-            cmd.CommandId = this.CommandId;
-            cmd.RequesterId = this.RequesterId;
-
-            cmd.UserVersion = this.UserVersion;
-
-            cmd.UserPermissionId = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserPermissionId;
-            cmd.Version = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).Version;
-            cmd.Active = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).Active;
-            cmd.UserAccessFailedCount = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserAccessFailedCount;
-            cmd.UserEmail = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserEmail;
-            cmd.UserEmailConfirmed = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserEmailConfirmed;
-            cmd.UserLockoutEnabled = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserLockoutEnabled;
-            cmd.UserLockoutEndDateUtc = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserLockoutEndDateUtc;
-            cmd.UserPasswordHash = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserPasswordHash;
-            cmd.UserPhoneNumber = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserPhoneNumber;
-            cmd.UserPhoneNumberConfirmed = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserPhoneNumberConfirmed;
-            cmd.UserTwoFactorEnabled = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserTwoFactorEnabled;
-            cmd.UserSecurityStamp = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserSecurityStamp;
-            cmd.UserCreatedBy = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserCreatedBy;
-            cmd.UserCreatedAt = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserCreatedAt;
-            cmd.UserUpdatedBy = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserUpdatedBy;
-            cmd.UserUpdatedAt = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserUpdatedAt;
-            cmd.UserActive = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserActive;
-            cmd.UserDeleted = ((ICreateOrMergePatchOrDeleteUserPermissionMvo)this).UserDeleted;
-            return cmd;
-        }
-*/
-        // //////////////////////////////////////////////////
 
         string ICommandDto.CommandType 
         {

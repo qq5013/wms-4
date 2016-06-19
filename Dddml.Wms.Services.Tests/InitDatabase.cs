@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Configuration;
+using Microsoft.AspNet.Identity;
 
 namespace Dddml.Wms.Services.Tests
 {
@@ -18,7 +19,13 @@ namespace Dddml.Wms.Services.Tests
 
         ISessionFactory _sessionFactory;
 
-        IAudienceApplicationService _audienceApplicationService; 
+        IAudienceApplicationService _audienceApplicationService;
+
+        IUserApplicationService _userApplicationService;
+
+        IRoleApplicationService _roleApplicationService;
+
+        PasswordHasher _passwordHasher = new PasswordHasher();
 
         [SetUp]
         public void SetUp()
@@ -28,10 +35,61 @@ namespace Dddml.Wms.Services.Tests
             _sessionFactory = ApplicationContext.Current["NHibernateSessionFactory"] as ISessionFactory;
 
             _audienceApplicationService = ApplicationContext.Current["AudienceApplicationService"] as IAudienceApplicationService;
+            
+            _userApplicationService = ApplicationContext.Current["UserApplicationService"] as IUserApplicationService;
+
+            _roleApplicationService = ApplicationContext.Current["RoleApplicationService"] as IRoleApplicationService;
         }
 
         [Test]
         public void Seed()
+        {
+            //Hbm2DdlFix();
+
+            CreateSelfClient();
+
+            var roles = new string[] { "Supervisor", "Manager" };
+
+            CreateRoles(roles);
+
+            var userIdAndPassword = CreateTestUser(roles);
+
+
+        }
+
+        private Tuple<string, string> CreateTestUser(string[] roles)
+        {
+            var userId = "test@dddml.org";
+            var password = "123456Abc!";
+            var passwordHash = _passwordHasher.HashPassword(password);
+
+            var user = new CreateUser();
+            user.UserId = user.UserName = userId;
+            user.PasswordHash = passwordHash;
+
+            foreach (var r in roles)
+            {
+                var c = new CreateUserRole();
+                c.RoleId = r;
+                user.UserRoles.Add(c);
+            }
+
+            _userApplicationService.When(user);
+
+            return new Tuple<string, string>(userId, password);
+        }
+
+        private void CreateRoles(string[] roles)
+        {
+            foreach (var r in roles)
+            {
+                CreateRole role = new CreateRole();
+                role.RoleId = r;
+                _roleApplicationService.When(role);
+            }
+        }
+
+        private void CreateSelfClient()
         {
             CreateAudience audience = new CreateAudience();
             audience.ClientId = ConfigurationManager.AppSettings["self.ClientId"];
@@ -51,7 +109,6 @@ namespace Dddml.Wms.Services.Tests
             {
                 _audienceApplicationService.When(audience);
             }
-
         }
 
         //[Test]

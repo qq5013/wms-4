@@ -403,8 +403,12 @@ namespace Dddml.Wms.Domain
             get { return _state.Version; }
 		}
 
-
 		#endregion
+
+        bool IAttributeSetInstanceExtensionFieldGroupState.IsUnsaved
+        {
+            get { return ((IVersioned<long>)this).Version == AttributeSetInstanceExtensionFieldGroupState.VersionZero; }
+        }
 
 
 

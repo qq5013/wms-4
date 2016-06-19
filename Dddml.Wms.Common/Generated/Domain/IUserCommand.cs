@@ -21,6 +21,8 @@ namespace Dddml.Wms.Domain
 	{
 		string UserId { get; set; }
 
+		string UserName { get; set; }
+
 		int? AccessFailedCount { get; set; }
 
 		string Email { get; set; }
@@ -64,6 +66,8 @@ namespace Dddml.Wms.Domain
 
 	public interface IMergePatchUser : ICreateOrMergePatchOrDeleteUser
 	{
+
+		bool IsPropertyUserNameRemoved { get; set; }
 
 		bool IsPropertyAccessFailedCountRemoved { get; set; }
 

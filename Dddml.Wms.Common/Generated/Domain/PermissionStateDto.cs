@@ -344,8 +344,12 @@ namespace Dddml.Wms.Domain
             get { return _state.Version; }
 		}
 
-
 		#endregion
+
+        bool IPermissionState.IsUnsaved
+        {
+            get { return ((IVersioned<long>)this).Version == PermissionState.VersionZero; }
+        }
 
 
 

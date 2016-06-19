@@ -8,7 +8,6 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Http.ModelBinding;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
@@ -16,6 +15,7 @@ using Microsoft.Owin.Security.OAuth;
 using Dddml.Wms.HttpServices.Models;
 using Dddml.Wms.HttpServices.Providers;
 using Dddml.Wms.HttpServices.Results;
+using Dddml.Wms.AspNet.Identity;
 
 namespace Dddml.Wms.HttpServices.Controllers
 {
@@ -87,14 +87,14 @@ namespace Dddml.Wms.HttpServices.Controllers
 
             List<UserLoginInfoViewModel> logins = new List<UserLoginInfoViewModel>();
 
-            foreach (IdentityUserLogin linkedAccount in user.Logins)
-            {
-                logins.Add(new UserLoginInfoViewModel
-                {
-                    LoginProvider = linkedAccount.LoginProvider,
-                    ProviderKey = linkedAccount.ProviderKey
-                });
-            }
+            //foreach (IdentityUserLogin linkedAccount in user.Logins)//TODO
+            //{
+            //    logins.Add(new UserLoginInfoViewModel
+            //    {
+            //        LoginProvider = linkedAccount.LoginProvider,
+            //        ProviderKey = linkedAccount.ProviderKey
+            //    });
+            //}
 
             if (user.PasswordHash != null)
             {
@@ -250,7 +250,7 @@ namespace Dddml.Wms.HttpServices.Controllers
                 return new ChallengeResult(provider, this);
             }
 
-            ApplicationUser user = await UserManager.FindAsync(new UserLoginInfo(externalLogin.LoginProvider,
+            var user = await UserManager.FindAsync(new UserLoginInfo(externalLogin.LoginProvider,
                 externalLogin.ProviderKey));
 
             bool hasRegistered = user != null;
@@ -328,7 +328,10 @@ namespace Dddml.Wms.HttpServices.Controllers
                 return BadRequest(ModelState);
             }
 
-            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
+            var user = new IdentityUser() { UserName = model.Email, Email = model.Email };
+
+            //这里 userId 是需要填写上的：
+            user.UserId = Guid.NewGuid().ToString();
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
 
@@ -357,7 +360,7 @@ namespace Dddml.Wms.HttpServices.Controllers
                 return InternalServerError();
             }
 
-            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
+            var user = new IdentityUser() { UserName = model.Email, Email = model.Email };
 
             IdentityResult result = await UserManager.CreateAsync(user);
             if (!result.Succeeded)
@@ -365,7 +368,7 @@ namespace Dddml.Wms.HttpServices.Controllers
                 return GetErrorResult(result);
             }
 
-            result = await UserManager.AddLoginAsync(user.Id, info.Login);
+            result = await UserManager.AddLoginAsync(user.UserId, info.Login);
             if (!result.Succeeded)
             {
                 return GetErrorResult(result); 

@@ -756,8 +756,12 @@ namespace Dddml.Wms.Domain
             get { return _state.AttrSetInstEFGroupVersion; }
 		}
 
-
 		#endregion
+
+        bool IAttributeSetInstanceExtensionFieldMvoState.IsUnsaved
+        {
+            get { return ((IVersioned<long>)this).Version == AttributeSetInstanceExtensionFieldMvoState.VersionZero; }
+        }
 
 
 

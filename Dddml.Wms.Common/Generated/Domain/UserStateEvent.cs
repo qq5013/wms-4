@@ -16,6 +16,8 @@ namespace Dddml.Wms.Domain
 
 		public virtual UserStateEventId StateEventId { get; set; }
 
+		public virtual string UserName { get; set; }
+
 		public virtual int? AccessFailedCount { get; set; }
 
 		public virtual string Email { get; set; }
@@ -364,6 +366,8 @@ namespace Dddml.Wms.Domain
 
 	public class UserStateMergePatched : UserStateEventBase, IUserStateMergePatched, ISaveable
 	{
+		public virtual bool IsPropertyUserNameRemoved { get; set; }
+
 		public virtual bool IsPropertyAccessFailedCountRemoved { get; set; }
 
 		public virtual bool IsPropertyEmailRemoved { get; set; }

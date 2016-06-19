@@ -1,4 +1,8 @@
-﻿using Microsoft.Owin;
+﻿using Dddml.Wms.Domain;
+using Dddml.Wms.Domain.Services;
+using Dddml.Wms.Specialization;
+using Microsoft.AspNet.Identity;
+using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
 using System;
@@ -7,9 +11,6 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
-using Dddml.Wms.Domain;
-using Dddml.Wms.Specialization;
-using Dddml.Wms.Domain.Services;
 
 namespace Dddml.Wms.AuthorizationServer.Providers
 {
@@ -31,6 +32,16 @@ namespace Dddml.Wms.AuthorizationServer.Providers
                 return ApplicationContext.Current["IdentityService"] as IIdentityService;
             }
         }
+
+        IUserApplicationService UserApplicationService
+        {
+            get 
+            {
+                return ApplicationContext.Current["UserApplicationService"] as IUserApplicationService;
+            }
+        }
+
+        PasswordHasher PasswordHasher = new PasswordHasher();
 
         public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
@@ -66,11 +77,11 @@ namespace Dddml.Wms.AuthorizationServer.Providers
 
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
-            //Dummy check here, you need to do your DB checks against membership system http://bit.ly/SPAAuthCode
-            if (context.UserName != context.Password)
+            //注意：这里使用 UserName 作为登录 Id
+            var userState = UserApplicationService.GetByProperty("UserName", context.UserName, null, 0, 1).FirstOrDefault();
+            if (userState == null || PasswordHasher.VerifyHashedPassword(userState.PasswordHash, context.Password) == PasswordVerificationResult.Failed)
             {
                 context.SetError("invalid_grant", "The user name or password is incorrect");
-                //return;
                 return Task.FromResult<object>(null);
             }
 

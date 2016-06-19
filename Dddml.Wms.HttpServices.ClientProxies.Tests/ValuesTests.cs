@@ -31,11 +31,16 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
         [Test]
         public void TestGetValue()
         {
-            
-            //var userNameAndPassword = RegisterTestUser();
-            //var accessToken = GetJwtAccessToken(userNameAndPassword.Item1, userNameAndPassword.Item2);
+            var loginIdAndPassword = RegisterTestUser();
 
-            var accessToken = GetJwtAccessToken("jyang", "jyang");
+            var accessToken = GetJwtAccessToken(loginIdAndPassword.Item1, loginIdAndPassword.Item2);
+
+            TestGetValue1(accessToken);
+        }
+
+        private void TestGetValue1(string accessToken)
+        {
+            //var accessToken = GetJwtAccessToken("jyang", "jyang");
             Console.WriteLine(accessToken);
 
             var client = new HttpClient { BaseAddress = new Uri(_endpointUrl) };
@@ -130,6 +135,18 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
 
         }
 
+        private static void PrintAsJObject(object value, string name)
+        {
+            JObject jObj = JObject.FromObject(value);
+            Console.WriteLine("==================== Object [name = " + name + "] : ====================");
+            Console.WriteLine(jObj.ToString());
+            Console.WriteLine("==================== End Of Object [name = " + name + "] ====================");
+        }
+
+
+
+        // ///////////////////////////
+
         private string _GetAccessToken(string loginId, string password)
         {
             //var loginData = {
@@ -173,15 +190,6 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
 
         }
         
-
-        private static void PrintAsJObject(object value, string name)
-        {
-            JObject jObj = JObject.FromObject(value);
-            Console.WriteLine("==================== Object [name = " + name + "] : ====================");
-            Console.WriteLine(jObj.ToString());
-            Console.WriteLine("==================== End Of Object [name = " + name + "] ====================");
-        }
-
 
       
     }

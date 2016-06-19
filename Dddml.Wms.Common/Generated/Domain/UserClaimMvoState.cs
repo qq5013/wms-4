@@ -14,8 +14,6 @@ namespace Dddml.Wms.Domain
 	public partial class UserClaimMvoState : UserClaimMvoStateProperties, IUserClaimMvoState
 	{
 
-		//public virtual long UserVersion { get; set; }
-
 		public virtual string CreatedBy { get; set; }
 
 		public virtual DateTime CreatedAt { get; set; }
@@ -126,6 +124,11 @@ namespace Dddml.Wms.Domain
 
 		#endregion
 
+        bool IUserClaimMvoState.IsUnsaved
+        {
+            get { return ((IVersioned<long>)this).Version == VersionZero; }
+        }
+
 		public static long VersionZero
 		{
 			get
@@ -152,6 +155,8 @@ namespace Dddml.Wms.Domain
             this.Version = (e.Version != null && e.Version.HasValue) ? e.Version.Value : default(long);
 
             this.Active = (e.Active != null && e.Active.HasValue) ? e.Active.Value : default(bool);
+
+			this.UserUserName = e.UserUserName;
 
             this.UserAccessFailedCount = (e.UserAccessFailedCount != null && e.UserAccessFailedCount.HasValue) ? e.UserAccessFailedCount.Value : default(int);
 
@@ -244,6 +249,18 @@ namespace Dddml.Wms.Domain
 			else
 			{
 				this.Active = (e.Active != null && e.Active.HasValue) ? e.Active.Value : default(bool);
+			}
+
+			if (e.UserUserName == null)
+			{
+				if (e.IsPropertyUserUserNameRemoved)
+				{
+					this.UserUserName = default(string);
+				}
+			}
+			else
+			{
+				this.UserUserName = e.UserUserName;
 			}
 
 			if (e.UserAccessFailedCount == null)

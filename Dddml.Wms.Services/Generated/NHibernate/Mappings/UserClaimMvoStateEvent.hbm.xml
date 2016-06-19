@@ -21,6 +21,8 @@
 
 	<property name="Active" ></property>
 
+	<property name="UserUserName" ></property>
+
 	<property name="UserAccessFailedCount" ></property>
 
 	<property name="UserEmail" ></property>
@@ -74,6 +76,8 @@
         <property name="IsPropertyVersionRemoved" />
 
         <property name="IsPropertyActiveRemoved" />
+
+        <property name="IsPropertyUserUserNameRemoved" />
 
         <property name="IsPropertyUserAccessFailedCountRemoved" />
 

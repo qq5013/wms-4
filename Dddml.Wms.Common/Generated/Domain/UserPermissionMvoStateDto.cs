@@ -130,6 +130,34 @@ namespace Dddml.Wms.Domain
             }
         }
 
+		public virtual string UserUserName
+		{
+            get
+            {
+                if ((this as IStateDto).ReturnedFieldsContains("UserUserName"))
+                {
+                    return _state.UserUserName;
+                }
+                return null;
+            }
+            set
+            {
+                _state.UserUserName = value;
+            }
+        }
+
+        string IUserPermissionMvoStateProperties.UserUserName
+        {
+            get 
+            {
+                return (this._state as IUserPermissionMvoStateProperties).UserUserName;
+            }
+            set 
+            {
+                this._state.UserUserName = value;
+            }
+        }
+
 		public virtual int? UserAccessFailedCount
         {
             get
@@ -768,8 +796,12 @@ namespace Dddml.Wms.Domain
             get { return _state.UserVersion; }
 		}
 
-
 		#endregion
+
+        bool IUserPermissionMvoState.IsUnsaved
+        {
+            get { return ((IVersioned<long>)this).Version == UserPermissionMvoState.VersionZero; }
+        }
 
 
 

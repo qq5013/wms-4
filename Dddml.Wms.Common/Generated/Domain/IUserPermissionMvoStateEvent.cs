@@ -20,6 +20,8 @@ namespace Dddml.Wms.Domain
 
 		bool? Active { get; set; }
 
+		string UserUserName { get; set; }
+
 		int? UserAccessFailedCount { get; set; }
 
 		string UserEmail { get; set; }
@@ -66,6 +68,8 @@ namespace Dddml.Wms.Domain
 		bool IsPropertyVersionRemoved { get; set; }
 
 		bool IsPropertyActiveRemoved { get; set; }
+
+		bool IsPropertyUserUserNameRemoved { get; set; }
 
 		bool IsPropertyUserAccessFailedCountRemoved { get; set; }
 

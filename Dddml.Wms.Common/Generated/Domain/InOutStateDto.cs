@@ -1258,8 +1258,12 @@ namespace Dddml.Wms.Domain
             get { return _state.Version; }
 		}
 
-
 		#endregion
+
+        bool IInOutState.IsUnsaved
+        {
+            get { return ((IVersioned<long>)this).Version == InOutState.VersionZero; }
+        }
 
 
 

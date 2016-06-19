@@ -106,6 +106,7 @@ namespace Dddml.Wms.Domain
 			var stateEventId = new UserStateEventId(c.UserId, c.Version);
             IUserStateCreated e = NewUserStateCreated(stateEventId);
 		
+            e.UserName = c.UserName;
             e.AccessFailedCount = c.AccessFailedCount;
             e.Email = c.Email;
             e.EmailConfirmed = c.EmailConfirmed;
@@ -157,6 +158,7 @@ namespace Dddml.Wms.Domain
 			var stateEventId = new UserStateEventId(c.UserId, c.Version);
             IUserStateMergePatched e = NewUserStateMergePatched(stateEventId);
 
+            e.UserName = c.UserName;
             e.AccessFailedCount = c.AccessFailedCount;
             e.Email = c.Email;
             e.EmailConfirmed = c.EmailConfirmed;
@@ -168,6 +170,7 @@ namespace Dddml.Wms.Domain
             e.TwoFactorEnabled = c.TwoFactorEnabled;
             e.SecurityStamp = c.SecurityStamp;
             e.Active = c.Active;
+            e.IsPropertyUserNameRemoved = c.IsPropertyUserNameRemoved;
             e.IsPropertyAccessFailedCountRemoved = c.IsPropertyAccessFailedCountRemoved;
             e.IsPropertyEmailRemoved = c.IsPropertyEmailRemoved;
             e.IsPropertyEmailConfirmedRemoved = c.IsPropertyEmailConfirmedRemoved;

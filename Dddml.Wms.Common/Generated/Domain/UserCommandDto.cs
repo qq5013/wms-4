@@ -51,6 +51,8 @@ namespace Dddml.Wms.Domain
 
 		public virtual string UserId { get; set; }
 
+		public virtual string UserName { get; set; }
+
 		public virtual int? AccessFailedCount { get; set; }
 
 		public virtual string Email { get; set; }
@@ -72,6 +74,25 @@ namespace Dddml.Wms.Domain
 		public virtual string SecurityStamp { get; set; }
 
 		public virtual bool? Active { get; set; }
+
+		public virtual bool? IsPropertyUserNameRemoved { get; set; }
+
+        bool IMergePatchUser.IsPropertyUserNameRemoved
+        {
+            get
+            {
+                var b = this.IsPropertyUserNameRemoved;
+                if (b != null && b.HasValue)
+                {
+                    return b.Value;
+                }
+                return false;
+            }
+            set
+            {
+                this.IsPropertyUserNameRemoved = value;
+            }
+        }
 
 		public virtual bool? IsPropertyAccessFailedCountRemoved { get; set; }
 
@@ -507,141 +528,6 @@ namespace Dddml.Wms.Domain
             }
         }
 
-
-        // //////////////////////////////////////////////
-/*
-        private IUserCommand _innerCommand;
-
-        internal ICommand ToCommand()
-        {
-            //if (this._innerCommand != null)
-            //{
-            //    return this._innerCommand;
-            //}
-            var cmdType = GetCommandType();
-            if (cmdType == CommandType.Create)
-            {
-                var cmd = ToCreateUser();
-                this._innerCommand = cmd;
-            }
-            else if (cmdType == CommandType.MergePatch)
-            {
-                var cmd = ToMergePatchUser();
-                this._innerCommand = cmd;
-            }
-            else if (cmdType == CommandType.Delete)
-            {
-                var cmd = ToDeleteUser();
-                this._innerCommand = cmd;
-            }
-            else
-            {
-                throw DomainError.Named("invalidCommandType", String.Format("Invalid command type: {0}", cmdType));
-            }
-            return this._innerCommand;
-        }
-
-        internal DeleteUser ToDeleteUser()
-        {
-            var cmd = new DeleteUser();
-            cmd.CommandId = this.CommandId;
-            cmd.RequesterId = this.RequesterId;
-
-            cmd.UserId = ((ICreateOrMergePatchOrDeleteUser)this).UserId;
-            cmd.Version = this.Version;
-
-            return cmd;
-        }
-
-        internal MergePatchUser ToMergePatchUser()
-        {
-            var cmd = new MergePatchUser();
-            cmd.CommandId = this.CommandId;
-            cmd.RequesterId = this.RequesterId;
-
-            cmd.Version = this.Version;
-
-            cmd.UserId = ((ICreateOrMergePatchOrDeleteUser)this).UserId;
-            cmd.AccessFailedCount = ((ICreateOrMergePatchOrDeleteUser)this).AccessFailedCount;
-            cmd.Email = ((ICreateOrMergePatchOrDeleteUser)this).Email;
-            cmd.EmailConfirmed = ((ICreateOrMergePatchOrDeleteUser)this).EmailConfirmed;
-            cmd.LockoutEnabled = ((ICreateOrMergePatchOrDeleteUser)this).LockoutEnabled;
-            cmd.LockoutEndDateUtc = ((ICreateOrMergePatchOrDeleteUser)this).LockoutEndDateUtc;
-            cmd.PasswordHash = ((ICreateOrMergePatchOrDeleteUser)this).PasswordHash;
-            cmd.PhoneNumber = ((ICreateOrMergePatchOrDeleteUser)this).PhoneNumber;
-            cmd.PhoneNumberConfirmed = ((ICreateOrMergePatchOrDeleteUser)this).PhoneNumberConfirmed;
-            cmd.TwoFactorEnabled = ((ICreateOrMergePatchOrDeleteUser)this).TwoFactorEnabled;
-            cmd.SecurityStamp = ((ICreateOrMergePatchOrDeleteUser)this).SecurityStamp;
-            cmd.Active = ((ICreateOrMergePatchOrDeleteUser)this).Active;
-            
-            cmd.IsPropertyAccessFailedCountRemoved = (this as IMergePatchUser).IsPropertyAccessFailedCountRemoved;
-            cmd.IsPropertyEmailRemoved = (this as IMergePatchUser).IsPropertyEmailRemoved;
-            cmd.IsPropertyEmailConfirmedRemoved = (this as IMergePatchUser).IsPropertyEmailConfirmedRemoved;
-            cmd.IsPropertyLockoutEnabledRemoved = (this as IMergePatchUser).IsPropertyLockoutEnabledRemoved;
-            cmd.IsPropertyLockoutEndDateUtcRemoved = (this as IMergePatchUser).IsPropertyLockoutEndDateUtcRemoved;
-            cmd.IsPropertyPasswordHashRemoved = (this as IMergePatchUser).IsPropertyPasswordHashRemoved;
-            cmd.IsPropertyPhoneNumberRemoved = (this as IMergePatchUser).IsPropertyPhoneNumberRemoved;
-            cmd.IsPropertyPhoneNumberConfirmedRemoved = (this as IMergePatchUser).IsPropertyPhoneNumberConfirmedRemoved;
-            cmd.IsPropertyTwoFactorEnabledRemoved = (this as IMergePatchUser).IsPropertyTwoFactorEnabledRemoved;
-            cmd.IsPropertySecurityStampRemoved = (this as IMergePatchUser).IsPropertySecurityStampRemoved;
-            cmd.IsPropertyActiveRemoved = (this as IMergePatchUser).IsPropertyActiveRemoved;
-            foreach (var d in (IEnumerable<CreateOrMergePatchOrRemoveUserRoleDto>)_userRoles)
-            {
-                var c = (IUserRoleCommand)d.ToCommand();
-                cmd.UserRoleCommands.Add(c);
-            }
-            foreach (var d in (IEnumerable<CreateOrMergePatchOrRemoveUserClaimDto>)_userClaims)
-            {
-                var c = (IUserClaimCommand)d.ToCommand();
-                cmd.UserClaimCommands.Add(c);
-            }
-            foreach (var d in (IEnumerable<CreateOrMergePatchOrRemoveUserPermissionDto>)_userPermissions)
-            {
-                var c = (IUserPermissionCommand)d.ToCommand();
-                cmd.UserPermissionCommands.Add(c);
-            }
-            return cmd;
-        }
-
-        internal CreateUser ToCreateUser()
-        {
-            var cmd = new CreateUser();
-            cmd.CommandId = this.CommandId;
-            cmd.RequesterId = this.RequesterId;
-
-            cmd.Version = this.Version;
-
-            cmd.UserId = ((ICreateOrMergePatchOrDeleteUser)this).UserId;
-            cmd.AccessFailedCount = ((ICreateOrMergePatchOrDeleteUser)this).AccessFailedCount;
-            cmd.Email = ((ICreateOrMergePatchOrDeleteUser)this).Email;
-            cmd.EmailConfirmed = ((ICreateOrMergePatchOrDeleteUser)this).EmailConfirmed;
-            cmd.LockoutEnabled = ((ICreateOrMergePatchOrDeleteUser)this).LockoutEnabled;
-            cmd.LockoutEndDateUtc = ((ICreateOrMergePatchOrDeleteUser)this).LockoutEndDateUtc;
-            cmd.PasswordHash = ((ICreateOrMergePatchOrDeleteUser)this).PasswordHash;
-            cmd.PhoneNumber = ((ICreateOrMergePatchOrDeleteUser)this).PhoneNumber;
-            cmd.PhoneNumberConfirmed = ((ICreateOrMergePatchOrDeleteUser)this).PhoneNumberConfirmed;
-            cmd.TwoFactorEnabled = ((ICreateOrMergePatchOrDeleteUser)this).TwoFactorEnabled;
-            cmd.SecurityStamp = ((ICreateOrMergePatchOrDeleteUser)this).SecurityStamp;
-            cmd.Active = ((ICreateOrMergePatchOrDeleteUser)this).Active;
-            foreach (var d in (IEnumerable<CreateOrMergePatchOrRemoveUserRoleDto>)_userRoles)
-            {
-                var c = d.ToCreateUserRole();
-                cmd.UserRoles.Add(c);
-            }
-            foreach (var d in (IEnumerable<CreateOrMergePatchOrRemoveUserClaimDto>)_userClaims)
-            {
-                var c = d.ToCreateUserClaim();
-                cmd.UserClaims.Add(c);
-            }
-            foreach (var d in (IEnumerable<CreateOrMergePatchOrRemoveUserPermissionDto>)_userPermissions)
-            {
-                var c = d.ToCreateUserPermission();
-                cmd.UserPermissions.Add(c);
-            }
-            return cmd;
-        }
-*/
-        // //////////////////////////////////////////////////
 
         string ICommandDto.CommandType 
         {

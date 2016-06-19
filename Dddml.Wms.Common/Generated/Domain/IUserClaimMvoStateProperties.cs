@@ -23,6 +23,8 @@ namespace Dddml.Wms.Domain
 
 		bool Active { get; set; }
 
+		string UserUserName { get; set; }
+
 		int UserAccessFailedCount { get; set; }
 
 		string UserEmail { get; set; }

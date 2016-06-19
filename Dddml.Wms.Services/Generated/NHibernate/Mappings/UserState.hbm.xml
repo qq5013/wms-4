@@ -11,6 +11,8 @@
 
 	<version name="Version" type="long" unsaved-value="0"/>
 
+	<property name="UserName" unique-key="UniqueUserName"></property>
+
 	<property name="AccessFailedCount" ></property>
 
 	<property name="Email" ></property>

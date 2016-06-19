@@ -14,8 +14,6 @@ namespace Dddml.Wms.Domain
 	public partial class AttributeValueState : AttributeValueStateProperties, IAttributeValueState
 	{
 
-		//public virtual long Version { get; set; }
-
 		public virtual string CreatedBy { get; set; }
 
 		public virtual DateTime CreatedAt { get; set; }
@@ -158,6 +156,11 @@ namespace Dddml.Wms.Domain
 
 
 		#endregion
+
+        bool IAttributeValueState.IsUnsaved
+        {
+            get { return ((IVersioned<long>)this).Version == VersionZero; }
+        }
 
 		public static long VersionZero
 		{

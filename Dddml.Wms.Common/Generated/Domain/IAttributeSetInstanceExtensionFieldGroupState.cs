@@ -31,6 +31,8 @@ namespace Dddml.Wms.Domain
 		IAttributeSetInstanceExtensionFieldStates Fields { get; }
 
 
+        bool IsUnsaved { get; }
+
 	}
 }
 

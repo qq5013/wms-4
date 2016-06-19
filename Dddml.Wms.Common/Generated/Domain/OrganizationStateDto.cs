@@ -375,8 +375,12 @@ namespace Dddml.Wms.Domain
             get { return _state.Version; }
 		}
 
-
 		#endregion
+
+        bool IOrganizationState.IsUnsaved
+        {
+            get { return ((IVersioned<long>)this).Version == OrganizationState.VersionZero; }
+        }
 
 
 

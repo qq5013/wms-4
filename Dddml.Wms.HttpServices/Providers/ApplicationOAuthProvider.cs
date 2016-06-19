@@ -4,12 +4,12 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using Dddml.Wms.HttpServices.Models;
+using Dddml.Wms.AspNet.Identity;
 
 namespace Dddml.Wms.HttpServices.Providers
 {
@@ -31,7 +31,7 @@ namespace Dddml.Wms.HttpServices.Providers
         {
             var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
 
-            ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
+            IdentityUser user = await userManager.FindAsync(context.UserName, context.Password);
 
             if (user == null)
             {

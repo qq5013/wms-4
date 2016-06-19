@@ -16,6 +16,8 @@ namespace Dddml.Wms.Domain
 
         bool ReadOnly { get; set; }
 
+		string UserName { get; set; }
+
 		int? AccessFailedCount { get; set; }
 
 		string Email { get; set; }
@@ -67,6 +69,8 @@ namespace Dddml.Wms.Domain
 
 	public interface IUserStateMergePatched : IUserStateEvent//, IUserStateProperties
 	{
+		bool IsPropertyUserNameRemoved { get; set; }
+
 		bool IsPropertyAccessFailedCountRemoved { get; set; }
 
 		bool IsPropertyEmailRemoved { get; set; }

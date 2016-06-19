@@ -108,6 +108,7 @@ namespace Dddml.Wms.Domain
 		
             e.Version = c.Version;
             e.Active = c.Active;
+            e.UserUserName = c.UserUserName;
             e.UserAccessFailedCount = c.UserAccessFailedCount;
             e.UserEmail = c.UserEmail;
             e.UserEmailConfirmed = c.UserEmailConfirmed;
@@ -142,6 +143,7 @@ namespace Dddml.Wms.Domain
 
             e.Version = c.Version;
             e.Active = c.Active;
+            e.UserUserName = c.UserUserName;
             e.UserAccessFailedCount = c.UserAccessFailedCount;
             e.UserEmail = c.UserEmail;
             e.UserEmailConfirmed = c.UserEmailConfirmed;
@@ -160,6 +162,7 @@ namespace Dddml.Wms.Domain
             e.UserDeleted = c.UserDeleted;
             e.IsPropertyVersionRemoved = c.IsPropertyVersionRemoved;
             e.IsPropertyActiveRemoved = c.IsPropertyActiveRemoved;
+            e.IsPropertyUserUserNameRemoved = c.IsPropertyUserUserNameRemoved;
             e.IsPropertyUserAccessFailedCountRemoved = c.IsPropertyUserAccessFailedCountRemoved;
             e.IsPropertyUserEmailRemoved = c.IsPropertyUserEmailRemoved;
             e.IsPropertyUserEmailConfirmedRemoved = c.IsPropertyUserEmailConfirmedRemoved;

@@ -14,7 +14,8 @@ aggregates:
 
       properties:
 
-        #UserName
+        UserName:
+          type: string
       
         AccessFailedCount:
           type: int
@@ -58,6 +59,8 @@ aggregates:
         #UserLogins:
         #  itemType: UserLogin
         
+      uniqueConstraints:
+        UniqueUserName: [UserName]
       
       # ------------------------------
       entities:

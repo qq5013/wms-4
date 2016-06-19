@@ -37,6 +37,8 @@ namespace Dddml.Wms.Domain
 		IUserPermissionStates UserPermissions { get; }
 
 
+        bool IsUnsaved { get; }
+
 	}
 }
 

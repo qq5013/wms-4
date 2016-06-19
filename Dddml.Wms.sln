@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorizationServer", "Auth
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorizationServer.Tests", "AuthorizationServer.Tests\AuthorizationServer.Tests.csproj", "{5EE9E787-A9D9-4DA7-8ED5-6CEE4AEE0836}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dddml.Wms.AspNet.Identity", "Dddml.Wms.AspNet.Identity\Dddml.Wms.AspNet.Identity.csproj", "{CEE62887-53FB-4291-8543-651C171D528A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{5EE9E787-A9D9-4DA7-8ED5-6CEE4AEE0836}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EE9E787-A9D9-4DA7-8ED5-6CEE4AEE0836}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EE9E787-A9D9-4DA7-8ED5-6CEE4AEE0836}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEE62887-53FB-4291-8543-651C171D528A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEE62887-53FB-4291-8543-651C171D528A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEE62887-53FB-4291-8543-651C171D528A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEE62887-53FB-4291-8543-651C171D528A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

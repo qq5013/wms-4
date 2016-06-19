@@ -1983,8 +1983,12 @@ namespace Dddml.Wms.Domain
             get { return _state.InOutVersion; }
 		}
 
-
 		#endregion
+
+        bool IInOutLineMvoState.IsUnsaved
+        {
+            get { return ((IVersioned<long>)this).Version == InOutLineMvoState.VersionZero; }
+        }
 
 
 

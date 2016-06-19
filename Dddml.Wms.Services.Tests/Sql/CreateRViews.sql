@@ -363,6 +363,8 @@ CREATE VIEW `UserRole_RV` AS
 
         `UserRoles`.`Deleted`,
 
+        `Users`.`UserName` AS `UserUserName`,
+
         `Users`.`AccessFailedCount` AS `UserAccessFailedCount`,
 
         `Users`.`Email` AS `UserEmail`,
@@ -432,6 +434,8 @@ CREATE VIEW `UserClaim_RV` AS
 
         `UserClaims`.`Deleted`,
 
+        `Users`.`UserName` AS `UserUserName`,
+
         `Users`.`AccessFailedCount` AS `UserAccessFailedCount`,
 
         `Users`.`Email` AS `UserEmail`,
@@ -496,6 +500,8 @@ CREATE VIEW `UserPermission_RV` AS
         `UserPermissions`.`Active`,
 
         `UserPermissions`.`Deleted`,
+
+        `Users`.`UserName` AS `UserUserName`,
 
         `Users`.`AccessFailedCount` AS `UserAccessFailedCount`,
 

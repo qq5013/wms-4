@@ -14,8 +14,6 @@ namespace Dddml.Wms.Domain
 	public partial class UserState : UserStateProperties, IUserState, ISaveable
 	{
 
-		//public virtual long Version { get; set; }
-
 		public virtual string CreatedBy { get; set; }
 
 		public virtual DateTime CreatedAt { get; set; }
@@ -126,6 +124,11 @@ namespace Dddml.Wms.Domain
 
 		#endregion
 
+        bool IUserState.IsUnsaved
+        {
+            get { return ((IVersioned<long>)this).Version == VersionZero; }
+        }
+
 		public static long VersionZero
 		{
 			get
@@ -218,6 +221,8 @@ namespace Dddml.Wms.Domain
 		public virtual void When(IUserStateCreated e)
 		{
 			ThrowOnWrongEvent(e);
+			this.UserName = e.UserName;
+
             this.AccessFailedCount = (e.AccessFailedCount != null && e.AccessFailedCount.HasValue) ? e.AccessFailedCount.Value : default(int);
 
 			this.Email = e.Email;
@@ -264,6 +269,18 @@ namespace Dddml.Wms.Domain
 		public virtual void When(IUserStateMergePatched e)
 		{
 			ThrowOnWrongEvent(e);
+
+			if (e.UserName == null)
+			{
+				if (e.IsPropertyUserNameRemoved)
+				{
+					this.UserName = default(string);
+				}
+			}
+			else
+			{
+				this.UserName = e.UserName;
+			}
 
 			if (e.AccessFailedCount == null)
 			{

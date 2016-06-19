@@ -19,6 +19,8 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool Active { get; set; }
 
+		public virtual string UserUserName { get; set; }
+
 		public virtual int UserAccessFailedCount { get; set; }
 
 		public virtual string UserEmail { get; set; }

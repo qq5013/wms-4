@@ -28,6 +28,8 @@ namespace Dddml.Wms.Domain
 		void Mutate(IEvent e);
 
 
+        bool IsUnsaved { get; }
+
 	}
 }
 

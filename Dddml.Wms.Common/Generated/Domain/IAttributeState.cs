@@ -31,6 +31,8 @@ namespace Dddml.Wms.Domain
 		IAttributeValueStates AttributeValues { get; }
 
 
+        bool IsUnsaved { get; }
+
 	}
 }
 

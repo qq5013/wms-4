@@ -90,7 +90,7 @@ namespace Dddml.Wms.Specialization
                 return true;
             }
 
-            //对于集合类型的属性，比如显式地要求需要返回
+            //对于集合类型的属性，需要显式地要求返回
             if (IsCollectionField(fieldName))
             {
                 if (CollectionUtils.DictionaryContainsKeyIgnoringCase(ReturnedFields, fieldName))

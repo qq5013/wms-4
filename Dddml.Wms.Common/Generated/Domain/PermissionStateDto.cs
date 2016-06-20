@@ -352,7 +352,6 @@ namespace Dddml.Wms.Domain
         }
 
 
-
 		void IPermissionState.When(IPermissionStateCreated e)
 		{
             throw new NotSupportedException();

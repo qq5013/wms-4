@@ -332,7 +332,6 @@ namespace Dddml.Wms.Domain
         }
 
 
-
 		void IAttributeUseState.When(IAttributeUseStateCreated e)
 		{
             throw new NotSupportedException();

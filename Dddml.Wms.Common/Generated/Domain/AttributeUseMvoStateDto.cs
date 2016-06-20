@@ -680,7 +680,6 @@ namespace Dddml.Wms.Domain
         }
 
 
-
 		void IAttributeUseMvoState.When(IAttributeUseMvoStateCreated e)
 		{
             throw new NotSupportedException();

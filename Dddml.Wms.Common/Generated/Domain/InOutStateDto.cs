@@ -1265,9 +1265,6 @@ namespace Dddml.Wms.Domain
             get { return ((IVersioned<long>)this).Version == InOutState.VersionZero; }
         }
 
-
-
-
         public virtual InOutLineStateDto[] InOutLines
         {
             get 

@@ -270,7 +270,6 @@ namespace Dddml.Wms.Domain
         }
 
 
-
 		void IRolePermissionState.When(IRolePermissionStateCreated e)
 		{
             throw new NotSupportedException();

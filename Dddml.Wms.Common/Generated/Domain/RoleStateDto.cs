@@ -324,7 +324,6 @@ namespace Dddml.Wms.Domain
         }
 
 
-
 		void IRoleState.When(IRoleStateCreated e)
 		{
             throw new NotSupportedException();

@@ -19,6 +19,7 @@ namespace Dddml.Wms.Domain
 		IVersioned<long>
 	{
 		
+
 		void When(ILocatorStateCreated e);
 
 		void When(ILocatorStateMergePatched e);

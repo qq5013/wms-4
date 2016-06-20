@@ -11,7 +11,7 @@
 
 	<version name="Version" type="long" unsaved-value="0"/>
 
-	<property name="WarehouseId" ></property>
+	<property name="WarehouseId" not-null="true"></property>
 
 	<property name="ParentLocatorId" ></property>
 

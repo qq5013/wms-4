@@ -803,6 +803,51 @@ namespace Dddml.Wms.Domain
             get { return ((IVersioned<long>)this).Version == UserRoleMvoState.VersionZero; }
         }
 
+        public virtual UserLoginDto[] UserUserLogins
+        {
+            get 
+            {
+                if (!(this as IStateDto).ReturnedFieldsContains("UserUserLogins"))
+                {
+                    return null;
+                }
+                var dtos = new List<UserLoginDto>();
+                if (this._state.UserUserLogins != null)
+                {
+                    foreach (var s in this._state.UserUserLogins)
+                    {
+                        var dto = new UserLoginDto(s);
+                        var returnFS = CollectionUtils.DictionaryGetValueIgnoringCase(ReturnedFields, "UserUserLogins");
+                        if (!String.IsNullOrWhiteSpace(returnFS))
+                        {
+                            (dto as IStateDto).ReturnedFieldsString = returnFS;
+                        }
+                        else
+                        {
+                            (dto as IStateDto).AllFieldsReturned = this.AllFieldsReturned;
+                        }
+                        dtos.Add(dto);
+                    }
+                }
+                return dtos.ToArray();
+            }
+            set 
+            {
+                if (value == null) { return; }
+                var states = new HashSet<UserLogin>();
+                foreach (var s in value)
+                {
+                    states.Add(s.ToUserLogin());
+                }
+                this._state.UserUserLogins = states;
+            }
+        }
+
+        ISet<UserLogin> IUserRoleMvoState.UserUserLogins 
+        {
+            get { return _state.UserUserLogins; }
+            set { _state.UserUserLogins = value; }
+        }
 
 
 		void IUserRoleMvoState.When(IUserRoleMvoStateCreated e)

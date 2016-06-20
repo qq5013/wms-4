@@ -19,6 +19,7 @@ namespace Dddml.Wms.Domain
 		IVersioned<long>
 	{
 		
+
 		void When(IRolePermissionStateCreated e);
 
 		void When(IRolePermissionStateMergePatched e);

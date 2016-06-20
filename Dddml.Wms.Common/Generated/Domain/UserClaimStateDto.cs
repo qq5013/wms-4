@@ -360,7 +360,6 @@ namespace Dddml.Wms.Domain
         }
 
 
-
 		void IUserClaimState.When(IUserClaimStateCreated e)
 		{
             throw new NotSupportedException();

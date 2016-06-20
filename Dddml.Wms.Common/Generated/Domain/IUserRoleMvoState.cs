@@ -19,6 +19,9 @@ namespace Dddml.Wms.Domain
 		IVersioned<long>
 	{
 		
+		ISet<UserLogin> UserUserLogins { get; set; }
+
+
 		void When(IUserRoleMvoStateCreated e);
 
 		void When(IUserRoleMvoStateMergePatched e);

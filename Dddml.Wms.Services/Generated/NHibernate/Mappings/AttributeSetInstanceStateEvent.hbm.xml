@@ -954,7 +954,7 @@
 
       <set name="RemovedPropertyNames" table="AttributeSetInstanceStateEventRemovedProperties">
         <key>
-          <column name="AttributeSetInstanceId" length="50"/>
+          <column name="AttributeSetInstanceId" />
           <column name="Version" />
         </key>
         <element column="RemovedPropertyName" type="string" not-null="true" />

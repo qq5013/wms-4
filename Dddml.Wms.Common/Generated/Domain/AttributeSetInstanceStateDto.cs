@@ -13204,7 +13204,6 @@ namespace Dddml.Wms.Domain
         }
 
 
-
 		void IAttributeSetInstanceState.When(IAttributeSetInstanceStateCreated e)
 		{
             throw new NotSupportedException();

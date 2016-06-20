@@ -20,6 +20,7 @@ namespace Dddml.Wms.Domain
 		IVersioned<long>
 	{
 		
+
 		void When(IAttributeSetInstanceExtensionFieldStateCreated e);
 
 		void When(IAttributeSetInstanceExtensionFieldStateMergePatched e);

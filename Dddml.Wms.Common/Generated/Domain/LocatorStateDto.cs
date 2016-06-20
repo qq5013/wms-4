@@ -495,7 +495,6 @@ namespace Dddml.Wms.Domain
         }
 
 
-
 		void ILocatorState.When(ILocatorStateCreated e)
 		{
             throw new NotSupportedException();

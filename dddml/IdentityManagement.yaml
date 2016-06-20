@@ -56,8 +56,8 @@ aggregates:
         UserPermissions:
           itemType: UserPermission
         
-        #UserLogins:
-        #  itemType: UserLogin
+        UserLogins:
+          itemType: UserLogin
         
       uniqueConstraints:
         UniqueUserName: [UserName]

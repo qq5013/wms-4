@@ -355,7 +355,6 @@ namespace Dddml.Wms.Domain
         }
 
 
-
 		void IWarehouseState.When(IWarehouseStateCreated e)
 		{
             throw new NotSupportedException();

@@ -410,9 +410,6 @@ namespace Dddml.Wms.Domain
             get { return ((IVersioned<long>)this).Version == AttributeSetInstanceExtensionFieldGroupState.VersionZero; }
         }
 
-
-
-
         public virtual AttributeSetInstanceExtensionFieldStateDto[] Fields
         {
             get 

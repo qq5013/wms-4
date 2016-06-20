@@ -217,6 +217,8 @@ namespace Dddml.Wms.Domain
 
 		#endregion
 
+		public virtual ISet<UserLogin> UserLogins { get; set; }
+
 
 		public virtual void When(IUserStateCreated e)
 		{

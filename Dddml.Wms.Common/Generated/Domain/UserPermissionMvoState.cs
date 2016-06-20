@@ -144,6 +144,8 @@ namespace Dddml.Wms.Domain
 		}
 
 
+		public virtual ISet<UserLogin> UserUserLogins { get; set; }
+
 
 		public virtual void When(IUserPermissionMvoStateCreated e)
 		{

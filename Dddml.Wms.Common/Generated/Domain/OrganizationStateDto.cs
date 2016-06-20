@@ -383,7 +383,6 @@ namespace Dddml.Wms.Domain
         }
 
 
-
 		void IOrganizationState.When(IOrganizationStateCreated e)
 		{
             throw new NotSupportedException();

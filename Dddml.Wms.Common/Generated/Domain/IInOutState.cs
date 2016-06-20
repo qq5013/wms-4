@@ -20,6 +20,7 @@ namespace Dddml.Wms.Domain
 		IVersioned<long>
 	{
 		
+
 		void When(IInOutStateCreated e);
 
 		void When(IInOutStateMergePatched e);

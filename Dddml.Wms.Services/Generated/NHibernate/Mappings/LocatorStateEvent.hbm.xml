@@ -12,7 +12,7 @@
 
     <discriminator column="StateEventType" type="String" />
 
-	<property name="WarehouseId" ></property>
+	<property name="WarehouseId" not-null="true"></property>
 
 	<property name="ParentLocatorId" ></property>
 

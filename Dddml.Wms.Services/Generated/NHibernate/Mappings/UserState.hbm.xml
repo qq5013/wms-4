@@ -45,6 +45,14 @@
 
 	<property name="Deleted" ></property>
 
+      <set name="UserLogins" table="UserUserLogins">
+        <key column="UserId" />
+				<composite-element class="Dddml.Wms.Domain.UserLogin">
+					<property name="LoginProvider" not-null="true"/>
+					<property name="ProviderKey" not-null="true"/>
+				</composite-element>
+      </set>
+
 
   </class>
   

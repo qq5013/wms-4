@@ -435,9 +435,6 @@ namespace Dddml.Wms.Domain
             get { return ((IVersioned<long>)this).Version == AttributeSetState.VersionZero; }
         }
 
-
-
-
         public virtual AttributeUseStateDto[] AttributeUses
         {
             get 

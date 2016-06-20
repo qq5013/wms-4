@@ -385,7 +385,6 @@ namespace Dddml.Wms.Domain
         }
 
 
-
 		void IAttributeValueState.When(IAttributeValueStateCreated e)
 		{
             throw new NotSupportedException();

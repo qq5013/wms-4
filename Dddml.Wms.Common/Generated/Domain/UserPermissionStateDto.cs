@@ -301,7 +301,6 @@ namespace Dddml.Wms.Domain
         }
 
 
-
 		void IUserPermissionState.When(IUserPermissionStateCreated e)
 		{
             throw new NotSupportedException();

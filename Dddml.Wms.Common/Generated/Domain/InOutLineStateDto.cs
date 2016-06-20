@@ -816,7 +816,6 @@ namespace Dddml.Wms.Domain
         }
 
 
-
 		void IInOutLineState.When(IInOutLineStateCreated e)
 		{
             throw new NotSupportedException();

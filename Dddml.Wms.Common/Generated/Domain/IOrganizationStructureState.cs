@@ -19,6 +19,7 @@ namespace Dddml.Wms.Domain
 		IVersioned<long>
 	{
 		
+
 		void When(IOrganizationStructureStateCreated e);
 
 		void When(IOrganizationStructureStateMergePatched e);

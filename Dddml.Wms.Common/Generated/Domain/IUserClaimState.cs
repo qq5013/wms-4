@@ -20,6 +20,7 @@ namespace Dddml.Wms.Domain
 		IVersioned<long>
 	{
 		
+
 		void When(IUserClaimStateCreated e);
 
 		void When(IUserClaimStateMergePatched e);

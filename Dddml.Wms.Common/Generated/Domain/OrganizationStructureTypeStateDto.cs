@@ -268,7 +268,6 @@ namespace Dddml.Wms.Domain
         }
 
 
-
 		void IOrganizationStructureTypeState.When(IOrganizationStructureTypeStateCreated e)
 		{
             throw new NotSupportedException();

@@ -556,9 +556,6 @@ namespace Dddml.Wms.Domain
             get { return ((IVersioned<long>)this).Version == AttributeState.VersionZero; }
         }
 
-
-
-
         public virtual AttributeValueStateDto[] AttributeValues
         {
             get 

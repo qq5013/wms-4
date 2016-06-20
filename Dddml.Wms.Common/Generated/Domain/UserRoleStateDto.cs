@@ -301,7 +301,6 @@ namespace Dddml.Wms.Domain
         }
 
 
-
 		void IUserRoleState.When(IUserRoleStateCreated e)
 		{
             throw new NotSupportedException();

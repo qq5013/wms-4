@@ -20,6 +20,7 @@ namespace Dddml.Wms.Domain
 		IVersioned<long>
 	{
 		
+
 		void When(IUserRoleStateCreated e);
 
 		void When(IUserRoleStateMergePatched e);

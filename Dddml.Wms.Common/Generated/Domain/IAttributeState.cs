@@ -19,6 +19,7 @@ namespace Dddml.Wms.Domain
 		IVersioned<long>
 	{
 		
+
 		void When(IAttributeStateCreated e);
 
 		void When(IAttributeStateMergePatched e);

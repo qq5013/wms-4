@@ -20,6 +20,7 @@ namespace Dddml.Wms.Domain
 		IVersioned<long>
 	{
 		
+
 		void When(IUserPermissionStateCreated e);
 
 		void When(IUserPermissionStateMergePatched e);

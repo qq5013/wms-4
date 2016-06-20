@@ -441,7 +441,6 @@ namespace Dddml.Wms.Domain
         }
 
 
-
 		void IAttributeSetInstanceExtensionFieldState.When(IAttributeSetInstanceExtensionFieldStateCreated e)
 		{
             throw new NotSupportedException();

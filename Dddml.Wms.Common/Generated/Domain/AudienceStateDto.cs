@@ -324,7 +324,6 @@ namespace Dddml.Wms.Domain
         }
 
 
-
 		void IAudienceState.When(IAudienceStateCreated e)
 		{
             throw new NotSupportedException();

@@ -1991,7 +1991,6 @@ namespace Dddml.Wms.Domain
         }
 
 
-
 		void IInOutLineMvoState.When(IInOutLineMvoStateCreated e)
 		{
             throw new NotSupportedException();

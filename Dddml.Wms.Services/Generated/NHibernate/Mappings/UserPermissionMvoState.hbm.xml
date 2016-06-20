@@ -60,6 +60,17 @@
 
 	<property name="UserDeleted" ></property>
 
+      <set name="UserUserLogins" table="UserPermissionMvoUserUserLogins">
+        <key>
+          <column name="UserPermissionIdUserId" />
+          <column name="UserPermissionIdPermissionId" />
+        </key>
+				<composite-element class="Dddml.Wms.Domain.UserLogin">
+					<property name="LoginProvider" not-null="true"/>
+					<property name="ProviderKey" not-null="true"/>
+				</composite-element>
+      </set>
+
 
   </class>
   

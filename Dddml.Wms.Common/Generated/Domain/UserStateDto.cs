@@ -590,8 +590,51 @@ namespace Dddml.Wms.Domain
             get { return ((IVersioned<long>)this).Version == UserState.VersionZero; }
         }
 
+        public virtual UserLoginDto[] UserLogins
+        {
+            get 
+            {
+                if (!(this as IStateDto).ReturnedFieldsContains("UserLogins"))
+                {
+                    return null;
+                }
+                var dtos = new List<UserLoginDto>();
+                if (this._state.UserLogins != null)
+                {
+                    foreach (var s in this._state.UserLogins)
+                    {
+                        var dto = new UserLoginDto(s);
+                        var returnFS = CollectionUtils.DictionaryGetValueIgnoringCase(ReturnedFields, "UserLogins");
+                        if (!String.IsNullOrWhiteSpace(returnFS))
+                        {
+                            (dto as IStateDto).ReturnedFieldsString = returnFS;
+                        }
+                        else
+                        {
+                            (dto as IStateDto).AllFieldsReturned = this.AllFieldsReturned;
+                        }
+                        dtos.Add(dto);
+                    }
+                }
+                return dtos.ToArray();
+            }
+            set 
+            {
+                if (value == null) { return; }
+                var states = new HashSet<UserLogin>();
+                foreach (var s in value)
+                {
+                    states.Add(s.ToUserLogin());
+                }
+                this._state.UserLogins = states;
+            }
+        }
 
-
+        ISet<UserLogin> IUserState.UserLogins 
+        {
+            get { return _state.UserLogins; }
+            set { _state.UserLogins = value; }
+        }
 
         public virtual UserRoleStateDto[] UserRoles
         {
@@ -638,8 +681,6 @@ namespace Dddml.Wms.Domain
             get { return _state.UserRoles; }
         }
 
-
-
         public virtual UserClaimStateDto[] UserClaims
         {
             get 
@@ -684,8 +725,6 @@ namespace Dddml.Wms.Domain
         {
             get { return _state.UserClaims; }
         }
-
-
 
         public virtual UserPermissionStateDto[] UserPermissions
         {

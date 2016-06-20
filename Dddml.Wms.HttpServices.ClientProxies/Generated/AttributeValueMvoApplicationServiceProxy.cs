@@ -78,6 +78,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             var q = new AttributeValueMvoDeleteQuery();
             q.CommandId = c.CommandId;
+            q.RequesterId = c.RequesterId;
+            q.Version = Convert.ToString(c.Version);
                 
             var req = new AttributeValueMvoDeleteRequest(uriParameters);
             req.Query = q;

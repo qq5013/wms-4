@@ -91,7 +91,7 @@ namespace Dddml.Wms.AuthorizationServer.Providers
 
             var userId = user.UserId;
             var identity = new ClaimsIdentity("JWT");
-            identity.AddClaim(new Claim(ClaimTypes.Name, userName));
+            identity.AddClaim(new Claim(ClaimTypes.Name, userId));
             identity.AddClaim(new Claim("sub", userId));
 
             var roles = IdentityService.GetUserRoleIds(userId);

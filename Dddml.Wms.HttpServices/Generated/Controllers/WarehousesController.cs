@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using Dddml.Wms.Specialization;
 using Dddml.Wms.Domain;
+using Dddml.Wms.Domain.Metadata;
+using Dddml.Wms.HttpServices.Filters;
 using System.Linq;
 using System.Net;
 using System.ComponentModel;
@@ -15,7 +17,6 @@ using System.Net.Http.Formatting;
 using System.Web.Http;
 using Newtonsoft.Json.Linq;
 using Dddml.Support.Criterion;
-using Dddml.Wms.Domain.Metadata;
 
 namespace Dddml.Wms.HttpServices.ApiControllers
 {
@@ -99,7 +100,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
           } catch (Exception ex) { var response = WarehousesControllerUtils.GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
-        [HttpPut]
+        [HttpPut][SetRequesterId]
         public void Put(string id, [FromBody]CreateWarehouseDto value)
         {
           try {
@@ -108,7 +109,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
           } catch (Exception ex) { var response = WarehousesControllerUtils.GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
-        [HttpPatch]
+        [HttpPatch][SetRequesterId]
         public void Patch(string id, [FromBody]MergePatchWarehouseDto value)
         {
           try {
@@ -117,13 +118,14 @@ namespace Dddml.Wms.HttpServices.ApiControllers
           } catch (Exception ex) { var response = WarehousesControllerUtils.GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
-        [HttpDelete]
-        public void Delete(string id, string commandId, string requesterId = default(string))
+        [HttpDelete][SetRequesterId]
+        public void Delete(string id, string commandId, string version, string requesterId = default(string))
         {
           try {
             var value = new DeleteWarehouseDto();
             value.CommandId = commandId;
             value.RequesterId = requesterId;
+            value.Version = (long)Convert.ChangeType(version, typeof(long));
             WarehousesControllerUtils.SetNullIdOrThrowOnInconsistentIds(id, value);
             _warehouseApplicationService.When(value as IDeleteWarehouse);
           } catch (Exception ex) { var response = WarehousesControllerUtils.GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }

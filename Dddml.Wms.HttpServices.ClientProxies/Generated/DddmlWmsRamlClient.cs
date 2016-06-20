@@ -184,6 +184,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 url += "?";
                 if(request.Query.CommandId != null)
                     url += "&commandId=" + request.Query.CommandId;
+                if(request.Query.Version != null)
+                    url += "&version=" + request.Query.Version;
                 if(request.Query.RequesterId != null)
                     url += "&requesterId=" + request.Query.RequesterId;
             }
@@ -548,6 +550,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 url += "?";
                 if(request.Query.CommandId != null)
                     url += "&commandId=" + request.Query.CommandId;
+                if(request.Query.Version != null)
+                    url += "&version=" + request.Query.Version;
                 if(request.Query.RequesterId != null)
                     url += "&requesterId=" + request.Query.RequesterId;
             }
@@ -912,6 +916,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 url += "?";
                 if(request.Query.CommandId != null)
                     url += "&commandId=" + request.Query.CommandId;
+                if(request.Query.Version != null)
+                    url += "&version=" + request.Query.Version;
                 if(request.Query.RequesterId != null)
                     url += "&requesterId=" + request.Query.RequesterId;
             }
@@ -1276,6 +1282,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 url += "?";
                 if(request.Query.CommandId != null)
                     url += "&commandId=" + request.Query.CommandId;
+                if(request.Query.Version != null)
+                    url += "&version=" + request.Query.Version;
                 if(request.Query.RequesterId != null)
                     url += "&requesterId=" + request.Query.RequesterId;
             }
@@ -1640,6 +1648,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 url += "?";
                 if(request.Query.CommandId != null)
                     url += "&commandId=" + request.Query.CommandId;
+                if(request.Query.Version != null)
+                    url += "&version=" + request.Query.Version;
                 if(request.Query.RequesterId != null)
                     url += "&requesterId=" + request.Query.RequesterId;
             }
@@ -2004,6 +2014,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 url += "?";
                 if(request.Query.CommandId != null)
                     url += "&commandId=" + request.Query.CommandId;
+                if(request.Query.Version != null)
+                    url += "&version=" + request.Query.Version;
                 if(request.Query.RequesterId != null)
                     url += "&requesterId=" + request.Query.RequesterId;
             }
@@ -2368,6 +2380,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 url += "?";
                 if(request.Query.CommandId != null)
                     url += "&commandId=" + request.Query.CommandId;
+                if(request.Query.Version != null)
+                    url += "&version=" + request.Query.Version;
                 if(request.Query.RequesterId != null)
                     url += "&requesterId=" + request.Query.RequesterId;
             }
@@ -2732,6 +2746,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 url += "?";
                 if(request.Query.CommandId != null)
                     url += "&commandId=" + request.Query.CommandId;
+                if(request.Query.Version != null)
+                    url += "&version=" + request.Query.Version;
                 if(request.Query.RequesterId != null)
                     url += "&requesterId=" + request.Query.RequesterId;
             }
@@ -3096,6 +3112,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 url += "?";
                 if(request.Query.CommandId != null)
                     url += "&commandId=" + request.Query.CommandId;
+                if(request.Query.Version != null)
+                    url += "&version=" + request.Query.Version;
                 if(request.Query.RequesterId != null)
                     url += "&requesterId=" + request.Query.RequesterId;
             }
@@ -3460,6 +3478,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 url += "?";
                 if(request.Query.CommandId != null)
                     url += "&commandId=" + request.Query.CommandId;
+                if(request.Query.Version != null)
+                    url += "&version=" + request.Query.Version;
                 if(request.Query.RequesterId != null)
                     url += "&requesterId=" + request.Query.RequesterId;
             }
@@ -3824,6 +3844,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 url += "?";
                 if(request.Query.CommandId != null)
                     url += "&commandId=" + request.Query.CommandId;
+                if(request.Query.Version != null)
+                    url += "&version=" + request.Query.Version;
                 if(request.Query.RequesterId != null)
                     url += "&requesterId=" + request.Query.RequesterId;
             }
@@ -4188,6 +4210,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 url += "?";
                 if(request.Query.CommandId != null)
                     url += "&commandId=" + request.Query.CommandId;
+                if(request.Query.Version != null)
+                    url += "&version=" + request.Query.Version;
                 if(request.Query.RequesterId != null)
                     url += "&requesterId=" + request.Query.RequesterId;
             }
@@ -4552,6 +4576,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 url += "?";
                 if(request.Query.CommandId != null)
                     url += "&commandId=" + request.Query.CommandId;
+                if(request.Query.Version != null)
+                    url += "&version=" + request.Query.Version;
                 if(request.Query.RequesterId != null)
                     url += "&requesterId=" + request.Query.RequesterId;
             }
@@ -4916,6 +4942,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 url += "?";
                 if(request.Query.CommandId != null)
                     url += "&commandId=" + request.Query.CommandId;
+                if(request.Query.Version != null)
+                    url += "&version=" + request.Query.Version;
                 if(request.Query.RequesterId != null)
                     url += "&requesterId=" + request.Query.RequesterId;
             }
@@ -5280,6 +5308,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 url += "?";
                 if(request.Query.CommandId != null)
                     url += "&commandId=" + request.Query.CommandId;
+                if(request.Query.Version != null)
+                    url += "&version=" + request.Query.Version;
                 if(request.Query.RequesterId != null)
                     url += "&requesterId=" + request.Query.RequesterId;
             }
@@ -5644,6 +5674,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 url += "?";
                 if(request.Query.CommandId != null)
                     url += "&commandId=" + request.Query.CommandId;
+                if(request.Query.Version != null)
+                    url += "&version=" + request.Query.Version;
                 if(request.Query.RequesterId != null)
                     url += "&requesterId=" + request.Query.RequesterId;
             }
@@ -6008,6 +6040,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 url += "?";
                 if(request.Query.CommandId != null)
                     url += "&commandId=" + request.Query.CommandId;
+                if(request.Query.Version != null)
+                    url += "&version=" + request.Query.Version;
                 if(request.Query.RequesterId != null)
                     url += "&requesterId=" + request.Query.RequesterId;
             }
@@ -6372,6 +6406,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 url += "?";
                 if(request.Query.CommandId != null)
                     url += "&commandId=" + request.Query.CommandId;
+                if(request.Query.Version != null)
+                    url += "&version=" + request.Query.Version;
                 if(request.Query.RequesterId != null)
                     url += "&requesterId=" + request.Query.RequesterId;
             }
@@ -6736,6 +6772,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 url += "?";
                 if(request.Query.CommandId != null)
                     url += "&commandId=" + request.Query.CommandId;
+                if(request.Query.Version != null)
+                    url += "&version=" + request.Query.Version;
                 if(request.Query.RequesterId != null)
                     url += "&requesterId=" + request.Query.RequesterId;
             }
@@ -7100,6 +7138,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 url += "?";
                 if(request.Query.CommandId != null)
                     url += "&commandId=" + request.Query.CommandId;
+                if(request.Query.Version != null)
+                    url += "&version=" + request.Query.Version;
                 if(request.Query.RequesterId != null)
                     url += "&requesterId=" + request.Query.RequesterId;
             }
@@ -7464,6 +7504,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 url += "?";
                 if(request.Query.CommandId != null)
                     url += "&commandId=" + request.Query.CommandId;
+                if(request.Query.Version != null)
+                    url += "&version=" + request.Query.Version;
                 if(request.Query.RequesterId != null)
                     url += "&requesterId=" + request.Query.RequesterId;
             }
@@ -7828,6 +7870,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 url += "?";
                 if(request.Query.CommandId != null)
                     url += "&commandId=" + request.Query.CommandId;
+                if(request.Query.Version != null)
+                    url += "&version=" + request.Query.Version;
                 if(request.Query.RequesterId != null)
                     url += "&requesterId=" + request.Query.RequesterId;
             }
@@ -8893,6 +8937,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 		[JsonProperty("commandId")]
         public string CommandId { get; set; }
 
+		[JsonProperty("version")]
+        public string Version { get; set; }
+
 		[JsonProperty("requesterId")]
         public string RequesterId { get; set; }
 
@@ -8945,6 +8992,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     {
 		[JsonProperty("commandId")]
         public string CommandId { get; set; }
+
+		[JsonProperty("version")]
+        public string Version { get; set; }
 
 		[JsonProperty("requesterId")]
         public string RequesterId { get; set; }
@@ -8999,6 +9049,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 		[JsonProperty("commandId")]
         public string CommandId { get; set; }
 
+		[JsonProperty("version")]
+        public string Version { get; set; }
+
 		[JsonProperty("requesterId")]
         public string RequesterId { get; set; }
 
@@ -9051,6 +9104,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     {
 		[JsonProperty("commandId")]
         public string CommandId { get; set; }
+
+		[JsonProperty("version")]
+        public string Version { get; set; }
 
 		[JsonProperty("requesterId")]
         public string RequesterId { get; set; }
@@ -9105,6 +9161,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 		[JsonProperty("commandId")]
         public string CommandId { get; set; }
 
+		[JsonProperty("version")]
+        public string Version { get; set; }
+
 		[JsonProperty("requesterId")]
         public string RequesterId { get; set; }
 
@@ -9157,6 +9216,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     {
 		[JsonProperty("commandId")]
         public string CommandId { get; set; }
+
+		[JsonProperty("version")]
+        public string Version { get; set; }
 
 		[JsonProperty("requesterId")]
         public string RequesterId { get; set; }
@@ -9211,6 +9273,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 		[JsonProperty("commandId")]
         public string CommandId { get; set; }
 
+		[JsonProperty("version")]
+        public string Version { get; set; }
+
 		[JsonProperty("requesterId")]
         public string RequesterId { get; set; }
 
@@ -9263,6 +9328,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     {
 		[JsonProperty("commandId")]
         public string CommandId { get; set; }
+
+		[JsonProperty("version")]
+        public string Version { get; set; }
 
 		[JsonProperty("requesterId")]
         public string RequesterId { get; set; }
@@ -9317,6 +9385,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 		[JsonProperty("commandId")]
         public string CommandId { get; set; }
 
+		[JsonProperty("version")]
+        public string Version { get; set; }
+
 		[JsonProperty("requesterId")]
         public string RequesterId { get; set; }
 
@@ -9369,6 +9440,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     {
 		[JsonProperty("commandId")]
         public string CommandId { get; set; }
+
+		[JsonProperty("version")]
+        public string Version { get; set; }
 
 		[JsonProperty("requesterId")]
         public string RequesterId { get; set; }
@@ -9423,6 +9497,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 		[JsonProperty("commandId")]
         public string CommandId { get; set; }
 
+		[JsonProperty("version")]
+        public string Version { get; set; }
+
 		[JsonProperty("requesterId")]
         public string RequesterId { get; set; }
 
@@ -9475,6 +9552,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     {
 		[JsonProperty("commandId")]
         public string CommandId { get; set; }
+
+		[JsonProperty("version")]
+        public string Version { get; set; }
 
 		[JsonProperty("requesterId")]
         public string RequesterId { get; set; }
@@ -9529,6 +9609,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 		[JsonProperty("commandId")]
         public string CommandId { get; set; }
 
+		[JsonProperty("version")]
+        public string Version { get; set; }
+
 		[JsonProperty("requesterId")]
         public string RequesterId { get; set; }
 
@@ -9581,6 +9664,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     {
 		[JsonProperty("commandId")]
         public string CommandId { get; set; }
+
+		[JsonProperty("version")]
+        public string Version { get; set; }
 
 		[JsonProperty("requesterId")]
         public string RequesterId { get; set; }
@@ -9635,6 +9721,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 		[JsonProperty("commandId")]
         public string CommandId { get; set; }
 
+		[JsonProperty("version")]
+        public string Version { get; set; }
+
 		[JsonProperty("requesterId")]
         public string RequesterId { get; set; }
 
@@ -9687,6 +9776,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     {
 		[JsonProperty("commandId")]
         public string CommandId { get; set; }
+
+		[JsonProperty("version")]
+        public string Version { get; set; }
 
 		[JsonProperty("requesterId")]
         public string RequesterId { get; set; }
@@ -9741,6 +9833,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 		[JsonProperty("commandId")]
         public string CommandId { get; set; }
 
+		[JsonProperty("version")]
+        public string Version { get; set; }
+
 		[JsonProperty("requesterId")]
         public string RequesterId { get; set; }
 
@@ -9793,6 +9888,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     {
 		[JsonProperty("commandId")]
         public string CommandId { get; set; }
+
+		[JsonProperty("version")]
+        public string Version { get; set; }
 
 		[JsonProperty("requesterId")]
         public string RequesterId { get; set; }
@@ -9847,6 +9945,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 		[JsonProperty("commandId")]
         public string CommandId { get; set; }
 
+		[JsonProperty("version")]
+        public string Version { get; set; }
+
 		[JsonProperty("requesterId")]
         public string RequesterId { get; set; }
 
@@ -9899,6 +10000,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     {
 		[JsonProperty("commandId")]
         public string CommandId { get; set; }
+
+		[JsonProperty("version")]
+        public string Version { get; set; }
 
 		[JsonProperty("requesterId")]
         public string RequesterId { get; set; }
@@ -9953,6 +10057,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 		[JsonProperty("commandId")]
         public string CommandId { get; set; }
 
+		[JsonProperty("version")]
+        public string Version { get; set; }
+
 		[JsonProperty("requesterId")]
         public string RequesterId { get; set; }
 
@@ -10005,6 +10112,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     {
 		[JsonProperty("commandId")]
         public string CommandId { get; set; }
+
+		[JsonProperty("version")]
+        public string Version { get; set; }
 
 		[JsonProperty("requesterId")]
         public string RequesterId { get; set; }

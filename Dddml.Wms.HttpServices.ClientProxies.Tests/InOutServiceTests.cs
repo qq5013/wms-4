@@ -86,6 +86,12 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
             Console.WriteLine(inOutResult.ChargeAmount);
             Assert.AreEqual(inOut.ChargeAmount, inOutResult.ChargeAmount);
 
+            var deleteInOut = _inOutApplicationServiceFactory.NewDeleteInOut();
+            deleteInOut.DocumentNumber = documentNumber;
+            deleteInOut.Version = 2;
+            deleteInOut.CommandId = Guid.NewGuid().ToString();
+            inOutApplicationService.When(deleteInOut);
+
         }
 
 

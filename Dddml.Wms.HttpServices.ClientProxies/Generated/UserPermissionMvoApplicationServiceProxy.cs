@@ -18,6 +18,7 @@ using System.ComponentModel;
 using RAML.Api.Core;
 using Newtonsoft.Json.Linq;
 using Dddml.Support.Criterion;
+using Dddml.Wms.Specialization.HttpServices.ClientProxies;
 
 
 namespace Dddml.Wms.HttpServices.ClientProxies
@@ -26,8 +27,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     public partial class UserPermissionMvoApplicationServiceProxy : IUserPermissionMvoApplicationService
     {
 
-
         private DddmlWmsRamlClient _ramlClient;
+
+        public UserPermissionMvoApplicationServiceProxy(ProxyTemplate proxyTemplate)
+            : this(proxyTemplate.GetEndpointUrl())
+        {
+            _ramlClient.GetAuthenticationHeaderValue = proxyTemplate.GetAuthenticationHeaderValue;
+        }
 
         public UserPermissionMvoApplicationServiceProxy(string endpointUrl)
         {
@@ -226,24 +232,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     }
 
 
-    public partial class UserPermissionMvoApplicationServiceProxyFactory : IUserPermissionMvoApplicationServiceFactory
+    public partial class UserPermissionMvoApplicationServiceProxyFactory : ProxyFactoryBase, IUserPermissionMvoApplicationServiceFactory
     {
 
-        private string _endpointUrl;
+        public UserPermissionMvoApplicationServiceProxyFactory() : base()
+        {}
 
-        public UserPermissionMvoApplicationServiceProxyFactory(string endpointUrl)
-        {
-            this._endpointUrl = endpointUrl;
-        }
+        public UserPermissionMvoApplicationServiceProxyFactory(string endpointUrl) : base(endpointUrl)
+        {}
 
         public IUserPermissionMvoApplicationService UserPermissionMvoApplicationService
         {
             get
             {
-                return new UserPermissionMvoApplicationServiceProxy(_endpointUrl);
+                return new UserPermissionMvoApplicationServiceProxy(ProxyTemplate);
             }
         }
-
+		
         public ICreateUserPermissionMvo NewCreateUserPermissionMvo()
         {
             return new CreateUserPermissionMvoDto();

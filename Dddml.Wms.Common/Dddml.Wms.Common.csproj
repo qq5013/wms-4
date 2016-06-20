@@ -2086,6 +2086,8 @@
     <Compile Include="Specialization\DefaultTypeConverter.cs" />
     <Compile Include="Specialization\DynamicObjectMapperBase.cs" />
     <Compile Include="Specialization\GuidStringIdGenerator.cs" />
+    <Compile Include="Specialization\HttpServices\ClientProxies\ProxyFactoryBase.cs" />
+    <Compile Include="Specialization\HttpServices\ClientProxies\ProxyTemplate.cs" />
     <Compile Include="Specialization\IIdGenerator.cs" />
     <Compile Include="Specialization\IPropertyCommand.cs" />
     <Compile Include="Specialization\IPropertyCommandHandler.cs" />

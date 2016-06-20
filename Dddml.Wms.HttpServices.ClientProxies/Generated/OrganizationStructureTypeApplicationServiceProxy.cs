@@ -18,6 +18,7 @@ using System.ComponentModel;
 using RAML.Api.Core;
 using Newtonsoft.Json.Linq;
 using Dddml.Support.Criterion;
+using Dddml.Wms.Specialization.HttpServices.ClientProxies;
 
 
 namespace Dddml.Wms.HttpServices.ClientProxies
@@ -26,8 +27,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     public partial class OrganizationStructureTypeApplicationServiceProxy : IOrganizationStructureTypeApplicationService
     {
 
-
         private DddmlWmsRamlClient _ramlClient;
+
+        public OrganizationStructureTypeApplicationServiceProxy(ProxyTemplate proxyTemplate)
+            : this(proxyTemplate.GetEndpointUrl())
+        {
+            _ramlClient.GetAuthenticationHeaderValue = proxyTemplate.GetAuthenticationHeaderValue;
+        }
 
         public OrganizationStructureTypeApplicationServiceProxy(string endpointUrl)
         {
@@ -226,24 +232,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     }
 
 
-    public partial class OrganizationStructureTypeApplicationServiceProxyFactory : IOrganizationStructureTypeApplicationServiceFactory
+    public partial class OrganizationStructureTypeApplicationServiceProxyFactory : ProxyFactoryBase, IOrganizationStructureTypeApplicationServiceFactory
     {
 
-        private string _endpointUrl;
+        public OrganizationStructureTypeApplicationServiceProxyFactory() : base()
+        {}
 
-        public OrganizationStructureTypeApplicationServiceProxyFactory(string endpointUrl)
-        {
-            this._endpointUrl = endpointUrl;
-        }
+        public OrganizationStructureTypeApplicationServiceProxyFactory(string endpointUrl) : base(endpointUrl)
+        {}
 
         public IOrganizationStructureTypeApplicationService OrganizationStructureTypeApplicationService
         {
             get
             {
-                return new OrganizationStructureTypeApplicationServiceProxy(_endpointUrl);
+                return new OrganizationStructureTypeApplicationServiceProxy(ProxyTemplate);
             }
         }
-
+		
         public ICreateOrganizationStructureType NewCreateOrganizationStructureType()
         {
             return new CreateOrganizationStructureTypeDto();

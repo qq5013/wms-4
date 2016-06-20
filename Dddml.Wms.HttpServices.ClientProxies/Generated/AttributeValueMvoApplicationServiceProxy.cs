@@ -18,6 +18,7 @@ using System.ComponentModel;
 using RAML.Api.Core;
 using Newtonsoft.Json.Linq;
 using Dddml.Support.Criterion;
+using Dddml.Wms.Specialization.HttpServices.ClientProxies;
 
 
 namespace Dddml.Wms.HttpServices.ClientProxies
@@ -26,8 +27,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     public partial class AttributeValueMvoApplicationServiceProxy : IAttributeValueMvoApplicationService
     {
 
-
         private DddmlWmsRamlClient _ramlClient;
+
+        public AttributeValueMvoApplicationServiceProxy(ProxyTemplate proxyTemplate)
+            : this(proxyTemplate.GetEndpointUrl())
+        {
+            _ramlClient.GetAuthenticationHeaderValue = proxyTemplate.GetAuthenticationHeaderValue;
+        }
 
         public AttributeValueMvoApplicationServiceProxy(string endpointUrl)
         {
@@ -226,24 +232,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     }
 
 
-    public partial class AttributeValueMvoApplicationServiceProxyFactory : IAttributeValueMvoApplicationServiceFactory
+    public partial class AttributeValueMvoApplicationServiceProxyFactory : ProxyFactoryBase, IAttributeValueMvoApplicationServiceFactory
     {
 
-        private string _endpointUrl;
+        public AttributeValueMvoApplicationServiceProxyFactory() : base()
+        {}
 
-        public AttributeValueMvoApplicationServiceProxyFactory(string endpointUrl)
-        {
-            this._endpointUrl = endpointUrl;
-        }
+        public AttributeValueMvoApplicationServiceProxyFactory(string endpointUrl) : base(endpointUrl)
+        {}
 
         public IAttributeValueMvoApplicationService AttributeValueMvoApplicationService
         {
             get
             {
-                return new AttributeValueMvoApplicationServiceProxy(_endpointUrl);
+                return new AttributeValueMvoApplicationServiceProxy(ProxyTemplate);
             }
         }
-
+		
         public ICreateAttributeValueMvo NewCreateAttributeValueMvo()
         {
             return new CreateAttributeValueMvoDto();

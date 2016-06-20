@@ -74,11 +74,14 @@ namespace Dddml.Wms.Domain
 			Update(c, ar => ar.Delete(c));
 		}
 
- 		public virtual IUserRoleMvoState Get(UserRoleId userRoleId)
-		{
+        public virtual IUserRoleMvoState Get(UserRoleId userRoleId)
+        {
             var state = StateRepository.Get(userRoleId);
-			return state;
-		}
+
+            if (state != null && state.IsUnsaved) { state = null; }
+
+            return state;
+        }
 
         public virtual IEnumerable<IUserRoleMvoState> GetAll(int firstResult, int maxResults)
 		{

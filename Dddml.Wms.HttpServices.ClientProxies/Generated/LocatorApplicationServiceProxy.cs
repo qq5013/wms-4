@@ -18,6 +18,7 @@ using System.ComponentModel;
 using RAML.Api.Core;
 using Newtonsoft.Json.Linq;
 using Dddml.Support.Criterion;
+using Dddml.Wms.Specialization.HttpServices.ClientProxies;
 
 
 namespace Dddml.Wms.HttpServices.ClientProxies
@@ -26,8 +27,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     public partial class LocatorApplicationServiceProxy : ILocatorApplicationService
     {
 
-
         private DddmlWmsRamlClient _ramlClient;
+
+        public LocatorApplicationServiceProxy(ProxyTemplate proxyTemplate)
+            : this(proxyTemplate.GetEndpointUrl())
+        {
+            _ramlClient.GetAuthenticationHeaderValue = proxyTemplate.GetAuthenticationHeaderValue;
+        }
 
         public LocatorApplicationServiceProxy(string endpointUrl)
         {
@@ -226,24 +232,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     }
 
 
-    public partial class LocatorApplicationServiceProxyFactory : ILocatorApplicationServiceFactory
+    public partial class LocatorApplicationServiceProxyFactory : ProxyFactoryBase, ILocatorApplicationServiceFactory
     {
 
-        private string _endpointUrl;
+        public LocatorApplicationServiceProxyFactory() : base()
+        {}
 
-        public LocatorApplicationServiceProxyFactory(string endpointUrl)
-        {
-            this._endpointUrl = endpointUrl;
-        }
+        public LocatorApplicationServiceProxyFactory(string endpointUrl) : base(endpointUrl)
+        {}
 
         public ILocatorApplicationService LocatorApplicationService
         {
             get
             {
-                return new LocatorApplicationServiceProxy(_endpointUrl);
+                return new LocatorApplicationServiceProxy(ProxyTemplate);
             }
         }
-
+		
         public ICreateLocator NewCreateLocator()
         {
             return new CreateLocatorDto();

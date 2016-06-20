@@ -18,6 +18,7 @@ using System.ComponentModel;
 using RAML.Api.Core;
 using Newtonsoft.Json.Linq;
 using Dddml.Support.Criterion;
+using Dddml.Wms.Specialization.HttpServices.ClientProxies;
 
 
 namespace Dddml.Wms.HttpServices.ClientProxies
@@ -26,8 +27,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     public partial class AttributeApplicationServiceProxy : IAttributeApplicationService
     {
 
-
         private DddmlWmsRamlClient _ramlClient;
+
+        public AttributeApplicationServiceProxy(ProxyTemplate proxyTemplate)
+            : this(proxyTemplate.GetEndpointUrl())
+        {
+            _ramlClient.GetAuthenticationHeaderValue = proxyTemplate.GetAuthenticationHeaderValue;
+        }
 
         public AttributeApplicationServiceProxy(string endpointUrl)
         {
@@ -226,24 +232,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     }
 
 
-    public partial class AttributeApplicationServiceProxyFactory : IAttributeApplicationServiceFactory
+    public partial class AttributeApplicationServiceProxyFactory : ProxyFactoryBase, IAttributeApplicationServiceFactory
     {
 
-        private string _endpointUrl;
+        public AttributeApplicationServiceProxyFactory() : base()
+        {}
 
-        public AttributeApplicationServiceProxyFactory(string endpointUrl)
-        {
-            this._endpointUrl = endpointUrl;
-        }
+        public AttributeApplicationServiceProxyFactory(string endpointUrl) : base(endpointUrl)
+        {}
 
         public IAttributeApplicationService AttributeApplicationService
         {
             get
             {
-                return new AttributeApplicationServiceProxy(_endpointUrl);
+                return new AttributeApplicationServiceProxy(ProxyTemplate);
             }
         }
-
+		
         public ICreateAttribute NewCreateAttribute()
         {
             return new CreateAttributeDto();

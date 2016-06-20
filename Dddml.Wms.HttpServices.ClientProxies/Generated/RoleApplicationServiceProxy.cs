@@ -18,6 +18,7 @@ using System.ComponentModel;
 using RAML.Api.Core;
 using Newtonsoft.Json.Linq;
 using Dddml.Support.Criterion;
+using Dddml.Wms.Specialization.HttpServices.ClientProxies;
 
 
 namespace Dddml.Wms.HttpServices.ClientProxies
@@ -26,8 +27,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     public partial class RoleApplicationServiceProxy : IRoleApplicationService
     {
 
-
         private DddmlWmsRamlClient _ramlClient;
+
+        public RoleApplicationServiceProxy(ProxyTemplate proxyTemplate)
+            : this(proxyTemplate.GetEndpointUrl())
+        {
+            _ramlClient.GetAuthenticationHeaderValue = proxyTemplate.GetAuthenticationHeaderValue;
+        }
 
         public RoleApplicationServiceProxy(string endpointUrl)
         {
@@ -226,24 +232,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     }
 
 
-    public partial class RoleApplicationServiceProxyFactory : IRoleApplicationServiceFactory
+    public partial class RoleApplicationServiceProxyFactory : ProxyFactoryBase, IRoleApplicationServiceFactory
     {
 
-        private string _endpointUrl;
+        public RoleApplicationServiceProxyFactory() : base()
+        {}
 
-        public RoleApplicationServiceProxyFactory(string endpointUrl)
-        {
-            this._endpointUrl = endpointUrl;
-        }
+        public RoleApplicationServiceProxyFactory(string endpointUrl) : base(endpointUrl)
+        {}
 
         public IRoleApplicationService RoleApplicationService
         {
             get
             {
-                return new RoleApplicationServiceProxy(_endpointUrl);
+                return new RoleApplicationServiceProxy(ProxyTemplate);
             }
         }
-
+		
         public ICreateRole NewCreateRole()
         {
             return new CreateRoleDto();

@@ -19,6 +19,7 @@ using System.ComponentModel;
 using RAML.Api.Core;
 using Newtonsoft.Json.Linq;
 using Dddml.Support.Criterion;
+using Dddml.Wms.Specialization.HttpServices.ClientProxies;
 
 
 namespace Dddml.Wms.HttpServices.ClientProxies
@@ -27,8 +28,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     public partial class InOutApplicationServiceProxy : IInOutApplicationService
     {
 
-
         private DddmlWmsRamlClient _ramlClient;
+
+        public InOutApplicationServiceProxy(ProxyTemplate proxyTemplate)
+            : this(proxyTemplate.GetEndpointUrl())
+        {
+            _ramlClient.GetAuthenticationHeaderValue = proxyTemplate.GetAuthenticationHeaderValue;
+        }
 
         public InOutApplicationServiceProxy(string endpointUrl)
         {
@@ -227,24 +233,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     }
 
 
-    public partial class InOutApplicationServiceProxyFactory : IInOutApplicationServiceFactory
+    public partial class InOutApplicationServiceProxyFactory : ProxyFactoryBase, IInOutApplicationServiceFactory
     {
 
-        private string _endpointUrl;
+        public InOutApplicationServiceProxyFactory() : base()
+        {}
 
-        public InOutApplicationServiceProxyFactory(string endpointUrl)
-        {
-            this._endpointUrl = endpointUrl;
-        }
+        public InOutApplicationServiceProxyFactory(string endpointUrl) : base(endpointUrl)
+        {}
 
         public IInOutApplicationService InOutApplicationService
         {
             get
             {
-                return new InOutApplicationServiceProxy(_endpointUrl);
+                return new InOutApplicationServiceProxy(ProxyTemplate);
             }
         }
-
+		
         public ICreateInOut NewCreateInOut()
         {
             return new CreateInOutDto();

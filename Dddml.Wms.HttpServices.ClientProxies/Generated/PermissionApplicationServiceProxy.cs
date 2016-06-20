@@ -18,6 +18,7 @@ using System.ComponentModel;
 using RAML.Api.Core;
 using Newtonsoft.Json.Linq;
 using Dddml.Support.Criterion;
+using Dddml.Wms.Specialization.HttpServices.ClientProxies;
 
 
 namespace Dddml.Wms.HttpServices.ClientProxies
@@ -26,8 +27,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     public partial class PermissionApplicationServiceProxy : IPermissionApplicationService
     {
 
-
         private DddmlWmsRamlClient _ramlClient;
+
+        public PermissionApplicationServiceProxy(ProxyTemplate proxyTemplate)
+            : this(proxyTemplate.GetEndpointUrl())
+        {
+            _ramlClient.GetAuthenticationHeaderValue = proxyTemplate.GetAuthenticationHeaderValue;
+        }
 
         public PermissionApplicationServiceProxy(string endpointUrl)
         {
@@ -226,24 +232,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     }
 
 
-    public partial class PermissionApplicationServiceProxyFactory : IPermissionApplicationServiceFactory
+    public partial class PermissionApplicationServiceProxyFactory : ProxyFactoryBase, IPermissionApplicationServiceFactory
     {
 
-        private string _endpointUrl;
+        public PermissionApplicationServiceProxyFactory() : base()
+        {}
 
-        public PermissionApplicationServiceProxyFactory(string endpointUrl)
-        {
-            this._endpointUrl = endpointUrl;
-        }
+        public PermissionApplicationServiceProxyFactory(string endpointUrl) : base(endpointUrl)
+        {}
 
         public IPermissionApplicationService PermissionApplicationService
         {
             get
             {
-                return new PermissionApplicationServiceProxy(_endpointUrl);
+                return new PermissionApplicationServiceProxy(ProxyTemplate);
             }
         }
-
+		
         public ICreatePermission NewCreatePermission()
         {
             return new CreatePermissionDto();

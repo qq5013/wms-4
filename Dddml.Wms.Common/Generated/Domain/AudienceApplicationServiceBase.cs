@@ -74,11 +74,14 @@ namespace Dddml.Wms.Domain
 			Update(c, ar => ar.Delete(c));
 		}
 
- 		public virtual IAudienceState Get(string clientId)
-		{
+        public virtual IAudienceState Get(string clientId)
+        {
             var state = StateRepository.Get(clientId);
-			return state;
-		}
+
+            if (state != null && state.IsUnsaved) { state = null; }
+
+            return state;
+        }
 
         public virtual IEnumerable<IAudienceState> GetAll(int firstResult, int maxResults)
 		{

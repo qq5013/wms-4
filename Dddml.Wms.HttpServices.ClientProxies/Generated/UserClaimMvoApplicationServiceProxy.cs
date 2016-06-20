@@ -18,6 +18,7 @@ using System.ComponentModel;
 using RAML.Api.Core;
 using Newtonsoft.Json.Linq;
 using Dddml.Support.Criterion;
+using Dddml.Wms.Specialization.HttpServices.ClientProxies;
 
 
 namespace Dddml.Wms.HttpServices.ClientProxies
@@ -26,8 +27,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     public partial class UserClaimMvoApplicationServiceProxy : IUserClaimMvoApplicationService
     {
 
-
         private DddmlWmsRamlClient _ramlClient;
+
+        public UserClaimMvoApplicationServiceProxy(ProxyTemplate proxyTemplate)
+            : this(proxyTemplate.GetEndpointUrl())
+        {
+            _ramlClient.GetAuthenticationHeaderValue = proxyTemplate.GetAuthenticationHeaderValue;
+        }
 
         public UserClaimMvoApplicationServiceProxy(string endpointUrl)
         {
@@ -226,24 +232,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     }
 
 
-    public partial class UserClaimMvoApplicationServiceProxyFactory : IUserClaimMvoApplicationServiceFactory
+    public partial class UserClaimMvoApplicationServiceProxyFactory : ProxyFactoryBase, IUserClaimMvoApplicationServiceFactory
     {
 
-        private string _endpointUrl;
+        public UserClaimMvoApplicationServiceProxyFactory() : base()
+        {}
 
-        public UserClaimMvoApplicationServiceProxyFactory(string endpointUrl)
-        {
-            this._endpointUrl = endpointUrl;
-        }
+        public UserClaimMvoApplicationServiceProxyFactory(string endpointUrl) : base(endpointUrl)
+        {}
 
         public IUserClaimMvoApplicationService UserClaimMvoApplicationService
         {
             get
             {
-                return new UserClaimMvoApplicationServiceProxy(_endpointUrl);
+                return new UserClaimMvoApplicationServiceProxy(ProxyTemplate);
             }
         }
-
+		
         public ICreateUserClaimMvo NewCreateUserClaimMvo()
         {
             return new CreateUserClaimMvoDto();

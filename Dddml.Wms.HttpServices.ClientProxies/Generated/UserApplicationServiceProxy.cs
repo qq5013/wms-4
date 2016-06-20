@@ -18,6 +18,7 @@ using System.ComponentModel;
 using RAML.Api.Core;
 using Newtonsoft.Json.Linq;
 using Dddml.Support.Criterion;
+using Dddml.Wms.Specialization.HttpServices.ClientProxies;
 
 
 namespace Dddml.Wms.HttpServices.ClientProxies
@@ -26,8 +27,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     public partial class UserApplicationServiceProxy : IUserApplicationService
     {
 
-
         private DddmlWmsRamlClient _ramlClient;
+
+        public UserApplicationServiceProxy(ProxyTemplate proxyTemplate)
+            : this(proxyTemplate.GetEndpointUrl())
+        {
+            _ramlClient.GetAuthenticationHeaderValue = proxyTemplate.GetAuthenticationHeaderValue;
+        }
 
         public UserApplicationServiceProxy(string endpointUrl)
         {
@@ -226,24 +232,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     }
 
 
-    public partial class UserApplicationServiceProxyFactory : IUserApplicationServiceFactory
+    public partial class UserApplicationServiceProxyFactory : ProxyFactoryBase, IUserApplicationServiceFactory
     {
 
-        private string _endpointUrl;
+        public UserApplicationServiceProxyFactory() : base()
+        {}
 
-        public UserApplicationServiceProxyFactory(string endpointUrl)
-        {
-            this._endpointUrl = endpointUrl;
-        }
+        public UserApplicationServiceProxyFactory(string endpointUrl) : base(endpointUrl)
+        {}
 
         public IUserApplicationService UserApplicationService
         {
             get
             {
-                return new UserApplicationServiceProxy(_endpointUrl);
+                return new UserApplicationServiceProxy(ProxyTemplate);
             }
         }
-
+		
         public ICreateUser NewCreateUser()
         {
             return new CreateUserDto();

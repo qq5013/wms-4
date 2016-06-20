@@ -74,11 +74,14 @@ namespace Dddml.Wms.Domain
 			Update(c, ar => ar.Delete(c));
 		}
 
- 		public virtual ILocatorState Get(string locatorId)
-		{
+        public virtual ILocatorState Get(string locatorId)
+        {
             var state = StateRepository.Get(locatorId);
-			return state;
-		}
+
+            if (state != null && state.IsUnsaved) { state = null; }
+
+            return state;
+        }
 
         public virtual IEnumerable<ILocatorState> GetAll(int firstResult, int maxResults)
 		{

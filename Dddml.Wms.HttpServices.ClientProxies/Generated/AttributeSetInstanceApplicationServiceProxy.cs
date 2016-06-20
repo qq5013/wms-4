@@ -18,6 +18,7 @@ using System.ComponentModel;
 using RAML.Api.Core;
 using Newtonsoft.Json.Linq;
 using Dddml.Support.Criterion;
+using Dddml.Wms.Specialization.HttpServices.ClientProxies;
 
 
 namespace Dddml.Wms.HttpServices.ClientProxies
@@ -26,8 +27,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     public partial class AttributeSetInstanceApplicationServiceProxy : IAttributeSetInstanceApplicationService
     {
 
-
         private DddmlWmsRamlClient _ramlClient;
+
+        public AttributeSetInstanceApplicationServiceProxy(ProxyTemplate proxyTemplate)
+            : this(proxyTemplate.GetEndpointUrl())
+        {
+            _ramlClient.GetAuthenticationHeaderValue = proxyTemplate.GetAuthenticationHeaderValue;
+        }
 
         public AttributeSetInstanceApplicationServiceProxy(string endpointUrl)
         {
@@ -226,24 +232,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     }
 
 
-    public partial class AttributeSetInstanceApplicationServiceProxyFactory : IAttributeSetInstanceApplicationServiceFactory
+    public partial class AttributeSetInstanceApplicationServiceProxyFactory : ProxyFactoryBase, IAttributeSetInstanceApplicationServiceFactory
     {
 
-        private string _endpointUrl;
+        public AttributeSetInstanceApplicationServiceProxyFactory() : base()
+        {}
 
-        public AttributeSetInstanceApplicationServiceProxyFactory(string endpointUrl)
-        {
-            this._endpointUrl = endpointUrl;
-        }
+        public AttributeSetInstanceApplicationServiceProxyFactory(string endpointUrl) : base(endpointUrl)
+        {}
 
         public IAttributeSetInstanceApplicationService AttributeSetInstanceApplicationService
         {
             get
             {
-                return new AttributeSetInstanceApplicationServiceProxy(_endpointUrl);
+                return new AttributeSetInstanceApplicationServiceProxy(ProxyTemplate);
             }
         }
-
+		
         public ICreateAttributeSetInstance NewCreateAttributeSetInstance()
         {
             return new CreateAttributeSetInstanceDto();

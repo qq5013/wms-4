@@ -18,6 +18,7 @@ using System.ComponentModel;
 using RAML.Api.Core;
 using Newtonsoft.Json.Linq;
 using Dddml.Support.Criterion;
+using Dddml.Wms.Specialization.HttpServices.ClientProxies;
 
 
 namespace Dddml.Wms.HttpServices.ClientProxies
@@ -26,8 +27,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     public partial class LocatorTreeApplicationServiceProxy : ILocatorTreeApplicationService
     {
 
-
         private DddmlWmsRamlClient _ramlClient;
+
+        public LocatorTreeApplicationServiceProxy(ProxyTemplate proxyTemplate)
+            : this(proxyTemplate.GetEndpointUrl())
+        {
+            _ramlClient.GetAuthenticationHeaderValue = proxyTemplate.GetAuthenticationHeaderValue;
+        }
 
         public LocatorTreeApplicationServiceProxy(string endpointUrl)
         {
@@ -236,21 +242,20 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
     }
 
-    public partial class LocatorTreeApplicationServiceProxyFactory : ILocatorTreeApplicationServiceFactory
+    public partial class LocatorTreeApplicationServiceProxyFactory : ProxyFactoryBase, ILocatorTreeApplicationServiceFactory
     {
 
-        private string _endpointUrl;
+        public LocatorTreeApplicationServiceProxyFactory() : base()
+        {}
 
-        public LocatorTreeApplicationServiceProxyFactory(string endpointUrl)
-        {
-            this._endpointUrl = endpointUrl;
-        }
+        public LocatorTreeApplicationServiceProxyFactory(string endpointUrl) : base(endpointUrl)
+        {}
 
         public ILocatorTreeApplicationService LocatorTreeApplicationService
         {
             get
             {
-                return new LocatorTreeApplicationServiceProxy(_endpointUrl);
+                return new LocatorTreeApplicationServiceProxy(ProxyTemplate);
             }
         }
     }

@@ -75,11 +75,14 @@ namespace Dddml.Wms.Domain
 			Update(c, ar => ar.Delete(c));
 		}
 
- 		public virtual IInOutState Get(string documentNumber)
-		{
+        public virtual IInOutState Get(string documentNumber)
+        {
             var state = StateRepository.Get(documentNumber);
-			return state;
-		}
+
+            if (state != null && state.IsUnsaved) { state = null; }
+
+            return state;
+        }
 
         public virtual IEnumerable<IInOutState> GetAll(int firstResult, int maxResults)
 		{

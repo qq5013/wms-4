@@ -72,8 +72,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientProxyTestsBase.cs" />
     <Compile Include="InOutServiceTests.cs" />
     <Compile Include="LocatorTreeServiceTests.cs" />
+    <Compile Include="TestApplicationContext.cs" />
     <Compile Include="ValuesTests.cs" />
     <Compile Include="AttributeSetInstanceServiceTests.cs" />
     <Compile Include="TestMain.cs" />

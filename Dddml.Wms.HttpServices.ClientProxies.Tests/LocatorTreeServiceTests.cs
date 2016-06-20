@@ -15,16 +15,17 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
 {
 
     [TestFixture]
-    public class LocatorTreeServiceTests
+    public class LocatorTreeServiceTests : ClientProxyTestsBase
     {
-        private string _endpointUrl = "http://localhost:63078/api/"; //注意，最后的斜杠是必须的！
+        //private string _endpointUrl = "http://localhost:63078/api/"; //注意，最后的斜杠是必须的！
 
         private ILocatorTreeApplicationServiceFactory _locatorTreeApplicationServiceFactory;
 
         [SetUp]
         public void SetUp()
         {
-            _locatorTreeApplicationServiceFactory = new LocatorTreeApplicationServiceProxyFactory(_endpointUrl);
+            base.SetUp();
+            _locatorTreeApplicationServiceFactory = new LocatorTreeApplicationServiceProxyFactory();
         }
 
         [Test]

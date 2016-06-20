@@ -18,6 +18,7 @@ using System.ComponentModel;
 using RAML.Api.Core;
 using Newtonsoft.Json.Linq;
 using Dddml.Support.Criterion;
+using Dddml.Wms.Specialization.HttpServices.ClientProxies;
 
 
 namespace Dddml.Wms.HttpServices.ClientProxies
@@ -26,8 +27,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     public partial class OrganizationTreeApplicationServiceProxy : IOrganizationTreeApplicationService
     {
 
-
         private DddmlWmsRamlClient _ramlClient;
+
+        public OrganizationTreeApplicationServiceProxy(ProxyTemplate proxyTemplate)
+            : this(proxyTemplate.GetEndpointUrl())
+        {
+            _ramlClient.GetAuthenticationHeaderValue = proxyTemplate.GetAuthenticationHeaderValue;
+        }
 
         public OrganizationTreeApplicationServiceProxy(string endpointUrl)
         {
@@ -236,21 +242,20 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
     }
 
-    public partial class OrganizationTreeApplicationServiceProxyFactory : IOrganizationTreeApplicationServiceFactory
+    public partial class OrganizationTreeApplicationServiceProxyFactory : ProxyFactoryBase, IOrganizationTreeApplicationServiceFactory
     {
 
-        private string _endpointUrl;
+        public OrganizationTreeApplicationServiceProxyFactory() : base()
+        {}
 
-        public OrganizationTreeApplicationServiceProxyFactory(string endpointUrl)
-        {
-            this._endpointUrl = endpointUrl;
-        }
+        public OrganizationTreeApplicationServiceProxyFactory(string endpointUrl) : base(endpointUrl)
+        {}
 
         public IOrganizationTreeApplicationService OrganizationTreeApplicationService
         {
             get
             {
-                return new OrganizationTreeApplicationServiceProxy(_endpointUrl);
+                return new OrganizationTreeApplicationServiceProxy(ProxyTemplate);
             }
         }
     }

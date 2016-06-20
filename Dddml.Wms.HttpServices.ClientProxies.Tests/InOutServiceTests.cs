@@ -13,21 +13,24 @@ using System.Threading.Tasks;
 using NodaMoney;
 using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json;
+using Dddml.Wms.Specialization;
 
 namespace Dddml.Wms.HttpServices.ClientProxies.Tests
 {
 
     [TestFixture]
-    public class InOutServiceTests
+    public class InOutServiceTests : ClientProxyTestsBase
     {
-        private string _endpointUrl = "http://localhost:63078/api/"; //注意，最后的斜杠是必须的！
+        //private string _endpointUrl = "http://localhost:63078/api/"; //注意，最后的斜杠是必须的！
 
         private IInOutApplicationServiceFactory _inOutApplicationServiceFactory;
 
         [SetUp]
         public void SetUp()
-        { 
-            _inOutApplicationServiceFactory = new InOutApplicationServiceProxyFactory(_endpointUrl);
+        {
+            base.SetUp();
+
+            _inOutApplicationServiceFactory = new InOutApplicationServiceProxyFactory();
 
             //JsonConvert.DefaultSettings = () => new JsonSerializerSettings()
             //{

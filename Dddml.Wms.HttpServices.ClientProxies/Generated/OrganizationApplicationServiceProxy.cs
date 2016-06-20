@@ -18,6 +18,7 @@ using System.ComponentModel;
 using RAML.Api.Core;
 using Newtonsoft.Json.Linq;
 using Dddml.Support.Criterion;
+using Dddml.Wms.Specialization.HttpServices.ClientProxies;
 
 
 namespace Dddml.Wms.HttpServices.ClientProxies
@@ -26,8 +27,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     public partial class OrganizationApplicationServiceProxy : IOrganizationApplicationService
     {
 
-
         private DddmlWmsRamlClient _ramlClient;
+
+        public OrganizationApplicationServiceProxy(ProxyTemplate proxyTemplate)
+            : this(proxyTemplate.GetEndpointUrl())
+        {
+            _ramlClient.GetAuthenticationHeaderValue = proxyTemplate.GetAuthenticationHeaderValue;
+        }
 
         public OrganizationApplicationServiceProxy(string endpointUrl)
         {
@@ -226,24 +232,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     }
 
 
-    public partial class OrganizationApplicationServiceProxyFactory : IOrganizationApplicationServiceFactory
+    public partial class OrganizationApplicationServiceProxyFactory : ProxyFactoryBase, IOrganizationApplicationServiceFactory
     {
 
-        private string _endpointUrl;
+        public OrganizationApplicationServiceProxyFactory() : base()
+        {}
 
-        public OrganizationApplicationServiceProxyFactory(string endpointUrl)
-        {
-            this._endpointUrl = endpointUrl;
-        }
+        public OrganizationApplicationServiceProxyFactory(string endpointUrl) : base(endpointUrl)
+        {}
 
         public IOrganizationApplicationService OrganizationApplicationService
         {
             get
             {
-                return new OrganizationApplicationServiceProxy(_endpointUrl);
+                return new OrganizationApplicationServiceProxy(ProxyTemplate);
             }
         }
-
+		
         public ICreateOrganization NewCreateOrganization()
         {
             return new CreateOrganizationDto();

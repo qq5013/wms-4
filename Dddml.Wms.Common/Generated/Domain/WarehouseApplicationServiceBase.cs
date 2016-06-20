@@ -74,11 +74,14 @@ namespace Dddml.Wms.Domain
 			Update(c, ar => ar.Delete(c));
 		}
 
- 		public virtual IWarehouseState Get(string warehouseId)
-		{
+        public virtual IWarehouseState Get(string warehouseId)
+        {
             var state = StateRepository.Get(warehouseId);
-			return state;
-		}
+
+            if (state != null && state.IsUnsaved) { state = null; }
+
+            return state;
+        }
 
         public virtual IEnumerable<IWarehouseState> GetAll(int firstResult, int maxResults)
 		{

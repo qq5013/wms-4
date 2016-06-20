@@ -74,11 +74,14 @@ namespace Dddml.Wms.Domain
 			Update(c, ar => ar.Delete(c));
 		}
 
- 		public virtual IPermissionState Get(string permissionId)
-		{
+        public virtual IPermissionState Get(string permissionId)
+        {
             var state = StateRepository.Get(permissionId);
-			return state;
-		}
+
+            if (state != null && state.IsUnsaved) { state = null; }
+
+            return state;
+        }
 
         public virtual IEnumerable<IPermissionState> GetAll(int firstResult, int maxResults)
 		{

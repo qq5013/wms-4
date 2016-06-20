@@ -12,26 +12,34 @@ namespace Dddml.Wms.Domain.Services
 
         public IUserApplicationService UserApplicationService { get; set; }
 
-        public IEnumerable<string> GetUserAllRoleIdsAndPermissionIds(string userId)
+        public IEnumerable<string> GetUserRoleIds(string userId)
         {
-            var ids = new List<string>();
             var user = UserApplicationService.Get(userId);
 
+            var ids = new List<string>();
+
+            AddUserRoleIdsAndPermissionIdsToList(user, ids);
+
+            return ids;
+        }
+
+        private void AddUserRoleIdsAndPermissionIdsToList(IUserState user, List<string> idList)
+        {
             var userRoles = user.UserRoles;
             if (userRoles != null)
             {
                 foreach (var role in userRoles)
                 {
-                    ids.Add(role.RoleId);
+                    idList.Add(role.RoleId);
 
                     var rolePermissions = RolePermissionApplicationService.GetByProperty("Id.RoleId", role.RoleId);
                     if (rolePermissions != null)
                     {
                         foreach (var p in rolePermissions)
                         {
-                            if (!ids.Contains(p.Id.PermissionId))
+                            if (!idList.Contains(p.Id.PermissionId))
                             {
-                                ids.Add(p.Id.PermissionId);
+                                idList.Add(p.Id.PermissionId);
                             }
                         }
                     }
@@ -43,11 +51,10 @@ namespace Dddml.Wms.Domain.Services
             {
                 foreach (var p in userPermissions)
                 {
-                    ids.Add(p.PermissionId);
+                    idList.Add(p.PermissionId);
                 }
             }
 
-            return ids;
         }
     }
 

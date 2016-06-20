@@ -74,11 +74,14 @@ namespace Dddml.Wms.Domain
 			Update(c, ar => ar.Delete(c));
 		}
 
- 		public virtual IAttributeSetInstanceExtensionFieldGroupState Get(string id)
-		{
+        public virtual IAttributeSetInstanceExtensionFieldGroupState Get(string id)
+        {
             var state = StateRepository.Get(id);
-			return state;
-		}
+
+            if (state != null && state.IsUnsaved) { state = null; }
+
+            return state;
+        }
 
         public virtual IEnumerable<IAttributeSetInstanceExtensionFieldGroupState> GetAll(int firstResult, int maxResults)
 		{

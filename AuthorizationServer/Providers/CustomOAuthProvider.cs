@@ -74,23 +74,27 @@ namespace Dddml.Wms.AuthorizationServer.Providers
 
         public override Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
-
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
+            var userName = context.UserName;
+            var password = context.Password;
+
+            // //////////////////////////////////////////////////
             //注意：这里使用 UserName 作为登录 Id
-            var userState = UserApplicationService.GetByProperty("UserName", context.UserName, null, 0, 1).FirstOrDefault();
-            if (userState == null || PasswordHasher.VerifyHashedPassword(userState.PasswordHash, context.Password) == PasswordVerificationResult.Failed)
+            // //////////////////////////////////////////////////
+            IUserState user;
+            if (!CheckPassword(userName, password, out user))
             {
                 context.SetError("invalid_grant", "The user name or password is incorrect");
                 return Task.FromResult<object>(null);
             }
 
+            var userId = user.UserId;
             var identity = new ClaimsIdentity("JWT");
+            identity.AddClaim(new Claim(ClaimTypes.Name, userName));
+            identity.AddClaim(new Claim("sub", userId));
 
-            identity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));
-            identity.AddClaim(new Claim("sub", context.UserName));
-
-            var roles = IdentityService.GetUserAllRoleIdsAndPermissionIds(context.UserName);
+            var roles = IdentityService.GetUserRoleIds(userId);
             if (roles != null)
             {
                 foreach (var role in roles)
@@ -98,8 +102,6 @@ namespace Dddml.Wms.AuthorizationServer.Providers
                     identity.AddClaim(new Claim(ClaimTypes.Role, role));
                 }
             }
-            //identity.AddClaim(new Claim(ClaimTypes.Role, "Supervisor"));
-            //identity.AddClaim(new Claim(ClaimTypes.Role, "Manager"));
 
             var props = new AuthenticationProperties(new Dictionary<string, string>
                 {
@@ -112,5 +114,17 @@ namespace Dddml.Wms.AuthorizationServer.Providers
             context.Validated(ticket);
             return Task.FromResult<object>(null);
         }
+
+        private bool CheckPassword(string userName, string password, out IUserState user)
+        {
+            user = UserApplicationService.GetByProperty("UserName", userName, null, 0, 1).FirstOrDefault();
+            bool isOk = true;
+            if (user == null || PasswordHasher.VerifyHashedPassword(user.PasswordHash, password) == PasswordVerificationResult.Failed)
+            {
+                isOk = false;
+            }
+            return isOk;
+        }
+
     }
 }

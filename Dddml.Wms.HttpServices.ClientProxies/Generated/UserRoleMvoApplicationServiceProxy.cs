@@ -18,6 +18,7 @@ using System.ComponentModel;
 using RAML.Api.Core;
 using Newtonsoft.Json.Linq;
 using Dddml.Support.Criterion;
+using Dddml.Wms.Specialization.HttpServices.ClientProxies;
 
 
 namespace Dddml.Wms.HttpServices.ClientProxies
@@ -26,8 +27,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     public partial class UserRoleMvoApplicationServiceProxy : IUserRoleMvoApplicationService
     {
 
-
         private DddmlWmsRamlClient _ramlClient;
+
+        public UserRoleMvoApplicationServiceProxy(ProxyTemplate proxyTemplate)
+            : this(proxyTemplate.GetEndpointUrl())
+        {
+            _ramlClient.GetAuthenticationHeaderValue = proxyTemplate.GetAuthenticationHeaderValue;
+        }
 
         public UserRoleMvoApplicationServiceProxy(string endpointUrl)
         {
@@ -226,24 +232,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     }
 
 
-    public partial class UserRoleMvoApplicationServiceProxyFactory : IUserRoleMvoApplicationServiceFactory
+    public partial class UserRoleMvoApplicationServiceProxyFactory : ProxyFactoryBase, IUserRoleMvoApplicationServiceFactory
     {
 
-        private string _endpointUrl;
+        public UserRoleMvoApplicationServiceProxyFactory() : base()
+        {}
 
-        public UserRoleMvoApplicationServiceProxyFactory(string endpointUrl)
-        {
-            this._endpointUrl = endpointUrl;
-        }
+        public UserRoleMvoApplicationServiceProxyFactory(string endpointUrl) : base(endpointUrl)
+        {}
 
         public IUserRoleMvoApplicationService UserRoleMvoApplicationService
         {
             get
             {
-                return new UserRoleMvoApplicationServiceProxy(_endpointUrl);
+                return new UserRoleMvoApplicationServiceProxy(ProxyTemplate);
             }
         }
-
+		
         public ICreateUserRoleMvo NewCreateUserRoleMvo()
         {
             return new CreateUserRoleMvoDto();

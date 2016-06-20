@@ -57,6 +57,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -102,6 +103,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Put, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -141,6 +143,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(new HttpMethod("PATCH"), url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -188,6 +191,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Delete, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -244,6 +248,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -300,6 +305,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -352,6 +358,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -414,6 +421,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -459,6 +467,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Put, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -498,6 +507,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(new HttpMethod("PATCH"), url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -545,6 +555,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Delete, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -601,6 +612,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -657,6 +669,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -709,6 +722,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -771,6 +785,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -816,6 +831,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Put, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -855,6 +871,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(new HttpMethod("PATCH"), url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -902,6 +919,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Delete, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -958,6 +976,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -1014,6 +1033,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -1066,6 +1086,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -1128,6 +1149,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -1173,6 +1195,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Put, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -1212,6 +1235,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(new HttpMethod("PATCH"), url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -1259,6 +1283,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Delete, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -1315,6 +1340,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -1371,6 +1397,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -1423,6 +1450,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -1485,6 +1513,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -1530,6 +1559,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Put, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -1569,6 +1599,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(new HttpMethod("PATCH"), url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -1616,6 +1647,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Delete, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -1672,6 +1704,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -1728,6 +1761,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -1780,6 +1814,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -1842,6 +1877,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -1887,6 +1923,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Put, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -1926,6 +1963,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(new HttpMethod("PATCH"), url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -1973,6 +2011,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Delete, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -2029,6 +2068,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -2085,6 +2125,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -2137,6 +2178,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -2199,6 +2241,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -2244,6 +2287,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Put, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -2283,6 +2327,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(new HttpMethod("PATCH"), url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -2330,6 +2375,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Delete, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -2386,6 +2432,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -2442,6 +2489,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -2494,6 +2542,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -2556,6 +2605,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -2601,6 +2651,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Put, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -2640,6 +2691,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(new HttpMethod("PATCH"), url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -2687,6 +2739,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Delete, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -2743,6 +2796,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -2799,6 +2853,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -2851,6 +2906,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -2913,6 +2969,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -2958,6 +3015,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Put, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -2997,6 +3055,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(new HttpMethod("PATCH"), url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -3044,6 +3103,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Delete, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -3100,6 +3160,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -3156,6 +3217,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -3208,6 +3270,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -3270,6 +3333,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -3315,6 +3379,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Put, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -3354,6 +3419,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(new HttpMethod("PATCH"), url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -3401,6 +3467,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Delete, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -3457,6 +3524,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -3513,6 +3581,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -3565,6 +3634,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -3627,6 +3697,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -3672,6 +3743,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Put, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -3711,6 +3783,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(new HttpMethod("PATCH"), url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -3758,6 +3831,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Delete, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -3814,6 +3888,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -3870,6 +3945,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -3922,6 +3998,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -3984,6 +4061,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -4029,6 +4107,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Put, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -4068,6 +4147,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(new HttpMethod("PATCH"), url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -4115,6 +4195,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Delete, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -4171,6 +4252,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -4227,6 +4309,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -4279,6 +4362,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -4341,6 +4425,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -4386,6 +4471,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Put, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -4425,6 +4511,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(new HttpMethod("PATCH"), url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -4472,6 +4559,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Delete, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -4528,6 +4616,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -4584,6 +4673,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -4636,6 +4726,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -4698,6 +4789,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -4743,6 +4835,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Put, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -4782,6 +4875,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(new HttpMethod("PATCH"), url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -4829,6 +4923,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Delete, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -4885,6 +4980,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -4941,6 +5037,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -4993,6 +5090,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -5055,6 +5153,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -5100,6 +5199,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Put, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -5139,6 +5239,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(new HttpMethod("PATCH"), url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -5186,6 +5287,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Delete, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -5242,6 +5344,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -5298,6 +5401,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -5350,6 +5454,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -5412,6 +5517,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -5457,6 +5563,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Put, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -5496,6 +5603,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(new HttpMethod("PATCH"), url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -5543,6 +5651,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Delete, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -5599,6 +5708,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -5655,6 +5765,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -5707,6 +5818,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -5769,6 +5881,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -5814,6 +5927,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Put, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -5853,6 +5967,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(new HttpMethod("PATCH"), url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -5900,6 +6015,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Delete, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -5956,6 +6072,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -6012,6 +6129,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -6064,6 +6182,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -6126,6 +6245,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -6171,6 +6291,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Put, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -6210,6 +6331,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(new HttpMethod("PATCH"), url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -6257,6 +6379,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Delete, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -6313,6 +6436,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -6369,6 +6493,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -6421,6 +6546,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -6483,6 +6609,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -6528,6 +6655,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Put, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -6567,6 +6695,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(new HttpMethod("PATCH"), url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -6614,6 +6743,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Delete, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -6670,6 +6800,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -6726,6 +6857,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -6778,6 +6910,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -6840,6 +6973,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -6885,6 +7019,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Put, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -6924,6 +7059,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(new HttpMethod("PATCH"), url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -6971,6 +7107,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Delete, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -7027,6 +7164,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -7083,6 +7221,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -7135,6 +7274,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -7197,6 +7337,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -7242,6 +7383,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Put, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -7281,6 +7423,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(new HttpMethod("PATCH"), url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -7328,6 +7471,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Delete, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -7384,6 +7528,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -7440,6 +7585,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -7492,6 +7638,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -7554,6 +7701,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -7599,6 +7747,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Put, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -7638,6 +7787,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(new HttpMethod("PATCH"), url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -7685,6 +7835,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Delete, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -7741,6 +7892,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -7797,6 +7949,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -7849,6 +8002,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -7916,6 +8070,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -7983,6 +8138,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -8050,6 +8206,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             url = url.Replace("?&", "?");
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
 
             if(request.RawHeaders != null)
             {
@@ -8086,24 +8243,19 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
     public partial class DddmlWmsRamlClient
     {
 
+        //public const string BaseUri = "/api/";
+
 		public SchemaValidationSettings SchemaValidation { get; private set; } 
 
         protected readonly HttpClient client;
-        public const string BaseUri = "/api/";
 
         internal HttpClient Client { get { return client; } }
 
-
+        public Func<Tuple<string, string>> GetAuthenticationHeaderValue { get; set; }
 
 
         public DddmlWmsRamlClient(string endpointUrl)
         {
-            SchemaValidation = new SchemaValidationSettings
-			{
-				Enabled = true,
-				RaiseExceptions = true
-			};
-
 			if(string.IsNullOrWhiteSpace(endpointUrl))
                 throw new ArgumentException("You must specify the endpoint URL", "endpointUrl");
 
@@ -8120,6 +8272,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
 			}
 
             client = new HttpClient {BaseAddress = new Uri(endpointUrl)};
+
+            InitSchemaValidation();
         }
 
         public DddmlWmsRamlClient(HttpClient httpClient)
@@ -8129,13 +8283,29 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
 
             client = httpClient;
 
-			SchemaValidation = new SchemaValidationSettings
-			{
-				Enabled = true,
-				RaiseExceptions = true
-			};
+            InitSchemaValidation();
         }
 
+        private void InitSchemaValidation()
+        {
+            SchemaValidation = new SchemaValidationSettings
+            {
+                Enabled = true,
+                RaiseExceptions = true
+            };
+        }
+
+        public void SetAuthenticationHeader(HttpRequestMessage req)
+        {
+            if (this.GetAuthenticationHeaderValue != null)
+            {
+                var authHeader = this.GetAuthenticationHeaderValue();
+                if (authHeader != null)
+                {
+                    req.Headers.Authorization = new AuthenticationHeaderValue(authHeader.Item1, authHeader.Item2);
+                }
+            }
+        }
         
 
         public virtual Attribute Attribute

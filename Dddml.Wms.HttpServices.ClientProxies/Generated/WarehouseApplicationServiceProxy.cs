@@ -18,6 +18,7 @@ using System.ComponentModel;
 using RAML.Api.Core;
 using Newtonsoft.Json.Linq;
 using Dddml.Support.Criterion;
+using Dddml.Wms.Specialization.HttpServices.ClientProxies;
 
 
 namespace Dddml.Wms.HttpServices.ClientProxies
@@ -26,8 +27,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     public partial class WarehouseApplicationServiceProxy : IWarehouseApplicationService
     {
 
-
         private DddmlWmsRamlClient _ramlClient;
+
+        public WarehouseApplicationServiceProxy(ProxyTemplate proxyTemplate)
+            : this(proxyTemplate.GetEndpointUrl())
+        {
+            _ramlClient.GetAuthenticationHeaderValue = proxyTemplate.GetAuthenticationHeaderValue;
+        }
 
         public WarehouseApplicationServiceProxy(string endpointUrl)
         {
@@ -226,24 +232,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     }
 
 
-    public partial class WarehouseApplicationServiceProxyFactory : IWarehouseApplicationServiceFactory
+    public partial class WarehouseApplicationServiceProxyFactory : ProxyFactoryBase, IWarehouseApplicationServiceFactory
     {
 
-        private string _endpointUrl;
+        public WarehouseApplicationServiceProxyFactory() : base()
+        {}
 
-        public WarehouseApplicationServiceProxyFactory(string endpointUrl)
-        {
-            this._endpointUrl = endpointUrl;
-        }
+        public WarehouseApplicationServiceProxyFactory(string endpointUrl) : base(endpointUrl)
+        {}
 
         public IWarehouseApplicationService WarehouseApplicationService
         {
             get
             {
-                return new WarehouseApplicationServiceProxy(_endpointUrl);
+                return new WarehouseApplicationServiceProxy(ProxyTemplate);
             }
         }
-
+		
         public ICreateWarehouse NewCreateWarehouse()
         {
             return new CreateWarehouseDto();

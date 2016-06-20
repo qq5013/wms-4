@@ -18,6 +18,7 @@ using System.ComponentModel;
 using RAML.Api.Core;
 using Newtonsoft.Json.Linq;
 using Dddml.Support.Criterion;
+using Dddml.Wms.Specialization.HttpServices.ClientProxies;
 
 
 namespace Dddml.Wms.HttpServices.ClientProxies
@@ -26,8 +27,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     public partial class AttributeSetInstanceExtensionFieldMvoApplicationServiceProxy : IAttributeSetInstanceExtensionFieldMvoApplicationService
     {
 
-
         private DddmlWmsRamlClient _ramlClient;
+
+        public AttributeSetInstanceExtensionFieldMvoApplicationServiceProxy(ProxyTemplate proxyTemplate)
+            : this(proxyTemplate.GetEndpointUrl())
+        {
+            _ramlClient.GetAuthenticationHeaderValue = proxyTemplate.GetAuthenticationHeaderValue;
+        }
 
         public AttributeSetInstanceExtensionFieldMvoApplicationServiceProxy(string endpointUrl)
         {
@@ -226,24 +232,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     }
 
 
-    public partial class AttributeSetInstanceExtensionFieldMvoApplicationServiceProxyFactory : IAttributeSetInstanceExtensionFieldMvoApplicationServiceFactory
+    public partial class AttributeSetInstanceExtensionFieldMvoApplicationServiceProxyFactory : ProxyFactoryBase, IAttributeSetInstanceExtensionFieldMvoApplicationServiceFactory
     {
 
-        private string _endpointUrl;
+        public AttributeSetInstanceExtensionFieldMvoApplicationServiceProxyFactory() : base()
+        {}
 
-        public AttributeSetInstanceExtensionFieldMvoApplicationServiceProxyFactory(string endpointUrl)
-        {
-            this._endpointUrl = endpointUrl;
-        }
+        public AttributeSetInstanceExtensionFieldMvoApplicationServiceProxyFactory(string endpointUrl) : base(endpointUrl)
+        {}
 
         public IAttributeSetInstanceExtensionFieldMvoApplicationService AttributeSetInstanceExtensionFieldMvoApplicationService
         {
             get
             {
-                return new AttributeSetInstanceExtensionFieldMvoApplicationServiceProxy(_endpointUrl);
+                return new AttributeSetInstanceExtensionFieldMvoApplicationServiceProxy(ProxyTemplate);
             }
         }
-
+		
         public ICreateAttributeSetInstanceExtensionFieldMvo NewCreateAttributeSetInstanceExtensionFieldMvo()
         {
             return new CreateAttributeSetInstanceExtensionFieldMvoDto();

@@ -18,6 +18,7 @@ using System.ComponentModel;
 using RAML.Api.Core;
 using Newtonsoft.Json.Linq;
 using Dddml.Support.Criterion;
+using Dddml.Wms.Specialization.HttpServices.ClientProxies;
 
 
 namespace Dddml.Wms.HttpServices.ClientProxies
@@ -26,8 +27,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     public partial class AttributeSetInstanceExtensionFieldGroupApplicationServiceProxy : IAttributeSetInstanceExtensionFieldGroupApplicationService
     {
 
-
         private DddmlWmsRamlClient _ramlClient;
+
+        public AttributeSetInstanceExtensionFieldGroupApplicationServiceProxy(ProxyTemplate proxyTemplate)
+            : this(proxyTemplate.GetEndpointUrl())
+        {
+            _ramlClient.GetAuthenticationHeaderValue = proxyTemplate.GetAuthenticationHeaderValue;
+        }
 
         public AttributeSetInstanceExtensionFieldGroupApplicationServiceProxy(string endpointUrl)
         {
@@ -226,24 +232,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     }
 
 
-    public partial class AttributeSetInstanceExtensionFieldGroupApplicationServiceProxyFactory : IAttributeSetInstanceExtensionFieldGroupApplicationServiceFactory
+    public partial class AttributeSetInstanceExtensionFieldGroupApplicationServiceProxyFactory : ProxyFactoryBase, IAttributeSetInstanceExtensionFieldGroupApplicationServiceFactory
     {
 
-        private string _endpointUrl;
+        public AttributeSetInstanceExtensionFieldGroupApplicationServiceProxyFactory() : base()
+        {}
 
-        public AttributeSetInstanceExtensionFieldGroupApplicationServiceProxyFactory(string endpointUrl)
-        {
-            this._endpointUrl = endpointUrl;
-        }
+        public AttributeSetInstanceExtensionFieldGroupApplicationServiceProxyFactory(string endpointUrl) : base(endpointUrl)
+        {}
 
         public IAttributeSetInstanceExtensionFieldGroupApplicationService AttributeSetInstanceExtensionFieldGroupApplicationService
         {
             get
             {
-                return new AttributeSetInstanceExtensionFieldGroupApplicationServiceProxy(_endpointUrl);
+                return new AttributeSetInstanceExtensionFieldGroupApplicationServiceProxy(ProxyTemplate);
             }
         }
-
+		
         public ICreateAttributeSetInstanceExtensionFieldGroup NewCreateAttributeSetInstanceExtensionFieldGroup()
         {
             return new CreateAttributeSetInstanceExtensionFieldGroupDto();

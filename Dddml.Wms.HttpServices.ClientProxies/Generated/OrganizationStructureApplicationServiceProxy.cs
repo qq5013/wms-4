@@ -18,6 +18,7 @@ using System.ComponentModel;
 using RAML.Api.Core;
 using Newtonsoft.Json.Linq;
 using Dddml.Support.Criterion;
+using Dddml.Wms.Specialization.HttpServices.ClientProxies;
 
 
 namespace Dddml.Wms.HttpServices.ClientProxies
@@ -26,8 +27,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     public partial class OrganizationStructureApplicationServiceProxy : IOrganizationStructureApplicationService
     {
 
-
         private DddmlWmsRamlClient _ramlClient;
+
+        public OrganizationStructureApplicationServiceProxy(ProxyTemplate proxyTemplate)
+            : this(proxyTemplate.GetEndpointUrl())
+        {
+            _ramlClient.GetAuthenticationHeaderValue = proxyTemplate.GetAuthenticationHeaderValue;
+        }
 
         public OrganizationStructureApplicationServiceProxy(string endpointUrl)
         {
@@ -226,24 +232,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     }
 
 
-    public partial class OrganizationStructureApplicationServiceProxyFactory : IOrganizationStructureApplicationServiceFactory
+    public partial class OrganizationStructureApplicationServiceProxyFactory : ProxyFactoryBase, IOrganizationStructureApplicationServiceFactory
     {
 
-        private string _endpointUrl;
+        public OrganizationStructureApplicationServiceProxyFactory() : base()
+        {}
 
-        public OrganizationStructureApplicationServiceProxyFactory(string endpointUrl)
-        {
-            this._endpointUrl = endpointUrl;
-        }
+        public OrganizationStructureApplicationServiceProxyFactory(string endpointUrl) : base(endpointUrl)
+        {}
 
         public IOrganizationStructureApplicationService OrganizationStructureApplicationService
         {
             get
             {
-                return new OrganizationStructureApplicationServiceProxy(_endpointUrl);
+                return new OrganizationStructureApplicationServiceProxy(ProxyTemplate);
             }
         }
-
+		
         public ICreateOrganizationStructure NewCreateOrganizationStructure()
         {
             return new CreateOrganizationStructureDto();

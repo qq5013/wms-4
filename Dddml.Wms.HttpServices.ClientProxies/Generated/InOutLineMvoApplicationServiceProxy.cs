@@ -19,6 +19,7 @@ using System.ComponentModel;
 using RAML.Api.Core;
 using Newtonsoft.Json.Linq;
 using Dddml.Support.Criterion;
+using Dddml.Wms.Specialization.HttpServices.ClientProxies;
 
 
 namespace Dddml.Wms.HttpServices.ClientProxies
@@ -27,8 +28,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     public partial class InOutLineMvoApplicationServiceProxy : IInOutLineMvoApplicationService
     {
 
-
         private DddmlWmsRamlClient _ramlClient;
+
+        public InOutLineMvoApplicationServiceProxy(ProxyTemplate proxyTemplate)
+            : this(proxyTemplate.GetEndpointUrl())
+        {
+            _ramlClient.GetAuthenticationHeaderValue = proxyTemplate.GetAuthenticationHeaderValue;
+        }
 
         public InOutLineMvoApplicationServiceProxy(string endpointUrl)
         {
@@ -227,24 +233,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     }
 
 
-    public partial class InOutLineMvoApplicationServiceProxyFactory : IInOutLineMvoApplicationServiceFactory
+    public partial class InOutLineMvoApplicationServiceProxyFactory : ProxyFactoryBase, IInOutLineMvoApplicationServiceFactory
     {
 
-        private string _endpointUrl;
+        public InOutLineMvoApplicationServiceProxyFactory() : base()
+        {}
 
-        public InOutLineMvoApplicationServiceProxyFactory(string endpointUrl)
-        {
-            this._endpointUrl = endpointUrl;
-        }
+        public InOutLineMvoApplicationServiceProxyFactory(string endpointUrl) : base(endpointUrl)
+        {}
 
         public IInOutLineMvoApplicationService InOutLineMvoApplicationService
         {
             get
             {
-                return new InOutLineMvoApplicationServiceProxy(_endpointUrl);
+                return new InOutLineMvoApplicationServiceProxy(ProxyTemplate);
             }
         }
-
+		
         public ICreateInOutLineMvo NewCreateInOutLineMvo()
         {
             return new CreateInOutLineMvoDto();

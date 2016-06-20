@@ -74,11 +74,14 @@ namespace Dddml.Wms.Domain
 			Update(c, ar => ar.Delete(c));
 		}
 
- 		public virtual IOrganizationStructureTypeState Get(string id)
-		{
+        public virtual IOrganizationStructureTypeState Get(string id)
+        {
             var state = StateRepository.Get(id);
-			return state;
-		}
+
+            if (state != null && state.IsUnsaved) { state = null; }
+
+            return state;
+        }
 
         public virtual IEnumerable<IOrganizationStructureTypeState> GetAll(int firstResult, int maxResults)
 		{

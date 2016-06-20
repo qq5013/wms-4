@@ -18,6 +18,7 @@ using System.ComponentModel;
 using RAML.Api.Core;
 using Newtonsoft.Json.Linq;
 using Dddml.Support.Criterion;
+using Dddml.Wms.Specialization.HttpServices.ClientProxies;
 
 
 namespace Dddml.Wms.HttpServices.ClientProxies
@@ -26,8 +27,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     public partial class AudienceApplicationServiceProxy : IAudienceApplicationService
     {
 
-
         private DddmlWmsRamlClient _ramlClient;
+
+        public AudienceApplicationServiceProxy(ProxyTemplate proxyTemplate)
+            : this(proxyTemplate.GetEndpointUrl())
+        {
+            _ramlClient.GetAuthenticationHeaderValue = proxyTemplate.GetAuthenticationHeaderValue;
+        }
 
         public AudienceApplicationServiceProxy(string endpointUrl)
         {
@@ -226,24 +232,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies
     }
 
 
-    public partial class AudienceApplicationServiceProxyFactory : IAudienceApplicationServiceFactory
+    public partial class AudienceApplicationServiceProxyFactory : ProxyFactoryBase, IAudienceApplicationServiceFactory
     {
 
-        private string _endpointUrl;
+        public AudienceApplicationServiceProxyFactory() : base()
+        {}
 
-        public AudienceApplicationServiceProxyFactory(string endpointUrl)
-        {
-            this._endpointUrl = endpointUrl;
-        }
+        public AudienceApplicationServiceProxyFactory(string endpointUrl) : base(endpointUrl)
+        {}
 
         public IAudienceApplicationService AudienceApplicationService
         {
             get
             {
-                return new AudienceApplicationServiceProxy(_endpointUrl);
+                return new AudienceApplicationServiceProxy(ProxyTemplate);
             }
         }
-
+		
         public ICreateAudience NewCreateAudience()
         {
             return new CreateAudienceDto();

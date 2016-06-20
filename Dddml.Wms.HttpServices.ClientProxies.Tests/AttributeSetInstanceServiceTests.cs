@@ -15,9 +15,9 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
 {
 
     [TestFixture]
-    public class AttributeSetInstanceServiceTests
+    public class AttributeSetInstanceServiceTests : ClientProxyTestsBase
     {
-        private string _endpointUrl = "http://localhost:63078/api/"; //注意，最后的斜杠是必须的！
+        //private string _endpointUrl = "http://localhost:63078/api/"; //注意，最后的斜杠是必须的！
 
         private IAttributeApplicationServiceFactory _attributeApplicationServiceFactory;
 
@@ -26,10 +26,12 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
 
         [SetUp]
         public void SetUp()
-        { 
-            _attributeApplicationServiceFactory = new AttributeApplicationServiceProxyFactory(_endpointUrl);
+        {
+            base.SetUp();
 
-            _attributeSetApplicationServiceFactory = new AttributeSetApplicationServiceProxyFactory(_endpointUrl);
+            _attributeApplicationServiceFactory = new AttributeApplicationServiceProxyFactory();
+
+            _attributeSetApplicationServiceFactory = new AttributeSetApplicationServiceProxyFactory();
 
             InitAttrbuteSet();
         }
@@ -37,8 +39,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
         [Test]
         public void TestPutAttributeSetInstance()
         {
-
-            var client = new HttpClient { BaseAddress = new Uri(_endpointUrl) };
+            var endpointUrl = ProxyTemplate.GetEndpointUrl();
+            var client = new HttpClient { BaseAddress = new Uri(endpointUrl) };
             var attrSetInstId = Guid.NewGuid().ToString();
 
             var url = "AttributeSetInstances/{id}";
@@ -48,6 +50,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
 
             var req = new HttpRequestMessage(HttpMethod.Put, url);
             req.Content = new ObjectContent(typeof(JObject), jObject, new JsonMediaTypeFormatter());
+            SetAuthenticationHeader(req);
             var response = client.SendAsync(req).GetAwaiter().GetResult();
 
             Console.WriteLine(response.Content);
@@ -72,6 +75,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
         private void TestPostAttributeSetInstance(HttpClient client, dynamic jObject, string url)
         {
             var req = new HttpRequestMessage(HttpMethod.Post, url);
+            SetAuthenticationHeader(req); 
             req.Content = new ObjectContent(typeof(JObject), jObject, new JsonMediaTypeFormatter());
             var response = client.SendAsync(req).GetAwaiter().GetResult();
 
@@ -98,13 +102,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
 
         private JObject TestGetAttributeSetInstance(string attrSetInstId)
         {
-            var client = new HttpClient { BaseAddress = new Uri(_endpointUrl) };
+            var endpointUrl = ProxyTemplate.GetEndpointUrl();
+            var client = new HttpClient { BaseAddress = new Uri(endpointUrl) };
             string idStr = attrSetInstId;
 
             var url = "AttributeSetInstances/{id}";
             url = url.Replace("{id}", idStr);
 
             var req = new HttpRequestMessage(HttpMethod.Get, url);
+            SetAuthenticationHeader(req); 
             var response = client.SendAsync(req).GetAwaiter().GetResult();
 
             var respContent = response.Content.ReadAsAsync<JObject>().GetAwaiter().GetResult();
@@ -118,7 +124,8 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
 
         private void TestMergePatchAttributeSetInstance(string attrSetInstId)
         {
-            var client = new HttpClient { BaseAddress = new Uri(_endpointUrl) };
+            var endpointUrl = ProxyTemplate.GetEndpointUrl();
+            var client = new HttpClient { BaseAddress = new Uri(endpointUrl) };
             //var attrSetInstId = Guid.NewGuid().ToString();
 
             var url = "AttributeSetInstances/{id}";
@@ -134,6 +141,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
             jObject.IsPropertyColorRemoved = true;
 
             var req = new HttpRequestMessage(new HttpMethod("PATCH"), url);
+            SetAuthenticationHeader(req); 
             req.Content = new ObjectContent(typeof(JObject), jObject, new JsonMediaTypeFormatter());
             var response = client.SendAsync(req).GetAwaiter().GetResult();
 

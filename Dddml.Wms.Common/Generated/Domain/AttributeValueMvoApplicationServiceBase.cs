@@ -74,11 +74,14 @@ namespace Dddml.Wms.Domain
 			Update(c, ar => ar.Delete(c));
 		}
 
- 		public virtual IAttributeValueMvoState Get(AttributeValueId attributeValueId)
-		{
+        public virtual IAttributeValueMvoState Get(AttributeValueId attributeValueId)
+        {
             var state = StateRepository.Get(attributeValueId);
-			return state;
-		}
+
+            if (state != null && state.IsUnsaved) { state = null; }
+
+            return state;
+        }
 
         public virtual IEnumerable<IAttributeValueMvoState> GetAll(int firstResult, int maxResults)
 		{

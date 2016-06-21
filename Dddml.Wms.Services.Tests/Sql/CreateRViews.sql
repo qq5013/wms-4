@@ -280,11 +280,15 @@ CREATE VIEW `InOutLine_RV` AS
 
         `InOuts`.`POReference` AS `InOutPOReference`,
 
-        `InOuts`.`FreightAmount` AS `InOutFreightAmount`,
+        `InOuts`.`FreightAmountAmount` AS `InOutFreightAmountAmount`,
+
+        `InOuts`.`FreightAmountCurrency` AS `InOutFreightAmountCurrency`,
 
         `InOuts`.`ShipperId` AS `InOutShipperId`,
 
-        `InOuts`.`ChargeAmount` AS `InOutChargeAmount`,
+        `InOuts`.`ChargeAmountAmount` AS `InOutChargeAmountAmount`,
+
+        `InOuts`.`ChargeAmountCurrency` AS `InOutChargeAmountCurrency`,
 
         `InOuts`.`DatePrinted` AS `InOutDatePrinted`,
 

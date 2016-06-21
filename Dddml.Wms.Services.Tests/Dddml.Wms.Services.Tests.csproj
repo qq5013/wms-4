@@ -141,11 +141,25 @@
       <LastGenOutput>DropRViewNameConflictedTables.sql</LastGenOutput>
       <LastOutputs>.\DropRViewNameConflictedTables.sql</LastOutputs>
     </Content>
+    <Content Include="Sql\DropRViews.sql">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DropRViews.tt</DependentUpon>
+    </Content>
+    <Content Include="Sql\DropRViews.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DropRViews.sql</LastGenOutput>
+      <LastOutputs>.\DropRViews.sql</LastOutputs>
+    </Content>
+    <Content Include="Sql\DropStateIdForeignKeyConstraints.sql">
+      <DependentUpon>GenerateBoundedContextStateIdForeignKeyConstraints.tt</DependentUpon>
+    </Content>
     <Content Include="Sql\GenerateBoundedContextStateIdForeignKeyConstraints.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GenerateBoundedContextStateIdForeignKeyConstraints.txt</LastGenOutput>
       <LastOutputs>
 .\AddStateIdForeignKeyConstraints.sql
+.\DropStateIdForeignKeyConstraints.sql
 .\GenerateBoundedContextStateIdForeignKeyConstraints.txt
 </LastOutputs>
     </Content>

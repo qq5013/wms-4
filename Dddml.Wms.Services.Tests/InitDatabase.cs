@@ -1,15 +1,13 @@
 ﻿using Dddml.Wms.Domain;
 using Dddml.Wms.Specialization;
 using Dddml.Wms.Specialization.Spring;
-using Dddml.Wms.Support;
+using Microsoft.AspNet.Identity;
 using NHibernate;
 using NUnit.Framework;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text.RegularExpressions;
 using System.Configuration;
-using Microsoft.AspNet.Identity;
+using System.IO;
+using System.Text;
 
 namespace Dddml.Wms.Services.Tests
 {
@@ -31,20 +29,20 @@ namespace Dddml.Wms.Services.Tests
         public void SetUp()
         {
             ApplicationContext.Current = SpringApplicationContext.Instance;
-            
+
             _sessionFactory = ApplicationContext.Current["NHibernateSessionFactory"] as ISessionFactory;
 
             _audienceApplicationService = ApplicationContext.Current["AudienceApplicationService"] as IAudienceApplicationService;
-            
+
             _userApplicationService = ApplicationContext.Current["UserApplicationService"] as IUserApplicationService;
 
             _roleApplicationService = ApplicationContext.Current["RoleApplicationService"] as IRoleApplicationService;
         }
 
         [Test]
-        public void Seed()
+        public void CreateDatabaseAndSeed()
         {
-            //Hbm2DdlFix();
+            Hbm2DdlCreateAndFix();
 
             CreateSelfClient();
 
@@ -53,7 +51,6 @@ namespace Dddml.Wms.Services.Tests
             CreateRoles(roles);
 
             var userIdAndPassword = CreateTestUser(roles);
-
 
         }
 
@@ -111,28 +108,76 @@ namespace Dddml.Wms.Services.Tests
             }
         }
 
-        //[Test]
-        //[Category("InitDatabase_999")]
-        public void Hbm2DdlFix()
+        private const string SqlDelimiter = ";";
+
+        [Test]
+        public void Hbm2DdlUpdate()
         {
+            var cfg = GetNHibernateConfiguration();
+
+            var sb = new StringBuilder();
+            var schemaUpdate = new NHibernate.Tool.hbm2ddl.SchemaUpdate(cfg);
+            
+            schemaUpdate.Execute(s => sb.Append(s).Append(SqlDelimiter), false);
+
+            using (var writer = new StreamWriter(@"..\..\sql\hbm2ddl_update.sql"))
+            {
+                writer.Write(sb.ToString());
+            }
+        }
+
+        //[Category("InitDatabase_999")]
+        //[Test]
+        public void Hbm2DdlCreateAndFix()
+        {
+            var cfg = GetNHibernateConfiguration();
+
+            var schemaExport = new NHibernate.Tool.hbm2ddl.SchemaExport(cfg);
+
+            schemaExport.SetOutputFile(@"..\..\sql\hbm2ddl_drop.sql").SetDelimiter(SqlDelimiter).Drop(true, false);
+            schemaExport.SetOutputFile(@"..\..\sql\hbm2ddl_create.sql").SetDelimiter(SqlDelimiter).Create(true, false);
+
             string[] sqlFiles = new string[] 
             {
+                @"..\..\sql\DropRViews.sql", 
+                @"..\..\sql\DropStateIdForeignKeyConstraints.sql",
+                @"..\..\sql\hbm2ddl_create.sql",
                 @"..\..\sql\DropRViewNameConflictedTables.sql", 
                 @"..\..\sql\CreateRViews.sql", 
-                @"..\..\sql\AddStateIdForeignKeyConstraints.sql"
+                @"..\..\sql\AddStateIdForeignKeyConstraints.sql",
             };
+
+            var sf = cfg.BuildSessionFactory();
             foreach (string file in sqlFiles)
             {
                 using (StreamReader reader = new StreamReader(File.OpenRead(file)))
                 {
                     string sql = reader.ReadToEnd();
-                    using (ISession session = _sessionFactory.OpenSession())
+
+                    using (ISession session = sf.OpenSession())
                     {
                         ISQLQuery query = session.CreateSQLQuery(sql);
                         query.ExecuteUpdate();
                     }
                 }
             }
+        }
+
+        private NHibernate.Cfg.Configuration GetNHibernateConfiguration()
+        {
+            var conn = (_sessionFactory as NHibernate.Impl.SessionFactoryImpl).ConnectionProvider.GetConnection();
+            var connString = conn.ConnectionString;
+            if (!connString.ToLower().Contains("Allow User Variables=True".ToLower()))
+            {
+                connString = connString + (connString.EndsWith(";") ? "" : ";") + "Allow User Variables=True";
+            }
+
+            var dialect = (_sessionFactory as NHibernate.Impl.SessionFactoryImpl).Dialect;
+            var cfg = new NHibernate.Cfg.Configuration();
+            cfg.Properties.Add("dialect", dialect.GetType().FullName);
+            cfg.Properties.Add("connection.connection_string", connString);
+            cfg.AddAssembly("Dddml.Wms.Services");
+            return cfg;
         }
 
     }

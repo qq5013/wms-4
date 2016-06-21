@@ -12,7 +12,11 @@
 	{
 		aggregates.Add(agg);
 	}
-	var template = new AggregatesStateIdForeignKeyConstraintsTemplate(aggregates);
-	template.RenderToFile(String.Format("AddStateIdForeignKeyConstraints.sql", "")); 
+	var templateAdd = new AggregatesStateIdForeignKeyConstraintsTemplate(aggregates);
+	templateAdd.RenderToFile(String.Format("AddStateIdForeignKeyConstraints.sql", "")); 
+
+	var templateDrop = new AggregatesStateIdForeignKeyConstraintsTemplate(aggregates, true);
+	templateDrop.RenderToFile(String.Format("DropStateIdForeignKeyConstraints.sql", "")); 
+
 
 #>

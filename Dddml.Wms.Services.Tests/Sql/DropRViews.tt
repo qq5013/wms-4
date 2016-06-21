@@ -17,7 +17,7 @@
 		var originEntity = aggregate.OriginEntity;
 		var rviewName = originEntity.GetDatabaseRViewName();
 #>
-DROP TABLE  if exists `<#= rviewName #>`;
+DROP view if exists `<#= rviewName #>` ;
 <#
 
 	}

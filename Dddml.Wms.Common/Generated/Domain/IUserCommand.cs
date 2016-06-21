@@ -62,6 +62,10 @@ namespace Dddml.Wms.Domain
 
         ICreateUserPermission NewCreateUserPermission();
 
+        ICreateUserLoginCommands UserLogins { get; }
+
+        ICreateUserLogin NewCreateUserLogin();
+
 	}
 
 	public interface IMergePatchUser : ICreateOrMergePatchOrDeleteUser
@@ -114,6 +118,14 @@ namespace Dddml.Wms.Domain
         IMergePatchUserPermission NewMergePatchUserPermission();
 
         IRemoveUserPermission NewRemoveUserPermission();
+
+        IUserLoginCommands UserLoginCommands { get; }
+
+        ICreateUserLogin NewCreateUserLogin();
+
+        IMergePatchUserLogin NewMergePatchUserLogin();
+
+        IRemoveUserLogin NewRemoveUserLogin();
 
 
 	}
@@ -177,6 +189,26 @@ namespace Dddml.Wms.Domain
         void Add(IUserPermissionCommand c);
 
         void Remove(IUserPermissionCommand c);
+
+        void Clear();
+
+    }
+
+    public interface ICreateUserLoginCommands : IEnumerable<ICreateUserLogin>
+    {
+        void Add(ICreateUserLogin c);
+
+        void Remove(ICreateUserLogin c);
+
+        void Clear();
+
+    }
+
+    public interface IUserLoginCommands : IEnumerable<IUserLoginCommand>
+    {
+        void Add(IUserLoginCommand c);
+
+        void Remove(IUserLoginCommand c);
 
         void Clear();
 

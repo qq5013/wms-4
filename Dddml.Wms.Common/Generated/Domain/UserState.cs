@@ -189,6 +189,23 @@ namespace Dddml.Wms.Domain
 
 
 
+        private IUserLoginStates _userLogins;
+      
+        public virtual IUserLoginStates UserLogins
+        {
+            get
+            {
+                return this._userLogins;
+            }
+        }
+
+        protected internal virtual void SetUserLogins(IUserLoginStates value)
+        {
+            this._userLogins = value;
+        }
+
+
+
 		public UserState ()
 		{
             _userRoles = new UserRoleStates(this);
@@ -196,6 +213,8 @@ namespace Dddml.Wms.Domain
             _userClaims = new UserClaimStates(this);
 
             _userPermissions = new UserPermissionStates(this);
+
+            _userLogins = new UserLoginStates(this);
 
             InitializeProperties();
 		}
@@ -212,12 +231,12 @@ namespace Dddml.Wms.Domain
 
             _userPermissions.Save();
 
+            _userLogins.Save();
+
         }
 
 
 		#endregion
-
-		public virtual ISet<UserLogin> UserLogins { get; set; }
 
 
 		public virtual void When(IUserStateCreated e)
@@ -262,6 +281,10 @@ namespace Dddml.Wms.Domain
 			}
 			foreach (IUserPermissionStateCreated innerEvent in e.UserPermissionEvents) {
 				IUserPermissionState innerState = this.UserPermissions.Get(innerEvent.GlobalId.PermissionId);
+				innerState.Mutate (innerEvent);
+			}
+			foreach (IUserLoginStateCreated innerEvent in e.UserLoginEvents) {
+				IUserLoginState innerState = this.UserLogins.Get(innerEvent.GlobalId.LoginKey);
 				innerState.Mutate (innerEvent);
 			}
 
@@ -460,6 +483,19 @@ namespace Dddml.Wms.Domain
           
             }
 
+			foreach (IUserLoginStateEvent innerEvent in e.UserLoginEvents)
+            {
+                IUserLoginState innerState = this.UserLogins.Get(innerEvent.GlobalId.LoginKey);
+
+                innerState.Mutate(innerEvent);
+                var removed = innerEvent as IUserLoginStateRemoved;
+                if (removed != null)
+                {
+                    this.UserLogins.Remove(innerState);
+                }
+          
+            }
+
 		}
 
 		public virtual void When(IUserStateDeleted e)
@@ -503,6 +539,18 @@ namespace Dddml.Wms.Domain
                 ((UserPermissionStateEventBase)innerE).CreatedBy = e.CreatedBy;
                 innerState.When(innerE);
                 //e.AddUserPermissionEvent(innerE);
+
+            }
+
+            foreach (var innerState in this.UserLogins)
+            {
+                this.UserLogins.Remove(innerState);
+                
+                var innerE = e.NewUserLoginStateRemoved(innerState.LoginKey);
+                ((UserLoginStateEventBase)innerE).CreatedAt = e.CreatedAt;
+                ((UserLoginStateEventBase)innerE).CreatedBy = e.CreatedBy;
+                innerState.When(innerE);
+                //e.AddUserLoginEvent(innerE);
 
             }
 

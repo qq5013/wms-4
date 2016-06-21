@@ -547,3 +547,72 @@ CREATE VIEW `UserPermission_RV` AS
         );
 
 
+CREATE VIEW `UserLogin_RV` AS
+    SELECT 
+
+        `UserLogins`.`UserLoginIdUserId`,
+
+        `UserLogins`.`UserLoginIdLoginKeyLoginProvider`,
+
+        `UserLogins`.`UserLoginIdLoginKeyProviderKey`,
+
+        `UserLogins`.`Version`,
+
+        `UserLogins`.`CreatedBy`,
+
+        `UserLogins`.`CreatedAt`,
+
+        `UserLogins`.`UpdatedBy`,
+
+        `UserLogins`.`UpdatedAt`,
+
+        `UserLogins`.`Active`,
+
+        `UserLogins`.`Deleted`,
+
+        `Users`.`UserName` AS `UserUserName`,
+
+        `Users`.`AccessFailedCount` AS `UserAccessFailedCount`,
+
+        `Users`.`Email` AS `UserEmail`,
+
+        `Users`.`EmailConfirmed` AS `UserEmailConfirmed`,
+
+        `Users`.`LockoutEnabled` AS `UserLockoutEnabled`,
+
+        `Users`.`LockoutEndDateUtc` AS `UserLockoutEndDateUtc`,
+
+        `Users`.`PasswordHash` AS `UserPasswordHash`,
+
+        `Users`.`PhoneNumber` AS `UserPhoneNumber`,
+
+        `Users`.`PhoneNumberConfirmed` AS `UserPhoneNumberConfirmed`,
+
+        `Users`.`TwoFactorEnabled` AS `UserTwoFactorEnabled`,
+
+        `Users`.`SecurityStamp` AS `UserSecurityStamp`,
+
+        `Users`.`Version` AS `UserVersion`,
+
+        `Users`.`CreatedBy` AS `UserCreatedBy`,
+
+        `Users`.`CreatedAt` AS `UserCreatedAt`,
+
+        `Users`.`UpdatedBy` AS `UserUpdatedBy`,
+
+        `Users`.`UpdatedAt` AS `UserUpdatedAt`,
+
+        `Users`.`Active` AS `UserActive`,
+
+        `Users`.`Deleted` AS `UserDeleted`
+
+    FROM
+        (`UserLogins`
+
+            JOIN `Users` ON ( 1=1 
+
+                and (`UserLogins`.`UserLoginIdUserId` = `Users`.`UserId`)
+            )
+        );
+
+

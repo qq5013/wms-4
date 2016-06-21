@@ -138,6 +138,9 @@
     <Compile Include="Generated\UserClaimMvoApplicationServiceProxy.cs">
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\UserLoginMvoApplicationServiceProxy.cs">
+      <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\UserPermissionMvoApplicationServiceProxy.cs">
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
@@ -178,6 +181,7 @@
 .\RolePermissionApplicationServiceProxy.cs
 .\UserApplicationServiceProxy.cs
 .\UserClaimMvoApplicationServiceProxy.cs
+.\UserLoginMvoApplicationServiceProxy.cs
 .\UserPermissionMvoApplicationServiceProxy.cs
 .\UserRoleMvoApplicationServiceProxy.cs
 .\WarehouseApplicationServiceProxy.cs

@@ -1215,6 +1215,51 @@
     <Compile Include="Generated\Domain\IUserCommand.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\IUserLoginCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IUserLoginMvoAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IUserLoginMvoApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IUserLoginMvoApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IUserLoginMvoCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IUserLoginMvoState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IUserLoginMvoStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IUserLoginMvoStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IUserLoginMvoStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IUserLoginState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IUserLoginStateDao.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IUserLoginStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IUserLoginStateEventDao.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IUserLoginStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IUserLoginStates.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\IUserPermissionCommand.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -1383,6 +1428,18 @@
     <Compile Include="Generated\Domain\LocatorTree.cs">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\LoginKey.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\LoginKeyDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\LoginKeyFlattenedDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\LoginKeyFlattenedDtoFormatter.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\Metadata\AttributeMetadata.cs">
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
     </Compile>
@@ -1450,6 +1507,12 @@
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\Metadata\UserClaimMvoMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\Metadata\UserLoginMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\Metadata\UserLoginMvoMetadata.cs">
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\Metadata\UserMetadata.cs">
@@ -1845,11 +1908,89 @@
     <Compile Include="Generated\Domain\UserCommandDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Domain\UserLogin.cs">
-      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    <Compile Include="Generated\Domain\UserLoginCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generated\Domain\UserLoginDto.cs">
-      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    <Compile Include="Generated\Domain\UserLoginCommandDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserLoginId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserLoginIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserLoginIdFlattenedDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserLoginIdFlattenedDtoFormatter.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserLoginMvoAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserLoginMvoApplicationServiceBase.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserLoginMvoApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserLoginMvoCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserLoginMvoCommandDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserLoginMvoState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserLoginMvoStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserLoginMvoStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserLoginMvoStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserLoginMvoStateEventId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserLoginMvoStateEventIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserLoginMvoStateExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserLoginMvoStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserLoginState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserLoginStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserLoginStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserLoginStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserLoginStateEventId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserLoginStateEventIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserLoginStateExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserLoginStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserLoginStates.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\UserPermissionCommand.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
@@ -2540,6 +2681,21 @@
 .\IUserClaimStateProperties.cs
 .\IUserClaimStates.cs
 .\IUserCommand.cs
+.\IUserLoginCommand.cs
+.\IUserLoginMvoAggregate.cs
+.\IUserLoginMvoApplicationService.cs
+.\IUserLoginMvoApplicationServiceFactory.cs
+.\IUserLoginMvoCommand.cs
+.\IUserLoginMvoState.cs
+.\IUserLoginMvoStateEvent.cs
+.\IUserLoginMvoStateProperties.cs
+.\IUserLoginMvoStateRepository.cs
+.\IUserLoginState.cs
+.\IUserLoginStateDao.cs
+.\IUserLoginStateEvent.cs
+.\IUserLoginStateEventDao.cs
+.\IUserLoginStateProperties.cs
+.\IUserLoginStates.cs
 .\IUserPermissionCommand.cs
 .\IUserPermissionMvoAggregate.cs
 .\IUserPermissionMvoApplicationService.cs
@@ -2595,6 +2751,10 @@
 .\LocatorStateEventIdDto.cs
 .\LocatorStateExtensions.cs
 .\LocatorStateProperties.cs
+.\LoginKey.cs
+.\LoginKeyDto.cs
+.\LoginKeyFlattenedDto.cs
+.\LoginKeyFlattenedDtoFormatter.cs
 .\OrganizationAggregate.cs
 .\OrganizationApplicationServiceBase.cs
 .\OrganizationApplicationServiceFactory.cs
@@ -2706,6 +2866,34 @@
 .\UserClaimStates.cs
 .\UserCommand.cs
 .\UserCommandDto.cs
+.\UserLoginCommand.cs
+.\UserLoginCommandDto.cs
+.\UserLoginId.cs
+.\UserLoginIdDto.cs
+.\UserLoginIdFlattenedDto.cs
+.\UserLoginIdFlattenedDtoFormatter.cs
+.\UserLoginMvoAggregate.cs
+.\UserLoginMvoApplicationServiceBase.cs
+.\UserLoginMvoApplicationServiceFactory.cs
+.\UserLoginMvoCommand.cs
+.\UserLoginMvoCommandDto.cs
+.\UserLoginMvoState.cs
+.\UserLoginMvoStateDto.cs
+.\UserLoginMvoStateEvent.cs
+.\UserLoginMvoStateEventDto.cs
+.\UserLoginMvoStateEventId.cs
+.\UserLoginMvoStateEventIdDto.cs
+.\UserLoginMvoStateExtensions.cs
+.\UserLoginMvoStateProperties.cs
+.\UserLoginState.cs
+.\UserLoginStateDto.cs
+.\UserLoginStateEvent.cs
+.\UserLoginStateEventDto.cs
+.\UserLoginStateEventId.cs
+.\UserLoginStateEventIdDto.cs
+.\UserLoginStateExtensions.cs
+.\UserLoginStateProperties.cs
+.\UserLoginStates.cs
 .\UserPermissionCommand.cs
 .\UserPermissionCommandDto.cs
 .\UserPermissionId.cs
@@ -2814,8 +3002,6 @@
 .\SkuIdDto.cs
 .\SkuIdFlattenedDto.cs
 .\SkuIdFlattenedDtoFormatter.cs
-.\UserLogin.cs
-.\UserLoginDto.cs
 </LastOutputs>
     </Content>
     <Content Include="Generated\Domain\GenerateBoundedContextDomain.txt">
@@ -2856,6 +3042,8 @@
 .\RolePermissionMetadata.cs
 .\UserClaimMetadata.cs
 .\UserClaimMvoMetadata.cs
+.\UserLoginMetadata.cs
+.\UserLoginMvoMetadata.cs
 .\UserMetadata.cs
 .\UserPermissionMetadata.cs
 .\UserPermissionMvoMetadata.cs

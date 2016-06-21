@@ -185,6 +185,31 @@ namespace Dddml.Wms.Domain
 
 
 
+        private CreateUserLoginCommands _userLogins = new CreateUserLoginCommands();
+
+        public ICreateUserLoginCommands UserLogins
+        {
+            get
+            {
+                return this._userLogins;
+            }
+        }
+
+        public CreateUserLogin NewCreateUserLogin()
+        {
+            var c = new CreateUserLogin();
+            c.UserId = this.UserId;
+
+            return c;
+        }
+
+        ICreateUserLogin ICreateUser.NewCreateUserLogin()
+        {
+            return this.NewCreateUserLogin();
+        }
+
+
+
         protected override string GetCommandType()
         {
             return Dddml.Wms.Specialization.CommandType.Create;
@@ -377,6 +402,58 @@ namespace Dddml.Wms.Domain
         IRemoveUserPermission IMergePatchUser.NewRemoveUserPermission()
         {
             return this.NewRemoveUserPermission();
+        }
+
+
+        private UserLoginCommands _userLoginCommands = new UserLoginCommands();
+
+        public IUserLoginCommands UserLoginCommands
+        {
+            get
+            {
+                return this._userLoginCommands;
+            }
+        }
+
+
+        public CreateUserLogin NewCreateUserLogin()
+        {
+            var c = new CreateUserLogin();
+            c.UserId = this.UserId;
+
+            return c;
+        }
+
+        ICreateUserLogin IMergePatchUser.NewCreateUserLogin()
+        {
+            return this.NewCreateUserLogin();
+        }
+
+        public MergePatchUserLogin NewMergePatchUserLogin()
+        {
+            var c = new MergePatchUserLogin();
+            c.UserId = this.UserId;
+
+            return c;
+        }
+
+        IMergePatchUserLogin IMergePatchUser.NewMergePatchUserLogin()
+        {
+            return this.NewMergePatchUserLogin();
+        }
+
+
+        public RemoveUserLogin NewRemoveUserLogin()
+        {
+            var c = new RemoveUserLogin();
+            c.UserId = this.UserId;
+
+            return c;
+        }
+
+        IRemoveUserLogin IMergePatchUser.NewRemoveUserLogin()
+        {
+            return this.NewRemoveUserLogin();
         }
 
 
@@ -580,6 +657,70 @@ namespace Dddml.Wms.Domain
         }
 
         public IEnumerator<IUserPermissionCommand> GetEnumerator()
+        {
+            return _innerCommands.GetEnumerator();
+        }
+
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        {
+            return _innerCommands.GetEnumerator();
+        }
+
+    }
+
+
+
+    public class CreateUserLoginCommands : ICreateUserLoginCommands
+    {
+        private List<ICreateUserLogin> _innerCommands = new List<ICreateUserLogin>();
+
+        public void Add(ICreateUserLogin c)
+        {
+            _innerCommands.Add(c);
+        }
+
+        public void Remove(ICreateUserLogin c)
+        {
+            _innerCommands.Remove(c);
+        }
+
+        public void Clear()
+        {
+            _innerCommands.Clear();
+        }
+
+        public IEnumerator<ICreateUserLogin> GetEnumerator()
+        {
+            return _innerCommands.GetEnumerator();
+        }
+
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        {
+            return _innerCommands.GetEnumerator();
+        }
+
+    }
+
+    public class UserLoginCommands : IUserLoginCommands
+    {
+        private List<IUserLoginCommand> _innerCommands = new List<IUserLoginCommand>();
+
+        public void Add(IUserLoginCommand c)
+        {
+            _innerCommands.Add(c);
+        }
+
+        public void Remove(IUserLoginCommand c)
+        {
+            _innerCommands.Remove(c);
+        }
+
+        public void Clear()
+        {
+            _innerCommands.Clear();
+        }
+
+        public IEnumerator<IUserLoginCommand> GetEnumerator()
         {
             return _innerCommands.GetEnumerator();
         }

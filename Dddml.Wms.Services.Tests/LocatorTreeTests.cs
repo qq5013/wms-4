@@ -33,6 +33,7 @@ namespace Dddml.Wms.Services.Tests
             var locator1 = new CreateLocator();
             locator1.LocatorId = Guid.NewGuid().ToString();
             locator1.X = "1";
+            locator1.WarehouseId = "1";
             locatorApplicationService.When(locator1);
 
             var locator2 = new CreateLocator();
@@ -40,6 +41,7 @@ namespace Dddml.Wms.Services.Tests
             locator2.ParentLocatorId = locator1.LocatorId;
             locator2.X = locator1.X;
             locator2.Y = "2";
+            locator2.WarehouseId = "1";
             locatorApplicationService.When(locator2);
 
             var roots = locatorTreeRepository.GetRoots((IEnumerable<KeyValuePair<string, object>>)null, null).ToList();

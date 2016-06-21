@@ -528,6 +528,81 @@ namespace Dddml.Wms.Domain
             }
         }
 
+        ICreateUserLoginCommands ICreateUser.UserLogins
+        {
+            get
+            {
+                return this._userLogins;
+            }
+        }
+
+        IUserLoginCommands IMergePatchUser.UserLoginCommands
+        {
+            get
+            {
+                return this._userLogins;
+            }
+        }
+
+        public virtual CreateUserLoginDto NewCreateUserLogin()
+        {
+            var c = new CreateUserLoginDto();
+            c.UserId = this.UserId;
+
+            return c;
+        }
+
+        ICreateUserLogin ICreateUser.NewCreateUserLogin()
+        {
+            return this.NewCreateUserLogin();
+        }
+
+        ICreateUserLogin IMergePatchUser.NewCreateUserLogin()
+        {
+            return this.NewCreateUserLogin();
+        }
+
+        public virtual MergePatchUserLoginDto NewMergePatchUserLogin()
+        {
+            var c = new MergePatchUserLoginDto();
+            c.UserId = this.UserId;
+
+            return c;
+        }
+
+        IMergePatchUserLogin IMergePatchUser.NewMergePatchUserLogin()
+        {
+            return this.NewMergePatchUserLogin();
+        }
+
+        public virtual RemoveUserLoginDto NewRemoveUserLogin()
+        {
+            var c = new RemoveUserLoginDto();
+            c.UserId = this.UserId;
+
+            return c;
+        }
+
+        IRemoveUserLogin IMergePatchUser.NewRemoveUserLogin()
+        {
+            return this.NewRemoveUserLogin();
+        }
+
+        private CreateOrMergePatchOrRemoveUserLoginDtos _userLogins = new CreateOrMergePatchOrRemoveUserLoginDtos();
+
+        public virtual CreateOrMergePatchOrRemoveUserLoginDto[] UserLogins
+        {
+            get
+            {
+                return _userLogins.ToArray();
+            }
+            set
+            {
+                _userLogins.Clear();
+                _userLogins.AddRange(value);
+            }
+        }
+
 
         string ICommandDto.CommandType 
         {

@@ -63,6 +63,12 @@ namespace Dddml.Wms.Domain
 
 		IUserPermissionStateCreated NewUserPermissionStateCreated(string permissionId);
 
+		IEnumerable<IUserLoginStateCreated> UserLoginEvents { get; }
+		
+		void AddUserLoginEvent(IUserLoginStateCreated e);
+
+		IUserLoginStateCreated NewUserLoginStateCreated(LoginKey loginKey);
+
 	
 	}
 
@@ -123,6 +129,16 @@ namespace Dddml.Wms.Domain
 
 		IUserPermissionStateRemoved NewUserPermissionStateRemoved(string permissionId);
 
+		IEnumerable<IUserLoginStateEvent> UserLoginEvents { get; }
+		
+		void AddUserLoginEvent(IUserLoginStateEvent e);
+
+		IUserLoginStateCreated NewUserLoginStateCreated(LoginKey loginKey);
+
+		IUserLoginStateMergePatched NewUserLoginStateMergePatched(LoginKey loginKey);
+
+		IUserLoginStateRemoved NewUserLoginStateRemoved(LoginKey loginKey);
+
 
 	}
 
@@ -146,6 +162,12 @@ namespace Dddml.Wms.Domain
 		void AddUserPermissionEvent(IUserPermissionStateRemoved e);
 		
 		IUserPermissionStateRemoved NewUserPermissionStateRemoved(string permissionId);
+
+		IEnumerable<IUserLoginStateRemoved> UserLoginEvents { get; }
+		
+		void AddUserLoginEvent(IUserLoginStateRemoved e);
+		
+		IUserLoginStateRemoved NewUserLoginStateRemoved(LoginKey loginKey);
 
 	}
 

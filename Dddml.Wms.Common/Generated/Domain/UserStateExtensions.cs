@@ -77,6 +77,11 @@ namespace Dddml.Wms.Domain
                 var c = d.ToCreateOrMergePatchUserPermission();
                 cmd.UserPermissionCommands.Add(c);
             }
+            foreach (UserLoginState d in state.UserLogins)
+            {
+                var c = d.ToCreateOrMergePatchUserLogin();
+                cmd.UserLoginCommands.Add(c);
+            }
             return cmd;
         }
 
@@ -113,6 +118,11 @@ namespace Dddml.Wms.Domain
             {
                 var c = d.ToCreateUserPermission();
                 cmd.UserPermissions.Add(c);
+            }
+            foreach (UserLoginState d in state.UserLogins)
+            {
+                var c = d.ToCreateUserLogin();
+                cmd.UserLogins.Add(c);
             }
             return cmd;
         }

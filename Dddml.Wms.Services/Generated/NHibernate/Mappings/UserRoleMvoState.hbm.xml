@@ -60,17 +60,6 @@
 
 	<property name="UserDeleted" ></property>
 
-      <set name="UserUserLogins" table="UserRoleMvoUserUserLogins">
-        <key>
-          <column name="UserRoleIdUserId" />
-          <column name="UserRoleIdRoleId" />
-        </key>
-				<composite-element class="Dddml.Wms.Domain.UserLogin">
-					<property name="LoginProvider" not-null="true"/>
-					<property name="ProviderKey" not-null="true"/>
-				</composite-element>
-      </set>
-
 
   </class>
   

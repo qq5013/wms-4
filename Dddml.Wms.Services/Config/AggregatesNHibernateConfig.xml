@@ -197,6 +197,14 @@
     <property name="SessionFactory" ref="NHibernateSessionFactory"/>
   </object>
 
+  <object id="userLoginStateDao" type="Dddml.Wms.Domain.NHibernate.NHibernateUserLoginStateDao, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="userLoginStateEventDao" type="Dddml.Wms.Domain.NHibernate.NHibernateUserLoginStateEventDao, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
 
   <object id="userStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateUserStateRepository, Dddml.Wms.Services">
     <property name="SessionFactory" ref="NHibernateSessionFactory"/>
@@ -363,6 +371,20 @@
   <object id="userPermissionMvoApplicationService" type="Dddml.Wms.Domain.NHibernate.UserPermissionMvoApplicationService, Dddml.Wms.Services">
     <constructor-arg ref="userPermissionMvoEventStore"/>
     <constructor-arg ref="userPermissionMvoStateRepository"/>
+  </object>
+
+
+  <object id="userLoginMvoStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateUserLoginMvoStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="userLoginMvoEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateUserLoginMvoEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="userLoginMvoApplicationService" type="Dddml.Wms.Domain.NHibernate.UserLoginMvoApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="userLoginMvoEventStore"/>
+    <constructor-arg ref="userLoginMvoStateRepository"/>
   </object>
 
 </objects>

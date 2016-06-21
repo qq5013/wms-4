@@ -176,6 +176,33 @@ namespace Dddml.Wms.Domain
 		}
 
 
+		protected IUserLoginStateEventDao UserLoginStateEventDao
+		{
+			get { return ApplicationContext.Current["UserLoginStateEventDao"] as IUserLoginStateEventDao; }
+		}
+
+        protected UserLoginStateEventId NewUserLoginStateEventId(LoginKey loginKey)
+        {
+            var stateEventId = new UserLoginStateEventId(this.StateEventId.UserId, loginKey, this.StateEventId.Version);
+            return stateEventId;
+        }
+
+
+        protected void ThrowOnInconsistentEventIds(IUserLoginStateEvent e)
+        {
+            ThrowOnInconsistentEventIds(this, e);
+        }
+
+		public static void ThrowOnInconsistentEventIds(IUserStateEvent oe, IUserLoginStateEvent e)
+		{
+			if (!oe.StateEventId.UserId.Equals(e.StateEventId.UserId))
+			{ 
+				DomainError.Named("inconsistentEventIds", "Outer Id UserId {0} but inner id UserId {1}", 
+					oe.StateEventId.UserId, e.StateEventId.UserId);
+			}
+		}
+
+
 
         string IStateEventDto.StateEventType
         {
@@ -343,6 +370,55 @@ namespace Dddml.Wms.Domain
             return stateEvent;
         }
 
+		private Dictionary<UserLoginStateEventId, IUserLoginStateCreated> _userLoginEvents = new Dictionary<UserLoginStateEventId, IUserLoginStateCreated>();
+		
+        private IEnumerable<IUserLoginStateCreated> _readOnlyUserLoginEvents;
+
+        public virtual IEnumerable<IUserLoginStateCreated> UserLoginEvents
+        {
+            get
+            {
+                if (!StateEventReadOnly)
+                {
+					return this._userLoginEvents.Values;
+                }
+                else
+                {
+                    if (_readOnlyUserLoginEvents != null) { return _readOnlyUserLoginEvents; }
+                    var eventDao = UserLoginStateEventDao;
+                    var eL = new List<IUserLoginStateCreated>();
+                    foreach (var e in eventDao.FindByUserStateEventId(this.StateEventId))
+                    {
+                        e.ReadOnly = true;
+                        eL.Add((IUserLoginStateCreated)e);
+                    }
+                    return (_readOnlyUserLoginEvents = eL);
+                }
+            }
+            set 
+            {
+                if (value != null)
+                {
+                    foreach (var e in value)
+                    {
+                        AddUserLoginEvent(e);
+                    }
+                }
+            }
+        }
+	
+		public virtual void AddUserLoginEvent(IUserLoginStateCreated e)
+		{
+			ThrowOnInconsistentEventIds(e);
+			this._userLoginEvents[e.StateEventId] = e;
+		}
+
+        public virtual IUserLoginStateCreated NewUserLoginStateCreated(LoginKey loginKey)
+        {
+            var stateEvent = new UserLoginStateCreated(NewUserLoginStateEventId(loginKey));
+            return stateEvent;
+        }
+
 		public virtual void Save ()
 		{
 			foreach (IUserRoleStateCreated e in this.UserRoleEvents) {
@@ -353,6 +429,9 @@ namespace Dddml.Wms.Domain
 			}
 			foreach (IUserPermissionStateCreated e in this.UserPermissionEvents) {
 				UserPermissionStateEventDao.Save(e);
+			}
+			foreach (IUserLoginStateCreated e in this.UserLoginEvents) {
+				UserLoginStateEventDao.Save(e);
 			}
 		}
 
@@ -582,6 +661,67 @@ namespace Dddml.Wms.Domain
             return stateEvent;
         }
 
+		private Dictionary<UserLoginStateEventId, IUserLoginStateEvent> _userLoginEvents = new Dictionary<UserLoginStateEventId, IUserLoginStateEvent>();
+
+	    private IEnumerable<IUserLoginStateEvent> _readOnlyUserLoginEvents;
+		
+        public virtual IEnumerable<IUserLoginStateEvent> UserLoginEvents
+        {
+            get
+            {
+                if (!StateEventReadOnly)
+                {
+					return this._userLoginEvents.Values;
+                }
+                else
+                {
+                    if (_readOnlyUserLoginEvents != null) { return _readOnlyUserLoginEvents; }
+                    var eventDao = UserLoginStateEventDao;
+                    var eL = new List<IUserLoginStateEvent>();
+                    foreach (var e in eventDao.FindByUserStateEventId(this.StateEventId))
+                    {
+                        e.ReadOnly = true;
+                        eL.Add((IUserLoginStateEvent)e);
+                    }
+                    return (_readOnlyUserLoginEvents = eL);
+                }
+            }
+            set 
+            {
+                if (value != null)
+                {
+                    foreach (var e in value)
+                    {
+                        AddUserLoginEvent(e);
+                    }
+                }
+            }
+        }
+
+		public virtual void AddUserLoginEvent(IUserLoginStateEvent e)
+		{
+			ThrowOnInconsistentEventIds(e);
+			this._userLoginEvents[e.StateEventId] = e;
+		}
+
+        public virtual IUserLoginStateCreated NewUserLoginStateCreated(LoginKey loginKey)
+        {
+            var stateEvent = new UserLoginStateCreated(NewUserLoginStateEventId(loginKey));
+            return stateEvent;
+        }
+
+        public virtual IUserLoginStateMergePatched NewUserLoginStateMergePatched(LoginKey loginKey)
+        {
+            var stateEvent = new UserLoginStateMergePatched(NewUserLoginStateEventId(loginKey));
+            return stateEvent;
+        }
+
+        public virtual IUserLoginStateRemoved NewUserLoginStateRemoved(LoginKey loginKey)
+        {
+            var stateEvent = new UserLoginStateRemoved(NewUserLoginStateEventId(loginKey));
+            return stateEvent;
+        }
+
 		public virtual void Save ()
 		{
 			foreach (IUserRoleStateEvent e in this.UserRoleEvents) {
@@ -592,6 +732,9 @@ namespace Dddml.Wms.Domain
 			}
 			foreach (IUserPermissionStateEvent e in this.UserPermissionEvents) {
 				UserPermissionStateEventDao.Save(e);
+			}
+			foreach (IUserLoginStateEvent e in this.UserLoginEvents) {
+				UserLoginStateEventDao.Save(e);
 			}
 		}
 
@@ -765,6 +908,55 @@ namespace Dddml.Wms.Domain
             return stateEvent;
         }
 
+		private Dictionary<UserLoginStateEventId, IUserLoginStateRemoved> _userLoginEvents = new Dictionary<UserLoginStateEventId, IUserLoginStateRemoved>();
+		
+        private IEnumerable<IUserLoginStateRemoved> _readOnlyUserLoginEvents;
+
+        public virtual IEnumerable<IUserLoginStateRemoved> UserLoginEvents
+        {
+            get
+            {
+                if (!StateEventReadOnly)
+                {
+					return this._userLoginEvents.Values;
+                }
+                else
+                {
+                    if (_readOnlyUserLoginEvents != null) { return _readOnlyUserLoginEvents; }
+                    var eventDao = UserLoginStateEventDao;
+                    var eL = new List<IUserLoginStateRemoved>();
+                    foreach (var e in eventDao.FindByUserStateEventId(this.StateEventId))
+                    {
+                        e.ReadOnly = true;
+                        eL.Add((IUserLoginStateRemoved)e);
+                    }
+                    return (_readOnlyUserLoginEvents = eL);
+                }
+            }
+            set 
+            {
+                if (value != null)
+                {
+                    foreach (var e in value)
+                    {
+                        AddUserLoginEvent(e);
+                    }
+                }
+            }
+        }
+	
+		public virtual void AddUserLoginEvent(IUserLoginStateRemoved e)
+		{
+			ThrowOnInconsistentEventIds(e);
+			this._userLoginEvents[e.StateEventId] = e;
+		}
+
+        public virtual IUserLoginStateRemoved NewUserLoginStateRemoved(LoginKey loginKey)
+        {
+            var stateEvent = new UserLoginStateRemoved(NewUserLoginStateEventId(loginKey));
+            return stateEvent;
+        }
+
 		public virtual void Save ()
 		{
 			foreach (IUserRoleStateRemoved e in this.UserRoleEvents) {
@@ -775,6 +967,9 @@ namespace Dddml.Wms.Domain
 			}
 			foreach (IUserPermissionStateRemoved e in this.UserPermissionEvents) {
 				UserPermissionStateEventDao.Save(e);
+			}
+			foreach (IUserLoginStateRemoved e in this.UserLoginEvents) {
+				UserLoginStateEventDao.Save(e);
 			}
 		}
 

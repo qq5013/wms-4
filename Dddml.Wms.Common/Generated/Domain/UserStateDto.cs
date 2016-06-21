@@ -14,7 +14,7 @@ namespace Dddml.Wms.Domain
 	public partial class UserStateDto : StateDtoBase, IUserState
 	{
 
-        internal static IList<string> _collectionFieldNames = new string[] { "UserRoles", "UserClaims", "UserPermissions" };
+        internal static IList<string> _collectionFieldNames = new string[] { "UserRoles", "UserClaims", "UserPermissions", "UserLogins" };
 
         protected override bool IsCollectionField(string fieldName)
         {
@@ -590,52 +590,6 @@ namespace Dddml.Wms.Domain
             get { return ((IVersioned<long>)this).Version == UserState.VersionZero; }
         }
 
-        public virtual UserLoginDto[] UserLogins
-        {
-            get 
-            {
-                if (!(this as IStateDto).ReturnedFieldsContains("UserLogins"))
-                {
-                    return null;
-                }
-                var dtos = new List<UserLoginDto>();
-                if (this._state.UserLogins != null)
-                {
-                    foreach (var s in this._state.UserLogins)
-                    {
-                        var dto = new UserLoginDto(s);
-                        var returnFS = CollectionUtils.DictionaryGetValueIgnoringCase(ReturnedFields, "UserLogins");
-                        if (!String.IsNullOrWhiteSpace(returnFS))
-                        {
-                            (dto as IStateDto).ReturnedFieldsString = returnFS;
-                        }
-                        else
-                        {
-                            (dto as IStateDto).AllFieldsReturned = this.AllFieldsReturned;
-                        }
-                        dtos.Add(dto);
-                    }
-                }
-                return dtos.ToArray();
-            }
-            set 
-            {
-                if (value == null) { return; }
-                var states = new HashSet<UserLogin>();
-                foreach (var s in value)
-                {
-                    states.Add(s.ToUserLogin());
-                }
-                this._state.UserLogins = states;
-            }
-        }
-
-        ISet<UserLogin> IUserState.UserLogins 
-        {
-            get { return _state.UserLogins; }
-            set { _state.UserLogins = value; }
-        }
-
         public virtual UserRoleStateDto[] UserRoles
         {
             get 
@@ -769,6 +723,51 @@ namespace Dddml.Wms.Domain
         IUserPermissionStates IUserState.UserPermissions
         {
             get { return _state.UserPermissions; }
+        }
+
+        public virtual UserLoginStateDto[] UserLogins
+        {
+            get 
+            {
+                if (!(this as IStateDto).ReturnedFieldsContains("UserLogins"))
+                {
+                    return null;
+                }
+                var dtos = new List<UserLoginStateDto>();
+                if (this._state.UserLogins != null)
+                {
+                    foreach (var s in this._state.UserLogins)
+                    {
+                        var dto = new UserLoginStateDto((UserLoginState)s);
+                        var returnFS = CollectionUtils.DictionaryGetValueIgnoringCase(ReturnedFields, "UserLogins");
+                        if (!String.IsNullOrWhiteSpace(returnFS))
+                        {
+                            (dto as IStateDto).ReturnedFieldsString = returnFS;
+                        }
+                        else
+                        {
+                            (dto as IStateDto).AllFieldsReturned = this.AllFieldsReturned;
+                        }
+                        dtos.Add(dto);
+                    }
+                }
+                return dtos.ToArray();
+            }
+            set 
+            {
+                if (value == null) { return; }
+                var states = new List<UserLoginState>();
+                foreach (var s in value)
+                {
+                    states.Add(s.ToUserLoginState());
+                }
+                this._state.SetUserLogins(new DtoUserLoginStates(this._state, states));
+            }
+        }
+
+        IUserLoginStates IUserState.UserLogins
+        {
+            get { return _state.UserLogins; }
         }
 
 
@@ -940,6 +939,57 @@ namespace Dddml.Wms.Domain
             }
 
             public void AddToSave(IUserPermissionState state)
+            {
+                throw new NotSupportedException();
+            }
+
+            public void Save()
+            {
+                throw new NotSupportedException();
+            }
+        }
+
+        public class DtoUserLoginStates : IUserLoginStates
+        {
+
+            private IUserState _outerState;
+
+            private IEnumerable<IUserLoginState> _innerStates;
+
+            public DtoUserLoginStates(IUserState outerState, IEnumerable<IUserLoginState> innerStates)
+            {
+                this._outerState = outerState;
+                if (innerStates == null)
+                {
+                    this._innerStates = new IUserLoginState[] { };
+                }
+                else
+                {
+                    this._innerStates = innerStates;
+                }
+            }
+
+            public IEnumerator<IUserLoginState> GetEnumerator()
+            {
+                return _innerStates.GetEnumerator();
+            }
+
+            System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+            {
+                return _innerStates.GetEnumerator();
+            }
+
+            public IUserLoginState Get(LoginKey loginKey)
+            {
+                throw new NotSupportedException();
+            }
+
+            public void Remove(IUserLoginState state)
+            {
+                throw new NotSupportedException();
+            }
+
+            public void AddToSave(IUserLoginState state)
             {
                 throw new NotSupportedException();
             }

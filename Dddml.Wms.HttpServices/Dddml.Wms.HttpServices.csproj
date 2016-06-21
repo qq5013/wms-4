@@ -343,6 +343,9 @@
     <Compile Include="Generated\Controllers\UserClaimMvosController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Controllers\UserLoginMvosController.cs">
+      <DependentUpon>GenerateControllers.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Controllers\UserPermissionMvosController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
@@ -426,6 +429,7 @@
 .\RolePermissionsController.cs
 .\RolesController.cs
 .\UserClaimMvosController.cs
+.\UserLoginMvosController.cs
 .\UserPermissionMvosController.cs
 .\UserRoleMvosController.cs
 .\UsersController.cs

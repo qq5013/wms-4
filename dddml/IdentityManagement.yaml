@@ -63,6 +63,20 @@ aggregates:
         UniqueUserName: [UserName]
       
       # ------------------------------
+      valueObjects:
+
+        # ------------------------------
+        LoginKey:
+           
+          properties:
+          
+            LoginProvider:
+              type: string
+
+            ProviderKey:
+              type: string
+
+      # ------------------------------
       entities:
 
         # ------------------------------
@@ -100,17 +114,15 @@ aggregates:
             
           globalId:
             name: UserPermissionId
-
-valueObjects:
             
-    UserLogin:
-      
-      properties:
-      
-        LoginProvider:
-          type: string
-
-        ProviderKey:
-          type: string
-
+        UserLogin:
           
+          id:
+            name: LoginKey
+            type: LoginKey
+          
+          globalId:
+            name: UserLoginId
+            type: UserLoginId
+
+    

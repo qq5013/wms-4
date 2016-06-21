@@ -54,3 +54,11 @@ alter TABLE `UserPermissions` add
     (`UserId`) 
   ON DELETE NO ACTION ON UPDATE NO ACTION;
 
+alter TABLE `UserLogins` add
+  CONSTRAINT `FK_UserLogin_User_StateId` 
+  FOREIGN KEY 
+    (`UserLoginIdUserId`) 
+  REFERENCES `Users` 
+    (`UserId`) 
+  ON DELETE NO ACTION ON UPDATE NO ACTION;
+

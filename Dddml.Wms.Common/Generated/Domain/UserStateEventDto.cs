@@ -636,6 +636,113 @@ namespace Dddml.Wms.Domain
         }
 
 
+        private UserLoginStateCreatedOrMergePatchedOrRemovedDtos _userLoginEvents = new UserLoginStateCreatedOrMergePatchedOrRemovedDtos();
+
+        public virtual UserLoginStateCreatedOrMergePatchedOrRemovedDto[] UserLoginEvents
+        {
+            get
+            {
+                return _userLoginEvents.ToArray();
+            }
+            set
+            {
+                _userLoginEvents.Clear();
+                _userLoginEvents.AddRange(value);
+            }
+        }
+
+
+
+        private UserLoginStateEventIdDto NewUserLoginStateEventId(LoginKey loginKey)
+        {
+            var eId = new UserLoginStateEventIdDto();
+            eId.UserId = this.StateEventId.UserId;
+            eId.LoginKey = new LoginKeyDto(loginKey);
+            eId.UserVersion = this.StateEventId.Version;
+            return eId;
+        }
+
+        public virtual UserLoginStateCreatedDto NewUserLoginStateCreated(LoginKey loginKey)
+        {
+            var e = new UserLoginStateCreatedDto();
+            var eId = NewUserLoginStateEventId(loginKey);
+            e.StateEventId = eId;
+            return e;
+        }
+
+        public virtual UserLoginStateMergePatchedDto NewUserLoginStateMergePatched(LoginKey loginKey)
+        {
+            var e = new UserLoginStateMergePatchedDto();
+            var eId = NewUserLoginStateEventId(loginKey);
+            e.StateEventId = eId;
+            return e;
+        }
+
+        public virtual UserLoginStateRemovedDto NewUserLoginStateRemoved(LoginKey loginKey)
+        {
+            var e = new UserLoginStateRemovedDto();
+            var eId = NewUserLoginStateEventId(loginKey);
+            e.StateEventId = eId;
+            return e;
+        }
+
+        IEnumerable<IUserLoginStateCreated> IUserStateCreated.UserLoginEvents
+        {
+            get { return this._userLoginEvents; }
+        }
+
+        void IUserStateCreated.AddUserLoginEvent(IUserLoginStateCreated e)
+        {
+            this._userLoginEvents.AddUserLoginEvent(e);
+        }
+
+        IUserLoginStateCreated IUserStateCreated.NewUserLoginStateCreated(LoginKey loginKey)
+        {
+            return NewUserLoginStateCreated(loginKey);
+        }
+
+        IEnumerable<IUserLoginStateEvent> IUserStateMergePatched.UserLoginEvents
+        {
+            get { return this._userLoginEvents; }
+        }
+
+        void IUserStateMergePatched.AddUserLoginEvent(IUserLoginStateEvent e)
+        {
+            this._userLoginEvents.AddUserLoginEvent(e);
+        }
+
+        IUserLoginStateCreated IUserStateMergePatched.NewUserLoginStateCreated(LoginKey loginKey)
+        {
+            return NewUserLoginStateCreated(loginKey);
+        }
+
+        IUserLoginStateMergePatched IUserStateMergePatched.NewUserLoginStateMergePatched(LoginKey loginKey)
+        {
+            return NewUserLoginStateMergePatched(loginKey);
+        }
+
+        IUserLoginStateRemoved IUserStateMergePatched.NewUserLoginStateRemoved(LoginKey loginKey)
+        {
+            return NewUserLoginStateRemoved(loginKey);
+        }
+
+
+        IEnumerable<IUserLoginStateRemoved> IUserStateDeleted.UserLoginEvents
+        {
+            get { return this._userLoginEvents; }
+        }
+
+        void IUserStateDeleted.AddUserLoginEvent(IUserLoginStateRemoved e)
+        {
+            this._userLoginEvents.AddUserLoginEvent(e);
+        }
+
+        IUserLoginStateRemoved IUserStateDeleted.NewUserLoginStateRemoved(LoginKey loginKey)
+        {
+            return NewUserLoginStateRemoved(loginKey);
+        }
+
+
         UserStateEventId IUserStateEvent.StateEventId
         {
             get { return this.StateEventId.ToUserStateEventId(); }

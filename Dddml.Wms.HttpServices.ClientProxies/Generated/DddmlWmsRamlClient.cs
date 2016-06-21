@@ -8077,6 +8077,372 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
 
     }
 
+    public partial class UserLoginMvo
+    {
+        private readonly DddmlWmsRamlClient proxy;
+
+        internal UserLoginMvo(DddmlWmsRamlClient proxy)
+        {
+            this.proxy = proxy;
+        }
+
+        		/// <param name="request">Models.UserLoginMvoGetRequest</param>
+		/// <param name="responseFormatters">response formatters</param>
+        public virtual async Task<Models.UserLoginMvoGetResponse> Get(Models.UserLoginMvoGetRequest request, IEnumerable<MediaTypeFormatter> responseFormatters = null)
+        {
+
+            var url = "UserLoginMvos/{id}";
+			if(request.UriParameters == null)
+				throw new InvalidOperationException("Uri Parameters cannot be null");               
+
+			if(request.UriParameters.Id == null)
+				throw new InvalidOperationException("Uri Parameter Id cannot be null");
+
+            url = url.Replace("{id}", request.UriParameters.Id.ToString());
+            if(request.Query != null)
+            {
+                url += "?";
+                if(request.Query.Fields != null)
+                    url += "&fields=" + request.Query.Fields;
+            }
+
+            url = url.Replace("?&", "?");
+
+            var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
+
+            if(request.RawHeaders != null)
+            {
+                foreach(var header in request.RawHeaders)
+                {
+                    req.Headers.TryAddWithoutValidation(header.Key, string.Join(",", header.Value));
+                }
+            }
+	        var response = await proxy.Client.SendAsync(req);
+			if (proxy.SchemaValidation.Enabled && proxy.SchemaValidation.RaiseExceptions)
+            {
+				if(proxy.SchemaValidation.RaiseExceptions)
+				{
+					;
+				}
+				
+            }
+            return new Models.UserLoginMvoGetResponse  
+                                            {
+                                                RawContent = response.Content,
+                                                RawHeaders = response.Headers,
+	                                            Formatters = responseFormatters,
+                                                StatusCode = response.StatusCode,
+                                                ReasonPhrase = response.ReasonPhrase,
+												SchemaValidation = new Lazy<SchemaValidationResults>(() => new SchemaValidationResults(true), true)
+                                            };
+        }
+
+
+        		/// <param name="request">Models.UserLoginMvoPutRequest</param>
+        public virtual async Task<ApiResponse> Put(Models.UserLoginMvoPutRequest request)
+        {
+
+            var url = "UserLoginMvos/{id}";
+			if(request.UriParameters == null)
+				throw new InvalidOperationException("Uri Parameters cannot be null");               
+
+			if(request.UriParameters.Id == null)
+				throw new InvalidOperationException("Uri Parameter Id cannot be null");
+
+            url = url.Replace("{id}", request.UriParameters.Id.ToString());
+
+            url = url.Replace("?&", "?");
+
+            var req = new HttpRequestMessage(HttpMethod.Put, url);
+            proxy.SetAuthenticationHeader(req);
+
+            if(request.RawHeaders != null)
+            {
+                foreach(var header in request.RawHeaders)
+                {
+                    req.Headers.TryAddWithoutValidation(header.Key, string.Join(",", header.Value));
+                }
+            }
+            if(request.Formatter == null)
+                request.Formatter = new JsonMediaTypeFormatter();
+            req.Content = new ObjectContent(typeof(CreateUserLoginMvoDto), request.Content , request.Formatter);                           
+	        var response = await proxy.Client.SendAsync(req);
+            return new ApiResponse  
+                                            {
+                                                RawContent = response.Content,
+                                                RawHeaders = response.Headers,
+                                                StatusCode = response.StatusCode,
+                                                ReasonPhrase = response.ReasonPhrase,
+												SchemaValidation = new Lazy<SchemaValidationResults>(() => new SchemaValidationResults(true), true)
+                                            };
+        }
+
+
+        		/// <param name="request">Models.UserLoginMvoPatchRequest</param>
+        public virtual async Task<ApiResponse> Patch(Models.UserLoginMvoPatchRequest request)
+        {
+
+            var url = "UserLoginMvos/{id}";
+			if(request.UriParameters == null)
+				throw new InvalidOperationException("Uri Parameters cannot be null");               
+
+			if(request.UriParameters.Id == null)
+				throw new InvalidOperationException("Uri Parameter Id cannot be null");
+
+            url = url.Replace("{id}", request.UriParameters.Id.ToString());
+
+            url = url.Replace("?&", "?");
+
+            var req = new HttpRequestMessage(new HttpMethod("PATCH"), url);
+            proxy.SetAuthenticationHeader(req);
+
+            if(request.RawHeaders != null)
+            {
+                foreach(var header in request.RawHeaders)
+                {
+                    req.Headers.TryAddWithoutValidation(header.Key, string.Join(",", header.Value));
+                }
+            }
+            if(request.Formatter == null)
+                request.Formatter = new JsonMediaTypeFormatter();
+            req.Content = new ObjectContent(typeof(MergePatchUserLoginMvoDto), request.Content , request.Formatter);                           
+	        var response = await proxy.Client.SendAsync(req);
+            return new ApiResponse  
+                                            {
+                                                RawContent = response.Content,
+                                                RawHeaders = response.Headers,
+                                                StatusCode = response.StatusCode,
+                                                ReasonPhrase = response.ReasonPhrase,
+												SchemaValidation = new Lazy<SchemaValidationResults>(() => new SchemaValidationResults(true), true)
+                                            };
+        }
+
+
+        		/// <param name="request">Models.UserLoginMvoDeleteRequest</param>
+        public virtual async Task<ApiResponse> Delete(Models.UserLoginMvoDeleteRequest request)
+        {
+
+            var url = "UserLoginMvos/{id}";
+			if(request.UriParameters == null)
+				throw new InvalidOperationException("Uri Parameters cannot be null");               
+
+			if(request.UriParameters.Id == null)
+				throw new InvalidOperationException("Uri Parameter Id cannot be null");
+
+            url = url.Replace("{id}", request.UriParameters.Id.ToString());
+            if(request.Query != null)
+            {
+                url += "?";
+                if(request.Query.CommandId != null)
+                    url += "&commandId=" + request.Query.CommandId;
+                if(request.Query.Version != null)
+                    url += "&version=" + request.Query.Version;
+                if(request.Query.RequesterId != null)
+                    url += "&requesterId=" + request.Query.RequesterId;
+            }
+
+            url = url.Replace("?&", "?");
+
+            var req = new HttpRequestMessage(HttpMethod.Delete, url);
+            proxy.SetAuthenticationHeader(req);
+
+            if(request.RawHeaders != null)
+            {
+                foreach(var header in request.RawHeaders)
+                {
+                    req.Headers.TryAddWithoutValidation(header.Key, string.Join(",", header.Value));
+                }
+            }
+	        var response = await proxy.Client.SendAsync(req);
+            return new ApiResponse  
+                                            {
+                                                RawContent = response.Content,
+                                                RawHeaders = response.Headers,
+                                                StatusCode = response.StatusCode,
+                                                ReasonPhrase = response.ReasonPhrase,
+												SchemaValidation = new Lazy<SchemaValidationResults>(() => new SchemaValidationResults(true), true)
+                                            };
+        }
+
+    }
+
+    public partial class UserLoginMvos
+    {
+        private readonly DddmlWmsRamlClient proxy;
+
+        internal UserLoginMvos(DddmlWmsRamlClient proxy)
+        {
+            this.proxy = proxy;
+        }
+
+        		/// <param name="request">Models.UserLoginMvosGetRequest</param>
+		/// <param name="responseFormatters">response formatters</param>
+        public virtual async Task<Models.UserLoginMvosGetResponse> Get(Models.UserLoginMvosGetRequest request, IEnumerable<MediaTypeFormatter> responseFormatters = null)
+        {
+
+            var url = "UserLoginMvos";
+            if(request.Query != null)
+            {
+                url += "?";
+                if(request.Query.FirstResult != null)
+                    url += "&firstResult=" + request.Query.FirstResult;
+                if(request.Query.MaxResults != null)
+                    url += "&maxResults=" + request.Query.MaxResults;
+                if(request.Query.Sort != null)
+                    url += "&sort=" + request.Query.Sort;
+                if(request.Query.Fields != null)
+                    url += "&fields=" + request.Query.Fields;
+                if(request.Query.Filter != null)
+                    url += "&filter=" + request.Query.Filter;
+                if(request.Query.FilterTag != null)
+                    url += "&filterTag=" + request.Query.FilterTag;
+            }
+
+            url = url.Replace("?&", "?");
+
+            var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
+
+            if(request.RawHeaders != null)
+            {
+                foreach(var header in request.RawHeaders)
+                {
+                    req.Headers.TryAddWithoutValidation(header.Key, string.Join(",", header.Value));
+                }
+            }
+	        var response = await proxy.Client.SendAsync(req);
+			if (proxy.SchemaValidation.Enabled && proxy.SchemaValidation.RaiseExceptions)
+            {
+				if(proxy.SchemaValidation.RaiseExceptions)
+				{
+					;
+				}
+				
+            }
+            return new Models.UserLoginMvosGetResponse  
+                                            {
+                                                RawContent = response.Content,
+                                                RawHeaders = response.Headers,
+	                                            Formatters = responseFormatters,
+                                                StatusCode = response.StatusCode,
+                                                ReasonPhrase = response.ReasonPhrase,
+												SchemaValidation = new Lazy<SchemaValidationResults>(() => new SchemaValidationResults(true), true)
+                                            };
+        }
+
+    }
+
+    public partial class UserLoginMvosCount
+    {
+        private readonly DddmlWmsRamlClient proxy;
+
+        internal UserLoginMvosCount(DddmlWmsRamlClient proxy)
+        {
+            this.proxy = proxy;
+        }
+
+        		/// <param name="request">Models.UserLoginMvosCountGetRequest</param>
+        public virtual async Task<ApiResponse> Get(Models.UserLoginMvosCountGetRequest request)
+        {
+
+            var url = "UserLoginMvos/_count";
+            if(request.Query != null)
+            {
+                url += "?";
+                if(request.Query.Filter != null)
+                    url += "&filter=" + request.Query.Filter;
+                if(request.Query.FilterTag != null)
+                    url += "&filterTag=" + request.Query.FilterTag;
+            }
+
+            url = url.Replace("?&", "?");
+
+            var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
+
+            if(request.RawHeaders != null)
+            {
+                foreach(var header in request.RawHeaders)
+                {
+                    req.Headers.TryAddWithoutValidation(header.Key, string.Join(",", header.Value));
+                }
+            }
+	        var response = await proxy.Client.SendAsync(req);
+            return new ApiResponse  
+                                            {
+                                                RawContent = response.Content,
+                                                RawHeaders = response.Headers,
+                                                StatusCode = response.StatusCode,
+                                                ReasonPhrase = response.ReasonPhrase,
+												SchemaValidation = new Lazy<SchemaValidationResults>(() => new SchemaValidationResults(true), true)
+                                            };
+        }
+
+    }
+
+    public partial class UserLoginMvoStateEvent
+    {
+        private readonly DddmlWmsRamlClient proxy;
+
+        internal UserLoginMvoStateEvent(DddmlWmsRamlClient proxy)
+        {
+            this.proxy = proxy;
+        }
+
+        		/// <param name="request">Models.UserLoginMvoStateEventGetRequest</param>
+		/// <param name="responseFormatters">response formatters</param>
+        public virtual async Task<Models.UserLoginMvoStateEventGetResponse> Get(Models.UserLoginMvoStateEventGetRequest request, IEnumerable<MediaTypeFormatter> responseFormatters = null)
+        {
+
+            var url = "UserLoginMvos/{id}/_stateEvents/{version}";
+			if(request.UriParameters == null)
+				throw new InvalidOperationException("Uri Parameters cannot be null");               
+
+			if(request.UriParameters.Id == null)
+				throw new InvalidOperationException("Uri Parameter Id cannot be null");
+
+            url = url.Replace("{id}", request.UriParameters.Id.ToString());
+
+			if(request.UriParameters.Version == null)
+				throw new InvalidOperationException("Uri Parameter Version cannot be null");
+
+            url = url.Replace("{version}", request.UriParameters.Version.ToString());
+
+            url = url.Replace("?&", "?");
+
+            var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
+
+            if(request.RawHeaders != null)
+            {
+                foreach(var header in request.RawHeaders)
+                {
+                    req.Headers.TryAddWithoutValidation(header.Key, string.Join(",", header.Value));
+                }
+            }
+	        var response = await proxy.Client.SendAsync(req);
+			if (proxy.SchemaValidation.Enabled && proxy.SchemaValidation.RaiseExceptions)
+            {
+				if(proxy.SchemaValidation.RaiseExceptions)
+				{
+					;
+				}
+				
+            }
+            return new Models.UserLoginMvoStateEventGetResponse  
+                                            {
+                                                RawContent = response.Content,
+                                                RawHeaders = response.Headers,
+	                                            Formatters = responseFormatters,
+                                                StatusCode = response.StatusCode,
+                                                ReasonPhrase = response.ReasonPhrase,
+												SchemaValidation = new Lazy<SchemaValidationResults>(() => new SchemaValidationResults(true), true)
+                                            };
+        }
+
+    }
+
     public partial class LocatorTrees
     {
         private readonly DddmlWmsRamlClient proxy;
@@ -8484,6 +8850,12 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
         }
                 
 
+        public virtual UserLoginMvo UserLoginMvo
+        {
+            get { return new UserLoginMvo(this); }
+        }
+                
+
         public virtual Attributes Attributes
         {
             get { return new Attributes(this); }
@@ -8613,6 +8985,12 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
         public virtual UserPermissionMvos UserPermissionMvos
         {
             get { return new UserPermissionMvos(this); }
+        }
+                
+
+        public virtual UserLoginMvos UserLoginMvos
+        {
+            get { return new UserLoginMvos(this); }
         }
                 
 
@@ -8748,6 +9126,12 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
         }
                 
 
+        public virtual UserLoginMvosCount UserLoginMvosCount
+        {
+            get { return new UserLoginMvosCount(this); }
+        }
+                
+
         public virtual AttributeStateEvent AttributeStateEvent
         {
             get { return new AttributeStateEvent(this); }
@@ -8877,6 +9261,12 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
         public virtual UserPermissionMvoStateEvent UserPermissionMvoStateEvent
         {
             get { return new UserPermissionMvoStateEvent(this); }
+        }
+                
+
+        public virtual UserLoginMvoStateEvent UserLoginMvoStateEvent
+        {
+            get { return new UserLoginMvoStateEvent(this); }
         }
                 
 
@@ -10156,6 +10546,62 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 
     } // end class
 
+    public partial class  UserLoginMvoGetQuery 
+    {
+		[JsonProperty("fields")]
+        public string Fields { get; set; }
+
+
+    } // end class
+
+    public partial class  UserLoginMvoDeleteQuery 
+    {
+		[JsonProperty("commandId")]
+        public string CommandId { get; set; }
+
+		[JsonProperty("version")]
+        public string Version { get; set; }
+
+		[JsonProperty("requesterId")]
+        public string RequesterId { get; set; }
+
+
+    } // end class
+
+    public partial class  UserLoginMvosGetQuery 
+    {
+		[JsonProperty("firstResult")]
+        public int? FirstResult { get; set; }
+
+		[JsonProperty("maxResults")]
+        public int? MaxResults { get; set; }
+
+		[JsonProperty("sort")]
+        public string Sort { get; set; }
+
+		[JsonProperty("fields")]
+        public string Fields { get; set; }
+
+		[JsonProperty("filter")]
+        public string Filter { get; set; }
+
+		[JsonProperty("filterTag")]
+        public string FilterTag { get; set; }
+
+
+    } // end class
+
+    public partial class  UserLoginMvosCountGetQuery 
+    {
+		[JsonProperty("filter")]
+        public string Filter { get; set; }
+
+		[JsonProperty("filterTag")]
+        public string FilterTag { get; set; }
+
+
+    } // end class
+
     public partial class  LocatorTreesGetQuery 
     {
 		[JsonProperty("parentId")]
@@ -10774,6 +11220,31 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     /// Uri Parameters for resource /UserPermissionMvos/{id}/_stateEvents/{version}
     /// </summary>
     public partial class  UserPermissionMvoStateEventUriParameters 
+    {
+		[JsonProperty("id")]
+        public string Id { get; set; }
+
+		[JsonProperty("version")]
+        public string Version { get; set; }
+
+
+    } // end class
+
+    /// <summary>
+    /// Uri Parameters for resource /UserLoginMvos/{id}
+    /// </summary>
+    public partial class  UserLoginMvoUriParameters 
+    {
+		[JsonProperty("id")]
+        public string Id { get; set; }
+
+
+    } // end class
+
+    /// <summary>
+    /// Uri Parameters for resource /UserLoginMvos/{id}/_stateEvents/{version}
+    /// </summary>
+    public partial class  UserLoginMvoStateEventUriParameters 
     {
 		[JsonProperty("id")]
         public string Id { get; set; }
@@ -14063,6 +14534,155 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     } // end class
 
     /// <summary>
+    /// Request object for method Get of class UserLoginMvo
+    /// </summary>
+    public partial class UserLoginMvoGetRequest : ApiRequest
+    {
+        public UserLoginMvoGetRequest(UserLoginMvoUriParameters UriParameters, UserLoginMvoGetQuery Query = null)
+        {
+            this.Query = Query;
+            this.UriParameters = UriParameters;
+        }
+
+        /// <summary>
+        /// Request query string properties
+        /// </summary>
+        public UserLoginMvoGetQuery Query { get; set; }
+        /// <summary>
+        /// Request Uri Parameters
+        /// </summary>
+        public UserLoginMvoUriParameters UriParameters { get; set; }
+
+    } // end class
+
+    /// <summary>
+    /// Request object for method Put of class UserLoginMvo
+    /// </summary>
+    public partial class UserLoginMvoPutRequest : ApiRequest
+    {
+        public UserLoginMvoPutRequest(UserLoginMvoUriParameters UriParameters, CreateUserLoginMvoDto Content = null, MediaTypeFormatter Formatter = null)
+        {
+            this.Content = Content;
+            this.Formatter = Formatter;
+            this.UriParameters = UriParameters;
+        }
+
+        /// <summary>
+        /// Request content
+        /// </summary>
+        public CreateUserLoginMvoDto Content { get; set; }
+        /// <summary>
+        /// Request formatter
+        /// </summary>
+        public MediaTypeFormatter Formatter { get; set; }
+        /// <summary>
+        /// Request Uri Parameters
+        /// </summary>
+        public UserLoginMvoUriParameters UriParameters { get; set; }
+
+    } // end class
+
+    /// <summary>
+    /// Request object for method Patch of class UserLoginMvo
+    /// </summary>
+    public partial class UserLoginMvoPatchRequest : ApiRequest
+    {
+        public UserLoginMvoPatchRequest(UserLoginMvoUriParameters UriParameters, MergePatchUserLoginMvoDto Content = null, MediaTypeFormatter Formatter = null)
+        {
+            this.Content = Content;
+            this.Formatter = Formatter;
+            this.UriParameters = UriParameters;
+        }
+
+        /// <summary>
+        /// Request content
+        /// </summary>
+        public MergePatchUserLoginMvoDto Content { get; set; }
+        /// <summary>
+        /// Request formatter
+        /// </summary>
+        public MediaTypeFormatter Formatter { get; set; }
+        /// <summary>
+        /// Request Uri Parameters
+        /// </summary>
+        public UserLoginMvoUriParameters UriParameters { get; set; }
+
+    } // end class
+
+    /// <summary>
+    /// Request object for method Delete of class UserLoginMvo
+    /// </summary>
+    public partial class UserLoginMvoDeleteRequest : ApiRequest
+    {
+        public UserLoginMvoDeleteRequest(UserLoginMvoUriParameters UriParameters, UserLoginMvoDeleteQuery Query = null)
+        {
+            this.Query = Query;
+            this.UriParameters = UriParameters;
+        }
+
+        /// <summary>
+        /// Request query string properties
+        /// </summary>
+        public UserLoginMvoDeleteQuery Query { get; set; }
+        /// <summary>
+        /// Request Uri Parameters
+        /// </summary>
+        public UserLoginMvoUriParameters UriParameters { get; set; }
+
+    } // end class
+
+    /// <summary>
+    /// Request object for method Get of class UserLoginMvos
+    /// </summary>
+    public partial class UserLoginMvosGetRequest : ApiRequest
+    {
+        public UserLoginMvosGetRequest(UserLoginMvosGetQuery Query = null)
+        {
+            this.Query = Query;
+        }
+
+        /// <summary>
+        /// Request query string properties
+        /// </summary>
+        public UserLoginMvosGetQuery Query { get; set; }
+
+    } // end class
+
+    /// <summary>
+    /// Request object for method Get of class UserLoginMvosCount
+    /// </summary>
+    public partial class UserLoginMvosCountGetRequest : ApiRequest
+    {
+        public UserLoginMvosCountGetRequest(UserLoginMvosCountGetQuery Query = null)
+        {
+            this.Query = Query;
+        }
+
+        /// <summary>
+        /// Request query string properties
+        /// </summary>
+        public UserLoginMvosCountGetQuery Query { get; set; }
+
+    } // end class
+
+    /// <summary>
+    /// Request object for method Get of class UserLoginMvoStateEvent
+    /// </summary>
+    public partial class UserLoginMvoStateEventGetRequest : ApiRequest
+    {
+        public UserLoginMvoStateEventGetRequest(UserLoginMvoStateEventUriParameters UriParameters)
+        {
+            this.UriParameters = UriParameters;
+        }
+
+        /// <summary>
+        /// Request Uri Parameters
+        /// </summary>
+        public UserLoginMvoStateEventUriParameters UriParameters { get; set; }
+
+    } // end class
+
+    /// <summary>
     /// Request object for method Get of class LocatorTrees
     /// </summary>
     public partial class LocatorTreesGetRequest : ApiRequest
@@ -17334,6 +17954,153 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
                     var task =  Formatters != null && Formatters.Any() 
                                 ? RawContent.ReadAsAsync<UserPermissionMvoStateCreatedOrMergePatchedOrDeletedDto>(Formatters).ConfigureAwait(false)
                                 : RawContent.ReadAsAsync<UserPermissionMvoStateCreatedOrMergePatchedOrDeletedDto>().ConfigureAwait(false);
+		        
+		            typedContent = task.GetAwaiter().GetResult();
+                }
+
+		        return typedContent;
+	        }
+	    }
+
+		
+
+
+    } // end class
+
+    /// <summary>
+    /// Response object for method Get of class UserLoginMvo
+    /// </summary>
+
+    public partial class UserLoginMvoGetResponse : ApiResponse
+    {
+
+
+	    private UserLoginMvoStateDto typedContent;
+        /// <summary>
+        /// Typed Response content
+        /// </summary>
+        public UserLoginMvoStateDto Content 
+    	{
+	        get
+	        {
+		        if (typedContent != null)
+			        return typedContent;
+
+                IEnumerable<string> values = new List<string>();
+                if (RawContent != null && RawContent.Headers != null)
+                    RawContent.Headers.TryGetValues("Content-Type", out values);
+
+                if (values.Any(hv => hv.ToLowerInvariant().Contains("xml")) &&
+                    !values.Any(hv => hv.ToLowerInvariant().Contains("json")))
+                {
+                    var task = RawContent.ReadAsStreamAsync();
+
+                    var xmlStream = task.GetAwaiter().GetResult();
+                    typedContent = (UserLoginMvoStateDto)new XmlSerializer(typeof(UserLoginMvoStateDto)).Deserialize(xmlStream);
+                }
+                else
+                {
+                    var task =  Formatters != null && Formatters.Any() 
+                                ? RawContent.ReadAsAsync<UserLoginMvoStateDto>(Formatters).ConfigureAwait(false)
+                                : RawContent.ReadAsAsync<UserLoginMvoStateDto>().ConfigureAwait(false);
+		        
+		            typedContent = task.GetAwaiter().GetResult();
+                }
+
+		        return typedContent;
+	        }
+	    }
+
+		
+
+
+    } // end class
+
+    /// <summary>
+    /// Response object for method Get of class UserLoginMvos
+    /// </summary>
+
+    public partial class UserLoginMvosGetResponse : ApiResponse
+    {
+
+
+	    private IList<UserLoginMvoStateDto> typedContent;
+        /// <summary>
+        /// Typed Response content
+        /// </summary>
+        public IList<UserLoginMvoStateDto> Content 
+    	{
+	        get
+	        {
+		        if (typedContent != null)
+			        return typedContent;
+
+                IEnumerable<string> values = new List<string>();
+                if (RawContent != null && RawContent.Headers != null)
+                    RawContent.Headers.TryGetValues("Content-Type", out values);
+
+                if (values.Any(hv => hv.ToLowerInvariant().Contains("xml")) &&
+                    !values.Any(hv => hv.ToLowerInvariant().Contains("json")))
+                {
+                    var task = RawContent.ReadAsStreamAsync();
+
+                    var xmlStream = task.GetAwaiter().GetResult();
+                    typedContent = (IList<UserLoginMvoStateDto>)new XmlSerializer(typeof(IList<UserLoginMvoStateDto>)).Deserialize(xmlStream);
+                }
+                else
+                {
+                    var task =  Formatters != null && Formatters.Any() 
+                                ? RawContent.ReadAsAsync<IList<UserLoginMvoStateDto>>(Formatters).ConfigureAwait(false)
+                                : RawContent.ReadAsAsync<IList<UserLoginMvoStateDto>>().ConfigureAwait(false);
+		        
+		            typedContent = task.GetAwaiter().GetResult();
+                }
+
+		        return typedContent;
+	        }
+	    }
+
+		
+
+
+    } // end class
+
+    /// <summary>
+    /// Response object for method Get of class UserLoginMvoStateEvent
+    /// </summary>
+
+    public partial class UserLoginMvoStateEventGetResponse : ApiResponse
+    {
+
+
+	    private UserLoginMvoStateCreatedOrMergePatchedOrDeletedDto typedContent;
+        /// <summary>
+        /// Typed Response content
+        /// </summary>
+        public UserLoginMvoStateCreatedOrMergePatchedOrDeletedDto Content 
+    	{
+	        get
+	        {
+		        if (typedContent != null)
+			        return typedContent;
+
+                IEnumerable<string> values = new List<string>();
+                if (RawContent != null && RawContent.Headers != null)
+                    RawContent.Headers.TryGetValues("Content-Type", out values);
+
+                if (values.Any(hv => hv.ToLowerInvariant().Contains("xml")) &&
+                    !values.Any(hv => hv.ToLowerInvariant().Contains("json")))
+                {
+                    var task = RawContent.ReadAsStreamAsync();
+
+                    var xmlStream = task.GetAwaiter().GetResult();
+                    typedContent = (UserLoginMvoStateCreatedOrMergePatchedOrDeletedDto)new XmlSerializer(typeof(UserLoginMvoStateCreatedOrMergePatchedOrDeletedDto)).Deserialize(xmlStream);
+                }
+                else
+                {
+                    var task =  Formatters != null && Formatters.Any() 
+                                ? RawContent.ReadAsAsync<UserLoginMvoStateCreatedOrMergePatchedOrDeletedDto>(Formatters).ConfigureAwait(false)
+                                : RawContent.ReadAsAsync<UserLoginMvoStateCreatedOrMergePatchedOrDeletedDto>().ConfigureAwait(false);
 		        
 		            typedContent = task.GetAwaiter().GetResult();
                 }

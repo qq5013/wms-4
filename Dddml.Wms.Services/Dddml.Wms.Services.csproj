@@ -277,6 +277,18 @@
     <Compile Include="Generated\Domain\NHibernate\NHibernateUserEventStore.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateUserLoginMvoEventStore.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateUserLoginMvoStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateUserLoginStateDao.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateUserLoginStateEventDao.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\NHibernate\NHibernateUserPermissionMvoEventStore.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
@@ -332,6 +344,9 @@
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\NHibernate\UserClaimMvoApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\UserLoginMvoApplicationService.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\NHibernate\UserPermissionMvoApplicationService.cs">
@@ -537,6 +552,10 @@
 .\UserClaimMvoStateEvent.hbm.xml
 .\UserClaimState.hbm.xml
 .\UserClaimStateEvent.hbm.xml
+.\UserLoginMvoState.hbm.xml
+.\UserLoginMvoStateEvent.hbm.xml
+.\UserLoginState.hbm.xml
+.\UserLoginStateEvent.hbm.xml
 .\UserPermissionMvoState.hbm.xml
 .\UserPermissionMvoStateEvent.hbm.xml
 .\UserPermissionState.hbm.xml
@@ -667,6 +686,18 @@
     <EmbeddedResource Include="Generated\NHibernate\Mappings\UserClaimMvoStateEvent.hbm.xml">
       <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\UserLoginState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\UserLoginStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\UserLoginMvoState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\UserLoginMvoStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
     <Content Include="LoadBoundedContext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>LoadBoundedContext.txt</LastGenOutput>
@@ -756,6 +787,10 @@
 .\NHibernateUserClaimStateDao.cs
 .\NHibernateUserClaimStateEventDao.cs
 .\NHibernateUserEventStore.cs
+.\NHibernateUserLoginMvoEventStore.cs
+.\NHibernateUserLoginMvoStateRepository.cs
+.\NHibernateUserLoginStateDao.cs
+.\NHibernateUserLoginStateEventDao.cs
 .\NHibernateUserPermissionMvoEventStore.cs
 .\NHibernateUserPermissionMvoStateRepository.cs
 .\NHibernateUserPermissionStateDao.cs
@@ -775,6 +810,7 @@
 .\RolePermissionApplicationService.cs
 .\UserApplicationService.cs
 .\UserClaimMvoApplicationService.cs
+.\UserLoginMvoApplicationService.cs
 .\UserPermissionMvoApplicationService.cs
 .\UserRoleMvoApplicationService.cs
 .\WarehouseApplicationService.cs

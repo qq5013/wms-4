@@ -19,8 +19,6 @@ namespace Dddml.Wms.Domain
 		IVersioned<long>
 	{
 		
-		ISet<UserLogin> UserLogins { get; set; }
-
 
 		void When(IUserStateCreated e);
 
@@ -38,6 +36,9 @@ namespace Dddml.Wms.Domain
 
 
 		IUserPermissionStates UserPermissions { get; }
+
+
+		IUserLoginStates UserLogins { get; }
 
 
         bool IsUnsaved { get; }

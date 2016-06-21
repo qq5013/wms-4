@@ -454,10 +454,6 @@ namespace Dddml.Wms.Domain.Metadata
                 },
                 new PropertyMetadata {
                     Name = "UserLogins",
-                    Type = typeof(ISet<UserLogin>),
-                    TypeName = "ISet<UserLogin>",
-                    IsBasicType = true,
-                    IsNullableType = false,
                     DeclairingObjectName = "User",
                     DisplayName = "",
                     Description = "",

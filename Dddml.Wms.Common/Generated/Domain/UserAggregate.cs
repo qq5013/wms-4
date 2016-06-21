@@ -149,6 +149,14 @@ namespace Dddml.Wms.Domain
                 e.AddUserPermissionEvent(innerEvent);
             }
 
+            foreach (ICreateUserLogin innerCommand in c.UserLogins)
+            {
+                ThrowOnInconsistentCommands(c, innerCommand);
+
+                IUserLoginStateCreated innerEvent = MapCreate(innerCommand, c, version, _state);
+                e.AddUserLoginEvent(innerEvent);
+            }
+
 
             return e;
         }
@@ -215,6 +223,14 @@ namespace Dddml.Wms.Domain
                 e.AddUserPermissionEvent(innerEvent);
             }
 
+            foreach (IUserLoginCommand innerCommand in c.UserLoginCommands)
+            {
+                ThrowOnInconsistentCommands(c, innerCommand);
+
+                IUserLoginStateEvent innerEvent = Map(innerCommand, c, version, _state);
+                e.AddUserLoginEvent(innerEvent);
+            }
+
 
             return e;
         }
@@ -270,6 +286,21 @@ namespace Dddml.Wms.Domain
 
             var properties =  command as ICreateOrMergePatchOrDeleteUser;
             var innerProperties = innerCommand as ICreateOrMergePatchOrRemoveUserPermission;
+            if (properties == null || innerProperties == null) { return; }
+            var outerUserIdName = "UserId";
+            var outerUserIdValue = properties.UserId;
+            var innerUserIdName = "UserId";
+            var innerUserIdValue = innerProperties.UserId;
+            SetNullInnerIdOrThrowOnInconsistentIds(innerProperties, innerUserIdName, innerUserIdValue, outerUserIdName, outerUserIdValue);
+
+        }// END ThrowOnInconsistentCommands /////////////////////
+
+
+        protected void ThrowOnInconsistentCommands(IUserCommand command, IUserLoginCommand innerCommand)
+        {
+
+            var properties =  command as ICreateOrMergePatchOrDeleteUser;
+            var innerProperties = innerCommand as ICreateOrMergePatchOrRemoveUserLogin;
             if (properties == null || innerProperties == null) { return; }
             var outerUserIdName = "UserId";
             var outerUserIdValue = properties.UserId;
@@ -501,6 +532,78 @@ namespace Dddml.Wms.Domain
 
         }// END Map(IRemove... ////////////////////////////
 
+
+        protected virtual IUserLoginStateEvent Map(IUserLoginCommand c, IUserCommand outerCommand, long version, IUserState outerState)
+        {
+            var create = (c.CommandType == CommandType.Create) ? (c as ICreateUserLogin) : null;
+            if(create != null)
+            {
+                return MapCreate(create, outerCommand, version, outerState);
+            }
+
+            var merge = (c.CommandType == CommandType.MergePatch) ? (c as IMergePatchUserLogin) : null;
+            if(merge != null)
+            {
+                return MapMergePatch(merge, outerCommand, version, outerState);
+            }
+
+            var remove = (c.CommandType == CommandType.Remove) ? (c as IRemoveUserLogin) : null;
+            if (remove != null)
+            {
+                return MapRemove(remove, outerCommand, version);
+            }
+            throw new NotSupportedException();
+        }
+
+
+        protected virtual IUserLoginStateCreated MapCreate(ICreateUserLogin c, IUserCommand outerCommand, long version, IUserState outerState)
+        {
+            c.RequesterId = outerCommand.RequesterId;
+			var stateEventId = new UserLoginStateEventId(c.UserId, c.LoginKey, version);
+            IUserLoginStateCreated e = NewUserLoginStateCreated(stateEventId);
+            var s = outerState.UserLogins.Get(c.LoginKey);
+
+            e.Active = c.Active;
+
+            e.CreatedBy = (string)c.RequesterId;
+            e.CreatedAt = DateTime.Now;
+            return e;
+
+        }// END Map(ICreate... ////////////////////////////
+
+
+
+        protected virtual IUserLoginStateMergePatched MapMergePatch(IMergePatchUserLogin c, IUserCommand outerCommand, long version, IUserState outerState)
+        {
+            c.RequesterId = outerCommand.RequesterId;
+			var stateEventId = new UserLoginStateEventId(c.UserId, c.LoginKey, version);
+            IUserLoginStateMergePatched e = NewUserLoginStateMergePatched(stateEventId);
+            var s = outerState.UserLogins.Get(c.LoginKey);
+
+            e.Active = c.Active;
+            e.IsPropertyActiveRemoved = c.IsPropertyActiveRemoved;
+
+            e.CreatedBy = (string)c.RequesterId;
+            e.CreatedAt = DateTime.Now;
+            return e;
+
+        }// END Map(IMergePatch... ////////////////////////////
+
+
+        protected virtual IUserLoginStateRemoved MapRemove(IRemoveUserLogin c, IUserCommand outerCommand, long version)
+        {
+            c.RequesterId = outerCommand.RequesterId;
+			var stateEventId = new UserLoginStateEventId(c.UserId, c.LoginKey, version);
+            IUserLoginStateRemoved e = NewUserLoginStateRemoved(stateEventId);
+
+
+            e.CreatedBy = (string)c.RequesterId;
+            e.CreatedAt = DateTime.Now;
+
+            return e;
+
+        }// END Map(IRemove... ////////////////////////////
+
         private void SetNullInnerIdOrThrowOnInconsistentIds(object innerObject, string innerIdName, object innerIdValue, string outerIdName, object outerIdValue)
         {
             if (innerIdValue == null)
@@ -622,6 +725,22 @@ namespace Dddml.Wms.Domain
         private UserPermissionStateRemoved NewUserPermissionStateRemoved(UserPermissionStateEventId stateEventId)
 		{
 			return new UserPermissionStateRemoved(stateEventId);
+		}
+
+
+		private UserLoginStateCreated NewUserLoginStateCreated(UserLoginStateEventId stateEventId)
+		{
+			return new UserLoginStateCreated(stateEventId);
+		}
+
+        private UserLoginStateMergePatched NewUserLoginStateMergePatched(UserLoginStateEventId stateEventId)
+		{
+			return new UserLoginStateMergePatched(stateEventId);
+		}
+
+        private UserLoginStateRemoved NewUserLoginStateRemoved(UserLoginStateEventId stateEventId)
+		{
+			return new UserLoginStateRemoved(stateEventId);
 		}
 
 

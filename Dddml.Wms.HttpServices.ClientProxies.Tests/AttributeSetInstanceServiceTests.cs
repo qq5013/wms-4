@@ -17,7 +17,6 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
     [TestFixture]
     public class AttributeSetInstanceServiceTests : ClientProxyTestsBase
     {
-        //private string _endpointUrl = "http://localhost:63078/api/"; //注意，最后的斜杠是必须的！
 
         private IAttributeApplicationServiceFactory _attributeApplicationServiceFactory;
 

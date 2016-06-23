@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 namespace Dddml.Wms.Services.Tests
 {
     [TestFixture]
-    public class AttributeSetBuilderTests
+    public class AttributeSetBuilderTests : TestsBase
     {
 
         IAttributeSetApplicationService attributeSetApplicationService;
@@ -20,7 +20,8 @@ namespace Dddml.Wms.Services.Tests
         [SetUp]
         public void SetUp()
         {
-            ApplicationContext.Current = SpringApplicationContext.Instance;
+            base.SetUp();
+
             attributeSetApplicationService = ApplicationContext.Current["attributeSetApplicationService"] as IAttributeSetApplicationService;
             attributeApplicationService = ApplicationContext.Current["attributeApplicationService"] as IAttributeApplicationService;
 

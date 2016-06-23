@@ -1,10 +1,13 @@
-﻿using Dddml.Wms.Domain;
+﻿using Dddml.Support.NHibernate;
+using Dddml.Wms.Domain;
 using Dddml.Wms.Specialization;
 using Dddml.Wms.Specialization.Spring;
 using Microsoft.AspNet.Identity;
 using NHibernate;
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Configuration;
 using System.IO;
 using System.Text;
@@ -12,7 +15,7 @@ using System.Text;
 namespace Dddml.Wms.Services.Tests
 {
     [TestFixture]
-    public class InitDatabase
+    public class InitDatabase : TestsBase
     {
 
         ISessionFactory _sessionFactory;
@@ -25,10 +28,11 @@ namespace Dddml.Wms.Services.Tests
 
         PasswordHasher _passwordHasher = new PasswordHasher();
 
+
         [SetUp]
         public void SetUp()
         {
-            ApplicationContext.Current = SpringApplicationContext.Instance;
+            base.SetUp();
 
             _sessionFactory = ApplicationContext.Current["NHibernateSessionFactory"] as ISessionFactory;
 
@@ -37,21 +41,28 @@ namespace Dddml.Wms.Services.Tests
             _userApplicationService = ApplicationContext.Current["UserApplicationService"] as IUserApplicationService;
 
             _roleApplicationService = ApplicationContext.Current["RoleApplicationService"] as IRoleApplicationService;
+
         }
 
         [Test]
         public void CreateDatabaseAndSeed()
         {
-            Hbm2DdlCreateAndFix();
+            foreach (var connRoutingKey in RoutingConnectionProviderDictionary.Keys)
+            {
+                ContextualKeyRoutingConnectionProvider.CurrentRoutingKey = connRoutingKey;
 
-            CreateSelfClient();
+                var connString = GetCurrentConnectionString();
 
-            var roles = new string[] { "Supervisor", "Manager" };
+                DropCreateDatebase(connString);
 
-            CreateRoles(roles);
+                CreateSelfClient();
 
-            var userIdAndPassword = CreateTestUser(roles);
+                var roles = new string[] { "Supervisor", "Manager" };
 
+                CreateRoles(roles);
+
+                var userIdAndPassword = CreateTestUser(roles);
+            }
         }
 
         private Tuple<string, string> CreateTestUser(string[] roles)
@@ -111,9 +122,17 @@ namespace Dddml.Wms.Services.Tests
         private const string SqlDelimiter = ";";
 
         [Test]
-        public void Hbm2DdlUpdate()
+        public void Hbm2DdlOutput()
         {
-            var cfg = GetNHibernateConfiguration();
+            ContextualKeyRoutingConnectionProvider.CurrentRoutingKey = FirstConnectionRoutingKey;
+
+            var connString = GetCurrentConnectionString();
+            var cfg = GetNHibernateConfiguration(connString);
+
+            var schemaExport = new NHibernate.Tool.hbm2ddl.SchemaExport(cfg);
+
+            schemaExport.SetOutputFile(@"..\..\sql\hbm2ddl_drop.sql").SetDelimiter(SqlDelimiter).Drop(true, false);
+            schemaExport.SetOutputFile(@"..\..\sql\hbm2ddl_create.sql").SetDelimiter(SqlDelimiter).Create(true, false);
 
             var sb = new StringBuilder();
             var schemaUpdate = new NHibernate.Tool.hbm2ddl.SchemaUpdate(cfg);
@@ -126,22 +145,18 @@ namespace Dddml.Wms.Services.Tests
             }
         }
 
+
         //[Category("InitDatabase_999")]
         //[Test]
-        public void Hbm2DdlCreateAndFix()
+        private void DropCreateDatebase(string connString)
         {
-            var cfg = GetNHibernateConfiguration();
-
-            var schemaExport = new NHibernate.Tool.hbm2ddl.SchemaExport(cfg);
-
-            schemaExport.SetOutputFile(@"..\..\sql\hbm2ddl_drop.sql").SetDelimiter(SqlDelimiter).Drop(true, false);
-            schemaExport.SetOutputFile(@"..\..\sql\hbm2ddl_create.sql").SetDelimiter(SqlDelimiter).Create(true, false);
+            var cfg = GetNHibernateConfiguration(connString);
 
             string[] sqlFiles = new string[] 
             {
                 @"..\..\sql\DropRViews.sql", 
                 @"..\..\sql\DropStateIdForeignKeyConstraints.sql",
-                @"..\..\sql\hbm2ddl_create.sql",
+                @"..\..\sql\hbm2ddl_create_fix.sql",
                 @"..\..\sql\DropRViewNameConflictedTables.sql", 
                 @"..\..\sql\CreateRViews.sql", 
                 @"..\..\sql\AddStateIdForeignKeyConstraints.sql",
@@ -163,10 +178,9 @@ namespace Dddml.Wms.Services.Tests
             }
         }
 
-        private NHibernate.Cfg.Configuration GetNHibernateConfiguration()
+        private NHibernate.Cfg.Configuration GetNHibernateConfiguration(string connString)
         {
-            var conn = (_sessionFactory as NHibernate.Impl.SessionFactoryImpl).ConnectionProvider.GetConnection();
-            var connString = conn.ConnectionString;
+            //var conn = (_sessionFactory as NHibernate.Impl.SessionFactoryImpl).ConnectionProvider.GetConnection();
             if (!connString.ToLower().Contains("Allow User Variables=True".ToLower()))
             {
                 connString = connString + (connString.EndsWith(";") ? "" : ";") + "Allow User Variables=True";

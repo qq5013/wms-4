@@ -7,11 +7,12 @@ using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using NodaMoney;
+using Dddml.Support.NHibernate;
 
 namespace Dddml.Wms.Services.Tests
 {
     [TestFixture]
-    public class InOutTests
+    public class InOutTests : TestsBase
     {
 
         IInOutApplicationService inOutApplicationService;
@@ -19,9 +20,9 @@ namespace Dddml.Wms.Services.Tests
         [SetUp]
         public void SetUp()
         {
-            ApplicationContext.Current = SpringApplicationContext.Instance;
+            base.SetUp();
+            
             inOutApplicationService = ApplicationContext.Current["inOutApplicationService"] as IInOutApplicationService;
-
         }
 
         [Test]

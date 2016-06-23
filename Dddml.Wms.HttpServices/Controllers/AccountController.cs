@@ -63,7 +63,7 @@ namespace Dddml.Wms.HttpServices.Controllers
                 Email = User.Identity.GetUserName(),
                 HasRegistered = externalLogin == null,
                 LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null
-            };
+            }; 
         }
 
         // POST api/Account/Logout

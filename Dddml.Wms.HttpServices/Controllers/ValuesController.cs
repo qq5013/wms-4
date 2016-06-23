@@ -19,9 +19,11 @@ namespace Dddml.Wms.HttpServices.Controllers
 
         // GET api/values/5
         //[SetRequesterId]
-        [Authorize]
+        //[Authorize]
+        [AllowAnonymous]
         public string Get(int id)
         {
+            return Request.RequestUri.Host + ":" + Request.RequestUri.Port;
             return "value";
         }
 

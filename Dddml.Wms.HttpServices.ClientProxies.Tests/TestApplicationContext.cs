@@ -15,9 +15,14 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
 {
     public class TestApplicationContext : ApplicationContext
     {
-        private string _authzServerEndpointUrl = "http://localhost:58760/";
 
-        private string _endpointUrl = "http://localhost:63078/api/"; //注意，最后的斜杠是必须的！
+        private string _authzServerEndpointUrl = "http://testtenant1.localhost:58760/";
+
+        private string _endpointUrl = "http://testtenant1.localhost:63078/api/"; 
+
+        //private string _authzServerEndpointUrl = "http://localhost:58760/";
+
+        //private string _endpointUrl = "http://localhost:63078/api/"; //注意，最后的斜杠是必须的！
 
         private string _oAuthBearerToken;
 
@@ -70,17 +75,18 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
             var response = client.SendAsync(req).GetAwaiter().GetResult();
             if (!HttpStatusCode.OK.Equals(response.StatusCode))
             {
-                throw new InvalidOperationException("!HttpStatusCode.OK.Equals(response.StatusCode)"); 
+                throw new Exception("!HttpStatusCode.OK.Equals(response.StatusCode)"); 
             }
 
             dynamic result = response.Content.ReadAsAsync<JObject>(new MediaTypeFormatter[] { new JsonMediaTypeFormatter() }).GetAwaiter().GetResult();
 
-            Console.WriteLine(result);
-            Console.WriteLine(response.Headers);
-            Console.WriteLine(response.StatusCode);
-            Console.WriteLine(response.ReasonPhrase);
+            //Console.WriteLine(result.ToString());
+            //Console.WriteLine(response.Headers);
+            //Console.WriteLine(response.StatusCode);
+            //Console.WriteLine(response.ReasonPhrase);
 
             this._oAuthBearerToken = (string)result.access_token;
+            Console.WriteLine(this._oAuthBearerToken);
             return this._oAuthBearerToken;
         }
 
@@ -120,13 +126,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
             //Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
             if (!HttpStatusCode.OK.Equals(response.StatusCode))
             {
-                throw new InvalidOperationException("!HttpStatusCode.OK.Equals(response.StatusCode)");
+                throw new Exception("!HttpStatusCode.OK.Equals(response.StatusCode)");
             }
 
-            Console.WriteLine(response.Content);
-            Console.WriteLine(response.Headers);
-            Console.WriteLine(response.StatusCode);
-            Console.WriteLine(response.ReasonPhrase);
+            //Console.WriteLine(response.Content);
+            //Console.WriteLine(response.Headers);
+            //Console.WriteLine(response.StatusCode);
+            //Console.WriteLine(response.ReasonPhrase);
 
             return new Tuple<string, string>(email, password);
         }

@@ -11,7 +11,7 @@ using System.Text.RegularExpressions;
 namespace Dddml.Wms.Services.Tests
 {
     [TestFixture]
-    public class LocatorTreeTests
+    public class LocatorTreeTests : TestsBase
     {
 
         ILocatorTreeRepository locatorTreeRepository;
@@ -21,7 +21,8 @@ namespace Dddml.Wms.Services.Tests
         [SetUp]
         public void SetUp()
         {
-            ApplicationContext.Current = SpringApplicationContext.Instance;
+            base.SetUp();
+
             locatorTreeRepository = ApplicationContext.Current["locatorTreeRepository"] as ILocatorTreeRepository;
             locatorApplicationService = ApplicationContext.Current["locatorApplicationService"] as ILocatorApplicationService;
 

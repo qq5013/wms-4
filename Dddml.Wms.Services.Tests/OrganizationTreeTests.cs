@@ -11,7 +11,7 @@ using System.Text.RegularExpressions;
 namespace Dddml.Wms.Services.Tests
 {
     [TestFixture]
-    public class OrganizationTreeTests
+    public class OrganizationTreeTests : TestsBase
     {
 
         IOrganizationTreeRepository organizationTreeRepository;
@@ -25,7 +25,8 @@ namespace Dddml.Wms.Services.Tests
         [SetUp]
         public void SetUp()
         {
-            ApplicationContext.Current = SpringApplicationContext.Instance;
+            base.SetUp();
+
             organizationTreeRepository = ApplicationContext.Current["organizationTreeRepository"] as IOrganizationTreeRepository;
             organizationApplicationService = ApplicationContext.Current["organizationApplicationService"] as IOrganizationApplicationService;
             organizationStructureApplicationService = ApplicationContext.Current["organizationStructureApplicationService"] as IOrganizationStructureApplicationService;

@@ -13,7 +13,7 @@ namespace Dddml.Wms.Services.Tests
 {
 
     [TestFixture]
-    public class AttributeSetInstanceExtensionFieldUtilsTests
+    public class AttributeSetInstanceExtensionFieldUtilsTests : TestsBase
     {
 
         IAttributeSetInstanceExtensionFieldGroupApplicationService attributeSetInstanceExtensionFieldGroupApplicationService;
@@ -23,7 +23,8 @@ namespace Dddml.Wms.Services.Tests
         [SetUp]
         public void SetUp()
         {
-            ApplicationContext.Current = SpringApplicationContext.Instance;
+            base.SetUp();
+
             attributeSetInstanceExtensionFieldGroupApplicationService = ApplicationContext.Current["attributeSetInstanceExtensionFieldGroupApplicationService"] as IAttributeSetInstanceExtensionFieldGroupApplicationService;
         }
 

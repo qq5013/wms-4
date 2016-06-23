@@ -15,6 +15,7 @@ namespace Dddml.Wms.AuthorizationServer
 {
     public partial class Startup
     {
+
         public static OAuthAuthorizationServerOptions OAuthOptions { get; private set; }
 
         public static string PublicClientId { get; private set; }
@@ -56,7 +57,7 @@ namespace Dddml.Wms.AuthorizationServer
                 TokenEndpointPath = new PathString("/oauth2/token"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(30),
                 Provider = new CustomOAuthProvider(),
-                AccessTokenFormat = new CustomJwtFormat("http://jwtauthzsrv.wms.dddml.org")
+                AccessTokenFormat = new CustomJwtFormat("http://jwtauthzsrv.wms.dddml.org"),
             };
 
             // OAuth 2.0 Bearer Access Token Generation

@@ -30,6 +30,9 @@ namespace Dddml.Wms.HttpServices
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            // ///////////////////////////
+            config.MessageHandlers.Insert(0, new NHibernateMultiTenancyMessageHandler());
         }
     }
 

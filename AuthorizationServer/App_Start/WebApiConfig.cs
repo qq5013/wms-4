@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
+using Dddml.Wms.HttpServices;
 
 namespace Dddml.Wms.AuthorizationServer
 {
@@ -25,6 +26,10 @@ namespace Dddml.Wms.AuthorizationServer
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            // ///////////////////////////
+            config.MessageHandlers.Insert(0, new NHibernateMultiTenancyMessageHandler());
+
         }
     }
 }

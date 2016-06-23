@@ -20,6 +20,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -361,7 +363,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="HttpModules\DddmlApplicationContextHttpModule.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -1042,7 +1043,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -1077,6 +1080,10 @@
       <Project>{5c91ecad-6c35-45aa-ace7-e8f156922658}</Project>
       <Name>Dddml.Support.Criterion</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\dddml-dotnet-tools\Dddml.Support.NHibernate\Dddml.Support.NHibernate.csproj">
+      <Project>{449e9fcd-f535-4d02-947f-22b0da756187}</Project>
+      <Name>Dddml.Support.NHibernate</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Dddml.Wms.AspNet.Identity\Dddml.Wms.AspNet.Identity.csproj">
       <Project>{cee62887-53fb-4291-8543-651c171d528a}</Project>
       <Name>Dddml.Wms.AspNet.Identity</Name>
@@ -1084,6 +1091,10 @@
     <ProjectReference Include="..\Dddml.Wms.Common\Dddml.Wms.Common.csproj">
       <Project>{31471bcf-d6c3-4bae-8ec5-2e9ac01edd5c}</Project>
       <Name>Dddml.Wms.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dddml.Wms.HttpServices.Common\Dddml.Wms.HttpServices.Common.csproj">
+      <Project>{cef7bb89-917c-4a08-bacc-6b3ed6020944}</Project>
+      <Name>Dddml.Wms.HttpServices.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Dddml.Wms.Services\Dddml.Wms.Services.csproj">
       <Project>{26ba5188-b72d-4ece-9984-4f76a3eb74c3}</Project>
@@ -1125,6 +1136,13 @@
   <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
     <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
     <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -2,6 +2,7 @@
 using Dddml.Wms.Specialization.HttpServices.ClientProxies;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -26,11 +27,19 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
         {
             ApplicationContext.Current = new TestApplicationContext();
 
-            var loginIdAndPassword = TestApplicationContext.RegisterTestUser();
+            var oauthToken = ConfigurationManager.AppSettings["test.OAuthBearerToken"];
+            if (oauthToken != null)
+            {
+                TestApplicationContext.OAuthBearerToken = oauthToken;
+            }
+            else
+            {
+                var loginIdAndPassword = TestApplicationContext.RegisterTestUser();
 
-            var accessToken = TestApplicationContext.GetOAuthBearerToken(loginIdAndPassword.Item1, loginIdAndPassword.Item2);
-            //上面这行代码已经在上下文中设置 Access token
-            //TestApplicationContext.OAuthBearerToken = accessToken;
+                var accessToken = TestApplicationContext.GetOAuthBearerToken(loginIdAndPassword.Item1, loginIdAndPassword.Item2);
+                //上面这行代码已经在上下文中设置 Access token
+                //TestApplicationContext.OAuthBearerToken = accessToken;
+            }
         }
 
         protected void SetAuthenticationHeader(HttpRequestMessage req)

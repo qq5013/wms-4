@@ -124,7 +124,7 @@ namespace Dddml.Wms.Services.Tests
         [Test]
         public void Hbm2DdlOutput()
         {
-            ContextualKeyRoutingConnectionProvider.CurrentRoutingKey = FirstConnectionRoutingKey;
+            ContextualKeyRoutingConnectionProvider.CurrentRoutingKey = AnyConnectionRoutingKey;
 
             var connString = GetCurrentConnectionString();
             var cfg = GetNHibernateConfiguration(connString);

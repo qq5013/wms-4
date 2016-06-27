@@ -37,6 +37,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
                 var loginIdAndPassword = TestApplicationContext.RegisterTestUser();
 
                 var accessToken = TestApplicationContext.GetOAuthBearerToken(loginIdAndPassword.Item1, loginIdAndPassword.Item2);
+                System.Console.WriteLine(accessToken);
                 //上面这行代码已经在上下文中设置 Access token
                 //TestApplicationContext.OAuthBearerToken = accessToken;
             }

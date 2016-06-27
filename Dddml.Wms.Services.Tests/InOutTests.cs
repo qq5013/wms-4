@@ -28,6 +28,15 @@ namespace Dddml.Wms.Services.Tests
         [Test]
         public void TestCreateAndVoidInout()
         {
+            for (int i = 0; i < 10; i++)
+            {
+                ContextualKeyRoutingConnectionProviderNextRandomRoutingKey();
+                TestCreateAndVoidInout_0();
+            }
+        }
+
+        private void TestCreateAndVoidInout_0()
+        {
             var documentNumber = Guid.NewGuid().ToString();
 
             CreateInOut inOut = new CreateInOut();
@@ -53,7 +62,6 @@ namespace Dddml.Wms.Services.Tests
             Assert.AreEqual(inOut.FreightAmount, inOutResult.FreightAmount);
             Console.WriteLine(inOutResult.ChargeAmount);
             Assert.AreEqual(inOut.ChargeAmount, inOutResult.ChargeAmount);
-
         }
 
 

@@ -17,10 +17,11 @@
   
   <object id="Initialize_Static_Routing_Dictionary_Of_ConnectionProvider" type="Dddml.Support.NHibernate.ContextualKeyRoutingConnectionProvider+Initializer, Dddml.Support.NHibernate">
     <constructor-arg ref="RoutingConnectionProviderDictionary"/>
+    <constructor-arg ref="CurrentRoutingKeyContext"/>
   </object>
 
   <object id="NHibernateSessionFactory" type="Spring.Data.NHibernate.LocalSessionFactoryObject, Spring.Data.NHibernate4">
-    <property name="DbProvider" ref="DbProvider"/>
+    <!--<property name="DbProvider" ref="DbProvider"/>-->
     <property name="MappingAssemblies">
       <list>
         <value>Dddml.Wms.Services</value>
@@ -29,8 +30,8 @@
 
     <property name="HibernateProperties">
       <dictionary>
-        <!--<entry key="connection.provider" value="Dddml.Support.NHibernate.ContextualKeyRoutingConnectionProvider, Dddml.Support.NHibernate"/>
-        <entry key="connection.connection_string" value="Database=_ERROR_;Data Source=_CONNECTION_;user id=_STRING_"/>-->
+        <entry key="connection.provider" value="Dddml.Support.NHibernate.ContextualKeyRoutingConnectionProvider, Dddml.Support.NHibernate"/>
+        <entry key="connection.connection_string" value="Database=_ERROR_;Data Source=_CONNECTION_;user id=_STRING_"/>
         <entry key="connection.driver_class" value="NHibernate.Driver.MySqlDataDriver"/>
         <entry key="dialect" value="NHibernate.Dialect.MySQLDialect"/>
         <entry key="use_outer_join" value="true"/>

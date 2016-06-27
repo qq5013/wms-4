@@ -18,13 +18,9 @@ namespace Dddml.Wms.HttpServices
         public override async Task Invoke(IOwinContext context)
         {
             var request = context.Request;
-            var host = request.Uri.Host;
+            ContextualKeyRoutingConnectionProvider.CurrentRoutingKey = MultiTenancyUtils.GetConnectionRoutingKey(request.Uri, null);
 
-            // TODO 直接使用主机的一部分作为 Tenant Id，生产系统可能也不会这么简单。
-            ContextualKeyRoutingConnectionProvider.CurrentRoutingKey = host.Split('.')[0];
-
-            //await Next.Invoke(context);
-            Next.Invoke(context);
+            await Next.Invoke(context);
         }
     }
 }

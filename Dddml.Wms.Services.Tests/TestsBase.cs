@@ -13,7 +13,32 @@ namespace Dddml.Wms.Services.Tests
     {
         protected IDictionary<string, string> RoutingConnectionProviderDictionary;
 
-        protected string FirstConnectionRoutingKey;
+        protected string AnyConnectionRoutingKey 
+        {
+            get
+            {
+                return RoutingConnectionProviderDictionary.Keys.First();
+            }
+        }
+
+        private static Random _random = new Random();
+
+        protected string RandomConnectionRoutingKey
+        {
+            get
+            {
+                var keys = RoutingConnectionProviderDictionary.Keys.ToList();
+                var idx = _random.Next(keys.Count);
+                return keys[idx];
+            }
+        }
+
+        protected void ContextualKeyRoutingConnectionProviderNextRandomRoutingKey()
+        {
+            ContextualKeyRoutingConnectionProvider.CurrentRoutingKey = RandomConnectionRoutingKey;
+            System.Console.WriteLine("============= ContextualKeyRoutingConnectionProvider.CurrentRoutingKey ============");
+            System.Console.WriteLine(String.Format("CurrentRoutingKey: {0}", ContextualKeyRoutingConnectionProvider.CurrentRoutingKey));
+        }
 
         protected string GetCurrentConnectionString()
         {
@@ -27,11 +52,9 @@ namespace Dddml.Wms.Services.Tests
 
             RoutingConnectionProviderDictionary = ApplicationContext.Current["RoutingConnectionProviderDictionary"] as IDictionary<string, string>;
 
-            FirstConnectionRoutingKey = RoutingConnectionProviderDictionary.Keys.First();
-
-            ContextualKeyRoutingConnectionProvider.CurrentRoutingKey = FirstConnectionRoutingKey;
-
+            ContextualKeyRoutingConnectionProviderNextRandomRoutingKey();
         }
+
 
     }
 }

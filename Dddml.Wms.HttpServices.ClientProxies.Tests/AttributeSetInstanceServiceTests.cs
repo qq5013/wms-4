@@ -22,6 +22,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
 
         private IAttributeSetApplicationServiceFactory _attributeSetApplicationServiceFactory;
 
+        private string _attributeSetId;
 
         [SetUp]
         public void SetUp()
@@ -32,7 +33,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
 
             _attributeSetApplicationServiceFactory = new AttributeSetApplicationServiceProxyFactory();
 
-            InitAttrbuteSet();
+            InitColorAttrbuteSet(out _attributeSetId);
         }
 
         [Test]
@@ -45,7 +46,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
             var url = "AttributeSetInstances/{id}";
             url = url.Replace("{id}", attrSetInstId);
 
-            dynamic jObject = GetTestColorAttributeSetInstance(attrSetInstId);
+            dynamic jObject = GetTestColorAttributeSetInstance(attrSetInstId, _attributeSetId);
 
             var req = new HttpRequestMessage(HttpMethod.Put, url);
             req.Content = new ObjectContent(typeof(JObject), jObject, new JsonMediaTypeFormatter());
@@ -86,13 +87,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
             Console.WriteLine(response.ReasonPhrase);
         }
 
-        private static dynamic GetTestColorAttributeSetInstance(string attrSetInstId)
+        private static dynamic GetTestColorAttributeSetInstance(string attrSetInstId, string attrSetId)
         {
             var attrSetInst = new CreateAttributeSetInstanceDto();
-            attrSetInst.SerialNumber = attrSetInstId;
+            attrSetInst.SerialNumber = attrSetId;
             attrSetInst.Lot = DateTime.Today.ToString();
 
-            attrSetInst.AttributeSetId = IdGenerator._lastAttributeSetId;
+            attrSetInst.AttributeSetId = attrSetId;
 
             dynamic jObject = JObject.FromObject(attrSetInst);
             jObject.Color = "R";
@@ -131,7 +132,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
             url = url.Replace("{id}", attrSetInstId);
 
             var attrSetInst = new MergePatchAttributeSetInstanceDto();
-            attrSetInst.AttributeSetId = IdGenerator._lastAttributeSetId;
+            attrSetInst.AttributeSetId = _attributeSetId;//IdGenerator._lastAttributeSetId;
             attrSetInst.SerialNumber = attrSetInstId;
             attrSetInst.Lot = DateTime.Today.ToString();
             attrSetInst.Version = 1;
@@ -153,7 +154,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
 
 
 
-        private void InitAttrbuteSet()
+        private void InitColorAttrbuteSet(out string attrSetId)
         {
             var attributeSetBuilder = new AttributeSetBuilder<CreateAttributeSetDto, CreateAttributeDto, CreateAttributeValueDto, CreateAttributeUseDto>(new IdGenerator());
 
@@ -174,44 +175,52 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
             Assert.AreEqual(3, attrVals.Count); //System.Console.WriteLine(attrVals);
             System.Console.WriteLine(attrUses);
 
-            foreach (var a in attrs)
+            var attr_0 = attrs[0];
+            attr_0.FieldName = "_F_C5_9_";
+            var existed = _attributeApplicationServiceFactory.AttributeApplicationService.GetByProperty("FieldName", attr_0.FieldName);
+            if (existed != null && existed.Count() > 0)
             {
-                a.FieldName = "_F_C5_0_";//TODO 检查这个是字段是否已经被使用？
-                _attributeApplicationServiceFactory.AttributeApplicationService.When((ICreateAttribute)a);
-                
+                Console.WriteLine(existed.First());
+                //TODO 检查属性/属性集是否完全相同？
+                // 现在只是抛出异常？
+                throw new InvalidOperationException(String.Format("Existed Attribute. attr_0.FieldName = \"{0}\";", attr_0.FieldName));
             }
-            foreach (var attrSet in attrSets)
+            else
             {
-                _attributeSetApplicationServiceFactory.AttributeSetApplicationService.When((ICreateAttributeSet)attrSet);
-            }
+                _attributeApplicationServiceFactory.AttributeApplicationService.When((ICreateAttribute)attr_0);
 
+                var attrSet_0 = attrSets[0];
+                _attributeSetApplicationServiceFactory.AttributeSetApplicationService.When((ICreateAttributeSet)attrSet_0);
+
+                attrSetId = attrSets[0].AttributeSetId;
+            }
         }
 
         class IdGenerator : AttributeSetBuilder<CreateAttributeSetDto, CreateAttributeDto, CreateAttributeValueDto, CreateAttributeUseDto>.IdGenerator
         {
-            [ThreadStatic]
-            internal static string _lastAttributeSetId;
+            //[ThreadStatic]
+            //internal static string _lastAttributeSetId;
 
             static Regex IdRegex = new Regex("^[_A-Za-z][_A-Za-z0-9]*$");
 
             public string GenerateAttributeSetId(CreateAttributeSetDto attributeSet)
             {
-                string id = null;
-                if (IdRegex.IsMatch(attributeSet.Name))
-                {
-                    id = attributeSet.Name + System.DateTime.Now.Ticks;
-                }
-                else
-                {
-                    id = System.Guid.NewGuid().ToString();
-                }
-                _lastAttributeSetId = id;
+                //string id = null;
+                //if (IdRegex.IsMatch(attributeSet.Name))
+                //{
+                //    id = attributeSet.Name + System.DateTime.Now.Ticks;
+                //}
+                //else
+                //{
+                var id = System.Guid.NewGuid().ToString();
+                //}
+                //_lastAttributeSetId = id;
                 return id;
             }
 
             public string GenerateAttributeId(CreateAttributeDto attribute)
             {
-                return attribute.Name + System.DateTime.Now.Ticks;
+                return System.Guid.NewGuid().ToString();//attribute.Name + System.DateTime.Now.Ticks;
             }
         }
 

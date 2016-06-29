@@ -9,6 +9,7 @@ using Dddml.Wms.Specialization;
 using Dddml.Wms.Domain;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Net.Http;
 using System.Web.Http;
 using Dddml.Wms.HttpServices.ClientProxies.Raml;
@@ -45,7 +46,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             _ramlClient = new DddmlWmsRamlClient(httpClient);
         }
 
-        public void When(CreateUserLoginMvoDto c)
+        public async Task WhenAsync(CreateUserLoginMvoDto c)
         {
             var idObj = UserLoginMvoProxyUtils.ToIdString((c as ICreateUserLoginMvo).UserLoginId);
             var uriParameters = new UserLoginMvoUriParameters();
@@ -53,25 +54,33 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             var req = new UserLoginMvoPutRequest(uriParameters, (CreateUserLoginMvoDto)c);
                 
-            var resp = _ramlClient.UserLoginMvo.Put(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UserLoginMvo.Put(req);
             UserLoginMvoProxyUtils.ThrowOnHttpResponseError(resp);
         }
 
-        public void When(MergePatchUserLoginMvoDto c)
+        public void When(CreateUserLoginMvoDto c)
+        {
+            WhenAsync(c).GetAwaiter().GetResult();
+        }
+
+        public async Task WhenAsync(MergePatchUserLoginMvoDto c)
         {
             var idObj = UserLoginMvoProxyUtils.ToIdString((c as IMergePatchUserLoginMvo).UserLoginId);
             var uriParameters = new UserLoginMvoUriParameters();
             uriParameters.Id = idObj;
 
             var req = new UserLoginMvoPatchRequest(uriParameters, (MergePatchUserLoginMvoDto)c);
-            var resp = _ramlClient.UserLoginMvo.Patch(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UserLoginMvo.Patch(req);
             UserLoginMvoProxyUtils.ThrowOnHttpResponseError(resp);
         }
 
-        public void When(DeleteUserLoginMvoDto c)
+        public void When(MergePatchUserLoginMvoDto c)
         {
-            //Action act = async () =>
-            //{
+            WhenAsync(c).GetAwaiter().GetResult();
+        }
+
+        public async Task WhenAsync(DeleteUserLoginMvoDto c)
+        {
             var idObj = UserLoginMvoProxyUtils.ToIdString((c as IDeleteUserLoginMvo).UserLoginId);
             var uriParameters = new UserLoginMvoUriParameters();
             uriParameters.Id = idObj;
@@ -84,10 +93,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             var req = new UserLoginMvoDeleteRequest(uriParameters);
             req.Query = q;
 
-            var resp = _ramlClient.UserLoginMvo.Delete(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UserLoginMvo.Delete(req);
             UserLoginMvoProxyUtils.ThrowOnHttpResponseError(resp);
-            //};
-            //act();
+        }
+
+        public void When(DeleteUserLoginMvoDto c)
+        {
+            WhenAsync(c).GetAwaiter().GetResult();
         }
 		
         void IUserLoginMvoApplicationService.When(ICreateUserLoginMvo c)
@@ -105,7 +117,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             this.When((DeleteUserLoginMvoDto)c);
         }
 
-        public IUserLoginMvoState Get(UserLoginId userLoginId)
+        public async Task<IUserLoginMvoState> GetAsync(UserLoginId userLoginId)
         {
             IUserLoginMvoState state = null;
             var idObj = UserLoginMvoProxyUtils.ToIdString(userLoginId);
@@ -114,11 +126,17 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             var req = new UserLoginMvoGetRequest(uriParameters);
 
-            var resp = _ramlClient.UserLoginMvo.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UserLoginMvo.Get(req);
             UserLoginMvoProxyUtils.ThrowOnHttpResponseError(resp);
             state = resp.Content;
             return state;
         }
+
+        public IUserLoginMvoState Get(UserLoginId userLoginId)
+        {
+            return GetAsync(userLoginId).GetAwaiter().GetResult();
+        }
+
 
         public IEnumerable<IUserLoginMvoState> GetAll(int firstResult, int maxResults)
         {
@@ -130,7 +148,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return Get(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IUserLoginMvoState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<IUserLoginMvoState>> GetAsync(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IUserLoginMvoState> states = null;
 			var q = new UserLoginMvosGetQuery();
@@ -141,10 +159,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.FilterTag = UserLoginMvoProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new UserLoginMvosGetRequest();
             req.Query = q;
-            var resp = _ramlClient.UserLoginMvos.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UserLoginMvos.Get(req);
             UserLoginMvoProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
+        }
+
+        public IEnumerable<IUserLoginMvoState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
         }
 
         public IEnumerable<IUserLoginMvoState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
@@ -168,7 +191,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return Get(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IUserLoginMvoState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<IUserLoginMvoState>> GetAsync(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IUserLoginMvoState> states = null;
 			var q = new UserLoginMvosGetQuery();
@@ -179,35 +202,50 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.Filter = UserLoginMvoProxyUtils.GetFilterQueryValueString(filter);
             var req = new UserLoginMvosGetRequest();
             req.Query = q;
-            var resp = _ramlClient.UserLoginMvos.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UserLoginMvos.Get(req);
             UserLoginMvoProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
         }
 
-        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+        public IEnumerable<IUserLoginMvoState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
+        }
+
+        public async virtual Task<long> GetCountAsync(IEnumerable<KeyValuePair<string, object>> filter)
 		{
 			var q = new UserLoginMvosCountGetQuery();
             q.FilterTag = UserLoginMvoProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new UserLoginMvosCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.UserLoginMvosCount.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UserLoginMvosCount.Get(req);
             UserLoginMvoProxyUtils.ThrowOnHttpResponseError(resp);
-            return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
+            return long.Parse(await resp.RawContent.ReadAsStringAsync());
 		}
 
-        public virtual long GetCount(ICriterion filter)
+        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+		{
+		    return GetCountAsync(filter).GetAwaiter().GetResult();
+		}
+
+        public async virtual Task<long> GetCountAsync(ICriterion filter)
 		{
 			var q = new UserLoginMvosCountGetQuery();
             q.Filter = UserLoginMvoProxyUtils.GetFilterQueryValueString(filter);
             var req = new UserLoginMvosCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.UserLoginMvosCount.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UserLoginMvosCount.Get(req);
             UserLoginMvoProxyUtils.ThrowOnHttpResponseError(resp);
-            return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
+            return long.Parse(await resp.RawContent.ReadAsStringAsync());
 		}
 
-        public IUserLoginMvoStateEvent GetStateEvent(UserLoginId userLoginId, long version)
+        public virtual long GetCount(ICriterion filter)
+		{
+		    return GetCountAsync(filter).GetAwaiter().GetResult();
+		}
+
+        public async Task<IUserLoginMvoStateEvent> GetStateEventAsync(UserLoginId userLoginId, long version)
         {
             var idObj = UserLoginMvoProxyUtils.ToIdString(userLoginId);
             var uriParameters = new UserLoginMvoStateEventUriParameters();
@@ -215,11 +253,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             uriParameters.Version = version.ToString();
 
             var req = new UserLoginMvoStateEventGetRequest(uriParameters);
-            var resp = _ramlClient.UserLoginMvoStateEvent.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UserLoginMvoStateEvent.Get(req);
             UserLoginMvoProxyUtils.ThrowOnHttpResponseError(resp);
             return resp.Content;
         }
 
+        public IUserLoginMvoStateEvent GetStateEvent(UserLoginId userLoginId, long version)
+        {
+            return GetStateEventAsync(userLoginId, version).GetAwaiter().GetResult();
+        }
 
         protected virtual string QueryFieldValueSeparator
         {

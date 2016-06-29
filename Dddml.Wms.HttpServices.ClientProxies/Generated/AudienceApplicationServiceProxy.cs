@@ -9,6 +9,7 @@ using Dddml.Wms.Specialization;
 using Dddml.Wms.Domain;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Net.Http;
 using System.Web.Http;
 using Dddml.Wms.HttpServices.ClientProxies.Raml;
@@ -45,7 +46,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             _ramlClient = new DddmlWmsRamlClient(httpClient);
         }
 
-        public void When(CreateAudienceDto c)
+        public async Task WhenAsync(CreateAudienceDto c)
         {
             var idObj = ((c as ICreateAudience).ClientId);
             var uriParameters = new AudienceUriParameters();
@@ -53,25 +54,33 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             var req = new AudiencePutRequest(uriParameters, (CreateAudienceDto)c);
                 
-            var resp = _ramlClient.Audience.Put(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.Audience.Put(req);
             AudienceProxyUtils.ThrowOnHttpResponseError(resp);
         }
 
-        public void When(MergePatchAudienceDto c)
+        public void When(CreateAudienceDto c)
+        {
+            WhenAsync(c).GetAwaiter().GetResult();
+        }
+
+        public async Task WhenAsync(MergePatchAudienceDto c)
         {
             var idObj = ((c as IMergePatchAudience).ClientId);
             var uriParameters = new AudienceUriParameters();
             uriParameters.Id = idObj;
 
             var req = new AudiencePatchRequest(uriParameters, (MergePatchAudienceDto)c);
-            var resp = _ramlClient.Audience.Patch(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.Audience.Patch(req);
             AudienceProxyUtils.ThrowOnHttpResponseError(resp);
         }
 
-        public void When(DeleteAudienceDto c)
+        public void When(MergePatchAudienceDto c)
         {
-            //Action act = async () =>
-            //{
+            WhenAsync(c).GetAwaiter().GetResult();
+        }
+
+        public async Task WhenAsync(DeleteAudienceDto c)
+        {
             var idObj = ((c as IDeleteAudience).ClientId);
             var uriParameters = new AudienceUriParameters();
             uriParameters.Id = idObj;
@@ -84,10 +93,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             var req = new AudienceDeleteRequest(uriParameters);
             req.Query = q;
 
-            var resp = _ramlClient.Audience.Delete(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.Audience.Delete(req);
             AudienceProxyUtils.ThrowOnHttpResponseError(resp);
-            //};
-            //act();
+        }
+
+        public void When(DeleteAudienceDto c)
+        {
+            WhenAsync(c).GetAwaiter().GetResult();
         }
 		
         void IAudienceApplicationService.When(ICreateAudience c)
@@ -105,7 +117,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             this.When((DeleteAudienceDto)c);
         }
 
-        public IAudienceState Get(string clientId)
+        public async Task<IAudienceState> GetAsync(string clientId)
         {
             IAudienceState state = null;
             var idObj = (clientId);
@@ -114,11 +126,17 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             var req = new AudienceGetRequest(uriParameters);
 
-            var resp = _ramlClient.Audience.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.Audience.Get(req);
             AudienceProxyUtils.ThrowOnHttpResponseError(resp);
             state = resp.Content;
             return state;
         }
+
+        public IAudienceState Get(string clientId)
+        {
+            return GetAsync(clientId).GetAwaiter().GetResult();
+        }
+
 
         public IEnumerable<IAudienceState> GetAll(int firstResult, int maxResults)
         {
@@ -130,7 +148,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return Get(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IAudienceState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<IAudienceState>> GetAsync(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IAudienceState> states = null;
 			var q = new AudiencesGetQuery();
@@ -141,10 +159,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.FilterTag = AudienceProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new AudiencesGetRequest();
             req.Query = q;
-            var resp = _ramlClient.Audiences.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.Audiences.Get(req);
             AudienceProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
+        }
+
+        public IEnumerable<IAudienceState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
         }
 
         public IEnumerable<IAudienceState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
@@ -168,7 +191,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return Get(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IAudienceState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<IAudienceState>> GetAsync(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IAudienceState> states = null;
 			var q = new AudiencesGetQuery();
@@ -179,35 +202,50 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.Filter = AudienceProxyUtils.GetFilterQueryValueString(filter);
             var req = new AudiencesGetRequest();
             req.Query = q;
-            var resp = _ramlClient.Audiences.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.Audiences.Get(req);
             AudienceProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
         }
 
-        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+        public IEnumerable<IAudienceState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
+        }
+
+        public async virtual Task<long> GetCountAsync(IEnumerable<KeyValuePair<string, object>> filter)
 		{
 			var q = new AudiencesCountGetQuery();
             q.FilterTag = AudienceProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new AudiencesCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.AudiencesCount.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.AudiencesCount.Get(req);
             AudienceProxyUtils.ThrowOnHttpResponseError(resp);
-            return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
+            return long.Parse(await resp.RawContent.ReadAsStringAsync());
 		}
 
-        public virtual long GetCount(ICriterion filter)
+        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+		{
+		    return GetCountAsync(filter).GetAwaiter().GetResult();
+		}
+
+        public async virtual Task<long> GetCountAsync(ICriterion filter)
 		{
 			var q = new AudiencesCountGetQuery();
             q.Filter = AudienceProxyUtils.GetFilterQueryValueString(filter);
             var req = new AudiencesCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.AudiencesCount.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.AudiencesCount.Get(req);
             AudienceProxyUtils.ThrowOnHttpResponseError(resp);
-            return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
+            return long.Parse(await resp.RawContent.ReadAsStringAsync());
 		}
 
-        public IAudienceStateEvent GetStateEvent(string clientId, long version)
+        public virtual long GetCount(ICriterion filter)
+		{
+		    return GetCountAsync(filter).GetAwaiter().GetResult();
+		}
+
+        public async Task<IAudienceStateEvent> GetStateEventAsync(string clientId, long version)
         {
             var idObj = (clientId);
             var uriParameters = new AudienceStateEventUriParameters();
@@ -215,11 +253,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             uriParameters.Version = version.ToString();
 
             var req = new AudienceStateEventGetRequest(uriParameters);
-            var resp = _ramlClient.AudienceStateEvent.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.AudienceStateEvent.Get(req);
             AudienceProxyUtils.ThrowOnHttpResponseError(resp);
             return resp.Content;
         }
 
+        public IAudienceStateEvent GetStateEvent(string clientId, long version)
+        {
+            return GetStateEventAsync(clientId, version).GetAwaiter().GetResult();
+        }
 
         protected virtual string QueryFieldValueSeparator
         {

@@ -9,6 +9,7 @@ using Dddml.Wms.Specialization;
 using Dddml.Wms.Domain;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Net.Http;
 using System.Web.Http;
 using Dddml.Wms.HttpServices.ClientProxies.Raml;
@@ -45,7 +46,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             _ramlClient = new DddmlWmsRamlClient(httpClient);
         }
 
-        public void When(CreateRolePermissionDto c)
+        public async Task WhenAsync(CreateRolePermissionDto c)
         {
             var idObj = RolePermissionProxyUtils.ToIdString((c as ICreateRolePermission).Id);
             var uriParameters = new RolePermissionUriParameters();
@@ -53,25 +54,33 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             var req = new RolePermissionPutRequest(uriParameters, (CreateRolePermissionDto)c);
                 
-            var resp = _ramlClient.RolePermission.Put(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.RolePermission.Put(req);
             RolePermissionProxyUtils.ThrowOnHttpResponseError(resp);
         }
 
-        public void When(MergePatchRolePermissionDto c)
+        public void When(CreateRolePermissionDto c)
+        {
+            WhenAsync(c).GetAwaiter().GetResult();
+        }
+
+        public async Task WhenAsync(MergePatchRolePermissionDto c)
         {
             var idObj = RolePermissionProxyUtils.ToIdString((c as IMergePatchRolePermission).Id);
             var uriParameters = new RolePermissionUriParameters();
             uriParameters.Id = idObj;
 
             var req = new RolePermissionPatchRequest(uriParameters, (MergePatchRolePermissionDto)c);
-            var resp = _ramlClient.RolePermission.Patch(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.RolePermission.Patch(req);
             RolePermissionProxyUtils.ThrowOnHttpResponseError(resp);
         }
 
-        public void When(DeleteRolePermissionDto c)
+        public void When(MergePatchRolePermissionDto c)
         {
-            //Action act = async () =>
-            //{
+            WhenAsync(c).GetAwaiter().GetResult();
+        }
+
+        public async Task WhenAsync(DeleteRolePermissionDto c)
+        {
             var idObj = RolePermissionProxyUtils.ToIdString((c as IDeleteRolePermission).Id);
             var uriParameters = new RolePermissionUriParameters();
             uriParameters.Id = idObj;
@@ -84,10 +93,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             var req = new RolePermissionDeleteRequest(uriParameters);
             req.Query = q;
 
-            var resp = _ramlClient.RolePermission.Delete(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.RolePermission.Delete(req);
             RolePermissionProxyUtils.ThrowOnHttpResponseError(resp);
-            //};
-            //act();
+        }
+
+        public void When(DeleteRolePermissionDto c)
+        {
+            WhenAsync(c).GetAwaiter().GetResult();
         }
 		
         void IRolePermissionApplicationService.When(ICreateRolePermission c)
@@ -105,7 +117,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             this.When((DeleteRolePermissionDto)c);
         }
 
-        public IRolePermissionState Get(RolePermissionId id)
+        public async Task<IRolePermissionState> GetAsync(RolePermissionId id)
         {
             IRolePermissionState state = null;
             var idObj = RolePermissionProxyUtils.ToIdString(id);
@@ -114,11 +126,17 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             var req = new RolePermissionGetRequest(uriParameters);
 
-            var resp = _ramlClient.RolePermission.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.RolePermission.Get(req);
             RolePermissionProxyUtils.ThrowOnHttpResponseError(resp);
             state = resp.Content;
             return state;
         }
+
+        public IRolePermissionState Get(RolePermissionId id)
+        {
+            return GetAsync(id).GetAwaiter().GetResult();
+        }
+
 
         public IEnumerable<IRolePermissionState> GetAll(int firstResult, int maxResults)
         {
@@ -130,7 +148,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return Get(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IRolePermissionState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<IRolePermissionState>> GetAsync(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IRolePermissionState> states = null;
 			var q = new RolePermissionsGetQuery();
@@ -141,10 +159,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.FilterTag = RolePermissionProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new RolePermissionsGetRequest();
             req.Query = q;
-            var resp = _ramlClient.RolePermissions.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.RolePermissions.Get(req);
             RolePermissionProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
+        }
+
+        public IEnumerable<IRolePermissionState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
         }
 
         public IEnumerable<IRolePermissionState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
@@ -168,7 +191,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return Get(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IRolePermissionState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<IRolePermissionState>> GetAsync(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IRolePermissionState> states = null;
 			var q = new RolePermissionsGetQuery();
@@ -179,35 +202,50 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.Filter = RolePermissionProxyUtils.GetFilterQueryValueString(filter);
             var req = new RolePermissionsGetRequest();
             req.Query = q;
-            var resp = _ramlClient.RolePermissions.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.RolePermissions.Get(req);
             RolePermissionProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
         }
 
-        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+        public IEnumerable<IRolePermissionState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
+        }
+
+        public async virtual Task<long> GetCountAsync(IEnumerable<KeyValuePair<string, object>> filter)
 		{
 			var q = new RolePermissionsCountGetQuery();
             q.FilterTag = RolePermissionProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new RolePermissionsCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.RolePermissionsCount.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.RolePermissionsCount.Get(req);
             RolePermissionProxyUtils.ThrowOnHttpResponseError(resp);
-            return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
+            return long.Parse(await resp.RawContent.ReadAsStringAsync());
 		}
 
-        public virtual long GetCount(ICriterion filter)
+        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+		{
+		    return GetCountAsync(filter).GetAwaiter().GetResult();
+		}
+
+        public async virtual Task<long> GetCountAsync(ICriterion filter)
 		{
 			var q = new RolePermissionsCountGetQuery();
             q.Filter = RolePermissionProxyUtils.GetFilterQueryValueString(filter);
             var req = new RolePermissionsCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.RolePermissionsCount.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.RolePermissionsCount.Get(req);
             RolePermissionProxyUtils.ThrowOnHttpResponseError(resp);
-            return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
+            return long.Parse(await resp.RawContent.ReadAsStringAsync());
 		}
 
-        public IRolePermissionStateEvent GetStateEvent(RolePermissionId id, long version)
+        public virtual long GetCount(ICriterion filter)
+		{
+		    return GetCountAsync(filter).GetAwaiter().GetResult();
+		}
+
+        public async Task<IRolePermissionStateEvent> GetStateEventAsync(RolePermissionId id, long version)
         {
             var idObj = RolePermissionProxyUtils.ToIdString(id);
             var uriParameters = new RolePermissionStateEventUriParameters();
@@ -215,11 +253,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             uriParameters.Version = version.ToString();
 
             var req = new RolePermissionStateEventGetRequest(uriParameters);
-            var resp = _ramlClient.RolePermissionStateEvent.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.RolePermissionStateEvent.Get(req);
             RolePermissionProxyUtils.ThrowOnHttpResponseError(resp);
             return resp.Content;
         }
 
+        public IRolePermissionStateEvent GetStateEvent(RolePermissionId id, long version)
+        {
+            return GetStateEventAsync(id, version).GetAwaiter().GetResult();
+        }
 
         protected virtual string QueryFieldValueSeparator
         {

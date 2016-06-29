@@ -9,6 +9,7 @@ using Dddml.Wms.Specialization;
 using Dddml.Wms.Domain;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Net.Http;
 using System.Web.Http;
 using Dddml.Wms.HttpServices.ClientProxies.Raml;
@@ -45,7 +46,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             _ramlClient = new DddmlWmsRamlClient(httpClient);
         }
 
-        public void When(CreateAttributeValueMvoDto c)
+        public async Task WhenAsync(CreateAttributeValueMvoDto c)
         {
             var idObj = AttributeValueMvoProxyUtils.ToIdString((c as ICreateAttributeValueMvo).AttributeValueId);
             var uriParameters = new AttributeValueMvoUriParameters();
@@ -53,25 +54,33 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             var req = new AttributeValueMvoPutRequest(uriParameters, (CreateAttributeValueMvoDto)c);
                 
-            var resp = _ramlClient.AttributeValueMvo.Put(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.AttributeValueMvo.Put(req);
             AttributeValueMvoProxyUtils.ThrowOnHttpResponseError(resp);
         }
 
-        public void When(MergePatchAttributeValueMvoDto c)
+        public void When(CreateAttributeValueMvoDto c)
+        {
+            WhenAsync(c).GetAwaiter().GetResult();
+        }
+
+        public async Task WhenAsync(MergePatchAttributeValueMvoDto c)
         {
             var idObj = AttributeValueMvoProxyUtils.ToIdString((c as IMergePatchAttributeValueMvo).AttributeValueId);
             var uriParameters = new AttributeValueMvoUriParameters();
             uriParameters.Id = idObj;
 
             var req = new AttributeValueMvoPatchRequest(uriParameters, (MergePatchAttributeValueMvoDto)c);
-            var resp = _ramlClient.AttributeValueMvo.Patch(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.AttributeValueMvo.Patch(req);
             AttributeValueMvoProxyUtils.ThrowOnHttpResponseError(resp);
         }
 
-        public void When(DeleteAttributeValueMvoDto c)
+        public void When(MergePatchAttributeValueMvoDto c)
         {
-            //Action act = async () =>
-            //{
+            WhenAsync(c).GetAwaiter().GetResult();
+        }
+
+        public async Task WhenAsync(DeleteAttributeValueMvoDto c)
+        {
             var idObj = AttributeValueMvoProxyUtils.ToIdString((c as IDeleteAttributeValueMvo).AttributeValueId);
             var uriParameters = new AttributeValueMvoUriParameters();
             uriParameters.Id = idObj;
@@ -84,10 +93,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             var req = new AttributeValueMvoDeleteRequest(uriParameters);
             req.Query = q;
 
-            var resp = _ramlClient.AttributeValueMvo.Delete(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.AttributeValueMvo.Delete(req);
             AttributeValueMvoProxyUtils.ThrowOnHttpResponseError(resp);
-            //};
-            //act();
+        }
+
+        public void When(DeleteAttributeValueMvoDto c)
+        {
+            WhenAsync(c).GetAwaiter().GetResult();
         }
 		
         void IAttributeValueMvoApplicationService.When(ICreateAttributeValueMvo c)
@@ -105,7 +117,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             this.When((DeleteAttributeValueMvoDto)c);
         }
 
-        public IAttributeValueMvoState Get(AttributeValueId attributeValueId)
+        public async Task<IAttributeValueMvoState> GetAsync(AttributeValueId attributeValueId)
         {
             IAttributeValueMvoState state = null;
             var idObj = AttributeValueMvoProxyUtils.ToIdString(attributeValueId);
@@ -114,11 +126,17 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             var req = new AttributeValueMvoGetRequest(uriParameters);
 
-            var resp = _ramlClient.AttributeValueMvo.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.AttributeValueMvo.Get(req);
             AttributeValueMvoProxyUtils.ThrowOnHttpResponseError(resp);
             state = resp.Content;
             return state;
         }
+
+        public IAttributeValueMvoState Get(AttributeValueId attributeValueId)
+        {
+            return GetAsync(attributeValueId).GetAwaiter().GetResult();
+        }
+
 
         public IEnumerable<IAttributeValueMvoState> GetAll(int firstResult, int maxResults)
         {
@@ -130,7 +148,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return Get(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IAttributeValueMvoState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<IAttributeValueMvoState>> GetAsync(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IAttributeValueMvoState> states = null;
 			var q = new AttributeValueMvosGetQuery();
@@ -141,10 +159,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.FilterTag = AttributeValueMvoProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new AttributeValueMvosGetRequest();
             req.Query = q;
-            var resp = _ramlClient.AttributeValueMvos.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.AttributeValueMvos.Get(req);
             AttributeValueMvoProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
+        }
+
+        public IEnumerable<IAttributeValueMvoState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
         }
 
         public IEnumerable<IAttributeValueMvoState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
@@ -168,7 +191,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return Get(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IAttributeValueMvoState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<IAttributeValueMvoState>> GetAsync(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IAttributeValueMvoState> states = null;
 			var q = new AttributeValueMvosGetQuery();
@@ -179,35 +202,50 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.Filter = AttributeValueMvoProxyUtils.GetFilterQueryValueString(filter);
             var req = new AttributeValueMvosGetRequest();
             req.Query = q;
-            var resp = _ramlClient.AttributeValueMvos.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.AttributeValueMvos.Get(req);
             AttributeValueMvoProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
         }
 
-        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+        public IEnumerable<IAttributeValueMvoState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
+        }
+
+        public async virtual Task<long> GetCountAsync(IEnumerable<KeyValuePair<string, object>> filter)
 		{
 			var q = new AttributeValueMvosCountGetQuery();
             q.FilterTag = AttributeValueMvoProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new AttributeValueMvosCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.AttributeValueMvosCount.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.AttributeValueMvosCount.Get(req);
             AttributeValueMvoProxyUtils.ThrowOnHttpResponseError(resp);
-            return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
+            return long.Parse(await resp.RawContent.ReadAsStringAsync());
 		}
 
-        public virtual long GetCount(ICriterion filter)
+        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+		{
+		    return GetCountAsync(filter).GetAwaiter().GetResult();
+		}
+
+        public async virtual Task<long> GetCountAsync(ICriterion filter)
 		{
 			var q = new AttributeValueMvosCountGetQuery();
             q.Filter = AttributeValueMvoProxyUtils.GetFilterQueryValueString(filter);
             var req = new AttributeValueMvosCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.AttributeValueMvosCount.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.AttributeValueMvosCount.Get(req);
             AttributeValueMvoProxyUtils.ThrowOnHttpResponseError(resp);
-            return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
+            return long.Parse(await resp.RawContent.ReadAsStringAsync());
 		}
 
-        public IAttributeValueMvoStateEvent GetStateEvent(AttributeValueId attributeValueId, long version)
+        public virtual long GetCount(ICriterion filter)
+		{
+		    return GetCountAsync(filter).GetAwaiter().GetResult();
+		}
+
+        public async Task<IAttributeValueMvoStateEvent> GetStateEventAsync(AttributeValueId attributeValueId, long version)
         {
             var idObj = AttributeValueMvoProxyUtils.ToIdString(attributeValueId);
             var uriParameters = new AttributeValueMvoStateEventUriParameters();
@@ -215,11 +253,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             uriParameters.Version = version.ToString();
 
             var req = new AttributeValueMvoStateEventGetRequest(uriParameters);
-            var resp = _ramlClient.AttributeValueMvoStateEvent.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.AttributeValueMvoStateEvent.Get(req);
             AttributeValueMvoProxyUtils.ThrowOnHttpResponseError(resp);
             return resp.Content;
         }
 
+        public IAttributeValueMvoStateEvent GetStateEvent(AttributeValueId attributeValueId, long version)
+        {
+            return GetStateEventAsync(attributeValueId, version).GetAwaiter().GetResult();
+        }
 
         protected virtual string QueryFieldValueSeparator
         {

@@ -10,6 +10,7 @@ using Dddml.Wms.Domain;
 using NodaMoney;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Net.Http;
 using System.Web.Http;
 using Dddml.Wms.HttpServices.ClientProxies.Raml;
@@ -46,7 +47,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             _ramlClient = new DddmlWmsRamlClient(httpClient);
         }
 
-        public void When(CreateInOutDto c)
+        public async Task WhenAsync(CreateInOutDto c)
         {
             var idObj = ((c as ICreateInOut).DocumentNumber);
             var uriParameters = new InOutUriParameters();
@@ -54,25 +55,33 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             var req = new InOutPutRequest(uriParameters, (CreateInOutDto)c);
                 
-            var resp = _ramlClient.InOut.Put(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.InOut.Put(req);
             InOutProxyUtils.ThrowOnHttpResponseError(resp);
         }
 
-        public void When(MergePatchInOutDto c)
+        public void When(CreateInOutDto c)
+        {
+            WhenAsync(c).GetAwaiter().GetResult();
+        }
+
+        public async Task WhenAsync(MergePatchInOutDto c)
         {
             var idObj = ((c as IMergePatchInOut).DocumentNumber);
             var uriParameters = new InOutUriParameters();
             uriParameters.Id = idObj;
 
             var req = new InOutPatchRequest(uriParameters, (MergePatchInOutDto)c);
-            var resp = _ramlClient.InOut.Patch(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.InOut.Patch(req);
             InOutProxyUtils.ThrowOnHttpResponseError(resp);
         }
 
-        public void When(DeleteInOutDto c)
+        public void When(MergePatchInOutDto c)
         {
-            //Action act = async () =>
-            //{
+            WhenAsync(c).GetAwaiter().GetResult();
+        }
+
+        public async Task WhenAsync(DeleteInOutDto c)
+        {
             var idObj = ((c as IDeleteInOut).DocumentNumber);
             var uriParameters = new InOutUriParameters();
             uriParameters.Id = idObj;
@@ -85,10 +94,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             var req = new InOutDeleteRequest(uriParameters);
             req.Query = q;
 
-            var resp = _ramlClient.InOut.Delete(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.InOut.Delete(req);
             InOutProxyUtils.ThrowOnHttpResponseError(resp);
-            //};
-            //act();
+        }
+
+        public void When(DeleteInOutDto c)
+        {
+            WhenAsync(c).GetAwaiter().GetResult();
         }
 		
         void IInOutApplicationService.When(ICreateInOut c)
@@ -106,7 +118,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             this.When((DeleteInOutDto)c);
         }
 
-        public IInOutState Get(string documentNumber)
+        public async Task<IInOutState> GetAsync(string documentNumber)
         {
             IInOutState state = null;
             var idObj = (documentNumber);
@@ -115,11 +127,17 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             var req = new InOutGetRequest(uriParameters);
 
-            var resp = _ramlClient.InOut.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.InOut.Get(req);
             InOutProxyUtils.ThrowOnHttpResponseError(resp);
             state = resp.Content;
             return state;
         }
+
+        public IInOutState Get(string documentNumber)
+        {
+            return GetAsync(documentNumber).GetAwaiter().GetResult();
+        }
+
 
         public IEnumerable<IInOutState> GetAll(int firstResult, int maxResults)
         {
@@ -131,7 +149,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return Get(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IInOutState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<IInOutState>> GetAsync(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IInOutState> states = null;
 			var q = new InOutsGetQuery();
@@ -142,10 +160,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.FilterTag = InOutProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new InOutsGetRequest();
             req.Query = q;
-            var resp = _ramlClient.InOuts.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.InOuts.Get(req);
             InOutProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
+        }
+
+        public IEnumerable<IInOutState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
         }
 
         public IEnumerable<IInOutState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
@@ -169,7 +192,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return Get(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IInOutState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<IInOutState>> GetAsync(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IInOutState> states = null;
 			var q = new InOutsGetQuery();
@@ -180,35 +203,50 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.Filter = InOutProxyUtils.GetFilterQueryValueString(filter);
             var req = new InOutsGetRequest();
             req.Query = q;
-            var resp = _ramlClient.InOuts.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.InOuts.Get(req);
             InOutProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
         }
 
-        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+        public IEnumerable<IInOutState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
+        }
+
+        public async virtual Task<long> GetCountAsync(IEnumerable<KeyValuePair<string, object>> filter)
 		{
 			var q = new InOutsCountGetQuery();
             q.FilterTag = InOutProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new InOutsCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.InOutsCount.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.InOutsCount.Get(req);
             InOutProxyUtils.ThrowOnHttpResponseError(resp);
-            return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
+            return long.Parse(await resp.RawContent.ReadAsStringAsync());
 		}
 
-        public virtual long GetCount(ICriterion filter)
+        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+		{
+		    return GetCountAsync(filter).GetAwaiter().GetResult();
+		}
+
+        public async virtual Task<long> GetCountAsync(ICriterion filter)
 		{
 			var q = new InOutsCountGetQuery();
             q.Filter = InOutProxyUtils.GetFilterQueryValueString(filter);
             var req = new InOutsCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.InOutsCount.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.InOutsCount.Get(req);
             InOutProxyUtils.ThrowOnHttpResponseError(resp);
-            return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
+            return long.Parse(await resp.RawContent.ReadAsStringAsync());
 		}
 
-        public IInOutStateEvent GetStateEvent(string documentNumber, long version)
+        public virtual long GetCount(ICriterion filter)
+		{
+		    return GetCountAsync(filter).GetAwaiter().GetResult();
+		}
+
+        public async Task<IInOutStateEvent> GetStateEventAsync(string documentNumber, long version)
         {
             var idObj = (documentNumber);
             var uriParameters = new InOutStateEventUriParameters();
@@ -216,11 +254,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             uriParameters.Version = version.ToString();
 
             var req = new InOutStateEventGetRequest(uriParameters);
-            var resp = _ramlClient.InOutStateEvent.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.InOutStateEvent.Get(req);
             InOutProxyUtils.ThrowOnHttpResponseError(resp);
             return resp.Content;
         }
 
+        public IInOutStateEvent GetStateEvent(string documentNumber, long version)
+        {
+            return GetStateEventAsync(documentNumber, version).GetAwaiter().GetResult();
+        }
 
         protected virtual string QueryFieldValueSeparator
         {

@@ -9,6 +9,7 @@ using Dddml.Wms.Specialization;
 using Dddml.Wms.Domain;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Net.Http;
 using System.Web.Http;
 using Dddml.Wms.HttpServices.ClientProxies.Raml;
@@ -45,7 +46,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             _ramlClient = new DddmlWmsRamlClient(httpClient);
         }
 
-        public void When(CreateAttributeSetInstanceDto c)
+        public async Task WhenAsync(CreateAttributeSetInstanceDto c)
         {
             var idObj = ((c as ICreateAttributeSetInstance).AttributeSetInstanceId);
             var uriParameters = new AttributeSetInstanceUriParameters();
@@ -53,25 +54,33 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             var req = new AttributeSetInstancePutRequest(uriParameters, (CreateAttributeSetInstanceDto)c);
                 
-            var resp = _ramlClient.AttributeSetInstance.Put(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.AttributeSetInstance.Put(req);
             AttributeSetInstanceProxyUtils.ThrowOnHttpResponseError(resp);
         }
 
-        public void When(MergePatchAttributeSetInstanceDto c)
+        public void When(CreateAttributeSetInstanceDto c)
+        {
+            WhenAsync(c).GetAwaiter().GetResult();
+        }
+
+        public async Task WhenAsync(MergePatchAttributeSetInstanceDto c)
         {
             var idObj = ((c as IMergePatchAttributeSetInstance).AttributeSetInstanceId);
             var uriParameters = new AttributeSetInstanceUriParameters();
             uriParameters.Id = idObj;
 
             var req = new AttributeSetInstancePatchRequest(uriParameters, (MergePatchAttributeSetInstanceDto)c);
-            var resp = _ramlClient.AttributeSetInstance.Patch(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.AttributeSetInstance.Patch(req);
             AttributeSetInstanceProxyUtils.ThrowOnHttpResponseError(resp);
         }
 
-        public void When(DeleteAttributeSetInstanceDto c)
+        public void When(MergePatchAttributeSetInstanceDto c)
         {
-            //Action act = async () =>
-            //{
+            WhenAsync(c).GetAwaiter().GetResult();
+        }
+
+        public async Task WhenAsync(DeleteAttributeSetInstanceDto c)
+        {
             var idObj = ((c as IDeleteAttributeSetInstance).AttributeSetInstanceId);
             var uriParameters = new AttributeSetInstanceUriParameters();
             uriParameters.Id = idObj;
@@ -84,10 +93,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             var req = new AttributeSetInstanceDeleteRequest(uriParameters);
             req.Query = q;
 
-            var resp = _ramlClient.AttributeSetInstance.Delete(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.AttributeSetInstance.Delete(req);
             AttributeSetInstanceProxyUtils.ThrowOnHttpResponseError(resp);
-            //};
-            //act();
+        }
+
+        public void When(DeleteAttributeSetInstanceDto c)
+        {
+            WhenAsync(c).GetAwaiter().GetResult();
         }
 		
         void IAttributeSetInstanceApplicationService.When(ICreateAttributeSetInstance c)
@@ -105,7 +117,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             this.When((DeleteAttributeSetInstanceDto)c);
         }
 
-        public IAttributeSetInstanceState Get(string attributeSetInstanceId)
+        public async Task<IAttributeSetInstanceState> GetAsync(string attributeSetInstanceId)
         {
             IAttributeSetInstanceState state = null;
             var idObj = (attributeSetInstanceId);
@@ -114,11 +126,17 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             var req = new AttributeSetInstanceGetRequest(uriParameters);
 
-            var resp = _ramlClient.AttributeSetInstance.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.AttributeSetInstance.Get(req);
             AttributeSetInstanceProxyUtils.ThrowOnHttpResponseError(resp);
             state = resp.Content;
             return state;
         }
+
+        public IAttributeSetInstanceState Get(string attributeSetInstanceId)
+        {
+            return GetAsync(attributeSetInstanceId).GetAwaiter().GetResult();
+        }
+
 
         public IEnumerable<IAttributeSetInstanceState> GetAll(int firstResult, int maxResults)
         {
@@ -130,7 +148,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return Get(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IAttributeSetInstanceState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<IAttributeSetInstanceState>> GetAsync(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IAttributeSetInstanceState> states = null;
 			var q = new AttributeSetInstancesGetQuery();
@@ -141,10 +159,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.FilterTag = AttributeSetInstanceProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new AttributeSetInstancesGetRequest();
             req.Query = q;
-            var resp = _ramlClient.AttributeSetInstances.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.AttributeSetInstances.Get(req);
             AttributeSetInstanceProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
+        }
+
+        public IEnumerable<IAttributeSetInstanceState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
         }
 
         public IEnumerable<IAttributeSetInstanceState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
@@ -168,7 +191,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return Get(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IAttributeSetInstanceState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<IAttributeSetInstanceState>> GetAsync(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IAttributeSetInstanceState> states = null;
 			var q = new AttributeSetInstancesGetQuery();
@@ -179,35 +202,50 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.Filter = AttributeSetInstanceProxyUtils.GetFilterQueryValueString(filter);
             var req = new AttributeSetInstancesGetRequest();
             req.Query = q;
-            var resp = _ramlClient.AttributeSetInstances.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.AttributeSetInstances.Get(req);
             AttributeSetInstanceProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
         }
 
-        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+        public IEnumerable<IAttributeSetInstanceState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
+        }
+
+        public async virtual Task<long> GetCountAsync(IEnumerable<KeyValuePair<string, object>> filter)
 		{
 			var q = new AttributeSetInstancesCountGetQuery();
             q.FilterTag = AttributeSetInstanceProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new AttributeSetInstancesCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.AttributeSetInstancesCount.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.AttributeSetInstancesCount.Get(req);
             AttributeSetInstanceProxyUtils.ThrowOnHttpResponseError(resp);
-            return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
+            return long.Parse(await resp.RawContent.ReadAsStringAsync());
 		}
 
-        public virtual long GetCount(ICriterion filter)
+        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+		{
+		    return GetCountAsync(filter).GetAwaiter().GetResult();
+		}
+
+        public async virtual Task<long> GetCountAsync(ICriterion filter)
 		{
 			var q = new AttributeSetInstancesCountGetQuery();
             q.Filter = AttributeSetInstanceProxyUtils.GetFilterQueryValueString(filter);
             var req = new AttributeSetInstancesCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.AttributeSetInstancesCount.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.AttributeSetInstancesCount.Get(req);
             AttributeSetInstanceProxyUtils.ThrowOnHttpResponseError(resp);
-            return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
+            return long.Parse(await resp.RawContent.ReadAsStringAsync());
 		}
 
-        public IAttributeSetInstanceStateEvent GetStateEvent(string attributeSetInstanceId, long version)
+        public virtual long GetCount(ICriterion filter)
+		{
+		    return GetCountAsync(filter).GetAwaiter().GetResult();
+		}
+
+        public async Task<IAttributeSetInstanceStateEvent> GetStateEventAsync(string attributeSetInstanceId, long version)
         {
             var idObj = (attributeSetInstanceId);
             var uriParameters = new AttributeSetInstanceStateEventUriParameters();
@@ -215,11 +253,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             uriParameters.Version = version.ToString();
 
             var req = new AttributeSetInstanceStateEventGetRequest(uriParameters);
-            var resp = _ramlClient.AttributeSetInstanceStateEvent.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.AttributeSetInstanceStateEvent.Get(req);
             AttributeSetInstanceProxyUtils.ThrowOnHttpResponseError(resp);
             return resp.Content;
         }
 
+        public IAttributeSetInstanceStateEvent GetStateEvent(string attributeSetInstanceId, long version)
+        {
+            return GetStateEventAsync(attributeSetInstanceId, version).GetAwaiter().GetResult();
+        }
 
         protected virtual string QueryFieldValueSeparator
         {

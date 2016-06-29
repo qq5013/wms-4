@@ -9,6 +9,7 @@ using Dddml.Wms.Specialization;
 using Dddml.Wms.Domain;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Net.Http;
 using System.Web.Http;
 using Dddml.Wms.HttpServices.ClientProxies.Raml;
@@ -50,7 +51,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return GetRoots(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IOrganizationState> GetRoots(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<IOrganizationState>> GetRootsAsync(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IOrganizationState> states = null;
 			var q = new OrganizationTreesGetQuery();
@@ -61,10 +62,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.Filter = OrganizationProxyUtils.GetFilterQueryValueString(filter);
             var req = new OrganizationTreesGetRequest();
             req.Query = q;
-            var resp = _ramlClient.OrganizationTrees.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.OrganizationTrees.Get(req);
             OrganizationProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
+        }
+
+        public IEnumerable<IOrganizationState> GetRoots(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetRootsAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
         }
 
         public IEnumerable<IOrganizationState> GetChildren(string parentId, ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
@@ -72,7 +78,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return GetChildren(parentId, filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IOrganizationState> GetChildren(string parentId, ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<IOrganizationState>> GetChildrenAsync(string parentId, ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IOrganizationState> states = null;
 			var q = new OrganizationTreesGetQuery();
@@ -85,10 +91,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.Filter = OrganizationProxyUtils.GetFilterQueryValueString(filter);
             var req = new OrganizationTreesGetRequest();
             req.Query = q;
-            var resp = _ramlClient.OrganizationTrees.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.OrganizationTrees.Get(req);
             OrganizationProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
+        }
+
+        public IEnumerable<IOrganizationState> GetChildren(string parentId, ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetChildrenAsync(parentId, filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
         }
 
         public IEnumerable<IOrganizationState> GetRoots(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
@@ -96,7 +107,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return GetRoots(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IOrganizationState> GetRoots(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<IOrganizationState>> GetRootsAsync(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IOrganizationState> states = null;
 			var q = new OrganizationTreesGetQuery();
@@ -107,10 +118,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.FilterTag = OrganizationProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new OrganizationTreesGetRequest();
             req.Query = q;
-            var resp = _ramlClient.OrganizationTrees.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.OrganizationTrees.Get(req);
             OrganizationProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
+        }
+
+        public IEnumerable<IOrganizationState> GetRoots(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetRootsAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
         }
 
         public IEnumerable<IOrganizationState> GetChildren(string parentId, IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
@@ -118,7 +134,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return GetChildren(parentId, filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IOrganizationState> GetChildren(string parentId, IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<IOrganizationState>> GetChildrenAsync(string parentId, IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IOrganizationState> states = null;
 			var q = new OrganizationTreesGetQuery();
@@ -131,10 +147,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.FilterTag = OrganizationProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new OrganizationTreesGetRequest();
             req.Query = q;
-            var resp = _ramlClient.OrganizationTrees.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.OrganizationTrees.Get(req);
             OrganizationProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
+        }
+
+        public IEnumerable<IOrganizationState> GetChildren(string parentId, IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetChildrenAsync(parentId, filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
         }
 
         public IEnumerable<string> GetRootIds(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
@@ -142,7 +163,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return GetRootIds(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<string> GetRootIds(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<string>> GetRootIdsAsync(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IOrganizationState> states = null;
 			var q = new OrganizationTreesGetQuery();
@@ -153,10 +174,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.Filter = OrganizationProxyUtils.GetFilterQueryValueString(filter);
             var req = new OrganizationTreesGetRequest();
             req.Query = q;
-            var resp = _ramlClient.OrganizationTrees.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.OrganizationTrees.Get(req);
             OrganizationProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return OrganizationProxyUtils.ToIdCollection(states);
+        }
+
+        public IEnumerable<string> GetRootIds(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetRootIdsAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
         }
 
         public IEnumerable<string> GetChildIds(string parentId, ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
@@ -164,7 +190,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return GetChildIds(parentId, filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<string> GetChildIds(string parentId, ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<string>> GetChildIdsAsync(string parentId, ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IOrganizationState> states = null;
 			var q = new OrganizationTreesGetQuery();
@@ -177,10 +203,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.Filter = OrganizationProxyUtils.GetFilterQueryValueString(filter);
             var req = new OrganizationTreesGetRequest();
             req.Query = q;
-            var resp = _ramlClient.OrganizationTrees.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.OrganizationTrees.Get(req);
             OrganizationProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return OrganizationProxyUtils.ToIdCollection(states);
+        }
+
+        public IEnumerable<string> GetChildIds(string parentId, ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetChildIdsAsync(parentId, filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
         }
 
         public IEnumerable<string> GetRootIds(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
@@ -188,7 +219,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return GetRootIds(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<string> GetRootIds(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<string>> GetRootIdsAsync(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IOrganizationState> states = null;
 			var q = new OrganizationTreesGetQuery();
@@ -199,10 +230,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.FilterTag = OrganizationProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new OrganizationTreesGetRequest();
             req.Query = q;
-            var resp = _ramlClient.OrganizationTrees.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.OrganizationTrees.Get(req);
             OrganizationProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return OrganizationProxyUtils.ToIdCollection(states);
+        }
+
+        public IEnumerable<string> GetRootIds(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetRootIdsAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
         }
 
         public IEnumerable<string> GetChildIds(string parentId, IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
@@ -210,7 +246,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return GetChildIds(parentId, filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<string> GetChildIds(string parentId, IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<string>> GetChildIdsAsync(string parentId, IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IOrganizationState> states = null;
 			var q = new OrganizationTreesGetQuery();
@@ -223,10 +259,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.FilterTag = OrganizationProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new OrganizationTreesGetRequest();
             req.Query = q;
-            var resp = _ramlClient.OrganizationTrees.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.OrganizationTrees.Get(req);
             OrganizationProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return OrganizationProxyUtils.ToIdCollection(states);
+        }
+
+        public IEnumerable<string> GetChildIds(string parentId, IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetChildIdsAsync(parentId, filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
         }
 
 

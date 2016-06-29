@@ -9,6 +9,7 @@ using Dddml.Wms.Specialization;
 using Dddml.Wms.Domain;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Net.Http;
 using System.Web.Http;
 using Dddml.Wms.HttpServices.ClientProxies.Raml;
@@ -45,7 +46,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             _ramlClient = new DddmlWmsRamlClient(httpClient);
         }
 
-        public void When(CreateUserRoleMvoDto c)
+        public async Task WhenAsync(CreateUserRoleMvoDto c)
         {
             var idObj = UserRoleMvoProxyUtils.ToIdString((c as ICreateUserRoleMvo).UserRoleId);
             var uriParameters = new UserRoleMvoUriParameters();
@@ -53,25 +54,33 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             var req = new UserRoleMvoPutRequest(uriParameters, (CreateUserRoleMvoDto)c);
                 
-            var resp = _ramlClient.UserRoleMvo.Put(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UserRoleMvo.Put(req);
             UserRoleMvoProxyUtils.ThrowOnHttpResponseError(resp);
         }
 
-        public void When(MergePatchUserRoleMvoDto c)
+        public void When(CreateUserRoleMvoDto c)
+        {
+            WhenAsync(c).GetAwaiter().GetResult();
+        }
+
+        public async Task WhenAsync(MergePatchUserRoleMvoDto c)
         {
             var idObj = UserRoleMvoProxyUtils.ToIdString((c as IMergePatchUserRoleMvo).UserRoleId);
             var uriParameters = new UserRoleMvoUriParameters();
             uriParameters.Id = idObj;
 
             var req = new UserRoleMvoPatchRequest(uriParameters, (MergePatchUserRoleMvoDto)c);
-            var resp = _ramlClient.UserRoleMvo.Patch(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UserRoleMvo.Patch(req);
             UserRoleMvoProxyUtils.ThrowOnHttpResponseError(resp);
         }
 
-        public void When(DeleteUserRoleMvoDto c)
+        public void When(MergePatchUserRoleMvoDto c)
         {
-            //Action act = async () =>
-            //{
+            WhenAsync(c).GetAwaiter().GetResult();
+        }
+
+        public async Task WhenAsync(DeleteUserRoleMvoDto c)
+        {
             var idObj = UserRoleMvoProxyUtils.ToIdString((c as IDeleteUserRoleMvo).UserRoleId);
             var uriParameters = new UserRoleMvoUriParameters();
             uriParameters.Id = idObj;
@@ -84,10 +93,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             var req = new UserRoleMvoDeleteRequest(uriParameters);
             req.Query = q;
 
-            var resp = _ramlClient.UserRoleMvo.Delete(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UserRoleMvo.Delete(req);
             UserRoleMvoProxyUtils.ThrowOnHttpResponseError(resp);
-            //};
-            //act();
+        }
+
+        public void When(DeleteUserRoleMvoDto c)
+        {
+            WhenAsync(c).GetAwaiter().GetResult();
         }
 		
         void IUserRoleMvoApplicationService.When(ICreateUserRoleMvo c)
@@ -105,7 +117,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             this.When((DeleteUserRoleMvoDto)c);
         }
 
-        public IUserRoleMvoState Get(UserRoleId userRoleId)
+        public async Task<IUserRoleMvoState> GetAsync(UserRoleId userRoleId)
         {
             IUserRoleMvoState state = null;
             var idObj = UserRoleMvoProxyUtils.ToIdString(userRoleId);
@@ -114,11 +126,17 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             var req = new UserRoleMvoGetRequest(uriParameters);
 
-            var resp = _ramlClient.UserRoleMvo.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UserRoleMvo.Get(req);
             UserRoleMvoProxyUtils.ThrowOnHttpResponseError(resp);
             state = resp.Content;
             return state;
         }
+
+        public IUserRoleMvoState Get(UserRoleId userRoleId)
+        {
+            return GetAsync(userRoleId).GetAwaiter().GetResult();
+        }
+
 
         public IEnumerable<IUserRoleMvoState> GetAll(int firstResult, int maxResults)
         {
@@ -130,7 +148,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return Get(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IUserRoleMvoState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<IUserRoleMvoState>> GetAsync(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IUserRoleMvoState> states = null;
 			var q = new UserRoleMvosGetQuery();
@@ -141,10 +159,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.FilterTag = UserRoleMvoProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new UserRoleMvosGetRequest();
             req.Query = q;
-            var resp = _ramlClient.UserRoleMvos.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UserRoleMvos.Get(req);
             UserRoleMvoProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
+        }
+
+        public IEnumerable<IUserRoleMvoState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
         }
 
         public IEnumerable<IUserRoleMvoState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
@@ -168,7 +191,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return Get(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IUserRoleMvoState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<IUserRoleMvoState>> GetAsync(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IUserRoleMvoState> states = null;
 			var q = new UserRoleMvosGetQuery();
@@ -179,35 +202,50 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.Filter = UserRoleMvoProxyUtils.GetFilterQueryValueString(filter);
             var req = new UserRoleMvosGetRequest();
             req.Query = q;
-            var resp = _ramlClient.UserRoleMvos.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UserRoleMvos.Get(req);
             UserRoleMvoProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
         }
 
-        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+        public IEnumerable<IUserRoleMvoState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
+        }
+
+        public async virtual Task<long> GetCountAsync(IEnumerable<KeyValuePair<string, object>> filter)
 		{
 			var q = new UserRoleMvosCountGetQuery();
             q.FilterTag = UserRoleMvoProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new UserRoleMvosCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.UserRoleMvosCount.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UserRoleMvosCount.Get(req);
             UserRoleMvoProxyUtils.ThrowOnHttpResponseError(resp);
-            return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
+            return long.Parse(await resp.RawContent.ReadAsStringAsync());
 		}
 
-        public virtual long GetCount(ICriterion filter)
+        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+		{
+		    return GetCountAsync(filter).GetAwaiter().GetResult();
+		}
+
+        public async virtual Task<long> GetCountAsync(ICriterion filter)
 		{
 			var q = new UserRoleMvosCountGetQuery();
             q.Filter = UserRoleMvoProxyUtils.GetFilterQueryValueString(filter);
             var req = new UserRoleMvosCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.UserRoleMvosCount.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UserRoleMvosCount.Get(req);
             UserRoleMvoProxyUtils.ThrowOnHttpResponseError(resp);
-            return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
+            return long.Parse(await resp.RawContent.ReadAsStringAsync());
 		}
 
-        public IUserRoleMvoStateEvent GetStateEvent(UserRoleId userRoleId, long version)
+        public virtual long GetCount(ICriterion filter)
+		{
+		    return GetCountAsync(filter).GetAwaiter().GetResult();
+		}
+
+        public async Task<IUserRoleMvoStateEvent> GetStateEventAsync(UserRoleId userRoleId, long version)
         {
             var idObj = UserRoleMvoProxyUtils.ToIdString(userRoleId);
             var uriParameters = new UserRoleMvoStateEventUriParameters();
@@ -215,11 +253,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             uriParameters.Version = version.ToString();
 
             var req = new UserRoleMvoStateEventGetRequest(uriParameters);
-            var resp = _ramlClient.UserRoleMvoStateEvent.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UserRoleMvoStateEvent.Get(req);
             UserRoleMvoProxyUtils.ThrowOnHttpResponseError(resp);
             return resp.Content;
         }
 
+        public IUserRoleMvoStateEvent GetStateEvent(UserRoleId userRoleId, long version)
+        {
+            return GetStateEventAsync(userRoleId, version).GetAwaiter().GetResult();
+        }
 
         protected virtual string QueryFieldValueSeparator
         {

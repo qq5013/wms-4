@@ -9,6 +9,7 @@ using Dddml.Wms.Specialization;
 using Dddml.Wms.Domain;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Net.Http;
 using System.Web.Http;
 using Dddml.Wms.HttpServices.ClientProxies.Raml;
@@ -45,7 +46,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             _ramlClient = new DddmlWmsRamlClient(httpClient);
         }
 
-        public void When(CreateWarehouseDto c)
+        public async Task WhenAsync(CreateWarehouseDto c)
         {
             var idObj = ((c as ICreateWarehouse).WarehouseId);
             var uriParameters = new WarehouseUriParameters();
@@ -53,25 +54,33 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             var req = new WarehousePutRequest(uriParameters, (CreateWarehouseDto)c);
                 
-            var resp = _ramlClient.Warehouse.Put(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.Warehouse.Put(req);
             WarehouseProxyUtils.ThrowOnHttpResponseError(resp);
         }
 
-        public void When(MergePatchWarehouseDto c)
+        public void When(CreateWarehouseDto c)
+        {
+            WhenAsync(c).GetAwaiter().GetResult();
+        }
+
+        public async Task WhenAsync(MergePatchWarehouseDto c)
         {
             var idObj = ((c as IMergePatchWarehouse).WarehouseId);
             var uriParameters = new WarehouseUriParameters();
             uriParameters.Id = idObj;
 
             var req = new WarehousePatchRequest(uriParameters, (MergePatchWarehouseDto)c);
-            var resp = _ramlClient.Warehouse.Patch(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.Warehouse.Patch(req);
             WarehouseProxyUtils.ThrowOnHttpResponseError(resp);
         }
 
-        public void When(DeleteWarehouseDto c)
+        public void When(MergePatchWarehouseDto c)
         {
-            //Action act = async () =>
-            //{
+            WhenAsync(c).GetAwaiter().GetResult();
+        }
+
+        public async Task WhenAsync(DeleteWarehouseDto c)
+        {
             var idObj = ((c as IDeleteWarehouse).WarehouseId);
             var uriParameters = new WarehouseUriParameters();
             uriParameters.Id = idObj;
@@ -84,10 +93,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             var req = new WarehouseDeleteRequest(uriParameters);
             req.Query = q;
 
-            var resp = _ramlClient.Warehouse.Delete(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.Warehouse.Delete(req);
             WarehouseProxyUtils.ThrowOnHttpResponseError(resp);
-            //};
-            //act();
+        }
+
+        public void When(DeleteWarehouseDto c)
+        {
+            WhenAsync(c).GetAwaiter().GetResult();
         }
 		
         void IWarehouseApplicationService.When(ICreateWarehouse c)
@@ -105,7 +117,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             this.When((DeleteWarehouseDto)c);
         }
 
-        public IWarehouseState Get(string warehouseId)
+        public async Task<IWarehouseState> GetAsync(string warehouseId)
         {
             IWarehouseState state = null;
             var idObj = (warehouseId);
@@ -114,11 +126,17 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             var req = new WarehouseGetRequest(uriParameters);
 
-            var resp = _ramlClient.Warehouse.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.Warehouse.Get(req);
             WarehouseProxyUtils.ThrowOnHttpResponseError(resp);
             state = resp.Content;
             return state;
         }
+
+        public IWarehouseState Get(string warehouseId)
+        {
+            return GetAsync(warehouseId).GetAwaiter().GetResult();
+        }
+
 
         public IEnumerable<IWarehouseState> GetAll(int firstResult, int maxResults)
         {
@@ -130,7 +148,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return Get(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IWarehouseState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<IWarehouseState>> GetAsync(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IWarehouseState> states = null;
 			var q = new WarehousesGetQuery();
@@ -141,10 +159,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.FilterTag = WarehouseProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new WarehousesGetRequest();
             req.Query = q;
-            var resp = _ramlClient.Warehouses.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.Warehouses.Get(req);
             WarehouseProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
+        }
+
+        public IEnumerable<IWarehouseState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
         }
 
         public IEnumerable<IWarehouseState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
@@ -168,7 +191,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return Get(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IWarehouseState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<IWarehouseState>> GetAsync(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IWarehouseState> states = null;
 			var q = new WarehousesGetQuery();
@@ -179,35 +202,50 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.Filter = WarehouseProxyUtils.GetFilterQueryValueString(filter);
             var req = new WarehousesGetRequest();
             req.Query = q;
-            var resp = _ramlClient.Warehouses.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.Warehouses.Get(req);
             WarehouseProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
         }
 
-        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+        public IEnumerable<IWarehouseState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
+        }
+
+        public async virtual Task<long> GetCountAsync(IEnumerable<KeyValuePair<string, object>> filter)
 		{
 			var q = new WarehousesCountGetQuery();
             q.FilterTag = WarehouseProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new WarehousesCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.WarehousesCount.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.WarehousesCount.Get(req);
             WarehouseProxyUtils.ThrowOnHttpResponseError(resp);
-            return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
+            return long.Parse(await resp.RawContent.ReadAsStringAsync());
 		}
 
-        public virtual long GetCount(ICriterion filter)
+        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+		{
+		    return GetCountAsync(filter).GetAwaiter().GetResult();
+		}
+
+        public async virtual Task<long> GetCountAsync(ICriterion filter)
 		{
 			var q = new WarehousesCountGetQuery();
             q.Filter = WarehouseProxyUtils.GetFilterQueryValueString(filter);
             var req = new WarehousesCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.WarehousesCount.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.WarehousesCount.Get(req);
             WarehouseProxyUtils.ThrowOnHttpResponseError(resp);
-            return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
+            return long.Parse(await resp.RawContent.ReadAsStringAsync());
 		}
 
-        public IWarehouseStateEvent GetStateEvent(string warehouseId, long version)
+        public virtual long GetCount(ICriterion filter)
+		{
+		    return GetCountAsync(filter).GetAwaiter().GetResult();
+		}
+
+        public async Task<IWarehouseStateEvent> GetStateEventAsync(string warehouseId, long version)
         {
             var idObj = (warehouseId);
             var uriParameters = new WarehouseStateEventUriParameters();
@@ -215,11 +253,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             uriParameters.Version = version.ToString();
 
             var req = new WarehouseStateEventGetRequest(uriParameters);
-            var resp = _ramlClient.WarehouseStateEvent.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.WarehouseStateEvent.Get(req);
             WarehouseProxyUtils.ThrowOnHttpResponseError(resp);
             return resp.Content;
         }
 
+        public IWarehouseStateEvent GetStateEvent(string warehouseId, long version)
+        {
+            return GetStateEventAsync(warehouseId, version).GetAwaiter().GetResult();
+        }
 
         protected virtual string QueryFieldValueSeparator
         {

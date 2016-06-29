@@ -9,6 +9,7 @@ using Dddml.Wms.Specialization;
 using Dddml.Wms.Domain;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Net.Http;
 using System.Web.Http;
 using Dddml.Wms.HttpServices.ClientProxies.Raml;
@@ -45,7 +46,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             _ramlClient = new DddmlWmsRamlClient(httpClient);
         }
 
-        public void When(CreateUserPermissionMvoDto c)
+        public async Task WhenAsync(CreateUserPermissionMvoDto c)
         {
             var idObj = UserPermissionMvoProxyUtils.ToIdString((c as ICreateUserPermissionMvo).UserPermissionId);
             var uriParameters = new UserPermissionMvoUriParameters();
@@ -53,25 +54,33 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             var req = new UserPermissionMvoPutRequest(uriParameters, (CreateUserPermissionMvoDto)c);
                 
-            var resp = _ramlClient.UserPermissionMvo.Put(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UserPermissionMvo.Put(req);
             UserPermissionMvoProxyUtils.ThrowOnHttpResponseError(resp);
         }
 
-        public void When(MergePatchUserPermissionMvoDto c)
+        public void When(CreateUserPermissionMvoDto c)
+        {
+            WhenAsync(c).GetAwaiter().GetResult();
+        }
+
+        public async Task WhenAsync(MergePatchUserPermissionMvoDto c)
         {
             var idObj = UserPermissionMvoProxyUtils.ToIdString((c as IMergePatchUserPermissionMvo).UserPermissionId);
             var uriParameters = new UserPermissionMvoUriParameters();
             uriParameters.Id = idObj;
 
             var req = new UserPermissionMvoPatchRequest(uriParameters, (MergePatchUserPermissionMvoDto)c);
-            var resp = _ramlClient.UserPermissionMvo.Patch(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UserPermissionMvo.Patch(req);
             UserPermissionMvoProxyUtils.ThrowOnHttpResponseError(resp);
         }
 
-        public void When(DeleteUserPermissionMvoDto c)
+        public void When(MergePatchUserPermissionMvoDto c)
         {
-            //Action act = async () =>
-            //{
+            WhenAsync(c).GetAwaiter().GetResult();
+        }
+
+        public async Task WhenAsync(DeleteUserPermissionMvoDto c)
+        {
             var idObj = UserPermissionMvoProxyUtils.ToIdString((c as IDeleteUserPermissionMvo).UserPermissionId);
             var uriParameters = new UserPermissionMvoUriParameters();
             uriParameters.Id = idObj;
@@ -84,10 +93,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             var req = new UserPermissionMvoDeleteRequest(uriParameters);
             req.Query = q;
 
-            var resp = _ramlClient.UserPermissionMvo.Delete(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UserPermissionMvo.Delete(req);
             UserPermissionMvoProxyUtils.ThrowOnHttpResponseError(resp);
-            //};
-            //act();
+        }
+
+        public void When(DeleteUserPermissionMvoDto c)
+        {
+            WhenAsync(c).GetAwaiter().GetResult();
         }
 		
         void IUserPermissionMvoApplicationService.When(ICreateUserPermissionMvo c)
@@ -105,7 +117,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             this.When((DeleteUserPermissionMvoDto)c);
         }
 
-        public IUserPermissionMvoState Get(UserPermissionId userPermissionId)
+        public async Task<IUserPermissionMvoState> GetAsync(UserPermissionId userPermissionId)
         {
             IUserPermissionMvoState state = null;
             var idObj = UserPermissionMvoProxyUtils.ToIdString(userPermissionId);
@@ -114,11 +126,17 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             var req = new UserPermissionMvoGetRequest(uriParameters);
 
-            var resp = _ramlClient.UserPermissionMvo.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UserPermissionMvo.Get(req);
             UserPermissionMvoProxyUtils.ThrowOnHttpResponseError(resp);
             state = resp.Content;
             return state;
         }
+
+        public IUserPermissionMvoState Get(UserPermissionId userPermissionId)
+        {
+            return GetAsync(userPermissionId).GetAwaiter().GetResult();
+        }
+
 
         public IEnumerable<IUserPermissionMvoState> GetAll(int firstResult, int maxResults)
         {
@@ -130,7 +148,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return Get(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IUserPermissionMvoState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<IUserPermissionMvoState>> GetAsync(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IUserPermissionMvoState> states = null;
 			var q = new UserPermissionMvosGetQuery();
@@ -141,10 +159,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.FilterTag = UserPermissionMvoProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new UserPermissionMvosGetRequest();
             req.Query = q;
-            var resp = _ramlClient.UserPermissionMvos.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UserPermissionMvos.Get(req);
             UserPermissionMvoProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
+        }
+
+        public IEnumerable<IUserPermissionMvoState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
         }
 
         public IEnumerable<IUserPermissionMvoState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
@@ -168,7 +191,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return Get(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IUserPermissionMvoState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<IUserPermissionMvoState>> GetAsync(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IUserPermissionMvoState> states = null;
 			var q = new UserPermissionMvosGetQuery();
@@ -179,35 +202,50 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.Filter = UserPermissionMvoProxyUtils.GetFilterQueryValueString(filter);
             var req = new UserPermissionMvosGetRequest();
             req.Query = q;
-            var resp = _ramlClient.UserPermissionMvos.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UserPermissionMvos.Get(req);
             UserPermissionMvoProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
         }
 
-        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+        public IEnumerable<IUserPermissionMvoState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
+        }
+
+        public async virtual Task<long> GetCountAsync(IEnumerable<KeyValuePair<string, object>> filter)
 		{
 			var q = new UserPermissionMvosCountGetQuery();
             q.FilterTag = UserPermissionMvoProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new UserPermissionMvosCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.UserPermissionMvosCount.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UserPermissionMvosCount.Get(req);
             UserPermissionMvoProxyUtils.ThrowOnHttpResponseError(resp);
-            return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
+            return long.Parse(await resp.RawContent.ReadAsStringAsync());
 		}
 
-        public virtual long GetCount(ICriterion filter)
+        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+		{
+		    return GetCountAsync(filter).GetAwaiter().GetResult();
+		}
+
+        public async virtual Task<long> GetCountAsync(ICriterion filter)
 		{
 			var q = new UserPermissionMvosCountGetQuery();
             q.Filter = UserPermissionMvoProxyUtils.GetFilterQueryValueString(filter);
             var req = new UserPermissionMvosCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.UserPermissionMvosCount.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UserPermissionMvosCount.Get(req);
             UserPermissionMvoProxyUtils.ThrowOnHttpResponseError(resp);
-            return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
+            return long.Parse(await resp.RawContent.ReadAsStringAsync());
 		}
 
-        public IUserPermissionMvoStateEvent GetStateEvent(UserPermissionId userPermissionId, long version)
+        public virtual long GetCount(ICriterion filter)
+		{
+		    return GetCountAsync(filter).GetAwaiter().GetResult();
+		}
+
+        public async Task<IUserPermissionMvoStateEvent> GetStateEventAsync(UserPermissionId userPermissionId, long version)
         {
             var idObj = UserPermissionMvoProxyUtils.ToIdString(userPermissionId);
             var uriParameters = new UserPermissionMvoStateEventUriParameters();
@@ -215,11 +253,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             uriParameters.Version = version.ToString();
 
             var req = new UserPermissionMvoStateEventGetRequest(uriParameters);
-            var resp = _ramlClient.UserPermissionMvoStateEvent.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UserPermissionMvoStateEvent.Get(req);
             UserPermissionMvoProxyUtils.ThrowOnHttpResponseError(resp);
             return resp.Content;
         }
 
+        public IUserPermissionMvoStateEvent GetStateEvent(UserPermissionId userPermissionId, long version)
+        {
+            return GetStateEventAsync(userPermissionId, version).GetAwaiter().GetResult();
+        }
 
         protected virtual string QueryFieldValueSeparator
         {

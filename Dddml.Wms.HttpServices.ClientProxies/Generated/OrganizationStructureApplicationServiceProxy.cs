@@ -9,6 +9,7 @@ using Dddml.Wms.Specialization;
 using Dddml.Wms.Domain;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Net.Http;
 using System.Web.Http;
 using Dddml.Wms.HttpServices.ClientProxies.Raml;
@@ -45,7 +46,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             _ramlClient = new DddmlWmsRamlClient(httpClient);
         }
 
-        public void When(CreateOrganizationStructureDto c)
+        public async Task WhenAsync(CreateOrganizationStructureDto c)
         {
             var idObj = OrganizationStructureProxyUtils.ToIdString((c as ICreateOrganizationStructure).Id);
             var uriParameters = new OrganizationStructureUriParameters();
@@ -53,25 +54,33 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             var req = new OrganizationStructurePutRequest(uriParameters, (CreateOrganizationStructureDto)c);
                 
-            var resp = _ramlClient.OrganizationStructure.Put(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.OrganizationStructure.Put(req);
             OrganizationStructureProxyUtils.ThrowOnHttpResponseError(resp);
         }
 
-        public void When(MergePatchOrganizationStructureDto c)
+        public void When(CreateOrganizationStructureDto c)
+        {
+            WhenAsync(c).GetAwaiter().GetResult();
+        }
+
+        public async Task WhenAsync(MergePatchOrganizationStructureDto c)
         {
             var idObj = OrganizationStructureProxyUtils.ToIdString((c as IMergePatchOrganizationStructure).Id);
             var uriParameters = new OrganizationStructureUriParameters();
             uriParameters.Id = idObj;
 
             var req = new OrganizationStructurePatchRequest(uriParameters, (MergePatchOrganizationStructureDto)c);
-            var resp = _ramlClient.OrganizationStructure.Patch(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.OrganizationStructure.Patch(req);
             OrganizationStructureProxyUtils.ThrowOnHttpResponseError(resp);
         }
 
-        public void When(DeleteOrganizationStructureDto c)
+        public void When(MergePatchOrganizationStructureDto c)
         {
-            //Action act = async () =>
-            //{
+            WhenAsync(c).GetAwaiter().GetResult();
+        }
+
+        public async Task WhenAsync(DeleteOrganizationStructureDto c)
+        {
             var idObj = OrganizationStructureProxyUtils.ToIdString((c as IDeleteOrganizationStructure).Id);
             var uriParameters = new OrganizationStructureUriParameters();
             uriParameters.Id = idObj;
@@ -84,10 +93,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             var req = new OrganizationStructureDeleteRequest(uriParameters);
             req.Query = q;
 
-            var resp = _ramlClient.OrganizationStructure.Delete(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.OrganizationStructure.Delete(req);
             OrganizationStructureProxyUtils.ThrowOnHttpResponseError(resp);
-            //};
-            //act();
+        }
+
+        public void When(DeleteOrganizationStructureDto c)
+        {
+            WhenAsync(c).GetAwaiter().GetResult();
         }
 		
         void IOrganizationStructureApplicationService.When(ICreateOrganizationStructure c)
@@ -105,7 +117,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             this.When((DeleteOrganizationStructureDto)c);
         }
 
-        public IOrganizationStructureState Get(OrganizationStructureId id)
+        public async Task<IOrganizationStructureState> GetAsync(OrganizationStructureId id)
         {
             IOrganizationStructureState state = null;
             var idObj = OrganizationStructureProxyUtils.ToIdString(id);
@@ -114,11 +126,17 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             var req = new OrganizationStructureGetRequest(uriParameters);
 
-            var resp = _ramlClient.OrganizationStructure.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.OrganizationStructure.Get(req);
             OrganizationStructureProxyUtils.ThrowOnHttpResponseError(resp);
             state = resp.Content;
             return state;
         }
+
+        public IOrganizationStructureState Get(OrganizationStructureId id)
+        {
+            return GetAsync(id).GetAwaiter().GetResult();
+        }
+
 
         public IEnumerable<IOrganizationStructureState> GetAll(int firstResult, int maxResults)
         {
@@ -130,7 +148,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return Get(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IOrganizationStructureState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<IOrganizationStructureState>> GetAsync(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IOrganizationStructureState> states = null;
 			var q = new OrganizationStructuresGetQuery();
@@ -141,10 +159,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.FilterTag = OrganizationStructureProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new OrganizationStructuresGetRequest();
             req.Query = q;
-            var resp = _ramlClient.OrganizationStructures.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.OrganizationStructures.Get(req);
             OrganizationStructureProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
+        }
+
+        public IEnumerable<IOrganizationStructureState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
         }
 
         public IEnumerable<IOrganizationStructureState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
@@ -168,7 +191,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return Get(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IOrganizationStructureState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<IOrganizationStructureState>> GetAsync(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IOrganizationStructureState> states = null;
 			var q = new OrganizationStructuresGetQuery();
@@ -179,35 +202,50 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.Filter = OrganizationStructureProxyUtils.GetFilterQueryValueString(filter);
             var req = new OrganizationStructuresGetRequest();
             req.Query = q;
-            var resp = _ramlClient.OrganizationStructures.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.OrganizationStructures.Get(req);
             OrganizationStructureProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
         }
 
-        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+        public IEnumerable<IOrganizationStructureState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
+        }
+
+        public async virtual Task<long> GetCountAsync(IEnumerable<KeyValuePair<string, object>> filter)
 		{
 			var q = new OrganizationStructuresCountGetQuery();
             q.FilterTag = OrganizationStructureProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new OrganizationStructuresCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.OrganizationStructuresCount.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.OrganizationStructuresCount.Get(req);
             OrganizationStructureProxyUtils.ThrowOnHttpResponseError(resp);
-            return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
+            return long.Parse(await resp.RawContent.ReadAsStringAsync());
 		}
 
-        public virtual long GetCount(ICriterion filter)
+        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+		{
+		    return GetCountAsync(filter).GetAwaiter().GetResult();
+		}
+
+        public async virtual Task<long> GetCountAsync(ICriterion filter)
 		{
 			var q = new OrganizationStructuresCountGetQuery();
             q.Filter = OrganizationStructureProxyUtils.GetFilterQueryValueString(filter);
             var req = new OrganizationStructuresCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.OrganizationStructuresCount.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.OrganizationStructuresCount.Get(req);
             OrganizationStructureProxyUtils.ThrowOnHttpResponseError(resp);
-            return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
+            return long.Parse(await resp.RawContent.ReadAsStringAsync());
 		}
 
-        public IOrganizationStructureStateEvent GetStateEvent(OrganizationStructureId id, long version)
+        public virtual long GetCount(ICriterion filter)
+		{
+		    return GetCountAsync(filter).GetAwaiter().GetResult();
+		}
+
+        public async Task<IOrganizationStructureStateEvent> GetStateEventAsync(OrganizationStructureId id, long version)
         {
             var idObj = OrganizationStructureProxyUtils.ToIdString(id);
             var uriParameters = new OrganizationStructureStateEventUriParameters();
@@ -215,11 +253,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             uriParameters.Version = version.ToString();
 
             var req = new OrganizationStructureStateEventGetRequest(uriParameters);
-            var resp = _ramlClient.OrganizationStructureStateEvent.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.OrganizationStructureStateEvent.Get(req);
             OrganizationStructureProxyUtils.ThrowOnHttpResponseError(resp);
             return resp.Content;
         }
 
+        public IOrganizationStructureStateEvent GetStateEvent(OrganizationStructureId id, long version)
+        {
+            return GetStateEventAsync(id, version).GetAwaiter().GetResult();
+        }
 
         protected virtual string QueryFieldValueSeparator
         {

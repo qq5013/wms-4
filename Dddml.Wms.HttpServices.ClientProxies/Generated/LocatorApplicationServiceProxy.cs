@@ -9,6 +9,7 @@ using Dddml.Wms.Specialization;
 using Dddml.Wms.Domain;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Net.Http;
 using System.Web.Http;
 using Dddml.Wms.HttpServices.ClientProxies.Raml;
@@ -45,7 +46,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             _ramlClient = new DddmlWmsRamlClient(httpClient);
         }
 
-        public void When(CreateLocatorDto c)
+        public async Task WhenAsync(CreateLocatorDto c)
         {
             var idObj = ((c as ICreateLocator).LocatorId);
             var uriParameters = new LocatorUriParameters();
@@ -53,25 +54,33 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             var req = new LocatorPutRequest(uriParameters, (CreateLocatorDto)c);
                 
-            var resp = _ramlClient.Locator.Put(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.Locator.Put(req);
             LocatorProxyUtils.ThrowOnHttpResponseError(resp);
         }
 
-        public void When(MergePatchLocatorDto c)
+        public void When(CreateLocatorDto c)
+        {
+            WhenAsync(c).GetAwaiter().GetResult();
+        }
+
+        public async Task WhenAsync(MergePatchLocatorDto c)
         {
             var idObj = ((c as IMergePatchLocator).LocatorId);
             var uriParameters = new LocatorUriParameters();
             uriParameters.Id = idObj;
 
             var req = new LocatorPatchRequest(uriParameters, (MergePatchLocatorDto)c);
-            var resp = _ramlClient.Locator.Patch(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.Locator.Patch(req);
             LocatorProxyUtils.ThrowOnHttpResponseError(resp);
         }
 
-        public void When(DeleteLocatorDto c)
+        public void When(MergePatchLocatorDto c)
         {
-            //Action act = async () =>
-            //{
+            WhenAsync(c).GetAwaiter().GetResult();
+        }
+
+        public async Task WhenAsync(DeleteLocatorDto c)
+        {
             var idObj = ((c as IDeleteLocator).LocatorId);
             var uriParameters = new LocatorUriParameters();
             uriParameters.Id = idObj;
@@ -84,10 +93,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             var req = new LocatorDeleteRequest(uriParameters);
             req.Query = q;
 
-            var resp = _ramlClient.Locator.Delete(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.Locator.Delete(req);
             LocatorProxyUtils.ThrowOnHttpResponseError(resp);
-            //};
-            //act();
+        }
+
+        public void When(DeleteLocatorDto c)
+        {
+            WhenAsync(c).GetAwaiter().GetResult();
         }
 		
         void ILocatorApplicationService.When(ICreateLocator c)
@@ -105,7 +117,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             this.When((DeleteLocatorDto)c);
         }
 
-        public ILocatorState Get(string locatorId)
+        public async Task<ILocatorState> GetAsync(string locatorId)
         {
             ILocatorState state = null;
             var idObj = (locatorId);
@@ -114,11 +126,17 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             var req = new LocatorGetRequest(uriParameters);
 
-            var resp = _ramlClient.Locator.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.Locator.Get(req);
             LocatorProxyUtils.ThrowOnHttpResponseError(resp);
             state = resp.Content;
             return state;
         }
+
+        public ILocatorState Get(string locatorId)
+        {
+            return GetAsync(locatorId).GetAwaiter().GetResult();
+        }
+
 
         public IEnumerable<ILocatorState> GetAll(int firstResult, int maxResults)
         {
@@ -130,7 +148,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return Get(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<ILocatorState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<ILocatorState>> GetAsync(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<ILocatorState> states = null;
 			var q = new LocatorsGetQuery();
@@ -141,10 +159,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.FilterTag = LocatorProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new LocatorsGetRequest();
             req.Query = q;
-            var resp = _ramlClient.Locators.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.Locators.Get(req);
             LocatorProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
+        }
+
+        public IEnumerable<ILocatorState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
         }
 
         public IEnumerable<ILocatorState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
@@ -168,7 +191,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return Get(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<ILocatorState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<ILocatorState>> GetAsync(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<ILocatorState> states = null;
 			var q = new LocatorsGetQuery();
@@ -179,35 +202,50 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.Filter = LocatorProxyUtils.GetFilterQueryValueString(filter);
             var req = new LocatorsGetRequest();
             req.Query = q;
-            var resp = _ramlClient.Locators.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.Locators.Get(req);
             LocatorProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
         }
 
-        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+        public IEnumerable<ILocatorState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
+        }
+
+        public async virtual Task<long> GetCountAsync(IEnumerable<KeyValuePair<string, object>> filter)
 		{
 			var q = new LocatorsCountGetQuery();
             q.FilterTag = LocatorProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new LocatorsCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.LocatorsCount.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.LocatorsCount.Get(req);
             LocatorProxyUtils.ThrowOnHttpResponseError(resp);
-            return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
+            return long.Parse(await resp.RawContent.ReadAsStringAsync());
 		}
 
-        public virtual long GetCount(ICriterion filter)
+        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+		{
+		    return GetCountAsync(filter).GetAwaiter().GetResult();
+		}
+
+        public async virtual Task<long> GetCountAsync(ICriterion filter)
 		{
 			var q = new LocatorsCountGetQuery();
             q.Filter = LocatorProxyUtils.GetFilterQueryValueString(filter);
             var req = new LocatorsCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.LocatorsCount.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.LocatorsCount.Get(req);
             LocatorProxyUtils.ThrowOnHttpResponseError(resp);
-            return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
+            return long.Parse(await resp.RawContent.ReadAsStringAsync());
 		}
 
-        public ILocatorStateEvent GetStateEvent(string locatorId, long version)
+        public virtual long GetCount(ICriterion filter)
+		{
+		    return GetCountAsync(filter).GetAwaiter().GetResult();
+		}
+
+        public async Task<ILocatorStateEvent> GetStateEventAsync(string locatorId, long version)
         {
             var idObj = (locatorId);
             var uriParameters = new LocatorStateEventUriParameters();
@@ -215,11 +253,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             uriParameters.Version = version.ToString();
 
             var req = new LocatorStateEventGetRequest(uriParameters);
-            var resp = _ramlClient.LocatorStateEvent.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.LocatorStateEvent.Get(req);
             LocatorProxyUtils.ThrowOnHttpResponseError(resp);
             return resp.Content;
         }
 
+        public ILocatorStateEvent GetStateEvent(string locatorId, long version)
+        {
+            return GetStateEventAsync(locatorId, version).GetAwaiter().GetResult();
+        }
 
         protected virtual string QueryFieldValueSeparator
         {

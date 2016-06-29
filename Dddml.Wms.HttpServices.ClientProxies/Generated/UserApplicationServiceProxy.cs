@@ -9,6 +9,7 @@ using Dddml.Wms.Specialization;
 using Dddml.Wms.Domain;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Net.Http;
 using System.Web.Http;
 using Dddml.Wms.HttpServices.ClientProxies.Raml;
@@ -45,7 +46,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             _ramlClient = new DddmlWmsRamlClient(httpClient);
         }
 
-        public void When(CreateUserDto c)
+        public async Task WhenAsync(CreateUserDto c)
         {
             var idObj = ((c as ICreateUser).UserId);
             var uriParameters = new UserUriParameters();
@@ -53,25 +54,33 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             var req = new UserPutRequest(uriParameters, (CreateUserDto)c);
                 
-            var resp = _ramlClient.User.Put(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.User.Put(req);
             UserProxyUtils.ThrowOnHttpResponseError(resp);
         }
 
-        public void When(MergePatchUserDto c)
+        public void When(CreateUserDto c)
+        {
+            WhenAsync(c).GetAwaiter().GetResult();
+        }
+
+        public async Task WhenAsync(MergePatchUserDto c)
         {
             var idObj = ((c as IMergePatchUser).UserId);
             var uriParameters = new UserUriParameters();
             uriParameters.Id = idObj;
 
             var req = new UserPatchRequest(uriParameters, (MergePatchUserDto)c);
-            var resp = _ramlClient.User.Patch(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.User.Patch(req);
             UserProxyUtils.ThrowOnHttpResponseError(resp);
         }
 
-        public void When(DeleteUserDto c)
+        public void When(MergePatchUserDto c)
         {
-            //Action act = async () =>
-            //{
+            WhenAsync(c).GetAwaiter().GetResult();
+        }
+
+        public async Task WhenAsync(DeleteUserDto c)
+        {
             var idObj = ((c as IDeleteUser).UserId);
             var uriParameters = new UserUriParameters();
             uriParameters.Id = idObj;
@@ -84,10 +93,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             var req = new UserDeleteRequest(uriParameters);
             req.Query = q;
 
-            var resp = _ramlClient.User.Delete(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.User.Delete(req);
             UserProxyUtils.ThrowOnHttpResponseError(resp);
-            //};
-            //act();
+        }
+
+        public void When(DeleteUserDto c)
+        {
+            WhenAsync(c).GetAwaiter().GetResult();
         }
 		
         void IUserApplicationService.When(ICreateUser c)
@@ -105,7 +117,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             this.When((DeleteUserDto)c);
         }
 
-        public IUserState Get(string userId)
+        public async Task<IUserState> GetAsync(string userId)
         {
             IUserState state = null;
             var idObj = (userId);
@@ -114,11 +126,17 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             var req = new UserGetRequest(uriParameters);
 
-            var resp = _ramlClient.User.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.User.Get(req);
             UserProxyUtils.ThrowOnHttpResponseError(resp);
             state = resp.Content;
             return state;
         }
+
+        public IUserState Get(string userId)
+        {
+            return GetAsync(userId).GetAwaiter().GetResult();
+        }
+
 
         public IEnumerable<IUserState> GetAll(int firstResult, int maxResults)
         {
@@ -130,7 +148,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return Get(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IUserState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<IUserState>> GetAsync(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IUserState> states = null;
 			var q = new UsersGetQuery();
@@ -141,10 +159,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.FilterTag = UserProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new UsersGetRequest();
             req.Query = q;
-            var resp = _ramlClient.Users.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.Users.Get(req);
             UserProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
+        }
+
+        public IEnumerable<IUserState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
         }
 
         public IEnumerable<IUserState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
@@ -168,7 +191,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return Get(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IUserState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<IUserState>> GetAsync(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IUserState> states = null;
 			var q = new UsersGetQuery();
@@ -179,35 +202,50 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.Filter = UserProxyUtils.GetFilterQueryValueString(filter);
             var req = new UsersGetRequest();
             req.Query = q;
-            var resp = _ramlClient.Users.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.Users.Get(req);
             UserProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
         }
 
-        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+        public IEnumerable<IUserState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
+        }
+
+        public async virtual Task<long> GetCountAsync(IEnumerable<KeyValuePair<string, object>> filter)
 		{
 			var q = new UsersCountGetQuery();
             q.FilterTag = UserProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new UsersCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.UsersCount.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UsersCount.Get(req);
             UserProxyUtils.ThrowOnHttpResponseError(resp);
-            return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
+            return long.Parse(await resp.RawContent.ReadAsStringAsync());
 		}
 
-        public virtual long GetCount(ICriterion filter)
+        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+		{
+		    return GetCountAsync(filter).GetAwaiter().GetResult();
+		}
+
+        public async virtual Task<long> GetCountAsync(ICriterion filter)
 		{
 			var q = new UsersCountGetQuery();
             q.Filter = UserProxyUtils.GetFilterQueryValueString(filter);
             var req = new UsersCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.UsersCount.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UsersCount.Get(req);
             UserProxyUtils.ThrowOnHttpResponseError(resp);
-            return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
+            return long.Parse(await resp.RawContent.ReadAsStringAsync());
 		}
 
-        public IUserStateEvent GetStateEvent(string userId, long version)
+        public virtual long GetCount(ICriterion filter)
+		{
+		    return GetCountAsync(filter).GetAwaiter().GetResult();
+		}
+
+        public async Task<IUserStateEvent> GetStateEventAsync(string userId, long version)
         {
             var idObj = (userId);
             var uriParameters = new UserStateEventUriParameters();
@@ -215,11 +253,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             uriParameters.Version = version.ToString();
 
             var req = new UserStateEventGetRequest(uriParameters);
-            var resp = _ramlClient.UserStateEvent.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.UserStateEvent.Get(req);
             UserProxyUtils.ThrowOnHttpResponseError(resp);
             return resp.Content;
         }
 
+        public IUserStateEvent GetStateEvent(string userId, long version)
+        {
+            return GetStateEventAsync(userId, version).GetAwaiter().GetResult();
+        }
 
         protected virtual string QueryFieldValueSeparator
         {

@@ -9,6 +9,7 @@ using Dddml.Wms.Specialization;
 using Dddml.Wms.Domain;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Net.Http;
 using System.Web.Http;
 using Dddml.Wms.HttpServices.ClientProxies.Raml;
@@ -45,7 +46,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             _ramlClient = new DddmlWmsRamlClient(httpClient);
         }
 
-        public void When(CreateRoleDto c)
+        public async Task WhenAsync(CreateRoleDto c)
         {
             var idObj = ((c as ICreateRole).RoleId);
             var uriParameters = new RoleUriParameters();
@@ -53,25 +54,33 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             var req = new RolePutRequest(uriParameters, (CreateRoleDto)c);
                 
-            var resp = _ramlClient.Role.Put(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.Role.Put(req);
             RoleProxyUtils.ThrowOnHttpResponseError(resp);
         }
 
-        public void When(MergePatchRoleDto c)
+        public void When(CreateRoleDto c)
+        {
+            WhenAsync(c).GetAwaiter().GetResult();
+        }
+
+        public async Task WhenAsync(MergePatchRoleDto c)
         {
             var idObj = ((c as IMergePatchRole).RoleId);
             var uriParameters = new RoleUriParameters();
             uriParameters.Id = idObj;
 
             var req = new RolePatchRequest(uriParameters, (MergePatchRoleDto)c);
-            var resp = _ramlClient.Role.Patch(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.Role.Patch(req);
             RoleProxyUtils.ThrowOnHttpResponseError(resp);
         }
 
-        public void When(DeleteRoleDto c)
+        public void When(MergePatchRoleDto c)
         {
-            //Action act = async () =>
-            //{
+            WhenAsync(c).GetAwaiter().GetResult();
+        }
+
+        public async Task WhenAsync(DeleteRoleDto c)
+        {
             var idObj = ((c as IDeleteRole).RoleId);
             var uriParameters = new RoleUriParameters();
             uriParameters.Id = idObj;
@@ -84,10 +93,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             var req = new RoleDeleteRequest(uriParameters);
             req.Query = q;
 
-            var resp = _ramlClient.Role.Delete(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.Role.Delete(req);
             RoleProxyUtils.ThrowOnHttpResponseError(resp);
-            //};
-            //act();
+        }
+
+        public void When(DeleteRoleDto c)
+        {
+            WhenAsync(c).GetAwaiter().GetResult();
         }
 		
         void IRoleApplicationService.When(ICreateRole c)
@@ -105,7 +117,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             this.When((DeleteRoleDto)c);
         }
 
-        public IRoleState Get(string roleId)
+        public async Task<IRoleState> GetAsync(string roleId)
         {
             IRoleState state = null;
             var idObj = (roleId);
@@ -114,11 +126,17 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             var req = new RoleGetRequest(uriParameters);
 
-            var resp = _ramlClient.Role.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.Role.Get(req);
             RoleProxyUtils.ThrowOnHttpResponseError(resp);
             state = resp.Content;
             return state;
         }
+
+        public IRoleState Get(string roleId)
+        {
+            return GetAsync(roleId).GetAwaiter().GetResult();
+        }
+
 
         public IEnumerable<IRoleState> GetAll(int firstResult, int maxResults)
         {
@@ -130,7 +148,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return Get(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IRoleState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<IRoleState>> GetAsync(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IRoleState> states = null;
 			var q = new RolesGetQuery();
@@ -141,10 +159,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.FilterTag = RoleProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new RolesGetRequest();
             req.Query = q;
-            var resp = _ramlClient.Roles.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.Roles.Get(req);
             RoleProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
+        }
+
+        public IEnumerable<IRoleState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
         }
 
         public IEnumerable<IRoleState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
@@ -168,7 +191,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return Get(filter, orders, firstResult, maxResults, null);
         }
 
-        public IEnumerable<IRoleState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        public async Task<IEnumerable<IRoleState>> GetAsync(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
         {
             IEnumerable<IRoleState> states = null;
 			var q = new RolesGetQuery();
@@ -179,35 +202,50 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             q.Filter = RoleProxyUtils.GetFilterQueryValueString(filter);
             var req = new RolesGetRequest();
             req.Query = q;
-            var resp = _ramlClient.Roles.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.Roles.Get(req);
             RoleProxyUtils.ThrowOnHttpResponseError(resp);
             states = resp.Content;
             return states;
         }
 
-        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+        public IEnumerable<IRoleState> Get(ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue, IList<string> fields = null)
+        {
+            return GetAsync(filter, orders, firstResult, maxResults, fields).GetAwaiter().GetResult();
+        }
+
+        public async virtual Task<long> GetCountAsync(IEnumerable<KeyValuePair<string, object>> filter)
 		{
 			var q = new RolesCountGetQuery();
             q.FilterTag = RoleProxyUtils.GetFilterTagQueryValueString(filter);
             var req = new RolesCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.RolesCount.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.RolesCount.Get(req);
             RoleProxyUtils.ThrowOnHttpResponseError(resp);
-            return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
+            return long.Parse(await resp.RawContent.ReadAsStringAsync());
 		}
 
-        public virtual long GetCount(ICriterion filter)
+        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
+		{
+		    return GetCountAsync(filter).GetAwaiter().GetResult();
+		}
+
+        public async virtual Task<long> GetCountAsync(ICriterion filter)
 		{
 			var q = new RolesCountGetQuery();
             q.Filter = RoleProxyUtils.GetFilterQueryValueString(filter);
             var req = new RolesCountGetRequest();
             req.Query = q;
-            var resp = _ramlClient.RolesCount.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.RolesCount.Get(req);
             RoleProxyUtils.ThrowOnHttpResponseError(resp);
-            return long.Parse(resp.RawContent.ReadAsStringAsync().GetAwaiter().GetResult());
+            return long.Parse(await resp.RawContent.ReadAsStringAsync());
 		}
 
-        public IRoleStateEvent GetStateEvent(string roleId, long version)
+        public virtual long GetCount(ICriterion filter)
+		{
+		    return GetCountAsync(filter).GetAwaiter().GetResult();
+		}
+
+        public async Task<IRoleStateEvent> GetStateEventAsync(string roleId, long version)
         {
             var idObj = (roleId);
             var uriParameters = new RoleStateEventUriParameters();
@@ -215,11 +253,15 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             uriParameters.Version = version.ToString();
 
             var req = new RoleStateEventGetRequest(uriParameters);
-            var resp = _ramlClient.RoleStateEvent.Get(req).GetAwaiter().GetResult();
+            var resp = await _ramlClient.RoleStateEvent.Get(req);
             RoleProxyUtils.ThrowOnHttpResponseError(resp);
             return resp.Content;
         }
 
+        public IRoleStateEvent GetStateEvent(string roleId, long version)
+        {
+            return GetStateEventAsync(roleId, version).GetAwaiter().GetResult();
+        }
 
         protected virtual string QueryFieldValueSeparator
         {

@@ -78,7 +78,7 @@ namespace Dddml.Wms.Domain
 
         protected virtual void Apply(IEvent e)
         {
-            BeforeApply(e);
+            OnApplying(e);
             _state.Mutate(e);
             _changes.Add(e);
         }

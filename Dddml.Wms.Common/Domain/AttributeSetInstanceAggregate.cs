@@ -9,14 +9,14 @@ namespace Dddml.Wms.Domain
 {
     public partial class AttributeSetInstanceAggregate
     {
-        protected override void BeforeApply(IEvent e)
+        protected override void OnApplying(IEvent e)
         {
             if (e is IAttributeSetInstanceStateCreated)
             {
                 var eC = e as IAttributeSetInstanceStateCreated;
                 eC.Hash = AttributeSetInstancePropertyUtils.GetHash(eC);
             }
-            base.BeforeApply(e);
+            base.OnApplying(e);
         }
     }
 }

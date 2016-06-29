@@ -6,7 +6,7 @@ namespace Dddml.Wms.Specialization
 {
     public abstract class AggregateBase
     {
-        protected virtual void BeforeApply(IEvent e)
+        protected virtual void OnApplying(IEvent e)
         {
         }
     }

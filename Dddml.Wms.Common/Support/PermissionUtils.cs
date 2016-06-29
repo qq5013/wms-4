@@ -96,7 +96,7 @@ namespace Dddml.Wms.Support
             public static readonly Permission InTransitMovement = new Permission(PermissionIds.InTransitMovement, "调拨出库", MaterailInOutManagement);
             public static readonly Permission InTransitMovementVoid = new Permission(PermissionIds.InTransitMovementVoid, "取消调拨", MaterailInOutManagement);
             public static readonly Permission InTransitMovementReverse = new Permission(PermissionIds.InTransitMovementReverse, "调拨反转", MaterailInOutManagement);
-            public static readonly Permission InTransitMovementForward = new Permission(PermissionIds.InTransitMovementForward, "调拨出库确认", MaterailInOutManagement);
+            public static readonly Permission InTransitMovementConfirm = new Permission(PermissionIds.InTransitMovementConfirm, "调拨出库确认", MaterailInOutManagement);
             public static readonly Permission InTransitMovementAccept = new Permission(PermissionIds.InTransitMovementAccept, "接收调拨", MaterailInOutManagement);
             public static readonly Permission InTransitMovementReject = new Permission(PermissionIds.InTransitMovementReject, "拒收调拨", MaterailInOutManagement);
 

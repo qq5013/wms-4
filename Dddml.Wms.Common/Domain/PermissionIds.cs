@@ -32,7 +32,7 @@ namespace Dddml.Wms.Domain
         public const string InTransitMovement = "InTransitMovement";
         public const string InTransitMovementVoid = "InTransitMovementVoid";
         public const string InTransitMovementReverse = "InTransitMovementReverse";
-        public const string InTransitMovementForward = "InTransitMovementForward";
+        public const string InTransitMovementConfirm = "InTransitMovementConfirm";
         public const string InTransitMovementAccept = "InTransitMovementAccept";
         public const string InTransitMovementReject = "InTransitMovementReject";
         public const string MaterailLocatorTransfer = "MaterailLocatorTransfer";

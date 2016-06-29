@@ -114,6 +114,23 @@ namespace Dddml.Wms.HttpServices.ApiControllers
           } catch (Exception ex) { var response = OrganizationsControllerUtils.GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
+        [Route("_metadata/filteringFields")]
+        [HttpGet]
+        public IEnumerable<PropertyMetadata> GetMetadataFilteringFields()
+        {
+          try {
+            var filtering = new List<PropertyMetadata>();
+            foreach (var p in OrganizationStructureMetadata.Instance.Properties)
+            {
+                if (PropertyMetadata.IsFilteringProperty(p))
+                {
+                    filtering.Add(p);
+                }
+            }
+            return filtering;
+          } catch (Exception ex) { var response = OrganizationsControllerUtils.GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
+        }
+
 		// /////////////////////////////////////////////////
 
         protected bool IsOnlyIdReturned(string fields)

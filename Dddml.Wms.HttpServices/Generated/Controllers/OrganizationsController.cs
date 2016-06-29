@@ -67,6 +67,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
           try {
             var idObj = id;
             var state = (OrganizationState)_organizationApplicationService.Get(idObj);
+            if (state == null) { return null; }
             var stateDto = new OrganizationStateDto(state);
             if (String.IsNullOrWhiteSpace(fields))
             {

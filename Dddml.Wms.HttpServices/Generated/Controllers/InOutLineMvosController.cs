@@ -68,6 +68,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
           try {
             var idObj = InOutLineMvosControllerUtils.ParseIdString(id);
             var state = (InOutLineMvoState)_inOutLineMvoApplicationService.Get(idObj);
+            if (state == null) { return null; }
             var stateDto = new InOutLineMvoStateDto(state);
             if (String.IsNullOrWhiteSpace(fields))
             {

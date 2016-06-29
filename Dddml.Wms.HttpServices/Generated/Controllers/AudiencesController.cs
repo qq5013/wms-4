@@ -67,6 +67,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
           try {
             var idObj = id;
             var state = (AudienceState)_audienceApplicationService.Get(idObj);
+            if (state == null) { return null; }
             var stateDto = new AudienceStateDto(state);
             if (String.IsNullOrWhiteSpace(fields))
             {

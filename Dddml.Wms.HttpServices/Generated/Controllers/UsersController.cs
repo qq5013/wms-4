@@ -67,6 +67,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
           try {
             var idObj = id;
             var state = (UserState)_userApplicationService.Get(idObj);
+            if (state == null) { return null; }
             var stateDto = new UserStateDto(state);
             if (String.IsNullOrWhiteSpace(fields))
             {

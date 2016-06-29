@@ -68,6 +68,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
           try {
             var idObj = id;
             var state = (InOutState)_inOutApplicationService.Get(idObj);
+            if (state == null) { return null; }
             var stateDto = new InOutStateDto(state);
             if (String.IsNullOrWhiteSpace(fields))
             {

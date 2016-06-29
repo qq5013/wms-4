@@ -67,6 +67,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
           try {
             var idObj = RolePermissionsControllerUtils.ParseIdString(id);
             var state = (RolePermissionState)_rolePermissionApplicationService.Get(idObj);
+            if (state == null) { return null; }
             var stateDto = new RolePermissionStateDto(state);
             if (String.IsNullOrWhiteSpace(fields))
             {

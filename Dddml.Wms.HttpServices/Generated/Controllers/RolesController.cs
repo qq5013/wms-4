@@ -67,6 +67,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
           try {
             var idObj = id;
             var state = (RoleState)_roleApplicationService.Get(idObj);
+            if (state == null) { return null; }
             var stateDto = new RoleStateDto(state);
             if (String.IsNullOrWhiteSpace(fields))
             {

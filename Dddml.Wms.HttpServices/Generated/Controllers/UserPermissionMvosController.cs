@@ -67,6 +67,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
           try {
             var idObj = UserPermissionMvosControllerUtils.ParseIdString(id);
             var state = (UserPermissionMvoState)_userPermissionMvoApplicationService.Get(idObj);
+            if (state == null) { return null; }
             var stateDto = new UserPermissionMvoStateDto(state);
             if (String.IsNullOrWhiteSpace(fields))
             {

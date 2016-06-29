@@ -67,6 +67,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
           try {
             var idObj = AttributeSetInstanceExtensionFieldMvosControllerUtils.ParseIdString(id);
             var state = (AttributeSetInstanceExtensionFieldMvoState)_attributeSetInstanceExtensionFieldMvoApplicationService.Get(idObj);
+            if (state == null) { return null; }
             var stateDto = new AttributeSetInstanceExtensionFieldMvoStateDto(state);
             if (String.IsNullOrWhiteSpace(fields))
             {

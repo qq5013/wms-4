@@ -18,11 +18,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
     public class AttributeSetInstanceServiceTests : ClientProxyTestsBase
     {
 
+        public const string TestColorAttributeFieldName = "_F_C5_4_";
+
         private IAttributeApplicationServiceFactory _attributeApplicationServiceFactory;
 
         private IAttributeSetApplicationServiceFactory _attributeSetApplicationServiceFactory;
 
-        private string _attributeSetId;
+        private string _testColorAttributeSetId;
 
         [SetUp]
         public void SetUp()
@@ -33,7 +35,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
 
             _attributeSetApplicationServiceFactory = new AttributeSetApplicationServiceProxyFactory();
 
-            InitColorAttrbuteSet(out _attributeSetId);
+            _testColorAttributeSetId = GetOrCreateTestColorAttributeSetId();
         }
 
         [Test]
@@ -46,7 +48,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
             var url = "AttributeSetInstances/{id}";
             url = url.Replace("{id}", attrSetInstId);
 
-            dynamic jObject = GetTestColorAttributeSetInstance(attrSetInstId, _attributeSetId);
+            dynamic jObject = GetTestColorAttributeSetInstance(attrSetInstId, _testColorAttributeSetId);
 
             var req = new HttpRequestMessage(HttpMethod.Put, url);
             req.Content = new ObjectContent(typeof(JObject), jObject, new JsonMediaTypeFormatter());
@@ -132,7 +134,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
             url = url.Replace("{id}", attrSetInstId);
 
             var attrSetInst = new MergePatchAttributeSetInstanceDto();
-            attrSetInst.AttributeSetId = _attributeSetId;//IdGenerator._lastAttributeSetId;
+            attrSetInst.AttributeSetId = _testColorAttributeSetId;//IdGenerator._lastAttributeSetId;
             attrSetInst.SerialNumber = attrSetInstId;
             attrSetInst.Lot = DateTime.Today.ToString();
             attrSetInst.Version = 1;
@@ -154,8 +156,21 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
 
 
 
-        private void InitColorAttrbuteSet(out string attrSetId)
+        private string GetOrCreateTestColorAttributeSetId()
         {
+            var attrSetId = IdGenerator.TestColorAttributeSetId;
+            var attrSet = _attributeSetApplicationServiceFactory.AttributeSetApplicationService.Get(attrSetId);
+            if (attrSet == null || attrSet.IsUnsaved)
+            {
+                attrSetId = CreateTestColorAttributeSet();
+            }
+            return attrSetId;
+        }
+
+
+        private string CreateTestColorAttributeSet()
+        {
+            string attrSetId;
             var attributeSetBuilder = new AttributeSetBuilder<CreateAttributeSetDto, CreateAttributeDto, CreateAttributeValueDto, CreateAttributeUseDto>(new IdGenerator());
 
 
@@ -176,13 +191,13 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
             System.Console.WriteLine(attrUses);
 
             var attr_0 = attrs[0];
-            attr_0.FieldName = "_F_C5_9_";
+            attr_0.FieldName = TestColorAttributeFieldName;
             var existed = _attributeApplicationServiceFactory.AttributeApplicationService.GetByProperty("FieldName", attr_0.FieldName);
             if (existed != null && existed.Count() > 0)
             {
                 Console.WriteLine(existed.First());
-                //TODO 检查属性/属性集是否完全相同？
-                // 现在只是抛出异常？
+                // 检查属性/属性集是否完全相同？
+                // 现在只是抛出异常：
                 throw new InvalidOperationException(String.Format("Existed Attribute. attr_0.FieldName = \"{0}\";", attr_0.FieldName));
             }
             else
@@ -194,14 +209,18 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
 
                 attrSetId = attrSets[0].AttributeSetId;
             }
+            return attrSetId;
         }
 
         class IdGenerator : AttributeSetBuilder<CreateAttributeSetDto, CreateAttributeDto, CreateAttributeValueDto, CreateAttributeUseDto>.IdGenerator
         {
+
+            public const string TestColorAttributeSetId = "TestColorAttributeSetId8c0fXA8idM6GE";
+
             //[ThreadStatic]
             //internal static string _lastAttributeSetId;
 
-            static Regex IdRegex = new Regex("^[_A-Za-z][_A-Za-z0-9]*$");
+            //static Regex IdRegex = new Regex("^[_A-Za-z][_A-Za-z0-9]*$");
 
             public string GenerateAttributeSetId(CreateAttributeSetDto attributeSet)
             {
@@ -212,7 +231,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
                 //}
                 //else
                 //{
-                var id = System.Guid.NewGuid().ToString();
+                var id = TestColorAttributeSetId;//System.Guid.NewGuid().ToString();
                 //}
                 //_lastAttributeSetId = id;
                 return id;

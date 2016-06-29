@@ -67,6 +67,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
           try {
             var idObj = id;
             var state = (LocatorState)_locatorApplicationService.Get(idObj);
+            if (state == null) { return null; }
             var stateDto = new LocatorStateDto(state);
             if (String.IsNullOrWhiteSpace(fields))
             {

@@ -67,6 +67,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
           try {
             var idObj = AttributeValueMvosControllerUtils.ParseIdString(id);
             var state = (AttributeValueMvoState)_attributeValueMvoApplicationService.Get(idObj);
+            if (state == null) { return null; }
             var stateDto = new AttributeValueMvoStateDto(state);
             if (String.IsNullOrWhiteSpace(fields))
             {

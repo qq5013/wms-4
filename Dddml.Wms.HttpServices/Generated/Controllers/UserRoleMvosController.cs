@@ -67,6 +67,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
           try {
             var idObj = UserRoleMvosControllerUtils.ParseIdString(id);
             var state = (UserRoleMvoState)_userRoleMvoApplicationService.Get(idObj);
+            if (state == null) { return null; }
             var stateDto = new UserRoleMvoStateDto(state);
             if (String.IsNullOrWhiteSpace(fields))
             {

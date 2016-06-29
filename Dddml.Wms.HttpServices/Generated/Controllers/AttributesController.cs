@@ -69,6 +69,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
           try {
             var idObj = id;
             var state = (AttributeState)_attributeApplicationService.Get(idObj);
+            if (state == null) { return null; }
             var stateDto = new AttributeStateDto(state);
             if (String.IsNullOrWhiteSpace(fields))
             {

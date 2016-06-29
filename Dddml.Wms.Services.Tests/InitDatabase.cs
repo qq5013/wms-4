@@ -2,14 +2,15 @@
 using Dddml.Wms.Domain;
 using Dddml.Wms.Specialization;
 using Dddml.Wms.Specialization.Spring;
+using Dddml.Wms.Support;
 using Microsoft.AspNet.Identity;
 using NHibernate;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Configuration;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace Dddml.Wms.Services.Tests
@@ -18,6 +19,42 @@ namespace Dddml.Wms.Services.Tests
     public class InitDatabase : TestsBase
     {
 
+        public static string TestUserId
+        {
+            get
+            {
+                return "test@dddml.org";
+            }
+        }
+
+        public static string TestUserPassword
+        {
+            get
+            {
+                return "123456Abc!";
+            }
+        }
+
+        public static Tuple<string, string, string> GetRoleWarehouseOperator()
+        {
+            var roleWarehouseOperator = new Tuple<string, string, string>("WarehouseOperator", "库存作业人员", "可以进行出入库操作的人员");
+            return roleWarehouseOperator;
+        }
+
+        public static Tuple<string, string, string> GetRoleWarehouseManager()
+        {
+            var roleWarehouseManager = new Tuple<string, string, string>("WarehouseManager", "仓库主管", "可以对仓库业务进行管理的角色");
+            return roleWarehouseManager;
+        }
+
+        public static Tuple<string, string, string> GetRoleSystemAdministrator()
+        {
+            var roleSysAdmin = new Tuple<string, string, string>("SystemAdministrator", "系统管理员", "可以进行基础数据维护和用户管理的角色");
+            return roleSysAdmin;
+        }
+
+        // ////////////////////////////////////////////////
+
         ISessionFactory _sessionFactory;
 
         IAudienceApplicationService _audienceApplicationService;
@@ -25,6 +62,10 @@ namespace Dddml.Wms.Services.Tests
         IUserApplicationService _userApplicationService;
 
         IRoleApplicationService _roleApplicationService;
+
+        IPermissionApplicationService _permissionApplicationService;
+
+        IRolePermissionApplicationService _rolePermissionApplicationService;
 
         PasswordHasher _passwordHasher = new PasswordHasher();
 
@@ -42,6 +83,10 @@ namespace Dddml.Wms.Services.Tests
 
             _roleApplicationService = ApplicationContext.Current["RoleApplicationService"] as IRoleApplicationService;
 
+            _permissionApplicationService = ApplicationContext.Current["PermissionApplicationService"] as IPermissionApplicationService;
+
+            _rolePermissionApplicationService = ApplicationContext.Current["RolePermissionApplicationService"] as IRolePermissionApplicationService;
+
         }
 
         [Test]
@@ -57,18 +102,23 @@ namespace Dddml.Wms.Services.Tests
 
                 CreateSelfClient();
 
-                var roles = new string[] { "Supervisor", "Manager" };
-
-                CreateRoles(roles);
+                var roles = CreateRoles();
 
                 var userIdAndPassword = CreateTestUser(roles);
+
+                CreatePermissions();
             }
         }
 
-        private Tuple<string, string> CreateTestUser(string[] roles)
+        /// <summary>
+        /// Create a user for test.
+        /// </summary>
+        /// <param name="roles">Role Ids.</param>
+        /// <returns>User Id and password.</returns>
+        private Tuple<string, string> CreateTestUser(ICollection<string> roles)
         {
-            var userId = "test@dddml.org";
-            var password = "123456Abc!";
+            var userId = TestUserId;
+            var password = TestUserPassword;
             var passwordHash = _passwordHasher.HashPassword(password);
 
             var user = new CreateUser();
@@ -87,13 +137,71 @@ namespace Dddml.Wms.Services.Tests
             return new Tuple<string, string>(userId, password);
         }
 
-        private void CreateRoles(string[] roles)
+        /// <summary>
+        /// Return Created Role Ids.
+        /// </summary>
+        /// <returns>Role Ids.</returns>
+        private ICollection<string> CreateRoles()
+        {
+            var roleSysAdmin = GetRoleSystemAdministrator();
+            var roleWarehouseManager = GetRoleWarehouseManager();
+            var roleWarehouseOperator = GetRoleWarehouseOperator();
+            var roles = new Tuple<string, string, string>[] { roleSysAdmin, roleWarehouseManager, roleWarehouseOperator };
+
+            CreateRoles(roles);
+
+            CreateRolePermissions(roleSysAdmin.Item1, PermissionUtils.Permissions.SystemManagement);
+
+            CreateRolePermissions(roleWarehouseManager.Item1, PermissionUtils.Permissions.MaterailInOutManagement);
+            CreateRolePermissions(roleWarehouseManager.Item1, PermissionUtils.Permissions.InventoryManagement);
+            CreateRolePermissions(roleWarehouseManager.Item1, PermissionUtils.Permissions.ViewsAndReports);
+
+            CreateRolePermissions(roleWarehouseOperator.Item1, PermissionUtils.Permissions.MaterailInOutManagement);
+
+            return roles.Select(r => r.Item1).ToList();
+        }
+
+
+        private void CreateRolePermissions(string roleId, PermissionUtils.Permission p)
+        {
+            var cs = PermissionUtils.GrantPermissionsToRole(roleId, p);
+            foreach (var c in cs)
+            {
+                _rolePermissionApplicationService.When(c);
+            }
+        }
+
+        private void CreateRoles(ICollection<Tuple<string, string, string>> roles)
         {
             foreach (var r in roles)
             {
                 CreateRole role = new CreateRole();
-                role.RoleId = r;
+                role.RoleId = r.Item1;
+                role.Name = r.Item2;
+                role.Description = r.Item3;
                 _roleApplicationService.When(role);
+                
+            }
+        }
+
+        private void CreatePermissions()
+        {
+            foreach (var p in PermissionUtils.GetRootPermissions())
+            {
+                CreatePermission(p);
+            }
+        }
+
+        private void CreatePermission(PermissionUtils.Permission p)
+        {
+            var c = p.ToCreatePermission();
+            _permissionApplicationService.When(c);
+            if (p.ChildPermissions != null)
+            {
+                foreach (var childP in p.ChildPermissions)
+                {
+                    CreatePermission(childP);
+                }
             }
         }
 

@@ -40,6 +40,34 @@ namespace Dddml.Wms.Support
             return new List<Permission>(dict.Values);
         }
 
+        public static ICollection<Permission> GetRootPermissions()
+        {
+            return new Permission[] {
+                Permissions.SystemManagement, 
+                Permissions.MaterailInOutManagement, 
+                Permissions.InventoryManagement,
+                Permissions.ViewsAndReports
+            };
+        }
+
+        public static IList<CreateRolePermission> GrantPermissionsToRole(string roleId, Permission p)
+        {
+            var commands = new List<CreateRolePermission>();
+            var c = CreateRolePermission(roleId, p);
+            commands.Add(c);
+            return commands;
+        }
+
+        private static CreateRolePermission CreateRolePermission(string roleId, Permission p)
+        {
+            var c = new CreateRolePermission();
+            c.Id = new RolePermissionId();
+            c.Id.RoleId = roleId;
+            c.Id.PermissionId = p.PermissionId;
+
+            return c;
+        }
+
         public static class Permissions
         {
             public static readonly Permission SystemManagement = new Permission(PermissionIds.SystemManagement, "系统管理", null);
@@ -160,6 +188,16 @@ namespace Dddml.Wms.Support
                 }
             }
 
+            public CreatePermission ToCreatePermission()
+            {
+                var c = new CreatePermission();
+                c.PermissionId = this.PermissionId;
+                c.ParentPermissionId = this.ParentPermissionId;
+                c.Name = this.PermissionName;
+                return c;
+            }
+
+  
         }
 
     }

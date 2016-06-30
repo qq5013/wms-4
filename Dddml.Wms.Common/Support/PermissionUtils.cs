@@ -50,12 +50,24 @@ namespace Dddml.Wms.Support
             };
         }
 
-        public static IList<CreateRolePermission> GrantPermissionsToRole(string roleId, Permission p)
+        public static IList<CreateRolePermission> GrantPermissionAndChildPermissionsToRole(Permission p, string roleId)
         {
             var commands = new List<CreateRolePermission>();
-            var c = CreateRolePermission(roleId, p);
-            commands.Add(c);
+            GrantPermissionAndChildPermissionsToRole(p, roleId, commands);
             return commands;
+        }
+
+        private static void GrantPermissionAndChildPermissionsToRole(Permission p, string roleId, IList<CreateRolePermission> commands)
+        {
+            var c = CreateRolePermission(roleId, p);
+            if (p.ChildPermissions != null)
+            {
+                foreach (var cp in p.ChildPermissions)
+                {
+                    GrantPermissionAndChildPermissionsToRole(cp, roleId, commands);
+                }
+            }
+            commands.Add(c);
         }
 
         private static CreateRolePermission CreateRolePermission(string roleId, Permission p)
@@ -64,7 +76,6 @@ namespace Dddml.Wms.Support
             c.Id = new RolePermissionId();
             c.Id.RoleId = roleId;
             c.Id.PermissionId = p.PermissionId;
-
             return c;
         }
 

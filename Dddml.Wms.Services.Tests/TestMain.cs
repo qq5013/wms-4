@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Dddml.Wms.Domain;
 using NUnit.Framework;
 using Dddml.Wms.Support;
+using System.Security.Cryptography;
 
 namespace Dddml.Wms.Services.Tests
 {
@@ -21,7 +22,6 @@ namespace Dddml.Wms.Services.Tests
             Console.ReadKey();
             
         }
-
  
     }
 }

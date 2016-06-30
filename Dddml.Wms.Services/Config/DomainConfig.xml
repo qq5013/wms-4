@@ -5,6 +5,7 @@
   </object>
   
   <object id="identityService" type="Dddml.Wms.Domain.Services.IdentityService, Dddml.Wms.Common">
+    <property name="IsUsingPermissionsAsRoles" value="true"/>
     <property name="RolePermissionApplicationService" ref="rolePermissionApplicationService"/>
     <property name="UserApplicationService" ref="userApplicationService"/>
   </object>

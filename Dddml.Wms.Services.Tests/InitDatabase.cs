@@ -164,7 +164,7 @@ namespace Dddml.Wms.Services.Tests
 
         private void CreateRolePermissions(string roleId, PermissionUtils.Permission p)
         {
-            var cs = PermissionUtils.GrantPermissionsToRole(roleId, p);
+            var cs = PermissionUtils.GrantPermissionAndChildPermissionsToRole(p, roleId);
             foreach (var c in cs)
             {
                 _rolePermissionApplicationService.When(c);

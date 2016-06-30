@@ -8,6 +8,8 @@ namespace Dddml.Wms.Domain.Services
     public partial class IdentityService : IIdentityService
     {
 
+        public bool IsUsingPermissionsAsRoles { get; set; }
+
         public IRolePermissionApplicationService RolePermissionApplicationService { get; set; }
 
         public IUserApplicationService UserApplicationService { get; set; }
@@ -16,14 +18,22 @@ namespace Dddml.Wms.Domain.Services
         {
             var user = UserApplicationService.Get(userId);
 
-            var ids = new List<string>();
+            var idList = new List<string>();
 
-            AddUserRoleIdsAndPermissionIdsToList(user, ids);
+            AddUserRoleIdsToList(user, idList);
 
-            return ids;
+            if (IsUsingPermissionsAsRoles)
+            {
+                AddUserRolesPermissionIdsToList(user.UserRoles, idList);
+            }
+
+            //貌似让用户直接关联到 Permission 这样已经太复杂了，有必要？
+            //AddUserPermissionIdsToIdList(user, idList);
+
+            return idList;
         }
 
-        private void AddUserRoleIdsAndPermissionIdsToList(IUserState user, List<string> idList)
+        private void AddUserRoleIdsToList(IUserState user, IList<string> idList)
         {
             var userRoles = user.UserRoles;
             if (userRoles != null)
@@ -31,21 +41,39 @@ namespace Dddml.Wms.Domain.Services
                 foreach (var role in userRoles)
                 {
                     idList.Add(role.RoleId);
+                }
+            }
+        }
 
-                    var rolePermissions = RolePermissionApplicationService.GetByProperty("Id.RoleId", role.RoleId);
-                    if (rolePermissions != null)
+        private void AddUserRolesPermissionIdsToList(IUserRoleStates userRoles, IList<string> idList)
+        {
+            if (userRoles != null)
+            {
+                foreach (var role in userRoles)
+                {
+                    var roleId = role.RoleId;
+                    AddPermissionIdsToIdListByRoleId(roleId, idList);
+                }
+            }
+        }
+
+        private void AddPermissionIdsToIdListByRoleId(string roleId, IList<string> idList)
+        {
+            var rolePermissions = RolePermissionApplicationService.GetByProperty("Id.RoleId", roleId);
+            if (rolePermissions != null)
+            {
+                foreach (var p in rolePermissions)
+                {
+                    if (!idList.Contains(p.Id.PermissionId))
                     {
-                        foreach (var p in rolePermissions)
-                        {
-                            if (!idList.Contains(p.Id.PermissionId))
-                            {
-                                idList.Add(p.Id.PermissionId);
-                            }
-                        }
+                        idList.Add(p.Id.PermissionId);
                     }
                 }
             }
+        }
 
+        private static void AddUserPermissionIdsToIdList(IUserState user, List<string> idList)
+        {
             var userPermissions = user.UserPermissions;
             if (userPermissions != null)
             {
@@ -54,8 +82,8 @@ namespace Dddml.Wms.Domain.Services
                     idList.Add(p.PermissionId);
                 }
             }
-
         }
+
     }
 
 }

@@ -124,5 +124,22 @@ aggregates:
           globalId:
             name: UserLoginId
             type: UserLoginId
+            
+      # ------------------------------
+      methods:
+      
+        Create:
+          authorizationEnabled: true
+          requiredRoles: [SystemAdministrator]
+          requiredPermissions: [UserManagement]
+          
+        Patch:
+          authorizationEnabled: true
+          requiredRoles: [SystemAdministrator]
+          requiredPermissions: [UserManagement]
 
+        Delete:
+          authorizationEnabled: true
+          requiredRoles: [SystemAdministrator]
+          requiredPermissions: [UserManagement]
     

@@ -101,7 +101,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
           } catch (Exception ex) { var response = UsersControllerUtils.GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
-        [HttpPut][SetRequesterId]
+        [HttpPut][SetRequesterId][Authorize(Roles = "SystemAdministrator,UserManagement")]
         public void Put(string id, [FromBody]CreateUserDto value)
         {
           try {
@@ -110,7 +110,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
           } catch (Exception ex) { var response = UsersControllerUtils.GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
-        [HttpPatch][SetRequesterId]
+        [HttpPatch][SetRequesterId][Authorize(Roles = "SystemAdministrator,UserManagement")]
         public void Patch(string id, [FromBody]MergePatchUserDto value)
         {
           try {
@@ -119,7 +119,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
           } catch (Exception ex) { var response = UsersControllerUtils.GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
-        [HttpDelete][SetRequesterId]
+        [HttpDelete][SetRequesterId][Authorize(Roles = "SystemAdministrator,UserManagement")]
         public void Delete(string id, string commandId, string version, string requesterId = default(string))
         {
           try {

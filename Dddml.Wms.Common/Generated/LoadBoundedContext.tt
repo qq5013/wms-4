@@ -10,6 +10,9 @@
 <#@ import namespace="Dddml.Serialization" #>
 <#@ import namespace="Dddml.T4" #>
 <#@ import namespace="Dddml.T4.Extensions" #>
+<#@ import namespace="Dddml.T4.Extensions.Clr" #>
+<#@ import namespace="Dddml.T4.Extensions.CSharp" #>
+<#@ import namespace="Dddml.T4.Extensions.NHibernate" #>
 <#@ include file="T4Toolbox.tt" #>
 <#
     TemplatingContext.Current.CurrentAssembly = "Dddml.Wms.Common";
@@ -22,7 +25,7 @@
 
 	boundedContext.IsGenericTypeAsType = true;
 
-	boundedContext.Metadata[Dddml.T4.Extensions.BoundedContextExtension.MetadataKeyDomainAssembly] = "Dddml.Wms.Common";
+	boundedContext.Metadata[Dddml.T4.Extensions.Clr.BoundedContextExtension.MetadataKeyDomainAssembly] = "Dddml.Wms.Common";
 
 	boundedContext.Aggregates["AttributeSetInstance"].Metadata[Dddml.T4.Extensions.EntityBaseExtension.MetadataKeyPersistingStateEventRemovedPropertiesAsSet] = true;
 

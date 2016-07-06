@@ -12,7 +12,7 @@ using NodaMoney;
 namespace Dddml.Wms.Domain
 {
 
-	public static partial class InOutLineStateExtensions
+	public static partial class InOutLineStateDtoExtensions
 	{
 
         public static IInOutLineCommand ToCreateOrMergePatchInOutLine(this InOutLineStateDto state)

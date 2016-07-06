@@ -11,7 +11,7 @@ using Dddml.Wms.Domain;
 namespace Dddml.Wms.Domain
 {
 
-	public static partial class RolePermissionStateExtensions
+	public static partial class RolePermissionStateDtoExtensions
 	{
 
         public static IRolePermissionCommand ToCreateOrMergePatchRolePermission(this RolePermissionStateDto state)

@@ -11,7 +11,7 @@ using Dddml.Wms.Domain;
 namespace Dddml.Wms.Domain
 {
 
-	public static partial class UserClaimMvoStateExtensions
+	public static partial class UserClaimMvoStateDtoExtensions
 	{
 
         public static IUserClaimMvoCommand ToCreateOrMergePatchUserClaimMvo(this UserClaimMvoStateDto state)

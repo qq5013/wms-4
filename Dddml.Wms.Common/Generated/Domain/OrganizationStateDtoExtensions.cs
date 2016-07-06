@@ -11,7 +11,7 @@ using Dddml.Wms.Domain;
 namespace Dddml.Wms.Domain
 {
 
-	public static partial class OrganizationStateExtensions
+	public static partial class OrganizationStateDtoExtensions
 	{
 
         public static IOrganizationCommand ToCreateOrMergePatchOrganization(this OrganizationStateDto state)

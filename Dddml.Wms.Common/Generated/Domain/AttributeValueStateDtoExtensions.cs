@@ -11,7 +11,7 @@ using Dddml.Wms.Domain;
 namespace Dddml.Wms.Domain
 {
 
-	public static partial class AttributeValueStateExtensions
+	public static partial class AttributeValueStateDtoExtensions
 	{
 
         public static IAttributeValueCommand ToCreateOrMergePatchAttributeValue(this AttributeValueStateDto state)

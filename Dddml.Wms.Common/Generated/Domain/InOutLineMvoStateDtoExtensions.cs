@@ -12,7 +12,7 @@ using NodaMoney;
 namespace Dddml.Wms.Domain
 {
 
-	public static partial class InOutLineMvoStateExtensions
+	public static partial class InOutLineMvoStateDtoExtensions
 	{
 
         public static IInOutLineMvoCommand ToCreateOrMergePatchInOutLineMvo(this InOutLineMvoStateDto state)

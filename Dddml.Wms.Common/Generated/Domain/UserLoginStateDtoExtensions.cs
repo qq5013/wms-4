@@ -11,7 +11,7 @@ using Dddml.Wms.Domain;
 namespace Dddml.Wms.Domain
 {
 
-	public static partial class UserLoginStateExtensions
+	public static partial class UserLoginStateDtoExtensions
 	{
 
         public static IUserLoginCommand ToCreateOrMergePatchUserLogin(this UserLoginStateDto state)

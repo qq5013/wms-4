@@ -11,7 +11,7 @@ using Dddml.Wms.Domain;
 namespace Dddml.Wms.Domain
 {
 
-	public static partial class WarehouseStateExtensions
+	public static partial class WarehouseStateDtoExtensions
 	{
 
         public static IWarehouseCommand ToCreateOrMergePatchWarehouse(this WarehouseStateDto state)

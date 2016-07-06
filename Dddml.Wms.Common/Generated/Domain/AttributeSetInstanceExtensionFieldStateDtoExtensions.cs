@@ -11,7 +11,7 @@ using Dddml.Wms.Domain;
 namespace Dddml.Wms.Domain
 {
 
-	public static partial class AttributeSetInstanceExtensionFieldStateExtensions
+	public static partial class AttributeSetInstanceExtensionFieldStateDtoExtensions
 	{
 
         public static IAttributeSetInstanceExtensionFieldCommand ToCreateOrMergePatchAttributeSetInstanceExtensionField(this AttributeSetInstanceExtensionFieldStateDto state)

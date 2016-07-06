@@ -11,7 +11,7 @@ using Dddml.Wms.Domain;
 namespace Dddml.Wms.Domain
 {
 
-	public static partial class UserPermissionMvoStateExtensions
+	public static partial class UserPermissionMvoStateDtoExtensions
 	{
 
         public static IUserPermissionMvoCommand ToCreateOrMergePatchUserPermissionMvo(this UserPermissionMvoStateDto state)

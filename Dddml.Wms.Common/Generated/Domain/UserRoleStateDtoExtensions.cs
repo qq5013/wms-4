@@ -11,7 +11,7 @@ using Dddml.Wms.Domain;
 namespace Dddml.Wms.Domain
 {
 
-	public static partial class UserRoleStateExtensions
+	public static partial class UserRoleStateDtoExtensions
 	{
 
         public static IUserRoleCommand ToCreateOrMergePatchUserRole(this UserRoleStateDto state)

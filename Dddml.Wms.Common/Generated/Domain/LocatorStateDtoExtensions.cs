@@ -11,7 +11,7 @@ using Dddml.Wms.Domain;
 namespace Dddml.Wms.Domain
 {
 
-	public static partial class LocatorStateExtensions
+	public static partial class LocatorStateDtoExtensions
 	{
 
         public static ILocatorCommand ToCreateOrMergePatchLocator(this LocatorStateDto state)

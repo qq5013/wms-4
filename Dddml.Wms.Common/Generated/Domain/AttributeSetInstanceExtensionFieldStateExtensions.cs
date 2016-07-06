@@ -16,58 +16,22 @@ namespace Dddml.Wms.Domain
 
         public static IAttributeSetInstanceExtensionFieldCommand ToCreateOrMergePatchAttributeSetInstanceExtensionField(this AttributeSetInstanceExtensionFieldState state)
         {
-            bool bUnsaved = ((IAttributeSetInstanceExtensionFieldState)state).IsUnsaved;
-            if (bUnsaved)
-            {
-                return state.ToCreateAttributeSetInstanceExtensionField();
-            }
-            else 
-            {
-                return state.ToMergePatchAttributeSetInstanceExtensionField();
-            }
+            return state.ToCreateOrMergePatchAttributeSetInstanceExtensionField<CreateAttributeSetInstanceExtensionField, MergePatchAttributeSetInstanceExtensionField>();
         }
 
         public static RemoveAttributeSetInstanceExtensionField ToRemoveAttributeSetInstanceExtensionField(this AttributeSetInstanceExtensionFieldState state)
         {
-            var cmd = new RemoveAttributeSetInstanceExtensionField();
-            cmd.Index = state.Index;
-            return cmd;
+            return state.ToRemoveAttributeSetInstanceExtensionField<RemoveAttributeSetInstanceExtensionField>();
         }
 
         public static MergePatchAttributeSetInstanceExtensionField ToMergePatchAttributeSetInstanceExtensionField(this AttributeSetInstanceExtensionFieldState state)
         {
-            var cmd = new MergePatchAttributeSetInstanceExtensionField();
-
-            cmd.Index = state.Index;
-            cmd.Name = state.Name;
-            cmd.Type = state.Type;
-            cmd.Length = state.Length;
-            cmd.Alias = state.Alias;
-            cmd.Description = state.Description;
-            cmd.Active = state.Active;
-            cmd.GroupId = state.GroupId;
-            
-            if (state.Name == null) { cmd.IsPropertyNameRemoved = true; }
-            if (state.Type == null) { cmd.IsPropertyTypeRemoved = true; }
-            if (state.Length == null) { cmd.IsPropertyLengthRemoved = true; }
-            if (state.Alias == null) { cmd.IsPropertyAliasRemoved = true; }
-            if (state.Description == null) { cmd.IsPropertyDescriptionRemoved = true; }
-            return cmd;
+            return state.ToMergePatchAttributeSetInstanceExtensionField<MergePatchAttributeSetInstanceExtensionField>();
         }
 
         public static CreateAttributeSetInstanceExtensionField ToCreateAttributeSetInstanceExtensionField(this AttributeSetInstanceExtensionFieldState state)
         {
-            var cmd = new CreateAttributeSetInstanceExtensionField();
-
-            cmd.Index = state.Index;
-            cmd.Name = state.Name;
-            cmd.Type = state.Type;
-            cmd.Length = state.Length;
-            cmd.Alias = state.Alias;
-            cmd.Description = state.Description;
-            cmd.Active = state.Active;
-            cmd.GroupId = state.GroupId;
-            return cmd;
+            return state.ToCreateAttributeSetInstanceExtensionField<CreateAttributeSetInstanceExtensionField>();
         }
 		
 

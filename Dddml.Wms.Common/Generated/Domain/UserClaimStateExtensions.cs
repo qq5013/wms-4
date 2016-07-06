@@ -16,49 +16,22 @@ namespace Dddml.Wms.Domain
 
         public static IUserClaimCommand ToCreateOrMergePatchUserClaim(this UserClaimState state)
         {
-            bool bUnsaved = ((IUserClaimState)state).IsUnsaved;
-            if (bUnsaved)
-            {
-                return state.ToCreateUserClaim();
-            }
-            else 
-            {
-                return state.ToMergePatchUserClaim();
-            }
+            return state.ToCreateOrMergePatchUserClaim<CreateUserClaim, MergePatchUserClaim>();
         }
 
         public static RemoveUserClaim ToRemoveUserClaim(this UserClaimState state)
         {
-            var cmd = new RemoveUserClaim();
-            cmd.ClaimId = state.ClaimId;
-            return cmd;
+            return state.ToRemoveUserClaim<RemoveUserClaim>();
         }
 
         public static MergePatchUserClaim ToMergePatchUserClaim(this UserClaimState state)
         {
-            var cmd = new MergePatchUserClaim();
-
-            cmd.ClaimId = state.ClaimId;
-            cmd.ClaimType = state.ClaimType;
-            cmd.ClaimValue = state.ClaimValue;
-            cmd.Active = state.Active;
-            cmd.UserId = state.UserId;
-            
-            if (state.ClaimType == null) { cmd.IsPropertyClaimTypeRemoved = true; }
-            if (state.ClaimValue == null) { cmd.IsPropertyClaimValueRemoved = true; }
-            return cmd;
+            return state.ToMergePatchUserClaim<MergePatchUserClaim>();
         }
 
         public static CreateUserClaim ToCreateUserClaim(this UserClaimState state)
         {
-            var cmd = new CreateUserClaim();
-
-            cmd.ClaimId = state.ClaimId;
-            cmd.ClaimType = state.ClaimType;
-            cmd.ClaimValue = state.ClaimValue;
-            cmd.Active = state.Active;
-            cmd.UserId = state.UserId;
-            return cmd;
+            return state.ToCreateUserClaim<CreateUserClaim>();
         }
 		
 

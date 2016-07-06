@@ -16,84 +16,22 @@ namespace Dddml.Wms.Domain
 
         public static IAttributeCommand ToCreateOrMergePatchAttribute(this AttributeState state)
         {
-            bool bUnsaved = ((IAttributeState)state).IsUnsaved;
-            if (bUnsaved)
-            {
-                return state.ToCreateAttribute();
-            }
-            else 
-            {
-                return state.ToMergePatchAttribute();
-            }
+            return state.ToCreateOrMergePatchAttribute<CreateAttribute, MergePatchAttribute, CreateAttributeValue, MergePatchAttributeValue>();
         }
 
         public static DeleteAttribute ToDeleteAttribute(this AttributeState state)
         {
-            var cmd = new DeleteAttribute();
-            cmd.AttributeId = state.AttributeId;
-            cmd.Version = state.Version;
-
-            return cmd;
+            return state.ToDeleteAttribute<DeleteAttribute>();
         }
 
         public static MergePatchAttribute ToMergePatchAttribute(this AttributeState state)
         {
-            var cmd = new MergePatchAttribute();
-
-            cmd.Version = state.Version;
-
-            cmd.AttributeId = state.AttributeId;
-            cmd.Name = state.Name;
-            cmd.OrganizationId = state.OrganizationId;
-            cmd.Description = state.Description;
-            cmd.IsMandatory = state.IsMandatory;
-            cmd.IsInstanceAttribute = state.IsInstanceAttribute;
-            cmd.AttributeValueType = state.AttributeValueType;
-            cmd.AttributeValueLength = state.AttributeValueLength;
-            cmd.IsList = state.IsList;
-            cmd.FieldName = state.FieldName;
-            cmd.ReferenceId = state.ReferenceId;
-            cmd.Active = state.Active;
-            
-            if (state.Name == null) { cmd.IsPropertyNameRemoved = true; }
-            if (state.OrganizationId == null) { cmd.IsPropertyOrganizationIdRemoved = true; }
-            if (state.Description == null) { cmd.IsPropertyDescriptionRemoved = true; }
-            if (state.AttributeValueType == null) { cmd.IsPropertyAttributeValueTypeRemoved = true; }
-            if (state.AttributeValueLength == null) { cmd.IsPropertyAttributeValueLengthRemoved = true; }
-            if (state.FieldName == null) { cmd.IsPropertyFieldNameRemoved = true; }
-            if (state.ReferenceId == null) { cmd.IsPropertyReferenceIdRemoved = true; }
-            foreach (AttributeValueState d in state.AttributeValues)
-            {
-                var c = d.ToCreateOrMergePatchAttributeValue();
-                cmd.AttributeValueCommands.Add(c);
-            }
-            return cmd;
+            return state.ToMergePatchAttribute<MergePatchAttribute, CreateAttributeValue, MergePatchAttributeValue>();
         }
 
         public static CreateAttribute ToCreateAttribute(this AttributeState state)
         {
-            var cmd = new CreateAttribute();
-
-            cmd.Version = state.Version;
-
-            cmd.AttributeId = state.AttributeId;
-            cmd.Name = state.Name;
-            cmd.OrganizationId = state.OrganizationId;
-            cmd.Description = state.Description;
-            cmd.IsMandatory = state.IsMandatory;
-            cmd.IsInstanceAttribute = state.IsInstanceAttribute;
-            cmd.AttributeValueType = state.AttributeValueType;
-            cmd.AttributeValueLength = state.AttributeValueLength;
-            cmd.IsList = state.IsList;
-            cmd.FieldName = state.FieldName;
-            cmd.ReferenceId = state.ReferenceId;
-            cmd.Active = state.Active;
-            foreach (AttributeValueState d in state.AttributeValues)
-            {
-                var c = d.ToCreateAttributeValue();
-                cmd.AttributeValues.Add(c);
-            }
-            return cmd;
+            return state.ToCreateAttribute<CreateAttribute, CreateAttributeValue>();
         }
 		
 

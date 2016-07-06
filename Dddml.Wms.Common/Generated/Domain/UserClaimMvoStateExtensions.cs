@@ -16,97 +16,22 @@ namespace Dddml.Wms.Domain
 
         public static IUserClaimMvoCommand ToCreateOrMergePatchUserClaimMvo(this UserClaimMvoState state)
         {
-            bool bUnsaved = ((IUserClaimMvoState)state).IsUnsaved;
-            if (bUnsaved)
-            {
-                return state.ToCreateUserClaimMvo();
-            }
-            else 
-            {
-                return state.ToMergePatchUserClaimMvo();
-            }
+            return state.ToCreateOrMergePatchUserClaimMvo<CreateUserClaimMvo, MergePatchUserClaimMvo>();
         }
 
         public static DeleteUserClaimMvo ToDeleteUserClaimMvo(this UserClaimMvoState state)
         {
-            var cmd = new DeleteUserClaimMvo();
-            cmd.UserClaimId = state.UserClaimId;
-            cmd.UserVersion = state.UserVersion;
-
-            return cmd;
+            return state.ToDeleteUserClaimMvo<DeleteUserClaimMvo>();
         }
 
         public static MergePatchUserClaimMvo ToMergePatchUserClaimMvo(this UserClaimMvoState state)
         {
-            var cmd = new MergePatchUserClaimMvo();
-
-            cmd.UserVersion = state.UserVersion;
-
-            cmd.UserClaimId = state.UserClaimId;
-            cmd.ClaimType = state.ClaimType;
-            cmd.ClaimValue = state.ClaimValue;
-            cmd.Version = state.Version;
-            cmd.Active = state.Active;
-            cmd.UserUserName = state.UserUserName;
-            cmd.UserAccessFailedCount = state.UserAccessFailedCount;
-            cmd.UserEmail = state.UserEmail;
-            cmd.UserEmailConfirmed = state.UserEmailConfirmed;
-            cmd.UserLockoutEnabled = state.UserLockoutEnabled;
-            cmd.UserLockoutEndDateUtc = state.UserLockoutEndDateUtc;
-            cmd.UserPasswordHash = state.UserPasswordHash;
-            cmd.UserPhoneNumber = state.UserPhoneNumber;
-            cmd.UserPhoneNumberConfirmed = state.UserPhoneNumberConfirmed;
-            cmd.UserTwoFactorEnabled = state.UserTwoFactorEnabled;
-            cmd.UserSecurityStamp = state.UserSecurityStamp;
-            cmd.UserCreatedBy = state.UserCreatedBy;
-            cmd.UserCreatedAt = state.UserCreatedAt;
-            cmd.UserUpdatedBy = state.UserUpdatedBy;
-            cmd.UserUpdatedAt = state.UserUpdatedAt;
-            cmd.UserActive = state.UserActive;
-            cmd.UserDeleted = state.UserDeleted;
-            
-            if (state.ClaimType == null) { cmd.IsPropertyClaimTypeRemoved = true; }
-            if (state.ClaimValue == null) { cmd.IsPropertyClaimValueRemoved = true; }
-            if (state.UserUserName == null) { cmd.IsPropertyUserUserNameRemoved = true; }
-            if (state.UserEmail == null) { cmd.IsPropertyUserEmailRemoved = true; }
-            if (state.UserLockoutEndDateUtc == null) { cmd.IsPropertyUserLockoutEndDateUtcRemoved = true; }
-            if (state.UserPasswordHash == null) { cmd.IsPropertyUserPasswordHashRemoved = true; }
-            if (state.UserPhoneNumber == null) { cmd.IsPropertyUserPhoneNumberRemoved = true; }
-            if (state.UserSecurityStamp == null) { cmd.IsPropertyUserSecurityStampRemoved = true; }
-            if (state.UserCreatedBy == null) { cmd.IsPropertyUserCreatedByRemoved = true; }
-            if (state.UserUpdatedBy == null) { cmd.IsPropertyUserUpdatedByRemoved = true; }
-            return cmd;
+            return state.ToMergePatchUserClaimMvo<MergePatchUserClaimMvo>();
         }
 
         public static CreateUserClaimMvo ToCreateUserClaimMvo(this UserClaimMvoState state)
         {
-            var cmd = new CreateUserClaimMvo();
-
-            cmd.UserVersion = state.UserVersion;
-
-            cmd.UserClaimId = state.UserClaimId;
-            cmd.ClaimType = state.ClaimType;
-            cmd.ClaimValue = state.ClaimValue;
-            cmd.Version = state.Version;
-            cmd.Active = state.Active;
-            cmd.UserUserName = state.UserUserName;
-            cmd.UserAccessFailedCount = state.UserAccessFailedCount;
-            cmd.UserEmail = state.UserEmail;
-            cmd.UserEmailConfirmed = state.UserEmailConfirmed;
-            cmd.UserLockoutEnabled = state.UserLockoutEnabled;
-            cmd.UserLockoutEndDateUtc = state.UserLockoutEndDateUtc;
-            cmd.UserPasswordHash = state.UserPasswordHash;
-            cmd.UserPhoneNumber = state.UserPhoneNumber;
-            cmd.UserPhoneNumberConfirmed = state.UserPhoneNumberConfirmed;
-            cmd.UserTwoFactorEnabled = state.UserTwoFactorEnabled;
-            cmd.UserSecurityStamp = state.UserSecurityStamp;
-            cmd.UserCreatedBy = state.UserCreatedBy;
-            cmd.UserCreatedAt = state.UserCreatedAt;
-            cmd.UserUpdatedBy = state.UserUpdatedBy;
-            cmd.UserUpdatedAt = state.UserUpdatedAt;
-            cmd.UserActive = state.UserActive;
-            cmd.UserDeleted = state.UserDeleted;
-            return cmd;
+            return state.ToCreateUserClaimMvo<CreateUserClaimMvo>();
         }
 		
 

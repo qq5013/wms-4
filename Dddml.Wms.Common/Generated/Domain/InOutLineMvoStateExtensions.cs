@@ -17,186 +17,22 @@ namespace Dddml.Wms.Domain
 
         public static IInOutLineMvoCommand ToCreateOrMergePatchInOutLineMvo(this InOutLineMvoState state)
         {
-            bool bUnsaved = ((IInOutLineMvoState)state).IsUnsaved;
-            if (bUnsaved)
-            {
-                return state.ToCreateInOutLineMvo();
-            }
-            else 
-            {
-                return state.ToMergePatchInOutLineMvo();
-            }
+            return state.ToCreateOrMergePatchInOutLineMvo<CreateInOutLineMvo, MergePatchInOutLineMvo>();
         }
 
         public static DeleteInOutLineMvo ToDeleteInOutLineMvo(this InOutLineMvoState state)
         {
-            var cmd = new DeleteInOutLineMvo();
-            cmd.InOutLineId = state.InOutLineId;
-            cmd.InOutVersion = state.InOutVersion;
-
-            return cmd;
+            return state.ToDeleteInOutLineMvo<DeleteInOutLineMvo>();
         }
 
         public static MergePatchInOutLineMvo ToMergePatchInOutLineMvo(this InOutLineMvoState state)
         {
-            var cmd = new MergePatchInOutLineMvo();
-
-            cmd.InOutVersion = state.InOutVersion;
-
-            cmd.InOutLineId = state.InOutLineId;
-            cmd.LineNumber = state.LineNumber;
-            cmd.Description = state.Description;
-            cmd.LocatorId = state.LocatorId;
-            cmd.Product = state.Product;
-            cmd.UomId = state.UomId;
-            cmd.MovementQuantity = state.MovementQuantity;
-            cmd.ConfirmedQuantity = state.ConfirmedQuantity;
-            cmd.ScrappedQuantity = state.ScrappedQuantity;
-            cmd.TargetQuantity = state.TargetQuantity;
-            cmd.PickedQuantity = state.PickedQuantity;
-            cmd.IsInvoiced = state.IsInvoiced;
-            cmd.AttributeSetInstanceId = state.AttributeSetInstanceId;
-            cmd.IsDescription = state.IsDescription;
-            cmd.Processed = state.Processed;
-            cmd.QuantityEntered = state.QuantityEntered;
-            cmd.RmaLineNumber = state.RmaLineNumber;
-            cmd.ReversalLineNumber = state.ReversalLineNumber;
-            cmd.Version = state.Version;
-            cmd.Active = state.Active;
-            cmd.InOutIsSOTransaction = state.InOutIsSOTransaction;
-            cmd.InOutPosted = state.InOutPosted;
-            cmd.InOutProcessing = state.InOutProcessing;
-            cmd.InOutProcessed = state.InOutProcessed;
-            cmd.InOutDocumentType = state.InOutDocumentType;
-            cmd.InOutDescription = state.InOutDescription;
-            cmd.InOutOrderNumber = state.InOutOrderNumber;
-            cmd.InOutDateOrdered = state.InOutDateOrdered;
-            cmd.InOutIsPrinted = state.InOutIsPrinted;
-            cmd.InOutMovementType = state.InOutMovementType;
-            cmd.InOutMovementDate = state.InOutMovementDate;
-            cmd.InOutBusinessPartnerId = state.InOutBusinessPartnerId;
-            cmd.InOutWarehouseId = state.InOutWarehouseId;
-            cmd.InOutPOReference = state.InOutPOReference;
-            cmd.InOutFreightAmount = state.InOutFreightAmount;
-            cmd.InOutShipperId = state.InOutShipperId;
-            cmd.InOutChargeAmount = state.InOutChargeAmount;
-            cmd.InOutDatePrinted = state.InOutDatePrinted;
-            cmd.InOutSalesRepresentative = state.InOutSalesRepresentative;
-            cmd.InOutNumberOfPackages = state.InOutNumberOfPackages;
-            cmd.InOutPickDate = state.InOutPickDate;
-            cmd.InOutShipDate = state.InOutShipDate;
-            cmd.InOutTrackingNumber = state.InOutTrackingNumber;
-            cmd.InOutDateReceived = state.InOutDateReceived;
-            cmd.InOutIsInTransit = state.InOutIsInTransit;
-            cmd.InOutIsApproved = state.InOutIsApproved;
-            cmd.InOutIsInDispute = state.InOutIsInDispute;
-            cmd.InOutVolume = state.InOutVolume;
-            cmd.InOutWeight = state.InOutWeight;
-            cmd.InOutRmaNumber = state.InOutRmaNumber;
-            cmd.InOutReversalNumber = state.InOutReversalNumber;
-            cmd.InOutIsDropShip = state.InOutIsDropShip;
-            cmd.InOutDropShipBusinessPartnerId = state.InOutDropShipBusinessPartnerId;
-            cmd.InOutCreatedBy = state.InOutCreatedBy;
-            cmd.InOutCreatedAt = state.InOutCreatedAt;
-            cmd.InOutUpdatedBy = state.InOutUpdatedBy;
-            cmd.InOutUpdatedAt = state.InOutUpdatedAt;
-            cmd.InOutActive = state.InOutActive;
-            cmd.InOutDeleted = state.InOutDeleted;
-            
-            if (state.Description == null) { cmd.IsPropertyDescriptionRemoved = true; }
-            if (state.LocatorId == null) { cmd.IsPropertyLocatorIdRemoved = true; }
-            if (state.Product == null) { cmd.IsPropertyProductRemoved = true; }
-            if (state.UomId == null) { cmd.IsPropertyUomIdRemoved = true; }
-            if (state.AttributeSetInstanceId == null) { cmd.IsPropertyAttributeSetInstanceIdRemoved = true; }
-            if (state.InOutDescription == null) { cmd.IsPropertyInOutDescriptionRemoved = true; }
-            if (state.InOutOrderNumber == null) { cmd.IsPropertyInOutOrderNumberRemoved = true; }
-            if (state.InOutDateOrdered == null) { cmd.IsPropertyInOutDateOrderedRemoved = true; }
-            if (state.InOutMovementType == null) { cmd.IsPropertyInOutMovementTypeRemoved = true; }
-            if (state.InOutMovementDate == null) { cmd.IsPropertyInOutMovementDateRemoved = true; }
-            if (state.InOutBusinessPartnerId == null) { cmd.IsPropertyInOutBusinessPartnerIdRemoved = true; }
-            if (state.InOutWarehouseId == null) { cmd.IsPropertyInOutWarehouseIdRemoved = true; }
-            if (state.InOutPOReference == null) { cmd.IsPropertyInOutPOReferenceRemoved = true; }
-            if (state.InOutShipperId == null) { cmd.IsPropertyInOutShipperIdRemoved = true; }
-            if (state.InOutDatePrinted == null) { cmd.IsPropertyInOutDatePrintedRemoved = true; }
-            if (state.InOutSalesRepresentative == null) { cmd.IsPropertyInOutSalesRepresentativeRemoved = true; }
-            if (state.InOutPickDate == null) { cmd.IsPropertyInOutPickDateRemoved = true; }
-            if (state.InOutShipDate == null) { cmd.IsPropertyInOutShipDateRemoved = true; }
-            if (state.InOutTrackingNumber == null) { cmd.IsPropertyInOutTrackingNumberRemoved = true; }
-            if (state.InOutDateReceived == null) { cmd.IsPropertyInOutDateReceivedRemoved = true; }
-            if (state.InOutRmaNumber == null) { cmd.IsPropertyInOutRmaNumberRemoved = true; }
-            if (state.InOutReversalNumber == null) { cmd.IsPropertyInOutReversalNumberRemoved = true; }
-            if (state.InOutDropShipBusinessPartnerId == null) { cmd.IsPropertyInOutDropShipBusinessPartnerIdRemoved = true; }
-            if (state.InOutCreatedBy == null) { cmd.IsPropertyInOutCreatedByRemoved = true; }
-            if (state.InOutUpdatedBy == null) { cmd.IsPropertyInOutUpdatedByRemoved = true; }
-            return cmd;
+            return state.ToMergePatchInOutLineMvo<MergePatchInOutLineMvo>();
         }
 
         public static CreateInOutLineMvo ToCreateInOutLineMvo(this InOutLineMvoState state)
         {
-            var cmd = new CreateInOutLineMvo();
-
-            cmd.InOutVersion = state.InOutVersion;
-
-            cmd.InOutLineId = state.InOutLineId;
-            cmd.LineNumber = state.LineNumber;
-            cmd.Description = state.Description;
-            cmd.LocatorId = state.LocatorId;
-            cmd.Product = state.Product;
-            cmd.UomId = state.UomId;
-            cmd.MovementQuantity = state.MovementQuantity;
-            cmd.ConfirmedQuantity = state.ConfirmedQuantity;
-            cmd.ScrappedQuantity = state.ScrappedQuantity;
-            cmd.TargetQuantity = state.TargetQuantity;
-            cmd.PickedQuantity = state.PickedQuantity;
-            cmd.IsInvoiced = state.IsInvoiced;
-            cmd.AttributeSetInstanceId = state.AttributeSetInstanceId;
-            cmd.IsDescription = state.IsDescription;
-            cmd.Processed = state.Processed;
-            cmd.QuantityEntered = state.QuantityEntered;
-            cmd.RmaLineNumber = state.RmaLineNumber;
-            cmd.ReversalLineNumber = state.ReversalLineNumber;
-            cmd.Version = state.Version;
-            cmd.Active = state.Active;
-            cmd.InOutIsSOTransaction = state.InOutIsSOTransaction;
-            cmd.InOutPosted = state.InOutPosted;
-            cmd.InOutProcessing = state.InOutProcessing;
-            cmd.InOutProcessed = state.InOutProcessed;
-            cmd.InOutDocumentType = state.InOutDocumentType;
-            cmd.InOutDescription = state.InOutDescription;
-            cmd.InOutOrderNumber = state.InOutOrderNumber;
-            cmd.InOutDateOrdered = state.InOutDateOrdered;
-            cmd.InOutIsPrinted = state.InOutIsPrinted;
-            cmd.InOutMovementType = state.InOutMovementType;
-            cmd.InOutMovementDate = state.InOutMovementDate;
-            cmd.InOutBusinessPartnerId = state.InOutBusinessPartnerId;
-            cmd.InOutWarehouseId = state.InOutWarehouseId;
-            cmd.InOutPOReference = state.InOutPOReference;
-            cmd.InOutFreightAmount = state.InOutFreightAmount;
-            cmd.InOutShipperId = state.InOutShipperId;
-            cmd.InOutChargeAmount = state.InOutChargeAmount;
-            cmd.InOutDatePrinted = state.InOutDatePrinted;
-            cmd.InOutSalesRepresentative = state.InOutSalesRepresentative;
-            cmd.InOutNumberOfPackages = state.InOutNumberOfPackages;
-            cmd.InOutPickDate = state.InOutPickDate;
-            cmd.InOutShipDate = state.InOutShipDate;
-            cmd.InOutTrackingNumber = state.InOutTrackingNumber;
-            cmd.InOutDateReceived = state.InOutDateReceived;
-            cmd.InOutIsInTransit = state.InOutIsInTransit;
-            cmd.InOutIsApproved = state.InOutIsApproved;
-            cmd.InOutIsInDispute = state.InOutIsInDispute;
-            cmd.InOutVolume = state.InOutVolume;
-            cmd.InOutWeight = state.InOutWeight;
-            cmd.InOutRmaNumber = state.InOutRmaNumber;
-            cmd.InOutReversalNumber = state.InOutReversalNumber;
-            cmd.InOutIsDropShip = state.InOutIsDropShip;
-            cmd.InOutDropShipBusinessPartnerId = state.InOutDropShipBusinessPartnerId;
-            cmd.InOutCreatedBy = state.InOutCreatedBy;
-            cmd.InOutCreatedAt = state.InOutCreatedAt;
-            cmd.InOutUpdatedBy = state.InOutUpdatedBy;
-            cmd.InOutUpdatedAt = state.InOutUpdatedAt;
-            cmd.InOutActive = state.InOutActive;
-            cmd.InOutDeleted = state.InOutDeleted;
-            return cmd;
+            return state.ToCreateInOutLineMvo<CreateInOutLineMvo>();
         }
 		
 

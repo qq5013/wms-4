@@ -16,75 +16,22 @@ namespace Dddml.Wms.Domain
 
         public static IAttributeSetCommand ToCreateOrMergePatchAttributeSet(this AttributeSetState state)
         {
-            bool bUnsaved = ((IAttributeSetState)state).IsUnsaved;
-            if (bUnsaved)
-            {
-                return state.ToCreateAttributeSet();
-            }
-            else 
-            {
-                return state.ToMergePatchAttributeSet();
-            }
+            return state.ToCreateOrMergePatchAttributeSet<CreateAttributeSet, MergePatchAttributeSet, CreateAttributeUse, MergePatchAttributeUse>();
         }
 
         public static DeleteAttributeSet ToDeleteAttributeSet(this AttributeSetState state)
         {
-            var cmd = new DeleteAttributeSet();
-            cmd.AttributeSetId = state.AttributeSetId;
-            cmd.Version = state.Version;
-
-            return cmd;
+            return state.ToDeleteAttributeSet<DeleteAttributeSet>();
         }
 
         public static MergePatchAttributeSet ToMergePatchAttributeSet(this AttributeSetState state)
         {
-            var cmd = new MergePatchAttributeSet();
-
-            cmd.Version = state.Version;
-
-            cmd.AttributeSetId = state.AttributeSetId;
-            cmd.Name = state.Name;
-            cmd.OrganizationId = state.OrganizationId;
-            cmd.Description = state.Description;
-            cmd.SerialNumberAttributeId = state.SerialNumberAttributeId;
-            cmd.LotAttributeId = state.LotAttributeId;
-            cmd.ReferenceId = state.ReferenceId;
-            cmd.Active = state.Active;
-            
-            if (state.Name == null) { cmd.IsPropertyNameRemoved = true; }
-            if (state.OrganizationId == null) { cmd.IsPropertyOrganizationIdRemoved = true; }
-            if (state.Description == null) { cmd.IsPropertyDescriptionRemoved = true; }
-            if (state.SerialNumberAttributeId == null) { cmd.IsPropertySerialNumberAttributeIdRemoved = true; }
-            if (state.LotAttributeId == null) { cmd.IsPropertyLotAttributeIdRemoved = true; }
-            if (state.ReferenceId == null) { cmd.IsPropertyReferenceIdRemoved = true; }
-            foreach (AttributeUseState d in state.AttributeUses)
-            {
-                var c = d.ToCreateOrMergePatchAttributeUse();
-                cmd.AttributeUseCommands.Add(c);
-            }
-            return cmd;
+            return state.ToMergePatchAttributeSet<MergePatchAttributeSet, CreateAttributeUse, MergePatchAttributeUse>();
         }
 
         public static CreateAttributeSet ToCreateAttributeSet(this AttributeSetState state)
         {
-            var cmd = new CreateAttributeSet();
-
-            cmd.Version = state.Version;
-
-            cmd.AttributeSetId = state.AttributeSetId;
-            cmd.Name = state.Name;
-            cmd.OrganizationId = state.OrganizationId;
-            cmd.Description = state.Description;
-            cmd.SerialNumberAttributeId = state.SerialNumberAttributeId;
-            cmd.LotAttributeId = state.LotAttributeId;
-            cmd.ReferenceId = state.ReferenceId;
-            cmd.Active = state.Active;
-            foreach (AttributeUseState d in state.AttributeUses)
-            {
-                var c = d.ToCreateAttributeUse();
-                cmd.AttributeUses.Add(c);
-            }
-            return cmd;
+            return state.ToCreateAttributeSet<CreateAttributeSet, CreateAttributeUse>();
         }
 		
 

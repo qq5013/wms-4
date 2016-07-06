@@ -16,91 +16,22 @@ namespace Dddml.Wms.Domain
 
         public static IUserPermissionMvoCommand ToCreateOrMergePatchUserPermissionMvo(this UserPermissionMvoState state)
         {
-            bool bUnsaved = ((IUserPermissionMvoState)state).IsUnsaved;
-            if (bUnsaved)
-            {
-                return state.ToCreateUserPermissionMvo();
-            }
-            else 
-            {
-                return state.ToMergePatchUserPermissionMvo();
-            }
+            return state.ToCreateOrMergePatchUserPermissionMvo<CreateUserPermissionMvo, MergePatchUserPermissionMvo>();
         }
 
         public static DeleteUserPermissionMvo ToDeleteUserPermissionMvo(this UserPermissionMvoState state)
         {
-            var cmd = new DeleteUserPermissionMvo();
-            cmd.UserPermissionId = state.UserPermissionId;
-            cmd.UserVersion = state.UserVersion;
-
-            return cmd;
+            return state.ToDeleteUserPermissionMvo<DeleteUserPermissionMvo>();
         }
 
         public static MergePatchUserPermissionMvo ToMergePatchUserPermissionMvo(this UserPermissionMvoState state)
         {
-            var cmd = new MergePatchUserPermissionMvo();
-
-            cmd.UserVersion = state.UserVersion;
-
-            cmd.UserPermissionId = state.UserPermissionId;
-            cmd.Version = state.Version;
-            cmd.Active = state.Active;
-            cmd.UserUserName = state.UserUserName;
-            cmd.UserAccessFailedCount = state.UserAccessFailedCount;
-            cmd.UserEmail = state.UserEmail;
-            cmd.UserEmailConfirmed = state.UserEmailConfirmed;
-            cmd.UserLockoutEnabled = state.UserLockoutEnabled;
-            cmd.UserLockoutEndDateUtc = state.UserLockoutEndDateUtc;
-            cmd.UserPasswordHash = state.UserPasswordHash;
-            cmd.UserPhoneNumber = state.UserPhoneNumber;
-            cmd.UserPhoneNumberConfirmed = state.UserPhoneNumberConfirmed;
-            cmd.UserTwoFactorEnabled = state.UserTwoFactorEnabled;
-            cmd.UserSecurityStamp = state.UserSecurityStamp;
-            cmd.UserCreatedBy = state.UserCreatedBy;
-            cmd.UserCreatedAt = state.UserCreatedAt;
-            cmd.UserUpdatedBy = state.UserUpdatedBy;
-            cmd.UserUpdatedAt = state.UserUpdatedAt;
-            cmd.UserActive = state.UserActive;
-            cmd.UserDeleted = state.UserDeleted;
-            
-            if (state.UserUserName == null) { cmd.IsPropertyUserUserNameRemoved = true; }
-            if (state.UserEmail == null) { cmd.IsPropertyUserEmailRemoved = true; }
-            if (state.UserLockoutEndDateUtc == null) { cmd.IsPropertyUserLockoutEndDateUtcRemoved = true; }
-            if (state.UserPasswordHash == null) { cmd.IsPropertyUserPasswordHashRemoved = true; }
-            if (state.UserPhoneNumber == null) { cmd.IsPropertyUserPhoneNumberRemoved = true; }
-            if (state.UserSecurityStamp == null) { cmd.IsPropertyUserSecurityStampRemoved = true; }
-            if (state.UserCreatedBy == null) { cmd.IsPropertyUserCreatedByRemoved = true; }
-            if (state.UserUpdatedBy == null) { cmd.IsPropertyUserUpdatedByRemoved = true; }
-            return cmd;
+            return state.ToMergePatchUserPermissionMvo<MergePatchUserPermissionMvo>();
         }
 
         public static CreateUserPermissionMvo ToCreateUserPermissionMvo(this UserPermissionMvoState state)
         {
-            var cmd = new CreateUserPermissionMvo();
-
-            cmd.UserVersion = state.UserVersion;
-
-            cmd.UserPermissionId = state.UserPermissionId;
-            cmd.Version = state.Version;
-            cmd.Active = state.Active;
-            cmd.UserUserName = state.UserUserName;
-            cmd.UserAccessFailedCount = state.UserAccessFailedCount;
-            cmd.UserEmail = state.UserEmail;
-            cmd.UserEmailConfirmed = state.UserEmailConfirmed;
-            cmd.UserLockoutEnabled = state.UserLockoutEnabled;
-            cmd.UserLockoutEndDateUtc = state.UserLockoutEndDateUtc;
-            cmd.UserPasswordHash = state.UserPasswordHash;
-            cmd.UserPhoneNumber = state.UserPhoneNumber;
-            cmd.UserPhoneNumberConfirmed = state.UserPhoneNumberConfirmed;
-            cmd.UserTwoFactorEnabled = state.UserTwoFactorEnabled;
-            cmd.UserSecurityStamp = state.UserSecurityStamp;
-            cmd.UserCreatedBy = state.UserCreatedBy;
-            cmd.UserCreatedAt = state.UserCreatedAt;
-            cmd.UserUpdatedBy = state.UserUpdatedBy;
-            cmd.UserUpdatedAt = state.UserUpdatedAt;
-            cmd.UserActive = state.UserActive;
-            cmd.UserDeleted = state.UserDeleted;
-            return cmd;
+            return state.ToCreateUserPermissionMvo<CreateUserPermissionMvo>();
         }
 		
 

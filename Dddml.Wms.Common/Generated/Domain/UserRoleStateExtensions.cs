@@ -16,43 +16,22 @@ namespace Dddml.Wms.Domain
 
         public static IUserRoleCommand ToCreateOrMergePatchUserRole(this UserRoleState state)
         {
-            bool bUnsaved = ((IUserRoleState)state).IsUnsaved;
-            if (bUnsaved)
-            {
-                return state.ToCreateUserRole();
-            }
-            else 
-            {
-                return state.ToMergePatchUserRole();
-            }
+            return state.ToCreateOrMergePatchUserRole<CreateUserRole, MergePatchUserRole>();
         }
 
         public static RemoveUserRole ToRemoveUserRole(this UserRoleState state)
         {
-            var cmd = new RemoveUserRole();
-            cmd.RoleId = state.RoleId;
-            return cmd;
+            return state.ToRemoveUserRole<RemoveUserRole>();
         }
 
         public static MergePatchUserRole ToMergePatchUserRole(this UserRoleState state)
         {
-            var cmd = new MergePatchUserRole();
-
-            cmd.RoleId = state.RoleId;
-            cmd.Active = state.Active;
-            cmd.UserId = state.UserId;
-            
-            return cmd;
+            return state.ToMergePatchUserRole<MergePatchUserRole>();
         }
 
         public static CreateUserRole ToCreateUserRole(this UserRoleState state)
         {
-            var cmd = new CreateUserRole();
-
-            cmd.RoleId = state.RoleId;
-            cmd.Active = state.Active;
-            cmd.UserId = state.UserId;
-            return cmd;
+            return state.ToCreateUserRole<CreateUserRole>();
         }
 		
 

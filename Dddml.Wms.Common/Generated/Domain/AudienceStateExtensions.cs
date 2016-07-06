@@ -16,53 +16,22 @@ namespace Dddml.Wms.Domain
 
         public static IAudienceCommand ToCreateOrMergePatchAudience(this AudienceState state)
         {
-            bool bUnsaved = ((IAudienceState)state).IsUnsaved;
-            if (bUnsaved)
-            {
-                return state.ToCreateAudience();
-            }
-            else 
-            {
-                return state.ToMergePatchAudience();
-            }
+            return state.ToCreateOrMergePatchAudience<CreateAudience, MergePatchAudience>();
         }
 
         public static DeleteAudience ToDeleteAudience(this AudienceState state)
         {
-            var cmd = new DeleteAudience();
-            cmd.ClientId = state.ClientId;
-            cmd.Version = state.Version;
-
-            return cmd;
+            return state.ToDeleteAudience<DeleteAudience>();
         }
 
         public static MergePatchAudience ToMergePatchAudience(this AudienceState state)
         {
-            var cmd = new MergePatchAudience();
-
-            cmd.Version = state.Version;
-
-            cmd.ClientId = state.ClientId;
-            cmd.Name = state.Name;
-            cmd.Base64Secret = state.Base64Secret;
-            cmd.Active = state.Active;
-            
-            if (state.Name == null) { cmd.IsPropertyNameRemoved = true; }
-            if (state.Base64Secret == null) { cmd.IsPropertyBase64SecretRemoved = true; }
-            return cmd;
+            return state.ToMergePatchAudience<MergePatchAudience>();
         }
 
         public static CreateAudience ToCreateAudience(this AudienceState state)
         {
-            var cmd = new CreateAudience();
-
-            cmd.Version = state.Version;
-
-            cmd.ClientId = state.ClientId;
-            cmd.Name = state.Name;
-            cmd.Base64Secret = state.Base64Secret;
-            cmd.Active = state.Active;
-            return cmd;
+            return state.ToCreateAudience<CreateAudience>();
         }
 		
 

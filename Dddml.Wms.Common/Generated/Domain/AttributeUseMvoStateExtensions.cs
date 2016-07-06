@@ -16,83 +16,22 @@ namespace Dddml.Wms.Domain
 
         public static IAttributeUseMvoCommand ToCreateOrMergePatchAttributeUseMvo(this AttributeUseMvoState state)
         {
-            bool bUnsaved = ((IAttributeUseMvoState)state).IsUnsaved;
-            if (bUnsaved)
-            {
-                return state.ToCreateAttributeUseMvo();
-            }
-            else 
-            {
-                return state.ToMergePatchAttributeUseMvo();
-            }
+            return state.ToCreateOrMergePatchAttributeUseMvo<CreateAttributeUseMvo, MergePatchAttributeUseMvo>();
         }
 
         public static DeleteAttributeUseMvo ToDeleteAttributeUseMvo(this AttributeUseMvoState state)
         {
-            var cmd = new DeleteAttributeUseMvo();
-            cmd.AttributeSetAttributeUseId = state.AttributeSetAttributeUseId;
-            cmd.AttributeSetVersion = state.AttributeSetVersion;
-
-            return cmd;
+            return state.ToDeleteAttributeUseMvo<DeleteAttributeUseMvo>();
         }
 
         public static MergePatchAttributeUseMvo ToMergePatchAttributeUseMvo(this AttributeUseMvoState state)
         {
-            var cmd = new MergePatchAttributeUseMvo();
-
-            cmd.AttributeSetVersion = state.AttributeSetVersion;
-
-            cmd.AttributeSetAttributeUseId = state.AttributeSetAttributeUseId;
-            cmd.SequenceNumber = state.SequenceNumber;
-            cmd.Version = state.Version;
-            cmd.Active = state.Active;
-            cmd.AttributeSetName = state.AttributeSetName;
-            cmd.AttributeSetOrganizationId = state.AttributeSetOrganizationId;
-            cmd.AttributeSetDescription = state.AttributeSetDescription;
-            cmd.AttributeSetSerialNumberAttributeId = state.AttributeSetSerialNumberAttributeId;
-            cmd.AttributeSetLotAttributeId = state.AttributeSetLotAttributeId;
-            cmd.AttributeSetReferenceId = state.AttributeSetReferenceId;
-            cmd.AttributeSetCreatedBy = state.AttributeSetCreatedBy;
-            cmd.AttributeSetCreatedAt = state.AttributeSetCreatedAt;
-            cmd.AttributeSetUpdatedBy = state.AttributeSetUpdatedBy;
-            cmd.AttributeSetUpdatedAt = state.AttributeSetUpdatedAt;
-            cmd.AttributeSetActive = state.AttributeSetActive;
-            cmd.AttributeSetDeleted = state.AttributeSetDeleted;
-            
-            if (state.AttributeSetName == null) { cmd.IsPropertyAttributeSetNameRemoved = true; }
-            if (state.AttributeSetOrganizationId == null) { cmd.IsPropertyAttributeSetOrganizationIdRemoved = true; }
-            if (state.AttributeSetDescription == null) { cmd.IsPropertyAttributeSetDescriptionRemoved = true; }
-            if (state.AttributeSetSerialNumberAttributeId == null) { cmd.IsPropertyAttributeSetSerialNumberAttributeIdRemoved = true; }
-            if (state.AttributeSetLotAttributeId == null) { cmd.IsPropertyAttributeSetLotAttributeIdRemoved = true; }
-            if (state.AttributeSetReferenceId == null) { cmd.IsPropertyAttributeSetReferenceIdRemoved = true; }
-            if (state.AttributeSetCreatedBy == null) { cmd.IsPropertyAttributeSetCreatedByRemoved = true; }
-            if (state.AttributeSetUpdatedBy == null) { cmd.IsPropertyAttributeSetUpdatedByRemoved = true; }
-            return cmd;
+            return state.ToMergePatchAttributeUseMvo<MergePatchAttributeUseMvo>();
         }
 
         public static CreateAttributeUseMvo ToCreateAttributeUseMvo(this AttributeUseMvoState state)
         {
-            var cmd = new CreateAttributeUseMvo();
-
-            cmd.AttributeSetVersion = state.AttributeSetVersion;
-
-            cmd.AttributeSetAttributeUseId = state.AttributeSetAttributeUseId;
-            cmd.SequenceNumber = state.SequenceNumber;
-            cmd.Version = state.Version;
-            cmd.Active = state.Active;
-            cmd.AttributeSetName = state.AttributeSetName;
-            cmd.AttributeSetOrganizationId = state.AttributeSetOrganizationId;
-            cmd.AttributeSetDescription = state.AttributeSetDescription;
-            cmd.AttributeSetSerialNumberAttributeId = state.AttributeSetSerialNumberAttributeId;
-            cmd.AttributeSetLotAttributeId = state.AttributeSetLotAttributeId;
-            cmd.AttributeSetReferenceId = state.AttributeSetReferenceId;
-            cmd.AttributeSetCreatedBy = state.AttributeSetCreatedBy;
-            cmd.AttributeSetCreatedAt = state.AttributeSetCreatedAt;
-            cmd.AttributeSetUpdatedBy = state.AttributeSetUpdatedBy;
-            cmd.AttributeSetUpdatedAt = state.AttributeSetUpdatedAt;
-            cmd.AttributeSetActive = state.AttributeSetActive;
-            cmd.AttributeSetDeleted = state.AttributeSetDeleted;
-            return cmd;
+            return state.ToCreateAttributeUseMvo<CreateAttributeUseMvo>();
         }
 		
 

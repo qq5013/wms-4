@@ -16,115 +16,22 @@ namespace Dddml.Wms.Domain
 
         public static IUserCommand ToCreateOrMergePatchUser(this UserState state)
         {
-            bool bUnsaved = ((IUserState)state).IsUnsaved;
-            if (bUnsaved)
-            {
-                return state.ToCreateUser();
-            }
-            else 
-            {
-                return state.ToMergePatchUser();
-            }
+            return state.ToCreateOrMergePatchUser<CreateUser, MergePatchUser, CreateUserRole, MergePatchUserRole, CreateUserClaim, MergePatchUserClaim, CreateUserPermission, MergePatchUserPermission, CreateUserLogin, MergePatchUserLogin>();
         }
 
         public static DeleteUser ToDeleteUser(this UserState state)
         {
-            var cmd = new DeleteUser();
-            cmd.UserId = state.UserId;
-            cmd.Version = state.Version;
-
-            return cmd;
+            return state.ToDeleteUser<DeleteUser>();
         }
 
         public static MergePatchUser ToMergePatchUser(this UserState state)
         {
-            var cmd = new MergePatchUser();
-
-            cmd.Version = state.Version;
-
-            cmd.UserId = state.UserId;
-            cmd.UserName = state.UserName;
-            cmd.AccessFailedCount = state.AccessFailedCount;
-            cmd.Email = state.Email;
-            cmd.EmailConfirmed = state.EmailConfirmed;
-            cmd.LockoutEnabled = state.LockoutEnabled;
-            cmd.LockoutEndDateUtc = state.LockoutEndDateUtc;
-            cmd.PasswordHash = state.PasswordHash;
-            cmd.PhoneNumber = state.PhoneNumber;
-            cmd.PhoneNumberConfirmed = state.PhoneNumberConfirmed;
-            cmd.TwoFactorEnabled = state.TwoFactorEnabled;
-            cmd.SecurityStamp = state.SecurityStamp;
-            cmd.Active = state.Active;
-            
-            if (state.UserName == null) { cmd.IsPropertyUserNameRemoved = true; }
-            if (state.Email == null) { cmd.IsPropertyEmailRemoved = true; }
-            if (state.LockoutEndDateUtc == null) { cmd.IsPropertyLockoutEndDateUtcRemoved = true; }
-            if (state.PasswordHash == null) { cmd.IsPropertyPasswordHashRemoved = true; }
-            if (state.PhoneNumber == null) { cmd.IsPropertyPhoneNumberRemoved = true; }
-            if (state.SecurityStamp == null) { cmd.IsPropertySecurityStampRemoved = true; }
-            foreach (UserRoleState d in state.UserRoles)
-            {
-                var c = d.ToCreateOrMergePatchUserRole();
-                cmd.UserRoleCommands.Add(c);
-            }
-            foreach (UserClaimState d in state.UserClaims)
-            {
-                var c = d.ToCreateOrMergePatchUserClaim();
-                cmd.UserClaimCommands.Add(c);
-            }
-            foreach (UserPermissionState d in state.UserPermissions)
-            {
-                var c = d.ToCreateOrMergePatchUserPermission();
-                cmd.UserPermissionCommands.Add(c);
-            }
-            foreach (UserLoginState d in state.UserLogins)
-            {
-                var c = d.ToCreateOrMergePatchUserLogin();
-                cmd.UserLoginCommands.Add(c);
-            }
-            return cmd;
+            return state.ToMergePatchUser<MergePatchUser, CreateUserRole, MergePatchUserRole, CreateUserClaim, MergePatchUserClaim, CreateUserPermission, MergePatchUserPermission, CreateUserLogin, MergePatchUserLogin>();
         }
 
         public static CreateUser ToCreateUser(this UserState state)
         {
-            var cmd = new CreateUser();
-
-            cmd.Version = state.Version;
-
-            cmd.UserId = state.UserId;
-            cmd.UserName = state.UserName;
-            cmd.AccessFailedCount = state.AccessFailedCount;
-            cmd.Email = state.Email;
-            cmd.EmailConfirmed = state.EmailConfirmed;
-            cmd.LockoutEnabled = state.LockoutEnabled;
-            cmd.LockoutEndDateUtc = state.LockoutEndDateUtc;
-            cmd.PasswordHash = state.PasswordHash;
-            cmd.PhoneNumber = state.PhoneNumber;
-            cmd.PhoneNumberConfirmed = state.PhoneNumberConfirmed;
-            cmd.TwoFactorEnabled = state.TwoFactorEnabled;
-            cmd.SecurityStamp = state.SecurityStamp;
-            cmd.Active = state.Active;
-            foreach (UserRoleState d in state.UserRoles)
-            {
-                var c = d.ToCreateUserRole();
-                cmd.UserRoles.Add(c);
-            }
-            foreach (UserClaimState d in state.UserClaims)
-            {
-                var c = d.ToCreateUserClaim();
-                cmd.UserClaims.Add(c);
-            }
-            foreach (UserPermissionState d in state.UserPermissions)
-            {
-                var c = d.ToCreateUserPermission();
-                cmd.UserPermissions.Add(c);
-            }
-            foreach (UserLoginState d in state.UserLogins)
-            {
-                var c = d.ToCreateUserLogin();
-                cmd.UserLogins.Add(c);
-            }
-            return cmd;
+            return state.ToCreateUser<CreateUser, CreateUserRole, CreateUserClaim, CreateUserPermission, CreateUserLogin>();
         }
 		
 

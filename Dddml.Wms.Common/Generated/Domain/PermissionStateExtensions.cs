@@ -16,56 +16,22 @@ namespace Dddml.Wms.Domain
 
         public static IPermissionCommand ToCreateOrMergePatchPermission(this PermissionState state)
         {
-            bool bUnsaved = ((IPermissionState)state).IsUnsaved;
-            if (bUnsaved)
-            {
-                return state.ToCreatePermission();
-            }
-            else 
-            {
-                return state.ToMergePatchPermission();
-            }
+            return state.ToCreateOrMergePatchPermission<CreatePermission, MergePatchPermission>();
         }
 
         public static DeletePermission ToDeletePermission(this PermissionState state)
         {
-            var cmd = new DeletePermission();
-            cmd.PermissionId = state.PermissionId;
-            cmd.Version = state.Version;
-
-            return cmd;
+            return state.ToDeletePermission<DeletePermission>();
         }
 
         public static MergePatchPermission ToMergePatchPermission(this PermissionState state)
         {
-            var cmd = new MergePatchPermission();
-
-            cmd.Version = state.Version;
-
-            cmd.PermissionId = state.PermissionId;
-            cmd.Name = state.Name;
-            cmd.ParentPermissionId = state.ParentPermissionId;
-            cmd.Description = state.Description;
-            cmd.Active = state.Active;
-            
-            if (state.Name == null) { cmd.IsPropertyNameRemoved = true; }
-            if (state.ParentPermissionId == null) { cmd.IsPropertyParentPermissionIdRemoved = true; }
-            if (state.Description == null) { cmd.IsPropertyDescriptionRemoved = true; }
-            return cmd;
+            return state.ToMergePatchPermission<MergePatchPermission>();
         }
 
         public static CreatePermission ToCreatePermission(this PermissionState state)
         {
-            var cmd = new CreatePermission();
-
-            cmd.Version = state.Version;
-
-            cmd.PermissionId = state.PermissionId;
-            cmd.Name = state.Name;
-            cmd.ParentPermissionId = state.ParentPermissionId;
-            cmd.Description = state.Description;
-            cmd.Active = state.Active;
-            return cmd;
+            return state.ToCreatePermission<CreatePermission>();
         }
 		
 

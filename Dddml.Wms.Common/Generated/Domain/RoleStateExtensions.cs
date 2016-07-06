@@ -16,53 +16,22 @@ namespace Dddml.Wms.Domain
 
         public static IRoleCommand ToCreateOrMergePatchRole(this RoleState state)
         {
-            bool bUnsaved = ((IRoleState)state).IsUnsaved;
-            if (bUnsaved)
-            {
-                return state.ToCreateRole();
-            }
-            else 
-            {
-                return state.ToMergePatchRole();
-            }
+            return state.ToCreateOrMergePatchRole<CreateRole, MergePatchRole>();
         }
 
         public static DeleteRole ToDeleteRole(this RoleState state)
         {
-            var cmd = new DeleteRole();
-            cmd.RoleId = state.RoleId;
-            cmd.Version = state.Version;
-
-            return cmd;
+            return state.ToDeleteRole<DeleteRole>();
         }
 
         public static MergePatchRole ToMergePatchRole(this RoleState state)
         {
-            var cmd = new MergePatchRole();
-
-            cmd.Version = state.Version;
-
-            cmd.RoleId = state.RoleId;
-            cmd.Name = state.Name;
-            cmd.Description = state.Description;
-            cmd.Active = state.Active;
-            
-            if (state.Name == null) { cmd.IsPropertyNameRemoved = true; }
-            if (state.Description == null) { cmd.IsPropertyDescriptionRemoved = true; }
-            return cmd;
+            return state.ToMergePatchRole<MergePatchRole>();
         }
 
         public static CreateRole ToCreateRole(this RoleState state)
         {
-            var cmd = new CreateRole();
-
-            cmd.Version = state.Version;
-
-            cmd.RoleId = state.RoleId;
-            cmd.Name = state.Name;
-            cmd.Description = state.Description;
-            cmd.Active = state.Active;
-            return cmd;
+            return state.ToCreateRole<CreateRole>();
         }
 		
 

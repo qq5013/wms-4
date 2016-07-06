@@ -16,47 +16,22 @@ namespace Dddml.Wms.Domain
 
         public static IRolePermissionCommand ToCreateOrMergePatchRolePermission(this RolePermissionState state)
         {
-            bool bUnsaved = ((IRolePermissionState)state).IsUnsaved;
-            if (bUnsaved)
-            {
-                return state.ToCreateRolePermission();
-            }
-            else 
-            {
-                return state.ToMergePatchRolePermission();
-            }
+            return state.ToCreateOrMergePatchRolePermission<CreateRolePermission, MergePatchRolePermission>();
         }
 
         public static DeleteRolePermission ToDeleteRolePermission(this RolePermissionState state)
         {
-            var cmd = new DeleteRolePermission();
-            cmd.Id = state.Id;
-            cmd.Version = state.Version;
-
-            return cmd;
+            return state.ToDeleteRolePermission<DeleteRolePermission>();
         }
 
         public static MergePatchRolePermission ToMergePatchRolePermission(this RolePermissionState state)
         {
-            var cmd = new MergePatchRolePermission();
-
-            cmd.Version = state.Version;
-
-            cmd.Id = state.Id;
-            cmd.Active = state.Active;
-            
-            return cmd;
+            return state.ToMergePatchRolePermission<MergePatchRolePermission>();
         }
 
         public static CreateRolePermission ToCreateRolePermission(this RolePermissionState state)
         {
-            var cmd = new CreateRolePermission();
-
-            cmd.Version = state.Version;
-
-            cmd.Id = state.Id;
-            cmd.Active = state.Active;
-            return cmd;
+            return state.ToCreateRolePermission<CreateRolePermission>();
         }
 		
 

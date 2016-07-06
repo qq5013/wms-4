@@ -16,47 +16,22 @@ namespace Dddml.Wms.Domain
 
         public static IOrganizationStructureCommand ToCreateOrMergePatchOrganizationStructure(this OrganizationStructureState state)
         {
-            bool bUnsaved = ((IOrganizationStructureState)state).IsUnsaved;
-            if (bUnsaved)
-            {
-                return state.ToCreateOrganizationStructure();
-            }
-            else 
-            {
-                return state.ToMergePatchOrganizationStructure();
-            }
+            return state.ToCreateOrMergePatchOrganizationStructure<CreateOrganizationStructure, MergePatchOrganizationStructure>();
         }
 
         public static DeleteOrganizationStructure ToDeleteOrganizationStructure(this OrganizationStructureState state)
         {
-            var cmd = new DeleteOrganizationStructure();
-            cmd.Id = state.Id;
-            cmd.Version = state.Version;
-
-            return cmd;
+            return state.ToDeleteOrganizationStructure<DeleteOrganizationStructure>();
         }
 
         public static MergePatchOrganizationStructure ToMergePatchOrganizationStructure(this OrganizationStructureState state)
         {
-            var cmd = new MergePatchOrganizationStructure();
-
-            cmd.Version = state.Version;
-
-            cmd.Id = state.Id;
-            cmd.Active = state.Active;
-            
-            return cmd;
+            return state.ToMergePatchOrganizationStructure<MergePatchOrganizationStructure>();
         }
 
         public static CreateOrganizationStructure ToCreateOrganizationStructure(this OrganizationStructureState state)
         {
-            var cmd = new CreateOrganizationStructure();
-
-            cmd.Version = state.Version;
-
-            cmd.Id = state.Id;
-            cmd.Active = state.Active;
-            return cmd;
+            return state.ToCreateOrganizationStructure<CreateOrganizationStructure>();
         }
 		
 

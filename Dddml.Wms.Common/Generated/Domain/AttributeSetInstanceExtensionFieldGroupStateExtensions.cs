@@ -16,71 +16,22 @@ namespace Dddml.Wms.Domain
 
         public static IAttributeSetInstanceExtensionFieldGroupCommand ToCreateOrMergePatchAttributeSetInstanceExtensionFieldGroup(this AttributeSetInstanceExtensionFieldGroupState state)
         {
-            bool bUnsaved = ((IAttributeSetInstanceExtensionFieldGroupState)state).IsUnsaved;
-            if (bUnsaved)
-            {
-                return state.ToCreateAttributeSetInstanceExtensionFieldGroup();
-            }
-            else 
-            {
-                return state.ToMergePatchAttributeSetInstanceExtensionFieldGroup();
-            }
+            return state.ToCreateOrMergePatchAttributeSetInstanceExtensionFieldGroup<CreateAttributeSetInstanceExtensionFieldGroup, MergePatchAttributeSetInstanceExtensionFieldGroup, CreateAttributeSetInstanceExtensionField, MergePatchAttributeSetInstanceExtensionField>();
         }
 
         public static DeleteAttributeSetInstanceExtensionFieldGroup ToDeleteAttributeSetInstanceExtensionFieldGroup(this AttributeSetInstanceExtensionFieldGroupState state)
         {
-            var cmd = new DeleteAttributeSetInstanceExtensionFieldGroup();
-            cmd.Id = state.Id;
-            cmd.Version = state.Version;
-
-            return cmd;
+            return state.ToDeleteAttributeSetInstanceExtensionFieldGroup<DeleteAttributeSetInstanceExtensionFieldGroup>();
         }
 
         public static MergePatchAttributeSetInstanceExtensionFieldGroup ToMergePatchAttributeSetInstanceExtensionFieldGroup(this AttributeSetInstanceExtensionFieldGroupState state)
         {
-            var cmd = new MergePatchAttributeSetInstanceExtensionFieldGroup();
-
-            cmd.Version = state.Version;
-
-            cmd.Id = state.Id;
-            cmd.FieldType = state.FieldType;
-            cmd.FieldLength = state.FieldLength;
-            cmd.FieldCount = state.FieldCount;
-            cmd.NameFormat = state.NameFormat;
-            cmd.Description = state.Description;
-            cmd.Active = state.Active;
-            
-            if (state.FieldType == null) { cmd.IsPropertyFieldTypeRemoved = true; }
-            if (state.FieldLength == null) { cmd.IsPropertyFieldLengthRemoved = true; }
-            if (state.NameFormat == null) { cmd.IsPropertyNameFormatRemoved = true; }
-            if (state.Description == null) { cmd.IsPropertyDescriptionRemoved = true; }
-            foreach (AttributeSetInstanceExtensionFieldState d in state.Fields)
-            {
-                var c = d.ToCreateOrMergePatchAttributeSetInstanceExtensionField();
-                cmd.AttributeSetInstanceExtensionFieldCommands.Add(c);
-            }
-            return cmd;
+            return state.ToMergePatchAttributeSetInstanceExtensionFieldGroup<MergePatchAttributeSetInstanceExtensionFieldGroup, CreateAttributeSetInstanceExtensionField, MergePatchAttributeSetInstanceExtensionField>();
         }
 
         public static CreateAttributeSetInstanceExtensionFieldGroup ToCreateAttributeSetInstanceExtensionFieldGroup(this AttributeSetInstanceExtensionFieldGroupState state)
         {
-            var cmd = new CreateAttributeSetInstanceExtensionFieldGroup();
-
-            cmd.Version = state.Version;
-
-            cmd.Id = state.Id;
-            cmd.FieldType = state.FieldType;
-            cmd.FieldLength = state.FieldLength;
-            cmd.FieldCount = state.FieldCount;
-            cmd.NameFormat = state.NameFormat;
-            cmd.Description = state.Description;
-            cmd.Active = state.Active;
-            foreach (AttributeSetInstanceExtensionFieldState d in state.Fields)
-            {
-                var c = d.ToCreateAttributeSetInstanceExtensionField();
-                cmd.Fields.Add(c);
-            }
-            return cmd;
+            return state.ToCreateAttributeSetInstanceExtensionFieldGroup<CreateAttributeSetInstanceExtensionFieldGroup, CreateAttributeSetInstanceExtensionField>();
         }
 		
 

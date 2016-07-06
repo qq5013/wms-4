@@ -16,47 +16,22 @@ namespace Dddml.Wms.Domain
 
         public static IOrganizationStructureTypeCommand ToCreateOrMergePatchOrganizationStructureType(this OrganizationStructureTypeState state)
         {
-            bool bUnsaved = ((IOrganizationStructureTypeState)state).IsUnsaved;
-            if (bUnsaved)
-            {
-                return state.ToCreateOrganizationStructureType();
-            }
-            else 
-            {
-                return state.ToMergePatchOrganizationStructureType();
-            }
+            return state.ToCreateOrMergePatchOrganizationStructureType<CreateOrganizationStructureType, MergePatchOrganizationStructureType>();
         }
 
         public static DeleteOrganizationStructureType ToDeleteOrganizationStructureType(this OrganizationStructureTypeState state)
         {
-            var cmd = new DeleteOrganizationStructureType();
-            cmd.Id = state.Id;
-            cmd.Version = state.Version;
-
-            return cmd;
+            return state.ToDeleteOrganizationStructureType<DeleteOrganizationStructureType>();
         }
 
         public static MergePatchOrganizationStructureType ToMergePatchOrganizationStructureType(this OrganizationStructureTypeState state)
         {
-            var cmd = new MergePatchOrganizationStructureType();
-
-            cmd.Version = state.Version;
-
-            cmd.Id = state.Id;
-            cmd.Active = state.Active;
-            
-            return cmd;
+            return state.ToMergePatchOrganizationStructureType<MergePatchOrganizationStructureType>();
         }
 
         public static CreateOrganizationStructureType ToCreateOrganizationStructureType(this OrganizationStructureTypeState state)
         {
-            var cmd = new CreateOrganizationStructureType();
-
-            cmd.Version = state.Version;
-
-            cmd.Id = state.Id;
-            cmd.Active = state.Active;
-            return cmd;
+            return state.ToCreateOrganizationStructureType<CreateOrganizationStructureType>();
         }
 		
 

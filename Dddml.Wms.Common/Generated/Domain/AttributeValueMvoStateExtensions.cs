@@ -16,99 +16,22 @@ namespace Dddml.Wms.Domain
 
         public static IAttributeValueMvoCommand ToCreateOrMergePatchAttributeValueMvo(this AttributeValueMvoState state)
         {
-            bool bUnsaved = ((IAttributeValueMvoState)state).IsUnsaved;
-            if (bUnsaved)
-            {
-                return state.ToCreateAttributeValueMvo();
-            }
-            else 
-            {
-                return state.ToMergePatchAttributeValueMvo();
-            }
+            return state.ToCreateOrMergePatchAttributeValueMvo<CreateAttributeValueMvo, MergePatchAttributeValueMvo>();
         }
 
         public static DeleteAttributeValueMvo ToDeleteAttributeValueMvo(this AttributeValueMvoState state)
         {
-            var cmd = new DeleteAttributeValueMvo();
-            cmd.AttributeValueId = state.AttributeValueId;
-            cmd.AttributeVersion = state.AttributeVersion;
-
-            return cmd;
+            return state.ToDeleteAttributeValueMvo<DeleteAttributeValueMvo>();
         }
 
         public static MergePatchAttributeValueMvo ToMergePatchAttributeValueMvo(this AttributeValueMvoState state)
         {
-            var cmd = new MergePatchAttributeValueMvo();
-
-            cmd.AttributeVersion = state.AttributeVersion;
-
-            cmd.AttributeValueId = state.AttributeValueId;
-            cmd.Name = state.Name;
-            cmd.Description = state.Description;
-            cmd.ReferenceId = state.ReferenceId;
-            cmd.Version = state.Version;
-            cmd.Active = state.Active;
-            cmd.AttributeName = state.AttributeName;
-            cmd.AttributeOrganizationId = state.AttributeOrganizationId;
-            cmd.AttributeDescription = state.AttributeDescription;
-            cmd.AttributeIsMandatory = state.AttributeIsMandatory;
-            cmd.AttributeIsInstanceAttribute = state.AttributeIsInstanceAttribute;
-            cmd.AttributeAttributeValueType = state.AttributeAttributeValueType;
-            cmd.AttributeAttributeValueLength = state.AttributeAttributeValueLength;
-            cmd.AttributeIsList = state.AttributeIsList;
-            cmd.AttributeFieldName = state.AttributeFieldName;
-            cmd.AttributeReferenceId = state.AttributeReferenceId;
-            cmd.AttributeCreatedBy = state.AttributeCreatedBy;
-            cmd.AttributeCreatedAt = state.AttributeCreatedAt;
-            cmd.AttributeUpdatedBy = state.AttributeUpdatedBy;
-            cmd.AttributeUpdatedAt = state.AttributeUpdatedAt;
-            cmd.AttributeActive = state.AttributeActive;
-            cmd.AttributeDeleted = state.AttributeDeleted;
-            
-            if (state.Name == null) { cmd.IsPropertyNameRemoved = true; }
-            if (state.Description == null) { cmd.IsPropertyDescriptionRemoved = true; }
-            if (state.ReferenceId == null) { cmd.IsPropertyReferenceIdRemoved = true; }
-            if (state.AttributeName == null) { cmd.IsPropertyAttributeNameRemoved = true; }
-            if (state.AttributeOrganizationId == null) { cmd.IsPropertyAttributeOrganizationIdRemoved = true; }
-            if (state.AttributeDescription == null) { cmd.IsPropertyAttributeDescriptionRemoved = true; }
-            if (state.AttributeAttributeValueType == null) { cmd.IsPropertyAttributeAttributeValueTypeRemoved = true; }
-            if (state.AttributeAttributeValueLength == null) { cmd.IsPropertyAttributeAttributeValueLengthRemoved = true; }
-            if (state.AttributeFieldName == null) { cmd.IsPropertyAttributeFieldNameRemoved = true; }
-            if (state.AttributeReferenceId == null) { cmd.IsPropertyAttributeReferenceIdRemoved = true; }
-            if (state.AttributeCreatedBy == null) { cmd.IsPropertyAttributeCreatedByRemoved = true; }
-            if (state.AttributeUpdatedBy == null) { cmd.IsPropertyAttributeUpdatedByRemoved = true; }
-            return cmd;
+            return state.ToMergePatchAttributeValueMvo<MergePatchAttributeValueMvo>();
         }
 
         public static CreateAttributeValueMvo ToCreateAttributeValueMvo(this AttributeValueMvoState state)
         {
-            var cmd = new CreateAttributeValueMvo();
-
-            cmd.AttributeVersion = state.AttributeVersion;
-
-            cmd.AttributeValueId = state.AttributeValueId;
-            cmd.Name = state.Name;
-            cmd.Description = state.Description;
-            cmd.ReferenceId = state.ReferenceId;
-            cmd.Version = state.Version;
-            cmd.Active = state.Active;
-            cmd.AttributeName = state.AttributeName;
-            cmd.AttributeOrganizationId = state.AttributeOrganizationId;
-            cmd.AttributeDescription = state.AttributeDescription;
-            cmd.AttributeIsMandatory = state.AttributeIsMandatory;
-            cmd.AttributeIsInstanceAttribute = state.AttributeIsInstanceAttribute;
-            cmd.AttributeAttributeValueType = state.AttributeAttributeValueType;
-            cmd.AttributeAttributeValueLength = state.AttributeAttributeValueLength;
-            cmd.AttributeIsList = state.AttributeIsList;
-            cmd.AttributeFieldName = state.AttributeFieldName;
-            cmd.AttributeReferenceId = state.AttributeReferenceId;
-            cmd.AttributeCreatedBy = state.AttributeCreatedBy;
-            cmd.AttributeCreatedAt = state.AttributeCreatedAt;
-            cmd.AttributeUpdatedBy = state.AttributeUpdatedBy;
-            cmd.AttributeUpdatedAt = state.AttributeUpdatedAt;
-            cmd.AttributeActive = state.AttributeActive;
-            cmd.AttributeDeleted = state.AttributeDeleted;
-            return cmd;
+            return state.ToCreateAttributeValueMvo<CreateAttributeValueMvo>();
         }
 		
 

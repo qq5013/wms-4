@@ -16,55 +16,22 @@ namespace Dddml.Wms.Domain
 
         public static IWarehouseCommand ToCreateOrMergePatchWarehouse(this WarehouseState state)
         {
-            bool bUnsaved = ((IWarehouseState)state).IsUnsaved;
-            if (bUnsaved)
-            {
-                return state.ToCreateWarehouse();
-            }
-            else 
-            {
-                return state.ToMergePatchWarehouse();
-            }
+            return state.ToCreateOrMergePatchWarehouse<CreateWarehouse, MergePatchWarehouse>();
         }
 
         public static DeleteWarehouse ToDeleteWarehouse(this WarehouseState state)
         {
-            var cmd = new DeleteWarehouse();
-            cmd.WarehouseId = state.WarehouseId;
-            cmd.Version = state.Version;
-
-            return cmd;
+            return state.ToDeleteWarehouse<DeleteWarehouse>();
         }
 
         public static MergePatchWarehouse ToMergePatchWarehouse(this WarehouseState state)
         {
-            var cmd = new MergePatchWarehouse();
-
-            cmd.Version = state.Version;
-
-            cmd.WarehouseId = state.WarehouseId;
-            cmd.Name = state.Name;
-            cmd.Description = state.Description;
-            cmd.IsInTransit = state.IsInTransit;
-            cmd.Active = state.Active;
-            
-            if (state.Name == null) { cmd.IsPropertyNameRemoved = true; }
-            if (state.Description == null) { cmd.IsPropertyDescriptionRemoved = true; }
-            return cmd;
+            return state.ToMergePatchWarehouse<MergePatchWarehouse>();
         }
 
         public static CreateWarehouse ToCreateWarehouse(this WarehouseState state)
         {
-            var cmd = new CreateWarehouse();
-
-            cmd.Version = state.Version;
-
-            cmd.WarehouseId = state.WarehouseId;
-            cmd.Name = state.Name;
-            cmd.Description = state.Description;
-            cmd.IsInTransit = state.IsInTransit;
-            cmd.Active = state.Active;
-            return cmd;
+            return state.ToCreateWarehouse<CreateWarehouse>();
         }
 		
 

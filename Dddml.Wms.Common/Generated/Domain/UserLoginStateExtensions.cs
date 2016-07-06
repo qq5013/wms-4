@@ -16,43 +16,22 @@ namespace Dddml.Wms.Domain
 
         public static IUserLoginCommand ToCreateOrMergePatchUserLogin(this UserLoginState state)
         {
-            bool bUnsaved = ((IUserLoginState)state).IsUnsaved;
-            if (bUnsaved)
-            {
-                return state.ToCreateUserLogin();
-            }
-            else 
-            {
-                return state.ToMergePatchUserLogin();
-            }
+            return state.ToCreateOrMergePatchUserLogin<CreateUserLogin, MergePatchUserLogin>();
         }
 
         public static RemoveUserLogin ToRemoveUserLogin(this UserLoginState state)
         {
-            var cmd = new RemoveUserLogin();
-            cmd.LoginKey = state.LoginKey;
-            return cmd;
+            return state.ToRemoveUserLogin<RemoveUserLogin>();
         }
 
         public static MergePatchUserLogin ToMergePatchUserLogin(this UserLoginState state)
         {
-            var cmd = new MergePatchUserLogin();
-
-            cmd.LoginKey = state.LoginKey;
-            cmd.Active = state.Active;
-            cmd.UserId = state.UserId;
-            
-            return cmd;
+            return state.ToMergePatchUserLogin<MergePatchUserLogin>();
         }
 
         public static CreateUserLogin ToCreateUserLogin(this UserLoginState state)
         {
-            var cmd = new CreateUserLogin();
-
-            cmd.LoginKey = state.LoginKey;
-            cmd.Active = state.Active;
-            cmd.UserId = state.UserId;
-            return cmd;
+            return state.ToCreateUserLogin<CreateUserLogin>();
         }
 		
 

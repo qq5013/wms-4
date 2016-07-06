@@ -17,82 +17,22 @@ namespace Dddml.Wms.Domain
 
         public static IInOutLineCommand ToCreateOrMergePatchInOutLine(this InOutLineState state)
         {
-            bool bUnsaved = ((IInOutLineState)state).IsUnsaved;
-            if (bUnsaved)
-            {
-                return state.ToCreateInOutLine();
-            }
-            else 
-            {
-                return state.ToMergePatchInOutLine();
-            }
+            return state.ToCreateOrMergePatchInOutLine<CreateInOutLine, MergePatchInOutLine>();
         }
 
         public static RemoveInOutLine ToRemoveInOutLine(this InOutLineState state)
         {
-            var cmd = new RemoveInOutLine();
-            cmd.SkuId = state.SkuId;
-            return cmd;
+            return state.ToRemoveInOutLine<RemoveInOutLine>();
         }
 
         public static MergePatchInOutLine ToMergePatchInOutLine(this InOutLineState state)
         {
-            var cmd = new MergePatchInOutLine();
-
-            cmd.SkuId = state.SkuId;
-            cmd.LineNumber = state.LineNumber;
-            cmd.Description = state.Description;
-            cmd.LocatorId = state.LocatorId;
-            cmd.Product = state.Product;
-            cmd.UomId = state.UomId;
-            cmd.MovementQuantity = state.MovementQuantity;
-            cmd.ConfirmedQuantity = state.ConfirmedQuantity;
-            cmd.ScrappedQuantity = state.ScrappedQuantity;
-            cmd.TargetQuantity = state.TargetQuantity;
-            cmd.PickedQuantity = state.PickedQuantity;
-            cmd.IsInvoiced = state.IsInvoiced;
-            cmd.AttributeSetInstanceId = state.AttributeSetInstanceId;
-            cmd.IsDescription = state.IsDescription;
-            cmd.Processed = state.Processed;
-            cmd.QuantityEntered = state.QuantityEntered;
-            cmd.RmaLineNumber = state.RmaLineNumber;
-            cmd.ReversalLineNumber = state.ReversalLineNumber;
-            cmd.Active = state.Active;
-            cmd.InOutDocumentNumber = state.InOutDocumentNumber;
-            
-            if (state.Description == null) { cmd.IsPropertyDescriptionRemoved = true; }
-            if (state.LocatorId == null) { cmd.IsPropertyLocatorIdRemoved = true; }
-            if (state.Product == null) { cmd.IsPropertyProductRemoved = true; }
-            if (state.UomId == null) { cmd.IsPropertyUomIdRemoved = true; }
-            if (state.AttributeSetInstanceId == null) { cmd.IsPropertyAttributeSetInstanceIdRemoved = true; }
-            return cmd;
+            return state.ToMergePatchInOutLine<MergePatchInOutLine>();
         }
 
         public static CreateInOutLine ToCreateInOutLine(this InOutLineState state)
         {
-            var cmd = new CreateInOutLine();
-
-            cmd.SkuId = state.SkuId;
-            cmd.LineNumber = state.LineNumber;
-            cmd.Description = state.Description;
-            cmd.LocatorId = state.LocatorId;
-            cmd.Product = state.Product;
-            cmd.UomId = state.UomId;
-            cmd.MovementQuantity = state.MovementQuantity;
-            cmd.ConfirmedQuantity = state.ConfirmedQuantity;
-            cmd.ScrappedQuantity = state.ScrappedQuantity;
-            cmd.TargetQuantity = state.TargetQuantity;
-            cmd.PickedQuantity = state.PickedQuantity;
-            cmd.IsInvoiced = state.IsInvoiced;
-            cmd.AttributeSetInstanceId = state.AttributeSetInstanceId;
-            cmd.IsDescription = state.IsDescription;
-            cmd.Processed = state.Processed;
-            cmd.QuantityEntered = state.QuantityEntered;
-            cmd.RmaLineNumber = state.RmaLineNumber;
-            cmd.ReversalLineNumber = state.ReversalLineNumber;
-            cmd.Active = state.Active;
-            cmd.InOutDocumentNumber = state.InOutDocumentNumber;
-            return cmd;
+            return state.ToCreateInOutLine<CreateInOutLine>();
         }
 		
 

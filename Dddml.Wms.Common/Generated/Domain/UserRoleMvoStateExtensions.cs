@@ -16,91 +16,22 @@ namespace Dddml.Wms.Domain
 
         public static IUserRoleMvoCommand ToCreateOrMergePatchUserRoleMvo(this UserRoleMvoState state)
         {
-            bool bUnsaved = ((IUserRoleMvoState)state).IsUnsaved;
-            if (bUnsaved)
-            {
-                return state.ToCreateUserRoleMvo();
-            }
-            else 
-            {
-                return state.ToMergePatchUserRoleMvo();
-            }
+            return state.ToCreateOrMergePatchUserRoleMvo<CreateUserRoleMvo, MergePatchUserRoleMvo>();
         }
 
         public static DeleteUserRoleMvo ToDeleteUserRoleMvo(this UserRoleMvoState state)
         {
-            var cmd = new DeleteUserRoleMvo();
-            cmd.UserRoleId = state.UserRoleId;
-            cmd.UserVersion = state.UserVersion;
-
-            return cmd;
+            return state.ToDeleteUserRoleMvo<DeleteUserRoleMvo>();
         }
 
         public static MergePatchUserRoleMvo ToMergePatchUserRoleMvo(this UserRoleMvoState state)
         {
-            var cmd = new MergePatchUserRoleMvo();
-
-            cmd.UserVersion = state.UserVersion;
-
-            cmd.UserRoleId = state.UserRoleId;
-            cmd.Version = state.Version;
-            cmd.Active = state.Active;
-            cmd.UserUserName = state.UserUserName;
-            cmd.UserAccessFailedCount = state.UserAccessFailedCount;
-            cmd.UserEmail = state.UserEmail;
-            cmd.UserEmailConfirmed = state.UserEmailConfirmed;
-            cmd.UserLockoutEnabled = state.UserLockoutEnabled;
-            cmd.UserLockoutEndDateUtc = state.UserLockoutEndDateUtc;
-            cmd.UserPasswordHash = state.UserPasswordHash;
-            cmd.UserPhoneNumber = state.UserPhoneNumber;
-            cmd.UserPhoneNumberConfirmed = state.UserPhoneNumberConfirmed;
-            cmd.UserTwoFactorEnabled = state.UserTwoFactorEnabled;
-            cmd.UserSecurityStamp = state.UserSecurityStamp;
-            cmd.UserCreatedBy = state.UserCreatedBy;
-            cmd.UserCreatedAt = state.UserCreatedAt;
-            cmd.UserUpdatedBy = state.UserUpdatedBy;
-            cmd.UserUpdatedAt = state.UserUpdatedAt;
-            cmd.UserActive = state.UserActive;
-            cmd.UserDeleted = state.UserDeleted;
-            
-            if (state.UserUserName == null) { cmd.IsPropertyUserUserNameRemoved = true; }
-            if (state.UserEmail == null) { cmd.IsPropertyUserEmailRemoved = true; }
-            if (state.UserLockoutEndDateUtc == null) { cmd.IsPropertyUserLockoutEndDateUtcRemoved = true; }
-            if (state.UserPasswordHash == null) { cmd.IsPropertyUserPasswordHashRemoved = true; }
-            if (state.UserPhoneNumber == null) { cmd.IsPropertyUserPhoneNumberRemoved = true; }
-            if (state.UserSecurityStamp == null) { cmd.IsPropertyUserSecurityStampRemoved = true; }
-            if (state.UserCreatedBy == null) { cmd.IsPropertyUserCreatedByRemoved = true; }
-            if (state.UserUpdatedBy == null) { cmd.IsPropertyUserUpdatedByRemoved = true; }
-            return cmd;
+            return state.ToMergePatchUserRoleMvo<MergePatchUserRoleMvo>();
         }
 
         public static CreateUserRoleMvo ToCreateUserRoleMvo(this UserRoleMvoState state)
         {
-            var cmd = new CreateUserRoleMvo();
-
-            cmd.UserVersion = state.UserVersion;
-
-            cmd.UserRoleId = state.UserRoleId;
-            cmd.Version = state.Version;
-            cmd.Active = state.Active;
-            cmd.UserUserName = state.UserUserName;
-            cmd.UserAccessFailedCount = state.UserAccessFailedCount;
-            cmd.UserEmail = state.UserEmail;
-            cmd.UserEmailConfirmed = state.UserEmailConfirmed;
-            cmd.UserLockoutEnabled = state.UserLockoutEnabled;
-            cmd.UserLockoutEndDateUtc = state.UserLockoutEndDateUtc;
-            cmd.UserPasswordHash = state.UserPasswordHash;
-            cmd.UserPhoneNumber = state.UserPhoneNumber;
-            cmd.UserPhoneNumberConfirmed = state.UserPhoneNumberConfirmed;
-            cmd.UserTwoFactorEnabled = state.UserTwoFactorEnabled;
-            cmd.UserSecurityStamp = state.UserSecurityStamp;
-            cmd.UserCreatedBy = state.UserCreatedBy;
-            cmd.UserCreatedAt = state.UserCreatedAt;
-            cmd.UserUpdatedBy = state.UserUpdatedBy;
-            cmd.UserUpdatedAt = state.UserUpdatedAt;
-            cmd.UserActive = state.UserActive;
-            cmd.UserDeleted = state.UserDeleted;
-            return cmd;
+            return state.ToCreateUserRoleMvo<CreateUserRoleMvo>();
         }
 		
 

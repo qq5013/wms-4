@@ -16,58 +16,22 @@ namespace Dddml.Wms.Domain
 
         public static IOrganizationCommand ToCreateOrMergePatchOrganization(this OrganizationState state)
         {
-            bool bUnsaved = ((IOrganizationState)state).IsUnsaved;
-            if (bUnsaved)
-            {
-                return state.ToCreateOrganization();
-            }
-            else 
-            {
-                return state.ToMergePatchOrganization();
-            }
+            return state.ToCreateOrMergePatchOrganization<CreateOrganization, MergePatchOrganization>();
         }
 
         public static DeleteOrganization ToDeleteOrganization(this OrganizationState state)
         {
-            var cmd = new DeleteOrganization();
-            cmd.OrganizationId = state.OrganizationId;
-            cmd.Version = state.Version;
-
-            return cmd;
+            return state.ToDeleteOrganization<DeleteOrganization>();
         }
 
         public static MergePatchOrganization ToMergePatchOrganization(this OrganizationState state)
         {
-            var cmd = new MergePatchOrganization();
-
-            cmd.Version = state.Version;
-
-            cmd.OrganizationId = state.OrganizationId;
-            cmd.Name = state.Name;
-            cmd.Description = state.Description;
-            cmd.Type = state.Type;
-            cmd.IsSummary = state.IsSummary;
-            cmd.Active = state.Active;
-            
-            if (state.Name == null) { cmd.IsPropertyNameRemoved = true; }
-            if (state.Description == null) { cmd.IsPropertyDescriptionRemoved = true; }
-            if (state.Type == null) { cmd.IsPropertyTypeRemoved = true; }
-            return cmd;
+            return state.ToMergePatchOrganization<MergePatchOrganization>();
         }
 
         public static CreateOrganization ToCreateOrganization(this OrganizationState state)
         {
-            var cmd = new CreateOrganization();
-
-            cmd.Version = state.Version;
-
-            cmd.OrganizationId = state.OrganizationId;
-            cmd.Name = state.Name;
-            cmd.Description = state.Description;
-            cmd.Type = state.Type;
-            cmd.IsSummary = state.IsSummary;
-            cmd.Active = state.Active;
-            return cmd;
+            return state.ToCreateOrganization<CreateOrganization>();
         }
 		
 

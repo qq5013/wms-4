@@ -16,43 +16,22 @@ namespace Dddml.Wms.Domain
 
         public static IUserPermissionCommand ToCreateOrMergePatchUserPermission(this UserPermissionState state)
         {
-            bool bUnsaved = ((IUserPermissionState)state).IsUnsaved;
-            if (bUnsaved)
-            {
-                return state.ToCreateUserPermission();
-            }
-            else 
-            {
-                return state.ToMergePatchUserPermission();
-            }
+            return state.ToCreateOrMergePatchUserPermission<CreateUserPermission, MergePatchUserPermission>();
         }
 
         public static RemoveUserPermission ToRemoveUserPermission(this UserPermissionState state)
         {
-            var cmd = new RemoveUserPermission();
-            cmd.PermissionId = state.PermissionId;
-            return cmd;
+            return state.ToRemoveUserPermission<RemoveUserPermission>();
         }
 
         public static MergePatchUserPermission ToMergePatchUserPermission(this UserPermissionState state)
         {
-            var cmd = new MergePatchUserPermission();
-
-            cmd.PermissionId = state.PermissionId;
-            cmd.Active = state.Active;
-            cmd.UserId = state.UserId;
-            
-            return cmd;
+            return state.ToMergePatchUserPermission<MergePatchUserPermission>();
         }
 
         public static CreateUserPermission ToCreateUserPermission(this UserPermissionState state)
         {
-            var cmd = new CreateUserPermission();
-
-            cmd.PermissionId = state.PermissionId;
-            cmd.Active = state.Active;
-            cmd.UserId = state.UserId;
-            return cmd;
+            return state.ToCreateUserPermission<CreateUserPermission>();
         }
 		
 

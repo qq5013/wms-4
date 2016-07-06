@@ -16,45 +16,22 @@ namespace Dddml.Wms.Domain
 
         public static IAttributeUseCommand ToCreateOrMergePatchAttributeUse(this AttributeUseState state)
         {
-            bool bUnsaved = ((IAttributeUseState)state).IsUnsaved;
-            if (bUnsaved)
-            {
-                return state.ToCreateAttributeUse();
-            }
-            else 
-            {
-                return state.ToMergePatchAttributeUse();
-            }
+            return state.ToCreateOrMergePatchAttributeUse<CreateAttributeUse, MergePatchAttributeUse>();
         }
 
         public static RemoveAttributeUse ToRemoveAttributeUse(this AttributeUseState state)
         {
-            var cmd = new RemoveAttributeUse();
-            cmd.AttributeId = state.AttributeId;
-            return cmd;
+            return state.ToRemoveAttributeUse<RemoveAttributeUse>();
         }
 
         public static MergePatchAttributeUse ToMergePatchAttributeUse(this AttributeUseState state)
         {
-            var cmd = new MergePatchAttributeUse();
-
-            cmd.AttributeId = state.AttributeId;
-            cmd.SequenceNumber = state.SequenceNumber;
-            cmd.Active = state.Active;
-            cmd.AttributeSetId = state.AttributeSetId;
-            
-            return cmd;
+            return state.ToMergePatchAttributeUse<MergePatchAttributeUse>();
         }
 
         public static CreateAttributeUse ToCreateAttributeUse(this AttributeUseState state)
         {
-            var cmd = new CreateAttributeUse();
-
-            cmd.AttributeId = state.AttributeId;
-            cmd.SequenceNumber = state.SequenceNumber;
-            cmd.Active = state.Active;
-            cmd.AttributeSetId = state.AttributeSetId;
-            return cmd;
+            return state.ToCreateAttributeUse<CreateAttributeUse>();
         }
 		
 

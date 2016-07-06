@@ -586,7 +586,7 @@ namespace Dddml.Wms.Domain
             }
             set 
             {
-                if (value == null) { return; }
+                if (value == null) { value = new AttributeValueStateDto[0]; }
                 var states = new List<AttributeValueState>();
                 foreach (var s in value)
                 {

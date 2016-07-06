@@ -336,7 +336,12 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
             public string[] ConvertToStringArray(object[] values)
             {
-                throw new NotSupportedException();
+                var list = new List<string>();
+                foreach (var o in values)
+                {
+                    list.Add(ConvertToString(o));
+                }
+                return list.ToArray();
             }
         }
 

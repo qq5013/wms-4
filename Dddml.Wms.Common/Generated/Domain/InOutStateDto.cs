@@ -1295,7 +1295,7 @@ namespace Dddml.Wms.Domain
             }
             set 
             {
-                if (value == null) { return; }
+                if (value == null) { value = new InOutLineStateDto[0]; }
                 var states = new List<InOutLineState>();
                 foreach (var s in value)
                 {

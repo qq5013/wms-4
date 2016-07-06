@@ -149,6 +149,9 @@
     <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroupStateDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroupStateDtoExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroupStateEvent.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -203,6 +206,9 @@
     <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldMvoStateDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldMvoStateDtoExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldMvoStateEvent.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -228,6 +234,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldStateDtoExtensions.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeSetInstanceExtensionFieldStateEvent.cs">
@@ -260,6 +269,9 @@
     <Compile Include="Generated\Domain\AttributeSetInstanceStateDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\AttributeSetInstanceStateDtoExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\AttributeSetInstanceStateEvent.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -287,6 +299,9 @@
     <Compile Include="Generated\Domain\AttributeSetStateDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\AttributeSetStateDtoExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\AttributeSetStateEvent.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -312,6 +327,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeStateDtoExtensions.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeStateEvent.cs">
@@ -362,6 +380,9 @@
     <Compile Include="Generated\Domain\AttributeUseMvoStateDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\AttributeUseMvoStateDtoExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\AttributeUseMvoStateEvent.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -387,6 +408,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeUseStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeUseStateDtoExtensions.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeUseStateEvent.cs">
@@ -452,6 +476,9 @@
     <Compile Include="Generated\Domain\AttributeValueMvoStateDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\AttributeValueMvoStateDtoExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\AttributeValueMvoStateEvent.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -477,6 +504,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeValueStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AttributeValueStateDtoExtensions.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AttributeValueStateEvent.cs">
@@ -522,6 +552,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AudienceStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\AudienceStateDtoExtensions.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\AudienceStateEvent.cs">
@@ -962,6 +995,9 @@
     <Compile Include="Generated\Domain\InOutLineMvoStateDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\InOutLineMvoStateDtoExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\InOutLineMvoStateEvent.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -987,6 +1023,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\InOutLineStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutLineStateDtoExtensions.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\InOutLineStateEvent.cs">
@@ -1017,6 +1056,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\InOutStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\InOutStateDtoExtensions.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\InOutStateEvent.cs">
@@ -1451,6 +1493,9 @@
     <Compile Include="Generated\Domain\LocatorStateDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\LocatorStateDtoExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\LocatorStateEvent.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -1601,6 +1646,9 @@
     <Compile Include="Generated\Domain\OrganizationStateDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\OrganizationStateDtoExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\OrganizationStateEvent.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -1655,6 +1703,9 @@
     <Compile Include="Generated\Domain\OrganizationStructureStateDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureStateDtoExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\OrganizationStructureStateEvent.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -1695,6 +1746,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\OrganizationStructureTypeStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\OrganizationStructureTypeStateDtoExtensions.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\OrganizationStructureTypeStateEvent.cs">
@@ -1740,6 +1794,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\PermissionStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\PermissionStateDtoExtensions.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\PermissionStateEvent.cs">
@@ -1814,6 +1871,9 @@
     <Compile Include="Generated\Domain\RolePermissionStateDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\RolePermissionStateDtoExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\RolePermissionStateEvent.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -1839,6 +1899,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\RoleStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\RoleStateDtoExtensions.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\RoleStateEvent.cs">
@@ -1922,6 +1985,9 @@
     <Compile Include="Generated\Domain\UserClaimMvoStateDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\UserClaimMvoStateDtoExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\UserClaimMvoStateEvent.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -1947,6 +2013,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\UserClaimStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserClaimStateDtoExtensions.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\UserClaimStateEvent.cs">
@@ -2018,6 +2087,9 @@
     <Compile Include="Generated\Domain\UserLoginMvoStateDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\UserLoginMvoStateDtoExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\UserLoginMvoStateEvent.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -2043,6 +2115,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\UserLoginStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserLoginStateDtoExtensions.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\UserLoginStateEvent.cs">
@@ -2108,6 +2183,9 @@
     <Compile Include="Generated\Domain\UserPermissionMvoStateDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\UserPermissionMvoStateDtoExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\UserPermissionMvoStateEvent.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -2133,6 +2211,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\UserPermissionStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserPermissionStateDtoExtensions.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\UserPermissionStateEvent.cs">
@@ -2198,6 +2279,9 @@
     <Compile Include="Generated\Domain\UserRoleMvoStateDto.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\UserRoleMvoStateDtoExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\UserRoleMvoStateEvent.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -2223,6 +2307,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\UserRoleStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserRoleStateDtoExtensions.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\UserRoleStateEvent.cs">
@@ -2253,6 +2340,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\UserStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\UserStateDtoExtensions.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\UserStateEvent.cs">
@@ -2295,6 +2385,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\WarehouseStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\WarehouseStateDtoExtensions.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\WarehouseStateEvent.cs">
@@ -2427,6 +2520,7 @@
 .\AttributeSetInstanceExtensionFieldGroupCommandDto.cs
 .\AttributeSetInstanceExtensionFieldGroupState.cs
 .\AttributeSetInstanceExtensionFieldGroupStateDto.cs
+.\AttributeSetInstanceExtensionFieldGroupStateDtoExtensions.cs
 .\AttributeSetInstanceExtensionFieldGroupStateEvent.cs
 .\AttributeSetInstanceExtensionFieldGroupStateEventDto.cs
 .\AttributeSetInstanceExtensionFieldGroupStateEventId.cs
@@ -2445,6 +2539,7 @@
 .\AttributeSetInstanceExtensionFieldMvoCommandDto.cs
 .\AttributeSetInstanceExtensionFieldMvoState.cs
 .\AttributeSetInstanceExtensionFieldMvoStateDto.cs
+.\AttributeSetInstanceExtensionFieldMvoStateDtoExtensions.cs
 .\AttributeSetInstanceExtensionFieldMvoStateEvent.cs
 .\AttributeSetInstanceExtensionFieldMvoStateEventDto.cs
 .\AttributeSetInstanceExtensionFieldMvoStateEventId.cs
@@ -2454,6 +2549,7 @@
 .\AttributeSetInstanceExtensionFieldMvoStateProperties.cs
 .\AttributeSetInstanceExtensionFieldState.cs
 .\AttributeSetInstanceExtensionFieldStateDto.cs
+.\AttributeSetInstanceExtensionFieldStateDtoExtensions.cs
 .\AttributeSetInstanceExtensionFieldStateEvent.cs
 .\AttributeSetInstanceExtensionFieldStateEventDto.cs
 .\AttributeSetInstanceExtensionFieldStateEventId.cs
@@ -2464,6 +2560,7 @@
 .\AttributeSetInstanceExtensionFieldStates.cs
 .\AttributeSetInstanceState.cs
 .\AttributeSetInstanceStateDto.cs
+.\AttributeSetInstanceStateDtoExtensions.cs
 .\AttributeSetInstanceStateEvent.cs
 .\AttributeSetInstanceStateEventDto.cs
 .\AttributeSetInstanceStateEventId.cs
@@ -2473,6 +2570,7 @@
 .\AttributeSetInstanceStateProperties.cs
 .\AttributeSetState.cs
 .\AttributeSetStateDto.cs
+.\AttributeSetStateDtoExtensions.cs
 .\AttributeSetStateEvent.cs
 .\AttributeSetStateEventDto.cs
 .\AttributeSetStateEventId.cs
@@ -2482,6 +2580,7 @@
 .\AttributeSetStateProperties.cs
 .\AttributeState.cs
 .\AttributeStateDto.cs
+.\AttributeStateDtoExtensions.cs
 .\AttributeStateEvent.cs
 .\AttributeStateEventDto.cs
 .\AttributeStateEventId.cs
@@ -2498,6 +2597,7 @@
 .\AttributeUseMvoCommandDto.cs
 .\AttributeUseMvoState.cs
 .\AttributeUseMvoStateDto.cs
+.\AttributeUseMvoStateDtoExtensions.cs
 .\AttributeUseMvoStateEvent.cs
 .\AttributeUseMvoStateEventDto.cs
 .\AttributeUseMvoStateEventId.cs
@@ -2507,6 +2607,7 @@
 .\AttributeUseMvoStateProperties.cs
 .\AttributeUseState.cs
 .\AttributeUseStateDto.cs
+.\AttributeUseStateDtoExtensions.cs
 .\AttributeUseStateEvent.cs
 .\AttributeUseStateEventDto.cs
 .\AttributeUseStateEventId.cs
@@ -2528,6 +2629,7 @@
 .\AttributeValueMvoCommandDto.cs
 .\AttributeValueMvoState.cs
 .\AttributeValueMvoStateDto.cs
+.\AttributeValueMvoStateDtoExtensions.cs
 .\AttributeValueMvoStateEvent.cs
 .\AttributeValueMvoStateEventDto.cs
 .\AttributeValueMvoStateEventId.cs
@@ -2537,6 +2639,7 @@
 .\AttributeValueMvoStateProperties.cs
 .\AttributeValueState.cs
 .\AttributeValueStateDto.cs
+.\AttributeValueStateDtoExtensions.cs
 .\AttributeValueStateEvent.cs
 .\AttributeValueStateEventDto.cs
 .\AttributeValueStateEventId.cs
@@ -2552,6 +2655,7 @@
 .\AudienceCommandDto.cs
 .\AudienceState.cs
 .\AudienceStateDto.cs
+.\AudienceStateDtoExtensions.cs
 .\AudienceStateEvent.cs
 .\AudienceStateEventDto.cs
 .\AudienceStateEventId.cs
@@ -2695,6 +2799,7 @@
 .\InOutLineMvoCommandDto.cs
 .\InOutLineMvoState.cs
 .\InOutLineMvoStateDto.cs
+.\InOutLineMvoStateDtoExtensions.cs
 .\InOutLineMvoStateEvent.cs
 .\InOutLineMvoStateEventDto.cs
 .\InOutLineMvoStateEventId.cs
@@ -2704,6 +2809,7 @@
 .\InOutLineMvoStateProperties.cs
 .\InOutLineState.cs
 .\InOutLineStateDto.cs
+.\InOutLineStateDtoExtensions.cs
 .\InOutLineStateEvent.cs
 .\InOutLineStateEventDto.cs
 .\InOutLineStateEventId.cs
@@ -2714,6 +2820,7 @@
 .\InOutLineStates.cs
 .\InOutState.cs
 .\InOutStateDto.cs
+.\InOutStateDtoExtensions.cs
 .\InOutStateEvent.cs
 .\InOutStateEventDto.cs
 .\InOutStateEventId.cs
@@ -2854,6 +2961,7 @@
 .\LocatorCommandDto.cs
 .\LocatorState.cs
 .\LocatorStateDto.cs
+.\LocatorStateDtoExtensions.cs
 .\LocatorStateEvent.cs
 .\LocatorStateEventDto.cs
 .\LocatorStateEventId.cs
@@ -2872,6 +2980,7 @@
 .\OrganizationCommandDto.cs
 .\OrganizationState.cs
 .\OrganizationStateDto.cs
+.\OrganizationStateDtoExtensions.cs
 .\OrganizationStateEvent.cs
 .\OrganizationStateEventDto.cs
 .\OrganizationStateEventId.cs
@@ -2886,6 +2995,7 @@
 .\OrganizationStructureCommandDto.cs
 .\OrganizationStructureState.cs
 .\OrganizationStructureStateDto.cs
+.\OrganizationStructureStateDtoExtensions.cs
 .\OrganizationStructureStateEvent.cs
 .\OrganizationStructureStateEventDto.cs
 .\OrganizationStructureStateEventId.cs
@@ -2900,6 +3010,7 @@
 .\OrganizationStructureTypeCommandDto.cs
 .\OrganizationStructureTypeState.cs
 .\OrganizationStructureTypeStateDto.cs
+.\OrganizationStructureTypeStateDtoExtensions.cs
 .\OrganizationStructureTypeStateEvent.cs
 .\OrganizationStructureTypeStateEventDto.cs
 .\OrganizationStructureTypeStateEventId.cs
@@ -2914,6 +3025,7 @@
 .\PermissionCommandDto.cs
 .\PermissionState.cs
 .\PermissionStateDto.cs
+.\PermissionStateDtoExtensions.cs
 .\PermissionStateEvent.cs
 .\PermissionStateEventDto.cs
 .\PermissionStateEventId.cs
@@ -2933,6 +3045,7 @@
 .\RolePermissionCommandDto.cs
 .\RolePermissionState.cs
 .\RolePermissionStateDto.cs
+.\RolePermissionStateDtoExtensions.cs
 .\RolePermissionStateEvent.cs
 .\RolePermissionStateEventDto.cs
 .\RolePermissionStateEventId.cs
@@ -2942,6 +3055,7 @@
 .\RolePermissionStateProperties.cs
 .\RoleState.cs
 .\RoleStateDto.cs
+.\RoleStateDtoExtensions.cs
 .\RoleStateEvent.cs
 .\RoleStateEventDto.cs
 .\RoleStateEventId.cs
@@ -2965,6 +3079,7 @@
 .\UserClaimMvoCommandDto.cs
 .\UserClaimMvoState.cs
 .\UserClaimMvoStateDto.cs
+.\UserClaimMvoStateDtoExtensions.cs
 .\UserClaimMvoStateEvent.cs
 .\UserClaimMvoStateEventDto.cs
 .\UserClaimMvoStateEventId.cs
@@ -2974,6 +3089,7 @@
 .\UserClaimMvoStateProperties.cs
 .\UserClaimState.cs
 .\UserClaimStateDto.cs
+.\UserClaimStateDtoExtensions.cs
 .\UserClaimStateEvent.cs
 .\UserClaimStateEventDto.cs
 .\UserClaimStateEventId.cs
@@ -2997,6 +3113,7 @@
 .\UserLoginMvoCommandDto.cs
 .\UserLoginMvoState.cs
 .\UserLoginMvoStateDto.cs
+.\UserLoginMvoStateDtoExtensions.cs
 .\UserLoginMvoStateEvent.cs
 .\UserLoginMvoStateEventDto.cs
 .\UserLoginMvoStateEventId.cs
@@ -3006,6 +3123,7 @@
 .\UserLoginMvoStateProperties.cs
 .\UserLoginState.cs
 .\UserLoginStateDto.cs
+.\UserLoginStateDtoExtensions.cs
 .\UserLoginStateEvent.cs
 .\UserLoginStateEventDto.cs
 .\UserLoginStateEventId.cs
@@ -3027,6 +3145,7 @@
 .\UserPermissionMvoCommandDto.cs
 .\UserPermissionMvoState.cs
 .\UserPermissionMvoStateDto.cs
+.\UserPermissionMvoStateDtoExtensions.cs
 .\UserPermissionMvoStateEvent.cs
 .\UserPermissionMvoStateEventDto.cs
 .\UserPermissionMvoStateEventId.cs
@@ -3036,6 +3155,7 @@
 .\UserPermissionMvoStateProperties.cs
 .\UserPermissionState.cs
 .\UserPermissionStateDto.cs
+.\UserPermissionStateDtoExtensions.cs
 .\UserPermissionStateEvent.cs
 .\UserPermissionStateEventDto.cs
 .\UserPermissionStateEventId.cs
@@ -3057,6 +3177,7 @@
 .\UserRoleMvoCommandDto.cs
 .\UserRoleMvoState.cs
 .\UserRoleMvoStateDto.cs
+.\UserRoleMvoStateDtoExtensions.cs
 .\UserRoleMvoStateEvent.cs
 .\UserRoleMvoStateEventDto.cs
 .\UserRoleMvoStateEventId.cs
@@ -3066,6 +3187,7 @@
 .\UserRoleMvoStateProperties.cs
 .\UserRoleState.cs
 .\UserRoleStateDto.cs
+.\UserRoleStateDtoExtensions.cs
 .\UserRoleStateEvent.cs
 .\UserRoleStateEventDto.cs
 .\UserRoleStateEventId.cs
@@ -3076,6 +3198,7 @@
 .\UserRoleStates.cs
 .\UserState.cs
 .\UserStateDto.cs
+.\UserStateDtoExtensions.cs
 .\UserStateEvent.cs
 .\UserStateEventDto.cs
 .\UserStateEventId.cs
@@ -3090,6 +3213,7 @@
 .\WarehouseCommandDto.cs
 .\WarehouseState.cs
 .\WarehouseStateDto.cs
+.\WarehouseStateDtoExtensions.cs
 .\WarehouseStateEvent.cs
 .\WarehouseStateEventDto.cs
 .\WarehouseStateEventId.cs

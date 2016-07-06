@@ -620,7 +620,7 @@ namespace Dddml.Wms.Domain
             }
             set 
             {
-                if (value == null) { return; }
+                if (value == null) { value = new UserRoleStateDto[0]; }
                 var states = new List<UserRoleState>();
                 foreach (var s in value)
                 {
@@ -665,7 +665,7 @@ namespace Dddml.Wms.Domain
             }
             set 
             {
-                if (value == null) { return; }
+                if (value == null) { value = new UserClaimStateDto[0]; }
                 var states = new List<UserClaimState>();
                 foreach (var s in value)
                 {
@@ -710,7 +710,7 @@ namespace Dddml.Wms.Domain
             }
             set 
             {
-                if (value == null) { return; }
+                if (value == null) { value = new UserPermissionStateDto[0]; }
                 var states = new List<UserPermissionState>();
                 foreach (var s in value)
                 {
@@ -755,7 +755,7 @@ namespace Dddml.Wms.Domain
             }
             set 
             {
-                if (value == null) { return; }
+                if (value == null) { value = new UserLoginStateDto[0]; }
                 var states = new List<UserLoginState>();
                 foreach (var s in value)
                 {

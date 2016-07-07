@@ -10,8 +10,6 @@
 <#@ import namespace="Dddml.Serialization" #>
 <#@ import namespace="Dddml.T4" #>
 <#@ import namespace="Dddml.T4.Extensions" #>
-<#@ import namespace="Dddml.T4.Extensions.Clr" #>
-<#@ import namespace="Dddml.T4.Extensions.CSharp" #>
 <#@ import namespace="Dddml.T4.Extensions.NHibernate" #>
 <#@ include file="T4Toolbox.tt" #>
 <#
@@ -37,7 +35,7 @@
 	boundedContext.SetTypeNamespaces(typeNamespaces);
 
 	var clrValueTypes = new string[]{ "Money" };
-	boundedContext.SetClrValueTypes(clrValueTypes);
+	Dddml.T4.Extensions.Clr.BoundedContextExtension.SetClrValueTypes(boundedContext, clrValueTypes);
 
 	var nhibernateTypes = new Dictionary<string, NHibernateType>();
 	var nodaMoneyNHibernateType = new NHibernateType() {
@@ -69,7 +67,7 @@
 		{
 			boundedContext.Aggregates.Add(mvo.Name, mvo);
 			mvo.GenerateAggregateStateEventIdValueObject();
-			mvo.SetAggregateDomainSubNamespaceName("MViews");
+			Dddml.T4.Extensions.Clr.AggregateExtension.SetAggregateDomainSubNamespaceName(mvo, "MViews");
 			mvo.SetStateDatabaseTableNameFormat("{0}s");
 			mvo.SetUsingRViewAsMView(true);
 			mvo.SetHttpServiceResourceCollectionNameFormat("{0}s");
@@ -91,7 +89,7 @@
 // ////////////////////////////
 	
 	boundedContext.SetHttpServicesAuthorizationEnabled(true);
-	boundedContext.SetHttpServiceSetRequesterIdAttributeEnabled(true);
+	Dddml.T4.Extensions.Clr.BoundedContextExtension.SetHttpServiceSetRequesterIdAttributeEnabled(boundedContext, true);
 
 #>
 <#+

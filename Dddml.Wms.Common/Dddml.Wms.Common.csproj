@@ -2438,6 +2438,16 @@
     </Compile>
     <Compile Include="Support\AuthorizationUtils.cs" />
     <Compile Include="Support\PermissionUtils.cs" />
+    <Content Include="Generated\ListAllTypes.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastOutputs>.\ListAllTypes.txt</LastOutputs>
+      <LastGenOutput>ListAllTypes.txt</LastGenOutput>
+    </Content>
+    <Content Include="Generated\ListAllTypes.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListAllTypes.tt</DependentUpon>
+    </Content>
     <Content Include="Support\GenerateAttributeSetInstancePropertyUtils.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GenerateAttributeSetInstancePropertyUtils.txt</LastGenOutput>

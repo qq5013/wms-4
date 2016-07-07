@@ -1,0 +1,43 @@
+<#@ template language="C#" debug="True" #>
+<#@ output extension="txt" #>
+<#@ include file="T4Toolbox.tt" #>
+<#@ include file="LoadBoundedContext.tt" #>
+<#
+
+	var listedTypes = new SortedSet<string>();
+
+// ////////////////////////////
+#>
+            var dict = new Dictionary<string, string>();
+           
+            foreach (var t in allTypes)
+            {
+<#
+            foreach (var t in boundedContext.AllTypes)
+            {
+				if (boundedContext.GetAllNestedValueObjects().ContainsKey(t))
+				{
+					listedTypes.Add(t);
+#>
+                dict.Add("<#= t #>", "_<#= t.ToUpper().Replace("?", "_") #>_");
+<#
+				}
+            }
+#>
+// //////////////////////
+<#
+            foreach (var t in boundedContext.AllTypes)
+            {
+				if (!listedTypes.Contains(t))
+				{
+#>
+                dict.Add("<#= t #>", "_<#= t.ToUpper().Replace("?", "_") #>_");
+<#
+				}
+            }
+#>
+            }
+
+<#
+// //////////////////////////////
+#>

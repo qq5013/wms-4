@@ -1,0 +1,32 @@
+﻿
+            var dict = new Dictionary<string, string>();
+           
+            foreach (var t in allTypes)
+            {
+                dict.Add("AttributeSetAttributeUseId", "_ATTRIBUTESETATTRIBUTEUSEID_");
+                dict.Add("AttributeSetInstanceExtensionFieldId", "_ATTRIBUTESETINSTANCEEXTENSIONFIELDID_");
+                dict.Add("AttributeValueId", "_ATTRIBUTEVALUEID_");
+                dict.Add("InOutLineId", "_INOUTLINEID_");
+                dict.Add("LoginKey", "_LOGINKEY_");
+                dict.Add("OrganizationStructureId", "_ORGANIZATIONSTRUCTUREID_");
+                dict.Add("RolePermissionId", "_ROLEPERMISSIONID_");
+                dict.Add("SkuId", "_SKUID_");
+                dict.Add("UserClaimId", "_USERCLAIMID_");
+                dict.Add("UserLoginId", "_USERLOGINID_");
+                dict.Add("UserPermissionId", "_USERPERMISSIONID_");
+                dict.Add("UserRoleId", "_USERROLEID_");
+// //////////////////////
+                dict.Add("bool", "_BOOL_");
+                dict.Add("bool?", "_BOOL__");
+                dict.Add("DateTime", "_DATETIME_");
+                dict.Add("DateTime?", "_DATETIME__");
+                dict.Add("decimal", "_DECIMAL_");
+                dict.Add("decimal?", "_DECIMAL__");
+                dict.Add("int", "_INT_");
+                dict.Add("int?", "_INT__");
+                dict.Add("long", "_LONG_");
+                dict.Add("long?", "_LONG__");
+                dict.Add("Money", "_MONEY_");
+                dict.Add("string", "_STRING_");
+            }
+

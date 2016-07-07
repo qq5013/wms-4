@@ -2448,6 +2448,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ListAllTypes.tt</DependentUpon>
     </Content>
+    <Content Include="Generated\LoadBoundedContextFiles.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>LoadBoundedContextFiles.txt</LastGenOutput>
+      <LastOutputs>.\LoadBoundedContextFiles.txt</LastOutputs>
+    </Content>
+    <Content Include="Generated\LoadBoundedContextFiles.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoadBoundedContextFiles.tt</DependentUpon>
+    </Content>
     <Content Include="Support\GenerateAttributeSetInstancePropertyUtils.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GenerateAttributeSetInstancePropertyUtils.txt</LastGenOutput>

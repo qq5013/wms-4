@@ -10,43 +10,31 @@
 <#@ import namespace="Dddml.Serialization" #>
 <#@ import namespace="Dddml.T4" #>
 <#@ import namespace="Dddml.T4.Extensions" #>
+<#@ import namespace="Dddml.T4.Extensions.Clr" #>
 <#@ import namespace="Dddml.T4.Extensions.NHibernate" #>
 <#@ include file="T4Toolbox.tt" #>
+<#@ include file="LoadBoundedContextFiles.tt" #>
 <#
+    //var boundedContext = LoadBoundedContextFiles();
+	//boundedContext.DefaultUserIdType = "string";
+
     TemplatingContext.Current.CurrentAssembly = "Dddml.Wms.Common";
     TemplatingContext.Current.SpecializationNamespace = "Dddml.Wms.Specialization";
-
-    var boundedContext = LoadBoundedContext();
-	boundedContext.DefaultUserIdType = "string";
 
 	boundedContext.IsUsingSeparatedDomainAggregateNamespace = false;
 
 	boundedContext.IsGenericTypeAsType = true;
 
-	boundedContext.Metadata[Dddml.T4.Extensions.Clr.BoundedContextExtension.MetadataKeyDomainAssembly] = "Dddml.Wms.Common";
+	boundedContext.SetClrDomainAssembly("Dddml.Wms.Common");
 
-	boundedContext.Aggregates["AttributeSetInstance"].Metadata[Dddml.T4.Extensions.EntityBaseExtension.MetadataKeyPersistingStateEventRemovedPropertiesAsSet] = true;
+	boundedContext.Aggregates["AttributeSetInstance"].SetPersistingStateEventRemovedPropertiesAsSet(true);
 
 	//boundedContext.Aggregates["AttributeSetInstance"].AuthorizationEnabled = true;
 	//boundedContext.Aggregates["AttributeSetInstance"].AnonymousAllowed = true;
 
-	var typeNamespaces = new Dictionary<string, string>();
-	typeNamespaces.Add("Money", "NodaMoney");
-	boundedContext.SetTypeNamespaces(typeNamespaces);
-
-	var clrValueTypes = new string[]{ "Money" };
-	Dddml.T4.Extensions.Clr.BoundedContextExtension.SetClrValueTypes(boundedContext, clrValueTypes);
-
-	var nhibernateTypes = new Dictionary<string, NHibernateType>();
-	var nodaMoneyNHibernateType = new NHibernateType() {
-			ActualTypeName = "Money", 
-			AssemblyQualifiedName = "Dddml.Wms.Services.Domain.NHibernate.NodaMoneyType, Dddml.Wms.Services",
-			PropertyNames = new string[] { "Amount", "Currency" }, 
-			PropertyClrTypes = new string[] { "decimal", "string" }
-		};
-	nhibernateTypes.Add(nodaMoneyNHibernateType.ActualTypeName, nodaMoneyNHibernateType);
-	boundedContext.SetNHibernateTypes(nhibernateTypes);
-
+	boundedContext.SetTypeNamespaces(GetTypeNamespaces());
+	boundedContext.SetClrValueTypes(GetClrValueTypes());
+	boundedContext.SetNHibernateTypes(GetNHibernateTypes());
 
 	boundedContext.Refresh();
 
@@ -59,7 +47,8 @@
 	boundedContext.Refresh();
 	//boundedContext.ReplacePropertyEnumTypeWithBaseType();	
 
-// ////////////////////////////
+	// ////////////////////////////
+
 	foreach (var aggregate in boundedContext.Aggregates.Values)
 	{
 		var mvObjcts = aggregate.GenerateAllEntityMViewObjects();
@@ -67,7 +56,7 @@
 		{
 			boundedContext.Aggregates.Add(mvo.Name, mvo);
 			mvo.GenerateAggregateStateEventIdValueObject();
-			Dddml.T4.Extensions.Clr.AggregateExtension.SetAggregateDomainSubNamespaceName(mvo, "MViews");
+			mvo.SetClrAggregateDomainSubNamespaceName("MViews");
 			mvo.SetStateDatabaseTableNameFormat("{0}s");
 			mvo.SetUsingRViewAsMView(true);
 			mvo.SetHttpServiceResourceCollectionNameFormat("{0}s");
@@ -86,29 +75,38 @@
 		}
 	}
 
-// ////////////////////////////
+	// ////////////////////////////
 	
 	boundedContext.SetHttpServicesAuthorizationEnabled(true);
-	Dddml.T4.Extensions.Clr.BoundedContextExtension.SetHttpServiceSetRequesterIdAttributeEnabled(boundedContext, true);
+	boundedContext.SetClrHttpServiceSetRequesterIdAttributeEnabled(true);
 
 #>
 <#+
-    private BoundedContext LoadBoundedContext()
-    {
-        string projectFile = TransformationContext.Current.GetPropertyValue("MSBuildProjectFullPath");
-		string projectDir = System.IO.Path.GetDirectoryName(projectFile);
-        string filePath1 = System.IO.Path.Combine(projectDir, "../dddml/AttributeSet.yaml");
-		string filePath2 = System.IO.Path.Combine(projectDir, "../Dddml.Wms.Metadata/AttributeSetInstanceDddml.yaml");
-		string filePath3 = System.IO.Path.Combine(projectDir, "../Dddml.Wms.Metadata/AttributeSetInstanceExtensionFieldGroupDddml.yaml");
-        string filePath4 = System.IO.Path.Combine(projectDir, "../dddml/InOut.yaml");
-		string filePath5 = System.IO.Path.Combine(projectDir, "../dddml/Warehouse.yaml");
-		string filePath6 = System.IO.Path.Combine(projectDir, "../dddml/Organization.yaml");
-		string filePath7 = System.IO.Path.Combine(projectDir, "../dddml/IdentityManagement.yaml");
-		string filePath8 = System.IO.Path.Combine(projectDir, "../dddml/AccessManagement.yaml");
-		string filePath9 = System.IO.Path.Combine(projectDir, "../dddml/Audience.yaml");
+	
+	private IDictionary<string, NHibernateType> GetNHibernateTypes()
+	{
+		var nhibernateTypes = new Dictionary<string, NHibernateType>();
+		var nodaMoneyNHibernateType = new NHibernateType() {
+				ActualTypeName = "Money", 
+				AssemblyQualifiedName = "Dddml.Wms.Services.Domain.NHibernate.NodaMoneyType, Dddml.Wms.Services",
+				PropertyNames = new string[] { "Amount", "Currency" }, 
+				PropertyClrTypes = new string[] { "decimal", "string" }
+			};
+		nhibernateTypes.Add(nodaMoneyNHibernateType.ActualTypeName, nodaMoneyNHibernateType);
+		return nhibernateTypes;
+	}
 
-        BoundedContext boundedContext = BoundedContextUtils.LoadFromFiles(new string[]{ filePath1, filePath2, filePath3, filePath4, filePath5, filePath6, filePath7, filePath8, filePath9});
-        boundedContext.DefaultModule = "Dddml.Wms";
-        return boundedContext; 
-    }
+	private string[] GetClrValueTypes()
+	{
+		var clrValueTypes = new string[]{ "Money" };
+		return clrValueTypes;
+	}
+
+	private IDictionary<string, string> GetTypeNamespaces()
+	{
+		var typeNamespaces = new Dictionary<string, string>();
+		typeNamespaces.Add("Money", "NodaMoney");
+		return typeNamespaces;
+	}
+
 #>

@@ -1,4 +1,5 @@
 ﻿
+
             var dict = new Dictionary<string, string>();
            
             foreach (var t in allTypes)

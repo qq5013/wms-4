@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5AC211A8-A4D7-4C55-B888-EE689CB7A18D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dddml.Wms.HttpServices.PhpClient</RootNamespace>
+    <AssemblyName>Dddml.Wms.HttpServices.PhpClient</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Generated\Domain\GenerateBoundedContextDomain.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GenerateBoundedContextDomain.txt</LastGenOutput>
+      <LastOutputs>
+.\DocumentAction.php
+.\GenerateBoundedContextDomain.txt
+.\OrganizationStructureId.php
+.\RolePermissionId.php
+.\SkuId.php
+</LastOutputs>
+    </Content>
+    <Content Include="Generated\Domain\GenerateBoundedContextDomain.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Content>
+    <Content Include="Generated\Domain\GenerateBoundedContextDomainAggregates.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GenerateBoundedContextDomainAggregates.txt</LastGenOutput>
+      <LastOutputs>
+.\Attribute.php
+.\AttributeSet.php
+.\AttributeSetAttributeUseId.php
+.\AttributeSetInstance.php
+.\AttributeSetInstanceExtensionField.php
+.\AttributeSetInstanceExtensionFieldGroup.php
+.\AttributeSetInstanceExtensionFieldGroupStateEventId.php
+.\AttributeSetInstanceExtensionFieldId.php
+.\AttributeSetInstanceExtensionFieldMvo.php
+.\AttributeSetInstanceExtensionFieldMvoStateEventId.php
+.\AttributeSetInstanceExtensionFieldStateEventId.php
+.\AttributeSetInstanceStateEventId.php
+.\AttributeSetStateEventId.php
+.\AttributeStateEventId.php
+.\AttributeUse.php
+.\AttributeUseMvo.php
+.\AttributeUseMvoStateEventId.php
+.\AttributeUseStateEventId.php
+.\AttributeValue.php
+.\AttributeValueId.php
+.\AttributeValueMvo.php
+.\AttributeValueMvoStateEventId.php
+.\AttributeValueStateEventId.php
+.\Audience.php
+.\AudienceStateEventId.php
+.\GenerateBoundedContextDomainAggregates.txt
+.\InOut.php
+.\InOutLine.php
+.\InOutLineId.php
+.\InOutLineMvo.php
+.\InOutLineMvoStateEventId.php
+.\InOutLineStateEventId.php
+.\InOutStateEventId.php
+.\Locator.php
+.\LocatorStateEventId.php
+.\LoginKey.php
+.\Organization.php
+.\OrganizationStateEventId.php
+.\OrganizationStructure.php
+.\OrganizationStructureStateEventId.php
+.\OrganizationStructureType.php
+.\OrganizationStructureTypeStateEventId.php
+.\Permission.php
+.\PermissionStateEventId.php
+.\Role.php
+.\RolePermission.php
+.\RolePermissionStateEventId.php
+.\RoleStateEventId.php
+.\User.php
+.\UserClaim.php
+.\UserClaimId.php
+.\UserClaimMvo.php
+.\UserClaimMvoStateEventId.php
+.\UserClaimStateEventId.php
+.\UserLogin.php
+.\UserLoginId.php
+.\UserLoginMvo.php
+.\UserLoginMvoStateEventId.php
+.\UserLoginStateEventId.php
+.\UserPermission.php
+.\UserPermissionId.php
+.\UserPermissionMvo.php
+.\UserPermissionMvoStateEventId.php
+.\UserPermissionStateEventId.php
+.\UserRole.php
+.\UserRoleId.php
+.\UserRoleMvo.php
+.\UserRoleMvoStateEventId.php
+.\UserRoleStateEventId.php
+.\UserStateEventId.php
+.\Warehouse.php
+.\WarehouseStateEventId.php
+</LastOutputs>
+    </Content>
+    <Content Include="Generated\Domain\GenerateBoundedContextDomainAggregates.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="Generated\LoadBoundedContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>LoadBoundedContext.txt</LastGenOutput>
+      <LastOutputs>.\LoadBoundedContext.txt</LastOutputs>
+    </Content>
+    <Content Include="Generated\LoadBoundedContext.txt">
+      <DependentUpon>LoadBoundedContext.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Generated\Domain\Attribute.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\AttributeSet.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\AttributeSetAttributeUseId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\AttributeSetInstance.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\AttributeSetInstanceExtensionField.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroup.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroupStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\AttributeSetInstanceExtensionFieldId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\AttributeSetInstanceExtensionFieldMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\AttributeSetInstanceExtensionFieldMvoStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\AttributeSetInstanceExtensionFieldStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\AttributeSetInstanceStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\AttributeSetStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\AttributeStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\AttributeUse.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\AttributeUseMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\AttributeUseMvoStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\AttributeUseStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\AttributeValue.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\AttributeValueId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\AttributeValueMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\AttributeValueMvoStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\AttributeValueStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\Audience.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\AudienceStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\DocumentAction.php">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\InOut.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\InOutLine.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\InOutLineId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\InOutLineMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\InOutLineMvoStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\InOutLineStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\InOutStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\Locator.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\LocatorStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\LoginKey.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\Organization.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\OrganizationStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\OrganizationStructure.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\OrganizationStructureId.php">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\OrganizationStructureStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\OrganizationStructureType.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\OrganizationStructureTypeStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\Permission.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\PermissionStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\Role.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\RolePermission.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\RolePermissionId.php">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\RolePermissionStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\RoleStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\SkuId.php">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\User.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\UserClaim.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\UserClaimId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\UserClaimMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\UserClaimMvoStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\UserClaimStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\UserLogin.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\UserLoginId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\UserLoginMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\UserLoginMvoStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\UserLoginStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\UserPermission.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\UserPermissionId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\UserPermissionMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\UserPermissionMvoStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\UserPermissionStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\UserRole.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\UserRoleId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\UserRoleMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\UserRoleMvoStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\UserRoleStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\UserStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\Warehouse.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Generated\Domain\WarehouseStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

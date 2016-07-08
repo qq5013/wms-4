@@ -2,8 +2,8 @@
 
             var dict = new Dictionary<string, string>();
            
-            foreach (var t in allTypes)
-            {
+            //foreach (var t in allTypes)
+            //{
                 dict.Add("AttributeSetAttributeUseId", "_ATTRIBUTESETATTRIBUTEUSEID_");
                 dict.Add("AttributeSetInstanceExtensionFieldId", "_ATTRIBUTESETINSTANCEEXTENSIONFIELDID_");
                 dict.Add("AttributeValueId", "_ATTRIBUTEVALUEID_");
@@ -29,5 +29,5 @@
                 dict.Add("long?", "_LONG__");
                 dict.Add("Money", "_MONEY_");
                 dict.Add("string", "_STRING_");
-            }
+            //}
 

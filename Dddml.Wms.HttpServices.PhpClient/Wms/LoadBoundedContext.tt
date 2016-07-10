@@ -1,0 +1,154 @@
+﻿<#@ template language="C#" debug="True" #>
+<#@ output extension="txt" #>
+<#@ assembly name="%DddmlDotNetToolsSolutionDir%\Dddml.Core\bin\Debug\Dddml.Core.dll" #>
+<#@ assembly name="%DddmlDotNetToolsSolutionDir%\Dddml.Serialization\bin\Debug\Dddml.Serialization.dll" #>
+<#@ assembly name="%DddmlDotNetToolsSolutionDir%\Dddml.T4\bin\Debug\Dddml.T4.dll" #>
+<#@ assembly name="%DddmlDotNetToolsSolutionDir%\packages\YamlDotNet.3.8.0\lib\net35\YamlDotNet.dll" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="Dddml.Core.Domain" #>
+<#@ import namespace="Dddml.Serialization" #>
+<#@ import namespace="Dddml.T4" #>
+<#@ import namespace="Dddml.T4.Extensions" #>
+<#@ import namespace="Dddml.T4.Extensions.Php" #>
+<#@ include file="T4Toolbox.tt" #>
+<#@ include file="$(SolutionDir)Dddml.Wms.Common\Generated\LoadBoundedContextFiles.tt" #>
+<#
+
+	boundedContext.SetBoundedContextNamespace("Wms");
+
+    TemplatingContext.Current.SpecializationNamespace = "Dddml";
+
+	boundedContext.IsUsingSeparatedDomainAggregateNamespace = false;
+
+	boundedContext.IsGenericTypeAsType = true;
+
+	//boundedContext.Aggregates["AttributeSetInstance"].SetPersistingStateEventRemovedPropertiesAsSet(true);
+
+	//boundedContext.Aggregates["AttributeSetInstance"].AuthorizationEnabled = true;
+	//boundedContext.Aggregates["AttributeSetInstance"].AnonymousAllowed = true;
+
+	boundedContext.SetTypeNamespaces(GetTypeNamespaces());
+	//boundedContext.SetClrValueTypes(GetClrValueTypes());
+	//boundedContext.SetNHibernateTypes(GetNHibernateTypes());
+
+	boundedContext.Refresh();
+
+	foreach (var agg in boundedContext.Aggregates.Values)
+	{
+		agg.GenerateAggregateStateEventIdValueObject();
+		agg.GenerateAllEntityStateEventIdValueObjects();
+	}
+
+	boundedContext.Refresh();
+	//boundedContext.ReplacePropertyEnumTypeWithBaseType();	
+
+	// ////////////////////////////
+
+	foreach (var aggregate in boundedContext.Aggregates.Values)
+	{
+		var mvObjcts = aggregate.GenerateAllEntityMViewObjects();
+		foreach (var mvo in mvObjcts)
+		{
+			boundedContext.Aggregates.Add(mvo.Name, mvo);
+			mvo.GenerateAggregateStateEventIdValueObject();
+			//mvo.SetClrAggregateDomainSubNamespaceName("MViews");
+			mvo.SetStateDatabaseTableNameFormat("{0}s");
+			mvo.SetUsingRViewAsMView(true);
+			mvo.SetHttpServiceResourceCollectionNameFormat("{0}s");
+		} 
+	}
+
+	boundedContext.Refresh();
+	boundedContext.ReplacePropertyEnumTypeWithBaseType();
+
+	var mviewObjects = new List<Aggregate>();
+	foreach (var aggregate in boundedContext.Aggregates.Values)
+	{
+		if (aggregate.IsMViewObject())
+		{
+			mviewObjects.Add(aggregate);
+		}
+	}
+
+	// ////////////////////////////
+	
+	boundedContext.SetHttpServicesAuthorizationEnabled(true);
+	//boundedContext.SetClrHttpServiceSetRequesterIdAttributeEnabled(true);
+
+	boundedContext.SetSerializationAnnotationTypes(GetSerializationAnnotationTypes());
+	
+	boundedContext.SetPhpTypes(GetPhpTypes());
+
+#>
+<#+
+	
+	private IDictionary<string, string> GetSerializationAnnotationTypes()
+	{
+            var dict = new Dictionary<string, string>();
+           
+                dict.Add("bool", "boolean");
+                dict.Add("bool?", "boolean");
+                dict.Add("DateTime", "string");
+                dict.Add("DateTime?", "string");
+                dict.Add("decimal", "double");
+                dict.Add("decimal?", "double");
+                dict.Add("int", "integer");
+                dict.Add("int?", "integer");
+                dict.Add("long", "integer");
+                dict.Add("long?", "integer");
+                //dict.Add("Money", "_MONEY_");
+                dict.Add("string", "string");
+			
+			return dict;
+
+	}
+
+	private IDictionary<string, string> GetPhpTypes()
+	{
+            var dict = new Dictionary<string, string>();
+           
+                dict.Add("bool", "boolean");
+                dict.Add("bool?", "boolean");
+                dict.Add("DateTime", "string");
+                dict.Add("DateTime?", "string");
+                dict.Add("decimal", "double");
+                dict.Add("decimal?", "double");
+                dict.Add("int", "integer");
+                dict.Add("int?", "integer");
+                dict.Add("long", "integer");
+                dict.Add("long?", "integer");
+                //dict.Add("Money", "_MONEY_");
+                dict.Add("string", "string");
+			
+			return dict;
+
+	}
+
+	//private IDictionary<string, NHibernateType> GetNHibernateTypes()
+	//{
+		//var nhibernateTypes = new Dictionary<string, NHibernateType>();
+		//var nodaMoneyNHibernateType = new NHibernateType() {
+				//ActualTypeName = "Money", 
+				//AssemblyQualifiedName = "Dddml.Wms.Services.Domain.NHibernate.NodaMoneyType, Dddml.Wms.Services",
+				//PropertyNames = new string[] { "Amount", "Currency" }, 
+				//PropertyClrTypes = new string[] { "decimal", "string" }
+			//};
+		//nhibernateTypes.Add(nodaMoneyNHibernateType.ActualTypeName, nodaMoneyNHibernateType);
+		//return nhibernateTypes;
+	//}
+
+	//private string[] GetClrValueTypes()
+	//{
+		//var clrValueTypes = new string[]{ "Money" };
+		//return clrValueTypes;
+	//}
+
+	private IDictionary<string, string> GetTypeNamespaces()
+	{
+		var typeNamespaces = new Dictionary<string, string>();
+		typeNamespaces.Add("Money", "NodaMoney");
+		return typeNamespaces;
+	}
+
+#>

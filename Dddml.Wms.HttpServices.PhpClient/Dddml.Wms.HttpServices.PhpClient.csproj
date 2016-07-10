@@ -42,10 +42,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Generated\Domain\GenerateBoundedContextDomain.tt">
+    <Content Include="Wms\Domain\GenerateBoundedContextDomain.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GenerateBoundedContextDomain.txt</LastGenOutput>
       <LastOutputs>
+.\CommandTrait.php
 .\DocumentAction.php
 .\GenerateBoundedContextDomain.txt
 .\OrganizationStructureId.php
@@ -53,100 +54,286 @@
 .\SkuId.php
 </LastOutputs>
     </Content>
-    <Content Include="Generated\Domain\GenerateBoundedContextDomain.txt">
+    <Content Include="Wms\Domain\GenerateBoundedContextDomain.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </Content>
-    <Content Include="Generated\Domain\GenerateBoundedContextDomainAggregates.tt">
+    <Content Include="Wms\Domain\GenerateBoundedContextDomainAggregates.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GenerateBoundedContextDomainAggregates.txt</LastGenOutput>
       <LastOutputs>
+.\AbstractAttributeCommand.php
+.\AbstractAttributeSetCommand.php
+.\AbstractAttributeSetInstanceCommand.php
+.\AbstractAttributeSetInstanceExtensionFieldCommand.php
+.\AbstractAttributeSetInstanceExtensionFieldGroupCommand.php
+.\AbstractAttributeSetInstanceExtensionFieldMvoCommand.php
+.\AbstractAttributeUseCommand.php
+.\AbstractAttributeUseMvoCommand.php
+.\AbstractAttributeValueCommand.php
+.\AbstractAttributeValueMvoCommand.php
+.\AbstractAudienceCommand.php
+.\AbstractInOutCommand.php
+.\AbstractInOutLineCommand.php
+.\AbstractInOutLineMvoCommand.php
+.\AbstractLocatorCommand.php
+.\AbstractOrganizationCommand.php
+.\AbstractOrganizationStructureCommand.php
+.\AbstractOrganizationStructureTypeCommand.php
+.\AbstractPermissionCommand.php
+.\AbstractRoleCommand.php
+.\AbstractRolePermissionCommand.php
+.\AbstractUserClaimCommand.php
+.\AbstractUserClaimMvoCommand.php
+.\AbstractUserCommand.php
+.\AbstractUserLoginCommand.php
+.\AbstractUserLoginMvoCommand.php
+.\AbstractUserPermissionCommand.php
+.\AbstractUserPermissionMvoCommand.php
+.\AbstractUserRoleCommand.php
+.\AbstractUserRoleMvoCommand.php
+.\AbstractWarehouseCommand.php
 .\Attribute.php
+.\AttributeIsPropertyRemovedTrait.php
 .\AttributeSet.php
 .\AttributeSetAttributeUseId.php
 .\AttributeSetInstance.php
 .\AttributeSetInstanceExtensionField.php
 .\AttributeSetInstanceExtensionFieldGroup.php
+.\AttributeSetInstanceExtensionFieldGroupIsPropertyRemovedTrait.php
 .\AttributeSetInstanceExtensionFieldGroupStateEventId.php
+.\AttributeSetInstanceExtensionFieldGroupStatePropertiesTrait.php
 .\AttributeSetInstanceExtensionFieldId.php
+.\AttributeSetInstanceExtensionFieldIsPropertyRemovedTrait.php
 .\AttributeSetInstanceExtensionFieldMvo.php
+.\AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait.php
 .\AttributeSetInstanceExtensionFieldMvoStateEventId.php
+.\AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait.php
 .\AttributeSetInstanceExtensionFieldStateEventId.php
+.\AttributeSetInstanceExtensionFieldStatePropertiesTrait.php
+.\AttributeSetInstanceIsPropertyRemovedTrait.php
 .\AttributeSetInstanceStateEventId.php
+.\AttributeSetInstanceStatePropertiesTrait.php
+.\AttributeSetIsPropertyRemovedTrait.php
 .\AttributeSetStateEventId.php
+.\AttributeSetStatePropertiesTrait.php
 .\AttributeStateEventId.php
+.\AttributeStatePropertiesTrait.php
 .\AttributeUse.php
+.\AttributeUseIsPropertyRemovedTrait.php
 .\AttributeUseMvo.php
+.\AttributeUseMvoIsPropertyRemovedTrait.php
 .\AttributeUseMvoStateEventId.php
+.\AttributeUseMvoStatePropertiesTrait.php
 .\AttributeUseStateEventId.php
+.\AttributeUseStatePropertiesTrait.php
 .\AttributeValue.php
 .\AttributeValueId.php
+.\AttributeValueIsPropertyRemovedTrait.php
 .\AttributeValueMvo.php
+.\AttributeValueMvoIsPropertyRemovedTrait.php
 .\AttributeValueMvoStateEventId.php
+.\AttributeValueMvoStatePropertiesTrait.php
 .\AttributeValueStateEventId.php
+.\AttributeValueStatePropertiesTrait.php
 .\Audience.php
+.\AudienceIsPropertyRemovedTrait.php
 .\AudienceStateEventId.php
+.\AudienceStatePropertiesTrait.php
+.\CreateAttributeRequest.php
+.\CreateAttributeSetInstanceExtensionFieldGroupRequest.php
+.\CreateAttributeSetInstanceExtensionFieldMvoRequest.php
+.\CreateAttributeSetInstanceExtensionFieldRequest.php
+.\CreateAttributeSetInstanceRequest.php
+.\CreateAttributeSetRequest.php
+.\CreateAttributeUseMvoRequest.php
+.\CreateAttributeUseRequest.php
+.\CreateAttributeValueMvoRequest.php
+.\CreateAttributeValueRequest.php
+.\CreateAudienceRequest.php
+.\CreateInOutLineMvoRequest.php
+.\CreateInOutLineRequest.php
+.\CreateInOutRequest.php
+.\CreateLocatorRequest.php
+.\CreateOrganizationRequest.php
+.\CreateOrganizationStructureRequest.php
+.\CreateOrganizationStructureTypeRequest.php
+.\CreateOrMergePatchAttribute.php
+.\CreateOrMergePatchAttributeSet.php
+.\CreateOrMergePatchAttributeSetInstance.php
+.\CreateOrMergePatchAttributeSetInstanceExtensionField.php
+.\CreateOrMergePatchAttributeSetInstanceExtensionFieldGroup.php
+.\CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo.php
+.\CreateOrMergePatchAttributeUse.php
+.\CreateOrMergePatchAttributeUseMvo.php
+.\CreateOrMergePatchAttributeValue.php
+.\CreateOrMergePatchAttributeValueMvo.php
+.\CreateOrMergePatchAudience.php
+.\CreateOrMergePatchInOut.php
+.\CreateOrMergePatchInOutLine.php
+.\CreateOrMergePatchInOutLineMvo.php
+.\CreateOrMergePatchLocator.php
+.\CreateOrMergePatchOrganization.php
+.\CreateOrMergePatchOrganizationStructure.php
+.\CreateOrMergePatchOrganizationStructureType.php
+.\CreateOrMergePatchPermission.php
+.\CreateOrMergePatchRole.php
+.\CreateOrMergePatchRolePermission.php
+.\CreateOrMergePatchUser.php
+.\CreateOrMergePatchUserClaim.php
+.\CreateOrMergePatchUserClaimMvo.php
+.\CreateOrMergePatchUserLogin.php
+.\CreateOrMergePatchUserLoginMvo.php
+.\CreateOrMergePatchUserPermission.php
+.\CreateOrMergePatchUserPermissionMvo.php
+.\CreateOrMergePatchUserRole.php
+.\CreateOrMergePatchUserRoleMvo.php
+.\CreateOrMergePatchWarehouse.php
+.\CreatePermissionRequest.php
+.\CreateRolePermissionRequest.php
+.\CreateRoleRequest.php
+.\CreateUserClaimMvoRequest.php
+.\CreateUserClaimRequest.php
+.\CreateUserLoginMvoRequest.php
+.\CreateUserLoginRequest.php
+.\CreateUserPermissionMvoRequest.php
+.\CreateUserPermissionRequest.php
+.\CreateUserRequest.php
+.\CreateUserRoleMvoRequest.php
+.\CreateUserRoleRequest.php
+.\CreateWarehouseRequest.php
 .\GenerateBoundedContextDomainAggregates.txt
 .\InOut.php
+.\InOutIsPropertyRemovedTrait.php
 .\InOutLine.php
 .\InOutLineId.php
+.\InOutLineIsPropertyRemovedTrait.php
 .\InOutLineMvo.php
+.\InOutLineMvoIsPropertyRemovedTrait.php
 .\InOutLineMvoStateEventId.php
+.\InOutLineMvoStatePropertiesTrait.php
 .\InOutLineStateEventId.php
+.\InOutLineStatePropertiesTrait.php
 .\InOutStateEventId.php
+.\InOutStatePropertiesTrait.php
 .\Locator.php
+.\LocatorIsPropertyRemovedTrait.php
 .\LocatorStateEventId.php
+.\LocatorStatePropertiesTrait.php
 .\LoginKey.php
+.\MergePatchAttributeRequest.php
+.\MergePatchAttributeSetInstanceExtensionFieldGroupRequest.php
+.\MergePatchAttributeSetInstanceExtensionFieldMvoRequest.php
+.\MergePatchAttributeSetInstanceExtensionFieldRequest.php
+.\MergePatchAttributeSetInstanceRequest.php
+.\MergePatchAttributeSetRequest.php
+.\MergePatchAttributeUseMvoRequest.php
+.\MergePatchAttributeUseRequest.php
+.\MergePatchAttributeValueMvoRequest.php
+.\MergePatchAttributeValueRequest.php
+.\MergePatchAudienceRequest.php
+.\MergePatchInOutLineMvoRequest.php
+.\MergePatchInOutLineRequest.php
+.\MergePatchInOutRequest.php
+.\MergePatchLocatorRequest.php
+.\MergePatchOrganizationRequest.php
+.\MergePatchOrganizationStructureRequest.php
+.\MergePatchOrganizationStructureTypeRequest.php
+.\MergePatchPermissionRequest.php
+.\MergePatchRolePermissionRequest.php
+.\MergePatchRoleRequest.php
+.\MergePatchUserClaimMvoRequest.php
+.\MergePatchUserClaimRequest.php
+.\MergePatchUserLoginMvoRequest.php
+.\MergePatchUserLoginRequest.php
+.\MergePatchUserPermissionMvoRequest.php
+.\MergePatchUserPermissionRequest.php
+.\MergePatchUserRequest.php
+.\MergePatchUserRoleMvoRequest.php
+.\MergePatchUserRoleRequest.php
+.\MergePatchWarehouseRequest.php
 .\Organization.php
+.\OrganizationIsPropertyRemovedTrait.php
 .\OrganizationStateEventId.php
+.\OrganizationStatePropertiesTrait.php
 .\OrganizationStructure.php
+.\OrganizationStructureIsPropertyRemovedTrait.php
 .\OrganizationStructureStateEventId.php
+.\OrganizationStructureStatePropertiesTrait.php
 .\OrganizationStructureType.php
+.\OrganizationStructureTypeIsPropertyRemovedTrait.php
 .\OrganizationStructureTypeStateEventId.php
+.\OrganizationStructureTypeStatePropertiesTrait.php
 .\Permission.php
+.\PermissionIsPropertyRemovedTrait.php
 .\PermissionStateEventId.php
+.\PermissionStatePropertiesTrait.php
 .\Role.php
+.\RoleIsPropertyRemovedTrait.php
 .\RolePermission.php
+.\RolePermissionIsPropertyRemovedTrait.php
 .\RolePermissionStateEventId.php
+.\RolePermissionStatePropertiesTrait.php
 .\RoleStateEventId.php
+.\RoleStatePropertiesTrait.php
 .\User.php
 .\UserClaim.php
 .\UserClaimId.php
+.\UserClaimIsPropertyRemovedTrait.php
 .\UserClaimMvo.php
+.\UserClaimMvoIsPropertyRemovedTrait.php
 .\UserClaimMvoStateEventId.php
+.\UserClaimMvoStatePropertiesTrait.php
 .\UserClaimStateEventId.php
+.\UserClaimStatePropertiesTrait.php
+.\UserIsPropertyRemovedTrait.php
 .\UserLogin.php
 .\UserLoginId.php
+.\UserLoginIsPropertyRemovedTrait.php
 .\UserLoginMvo.php
+.\UserLoginMvoIsPropertyRemovedTrait.php
 .\UserLoginMvoStateEventId.php
+.\UserLoginMvoStatePropertiesTrait.php
 .\UserLoginStateEventId.php
+.\UserLoginStatePropertiesTrait.php
 .\UserPermission.php
 .\UserPermissionId.php
+.\UserPermissionIsPropertyRemovedTrait.php
 .\UserPermissionMvo.php
+.\UserPermissionMvoIsPropertyRemovedTrait.php
 .\UserPermissionMvoStateEventId.php
+.\UserPermissionMvoStatePropertiesTrait.php
 .\UserPermissionStateEventId.php
+.\UserPermissionStatePropertiesTrait.php
 .\UserRole.php
 .\UserRoleId.php
+.\UserRoleIsPropertyRemovedTrait.php
 .\UserRoleMvo.php
+.\UserRoleMvoIsPropertyRemovedTrait.php
 .\UserRoleMvoStateEventId.php
+.\UserRoleMvoStatePropertiesTrait.php
 .\UserRoleStateEventId.php
+.\UserRoleStatePropertiesTrait.php
 .\UserStateEventId.php
+.\UserStatePropertiesTrait.php
 .\Warehouse.php
+.\WarehouseIsPropertyRemovedTrait.php
 .\WarehouseStateEventId.php
+.\WarehouseStatePropertiesTrait.php
 </LastOutputs>
     </Content>
-    <Content Include="Generated\Domain\GenerateBoundedContextDomainAggregates.txt">
+    <Content Include="Wms\Domain\GenerateBoundedContextDomainAggregates.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
-    <Content Include="Generated\LoadBoundedContext.tt">
+    <Content Include="Wms\LoadBoundedContext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>LoadBoundedContext.txt</LastGenOutput>
       <LastOutputs>.\LoadBoundedContext.txt</LastOutputs>
     </Content>
-    <Content Include="Generated\LoadBoundedContext.txt">
+    <Content Include="Wms\LoadBoundedContext.txt">
       <DependentUpon>LoadBoundedContext.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -156,229 +343,790 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Generated\Domain\Attribute.php">
+    <None Include="Wms\Domain\AbstractAttributeCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\AttributeSet.php">
+    <None Include="Wms\Domain\AbstractAttributeSetCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\AttributeSetAttributeUseId.php">
+    <None Include="Wms\Domain\AbstractAttributeSetInstanceCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\AttributeSetInstance.php">
+    <None Include="Wms\Domain\AbstractAttributeSetInstanceExtensionFieldCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\AttributeSetInstanceExtensionField.php">
+    <None Include="Wms\Domain\AbstractAttributeSetInstanceExtensionFieldGroupCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroup.php">
+    <None Include="Wms\Domain\AbstractAttributeSetInstanceExtensionFieldMvoCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\AttributeSetInstanceExtensionFieldGroupStateEventId.php">
+    <None Include="Wms\Domain\AbstractAttributeUseCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\AttributeSetInstanceExtensionFieldId.php">
+    <None Include="Wms\Domain\AbstractAttributeUseMvoCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\AttributeSetInstanceExtensionFieldMvo.php">
+    <None Include="Wms\Domain\AbstractAttributeValueCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\AttributeSetInstanceExtensionFieldMvoStateEventId.php">
+    <None Include="Wms\Domain\AbstractAttributeValueMvoCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\AttributeSetInstanceExtensionFieldStateEventId.php">
+    <None Include="Wms\Domain\AbstractAudienceCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\AttributeSetInstanceStateEventId.php">
+    <None Include="Wms\Domain\AbstractInOutCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\AttributeSetStateEventId.php">
+    <None Include="Wms\Domain\AbstractInOutLineCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\AttributeStateEventId.php">
+    <None Include="Wms\Domain\AbstractInOutLineMvoCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\AttributeUse.php">
+    <None Include="Wms\Domain\AbstractLocatorCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\AttributeUseMvo.php">
+    <None Include="Wms\Domain\AbstractOrganizationCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\AttributeUseMvoStateEventId.php">
+    <None Include="Wms\Domain\AbstractOrganizationStructureCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\AttributeUseStateEventId.php">
+    <None Include="Wms\Domain\AbstractOrganizationStructureTypeCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\AttributeValue.php">
+    <None Include="Wms\Domain\AbstractPermissionCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\AttributeValueId.php">
+    <None Include="Wms\Domain\AbstractRoleCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\AttributeValueMvo.php">
+    <None Include="Wms\Domain\AbstractRolePermissionCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\AttributeValueMvoStateEventId.php">
+    <None Include="Wms\Domain\AbstractUserClaimCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\AttributeValueStateEventId.php">
+    <None Include="Wms\Domain\AbstractUserClaimMvoCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\Audience.php">
+    <None Include="Wms\Domain\AbstractUserCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\AudienceStateEventId.php">
+    <None Include="Wms\Domain\AbstractUserLoginCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\DocumentAction.php">
+    <None Include="Wms\Domain\AbstractUserLoginMvoCommand.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AbstractUserPermissionCommand.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AbstractUserPermissionMvoCommand.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AbstractUserRoleCommand.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AbstractUserRoleMvoCommand.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AbstractWarehouseCommand.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\Attribute.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeSet.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeSetAttributeUseId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeSetInstance.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeSetInstanceExtensionField.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeSetInstanceExtensionFieldGroup.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeSetInstanceExtensionFieldGroupIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeSetInstanceExtensionFieldGroupStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeSetInstanceExtensionFieldGroupStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeSetInstanceExtensionFieldId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeSetInstanceExtensionFieldIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeSetInstanceExtensionFieldMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeSetInstanceExtensionFieldMvoStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeSetInstanceExtensionFieldStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeSetInstanceExtensionFieldStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeSetInstanceIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeSetInstanceStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeSetInstanceStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeSetIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeSetStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeSetStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeUse.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeUseIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeUseMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeUseMvoIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeUseMvoStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeUseMvoStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeUseStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeUseStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeValue.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeValueId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeValueIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeValueMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeValueMvoIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeValueMvoStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeValueMvoStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeValueStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeValueStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\Audience.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AudienceIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AudienceStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AudienceStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CommandTrait.php">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\InOut.php">
+    <None Include="Wms\Domain\CreateAttributeRequest.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\InOutLine.php">
+    <None Include="Wms\Domain\CreateAttributeSetInstanceExtensionFieldGroupRequest.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\InOutLineId.php">
+    <None Include="Wms\Domain\CreateAttributeSetInstanceExtensionFieldMvoRequest.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\InOutLineMvo.php">
+    <None Include="Wms\Domain\CreateAttributeSetInstanceExtensionFieldRequest.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\InOutLineMvoStateEventId.php">
+    <None Include="Wms\Domain\CreateAttributeSetInstanceRequest.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\InOutLineStateEventId.php">
+    <None Include="Wms\Domain\CreateAttributeSetRequest.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\InOutStateEventId.php">
+    <None Include="Wms\Domain\CreateAttributeUseMvoRequest.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\Locator.php">
+    <None Include="Wms\Domain\CreateAttributeUseRequest.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\LocatorStateEventId.php">
+    <None Include="Wms\Domain\CreateAttributeValueMvoRequest.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\LoginKey.php">
+    <None Include="Wms\Domain\CreateAttributeValueRequest.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\Organization.php">
+    <None Include="Wms\Domain\CreateAudienceRequest.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\OrganizationStateEventId.php">
+    <None Include="Wms\Domain\CreateInOutLineMvoRequest.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\OrganizationStructure.php">
+    <None Include="Wms\Domain\CreateInOutLineRequest.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\OrganizationStructureId.php">
+    <None Include="Wms\Domain\CreateInOutRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateLocatorRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrganizationRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrganizationStructureRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrganizationStructureTypeRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchAttribute.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchAttributeSet.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchAttributeSetInstance.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchAttributeSetInstanceExtensionField.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchAttributeSetInstanceExtensionFieldGroup.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchAttributeUse.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchAttributeUseMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchAttributeValue.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchAttributeValueMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchAudience.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchInOut.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchInOutLine.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchInOutLineMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchLocator.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchOrganization.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchOrganizationStructure.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchOrganizationStructureType.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchPermission.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchRole.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchRolePermission.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchUser.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchUserClaim.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchUserClaimMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchUserLogin.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchUserLoginMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchUserPermission.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchUserPermissionMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchUserRole.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchUserRoleMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateOrMergePatchWarehouse.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreatePermissionRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateRolePermissionRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateRoleRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateUserClaimMvoRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateUserClaimRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateUserLoginMvoRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateUserLoginRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateUserPermissionMvoRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateUserPermissionRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateUserRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateUserRoleMvoRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateUserRoleRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\CreateWarehouseRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\DocumentAction.php">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\OrganizationStructureStateEventId.php">
+    <None Include="Wms\Domain\InOut.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\OrganizationStructureType.php">
+    <None Include="Wms\Domain\InOutIsPropertyRemovedTrait.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\OrganizationStructureTypeStateEventId.php">
+    <None Include="Wms\Domain\InOutLine.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\Permission.php">
+    <None Include="Wms\Domain\InOutLineId.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\PermissionStateEventId.php">
+    <None Include="Wms\Domain\InOutLineIsPropertyRemovedTrait.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\Role.php">
+    <None Include="Wms\Domain\InOutLineMvo.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\RolePermission.php">
+    <None Include="Wms\Domain\InOutLineMvoIsPropertyRemovedTrait.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\RolePermissionId.php">
+    <None Include="Wms\Domain\InOutLineMvoStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\InOutLineMvoStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\InOutLineStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\InOutLineStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\InOutStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\InOutStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\Locator.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\LocatorIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\LocatorStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\LocatorStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\LoginKey.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchAttributeRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchAttributeSetInstanceExtensionFieldGroupRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchAttributeSetInstanceExtensionFieldMvoRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchAttributeSetInstanceExtensionFieldRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchAttributeSetInstanceRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchAttributeSetRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchAttributeUseMvoRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchAttributeUseRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchAttributeValueMvoRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchAttributeValueRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchAudienceRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchInOutLineMvoRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchInOutLineRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchInOutRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchLocatorRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchOrganizationRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchOrganizationStructureRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchOrganizationStructureTypeRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchPermissionRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchRolePermissionRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchRoleRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchUserClaimMvoRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchUserClaimRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchUserLoginMvoRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchUserLoginRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchUserPermissionMvoRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchUserPermissionRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchUserRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchUserRoleMvoRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchUserRoleRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\MergePatchWarehouseRequest.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\Organization.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\OrganizationIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\OrganizationStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\OrganizationStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\OrganizationStructure.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\OrganizationStructureId.php">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\RolePermissionStateEventId.php">
+    <None Include="Wms\Domain\OrganizationStructureIsPropertyRemovedTrait.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\RoleStateEventId.php">
+    <None Include="Wms\Domain\OrganizationStructureStateEventId.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\SkuId.php">
+    <None Include="Wms\Domain\OrganizationStructureStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\OrganizationStructureType.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\OrganizationStructureTypeIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\OrganizationStructureTypeStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\OrganizationStructureTypeStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\Permission.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\PermissionIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\PermissionStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\PermissionStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\Role.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\RoleIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\RolePermission.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\RolePermissionId.php">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\User.php">
+    <None Include="Wms\Domain\RolePermissionIsPropertyRemovedTrait.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\UserClaim.php">
+    <None Include="Wms\Domain\RolePermissionStateEventId.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\UserClaimId.php">
+    <None Include="Wms\Domain\RolePermissionStatePropertiesTrait.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\UserClaimMvo.php">
+    <None Include="Wms\Domain\RoleStateEventId.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\UserClaimMvoStateEventId.php">
+    <None Include="Wms\Domain\RoleStatePropertiesTrait.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\UserClaimStateEventId.php">
+    <None Include="Wms\Domain\SkuId.php">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\User.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\UserLogin.php">
+    <None Include="Wms\Domain\UserClaim.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\UserLoginId.php">
+    <None Include="Wms\Domain\UserClaimId.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\UserLoginMvo.php">
+    <None Include="Wms\Domain\UserClaimIsPropertyRemovedTrait.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\UserLoginMvoStateEventId.php">
+    <None Include="Wms\Domain\UserClaimMvo.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\UserLoginStateEventId.php">
+    <None Include="Wms\Domain\UserClaimMvoIsPropertyRemovedTrait.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\UserPermission.php">
+    <None Include="Wms\Domain\UserClaimMvoStateEventId.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\UserPermissionId.php">
+    <None Include="Wms\Domain\UserClaimMvoStatePropertiesTrait.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\UserPermissionMvo.php">
+    <None Include="Wms\Domain\UserClaimStateEventId.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\UserPermissionMvoStateEventId.php">
+    <None Include="Wms\Domain\UserClaimStatePropertiesTrait.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\UserPermissionStateEventId.php">
+    <None Include="Wms\Domain\UserIsPropertyRemovedTrait.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\UserRole.php">
+    <None Include="Wms\Domain\UserLogin.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\UserRoleId.php">
+    <None Include="Wms\Domain\UserLoginId.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\UserRoleMvo.php">
+    <None Include="Wms\Domain\UserLoginIsPropertyRemovedTrait.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\UserRoleMvoStateEventId.php">
+    <None Include="Wms\Domain\UserLoginMvo.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\UserRoleStateEventId.php">
+    <None Include="Wms\Domain\UserLoginMvoIsPropertyRemovedTrait.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\UserStateEventId.php">
+    <None Include="Wms\Domain\UserLoginMvoStateEventId.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\Warehouse.php">
+    <None Include="Wms\Domain\UserLoginMvoStatePropertiesTrait.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
-    <None Include="Generated\Domain\WarehouseStateEventId.php">
+    <None Include="Wms\Domain\UserLoginStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\UserLoginStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\UserPermission.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\UserPermissionId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\UserPermissionIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\UserPermissionMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\UserPermissionMvoIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\UserPermissionMvoStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\UserPermissionMvoStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\UserPermissionStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\UserPermissionStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\UserRole.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\UserRoleId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\UserRoleIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\UserRoleMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\UserRoleMvoIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\UserRoleMvoStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\UserRoleMvoStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\UserRoleStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\UserRoleStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\UserStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\UserStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\Warehouse.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\WarehouseIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\WarehouseStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\WarehouseStatePropertiesTrait.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
   </ItemGroup>

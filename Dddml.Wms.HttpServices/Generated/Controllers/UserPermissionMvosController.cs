@@ -141,7 +141,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             var filtering = new List<PropertyMetadata>();
             foreach (var p in UserPermissionMvoMetadata.Instance.Properties)
             {
-                if (PropertyMetadata.IsFilteringProperty(p))
+                if (p.IsFilteringProperty)
                 {
                     filtering.Add(p);
                 }
@@ -273,7 +273,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             if (UserPermissionMvoMetadata.Instance.PropertyMetadataDictionary.ContainsKey(fieldName))
             {
                 var p = UserPermissionMvoMetadata.Instance.PropertyMetadataDictionary[fieldName];
-                if (PropertyMetadata.IsFilteringProperty(p))
+                if (p.IsFilteringProperty)
                 {
                     var propertyName = fieldName;
                     if (p.IsDerived)

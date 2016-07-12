@@ -141,7 +141,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             var filtering = new List<PropertyMetadata>();
             foreach (var p in AttributeSetInstanceExtensionFieldMvoMetadata.Instance.Properties)
             {
-                if (PropertyMetadata.IsFilteringProperty(p))
+                if (p.IsFilteringProperty)
                 {
                     filtering.Add(p);
                 }
@@ -273,7 +273,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             if (AttributeSetInstanceExtensionFieldMvoMetadata.Instance.PropertyMetadataDictionary.ContainsKey(fieldName))
             {
                 var p = AttributeSetInstanceExtensionFieldMvoMetadata.Instance.PropertyMetadataDictionary[fieldName];
-                if (PropertyMetadata.IsFilteringProperty(p))
+                if (p.IsFilteringProperty)
                 {
                     var propertyName = fieldName;
                     if (p.IsDerived)

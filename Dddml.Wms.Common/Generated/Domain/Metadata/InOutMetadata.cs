@@ -44,6 +44,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "IsSOTransaction",
@@ -74,6 +75,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "DocumentStatus",
@@ -104,6 +106,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "Posted",
@@ -134,6 +137,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "Processing",
@@ -164,6 +168,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "Processed",
@@ -194,6 +199,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "DocumentType",
@@ -224,6 +230,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "Description",
@@ -254,6 +261,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "OrderNumber",
@@ -284,6 +292,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "DateOrdered",
@@ -314,6 +323,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "IsPrinted",
@@ -344,6 +354,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "MovementType",
@@ -374,6 +385,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "MovementDate",
@@ -404,6 +416,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "BusinessPartnerId",
@@ -434,6 +447,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "WarehouseId",
@@ -464,6 +478,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "POReference",
@@ -494,6 +509,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "FreightAmount",
@@ -524,6 +540,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "ShipperId",
@@ -554,6 +571,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "ChargeAmount",
@@ -584,6 +602,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "DatePrinted",
@@ -614,6 +633,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "SalesRepresentative",
@@ -644,6 +664,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "NumberOfPackages",
@@ -674,6 +695,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "PickDate",
@@ -704,6 +726,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "ShipDate",
@@ -734,6 +757,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "TrackingNumber",
@@ -764,6 +788,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "DateReceived",
@@ -794,6 +819,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "IsInTransit",
@@ -824,6 +850,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "IsApproved",
@@ -854,6 +881,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "IsInDispute",
@@ -884,6 +912,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "Volume",
@@ -914,6 +943,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "Weight",
@@ -944,6 +974,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "RmaNumber",
@@ -974,6 +1005,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "ReversalNumber",
@@ -1004,6 +1036,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "IsDropShip",
@@ -1034,6 +1067,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "DropShipBusinessPartnerId",
@@ -1064,6 +1098,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "InOutLines",
@@ -1090,6 +1125,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = false,
                 },
                 new PropertyMetadata {
                     Name = "Version",
@@ -1120,6 +1156,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "CreatedBy",
@@ -1150,6 +1187,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "CreatedAt",
@@ -1180,6 +1218,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = true,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "UpdatedBy",
@@ -1210,6 +1249,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = true,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "UpdatedAt",
@@ -1240,6 +1280,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = true,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "Active",
@@ -1270,6 +1311,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "Deleted",
@@ -1300,6 +1342,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "FreightAmount.Amount",
@@ -1330,6 +1373,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "FreightAmount.Currency",
@@ -1360,6 +1404,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "ChargeAmount.Amount",
@@ -1390,6 +1435,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "ChargeAmount.Currency",
@@ -1420,6 +1466,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
             };
 

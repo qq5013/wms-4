@@ -122,7 +122,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             var filtering = new List<PropertyMetadata>();
             foreach (var p in PermissionMetadata.Instance.Properties)
             {
-                if (PropertyMetadata.IsFilteringProperty(p))
+                if (p.IsFilteringProperty)
                 {
                     filtering.Add(p);
                 }

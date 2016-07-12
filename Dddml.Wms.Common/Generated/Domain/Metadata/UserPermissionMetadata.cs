@@ -43,6 +43,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "Version",
@@ -73,6 +74,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "CreatedBy",
@@ -103,6 +105,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "CreatedAt",
@@ -133,6 +136,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = true,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "UpdatedBy",
@@ -163,6 +167,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = true,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "UpdatedAt",
@@ -193,6 +198,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = true,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "Active",
@@ -223,6 +229,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "Deleted",
@@ -253,6 +260,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "UserPermissionId",
@@ -283,6 +291,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = false,
                 },
                 new PropertyMetadata {
                     Name = "UserId",
@@ -315,6 +324,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "UserPermissionId.UserId",
@@ -347,6 +357,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
                 new PropertyMetadata {
                     Name = "UserPermissionId.PermissionId",
@@ -379,6 +390,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
+                    IsFilteringProperty = true,
                 },
             };
 

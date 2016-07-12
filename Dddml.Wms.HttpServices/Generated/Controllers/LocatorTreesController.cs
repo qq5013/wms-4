@@ -122,7 +122,7 @@ namespace Dddml.Wms.HttpServices.ApiControllers
             var filtering = new List<PropertyMetadata>();
             foreach (var p in LocatorMetadata.Instance.Properties)
             {
-                if (PropertyMetadata.IsFilteringProperty(p))
+                if (p.IsFilteringProperty)
                 {
                     filtering.Add(p);
                 }

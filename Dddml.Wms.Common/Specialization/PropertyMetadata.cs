@@ -3,24 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-
 namespace Dddml.Wms.Specialization
 {
     public partial class PropertyMetadata
     {
-
-        public static bool IsFilteringProperty(PropertyMetadata p)
-        {
-            if (!p.IsCollectionProperty && !p.IsTransient && p.IsBasicType)
-            {
-                if (p.IsDerived)
-                {
-                    return !String.IsNullOrWhiteSpace(p.DerivedFrom);
-                }
-                return true;
-            }
-            return false;
-        }
 
         public virtual string Name { get; set; }
 
@@ -98,5 +84,19 @@ namespace Dddml.Wms.Specialization
             get { return !String.IsNullOrWhiteSpace(ReferenceTypeName); }
         }
 
+        public virtual bool IsFilteringProperty { get; set; }
+
+        //public static bool IsFilteringProperty(PropertyMetadata p)
+        //{
+        //    if (!p.IsCollectionProperty && !p.IsTransient && p.IsBasicType)
+        //    {
+        //        if (p.IsDerived)
+        //        {
+        //            return !String.IsNullOrWhiteSpace(p.DerivedFrom);
+        //        }
+        //        return true;
+        //    }
+        //    return false;
+        //}
     }
 }

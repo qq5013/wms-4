@@ -24,7 +24,7 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @var AttributeSetAttributeUseId $attributeSetAttributeUseId
+     * @param AttributeSetAttributeUseId $attributeSetAttributeUseId
      */
     public function setAttributeSetAttributeUseId($attributeSetAttributeUseId)
     {
@@ -45,7 +45,7 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @var integer $sequenceNumber
+     * @param integer $sequenceNumber
      */
     public function setSequenceNumber($sequenceNumber)
     {
@@ -53,12 +53,12 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -66,7 +66,7 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {
@@ -87,7 +87,7 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {
@@ -108,7 +108,7 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $attributeSetName
+     * @param string $attributeSetName
      */
     public function setAttributeSetName($attributeSetName)
     {
@@ -129,7 +129,7 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $attributeSetOrganizationId
+     * @param string $attributeSetOrganizationId
      */
     public function setAttributeSetOrganizationId($attributeSetOrganizationId)
     {
@@ -150,7 +150,7 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $attributeSetDescription
+     * @param string $attributeSetDescription
      */
     public function setAttributeSetDescription($attributeSetDescription)
     {
@@ -171,7 +171,7 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $attributeSetSerialNumberAttributeId
+     * @param string $attributeSetSerialNumberAttributeId
      */
     public function setAttributeSetSerialNumberAttributeId($attributeSetSerialNumberAttributeId)
     {
@@ -192,7 +192,7 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $attributeSetLotAttributeId
+     * @param string $attributeSetLotAttributeId
      */
     public function setAttributeSetLotAttributeId($attributeSetLotAttributeId)
     {
@@ -213,7 +213,7 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $attributeSetReferenceId
+     * @param string $attributeSetReferenceId
      */
     public function setAttributeSetReferenceId($attributeSetReferenceId)
     {
@@ -234,7 +234,7 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $attributeSetCreatedBy
+     * @param string $attributeSetCreatedBy
      */
     public function setAttributeSetCreatedBy($attributeSetCreatedBy)
     {
@@ -242,12 +242,12 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $attributeSetCreatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getAttributeSetCreatedAt()
     {
@@ -255,7 +255,7 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $attributeSetCreatedAt
+     * @param \DateTime $attributeSetCreatedAt
      */
     public function setAttributeSetCreatedAt($attributeSetCreatedAt)
     {
@@ -276,7 +276,7 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $attributeSetUpdatedBy
+     * @param string $attributeSetUpdatedBy
      */
     public function setAttributeSetUpdatedBy($attributeSetUpdatedBy)
     {
@@ -284,12 +284,12 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $attributeSetUpdatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getAttributeSetUpdatedAt()
     {
@@ -297,7 +297,7 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $attributeSetUpdatedAt
+     * @param \DateTime $attributeSetUpdatedAt
      */
     public function setAttributeSetUpdatedAt($attributeSetUpdatedAt)
     {
@@ -318,7 +318,7 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $attributeSetActive
+     * @param boolean $attributeSetActive
      */
     public function setAttributeSetActive($attributeSetActive)
     {
@@ -339,7 +339,7 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $attributeSetDeleted
+     * @param boolean $attributeSetDeleted
      */
     public function setAttributeSetDeleted($attributeSetDeleted)
     {
@@ -347,12 +347,12 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $attributeSetVersion;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getAttributeSetVersion()
     {
@@ -360,7 +360,7 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @var integer $attributeSetVersion
+     * @param long $attributeSetVersion
      */
     public function setAttributeSetVersion($attributeSetVersion)
     {
@@ -381,7 +381,7 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $createdBy
+     * @param string $createdBy
      */
     public function setCreatedBy($createdBy)
     {
@@ -389,12 +389,12 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $createdAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -402,7 +402,7 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $createdAt
+     * @param \DateTime $createdAt
      */
     public function setCreatedAt($createdAt)
     {
@@ -423,7 +423,7 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedBy
+     * @param string $updatedBy
      */
     public function setUpdatedBy($updatedBy)
     {
@@ -431,12 +431,12 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $updatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -444,7 +444,7 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedAt
+     * @param \DateTime $updatedAt
      */
     public function setUpdatedAt($updatedAt)
     {

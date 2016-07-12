@@ -24,7 +24,7 @@ class CreateOrMergePatchWarehouse extends AbstractWarehouseCommand
     }
 
     /**
-     * @var string $name
+     * @param string $name
      */
     public function setName($name)
     {
@@ -45,7 +45,7 @@ class CreateOrMergePatchWarehouse extends AbstractWarehouseCommand
     }
 
     /**
-     * @var string $description
+     * @param string $description
      */
     public function setDescription($description)
     {
@@ -66,7 +66,7 @@ class CreateOrMergePatchWarehouse extends AbstractWarehouseCommand
     }
 
     /**
-     * @var boolean $isInTransit
+     * @param boolean $isInTransit
      */
     public function setIsInTransit($isInTransit)
     {
@@ -87,7 +87,7 @@ class CreateOrMergePatchWarehouse extends AbstractWarehouseCommand
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {

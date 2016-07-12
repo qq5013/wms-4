@@ -24,7 +24,7 @@ class CreateOrMergePatchAttributeValue extends AbstractAttributeValueCommand
     }
 
     /**
-     * @var string $name
+     * @param string $name
      */
     public function setName($name)
     {
@@ -45,7 +45,7 @@ class CreateOrMergePatchAttributeValue extends AbstractAttributeValueCommand
     }
 
     /**
-     * @var string $description
+     * @param string $description
      */
     public function setDescription($description)
     {
@@ -66,7 +66,7 @@ class CreateOrMergePatchAttributeValue extends AbstractAttributeValueCommand
     }
 
     /**
-     * @var string $referenceId
+     * @param string $referenceId
      */
     public function setReferenceId($referenceId)
     {
@@ -87,7 +87,7 @@ class CreateOrMergePatchAttributeValue extends AbstractAttributeValueCommand
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {

@@ -20,7 +20,7 @@ class UserRoleId
     }
 
     /**
-     * @var string $userId
+     * @param string $userId
      */
     public function setUserId($userId)
     {
@@ -41,7 +41,7 @@ class UserRoleId
     }
 
     /**
-     * @var string $roleId
+     * @param string $roleId
      */
     public function setRoleId($roleId)
     {

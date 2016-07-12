@@ -21,7 +21,7 @@ class AttributeValueMvoStateEventId
     }
 
     /**
-     * @var AttributeValueId $attributeValueId
+     * @param AttributeValueId $attributeValueId
      */
     public function setAttributeValueId($attributeValueId)
     {
@@ -29,12 +29,12 @@ class AttributeValueMvoStateEventId
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $attributeVersion;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getAttributeVersion()
     {
@@ -42,7 +42,7 @@ class AttributeValueMvoStateEventId
     }
 
     /**
-     * @var integer $attributeVersion
+     * @param long $attributeVersion
      */
     public function setAttributeVersion($attributeVersion)
     {

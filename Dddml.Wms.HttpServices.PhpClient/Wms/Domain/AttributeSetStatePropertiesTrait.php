@@ -23,7 +23,7 @@ trait AttributeSetStatePropertiesTrait
     }
 
     /**
-     * @var string $attributeSetId
+     * @param string $attributeSetId
      */
     public function setAttributeSetId($attributeSetId)
     {
@@ -44,7 +44,7 @@ trait AttributeSetStatePropertiesTrait
     }
 
     /**
-     * @var string $name
+     * @param string $name
      */
     public function setName($name)
     {
@@ -65,7 +65,7 @@ trait AttributeSetStatePropertiesTrait
     }
 
     /**
-     * @var string $organizationId
+     * @param string $organizationId
      */
     public function setOrganizationId($organizationId)
     {
@@ -86,7 +86,7 @@ trait AttributeSetStatePropertiesTrait
     }
 
     /**
-     * @var string $description
+     * @param string $description
      */
     public function setDescription($description)
     {
@@ -107,7 +107,7 @@ trait AttributeSetStatePropertiesTrait
     }
 
     /**
-     * @var string $serialNumberAttributeId
+     * @param string $serialNumberAttributeId
      */
     public function setSerialNumberAttributeId($serialNumberAttributeId)
     {
@@ -128,7 +128,7 @@ trait AttributeSetStatePropertiesTrait
     }
 
     /**
-     * @var string $lotAttributeId
+     * @param string $lotAttributeId
      */
     public function setLotAttributeId($lotAttributeId)
     {
@@ -149,7 +149,7 @@ trait AttributeSetStatePropertiesTrait
     }
 
     /**
-     * @var string $referenceId
+     * @param string $referenceId
      */
     public function setReferenceId($referenceId)
     {
@@ -170,7 +170,7 @@ trait AttributeSetStatePropertiesTrait
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {
@@ -178,12 +178,12 @@ trait AttributeSetStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -191,7 +191,7 @@ trait AttributeSetStatePropertiesTrait
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {
@@ -212,7 +212,7 @@ trait AttributeSetStatePropertiesTrait
     }
 
     /**
-     * @var string $createdBy
+     * @param string $createdBy
      */
     public function setCreatedBy($createdBy)
     {
@@ -220,12 +220,12 @@ trait AttributeSetStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $createdAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -233,7 +233,7 @@ trait AttributeSetStatePropertiesTrait
     }
 
     /**
-     * @var string $createdAt
+     * @param \DateTime $createdAt
      */
     public function setCreatedAt($createdAt)
     {
@@ -254,7 +254,7 @@ trait AttributeSetStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedBy
+     * @param string $updatedBy
      */
     public function setUpdatedBy($updatedBy)
     {
@@ -262,12 +262,12 @@ trait AttributeSetStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $updatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -275,7 +275,7 @@ trait AttributeSetStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedAt
+     * @param \DateTime $updatedAt
      */
     public function setUpdatedAt($updatedAt)
     {

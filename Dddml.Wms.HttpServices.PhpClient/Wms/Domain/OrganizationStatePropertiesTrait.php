@@ -22,7 +22,7 @@ trait OrganizationStatePropertiesTrait
     }
 
     /**
-     * @var string $organizationId
+     * @param string $organizationId
      */
     public function setOrganizationId($organizationId)
     {
@@ -43,7 +43,7 @@ trait OrganizationStatePropertiesTrait
     }
 
     /**
-     * @var string $name
+     * @param string $name
      */
     public function setName($name)
     {
@@ -64,7 +64,7 @@ trait OrganizationStatePropertiesTrait
     }
 
     /**
-     * @var string $description
+     * @param string $description
      */
     public function setDescription($description)
     {
@@ -85,7 +85,7 @@ trait OrganizationStatePropertiesTrait
     }
 
     /**
-     * @var string $type
+     * @param string $type
      */
     public function setType($type)
     {
@@ -106,7 +106,7 @@ trait OrganizationStatePropertiesTrait
     }
 
     /**
-     * @var boolean $isSummary
+     * @param boolean $isSummary
      */
     public function setIsSummary($isSummary)
     {
@@ -127,7 +127,7 @@ trait OrganizationStatePropertiesTrait
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {
@@ -135,12 +135,12 @@ trait OrganizationStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -148,7 +148,7 @@ trait OrganizationStatePropertiesTrait
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {
@@ -169,7 +169,7 @@ trait OrganizationStatePropertiesTrait
     }
 
     /**
-     * @var string $createdBy
+     * @param string $createdBy
      */
     public function setCreatedBy($createdBy)
     {
@@ -177,12 +177,12 @@ trait OrganizationStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $createdAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -190,7 +190,7 @@ trait OrganizationStatePropertiesTrait
     }
 
     /**
-     * @var string $createdAt
+     * @param \DateTime $createdAt
      */
     public function setCreatedAt($createdAt)
     {
@@ -211,7 +211,7 @@ trait OrganizationStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedBy
+     * @param string $updatedBy
      */
     public function setUpdatedBy($updatedBy)
     {
@@ -219,12 +219,12 @@ trait OrganizationStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $updatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -232,7 +232,7 @@ trait OrganizationStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedAt
+     * @param \DateTime $updatedAt
      */
     public function setUpdatedAt($updatedAt)
     {

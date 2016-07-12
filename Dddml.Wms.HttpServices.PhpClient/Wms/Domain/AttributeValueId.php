@@ -20,7 +20,7 @@ class AttributeValueId
     }
 
     /**
-     * @var string $attributeId
+     * @param string $attributeId
      */
     public function setAttributeId($attributeId)
     {
@@ -41,7 +41,7 @@ class AttributeValueId
     }
 
     /**
-     * @var string $value
+     * @param string $value
      */
     public function setValue($value)
     {

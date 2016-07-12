@@ -24,7 +24,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionField extends AbstractAttri
     }
 
     /**
-     * @var string $name
+     * @param string $name
      */
     public function setName($name)
     {
@@ -45,7 +45,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionField extends AbstractAttri
     }
 
     /**
-     * @var string $type
+     * @param string $type
      */
     public function setType($type)
     {
@@ -66,7 +66,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionField extends AbstractAttri
     }
 
     /**
-     * @var integer $length
+     * @param integer $length
      */
     public function setLength($length)
     {
@@ -87,7 +87,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionField extends AbstractAttri
     }
 
     /**
-     * @var string $alias
+     * @param string $alias
      */
     public function setAlias($alias)
     {
@@ -108,7 +108,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionField extends AbstractAttri
     }
 
     /**
-     * @var string $description
+     * @param string $description
      */
     public function setDescription($description)
     {
@@ -129,7 +129,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionField extends AbstractAttri
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {

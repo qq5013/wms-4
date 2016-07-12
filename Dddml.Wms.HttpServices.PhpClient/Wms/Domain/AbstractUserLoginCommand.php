@@ -25,7 +25,7 @@ class AbstractUserLoginCommand
     }
 
     /**
-     * @var LoginKey $loginKey
+     * @param LoginKey $loginKey
      */
     public function setLoginKey($loginKey)
     {

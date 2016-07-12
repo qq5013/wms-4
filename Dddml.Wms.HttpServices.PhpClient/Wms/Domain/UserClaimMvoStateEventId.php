@@ -21,7 +21,7 @@ class UserClaimMvoStateEventId
     }
 
     /**
-     * @var UserClaimId $userClaimId
+     * @param UserClaimId $userClaimId
      */
     public function setUserClaimId($userClaimId)
     {
@@ -29,12 +29,12 @@ class UserClaimMvoStateEventId
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $userVersion;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getUserVersion()
     {
@@ -42,7 +42,7 @@ class UserClaimMvoStateEventId
     }
 
     /**
-     * @var integer $userVersion
+     * @param long $userVersion
      */
     public function setUserVersion($userVersion)
     {

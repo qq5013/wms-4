@@ -20,7 +20,7 @@ class OrganizationStructureId
     }
 
     /**
-     * @var string $organizationStructureTypeId
+     * @param string $organizationStructureTypeId
      */
     public function setOrganizationStructureTypeId($organizationStructureTypeId)
     {
@@ -41,7 +41,7 @@ class OrganizationStructureId
     }
 
     /**
-     * @var string $parentId
+     * @param string $parentId
      */
     public function setParentId($parentId)
     {
@@ -62,7 +62,7 @@ class OrganizationStructureId
     }
 
     /**
-     * @var string $subsidiaryId
+     * @param string $subsidiaryId
      */
     public function setSubsidiaryId($subsidiaryId)
     {

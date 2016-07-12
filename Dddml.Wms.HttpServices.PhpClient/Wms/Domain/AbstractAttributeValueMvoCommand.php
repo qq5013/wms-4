@@ -26,7 +26,7 @@ class AbstractAttributeValueMvoCommand
     }
 
     /**
-     * @var AttributeValueId $attributeValueId
+     * @param AttributeValueId $attributeValueId
      */
     public function setAttributeValueId($attributeValueId)
     {
@@ -34,12 +34,12 @@ class AbstractAttributeValueMvoCommand
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $attributeVersion;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getAttributeVersion()
     {
@@ -47,7 +47,7 @@ class AbstractAttributeValueMvoCommand
     }
 
     /**
-     * @var integer $attributeVersion
+     * @param long $attributeVersion
      */
     public function setAttributeVersion($attributeVersion)
     {

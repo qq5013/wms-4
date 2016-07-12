@@ -24,7 +24,7 @@ class AbstractPermissionCommand
     }
 
     /**
-     * @var string $permissionId
+     * @param string $permissionId
      */
     public function setPermissionId($permissionId)
     {
@@ -32,12 +32,12 @@ class AbstractPermissionCommand
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -45,7 +45,7 @@ class AbstractPermissionCommand
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {

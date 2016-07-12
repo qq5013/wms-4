@@ -24,7 +24,7 @@ class AbstractUserRoleCommand
     }
 
     /**
-     * @var string $roleId
+     * @param string $roleId
      */
     public function setRoleId($roleId)
     {

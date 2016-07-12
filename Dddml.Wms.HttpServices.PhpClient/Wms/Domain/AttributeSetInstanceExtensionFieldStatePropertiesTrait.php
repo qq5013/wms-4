@@ -22,7 +22,7 @@ trait AttributeSetInstanceExtensionFieldStatePropertiesTrait
     }
 
     /**
-     * @var string $index
+     * @param string $index
      */
     public function setIndex($index)
     {
@@ -43,7 +43,7 @@ trait AttributeSetInstanceExtensionFieldStatePropertiesTrait
     }
 
     /**
-     * @var string $name
+     * @param string $name
      */
     public function setName($name)
     {
@@ -64,7 +64,7 @@ trait AttributeSetInstanceExtensionFieldStatePropertiesTrait
     }
 
     /**
-     * @var string $type
+     * @param string $type
      */
     public function setType($type)
     {
@@ -85,7 +85,7 @@ trait AttributeSetInstanceExtensionFieldStatePropertiesTrait
     }
 
     /**
-     * @var integer $length
+     * @param integer $length
      */
     public function setLength($length)
     {
@@ -106,7 +106,7 @@ trait AttributeSetInstanceExtensionFieldStatePropertiesTrait
     }
 
     /**
-     * @var string $alias
+     * @param string $alias
      */
     public function setAlias($alias)
     {
@@ -127,7 +127,7 @@ trait AttributeSetInstanceExtensionFieldStatePropertiesTrait
     }
 
     /**
-     * @var string $description
+     * @param string $description
      */
     public function setDescription($description)
     {
@@ -148,7 +148,7 @@ trait AttributeSetInstanceExtensionFieldStatePropertiesTrait
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {
@@ -156,12 +156,12 @@ trait AttributeSetInstanceExtensionFieldStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -169,7 +169,7 @@ trait AttributeSetInstanceExtensionFieldStatePropertiesTrait
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {
@@ -190,7 +190,7 @@ trait AttributeSetInstanceExtensionFieldStatePropertiesTrait
     }
 
     /**
-     * @var string $groupId
+     * @param string $groupId
      */
     public function setGroupId($groupId)
     {
@@ -211,7 +211,7 @@ trait AttributeSetInstanceExtensionFieldStatePropertiesTrait
     }
 
     /**
-     * @var string $createdBy
+     * @param string $createdBy
      */
     public function setCreatedBy($createdBy)
     {
@@ -219,12 +219,12 @@ trait AttributeSetInstanceExtensionFieldStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $createdAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -232,7 +232,7 @@ trait AttributeSetInstanceExtensionFieldStatePropertiesTrait
     }
 
     /**
-     * @var string $createdAt
+     * @param \DateTime $createdAt
      */
     public function setCreatedAt($createdAt)
     {
@@ -253,7 +253,7 @@ trait AttributeSetInstanceExtensionFieldStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedBy
+     * @param string $updatedBy
      */
     public function setUpdatedBy($updatedBy)
     {
@@ -261,12 +261,12 @@ trait AttributeSetInstanceExtensionFieldStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $updatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -274,7 +274,7 @@ trait AttributeSetInstanceExtensionFieldStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedAt
+     * @param \DateTime $updatedAt
      */
     public function setUpdatedAt($updatedAt)
     {

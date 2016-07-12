@@ -20,7 +20,7 @@ class AttributeSetStateEventId
     }
 
     /**
-     * @var string $attributeSetId
+     * @param string $attributeSetId
      */
     public function setAttributeSetId($attributeSetId)
     {
@@ -28,12 +28,12 @@ class AttributeSetStateEventId
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -41,7 +41,7 @@ class AttributeSetStateEventId
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {

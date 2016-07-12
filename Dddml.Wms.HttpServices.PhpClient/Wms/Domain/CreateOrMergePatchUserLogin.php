@@ -25,7 +25,7 @@ class CreateOrMergePatchUserLogin extends AbstractUserLoginCommand
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {

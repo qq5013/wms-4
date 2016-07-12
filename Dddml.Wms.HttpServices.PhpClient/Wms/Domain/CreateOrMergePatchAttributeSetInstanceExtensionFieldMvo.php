@@ -26,7 +26,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo extends AbstractAt
     }
 
     /**
-     * @var string $name
+     * @param string $name
      */
     public function setName($name)
     {
@@ -47,7 +47,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo extends AbstractAt
     }
 
     /**
-     * @var string $type
+     * @param string $type
      */
     public function setType($type)
     {
@@ -68,7 +68,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo extends AbstractAt
     }
 
     /**
-     * @var integer $length
+     * @param integer $length
      */
     public function setLength($length)
     {
@@ -89,7 +89,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo extends AbstractAt
     }
 
     /**
-     * @var string $alias
+     * @param string $alias
      */
     public function setAlias($alias)
     {
@@ -110,7 +110,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo extends AbstractAt
     }
 
     /**
-     * @var string $description
+     * @param string $description
      */
     public function setDescription($description)
     {
@@ -118,12 +118,12 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo extends AbstractAt
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -131,7 +131,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo extends AbstractAt
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {
@@ -152,7 +152,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo extends AbstractAt
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {
@@ -173,7 +173,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo extends AbstractAt
     }
 
     /**
-     * @var string $attrSetInstEfGroupFieldType
+     * @param string $attrSetInstEfGroupFieldType
      */
     public function setAttrSetInstEfGroupFieldType($attrSetInstEfGroupFieldType)
     {
@@ -194,7 +194,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo extends AbstractAt
     }
 
     /**
-     * @var integer $attrSetInstEfGroupFieldLength
+     * @param integer $attrSetInstEfGroupFieldLength
      */
     public function setAttrSetInstEfGroupFieldLength($attrSetInstEfGroupFieldLength)
     {
@@ -215,7 +215,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo extends AbstractAt
     }
 
     /**
-     * @var integer $attrSetInstEfGroupFieldCount
+     * @param integer $attrSetInstEfGroupFieldCount
      */
     public function setAttrSetInstEfGroupFieldCount($attrSetInstEfGroupFieldCount)
     {
@@ -236,7 +236,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo extends AbstractAt
     }
 
     /**
-     * @var string $attrSetInstEfGroupNameFormat
+     * @param string $attrSetInstEfGroupNameFormat
      */
     public function setAttrSetInstEfGroupNameFormat($attrSetInstEfGroupNameFormat)
     {
@@ -257,7 +257,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo extends AbstractAt
     }
 
     /**
-     * @var string $attrSetInstEfGroupDescription
+     * @param string $attrSetInstEfGroupDescription
      */
     public function setAttrSetInstEfGroupDescription($attrSetInstEfGroupDescription)
     {
@@ -278,7 +278,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo extends AbstractAt
     }
 
     /**
-     * @var string $attrSetInstEfGroupCreatedBy
+     * @param string $attrSetInstEfGroupCreatedBy
      */
     public function setAttrSetInstEfGroupCreatedBy($attrSetInstEfGroupCreatedBy)
     {
@@ -286,12 +286,12 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo extends AbstractAt
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $attrSetInstEfGroupCreatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getAttrSetInstEfGroupCreatedAt()
     {
@@ -299,7 +299,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo extends AbstractAt
     }
 
     /**
-     * @var string $attrSetInstEfGroupCreatedAt
+     * @param \DateTime $attrSetInstEfGroupCreatedAt
      */
     public function setAttrSetInstEfGroupCreatedAt($attrSetInstEfGroupCreatedAt)
     {
@@ -320,7 +320,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo extends AbstractAt
     }
 
     /**
-     * @var string $attrSetInstEfGroupUpdatedBy
+     * @param string $attrSetInstEfGroupUpdatedBy
      */
     public function setAttrSetInstEfGroupUpdatedBy($attrSetInstEfGroupUpdatedBy)
     {
@@ -328,12 +328,12 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo extends AbstractAt
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $attrSetInstEfGroupUpdatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getAttrSetInstEfGroupUpdatedAt()
     {
@@ -341,7 +341,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo extends AbstractAt
     }
 
     /**
-     * @var string $attrSetInstEfGroupUpdatedAt
+     * @param \DateTime $attrSetInstEfGroupUpdatedAt
      */
     public function setAttrSetInstEfGroupUpdatedAt($attrSetInstEfGroupUpdatedAt)
     {
@@ -362,7 +362,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo extends AbstractAt
     }
 
     /**
-     * @var boolean $attrSetInstEfGroupActive
+     * @param boolean $attrSetInstEfGroupActive
      */
     public function setAttrSetInstEfGroupActive($attrSetInstEfGroupActive)
     {
@@ -383,7 +383,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo extends AbstractAt
     }
 
     /**
-     * @var boolean $attrSetInstEfGroupDeleted
+     * @param boolean $attrSetInstEfGroupDeleted
      */
     public function setAttrSetInstEfGroupDeleted($attrSetInstEfGroupDeleted)
     {

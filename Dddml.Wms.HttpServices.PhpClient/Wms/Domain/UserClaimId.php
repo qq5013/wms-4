@@ -20,7 +20,7 @@ class UserClaimId
     }
 
     /**
-     * @var string $userId
+     * @param string $userId
      */
     public function setUserId($userId)
     {
@@ -41,7 +41,7 @@ class UserClaimId
     }
 
     /**
-     * @var integer $claimId
+     * @param integer $claimId
      */
     public function setClaimId($claimId)
     {

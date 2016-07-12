@@ -25,7 +25,7 @@ class CreateOrMergePatchAttributeSet extends AbstractAttributeSetCommand
     }
 
     /**
-     * @var string $name
+     * @param string $name
      */
     public function setName($name)
     {
@@ -46,7 +46,7 @@ class CreateOrMergePatchAttributeSet extends AbstractAttributeSetCommand
     }
 
     /**
-     * @var string $organizationId
+     * @param string $organizationId
      */
     public function setOrganizationId($organizationId)
     {
@@ -67,7 +67,7 @@ class CreateOrMergePatchAttributeSet extends AbstractAttributeSetCommand
     }
 
     /**
-     * @var string $description
+     * @param string $description
      */
     public function setDescription($description)
     {
@@ -88,7 +88,7 @@ class CreateOrMergePatchAttributeSet extends AbstractAttributeSetCommand
     }
 
     /**
-     * @var string $serialNumberAttributeId
+     * @param string $serialNumberAttributeId
      */
     public function setSerialNumberAttributeId($serialNumberAttributeId)
     {
@@ -109,7 +109,7 @@ class CreateOrMergePatchAttributeSet extends AbstractAttributeSetCommand
     }
 
     /**
-     * @var string $lotAttributeId
+     * @param string $lotAttributeId
      */
     public function setLotAttributeId($lotAttributeId)
     {
@@ -130,7 +130,7 @@ class CreateOrMergePatchAttributeSet extends AbstractAttributeSetCommand
     }
 
     /**
-     * @var string $referenceId
+     * @param string $referenceId
      */
     public function setReferenceId($referenceId)
     {
@@ -151,7 +151,7 @@ class CreateOrMergePatchAttributeSet extends AbstractAttributeSetCommand
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {
@@ -173,7 +173,7 @@ class CreateOrMergePatchAttributeSet extends AbstractAttributeSetCommand
     }	
 
     /**
-     * @var CreateOrMergePatchAttributeUse[] $attributeUses
+     * @param CreateOrMergePatchAttributeUse[] $attributeUses
      */
     public function setAttributeUses($attributeUses)
     {

@@ -25,7 +25,7 @@ class AbstractInOutLineCommand
     }
 
     /**
-     * @var SkuId $skuId
+     * @param SkuId $skuId
      */
     public function setSkuId($skuId)
     {

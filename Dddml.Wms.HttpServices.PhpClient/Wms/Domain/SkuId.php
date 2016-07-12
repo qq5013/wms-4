@@ -20,7 +20,7 @@ class SkuId
     }
 
     /**
-     * @var string $productId
+     * @param string $productId
      */
     public function setProductId($productId)
     {
@@ -41,7 +41,7 @@ class SkuId
     }
 
     /**
-     * @var string $attributeSetInstanceId
+     * @param string $attributeSetInstanceId
      */
     public function setAttributeSetInstanceId($attributeSetInstanceId)
     {

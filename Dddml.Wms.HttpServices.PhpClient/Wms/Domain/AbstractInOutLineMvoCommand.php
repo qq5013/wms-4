@@ -27,7 +27,7 @@ class AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var InOutLineId $inOutLineId
+     * @param InOutLineId $inOutLineId
      */
     public function setInOutLineId($inOutLineId)
     {
@@ -35,12 +35,12 @@ class AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $inOutVersion;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getInOutVersion()
     {
@@ -48,7 +48,7 @@ class AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var integer $inOutVersion
+     * @param long $inOutVersion
      */
     public function setInOutVersion($inOutVersion)
     {

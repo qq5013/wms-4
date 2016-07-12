@@ -27,7 +27,7 @@ class InOut
     }	
 
     /**
-     * @var InOutLine[] $inOutLines
+     * @param InOutLine[] $inOutLines
      */
     public function setInOutLines($inOutLines)
     {

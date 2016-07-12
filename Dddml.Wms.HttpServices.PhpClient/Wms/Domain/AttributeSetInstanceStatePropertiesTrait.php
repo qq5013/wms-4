@@ -22,7 +22,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $attributeSetInstanceId
+     * @param string $attributeSetInstanceId
      */
     public function setAttributeSetInstanceId($attributeSetInstanceId)
     {
@@ -43,7 +43,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $attributeSetId
+     * @param string $attributeSetId
      */
     public function setAttributeSetId($attributeSetId)
     {
@@ -64,7 +64,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $organizationId
+     * @param string $organizationId
      */
     public function setOrganizationId($organizationId)
     {
@@ -85,7 +85,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $referenceId
+     * @param string $referenceId
      */
     public function setReferenceId($referenceId)
     {
@@ -106,7 +106,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $serialNumber
+     * @param string $serialNumber
      */
     public function setSerialNumber($serialNumber)
     {
@@ -127,7 +127,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $lot
+     * @param string $lot
      */
     public function setLot($lot)
     {
@@ -148,7 +148,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $description
+     * @param string $description
      */
     public function setDescription($description)
     {
@@ -169,7 +169,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $hash
+     * @param string $hash
      */
     public function setHash($hash)
     {
@@ -190,7 +190,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB0
+     * @param boolean $fB0
      */
     public function setFB0($fB0)
     {
@@ -211,7 +211,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI0
+     * @param integer $fI0
      */
     public function setFI0($fI0)
     {
@@ -219,12 +219,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL0;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL0()
     {
@@ -232,7 +232,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL0
+     * @param long $fL0
      */
     public function setFL0($fL0)
     {
@@ -240,12 +240,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $fDt0;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getFDt0()
     {
@@ -253,7 +253,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fDt0
+     * @param \DateTime $fDt0
      */
     public function setFDt0($fDt0)
     {
@@ -261,12 +261,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN0;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN0()
     {
@@ -274,7 +274,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN0
+     * @param decimal $fN0
      */
     public function setFN0($fN0)
     {
@@ -295,7 +295,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC50
+     * @param string $fC50
      */
     public function setFC50($fC50)
     {
@@ -316,7 +316,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC100
+     * @param string $fC100
      */
     public function setFC100($fC100)
     {
@@ -337,7 +337,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC200
+     * @param string $fC200
      */
     public function setFC200($fC200)
     {
@@ -358,7 +358,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC500
+     * @param string $fC500
      */
     public function setFC500($fC500)
     {
@@ -379,7 +379,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1000
+     * @param string $fC1000
      */
     public function setFC1000($fC1000)
     {
@@ -400,7 +400,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2000
+     * @param string $fC2000
      */
     public function setFC2000($fC2000)
     {
@@ -421,7 +421,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5000
+     * @param string $fC5000
      */
     public function setFC5000($fC5000)
     {
@@ -442,7 +442,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC10000
+     * @param string $fC10000
      */
     public function setFC10000($fC10000)
     {
@@ -463,7 +463,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB1
+     * @param boolean $fB1
      */
     public function setFB1($fB1)
     {
@@ -484,7 +484,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI1
+     * @param integer $fI1
      */
     public function setFI1($fI1)
     {
@@ -492,12 +492,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL1;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL1()
     {
@@ -505,7 +505,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL1
+     * @param long $fL1
      */
     public function setFL1($fL1)
     {
@@ -513,12 +513,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $fDt1;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getFDt1()
     {
@@ -526,7 +526,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fDt1
+     * @param \DateTime $fDt1
      */
     public function setFDt1($fDt1)
     {
@@ -534,12 +534,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN1;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN1()
     {
@@ -547,7 +547,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN1
+     * @param decimal $fN1
      */
     public function setFN1($fN1)
     {
@@ -568,7 +568,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC51
+     * @param string $fC51
      */
     public function setFC51($fC51)
     {
@@ -589,7 +589,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC101
+     * @param string $fC101
      */
     public function setFC101($fC101)
     {
@@ -610,7 +610,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC201
+     * @param string $fC201
      */
     public function setFC201($fC201)
     {
@@ -631,7 +631,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC501
+     * @param string $fC501
      */
     public function setFC501($fC501)
     {
@@ -652,7 +652,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1001
+     * @param string $fC1001
      */
     public function setFC1001($fC1001)
     {
@@ -673,7 +673,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2001
+     * @param string $fC2001
      */
     public function setFC2001($fC2001)
     {
@@ -694,7 +694,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5001
+     * @param string $fC5001
      */
     public function setFC5001($fC5001)
     {
@@ -715,7 +715,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC10001
+     * @param string $fC10001
      */
     public function setFC10001($fC10001)
     {
@@ -736,7 +736,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB2
+     * @param boolean $fB2
      */
     public function setFB2($fB2)
     {
@@ -757,7 +757,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI2
+     * @param integer $fI2
      */
     public function setFI2($fI2)
     {
@@ -765,12 +765,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL2;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL2()
     {
@@ -778,7 +778,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL2
+     * @param long $fL2
      */
     public function setFL2($fL2)
     {
@@ -786,12 +786,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $fDt2;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getFDt2()
     {
@@ -799,7 +799,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fDt2
+     * @param \DateTime $fDt2
      */
     public function setFDt2($fDt2)
     {
@@ -807,12 +807,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN2;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN2()
     {
@@ -820,7 +820,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN2
+     * @param decimal $fN2
      */
     public function setFN2($fN2)
     {
@@ -841,7 +841,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC52
+     * @param string $fC52
      */
     public function setFC52($fC52)
     {
@@ -862,7 +862,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC102
+     * @param string $fC102
      */
     public function setFC102($fC102)
     {
@@ -883,7 +883,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC202
+     * @param string $fC202
      */
     public function setFC202($fC202)
     {
@@ -904,7 +904,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC502
+     * @param string $fC502
      */
     public function setFC502($fC502)
     {
@@ -925,7 +925,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1002
+     * @param string $fC1002
      */
     public function setFC1002($fC1002)
     {
@@ -946,7 +946,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2002
+     * @param string $fC2002
      */
     public function setFC2002($fC2002)
     {
@@ -967,7 +967,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5002
+     * @param string $fC5002
      */
     public function setFC5002($fC5002)
     {
@@ -988,7 +988,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC10002
+     * @param string $fC10002
      */
     public function setFC10002($fC10002)
     {
@@ -1009,7 +1009,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB3
+     * @param boolean $fB3
      */
     public function setFB3($fB3)
     {
@@ -1030,7 +1030,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI3
+     * @param integer $fI3
      */
     public function setFI3($fI3)
     {
@@ -1038,12 +1038,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL3;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL3()
     {
@@ -1051,7 +1051,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL3
+     * @param long $fL3
      */
     public function setFL3($fL3)
     {
@@ -1059,12 +1059,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $fDt3;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getFDt3()
     {
@@ -1072,7 +1072,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fDt3
+     * @param \DateTime $fDt3
      */
     public function setFDt3($fDt3)
     {
@@ -1080,12 +1080,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN3;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN3()
     {
@@ -1093,7 +1093,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN3
+     * @param decimal $fN3
      */
     public function setFN3($fN3)
     {
@@ -1114,7 +1114,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC53
+     * @param string $fC53
      */
     public function setFC53($fC53)
     {
@@ -1135,7 +1135,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC103
+     * @param string $fC103
      */
     public function setFC103($fC103)
     {
@@ -1156,7 +1156,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC203
+     * @param string $fC203
      */
     public function setFC203($fC203)
     {
@@ -1177,7 +1177,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC503
+     * @param string $fC503
      */
     public function setFC503($fC503)
     {
@@ -1198,7 +1198,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1003
+     * @param string $fC1003
      */
     public function setFC1003($fC1003)
     {
@@ -1219,7 +1219,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2003
+     * @param string $fC2003
      */
     public function setFC2003($fC2003)
     {
@@ -1240,7 +1240,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5003
+     * @param string $fC5003
      */
     public function setFC5003($fC5003)
     {
@@ -1261,7 +1261,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC10003
+     * @param string $fC10003
      */
     public function setFC10003($fC10003)
     {
@@ -1282,7 +1282,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB4
+     * @param boolean $fB4
      */
     public function setFB4($fB4)
     {
@@ -1303,7 +1303,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI4
+     * @param integer $fI4
      */
     public function setFI4($fI4)
     {
@@ -1311,12 +1311,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL4;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL4()
     {
@@ -1324,7 +1324,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL4
+     * @param long $fL4
      */
     public function setFL4($fL4)
     {
@@ -1332,12 +1332,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $fDt4;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getFDt4()
     {
@@ -1345,7 +1345,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fDt4
+     * @param \DateTime $fDt4
      */
     public function setFDt4($fDt4)
     {
@@ -1353,12 +1353,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN4;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN4()
     {
@@ -1366,7 +1366,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN4
+     * @param decimal $fN4
      */
     public function setFN4($fN4)
     {
@@ -1387,7 +1387,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC54
+     * @param string $fC54
      */
     public function setFC54($fC54)
     {
@@ -1408,7 +1408,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC104
+     * @param string $fC104
      */
     public function setFC104($fC104)
     {
@@ -1429,7 +1429,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC204
+     * @param string $fC204
      */
     public function setFC204($fC204)
     {
@@ -1450,7 +1450,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC504
+     * @param string $fC504
      */
     public function setFC504($fC504)
     {
@@ -1471,7 +1471,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1004
+     * @param string $fC1004
      */
     public function setFC1004($fC1004)
     {
@@ -1492,7 +1492,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2004
+     * @param string $fC2004
      */
     public function setFC2004($fC2004)
     {
@@ -1513,7 +1513,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5004
+     * @param string $fC5004
      */
     public function setFC5004($fC5004)
     {
@@ -1534,7 +1534,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC10004
+     * @param string $fC10004
      */
     public function setFC10004($fC10004)
     {
@@ -1555,7 +1555,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB5
+     * @param boolean $fB5
      */
     public function setFB5($fB5)
     {
@@ -1576,7 +1576,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI5
+     * @param integer $fI5
      */
     public function setFI5($fI5)
     {
@@ -1584,12 +1584,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL5;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL5()
     {
@@ -1597,7 +1597,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL5
+     * @param long $fL5
      */
     public function setFL5($fL5)
     {
@@ -1605,12 +1605,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $fDt5;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getFDt5()
     {
@@ -1618,7 +1618,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fDt5
+     * @param \DateTime $fDt5
      */
     public function setFDt5($fDt5)
     {
@@ -1626,12 +1626,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN5;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN5()
     {
@@ -1639,7 +1639,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN5
+     * @param decimal $fN5
      */
     public function setFN5($fN5)
     {
@@ -1660,7 +1660,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC55
+     * @param string $fC55
      */
     public function setFC55($fC55)
     {
@@ -1681,7 +1681,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC105
+     * @param string $fC105
      */
     public function setFC105($fC105)
     {
@@ -1702,7 +1702,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC205
+     * @param string $fC205
      */
     public function setFC205($fC205)
     {
@@ -1723,7 +1723,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC505
+     * @param string $fC505
      */
     public function setFC505($fC505)
     {
@@ -1744,7 +1744,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1005
+     * @param string $fC1005
      */
     public function setFC1005($fC1005)
     {
@@ -1765,7 +1765,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2005
+     * @param string $fC2005
      */
     public function setFC2005($fC2005)
     {
@@ -1786,7 +1786,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5005
+     * @param string $fC5005
      */
     public function setFC5005($fC5005)
     {
@@ -1807,7 +1807,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB6
+     * @param boolean $fB6
      */
     public function setFB6($fB6)
     {
@@ -1828,7 +1828,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI6
+     * @param integer $fI6
      */
     public function setFI6($fI6)
     {
@@ -1836,12 +1836,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL6;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL6()
     {
@@ -1849,7 +1849,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL6
+     * @param long $fL6
      */
     public function setFL6($fL6)
     {
@@ -1857,12 +1857,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $fDt6;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getFDt6()
     {
@@ -1870,7 +1870,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fDt6
+     * @param \DateTime $fDt6
      */
     public function setFDt6($fDt6)
     {
@@ -1878,12 +1878,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN6;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN6()
     {
@@ -1891,7 +1891,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN6
+     * @param decimal $fN6
      */
     public function setFN6($fN6)
     {
@@ -1912,7 +1912,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC56
+     * @param string $fC56
      */
     public function setFC56($fC56)
     {
@@ -1933,7 +1933,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC106
+     * @param string $fC106
      */
     public function setFC106($fC106)
     {
@@ -1954,7 +1954,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC206
+     * @param string $fC206
      */
     public function setFC206($fC206)
     {
@@ -1975,7 +1975,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC506
+     * @param string $fC506
      */
     public function setFC506($fC506)
     {
@@ -1996,7 +1996,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1006
+     * @param string $fC1006
      */
     public function setFC1006($fC1006)
     {
@@ -2017,7 +2017,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2006
+     * @param string $fC2006
      */
     public function setFC2006($fC2006)
     {
@@ -2038,7 +2038,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5006
+     * @param string $fC5006
      */
     public function setFC5006($fC5006)
     {
@@ -2059,7 +2059,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB7
+     * @param boolean $fB7
      */
     public function setFB7($fB7)
     {
@@ -2080,7 +2080,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI7
+     * @param integer $fI7
      */
     public function setFI7($fI7)
     {
@@ -2088,12 +2088,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL7;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL7()
     {
@@ -2101,7 +2101,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL7
+     * @param long $fL7
      */
     public function setFL7($fL7)
     {
@@ -2109,12 +2109,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $fDt7;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getFDt7()
     {
@@ -2122,7 +2122,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fDt7
+     * @param \DateTime $fDt7
      */
     public function setFDt7($fDt7)
     {
@@ -2130,12 +2130,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN7;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN7()
     {
@@ -2143,7 +2143,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN7
+     * @param decimal $fN7
      */
     public function setFN7($fN7)
     {
@@ -2164,7 +2164,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC57
+     * @param string $fC57
      */
     public function setFC57($fC57)
     {
@@ -2185,7 +2185,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC107
+     * @param string $fC107
      */
     public function setFC107($fC107)
     {
@@ -2206,7 +2206,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC207
+     * @param string $fC207
      */
     public function setFC207($fC207)
     {
@@ -2227,7 +2227,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC507
+     * @param string $fC507
      */
     public function setFC507($fC507)
     {
@@ -2248,7 +2248,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1007
+     * @param string $fC1007
      */
     public function setFC1007($fC1007)
     {
@@ -2269,7 +2269,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2007
+     * @param string $fC2007
      */
     public function setFC2007($fC2007)
     {
@@ -2290,7 +2290,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5007
+     * @param string $fC5007
      */
     public function setFC5007($fC5007)
     {
@@ -2311,7 +2311,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB8
+     * @param boolean $fB8
      */
     public function setFB8($fB8)
     {
@@ -2332,7 +2332,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI8
+     * @param integer $fI8
      */
     public function setFI8($fI8)
     {
@@ -2340,12 +2340,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL8;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL8()
     {
@@ -2353,7 +2353,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL8
+     * @param long $fL8
      */
     public function setFL8($fL8)
     {
@@ -2361,12 +2361,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $fDt8;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getFDt8()
     {
@@ -2374,7 +2374,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fDt8
+     * @param \DateTime $fDt8
      */
     public function setFDt8($fDt8)
     {
@@ -2382,12 +2382,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN8;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN8()
     {
@@ -2395,7 +2395,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN8
+     * @param decimal $fN8
      */
     public function setFN8($fN8)
     {
@@ -2416,7 +2416,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC58
+     * @param string $fC58
      */
     public function setFC58($fC58)
     {
@@ -2437,7 +2437,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC108
+     * @param string $fC108
      */
     public function setFC108($fC108)
     {
@@ -2458,7 +2458,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC208
+     * @param string $fC208
      */
     public function setFC208($fC208)
     {
@@ -2479,7 +2479,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC508
+     * @param string $fC508
      */
     public function setFC508($fC508)
     {
@@ -2500,7 +2500,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1008
+     * @param string $fC1008
      */
     public function setFC1008($fC1008)
     {
@@ -2521,7 +2521,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2008
+     * @param string $fC2008
      */
     public function setFC2008($fC2008)
     {
@@ -2542,7 +2542,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5008
+     * @param string $fC5008
      */
     public function setFC5008($fC5008)
     {
@@ -2563,7 +2563,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB9
+     * @param boolean $fB9
      */
     public function setFB9($fB9)
     {
@@ -2584,7 +2584,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI9
+     * @param integer $fI9
      */
     public function setFI9($fI9)
     {
@@ -2592,12 +2592,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL9;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL9()
     {
@@ -2605,7 +2605,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL9
+     * @param long $fL9
      */
     public function setFL9($fL9)
     {
@@ -2613,12 +2613,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $fDt9;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getFDt9()
     {
@@ -2626,7 +2626,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fDt9
+     * @param \DateTime $fDt9
      */
     public function setFDt9($fDt9)
     {
@@ -2634,12 +2634,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN9;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN9()
     {
@@ -2647,7 +2647,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN9
+     * @param decimal $fN9
      */
     public function setFN9($fN9)
     {
@@ -2668,7 +2668,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC59
+     * @param string $fC59
      */
     public function setFC59($fC59)
     {
@@ -2689,7 +2689,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC109
+     * @param string $fC109
      */
     public function setFC109($fC109)
     {
@@ -2710,7 +2710,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC209
+     * @param string $fC209
      */
     public function setFC209($fC209)
     {
@@ -2731,7 +2731,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC509
+     * @param string $fC509
      */
     public function setFC509($fC509)
     {
@@ -2752,7 +2752,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1009
+     * @param string $fC1009
      */
     public function setFC1009($fC1009)
     {
@@ -2773,7 +2773,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2009
+     * @param string $fC2009
      */
     public function setFC2009($fC2009)
     {
@@ -2794,7 +2794,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5009
+     * @param string $fC5009
      */
     public function setFC5009($fC5009)
     {
@@ -2815,7 +2815,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB10
+     * @param boolean $fB10
      */
     public function setFB10($fB10)
     {
@@ -2836,7 +2836,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI10
+     * @param integer $fI10
      */
     public function setFI10($fI10)
     {
@@ -2844,12 +2844,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL10;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL10()
     {
@@ -2857,7 +2857,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL10
+     * @param long $fL10
      */
     public function setFL10($fL10)
     {
@@ -2865,12 +2865,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $fDt10;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getFDt10()
     {
@@ -2878,7 +2878,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fDt10
+     * @param \DateTime $fDt10
      */
     public function setFDt10($fDt10)
     {
@@ -2886,12 +2886,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN10;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN10()
     {
@@ -2899,7 +2899,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN10
+     * @param decimal $fN10
      */
     public function setFN10($fN10)
     {
@@ -2920,7 +2920,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC510
+     * @param string $fC510
      */
     public function setFC510($fC510)
     {
@@ -2941,7 +2941,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1010
+     * @param string $fC1010
      */
     public function setFC1010($fC1010)
     {
@@ -2962,7 +2962,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2010
+     * @param string $fC2010
      */
     public function setFC2010($fC2010)
     {
@@ -2983,7 +2983,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5010
+     * @param string $fC5010
      */
     public function setFC5010($fC5010)
     {
@@ -3004,7 +3004,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC10010
+     * @param string $fC10010
      */
     public function setFC10010($fC10010)
     {
@@ -3025,7 +3025,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC20010
+     * @param string $fC20010
      */
     public function setFC20010($fC20010)
     {
@@ -3046,7 +3046,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB11
+     * @param boolean $fB11
      */
     public function setFB11($fB11)
     {
@@ -3067,7 +3067,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI11
+     * @param integer $fI11
      */
     public function setFI11($fI11)
     {
@@ -3075,12 +3075,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL11;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL11()
     {
@@ -3088,7 +3088,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL11
+     * @param long $fL11
      */
     public function setFL11($fL11)
     {
@@ -3096,12 +3096,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $fDt11;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getFDt11()
     {
@@ -3109,7 +3109,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fDt11
+     * @param \DateTime $fDt11
      */
     public function setFDt11($fDt11)
     {
@@ -3117,12 +3117,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN11;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN11()
     {
@@ -3130,7 +3130,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN11
+     * @param decimal $fN11
      */
     public function setFN11($fN11)
     {
@@ -3151,7 +3151,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC511
+     * @param string $fC511
      */
     public function setFC511($fC511)
     {
@@ -3172,7 +3172,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1011
+     * @param string $fC1011
      */
     public function setFC1011($fC1011)
     {
@@ -3193,7 +3193,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2011
+     * @param string $fC2011
      */
     public function setFC2011($fC2011)
     {
@@ -3214,7 +3214,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5011
+     * @param string $fC5011
      */
     public function setFC5011($fC5011)
     {
@@ -3235,7 +3235,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC10011
+     * @param string $fC10011
      */
     public function setFC10011($fC10011)
     {
@@ -3256,7 +3256,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC20011
+     * @param string $fC20011
      */
     public function setFC20011($fC20011)
     {
@@ -3277,7 +3277,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB12
+     * @param boolean $fB12
      */
     public function setFB12($fB12)
     {
@@ -3298,7 +3298,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI12
+     * @param integer $fI12
      */
     public function setFI12($fI12)
     {
@@ -3306,12 +3306,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL12;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL12()
     {
@@ -3319,7 +3319,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL12
+     * @param long $fL12
      */
     public function setFL12($fL12)
     {
@@ -3327,12 +3327,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $fDt12;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getFDt12()
     {
@@ -3340,7 +3340,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fDt12
+     * @param \DateTime $fDt12
      */
     public function setFDt12($fDt12)
     {
@@ -3348,12 +3348,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN12;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN12()
     {
@@ -3361,7 +3361,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN12
+     * @param decimal $fN12
      */
     public function setFN12($fN12)
     {
@@ -3382,7 +3382,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC512
+     * @param string $fC512
      */
     public function setFC512($fC512)
     {
@@ -3403,7 +3403,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1012
+     * @param string $fC1012
      */
     public function setFC1012($fC1012)
     {
@@ -3424,7 +3424,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2012
+     * @param string $fC2012
      */
     public function setFC2012($fC2012)
     {
@@ -3445,7 +3445,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5012
+     * @param string $fC5012
      */
     public function setFC5012($fC5012)
     {
@@ -3466,7 +3466,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC10012
+     * @param string $fC10012
      */
     public function setFC10012($fC10012)
     {
@@ -3487,7 +3487,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC20012
+     * @param string $fC20012
      */
     public function setFC20012($fC20012)
     {
@@ -3508,7 +3508,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB13
+     * @param boolean $fB13
      */
     public function setFB13($fB13)
     {
@@ -3529,7 +3529,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI13
+     * @param integer $fI13
      */
     public function setFI13($fI13)
     {
@@ -3537,12 +3537,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL13;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL13()
     {
@@ -3550,7 +3550,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL13
+     * @param long $fL13
      */
     public function setFL13($fL13)
     {
@@ -3558,12 +3558,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $fDt13;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getFDt13()
     {
@@ -3571,7 +3571,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fDt13
+     * @param \DateTime $fDt13
      */
     public function setFDt13($fDt13)
     {
@@ -3579,12 +3579,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN13;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN13()
     {
@@ -3592,7 +3592,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN13
+     * @param decimal $fN13
      */
     public function setFN13($fN13)
     {
@@ -3613,7 +3613,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC513
+     * @param string $fC513
      */
     public function setFC513($fC513)
     {
@@ -3634,7 +3634,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1013
+     * @param string $fC1013
      */
     public function setFC1013($fC1013)
     {
@@ -3655,7 +3655,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2013
+     * @param string $fC2013
      */
     public function setFC2013($fC2013)
     {
@@ -3676,7 +3676,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5013
+     * @param string $fC5013
      */
     public function setFC5013($fC5013)
     {
@@ -3697,7 +3697,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC10013
+     * @param string $fC10013
      */
     public function setFC10013($fC10013)
     {
@@ -3718,7 +3718,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC20013
+     * @param string $fC20013
      */
     public function setFC20013($fC20013)
     {
@@ -3739,7 +3739,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB14
+     * @param boolean $fB14
      */
     public function setFB14($fB14)
     {
@@ -3760,7 +3760,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI14
+     * @param integer $fI14
      */
     public function setFI14($fI14)
     {
@@ -3768,12 +3768,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL14;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL14()
     {
@@ -3781,7 +3781,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL14
+     * @param long $fL14
      */
     public function setFL14($fL14)
     {
@@ -3789,12 +3789,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $fDt14;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getFDt14()
     {
@@ -3802,7 +3802,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fDt14
+     * @param \DateTime $fDt14
      */
     public function setFDt14($fDt14)
     {
@@ -3810,12 +3810,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN14;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN14()
     {
@@ -3823,7 +3823,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN14
+     * @param decimal $fN14
      */
     public function setFN14($fN14)
     {
@@ -3844,7 +3844,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC514
+     * @param string $fC514
      */
     public function setFC514($fC514)
     {
@@ -3865,7 +3865,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1014
+     * @param string $fC1014
      */
     public function setFC1014($fC1014)
     {
@@ -3886,7 +3886,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2014
+     * @param string $fC2014
      */
     public function setFC2014($fC2014)
     {
@@ -3907,7 +3907,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5014
+     * @param string $fC5014
      */
     public function setFC5014($fC5014)
     {
@@ -3928,7 +3928,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC10014
+     * @param string $fC10014
      */
     public function setFC10014($fC10014)
     {
@@ -3949,7 +3949,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC20014
+     * @param string $fC20014
      */
     public function setFC20014($fC20014)
     {
@@ -3970,7 +3970,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB15
+     * @param boolean $fB15
      */
     public function setFB15($fB15)
     {
@@ -3991,7 +3991,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI15
+     * @param integer $fI15
      */
     public function setFI15($fI15)
     {
@@ -3999,12 +3999,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL15;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL15()
     {
@@ -4012,7 +4012,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL15
+     * @param long $fL15
      */
     public function setFL15($fL15)
     {
@@ -4020,12 +4020,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $fDt15;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getFDt15()
     {
@@ -4033,7 +4033,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fDt15
+     * @param \DateTime $fDt15
      */
     public function setFDt15($fDt15)
     {
@@ -4041,12 +4041,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN15;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN15()
     {
@@ -4054,7 +4054,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN15
+     * @param decimal $fN15
      */
     public function setFN15($fN15)
     {
@@ -4075,7 +4075,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC515
+     * @param string $fC515
      */
     public function setFC515($fC515)
     {
@@ -4096,7 +4096,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1015
+     * @param string $fC1015
      */
     public function setFC1015($fC1015)
     {
@@ -4117,7 +4117,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2015
+     * @param string $fC2015
      */
     public function setFC2015($fC2015)
     {
@@ -4138,7 +4138,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5015
+     * @param string $fC5015
      */
     public function setFC5015($fC5015)
     {
@@ -4159,7 +4159,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC10015
+     * @param string $fC10015
      */
     public function setFC10015($fC10015)
     {
@@ -4180,7 +4180,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC20015
+     * @param string $fC20015
      */
     public function setFC20015($fC20015)
     {
@@ -4201,7 +4201,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB16
+     * @param boolean $fB16
      */
     public function setFB16($fB16)
     {
@@ -4222,7 +4222,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI16
+     * @param integer $fI16
      */
     public function setFI16($fI16)
     {
@@ -4230,12 +4230,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL16;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL16()
     {
@@ -4243,7 +4243,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL16
+     * @param long $fL16
      */
     public function setFL16($fL16)
     {
@@ -4251,12 +4251,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $fDt16;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getFDt16()
     {
@@ -4264,7 +4264,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fDt16
+     * @param \DateTime $fDt16
      */
     public function setFDt16($fDt16)
     {
@@ -4272,12 +4272,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN16;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN16()
     {
@@ -4285,7 +4285,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN16
+     * @param decimal $fN16
      */
     public function setFN16($fN16)
     {
@@ -4306,7 +4306,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC516
+     * @param string $fC516
      */
     public function setFC516($fC516)
     {
@@ -4327,7 +4327,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1016
+     * @param string $fC1016
      */
     public function setFC1016($fC1016)
     {
@@ -4348,7 +4348,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2016
+     * @param string $fC2016
      */
     public function setFC2016($fC2016)
     {
@@ -4369,7 +4369,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5016
+     * @param string $fC5016
      */
     public function setFC5016($fC5016)
     {
@@ -4390,7 +4390,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC10016
+     * @param string $fC10016
      */
     public function setFC10016($fC10016)
     {
@@ -4411,7 +4411,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC20016
+     * @param string $fC20016
      */
     public function setFC20016($fC20016)
     {
@@ -4432,7 +4432,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB17
+     * @param boolean $fB17
      */
     public function setFB17($fB17)
     {
@@ -4453,7 +4453,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI17
+     * @param integer $fI17
      */
     public function setFI17($fI17)
     {
@@ -4461,12 +4461,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL17;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL17()
     {
@@ -4474,7 +4474,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL17
+     * @param long $fL17
      */
     public function setFL17($fL17)
     {
@@ -4482,12 +4482,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $fDt17;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getFDt17()
     {
@@ -4495,7 +4495,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fDt17
+     * @param \DateTime $fDt17
      */
     public function setFDt17($fDt17)
     {
@@ -4503,12 +4503,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN17;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN17()
     {
@@ -4516,7 +4516,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN17
+     * @param decimal $fN17
      */
     public function setFN17($fN17)
     {
@@ -4537,7 +4537,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC517
+     * @param string $fC517
      */
     public function setFC517($fC517)
     {
@@ -4558,7 +4558,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1017
+     * @param string $fC1017
      */
     public function setFC1017($fC1017)
     {
@@ -4579,7 +4579,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2017
+     * @param string $fC2017
      */
     public function setFC2017($fC2017)
     {
@@ -4600,7 +4600,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5017
+     * @param string $fC5017
      */
     public function setFC5017($fC5017)
     {
@@ -4621,7 +4621,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC10017
+     * @param string $fC10017
      */
     public function setFC10017($fC10017)
     {
@@ -4642,7 +4642,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC20017
+     * @param string $fC20017
      */
     public function setFC20017($fC20017)
     {
@@ -4663,7 +4663,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB18
+     * @param boolean $fB18
      */
     public function setFB18($fB18)
     {
@@ -4684,7 +4684,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI18
+     * @param integer $fI18
      */
     public function setFI18($fI18)
     {
@@ -4692,12 +4692,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL18;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL18()
     {
@@ -4705,7 +4705,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL18
+     * @param long $fL18
      */
     public function setFL18($fL18)
     {
@@ -4713,12 +4713,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $fDt18;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getFDt18()
     {
@@ -4726,7 +4726,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fDt18
+     * @param \DateTime $fDt18
      */
     public function setFDt18($fDt18)
     {
@@ -4734,12 +4734,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN18;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN18()
     {
@@ -4747,7 +4747,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN18
+     * @param decimal $fN18
      */
     public function setFN18($fN18)
     {
@@ -4768,7 +4768,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC518
+     * @param string $fC518
      */
     public function setFC518($fC518)
     {
@@ -4789,7 +4789,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1018
+     * @param string $fC1018
      */
     public function setFC1018($fC1018)
     {
@@ -4810,7 +4810,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2018
+     * @param string $fC2018
      */
     public function setFC2018($fC2018)
     {
@@ -4831,7 +4831,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5018
+     * @param string $fC5018
      */
     public function setFC5018($fC5018)
     {
@@ -4852,7 +4852,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC10018
+     * @param string $fC10018
      */
     public function setFC10018($fC10018)
     {
@@ -4873,7 +4873,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC20018
+     * @param string $fC20018
      */
     public function setFC20018($fC20018)
     {
@@ -4894,7 +4894,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB19
+     * @param boolean $fB19
      */
     public function setFB19($fB19)
     {
@@ -4915,7 +4915,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI19
+     * @param integer $fI19
      */
     public function setFI19($fI19)
     {
@@ -4923,12 +4923,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL19;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL19()
     {
@@ -4936,7 +4936,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL19
+     * @param long $fL19
      */
     public function setFL19($fL19)
     {
@@ -4944,12 +4944,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $fDt19;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getFDt19()
     {
@@ -4957,7 +4957,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fDt19
+     * @param \DateTime $fDt19
      */
     public function setFDt19($fDt19)
     {
@@ -4965,12 +4965,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN19;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN19()
     {
@@ -4978,7 +4978,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN19
+     * @param decimal $fN19
      */
     public function setFN19($fN19)
     {
@@ -4999,7 +4999,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC519
+     * @param string $fC519
      */
     public function setFC519($fC519)
     {
@@ -5020,7 +5020,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1019
+     * @param string $fC1019
      */
     public function setFC1019($fC1019)
     {
@@ -5041,7 +5041,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2019
+     * @param string $fC2019
      */
     public function setFC2019($fC2019)
     {
@@ -5062,7 +5062,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5019
+     * @param string $fC5019
      */
     public function setFC5019($fC5019)
     {
@@ -5083,7 +5083,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC10019
+     * @param string $fC10019
      */
     public function setFC10019($fC10019)
     {
@@ -5104,7 +5104,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC20019
+     * @param string $fC20019
      */
     public function setFC20019($fC20019)
     {
@@ -5125,7 +5125,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB20
+     * @param boolean $fB20
      */
     public function setFB20($fB20)
     {
@@ -5146,7 +5146,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI20
+     * @param integer $fI20
      */
     public function setFI20($fI20)
     {
@@ -5154,12 +5154,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL20;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL20()
     {
@@ -5167,7 +5167,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL20
+     * @param long $fL20
      */
     public function setFL20($fL20)
     {
@@ -5175,12 +5175,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN20;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN20()
     {
@@ -5188,7 +5188,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN20
+     * @param decimal $fN20
      */
     public function setFN20($fN20)
     {
@@ -5209,7 +5209,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC520
+     * @param string $fC520
      */
     public function setFC520($fC520)
     {
@@ -5230,7 +5230,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1020
+     * @param string $fC1020
      */
     public function setFC1020($fC1020)
     {
@@ -5251,7 +5251,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2020
+     * @param string $fC2020
      */
     public function setFC2020($fC2020)
     {
@@ -5272,7 +5272,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5020
+     * @param string $fC5020
      */
     public function setFC5020($fC5020)
     {
@@ -5293,7 +5293,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB21
+     * @param boolean $fB21
      */
     public function setFB21($fB21)
     {
@@ -5314,7 +5314,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI21
+     * @param integer $fI21
      */
     public function setFI21($fI21)
     {
@@ -5322,12 +5322,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL21;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL21()
     {
@@ -5335,7 +5335,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL21
+     * @param long $fL21
      */
     public function setFL21($fL21)
     {
@@ -5343,12 +5343,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN21;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN21()
     {
@@ -5356,7 +5356,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN21
+     * @param decimal $fN21
      */
     public function setFN21($fN21)
     {
@@ -5377,7 +5377,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC521
+     * @param string $fC521
      */
     public function setFC521($fC521)
     {
@@ -5398,7 +5398,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1021
+     * @param string $fC1021
      */
     public function setFC1021($fC1021)
     {
@@ -5419,7 +5419,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2021
+     * @param string $fC2021
      */
     public function setFC2021($fC2021)
     {
@@ -5440,7 +5440,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5021
+     * @param string $fC5021
      */
     public function setFC5021($fC5021)
     {
@@ -5461,7 +5461,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB22
+     * @param boolean $fB22
      */
     public function setFB22($fB22)
     {
@@ -5482,7 +5482,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI22
+     * @param integer $fI22
      */
     public function setFI22($fI22)
     {
@@ -5490,12 +5490,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL22;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL22()
     {
@@ -5503,7 +5503,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL22
+     * @param long $fL22
      */
     public function setFL22($fL22)
     {
@@ -5511,12 +5511,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN22;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN22()
     {
@@ -5524,7 +5524,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN22
+     * @param decimal $fN22
      */
     public function setFN22($fN22)
     {
@@ -5545,7 +5545,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC522
+     * @param string $fC522
      */
     public function setFC522($fC522)
     {
@@ -5566,7 +5566,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1022
+     * @param string $fC1022
      */
     public function setFC1022($fC1022)
     {
@@ -5587,7 +5587,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2022
+     * @param string $fC2022
      */
     public function setFC2022($fC2022)
     {
@@ -5608,7 +5608,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5022
+     * @param string $fC5022
      */
     public function setFC5022($fC5022)
     {
@@ -5629,7 +5629,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB23
+     * @param boolean $fB23
      */
     public function setFB23($fB23)
     {
@@ -5650,7 +5650,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI23
+     * @param integer $fI23
      */
     public function setFI23($fI23)
     {
@@ -5658,12 +5658,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL23;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL23()
     {
@@ -5671,7 +5671,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL23
+     * @param long $fL23
      */
     public function setFL23($fL23)
     {
@@ -5679,12 +5679,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN23;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN23()
     {
@@ -5692,7 +5692,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN23
+     * @param decimal $fN23
      */
     public function setFN23($fN23)
     {
@@ -5713,7 +5713,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC523
+     * @param string $fC523
      */
     public function setFC523($fC523)
     {
@@ -5734,7 +5734,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1023
+     * @param string $fC1023
      */
     public function setFC1023($fC1023)
     {
@@ -5755,7 +5755,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2023
+     * @param string $fC2023
      */
     public function setFC2023($fC2023)
     {
@@ -5776,7 +5776,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5023
+     * @param string $fC5023
      */
     public function setFC5023($fC5023)
     {
@@ -5797,7 +5797,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB24
+     * @param boolean $fB24
      */
     public function setFB24($fB24)
     {
@@ -5818,7 +5818,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI24
+     * @param integer $fI24
      */
     public function setFI24($fI24)
     {
@@ -5826,12 +5826,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL24;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL24()
     {
@@ -5839,7 +5839,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL24
+     * @param long $fL24
      */
     public function setFL24($fL24)
     {
@@ -5847,12 +5847,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN24;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN24()
     {
@@ -5860,7 +5860,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN24
+     * @param decimal $fN24
      */
     public function setFN24($fN24)
     {
@@ -5881,7 +5881,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC524
+     * @param string $fC524
      */
     public function setFC524($fC524)
     {
@@ -5902,7 +5902,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1024
+     * @param string $fC1024
      */
     public function setFC1024($fC1024)
     {
@@ -5923,7 +5923,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2024
+     * @param string $fC2024
      */
     public function setFC2024($fC2024)
     {
@@ -5944,7 +5944,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5024
+     * @param string $fC5024
      */
     public function setFC5024($fC5024)
     {
@@ -5965,7 +5965,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB25
+     * @param boolean $fB25
      */
     public function setFB25($fB25)
     {
@@ -5986,7 +5986,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI25
+     * @param integer $fI25
      */
     public function setFI25($fI25)
     {
@@ -5994,12 +5994,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL25;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL25()
     {
@@ -6007,7 +6007,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL25
+     * @param long $fL25
      */
     public function setFL25($fL25)
     {
@@ -6015,12 +6015,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN25;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN25()
     {
@@ -6028,7 +6028,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN25
+     * @param decimal $fN25
      */
     public function setFN25($fN25)
     {
@@ -6049,7 +6049,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC525
+     * @param string $fC525
      */
     public function setFC525($fC525)
     {
@@ -6070,7 +6070,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1025
+     * @param string $fC1025
      */
     public function setFC1025($fC1025)
     {
@@ -6091,7 +6091,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2025
+     * @param string $fC2025
      */
     public function setFC2025($fC2025)
     {
@@ -6112,7 +6112,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5025
+     * @param string $fC5025
      */
     public function setFC5025($fC5025)
     {
@@ -6133,7 +6133,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB26
+     * @param boolean $fB26
      */
     public function setFB26($fB26)
     {
@@ -6154,7 +6154,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI26
+     * @param integer $fI26
      */
     public function setFI26($fI26)
     {
@@ -6162,12 +6162,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL26;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL26()
     {
@@ -6175,7 +6175,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL26
+     * @param long $fL26
      */
     public function setFL26($fL26)
     {
@@ -6183,12 +6183,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN26;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN26()
     {
@@ -6196,7 +6196,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN26
+     * @param decimal $fN26
      */
     public function setFN26($fN26)
     {
@@ -6217,7 +6217,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC526
+     * @param string $fC526
      */
     public function setFC526($fC526)
     {
@@ -6238,7 +6238,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1026
+     * @param string $fC1026
      */
     public function setFC1026($fC1026)
     {
@@ -6259,7 +6259,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2026
+     * @param string $fC2026
      */
     public function setFC2026($fC2026)
     {
@@ -6280,7 +6280,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5026
+     * @param string $fC5026
      */
     public function setFC5026($fC5026)
     {
@@ -6301,7 +6301,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB27
+     * @param boolean $fB27
      */
     public function setFB27($fB27)
     {
@@ -6322,7 +6322,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI27
+     * @param integer $fI27
      */
     public function setFI27($fI27)
     {
@@ -6330,12 +6330,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL27;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL27()
     {
@@ -6343,7 +6343,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL27
+     * @param long $fL27
      */
     public function setFL27($fL27)
     {
@@ -6351,12 +6351,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN27;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN27()
     {
@@ -6364,7 +6364,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN27
+     * @param decimal $fN27
      */
     public function setFN27($fN27)
     {
@@ -6385,7 +6385,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC527
+     * @param string $fC527
      */
     public function setFC527($fC527)
     {
@@ -6406,7 +6406,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1027
+     * @param string $fC1027
      */
     public function setFC1027($fC1027)
     {
@@ -6427,7 +6427,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2027
+     * @param string $fC2027
      */
     public function setFC2027($fC2027)
     {
@@ -6448,7 +6448,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5027
+     * @param string $fC5027
      */
     public function setFC5027($fC5027)
     {
@@ -6469,7 +6469,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB28
+     * @param boolean $fB28
      */
     public function setFB28($fB28)
     {
@@ -6490,7 +6490,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI28
+     * @param integer $fI28
      */
     public function setFI28($fI28)
     {
@@ -6498,12 +6498,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL28;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL28()
     {
@@ -6511,7 +6511,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL28
+     * @param long $fL28
      */
     public function setFL28($fL28)
     {
@@ -6519,12 +6519,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN28;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN28()
     {
@@ -6532,7 +6532,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN28
+     * @param decimal $fN28
      */
     public function setFN28($fN28)
     {
@@ -6553,7 +6553,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC528
+     * @param string $fC528
      */
     public function setFC528($fC528)
     {
@@ -6574,7 +6574,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1028
+     * @param string $fC1028
      */
     public function setFC1028($fC1028)
     {
@@ -6595,7 +6595,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2028
+     * @param string $fC2028
      */
     public function setFC2028($fC2028)
     {
@@ -6616,7 +6616,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5028
+     * @param string $fC5028
      */
     public function setFC5028($fC5028)
     {
@@ -6637,7 +6637,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB29
+     * @param boolean $fB29
      */
     public function setFB29($fB29)
     {
@@ -6658,7 +6658,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI29
+     * @param integer $fI29
      */
     public function setFI29($fI29)
     {
@@ -6666,12 +6666,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $fL29;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getFL29()
     {
@@ -6679,7 +6679,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fL29
+     * @param long $fL29
      */
     public function setFL29($fL29)
     {
@@ -6687,12 +6687,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN29;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN29()
     {
@@ -6700,7 +6700,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN29
+     * @param decimal $fN29
      */
     public function setFN29($fN29)
     {
@@ -6721,7 +6721,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC529
+     * @param string $fC529
      */
     public function setFC529($fC529)
     {
@@ -6742,7 +6742,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1029
+     * @param string $fC1029
      */
     public function setFC1029($fC1029)
     {
@@ -6763,7 +6763,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2029
+     * @param string $fC2029
      */
     public function setFC2029($fC2029)
     {
@@ -6784,7 +6784,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5029
+     * @param string $fC5029
      */
     public function setFC5029($fC5029)
     {
@@ -6805,7 +6805,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB30
+     * @param boolean $fB30
      */
     public function setFB30($fB30)
     {
@@ -6826,7 +6826,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI30
+     * @param integer $fI30
      */
     public function setFI30($fI30)
     {
@@ -6834,12 +6834,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN30;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN30()
     {
@@ -6847,7 +6847,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN30
+     * @param decimal $fN30
      */
     public function setFN30($fN30)
     {
@@ -6868,7 +6868,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC530
+     * @param string $fC530
      */
     public function setFC530($fC530)
     {
@@ -6889,7 +6889,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1030
+     * @param string $fC1030
      */
     public function setFC1030($fC1030)
     {
@@ -6910,7 +6910,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2030
+     * @param string $fC2030
      */
     public function setFC2030($fC2030)
     {
@@ -6931,7 +6931,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5030
+     * @param string $fC5030
      */
     public function setFC5030($fC5030)
     {
@@ -6952,7 +6952,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB31
+     * @param boolean $fB31
      */
     public function setFB31($fB31)
     {
@@ -6973,7 +6973,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI31
+     * @param integer $fI31
      */
     public function setFI31($fI31)
     {
@@ -6981,12 +6981,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN31;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN31()
     {
@@ -6994,7 +6994,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN31
+     * @param decimal $fN31
      */
     public function setFN31($fN31)
     {
@@ -7015,7 +7015,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC531
+     * @param string $fC531
      */
     public function setFC531($fC531)
     {
@@ -7036,7 +7036,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1031
+     * @param string $fC1031
      */
     public function setFC1031($fC1031)
     {
@@ -7057,7 +7057,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2031
+     * @param string $fC2031
      */
     public function setFC2031($fC2031)
     {
@@ -7078,7 +7078,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5031
+     * @param string $fC5031
      */
     public function setFC5031($fC5031)
     {
@@ -7099,7 +7099,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB32
+     * @param boolean $fB32
      */
     public function setFB32($fB32)
     {
@@ -7120,7 +7120,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI32
+     * @param integer $fI32
      */
     public function setFI32($fI32)
     {
@@ -7128,12 +7128,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN32;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN32()
     {
@@ -7141,7 +7141,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN32
+     * @param decimal $fN32
      */
     public function setFN32($fN32)
     {
@@ -7162,7 +7162,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC532
+     * @param string $fC532
      */
     public function setFC532($fC532)
     {
@@ -7183,7 +7183,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1032
+     * @param string $fC1032
      */
     public function setFC1032($fC1032)
     {
@@ -7204,7 +7204,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2032
+     * @param string $fC2032
      */
     public function setFC2032($fC2032)
     {
@@ -7225,7 +7225,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5032
+     * @param string $fC5032
      */
     public function setFC5032($fC5032)
     {
@@ -7246,7 +7246,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB33
+     * @param boolean $fB33
      */
     public function setFB33($fB33)
     {
@@ -7267,7 +7267,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI33
+     * @param integer $fI33
      */
     public function setFI33($fI33)
     {
@@ -7275,12 +7275,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN33;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN33()
     {
@@ -7288,7 +7288,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN33
+     * @param decimal $fN33
      */
     public function setFN33($fN33)
     {
@@ -7309,7 +7309,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC533
+     * @param string $fC533
      */
     public function setFC533($fC533)
     {
@@ -7330,7 +7330,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1033
+     * @param string $fC1033
      */
     public function setFC1033($fC1033)
     {
@@ -7351,7 +7351,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2033
+     * @param string $fC2033
      */
     public function setFC2033($fC2033)
     {
@@ -7372,7 +7372,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5033
+     * @param string $fC5033
      */
     public function setFC5033($fC5033)
     {
@@ -7393,7 +7393,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB34
+     * @param boolean $fB34
      */
     public function setFB34($fB34)
     {
@@ -7414,7 +7414,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI34
+     * @param integer $fI34
      */
     public function setFI34($fI34)
     {
@@ -7422,12 +7422,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN34;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN34()
     {
@@ -7435,7 +7435,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN34
+     * @param decimal $fN34
      */
     public function setFN34($fN34)
     {
@@ -7456,7 +7456,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC534
+     * @param string $fC534
      */
     public function setFC534($fC534)
     {
@@ -7477,7 +7477,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1034
+     * @param string $fC1034
      */
     public function setFC1034($fC1034)
     {
@@ -7498,7 +7498,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2034
+     * @param string $fC2034
      */
     public function setFC2034($fC2034)
     {
@@ -7519,7 +7519,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5034
+     * @param string $fC5034
      */
     public function setFC5034($fC5034)
     {
@@ -7540,7 +7540,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB35
+     * @param boolean $fB35
      */
     public function setFB35($fB35)
     {
@@ -7561,7 +7561,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI35
+     * @param integer $fI35
      */
     public function setFI35($fI35)
     {
@@ -7569,12 +7569,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN35;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN35()
     {
@@ -7582,7 +7582,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN35
+     * @param decimal $fN35
      */
     public function setFN35($fN35)
     {
@@ -7603,7 +7603,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC535
+     * @param string $fC535
      */
     public function setFC535($fC535)
     {
@@ -7624,7 +7624,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1035
+     * @param string $fC1035
      */
     public function setFC1035($fC1035)
     {
@@ -7645,7 +7645,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2035
+     * @param string $fC2035
      */
     public function setFC2035($fC2035)
     {
@@ -7666,7 +7666,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5035
+     * @param string $fC5035
      */
     public function setFC5035($fC5035)
     {
@@ -7687,7 +7687,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB36
+     * @param boolean $fB36
      */
     public function setFB36($fB36)
     {
@@ -7708,7 +7708,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI36
+     * @param integer $fI36
      */
     public function setFI36($fI36)
     {
@@ -7716,12 +7716,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN36;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN36()
     {
@@ -7729,7 +7729,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN36
+     * @param decimal $fN36
      */
     public function setFN36($fN36)
     {
@@ -7750,7 +7750,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC536
+     * @param string $fC536
      */
     public function setFC536($fC536)
     {
@@ -7771,7 +7771,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1036
+     * @param string $fC1036
      */
     public function setFC1036($fC1036)
     {
@@ -7792,7 +7792,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2036
+     * @param string $fC2036
      */
     public function setFC2036($fC2036)
     {
@@ -7813,7 +7813,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5036
+     * @param string $fC5036
      */
     public function setFC5036($fC5036)
     {
@@ -7834,7 +7834,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB37
+     * @param boolean $fB37
      */
     public function setFB37($fB37)
     {
@@ -7855,7 +7855,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI37
+     * @param integer $fI37
      */
     public function setFI37($fI37)
     {
@@ -7863,12 +7863,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN37;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN37()
     {
@@ -7876,7 +7876,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN37
+     * @param decimal $fN37
      */
     public function setFN37($fN37)
     {
@@ -7897,7 +7897,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC537
+     * @param string $fC537
      */
     public function setFC537($fC537)
     {
@@ -7918,7 +7918,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1037
+     * @param string $fC1037
      */
     public function setFC1037($fC1037)
     {
@@ -7939,7 +7939,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2037
+     * @param string $fC2037
      */
     public function setFC2037($fC2037)
     {
@@ -7960,7 +7960,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5037
+     * @param string $fC5037
      */
     public function setFC5037($fC5037)
     {
@@ -7981,7 +7981,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB38
+     * @param boolean $fB38
      */
     public function setFB38($fB38)
     {
@@ -8002,7 +8002,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI38
+     * @param integer $fI38
      */
     public function setFI38($fI38)
     {
@@ -8010,12 +8010,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN38;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN38()
     {
@@ -8023,7 +8023,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN38
+     * @param decimal $fN38
      */
     public function setFN38($fN38)
     {
@@ -8044,7 +8044,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC538
+     * @param string $fC538
      */
     public function setFC538($fC538)
     {
@@ -8065,7 +8065,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1038
+     * @param string $fC1038
      */
     public function setFC1038($fC1038)
     {
@@ -8086,7 +8086,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2038
+     * @param string $fC2038
      */
     public function setFC2038($fC2038)
     {
@@ -8107,7 +8107,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5038
+     * @param string $fC5038
      */
     public function setFC5038($fC5038)
     {
@@ -8128,7 +8128,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB39
+     * @param boolean $fB39
      */
     public function setFB39($fB39)
     {
@@ -8149,7 +8149,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI39
+     * @param integer $fI39
      */
     public function setFI39($fI39)
     {
@@ -8157,12 +8157,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN39;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN39()
     {
@@ -8170,7 +8170,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN39
+     * @param decimal $fN39
      */
     public function setFN39($fN39)
     {
@@ -8191,7 +8191,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC539
+     * @param string $fC539
      */
     public function setFC539($fC539)
     {
@@ -8212,7 +8212,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1039
+     * @param string $fC1039
      */
     public function setFC1039($fC1039)
     {
@@ -8233,7 +8233,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2039
+     * @param string $fC2039
      */
     public function setFC2039($fC2039)
     {
@@ -8254,7 +8254,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5039
+     * @param string $fC5039
      */
     public function setFC5039($fC5039)
     {
@@ -8275,7 +8275,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB40
+     * @param boolean $fB40
      */
     public function setFB40($fB40)
     {
@@ -8296,7 +8296,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI40
+     * @param integer $fI40
      */
     public function setFI40($fI40)
     {
@@ -8304,12 +8304,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN40;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN40()
     {
@@ -8317,7 +8317,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN40
+     * @param decimal $fN40
      */
     public function setFN40($fN40)
     {
@@ -8338,7 +8338,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC540
+     * @param string $fC540
      */
     public function setFC540($fC540)
     {
@@ -8359,7 +8359,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1040
+     * @param string $fC1040
      */
     public function setFC1040($fC1040)
     {
@@ -8380,7 +8380,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2040
+     * @param string $fC2040
      */
     public function setFC2040($fC2040)
     {
@@ -8401,7 +8401,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5040
+     * @param string $fC5040
      */
     public function setFC5040($fC5040)
     {
@@ -8422,7 +8422,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB41
+     * @param boolean $fB41
      */
     public function setFB41($fB41)
     {
@@ -8443,7 +8443,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI41
+     * @param integer $fI41
      */
     public function setFI41($fI41)
     {
@@ -8451,12 +8451,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN41;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN41()
     {
@@ -8464,7 +8464,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN41
+     * @param decimal $fN41
      */
     public function setFN41($fN41)
     {
@@ -8485,7 +8485,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC541
+     * @param string $fC541
      */
     public function setFC541($fC541)
     {
@@ -8506,7 +8506,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1041
+     * @param string $fC1041
      */
     public function setFC1041($fC1041)
     {
@@ -8527,7 +8527,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2041
+     * @param string $fC2041
      */
     public function setFC2041($fC2041)
     {
@@ -8548,7 +8548,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5041
+     * @param string $fC5041
      */
     public function setFC5041($fC5041)
     {
@@ -8569,7 +8569,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB42
+     * @param boolean $fB42
      */
     public function setFB42($fB42)
     {
@@ -8590,7 +8590,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI42
+     * @param integer $fI42
      */
     public function setFI42($fI42)
     {
@@ -8598,12 +8598,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN42;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN42()
     {
@@ -8611,7 +8611,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN42
+     * @param decimal $fN42
      */
     public function setFN42($fN42)
     {
@@ -8632,7 +8632,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC542
+     * @param string $fC542
      */
     public function setFC542($fC542)
     {
@@ -8653,7 +8653,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1042
+     * @param string $fC1042
      */
     public function setFC1042($fC1042)
     {
@@ -8674,7 +8674,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2042
+     * @param string $fC2042
      */
     public function setFC2042($fC2042)
     {
@@ -8695,7 +8695,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5042
+     * @param string $fC5042
      */
     public function setFC5042($fC5042)
     {
@@ -8716,7 +8716,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB43
+     * @param boolean $fB43
      */
     public function setFB43($fB43)
     {
@@ -8737,7 +8737,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI43
+     * @param integer $fI43
      */
     public function setFI43($fI43)
     {
@@ -8745,12 +8745,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN43;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN43()
     {
@@ -8758,7 +8758,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN43
+     * @param decimal $fN43
      */
     public function setFN43($fN43)
     {
@@ -8779,7 +8779,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC543
+     * @param string $fC543
      */
     public function setFC543($fC543)
     {
@@ -8800,7 +8800,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1043
+     * @param string $fC1043
      */
     public function setFC1043($fC1043)
     {
@@ -8821,7 +8821,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2043
+     * @param string $fC2043
      */
     public function setFC2043($fC2043)
     {
@@ -8842,7 +8842,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5043
+     * @param string $fC5043
      */
     public function setFC5043($fC5043)
     {
@@ -8863,7 +8863,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB44
+     * @param boolean $fB44
      */
     public function setFB44($fB44)
     {
@@ -8884,7 +8884,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI44
+     * @param integer $fI44
      */
     public function setFI44($fI44)
     {
@@ -8892,12 +8892,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN44;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN44()
     {
@@ -8905,7 +8905,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN44
+     * @param decimal $fN44
      */
     public function setFN44($fN44)
     {
@@ -8926,7 +8926,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC544
+     * @param string $fC544
      */
     public function setFC544($fC544)
     {
@@ -8947,7 +8947,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1044
+     * @param string $fC1044
      */
     public function setFC1044($fC1044)
     {
@@ -8968,7 +8968,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2044
+     * @param string $fC2044
      */
     public function setFC2044($fC2044)
     {
@@ -8989,7 +8989,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5044
+     * @param string $fC5044
      */
     public function setFC5044($fC5044)
     {
@@ -9010,7 +9010,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB45
+     * @param boolean $fB45
      */
     public function setFB45($fB45)
     {
@@ -9031,7 +9031,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI45
+     * @param integer $fI45
      */
     public function setFI45($fI45)
     {
@@ -9039,12 +9039,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN45;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN45()
     {
@@ -9052,7 +9052,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN45
+     * @param decimal $fN45
      */
     public function setFN45($fN45)
     {
@@ -9073,7 +9073,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC545
+     * @param string $fC545
      */
     public function setFC545($fC545)
     {
@@ -9094,7 +9094,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1045
+     * @param string $fC1045
      */
     public function setFC1045($fC1045)
     {
@@ -9115,7 +9115,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2045
+     * @param string $fC2045
      */
     public function setFC2045($fC2045)
     {
@@ -9136,7 +9136,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5045
+     * @param string $fC5045
      */
     public function setFC5045($fC5045)
     {
@@ -9157,7 +9157,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB46
+     * @param boolean $fB46
      */
     public function setFB46($fB46)
     {
@@ -9178,7 +9178,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI46
+     * @param integer $fI46
      */
     public function setFI46($fI46)
     {
@@ -9186,12 +9186,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN46;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN46()
     {
@@ -9199,7 +9199,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN46
+     * @param decimal $fN46
      */
     public function setFN46($fN46)
     {
@@ -9220,7 +9220,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC546
+     * @param string $fC546
      */
     public function setFC546($fC546)
     {
@@ -9241,7 +9241,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1046
+     * @param string $fC1046
      */
     public function setFC1046($fC1046)
     {
@@ -9262,7 +9262,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2046
+     * @param string $fC2046
      */
     public function setFC2046($fC2046)
     {
@@ -9283,7 +9283,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5046
+     * @param string $fC5046
      */
     public function setFC5046($fC5046)
     {
@@ -9304,7 +9304,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB47
+     * @param boolean $fB47
      */
     public function setFB47($fB47)
     {
@@ -9325,7 +9325,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI47
+     * @param integer $fI47
      */
     public function setFI47($fI47)
     {
@@ -9333,12 +9333,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN47;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN47()
     {
@@ -9346,7 +9346,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN47
+     * @param decimal $fN47
      */
     public function setFN47($fN47)
     {
@@ -9367,7 +9367,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC547
+     * @param string $fC547
      */
     public function setFC547($fC547)
     {
@@ -9388,7 +9388,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1047
+     * @param string $fC1047
      */
     public function setFC1047($fC1047)
     {
@@ -9409,7 +9409,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2047
+     * @param string $fC2047
      */
     public function setFC2047($fC2047)
     {
@@ -9430,7 +9430,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5047
+     * @param string $fC5047
      */
     public function setFC5047($fC5047)
     {
@@ -9451,7 +9451,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB48
+     * @param boolean $fB48
      */
     public function setFB48($fB48)
     {
@@ -9472,7 +9472,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI48
+     * @param integer $fI48
      */
     public function setFI48($fI48)
     {
@@ -9480,12 +9480,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN48;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN48()
     {
@@ -9493,7 +9493,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN48
+     * @param decimal $fN48
      */
     public function setFN48($fN48)
     {
@@ -9514,7 +9514,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC548
+     * @param string $fC548
      */
     public function setFC548($fC548)
     {
@@ -9535,7 +9535,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1048
+     * @param string $fC1048
      */
     public function setFC1048($fC1048)
     {
@@ -9556,7 +9556,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2048
+     * @param string $fC2048
      */
     public function setFC2048($fC2048)
     {
@@ -9577,7 +9577,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5048
+     * @param string $fC5048
      */
     public function setFC5048($fC5048)
     {
@@ -9598,7 +9598,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $fB49
+     * @param boolean $fB49
      */
     public function setFB49($fB49)
     {
@@ -9619,7 +9619,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $fI49
+     * @param integer $fI49
      */
     public function setFI49($fI49)
     {
@@ -9627,12 +9627,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $fN49;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getFN49()
     {
@@ -9640,7 +9640,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var double $fN49
+     * @param decimal $fN49
      */
     public function setFN49($fN49)
     {
@@ -9661,7 +9661,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC549
+     * @param string $fC549
      */
     public function setFC549($fC549)
     {
@@ -9682,7 +9682,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC1049
+     * @param string $fC1049
      */
     public function setFC1049($fC1049)
     {
@@ -9703,7 +9703,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC2049
+     * @param string $fC2049
      */
     public function setFC2049($fC2049)
     {
@@ -9724,7 +9724,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $fC5049
+     * @param string $fC5049
      */
     public function setFC5049($fC5049)
     {
@@ -9745,7 +9745,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {
@@ -9753,12 +9753,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -9766,7 +9766,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {
@@ -9787,7 +9787,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $createdBy
+     * @param string $createdBy
      */
     public function setCreatedBy($createdBy)
     {
@@ -9795,12 +9795,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $createdAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -9808,7 +9808,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $createdAt
+     * @param \DateTime $createdAt
      */
     public function setCreatedAt($createdAt)
     {
@@ -9829,7 +9829,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedBy
+     * @param string $updatedBy
      */
     public function setUpdatedBy($updatedBy)
     {
@@ -9837,12 +9837,12 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $updatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -9850,7 +9850,7 @@ trait AttributeSetInstanceStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedAt
+     * @param \DateTime $updatedAt
      */
     public function setUpdatedAt($updatedAt)
     {

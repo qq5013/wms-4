@@ -26,7 +26,7 @@ class CreateOrMergePatchAttributeUseMvo extends AbstractAttributeUseMvoCommand
     }
 
     /**
-     * @var integer $sequenceNumber
+     * @param integer $sequenceNumber
      */
     public function setSequenceNumber($sequenceNumber)
     {
@@ -34,12 +34,12 @@ class CreateOrMergePatchAttributeUseMvo extends AbstractAttributeUseMvoCommand
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -47,7 +47,7 @@ class CreateOrMergePatchAttributeUseMvo extends AbstractAttributeUseMvoCommand
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {
@@ -68,7 +68,7 @@ class CreateOrMergePatchAttributeUseMvo extends AbstractAttributeUseMvoCommand
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {
@@ -89,7 +89,7 @@ class CreateOrMergePatchAttributeUseMvo extends AbstractAttributeUseMvoCommand
     }
 
     /**
-     * @var string $attributeSetName
+     * @param string $attributeSetName
      */
     public function setAttributeSetName($attributeSetName)
     {
@@ -110,7 +110,7 @@ class CreateOrMergePatchAttributeUseMvo extends AbstractAttributeUseMvoCommand
     }
 
     /**
-     * @var string $attributeSetOrganizationId
+     * @param string $attributeSetOrganizationId
      */
     public function setAttributeSetOrganizationId($attributeSetOrganizationId)
     {
@@ -131,7 +131,7 @@ class CreateOrMergePatchAttributeUseMvo extends AbstractAttributeUseMvoCommand
     }
 
     /**
-     * @var string $attributeSetDescription
+     * @param string $attributeSetDescription
      */
     public function setAttributeSetDescription($attributeSetDescription)
     {
@@ -152,7 +152,7 @@ class CreateOrMergePatchAttributeUseMvo extends AbstractAttributeUseMvoCommand
     }
 
     /**
-     * @var string $attributeSetSerialNumberAttributeId
+     * @param string $attributeSetSerialNumberAttributeId
      */
     public function setAttributeSetSerialNumberAttributeId($attributeSetSerialNumberAttributeId)
     {
@@ -173,7 +173,7 @@ class CreateOrMergePatchAttributeUseMvo extends AbstractAttributeUseMvoCommand
     }
 
     /**
-     * @var string $attributeSetLotAttributeId
+     * @param string $attributeSetLotAttributeId
      */
     public function setAttributeSetLotAttributeId($attributeSetLotAttributeId)
     {
@@ -194,7 +194,7 @@ class CreateOrMergePatchAttributeUseMvo extends AbstractAttributeUseMvoCommand
     }
 
     /**
-     * @var string $attributeSetReferenceId
+     * @param string $attributeSetReferenceId
      */
     public function setAttributeSetReferenceId($attributeSetReferenceId)
     {
@@ -215,7 +215,7 @@ class CreateOrMergePatchAttributeUseMvo extends AbstractAttributeUseMvoCommand
     }
 
     /**
-     * @var string $attributeSetCreatedBy
+     * @param string $attributeSetCreatedBy
      */
     public function setAttributeSetCreatedBy($attributeSetCreatedBy)
     {
@@ -223,12 +223,12 @@ class CreateOrMergePatchAttributeUseMvo extends AbstractAttributeUseMvoCommand
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $attributeSetCreatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getAttributeSetCreatedAt()
     {
@@ -236,7 +236,7 @@ class CreateOrMergePatchAttributeUseMvo extends AbstractAttributeUseMvoCommand
     }
 
     /**
-     * @var string $attributeSetCreatedAt
+     * @param \DateTime $attributeSetCreatedAt
      */
     public function setAttributeSetCreatedAt($attributeSetCreatedAt)
     {
@@ -257,7 +257,7 @@ class CreateOrMergePatchAttributeUseMvo extends AbstractAttributeUseMvoCommand
     }
 
     /**
-     * @var string $attributeSetUpdatedBy
+     * @param string $attributeSetUpdatedBy
      */
     public function setAttributeSetUpdatedBy($attributeSetUpdatedBy)
     {
@@ -265,12 +265,12 @@ class CreateOrMergePatchAttributeUseMvo extends AbstractAttributeUseMvoCommand
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $attributeSetUpdatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getAttributeSetUpdatedAt()
     {
@@ -278,7 +278,7 @@ class CreateOrMergePatchAttributeUseMvo extends AbstractAttributeUseMvoCommand
     }
 
     /**
-     * @var string $attributeSetUpdatedAt
+     * @param \DateTime $attributeSetUpdatedAt
      */
     public function setAttributeSetUpdatedAt($attributeSetUpdatedAt)
     {
@@ -299,7 +299,7 @@ class CreateOrMergePatchAttributeUseMvo extends AbstractAttributeUseMvoCommand
     }
 
     /**
-     * @var boolean $attributeSetActive
+     * @param boolean $attributeSetActive
      */
     public function setAttributeSetActive($attributeSetActive)
     {
@@ -320,7 +320,7 @@ class CreateOrMergePatchAttributeUseMvo extends AbstractAttributeUseMvoCommand
     }
 
     /**
-     * @var boolean $attributeSetDeleted
+     * @param boolean $attributeSetDeleted
      */
     public function setAttributeSetDeleted($attributeSetDeleted)
     {

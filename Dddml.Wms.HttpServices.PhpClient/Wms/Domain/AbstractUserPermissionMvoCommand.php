@@ -29,7 +29,7 @@ class AbstractUserPermissionMvoCommand
     }
 
     /**
-     * @var UserPermissionId $userPermissionId
+     * @param UserPermissionId $userPermissionId
      */
     public function setUserPermissionId($userPermissionId)
     {
@@ -37,12 +37,12 @@ class AbstractUserPermissionMvoCommand
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $userVersion;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getUserVersion()
     {
@@ -50,7 +50,7 @@ class AbstractUserPermissionMvoCommand
     }
 
     /**
-     * @var integer $userVersion
+     * @param long $userVersion
      */
     public function setUserVersion($userVersion)
     {

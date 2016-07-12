@@ -27,7 +27,7 @@ trait UserStatePropertiesTrait
     }
 
     /**
-     * @var string $userId
+     * @param string $userId
      */
     public function setUserId($userId)
     {
@@ -48,7 +48,7 @@ trait UserStatePropertiesTrait
     }
 
     /**
-     * @var string $userName
+     * @param string $userName
      */
     public function setUserName($userName)
     {
@@ -69,7 +69,7 @@ trait UserStatePropertiesTrait
     }
 
     /**
-     * @var integer $accessFailedCount
+     * @param integer $accessFailedCount
      */
     public function setAccessFailedCount($accessFailedCount)
     {
@@ -90,7 +90,7 @@ trait UserStatePropertiesTrait
     }
 
     /**
-     * @var string $email
+     * @param string $email
      */
     public function setEmail($email)
     {
@@ -111,7 +111,7 @@ trait UserStatePropertiesTrait
     }
 
     /**
-     * @var boolean $emailConfirmed
+     * @param boolean $emailConfirmed
      */
     public function setEmailConfirmed($emailConfirmed)
     {
@@ -132,7 +132,7 @@ trait UserStatePropertiesTrait
     }
 
     /**
-     * @var boolean $lockoutEnabled
+     * @param boolean $lockoutEnabled
      */
     public function setLockoutEnabled($lockoutEnabled)
     {
@@ -140,12 +140,12 @@ trait UserStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $lockoutEndDateUtc;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getLockoutEndDateUtc()
     {
@@ -153,7 +153,7 @@ trait UserStatePropertiesTrait
     }
 
     /**
-     * @var string $lockoutEndDateUtc
+     * @param \DateTime $lockoutEndDateUtc
      */
     public function setLockoutEndDateUtc($lockoutEndDateUtc)
     {
@@ -174,7 +174,7 @@ trait UserStatePropertiesTrait
     }
 
     /**
-     * @var string $passwordHash
+     * @param string $passwordHash
      */
     public function setPasswordHash($passwordHash)
     {
@@ -195,7 +195,7 @@ trait UserStatePropertiesTrait
     }
 
     /**
-     * @var string $phoneNumber
+     * @param string $phoneNumber
      */
     public function setPhoneNumber($phoneNumber)
     {
@@ -216,7 +216,7 @@ trait UserStatePropertiesTrait
     }
 
     /**
-     * @var boolean $phoneNumberConfirmed
+     * @param boolean $phoneNumberConfirmed
      */
     public function setPhoneNumberConfirmed($phoneNumberConfirmed)
     {
@@ -237,7 +237,7 @@ trait UserStatePropertiesTrait
     }
 
     /**
-     * @var boolean $twoFactorEnabled
+     * @param boolean $twoFactorEnabled
      */
     public function setTwoFactorEnabled($twoFactorEnabled)
     {
@@ -258,7 +258,7 @@ trait UserStatePropertiesTrait
     }
 
     /**
-     * @var string $securityStamp
+     * @param string $securityStamp
      */
     public function setSecurityStamp($securityStamp)
     {
@@ -279,7 +279,7 @@ trait UserStatePropertiesTrait
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {
@@ -287,12 +287,12 @@ trait UserStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -300,7 +300,7 @@ trait UserStatePropertiesTrait
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {
@@ -321,7 +321,7 @@ trait UserStatePropertiesTrait
     }
 
     /**
-     * @var string $createdBy
+     * @param string $createdBy
      */
     public function setCreatedBy($createdBy)
     {
@@ -329,12 +329,12 @@ trait UserStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $createdAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -342,7 +342,7 @@ trait UserStatePropertiesTrait
     }
 
     /**
-     * @var string $createdAt
+     * @param \DateTime $createdAt
      */
     public function setCreatedAt($createdAt)
     {
@@ -363,7 +363,7 @@ trait UserStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedBy
+     * @param string $updatedBy
      */
     public function setUpdatedBy($updatedBy)
     {
@@ -371,12 +371,12 @@ trait UserStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $updatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -384,7 +384,7 @@ trait UserStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedAt
+     * @param \DateTime $updatedAt
      */
     public function setUpdatedAt($updatedAt)
     {

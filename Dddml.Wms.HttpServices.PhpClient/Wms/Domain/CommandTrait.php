@@ -12,7 +12,7 @@ trait CommandTrait
     protected $commandType;
 
     /**
-     * @var string $commandType
+     * @param string $commandType
      */
     public function setCommandType($commandType)
     {

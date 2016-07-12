@@ -24,7 +24,7 @@ class CreateOrMergePatchUserPermission extends AbstractUserPermissionCommand
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {

@@ -27,7 +27,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @var UserPermissionId $userPermissionId
+     * @param UserPermissionId $userPermissionId
      */
     public function setUserPermissionId($userPermissionId)
     {
@@ -35,12 +35,12 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -48,7 +48,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {
@@ -69,7 +69,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {
@@ -90,7 +90,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $userUserName
+     * @param string $userUserName
      */
     public function setUserUserName($userUserName)
     {
@@ -111,7 +111,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @var integer $userAccessFailedCount
+     * @param integer $userAccessFailedCount
      */
     public function setUserAccessFailedCount($userAccessFailedCount)
     {
@@ -132,7 +132,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $userEmail
+     * @param string $userEmail
      */
     public function setUserEmail($userEmail)
     {
@@ -153,7 +153,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $userEmailConfirmed
+     * @param boolean $userEmailConfirmed
      */
     public function setUserEmailConfirmed($userEmailConfirmed)
     {
@@ -174,7 +174,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $userLockoutEnabled
+     * @param boolean $userLockoutEnabled
      */
     public function setUserLockoutEnabled($userLockoutEnabled)
     {
@@ -182,12 +182,12 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $userLockoutEndDateUtc;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUserLockoutEndDateUtc()
     {
@@ -195,7 +195,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $userLockoutEndDateUtc
+     * @param \DateTime $userLockoutEndDateUtc
      */
     public function setUserLockoutEndDateUtc($userLockoutEndDateUtc)
     {
@@ -216,7 +216,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $userPasswordHash
+     * @param string $userPasswordHash
      */
     public function setUserPasswordHash($userPasswordHash)
     {
@@ -237,7 +237,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $userPhoneNumber
+     * @param string $userPhoneNumber
      */
     public function setUserPhoneNumber($userPhoneNumber)
     {
@@ -258,7 +258,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $userPhoneNumberConfirmed
+     * @param boolean $userPhoneNumberConfirmed
      */
     public function setUserPhoneNumberConfirmed($userPhoneNumberConfirmed)
     {
@@ -279,7 +279,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $userTwoFactorEnabled
+     * @param boolean $userTwoFactorEnabled
      */
     public function setUserTwoFactorEnabled($userTwoFactorEnabled)
     {
@@ -300,7 +300,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $userSecurityStamp
+     * @param string $userSecurityStamp
      */
     public function setUserSecurityStamp($userSecurityStamp)
     {
@@ -321,7 +321,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $userCreatedBy
+     * @param string $userCreatedBy
      */
     public function setUserCreatedBy($userCreatedBy)
     {
@@ -329,12 +329,12 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $userCreatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUserCreatedAt()
     {
@@ -342,7 +342,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $userCreatedAt
+     * @param \DateTime $userCreatedAt
      */
     public function setUserCreatedAt($userCreatedAt)
     {
@@ -363,7 +363,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $userUpdatedBy
+     * @param string $userUpdatedBy
      */
     public function setUserUpdatedBy($userUpdatedBy)
     {
@@ -371,12 +371,12 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $userUpdatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUserUpdatedAt()
     {
@@ -384,7 +384,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $userUpdatedAt
+     * @param \DateTime $userUpdatedAt
      */
     public function setUserUpdatedAt($userUpdatedAt)
     {
@@ -405,7 +405,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $userActive
+     * @param boolean $userActive
      */
     public function setUserActive($userActive)
     {
@@ -426,7 +426,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $userDeleted
+     * @param boolean $userDeleted
      */
     public function setUserDeleted($userDeleted)
     {
@@ -434,12 +434,12 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $userVersion;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getUserVersion()
     {
@@ -447,7 +447,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @var integer $userVersion
+     * @param long $userVersion
      */
     public function setUserVersion($userVersion)
     {
@@ -468,7 +468,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $createdBy
+     * @param string $createdBy
      */
     public function setCreatedBy($createdBy)
     {
@@ -476,12 +476,12 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $createdAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -489,7 +489,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $createdAt
+     * @param \DateTime $createdAt
      */
     public function setCreatedAt($createdAt)
     {
@@ -510,7 +510,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedBy
+     * @param string $updatedBy
      */
     public function setUpdatedBy($updatedBy)
     {
@@ -518,12 +518,12 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $updatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -531,7 +531,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedAt
+     * @param \DateTime $updatedAt
      */
     public function setUpdatedAt($updatedAt)
     {

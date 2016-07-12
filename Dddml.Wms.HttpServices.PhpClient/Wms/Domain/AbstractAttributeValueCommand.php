@@ -24,7 +24,7 @@ class AbstractAttributeValueCommand
     }
 
     /**
-     * @var string $value
+     * @param string $value
      */
     public function setValue($value)
     {

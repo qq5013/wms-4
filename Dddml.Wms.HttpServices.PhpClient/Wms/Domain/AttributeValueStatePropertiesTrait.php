@@ -22,7 +22,7 @@ trait AttributeValueStatePropertiesTrait
     }
 
     /**
-     * @var string $value
+     * @param string $value
      */
     public function setValue($value)
     {
@@ -43,7 +43,7 @@ trait AttributeValueStatePropertiesTrait
     }
 
     /**
-     * @var string $name
+     * @param string $name
      */
     public function setName($name)
     {
@@ -64,7 +64,7 @@ trait AttributeValueStatePropertiesTrait
     }
 
     /**
-     * @var string $description
+     * @param string $description
      */
     public function setDescription($description)
     {
@@ -85,7 +85,7 @@ trait AttributeValueStatePropertiesTrait
     }
 
     /**
-     * @var string $referenceId
+     * @param string $referenceId
      */
     public function setReferenceId($referenceId)
     {
@@ -106,7 +106,7 @@ trait AttributeValueStatePropertiesTrait
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {
@@ -114,12 +114,12 @@ trait AttributeValueStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -127,7 +127,7 @@ trait AttributeValueStatePropertiesTrait
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {
@@ -148,7 +148,7 @@ trait AttributeValueStatePropertiesTrait
     }
 
     /**
-     * @var string $attributeId
+     * @param string $attributeId
      */
     public function setAttributeId($attributeId)
     {
@@ -169,7 +169,7 @@ trait AttributeValueStatePropertiesTrait
     }
 
     /**
-     * @var string $createdBy
+     * @param string $createdBy
      */
     public function setCreatedBy($createdBy)
     {
@@ -177,12 +177,12 @@ trait AttributeValueStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $createdAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -190,7 +190,7 @@ trait AttributeValueStatePropertiesTrait
     }
 
     /**
-     * @var string $createdAt
+     * @param \DateTime $createdAt
      */
     public function setCreatedAt($createdAt)
     {
@@ -211,7 +211,7 @@ trait AttributeValueStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedBy
+     * @param string $updatedBy
      */
     public function setUpdatedBy($updatedBy)
     {
@@ -219,12 +219,12 @@ trait AttributeValueStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $updatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -232,7 +232,7 @@ trait AttributeValueStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedAt
+     * @param \DateTime $updatedAt
      */
     public function setUpdatedAt($updatedAt)
     {

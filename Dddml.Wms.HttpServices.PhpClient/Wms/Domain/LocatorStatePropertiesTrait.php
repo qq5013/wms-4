@@ -22,7 +22,7 @@ trait LocatorStatePropertiesTrait
     }
 
     /**
-     * @var string $locatorId
+     * @param string $locatorId
      */
     public function setLocatorId($locatorId)
     {
@@ -43,7 +43,7 @@ trait LocatorStatePropertiesTrait
     }
 
     /**
-     * @var string $warehouseId
+     * @param string $warehouseId
      */
     public function setWarehouseId($warehouseId)
     {
@@ -64,7 +64,7 @@ trait LocatorStatePropertiesTrait
     }
 
     /**
-     * @var string $parentLocatorId
+     * @param string $parentLocatorId
      */
     public function setParentLocatorId($parentLocatorId)
     {
@@ -85,7 +85,7 @@ trait LocatorStatePropertiesTrait
     }
 
     /**
-     * @var string $locatorType
+     * @param string $locatorType
      */
     public function setLocatorType($locatorType)
     {
@@ -106,7 +106,7 @@ trait LocatorStatePropertiesTrait
     }
 
     /**
-     * @var string $priorityNumber
+     * @param string $priorityNumber
      */
     public function setPriorityNumber($priorityNumber)
     {
@@ -127,7 +127,7 @@ trait LocatorStatePropertiesTrait
     }
 
     /**
-     * @var boolean $isDefault
+     * @param boolean $isDefault
      */
     public function setIsDefault($isDefault)
     {
@@ -148,7 +148,7 @@ trait LocatorStatePropertiesTrait
     }
 
     /**
-     * @var string $x
+     * @param string $x
      */
     public function setX($x)
     {
@@ -169,7 +169,7 @@ trait LocatorStatePropertiesTrait
     }
 
     /**
-     * @var string $y
+     * @param string $y
      */
     public function setY($y)
     {
@@ -190,7 +190,7 @@ trait LocatorStatePropertiesTrait
     }
 
     /**
-     * @var string $z
+     * @param string $z
      */
     public function setZ($z)
     {
@@ -211,7 +211,7 @@ trait LocatorStatePropertiesTrait
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {
@@ -219,12 +219,12 @@ trait LocatorStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -232,7 +232,7 @@ trait LocatorStatePropertiesTrait
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {
@@ -253,7 +253,7 @@ trait LocatorStatePropertiesTrait
     }
 
     /**
-     * @var string $createdBy
+     * @param string $createdBy
      */
     public function setCreatedBy($createdBy)
     {
@@ -261,12 +261,12 @@ trait LocatorStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $createdAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -274,7 +274,7 @@ trait LocatorStatePropertiesTrait
     }
 
     /**
-     * @var string $createdAt
+     * @param \DateTime $createdAt
      */
     public function setCreatedAt($createdAt)
     {
@@ -295,7 +295,7 @@ trait LocatorStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedBy
+     * @param string $updatedBy
      */
     public function setUpdatedBy($updatedBy)
     {
@@ -303,12 +303,12 @@ trait LocatorStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $updatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -316,7 +316,7 @@ trait LocatorStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedAt
+     * @param \DateTime $updatedAt
      */
     public function setUpdatedAt($updatedAt)
     {

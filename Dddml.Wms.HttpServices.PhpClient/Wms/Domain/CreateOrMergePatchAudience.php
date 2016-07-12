@@ -24,7 +24,7 @@ class CreateOrMergePatchAudience extends AbstractAudienceCommand
     }
 
     /**
-     * @var string $name
+     * @param string $name
      */
     public function setName($name)
     {
@@ -45,7 +45,7 @@ class CreateOrMergePatchAudience extends AbstractAudienceCommand
     }
 
     /**
-     * @var string $base64Secret
+     * @param string $base64Secret
      */
     public function setBase64Secret($base64Secret)
     {
@@ -66,7 +66,7 @@ class CreateOrMergePatchAudience extends AbstractAudienceCommand
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {

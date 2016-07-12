@@ -21,7 +21,7 @@ class UserLoginId
     }
 
     /**
-     * @var string $userId
+     * @param string $userId
      */
     public function setUserId($userId)
     {
@@ -42,7 +42,7 @@ class UserLoginId
     }
 
     /**
-     * @var LoginKey $loginKey
+     * @param LoginKey $loginKey
      */
     public function setLoginKey($loginKey)
     {

@@ -29,7 +29,7 @@ class CreateOrMergePatchUser extends AbstractUserCommand
     }
 
     /**
-     * @var string $userName
+     * @param string $userName
      */
     public function setUserName($userName)
     {
@@ -50,7 +50,7 @@ class CreateOrMergePatchUser extends AbstractUserCommand
     }
 
     /**
-     * @var integer $accessFailedCount
+     * @param integer $accessFailedCount
      */
     public function setAccessFailedCount($accessFailedCount)
     {
@@ -71,7 +71,7 @@ class CreateOrMergePatchUser extends AbstractUserCommand
     }
 
     /**
-     * @var string $email
+     * @param string $email
      */
     public function setEmail($email)
     {
@@ -92,7 +92,7 @@ class CreateOrMergePatchUser extends AbstractUserCommand
     }
 
     /**
-     * @var boolean $emailConfirmed
+     * @param boolean $emailConfirmed
      */
     public function setEmailConfirmed($emailConfirmed)
     {
@@ -113,7 +113,7 @@ class CreateOrMergePatchUser extends AbstractUserCommand
     }
 
     /**
-     * @var boolean $lockoutEnabled
+     * @param boolean $lockoutEnabled
      */
     public function setLockoutEnabled($lockoutEnabled)
     {
@@ -121,12 +121,12 @@ class CreateOrMergePatchUser extends AbstractUserCommand
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $lockoutEndDateUtc;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getLockoutEndDateUtc()
     {
@@ -134,7 +134,7 @@ class CreateOrMergePatchUser extends AbstractUserCommand
     }
 
     /**
-     * @var string $lockoutEndDateUtc
+     * @param \DateTime $lockoutEndDateUtc
      */
     public function setLockoutEndDateUtc($lockoutEndDateUtc)
     {
@@ -155,7 +155,7 @@ class CreateOrMergePatchUser extends AbstractUserCommand
     }
 
     /**
-     * @var string $passwordHash
+     * @param string $passwordHash
      */
     public function setPasswordHash($passwordHash)
     {
@@ -176,7 +176,7 @@ class CreateOrMergePatchUser extends AbstractUserCommand
     }
 
     /**
-     * @var string $phoneNumber
+     * @param string $phoneNumber
      */
     public function setPhoneNumber($phoneNumber)
     {
@@ -197,7 +197,7 @@ class CreateOrMergePatchUser extends AbstractUserCommand
     }
 
     /**
-     * @var boolean $phoneNumberConfirmed
+     * @param boolean $phoneNumberConfirmed
      */
     public function setPhoneNumberConfirmed($phoneNumberConfirmed)
     {
@@ -218,7 +218,7 @@ class CreateOrMergePatchUser extends AbstractUserCommand
     }
 
     /**
-     * @var boolean $twoFactorEnabled
+     * @param boolean $twoFactorEnabled
      */
     public function setTwoFactorEnabled($twoFactorEnabled)
     {
@@ -239,7 +239,7 @@ class CreateOrMergePatchUser extends AbstractUserCommand
     }
 
     /**
-     * @var string $securityStamp
+     * @param string $securityStamp
      */
     public function setSecurityStamp($securityStamp)
     {
@@ -260,7 +260,7 @@ class CreateOrMergePatchUser extends AbstractUserCommand
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {
@@ -282,7 +282,7 @@ class CreateOrMergePatchUser extends AbstractUserCommand
     }	
 
     /**
-     * @var CreateOrMergePatchUserRole[] $userRoles
+     * @param CreateOrMergePatchUserRole[] $userRoles
      */
     public function setUserRoles($userRoles)
     {
@@ -304,7 +304,7 @@ class CreateOrMergePatchUser extends AbstractUserCommand
     }	
 
     /**
-     * @var CreateOrMergePatchUserClaim[] $userClaims
+     * @param CreateOrMergePatchUserClaim[] $userClaims
      */
     public function setUserClaims($userClaims)
     {
@@ -326,7 +326,7 @@ class CreateOrMergePatchUser extends AbstractUserCommand
     }	
 
     /**
-     * @var CreateOrMergePatchUserPermission[] $userPermissions
+     * @param CreateOrMergePatchUserPermission[] $userPermissions
      */
     public function setUserPermissions($userPermissions)
     {
@@ -348,7 +348,7 @@ class CreateOrMergePatchUser extends AbstractUserCommand
     }	
 
     /**
-     * @var CreateOrMergePatchUserLogin[] $userLogins
+     * @param CreateOrMergePatchUserLogin[] $userLogins
      */
     public function setUserLogins($userLogins)
     {

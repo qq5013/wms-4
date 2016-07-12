@@ -20,7 +20,7 @@ class AttributeSetAttributeUseId
     }
 
     /**
-     * @var string $attributeSetId
+     * @param string $attributeSetId
      */
     public function setAttributeSetId($attributeSetId)
     {
@@ -41,7 +41,7 @@ class AttributeSetAttributeUseId
     }
 
     /**
-     * @var string $attributeId
+     * @param string $attributeId
      */
     public function setAttributeId($attributeId)
     {

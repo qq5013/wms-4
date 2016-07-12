@@ -24,7 +24,7 @@ class CreateOrMergePatchAttributeUse extends AbstractAttributeUseCommand
     }
 
     /**
-     * @var integer $sequenceNumber
+     * @param integer $sequenceNumber
      */
     public function setSequenceNumber($sequenceNumber)
     {
@@ -45,7 +45,7 @@ class CreateOrMergePatchAttributeUse extends AbstractAttributeUseCommand
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {

@@ -24,7 +24,7 @@ class CreateOrMergePatchOrganizationStructureType extends AbstractOrganizationSt
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {

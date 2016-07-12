@@ -21,7 +21,7 @@ class UserPermissionMvoStateEventId
     }
 
     /**
-     * @var UserPermissionId $userPermissionId
+     * @param UserPermissionId $userPermissionId
      */
     public function setUserPermissionId($userPermissionId)
     {
@@ -29,12 +29,12 @@ class UserPermissionMvoStateEventId
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $userVersion;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getUserVersion()
     {
@@ -42,7 +42,7 @@ class UserPermissionMvoStateEventId
     }
 
     /**
-     * @var integer $userVersion
+     * @param long $userVersion
      */
     public function setUserVersion($userVersion)
     {

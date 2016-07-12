@@ -23,7 +23,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @var SkuId $skuId
+     * @param SkuId $skuId
      */
     public function setSkuId($skuId)
     {
@@ -31,12 +31,12 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $lineNumber;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getLineNumber()
     {
@@ -44,7 +44,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @var integer $lineNumber
+     * @param long $lineNumber
      */
     public function setLineNumber($lineNumber)
     {
@@ -65,7 +65,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @var string $description
+     * @param string $description
      */
     public function setDescription($description)
     {
@@ -86,7 +86,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @var string $locatorId
+     * @param string $locatorId
      */
     public function setLocatorId($locatorId)
     {
@@ -107,7 +107,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @var string $product
+     * @param string $product
      */
     public function setProduct($product)
     {
@@ -128,7 +128,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @var string $uomId
+     * @param string $uomId
      */
     public function setUomId($uomId)
     {
@@ -136,12 +136,12 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $movementQuantity;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getMovementQuantity()
     {
@@ -149,7 +149,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @var double $movementQuantity
+     * @param decimal $movementQuantity
      */
     public function setMovementQuantity($movementQuantity)
     {
@@ -157,12 +157,12 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $confirmedQuantity;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getConfirmedQuantity()
     {
@@ -170,7 +170,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @var double $confirmedQuantity
+     * @param decimal $confirmedQuantity
      */
     public function setConfirmedQuantity($confirmedQuantity)
     {
@@ -178,12 +178,12 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $scrappedQuantity;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getScrappedQuantity()
     {
@@ -191,7 +191,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @var double $scrappedQuantity
+     * @param decimal $scrappedQuantity
      */
     public function setScrappedQuantity($scrappedQuantity)
     {
@@ -199,12 +199,12 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $targetQuantity;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getTargetQuantity()
     {
@@ -212,7 +212,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @var double $targetQuantity
+     * @param decimal $targetQuantity
      */
     public function setTargetQuantity($targetQuantity)
     {
@@ -220,12 +220,12 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $pickedQuantity;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getPickedQuantity()
     {
@@ -233,7 +233,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @var double $pickedQuantity
+     * @param decimal $pickedQuantity
      */
     public function setPickedQuantity($pickedQuantity)
     {
@@ -254,7 +254,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @var boolean $isInvoiced
+     * @param boolean $isInvoiced
      */
     public function setIsInvoiced($isInvoiced)
     {
@@ -275,7 +275,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @var string $attributeSetInstanceId
+     * @param string $attributeSetInstanceId
      */
     public function setAttributeSetInstanceId($attributeSetInstanceId)
     {
@@ -296,7 +296,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @var boolean $isDescription
+     * @param boolean $isDescription
      */
     public function setIsDescription($isDescription)
     {
@@ -317,7 +317,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @var boolean $processed
+     * @param boolean $processed
      */
     public function setProcessed($processed)
     {
@@ -325,12 +325,12 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $quantityEntered;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getQuantityEntered()
     {
@@ -338,7 +338,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @var double $quantityEntered
+     * @param decimal $quantityEntered
      */
     public function setQuantityEntered($quantityEntered)
     {
@@ -346,12 +346,12 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $rmaLineNumber;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getRmaLineNumber()
     {
@@ -359,7 +359,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @var integer $rmaLineNumber
+     * @param long $rmaLineNumber
      */
     public function setRmaLineNumber($rmaLineNumber)
     {
@@ -367,12 +367,12 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $reversalLineNumber;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getReversalLineNumber()
     {
@@ -380,7 +380,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @var integer $reversalLineNumber
+     * @param long $reversalLineNumber
      */
     public function setReversalLineNumber($reversalLineNumber)
     {
@@ -401,7 +401,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {
@@ -409,12 +409,12 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -422,7 +422,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {
@@ -443,7 +443,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @var string $inOutDocumentNumber
+     * @param string $inOutDocumentNumber
      */
     public function setInOutDocumentNumber($inOutDocumentNumber)
     {
@@ -464,7 +464,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @var string $createdBy
+     * @param string $createdBy
      */
     public function setCreatedBy($createdBy)
     {
@@ -472,12 +472,12 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $createdAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -485,7 +485,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @var string $createdAt
+     * @param \DateTime $createdAt
      */
     public function setCreatedAt($createdAt)
     {
@@ -506,7 +506,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedBy
+     * @param string $updatedBy
      */
     public function setUpdatedBy($updatedBy)
     {
@@ -514,12 +514,12 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $updatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -527,7 +527,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedAt
+     * @param \DateTime $updatedAt
      */
     public function setUpdatedAt($updatedAt)
     {

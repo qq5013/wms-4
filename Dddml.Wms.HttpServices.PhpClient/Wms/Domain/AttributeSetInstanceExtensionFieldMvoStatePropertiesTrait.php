@@ -24,7 +24,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @var AttributeSetInstanceExtensionFieldId $attributeSetInstanceExtensionFieldId
+     * @param AttributeSetInstanceExtensionFieldId $attributeSetInstanceExtensionFieldId
      */
     public function setAttributeSetInstanceExtensionFieldId($attributeSetInstanceExtensionFieldId)
     {
@@ -45,7 +45,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $name
+     * @param string $name
      */
     public function setName($name)
     {
@@ -66,7 +66,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $type
+     * @param string $type
      */
     public function setType($type)
     {
@@ -87,7 +87,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @var integer $length
+     * @param integer $length
      */
     public function setLength($length)
     {
@@ -108,7 +108,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $alias
+     * @param string $alias
      */
     public function setAlias($alias)
     {
@@ -129,7 +129,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $description
+     * @param string $description
      */
     public function setDescription($description)
     {
@@ -137,12 +137,12 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -150,7 +150,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {
@@ -171,7 +171,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {
@@ -192,7 +192,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $attrSetInstEfGroupFieldType
+     * @param string $attrSetInstEfGroupFieldType
      */
     public function setAttrSetInstEfGroupFieldType($attrSetInstEfGroupFieldType)
     {
@@ -213,7 +213,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @var integer $attrSetInstEfGroupFieldLength
+     * @param integer $attrSetInstEfGroupFieldLength
      */
     public function setAttrSetInstEfGroupFieldLength($attrSetInstEfGroupFieldLength)
     {
@@ -234,7 +234,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @var integer $attrSetInstEfGroupFieldCount
+     * @param integer $attrSetInstEfGroupFieldCount
      */
     public function setAttrSetInstEfGroupFieldCount($attrSetInstEfGroupFieldCount)
     {
@@ -255,7 +255,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $attrSetInstEfGroupNameFormat
+     * @param string $attrSetInstEfGroupNameFormat
      */
     public function setAttrSetInstEfGroupNameFormat($attrSetInstEfGroupNameFormat)
     {
@@ -276,7 +276,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $attrSetInstEfGroupDescription
+     * @param string $attrSetInstEfGroupDescription
      */
     public function setAttrSetInstEfGroupDescription($attrSetInstEfGroupDescription)
     {
@@ -297,7 +297,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $attrSetInstEfGroupCreatedBy
+     * @param string $attrSetInstEfGroupCreatedBy
      */
     public function setAttrSetInstEfGroupCreatedBy($attrSetInstEfGroupCreatedBy)
     {
@@ -305,12 +305,12 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $attrSetInstEfGroupCreatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getAttrSetInstEfGroupCreatedAt()
     {
@@ -318,7 +318,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $attrSetInstEfGroupCreatedAt
+     * @param \DateTime $attrSetInstEfGroupCreatedAt
      */
     public function setAttrSetInstEfGroupCreatedAt($attrSetInstEfGroupCreatedAt)
     {
@@ -339,7 +339,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $attrSetInstEfGroupUpdatedBy
+     * @param string $attrSetInstEfGroupUpdatedBy
      */
     public function setAttrSetInstEfGroupUpdatedBy($attrSetInstEfGroupUpdatedBy)
     {
@@ -347,12 +347,12 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $attrSetInstEfGroupUpdatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getAttrSetInstEfGroupUpdatedAt()
     {
@@ -360,7 +360,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $attrSetInstEfGroupUpdatedAt
+     * @param \DateTime $attrSetInstEfGroupUpdatedAt
      */
     public function setAttrSetInstEfGroupUpdatedAt($attrSetInstEfGroupUpdatedAt)
     {
@@ -381,7 +381,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $attrSetInstEfGroupActive
+     * @param boolean $attrSetInstEfGroupActive
      */
     public function setAttrSetInstEfGroupActive($attrSetInstEfGroupActive)
     {
@@ -402,7 +402,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $attrSetInstEfGroupDeleted
+     * @param boolean $attrSetInstEfGroupDeleted
      */
     public function setAttrSetInstEfGroupDeleted($attrSetInstEfGroupDeleted)
     {
@@ -410,12 +410,12 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $attrSetInstEfGroupVersion;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getAttrSetInstEfGroupVersion()
     {
@@ -423,7 +423,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @var integer $attrSetInstEfGroupVersion
+     * @param long $attrSetInstEfGroupVersion
      */
     public function setAttrSetInstEfGroupVersion($attrSetInstEfGroupVersion)
     {
@@ -444,7 +444,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $createdBy
+     * @param string $createdBy
      */
     public function setCreatedBy($createdBy)
     {
@@ -452,12 +452,12 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $createdAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -465,7 +465,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $createdAt
+     * @param \DateTime $createdAt
      */
     public function setCreatedAt($createdAt)
     {
@@ -486,7 +486,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedBy
+     * @param string $updatedBy
      */
     public function setUpdatedBy($updatedBy)
     {
@@ -494,12 +494,12 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $updatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -507,7 +507,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedAt
+     * @param \DateTime $updatedAt
      */
     public function setUpdatedAt($updatedAt)
     {

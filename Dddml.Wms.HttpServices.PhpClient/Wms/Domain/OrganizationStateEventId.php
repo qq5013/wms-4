@@ -20,7 +20,7 @@ class OrganizationStateEventId
     }
 
     /**
-     * @var string $organizationId
+     * @param string $organizationId
      */
     public function setOrganizationId($organizationId)
     {
@@ -28,12 +28,12 @@ class OrganizationStateEventId
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -41,7 +41,7 @@ class OrganizationStateEventId
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {

@@ -26,7 +26,7 @@ class AbstractAttributeUseMvoCommand
     }
 
     /**
-     * @var AttributeSetAttributeUseId $attributeSetAttributeUseId
+     * @param AttributeSetAttributeUseId $attributeSetAttributeUseId
      */
     public function setAttributeSetAttributeUseId($attributeSetAttributeUseId)
     {
@@ -34,12 +34,12 @@ class AbstractAttributeUseMvoCommand
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $attributeSetVersion;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getAttributeSetVersion()
     {
@@ -47,7 +47,7 @@ class AbstractAttributeUseMvoCommand
     }
 
     /**
-     * @var integer $attributeSetVersion
+     * @param long $attributeSetVersion
      */
     public function setAttributeSetVersion($attributeSetVersion)
     {

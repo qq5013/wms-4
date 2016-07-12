@@ -21,7 +21,7 @@ class RolePermissionStateEventId
     }
 
     /**
-     * @var RolePermissionId $id
+     * @param RolePermissionId $id
      */
     public function setId($id)
     {
@@ -29,12 +29,12 @@ class RolePermissionStateEventId
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -42,7 +42,7 @@ class RolePermissionStateEventId
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {

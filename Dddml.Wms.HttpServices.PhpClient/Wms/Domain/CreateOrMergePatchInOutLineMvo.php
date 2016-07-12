@@ -14,12 +14,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     use InOutLineMvoIsPropertyRemovedTrait;
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $lineNumber;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getLineNumber()
     {
@@ -27,7 +27,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var integer $lineNumber
+     * @param long $lineNumber
      */
     public function setLineNumber($lineNumber)
     {
@@ -48,7 +48,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var string $description
+     * @param string $description
      */
     public function setDescription($description)
     {
@@ -69,7 +69,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var string $locatorId
+     * @param string $locatorId
      */
     public function setLocatorId($locatorId)
     {
@@ -90,7 +90,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var string $product
+     * @param string $product
      */
     public function setProduct($product)
     {
@@ -111,7 +111,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var string $uomId
+     * @param string $uomId
      */
     public function setUomId($uomId)
     {
@@ -119,12 +119,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $movementQuantity;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getMovementQuantity()
     {
@@ -132,7 +132,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var double $movementQuantity
+     * @param decimal $movementQuantity
      */
     public function setMovementQuantity($movementQuantity)
     {
@@ -140,12 +140,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $confirmedQuantity;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getConfirmedQuantity()
     {
@@ -153,7 +153,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var double $confirmedQuantity
+     * @param decimal $confirmedQuantity
      */
     public function setConfirmedQuantity($confirmedQuantity)
     {
@@ -161,12 +161,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $scrappedQuantity;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getScrappedQuantity()
     {
@@ -174,7 +174,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var double $scrappedQuantity
+     * @param decimal $scrappedQuantity
      */
     public function setScrappedQuantity($scrappedQuantity)
     {
@@ -182,12 +182,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $targetQuantity;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getTargetQuantity()
     {
@@ -195,7 +195,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var double $targetQuantity
+     * @param decimal $targetQuantity
      */
     public function setTargetQuantity($targetQuantity)
     {
@@ -203,12 +203,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $pickedQuantity;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getPickedQuantity()
     {
@@ -216,7 +216,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var double $pickedQuantity
+     * @param decimal $pickedQuantity
      */
     public function setPickedQuantity($pickedQuantity)
     {
@@ -237,7 +237,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var boolean $isInvoiced
+     * @param boolean $isInvoiced
      */
     public function setIsInvoiced($isInvoiced)
     {
@@ -258,7 +258,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var string $attributeSetInstanceId
+     * @param string $attributeSetInstanceId
      */
     public function setAttributeSetInstanceId($attributeSetInstanceId)
     {
@@ -279,7 +279,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var boolean $isDescription
+     * @param boolean $isDescription
      */
     public function setIsDescription($isDescription)
     {
@@ -300,7 +300,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var boolean $processed
+     * @param boolean $processed
      */
     public function setProcessed($processed)
     {
@@ -308,12 +308,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $quantityEntered;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getQuantityEntered()
     {
@@ -321,7 +321,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var double $quantityEntered
+     * @param decimal $quantityEntered
      */
     public function setQuantityEntered($quantityEntered)
     {
@@ -329,12 +329,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $rmaLineNumber;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getRmaLineNumber()
     {
@@ -342,7 +342,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var integer $rmaLineNumber
+     * @param long $rmaLineNumber
      */
     public function setRmaLineNumber($rmaLineNumber)
     {
@@ -350,12 +350,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $reversalLineNumber;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getReversalLineNumber()
     {
@@ -363,7 +363,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var integer $reversalLineNumber
+     * @param long $reversalLineNumber
      */
     public function setReversalLineNumber($reversalLineNumber)
     {
@@ -371,12 +371,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -384,7 +384,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {
@@ -405,7 +405,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {
@@ -426,7 +426,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var boolean $inOutIsSoTransaction
+     * @param boolean $inOutIsSoTransaction
      */
     public function setInOutIsSoTransaction($inOutIsSoTransaction)
     {
@@ -447,7 +447,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var DocumentAction $documentAction
+     * @param DocumentAction $documentAction
      */
     public function setDocumentAction($documentAction)
     {
@@ -468,7 +468,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var boolean $inOutPosted
+     * @param boolean $inOutPosted
      */
     public function setInOutPosted($inOutPosted)
     {
@@ -489,7 +489,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var boolean $inOutProcessing
+     * @param boolean $inOutProcessing
      */
     public function setInOutProcessing($inOutProcessing)
     {
@@ -510,7 +510,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var boolean $inOutProcessed
+     * @param boolean $inOutProcessed
      */
     public function setInOutProcessed($inOutProcessed)
     {
@@ -531,7 +531,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var integer $inOutDocumentType
+     * @param integer $inOutDocumentType
      */
     public function setInOutDocumentType($inOutDocumentType)
     {
@@ -552,7 +552,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var string $inOutDescription
+     * @param string $inOutDescription
      */
     public function setInOutDescription($inOutDescription)
     {
@@ -573,7 +573,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var string $inOutOrderNumber
+     * @param string $inOutOrderNumber
      */
     public function setInOutOrderNumber($inOutOrderNumber)
     {
@@ -581,12 +581,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $inOutDateOrdered;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getInOutDateOrdered()
     {
@@ -594,7 +594,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var string $inOutDateOrdered
+     * @param \DateTime $inOutDateOrdered
      */
     public function setInOutDateOrdered($inOutDateOrdered)
     {
@@ -615,7 +615,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var boolean $inOutIsPrinted
+     * @param boolean $inOutIsPrinted
      */
     public function setInOutIsPrinted($inOutIsPrinted)
     {
@@ -636,7 +636,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var string $inOutMovementType
+     * @param string $inOutMovementType
      */
     public function setInOutMovementType($inOutMovementType)
     {
@@ -644,12 +644,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $inOutMovementDate;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getInOutMovementDate()
     {
@@ -657,7 +657,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var string $inOutMovementDate
+     * @param \DateTime $inOutMovementDate
      */
     public function setInOutMovementDate($inOutMovementDate)
     {
@@ -678,7 +678,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var string $inOutBusinessPartnerId
+     * @param string $inOutBusinessPartnerId
      */
     public function setInOutBusinessPartnerId($inOutBusinessPartnerId)
     {
@@ -699,7 +699,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var string $inOutWarehouseId
+     * @param string $inOutWarehouseId
      */
     public function setInOutWarehouseId($inOutWarehouseId)
     {
@@ -720,7 +720,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var string $inOutPoReference
+     * @param string $inOutPoReference
      */
     public function setInOutPoReference($inOutPoReference)
     {
@@ -741,7 +741,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var Money $inOutFreightAmount
+     * @param Money $inOutFreightAmount
      */
     public function setInOutFreightAmount($inOutFreightAmount)
     {
@@ -762,7 +762,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var string $inOutShipperId
+     * @param string $inOutShipperId
      */
     public function setInOutShipperId($inOutShipperId)
     {
@@ -783,7 +783,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var Money $inOutChargeAmount
+     * @param Money $inOutChargeAmount
      */
     public function setInOutChargeAmount($inOutChargeAmount)
     {
@@ -791,12 +791,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $inOutDatePrinted;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getInOutDatePrinted()
     {
@@ -804,7 +804,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var string $inOutDatePrinted
+     * @param \DateTime $inOutDatePrinted
      */
     public function setInOutDatePrinted($inOutDatePrinted)
     {
@@ -825,7 +825,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var string $inOutSalesRepresentative
+     * @param string $inOutSalesRepresentative
      */
     public function setInOutSalesRepresentative($inOutSalesRepresentative)
     {
@@ -846,7 +846,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var integer $inOutNumberOfPackages
+     * @param integer $inOutNumberOfPackages
      */
     public function setInOutNumberOfPackages($inOutNumberOfPackages)
     {
@@ -854,12 +854,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $inOutPickDate;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getInOutPickDate()
     {
@@ -867,7 +867,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var string $inOutPickDate
+     * @param \DateTime $inOutPickDate
      */
     public function setInOutPickDate($inOutPickDate)
     {
@@ -875,12 +875,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $inOutShipDate;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getInOutShipDate()
     {
@@ -888,7 +888,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var string $inOutShipDate
+     * @param \DateTime $inOutShipDate
      */
     public function setInOutShipDate($inOutShipDate)
     {
@@ -909,7 +909,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var string $inOutTrackingNumber
+     * @param string $inOutTrackingNumber
      */
     public function setInOutTrackingNumber($inOutTrackingNumber)
     {
@@ -917,12 +917,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $inOutDateReceived;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getInOutDateReceived()
     {
@@ -930,7 +930,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var string $inOutDateReceived
+     * @param \DateTime $inOutDateReceived
      */
     public function setInOutDateReceived($inOutDateReceived)
     {
@@ -951,7 +951,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var boolean $inOutIsInTransit
+     * @param boolean $inOutIsInTransit
      */
     public function setInOutIsInTransit($inOutIsInTransit)
     {
@@ -972,7 +972,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var boolean $inOutIsApproved
+     * @param boolean $inOutIsApproved
      */
     public function setInOutIsApproved($inOutIsApproved)
     {
@@ -993,7 +993,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var boolean $inOutIsInDispute
+     * @param boolean $inOutIsInDispute
      */
     public function setInOutIsInDispute($inOutIsInDispute)
     {
@@ -1001,12 +1001,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $inOutVolume;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getInOutVolume()
     {
@@ -1014,7 +1014,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var double $inOutVolume
+     * @param decimal $inOutVolume
      */
     public function setInOutVolume($inOutVolume)
     {
@@ -1022,12 +1022,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $inOutWeight;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getInOutWeight()
     {
@@ -1035,7 +1035,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var double $inOutWeight
+     * @param decimal $inOutWeight
      */
     public function setInOutWeight($inOutWeight)
     {
@@ -1056,7 +1056,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var string $inOutRmaNumber
+     * @param string $inOutRmaNumber
      */
     public function setInOutRmaNumber($inOutRmaNumber)
     {
@@ -1077,7 +1077,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var string $inOutReversalNumber
+     * @param string $inOutReversalNumber
      */
     public function setInOutReversalNumber($inOutReversalNumber)
     {
@@ -1098,7 +1098,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var boolean $inOutIsDropShip
+     * @param boolean $inOutIsDropShip
      */
     public function setInOutIsDropShip($inOutIsDropShip)
     {
@@ -1119,7 +1119,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var string $inOutDropShipBusinessPartnerId
+     * @param string $inOutDropShipBusinessPartnerId
      */
     public function setInOutDropShipBusinessPartnerId($inOutDropShipBusinessPartnerId)
     {
@@ -1140,7 +1140,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var string $inOutCreatedBy
+     * @param string $inOutCreatedBy
      */
     public function setInOutCreatedBy($inOutCreatedBy)
     {
@@ -1148,12 +1148,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $inOutCreatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getInOutCreatedAt()
     {
@@ -1161,7 +1161,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var string $inOutCreatedAt
+     * @param \DateTime $inOutCreatedAt
      */
     public function setInOutCreatedAt($inOutCreatedAt)
     {
@@ -1182,7 +1182,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var string $inOutUpdatedBy
+     * @param string $inOutUpdatedBy
      */
     public function setInOutUpdatedBy($inOutUpdatedBy)
     {
@@ -1190,12 +1190,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $inOutUpdatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getInOutUpdatedAt()
     {
@@ -1203,7 +1203,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var string $inOutUpdatedAt
+     * @param \DateTime $inOutUpdatedAt
      */
     public function setInOutUpdatedAt($inOutUpdatedAt)
     {
@@ -1224,7 +1224,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var boolean $inOutActive
+     * @param boolean $inOutActive
      */
     public function setInOutActive($inOutActive)
     {
@@ -1245,7 +1245,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @var boolean $inOutDeleted
+     * @param boolean $inOutDeleted
      */
     public function setInOutDeleted($inOutDeleted)
     {

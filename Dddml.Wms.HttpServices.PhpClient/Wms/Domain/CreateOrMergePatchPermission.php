@@ -24,7 +24,7 @@ class CreateOrMergePatchPermission extends AbstractPermissionCommand
     }
 
     /**
-     * @var string $name
+     * @param string $name
      */
     public function setName($name)
     {
@@ -45,7 +45,7 @@ class CreateOrMergePatchPermission extends AbstractPermissionCommand
     }
 
     /**
-     * @var string $parentPermissionId
+     * @param string $parentPermissionId
      */
     public function setParentPermissionId($parentPermissionId)
     {
@@ -66,7 +66,7 @@ class CreateOrMergePatchPermission extends AbstractPermissionCommand
     }
 
     /**
-     * @var string $description
+     * @param string $description
      */
     public function setDescription($description)
     {
@@ -87,7 +87,7 @@ class CreateOrMergePatchPermission extends AbstractPermissionCommand
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {

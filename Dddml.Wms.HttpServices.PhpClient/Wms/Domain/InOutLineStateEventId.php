@@ -21,7 +21,7 @@ class InOutLineStateEventId
     }
 
     /**
-     * @var string $inOutDocumentNumber
+     * @param string $inOutDocumentNumber
      */
     public function setInOutDocumentNumber($inOutDocumentNumber)
     {
@@ -42,7 +42,7 @@ class InOutLineStateEventId
     }
 
     /**
-     * @var SkuId $skuId
+     * @param SkuId $skuId
      */
     public function setSkuId($skuId)
     {
@@ -50,12 +50,12 @@ class InOutLineStateEventId
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $inOutVersion;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getInOutVersion()
     {
@@ -63,7 +63,7 @@ class InOutLineStateEventId
     }
 
     /**
-     * @var integer $inOutVersion
+     * @param long $inOutVersion
      */
     public function setInOutVersion($inOutVersion)
     {

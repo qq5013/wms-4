@@ -22,7 +22,7 @@ trait UserClaimStatePropertiesTrait
     }
 
     /**
-     * @var integer $claimId
+     * @param integer $claimId
      */
     public function setClaimId($claimId)
     {
@@ -43,7 +43,7 @@ trait UserClaimStatePropertiesTrait
     }
 
     /**
-     * @var string $claimType
+     * @param string $claimType
      */
     public function setClaimType($claimType)
     {
@@ -64,7 +64,7 @@ trait UserClaimStatePropertiesTrait
     }
 
     /**
-     * @var string $claimValue
+     * @param string $claimValue
      */
     public function setClaimValue($claimValue)
     {
@@ -85,7 +85,7 @@ trait UserClaimStatePropertiesTrait
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {
@@ -93,12 +93,12 @@ trait UserClaimStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -106,7 +106,7 @@ trait UserClaimStatePropertiesTrait
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {
@@ -127,7 +127,7 @@ trait UserClaimStatePropertiesTrait
     }
 
     /**
-     * @var string $userId
+     * @param string $userId
      */
     public function setUserId($userId)
     {
@@ -148,7 +148,7 @@ trait UserClaimStatePropertiesTrait
     }
 
     /**
-     * @var string $createdBy
+     * @param string $createdBy
      */
     public function setCreatedBy($createdBy)
     {
@@ -156,12 +156,12 @@ trait UserClaimStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $createdAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -169,7 +169,7 @@ trait UserClaimStatePropertiesTrait
     }
 
     /**
-     * @var string $createdAt
+     * @param \DateTime $createdAt
      */
     public function setCreatedAt($createdAt)
     {
@@ -190,7 +190,7 @@ trait UserClaimStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedBy
+     * @param string $updatedBy
      */
     public function setUpdatedBy($updatedBy)
     {
@@ -198,12 +198,12 @@ trait UserClaimStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $updatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -211,7 +211,7 @@ trait UserClaimStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedAt
+     * @param \DateTime $updatedAt
      */
     public function setUpdatedAt($updatedAt)
     {

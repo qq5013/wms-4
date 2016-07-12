@@ -20,7 +20,7 @@ class RolePermissionId
     }
 
     /**
-     * @var string $roleId
+     * @param string $roleId
      */
     public function setRoleId($roleId)
     {
@@ -41,7 +41,7 @@ class RolePermissionId
     }
 
     /**
-     * @var string $permissionId
+     * @param string $permissionId
      */
     public function setPermissionId($permissionId)
     {

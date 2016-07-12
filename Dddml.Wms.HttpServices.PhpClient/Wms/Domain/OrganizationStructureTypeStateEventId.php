@@ -20,7 +20,7 @@ class OrganizationStructureTypeStateEventId
     }
 
     /**
-     * @var string $id
+     * @param string $id
      */
     public function setId($id)
     {
@@ -28,12 +28,12 @@ class OrganizationStructureTypeStateEventId
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -41,7 +41,7 @@ class OrganizationStructureTypeStateEventId
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {

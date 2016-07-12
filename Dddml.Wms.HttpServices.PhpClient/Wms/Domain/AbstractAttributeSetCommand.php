@@ -25,7 +25,7 @@ class AbstractAttributeSetCommand
     }
 
     /**
-     * @var string $attributeSetId
+     * @param string $attributeSetId
      */
     public function setAttributeSetId($attributeSetId)
     {
@@ -33,12 +33,12 @@ class AbstractAttributeSetCommand
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -46,7 +46,7 @@ class AbstractAttributeSetCommand
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {

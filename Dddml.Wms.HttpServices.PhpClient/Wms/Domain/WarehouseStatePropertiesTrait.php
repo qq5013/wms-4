@@ -22,7 +22,7 @@ trait WarehouseStatePropertiesTrait
     }
 
     /**
-     * @var string $warehouseId
+     * @param string $warehouseId
      */
     public function setWarehouseId($warehouseId)
     {
@@ -43,7 +43,7 @@ trait WarehouseStatePropertiesTrait
     }
 
     /**
-     * @var string $name
+     * @param string $name
      */
     public function setName($name)
     {
@@ -64,7 +64,7 @@ trait WarehouseStatePropertiesTrait
     }
 
     /**
-     * @var string $description
+     * @param string $description
      */
     public function setDescription($description)
     {
@@ -85,7 +85,7 @@ trait WarehouseStatePropertiesTrait
     }
 
     /**
-     * @var boolean $isInTransit
+     * @param boolean $isInTransit
      */
     public function setIsInTransit($isInTransit)
     {
@@ -106,7 +106,7 @@ trait WarehouseStatePropertiesTrait
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {
@@ -114,12 +114,12 @@ trait WarehouseStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -127,7 +127,7 @@ trait WarehouseStatePropertiesTrait
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {
@@ -148,7 +148,7 @@ trait WarehouseStatePropertiesTrait
     }
 
     /**
-     * @var string $createdBy
+     * @param string $createdBy
      */
     public function setCreatedBy($createdBy)
     {
@@ -156,12 +156,12 @@ trait WarehouseStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $createdAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -169,7 +169,7 @@ trait WarehouseStatePropertiesTrait
     }
 
     /**
-     * @var string $createdAt
+     * @param \DateTime $createdAt
      */
     public function setCreatedAt($createdAt)
     {
@@ -190,7 +190,7 @@ trait WarehouseStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedBy
+     * @param string $updatedBy
      */
     public function setUpdatedBy($updatedBy)
     {
@@ -198,12 +198,12 @@ trait WarehouseStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $updatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -211,7 +211,7 @@ trait WarehouseStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedAt
+     * @param \DateTime $updatedAt
      */
     public function setUpdatedAt($updatedAt)
     {

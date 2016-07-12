@@ -25,7 +25,7 @@ class AttributeSetInstanceExtensionFieldGroup
     }	
 
     /**
-     * @var AttributeSetInstanceExtensionField[] $fields
+     * @param AttributeSetInstanceExtensionField[] $fields
      */
     public function setFields($fields)
     {

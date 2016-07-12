@@ -27,7 +27,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var boolean $isSoTransaction
+     * @param boolean $isSoTransaction
      */
     public function setIsSoTransaction($isSoTransaction)
     {
@@ -48,7 +48,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var DocumentAction $documentAction
+     * @param DocumentAction $documentAction
      */
     public function setDocumentAction($documentAction)
     {
@@ -69,7 +69,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var boolean $posted
+     * @param boolean $posted
      */
     public function setPosted($posted)
     {
@@ -90,7 +90,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var boolean $processing
+     * @param boolean $processing
      */
     public function setProcessing($processing)
     {
@@ -111,7 +111,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var boolean $processed
+     * @param boolean $processed
      */
     public function setProcessed($processed)
     {
@@ -132,7 +132,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var integer $documentType
+     * @param integer $documentType
      */
     public function setDocumentType($documentType)
     {
@@ -153,7 +153,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var string $description
+     * @param string $description
      */
     public function setDescription($description)
     {
@@ -174,7 +174,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var string $orderNumber
+     * @param string $orderNumber
      */
     public function setOrderNumber($orderNumber)
     {
@@ -182,12 +182,12 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $dateOrdered;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getDateOrdered()
     {
@@ -195,7 +195,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var string $dateOrdered
+     * @param \DateTime $dateOrdered
      */
     public function setDateOrdered($dateOrdered)
     {
@@ -216,7 +216,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var boolean $isPrinted
+     * @param boolean $isPrinted
      */
     public function setIsPrinted($isPrinted)
     {
@@ -237,7 +237,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var string $movementType
+     * @param string $movementType
      */
     public function setMovementType($movementType)
     {
@@ -245,12 +245,12 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $movementDate;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getMovementDate()
     {
@@ -258,7 +258,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var string $movementDate
+     * @param \DateTime $movementDate
      */
     public function setMovementDate($movementDate)
     {
@@ -279,7 +279,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var string $businessPartnerId
+     * @param string $businessPartnerId
      */
     public function setBusinessPartnerId($businessPartnerId)
     {
@@ -300,7 +300,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var string $warehouseId
+     * @param string $warehouseId
      */
     public function setWarehouseId($warehouseId)
     {
@@ -321,7 +321,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var string $poReference
+     * @param string $poReference
      */
     public function setPoReference($poReference)
     {
@@ -342,7 +342,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var Money $freightAmount
+     * @param Money $freightAmount
      */
     public function setFreightAmount($freightAmount)
     {
@@ -363,7 +363,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var string $shipperId
+     * @param string $shipperId
      */
     public function setShipperId($shipperId)
     {
@@ -384,7 +384,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var Money $chargeAmount
+     * @param Money $chargeAmount
      */
     public function setChargeAmount($chargeAmount)
     {
@@ -392,12 +392,12 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $datePrinted;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getDatePrinted()
     {
@@ -405,7 +405,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var string $datePrinted
+     * @param \DateTime $datePrinted
      */
     public function setDatePrinted($datePrinted)
     {
@@ -426,7 +426,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var string $salesRepresentative
+     * @param string $salesRepresentative
      */
     public function setSalesRepresentative($salesRepresentative)
     {
@@ -447,7 +447,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var integer $numberOfPackages
+     * @param integer $numberOfPackages
      */
     public function setNumberOfPackages($numberOfPackages)
     {
@@ -455,12 +455,12 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $pickDate;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getPickDate()
     {
@@ -468,7 +468,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var string $pickDate
+     * @param \DateTime $pickDate
      */
     public function setPickDate($pickDate)
     {
@@ -476,12 +476,12 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $shipDate;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getShipDate()
     {
@@ -489,7 +489,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var string $shipDate
+     * @param \DateTime $shipDate
      */
     public function setShipDate($shipDate)
     {
@@ -510,7 +510,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var string $trackingNumber
+     * @param string $trackingNumber
      */
     public function setTrackingNumber($trackingNumber)
     {
@@ -518,12 +518,12 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $dateReceived;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getDateReceived()
     {
@@ -531,7 +531,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var string $dateReceived
+     * @param \DateTime $dateReceived
      */
     public function setDateReceived($dateReceived)
     {
@@ -552,7 +552,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var boolean $isInTransit
+     * @param boolean $isInTransit
      */
     public function setIsInTransit($isInTransit)
     {
@@ -573,7 +573,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var boolean $isApproved
+     * @param boolean $isApproved
      */
     public function setIsApproved($isApproved)
     {
@@ -594,7 +594,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var boolean $isInDispute
+     * @param boolean $isInDispute
      */
     public function setIsInDispute($isInDispute)
     {
@@ -602,12 +602,12 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $volume;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getVolume()
     {
@@ -615,7 +615,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var double $volume
+     * @param decimal $volume
      */
     public function setVolume($volume)
     {
@@ -623,12 +623,12 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $weight;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getWeight()
     {
@@ -636,7 +636,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var double $weight
+     * @param decimal $weight
      */
     public function setWeight($weight)
     {
@@ -657,7 +657,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var string $rmaNumber
+     * @param string $rmaNumber
      */
     public function setRmaNumber($rmaNumber)
     {
@@ -678,7 +678,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var string $reversalNumber
+     * @param string $reversalNumber
      */
     public function setReversalNumber($reversalNumber)
     {
@@ -699,7 +699,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var boolean $isDropShip
+     * @param boolean $isDropShip
      */
     public function setIsDropShip($isDropShip)
     {
@@ -720,7 +720,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var string $dropShipBusinessPartnerId
+     * @param string $dropShipBusinessPartnerId
      */
     public function setDropShipBusinessPartnerId($dropShipBusinessPartnerId)
     {
@@ -741,7 +741,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {
@@ -763,7 +763,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }	
 
     /**
-     * @var CreateOrMergePatchInOutLine[] $inOutLines
+     * @param CreateOrMergePatchInOutLine[] $inOutLines
      */
     public function setInOutLines($inOutLines)
     {

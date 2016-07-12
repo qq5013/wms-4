@@ -29,7 +29,7 @@ class AbstractUserClaimMvoCommand
     }
 
     /**
-     * @var UserClaimId $userClaimId
+     * @param UserClaimId $userClaimId
      */
     public function setUserClaimId($userClaimId)
     {
@@ -37,12 +37,12 @@ class AbstractUserClaimMvoCommand
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $userVersion;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getUserVersion()
     {
@@ -50,7 +50,7 @@ class AbstractUserClaimMvoCommand
     }
 
     /**
-     * @var integer $userVersion
+     * @param long $userVersion
      */
     public function setUserVersion($userVersion)
     {

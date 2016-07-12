@@ -24,7 +24,7 @@ class AbstractUserPermissionCommand
     }
 
     /**
-     * @var string $permissionId
+     * @param string $permissionId
      */
     public function setPermissionId($permissionId)
     {

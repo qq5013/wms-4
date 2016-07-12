@@ -24,7 +24,7 @@ class AbstractAudienceCommand
     }
 
     /**
-     * @var string $clientId
+     * @param string $clientId
      */
     public function setClientId($clientId)
     {
@@ -32,12 +32,12 @@ class AbstractAudienceCommand
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -45,7 +45,7 @@ class AbstractAudienceCommand
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {

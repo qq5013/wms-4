@@ -24,7 +24,7 @@ class CreateOrMergePatchRole extends AbstractRoleCommand
     }
 
     /**
-     * @var string $name
+     * @param string $name
      */
     public function setName($name)
     {
@@ -45,7 +45,7 @@ class CreateOrMergePatchRole extends AbstractRoleCommand
     }
 
     /**
-     * @var string $description
+     * @param string $description
      */
     public function setDescription($description)
     {
@@ -66,7 +66,7 @@ class CreateOrMergePatchRole extends AbstractRoleCommand
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {

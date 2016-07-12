@@ -20,7 +20,7 @@ class WarehouseStateEventId
     }
 
     /**
-     * @var string $warehouseId
+     * @param string $warehouseId
      */
     public function setWarehouseId($warehouseId)
     {
@@ -28,12 +28,12 @@ class WarehouseStateEventId
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -41,7 +41,7 @@ class WarehouseStateEventId
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {

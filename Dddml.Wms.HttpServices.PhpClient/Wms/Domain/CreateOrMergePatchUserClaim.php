@@ -24,7 +24,7 @@ class CreateOrMergePatchUserClaim extends AbstractUserClaimCommand
     }
 
     /**
-     * @var string $claimType
+     * @param string $claimType
      */
     public function setClaimType($claimType)
     {
@@ -45,7 +45,7 @@ class CreateOrMergePatchUserClaim extends AbstractUserClaimCommand
     }
 
     /**
-     * @var string $claimValue
+     * @param string $claimValue
      */
     public function setClaimValue($claimValue)
     {
@@ -66,7 +66,7 @@ class CreateOrMergePatchUserClaim extends AbstractUserClaimCommand
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {

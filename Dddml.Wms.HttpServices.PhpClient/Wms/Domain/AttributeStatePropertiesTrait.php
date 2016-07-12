@@ -23,7 +23,7 @@ trait AttributeStatePropertiesTrait
     }
 
     /**
-     * @var string $attributeId
+     * @param string $attributeId
      */
     public function setAttributeId($attributeId)
     {
@@ -44,7 +44,7 @@ trait AttributeStatePropertiesTrait
     }
 
     /**
-     * @var string $name
+     * @param string $name
      */
     public function setName($name)
     {
@@ -65,7 +65,7 @@ trait AttributeStatePropertiesTrait
     }
 
     /**
-     * @var string $organizationId
+     * @param string $organizationId
      */
     public function setOrganizationId($organizationId)
     {
@@ -86,7 +86,7 @@ trait AttributeStatePropertiesTrait
     }
 
     /**
-     * @var string $description
+     * @param string $description
      */
     public function setDescription($description)
     {
@@ -107,7 +107,7 @@ trait AttributeStatePropertiesTrait
     }
 
     /**
-     * @var boolean $isMandatory
+     * @param boolean $isMandatory
      */
     public function setIsMandatory($isMandatory)
     {
@@ -128,7 +128,7 @@ trait AttributeStatePropertiesTrait
     }
 
     /**
-     * @var boolean $isInstanceAttribute
+     * @param boolean $isInstanceAttribute
      */
     public function setIsInstanceAttribute($isInstanceAttribute)
     {
@@ -149,7 +149,7 @@ trait AttributeStatePropertiesTrait
     }
 
     /**
-     * @var string $attributeValueType
+     * @param string $attributeValueType
      */
     public function setAttributeValueType($attributeValueType)
     {
@@ -170,7 +170,7 @@ trait AttributeStatePropertiesTrait
     }
 
     /**
-     * @var integer $attributeValueLength
+     * @param integer $attributeValueLength
      */
     public function setAttributeValueLength($attributeValueLength)
     {
@@ -191,7 +191,7 @@ trait AttributeStatePropertiesTrait
     }
 
     /**
-     * @var boolean $isList
+     * @param boolean $isList
      */
     public function setIsList($isList)
     {
@@ -212,7 +212,7 @@ trait AttributeStatePropertiesTrait
     }
 
     /**
-     * @var string $fieldName
+     * @param string $fieldName
      */
     public function setFieldName($fieldName)
     {
@@ -233,7 +233,7 @@ trait AttributeStatePropertiesTrait
     }
 
     /**
-     * @var string $referenceId
+     * @param string $referenceId
      */
     public function setReferenceId($referenceId)
     {
@@ -254,7 +254,7 @@ trait AttributeStatePropertiesTrait
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {
@@ -262,12 +262,12 @@ trait AttributeStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -275,7 +275,7 @@ trait AttributeStatePropertiesTrait
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {
@@ -296,7 +296,7 @@ trait AttributeStatePropertiesTrait
     }
 
     /**
-     * @var string $createdBy
+     * @param string $createdBy
      */
     public function setCreatedBy($createdBy)
     {
@@ -304,12 +304,12 @@ trait AttributeStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $createdAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -317,7 +317,7 @@ trait AttributeStatePropertiesTrait
     }
 
     /**
-     * @var string $createdAt
+     * @param \DateTime $createdAt
      */
     public function setCreatedAt($createdAt)
     {
@@ -338,7 +338,7 @@ trait AttributeStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedBy
+     * @param string $updatedBy
      */
     public function setUpdatedBy($updatedBy)
     {
@@ -346,12 +346,12 @@ trait AttributeStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $updatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -359,7 +359,7 @@ trait AttributeStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedAt
+     * @param \DateTime $updatedAt
      */
     public function setUpdatedAt($updatedAt)
     {

@@ -20,7 +20,7 @@ class AttributeUseStateEventId
     }
 
     /**
-     * @var string $attributeSetId
+     * @param string $attributeSetId
      */
     public function setAttributeSetId($attributeSetId)
     {
@@ -41,7 +41,7 @@ class AttributeUseStateEventId
     }
 
     /**
-     * @var string $attributeId
+     * @param string $attributeId
      */
     public function setAttributeId($attributeId)
     {
@@ -49,12 +49,12 @@ class AttributeUseStateEventId
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $attributeSetVersion;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getAttributeSetVersion()
     {
@@ -62,7 +62,7 @@ class AttributeUseStateEventId
     }
 
     /**
-     * @var integer $attributeSetVersion
+     * @param long $attributeSetVersion
      */
     public function setAttributeSetVersion($attributeSetVersion)
     {

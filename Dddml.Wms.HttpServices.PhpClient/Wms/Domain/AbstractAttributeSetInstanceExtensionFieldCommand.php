@@ -24,7 +24,7 @@ class AbstractAttributeSetInstanceExtensionFieldCommand
     }
 
     /**
-     * @var string $index
+     * @param string $index
      */
     public function setIndex($index)
     {

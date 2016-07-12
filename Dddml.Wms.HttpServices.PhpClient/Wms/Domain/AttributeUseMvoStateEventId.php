@@ -21,7 +21,7 @@ class AttributeUseMvoStateEventId
     }
 
     /**
-     * @var AttributeSetAttributeUseId $attributeSetAttributeUseId
+     * @param AttributeSetAttributeUseId $attributeSetAttributeUseId
      */
     public function setAttributeSetAttributeUseId($attributeSetAttributeUseId)
     {
@@ -29,12 +29,12 @@ class AttributeUseMvoStateEventId
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $attributeSetVersion;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getAttributeSetVersion()
     {
@@ -42,7 +42,7 @@ class AttributeUseMvoStateEventId
     }
 
     /**
-     * @var integer $attributeSetVersion
+     * @param long $attributeSetVersion
      */
     public function setAttributeSetVersion($attributeSetVersion)
     {

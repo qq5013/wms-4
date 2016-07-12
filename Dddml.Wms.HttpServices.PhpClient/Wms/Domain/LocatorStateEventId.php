@@ -20,7 +20,7 @@ class LocatorStateEventId
     }
 
     /**
-     * @var string $locatorId
+     * @param string $locatorId
      */
     public function setLocatorId($locatorId)
     {
@@ -28,12 +28,12 @@ class LocatorStateEventId
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -41,7 +41,7 @@ class LocatorStateEventId
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {

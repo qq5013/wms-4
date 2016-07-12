@@ -27,7 +27,7 @@ class AbstractInOutCommand
     }
 
     /**
-     * @var string $documentNumber
+     * @param string $documentNumber
      */
     public function setDocumentNumber($documentNumber)
     {
@@ -35,12 +35,12 @@ class AbstractInOutCommand
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -48,7 +48,7 @@ class AbstractInOutCommand
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {

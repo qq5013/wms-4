@@ -25,7 +25,7 @@ class AbstractRolePermissionCommand
     }
 
     /**
-     * @var RolePermissionId $id
+     * @param RolePermissionId $id
      */
     public function setId($id)
     {
@@ -33,12 +33,12 @@ class AbstractRolePermissionCommand
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -46,7 +46,7 @@ class AbstractRolePermissionCommand
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {

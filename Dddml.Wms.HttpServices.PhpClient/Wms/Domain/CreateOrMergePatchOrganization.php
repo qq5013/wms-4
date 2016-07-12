@@ -24,7 +24,7 @@ class CreateOrMergePatchOrganization extends AbstractOrganizationCommand
     }
 
     /**
-     * @var string $name
+     * @param string $name
      */
     public function setName($name)
     {
@@ -45,7 +45,7 @@ class CreateOrMergePatchOrganization extends AbstractOrganizationCommand
     }
 
     /**
-     * @var string $description
+     * @param string $description
      */
     public function setDescription($description)
     {
@@ -66,7 +66,7 @@ class CreateOrMergePatchOrganization extends AbstractOrganizationCommand
     }
 
     /**
-     * @var string $type
+     * @param string $type
      */
     public function setType($type)
     {
@@ -87,7 +87,7 @@ class CreateOrMergePatchOrganization extends AbstractOrganizationCommand
     }
 
     /**
-     * @var boolean $isSummary
+     * @param boolean $isSummary
      */
     public function setIsSummary($isSummary)
     {
@@ -108,7 +108,7 @@ class CreateOrMergePatchOrganization extends AbstractOrganizationCommand
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {

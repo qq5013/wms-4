@@ -20,7 +20,7 @@ class AttributeSetInstanceExtensionFieldId
     }
 
     /**
-     * @var string $groupId
+     * @param string $groupId
      */
     public function setGroupId($groupId)
     {
@@ -41,7 +41,7 @@ class AttributeSetInstanceExtensionFieldId
     }
 
     /**
-     * @var string $index
+     * @param string $index
      */
     public function setIndex($index)
     {

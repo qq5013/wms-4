@@ -21,7 +21,7 @@ class InOutLineMvoStateEventId
     }
 
     /**
-     * @var InOutLineId $inOutLineId
+     * @param InOutLineId $inOutLineId
      */
     public function setInOutLineId($inOutLineId)
     {
@@ -29,12 +29,12 @@ class InOutLineMvoStateEventId
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $inOutVersion;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getInOutVersion()
     {
@@ -42,7 +42,7 @@ class InOutLineMvoStateEventId
     }
 
     /**
-     * @var integer $inOutVersion
+     * @param long $inOutVersion
      */
     public function setInOutVersion($inOutVersion)
     {

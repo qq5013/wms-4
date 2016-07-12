@@ -22,7 +22,7 @@ trait AudienceStatePropertiesTrait
     }
 
     /**
-     * @var string $clientId
+     * @param string $clientId
      */
     public function setClientId($clientId)
     {
@@ -43,7 +43,7 @@ trait AudienceStatePropertiesTrait
     }
 
     /**
-     * @var string $name
+     * @param string $name
      */
     public function setName($name)
     {
@@ -64,7 +64,7 @@ trait AudienceStatePropertiesTrait
     }
 
     /**
-     * @var string $base64Secret
+     * @param string $base64Secret
      */
     public function setBase64Secret($base64Secret)
     {
@@ -85,7 +85,7 @@ trait AudienceStatePropertiesTrait
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {
@@ -93,12 +93,12 @@ trait AudienceStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -106,7 +106,7 @@ trait AudienceStatePropertiesTrait
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {
@@ -127,7 +127,7 @@ trait AudienceStatePropertiesTrait
     }
 
     /**
-     * @var string $createdBy
+     * @param string $createdBy
      */
     public function setCreatedBy($createdBy)
     {
@@ -135,12 +135,12 @@ trait AudienceStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $createdAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -148,7 +148,7 @@ trait AudienceStatePropertiesTrait
     }
 
     /**
-     * @var string $createdAt
+     * @param \DateTime $createdAt
      */
     public function setCreatedAt($createdAt)
     {
@@ -169,7 +169,7 @@ trait AudienceStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedBy
+     * @param string $updatedBy
      */
     public function setUpdatedBy($updatedBy)
     {
@@ -177,12 +177,12 @@ trait AudienceStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $updatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -190,7 +190,7 @@ trait AudienceStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedAt
+     * @param \DateTime $updatedAt
      */
     public function setUpdatedAt($updatedAt)
     {

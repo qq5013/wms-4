@@ -20,7 +20,7 @@ class AttributeSetInstanceExtensionFieldStateEventId
     }
 
     /**
-     * @var string $groupId
+     * @param string $groupId
      */
     public function setGroupId($groupId)
     {
@@ -41,7 +41,7 @@ class AttributeSetInstanceExtensionFieldStateEventId
     }
 
     /**
-     * @var string $index
+     * @param string $index
      */
     public function setIndex($index)
     {
@@ -49,12 +49,12 @@ class AttributeSetInstanceExtensionFieldStateEventId
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $attributeSetInstanceExtensionFieldGroupVersion;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getAttributeSetInstanceExtensionFieldGroupVersion()
     {
@@ -62,7 +62,7 @@ class AttributeSetInstanceExtensionFieldStateEventId
     }
 
     /**
-     * @var integer $attributeSetInstanceExtensionFieldGroupVersion
+     * @param long $attributeSetInstanceExtensionFieldGroupVersion
      */
     public function setAttributeSetInstanceExtensionFieldGroupVersion($attributeSetInstanceExtensionFieldGroupVersion)
     {

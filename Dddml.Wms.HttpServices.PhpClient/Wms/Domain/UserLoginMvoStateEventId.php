@@ -21,7 +21,7 @@ class UserLoginMvoStateEventId
     }
 
     /**
-     * @var UserLoginId $userLoginId
+     * @param UserLoginId $userLoginId
      */
     public function setUserLoginId($userLoginId)
     {
@@ -29,12 +29,12 @@ class UserLoginMvoStateEventId
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $userVersion;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getUserVersion()
     {
@@ -42,7 +42,7 @@ class UserLoginMvoStateEventId
     }
 
     /**
-     * @var integer $userVersion
+     * @param long $userVersion
      */
     public function setUserVersion($userVersion)
     {

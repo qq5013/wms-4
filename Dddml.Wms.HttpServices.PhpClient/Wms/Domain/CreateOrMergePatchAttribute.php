@@ -25,7 +25,7 @@ class CreateOrMergePatchAttribute extends AbstractAttributeCommand
     }
 
     /**
-     * @var string $name
+     * @param string $name
      */
     public function setName($name)
     {
@@ -46,7 +46,7 @@ class CreateOrMergePatchAttribute extends AbstractAttributeCommand
     }
 
     /**
-     * @var string $organizationId
+     * @param string $organizationId
      */
     public function setOrganizationId($organizationId)
     {
@@ -67,7 +67,7 @@ class CreateOrMergePatchAttribute extends AbstractAttributeCommand
     }
 
     /**
-     * @var string $description
+     * @param string $description
      */
     public function setDescription($description)
     {
@@ -88,7 +88,7 @@ class CreateOrMergePatchAttribute extends AbstractAttributeCommand
     }
 
     /**
-     * @var boolean $isMandatory
+     * @param boolean $isMandatory
      */
     public function setIsMandatory($isMandatory)
     {
@@ -109,7 +109,7 @@ class CreateOrMergePatchAttribute extends AbstractAttributeCommand
     }
 
     /**
-     * @var boolean $isInstanceAttribute
+     * @param boolean $isInstanceAttribute
      */
     public function setIsInstanceAttribute($isInstanceAttribute)
     {
@@ -130,7 +130,7 @@ class CreateOrMergePatchAttribute extends AbstractAttributeCommand
     }
 
     /**
-     * @var string $attributeValueType
+     * @param string $attributeValueType
      */
     public function setAttributeValueType($attributeValueType)
     {
@@ -151,7 +151,7 @@ class CreateOrMergePatchAttribute extends AbstractAttributeCommand
     }
 
     /**
-     * @var integer $attributeValueLength
+     * @param integer $attributeValueLength
      */
     public function setAttributeValueLength($attributeValueLength)
     {
@@ -172,7 +172,7 @@ class CreateOrMergePatchAttribute extends AbstractAttributeCommand
     }
 
     /**
-     * @var boolean $isList
+     * @param boolean $isList
      */
     public function setIsList($isList)
     {
@@ -193,7 +193,7 @@ class CreateOrMergePatchAttribute extends AbstractAttributeCommand
     }
 
     /**
-     * @var string $fieldName
+     * @param string $fieldName
      */
     public function setFieldName($fieldName)
     {
@@ -214,7 +214,7 @@ class CreateOrMergePatchAttribute extends AbstractAttributeCommand
     }
 
     /**
-     * @var string $referenceId
+     * @param string $referenceId
      */
     public function setReferenceId($referenceId)
     {
@@ -235,7 +235,7 @@ class CreateOrMergePatchAttribute extends AbstractAttributeCommand
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {
@@ -257,7 +257,7 @@ class CreateOrMergePatchAttribute extends AbstractAttributeCommand
     }	
 
     /**
-     * @var CreateOrMergePatchAttributeValue[] $attributeValues
+     * @param CreateOrMergePatchAttributeValue[] $attributeValues
      */
     public function setAttributeValues($attributeValues)
     {

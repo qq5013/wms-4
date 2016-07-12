@@ -25,7 +25,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldGroup extends Abstract
     }
 
     /**
-     * @var string $fieldType
+     * @param string $fieldType
      */
     public function setFieldType($fieldType)
     {
@@ -46,7 +46,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldGroup extends Abstract
     }
 
     /**
-     * @var integer $fieldLength
+     * @param integer $fieldLength
      */
     public function setFieldLength($fieldLength)
     {
@@ -67,7 +67,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldGroup extends Abstract
     }
 
     /**
-     * @var integer $fieldCount
+     * @param integer $fieldCount
      */
     public function setFieldCount($fieldCount)
     {
@@ -88,7 +88,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldGroup extends Abstract
     }
 
     /**
-     * @var string $nameFormat
+     * @param string $nameFormat
      */
     public function setNameFormat($nameFormat)
     {
@@ -109,7 +109,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldGroup extends Abstract
     }
 
     /**
-     * @var string $description
+     * @param string $description
      */
     public function setDescription($description)
     {
@@ -130,7 +130,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldGroup extends Abstract
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {
@@ -152,7 +152,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldGroup extends Abstract
     }	
 
     /**
-     * @var CreateOrMergePatchAttributeSetInstanceExtensionField[] $fields
+     * @param CreateOrMergePatchAttributeSetInstanceExtensionField[] $fields
      */
     public function setFields($fields)
     {

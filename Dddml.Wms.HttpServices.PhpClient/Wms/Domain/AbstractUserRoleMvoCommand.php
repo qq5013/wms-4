@@ -29,7 +29,7 @@ class AbstractUserRoleMvoCommand
     }
 
     /**
-     * @var UserRoleId $userRoleId
+     * @param UserRoleId $userRoleId
      */
     public function setUserRoleId($userRoleId)
     {
@@ -37,12 +37,12 @@ class AbstractUserRoleMvoCommand
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $userVersion;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getUserVersion()
     {
@@ -50,7 +50,7 @@ class AbstractUserRoleMvoCommand
     }
 
     /**
-     * @var integer $userVersion
+     * @param long $userVersion
      */
     public function setUserVersion($userVersion)
     {

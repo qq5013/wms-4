@@ -85,23 +85,8 @@
 	
 	private IDictionary<string, string> GetSerializationAnnotationTypes()
 	{
-            var dict = new Dictionary<string, string>();
-           
-                dict.Add("bool", "boolean");
-                dict.Add("bool?", "boolean");
-                dict.Add("DateTime", "string");
-                dict.Add("DateTime?", "string");
-                dict.Add("decimal", "double");
-                dict.Add("decimal?", "double");
-                dict.Add("int", "integer");
-                dict.Add("int?", "integer");
-                dict.Add("long", "integer");
-                dict.Add("long?", "integer");
-                //dict.Add("Money", "_MONEY_");
-                dict.Add("string", "string");
-			
+            var dict = GetPhpTypes();
 			return dict;
-
 	}
 
 	private IDictionary<string, string> GetPhpTypes()
@@ -110,19 +95,18 @@
            
                 dict.Add("bool", "boolean");
                 dict.Add("bool?", "boolean");
-                dict.Add("DateTime", "string");
-                dict.Add("DateTime?", "string");
-                dict.Add("decimal", "double");
-                dict.Add("decimal?", "double");
+                dict.Add("DateTime", "\\DateTime");
+                dict.Add("DateTime?", "\\DateTime");
+                dict.Add("decimal", "decimal");
+                dict.Add("decimal?", "decimal");
                 dict.Add("int", "integer");
                 dict.Add("int?", "integer");
-                dict.Add("long", "integer");
-                dict.Add("long?", "integer");
+                dict.Add("long", "long");
+                dict.Add("long?", "long");
                 //dict.Add("Money", "_MONEY_");
                 dict.Add("string", "string");
 			
 			return dict;
-
 	}
 
 	//private IDictionary<string, NHibernateType> GetNHibernateTypes()

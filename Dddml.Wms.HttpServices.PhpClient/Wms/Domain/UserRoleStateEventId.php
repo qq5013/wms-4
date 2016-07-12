@@ -20,7 +20,7 @@ class UserRoleStateEventId
     }
 
     /**
-     * @var string $userId
+     * @param string $userId
      */
     public function setUserId($userId)
     {
@@ -41,7 +41,7 @@ class UserRoleStateEventId
     }
 
     /**
-     * @var string $roleId
+     * @param string $roleId
      */
     public function setRoleId($roleId)
     {
@@ -49,12 +49,12 @@ class UserRoleStateEventId
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $userVersion;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getUserVersion()
     {
@@ -62,7 +62,7 @@ class UserRoleStateEventId
     }
 
     /**
-     * @var integer $userVersion
+     * @param long $userVersion
      */
     public function setUserVersion($userVersion)
     {

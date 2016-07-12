@@ -27,7 +27,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @var UserClaimId $userClaimId
+     * @param UserClaimId $userClaimId
      */
     public function setUserClaimId($userClaimId)
     {
@@ -48,7 +48,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $claimType
+     * @param string $claimType
      */
     public function setClaimType($claimType)
     {
@@ -69,7 +69,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $claimValue
+     * @param string $claimValue
      */
     public function setClaimValue($claimValue)
     {
@@ -77,12 +77,12 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -90,7 +90,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {
@@ -111,7 +111,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {
@@ -132,7 +132,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $userUserName
+     * @param string $userUserName
      */
     public function setUserUserName($userUserName)
     {
@@ -153,7 +153,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @var integer $userAccessFailedCount
+     * @param integer $userAccessFailedCount
      */
     public function setUserAccessFailedCount($userAccessFailedCount)
     {
@@ -174,7 +174,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $userEmail
+     * @param string $userEmail
      */
     public function setUserEmail($userEmail)
     {
@@ -195,7 +195,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $userEmailConfirmed
+     * @param boolean $userEmailConfirmed
      */
     public function setUserEmailConfirmed($userEmailConfirmed)
     {
@@ -216,7 +216,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $userLockoutEnabled
+     * @param boolean $userLockoutEnabled
      */
     public function setUserLockoutEnabled($userLockoutEnabled)
     {
@@ -224,12 +224,12 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $userLockoutEndDateUtc;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUserLockoutEndDateUtc()
     {
@@ -237,7 +237,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $userLockoutEndDateUtc
+     * @param \DateTime $userLockoutEndDateUtc
      */
     public function setUserLockoutEndDateUtc($userLockoutEndDateUtc)
     {
@@ -258,7 +258,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $userPasswordHash
+     * @param string $userPasswordHash
      */
     public function setUserPasswordHash($userPasswordHash)
     {
@@ -279,7 +279,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $userPhoneNumber
+     * @param string $userPhoneNumber
      */
     public function setUserPhoneNumber($userPhoneNumber)
     {
@@ -300,7 +300,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $userPhoneNumberConfirmed
+     * @param boolean $userPhoneNumberConfirmed
      */
     public function setUserPhoneNumberConfirmed($userPhoneNumberConfirmed)
     {
@@ -321,7 +321,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $userTwoFactorEnabled
+     * @param boolean $userTwoFactorEnabled
      */
     public function setUserTwoFactorEnabled($userTwoFactorEnabled)
     {
@@ -342,7 +342,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $userSecurityStamp
+     * @param string $userSecurityStamp
      */
     public function setUserSecurityStamp($userSecurityStamp)
     {
@@ -363,7 +363,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $userCreatedBy
+     * @param string $userCreatedBy
      */
     public function setUserCreatedBy($userCreatedBy)
     {
@@ -371,12 +371,12 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $userCreatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUserCreatedAt()
     {
@@ -384,7 +384,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $userCreatedAt
+     * @param \DateTime $userCreatedAt
      */
     public function setUserCreatedAt($userCreatedAt)
     {
@@ -405,7 +405,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $userUpdatedBy
+     * @param string $userUpdatedBy
      */
     public function setUserUpdatedBy($userUpdatedBy)
     {
@@ -413,12 +413,12 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $userUpdatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUserUpdatedAt()
     {
@@ -426,7 +426,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $userUpdatedAt
+     * @param \DateTime $userUpdatedAt
      */
     public function setUserUpdatedAt($userUpdatedAt)
     {
@@ -447,7 +447,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $userActive
+     * @param boolean $userActive
      */
     public function setUserActive($userActive)
     {
@@ -468,7 +468,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $userDeleted
+     * @param boolean $userDeleted
      */
     public function setUserDeleted($userDeleted)
     {
@@ -476,12 +476,12 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $userVersion;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getUserVersion()
     {
@@ -489,7 +489,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @var integer $userVersion
+     * @param long $userVersion
      */
     public function setUserVersion($userVersion)
     {
@@ -510,7 +510,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $createdBy
+     * @param string $createdBy
      */
     public function setCreatedBy($createdBy)
     {
@@ -518,12 +518,12 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $createdAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -531,7 +531,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $createdAt
+     * @param \DateTime $createdAt
      */
     public function setCreatedAt($createdAt)
     {
@@ -552,7 +552,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedBy
+     * @param string $updatedBy
      */
     public function setUpdatedBy($updatedBy)
     {
@@ -560,12 +560,12 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $updatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -573,7 +573,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedAt
+     * @param \DateTime $updatedAt
      */
     public function setUpdatedAt($updatedAt)
     {

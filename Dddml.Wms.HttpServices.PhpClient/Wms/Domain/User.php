@@ -29,7 +29,7 @@ class User
     }	
 
     /**
-     * @var UserRole[] $userRoles
+     * @param UserRole[] $userRoles
      */
     public function setUserRoles($userRoles)
     {
@@ -51,7 +51,7 @@ class User
     }	
 
     /**
-     * @var UserClaim[] $userClaims
+     * @param UserClaim[] $userClaims
      */
     public function setUserClaims($userClaims)
     {
@@ -73,7 +73,7 @@ class User
     }	
 
     /**
-     * @var UserPermission[] $userPermissions
+     * @param UserPermission[] $userPermissions
      */
     public function setUserPermissions($userPermissions)
     {
@@ -95,7 +95,7 @@ class User
     }	
 
     /**
-     * @var UserLogin[] $userLogins
+     * @param UserLogin[] $userLogins
      */
     public function setUserLogins($userLogins)
     {

@@ -12,12 +12,12 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     use InOutLineIsPropertyRemovedTrait;
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $lineNumber;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getLineNumber()
     {
@@ -25,7 +25,7 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @var integer $lineNumber
+     * @param long $lineNumber
      */
     public function setLineNumber($lineNumber)
     {
@@ -46,7 +46,7 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @var string $description
+     * @param string $description
      */
     public function setDescription($description)
     {
@@ -67,7 +67,7 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @var string $locatorId
+     * @param string $locatorId
      */
     public function setLocatorId($locatorId)
     {
@@ -88,7 +88,7 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @var string $product
+     * @param string $product
      */
     public function setProduct($product)
     {
@@ -109,7 +109,7 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @var string $uomId
+     * @param string $uomId
      */
     public function setUomId($uomId)
     {
@@ -117,12 +117,12 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $movementQuantity;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getMovementQuantity()
     {
@@ -130,7 +130,7 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @var double $movementQuantity
+     * @param decimal $movementQuantity
      */
     public function setMovementQuantity($movementQuantity)
     {
@@ -138,12 +138,12 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $confirmedQuantity;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getConfirmedQuantity()
     {
@@ -151,7 +151,7 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @var double $confirmedQuantity
+     * @param decimal $confirmedQuantity
      */
     public function setConfirmedQuantity($confirmedQuantity)
     {
@@ -159,12 +159,12 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $scrappedQuantity;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getScrappedQuantity()
     {
@@ -172,7 +172,7 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @var double $scrappedQuantity
+     * @param decimal $scrappedQuantity
      */
     public function setScrappedQuantity($scrappedQuantity)
     {
@@ -180,12 +180,12 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $targetQuantity;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getTargetQuantity()
     {
@@ -193,7 +193,7 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @var double $targetQuantity
+     * @param decimal $targetQuantity
      */
     public function setTargetQuantity($targetQuantity)
     {
@@ -201,12 +201,12 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $pickedQuantity;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getPickedQuantity()
     {
@@ -214,7 +214,7 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @var double $pickedQuantity
+     * @param decimal $pickedQuantity
      */
     public function setPickedQuantity($pickedQuantity)
     {
@@ -235,7 +235,7 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @var boolean $isInvoiced
+     * @param boolean $isInvoiced
      */
     public function setIsInvoiced($isInvoiced)
     {
@@ -256,7 +256,7 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @var string $attributeSetInstanceId
+     * @param string $attributeSetInstanceId
      */
     public function setAttributeSetInstanceId($attributeSetInstanceId)
     {
@@ -277,7 +277,7 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @var boolean $isDescription
+     * @param boolean $isDescription
      */
     public function setIsDescription($isDescription)
     {
@@ -298,7 +298,7 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @var boolean $processed
+     * @param boolean $processed
      */
     public function setProcessed($processed)
     {
@@ -306,12 +306,12 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $quantityEntered;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getQuantityEntered()
     {
@@ -319,7 +319,7 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @var double $quantityEntered
+     * @param decimal $quantityEntered
      */
     public function setQuantityEntered($quantityEntered)
     {
@@ -327,12 +327,12 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $rmaLineNumber;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getRmaLineNumber()
     {
@@ -340,7 +340,7 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @var integer $rmaLineNumber
+     * @param long $rmaLineNumber
      */
     public function setRmaLineNumber($rmaLineNumber)
     {
@@ -348,12 +348,12 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $reversalLineNumber;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getReversalLineNumber()
     {
@@ -361,7 +361,7 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @var integer $reversalLineNumber
+     * @param long $reversalLineNumber
      */
     public function setReversalLineNumber($reversalLineNumber)
     {
@@ -382,7 +382,7 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {

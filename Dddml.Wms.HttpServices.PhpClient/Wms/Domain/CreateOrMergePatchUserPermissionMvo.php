@@ -16,12 +16,12 @@ class CreateOrMergePatchUserPermissionMvo extends AbstractUserPermissionMvoComma
     use UserPermissionMvoIsPropertyRemovedTrait;
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -29,7 +29,7 @@ class CreateOrMergePatchUserPermissionMvo extends AbstractUserPermissionMvoComma
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {
@@ -50,7 +50,7 @@ class CreateOrMergePatchUserPermissionMvo extends AbstractUserPermissionMvoComma
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {
@@ -71,7 +71,7 @@ class CreateOrMergePatchUserPermissionMvo extends AbstractUserPermissionMvoComma
     }
 
     /**
-     * @var string $userUserName
+     * @param string $userUserName
      */
     public function setUserUserName($userUserName)
     {
@@ -92,7 +92,7 @@ class CreateOrMergePatchUserPermissionMvo extends AbstractUserPermissionMvoComma
     }
 
     /**
-     * @var integer $userAccessFailedCount
+     * @param integer $userAccessFailedCount
      */
     public function setUserAccessFailedCount($userAccessFailedCount)
     {
@@ -113,7 +113,7 @@ class CreateOrMergePatchUserPermissionMvo extends AbstractUserPermissionMvoComma
     }
 
     /**
-     * @var string $userEmail
+     * @param string $userEmail
      */
     public function setUserEmail($userEmail)
     {
@@ -134,7 +134,7 @@ class CreateOrMergePatchUserPermissionMvo extends AbstractUserPermissionMvoComma
     }
 
     /**
-     * @var boolean $userEmailConfirmed
+     * @param boolean $userEmailConfirmed
      */
     public function setUserEmailConfirmed($userEmailConfirmed)
     {
@@ -155,7 +155,7 @@ class CreateOrMergePatchUserPermissionMvo extends AbstractUserPermissionMvoComma
     }
 
     /**
-     * @var boolean $userLockoutEnabled
+     * @param boolean $userLockoutEnabled
      */
     public function setUserLockoutEnabled($userLockoutEnabled)
     {
@@ -163,12 +163,12 @@ class CreateOrMergePatchUserPermissionMvo extends AbstractUserPermissionMvoComma
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $userLockoutEndDateUtc;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUserLockoutEndDateUtc()
     {
@@ -176,7 +176,7 @@ class CreateOrMergePatchUserPermissionMvo extends AbstractUserPermissionMvoComma
     }
 
     /**
-     * @var string $userLockoutEndDateUtc
+     * @param \DateTime $userLockoutEndDateUtc
      */
     public function setUserLockoutEndDateUtc($userLockoutEndDateUtc)
     {
@@ -197,7 +197,7 @@ class CreateOrMergePatchUserPermissionMvo extends AbstractUserPermissionMvoComma
     }
 
     /**
-     * @var string $userPasswordHash
+     * @param string $userPasswordHash
      */
     public function setUserPasswordHash($userPasswordHash)
     {
@@ -218,7 +218,7 @@ class CreateOrMergePatchUserPermissionMvo extends AbstractUserPermissionMvoComma
     }
 
     /**
-     * @var string $userPhoneNumber
+     * @param string $userPhoneNumber
      */
     public function setUserPhoneNumber($userPhoneNumber)
     {
@@ -239,7 +239,7 @@ class CreateOrMergePatchUserPermissionMvo extends AbstractUserPermissionMvoComma
     }
 
     /**
-     * @var boolean $userPhoneNumberConfirmed
+     * @param boolean $userPhoneNumberConfirmed
      */
     public function setUserPhoneNumberConfirmed($userPhoneNumberConfirmed)
     {
@@ -260,7 +260,7 @@ class CreateOrMergePatchUserPermissionMvo extends AbstractUserPermissionMvoComma
     }
 
     /**
-     * @var boolean $userTwoFactorEnabled
+     * @param boolean $userTwoFactorEnabled
      */
     public function setUserTwoFactorEnabled($userTwoFactorEnabled)
     {
@@ -281,7 +281,7 @@ class CreateOrMergePatchUserPermissionMvo extends AbstractUserPermissionMvoComma
     }
 
     /**
-     * @var string $userSecurityStamp
+     * @param string $userSecurityStamp
      */
     public function setUserSecurityStamp($userSecurityStamp)
     {
@@ -302,7 +302,7 @@ class CreateOrMergePatchUserPermissionMvo extends AbstractUserPermissionMvoComma
     }
 
     /**
-     * @var string $userCreatedBy
+     * @param string $userCreatedBy
      */
     public function setUserCreatedBy($userCreatedBy)
     {
@@ -310,12 +310,12 @@ class CreateOrMergePatchUserPermissionMvo extends AbstractUserPermissionMvoComma
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $userCreatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUserCreatedAt()
     {
@@ -323,7 +323,7 @@ class CreateOrMergePatchUserPermissionMvo extends AbstractUserPermissionMvoComma
     }
 
     /**
-     * @var string $userCreatedAt
+     * @param \DateTime $userCreatedAt
      */
     public function setUserCreatedAt($userCreatedAt)
     {
@@ -344,7 +344,7 @@ class CreateOrMergePatchUserPermissionMvo extends AbstractUserPermissionMvoComma
     }
 
     /**
-     * @var string $userUpdatedBy
+     * @param string $userUpdatedBy
      */
     public function setUserUpdatedBy($userUpdatedBy)
     {
@@ -352,12 +352,12 @@ class CreateOrMergePatchUserPermissionMvo extends AbstractUserPermissionMvoComma
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $userUpdatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUserUpdatedAt()
     {
@@ -365,7 +365,7 @@ class CreateOrMergePatchUserPermissionMvo extends AbstractUserPermissionMvoComma
     }
 
     /**
-     * @var string $userUpdatedAt
+     * @param \DateTime $userUpdatedAt
      */
     public function setUserUpdatedAt($userUpdatedAt)
     {
@@ -386,7 +386,7 @@ class CreateOrMergePatchUserPermissionMvo extends AbstractUserPermissionMvoComma
     }
 
     /**
-     * @var boolean $userActive
+     * @param boolean $userActive
      */
     public function setUserActive($userActive)
     {
@@ -407,7 +407,7 @@ class CreateOrMergePatchUserPermissionMvo extends AbstractUserPermissionMvoComma
     }
 
     /**
-     * @var boolean $userDeleted
+     * @param boolean $userDeleted
      */
     public function setUserDeleted($userDeleted)
     {

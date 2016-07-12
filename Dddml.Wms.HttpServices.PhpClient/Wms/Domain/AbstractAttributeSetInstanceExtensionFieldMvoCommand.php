@@ -26,7 +26,7 @@ class AbstractAttributeSetInstanceExtensionFieldMvoCommand
     }
 
     /**
-     * @var AttributeSetInstanceExtensionFieldId $attributeSetInstanceExtensionFieldId
+     * @param AttributeSetInstanceExtensionFieldId $attributeSetInstanceExtensionFieldId
      */
     public function setAttributeSetInstanceExtensionFieldId($attributeSetInstanceExtensionFieldId)
     {
@@ -34,12 +34,12 @@ class AbstractAttributeSetInstanceExtensionFieldMvoCommand
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $attrSetInstEfGroupVersion;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getAttrSetInstEfGroupVersion()
     {
@@ -47,7 +47,7 @@ class AbstractAttributeSetInstanceExtensionFieldMvoCommand
     }
 
     /**
-     * @var integer $attrSetInstEfGroupVersion
+     * @param long $attrSetInstEfGroupVersion
      */
     public function setAttrSetInstEfGroupVersion($attrSetInstEfGroupVersion)
     {

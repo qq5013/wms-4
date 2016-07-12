@@ -20,7 +20,7 @@ class DocumentAction
     }
 
     /**
-     * @var string $name
+     * @param string $name
      */
     public function setName($name)
     {

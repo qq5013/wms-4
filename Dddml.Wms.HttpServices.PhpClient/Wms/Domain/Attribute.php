@@ -25,7 +25,7 @@ class Attribute
     }	
 
     /**
-     * @var AttributeValue[] $attributeValues
+     * @param AttributeValue[] $attributeValues
      */
     public function setAttributeValues($attributeValues)
     {

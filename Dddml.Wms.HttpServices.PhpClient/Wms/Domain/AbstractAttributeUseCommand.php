@@ -24,7 +24,7 @@ class AbstractAttributeUseCommand
     }
 
     /**
-     * @var string $attributeId
+     * @param string $attributeId
      */
     public function setAttributeId($attributeId)
     {

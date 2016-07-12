@@ -20,7 +20,7 @@ class LoginKey
     }
 
     /**
-     * @var string $loginProvider
+     * @param string $loginProvider
      */
     public function setLoginProvider($loginProvider)
     {
@@ -41,7 +41,7 @@ class LoginKey
     }
 
     /**
-     * @var string $providerKey
+     * @param string $providerKey
      */
     public function setProviderKey($providerKey)
     {

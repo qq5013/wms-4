@@ -29,7 +29,7 @@ class CreateOrMergePatchUserClaimMvo extends AbstractUserClaimMvoCommand
     }
 
     /**
-     * @var string $claimType
+     * @param string $claimType
      */
     public function setClaimType($claimType)
     {
@@ -50,7 +50,7 @@ class CreateOrMergePatchUserClaimMvo extends AbstractUserClaimMvoCommand
     }
 
     /**
-     * @var string $claimValue
+     * @param string $claimValue
      */
     public function setClaimValue($claimValue)
     {
@@ -58,12 +58,12 @@ class CreateOrMergePatchUserClaimMvo extends AbstractUserClaimMvoCommand
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -71,7 +71,7 @@ class CreateOrMergePatchUserClaimMvo extends AbstractUserClaimMvoCommand
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {
@@ -92,7 +92,7 @@ class CreateOrMergePatchUserClaimMvo extends AbstractUserClaimMvoCommand
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {
@@ -113,7 +113,7 @@ class CreateOrMergePatchUserClaimMvo extends AbstractUserClaimMvoCommand
     }
 
     /**
-     * @var string $userUserName
+     * @param string $userUserName
      */
     public function setUserUserName($userUserName)
     {
@@ -134,7 +134,7 @@ class CreateOrMergePatchUserClaimMvo extends AbstractUserClaimMvoCommand
     }
 
     /**
-     * @var integer $userAccessFailedCount
+     * @param integer $userAccessFailedCount
      */
     public function setUserAccessFailedCount($userAccessFailedCount)
     {
@@ -155,7 +155,7 @@ class CreateOrMergePatchUserClaimMvo extends AbstractUserClaimMvoCommand
     }
 
     /**
-     * @var string $userEmail
+     * @param string $userEmail
      */
     public function setUserEmail($userEmail)
     {
@@ -176,7 +176,7 @@ class CreateOrMergePatchUserClaimMvo extends AbstractUserClaimMvoCommand
     }
 
     /**
-     * @var boolean $userEmailConfirmed
+     * @param boolean $userEmailConfirmed
      */
     public function setUserEmailConfirmed($userEmailConfirmed)
     {
@@ -197,7 +197,7 @@ class CreateOrMergePatchUserClaimMvo extends AbstractUserClaimMvoCommand
     }
 
     /**
-     * @var boolean $userLockoutEnabled
+     * @param boolean $userLockoutEnabled
      */
     public function setUserLockoutEnabled($userLockoutEnabled)
     {
@@ -205,12 +205,12 @@ class CreateOrMergePatchUserClaimMvo extends AbstractUserClaimMvoCommand
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $userLockoutEndDateUtc;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUserLockoutEndDateUtc()
     {
@@ -218,7 +218,7 @@ class CreateOrMergePatchUserClaimMvo extends AbstractUserClaimMvoCommand
     }
 
     /**
-     * @var string $userLockoutEndDateUtc
+     * @param \DateTime $userLockoutEndDateUtc
      */
     public function setUserLockoutEndDateUtc($userLockoutEndDateUtc)
     {
@@ -239,7 +239,7 @@ class CreateOrMergePatchUserClaimMvo extends AbstractUserClaimMvoCommand
     }
 
     /**
-     * @var string $userPasswordHash
+     * @param string $userPasswordHash
      */
     public function setUserPasswordHash($userPasswordHash)
     {
@@ -260,7 +260,7 @@ class CreateOrMergePatchUserClaimMvo extends AbstractUserClaimMvoCommand
     }
 
     /**
-     * @var string $userPhoneNumber
+     * @param string $userPhoneNumber
      */
     public function setUserPhoneNumber($userPhoneNumber)
     {
@@ -281,7 +281,7 @@ class CreateOrMergePatchUserClaimMvo extends AbstractUserClaimMvoCommand
     }
 
     /**
-     * @var boolean $userPhoneNumberConfirmed
+     * @param boolean $userPhoneNumberConfirmed
      */
     public function setUserPhoneNumberConfirmed($userPhoneNumberConfirmed)
     {
@@ -302,7 +302,7 @@ class CreateOrMergePatchUserClaimMvo extends AbstractUserClaimMvoCommand
     }
 
     /**
-     * @var boolean $userTwoFactorEnabled
+     * @param boolean $userTwoFactorEnabled
      */
     public function setUserTwoFactorEnabled($userTwoFactorEnabled)
     {
@@ -323,7 +323,7 @@ class CreateOrMergePatchUserClaimMvo extends AbstractUserClaimMvoCommand
     }
 
     /**
-     * @var string $userSecurityStamp
+     * @param string $userSecurityStamp
      */
     public function setUserSecurityStamp($userSecurityStamp)
     {
@@ -344,7 +344,7 @@ class CreateOrMergePatchUserClaimMvo extends AbstractUserClaimMvoCommand
     }
 
     /**
-     * @var string $userCreatedBy
+     * @param string $userCreatedBy
      */
     public function setUserCreatedBy($userCreatedBy)
     {
@@ -352,12 +352,12 @@ class CreateOrMergePatchUserClaimMvo extends AbstractUserClaimMvoCommand
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $userCreatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUserCreatedAt()
     {
@@ -365,7 +365,7 @@ class CreateOrMergePatchUserClaimMvo extends AbstractUserClaimMvoCommand
     }
 
     /**
-     * @var string $userCreatedAt
+     * @param \DateTime $userCreatedAt
      */
     public function setUserCreatedAt($userCreatedAt)
     {
@@ -386,7 +386,7 @@ class CreateOrMergePatchUserClaimMvo extends AbstractUserClaimMvoCommand
     }
 
     /**
-     * @var string $userUpdatedBy
+     * @param string $userUpdatedBy
      */
     public function setUserUpdatedBy($userUpdatedBy)
     {
@@ -394,12 +394,12 @@ class CreateOrMergePatchUserClaimMvo extends AbstractUserClaimMvoCommand
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $userUpdatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUserUpdatedAt()
     {
@@ -407,7 +407,7 @@ class CreateOrMergePatchUserClaimMvo extends AbstractUserClaimMvoCommand
     }
 
     /**
-     * @var string $userUpdatedAt
+     * @param \DateTime $userUpdatedAt
      */
     public function setUserUpdatedAt($userUpdatedAt)
     {
@@ -428,7 +428,7 @@ class CreateOrMergePatchUserClaimMvo extends AbstractUserClaimMvoCommand
     }
 
     /**
-     * @var boolean $userActive
+     * @param boolean $userActive
      */
     public function setUserActive($userActive)
     {
@@ -449,7 +449,7 @@ class CreateOrMergePatchUserClaimMvo extends AbstractUserClaimMvoCommand
     }
 
     /**
-     * @var boolean $userDeleted
+     * @param boolean $userDeleted
      */
     public function setUserDeleted($userDeleted)
     {

@@ -29,7 +29,7 @@ class AbstractUserLoginMvoCommand
     }
 
     /**
-     * @var UserLoginId $userLoginId
+     * @param UserLoginId $userLoginId
      */
     public function setUserLoginId($userLoginId)
     {
@@ -37,12 +37,12 @@ class AbstractUserLoginMvoCommand
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $userVersion;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getUserVersion()
     {
@@ -50,7 +50,7 @@ class AbstractUserLoginMvoCommand
     }
 
     /**
-     * @var integer $userVersion
+     * @param long $userVersion
      */
     public function setUserVersion($userVersion)
     {

@@ -24,7 +24,7 @@ class CreateOrMergePatchLocator extends AbstractLocatorCommand
     }
 
     /**
-     * @var string $warehouseId
+     * @param string $warehouseId
      */
     public function setWarehouseId($warehouseId)
     {
@@ -45,7 +45,7 @@ class CreateOrMergePatchLocator extends AbstractLocatorCommand
     }
 
     /**
-     * @var string $parentLocatorId
+     * @param string $parentLocatorId
      */
     public function setParentLocatorId($parentLocatorId)
     {
@@ -66,7 +66,7 @@ class CreateOrMergePatchLocator extends AbstractLocatorCommand
     }
 
     /**
-     * @var string $locatorType
+     * @param string $locatorType
      */
     public function setLocatorType($locatorType)
     {
@@ -87,7 +87,7 @@ class CreateOrMergePatchLocator extends AbstractLocatorCommand
     }
 
     /**
-     * @var string $priorityNumber
+     * @param string $priorityNumber
      */
     public function setPriorityNumber($priorityNumber)
     {
@@ -108,7 +108,7 @@ class CreateOrMergePatchLocator extends AbstractLocatorCommand
     }
 
     /**
-     * @var boolean $isDefault
+     * @param boolean $isDefault
      */
     public function setIsDefault($isDefault)
     {
@@ -129,7 +129,7 @@ class CreateOrMergePatchLocator extends AbstractLocatorCommand
     }
 
     /**
-     * @var string $x
+     * @param string $x
      */
     public function setX($x)
     {
@@ -150,7 +150,7 @@ class CreateOrMergePatchLocator extends AbstractLocatorCommand
     }
 
     /**
-     * @var string $y
+     * @param string $y
      */
     public function setY($y)
     {
@@ -171,7 +171,7 @@ class CreateOrMergePatchLocator extends AbstractLocatorCommand
     }
 
     /**
-     * @var string $z
+     * @param string $z
      */
     public function setZ($z)
     {
@@ -192,7 +192,7 @@ class CreateOrMergePatchLocator extends AbstractLocatorCommand
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {

@@ -25,7 +25,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var InOutLineId $inOutLineId
+     * @param InOutLineId $inOutLineId
      */
     public function setInOutLineId($inOutLineId)
     {
@@ -33,12 +33,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $lineNumber;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getLineNumber()
     {
@@ -46,7 +46,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var integer $lineNumber
+     * @param long $lineNumber
      */
     public function setLineNumber($lineNumber)
     {
@@ -67,7 +67,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $description
+     * @param string $description
      */
     public function setDescription($description)
     {
@@ -88,7 +88,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $locatorId
+     * @param string $locatorId
      */
     public function setLocatorId($locatorId)
     {
@@ -109,7 +109,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $product
+     * @param string $product
      */
     public function setProduct($product)
     {
@@ -130,7 +130,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $uomId
+     * @param string $uomId
      */
     public function setUomId($uomId)
     {
@@ -138,12 +138,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $movementQuantity;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getMovementQuantity()
     {
@@ -151,7 +151,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var double $movementQuantity
+     * @param decimal $movementQuantity
      */
     public function setMovementQuantity($movementQuantity)
     {
@@ -159,12 +159,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $confirmedQuantity;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getConfirmedQuantity()
     {
@@ -172,7 +172,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var double $confirmedQuantity
+     * @param decimal $confirmedQuantity
      */
     public function setConfirmedQuantity($confirmedQuantity)
     {
@@ -180,12 +180,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $scrappedQuantity;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getScrappedQuantity()
     {
@@ -193,7 +193,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var double $scrappedQuantity
+     * @param decimal $scrappedQuantity
      */
     public function setScrappedQuantity($scrappedQuantity)
     {
@@ -201,12 +201,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $targetQuantity;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getTargetQuantity()
     {
@@ -214,7 +214,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var double $targetQuantity
+     * @param decimal $targetQuantity
      */
     public function setTargetQuantity($targetQuantity)
     {
@@ -222,12 +222,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $pickedQuantity;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getPickedQuantity()
     {
@@ -235,7 +235,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var double $pickedQuantity
+     * @param decimal $pickedQuantity
      */
     public function setPickedQuantity($pickedQuantity)
     {
@@ -256,7 +256,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $isInvoiced
+     * @param boolean $isInvoiced
      */
     public function setIsInvoiced($isInvoiced)
     {
@@ -277,7 +277,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $attributeSetInstanceId
+     * @param string $attributeSetInstanceId
      */
     public function setAttributeSetInstanceId($attributeSetInstanceId)
     {
@@ -298,7 +298,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $isDescription
+     * @param boolean $isDescription
      */
     public function setIsDescription($isDescription)
     {
@@ -319,7 +319,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $processed
+     * @param boolean $processed
      */
     public function setProcessed($processed)
     {
@@ -327,12 +327,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $quantityEntered;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getQuantityEntered()
     {
@@ -340,7 +340,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var double $quantityEntered
+     * @param decimal $quantityEntered
      */
     public function setQuantityEntered($quantityEntered)
     {
@@ -348,12 +348,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $rmaLineNumber;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getRmaLineNumber()
     {
@@ -361,7 +361,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var integer $rmaLineNumber
+     * @param long $rmaLineNumber
      */
     public function setRmaLineNumber($rmaLineNumber)
     {
@@ -369,12 +369,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $reversalLineNumber;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getReversalLineNumber()
     {
@@ -382,7 +382,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var integer $reversalLineNumber
+     * @param long $reversalLineNumber
      */
     public function setReversalLineNumber($reversalLineNumber)
     {
@@ -390,12 +390,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -403,7 +403,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {
@@ -424,7 +424,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {
@@ -445,7 +445,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $inOutIsSoTransaction
+     * @param boolean $inOutIsSoTransaction
      */
     public function setInOutIsSoTransaction($inOutIsSoTransaction)
     {
@@ -466,7 +466,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $inOutDocumentStatus
+     * @param string $inOutDocumentStatus
      */
     public function setInOutDocumentStatus($inOutDocumentStatus)
     {
@@ -487,7 +487,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $inOutPosted
+     * @param boolean $inOutPosted
      */
     public function setInOutPosted($inOutPosted)
     {
@@ -508,7 +508,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $inOutProcessing
+     * @param boolean $inOutProcessing
      */
     public function setInOutProcessing($inOutProcessing)
     {
@@ -529,7 +529,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $inOutProcessed
+     * @param boolean $inOutProcessed
      */
     public function setInOutProcessed($inOutProcessed)
     {
@@ -550,7 +550,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var integer $inOutDocumentType
+     * @param integer $inOutDocumentType
      */
     public function setInOutDocumentType($inOutDocumentType)
     {
@@ -571,7 +571,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $inOutDescription
+     * @param string $inOutDescription
      */
     public function setInOutDescription($inOutDescription)
     {
@@ -592,7 +592,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $inOutOrderNumber
+     * @param string $inOutOrderNumber
      */
     public function setInOutOrderNumber($inOutOrderNumber)
     {
@@ -600,12 +600,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $inOutDateOrdered;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getInOutDateOrdered()
     {
@@ -613,7 +613,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $inOutDateOrdered
+     * @param \DateTime $inOutDateOrdered
      */
     public function setInOutDateOrdered($inOutDateOrdered)
     {
@@ -634,7 +634,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $inOutIsPrinted
+     * @param boolean $inOutIsPrinted
      */
     public function setInOutIsPrinted($inOutIsPrinted)
     {
@@ -655,7 +655,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $inOutMovementType
+     * @param string $inOutMovementType
      */
     public function setInOutMovementType($inOutMovementType)
     {
@@ -663,12 +663,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $inOutMovementDate;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getInOutMovementDate()
     {
@@ -676,7 +676,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $inOutMovementDate
+     * @param \DateTime $inOutMovementDate
      */
     public function setInOutMovementDate($inOutMovementDate)
     {
@@ -697,7 +697,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $inOutBusinessPartnerId
+     * @param string $inOutBusinessPartnerId
      */
     public function setInOutBusinessPartnerId($inOutBusinessPartnerId)
     {
@@ -718,7 +718,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $inOutWarehouseId
+     * @param string $inOutWarehouseId
      */
     public function setInOutWarehouseId($inOutWarehouseId)
     {
@@ -739,7 +739,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $inOutPoReference
+     * @param string $inOutPoReference
      */
     public function setInOutPoReference($inOutPoReference)
     {
@@ -760,7 +760,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var Money $inOutFreightAmount
+     * @param Money $inOutFreightAmount
      */
     public function setInOutFreightAmount($inOutFreightAmount)
     {
@@ -781,7 +781,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $inOutShipperId
+     * @param string $inOutShipperId
      */
     public function setInOutShipperId($inOutShipperId)
     {
@@ -802,7 +802,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var Money $inOutChargeAmount
+     * @param Money $inOutChargeAmount
      */
     public function setInOutChargeAmount($inOutChargeAmount)
     {
@@ -810,12 +810,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $inOutDatePrinted;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getInOutDatePrinted()
     {
@@ -823,7 +823,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $inOutDatePrinted
+     * @param \DateTime $inOutDatePrinted
      */
     public function setInOutDatePrinted($inOutDatePrinted)
     {
@@ -844,7 +844,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $inOutSalesRepresentative
+     * @param string $inOutSalesRepresentative
      */
     public function setInOutSalesRepresentative($inOutSalesRepresentative)
     {
@@ -865,7 +865,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var integer $inOutNumberOfPackages
+     * @param integer $inOutNumberOfPackages
      */
     public function setInOutNumberOfPackages($inOutNumberOfPackages)
     {
@@ -873,12 +873,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $inOutPickDate;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getInOutPickDate()
     {
@@ -886,7 +886,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $inOutPickDate
+     * @param \DateTime $inOutPickDate
      */
     public function setInOutPickDate($inOutPickDate)
     {
@@ -894,12 +894,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $inOutShipDate;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getInOutShipDate()
     {
@@ -907,7 +907,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $inOutShipDate
+     * @param \DateTime $inOutShipDate
      */
     public function setInOutShipDate($inOutShipDate)
     {
@@ -928,7 +928,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $inOutTrackingNumber
+     * @param string $inOutTrackingNumber
      */
     public function setInOutTrackingNumber($inOutTrackingNumber)
     {
@@ -936,12 +936,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $inOutDateReceived;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getInOutDateReceived()
     {
@@ -949,7 +949,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $inOutDateReceived
+     * @param \DateTime $inOutDateReceived
      */
     public function setInOutDateReceived($inOutDateReceived)
     {
@@ -970,7 +970,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $inOutIsInTransit
+     * @param boolean $inOutIsInTransit
      */
     public function setInOutIsInTransit($inOutIsInTransit)
     {
@@ -991,7 +991,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $inOutIsApproved
+     * @param boolean $inOutIsApproved
      */
     public function setInOutIsApproved($inOutIsApproved)
     {
@@ -1012,7 +1012,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $inOutIsInDispute
+     * @param boolean $inOutIsInDispute
      */
     public function setInOutIsInDispute($inOutIsInDispute)
     {
@@ -1020,12 +1020,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $inOutVolume;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getInOutVolume()
     {
@@ -1033,7 +1033,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var double $inOutVolume
+     * @param decimal $inOutVolume
      */
     public function setInOutVolume($inOutVolume)
     {
@@ -1041,12 +1041,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("double")
+     * @Type("decimal")
      */
     private $inOutWeight;
 
     /**
-     * @return double
+     * @return decimal
      */
     public function getInOutWeight()
     {
@@ -1054,7 +1054,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var double $inOutWeight
+     * @param decimal $inOutWeight
      */
     public function setInOutWeight($inOutWeight)
     {
@@ -1075,7 +1075,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $inOutRmaNumber
+     * @param string $inOutRmaNumber
      */
     public function setInOutRmaNumber($inOutRmaNumber)
     {
@@ -1096,7 +1096,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $inOutReversalNumber
+     * @param string $inOutReversalNumber
      */
     public function setInOutReversalNumber($inOutReversalNumber)
     {
@@ -1117,7 +1117,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $inOutIsDropShip
+     * @param boolean $inOutIsDropShip
      */
     public function setInOutIsDropShip($inOutIsDropShip)
     {
@@ -1138,7 +1138,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $inOutDropShipBusinessPartnerId
+     * @param string $inOutDropShipBusinessPartnerId
      */
     public function setInOutDropShipBusinessPartnerId($inOutDropShipBusinessPartnerId)
     {
@@ -1159,7 +1159,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $inOutCreatedBy
+     * @param string $inOutCreatedBy
      */
     public function setInOutCreatedBy($inOutCreatedBy)
     {
@@ -1167,12 +1167,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $inOutCreatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getInOutCreatedAt()
     {
@@ -1180,7 +1180,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $inOutCreatedAt
+     * @param \DateTime $inOutCreatedAt
      */
     public function setInOutCreatedAt($inOutCreatedAt)
     {
@@ -1201,7 +1201,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $inOutUpdatedBy
+     * @param string $inOutUpdatedBy
      */
     public function setInOutUpdatedBy($inOutUpdatedBy)
     {
@@ -1209,12 +1209,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $inOutUpdatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getInOutUpdatedAt()
     {
@@ -1222,7 +1222,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $inOutUpdatedAt
+     * @param \DateTime $inOutUpdatedAt
      */
     public function setInOutUpdatedAt($inOutUpdatedAt)
     {
@@ -1243,7 +1243,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $inOutActive
+     * @param boolean $inOutActive
      */
     public function setInOutActive($inOutActive)
     {
@@ -1264,7 +1264,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var boolean $inOutDeleted
+     * @param boolean $inOutDeleted
      */
     public function setInOutDeleted($inOutDeleted)
     {
@@ -1272,12 +1272,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $inOutVersion;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getInOutVersion()
     {
@@ -1285,7 +1285,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var integer $inOutVersion
+     * @param long $inOutVersion
      */
     public function setInOutVersion($inOutVersion)
     {
@@ -1306,7 +1306,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $createdBy
+     * @param string $createdBy
      */
     public function setCreatedBy($createdBy)
     {
@@ -1314,12 +1314,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $createdAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -1327,7 +1327,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $createdAt
+     * @param \DateTime $createdAt
      */
     public function setCreatedAt($createdAt)
     {
@@ -1348,7 +1348,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedBy
+     * @param string $updatedBy
      */
     public function setUpdatedBy($updatedBy)
     {
@@ -1356,12 +1356,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $updatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -1369,7 +1369,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @var string $updatedAt
+     * @param \DateTime $updatedAt
      */
     public function setUpdatedAt($updatedAt)
     {

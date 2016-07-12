@@ -24,7 +24,7 @@ class AbstractUserClaimCommand
     }
 
     /**
-     * @var integer $claimId
+     * @param integer $claimId
      */
     public function setClaimId($claimId)
     {

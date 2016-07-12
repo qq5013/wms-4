@@ -20,7 +20,7 @@ class InOutStateEventId
     }
 
     /**
-     * @var string $documentNumber
+     * @param string $documentNumber
      */
     public function setDocumentNumber($documentNumber)
     {
@@ -28,12 +28,12 @@ class InOutStateEventId
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -41,7 +41,7 @@ class InOutStateEventId
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {

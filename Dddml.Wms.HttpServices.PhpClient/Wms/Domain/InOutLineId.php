@@ -21,7 +21,7 @@ class InOutLineId
     }
 
     /**
-     * @var string $inOutDocumentNumber
+     * @param string $inOutDocumentNumber
      */
     public function setInOutDocumentNumber($inOutDocumentNumber)
     {
@@ -42,7 +42,7 @@ class InOutLineId
     }
 
     /**
-     * @var SkuId $skuId
+     * @param SkuId $skuId
      */
     public function setSkuId($skuId)
     {

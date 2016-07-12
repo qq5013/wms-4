@@ -25,7 +25,7 @@ class AttributeSet
     }	
 
     /**
-     * @var AttributeUse[] $attributeUses
+     * @param AttributeUse[] $attributeUses
      */
     public function setAttributeUses($attributeUses)
     {

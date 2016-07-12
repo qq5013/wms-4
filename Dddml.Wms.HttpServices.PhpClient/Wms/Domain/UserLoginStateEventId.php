@@ -21,7 +21,7 @@ class UserLoginStateEventId
     }
 
     /**
-     * @var string $userId
+     * @param string $userId
      */
     public function setUserId($userId)
     {
@@ -42,7 +42,7 @@ class UserLoginStateEventId
     }
 
     /**
-     * @var LoginKey $loginKey
+     * @param LoginKey $loginKey
      */
     public function setLoginKey($loginKey)
     {
@@ -50,12 +50,12 @@ class UserLoginStateEventId
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $userVersion;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getUserVersion()
     {
@@ -63,7 +63,7 @@ class UserLoginStateEventId
     }
 
     /**
-     * @var integer $userVersion
+     * @param long $userVersion
      */
     public function setUserVersion($userVersion)
     {

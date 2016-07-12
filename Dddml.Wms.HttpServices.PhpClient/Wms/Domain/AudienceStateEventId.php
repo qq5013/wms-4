@@ -20,7 +20,7 @@ class AudienceStateEventId
     }
 
     /**
-     * @var string $clientId
+     * @param string $clientId
      */
     public function setClientId($clientId)
     {
@@ -28,12 +28,12 @@ class AudienceStateEventId
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -41,7 +41,7 @@ class AudienceStateEventId
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {

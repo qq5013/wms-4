@@ -24,7 +24,7 @@ class AbstractOrganizationStructureTypeCommand
     }
 
     /**
-     * @var string $id
+     * @param string $id
      */
     public function setId($id)
     {
@@ -32,12 +32,12 @@ class AbstractOrganizationStructureTypeCommand
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -45,7 +45,7 @@ class AbstractOrganizationStructureTypeCommand
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {

@@ -26,7 +26,7 @@ class CreateOrMergePatchAttributeValueMvo extends AbstractAttributeValueMvoComma
     }
 
     /**
-     * @var string $name
+     * @param string $name
      */
     public function setName($name)
     {
@@ -47,7 +47,7 @@ class CreateOrMergePatchAttributeValueMvo extends AbstractAttributeValueMvoComma
     }
 
     /**
-     * @var string $description
+     * @param string $description
      */
     public function setDescription($description)
     {
@@ -68,7 +68,7 @@ class CreateOrMergePatchAttributeValueMvo extends AbstractAttributeValueMvoComma
     }
 
     /**
-     * @var string $referenceId
+     * @param string $referenceId
      */
     public function setReferenceId($referenceId)
     {
@@ -76,12 +76,12 @@ class CreateOrMergePatchAttributeValueMvo extends AbstractAttributeValueMvoComma
     }
 
     /**
-     * @Type("integer")
+     * @Type("long")
      */
     private $version;
 
     /**
-     * @return integer
+     * @return long
      */
     public function getVersion()
     {
@@ -89,7 +89,7 @@ class CreateOrMergePatchAttributeValueMvo extends AbstractAttributeValueMvoComma
     }
 
     /**
-     * @var integer $version
+     * @param long $version
      */
     public function setVersion($version)
     {
@@ -110,7 +110,7 @@ class CreateOrMergePatchAttributeValueMvo extends AbstractAttributeValueMvoComma
     }
 
     /**
-     * @var boolean $active
+     * @param boolean $active
      */
     public function setActive($active)
     {
@@ -131,7 +131,7 @@ class CreateOrMergePatchAttributeValueMvo extends AbstractAttributeValueMvoComma
     }
 
     /**
-     * @var string $attributeName
+     * @param string $attributeName
      */
     public function setAttributeName($attributeName)
     {
@@ -152,7 +152,7 @@ class CreateOrMergePatchAttributeValueMvo extends AbstractAttributeValueMvoComma
     }
 
     /**
-     * @var string $attributeOrganizationId
+     * @param string $attributeOrganizationId
      */
     public function setAttributeOrganizationId($attributeOrganizationId)
     {
@@ -173,7 +173,7 @@ class CreateOrMergePatchAttributeValueMvo extends AbstractAttributeValueMvoComma
     }
 
     /**
-     * @var string $attributeDescription
+     * @param string $attributeDescription
      */
     public function setAttributeDescription($attributeDescription)
     {
@@ -194,7 +194,7 @@ class CreateOrMergePatchAttributeValueMvo extends AbstractAttributeValueMvoComma
     }
 
     /**
-     * @var boolean $attributeIsMandatory
+     * @param boolean $attributeIsMandatory
      */
     public function setAttributeIsMandatory($attributeIsMandatory)
     {
@@ -215,7 +215,7 @@ class CreateOrMergePatchAttributeValueMvo extends AbstractAttributeValueMvoComma
     }
 
     /**
-     * @var boolean $attributeIsInstanceAttribute
+     * @param boolean $attributeIsInstanceAttribute
      */
     public function setAttributeIsInstanceAttribute($attributeIsInstanceAttribute)
     {
@@ -236,7 +236,7 @@ class CreateOrMergePatchAttributeValueMvo extends AbstractAttributeValueMvoComma
     }
 
     /**
-     * @var string $attributeAttributeValueType
+     * @param string $attributeAttributeValueType
      */
     public function setAttributeAttributeValueType($attributeAttributeValueType)
     {
@@ -257,7 +257,7 @@ class CreateOrMergePatchAttributeValueMvo extends AbstractAttributeValueMvoComma
     }
 
     /**
-     * @var integer $attributeAttributeValueLength
+     * @param integer $attributeAttributeValueLength
      */
     public function setAttributeAttributeValueLength($attributeAttributeValueLength)
     {
@@ -278,7 +278,7 @@ class CreateOrMergePatchAttributeValueMvo extends AbstractAttributeValueMvoComma
     }
 
     /**
-     * @var boolean $attributeIsList
+     * @param boolean $attributeIsList
      */
     public function setAttributeIsList($attributeIsList)
     {
@@ -299,7 +299,7 @@ class CreateOrMergePatchAttributeValueMvo extends AbstractAttributeValueMvoComma
     }
 
     /**
-     * @var string $attributeFieldName
+     * @param string $attributeFieldName
      */
     public function setAttributeFieldName($attributeFieldName)
     {
@@ -320,7 +320,7 @@ class CreateOrMergePatchAttributeValueMvo extends AbstractAttributeValueMvoComma
     }
 
     /**
-     * @var string $attributeReferenceId
+     * @param string $attributeReferenceId
      */
     public function setAttributeReferenceId($attributeReferenceId)
     {
@@ -341,7 +341,7 @@ class CreateOrMergePatchAttributeValueMvo extends AbstractAttributeValueMvoComma
     }
 
     /**
-     * @var string $attributeCreatedBy
+     * @param string $attributeCreatedBy
      */
     public function setAttributeCreatedBy($attributeCreatedBy)
     {
@@ -349,12 +349,12 @@ class CreateOrMergePatchAttributeValueMvo extends AbstractAttributeValueMvoComma
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $attributeCreatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getAttributeCreatedAt()
     {
@@ -362,7 +362,7 @@ class CreateOrMergePatchAttributeValueMvo extends AbstractAttributeValueMvoComma
     }
 
     /**
-     * @var string $attributeCreatedAt
+     * @param \DateTime $attributeCreatedAt
      */
     public function setAttributeCreatedAt($attributeCreatedAt)
     {
@@ -383,7 +383,7 @@ class CreateOrMergePatchAttributeValueMvo extends AbstractAttributeValueMvoComma
     }
 
     /**
-     * @var string $attributeUpdatedBy
+     * @param string $attributeUpdatedBy
      */
     public function setAttributeUpdatedBy($attributeUpdatedBy)
     {
@@ -391,12 +391,12 @@ class CreateOrMergePatchAttributeValueMvo extends AbstractAttributeValueMvoComma
     }
 
     /**
-     * @Type("string")
+     * @Type("\DateTime")
      */
     private $attributeUpdatedAt;
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getAttributeUpdatedAt()
     {
@@ -404,7 +404,7 @@ class CreateOrMergePatchAttributeValueMvo extends AbstractAttributeValueMvoComma
     }
 
     /**
-     * @var string $attributeUpdatedAt
+     * @param \DateTime $attributeUpdatedAt
      */
     public function setAttributeUpdatedAt($attributeUpdatedAt)
     {
@@ -425,7 +425,7 @@ class CreateOrMergePatchAttributeValueMvo extends AbstractAttributeValueMvoComma
     }
 
     /**
-     * @var boolean $attributeActive
+     * @param boolean $attributeActive
      */
     public function setAttributeActive($attributeActive)
     {
@@ -446,7 +446,7 @@ class CreateOrMergePatchAttributeValueMvo extends AbstractAttributeValueMvoComma
     }
 
     /**
-     * @var boolean $attributeDeleted
+     * @param boolean $attributeDeleted
      */
     public function setAttributeDeleted($attributeDeleted)
     {

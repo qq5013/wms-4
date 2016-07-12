@@ -1,0 +1,83 @@
+﻿<?php
+
+namespace Wms\Domain;
+
+
+trait InOutLineMvoFilteringFieldsTrait
+{
+    public function getFilteringFields()
+    {
+        return [
+            'LineNumber' => 'long',
+            'Description' => 'string',
+            'LocatorId' => 'string',
+            'Product' => 'string',
+            'UomId' => 'string',
+            'MovementQuantity' => 'decimal',
+            'ConfirmedQuantity' => 'decimal',
+            'ScrappedQuantity' => 'decimal',
+            'TargetQuantity' => 'decimal',
+            'PickedQuantity' => 'decimal',
+            'IsInvoiced' => 'boolean',
+            'AttributeSetInstanceId' => 'string',
+            'IsDescription' => 'boolean',
+            'Processed' => 'boolean',
+            'QuantityEntered' => 'decimal',
+            'RmaLineNumber' => 'long',
+            'ReversalLineNumber' => 'long',
+            'Version' => 'long',
+            'CreatedBy' => 'string',
+            'CreatedAt' => '\DateTime',
+            'UpdatedBy' => 'string',
+            'UpdatedAt' => '\DateTime',
+            'Active' => 'boolean',
+            'Deleted' => 'boolean',
+            'InOutIsSOTransaction' => 'boolean',
+            'InOutDocumentStatus' => 'string',
+            'InOutPosted' => 'boolean',
+            'InOutProcessing' => 'boolean',
+            'InOutProcessed' => 'boolean',
+            'InOutDocumentType' => 'integer',
+            'InOutDescription' => 'string',
+            'InOutOrderNumber' => 'string',
+            'InOutDateOrdered' => '\DateTime',
+            'InOutIsPrinted' => 'boolean',
+            'InOutMovementType' => 'string',
+            'InOutMovementDate' => '\DateTime',
+            'InOutBusinessPartnerId' => 'string',
+            'InOutWarehouseId' => 'string',
+            'InOutPOReference' => 'string',
+            'InOutFreightAmount' => 'Money',
+            'InOutShipperId' => 'string',
+            'InOutChargeAmount' => 'Money',
+            'InOutDatePrinted' => '\DateTime',
+            'InOutSalesRepresentative' => 'string',
+            'InOutNumberOfPackages' => 'integer',
+            'InOutPickDate' => '\DateTime',
+            'InOutShipDate' => '\DateTime',
+            'InOutTrackingNumber' => 'string',
+            'InOutDateReceived' => '\DateTime',
+            'InOutIsInTransit' => 'boolean',
+            'InOutIsApproved' => 'boolean',
+            'InOutIsInDispute' => 'boolean',
+            'InOutVolume' => 'decimal',
+            'InOutWeight' => 'decimal',
+            'InOutRmaNumber' => 'string',
+            'InOutReversalNumber' => 'string',
+            'InOutIsDropShip' => 'boolean',
+            'InOutDropShipBusinessPartnerId' => 'string',
+            'InOutVersion' => 'long',
+            'InOutCreatedBy' => 'string',
+            'InOutCreatedAt' => '\DateTime',
+            'InOutUpdatedBy' => 'string',
+            'InOutUpdatedAt' => '\DateTime',
+            'InOutActive' => 'boolean',
+            'InOutDeleted' => 'boolean',
+            'InOutLineId.InOutDocumentNumber' => 'string',
+            'InOutLineId.SkuIdProductId' => 'string',
+            'InOutLineId.SkuIdAttributeSetInstanceId' => 'string',
+        ];
+    }
+
+}
+

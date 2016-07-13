@@ -5,7 +5,7 @@ namespace Wms\Domain;
 
 trait RolePermissionFilteringFieldsTrait
 {
-    public static function getFilteringFields()
+    public function getFilteringFields()
     {
         return [
             'Version' => 'long',

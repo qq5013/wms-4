@@ -200,12 +200,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL0;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL0()
     {
@@ -213,7 +213,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL0
+     * @param Long $fL0
      */
     public function setFL0($fL0)
     {
@@ -242,12 +242,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN0;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN0()
     {
@@ -255,7 +255,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN0
+     * @param Decimal $fN0
      */
     public function setFN0($fN0)
     {
@@ -473,12 +473,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL1;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL1()
     {
@@ -486,7 +486,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL1
+     * @param Long $fL1
      */
     public function setFL1($fL1)
     {
@@ -515,12 +515,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN1;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN1()
     {
@@ -528,7 +528,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN1
+     * @param Decimal $fN1
      */
     public function setFN1($fN1)
     {
@@ -746,12 +746,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL2;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL2()
     {
@@ -759,7 +759,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL2
+     * @param Long $fL2
      */
     public function setFL2($fL2)
     {
@@ -788,12 +788,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN2;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN2()
     {
@@ -801,7 +801,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN2
+     * @param Decimal $fN2
      */
     public function setFN2($fN2)
     {
@@ -1019,12 +1019,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL3;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL3()
     {
@@ -1032,7 +1032,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL3
+     * @param Long $fL3
      */
     public function setFL3($fL3)
     {
@@ -1061,12 +1061,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN3;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN3()
     {
@@ -1074,7 +1074,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN3
+     * @param Decimal $fN3
      */
     public function setFN3($fN3)
     {
@@ -1292,12 +1292,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL4;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL4()
     {
@@ -1305,7 +1305,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL4
+     * @param Long $fL4
      */
     public function setFL4($fL4)
     {
@@ -1334,12 +1334,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN4;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN4()
     {
@@ -1347,7 +1347,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN4
+     * @param Decimal $fN4
      */
     public function setFN4($fN4)
     {
@@ -1565,12 +1565,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL5;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL5()
     {
@@ -1578,7 +1578,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL5
+     * @param Long $fL5
      */
     public function setFL5($fL5)
     {
@@ -1607,12 +1607,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN5;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN5()
     {
@@ -1620,7 +1620,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN5
+     * @param Decimal $fN5
      */
     public function setFN5($fN5)
     {
@@ -1817,12 +1817,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL6;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL6()
     {
@@ -1830,7 +1830,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL6
+     * @param Long $fL6
      */
     public function setFL6($fL6)
     {
@@ -1859,12 +1859,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN6;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN6()
     {
@@ -1872,7 +1872,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN6
+     * @param Decimal $fN6
      */
     public function setFN6($fN6)
     {
@@ -2069,12 +2069,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL7;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL7()
     {
@@ -2082,7 +2082,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL7
+     * @param Long $fL7
      */
     public function setFL7($fL7)
     {
@@ -2111,12 +2111,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN7;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN7()
     {
@@ -2124,7 +2124,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN7
+     * @param Decimal $fN7
      */
     public function setFN7($fN7)
     {
@@ -2321,12 +2321,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL8;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL8()
     {
@@ -2334,7 +2334,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL8
+     * @param Long $fL8
      */
     public function setFL8($fL8)
     {
@@ -2363,12 +2363,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN8;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN8()
     {
@@ -2376,7 +2376,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN8
+     * @param Decimal $fN8
      */
     public function setFN8($fN8)
     {
@@ -2573,12 +2573,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL9;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL9()
     {
@@ -2586,7 +2586,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL9
+     * @param Long $fL9
      */
     public function setFL9($fL9)
     {
@@ -2615,12 +2615,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN9;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN9()
     {
@@ -2628,7 +2628,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN9
+     * @param Decimal $fN9
      */
     public function setFN9($fN9)
     {
@@ -2825,12 +2825,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL10;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL10()
     {
@@ -2838,7 +2838,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL10
+     * @param Long $fL10
      */
     public function setFL10($fL10)
     {
@@ -2867,12 +2867,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN10;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN10()
     {
@@ -2880,7 +2880,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN10
+     * @param Decimal $fN10
      */
     public function setFN10($fN10)
     {
@@ -3056,12 +3056,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL11;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL11()
     {
@@ -3069,7 +3069,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL11
+     * @param Long $fL11
      */
     public function setFL11($fL11)
     {
@@ -3098,12 +3098,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN11;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN11()
     {
@@ -3111,7 +3111,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN11
+     * @param Decimal $fN11
      */
     public function setFN11($fN11)
     {
@@ -3287,12 +3287,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL12;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL12()
     {
@@ -3300,7 +3300,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL12
+     * @param Long $fL12
      */
     public function setFL12($fL12)
     {
@@ -3329,12 +3329,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN12;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN12()
     {
@@ -3342,7 +3342,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN12
+     * @param Decimal $fN12
      */
     public function setFN12($fN12)
     {
@@ -3518,12 +3518,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL13;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL13()
     {
@@ -3531,7 +3531,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL13
+     * @param Long $fL13
      */
     public function setFL13($fL13)
     {
@@ -3560,12 +3560,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN13;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN13()
     {
@@ -3573,7 +3573,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN13
+     * @param Decimal $fN13
      */
     public function setFN13($fN13)
     {
@@ -3749,12 +3749,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL14;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL14()
     {
@@ -3762,7 +3762,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL14
+     * @param Long $fL14
      */
     public function setFL14($fL14)
     {
@@ -3791,12 +3791,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN14;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN14()
     {
@@ -3804,7 +3804,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN14
+     * @param Decimal $fN14
      */
     public function setFN14($fN14)
     {
@@ -3980,12 +3980,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL15;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL15()
     {
@@ -3993,7 +3993,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL15
+     * @param Long $fL15
      */
     public function setFL15($fL15)
     {
@@ -4022,12 +4022,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN15;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN15()
     {
@@ -4035,7 +4035,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN15
+     * @param Decimal $fN15
      */
     public function setFN15($fN15)
     {
@@ -4211,12 +4211,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL16;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL16()
     {
@@ -4224,7 +4224,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL16
+     * @param Long $fL16
      */
     public function setFL16($fL16)
     {
@@ -4253,12 +4253,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN16;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN16()
     {
@@ -4266,7 +4266,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN16
+     * @param Decimal $fN16
      */
     public function setFN16($fN16)
     {
@@ -4442,12 +4442,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL17;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL17()
     {
@@ -4455,7 +4455,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL17
+     * @param Long $fL17
      */
     public function setFL17($fL17)
     {
@@ -4484,12 +4484,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN17;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN17()
     {
@@ -4497,7 +4497,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN17
+     * @param Decimal $fN17
      */
     public function setFN17($fN17)
     {
@@ -4673,12 +4673,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL18;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL18()
     {
@@ -4686,7 +4686,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL18
+     * @param Long $fL18
      */
     public function setFL18($fL18)
     {
@@ -4715,12 +4715,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN18;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN18()
     {
@@ -4728,7 +4728,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN18
+     * @param Decimal $fN18
      */
     public function setFN18($fN18)
     {
@@ -4904,12 +4904,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL19;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL19()
     {
@@ -4917,7 +4917,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL19
+     * @param Long $fL19
      */
     public function setFL19($fL19)
     {
@@ -4946,12 +4946,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN19;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN19()
     {
@@ -4959,7 +4959,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN19
+     * @param Decimal $fN19
      */
     public function setFN19($fN19)
     {
@@ -5135,12 +5135,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL20;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL20()
     {
@@ -5148,7 +5148,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL20
+     * @param Long $fL20
      */
     public function setFL20($fL20)
     {
@@ -5156,12 +5156,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN20;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN20()
     {
@@ -5169,7 +5169,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN20
+     * @param Decimal $fN20
      */
     public function setFN20($fN20)
     {
@@ -5303,12 +5303,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL21;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL21()
     {
@@ -5316,7 +5316,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL21
+     * @param Long $fL21
      */
     public function setFL21($fL21)
     {
@@ -5324,12 +5324,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN21;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN21()
     {
@@ -5337,7 +5337,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN21
+     * @param Decimal $fN21
      */
     public function setFN21($fN21)
     {
@@ -5471,12 +5471,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL22;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL22()
     {
@@ -5484,7 +5484,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL22
+     * @param Long $fL22
      */
     public function setFL22($fL22)
     {
@@ -5492,12 +5492,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN22;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN22()
     {
@@ -5505,7 +5505,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN22
+     * @param Decimal $fN22
      */
     public function setFN22($fN22)
     {
@@ -5639,12 +5639,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL23;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL23()
     {
@@ -5652,7 +5652,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL23
+     * @param Long $fL23
      */
     public function setFL23($fL23)
     {
@@ -5660,12 +5660,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN23;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN23()
     {
@@ -5673,7 +5673,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN23
+     * @param Decimal $fN23
      */
     public function setFN23($fN23)
     {
@@ -5807,12 +5807,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL24;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL24()
     {
@@ -5820,7 +5820,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL24
+     * @param Long $fL24
      */
     public function setFL24($fL24)
     {
@@ -5828,12 +5828,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN24;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN24()
     {
@@ -5841,7 +5841,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN24
+     * @param Decimal $fN24
      */
     public function setFN24($fN24)
     {
@@ -5975,12 +5975,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL25;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL25()
     {
@@ -5988,7 +5988,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL25
+     * @param Long $fL25
      */
     public function setFL25($fL25)
     {
@@ -5996,12 +5996,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN25;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN25()
     {
@@ -6009,7 +6009,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN25
+     * @param Decimal $fN25
      */
     public function setFN25($fN25)
     {
@@ -6143,12 +6143,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL26;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL26()
     {
@@ -6156,7 +6156,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL26
+     * @param Long $fL26
      */
     public function setFL26($fL26)
     {
@@ -6164,12 +6164,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN26;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN26()
     {
@@ -6177,7 +6177,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN26
+     * @param Decimal $fN26
      */
     public function setFN26($fN26)
     {
@@ -6311,12 +6311,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL27;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL27()
     {
@@ -6324,7 +6324,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL27
+     * @param Long $fL27
      */
     public function setFL27($fL27)
     {
@@ -6332,12 +6332,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN27;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN27()
     {
@@ -6345,7 +6345,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN27
+     * @param Decimal $fN27
      */
     public function setFN27($fN27)
     {
@@ -6479,12 +6479,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL28;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL28()
     {
@@ -6492,7 +6492,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL28
+     * @param Long $fL28
      */
     public function setFL28($fL28)
     {
@@ -6500,12 +6500,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN28;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN28()
     {
@@ -6513,7 +6513,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN28
+     * @param Decimal $fN28
      */
     public function setFN28($fN28)
     {
@@ -6647,12 +6647,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $fL29;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getFL29()
     {
@@ -6660,7 +6660,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param long $fL29
+     * @param Long $fL29
      */
     public function setFL29($fL29)
     {
@@ -6668,12 +6668,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN29;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN29()
     {
@@ -6681,7 +6681,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN29
+     * @param Decimal $fN29
      */
     public function setFN29($fN29)
     {
@@ -6815,12 +6815,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN30;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN30()
     {
@@ -6828,7 +6828,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN30
+     * @param Decimal $fN30
      */
     public function setFN30($fN30)
     {
@@ -6962,12 +6962,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN31;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN31()
     {
@@ -6975,7 +6975,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN31
+     * @param Decimal $fN31
      */
     public function setFN31($fN31)
     {
@@ -7109,12 +7109,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN32;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN32()
     {
@@ -7122,7 +7122,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN32
+     * @param Decimal $fN32
      */
     public function setFN32($fN32)
     {
@@ -7256,12 +7256,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN33;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN33()
     {
@@ -7269,7 +7269,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN33
+     * @param Decimal $fN33
      */
     public function setFN33($fN33)
     {
@@ -7403,12 +7403,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN34;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN34()
     {
@@ -7416,7 +7416,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN34
+     * @param Decimal $fN34
      */
     public function setFN34($fN34)
     {
@@ -7550,12 +7550,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN35;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN35()
     {
@@ -7563,7 +7563,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN35
+     * @param Decimal $fN35
      */
     public function setFN35($fN35)
     {
@@ -7697,12 +7697,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN36;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN36()
     {
@@ -7710,7 +7710,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN36
+     * @param Decimal $fN36
      */
     public function setFN36($fN36)
     {
@@ -7844,12 +7844,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN37;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN37()
     {
@@ -7857,7 +7857,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN37
+     * @param Decimal $fN37
      */
     public function setFN37($fN37)
     {
@@ -7991,12 +7991,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN38;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN38()
     {
@@ -8004,7 +8004,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN38
+     * @param Decimal $fN38
      */
     public function setFN38($fN38)
     {
@@ -8138,12 +8138,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN39;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN39()
     {
@@ -8151,7 +8151,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN39
+     * @param Decimal $fN39
      */
     public function setFN39($fN39)
     {
@@ -8285,12 +8285,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN40;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN40()
     {
@@ -8298,7 +8298,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN40
+     * @param Decimal $fN40
      */
     public function setFN40($fN40)
     {
@@ -8432,12 +8432,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN41;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN41()
     {
@@ -8445,7 +8445,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN41
+     * @param Decimal $fN41
      */
     public function setFN41($fN41)
     {
@@ -8579,12 +8579,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN42;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN42()
     {
@@ -8592,7 +8592,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN42
+     * @param Decimal $fN42
      */
     public function setFN42($fN42)
     {
@@ -8726,12 +8726,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN43;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN43()
     {
@@ -8739,7 +8739,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN43
+     * @param Decimal $fN43
      */
     public function setFN43($fN43)
     {
@@ -8873,12 +8873,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN44;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN44()
     {
@@ -8886,7 +8886,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN44
+     * @param Decimal $fN44
      */
     public function setFN44($fN44)
     {
@@ -9020,12 +9020,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN45;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN45()
     {
@@ -9033,7 +9033,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN45
+     * @param Decimal $fN45
      */
     public function setFN45($fN45)
     {
@@ -9167,12 +9167,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN46;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN46()
     {
@@ -9180,7 +9180,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN46
+     * @param Decimal $fN46
      */
     public function setFN46($fN46)
     {
@@ -9314,12 +9314,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN47;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN47()
     {
@@ -9327,7 +9327,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN47
+     * @param Decimal $fN47
      */
     public function setFN47($fN47)
     {
@@ -9461,12 +9461,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN48;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN48()
     {
@@ -9474,7 +9474,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN48
+     * @param Decimal $fN48
      */
     public function setFN48($fN48)
     {
@@ -9608,12 +9608,12 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $fN49;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getFN49()
     {
@@ -9621,7 +9621,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @param decimal $fN49
+     * @param Decimal $fN49
      */
     public function setFN49($fN49)
     {

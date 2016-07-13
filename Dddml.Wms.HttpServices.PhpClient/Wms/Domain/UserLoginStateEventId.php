@@ -50,12 +50,12 @@ class UserLoginStateEventId
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $userVersion;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getUserVersion()
     {
@@ -63,7 +63,7 @@ class UserLoginStateEventId
     }
 
     /**
-     * @param long $userVersion
+     * @param Long $userVersion
      */
     public function setUserVersion($userVersion)
     {

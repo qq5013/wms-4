@@ -12,7 +12,7 @@ trait WarehouseFilteringFieldsTrait
             'Name' => 'string',
             'Description' => 'string',
             'IsInTransit' => 'boolean',
-            'Version' => 'long',
+            'Version' => 'Long',
             'CreatedBy' => 'string',
             'CreatedAt' => '\DateTime',
             'UpdatedBy' => 'string',

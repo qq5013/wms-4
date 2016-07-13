@@ -31,12 +31,12 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $lineNumber;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getLineNumber()
     {
@@ -44,7 +44,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @param long $lineNumber
+     * @param Long $lineNumber
      */
     public function setLineNumber($lineNumber)
     {
@@ -136,12 +136,12 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $movementQuantity;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getMovementQuantity()
     {
@@ -149,7 +149,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @param decimal $movementQuantity
+     * @param Decimal $movementQuantity
      */
     public function setMovementQuantity($movementQuantity)
     {
@@ -157,12 +157,12 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $confirmedQuantity;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getConfirmedQuantity()
     {
@@ -170,7 +170,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @param decimal $confirmedQuantity
+     * @param Decimal $confirmedQuantity
      */
     public function setConfirmedQuantity($confirmedQuantity)
     {
@@ -178,12 +178,12 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $scrappedQuantity;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getScrappedQuantity()
     {
@@ -191,7 +191,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @param decimal $scrappedQuantity
+     * @param Decimal $scrappedQuantity
      */
     public function setScrappedQuantity($scrappedQuantity)
     {
@@ -199,12 +199,12 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $targetQuantity;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getTargetQuantity()
     {
@@ -212,7 +212,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @param decimal $targetQuantity
+     * @param Decimal $targetQuantity
      */
     public function setTargetQuantity($targetQuantity)
     {
@@ -220,12 +220,12 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $pickedQuantity;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getPickedQuantity()
     {
@@ -233,7 +233,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @param decimal $pickedQuantity
+     * @param Decimal $pickedQuantity
      */
     public function setPickedQuantity($pickedQuantity)
     {
@@ -325,12 +325,12 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $quantityEntered;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getQuantityEntered()
     {
@@ -338,7 +338,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @param decimal $quantityEntered
+     * @param Decimal $quantityEntered
      */
     public function setQuantityEntered($quantityEntered)
     {
@@ -346,12 +346,12 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $rmaLineNumber;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getRmaLineNumber()
     {
@@ -359,7 +359,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @param long $rmaLineNumber
+     * @param Long $rmaLineNumber
      */
     public function setRmaLineNumber($rmaLineNumber)
     {
@@ -367,12 +367,12 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $reversalLineNumber;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getReversalLineNumber()
     {
@@ -380,7 +380,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @param long $reversalLineNumber
+     * @param Long $reversalLineNumber
      */
     public function setReversalLineNumber($reversalLineNumber)
     {
@@ -409,12 +409,12 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $version;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getVersion()
     {
@@ -422,7 +422,7 @@ trait InOutLineStatePropertiesTrait
     }
 
     /**
-     * @param long $version
+     * @param Long $version
      */
     public function setVersion($version)
     {

@@ -86,6 +86,12 @@
 	private IDictionary<string, string> GetSerializationAnnotationTypes()
 	{
             var dict = GetPhpTypes();
+
+                dict["decimal"] = "Dddml\\Serializer\\Type\\Decimal";
+                dict["decimal?"] = "Dddml\\Serializer\\Type\\Decimal";
+                dict["long"] = "Dddml\\Serializer\\Type\\Long";
+                dict["long?"] = "Dddml\\Serializer\\Type\\Long";
+
 			return dict;
 	}
 
@@ -97,12 +103,12 @@
                 dict.Add("bool?", "boolean");
                 dict.Add("DateTime", "\\DateTime");
                 dict.Add("DateTime?", "\\DateTime");
-                dict.Add("decimal", "decimal");
-                dict.Add("decimal?", "decimal");
+                dict.Add("decimal", "Decimal");
+                dict.Add("decimal?", "Decimal");
                 dict.Add("int", "integer");
                 dict.Add("int?", "integer");
-                dict.Add("long", "long");
-                dict.Add("long?", "long");
+                dict.Add("long", "Long");
+                dict.Add("long?", "Long");
                 //dict.Add("Money", "_MONEY_");
                 dict.Add("string", "string");
 			

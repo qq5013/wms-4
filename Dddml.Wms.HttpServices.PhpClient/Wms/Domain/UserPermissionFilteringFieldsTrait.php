@@ -9,7 +9,7 @@ trait UserPermissionFilteringFieldsTrait
     {
         return [
             'PermissionId' => 'string',
-            'Version' => 'long',
+            'Version' => 'Long',
             'CreatedBy' => 'string',
             'CreatedAt' => '\DateTime',
             'UpdatedBy' => 'string',

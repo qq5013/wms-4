@@ -9,7 +9,7 @@ trait AttributeUseMvoFilteringFieldsTrait
     {
         return [
             'SequenceNumber' => 'integer',
-            'Version' => 'long',
+            'Version' => 'Long',
             'CreatedBy' => 'string',
             'CreatedAt' => '\DateTime',
             'UpdatedBy' => 'string',
@@ -22,7 +22,7 @@ trait AttributeUseMvoFilteringFieldsTrait
             'AttributeSetSerialNumberAttributeId' => 'string',
             'AttributeSetLotAttributeId' => 'string',
             'AttributeSetReferenceId' => 'string',
-            'AttributeSetVersion' => 'long',
+            'AttributeSetVersion' => 'Long',
             'AttributeSetCreatedBy' => 'string',
             'AttributeSetCreatedAt' => '\DateTime',
             'AttributeSetUpdatedBy' => 'string',

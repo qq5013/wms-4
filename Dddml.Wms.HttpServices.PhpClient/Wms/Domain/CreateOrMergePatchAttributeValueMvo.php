@@ -76,12 +76,12 @@ class CreateOrMergePatchAttributeValueMvo extends AbstractAttributeValueMvoComma
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $version;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getVersion()
     {
@@ -89,7 +89,7 @@ class CreateOrMergePatchAttributeValueMvo extends AbstractAttributeValueMvoComma
     }
 
     /**
-     * @param long $version
+     * @param Long $version
      */
     public function setVersion($version)
     {

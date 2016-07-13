@@ -49,12 +49,12 @@ class AttributeValueStateEventId
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $attributeVersion;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getAttributeVersion()
     {
@@ -62,7 +62,7 @@ class AttributeValueStateEventId
     }
 
     /**
-     * @param long $attributeVersion
+     * @param Long $attributeVersion
      */
     public function setAttributeVersion($attributeVersion)
     {

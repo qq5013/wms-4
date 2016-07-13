@@ -50,12 +50,12 @@ class InOutLineStateEventId
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $inOutVersion;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getInOutVersion()
     {
@@ -63,7 +63,7 @@ class InOutLineStateEventId
     }
 
     /**
-     * @param long $inOutVersion
+     * @param Long $inOutVersion
      */
     public function setInOutVersion($inOutVersion)
     {

@@ -33,12 +33,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $lineNumber;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getLineNumber()
     {
@@ -46,7 +46,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @param long $lineNumber
+     * @param Long $lineNumber
      */
     public function setLineNumber($lineNumber)
     {
@@ -138,12 +138,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $movementQuantity;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getMovementQuantity()
     {
@@ -151,7 +151,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @param decimal $movementQuantity
+     * @param Decimal $movementQuantity
      */
     public function setMovementQuantity($movementQuantity)
     {
@@ -159,12 +159,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $confirmedQuantity;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getConfirmedQuantity()
     {
@@ -172,7 +172,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @param decimal $confirmedQuantity
+     * @param Decimal $confirmedQuantity
      */
     public function setConfirmedQuantity($confirmedQuantity)
     {
@@ -180,12 +180,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $scrappedQuantity;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getScrappedQuantity()
     {
@@ -193,7 +193,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @param decimal $scrappedQuantity
+     * @param Decimal $scrappedQuantity
      */
     public function setScrappedQuantity($scrappedQuantity)
     {
@@ -201,12 +201,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $targetQuantity;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getTargetQuantity()
     {
@@ -214,7 +214,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @param decimal $targetQuantity
+     * @param Decimal $targetQuantity
      */
     public function setTargetQuantity($targetQuantity)
     {
@@ -222,12 +222,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $pickedQuantity;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getPickedQuantity()
     {
@@ -235,7 +235,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @param decimal $pickedQuantity
+     * @param Decimal $pickedQuantity
      */
     public function setPickedQuantity($pickedQuantity)
     {
@@ -327,12 +327,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $quantityEntered;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getQuantityEntered()
     {
@@ -340,7 +340,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @param decimal $quantityEntered
+     * @param Decimal $quantityEntered
      */
     public function setQuantityEntered($quantityEntered)
     {
@@ -348,12 +348,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $rmaLineNumber;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getRmaLineNumber()
     {
@@ -361,7 +361,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @param long $rmaLineNumber
+     * @param Long $rmaLineNumber
      */
     public function setRmaLineNumber($rmaLineNumber)
     {
@@ -369,12 +369,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $reversalLineNumber;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getReversalLineNumber()
     {
@@ -382,7 +382,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @param long $reversalLineNumber
+     * @param Long $reversalLineNumber
      */
     public function setReversalLineNumber($reversalLineNumber)
     {
@@ -390,12 +390,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $version;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getVersion()
     {
@@ -403,7 +403,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @param long $version
+     * @param Long $version
      */
     public function setVersion($version)
     {
@@ -1020,12 +1020,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $inOutVolume;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getInOutVolume()
     {
@@ -1033,7 +1033,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @param decimal $inOutVolume
+     * @param Decimal $inOutVolume
      */
     public function setInOutVolume($inOutVolume)
     {
@@ -1041,12 +1041,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $inOutWeight;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getInOutWeight()
     {
@@ -1054,7 +1054,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @param decimal $inOutWeight
+     * @param Decimal $inOutWeight
      */
     public function setInOutWeight($inOutWeight)
     {
@@ -1272,12 +1272,12 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $inOutVersion;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getInOutVersion()
     {
@@ -1285,7 +1285,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @param long $inOutVersion
+     * @param Long $inOutVersion
      */
     public function setInOutVersion($inOutVersion)
     {

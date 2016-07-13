@@ -77,12 +77,12 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $version;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getVersion()
     {
@@ -90,7 +90,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @param long $version
+     * @param Long $version
      */
     public function setVersion($version)
     {
@@ -476,12 +476,12 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $userVersion;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getUserVersion()
     {
@@ -489,7 +489,7 @@ trait UserClaimMvoStatePropertiesTrait
     }
 
     /**
-     * @param long $userVersion
+     * @param Long $userVersion
      */
     public function setUserVersion($userVersion)
     {

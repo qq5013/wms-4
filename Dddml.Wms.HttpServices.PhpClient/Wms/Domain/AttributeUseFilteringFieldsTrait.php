@@ -10,7 +10,7 @@ trait AttributeUseFilteringFieldsTrait
         return [
             'AttributeId' => 'string',
             'SequenceNumber' => 'integer',
-            'Version' => 'long',
+            'Version' => 'Long',
             'CreatedBy' => 'string',
             'CreatedAt' => '\DateTime',
             'UpdatedBy' => 'string',

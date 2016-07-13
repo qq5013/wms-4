@@ -52,12 +52,12 @@ trait UserLoginStatePropertiesTrait
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $version;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getVersion()
     {
@@ -65,7 +65,7 @@ trait UserLoginStatePropertiesTrait
     }
 
     /**
-     * @param long $version
+     * @param Long $version
      */
     public function setVersion($version)
     {

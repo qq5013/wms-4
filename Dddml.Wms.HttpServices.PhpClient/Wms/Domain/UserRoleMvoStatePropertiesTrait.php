@@ -35,12 +35,12 @@ trait UserRoleMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $version;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getVersion()
     {
@@ -48,7 +48,7 @@ trait UserRoleMvoStatePropertiesTrait
     }
 
     /**
-     * @param long $version
+     * @param Long $version
      */
     public function setVersion($version)
     {
@@ -434,12 +434,12 @@ trait UserRoleMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $userVersion;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getUserVersion()
     {
@@ -447,7 +447,7 @@ trait UserRoleMvoStatePropertiesTrait
     }
 
     /**
-     * @param long $userVersion
+     * @param Long $userVersion
      */
     public function setUserVersion($userVersion)
     {

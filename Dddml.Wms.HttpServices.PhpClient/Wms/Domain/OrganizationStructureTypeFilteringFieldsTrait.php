@@ -9,7 +9,7 @@ trait OrganizationStructureTypeFilteringFieldsTrait
     {
         return [
             'Id' => 'string',
-            'Version' => 'long',
+            'Version' => 'Long',
             'CreatedBy' => 'string',
             'CreatedAt' => '\DateTime',
             'UpdatedBy' => 'string',

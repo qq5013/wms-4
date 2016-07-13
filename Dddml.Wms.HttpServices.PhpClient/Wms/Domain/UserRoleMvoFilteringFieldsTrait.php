@@ -8,7 +8,7 @@ trait UserRoleMvoFilteringFieldsTrait
     public function getFilteringFields()
     {
         return [
-            'Version' => 'long',
+            'Version' => 'Long',
             'CreatedBy' => 'string',
             'CreatedAt' => '\DateTime',
             'UpdatedBy' => 'string',
@@ -26,7 +26,7 @@ trait UserRoleMvoFilteringFieldsTrait
             'UserPhoneNumberConfirmed' => 'boolean',
             'UserTwoFactorEnabled' => 'boolean',
             'UserSecurityStamp' => 'string',
-            'UserVersion' => 'long',
+            'UserVersion' => 'Long',
             'UserCreatedBy' => 'string',
             'UserCreatedAt' => '\DateTime',
             'UserUpdatedBy' => 'string',

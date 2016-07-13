@@ -12,7 +12,7 @@ trait AttributeValueFilteringFieldsTrait
             'Name' => 'string',
             'Description' => 'string',
             'ReferenceId' => 'string',
-            'Version' => 'long',
+            'Version' => 'Long',
             'CreatedBy' => 'string',
             'CreatedAt' => '\DateTime',
             'UpdatedBy' => 'string',

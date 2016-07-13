@@ -10,7 +10,7 @@ trait UserClaimMvoFilteringFieldsTrait
         return [
             'ClaimType' => 'string',
             'ClaimValue' => 'string',
-            'Version' => 'long',
+            'Version' => 'Long',
             'CreatedBy' => 'string',
             'CreatedAt' => '\DateTime',
             'UpdatedBy' => 'string',
@@ -28,7 +28,7 @@ trait UserClaimMvoFilteringFieldsTrait
             'UserPhoneNumberConfirmed' => 'boolean',
             'UserTwoFactorEnabled' => 'boolean',
             'UserSecurityStamp' => 'string',
-            'UserVersion' => 'long',
+            'UserVersion' => 'Long',
             'UserCreatedBy' => 'string',
             'UserCreatedAt' => '\DateTime',
             'UserUpdatedBy' => 'string',

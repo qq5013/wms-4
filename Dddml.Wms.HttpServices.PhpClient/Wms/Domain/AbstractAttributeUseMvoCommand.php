@@ -34,12 +34,12 @@ class AbstractAttributeUseMvoCommand
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $attributeSetVersion;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getAttributeSetVersion()
     {
@@ -47,7 +47,7 @@ class AbstractAttributeUseMvoCommand
     }
 
     /**
-     * @param long $attributeSetVersion
+     * @param Long $attributeSetVersion
      */
     public function setAttributeSetVersion($attributeSetVersion)
     {

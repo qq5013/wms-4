@@ -12,12 +12,12 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     use InOutLineIsPropertyRemovedTrait;
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $lineNumber;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getLineNumber()
     {
@@ -25,7 +25,7 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @param long $lineNumber
+     * @param Long $lineNumber
      */
     public function setLineNumber($lineNumber)
     {
@@ -117,12 +117,12 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $movementQuantity;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getMovementQuantity()
     {
@@ -130,7 +130,7 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @param decimal $movementQuantity
+     * @param Decimal $movementQuantity
      */
     public function setMovementQuantity($movementQuantity)
     {
@@ -138,12 +138,12 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $confirmedQuantity;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getConfirmedQuantity()
     {
@@ -151,7 +151,7 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @param decimal $confirmedQuantity
+     * @param Decimal $confirmedQuantity
      */
     public function setConfirmedQuantity($confirmedQuantity)
     {
@@ -159,12 +159,12 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $scrappedQuantity;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getScrappedQuantity()
     {
@@ -172,7 +172,7 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @param decimal $scrappedQuantity
+     * @param Decimal $scrappedQuantity
      */
     public function setScrappedQuantity($scrappedQuantity)
     {
@@ -180,12 +180,12 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $targetQuantity;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getTargetQuantity()
     {
@@ -193,7 +193,7 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @param decimal $targetQuantity
+     * @param Decimal $targetQuantity
      */
     public function setTargetQuantity($targetQuantity)
     {
@@ -201,12 +201,12 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $pickedQuantity;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getPickedQuantity()
     {
@@ -214,7 +214,7 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @param decimal $pickedQuantity
+     * @param Decimal $pickedQuantity
      */
     public function setPickedQuantity($pickedQuantity)
     {
@@ -306,12 +306,12 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $quantityEntered;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getQuantityEntered()
     {
@@ -319,7 +319,7 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @param decimal $quantityEntered
+     * @param Decimal $quantityEntered
      */
     public function setQuantityEntered($quantityEntered)
     {
@@ -327,12 +327,12 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $rmaLineNumber;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getRmaLineNumber()
     {
@@ -340,7 +340,7 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @param long $rmaLineNumber
+     * @param Long $rmaLineNumber
      */
     public function setRmaLineNumber($rmaLineNumber)
     {
@@ -348,12 +348,12 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $reversalLineNumber;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getReversalLineNumber()
     {
@@ -361,7 +361,7 @@ class CreateOrMergePatchInOutLine extends AbstractInOutLineCommand
     }
 
     /**
-     * @param long $reversalLineNumber
+     * @param Long $reversalLineNumber
      */
     public function setReversalLineNumber($reversalLineNumber)
     {

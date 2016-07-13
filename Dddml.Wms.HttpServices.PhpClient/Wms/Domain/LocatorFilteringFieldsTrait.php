@@ -17,7 +17,7 @@ trait LocatorFilteringFieldsTrait
             'X' => 'string',
             'Y' => 'string',
             'Z' => 'string',
-            'Version' => 'long',
+            'Version' => 'Long',
             'CreatedBy' => 'string',
             'CreatedAt' => '\DateTime',
             'UpdatedBy' => 'string',

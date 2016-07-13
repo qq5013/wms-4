@@ -602,12 +602,12 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $volume;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getVolume()
     {
@@ -615,7 +615,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @param decimal $volume
+     * @param Decimal $volume
      */
     public function setVolume($volume)
     {
@@ -623,12 +623,12 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $weight;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getWeight()
     {
@@ -636,7 +636,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @param decimal $weight
+     * @param Decimal $weight
      */
     public function setWeight($weight)
     {

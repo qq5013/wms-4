@@ -11,7 +11,7 @@ trait AudienceFilteringFieldsTrait
             'ClientId' => 'string',
             'Name' => 'string',
             'Base64Secret' => 'string',
-            'Version' => 'long',
+            'Version' => 'Long',
             'CreatedBy' => 'string',
             'CreatedAt' => '\DateTime',
             'UpdatedBy' => 'string',

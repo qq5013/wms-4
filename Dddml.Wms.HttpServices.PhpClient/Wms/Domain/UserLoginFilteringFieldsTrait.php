@@ -8,7 +8,7 @@ trait UserLoginFilteringFieldsTrait
     public function getFilteringFields()
     {
         return [
-            'Version' => 'long',
+            'Version' => 'Long',
             'CreatedBy' => 'string',
             'CreatedAt' => '\DateTime',
             'UpdatedBy' => 'string',

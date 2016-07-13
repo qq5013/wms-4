@@ -137,12 +137,12 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $version;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getVersion()
     {
@@ -150,7 +150,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @param long $version
+     * @param Long $version
      */
     public function setVersion($version)
     {
@@ -410,12 +410,12 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $attrSetInstEfGroupVersion;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getAttrSetInstEfGroupVersion()
     {
@@ -423,7 +423,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @param long $attrSetInstEfGroupVersion
+     * @param Long $attrSetInstEfGroupVersion
      */
     public function setAttrSetInstEfGroupVersion($attrSetInstEfGroupVersion)
     {

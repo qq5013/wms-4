@@ -37,12 +37,12 @@ class AbstractUserClaimMvoCommand
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $userVersion;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getUserVersion()
     {
@@ -50,7 +50,7 @@ class AbstractUserClaimMvoCommand
     }
 
     /**
-     * @param long $userVersion
+     * @param Long $userVersion
      */
     public function setUserVersion($userVersion)
     {

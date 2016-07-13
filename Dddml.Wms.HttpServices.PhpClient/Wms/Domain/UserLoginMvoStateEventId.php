@@ -29,12 +29,12 @@ class UserLoginMvoStateEventId
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $userVersion;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getUserVersion()
     {
@@ -42,7 +42,7 @@ class UserLoginMvoStateEventId
     }
 
     /**
-     * @param long $userVersion
+     * @param Long $userVersion
      */
     public function setUserVersion($userVersion)
     {

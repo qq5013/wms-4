@@ -621,12 +621,12 @@ trait InOutStatePropertiesTrait
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $volume;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getVolume()
     {
@@ -634,7 +634,7 @@ trait InOutStatePropertiesTrait
     }
 
     /**
-     * @param decimal $volume
+     * @param Decimal $volume
      */
     public function setVolume($volume)
     {
@@ -642,12 +642,12 @@ trait InOutStatePropertiesTrait
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $weight;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getWeight()
     {
@@ -655,7 +655,7 @@ trait InOutStatePropertiesTrait
     }
 
     /**
-     * @param decimal $weight
+     * @param Decimal $weight
      */
     public function setWeight($weight)
     {
@@ -768,12 +768,12 @@ trait InOutStatePropertiesTrait
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $version;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getVersion()
     {
@@ -781,7 +781,7 @@ trait InOutStatePropertiesTrait
     }
 
     /**
-     * @param long $version
+     * @param Long $version
      */
     public function setVersion($version)
     {

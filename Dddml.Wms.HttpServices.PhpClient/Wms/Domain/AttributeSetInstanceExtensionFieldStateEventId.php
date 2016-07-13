@@ -49,12 +49,12 @@ class AttributeSetInstanceExtensionFieldStateEventId
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $attributeSetInstanceExtensionFieldGroupVersion;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getAttributeSetInstanceExtensionFieldGroupVersion()
     {
@@ -62,7 +62,7 @@ class AttributeSetInstanceExtensionFieldStateEventId
     }
 
     /**
-     * @param long $attributeSetInstanceExtensionFieldGroupVersion
+     * @param Long $attributeSetInstanceExtensionFieldGroupVersion
      */
     public function setAttributeSetInstanceExtensionFieldGroupVersion($attributeSetInstanceExtensionFieldGroupVersion)
     {

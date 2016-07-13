@@ -29,12 +29,12 @@ class AttributeSetInstanceExtensionFieldMvoStateEventId
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $attrSetInstEfGroupVersion;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getAttrSetInstEfGroupVersion()
     {
@@ -42,7 +42,7 @@ class AttributeSetInstanceExtensionFieldMvoStateEventId
     }
 
     /**
-     * @param long $attrSetInstEfGroupVersion
+     * @param Long $attrSetInstEfGroupVersion
      */
     public function setAttrSetInstEfGroupVersion($attrSetInstEfGroupVersion)
     {

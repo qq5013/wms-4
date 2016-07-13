@@ -12,7 +12,7 @@ trait PermissionFilteringFieldsTrait
             'Name' => 'string',
             'ParentPermissionId' => 'string',
             'Description' => 'string',
-            'Version' => 'long',
+            'Version' => 'Long',
             'CreatedBy' => 'string',
             'CreatedAt' => '\DateTime',
             'UpdatedBy' => 'string',

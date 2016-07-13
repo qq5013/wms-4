@@ -20,7 +20,7 @@ trait UserFilteringFieldsTrait
             'PhoneNumberConfirmed' => 'boolean',
             'TwoFactorEnabled' => 'boolean',
             'SecurityStamp' => 'string',
-            'Version' => 'long',
+            'Version' => 'Long',
             'CreatedBy' => 'string',
             'CreatedAt' => '\DateTime',
             'UpdatedBy' => 'string',

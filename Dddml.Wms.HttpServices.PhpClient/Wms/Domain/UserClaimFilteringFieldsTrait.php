@@ -11,7 +11,7 @@ trait UserClaimFilteringFieldsTrait
             'ClaimId' => 'integer',
             'ClaimType' => 'string',
             'ClaimValue' => 'string',
-            'Version' => 'long',
+            'Version' => 'Long',
             'CreatedBy' => 'string',
             'CreatedAt' => '\DateTime',
             'UpdatedBy' => 'string',

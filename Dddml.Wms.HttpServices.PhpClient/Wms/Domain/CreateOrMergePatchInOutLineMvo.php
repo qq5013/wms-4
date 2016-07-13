@@ -14,12 +14,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     use InOutLineMvoIsPropertyRemovedTrait;
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $lineNumber;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getLineNumber()
     {
@@ -27,7 +27,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @param long $lineNumber
+     * @param Long $lineNumber
      */
     public function setLineNumber($lineNumber)
     {
@@ -119,12 +119,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $movementQuantity;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getMovementQuantity()
     {
@@ -132,7 +132,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @param decimal $movementQuantity
+     * @param Decimal $movementQuantity
      */
     public function setMovementQuantity($movementQuantity)
     {
@@ -140,12 +140,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $confirmedQuantity;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getConfirmedQuantity()
     {
@@ -153,7 +153,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @param decimal $confirmedQuantity
+     * @param Decimal $confirmedQuantity
      */
     public function setConfirmedQuantity($confirmedQuantity)
     {
@@ -161,12 +161,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $scrappedQuantity;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getScrappedQuantity()
     {
@@ -174,7 +174,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @param decimal $scrappedQuantity
+     * @param Decimal $scrappedQuantity
      */
     public function setScrappedQuantity($scrappedQuantity)
     {
@@ -182,12 +182,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $targetQuantity;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getTargetQuantity()
     {
@@ -195,7 +195,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @param decimal $targetQuantity
+     * @param Decimal $targetQuantity
      */
     public function setTargetQuantity($targetQuantity)
     {
@@ -203,12 +203,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $pickedQuantity;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getPickedQuantity()
     {
@@ -216,7 +216,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @param decimal $pickedQuantity
+     * @param Decimal $pickedQuantity
      */
     public function setPickedQuantity($pickedQuantity)
     {
@@ -308,12 +308,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $quantityEntered;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getQuantityEntered()
     {
@@ -321,7 +321,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @param decimal $quantityEntered
+     * @param Decimal $quantityEntered
      */
     public function setQuantityEntered($quantityEntered)
     {
@@ -329,12 +329,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $rmaLineNumber;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getRmaLineNumber()
     {
@@ -342,7 +342,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @param long $rmaLineNumber
+     * @param Long $rmaLineNumber
      */
     public function setRmaLineNumber($rmaLineNumber)
     {
@@ -350,12 +350,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $reversalLineNumber;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getReversalLineNumber()
     {
@@ -363,7 +363,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @param long $reversalLineNumber
+     * @param Long $reversalLineNumber
      */
     public function setReversalLineNumber($reversalLineNumber)
     {
@@ -371,12 +371,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $version;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getVersion()
     {
@@ -384,7 +384,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @param long $version
+     * @param Long $version
      */
     public function setVersion($version)
     {
@@ -1001,12 +1001,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $inOutVolume;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getInOutVolume()
     {
@@ -1014,7 +1014,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @param decimal $inOutVolume
+     * @param Decimal $inOutVolume
      */
     public function setInOutVolume($inOutVolume)
     {
@@ -1022,12 +1022,12 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("decimal")
+     * @Type("Dddml\Serializer\Type\Decimal")
      */
     private $inOutWeight;
 
     /**
-     * @return decimal
+     * @return Decimal
      */
     public function getInOutWeight()
     {
@@ -1035,7 +1035,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @param decimal $inOutWeight
+     * @param Decimal $inOutWeight
      */
     public function setInOutWeight($inOutWeight)
     {

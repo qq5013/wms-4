@@ -13,7 +13,7 @@ trait OrganizationFilteringFieldsTrait
             'Description' => 'string',
             'Type' => 'string',
             'IsSummary' => 'boolean',
-            'Version' => 'long',
+            'Version' => 'Long',
             'CreatedBy' => 'string',
             'CreatedAt' => '\DateTime',
             'UpdatedBy' => 'string',

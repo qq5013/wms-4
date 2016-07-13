@@ -15,7 +15,7 @@ trait AttributeSetFilteringFieldsTrait
             'SerialNumberAttributeId' => 'string',
             'LotAttributeId' => 'string',
             'ReferenceId' => 'string',
-            'Version' => 'long',
+            'Version' => 'Long',
             'CreatedBy' => 'string',
             'CreatedAt' => '\DateTime',
             'UpdatedBy' => 'string',

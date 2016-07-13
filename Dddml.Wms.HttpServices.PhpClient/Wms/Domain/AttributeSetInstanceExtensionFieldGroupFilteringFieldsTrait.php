@@ -14,7 +14,7 @@ trait AttributeSetInstanceExtensionFieldGroupFilteringFieldsTrait
             'FieldCount' => 'integer',
             'NameFormat' => 'string',
             'Description' => 'string',
-            'Version' => 'long',
+            'Version' => 'Long',
             'CreatedBy' => 'string',
             'CreatedAt' => '\DateTime',
             'UpdatedBy' => 'string',

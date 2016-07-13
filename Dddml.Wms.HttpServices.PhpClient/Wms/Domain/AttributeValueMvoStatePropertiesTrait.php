@@ -95,12 +95,12 @@ trait AttributeValueMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $version;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getVersion()
     {
@@ -108,7 +108,7 @@ trait AttributeValueMvoStatePropertiesTrait
     }
 
     /**
-     * @param long $version
+     * @param Long $version
      */
     public function setVersion($version)
     {
@@ -473,12 +473,12 @@ trait AttributeValueMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $attributeVersion;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getAttributeVersion()
     {
@@ -486,7 +486,7 @@ trait AttributeValueMvoStatePropertiesTrait
     }
 
     /**
-     * @param long $attributeVersion
+     * @param Long $attributeVersion
      */
     public function setAttributeVersion($attributeVersion)
     {

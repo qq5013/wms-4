@@ -16,12 +16,12 @@ class CreateOrMergePatchUserRoleMvo extends AbstractUserRoleMvoCommand
     use UserRoleMvoIsPropertyRemovedTrait;
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $version;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getVersion()
     {
@@ -29,7 +29,7 @@ class CreateOrMergePatchUserRoleMvo extends AbstractUserRoleMvoCommand
     }
 
     /**
-     * @param long $version
+     * @param Long $version
      */
     public function setVersion($version)
     {

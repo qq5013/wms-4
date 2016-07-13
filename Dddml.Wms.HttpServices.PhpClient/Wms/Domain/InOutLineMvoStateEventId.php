@@ -29,12 +29,12 @@ class InOutLineMvoStateEventId
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $inOutVersion;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getInOutVersion()
     {
@@ -42,7 +42,7 @@ class InOutLineMvoStateEventId
     }
 
     /**
-     * @param long $inOutVersion
+     * @param Long $inOutVersion
      */
     public function setInOutVersion($inOutVersion)
     {

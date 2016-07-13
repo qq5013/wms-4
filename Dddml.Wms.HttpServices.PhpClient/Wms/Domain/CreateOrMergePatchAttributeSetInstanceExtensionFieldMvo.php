@@ -118,12 +118,12 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo extends AbstractAt
     }
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $version;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getVersion()
     {
@@ -131,7 +131,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo extends AbstractAt
     }
 
     /**
-     * @param long $version
+     * @param Long $version
      */
     public function setVersion($version)
     {

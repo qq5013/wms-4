@@ -16,12 +16,12 @@ class CreateOrMergePatchUserPermissionMvo extends AbstractUserPermissionMvoComma
     use UserPermissionMvoIsPropertyRemovedTrait;
 
     /**
-     * @Type("long")
+     * @Type("Dddml\Serializer\Type\Long")
      */
     private $version;
 
     /**
-     * @return long
+     * @return Long
      */
     public function getVersion()
     {
@@ -29,7 +29,7 @@ class CreateOrMergePatchUserPermissionMvo extends AbstractUserPermissionMvoComma
     }
 
     /**
-     * @param long $version
+     * @param Long $version
      */
     public function setVersion($version)
     {

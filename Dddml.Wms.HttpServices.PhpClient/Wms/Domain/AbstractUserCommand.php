@@ -10,7 +10,7 @@ use Wms\Domain\UserLogin;
 use Wms\Domain\LoginKey;
 use Wms\Domain\CommandTrait;
 
-class AbstractUserCommand
+abstract class AbstractUserCommand
 {
 
     use CommandTrait;

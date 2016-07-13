@@ -6,7 +6,7 @@ use JMS\Serializer\Annotation\Type;
 use Wms\Domain\OrganizationStructureId;
 use Wms\Domain\CommandTrait;
 
-class AbstractOrganizationStructureCommand
+abstract class AbstractOrganizationStructureCommand
 {
 
     use CommandTrait;

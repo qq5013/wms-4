@@ -6,7 +6,7 @@ use JMS\Serializer\Annotation\Type;
 use Wms\Domain\AttributeUse;
 use Wms\Domain\CommandTrait;
 
-class AbstractAttributeSetCommand
+abstract class AbstractAttributeSetCommand
 {
 
     use CommandTrait;

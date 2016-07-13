@@ -5,7 +5,7 @@ namespace Wms\Domain;
 use JMS\Serializer\Annotation\Type;
 use Wms\Domain\CommandTrait;
 
-class AbstractRoleCommand
+abstract class AbstractRoleCommand
 {
 
     use CommandTrait;

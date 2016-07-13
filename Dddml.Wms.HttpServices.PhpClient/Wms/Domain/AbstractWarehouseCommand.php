@@ -5,7 +5,7 @@ namespace Wms\Domain;
 use JMS\Serializer\Annotation\Type;
 use Wms\Domain\CommandTrait;
 
-class AbstractWarehouseCommand
+abstract class AbstractWarehouseCommand
 {
 
     use CommandTrait;

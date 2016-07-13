@@ -6,7 +6,7 @@ use JMS\Serializer\Annotation\Type;
 use Wms\Domain\AttributeSetInstanceExtensionField;
 use Wms\Domain\CommandTrait;
 
-class AbstractAttributeSetInstanceExtensionFieldGroupCommand
+abstract class AbstractAttributeSetInstanceExtensionFieldGroupCommand
 {
 
     use CommandTrait;

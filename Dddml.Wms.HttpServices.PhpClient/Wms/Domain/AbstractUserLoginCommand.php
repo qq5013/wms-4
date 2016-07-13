@@ -6,7 +6,7 @@ use JMS\Serializer\Annotation\Type;
 use Wms\Domain\LoginKey;
 use Wms\Domain\CommandTrait;
 
-class AbstractUserLoginCommand
+abstract class AbstractUserLoginCommand
 {
 
     use CommandTrait;

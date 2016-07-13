@@ -8,7 +8,7 @@ use NodaMoney\Money;
 use Wms\Domain\InOutLine;
 use Wms\Domain\CommandTrait;
 
-class AbstractInOutLineMvoCommand
+abstract class AbstractInOutLineMvoCommand
 {
 
     use CommandTrait;

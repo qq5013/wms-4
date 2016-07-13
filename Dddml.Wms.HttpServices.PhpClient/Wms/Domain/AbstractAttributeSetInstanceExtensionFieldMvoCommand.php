@@ -7,7 +7,7 @@ use Wms\Domain\AttributeSetInstanceExtensionFieldId;
 use Wms\Domain\AttributeSetInstanceExtensionField;
 use Wms\Domain\CommandTrait;
 
-class AbstractAttributeSetInstanceExtensionFieldMvoCommand
+abstract class AbstractAttributeSetInstanceExtensionFieldMvoCommand
 {
 
     use CommandTrait;

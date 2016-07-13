@@ -7,7 +7,7 @@ use Wms\Domain\AttributeValueId;
 use Wms\Domain\AttributeValue;
 use Wms\Domain\CommandTrait;
 
-class AbstractAttributeValueMvoCommand
+abstract class AbstractAttributeValueMvoCommand
 {
 
     use CommandTrait;

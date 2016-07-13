@@ -10,7 +10,7 @@ use Wms\Domain\UserPermission;
 use Wms\Domain\UserLogin;
 use Wms\Domain\CommandTrait;
 
-class AbstractUserPermissionMvoCommand
+abstract class AbstractUserPermissionMvoCommand
 {
 
     use CommandTrait;

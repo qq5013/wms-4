@@ -8,7 +8,7 @@ use Wms\Domain\InOutLine;
 use Wms\Domain\SkuId;
 use Wms\Domain\CommandTrait;
 
-class AbstractInOutCommand
+abstract class AbstractInOutCommand
 {
 
     use CommandTrait;

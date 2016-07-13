@@ -6,7 +6,7 @@ use JMS\Serializer\Annotation\Type;
 use Wms\Domain\SkuId;
 use Wms\Domain\CommandTrait;
 
-class AbstractInOutLineCommand
+abstract class AbstractInOutLineCommand
 {
 
     use CommandTrait;

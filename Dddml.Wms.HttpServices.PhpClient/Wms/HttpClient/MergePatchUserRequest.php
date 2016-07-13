@@ -12,6 +12,7 @@ use Wms\Domain\UserClaim;
 use Wms\Domain\UserPermission;
 use Wms\Domain\UserLogin;
 use Wms\Domain\LoginKey;
+use Wms\Domain\CreateOrMergePatchUser;
 
 class MergePatchUserRequest implements CommandRequestInterface
 {

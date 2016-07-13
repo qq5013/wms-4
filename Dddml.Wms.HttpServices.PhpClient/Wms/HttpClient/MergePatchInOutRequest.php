@@ -10,6 +10,7 @@ use Symfony\Component\Routing\Route;
 use NodaMoney\Money;
 use Wms\Domain\InOutLine;
 use Wms\Domain\SkuId;
+use Wms\Domain\CreateOrMergePatchInOut;
 
 class MergePatchInOutRequest implements CommandRequestInterface
 {

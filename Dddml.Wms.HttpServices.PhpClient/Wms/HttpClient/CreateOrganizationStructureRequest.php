@@ -8,6 +8,8 @@ use Dddml\Routing\RouteTrait;
 use JMS\Serializer\Annotation\Type;
 use Symfony\Component\Routing\Route;
 use Wms\Domain\OrganizationStructureId;
+use Wms\Domain\CreateOrMergePatchOrganizationStructure;
+
 
 class CreateOrganizationStructureRequest implements CommandRequestInterface
 {

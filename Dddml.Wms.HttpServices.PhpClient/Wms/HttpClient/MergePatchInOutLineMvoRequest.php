@@ -10,6 +10,7 @@ use Symfony\Component\Routing\Route;
 use Wms\Domain\InOutLineId;
 use NodaMoney\Money;
 use Wms\Domain\InOutLine;
+use Wms\Domain\CreateOrMergePatchInOutLineMvo;
 
 class MergePatchInOutLineMvoRequest implements CommandRequestInterface
 {

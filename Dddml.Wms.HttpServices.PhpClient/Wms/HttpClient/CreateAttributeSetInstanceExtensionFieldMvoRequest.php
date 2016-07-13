@@ -9,6 +9,8 @@ use JMS\Serializer\Annotation\Type;
 use Symfony\Component\Routing\Route;
 use Wms\Domain\AttributeSetInstanceExtensionFieldId;
 use Wms\Domain\AttributeSetInstanceExtensionField;
+use Wms\Domain\CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo;
+
 
 class CreateAttributeSetInstanceExtensionFieldMvoRequest implements CommandRequestInterface
 {

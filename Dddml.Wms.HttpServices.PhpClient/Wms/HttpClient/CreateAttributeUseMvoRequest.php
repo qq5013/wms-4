@@ -9,6 +9,8 @@ use JMS\Serializer\Annotation\Type;
 use Symfony\Component\Routing\Route;
 use Wms\Domain\AttributeSetAttributeUseId;
 use Wms\Domain\AttributeUse;
+use Wms\Domain\CreateOrMergePatchAttributeUseMvo;
+
 
 class CreateAttributeUseMvoRequest implements CommandRequestInterface
 {

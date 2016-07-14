@@ -2,12 +2,13 @@
 
 namespace Wms\Domain;
 
+use Dddml\Command\CommandInterface;
 use JMS\Serializer\Annotation\Type;
 use Wms\Domain\AttributeSetAttributeUseId;
 use Wms\Domain\AttributeUse;
 use Wms\Domain\CommandTrait;
 
-abstract class AbstractAttributeUseMvoCommand
+abstract class AbstractAttributeUseMvoCommand implements CommandInterface
 {
 
     use CommandTrait;

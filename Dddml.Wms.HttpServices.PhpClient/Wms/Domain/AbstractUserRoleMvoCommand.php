@@ -2,6 +2,7 @@
 
 namespace Wms\Domain;
 
+use Dddml\Command\CommandInterface;
 use JMS\Serializer\Annotation\Type;
 use Wms\Domain\UserRoleId;
 use Wms\Domain\UserRole;
@@ -10,7 +11,7 @@ use Wms\Domain\UserPermission;
 use Wms\Domain\UserLogin;
 use Wms\Domain\CommandTrait;
 
-abstract class AbstractUserRoleMvoCommand
+abstract class AbstractUserRoleMvoCommand implements CommandInterface
 {
 
     use CommandTrait;

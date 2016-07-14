@@ -2,10 +2,11 @@
 
 namespace Wms\Domain;
 
+use Dddml\Command\CommandInterface;
 use JMS\Serializer\Annotation\Type;
 use Wms\Domain\CommandTrait;
 
-abstract class AbstractPermissionCommand
+abstract class AbstractPermissionCommand implements CommandInterface
 {
 
     use CommandTrait;

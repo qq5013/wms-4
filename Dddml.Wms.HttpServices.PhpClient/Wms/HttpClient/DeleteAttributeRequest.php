@@ -3,14 +3,22 @@
 namespace Wms\HttpClient;
 
 use Dddml\Command\CommandExecutor;
-use Dddml\Command\CommandRequestInterface;
+use Dddml\Executor\Http\CommandRequestInterface;
 use Dddml\Routing\RouteTrait;
 use Symfony\Component\Routing\Route;
 use Wms\Domain\AttributeValue;
+use Wms\Domain\DeleteAttribute;
+
 
 class DeleteAttributeRequest implements CommandRequestInterface
 {
     use RouteTrait;
+
+    /**
+     * @var  DeleteAttribute
+     */
+    private $command;
+// ///////////////////// TODO //////////////////////////
 
     public function __construct()
     {

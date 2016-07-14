@@ -3,7 +3,7 @@
 namespace Wms\HttpClient;
 
 use Dddml\Command\CommandExecutor;
-use Dddml\Command\CommandRequestInterface;
+use Dddml\Executor\Http\CommandRequestInterface;
 use Dddml\Routing\RouteTrait;
 use JMS\Serializer\Annotation\Type;
 use Symfony\Component\Routing\Route;

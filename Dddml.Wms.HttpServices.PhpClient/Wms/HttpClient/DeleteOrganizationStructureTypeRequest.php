@@ -3,13 +3,21 @@
 namespace Wms\HttpClient;
 
 use Dddml\Command\CommandExecutor;
-use Dddml\Command\CommandRequestInterface;
+use Dddml\Executor\Http\CommandRequestInterface;
 use Dddml\Routing\RouteTrait;
 use Symfony\Component\Routing\Route;
+use Wms\Domain\DeleteOrganizationStructureType;
+
 
 class DeleteOrganizationStructureTypeRequest implements CommandRequestInterface
 {
     use RouteTrait;
+
+    /**
+     * @var  DeleteOrganizationStructureType
+     */
+    private $command;
+// ///////////////////// TODO //////////////////////////
 
     public function __construct()
     {

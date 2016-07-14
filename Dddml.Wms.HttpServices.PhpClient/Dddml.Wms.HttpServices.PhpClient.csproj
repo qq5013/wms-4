@@ -172,6 +172,29 @@
 .\CreateOrMergePatchUserRole.php
 .\CreateOrMergePatchUserRoleMvo.php
 .\CreateOrMergePatchWarehouse.php
+.\DeleteAttribute.php
+.\DeleteAttributeSet.php
+.\DeleteAttributeSetInstance.php
+.\DeleteAttributeSetInstanceExtensionFieldGroup.php
+.\DeleteAttributeSetInstanceExtensionFieldMvo.php
+.\DeleteAttributeUseMvo.php
+.\DeleteAttributeValueMvo.php
+.\DeleteAudience.php
+.\DeleteInOut.php
+.\DeleteInOutLineMvo.php
+.\DeleteLocator.php
+.\DeleteOrganization.php
+.\DeleteOrganizationStructure.php
+.\DeleteOrganizationStructureType.php
+.\DeletePermission.php
+.\DeleteRole.php
+.\DeleteRolePermission.php
+.\DeleteUser.php
+.\DeleteUserClaimMvo.php
+.\DeleteUserLoginMvo.php
+.\DeleteUserPermissionMvo.php
+.\DeleteUserRoleMvo.php
+.\DeleteWarehouse.php
 .\GenerateBoundedContextDomainAggregates.txt
 .\InOut.php
 .\InOutIsPropertyRemovedTrait.php
@@ -207,6 +230,14 @@
 .\PermissionIsPropertyRemovedTrait.php
 .\PermissionStateEventId.php
 .\PermissionStatePropertiesTrait.php
+.\RemoveAttributeSetInstanceExtensionField.php
+.\RemoveAttributeUse.php
+.\RemoveAttributeValue.php
+.\RemoveInOutLine.php
+.\RemoveUserClaim.php
+.\RemoveUserLogin.php
+.\RemoveUserPermission.php
+.\RemoveUserRole.php
 .\Role.php
 .\RoleIsPropertyRemovedTrait.php
 .\RolePermission.php
@@ -838,6 +869,75 @@
     <None Include="Wms\Domain\CreateOrMergePatchWarehouse.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
+    <None Include="Wms\Domain\DeleteAttribute.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\DeleteAttributeSet.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\DeleteAttributeSetInstance.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\DeleteAttributeSetInstanceExtensionFieldGroup.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\DeleteAttributeSetInstanceExtensionFieldMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\DeleteAttributeUseMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\DeleteAttributeValueMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\DeleteAudience.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\DeleteInOut.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\DeleteInOutLineMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\DeleteLocator.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\DeleteOrganization.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\DeleteOrganizationStructure.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\DeleteOrganizationStructureType.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\DeletePermission.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\DeleteRole.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\DeleteRolePermission.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\DeleteUser.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\DeleteUserClaimMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\DeleteUserLoginMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\DeleteUserPermissionMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\DeleteUserRoleMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\DeleteWarehouse.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
     <None Include="Wms\Domain\DocumentAction.php">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </None>
@@ -1040,6 +1140,30 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Wms\Domain\PermissionStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\RemoveAttributeSetInstanceExtensionField.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\RemoveAttributeUse.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\RemoveAttributeValue.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\RemoveInOutLine.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\RemoveUserClaim.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\RemoveUserLogin.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\RemoveUserPermission.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\RemoveUserRole.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Wms\Domain\Role.php">

@@ -2,11 +2,12 @@
 
 namespace Wms\Domain;
 
+use Dddml\Command\CommandInterface;
 use JMS\Serializer\Annotation\Type;
 use Wms\Domain\AttributeSetInstanceExtensionField;
 use Wms\Domain\CommandTrait;
 
-abstract class AbstractAttributeSetInstanceExtensionFieldGroupCommand
+abstract class AbstractAttributeSetInstanceExtensionFieldGroupCommand implements CommandInterface
 {
 
     use CommandTrait;

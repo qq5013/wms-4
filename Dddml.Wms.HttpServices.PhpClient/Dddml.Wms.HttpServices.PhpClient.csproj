@@ -98,6 +98,7 @@
 .\AttributeIsPropertyRemovedTrait.php
 .\AttributeSet.php
 .\AttributeSetAttributeUseId.php
+.\AttributeSetAttributeUseIdFlattenedDto.php
 .\AttributeSetInstance.php
 .\AttributeSetInstanceExtensionField.php
 .\AttributeSetInstanceExtensionFieldGroup.php
@@ -105,6 +106,7 @@
 .\AttributeSetInstanceExtensionFieldGroupStateEventId.php
 .\AttributeSetInstanceExtensionFieldGroupStatePropertiesTrait.php
 .\AttributeSetInstanceExtensionFieldId.php
+.\AttributeSetInstanceExtensionFieldIdFlattenedDto.php
 .\AttributeSetInstanceExtensionFieldIsPropertyRemovedTrait.php
 .\AttributeSetInstanceExtensionFieldMvo.php
 .\AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait.php
@@ -130,6 +132,7 @@
 .\AttributeUseStatePropertiesTrait.php
 .\AttributeValue.php
 .\AttributeValueId.php
+.\AttributeValueIdFlattenedDto.php
 .\AttributeValueIsPropertyRemovedTrait.php
 .\AttributeValueMvo.php
 .\AttributeValueMvoIsPropertyRemovedTrait.php
@@ -200,6 +203,7 @@
 .\InOutIsPropertyRemovedTrait.php
 .\InOutLine.php
 .\InOutLineId.php
+.\InOutLineIdFlattenedDto.php
 .\InOutLineIsPropertyRemovedTrait.php
 .\InOutLineMvo.php
 .\InOutLineMvoIsPropertyRemovedTrait.php
@@ -214,6 +218,7 @@
 .\LocatorStateEventId.php
 .\LocatorStatePropertiesTrait.php
 .\LoginKey.php
+.\LoginKeyFlattenedDto.php
 .\Organization.php
 .\OrganizationIsPropertyRemovedTrait.php
 .\OrganizationStateEventId.php
@@ -249,6 +254,7 @@
 .\User.php
 .\UserClaim.php
 .\UserClaimId.php
+.\UserClaimIdFlattenedDto.php
 .\UserClaimIsPropertyRemovedTrait.php
 .\UserClaimMvo.php
 .\UserClaimMvoIsPropertyRemovedTrait.php
@@ -259,6 +265,7 @@
 .\UserIsPropertyRemovedTrait.php
 .\UserLogin.php
 .\UserLoginId.php
+.\UserLoginIdFlattenedDto.php
 .\UserLoginIsPropertyRemovedTrait.php
 .\UserLoginMvo.php
 .\UserLoginMvoIsPropertyRemovedTrait.php
@@ -268,6 +275,7 @@
 .\UserLoginStatePropertiesTrait.php
 .\UserPermission.php
 .\UserPermissionId.php
+.\UserPermissionIdFlattenedDto.php
 .\UserPermissionIsPropertyRemovedTrait.php
 .\UserPermissionMvo.php
 .\UserPermissionMvoIsPropertyRemovedTrait.php
@@ -277,6 +285,7 @@
 .\UserPermissionStatePropertiesTrait.php
 .\UserRole.php
 .\UserRoleId.php
+.\UserRoleIdFlattenedDto.php
 .\UserRoleIsPropertyRemovedTrait.php
 .\UserRoleMvo.php
 .\UserRoleMvoIsPropertyRemovedTrait.php
@@ -644,6 +653,9 @@
     <None Include="Wms\Domain\AttributeSetAttributeUseId.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
+    <None Include="Wms\Domain\AttributeSetAttributeUseIdFlattenedDto.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
     <None Include="Wms\Domain\AttributeSetInstance.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
@@ -663,6 +675,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Wms\Domain\AttributeSetInstanceExtensionFieldId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeSetInstanceExtensionFieldIdFlattenedDto.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Wms\Domain\AttributeSetInstanceExtensionFieldIsPropertyRemovedTrait.php">
@@ -738,6 +753,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Wms\Domain\AttributeValueId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\AttributeValueIdFlattenedDto.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Wms\Domain\AttributeValueIsPropertyRemovedTrait.php">
@@ -953,6 +971,9 @@
     <None Include="Wms\Domain\InOutLineId.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
+    <None Include="Wms\Domain\InOutLineIdFlattenedDto.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
     <None Include="Wms\Domain\InOutLineIsPropertyRemovedTrait.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
@@ -993,6 +1014,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Wms\Domain\LoginKey.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\LoginKeyFlattenedDto.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Wms\Domain\Metadata\AttributeMetadata.php">
@@ -1205,6 +1229,9 @@
     <None Include="Wms\Domain\UserClaimId.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
+    <None Include="Wms\Domain\UserClaimIdFlattenedDto.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
     <None Include="Wms\Domain\UserClaimIsPropertyRemovedTrait.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
@@ -1235,6 +1262,9 @@
     <None Include="Wms\Domain\UserLoginId.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
+    <None Include="Wms\Domain\UserLoginIdFlattenedDto.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
     <None Include="Wms\Domain\UserLoginIsPropertyRemovedTrait.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
@@ -1262,6 +1292,9 @@
     <None Include="Wms\Domain\UserPermissionId.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
+    <None Include="Wms\Domain\UserPermissionIdFlattenedDto.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
     <None Include="Wms\Domain\UserPermissionIsPropertyRemovedTrait.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
@@ -1287,6 +1320,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Wms\Domain\UserRoleId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\UserRoleIdFlattenedDto.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Wms\Domain\UserRoleIsPropertyRemovedTrait.php">

@@ -1,0 +1,43 @@
+package org.dddml.wms.domain;
+
+
+public class UserPermissionStateEventId
+{
+    private String userId;
+
+    public String getUserId()
+    {
+        return this.userId;
+    }
+
+    public void setUserId(String userId)
+    {
+        this.userId = userId;
+    }
+
+    private String permissionId;
+
+    public String getPermissionId()
+    {
+        return this.permissionId;
+    }
+
+    public void setPermissionId(String permissionId)
+    {
+        this.permissionId = permissionId;
+    }
+
+    private Long userVersion;
+
+    public Long getUserVersion()
+    {
+        return this.userVersion;
+    }
+
+    public void setUserVersion(Long userVersion)
+    {
+        this.userVersion = userVersion;
+    }
+
+}
+

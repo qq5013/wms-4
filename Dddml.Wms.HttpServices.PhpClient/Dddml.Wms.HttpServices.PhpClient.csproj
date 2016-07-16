@@ -50,8 +50,11 @@
 .\DocumentAction.php
 .\GenerateBoundedContextDomain.txt
 .\OrganizationStructureId.php
+.\OrganizationStructureIdFlattenedDto.php
 .\RolePermissionId.php
+.\RolePermissionIdFlattenedDto.php
 .\SkuId.php
+.\SkuIdFlattenedDto.php
 </LastOutputs>
     </Content>
     <Content Include="Wms\Domain\GenerateBoundedContextDomain.txt">
@@ -1133,6 +1136,9 @@
     <None Include="Wms\Domain\OrganizationStructureId.php">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </None>
+    <None Include="Wms\Domain\OrganizationStructureIdFlattenedDto.php">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </None>
     <None Include="Wms\Domain\OrganizationStructureIsPropertyRemovedTrait.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
@@ -1202,6 +1208,9 @@
     <None Include="Wms\Domain\RolePermissionId.php">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </None>
+    <None Include="Wms\Domain\RolePermissionIdFlattenedDto.php">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </None>
     <None Include="Wms\Domain\RolePermissionIsPropertyRemovedTrait.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
@@ -1218,6 +1227,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Wms\Domain\SkuId.php">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </None>
+    <None Include="Wms\Domain\SkuIdFlattenedDto.php">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </None>
     <None Include="Wms\Domain\User.php">

@@ -17,7 +17,7 @@
 
 	boundedContext.SetBoundedContextPackage("org.dddml.wms");
 
-    TemplatingContext.Current.SpecializationNamespace = "org.dddml.specialization";
+    boundedContext.SetJavaSpecializationPackage("org.dddml.specialization");
 
 	boundedContext.IsUsingSeparatedDomainAggregateNamespace = false;
 
@@ -28,7 +28,7 @@
 	//boundedContext.Aggregates["AttributeSetInstance"].AuthorizationEnabled = true;
 	//boundedContext.Aggregates["AttributeSetInstance"].AnonymousAllowed = true;
 
-	boundedContext.SetTypeNamespaces(GetTypeNamespaces());
+	boundedContext.SetJavaTypePackages(GetTypePackages());
 	//boundedContext.SetClrValueTypes(GetClrValueTypes());
 	//boundedContext.SetNHibernateTypes(GetNHibernateTypes());
 
@@ -52,7 +52,7 @@
 		{
 			boundedContext.Aggregates.Add(mvo.Name, mvo);
 			mvo.GenerateAggregateStateEventIdValueObject();
-			//mvo.SetClrAggregateDomainSubNamespaceName("MViews");
+			//mvo.SetClrAggregateDomainSubPackageName("MViews");
 			mvo.SetStateDatabaseTableNameFormat("{0}s");
 			mvo.SetUsingRViewAsMView(true);
 			mvo.SetHttpServiceResourceCollectionNameFormat("{0}s");
@@ -103,7 +103,7 @@
                 dict.Add("int?", "Integer");
                 dict.Add("long", "Long");
                 dict.Add("long?", "Long");
-                //dict.Add("Money", "_MONEY_");
+                dict.Add("Money", "Money");
                 dict.Add("string", "String");
                 dict.Add("String", "String");
 			
@@ -129,11 +129,14 @@
 		//return clrValueTypes;
 	//}
 
-	private IDictionary<string, string> GetTypeNamespaces()
+	private IDictionary<string, string> GetTypePackages()
 	{
-		var typeNamespaces = new Dictionary<string, string>();
-		typeNamespaces.Add("Money", "NodaMoney");
-		return typeNamespaces;
+		var typePackages = new Dictionary<string, string>();
+		typePackages.Add("Money", "nodamoney");
+		typePackages.Add("BigDecimal", "java.math");
+		typePackages.Add("Date", "java.util");
+
+		return typePackages;
 	}
 
 #>

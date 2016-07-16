@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BD368EED-83C7-49B0-8116-797BD98741E0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dddml.Wms.HttpServices.JavaClient</RootNamespace>
+    <AssemblyName>Dddml.Wms.HttpServices.JavaClient</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\org\dddml\wms\domain\meta\AttributeMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\AttributeSetInstanceExtensionFieldGroupMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\AttributeSetInstanceExtensionFieldMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\AttributeSetInstanceExtensionFieldMvoMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\AttributeSetInstanceMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\AttributeSetMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\AttributeUseMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\AttributeUseMvoMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\AttributeValueMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\AttributeValueMvoMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\AudienceMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\BoundedContextMetadata.java">
+      <DependentUpon>GenerateBoundedContextMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\GenerateBoundedContextDomainAggregatesMetadata.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GenerateBoundedContextDomainAggregatesMetadata.txt</LastGenOutput>
+      <LastOutputs>
+.\AttributeMetadata.java
+.\AttributeSetInstanceExtensionFieldGroupMetadata.java
+.\AttributeSetInstanceExtensionFieldMetadata.java
+.\AttributeSetInstanceExtensionFieldMvoMetadata.java
+.\AttributeSetInstanceMetadata.java
+.\AttributeSetMetadata.java
+.\AttributeUseMetadata.java
+.\AttributeUseMvoMetadata.java
+.\AttributeValueMetadata.java
+.\AttributeValueMvoMetadata.java
+.\AudienceMetadata.java
+.\GenerateBoundedContextDomainAggregatesMetadata.txt
+.\InOutLineMetadata.java
+.\InOutLineMvoMetadata.java
+.\InOutMetadata.java
+.\LocatorMetadata.java
+.\OrganizationMetadata.java
+.\OrganizationStructureMetadata.java
+.\OrganizationStructureTypeMetadata.java
+.\PermissionMetadata.java
+.\RoleMetadata.java
+.\RolePermissionMetadata.java
+.\UserClaimMetadata.java
+.\UserClaimMvoMetadata.java
+.\UserLoginMetadata.java
+.\UserLoginMvoMetadata.java
+.\UserMetadata.java
+.\UserPermissionMetadata.java
+.\UserPermissionMvoMetadata.java
+.\UserRoleMetadata.java
+.\UserRoleMvoMetadata.java
+.\WarehouseMetadata.java
+</LastOutputs>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\GenerateBoundedContextDomainAggregatesMetadata.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\GenerateBoundedContextMetadata.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GenerateBoundedContextMetadata.txt</LastGenOutput>
+      <LastOutputs>
+.\BoundedContextMetadata.java
+.\GenerateBoundedContextMetadata.txt
+</LastOutputs>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\GenerateBoundedContextMetadata.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenerateBoundedContextMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\InOutLineMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\InOutLineMvoMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\InOutMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\LocatorMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\OrganizationMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\OrganizationStructureMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\OrganizationStructureTypeMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\PermissionMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\RoleMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\RolePermissionMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\UserClaimMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\UserClaimMvoMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\UserLoginMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\UserLoginMvoMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\UserMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\UserPermissionMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\UserPermissionMvoMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\UserRoleMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\UserRoleMvoMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\WarehouseMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\LoadBoundedContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>LoadBoundedContext.txt</LastGenOutput>
+      <LastOutputs>.\LoadBoundedContext.txt</LastOutputs>
+    </Content>
+    <Content Include="src\org\dddml\wms\LoadBoundedContext.txt">
+      <DependentUpon>LoadBoundedContext.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

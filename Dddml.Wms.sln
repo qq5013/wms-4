@@ -38,6 +38,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dddml.Wms.HttpServices.Comm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dddml.Wms.HttpServices.PhpClient", "Dddml.Wms.HttpServices.PhpClient\Dddml.Wms.HttpServices.PhpClient.csproj", "{5AC211A8-A4D7-4C55-B888-EE689CB7A18D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dddml.Wms.HttpServices.JavaClient", "Dddml.Wms.HttpServices.JavaClient\Dddml.Wms.HttpServices.JavaClient.csproj", "{BD368EED-83C7-49B0-8116-797BD98741E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -100,6 +102,10 @@ Global
 		{5AC211A8-A4D7-4C55-B888-EE689CB7A18D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AC211A8-A4D7-4C55-B888-EE689CB7A18D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AC211A8-A4D7-4C55-B888-EE689CB7A18D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD368EED-83C7-49B0-8116-797BD98741E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD368EED-83C7-49B0-8116-797BD98741E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD368EED-83C7-49B0-8116-797BD98741E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD368EED-83C7-49B0-8116-797BD98741E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,22 +6,26 @@ public class UserLoginIdFlattenedDto
 {
 
 
-    public static String[] getPropertyNames()
-    {
-        return new String[]{
+    private static String[] _propertyNames = new String[]{
             "userId",
             "loginKeyLoginProvider",
             "loginKeyProviderKey",
         };
-    }
 
-    public static String[] getPropertyTypes()
-    {
-        return new String[]{
+    private static String[] _propertyTypes = new String[]{
             "String",
             "String",
             "String",
         };
+
+    public static String[] getPropertyNames()
+    {
+        return _propertyNames;
+    }
+
+    public static String[] getPropertyTypes()
+    {
+        return _propertyTypes;
     }
 	
     private UserLoginId value;

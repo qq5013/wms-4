@@ -5,20 +5,24 @@ public class SkuIdFlattenedDto
 {
 
 
-    public static String[] getPropertyNames()
-    {
-        return new String[]{
+    private static String[] _propertyNames = new String[]{
             "productId",
             "attributeSetInstanceId",
         };
+
+    private static String[] _propertyTypes = new String[]{
+            "String",
+            "String",
+        };
+
+    public static String[] getPropertyNames()
+    {
+        return _propertyNames;
     }
 
     public static String[] getPropertyTypes()
     {
-        return new String[]{
-            "String",
-            "String",
-        };
+        return _propertyTypes;
     }
 	
     private SkuId value;

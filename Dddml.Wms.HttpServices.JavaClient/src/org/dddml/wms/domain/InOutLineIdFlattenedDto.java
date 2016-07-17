@@ -6,22 +6,26 @@ public class InOutLineIdFlattenedDto
 {
 
 
-    public static String[] getPropertyNames()
-    {
-        return new String[]{
+    private static String[] _propertyNames = new String[]{
             "inOutDocumentNumber",
             "skuIdProductId",
             "skuIdAttributeSetInstanceId",
         };
-    }
 
-    public static String[] getPropertyTypes()
-    {
-        return new String[]{
+    private static String[] _propertyTypes = new String[]{
             "String",
             "String",
             "String",
         };
+
+    public static String[] getPropertyNames()
+    {
+        return _propertyNames;
+    }
+
+    public static String[] getPropertyTypes()
+    {
+        return _propertyTypes;
     }
 	
     private InOutLineId value;

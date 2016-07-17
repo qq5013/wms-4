@@ -5,20 +5,24 @@ public class UserClaimIdFlattenedDto
 {
 
 
-    public static String[] getPropertyNames()
-    {
-        return new String[]{
+    private static String[] _propertyNames = new String[]{
             "userId",
             "claimId",
         };
+
+    private static String[] _propertyTypes = new String[]{
+            "String",
+            "Integer",
+        };
+
+    public static String[] getPropertyNames()
+    {
+        return _propertyNames;
     }
 
     public static String[] getPropertyTypes()
     {
-        return new String[]{
-            "String",
-            "Integer",
-        };
+        return _propertyTypes;
     }
 	
     private UserClaimId value;

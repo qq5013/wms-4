@@ -434,22 +434,22 @@ trait InOutLineMvoStatePropertiesTrait
     /**
      * @Type("boolean")
      */
-    private $inOutIsSoTransaction;
+    private $inOutIsSOTransaction;
 
     /**
      * @return boolean
      */
-    public function getInOutIsSoTransaction()
+    public function getInOutIsSOTransaction()
     {
-        return $this->inOutIsSoTransaction;
+        return $this->inOutIsSOTransaction;
     }
 
     /**
-     * @param boolean $inOutIsSoTransaction
+     * @param boolean $inOutIsSOTransaction
      */
-    public function setInOutIsSoTransaction($inOutIsSoTransaction)
+    public function setInOutIsSOTransaction($inOutIsSOTransaction)
     {
-        $this->inOutIsSoTransaction = $inOutIsSoTransaction;
+        $this->inOutIsSOTransaction = $inOutIsSOTransaction;
     }
 
     /**
@@ -728,22 +728,22 @@ trait InOutLineMvoStatePropertiesTrait
     /**
      * @Type("string")
      */
-    private $inOutPoReference;
+    private $inOutPOReference;
 
     /**
      * @return string
      */
-    public function getInOutPoReference()
+    public function getInOutPOReference()
     {
-        return $this->inOutPoReference;
+        return $this->inOutPOReference;
     }
 
     /**
-     * @param string $inOutPoReference
+     * @param string $inOutPOReference
      */
-    public function setInOutPoReference($inOutPoReference)
+    public function setInOutPOReference($inOutPOReference)
     {
-        $this->inOutPoReference = $inOutPoReference;
+        $this->inOutPOReference = $inOutPOReference;
     }
 
     /**

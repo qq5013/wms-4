@@ -37,22 +37,22 @@ abstract class AbstractAttributeSetInstanceExtensionFieldMvoCommand implements C
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $attrSetInstEfGroupVersion;
+    private $attrSetInstEFGroupVersion;
 
     /**
      * @return Long
      */
-    public function getAttrSetInstEfGroupVersion()
+    public function getAttrSetInstEFGroupVersion()
     {
-        return $this->attrSetInstEfGroupVersion;
+        return $this->attrSetInstEFGroupVersion;
     }
 
     /**
-     * @param Long $attrSetInstEfGroupVersion
+     * @param Long $attrSetInstEFGroupVersion
      */
-    public function setAttrSetInstEfGroupVersion($attrSetInstEfGroupVersion)
+    public function setAttrSetInstEFGroupVersion($attrSetInstEFGroupVersion)
     {
-        $this->attrSetInstEfGroupVersion = $attrSetInstEfGroupVersion;
+        $this->attrSetInstEFGroupVersion = $attrSetInstEFGroupVersion;
     }
 
 

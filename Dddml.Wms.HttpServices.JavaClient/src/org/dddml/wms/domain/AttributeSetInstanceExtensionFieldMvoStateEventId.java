@@ -16,16 +16,16 @@ public class AttributeSetInstanceExtensionFieldMvoStateEventId
         this.attributeSetInstanceExtensionFieldId = attributeSetInstanceExtensionFieldId;
     }
 
-    private Long attrSetInstEfGroupVersion;
+    private Long attrSetInstEFGroupVersion;
 
-    public Long getAttrSetInstEfGroupVersion()
+    public Long getAttrSetInstEFGroupVersion()
     {
-        return this.attrSetInstEfGroupVersion;
+        return this.attrSetInstEFGroupVersion;
     }
 
-    public void setAttrSetInstEfGroupVersion(Long attrSetInstEfGroupVersion)
+    public void setAttrSetInstEFGroupVersion(Long attrSetInstEFGroupVersion)
     {
-        this.attrSetInstEfGroupVersion = attrSetInstEfGroupVersion;
+        this.attrSetInstEFGroupVersion = attrSetInstEFGroupVersion;
     }
 
 }

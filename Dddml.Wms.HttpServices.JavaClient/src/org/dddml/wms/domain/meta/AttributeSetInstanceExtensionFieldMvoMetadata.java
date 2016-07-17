@@ -3,7 +3,7 @@ package org.dddml.wms.domain.meta;
 
 public interface AttributeSetInstanceExtensionFieldMvoMetadata
 {
-    String VERSION      = "attrSetInstEfGroupVersion";
+    String VERSION      = "attrSetInstEFGroupVersion";
     String ACTIVE       = "active";
     String DELETED      = "deleted";
     String CREATED_BY   = "createdBy";

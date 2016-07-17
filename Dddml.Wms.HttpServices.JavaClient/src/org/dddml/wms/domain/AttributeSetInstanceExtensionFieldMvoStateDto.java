@@ -104,148 +104,148 @@ public class AttributeSetInstanceExtensionFieldMvoStateDto
         this.active = active;
     }
 
-    private String attrSetInstEfGroupFieldType;
+    private String attrSetInstEFGroupFieldType;
 
-    public String getAttrSetInstEfGroupFieldType()
+    public String getAttrSetInstEFGroupFieldType()
     {
-        return this.attrSetInstEfGroupFieldType;
+        return this.attrSetInstEFGroupFieldType;
     }
 
-    public void setAttrSetInstEfGroupFieldType(String attrSetInstEfGroupFieldType)
+    public void setAttrSetInstEFGroupFieldType(String attrSetInstEFGroupFieldType)
     {
-        this.attrSetInstEfGroupFieldType = attrSetInstEfGroupFieldType;
+        this.attrSetInstEFGroupFieldType = attrSetInstEFGroupFieldType;
     }
 
-    private Integer attrSetInstEfGroupFieldLength;
+    private Integer attrSetInstEFGroupFieldLength;
 
-    public Integer getAttrSetInstEfGroupFieldLength()
+    public Integer getAttrSetInstEFGroupFieldLength()
     {
-        return this.attrSetInstEfGroupFieldLength;
+        return this.attrSetInstEFGroupFieldLength;
     }
 
-    public void setAttrSetInstEfGroupFieldLength(Integer attrSetInstEfGroupFieldLength)
+    public void setAttrSetInstEFGroupFieldLength(Integer attrSetInstEFGroupFieldLength)
     {
-        this.attrSetInstEfGroupFieldLength = attrSetInstEfGroupFieldLength;
+        this.attrSetInstEFGroupFieldLength = attrSetInstEFGroupFieldLength;
     }
 
-    private Integer attrSetInstEfGroupFieldCount;
+    private Integer attrSetInstEFGroupFieldCount;
 
-    public Integer getAttrSetInstEfGroupFieldCount()
+    public Integer getAttrSetInstEFGroupFieldCount()
     {
-        return this.attrSetInstEfGroupFieldCount;
+        return this.attrSetInstEFGroupFieldCount;
     }
 
-    public void setAttrSetInstEfGroupFieldCount(Integer attrSetInstEfGroupFieldCount)
+    public void setAttrSetInstEFGroupFieldCount(Integer attrSetInstEFGroupFieldCount)
     {
-        this.attrSetInstEfGroupFieldCount = attrSetInstEfGroupFieldCount;
+        this.attrSetInstEFGroupFieldCount = attrSetInstEFGroupFieldCount;
     }
 
-    private String attrSetInstEfGroupNameFormat;
+    private String attrSetInstEFGroupNameFormat;
 
-    public String getAttrSetInstEfGroupNameFormat()
+    public String getAttrSetInstEFGroupNameFormat()
     {
-        return this.attrSetInstEfGroupNameFormat;
+        return this.attrSetInstEFGroupNameFormat;
     }
 
-    public void setAttrSetInstEfGroupNameFormat(String attrSetInstEfGroupNameFormat)
+    public void setAttrSetInstEFGroupNameFormat(String attrSetInstEFGroupNameFormat)
     {
-        this.attrSetInstEfGroupNameFormat = attrSetInstEfGroupNameFormat;
+        this.attrSetInstEFGroupNameFormat = attrSetInstEFGroupNameFormat;
     }
 
-    private String attrSetInstEfGroupDescription;
+    private String attrSetInstEFGroupDescription;
 
-    public String getAttrSetInstEfGroupDescription()
+    public String getAttrSetInstEFGroupDescription()
     {
-        return this.attrSetInstEfGroupDescription;
+        return this.attrSetInstEFGroupDescription;
     }
 
-    public void setAttrSetInstEfGroupDescription(String attrSetInstEfGroupDescription)
+    public void setAttrSetInstEFGroupDescription(String attrSetInstEFGroupDescription)
     {
-        this.attrSetInstEfGroupDescription = attrSetInstEfGroupDescription;
+        this.attrSetInstEFGroupDescription = attrSetInstEFGroupDescription;
     }
 
-    private String attrSetInstEfGroupCreatedBy;
+    private String attrSetInstEFGroupCreatedBy;
 
-    public String getAttrSetInstEfGroupCreatedBy()
+    public String getAttrSetInstEFGroupCreatedBy()
     {
-        return this.attrSetInstEfGroupCreatedBy;
+        return this.attrSetInstEFGroupCreatedBy;
     }
 
-    public void setAttrSetInstEfGroupCreatedBy(String attrSetInstEfGroupCreatedBy)
+    public void setAttrSetInstEFGroupCreatedBy(String attrSetInstEFGroupCreatedBy)
     {
-        this.attrSetInstEfGroupCreatedBy = attrSetInstEfGroupCreatedBy;
+        this.attrSetInstEFGroupCreatedBy = attrSetInstEFGroupCreatedBy;
     }
 
-    private Date attrSetInstEfGroupCreatedAt;
+    private Date attrSetInstEFGroupCreatedAt;
 
-    public Date getAttrSetInstEfGroupCreatedAt()
+    public Date getAttrSetInstEFGroupCreatedAt()
     {
-        return this.attrSetInstEfGroupCreatedAt;
+        return this.attrSetInstEFGroupCreatedAt;
     }
 
-    public void setAttrSetInstEfGroupCreatedAt(Date attrSetInstEfGroupCreatedAt)
+    public void setAttrSetInstEFGroupCreatedAt(Date attrSetInstEFGroupCreatedAt)
     {
-        this.attrSetInstEfGroupCreatedAt = attrSetInstEfGroupCreatedAt;
+        this.attrSetInstEFGroupCreatedAt = attrSetInstEFGroupCreatedAt;
     }
 
-    private String attrSetInstEfGroupUpdatedBy;
+    private String attrSetInstEFGroupUpdatedBy;
 
-    public String getAttrSetInstEfGroupUpdatedBy()
+    public String getAttrSetInstEFGroupUpdatedBy()
     {
-        return this.attrSetInstEfGroupUpdatedBy;
+        return this.attrSetInstEFGroupUpdatedBy;
     }
 
-    public void setAttrSetInstEfGroupUpdatedBy(String attrSetInstEfGroupUpdatedBy)
+    public void setAttrSetInstEFGroupUpdatedBy(String attrSetInstEFGroupUpdatedBy)
     {
-        this.attrSetInstEfGroupUpdatedBy = attrSetInstEfGroupUpdatedBy;
+        this.attrSetInstEFGroupUpdatedBy = attrSetInstEFGroupUpdatedBy;
     }
 
-    private Date attrSetInstEfGroupUpdatedAt;
+    private Date attrSetInstEFGroupUpdatedAt;
 
-    public Date getAttrSetInstEfGroupUpdatedAt()
+    public Date getAttrSetInstEFGroupUpdatedAt()
     {
-        return this.attrSetInstEfGroupUpdatedAt;
+        return this.attrSetInstEFGroupUpdatedAt;
     }
 
-    public void setAttrSetInstEfGroupUpdatedAt(Date attrSetInstEfGroupUpdatedAt)
+    public void setAttrSetInstEFGroupUpdatedAt(Date attrSetInstEFGroupUpdatedAt)
     {
-        this.attrSetInstEfGroupUpdatedAt = attrSetInstEfGroupUpdatedAt;
+        this.attrSetInstEFGroupUpdatedAt = attrSetInstEFGroupUpdatedAt;
     }
 
-    private Boolean attrSetInstEfGroupActive;
+    private Boolean attrSetInstEFGroupActive;
 
-    public Boolean getAttrSetInstEfGroupActive()
+    public Boolean getAttrSetInstEFGroupActive()
     {
-        return this.attrSetInstEfGroupActive;
+        return this.attrSetInstEFGroupActive;
     }
 
-    public void setAttrSetInstEfGroupActive(Boolean attrSetInstEfGroupActive)
+    public void setAttrSetInstEFGroupActive(Boolean attrSetInstEFGroupActive)
     {
-        this.attrSetInstEfGroupActive = attrSetInstEfGroupActive;
+        this.attrSetInstEFGroupActive = attrSetInstEFGroupActive;
     }
 
-    private Boolean attrSetInstEfGroupDeleted;
+    private Boolean attrSetInstEFGroupDeleted;
 
-    public Boolean getAttrSetInstEfGroupDeleted()
+    public Boolean getAttrSetInstEFGroupDeleted()
     {
-        return this.attrSetInstEfGroupDeleted;
+        return this.attrSetInstEFGroupDeleted;
     }
 
-    public void setAttrSetInstEfGroupDeleted(Boolean attrSetInstEfGroupDeleted)
+    public void setAttrSetInstEFGroupDeleted(Boolean attrSetInstEFGroupDeleted)
     {
-        this.attrSetInstEfGroupDeleted = attrSetInstEfGroupDeleted;
+        this.attrSetInstEFGroupDeleted = attrSetInstEFGroupDeleted;
     }
 
-    private Long attrSetInstEfGroupVersion;
+    private Long attrSetInstEFGroupVersion;
 
-    public Long getAttrSetInstEfGroupVersion()
+    public Long getAttrSetInstEFGroupVersion()
     {
-        return this.attrSetInstEfGroupVersion;
+        return this.attrSetInstEFGroupVersion;
     }
 
-    public void setAttrSetInstEfGroupVersion(Long attrSetInstEfGroupVersion)
+    public void setAttrSetInstEFGroupVersion(Long attrSetInstEFGroupVersion)
     {
-        this.attrSetInstEfGroupVersion = attrSetInstEfGroupVersion;
+        this.attrSetInstEFGroupVersion = attrSetInstEFGroupVersion;
     }
 
     private String createdBy;

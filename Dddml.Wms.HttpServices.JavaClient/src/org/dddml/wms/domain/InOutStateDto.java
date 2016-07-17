@@ -22,16 +22,16 @@ public class InOutStateDto
         this.documentNumber = documentNumber;
     }
 
-    private Boolean isSoTransaction;
+    private Boolean isSOTransaction;
 
-    public Boolean getIsSoTransaction()
+    public Boolean getIsSOTransaction()
     {
-        return this.isSoTransaction;
+        return this.isSOTransaction;
     }
 
-    public void setIsSoTransaction(Boolean isSoTransaction)
+    public void setIsSOTransaction(Boolean isSOTransaction)
     {
-        this.isSoTransaction = isSoTransaction;
+        this.isSOTransaction = isSOTransaction;
     }
 
     private String documentStatus;
@@ -190,16 +190,16 @@ public class InOutStateDto
         this.warehouseId = warehouseId;
     }
 
-    private String poReference;
+    private String pOReference;
 
-    public String getPoReference()
+    public String getPOReference()
     {
-        return this.poReference;
+        return this.pOReference;
     }
 
-    public void setPoReference(String poReference)
+    public void setPOReference(String pOReference)
     {
-        this.poReference = poReference;
+        this.pOReference = pOReference;
     }
 
     private Money freightAmount;

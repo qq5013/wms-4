@@ -160,9556 +160,9556 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     /**
      * @Type("boolean")
      */
-    private $fB0;
+    private $_f_B_0_;
 
     /**
      * @return boolean
      */
-    public function getFB0()
+    public function get_F_B_0_()
     {
-        return $this->fB0;
+        return $this->_f_B_0_;
     }
 
     /**
-     * @param boolean $fB0
+     * @param boolean $_f_B_0_
      */
-    public function setFB0($fB0)
+    public function set_F_B_0_($_f_B_0_)
     {
-        $this->fB0 = $fB0;
+        $this->_f_B_0_ = $_f_B_0_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI0;
+    private $_f_I_0_;
 
     /**
      * @return integer
      */
-    public function getFI0()
+    public function get_F_I_0_()
     {
-        return $this->fI0;
+        return $this->_f_I_0_;
     }
 
     /**
-     * @param integer $fI0
+     * @param integer $_f_I_0_
      */
-    public function setFI0($fI0)
+    public function set_F_I_0_($_f_I_0_)
     {
-        $this->fI0 = $fI0;
+        $this->_f_I_0_ = $_f_I_0_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL0;
+    private $_f_L_0_;
 
     /**
      * @return Long
      */
-    public function getFL0()
+    public function get_F_L_0_()
     {
-        return $this->fL0;
+        return $this->_f_L_0_;
     }
 
     /**
-     * @param Long $fL0
+     * @param Long $_f_L_0_
      */
-    public function setFL0($fL0)
+    public function set_F_L_0_($_f_L_0_)
     {
-        $this->fL0 = $fL0;
+        $this->_f_L_0_ = $_f_L_0_;
     }
 
     /**
      * @Type("\DateTime")
      */
-    private $fDt0;
+    private $_f_DT_0_;
 
     /**
      * @return \DateTime
      */
-    public function getFDt0()
+    public function get_F_DT_0_()
     {
-        return $this->fDt0;
+        return $this->_f_DT_0_;
     }
 
     /**
-     * @param \DateTime $fDt0
+     * @param \DateTime $_f_DT_0_
      */
-    public function setFDt0($fDt0)
+    public function set_F_DT_0_($_f_DT_0_)
     {
-        $this->fDt0 = $fDt0;
+        $this->_f_DT_0_ = $_f_DT_0_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN0;
+    private $_f_N_0_;
 
     /**
      * @return Decimal
      */
-    public function getFN0()
+    public function get_F_N_0_()
     {
-        return $this->fN0;
+        return $this->_f_N_0_;
     }
 
     /**
-     * @param Decimal $fN0
+     * @param Decimal $_f_N_0_
      */
-    public function setFN0($fN0)
+    public function set_F_N_0_($_f_N_0_)
     {
-        $this->fN0 = $fN0;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC50;
-
-    /**
-     * @return string
-     */
-    public function getFC50()
-    {
-        return $this->fC50;
-    }
-
-    /**
-     * @param string $fC50
-     */
-    public function setFC50($fC50)
-    {
-        $this->fC50 = $fC50;
+        $this->_f_N_0_ = $_f_N_0_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC100;
+    private $_f_C5_0_;
 
     /**
      * @return string
      */
-    public function getFC100()
+    public function get_F_C5_0_()
     {
-        return $this->fC100;
+        return $this->_f_C5_0_;
     }
 
     /**
-     * @param string $fC100
+     * @param string $_f_C5_0_
      */
-    public function setFC100($fC100)
+    public function set_F_C5_0_($_f_C5_0_)
     {
-        $this->fC100 = $fC100;
+        $this->_f_C5_0_ = $_f_C5_0_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC200;
+    private $_f_C10_0_;
 
     /**
      * @return string
      */
-    public function getFC200()
+    public function get_F_C10_0_()
     {
-        return $this->fC200;
+        return $this->_f_C10_0_;
     }
 
     /**
-     * @param string $fC200
+     * @param string $_f_C10_0_
      */
-    public function setFC200($fC200)
+    public function set_F_C10_0_($_f_C10_0_)
     {
-        $this->fC200 = $fC200;
+        $this->_f_C10_0_ = $_f_C10_0_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC500;
+    private $_f_C20_0_;
 
     /**
      * @return string
      */
-    public function getFC500()
+    public function get_F_C20_0_()
     {
-        return $this->fC500;
+        return $this->_f_C20_0_;
     }
 
     /**
-     * @param string $fC500
+     * @param string $_f_C20_0_
      */
-    public function setFC500($fC500)
+    public function set_F_C20_0_($_f_C20_0_)
     {
-        $this->fC500 = $fC500;
+        $this->_f_C20_0_ = $_f_C20_0_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1000;
+    private $_f_C50_0_;
 
     /**
      * @return string
      */
-    public function getFC1000()
+    public function get_F_C50_0_()
     {
-        return $this->fC1000;
+        return $this->_f_C50_0_;
     }
 
     /**
-     * @param string $fC1000
+     * @param string $_f_C50_0_
      */
-    public function setFC1000($fC1000)
+    public function set_F_C50_0_($_f_C50_0_)
     {
-        $this->fC1000 = $fC1000;
+        $this->_f_C50_0_ = $_f_C50_0_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2000;
+    private $_f_C100_0_;
 
     /**
      * @return string
      */
-    public function getFC2000()
+    public function get_F_C100_0_()
     {
-        return $this->fC2000;
+        return $this->_f_C100_0_;
     }
 
     /**
-     * @param string $fC2000
+     * @param string $_f_C100_0_
      */
-    public function setFC2000($fC2000)
+    public function set_F_C100_0_($_f_C100_0_)
     {
-        $this->fC2000 = $fC2000;
+        $this->_f_C100_0_ = $_f_C100_0_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5000;
+    private $_f_C200_0_;
 
     /**
      * @return string
      */
-    public function getFC5000()
+    public function get_F_C200_0_()
     {
-        return $this->fC5000;
+        return $this->_f_C200_0_;
     }
 
     /**
-     * @param string $fC5000
+     * @param string $_f_C200_0_
      */
-    public function setFC5000($fC5000)
+    public function set_F_C200_0_($_f_C200_0_)
     {
-        $this->fC5000 = $fC5000;
+        $this->_f_C200_0_ = $_f_C200_0_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC10000;
+    private $_f_C500_0_;
 
     /**
      * @return string
      */
-    public function getFC10000()
+    public function get_F_C500_0_()
     {
-        return $this->fC10000;
+        return $this->_f_C500_0_;
     }
 
     /**
-     * @param string $fC10000
+     * @param string $_f_C500_0_
      */
-    public function setFC10000($fC10000)
+    public function set_F_C500_0_($_f_C500_0_)
     {
-        $this->fC10000 = $fC10000;
+        $this->_f_C500_0_ = $_f_C500_0_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C1000_0_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C1000_0_()
+    {
+        return $this->_f_C1000_0_;
+    }
+
+    /**
+     * @param string $_f_C1000_0_
+     */
+    public function set_F_C1000_0_($_f_C1000_0_)
+    {
+        $this->_f_C1000_0_ = $_f_C1000_0_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB1;
+    private $_f_B_1_;
 
     /**
      * @return boolean
      */
-    public function getFB1()
+    public function get_F_B_1_()
     {
-        return $this->fB1;
+        return $this->_f_B_1_;
     }
 
     /**
-     * @param boolean $fB1
+     * @param boolean $_f_B_1_
      */
-    public function setFB1($fB1)
+    public function set_F_B_1_($_f_B_1_)
     {
-        $this->fB1 = $fB1;
+        $this->_f_B_1_ = $_f_B_1_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI1;
+    private $_f_I_1_;
 
     /**
      * @return integer
      */
-    public function getFI1()
+    public function get_F_I_1_()
     {
-        return $this->fI1;
+        return $this->_f_I_1_;
     }
 
     /**
-     * @param integer $fI1
+     * @param integer $_f_I_1_
      */
-    public function setFI1($fI1)
+    public function set_F_I_1_($_f_I_1_)
     {
-        $this->fI1 = $fI1;
+        $this->_f_I_1_ = $_f_I_1_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL1;
+    private $_f_L_1_;
 
     /**
      * @return Long
      */
-    public function getFL1()
+    public function get_F_L_1_()
     {
-        return $this->fL1;
+        return $this->_f_L_1_;
     }
 
     /**
-     * @param Long $fL1
+     * @param Long $_f_L_1_
      */
-    public function setFL1($fL1)
+    public function set_F_L_1_($_f_L_1_)
     {
-        $this->fL1 = $fL1;
+        $this->_f_L_1_ = $_f_L_1_;
     }
 
     /**
      * @Type("\DateTime")
      */
-    private $fDt1;
+    private $_f_DT_1_;
 
     /**
      * @return \DateTime
      */
-    public function getFDt1()
+    public function get_F_DT_1_()
     {
-        return $this->fDt1;
+        return $this->_f_DT_1_;
     }
 
     /**
-     * @param \DateTime $fDt1
+     * @param \DateTime $_f_DT_1_
      */
-    public function setFDt1($fDt1)
+    public function set_F_DT_1_($_f_DT_1_)
     {
-        $this->fDt1 = $fDt1;
+        $this->_f_DT_1_ = $_f_DT_1_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN1;
+    private $_f_N_1_;
 
     /**
      * @return Decimal
      */
-    public function getFN1()
+    public function get_F_N_1_()
     {
-        return $this->fN1;
+        return $this->_f_N_1_;
     }
 
     /**
-     * @param Decimal $fN1
+     * @param Decimal $_f_N_1_
      */
-    public function setFN1($fN1)
+    public function set_F_N_1_($_f_N_1_)
     {
-        $this->fN1 = $fN1;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC51;
-
-    /**
-     * @return string
-     */
-    public function getFC51()
-    {
-        return $this->fC51;
-    }
-
-    /**
-     * @param string $fC51
-     */
-    public function setFC51($fC51)
-    {
-        $this->fC51 = $fC51;
+        $this->_f_N_1_ = $_f_N_1_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC101;
+    private $_f_C5_1_;
 
     /**
      * @return string
      */
-    public function getFC101()
+    public function get_F_C5_1_()
     {
-        return $this->fC101;
+        return $this->_f_C5_1_;
     }
 
     /**
-     * @param string $fC101
+     * @param string $_f_C5_1_
      */
-    public function setFC101($fC101)
+    public function set_F_C5_1_($_f_C5_1_)
     {
-        $this->fC101 = $fC101;
+        $this->_f_C5_1_ = $_f_C5_1_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC201;
+    private $_f_C10_1_;
 
     /**
      * @return string
      */
-    public function getFC201()
+    public function get_F_C10_1_()
     {
-        return $this->fC201;
+        return $this->_f_C10_1_;
     }
 
     /**
-     * @param string $fC201
+     * @param string $_f_C10_1_
      */
-    public function setFC201($fC201)
+    public function set_F_C10_1_($_f_C10_1_)
     {
-        $this->fC201 = $fC201;
+        $this->_f_C10_1_ = $_f_C10_1_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC501;
+    private $_f_C20_1_;
 
     /**
      * @return string
      */
-    public function getFC501()
+    public function get_F_C20_1_()
     {
-        return $this->fC501;
+        return $this->_f_C20_1_;
     }
 
     /**
-     * @param string $fC501
+     * @param string $_f_C20_1_
      */
-    public function setFC501($fC501)
+    public function set_F_C20_1_($_f_C20_1_)
     {
-        $this->fC501 = $fC501;
+        $this->_f_C20_1_ = $_f_C20_1_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1001;
+    private $_f_C50_1_;
 
     /**
      * @return string
      */
-    public function getFC1001()
+    public function get_F_C50_1_()
     {
-        return $this->fC1001;
+        return $this->_f_C50_1_;
     }
 
     /**
-     * @param string $fC1001
+     * @param string $_f_C50_1_
      */
-    public function setFC1001($fC1001)
+    public function set_F_C50_1_($_f_C50_1_)
     {
-        $this->fC1001 = $fC1001;
+        $this->_f_C50_1_ = $_f_C50_1_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2001;
+    private $_f_C100_1_;
 
     /**
      * @return string
      */
-    public function getFC2001()
+    public function get_F_C100_1_()
     {
-        return $this->fC2001;
+        return $this->_f_C100_1_;
     }
 
     /**
-     * @param string $fC2001
+     * @param string $_f_C100_1_
      */
-    public function setFC2001($fC2001)
+    public function set_F_C100_1_($_f_C100_1_)
     {
-        $this->fC2001 = $fC2001;
+        $this->_f_C100_1_ = $_f_C100_1_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5001;
+    private $_f_C200_1_;
 
     /**
      * @return string
      */
-    public function getFC5001()
+    public function get_F_C200_1_()
     {
-        return $this->fC5001;
+        return $this->_f_C200_1_;
     }
 
     /**
-     * @param string $fC5001
+     * @param string $_f_C200_1_
      */
-    public function setFC5001($fC5001)
+    public function set_F_C200_1_($_f_C200_1_)
     {
-        $this->fC5001 = $fC5001;
+        $this->_f_C200_1_ = $_f_C200_1_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC10001;
+    private $_f_C500_1_;
 
     /**
      * @return string
      */
-    public function getFC10001()
+    public function get_F_C500_1_()
     {
-        return $this->fC10001;
+        return $this->_f_C500_1_;
     }
 
     /**
-     * @param string $fC10001
+     * @param string $_f_C500_1_
      */
-    public function setFC10001($fC10001)
+    public function set_F_C500_1_($_f_C500_1_)
     {
-        $this->fC10001 = $fC10001;
+        $this->_f_C500_1_ = $_f_C500_1_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C1000_1_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C1000_1_()
+    {
+        return $this->_f_C1000_1_;
+    }
+
+    /**
+     * @param string $_f_C1000_1_
+     */
+    public function set_F_C1000_1_($_f_C1000_1_)
+    {
+        $this->_f_C1000_1_ = $_f_C1000_1_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB2;
+    private $_f_B_2_;
 
     /**
      * @return boolean
      */
-    public function getFB2()
+    public function get_F_B_2_()
     {
-        return $this->fB2;
+        return $this->_f_B_2_;
     }
 
     /**
-     * @param boolean $fB2
+     * @param boolean $_f_B_2_
      */
-    public function setFB2($fB2)
+    public function set_F_B_2_($_f_B_2_)
     {
-        $this->fB2 = $fB2;
+        $this->_f_B_2_ = $_f_B_2_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI2;
+    private $_f_I_2_;
 
     /**
      * @return integer
      */
-    public function getFI2()
+    public function get_F_I_2_()
     {
-        return $this->fI2;
+        return $this->_f_I_2_;
     }
 
     /**
-     * @param integer $fI2
+     * @param integer $_f_I_2_
      */
-    public function setFI2($fI2)
+    public function set_F_I_2_($_f_I_2_)
     {
-        $this->fI2 = $fI2;
+        $this->_f_I_2_ = $_f_I_2_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL2;
+    private $_f_L_2_;
 
     /**
      * @return Long
      */
-    public function getFL2()
+    public function get_F_L_2_()
     {
-        return $this->fL2;
+        return $this->_f_L_2_;
     }
 
     /**
-     * @param Long $fL2
+     * @param Long $_f_L_2_
      */
-    public function setFL2($fL2)
+    public function set_F_L_2_($_f_L_2_)
     {
-        $this->fL2 = $fL2;
+        $this->_f_L_2_ = $_f_L_2_;
     }
 
     /**
      * @Type("\DateTime")
      */
-    private $fDt2;
+    private $_f_DT_2_;
 
     /**
      * @return \DateTime
      */
-    public function getFDt2()
+    public function get_F_DT_2_()
     {
-        return $this->fDt2;
+        return $this->_f_DT_2_;
     }
 
     /**
-     * @param \DateTime $fDt2
+     * @param \DateTime $_f_DT_2_
      */
-    public function setFDt2($fDt2)
+    public function set_F_DT_2_($_f_DT_2_)
     {
-        $this->fDt2 = $fDt2;
+        $this->_f_DT_2_ = $_f_DT_2_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN2;
+    private $_f_N_2_;
 
     /**
      * @return Decimal
      */
-    public function getFN2()
+    public function get_F_N_2_()
     {
-        return $this->fN2;
+        return $this->_f_N_2_;
     }
 
     /**
-     * @param Decimal $fN2
+     * @param Decimal $_f_N_2_
      */
-    public function setFN2($fN2)
+    public function set_F_N_2_($_f_N_2_)
     {
-        $this->fN2 = $fN2;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC52;
-
-    /**
-     * @return string
-     */
-    public function getFC52()
-    {
-        return $this->fC52;
-    }
-
-    /**
-     * @param string $fC52
-     */
-    public function setFC52($fC52)
-    {
-        $this->fC52 = $fC52;
+        $this->_f_N_2_ = $_f_N_2_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC102;
+    private $_f_C5_2_;
 
     /**
      * @return string
      */
-    public function getFC102()
+    public function get_F_C5_2_()
     {
-        return $this->fC102;
+        return $this->_f_C5_2_;
     }
 
     /**
-     * @param string $fC102
+     * @param string $_f_C5_2_
      */
-    public function setFC102($fC102)
+    public function set_F_C5_2_($_f_C5_2_)
     {
-        $this->fC102 = $fC102;
+        $this->_f_C5_2_ = $_f_C5_2_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC202;
+    private $_f_C10_2_;
 
     /**
      * @return string
      */
-    public function getFC202()
+    public function get_F_C10_2_()
     {
-        return $this->fC202;
+        return $this->_f_C10_2_;
     }
 
     /**
-     * @param string $fC202
+     * @param string $_f_C10_2_
      */
-    public function setFC202($fC202)
+    public function set_F_C10_2_($_f_C10_2_)
     {
-        $this->fC202 = $fC202;
+        $this->_f_C10_2_ = $_f_C10_2_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC502;
+    private $_f_C20_2_;
 
     /**
      * @return string
      */
-    public function getFC502()
+    public function get_F_C20_2_()
     {
-        return $this->fC502;
+        return $this->_f_C20_2_;
     }
 
     /**
-     * @param string $fC502
+     * @param string $_f_C20_2_
      */
-    public function setFC502($fC502)
+    public function set_F_C20_2_($_f_C20_2_)
     {
-        $this->fC502 = $fC502;
+        $this->_f_C20_2_ = $_f_C20_2_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1002;
+    private $_f_C50_2_;
 
     /**
      * @return string
      */
-    public function getFC1002()
+    public function get_F_C50_2_()
     {
-        return $this->fC1002;
+        return $this->_f_C50_2_;
     }
 
     /**
-     * @param string $fC1002
+     * @param string $_f_C50_2_
      */
-    public function setFC1002($fC1002)
+    public function set_F_C50_2_($_f_C50_2_)
     {
-        $this->fC1002 = $fC1002;
+        $this->_f_C50_2_ = $_f_C50_2_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2002;
+    private $_f_C100_2_;
 
     /**
      * @return string
      */
-    public function getFC2002()
+    public function get_F_C100_2_()
     {
-        return $this->fC2002;
+        return $this->_f_C100_2_;
     }
 
     /**
-     * @param string $fC2002
+     * @param string $_f_C100_2_
      */
-    public function setFC2002($fC2002)
+    public function set_F_C100_2_($_f_C100_2_)
     {
-        $this->fC2002 = $fC2002;
+        $this->_f_C100_2_ = $_f_C100_2_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5002;
+    private $_f_C200_2_;
 
     /**
      * @return string
      */
-    public function getFC5002()
+    public function get_F_C200_2_()
     {
-        return $this->fC5002;
+        return $this->_f_C200_2_;
     }
 
     /**
-     * @param string $fC5002
+     * @param string $_f_C200_2_
      */
-    public function setFC5002($fC5002)
+    public function set_F_C200_2_($_f_C200_2_)
     {
-        $this->fC5002 = $fC5002;
+        $this->_f_C200_2_ = $_f_C200_2_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC10002;
+    private $_f_C500_2_;
 
     /**
      * @return string
      */
-    public function getFC10002()
+    public function get_F_C500_2_()
     {
-        return $this->fC10002;
+        return $this->_f_C500_2_;
     }
 
     /**
-     * @param string $fC10002
+     * @param string $_f_C500_2_
      */
-    public function setFC10002($fC10002)
+    public function set_F_C500_2_($_f_C500_2_)
     {
-        $this->fC10002 = $fC10002;
+        $this->_f_C500_2_ = $_f_C500_2_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C1000_2_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C1000_2_()
+    {
+        return $this->_f_C1000_2_;
+    }
+
+    /**
+     * @param string $_f_C1000_2_
+     */
+    public function set_F_C1000_2_($_f_C1000_2_)
+    {
+        $this->_f_C1000_2_ = $_f_C1000_2_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB3;
+    private $_f_B_3_;
 
     /**
      * @return boolean
      */
-    public function getFB3()
+    public function get_F_B_3_()
     {
-        return $this->fB3;
+        return $this->_f_B_3_;
     }
 
     /**
-     * @param boolean $fB3
+     * @param boolean $_f_B_3_
      */
-    public function setFB3($fB3)
+    public function set_F_B_3_($_f_B_3_)
     {
-        $this->fB3 = $fB3;
+        $this->_f_B_3_ = $_f_B_3_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI3;
+    private $_f_I_3_;
 
     /**
      * @return integer
      */
-    public function getFI3()
+    public function get_F_I_3_()
     {
-        return $this->fI3;
+        return $this->_f_I_3_;
     }
 
     /**
-     * @param integer $fI3
+     * @param integer $_f_I_3_
      */
-    public function setFI3($fI3)
+    public function set_F_I_3_($_f_I_3_)
     {
-        $this->fI3 = $fI3;
+        $this->_f_I_3_ = $_f_I_3_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL3;
+    private $_f_L_3_;
 
     /**
      * @return Long
      */
-    public function getFL3()
+    public function get_F_L_3_()
     {
-        return $this->fL3;
+        return $this->_f_L_3_;
     }
 
     /**
-     * @param Long $fL3
+     * @param Long $_f_L_3_
      */
-    public function setFL3($fL3)
+    public function set_F_L_3_($_f_L_3_)
     {
-        $this->fL3 = $fL3;
+        $this->_f_L_3_ = $_f_L_3_;
     }
 
     /**
      * @Type("\DateTime")
      */
-    private $fDt3;
+    private $_f_DT_3_;
 
     /**
      * @return \DateTime
      */
-    public function getFDt3()
+    public function get_F_DT_3_()
     {
-        return $this->fDt3;
+        return $this->_f_DT_3_;
     }
 
     /**
-     * @param \DateTime $fDt3
+     * @param \DateTime $_f_DT_3_
      */
-    public function setFDt3($fDt3)
+    public function set_F_DT_3_($_f_DT_3_)
     {
-        $this->fDt3 = $fDt3;
+        $this->_f_DT_3_ = $_f_DT_3_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN3;
+    private $_f_N_3_;
 
     /**
      * @return Decimal
      */
-    public function getFN3()
+    public function get_F_N_3_()
     {
-        return $this->fN3;
+        return $this->_f_N_3_;
     }
 
     /**
-     * @param Decimal $fN3
+     * @param Decimal $_f_N_3_
      */
-    public function setFN3($fN3)
+    public function set_F_N_3_($_f_N_3_)
     {
-        $this->fN3 = $fN3;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC53;
-
-    /**
-     * @return string
-     */
-    public function getFC53()
-    {
-        return $this->fC53;
-    }
-
-    /**
-     * @param string $fC53
-     */
-    public function setFC53($fC53)
-    {
-        $this->fC53 = $fC53;
+        $this->_f_N_3_ = $_f_N_3_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC103;
+    private $_f_C5_3_;
 
     /**
      * @return string
      */
-    public function getFC103()
+    public function get_F_C5_3_()
     {
-        return $this->fC103;
+        return $this->_f_C5_3_;
     }
 
     /**
-     * @param string $fC103
+     * @param string $_f_C5_3_
      */
-    public function setFC103($fC103)
+    public function set_F_C5_3_($_f_C5_3_)
     {
-        $this->fC103 = $fC103;
+        $this->_f_C5_3_ = $_f_C5_3_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC203;
+    private $_f_C10_3_;
 
     /**
      * @return string
      */
-    public function getFC203()
+    public function get_F_C10_3_()
     {
-        return $this->fC203;
+        return $this->_f_C10_3_;
     }
 
     /**
-     * @param string $fC203
+     * @param string $_f_C10_3_
      */
-    public function setFC203($fC203)
+    public function set_F_C10_3_($_f_C10_3_)
     {
-        $this->fC203 = $fC203;
+        $this->_f_C10_3_ = $_f_C10_3_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC503;
+    private $_f_C20_3_;
 
     /**
      * @return string
      */
-    public function getFC503()
+    public function get_F_C20_3_()
     {
-        return $this->fC503;
+        return $this->_f_C20_3_;
     }
 
     /**
-     * @param string $fC503
+     * @param string $_f_C20_3_
      */
-    public function setFC503($fC503)
+    public function set_F_C20_3_($_f_C20_3_)
     {
-        $this->fC503 = $fC503;
+        $this->_f_C20_3_ = $_f_C20_3_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1003;
+    private $_f_C50_3_;
 
     /**
      * @return string
      */
-    public function getFC1003()
+    public function get_F_C50_3_()
     {
-        return $this->fC1003;
+        return $this->_f_C50_3_;
     }
 
     /**
-     * @param string $fC1003
+     * @param string $_f_C50_3_
      */
-    public function setFC1003($fC1003)
+    public function set_F_C50_3_($_f_C50_3_)
     {
-        $this->fC1003 = $fC1003;
+        $this->_f_C50_3_ = $_f_C50_3_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2003;
+    private $_f_C100_3_;
 
     /**
      * @return string
      */
-    public function getFC2003()
+    public function get_F_C100_3_()
     {
-        return $this->fC2003;
+        return $this->_f_C100_3_;
     }
 
     /**
-     * @param string $fC2003
+     * @param string $_f_C100_3_
      */
-    public function setFC2003($fC2003)
+    public function set_F_C100_3_($_f_C100_3_)
     {
-        $this->fC2003 = $fC2003;
+        $this->_f_C100_3_ = $_f_C100_3_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5003;
+    private $_f_C200_3_;
 
     /**
      * @return string
      */
-    public function getFC5003()
+    public function get_F_C200_3_()
     {
-        return $this->fC5003;
+        return $this->_f_C200_3_;
     }
 
     /**
-     * @param string $fC5003
+     * @param string $_f_C200_3_
      */
-    public function setFC5003($fC5003)
+    public function set_F_C200_3_($_f_C200_3_)
     {
-        $this->fC5003 = $fC5003;
+        $this->_f_C200_3_ = $_f_C200_3_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC10003;
+    private $_f_C500_3_;
 
     /**
      * @return string
      */
-    public function getFC10003()
+    public function get_F_C500_3_()
     {
-        return $this->fC10003;
+        return $this->_f_C500_3_;
     }
 
     /**
-     * @param string $fC10003
+     * @param string $_f_C500_3_
      */
-    public function setFC10003($fC10003)
+    public function set_F_C500_3_($_f_C500_3_)
     {
-        $this->fC10003 = $fC10003;
+        $this->_f_C500_3_ = $_f_C500_3_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C1000_3_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C1000_3_()
+    {
+        return $this->_f_C1000_3_;
+    }
+
+    /**
+     * @param string $_f_C1000_3_
+     */
+    public function set_F_C1000_3_($_f_C1000_3_)
+    {
+        $this->_f_C1000_3_ = $_f_C1000_3_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB4;
+    private $_f_B_4_;
 
     /**
      * @return boolean
      */
-    public function getFB4()
+    public function get_F_B_4_()
     {
-        return $this->fB4;
+        return $this->_f_B_4_;
     }
 
     /**
-     * @param boolean $fB4
+     * @param boolean $_f_B_4_
      */
-    public function setFB4($fB4)
+    public function set_F_B_4_($_f_B_4_)
     {
-        $this->fB4 = $fB4;
+        $this->_f_B_4_ = $_f_B_4_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI4;
+    private $_f_I_4_;
 
     /**
      * @return integer
      */
-    public function getFI4()
+    public function get_F_I_4_()
     {
-        return $this->fI4;
+        return $this->_f_I_4_;
     }
 
     /**
-     * @param integer $fI4
+     * @param integer $_f_I_4_
      */
-    public function setFI4($fI4)
+    public function set_F_I_4_($_f_I_4_)
     {
-        $this->fI4 = $fI4;
+        $this->_f_I_4_ = $_f_I_4_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL4;
+    private $_f_L_4_;
 
     /**
      * @return Long
      */
-    public function getFL4()
+    public function get_F_L_4_()
     {
-        return $this->fL4;
+        return $this->_f_L_4_;
     }
 
     /**
-     * @param Long $fL4
+     * @param Long $_f_L_4_
      */
-    public function setFL4($fL4)
+    public function set_F_L_4_($_f_L_4_)
     {
-        $this->fL4 = $fL4;
+        $this->_f_L_4_ = $_f_L_4_;
     }
 
     /**
      * @Type("\DateTime")
      */
-    private $fDt4;
+    private $_f_DT_4_;
 
     /**
      * @return \DateTime
      */
-    public function getFDt4()
+    public function get_F_DT_4_()
     {
-        return $this->fDt4;
+        return $this->_f_DT_4_;
     }
 
     /**
-     * @param \DateTime $fDt4
+     * @param \DateTime $_f_DT_4_
      */
-    public function setFDt4($fDt4)
+    public function set_F_DT_4_($_f_DT_4_)
     {
-        $this->fDt4 = $fDt4;
+        $this->_f_DT_4_ = $_f_DT_4_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN4;
+    private $_f_N_4_;
 
     /**
      * @return Decimal
      */
-    public function getFN4()
+    public function get_F_N_4_()
     {
-        return $this->fN4;
+        return $this->_f_N_4_;
     }
 
     /**
-     * @param Decimal $fN4
+     * @param Decimal $_f_N_4_
      */
-    public function setFN4($fN4)
+    public function set_F_N_4_($_f_N_4_)
     {
-        $this->fN4 = $fN4;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC54;
-
-    /**
-     * @return string
-     */
-    public function getFC54()
-    {
-        return $this->fC54;
-    }
-
-    /**
-     * @param string $fC54
-     */
-    public function setFC54($fC54)
-    {
-        $this->fC54 = $fC54;
+        $this->_f_N_4_ = $_f_N_4_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC104;
+    private $_f_C5_4_;
 
     /**
      * @return string
      */
-    public function getFC104()
+    public function get_F_C5_4_()
     {
-        return $this->fC104;
+        return $this->_f_C5_4_;
     }
 
     /**
-     * @param string $fC104
+     * @param string $_f_C5_4_
      */
-    public function setFC104($fC104)
+    public function set_F_C5_4_($_f_C5_4_)
     {
-        $this->fC104 = $fC104;
+        $this->_f_C5_4_ = $_f_C5_4_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC204;
+    private $_f_C10_4_;
 
     /**
      * @return string
      */
-    public function getFC204()
+    public function get_F_C10_4_()
     {
-        return $this->fC204;
+        return $this->_f_C10_4_;
     }
 
     /**
-     * @param string $fC204
+     * @param string $_f_C10_4_
      */
-    public function setFC204($fC204)
+    public function set_F_C10_4_($_f_C10_4_)
     {
-        $this->fC204 = $fC204;
+        $this->_f_C10_4_ = $_f_C10_4_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC504;
+    private $_f_C20_4_;
 
     /**
      * @return string
      */
-    public function getFC504()
+    public function get_F_C20_4_()
     {
-        return $this->fC504;
+        return $this->_f_C20_4_;
     }
 
     /**
-     * @param string $fC504
+     * @param string $_f_C20_4_
      */
-    public function setFC504($fC504)
+    public function set_F_C20_4_($_f_C20_4_)
     {
-        $this->fC504 = $fC504;
+        $this->_f_C20_4_ = $_f_C20_4_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1004;
+    private $_f_C50_4_;
 
     /**
      * @return string
      */
-    public function getFC1004()
+    public function get_F_C50_4_()
     {
-        return $this->fC1004;
+        return $this->_f_C50_4_;
     }
 
     /**
-     * @param string $fC1004
+     * @param string $_f_C50_4_
      */
-    public function setFC1004($fC1004)
+    public function set_F_C50_4_($_f_C50_4_)
     {
-        $this->fC1004 = $fC1004;
+        $this->_f_C50_4_ = $_f_C50_4_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2004;
+    private $_f_C100_4_;
 
     /**
      * @return string
      */
-    public function getFC2004()
+    public function get_F_C100_4_()
     {
-        return $this->fC2004;
+        return $this->_f_C100_4_;
     }
 
     /**
-     * @param string $fC2004
+     * @param string $_f_C100_4_
      */
-    public function setFC2004($fC2004)
+    public function set_F_C100_4_($_f_C100_4_)
     {
-        $this->fC2004 = $fC2004;
+        $this->_f_C100_4_ = $_f_C100_4_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5004;
+    private $_f_C200_4_;
 
     /**
      * @return string
      */
-    public function getFC5004()
+    public function get_F_C200_4_()
     {
-        return $this->fC5004;
+        return $this->_f_C200_4_;
     }
 
     /**
-     * @param string $fC5004
+     * @param string $_f_C200_4_
      */
-    public function setFC5004($fC5004)
+    public function set_F_C200_4_($_f_C200_4_)
     {
-        $this->fC5004 = $fC5004;
+        $this->_f_C200_4_ = $_f_C200_4_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC10004;
+    private $_f_C500_4_;
 
     /**
      * @return string
      */
-    public function getFC10004()
+    public function get_F_C500_4_()
     {
-        return $this->fC10004;
+        return $this->_f_C500_4_;
     }
 
     /**
-     * @param string $fC10004
+     * @param string $_f_C500_4_
      */
-    public function setFC10004($fC10004)
+    public function set_F_C500_4_($_f_C500_4_)
     {
-        $this->fC10004 = $fC10004;
+        $this->_f_C500_4_ = $_f_C500_4_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C1000_4_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C1000_4_()
+    {
+        return $this->_f_C1000_4_;
+    }
+
+    /**
+     * @param string $_f_C1000_4_
+     */
+    public function set_F_C1000_4_($_f_C1000_4_)
+    {
+        $this->_f_C1000_4_ = $_f_C1000_4_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB5;
+    private $_f_B_5_;
 
     /**
      * @return boolean
      */
-    public function getFB5()
+    public function get_F_B_5_()
     {
-        return $this->fB5;
+        return $this->_f_B_5_;
     }
 
     /**
-     * @param boolean $fB5
+     * @param boolean $_f_B_5_
      */
-    public function setFB5($fB5)
+    public function set_F_B_5_($_f_B_5_)
     {
-        $this->fB5 = $fB5;
+        $this->_f_B_5_ = $_f_B_5_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI5;
+    private $_f_I_5_;
 
     /**
      * @return integer
      */
-    public function getFI5()
+    public function get_F_I_5_()
     {
-        return $this->fI5;
+        return $this->_f_I_5_;
     }
 
     /**
-     * @param integer $fI5
+     * @param integer $_f_I_5_
      */
-    public function setFI5($fI5)
+    public function set_F_I_5_($_f_I_5_)
     {
-        $this->fI5 = $fI5;
+        $this->_f_I_5_ = $_f_I_5_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL5;
+    private $_f_L_5_;
 
     /**
      * @return Long
      */
-    public function getFL5()
+    public function get_F_L_5_()
     {
-        return $this->fL5;
+        return $this->_f_L_5_;
     }
 
     /**
-     * @param Long $fL5
+     * @param Long $_f_L_5_
      */
-    public function setFL5($fL5)
+    public function set_F_L_5_($_f_L_5_)
     {
-        $this->fL5 = $fL5;
+        $this->_f_L_5_ = $_f_L_5_;
     }
 
     /**
      * @Type("\DateTime")
      */
-    private $fDt5;
+    private $_f_DT_5_;
 
     /**
      * @return \DateTime
      */
-    public function getFDt5()
+    public function get_F_DT_5_()
     {
-        return $this->fDt5;
+        return $this->_f_DT_5_;
     }
 
     /**
-     * @param \DateTime $fDt5
+     * @param \DateTime $_f_DT_5_
      */
-    public function setFDt5($fDt5)
+    public function set_F_DT_5_($_f_DT_5_)
     {
-        $this->fDt5 = $fDt5;
+        $this->_f_DT_5_ = $_f_DT_5_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN5;
+    private $_f_N_5_;
 
     /**
      * @return Decimal
      */
-    public function getFN5()
+    public function get_F_N_5_()
     {
-        return $this->fN5;
+        return $this->_f_N_5_;
     }
 
     /**
-     * @param Decimal $fN5
+     * @param Decimal $_f_N_5_
      */
-    public function setFN5($fN5)
+    public function set_F_N_5_($_f_N_5_)
     {
-        $this->fN5 = $fN5;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC55;
-
-    /**
-     * @return string
-     */
-    public function getFC55()
-    {
-        return $this->fC55;
-    }
-
-    /**
-     * @param string $fC55
-     */
-    public function setFC55($fC55)
-    {
-        $this->fC55 = $fC55;
+        $this->_f_N_5_ = $_f_N_5_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC105;
+    private $_f_C5_5_;
 
     /**
      * @return string
      */
-    public function getFC105()
+    public function get_F_C5_5_()
     {
-        return $this->fC105;
+        return $this->_f_C5_5_;
     }
 
     /**
-     * @param string $fC105
+     * @param string $_f_C5_5_
      */
-    public function setFC105($fC105)
+    public function set_F_C5_5_($_f_C5_5_)
     {
-        $this->fC105 = $fC105;
+        $this->_f_C5_5_ = $_f_C5_5_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC205;
+    private $_f_C10_5_;
 
     /**
      * @return string
      */
-    public function getFC205()
+    public function get_F_C10_5_()
     {
-        return $this->fC205;
+        return $this->_f_C10_5_;
     }
 
     /**
-     * @param string $fC205
+     * @param string $_f_C10_5_
      */
-    public function setFC205($fC205)
+    public function set_F_C10_5_($_f_C10_5_)
     {
-        $this->fC205 = $fC205;
+        $this->_f_C10_5_ = $_f_C10_5_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC505;
+    private $_f_C20_5_;
 
     /**
      * @return string
      */
-    public function getFC505()
+    public function get_F_C20_5_()
     {
-        return $this->fC505;
+        return $this->_f_C20_5_;
     }
 
     /**
-     * @param string $fC505
+     * @param string $_f_C20_5_
      */
-    public function setFC505($fC505)
+    public function set_F_C20_5_($_f_C20_5_)
     {
-        $this->fC505 = $fC505;
+        $this->_f_C20_5_ = $_f_C20_5_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1005;
+    private $_f_C50_5_;
 
     /**
      * @return string
      */
-    public function getFC1005()
+    public function get_F_C50_5_()
     {
-        return $this->fC1005;
+        return $this->_f_C50_5_;
     }
 
     /**
-     * @param string $fC1005
+     * @param string $_f_C50_5_
      */
-    public function setFC1005($fC1005)
+    public function set_F_C50_5_($_f_C50_5_)
     {
-        $this->fC1005 = $fC1005;
+        $this->_f_C50_5_ = $_f_C50_5_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2005;
+    private $_f_C100_5_;
 
     /**
      * @return string
      */
-    public function getFC2005()
+    public function get_F_C100_5_()
     {
-        return $this->fC2005;
+        return $this->_f_C100_5_;
     }
 
     /**
-     * @param string $fC2005
+     * @param string $_f_C100_5_
      */
-    public function setFC2005($fC2005)
+    public function set_F_C100_5_($_f_C100_5_)
     {
-        $this->fC2005 = $fC2005;
+        $this->_f_C100_5_ = $_f_C100_5_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5005;
+    private $_f_C200_5_;
 
     /**
      * @return string
      */
-    public function getFC5005()
+    public function get_F_C200_5_()
     {
-        return $this->fC5005;
+        return $this->_f_C200_5_;
     }
 
     /**
-     * @param string $fC5005
+     * @param string $_f_C200_5_
      */
-    public function setFC5005($fC5005)
+    public function set_F_C200_5_($_f_C200_5_)
     {
-        $this->fC5005 = $fC5005;
+        $this->_f_C200_5_ = $_f_C200_5_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C500_5_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C500_5_()
+    {
+        return $this->_f_C500_5_;
+    }
+
+    /**
+     * @param string $_f_C500_5_
+     */
+    public function set_F_C500_5_($_f_C500_5_)
+    {
+        $this->_f_C500_5_ = $_f_C500_5_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB6;
+    private $_f_B_6_;
 
     /**
      * @return boolean
      */
-    public function getFB6()
+    public function get_F_B_6_()
     {
-        return $this->fB6;
+        return $this->_f_B_6_;
     }
 
     /**
-     * @param boolean $fB6
+     * @param boolean $_f_B_6_
      */
-    public function setFB6($fB6)
+    public function set_F_B_6_($_f_B_6_)
     {
-        $this->fB6 = $fB6;
+        $this->_f_B_6_ = $_f_B_6_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI6;
+    private $_f_I_6_;
 
     /**
      * @return integer
      */
-    public function getFI6()
+    public function get_F_I_6_()
     {
-        return $this->fI6;
+        return $this->_f_I_6_;
     }
 
     /**
-     * @param integer $fI6
+     * @param integer $_f_I_6_
      */
-    public function setFI6($fI6)
+    public function set_F_I_6_($_f_I_6_)
     {
-        $this->fI6 = $fI6;
+        $this->_f_I_6_ = $_f_I_6_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL6;
+    private $_f_L_6_;
 
     /**
      * @return Long
      */
-    public function getFL6()
+    public function get_F_L_6_()
     {
-        return $this->fL6;
+        return $this->_f_L_6_;
     }
 
     /**
-     * @param Long $fL6
+     * @param Long $_f_L_6_
      */
-    public function setFL6($fL6)
+    public function set_F_L_6_($_f_L_6_)
     {
-        $this->fL6 = $fL6;
+        $this->_f_L_6_ = $_f_L_6_;
     }
 
     /**
      * @Type("\DateTime")
      */
-    private $fDt6;
+    private $_f_DT_6_;
 
     /**
      * @return \DateTime
      */
-    public function getFDt6()
+    public function get_F_DT_6_()
     {
-        return $this->fDt6;
+        return $this->_f_DT_6_;
     }
 
     /**
-     * @param \DateTime $fDt6
+     * @param \DateTime $_f_DT_6_
      */
-    public function setFDt6($fDt6)
+    public function set_F_DT_6_($_f_DT_6_)
     {
-        $this->fDt6 = $fDt6;
+        $this->_f_DT_6_ = $_f_DT_6_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN6;
+    private $_f_N_6_;
 
     /**
      * @return Decimal
      */
-    public function getFN6()
+    public function get_F_N_6_()
     {
-        return $this->fN6;
+        return $this->_f_N_6_;
     }
 
     /**
-     * @param Decimal $fN6
+     * @param Decimal $_f_N_6_
      */
-    public function setFN6($fN6)
+    public function set_F_N_6_($_f_N_6_)
     {
-        $this->fN6 = $fN6;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC56;
-
-    /**
-     * @return string
-     */
-    public function getFC56()
-    {
-        return $this->fC56;
-    }
-
-    /**
-     * @param string $fC56
-     */
-    public function setFC56($fC56)
-    {
-        $this->fC56 = $fC56;
+        $this->_f_N_6_ = $_f_N_6_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC106;
+    private $_f_C5_6_;
 
     /**
      * @return string
      */
-    public function getFC106()
+    public function get_F_C5_6_()
     {
-        return $this->fC106;
+        return $this->_f_C5_6_;
     }
 
     /**
-     * @param string $fC106
+     * @param string $_f_C5_6_
      */
-    public function setFC106($fC106)
+    public function set_F_C5_6_($_f_C5_6_)
     {
-        $this->fC106 = $fC106;
+        $this->_f_C5_6_ = $_f_C5_6_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC206;
+    private $_f_C10_6_;
 
     /**
      * @return string
      */
-    public function getFC206()
+    public function get_F_C10_6_()
     {
-        return $this->fC206;
+        return $this->_f_C10_6_;
     }
 
     /**
-     * @param string $fC206
+     * @param string $_f_C10_6_
      */
-    public function setFC206($fC206)
+    public function set_F_C10_6_($_f_C10_6_)
     {
-        $this->fC206 = $fC206;
+        $this->_f_C10_6_ = $_f_C10_6_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC506;
+    private $_f_C20_6_;
 
     /**
      * @return string
      */
-    public function getFC506()
+    public function get_F_C20_6_()
     {
-        return $this->fC506;
+        return $this->_f_C20_6_;
     }
 
     /**
-     * @param string $fC506
+     * @param string $_f_C20_6_
      */
-    public function setFC506($fC506)
+    public function set_F_C20_6_($_f_C20_6_)
     {
-        $this->fC506 = $fC506;
+        $this->_f_C20_6_ = $_f_C20_6_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1006;
+    private $_f_C50_6_;
 
     /**
      * @return string
      */
-    public function getFC1006()
+    public function get_F_C50_6_()
     {
-        return $this->fC1006;
+        return $this->_f_C50_6_;
     }
 
     /**
-     * @param string $fC1006
+     * @param string $_f_C50_6_
      */
-    public function setFC1006($fC1006)
+    public function set_F_C50_6_($_f_C50_6_)
     {
-        $this->fC1006 = $fC1006;
+        $this->_f_C50_6_ = $_f_C50_6_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2006;
+    private $_f_C100_6_;
 
     /**
      * @return string
      */
-    public function getFC2006()
+    public function get_F_C100_6_()
     {
-        return $this->fC2006;
+        return $this->_f_C100_6_;
     }
 
     /**
-     * @param string $fC2006
+     * @param string $_f_C100_6_
      */
-    public function setFC2006($fC2006)
+    public function set_F_C100_6_($_f_C100_6_)
     {
-        $this->fC2006 = $fC2006;
+        $this->_f_C100_6_ = $_f_C100_6_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5006;
+    private $_f_C200_6_;
 
     /**
      * @return string
      */
-    public function getFC5006()
+    public function get_F_C200_6_()
     {
-        return $this->fC5006;
+        return $this->_f_C200_6_;
     }
 
     /**
-     * @param string $fC5006
+     * @param string $_f_C200_6_
      */
-    public function setFC5006($fC5006)
+    public function set_F_C200_6_($_f_C200_6_)
     {
-        $this->fC5006 = $fC5006;
+        $this->_f_C200_6_ = $_f_C200_6_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C500_6_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C500_6_()
+    {
+        return $this->_f_C500_6_;
+    }
+
+    /**
+     * @param string $_f_C500_6_
+     */
+    public function set_F_C500_6_($_f_C500_6_)
+    {
+        $this->_f_C500_6_ = $_f_C500_6_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB7;
+    private $_f_B_7_;
 
     /**
      * @return boolean
      */
-    public function getFB7()
+    public function get_F_B_7_()
     {
-        return $this->fB7;
+        return $this->_f_B_7_;
     }
 
     /**
-     * @param boolean $fB7
+     * @param boolean $_f_B_7_
      */
-    public function setFB7($fB7)
+    public function set_F_B_7_($_f_B_7_)
     {
-        $this->fB7 = $fB7;
+        $this->_f_B_7_ = $_f_B_7_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI7;
+    private $_f_I_7_;
 
     /**
      * @return integer
      */
-    public function getFI7()
+    public function get_F_I_7_()
     {
-        return $this->fI7;
+        return $this->_f_I_7_;
     }
 
     /**
-     * @param integer $fI7
+     * @param integer $_f_I_7_
      */
-    public function setFI7($fI7)
+    public function set_F_I_7_($_f_I_7_)
     {
-        $this->fI7 = $fI7;
+        $this->_f_I_7_ = $_f_I_7_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL7;
+    private $_f_L_7_;
 
     /**
      * @return Long
      */
-    public function getFL7()
+    public function get_F_L_7_()
     {
-        return $this->fL7;
+        return $this->_f_L_7_;
     }
 
     /**
-     * @param Long $fL7
+     * @param Long $_f_L_7_
      */
-    public function setFL7($fL7)
+    public function set_F_L_7_($_f_L_7_)
     {
-        $this->fL7 = $fL7;
+        $this->_f_L_7_ = $_f_L_7_;
     }
 
     /**
      * @Type("\DateTime")
      */
-    private $fDt7;
+    private $_f_DT_7_;
 
     /**
      * @return \DateTime
      */
-    public function getFDt7()
+    public function get_F_DT_7_()
     {
-        return $this->fDt7;
+        return $this->_f_DT_7_;
     }
 
     /**
-     * @param \DateTime $fDt7
+     * @param \DateTime $_f_DT_7_
      */
-    public function setFDt7($fDt7)
+    public function set_F_DT_7_($_f_DT_7_)
     {
-        $this->fDt7 = $fDt7;
+        $this->_f_DT_7_ = $_f_DT_7_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN7;
+    private $_f_N_7_;
 
     /**
      * @return Decimal
      */
-    public function getFN7()
+    public function get_F_N_7_()
     {
-        return $this->fN7;
+        return $this->_f_N_7_;
     }
 
     /**
-     * @param Decimal $fN7
+     * @param Decimal $_f_N_7_
      */
-    public function setFN7($fN7)
+    public function set_F_N_7_($_f_N_7_)
     {
-        $this->fN7 = $fN7;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC57;
-
-    /**
-     * @return string
-     */
-    public function getFC57()
-    {
-        return $this->fC57;
-    }
-
-    /**
-     * @param string $fC57
-     */
-    public function setFC57($fC57)
-    {
-        $this->fC57 = $fC57;
+        $this->_f_N_7_ = $_f_N_7_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC107;
+    private $_f_C5_7_;
 
     /**
      * @return string
      */
-    public function getFC107()
+    public function get_F_C5_7_()
     {
-        return $this->fC107;
+        return $this->_f_C5_7_;
     }
 
     /**
-     * @param string $fC107
+     * @param string $_f_C5_7_
      */
-    public function setFC107($fC107)
+    public function set_F_C5_7_($_f_C5_7_)
     {
-        $this->fC107 = $fC107;
+        $this->_f_C5_7_ = $_f_C5_7_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC207;
+    private $_f_C10_7_;
 
     /**
      * @return string
      */
-    public function getFC207()
+    public function get_F_C10_7_()
     {
-        return $this->fC207;
+        return $this->_f_C10_7_;
     }
 
     /**
-     * @param string $fC207
+     * @param string $_f_C10_7_
      */
-    public function setFC207($fC207)
+    public function set_F_C10_7_($_f_C10_7_)
     {
-        $this->fC207 = $fC207;
+        $this->_f_C10_7_ = $_f_C10_7_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC507;
+    private $_f_C20_7_;
 
     /**
      * @return string
      */
-    public function getFC507()
+    public function get_F_C20_7_()
     {
-        return $this->fC507;
+        return $this->_f_C20_7_;
     }
 
     /**
-     * @param string $fC507
+     * @param string $_f_C20_7_
      */
-    public function setFC507($fC507)
+    public function set_F_C20_7_($_f_C20_7_)
     {
-        $this->fC507 = $fC507;
+        $this->_f_C20_7_ = $_f_C20_7_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1007;
+    private $_f_C50_7_;
 
     /**
      * @return string
      */
-    public function getFC1007()
+    public function get_F_C50_7_()
     {
-        return $this->fC1007;
+        return $this->_f_C50_7_;
     }
 
     /**
-     * @param string $fC1007
+     * @param string $_f_C50_7_
      */
-    public function setFC1007($fC1007)
+    public function set_F_C50_7_($_f_C50_7_)
     {
-        $this->fC1007 = $fC1007;
+        $this->_f_C50_7_ = $_f_C50_7_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2007;
+    private $_f_C100_7_;
 
     /**
      * @return string
      */
-    public function getFC2007()
+    public function get_F_C100_7_()
     {
-        return $this->fC2007;
+        return $this->_f_C100_7_;
     }
 
     /**
-     * @param string $fC2007
+     * @param string $_f_C100_7_
      */
-    public function setFC2007($fC2007)
+    public function set_F_C100_7_($_f_C100_7_)
     {
-        $this->fC2007 = $fC2007;
+        $this->_f_C100_7_ = $_f_C100_7_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5007;
+    private $_f_C200_7_;
 
     /**
      * @return string
      */
-    public function getFC5007()
+    public function get_F_C200_7_()
     {
-        return $this->fC5007;
+        return $this->_f_C200_7_;
     }
 
     /**
-     * @param string $fC5007
+     * @param string $_f_C200_7_
      */
-    public function setFC5007($fC5007)
+    public function set_F_C200_7_($_f_C200_7_)
     {
-        $this->fC5007 = $fC5007;
+        $this->_f_C200_7_ = $_f_C200_7_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C500_7_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C500_7_()
+    {
+        return $this->_f_C500_7_;
+    }
+
+    /**
+     * @param string $_f_C500_7_
+     */
+    public function set_F_C500_7_($_f_C500_7_)
+    {
+        $this->_f_C500_7_ = $_f_C500_7_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB8;
+    private $_f_B_8_;
 
     /**
      * @return boolean
      */
-    public function getFB8()
+    public function get_F_B_8_()
     {
-        return $this->fB8;
+        return $this->_f_B_8_;
     }
 
     /**
-     * @param boolean $fB8
+     * @param boolean $_f_B_8_
      */
-    public function setFB8($fB8)
+    public function set_F_B_8_($_f_B_8_)
     {
-        $this->fB8 = $fB8;
+        $this->_f_B_8_ = $_f_B_8_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI8;
+    private $_f_I_8_;
 
     /**
      * @return integer
      */
-    public function getFI8()
+    public function get_F_I_8_()
     {
-        return $this->fI8;
+        return $this->_f_I_8_;
     }
 
     /**
-     * @param integer $fI8
+     * @param integer $_f_I_8_
      */
-    public function setFI8($fI8)
+    public function set_F_I_8_($_f_I_8_)
     {
-        $this->fI8 = $fI8;
+        $this->_f_I_8_ = $_f_I_8_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL8;
+    private $_f_L_8_;
 
     /**
      * @return Long
      */
-    public function getFL8()
+    public function get_F_L_8_()
     {
-        return $this->fL8;
+        return $this->_f_L_8_;
     }
 
     /**
-     * @param Long $fL8
+     * @param Long $_f_L_8_
      */
-    public function setFL8($fL8)
+    public function set_F_L_8_($_f_L_8_)
     {
-        $this->fL8 = $fL8;
+        $this->_f_L_8_ = $_f_L_8_;
     }
 
     /**
      * @Type("\DateTime")
      */
-    private $fDt8;
+    private $_f_DT_8_;
 
     /**
      * @return \DateTime
      */
-    public function getFDt8()
+    public function get_F_DT_8_()
     {
-        return $this->fDt8;
+        return $this->_f_DT_8_;
     }
 
     /**
-     * @param \DateTime $fDt8
+     * @param \DateTime $_f_DT_8_
      */
-    public function setFDt8($fDt8)
+    public function set_F_DT_8_($_f_DT_8_)
     {
-        $this->fDt8 = $fDt8;
+        $this->_f_DT_8_ = $_f_DT_8_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN8;
+    private $_f_N_8_;
 
     /**
      * @return Decimal
      */
-    public function getFN8()
+    public function get_F_N_8_()
     {
-        return $this->fN8;
+        return $this->_f_N_8_;
     }
 
     /**
-     * @param Decimal $fN8
+     * @param Decimal $_f_N_8_
      */
-    public function setFN8($fN8)
+    public function set_F_N_8_($_f_N_8_)
     {
-        $this->fN8 = $fN8;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC58;
-
-    /**
-     * @return string
-     */
-    public function getFC58()
-    {
-        return $this->fC58;
-    }
-
-    /**
-     * @param string $fC58
-     */
-    public function setFC58($fC58)
-    {
-        $this->fC58 = $fC58;
+        $this->_f_N_8_ = $_f_N_8_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC108;
+    private $_f_C5_8_;
 
     /**
      * @return string
      */
-    public function getFC108()
+    public function get_F_C5_8_()
     {
-        return $this->fC108;
+        return $this->_f_C5_8_;
     }
 
     /**
-     * @param string $fC108
+     * @param string $_f_C5_8_
      */
-    public function setFC108($fC108)
+    public function set_F_C5_8_($_f_C5_8_)
     {
-        $this->fC108 = $fC108;
+        $this->_f_C5_8_ = $_f_C5_8_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC208;
+    private $_f_C10_8_;
 
     /**
      * @return string
      */
-    public function getFC208()
+    public function get_F_C10_8_()
     {
-        return $this->fC208;
+        return $this->_f_C10_8_;
     }
 
     /**
-     * @param string $fC208
+     * @param string $_f_C10_8_
      */
-    public function setFC208($fC208)
+    public function set_F_C10_8_($_f_C10_8_)
     {
-        $this->fC208 = $fC208;
+        $this->_f_C10_8_ = $_f_C10_8_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC508;
+    private $_f_C20_8_;
 
     /**
      * @return string
      */
-    public function getFC508()
+    public function get_F_C20_8_()
     {
-        return $this->fC508;
+        return $this->_f_C20_8_;
     }
 
     /**
-     * @param string $fC508
+     * @param string $_f_C20_8_
      */
-    public function setFC508($fC508)
+    public function set_F_C20_8_($_f_C20_8_)
     {
-        $this->fC508 = $fC508;
+        $this->_f_C20_8_ = $_f_C20_8_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1008;
+    private $_f_C50_8_;
 
     /**
      * @return string
      */
-    public function getFC1008()
+    public function get_F_C50_8_()
     {
-        return $this->fC1008;
+        return $this->_f_C50_8_;
     }
 
     /**
-     * @param string $fC1008
+     * @param string $_f_C50_8_
      */
-    public function setFC1008($fC1008)
+    public function set_F_C50_8_($_f_C50_8_)
     {
-        $this->fC1008 = $fC1008;
+        $this->_f_C50_8_ = $_f_C50_8_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2008;
+    private $_f_C100_8_;
 
     /**
      * @return string
      */
-    public function getFC2008()
+    public function get_F_C100_8_()
     {
-        return $this->fC2008;
+        return $this->_f_C100_8_;
     }
 
     /**
-     * @param string $fC2008
+     * @param string $_f_C100_8_
      */
-    public function setFC2008($fC2008)
+    public function set_F_C100_8_($_f_C100_8_)
     {
-        $this->fC2008 = $fC2008;
+        $this->_f_C100_8_ = $_f_C100_8_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5008;
+    private $_f_C200_8_;
 
     /**
      * @return string
      */
-    public function getFC5008()
+    public function get_F_C200_8_()
     {
-        return $this->fC5008;
+        return $this->_f_C200_8_;
     }
 
     /**
-     * @param string $fC5008
+     * @param string $_f_C200_8_
      */
-    public function setFC5008($fC5008)
+    public function set_F_C200_8_($_f_C200_8_)
     {
-        $this->fC5008 = $fC5008;
+        $this->_f_C200_8_ = $_f_C200_8_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C500_8_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C500_8_()
+    {
+        return $this->_f_C500_8_;
+    }
+
+    /**
+     * @param string $_f_C500_8_
+     */
+    public function set_F_C500_8_($_f_C500_8_)
+    {
+        $this->_f_C500_8_ = $_f_C500_8_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB9;
+    private $_f_B_9_;
 
     /**
      * @return boolean
      */
-    public function getFB9()
+    public function get_F_B_9_()
     {
-        return $this->fB9;
+        return $this->_f_B_9_;
     }
 
     /**
-     * @param boolean $fB9
+     * @param boolean $_f_B_9_
      */
-    public function setFB9($fB9)
+    public function set_F_B_9_($_f_B_9_)
     {
-        $this->fB9 = $fB9;
+        $this->_f_B_9_ = $_f_B_9_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI9;
+    private $_f_I_9_;
 
     /**
      * @return integer
      */
-    public function getFI9()
+    public function get_F_I_9_()
     {
-        return $this->fI9;
+        return $this->_f_I_9_;
     }
 
     /**
-     * @param integer $fI9
+     * @param integer $_f_I_9_
      */
-    public function setFI9($fI9)
+    public function set_F_I_9_($_f_I_9_)
     {
-        $this->fI9 = $fI9;
+        $this->_f_I_9_ = $_f_I_9_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL9;
+    private $_f_L_9_;
 
     /**
      * @return Long
      */
-    public function getFL9()
+    public function get_F_L_9_()
     {
-        return $this->fL9;
+        return $this->_f_L_9_;
     }
 
     /**
-     * @param Long $fL9
+     * @param Long $_f_L_9_
      */
-    public function setFL9($fL9)
+    public function set_F_L_9_($_f_L_9_)
     {
-        $this->fL9 = $fL9;
+        $this->_f_L_9_ = $_f_L_9_;
     }
 
     /**
      * @Type("\DateTime")
      */
-    private $fDt9;
+    private $_f_DT_9_;
 
     /**
      * @return \DateTime
      */
-    public function getFDt9()
+    public function get_F_DT_9_()
     {
-        return $this->fDt9;
+        return $this->_f_DT_9_;
     }
 
     /**
-     * @param \DateTime $fDt9
+     * @param \DateTime $_f_DT_9_
      */
-    public function setFDt9($fDt9)
+    public function set_F_DT_9_($_f_DT_9_)
     {
-        $this->fDt9 = $fDt9;
+        $this->_f_DT_9_ = $_f_DT_9_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN9;
+    private $_f_N_9_;
 
     /**
      * @return Decimal
      */
-    public function getFN9()
+    public function get_F_N_9_()
     {
-        return $this->fN9;
+        return $this->_f_N_9_;
     }
 
     /**
-     * @param Decimal $fN9
+     * @param Decimal $_f_N_9_
      */
-    public function setFN9($fN9)
+    public function set_F_N_9_($_f_N_9_)
     {
-        $this->fN9 = $fN9;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC59;
-
-    /**
-     * @return string
-     */
-    public function getFC59()
-    {
-        return $this->fC59;
-    }
-
-    /**
-     * @param string $fC59
-     */
-    public function setFC59($fC59)
-    {
-        $this->fC59 = $fC59;
+        $this->_f_N_9_ = $_f_N_9_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC109;
+    private $_f_C5_9_;
 
     /**
      * @return string
      */
-    public function getFC109()
+    public function get_F_C5_9_()
     {
-        return $this->fC109;
+        return $this->_f_C5_9_;
     }
 
     /**
-     * @param string $fC109
+     * @param string $_f_C5_9_
      */
-    public function setFC109($fC109)
+    public function set_F_C5_9_($_f_C5_9_)
     {
-        $this->fC109 = $fC109;
+        $this->_f_C5_9_ = $_f_C5_9_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC209;
+    private $_f_C10_9_;
 
     /**
      * @return string
      */
-    public function getFC209()
+    public function get_F_C10_9_()
     {
-        return $this->fC209;
+        return $this->_f_C10_9_;
     }
 
     /**
-     * @param string $fC209
+     * @param string $_f_C10_9_
      */
-    public function setFC209($fC209)
+    public function set_F_C10_9_($_f_C10_9_)
     {
-        $this->fC209 = $fC209;
+        $this->_f_C10_9_ = $_f_C10_9_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC509;
+    private $_f_C20_9_;
 
     /**
      * @return string
      */
-    public function getFC509()
+    public function get_F_C20_9_()
     {
-        return $this->fC509;
+        return $this->_f_C20_9_;
     }
 
     /**
-     * @param string $fC509
+     * @param string $_f_C20_9_
      */
-    public function setFC509($fC509)
+    public function set_F_C20_9_($_f_C20_9_)
     {
-        $this->fC509 = $fC509;
+        $this->_f_C20_9_ = $_f_C20_9_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1009;
+    private $_f_C50_9_;
 
     /**
      * @return string
      */
-    public function getFC1009()
+    public function get_F_C50_9_()
     {
-        return $this->fC1009;
+        return $this->_f_C50_9_;
     }
 
     /**
-     * @param string $fC1009
+     * @param string $_f_C50_9_
      */
-    public function setFC1009($fC1009)
+    public function set_F_C50_9_($_f_C50_9_)
     {
-        $this->fC1009 = $fC1009;
+        $this->_f_C50_9_ = $_f_C50_9_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2009;
+    private $_f_C100_9_;
 
     /**
      * @return string
      */
-    public function getFC2009()
+    public function get_F_C100_9_()
     {
-        return $this->fC2009;
+        return $this->_f_C100_9_;
     }
 
     /**
-     * @param string $fC2009
+     * @param string $_f_C100_9_
      */
-    public function setFC2009($fC2009)
+    public function set_F_C100_9_($_f_C100_9_)
     {
-        $this->fC2009 = $fC2009;
+        $this->_f_C100_9_ = $_f_C100_9_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5009;
+    private $_f_C200_9_;
 
     /**
      * @return string
      */
-    public function getFC5009()
+    public function get_F_C200_9_()
     {
-        return $this->fC5009;
+        return $this->_f_C200_9_;
     }
 
     /**
-     * @param string $fC5009
+     * @param string $_f_C200_9_
      */
-    public function setFC5009($fC5009)
+    public function set_F_C200_9_($_f_C200_9_)
     {
-        $this->fC5009 = $fC5009;
+        $this->_f_C200_9_ = $_f_C200_9_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C500_9_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C500_9_()
+    {
+        return $this->_f_C500_9_;
+    }
+
+    /**
+     * @param string $_f_C500_9_
+     */
+    public function set_F_C500_9_($_f_C500_9_)
+    {
+        $this->_f_C500_9_ = $_f_C500_9_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB10;
+    private $_f_B_10_;
 
     /**
      * @return boolean
      */
-    public function getFB10()
+    public function get_F_B_10_()
     {
-        return $this->fB10;
+        return $this->_f_B_10_;
     }
 
     /**
-     * @param boolean $fB10
+     * @param boolean $_f_B_10_
      */
-    public function setFB10($fB10)
+    public function set_F_B_10_($_f_B_10_)
     {
-        $this->fB10 = $fB10;
+        $this->_f_B_10_ = $_f_B_10_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI10;
+    private $_f_I_10_;
 
     /**
      * @return integer
      */
-    public function getFI10()
+    public function get_F_I_10_()
     {
-        return $this->fI10;
+        return $this->_f_I_10_;
     }
 
     /**
-     * @param integer $fI10
+     * @param integer $_f_I_10_
      */
-    public function setFI10($fI10)
+    public function set_F_I_10_($_f_I_10_)
     {
-        $this->fI10 = $fI10;
+        $this->_f_I_10_ = $_f_I_10_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL10;
+    private $_f_L_10_;
 
     /**
      * @return Long
      */
-    public function getFL10()
+    public function get_F_L_10_()
     {
-        return $this->fL10;
+        return $this->_f_L_10_;
     }
 
     /**
-     * @param Long $fL10
+     * @param Long $_f_L_10_
      */
-    public function setFL10($fL10)
+    public function set_F_L_10_($_f_L_10_)
     {
-        $this->fL10 = $fL10;
+        $this->_f_L_10_ = $_f_L_10_;
     }
 
     /**
      * @Type("\DateTime")
      */
-    private $fDt10;
+    private $_f_DT_10_;
 
     /**
      * @return \DateTime
      */
-    public function getFDt10()
+    public function get_F_DT_10_()
     {
-        return $this->fDt10;
+        return $this->_f_DT_10_;
     }
 
     /**
-     * @param \DateTime $fDt10
+     * @param \DateTime $_f_DT_10_
      */
-    public function setFDt10($fDt10)
+    public function set_F_DT_10_($_f_DT_10_)
     {
-        $this->fDt10 = $fDt10;
+        $this->_f_DT_10_ = $_f_DT_10_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN10;
+    private $_f_N_10_;
 
     /**
      * @return Decimal
      */
-    public function getFN10()
+    public function get_F_N_10_()
     {
-        return $this->fN10;
+        return $this->_f_N_10_;
     }
 
     /**
-     * @param Decimal $fN10
+     * @param Decimal $_f_N_10_
      */
-    public function setFN10($fN10)
+    public function set_F_N_10_($_f_N_10_)
     {
-        $this->fN10 = $fN10;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC510;
-
-    /**
-     * @return string
-     */
-    public function getFC510()
-    {
-        return $this->fC510;
-    }
-
-    /**
-     * @param string $fC510
-     */
-    public function setFC510($fC510)
-    {
-        $this->fC510 = $fC510;
+        $this->_f_N_10_ = $_f_N_10_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1010;
+    private $_f_C5_10_;
 
     /**
      * @return string
      */
-    public function getFC1010()
+    public function get_F_C5_10_()
     {
-        return $this->fC1010;
+        return $this->_f_C5_10_;
     }
 
     /**
-     * @param string $fC1010
+     * @param string $_f_C5_10_
      */
-    public function setFC1010($fC1010)
+    public function set_F_C5_10_($_f_C5_10_)
     {
-        $this->fC1010 = $fC1010;
+        $this->_f_C5_10_ = $_f_C5_10_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2010;
+    private $_f_C10_10_;
 
     /**
      * @return string
      */
-    public function getFC2010()
+    public function get_F_C10_10_()
     {
-        return $this->fC2010;
+        return $this->_f_C10_10_;
     }
 
     /**
-     * @param string $fC2010
+     * @param string $_f_C10_10_
      */
-    public function setFC2010($fC2010)
+    public function set_F_C10_10_($_f_C10_10_)
     {
-        $this->fC2010 = $fC2010;
+        $this->_f_C10_10_ = $_f_C10_10_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5010;
+    private $_f_C20_10_;
 
     /**
      * @return string
      */
-    public function getFC5010()
+    public function get_F_C20_10_()
     {
-        return $this->fC5010;
+        return $this->_f_C20_10_;
     }
 
     /**
-     * @param string $fC5010
+     * @param string $_f_C20_10_
      */
-    public function setFC5010($fC5010)
+    public function set_F_C20_10_($_f_C20_10_)
     {
-        $this->fC5010 = $fC5010;
+        $this->_f_C20_10_ = $_f_C20_10_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC10010;
+    private $_f_C50_10_;
 
     /**
      * @return string
      */
-    public function getFC10010()
+    public function get_F_C50_10_()
     {
-        return $this->fC10010;
+        return $this->_f_C50_10_;
     }
 
     /**
-     * @param string $fC10010
+     * @param string $_f_C50_10_
      */
-    public function setFC10010($fC10010)
+    public function set_F_C50_10_($_f_C50_10_)
     {
-        $this->fC10010 = $fC10010;
+        $this->_f_C50_10_ = $_f_C50_10_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC20010;
+    private $_f_C100_10_;
 
     /**
      * @return string
      */
-    public function getFC20010()
+    public function get_F_C100_10_()
     {
-        return $this->fC20010;
+        return $this->_f_C100_10_;
     }
 
     /**
-     * @param string $fC20010
+     * @param string $_f_C100_10_
      */
-    public function setFC20010($fC20010)
+    public function set_F_C100_10_($_f_C100_10_)
     {
-        $this->fC20010 = $fC20010;
+        $this->_f_C100_10_ = $_f_C100_10_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C200_10_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C200_10_()
+    {
+        return $this->_f_C200_10_;
+    }
+
+    /**
+     * @param string $_f_C200_10_
+     */
+    public function set_F_C200_10_($_f_C200_10_)
+    {
+        $this->_f_C200_10_ = $_f_C200_10_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB11;
+    private $_f_B_11_;
 
     /**
      * @return boolean
      */
-    public function getFB11()
+    public function get_F_B_11_()
     {
-        return $this->fB11;
+        return $this->_f_B_11_;
     }
 
     /**
-     * @param boolean $fB11
+     * @param boolean $_f_B_11_
      */
-    public function setFB11($fB11)
+    public function set_F_B_11_($_f_B_11_)
     {
-        $this->fB11 = $fB11;
+        $this->_f_B_11_ = $_f_B_11_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI11;
+    private $_f_I_11_;
 
     /**
      * @return integer
      */
-    public function getFI11()
+    public function get_F_I_11_()
     {
-        return $this->fI11;
+        return $this->_f_I_11_;
     }
 
     /**
-     * @param integer $fI11
+     * @param integer $_f_I_11_
      */
-    public function setFI11($fI11)
+    public function set_F_I_11_($_f_I_11_)
     {
-        $this->fI11 = $fI11;
+        $this->_f_I_11_ = $_f_I_11_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL11;
+    private $_f_L_11_;
 
     /**
      * @return Long
      */
-    public function getFL11()
+    public function get_F_L_11_()
     {
-        return $this->fL11;
+        return $this->_f_L_11_;
     }
 
     /**
-     * @param Long $fL11
+     * @param Long $_f_L_11_
      */
-    public function setFL11($fL11)
+    public function set_F_L_11_($_f_L_11_)
     {
-        $this->fL11 = $fL11;
+        $this->_f_L_11_ = $_f_L_11_;
     }
 
     /**
      * @Type("\DateTime")
      */
-    private $fDt11;
+    private $_f_DT_11_;
 
     /**
      * @return \DateTime
      */
-    public function getFDt11()
+    public function get_F_DT_11_()
     {
-        return $this->fDt11;
+        return $this->_f_DT_11_;
     }
 
     /**
-     * @param \DateTime $fDt11
+     * @param \DateTime $_f_DT_11_
      */
-    public function setFDt11($fDt11)
+    public function set_F_DT_11_($_f_DT_11_)
     {
-        $this->fDt11 = $fDt11;
+        $this->_f_DT_11_ = $_f_DT_11_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN11;
+    private $_f_N_11_;
 
     /**
      * @return Decimal
      */
-    public function getFN11()
+    public function get_F_N_11_()
     {
-        return $this->fN11;
+        return $this->_f_N_11_;
     }
 
     /**
-     * @param Decimal $fN11
+     * @param Decimal $_f_N_11_
      */
-    public function setFN11($fN11)
+    public function set_F_N_11_($_f_N_11_)
     {
-        $this->fN11 = $fN11;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC511;
-
-    /**
-     * @return string
-     */
-    public function getFC511()
-    {
-        return $this->fC511;
-    }
-
-    /**
-     * @param string $fC511
-     */
-    public function setFC511($fC511)
-    {
-        $this->fC511 = $fC511;
+        $this->_f_N_11_ = $_f_N_11_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1011;
+    private $_f_C5_11_;
 
     /**
      * @return string
      */
-    public function getFC1011()
+    public function get_F_C5_11_()
     {
-        return $this->fC1011;
+        return $this->_f_C5_11_;
     }
 
     /**
-     * @param string $fC1011
+     * @param string $_f_C5_11_
      */
-    public function setFC1011($fC1011)
+    public function set_F_C5_11_($_f_C5_11_)
     {
-        $this->fC1011 = $fC1011;
+        $this->_f_C5_11_ = $_f_C5_11_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2011;
+    private $_f_C10_11_;
 
     /**
      * @return string
      */
-    public function getFC2011()
+    public function get_F_C10_11_()
     {
-        return $this->fC2011;
+        return $this->_f_C10_11_;
     }
 
     /**
-     * @param string $fC2011
+     * @param string $_f_C10_11_
      */
-    public function setFC2011($fC2011)
+    public function set_F_C10_11_($_f_C10_11_)
     {
-        $this->fC2011 = $fC2011;
+        $this->_f_C10_11_ = $_f_C10_11_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5011;
+    private $_f_C20_11_;
 
     /**
      * @return string
      */
-    public function getFC5011()
+    public function get_F_C20_11_()
     {
-        return $this->fC5011;
+        return $this->_f_C20_11_;
     }
 
     /**
-     * @param string $fC5011
+     * @param string $_f_C20_11_
      */
-    public function setFC5011($fC5011)
+    public function set_F_C20_11_($_f_C20_11_)
     {
-        $this->fC5011 = $fC5011;
+        $this->_f_C20_11_ = $_f_C20_11_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC10011;
+    private $_f_C50_11_;
 
     /**
      * @return string
      */
-    public function getFC10011()
+    public function get_F_C50_11_()
     {
-        return $this->fC10011;
+        return $this->_f_C50_11_;
     }
 
     /**
-     * @param string $fC10011
+     * @param string $_f_C50_11_
      */
-    public function setFC10011($fC10011)
+    public function set_F_C50_11_($_f_C50_11_)
     {
-        $this->fC10011 = $fC10011;
+        $this->_f_C50_11_ = $_f_C50_11_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC20011;
+    private $_f_C100_11_;
 
     /**
      * @return string
      */
-    public function getFC20011()
+    public function get_F_C100_11_()
     {
-        return $this->fC20011;
+        return $this->_f_C100_11_;
     }
 
     /**
-     * @param string $fC20011
+     * @param string $_f_C100_11_
      */
-    public function setFC20011($fC20011)
+    public function set_F_C100_11_($_f_C100_11_)
     {
-        $this->fC20011 = $fC20011;
+        $this->_f_C100_11_ = $_f_C100_11_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C200_11_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C200_11_()
+    {
+        return $this->_f_C200_11_;
+    }
+
+    /**
+     * @param string $_f_C200_11_
+     */
+    public function set_F_C200_11_($_f_C200_11_)
+    {
+        $this->_f_C200_11_ = $_f_C200_11_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB12;
+    private $_f_B_12_;
 
     /**
      * @return boolean
      */
-    public function getFB12()
+    public function get_F_B_12_()
     {
-        return $this->fB12;
+        return $this->_f_B_12_;
     }
 
     /**
-     * @param boolean $fB12
+     * @param boolean $_f_B_12_
      */
-    public function setFB12($fB12)
+    public function set_F_B_12_($_f_B_12_)
     {
-        $this->fB12 = $fB12;
+        $this->_f_B_12_ = $_f_B_12_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI12;
+    private $_f_I_12_;
 
     /**
      * @return integer
      */
-    public function getFI12()
+    public function get_F_I_12_()
     {
-        return $this->fI12;
+        return $this->_f_I_12_;
     }
 
     /**
-     * @param integer $fI12
+     * @param integer $_f_I_12_
      */
-    public function setFI12($fI12)
+    public function set_F_I_12_($_f_I_12_)
     {
-        $this->fI12 = $fI12;
+        $this->_f_I_12_ = $_f_I_12_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL12;
+    private $_f_L_12_;
 
     /**
      * @return Long
      */
-    public function getFL12()
+    public function get_F_L_12_()
     {
-        return $this->fL12;
+        return $this->_f_L_12_;
     }
 
     /**
-     * @param Long $fL12
+     * @param Long $_f_L_12_
      */
-    public function setFL12($fL12)
+    public function set_F_L_12_($_f_L_12_)
     {
-        $this->fL12 = $fL12;
+        $this->_f_L_12_ = $_f_L_12_;
     }
 
     /**
      * @Type("\DateTime")
      */
-    private $fDt12;
+    private $_f_DT_12_;
 
     /**
      * @return \DateTime
      */
-    public function getFDt12()
+    public function get_F_DT_12_()
     {
-        return $this->fDt12;
+        return $this->_f_DT_12_;
     }
 
     /**
-     * @param \DateTime $fDt12
+     * @param \DateTime $_f_DT_12_
      */
-    public function setFDt12($fDt12)
+    public function set_F_DT_12_($_f_DT_12_)
     {
-        $this->fDt12 = $fDt12;
+        $this->_f_DT_12_ = $_f_DT_12_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN12;
+    private $_f_N_12_;
 
     /**
      * @return Decimal
      */
-    public function getFN12()
+    public function get_F_N_12_()
     {
-        return $this->fN12;
+        return $this->_f_N_12_;
     }
 
     /**
-     * @param Decimal $fN12
+     * @param Decimal $_f_N_12_
      */
-    public function setFN12($fN12)
+    public function set_F_N_12_($_f_N_12_)
     {
-        $this->fN12 = $fN12;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC512;
-
-    /**
-     * @return string
-     */
-    public function getFC512()
-    {
-        return $this->fC512;
-    }
-
-    /**
-     * @param string $fC512
-     */
-    public function setFC512($fC512)
-    {
-        $this->fC512 = $fC512;
+        $this->_f_N_12_ = $_f_N_12_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1012;
+    private $_f_C5_12_;
 
     /**
      * @return string
      */
-    public function getFC1012()
+    public function get_F_C5_12_()
     {
-        return $this->fC1012;
+        return $this->_f_C5_12_;
     }
 
     /**
-     * @param string $fC1012
+     * @param string $_f_C5_12_
      */
-    public function setFC1012($fC1012)
+    public function set_F_C5_12_($_f_C5_12_)
     {
-        $this->fC1012 = $fC1012;
+        $this->_f_C5_12_ = $_f_C5_12_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2012;
+    private $_f_C10_12_;
 
     /**
      * @return string
      */
-    public function getFC2012()
+    public function get_F_C10_12_()
     {
-        return $this->fC2012;
+        return $this->_f_C10_12_;
     }
 
     /**
-     * @param string $fC2012
+     * @param string $_f_C10_12_
      */
-    public function setFC2012($fC2012)
+    public function set_F_C10_12_($_f_C10_12_)
     {
-        $this->fC2012 = $fC2012;
+        $this->_f_C10_12_ = $_f_C10_12_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5012;
+    private $_f_C20_12_;
 
     /**
      * @return string
      */
-    public function getFC5012()
+    public function get_F_C20_12_()
     {
-        return $this->fC5012;
+        return $this->_f_C20_12_;
     }
 
     /**
-     * @param string $fC5012
+     * @param string $_f_C20_12_
      */
-    public function setFC5012($fC5012)
+    public function set_F_C20_12_($_f_C20_12_)
     {
-        $this->fC5012 = $fC5012;
+        $this->_f_C20_12_ = $_f_C20_12_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC10012;
+    private $_f_C50_12_;
 
     /**
      * @return string
      */
-    public function getFC10012()
+    public function get_F_C50_12_()
     {
-        return $this->fC10012;
+        return $this->_f_C50_12_;
     }
 
     /**
-     * @param string $fC10012
+     * @param string $_f_C50_12_
      */
-    public function setFC10012($fC10012)
+    public function set_F_C50_12_($_f_C50_12_)
     {
-        $this->fC10012 = $fC10012;
+        $this->_f_C50_12_ = $_f_C50_12_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC20012;
+    private $_f_C100_12_;
 
     /**
      * @return string
      */
-    public function getFC20012()
+    public function get_F_C100_12_()
     {
-        return $this->fC20012;
+        return $this->_f_C100_12_;
     }
 
     /**
-     * @param string $fC20012
+     * @param string $_f_C100_12_
      */
-    public function setFC20012($fC20012)
+    public function set_F_C100_12_($_f_C100_12_)
     {
-        $this->fC20012 = $fC20012;
+        $this->_f_C100_12_ = $_f_C100_12_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C200_12_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C200_12_()
+    {
+        return $this->_f_C200_12_;
+    }
+
+    /**
+     * @param string $_f_C200_12_
+     */
+    public function set_F_C200_12_($_f_C200_12_)
+    {
+        $this->_f_C200_12_ = $_f_C200_12_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB13;
+    private $_f_B_13_;
 
     /**
      * @return boolean
      */
-    public function getFB13()
+    public function get_F_B_13_()
     {
-        return $this->fB13;
+        return $this->_f_B_13_;
     }
 
     /**
-     * @param boolean $fB13
+     * @param boolean $_f_B_13_
      */
-    public function setFB13($fB13)
+    public function set_F_B_13_($_f_B_13_)
     {
-        $this->fB13 = $fB13;
+        $this->_f_B_13_ = $_f_B_13_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI13;
+    private $_f_I_13_;
 
     /**
      * @return integer
      */
-    public function getFI13()
+    public function get_F_I_13_()
     {
-        return $this->fI13;
+        return $this->_f_I_13_;
     }
 
     /**
-     * @param integer $fI13
+     * @param integer $_f_I_13_
      */
-    public function setFI13($fI13)
+    public function set_F_I_13_($_f_I_13_)
     {
-        $this->fI13 = $fI13;
+        $this->_f_I_13_ = $_f_I_13_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL13;
+    private $_f_L_13_;
 
     /**
      * @return Long
      */
-    public function getFL13()
+    public function get_F_L_13_()
     {
-        return $this->fL13;
+        return $this->_f_L_13_;
     }
 
     /**
-     * @param Long $fL13
+     * @param Long $_f_L_13_
      */
-    public function setFL13($fL13)
+    public function set_F_L_13_($_f_L_13_)
     {
-        $this->fL13 = $fL13;
+        $this->_f_L_13_ = $_f_L_13_;
     }
 
     /**
      * @Type("\DateTime")
      */
-    private $fDt13;
+    private $_f_DT_13_;
 
     /**
      * @return \DateTime
      */
-    public function getFDt13()
+    public function get_F_DT_13_()
     {
-        return $this->fDt13;
+        return $this->_f_DT_13_;
     }
 
     /**
-     * @param \DateTime $fDt13
+     * @param \DateTime $_f_DT_13_
      */
-    public function setFDt13($fDt13)
+    public function set_F_DT_13_($_f_DT_13_)
     {
-        $this->fDt13 = $fDt13;
+        $this->_f_DT_13_ = $_f_DT_13_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN13;
+    private $_f_N_13_;
 
     /**
      * @return Decimal
      */
-    public function getFN13()
+    public function get_F_N_13_()
     {
-        return $this->fN13;
+        return $this->_f_N_13_;
     }
 
     /**
-     * @param Decimal $fN13
+     * @param Decimal $_f_N_13_
      */
-    public function setFN13($fN13)
+    public function set_F_N_13_($_f_N_13_)
     {
-        $this->fN13 = $fN13;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC513;
-
-    /**
-     * @return string
-     */
-    public function getFC513()
-    {
-        return $this->fC513;
-    }
-
-    /**
-     * @param string $fC513
-     */
-    public function setFC513($fC513)
-    {
-        $this->fC513 = $fC513;
+        $this->_f_N_13_ = $_f_N_13_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1013;
+    private $_f_C5_13_;
 
     /**
      * @return string
      */
-    public function getFC1013()
+    public function get_F_C5_13_()
     {
-        return $this->fC1013;
+        return $this->_f_C5_13_;
     }
 
     /**
-     * @param string $fC1013
+     * @param string $_f_C5_13_
      */
-    public function setFC1013($fC1013)
+    public function set_F_C5_13_($_f_C5_13_)
     {
-        $this->fC1013 = $fC1013;
+        $this->_f_C5_13_ = $_f_C5_13_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2013;
+    private $_f_C10_13_;
 
     /**
      * @return string
      */
-    public function getFC2013()
+    public function get_F_C10_13_()
     {
-        return $this->fC2013;
+        return $this->_f_C10_13_;
     }
 
     /**
-     * @param string $fC2013
+     * @param string $_f_C10_13_
      */
-    public function setFC2013($fC2013)
+    public function set_F_C10_13_($_f_C10_13_)
     {
-        $this->fC2013 = $fC2013;
+        $this->_f_C10_13_ = $_f_C10_13_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5013;
+    private $_f_C20_13_;
 
     /**
      * @return string
      */
-    public function getFC5013()
+    public function get_F_C20_13_()
     {
-        return $this->fC5013;
+        return $this->_f_C20_13_;
     }
 
     /**
-     * @param string $fC5013
+     * @param string $_f_C20_13_
      */
-    public function setFC5013($fC5013)
+    public function set_F_C20_13_($_f_C20_13_)
     {
-        $this->fC5013 = $fC5013;
+        $this->_f_C20_13_ = $_f_C20_13_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC10013;
+    private $_f_C50_13_;
 
     /**
      * @return string
      */
-    public function getFC10013()
+    public function get_F_C50_13_()
     {
-        return $this->fC10013;
+        return $this->_f_C50_13_;
     }
 
     /**
-     * @param string $fC10013
+     * @param string $_f_C50_13_
      */
-    public function setFC10013($fC10013)
+    public function set_F_C50_13_($_f_C50_13_)
     {
-        $this->fC10013 = $fC10013;
+        $this->_f_C50_13_ = $_f_C50_13_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC20013;
+    private $_f_C100_13_;
 
     /**
      * @return string
      */
-    public function getFC20013()
+    public function get_F_C100_13_()
     {
-        return $this->fC20013;
+        return $this->_f_C100_13_;
     }
 
     /**
-     * @param string $fC20013
+     * @param string $_f_C100_13_
      */
-    public function setFC20013($fC20013)
+    public function set_F_C100_13_($_f_C100_13_)
     {
-        $this->fC20013 = $fC20013;
+        $this->_f_C100_13_ = $_f_C100_13_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C200_13_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C200_13_()
+    {
+        return $this->_f_C200_13_;
+    }
+
+    /**
+     * @param string $_f_C200_13_
+     */
+    public function set_F_C200_13_($_f_C200_13_)
+    {
+        $this->_f_C200_13_ = $_f_C200_13_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB14;
+    private $_f_B_14_;
 
     /**
      * @return boolean
      */
-    public function getFB14()
+    public function get_F_B_14_()
     {
-        return $this->fB14;
+        return $this->_f_B_14_;
     }
 
     /**
-     * @param boolean $fB14
+     * @param boolean $_f_B_14_
      */
-    public function setFB14($fB14)
+    public function set_F_B_14_($_f_B_14_)
     {
-        $this->fB14 = $fB14;
+        $this->_f_B_14_ = $_f_B_14_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI14;
+    private $_f_I_14_;
 
     /**
      * @return integer
      */
-    public function getFI14()
+    public function get_F_I_14_()
     {
-        return $this->fI14;
+        return $this->_f_I_14_;
     }
 
     /**
-     * @param integer $fI14
+     * @param integer $_f_I_14_
      */
-    public function setFI14($fI14)
+    public function set_F_I_14_($_f_I_14_)
     {
-        $this->fI14 = $fI14;
+        $this->_f_I_14_ = $_f_I_14_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL14;
+    private $_f_L_14_;
 
     /**
      * @return Long
      */
-    public function getFL14()
+    public function get_F_L_14_()
     {
-        return $this->fL14;
+        return $this->_f_L_14_;
     }
 
     /**
-     * @param Long $fL14
+     * @param Long $_f_L_14_
      */
-    public function setFL14($fL14)
+    public function set_F_L_14_($_f_L_14_)
     {
-        $this->fL14 = $fL14;
+        $this->_f_L_14_ = $_f_L_14_;
     }
 
     /**
      * @Type("\DateTime")
      */
-    private $fDt14;
+    private $_f_DT_14_;
 
     /**
      * @return \DateTime
      */
-    public function getFDt14()
+    public function get_F_DT_14_()
     {
-        return $this->fDt14;
+        return $this->_f_DT_14_;
     }
 
     /**
-     * @param \DateTime $fDt14
+     * @param \DateTime $_f_DT_14_
      */
-    public function setFDt14($fDt14)
+    public function set_F_DT_14_($_f_DT_14_)
     {
-        $this->fDt14 = $fDt14;
+        $this->_f_DT_14_ = $_f_DT_14_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN14;
+    private $_f_N_14_;
 
     /**
      * @return Decimal
      */
-    public function getFN14()
+    public function get_F_N_14_()
     {
-        return $this->fN14;
+        return $this->_f_N_14_;
     }
 
     /**
-     * @param Decimal $fN14
+     * @param Decimal $_f_N_14_
      */
-    public function setFN14($fN14)
+    public function set_F_N_14_($_f_N_14_)
     {
-        $this->fN14 = $fN14;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC514;
-
-    /**
-     * @return string
-     */
-    public function getFC514()
-    {
-        return $this->fC514;
-    }
-
-    /**
-     * @param string $fC514
-     */
-    public function setFC514($fC514)
-    {
-        $this->fC514 = $fC514;
+        $this->_f_N_14_ = $_f_N_14_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1014;
+    private $_f_C5_14_;
 
     /**
      * @return string
      */
-    public function getFC1014()
+    public function get_F_C5_14_()
     {
-        return $this->fC1014;
+        return $this->_f_C5_14_;
     }
 
     /**
-     * @param string $fC1014
+     * @param string $_f_C5_14_
      */
-    public function setFC1014($fC1014)
+    public function set_F_C5_14_($_f_C5_14_)
     {
-        $this->fC1014 = $fC1014;
+        $this->_f_C5_14_ = $_f_C5_14_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2014;
+    private $_f_C10_14_;
 
     /**
      * @return string
      */
-    public function getFC2014()
+    public function get_F_C10_14_()
     {
-        return $this->fC2014;
+        return $this->_f_C10_14_;
     }
 
     /**
-     * @param string $fC2014
+     * @param string $_f_C10_14_
      */
-    public function setFC2014($fC2014)
+    public function set_F_C10_14_($_f_C10_14_)
     {
-        $this->fC2014 = $fC2014;
+        $this->_f_C10_14_ = $_f_C10_14_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5014;
+    private $_f_C20_14_;
 
     /**
      * @return string
      */
-    public function getFC5014()
+    public function get_F_C20_14_()
     {
-        return $this->fC5014;
+        return $this->_f_C20_14_;
     }
 
     /**
-     * @param string $fC5014
+     * @param string $_f_C20_14_
      */
-    public function setFC5014($fC5014)
+    public function set_F_C20_14_($_f_C20_14_)
     {
-        $this->fC5014 = $fC5014;
+        $this->_f_C20_14_ = $_f_C20_14_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC10014;
+    private $_f_C50_14_;
 
     /**
      * @return string
      */
-    public function getFC10014()
+    public function get_F_C50_14_()
     {
-        return $this->fC10014;
+        return $this->_f_C50_14_;
     }
 
     /**
-     * @param string $fC10014
+     * @param string $_f_C50_14_
      */
-    public function setFC10014($fC10014)
+    public function set_F_C50_14_($_f_C50_14_)
     {
-        $this->fC10014 = $fC10014;
+        $this->_f_C50_14_ = $_f_C50_14_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC20014;
+    private $_f_C100_14_;
 
     /**
      * @return string
      */
-    public function getFC20014()
+    public function get_F_C100_14_()
     {
-        return $this->fC20014;
+        return $this->_f_C100_14_;
     }
 
     /**
-     * @param string $fC20014
+     * @param string $_f_C100_14_
      */
-    public function setFC20014($fC20014)
+    public function set_F_C100_14_($_f_C100_14_)
     {
-        $this->fC20014 = $fC20014;
+        $this->_f_C100_14_ = $_f_C100_14_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C200_14_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C200_14_()
+    {
+        return $this->_f_C200_14_;
+    }
+
+    /**
+     * @param string $_f_C200_14_
+     */
+    public function set_F_C200_14_($_f_C200_14_)
+    {
+        $this->_f_C200_14_ = $_f_C200_14_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB15;
+    private $_f_B_15_;
 
     /**
      * @return boolean
      */
-    public function getFB15()
+    public function get_F_B_15_()
     {
-        return $this->fB15;
+        return $this->_f_B_15_;
     }
 
     /**
-     * @param boolean $fB15
+     * @param boolean $_f_B_15_
      */
-    public function setFB15($fB15)
+    public function set_F_B_15_($_f_B_15_)
     {
-        $this->fB15 = $fB15;
+        $this->_f_B_15_ = $_f_B_15_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI15;
+    private $_f_I_15_;
 
     /**
      * @return integer
      */
-    public function getFI15()
+    public function get_F_I_15_()
     {
-        return $this->fI15;
+        return $this->_f_I_15_;
     }
 
     /**
-     * @param integer $fI15
+     * @param integer $_f_I_15_
      */
-    public function setFI15($fI15)
+    public function set_F_I_15_($_f_I_15_)
     {
-        $this->fI15 = $fI15;
+        $this->_f_I_15_ = $_f_I_15_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL15;
+    private $_f_L_15_;
 
     /**
      * @return Long
      */
-    public function getFL15()
+    public function get_F_L_15_()
     {
-        return $this->fL15;
+        return $this->_f_L_15_;
     }
 
     /**
-     * @param Long $fL15
+     * @param Long $_f_L_15_
      */
-    public function setFL15($fL15)
+    public function set_F_L_15_($_f_L_15_)
     {
-        $this->fL15 = $fL15;
+        $this->_f_L_15_ = $_f_L_15_;
     }
 
     /**
      * @Type("\DateTime")
      */
-    private $fDt15;
+    private $_f_DT_15_;
 
     /**
      * @return \DateTime
      */
-    public function getFDt15()
+    public function get_F_DT_15_()
     {
-        return $this->fDt15;
+        return $this->_f_DT_15_;
     }
 
     /**
-     * @param \DateTime $fDt15
+     * @param \DateTime $_f_DT_15_
      */
-    public function setFDt15($fDt15)
+    public function set_F_DT_15_($_f_DT_15_)
     {
-        $this->fDt15 = $fDt15;
+        $this->_f_DT_15_ = $_f_DT_15_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN15;
+    private $_f_N_15_;
 
     /**
      * @return Decimal
      */
-    public function getFN15()
+    public function get_F_N_15_()
     {
-        return $this->fN15;
+        return $this->_f_N_15_;
     }
 
     /**
-     * @param Decimal $fN15
+     * @param Decimal $_f_N_15_
      */
-    public function setFN15($fN15)
+    public function set_F_N_15_($_f_N_15_)
     {
-        $this->fN15 = $fN15;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC515;
-
-    /**
-     * @return string
-     */
-    public function getFC515()
-    {
-        return $this->fC515;
-    }
-
-    /**
-     * @param string $fC515
-     */
-    public function setFC515($fC515)
-    {
-        $this->fC515 = $fC515;
+        $this->_f_N_15_ = $_f_N_15_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1015;
+    private $_f_C5_15_;
 
     /**
      * @return string
      */
-    public function getFC1015()
+    public function get_F_C5_15_()
     {
-        return $this->fC1015;
+        return $this->_f_C5_15_;
     }
 
     /**
-     * @param string $fC1015
+     * @param string $_f_C5_15_
      */
-    public function setFC1015($fC1015)
+    public function set_F_C5_15_($_f_C5_15_)
     {
-        $this->fC1015 = $fC1015;
+        $this->_f_C5_15_ = $_f_C5_15_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2015;
+    private $_f_C10_15_;
 
     /**
      * @return string
      */
-    public function getFC2015()
+    public function get_F_C10_15_()
     {
-        return $this->fC2015;
+        return $this->_f_C10_15_;
     }
 
     /**
-     * @param string $fC2015
+     * @param string $_f_C10_15_
      */
-    public function setFC2015($fC2015)
+    public function set_F_C10_15_($_f_C10_15_)
     {
-        $this->fC2015 = $fC2015;
+        $this->_f_C10_15_ = $_f_C10_15_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5015;
+    private $_f_C20_15_;
 
     /**
      * @return string
      */
-    public function getFC5015()
+    public function get_F_C20_15_()
     {
-        return $this->fC5015;
+        return $this->_f_C20_15_;
     }
 
     /**
-     * @param string $fC5015
+     * @param string $_f_C20_15_
      */
-    public function setFC5015($fC5015)
+    public function set_F_C20_15_($_f_C20_15_)
     {
-        $this->fC5015 = $fC5015;
+        $this->_f_C20_15_ = $_f_C20_15_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC10015;
+    private $_f_C50_15_;
 
     /**
      * @return string
      */
-    public function getFC10015()
+    public function get_F_C50_15_()
     {
-        return $this->fC10015;
+        return $this->_f_C50_15_;
     }
 
     /**
-     * @param string $fC10015
+     * @param string $_f_C50_15_
      */
-    public function setFC10015($fC10015)
+    public function set_F_C50_15_($_f_C50_15_)
     {
-        $this->fC10015 = $fC10015;
+        $this->_f_C50_15_ = $_f_C50_15_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC20015;
+    private $_f_C100_15_;
 
     /**
      * @return string
      */
-    public function getFC20015()
+    public function get_F_C100_15_()
     {
-        return $this->fC20015;
+        return $this->_f_C100_15_;
     }
 
     /**
-     * @param string $fC20015
+     * @param string $_f_C100_15_
      */
-    public function setFC20015($fC20015)
+    public function set_F_C100_15_($_f_C100_15_)
     {
-        $this->fC20015 = $fC20015;
+        $this->_f_C100_15_ = $_f_C100_15_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C200_15_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C200_15_()
+    {
+        return $this->_f_C200_15_;
+    }
+
+    /**
+     * @param string $_f_C200_15_
+     */
+    public function set_F_C200_15_($_f_C200_15_)
+    {
+        $this->_f_C200_15_ = $_f_C200_15_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB16;
+    private $_f_B_16_;
 
     /**
      * @return boolean
      */
-    public function getFB16()
+    public function get_F_B_16_()
     {
-        return $this->fB16;
+        return $this->_f_B_16_;
     }
 
     /**
-     * @param boolean $fB16
+     * @param boolean $_f_B_16_
      */
-    public function setFB16($fB16)
+    public function set_F_B_16_($_f_B_16_)
     {
-        $this->fB16 = $fB16;
+        $this->_f_B_16_ = $_f_B_16_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI16;
+    private $_f_I_16_;
 
     /**
      * @return integer
      */
-    public function getFI16()
+    public function get_F_I_16_()
     {
-        return $this->fI16;
+        return $this->_f_I_16_;
     }
 
     /**
-     * @param integer $fI16
+     * @param integer $_f_I_16_
      */
-    public function setFI16($fI16)
+    public function set_F_I_16_($_f_I_16_)
     {
-        $this->fI16 = $fI16;
+        $this->_f_I_16_ = $_f_I_16_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL16;
+    private $_f_L_16_;
 
     /**
      * @return Long
      */
-    public function getFL16()
+    public function get_F_L_16_()
     {
-        return $this->fL16;
+        return $this->_f_L_16_;
     }
 
     /**
-     * @param Long $fL16
+     * @param Long $_f_L_16_
      */
-    public function setFL16($fL16)
+    public function set_F_L_16_($_f_L_16_)
     {
-        $this->fL16 = $fL16;
+        $this->_f_L_16_ = $_f_L_16_;
     }
 
     /**
      * @Type("\DateTime")
      */
-    private $fDt16;
+    private $_f_DT_16_;
 
     /**
      * @return \DateTime
      */
-    public function getFDt16()
+    public function get_F_DT_16_()
     {
-        return $this->fDt16;
+        return $this->_f_DT_16_;
     }
 
     /**
-     * @param \DateTime $fDt16
+     * @param \DateTime $_f_DT_16_
      */
-    public function setFDt16($fDt16)
+    public function set_F_DT_16_($_f_DT_16_)
     {
-        $this->fDt16 = $fDt16;
+        $this->_f_DT_16_ = $_f_DT_16_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN16;
+    private $_f_N_16_;
 
     /**
      * @return Decimal
      */
-    public function getFN16()
+    public function get_F_N_16_()
     {
-        return $this->fN16;
+        return $this->_f_N_16_;
     }
 
     /**
-     * @param Decimal $fN16
+     * @param Decimal $_f_N_16_
      */
-    public function setFN16($fN16)
+    public function set_F_N_16_($_f_N_16_)
     {
-        $this->fN16 = $fN16;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC516;
-
-    /**
-     * @return string
-     */
-    public function getFC516()
-    {
-        return $this->fC516;
-    }
-
-    /**
-     * @param string $fC516
-     */
-    public function setFC516($fC516)
-    {
-        $this->fC516 = $fC516;
+        $this->_f_N_16_ = $_f_N_16_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1016;
+    private $_f_C5_16_;
 
     /**
      * @return string
      */
-    public function getFC1016()
+    public function get_F_C5_16_()
     {
-        return $this->fC1016;
+        return $this->_f_C5_16_;
     }
 
     /**
-     * @param string $fC1016
+     * @param string $_f_C5_16_
      */
-    public function setFC1016($fC1016)
+    public function set_F_C5_16_($_f_C5_16_)
     {
-        $this->fC1016 = $fC1016;
+        $this->_f_C5_16_ = $_f_C5_16_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2016;
+    private $_f_C10_16_;
 
     /**
      * @return string
      */
-    public function getFC2016()
+    public function get_F_C10_16_()
     {
-        return $this->fC2016;
+        return $this->_f_C10_16_;
     }
 
     /**
-     * @param string $fC2016
+     * @param string $_f_C10_16_
      */
-    public function setFC2016($fC2016)
+    public function set_F_C10_16_($_f_C10_16_)
     {
-        $this->fC2016 = $fC2016;
+        $this->_f_C10_16_ = $_f_C10_16_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5016;
+    private $_f_C20_16_;
 
     /**
      * @return string
      */
-    public function getFC5016()
+    public function get_F_C20_16_()
     {
-        return $this->fC5016;
+        return $this->_f_C20_16_;
     }
 
     /**
-     * @param string $fC5016
+     * @param string $_f_C20_16_
      */
-    public function setFC5016($fC5016)
+    public function set_F_C20_16_($_f_C20_16_)
     {
-        $this->fC5016 = $fC5016;
+        $this->_f_C20_16_ = $_f_C20_16_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC10016;
+    private $_f_C50_16_;
 
     /**
      * @return string
      */
-    public function getFC10016()
+    public function get_F_C50_16_()
     {
-        return $this->fC10016;
+        return $this->_f_C50_16_;
     }
 
     /**
-     * @param string $fC10016
+     * @param string $_f_C50_16_
      */
-    public function setFC10016($fC10016)
+    public function set_F_C50_16_($_f_C50_16_)
     {
-        $this->fC10016 = $fC10016;
+        $this->_f_C50_16_ = $_f_C50_16_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC20016;
+    private $_f_C100_16_;
 
     /**
      * @return string
      */
-    public function getFC20016()
+    public function get_F_C100_16_()
     {
-        return $this->fC20016;
+        return $this->_f_C100_16_;
     }
 
     /**
-     * @param string $fC20016
+     * @param string $_f_C100_16_
      */
-    public function setFC20016($fC20016)
+    public function set_F_C100_16_($_f_C100_16_)
     {
-        $this->fC20016 = $fC20016;
+        $this->_f_C100_16_ = $_f_C100_16_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C200_16_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C200_16_()
+    {
+        return $this->_f_C200_16_;
+    }
+
+    /**
+     * @param string $_f_C200_16_
+     */
+    public function set_F_C200_16_($_f_C200_16_)
+    {
+        $this->_f_C200_16_ = $_f_C200_16_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB17;
+    private $_f_B_17_;
 
     /**
      * @return boolean
      */
-    public function getFB17()
+    public function get_F_B_17_()
     {
-        return $this->fB17;
+        return $this->_f_B_17_;
     }
 
     /**
-     * @param boolean $fB17
+     * @param boolean $_f_B_17_
      */
-    public function setFB17($fB17)
+    public function set_F_B_17_($_f_B_17_)
     {
-        $this->fB17 = $fB17;
+        $this->_f_B_17_ = $_f_B_17_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI17;
+    private $_f_I_17_;
 
     /**
      * @return integer
      */
-    public function getFI17()
+    public function get_F_I_17_()
     {
-        return $this->fI17;
+        return $this->_f_I_17_;
     }
 
     /**
-     * @param integer $fI17
+     * @param integer $_f_I_17_
      */
-    public function setFI17($fI17)
+    public function set_F_I_17_($_f_I_17_)
     {
-        $this->fI17 = $fI17;
+        $this->_f_I_17_ = $_f_I_17_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL17;
+    private $_f_L_17_;
 
     /**
      * @return Long
      */
-    public function getFL17()
+    public function get_F_L_17_()
     {
-        return $this->fL17;
+        return $this->_f_L_17_;
     }
 
     /**
-     * @param Long $fL17
+     * @param Long $_f_L_17_
      */
-    public function setFL17($fL17)
+    public function set_F_L_17_($_f_L_17_)
     {
-        $this->fL17 = $fL17;
+        $this->_f_L_17_ = $_f_L_17_;
     }
 
     /**
      * @Type("\DateTime")
      */
-    private $fDt17;
+    private $_f_DT_17_;
 
     /**
      * @return \DateTime
      */
-    public function getFDt17()
+    public function get_F_DT_17_()
     {
-        return $this->fDt17;
+        return $this->_f_DT_17_;
     }
 
     /**
-     * @param \DateTime $fDt17
+     * @param \DateTime $_f_DT_17_
      */
-    public function setFDt17($fDt17)
+    public function set_F_DT_17_($_f_DT_17_)
     {
-        $this->fDt17 = $fDt17;
+        $this->_f_DT_17_ = $_f_DT_17_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN17;
+    private $_f_N_17_;
 
     /**
      * @return Decimal
      */
-    public function getFN17()
+    public function get_F_N_17_()
     {
-        return $this->fN17;
+        return $this->_f_N_17_;
     }
 
     /**
-     * @param Decimal $fN17
+     * @param Decimal $_f_N_17_
      */
-    public function setFN17($fN17)
+    public function set_F_N_17_($_f_N_17_)
     {
-        $this->fN17 = $fN17;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC517;
-
-    /**
-     * @return string
-     */
-    public function getFC517()
-    {
-        return $this->fC517;
-    }
-
-    /**
-     * @param string $fC517
-     */
-    public function setFC517($fC517)
-    {
-        $this->fC517 = $fC517;
+        $this->_f_N_17_ = $_f_N_17_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1017;
+    private $_f_C5_17_;
 
     /**
      * @return string
      */
-    public function getFC1017()
+    public function get_F_C5_17_()
     {
-        return $this->fC1017;
+        return $this->_f_C5_17_;
     }
 
     /**
-     * @param string $fC1017
+     * @param string $_f_C5_17_
      */
-    public function setFC1017($fC1017)
+    public function set_F_C5_17_($_f_C5_17_)
     {
-        $this->fC1017 = $fC1017;
+        $this->_f_C5_17_ = $_f_C5_17_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2017;
+    private $_f_C10_17_;
 
     /**
      * @return string
      */
-    public function getFC2017()
+    public function get_F_C10_17_()
     {
-        return $this->fC2017;
+        return $this->_f_C10_17_;
     }
 
     /**
-     * @param string $fC2017
+     * @param string $_f_C10_17_
      */
-    public function setFC2017($fC2017)
+    public function set_F_C10_17_($_f_C10_17_)
     {
-        $this->fC2017 = $fC2017;
+        $this->_f_C10_17_ = $_f_C10_17_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5017;
+    private $_f_C20_17_;
 
     /**
      * @return string
      */
-    public function getFC5017()
+    public function get_F_C20_17_()
     {
-        return $this->fC5017;
+        return $this->_f_C20_17_;
     }
 
     /**
-     * @param string $fC5017
+     * @param string $_f_C20_17_
      */
-    public function setFC5017($fC5017)
+    public function set_F_C20_17_($_f_C20_17_)
     {
-        $this->fC5017 = $fC5017;
+        $this->_f_C20_17_ = $_f_C20_17_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC10017;
+    private $_f_C50_17_;
 
     /**
      * @return string
      */
-    public function getFC10017()
+    public function get_F_C50_17_()
     {
-        return $this->fC10017;
+        return $this->_f_C50_17_;
     }
 
     /**
-     * @param string $fC10017
+     * @param string $_f_C50_17_
      */
-    public function setFC10017($fC10017)
+    public function set_F_C50_17_($_f_C50_17_)
     {
-        $this->fC10017 = $fC10017;
+        $this->_f_C50_17_ = $_f_C50_17_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC20017;
+    private $_f_C100_17_;
 
     /**
      * @return string
      */
-    public function getFC20017()
+    public function get_F_C100_17_()
     {
-        return $this->fC20017;
+        return $this->_f_C100_17_;
     }
 
     /**
-     * @param string $fC20017
+     * @param string $_f_C100_17_
      */
-    public function setFC20017($fC20017)
+    public function set_F_C100_17_($_f_C100_17_)
     {
-        $this->fC20017 = $fC20017;
+        $this->_f_C100_17_ = $_f_C100_17_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C200_17_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C200_17_()
+    {
+        return $this->_f_C200_17_;
+    }
+
+    /**
+     * @param string $_f_C200_17_
+     */
+    public function set_F_C200_17_($_f_C200_17_)
+    {
+        $this->_f_C200_17_ = $_f_C200_17_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB18;
+    private $_f_B_18_;
 
     /**
      * @return boolean
      */
-    public function getFB18()
+    public function get_F_B_18_()
     {
-        return $this->fB18;
+        return $this->_f_B_18_;
     }
 
     /**
-     * @param boolean $fB18
+     * @param boolean $_f_B_18_
      */
-    public function setFB18($fB18)
+    public function set_F_B_18_($_f_B_18_)
     {
-        $this->fB18 = $fB18;
+        $this->_f_B_18_ = $_f_B_18_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI18;
+    private $_f_I_18_;
 
     /**
      * @return integer
      */
-    public function getFI18()
+    public function get_F_I_18_()
     {
-        return $this->fI18;
+        return $this->_f_I_18_;
     }
 
     /**
-     * @param integer $fI18
+     * @param integer $_f_I_18_
      */
-    public function setFI18($fI18)
+    public function set_F_I_18_($_f_I_18_)
     {
-        $this->fI18 = $fI18;
+        $this->_f_I_18_ = $_f_I_18_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL18;
+    private $_f_L_18_;
 
     /**
      * @return Long
      */
-    public function getFL18()
+    public function get_F_L_18_()
     {
-        return $this->fL18;
+        return $this->_f_L_18_;
     }
 
     /**
-     * @param Long $fL18
+     * @param Long $_f_L_18_
      */
-    public function setFL18($fL18)
+    public function set_F_L_18_($_f_L_18_)
     {
-        $this->fL18 = $fL18;
+        $this->_f_L_18_ = $_f_L_18_;
     }
 
     /**
      * @Type("\DateTime")
      */
-    private $fDt18;
+    private $_f_DT_18_;
 
     /**
      * @return \DateTime
      */
-    public function getFDt18()
+    public function get_F_DT_18_()
     {
-        return $this->fDt18;
+        return $this->_f_DT_18_;
     }
 
     /**
-     * @param \DateTime $fDt18
+     * @param \DateTime $_f_DT_18_
      */
-    public function setFDt18($fDt18)
+    public function set_F_DT_18_($_f_DT_18_)
     {
-        $this->fDt18 = $fDt18;
+        $this->_f_DT_18_ = $_f_DT_18_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN18;
+    private $_f_N_18_;
 
     /**
      * @return Decimal
      */
-    public function getFN18()
+    public function get_F_N_18_()
     {
-        return $this->fN18;
+        return $this->_f_N_18_;
     }
 
     /**
-     * @param Decimal $fN18
+     * @param Decimal $_f_N_18_
      */
-    public function setFN18($fN18)
+    public function set_F_N_18_($_f_N_18_)
     {
-        $this->fN18 = $fN18;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC518;
-
-    /**
-     * @return string
-     */
-    public function getFC518()
-    {
-        return $this->fC518;
-    }
-
-    /**
-     * @param string $fC518
-     */
-    public function setFC518($fC518)
-    {
-        $this->fC518 = $fC518;
+        $this->_f_N_18_ = $_f_N_18_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1018;
+    private $_f_C5_18_;
 
     /**
      * @return string
      */
-    public function getFC1018()
+    public function get_F_C5_18_()
     {
-        return $this->fC1018;
+        return $this->_f_C5_18_;
     }
 
     /**
-     * @param string $fC1018
+     * @param string $_f_C5_18_
      */
-    public function setFC1018($fC1018)
+    public function set_F_C5_18_($_f_C5_18_)
     {
-        $this->fC1018 = $fC1018;
+        $this->_f_C5_18_ = $_f_C5_18_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2018;
+    private $_f_C10_18_;
 
     /**
      * @return string
      */
-    public function getFC2018()
+    public function get_F_C10_18_()
     {
-        return $this->fC2018;
+        return $this->_f_C10_18_;
     }
 
     /**
-     * @param string $fC2018
+     * @param string $_f_C10_18_
      */
-    public function setFC2018($fC2018)
+    public function set_F_C10_18_($_f_C10_18_)
     {
-        $this->fC2018 = $fC2018;
+        $this->_f_C10_18_ = $_f_C10_18_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5018;
+    private $_f_C20_18_;
 
     /**
      * @return string
      */
-    public function getFC5018()
+    public function get_F_C20_18_()
     {
-        return $this->fC5018;
+        return $this->_f_C20_18_;
     }
 
     /**
-     * @param string $fC5018
+     * @param string $_f_C20_18_
      */
-    public function setFC5018($fC5018)
+    public function set_F_C20_18_($_f_C20_18_)
     {
-        $this->fC5018 = $fC5018;
+        $this->_f_C20_18_ = $_f_C20_18_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC10018;
+    private $_f_C50_18_;
 
     /**
      * @return string
      */
-    public function getFC10018()
+    public function get_F_C50_18_()
     {
-        return $this->fC10018;
+        return $this->_f_C50_18_;
     }
 
     /**
-     * @param string $fC10018
+     * @param string $_f_C50_18_
      */
-    public function setFC10018($fC10018)
+    public function set_F_C50_18_($_f_C50_18_)
     {
-        $this->fC10018 = $fC10018;
+        $this->_f_C50_18_ = $_f_C50_18_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC20018;
+    private $_f_C100_18_;
 
     /**
      * @return string
      */
-    public function getFC20018()
+    public function get_F_C100_18_()
     {
-        return $this->fC20018;
+        return $this->_f_C100_18_;
     }
 
     /**
-     * @param string $fC20018
+     * @param string $_f_C100_18_
      */
-    public function setFC20018($fC20018)
+    public function set_F_C100_18_($_f_C100_18_)
     {
-        $this->fC20018 = $fC20018;
+        $this->_f_C100_18_ = $_f_C100_18_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C200_18_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C200_18_()
+    {
+        return $this->_f_C200_18_;
+    }
+
+    /**
+     * @param string $_f_C200_18_
+     */
+    public function set_F_C200_18_($_f_C200_18_)
+    {
+        $this->_f_C200_18_ = $_f_C200_18_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB19;
+    private $_f_B_19_;
 
     /**
      * @return boolean
      */
-    public function getFB19()
+    public function get_F_B_19_()
     {
-        return $this->fB19;
+        return $this->_f_B_19_;
     }
 
     /**
-     * @param boolean $fB19
+     * @param boolean $_f_B_19_
      */
-    public function setFB19($fB19)
+    public function set_F_B_19_($_f_B_19_)
     {
-        $this->fB19 = $fB19;
+        $this->_f_B_19_ = $_f_B_19_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI19;
+    private $_f_I_19_;
 
     /**
      * @return integer
      */
-    public function getFI19()
+    public function get_F_I_19_()
     {
-        return $this->fI19;
+        return $this->_f_I_19_;
     }
 
     /**
-     * @param integer $fI19
+     * @param integer $_f_I_19_
      */
-    public function setFI19($fI19)
+    public function set_F_I_19_($_f_I_19_)
     {
-        $this->fI19 = $fI19;
+        $this->_f_I_19_ = $_f_I_19_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL19;
+    private $_f_L_19_;
 
     /**
      * @return Long
      */
-    public function getFL19()
+    public function get_F_L_19_()
     {
-        return $this->fL19;
+        return $this->_f_L_19_;
     }
 
     /**
-     * @param Long $fL19
+     * @param Long $_f_L_19_
      */
-    public function setFL19($fL19)
+    public function set_F_L_19_($_f_L_19_)
     {
-        $this->fL19 = $fL19;
+        $this->_f_L_19_ = $_f_L_19_;
     }
 
     /**
      * @Type("\DateTime")
      */
-    private $fDt19;
+    private $_f_DT_19_;
 
     /**
      * @return \DateTime
      */
-    public function getFDt19()
+    public function get_F_DT_19_()
     {
-        return $this->fDt19;
+        return $this->_f_DT_19_;
     }
 
     /**
-     * @param \DateTime $fDt19
+     * @param \DateTime $_f_DT_19_
      */
-    public function setFDt19($fDt19)
+    public function set_F_DT_19_($_f_DT_19_)
     {
-        $this->fDt19 = $fDt19;
+        $this->_f_DT_19_ = $_f_DT_19_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN19;
+    private $_f_N_19_;
 
     /**
      * @return Decimal
      */
-    public function getFN19()
+    public function get_F_N_19_()
     {
-        return $this->fN19;
+        return $this->_f_N_19_;
     }
 
     /**
-     * @param Decimal $fN19
+     * @param Decimal $_f_N_19_
      */
-    public function setFN19($fN19)
+    public function set_F_N_19_($_f_N_19_)
     {
-        $this->fN19 = $fN19;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC519;
-
-    /**
-     * @return string
-     */
-    public function getFC519()
-    {
-        return $this->fC519;
-    }
-
-    /**
-     * @param string $fC519
-     */
-    public function setFC519($fC519)
-    {
-        $this->fC519 = $fC519;
+        $this->_f_N_19_ = $_f_N_19_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1019;
+    private $_f_C5_19_;
 
     /**
      * @return string
      */
-    public function getFC1019()
+    public function get_F_C5_19_()
     {
-        return $this->fC1019;
+        return $this->_f_C5_19_;
     }
 
     /**
-     * @param string $fC1019
+     * @param string $_f_C5_19_
      */
-    public function setFC1019($fC1019)
+    public function set_F_C5_19_($_f_C5_19_)
     {
-        $this->fC1019 = $fC1019;
+        $this->_f_C5_19_ = $_f_C5_19_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2019;
+    private $_f_C10_19_;
 
     /**
      * @return string
      */
-    public function getFC2019()
+    public function get_F_C10_19_()
     {
-        return $this->fC2019;
+        return $this->_f_C10_19_;
     }
 
     /**
-     * @param string $fC2019
+     * @param string $_f_C10_19_
      */
-    public function setFC2019($fC2019)
+    public function set_F_C10_19_($_f_C10_19_)
     {
-        $this->fC2019 = $fC2019;
+        $this->_f_C10_19_ = $_f_C10_19_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5019;
+    private $_f_C20_19_;
 
     /**
      * @return string
      */
-    public function getFC5019()
+    public function get_F_C20_19_()
     {
-        return $this->fC5019;
+        return $this->_f_C20_19_;
     }
 
     /**
-     * @param string $fC5019
+     * @param string $_f_C20_19_
      */
-    public function setFC5019($fC5019)
+    public function set_F_C20_19_($_f_C20_19_)
     {
-        $this->fC5019 = $fC5019;
+        $this->_f_C20_19_ = $_f_C20_19_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC10019;
+    private $_f_C50_19_;
 
     /**
      * @return string
      */
-    public function getFC10019()
+    public function get_F_C50_19_()
     {
-        return $this->fC10019;
+        return $this->_f_C50_19_;
     }
 
     /**
-     * @param string $fC10019
+     * @param string $_f_C50_19_
      */
-    public function setFC10019($fC10019)
+    public function set_F_C50_19_($_f_C50_19_)
     {
-        $this->fC10019 = $fC10019;
+        $this->_f_C50_19_ = $_f_C50_19_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC20019;
+    private $_f_C100_19_;
 
     /**
      * @return string
      */
-    public function getFC20019()
+    public function get_F_C100_19_()
     {
-        return $this->fC20019;
+        return $this->_f_C100_19_;
     }
 
     /**
-     * @param string $fC20019
+     * @param string $_f_C100_19_
      */
-    public function setFC20019($fC20019)
+    public function set_F_C100_19_($_f_C100_19_)
     {
-        $this->fC20019 = $fC20019;
+        $this->_f_C100_19_ = $_f_C100_19_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C200_19_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C200_19_()
+    {
+        return $this->_f_C200_19_;
+    }
+
+    /**
+     * @param string $_f_C200_19_
+     */
+    public function set_F_C200_19_($_f_C200_19_)
+    {
+        $this->_f_C200_19_ = $_f_C200_19_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB20;
+    private $_f_B_20_;
 
     /**
      * @return boolean
      */
-    public function getFB20()
+    public function get_F_B_20_()
     {
-        return $this->fB20;
+        return $this->_f_B_20_;
     }
 
     /**
-     * @param boolean $fB20
+     * @param boolean $_f_B_20_
      */
-    public function setFB20($fB20)
+    public function set_F_B_20_($_f_B_20_)
     {
-        $this->fB20 = $fB20;
+        $this->_f_B_20_ = $_f_B_20_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI20;
+    private $_f_I_20_;
 
     /**
      * @return integer
      */
-    public function getFI20()
+    public function get_F_I_20_()
     {
-        return $this->fI20;
+        return $this->_f_I_20_;
     }
 
     /**
-     * @param integer $fI20
+     * @param integer $_f_I_20_
      */
-    public function setFI20($fI20)
+    public function set_F_I_20_($_f_I_20_)
     {
-        $this->fI20 = $fI20;
+        $this->_f_I_20_ = $_f_I_20_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL20;
+    private $_f_L_20_;
 
     /**
      * @return Long
      */
-    public function getFL20()
+    public function get_F_L_20_()
     {
-        return $this->fL20;
+        return $this->_f_L_20_;
     }
 
     /**
-     * @param Long $fL20
+     * @param Long $_f_L_20_
      */
-    public function setFL20($fL20)
+    public function set_F_L_20_($_f_L_20_)
     {
-        $this->fL20 = $fL20;
+        $this->_f_L_20_ = $_f_L_20_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN20;
+    private $_f_N_20_;
 
     /**
      * @return Decimal
      */
-    public function getFN20()
+    public function get_F_N_20_()
     {
-        return $this->fN20;
+        return $this->_f_N_20_;
     }
 
     /**
-     * @param Decimal $fN20
+     * @param Decimal $_f_N_20_
      */
-    public function setFN20($fN20)
+    public function set_F_N_20_($_f_N_20_)
     {
-        $this->fN20 = $fN20;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC520;
-
-    /**
-     * @return string
-     */
-    public function getFC520()
-    {
-        return $this->fC520;
-    }
-
-    /**
-     * @param string $fC520
-     */
-    public function setFC520($fC520)
-    {
-        $this->fC520 = $fC520;
+        $this->_f_N_20_ = $_f_N_20_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1020;
+    private $_f_C5_20_;
 
     /**
      * @return string
      */
-    public function getFC1020()
+    public function get_F_C5_20_()
     {
-        return $this->fC1020;
+        return $this->_f_C5_20_;
     }
 
     /**
-     * @param string $fC1020
+     * @param string $_f_C5_20_
      */
-    public function setFC1020($fC1020)
+    public function set_F_C5_20_($_f_C5_20_)
     {
-        $this->fC1020 = $fC1020;
+        $this->_f_C5_20_ = $_f_C5_20_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2020;
+    private $_f_C10_20_;
 
     /**
      * @return string
      */
-    public function getFC2020()
+    public function get_F_C10_20_()
     {
-        return $this->fC2020;
+        return $this->_f_C10_20_;
     }
 
     /**
-     * @param string $fC2020
+     * @param string $_f_C10_20_
      */
-    public function setFC2020($fC2020)
+    public function set_F_C10_20_($_f_C10_20_)
     {
-        $this->fC2020 = $fC2020;
+        $this->_f_C10_20_ = $_f_C10_20_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5020;
+    private $_f_C20_20_;
 
     /**
      * @return string
      */
-    public function getFC5020()
+    public function get_F_C20_20_()
     {
-        return $this->fC5020;
+        return $this->_f_C20_20_;
     }
 
     /**
-     * @param string $fC5020
+     * @param string $_f_C20_20_
      */
-    public function setFC5020($fC5020)
+    public function set_F_C20_20_($_f_C20_20_)
     {
-        $this->fC5020 = $fC5020;
+        $this->_f_C20_20_ = $_f_C20_20_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_20_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_20_()
+    {
+        return $this->_f_C50_20_;
+    }
+
+    /**
+     * @param string $_f_C50_20_
+     */
+    public function set_F_C50_20_($_f_C50_20_)
+    {
+        $this->_f_C50_20_ = $_f_C50_20_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB21;
+    private $_f_B_21_;
 
     /**
      * @return boolean
      */
-    public function getFB21()
+    public function get_F_B_21_()
     {
-        return $this->fB21;
+        return $this->_f_B_21_;
     }
 
     /**
-     * @param boolean $fB21
+     * @param boolean $_f_B_21_
      */
-    public function setFB21($fB21)
+    public function set_F_B_21_($_f_B_21_)
     {
-        $this->fB21 = $fB21;
+        $this->_f_B_21_ = $_f_B_21_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI21;
+    private $_f_I_21_;
 
     /**
      * @return integer
      */
-    public function getFI21()
+    public function get_F_I_21_()
     {
-        return $this->fI21;
+        return $this->_f_I_21_;
     }
 
     /**
-     * @param integer $fI21
+     * @param integer $_f_I_21_
      */
-    public function setFI21($fI21)
+    public function set_F_I_21_($_f_I_21_)
     {
-        $this->fI21 = $fI21;
+        $this->_f_I_21_ = $_f_I_21_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL21;
+    private $_f_L_21_;
 
     /**
      * @return Long
      */
-    public function getFL21()
+    public function get_F_L_21_()
     {
-        return $this->fL21;
+        return $this->_f_L_21_;
     }
 
     /**
-     * @param Long $fL21
+     * @param Long $_f_L_21_
      */
-    public function setFL21($fL21)
+    public function set_F_L_21_($_f_L_21_)
     {
-        $this->fL21 = $fL21;
+        $this->_f_L_21_ = $_f_L_21_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN21;
+    private $_f_N_21_;
 
     /**
      * @return Decimal
      */
-    public function getFN21()
+    public function get_F_N_21_()
     {
-        return $this->fN21;
+        return $this->_f_N_21_;
     }
 
     /**
-     * @param Decimal $fN21
+     * @param Decimal $_f_N_21_
      */
-    public function setFN21($fN21)
+    public function set_F_N_21_($_f_N_21_)
     {
-        $this->fN21 = $fN21;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC521;
-
-    /**
-     * @return string
-     */
-    public function getFC521()
-    {
-        return $this->fC521;
-    }
-
-    /**
-     * @param string $fC521
-     */
-    public function setFC521($fC521)
-    {
-        $this->fC521 = $fC521;
+        $this->_f_N_21_ = $_f_N_21_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1021;
+    private $_f_C5_21_;
 
     /**
      * @return string
      */
-    public function getFC1021()
+    public function get_F_C5_21_()
     {
-        return $this->fC1021;
+        return $this->_f_C5_21_;
     }
 
     /**
-     * @param string $fC1021
+     * @param string $_f_C5_21_
      */
-    public function setFC1021($fC1021)
+    public function set_F_C5_21_($_f_C5_21_)
     {
-        $this->fC1021 = $fC1021;
+        $this->_f_C5_21_ = $_f_C5_21_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2021;
+    private $_f_C10_21_;
 
     /**
      * @return string
      */
-    public function getFC2021()
+    public function get_F_C10_21_()
     {
-        return $this->fC2021;
+        return $this->_f_C10_21_;
     }
 
     /**
-     * @param string $fC2021
+     * @param string $_f_C10_21_
      */
-    public function setFC2021($fC2021)
+    public function set_F_C10_21_($_f_C10_21_)
     {
-        $this->fC2021 = $fC2021;
+        $this->_f_C10_21_ = $_f_C10_21_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5021;
+    private $_f_C20_21_;
 
     /**
      * @return string
      */
-    public function getFC5021()
+    public function get_F_C20_21_()
     {
-        return $this->fC5021;
+        return $this->_f_C20_21_;
     }
 
     /**
-     * @param string $fC5021
+     * @param string $_f_C20_21_
      */
-    public function setFC5021($fC5021)
+    public function set_F_C20_21_($_f_C20_21_)
     {
-        $this->fC5021 = $fC5021;
+        $this->_f_C20_21_ = $_f_C20_21_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_21_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_21_()
+    {
+        return $this->_f_C50_21_;
+    }
+
+    /**
+     * @param string $_f_C50_21_
+     */
+    public function set_F_C50_21_($_f_C50_21_)
+    {
+        $this->_f_C50_21_ = $_f_C50_21_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB22;
+    private $_f_B_22_;
 
     /**
      * @return boolean
      */
-    public function getFB22()
+    public function get_F_B_22_()
     {
-        return $this->fB22;
+        return $this->_f_B_22_;
     }
 
     /**
-     * @param boolean $fB22
+     * @param boolean $_f_B_22_
      */
-    public function setFB22($fB22)
+    public function set_F_B_22_($_f_B_22_)
     {
-        $this->fB22 = $fB22;
+        $this->_f_B_22_ = $_f_B_22_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI22;
+    private $_f_I_22_;
 
     /**
      * @return integer
      */
-    public function getFI22()
+    public function get_F_I_22_()
     {
-        return $this->fI22;
+        return $this->_f_I_22_;
     }
 
     /**
-     * @param integer $fI22
+     * @param integer $_f_I_22_
      */
-    public function setFI22($fI22)
+    public function set_F_I_22_($_f_I_22_)
     {
-        $this->fI22 = $fI22;
+        $this->_f_I_22_ = $_f_I_22_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL22;
+    private $_f_L_22_;
 
     /**
      * @return Long
      */
-    public function getFL22()
+    public function get_F_L_22_()
     {
-        return $this->fL22;
+        return $this->_f_L_22_;
     }
 
     /**
-     * @param Long $fL22
+     * @param Long $_f_L_22_
      */
-    public function setFL22($fL22)
+    public function set_F_L_22_($_f_L_22_)
     {
-        $this->fL22 = $fL22;
+        $this->_f_L_22_ = $_f_L_22_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN22;
+    private $_f_N_22_;
 
     /**
      * @return Decimal
      */
-    public function getFN22()
+    public function get_F_N_22_()
     {
-        return $this->fN22;
+        return $this->_f_N_22_;
     }
 
     /**
-     * @param Decimal $fN22
+     * @param Decimal $_f_N_22_
      */
-    public function setFN22($fN22)
+    public function set_F_N_22_($_f_N_22_)
     {
-        $this->fN22 = $fN22;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC522;
-
-    /**
-     * @return string
-     */
-    public function getFC522()
-    {
-        return $this->fC522;
-    }
-
-    /**
-     * @param string $fC522
-     */
-    public function setFC522($fC522)
-    {
-        $this->fC522 = $fC522;
+        $this->_f_N_22_ = $_f_N_22_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1022;
+    private $_f_C5_22_;
 
     /**
      * @return string
      */
-    public function getFC1022()
+    public function get_F_C5_22_()
     {
-        return $this->fC1022;
+        return $this->_f_C5_22_;
     }
 
     /**
-     * @param string $fC1022
+     * @param string $_f_C5_22_
      */
-    public function setFC1022($fC1022)
+    public function set_F_C5_22_($_f_C5_22_)
     {
-        $this->fC1022 = $fC1022;
+        $this->_f_C5_22_ = $_f_C5_22_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2022;
+    private $_f_C10_22_;
 
     /**
      * @return string
      */
-    public function getFC2022()
+    public function get_F_C10_22_()
     {
-        return $this->fC2022;
+        return $this->_f_C10_22_;
     }
 
     /**
-     * @param string $fC2022
+     * @param string $_f_C10_22_
      */
-    public function setFC2022($fC2022)
+    public function set_F_C10_22_($_f_C10_22_)
     {
-        $this->fC2022 = $fC2022;
+        $this->_f_C10_22_ = $_f_C10_22_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5022;
+    private $_f_C20_22_;
 
     /**
      * @return string
      */
-    public function getFC5022()
+    public function get_F_C20_22_()
     {
-        return $this->fC5022;
+        return $this->_f_C20_22_;
     }
 
     /**
-     * @param string $fC5022
+     * @param string $_f_C20_22_
      */
-    public function setFC5022($fC5022)
+    public function set_F_C20_22_($_f_C20_22_)
     {
-        $this->fC5022 = $fC5022;
+        $this->_f_C20_22_ = $_f_C20_22_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_22_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_22_()
+    {
+        return $this->_f_C50_22_;
+    }
+
+    /**
+     * @param string $_f_C50_22_
+     */
+    public function set_F_C50_22_($_f_C50_22_)
+    {
+        $this->_f_C50_22_ = $_f_C50_22_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB23;
+    private $_f_B_23_;
 
     /**
      * @return boolean
      */
-    public function getFB23()
+    public function get_F_B_23_()
     {
-        return $this->fB23;
+        return $this->_f_B_23_;
     }
 
     /**
-     * @param boolean $fB23
+     * @param boolean $_f_B_23_
      */
-    public function setFB23($fB23)
+    public function set_F_B_23_($_f_B_23_)
     {
-        $this->fB23 = $fB23;
+        $this->_f_B_23_ = $_f_B_23_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI23;
+    private $_f_I_23_;
 
     /**
      * @return integer
      */
-    public function getFI23()
+    public function get_F_I_23_()
     {
-        return $this->fI23;
+        return $this->_f_I_23_;
     }
 
     /**
-     * @param integer $fI23
+     * @param integer $_f_I_23_
      */
-    public function setFI23($fI23)
+    public function set_F_I_23_($_f_I_23_)
     {
-        $this->fI23 = $fI23;
+        $this->_f_I_23_ = $_f_I_23_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL23;
+    private $_f_L_23_;
 
     /**
      * @return Long
      */
-    public function getFL23()
+    public function get_F_L_23_()
     {
-        return $this->fL23;
+        return $this->_f_L_23_;
     }
 
     /**
-     * @param Long $fL23
+     * @param Long $_f_L_23_
      */
-    public function setFL23($fL23)
+    public function set_F_L_23_($_f_L_23_)
     {
-        $this->fL23 = $fL23;
+        $this->_f_L_23_ = $_f_L_23_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN23;
+    private $_f_N_23_;
 
     /**
      * @return Decimal
      */
-    public function getFN23()
+    public function get_F_N_23_()
     {
-        return $this->fN23;
+        return $this->_f_N_23_;
     }
 
     /**
-     * @param Decimal $fN23
+     * @param Decimal $_f_N_23_
      */
-    public function setFN23($fN23)
+    public function set_F_N_23_($_f_N_23_)
     {
-        $this->fN23 = $fN23;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC523;
-
-    /**
-     * @return string
-     */
-    public function getFC523()
-    {
-        return $this->fC523;
-    }
-
-    /**
-     * @param string $fC523
-     */
-    public function setFC523($fC523)
-    {
-        $this->fC523 = $fC523;
+        $this->_f_N_23_ = $_f_N_23_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1023;
+    private $_f_C5_23_;
 
     /**
      * @return string
      */
-    public function getFC1023()
+    public function get_F_C5_23_()
     {
-        return $this->fC1023;
+        return $this->_f_C5_23_;
     }
 
     /**
-     * @param string $fC1023
+     * @param string $_f_C5_23_
      */
-    public function setFC1023($fC1023)
+    public function set_F_C5_23_($_f_C5_23_)
     {
-        $this->fC1023 = $fC1023;
+        $this->_f_C5_23_ = $_f_C5_23_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2023;
+    private $_f_C10_23_;
 
     /**
      * @return string
      */
-    public function getFC2023()
+    public function get_F_C10_23_()
     {
-        return $this->fC2023;
+        return $this->_f_C10_23_;
     }
 
     /**
-     * @param string $fC2023
+     * @param string $_f_C10_23_
      */
-    public function setFC2023($fC2023)
+    public function set_F_C10_23_($_f_C10_23_)
     {
-        $this->fC2023 = $fC2023;
+        $this->_f_C10_23_ = $_f_C10_23_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5023;
+    private $_f_C20_23_;
 
     /**
      * @return string
      */
-    public function getFC5023()
+    public function get_F_C20_23_()
     {
-        return $this->fC5023;
+        return $this->_f_C20_23_;
     }
 
     /**
-     * @param string $fC5023
+     * @param string $_f_C20_23_
      */
-    public function setFC5023($fC5023)
+    public function set_F_C20_23_($_f_C20_23_)
     {
-        $this->fC5023 = $fC5023;
+        $this->_f_C20_23_ = $_f_C20_23_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_23_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_23_()
+    {
+        return $this->_f_C50_23_;
+    }
+
+    /**
+     * @param string $_f_C50_23_
+     */
+    public function set_F_C50_23_($_f_C50_23_)
+    {
+        $this->_f_C50_23_ = $_f_C50_23_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB24;
+    private $_f_B_24_;
 
     /**
      * @return boolean
      */
-    public function getFB24()
+    public function get_F_B_24_()
     {
-        return $this->fB24;
+        return $this->_f_B_24_;
     }
 
     /**
-     * @param boolean $fB24
+     * @param boolean $_f_B_24_
      */
-    public function setFB24($fB24)
+    public function set_F_B_24_($_f_B_24_)
     {
-        $this->fB24 = $fB24;
+        $this->_f_B_24_ = $_f_B_24_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI24;
+    private $_f_I_24_;
 
     /**
      * @return integer
      */
-    public function getFI24()
+    public function get_F_I_24_()
     {
-        return $this->fI24;
+        return $this->_f_I_24_;
     }
 
     /**
-     * @param integer $fI24
+     * @param integer $_f_I_24_
      */
-    public function setFI24($fI24)
+    public function set_F_I_24_($_f_I_24_)
     {
-        $this->fI24 = $fI24;
+        $this->_f_I_24_ = $_f_I_24_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL24;
+    private $_f_L_24_;
 
     /**
      * @return Long
      */
-    public function getFL24()
+    public function get_F_L_24_()
     {
-        return $this->fL24;
+        return $this->_f_L_24_;
     }
 
     /**
-     * @param Long $fL24
+     * @param Long $_f_L_24_
      */
-    public function setFL24($fL24)
+    public function set_F_L_24_($_f_L_24_)
     {
-        $this->fL24 = $fL24;
+        $this->_f_L_24_ = $_f_L_24_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN24;
+    private $_f_N_24_;
 
     /**
      * @return Decimal
      */
-    public function getFN24()
+    public function get_F_N_24_()
     {
-        return $this->fN24;
+        return $this->_f_N_24_;
     }
 
     /**
-     * @param Decimal $fN24
+     * @param Decimal $_f_N_24_
      */
-    public function setFN24($fN24)
+    public function set_F_N_24_($_f_N_24_)
     {
-        $this->fN24 = $fN24;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC524;
-
-    /**
-     * @return string
-     */
-    public function getFC524()
-    {
-        return $this->fC524;
-    }
-
-    /**
-     * @param string $fC524
-     */
-    public function setFC524($fC524)
-    {
-        $this->fC524 = $fC524;
+        $this->_f_N_24_ = $_f_N_24_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1024;
+    private $_f_C5_24_;
 
     /**
      * @return string
      */
-    public function getFC1024()
+    public function get_F_C5_24_()
     {
-        return $this->fC1024;
+        return $this->_f_C5_24_;
     }
 
     /**
-     * @param string $fC1024
+     * @param string $_f_C5_24_
      */
-    public function setFC1024($fC1024)
+    public function set_F_C5_24_($_f_C5_24_)
     {
-        $this->fC1024 = $fC1024;
+        $this->_f_C5_24_ = $_f_C5_24_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2024;
+    private $_f_C10_24_;
 
     /**
      * @return string
      */
-    public function getFC2024()
+    public function get_F_C10_24_()
     {
-        return $this->fC2024;
+        return $this->_f_C10_24_;
     }
 
     /**
-     * @param string $fC2024
+     * @param string $_f_C10_24_
      */
-    public function setFC2024($fC2024)
+    public function set_F_C10_24_($_f_C10_24_)
     {
-        $this->fC2024 = $fC2024;
+        $this->_f_C10_24_ = $_f_C10_24_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5024;
+    private $_f_C20_24_;
 
     /**
      * @return string
      */
-    public function getFC5024()
+    public function get_F_C20_24_()
     {
-        return $this->fC5024;
+        return $this->_f_C20_24_;
     }
 
     /**
-     * @param string $fC5024
+     * @param string $_f_C20_24_
      */
-    public function setFC5024($fC5024)
+    public function set_F_C20_24_($_f_C20_24_)
     {
-        $this->fC5024 = $fC5024;
+        $this->_f_C20_24_ = $_f_C20_24_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_24_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_24_()
+    {
+        return $this->_f_C50_24_;
+    }
+
+    /**
+     * @param string $_f_C50_24_
+     */
+    public function set_F_C50_24_($_f_C50_24_)
+    {
+        $this->_f_C50_24_ = $_f_C50_24_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB25;
+    private $_f_B_25_;
 
     /**
      * @return boolean
      */
-    public function getFB25()
+    public function get_F_B_25_()
     {
-        return $this->fB25;
+        return $this->_f_B_25_;
     }
 
     /**
-     * @param boolean $fB25
+     * @param boolean $_f_B_25_
      */
-    public function setFB25($fB25)
+    public function set_F_B_25_($_f_B_25_)
     {
-        $this->fB25 = $fB25;
+        $this->_f_B_25_ = $_f_B_25_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI25;
+    private $_f_I_25_;
 
     /**
      * @return integer
      */
-    public function getFI25()
+    public function get_F_I_25_()
     {
-        return $this->fI25;
+        return $this->_f_I_25_;
     }
 
     /**
-     * @param integer $fI25
+     * @param integer $_f_I_25_
      */
-    public function setFI25($fI25)
+    public function set_F_I_25_($_f_I_25_)
     {
-        $this->fI25 = $fI25;
+        $this->_f_I_25_ = $_f_I_25_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL25;
+    private $_f_L_25_;
 
     /**
      * @return Long
      */
-    public function getFL25()
+    public function get_F_L_25_()
     {
-        return $this->fL25;
+        return $this->_f_L_25_;
     }
 
     /**
-     * @param Long $fL25
+     * @param Long $_f_L_25_
      */
-    public function setFL25($fL25)
+    public function set_F_L_25_($_f_L_25_)
     {
-        $this->fL25 = $fL25;
+        $this->_f_L_25_ = $_f_L_25_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN25;
+    private $_f_N_25_;
 
     /**
      * @return Decimal
      */
-    public function getFN25()
+    public function get_F_N_25_()
     {
-        return $this->fN25;
+        return $this->_f_N_25_;
     }
 
     /**
-     * @param Decimal $fN25
+     * @param Decimal $_f_N_25_
      */
-    public function setFN25($fN25)
+    public function set_F_N_25_($_f_N_25_)
     {
-        $this->fN25 = $fN25;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC525;
-
-    /**
-     * @return string
-     */
-    public function getFC525()
-    {
-        return $this->fC525;
-    }
-
-    /**
-     * @param string $fC525
-     */
-    public function setFC525($fC525)
-    {
-        $this->fC525 = $fC525;
+        $this->_f_N_25_ = $_f_N_25_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1025;
+    private $_f_C5_25_;
 
     /**
      * @return string
      */
-    public function getFC1025()
+    public function get_F_C5_25_()
     {
-        return $this->fC1025;
+        return $this->_f_C5_25_;
     }
 
     /**
-     * @param string $fC1025
+     * @param string $_f_C5_25_
      */
-    public function setFC1025($fC1025)
+    public function set_F_C5_25_($_f_C5_25_)
     {
-        $this->fC1025 = $fC1025;
+        $this->_f_C5_25_ = $_f_C5_25_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2025;
+    private $_f_C10_25_;
 
     /**
      * @return string
      */
-    public function getFC2025()
+    public function get_F_C10_25_()
     {
-        return $this->fC2025;
+        return $this->_f_C10_25_;
     }
 
     /**
-     * @param string $fC2025
+     * @param string $_f_C10_25_
      */
-    public function setFC2025($fC2025)
+    public function set_F_C10_25_($_f_C10_25_)
     {
-        $this->fC2025 = $fC2025;
+        $this->_f_C10_25_ = $_f_C10_25_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5025;
+    private $_f_C20_25_;
 
     /**
      * @return string
      */
-    public function getFC5025()
+    public function get_F_C20_25_()
     {
-        return $this->fC5025;
+        return $this->_f_C20_25_;
     }
 
     /**
-     * @param string $fC5025
+     * @param string $_f_C20_25_
      */
-    public function setFC5025($fC5025)
+    public function set_F_C20_25_($_f_C20_25_)
     {
-        $this->fC5025 = $fC5025;
+        $this->_f_C20_25_ = $_f_C20_25_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_25_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_25_()
+    {
+        return $this->_f_C50_25_;
+    }
+
+    /**
+     * @param string $_f_C50_25_
+     */
+    public function set_F_C50_25_($_f_C50_25_)
+    {
+        $this->_f_C50_25_ = $_f_C50_25_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB26;
+    private $_f_B_26_;
 
     /**
      * @return boolean
      */
-    public function getFB26()
+    public function get_F_B_26_()
     {
-        return $this->fB26;
+        return $this->_f_B_26_;
     }
 
     /**
-     * @param boolean $fB26
+     * @param boolean $_f_B_26_
      */
-    public function setFB26($fB26)
+    public function set_F_B_26_($_f_B_26_)
     {
-        $this->fB26 = $fB26;
+        $this->_f_B_26_ = $_f_B_26_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI26;
+    private $_f_I_26_;
 
     /**
      * @return integer
      */
-    public function getFI26()
+    public function get_F_I_26_()
     {
-        return $this->fI26;
+        return $this->_f_I_26_;
     }
 
     /**
-     * @param integer $fI26
+     * @param integer $_f_I_26_
      */
-    public function setFI26($fI26)
+    public function set_F_I_26_($_f_I_26_)
     {
-        $this->fI26 = $fI26;
+        $this->_f_I_26_ = $_f_I_26_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL26;
+    private $_f_L_26_;
 
     /**
      * @return Long
      */
-    public function getFL26()
+    public function get_F_L_26_()
     {
-        return $this->fL26;
+        return $this->_f_L_26_;
     }
 
     /**
-     * @param Long $fL26
+     * @param Long $_f_L_26_
      */
-    public function setFL26($fL26)
+    public function set_F_L_26_($_f_L_26_)
     {
-        $this->fL26 = $fL26;
+        $this->_f_L_26_ = $_f_L_26_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN26;
+    private $_f_N_26_;
 
     /**
      * @return Decimal
      */
-    public function getFN26()
+    public function get_F_N_26_()
     {
-        return $this->fN26;
+        return $this->_f_N_26_;
     }
 
     /**
-     * @param Decimal $fN26
+     * @param Decimal $_f_N_26_
      */
-    public function setFN26($fN26)
+    public function set_F_N_26_($_f_N_26_)
     {
-        $this->fN26 = $fN26;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC526;
-
-    /**
-     * @return string
-     */
-    public function getFC526()
-    {
-        return $this->fC526;
-    }
-
-    /**
-     * @param string $fC526
-     */
-    public function setFC526($fC526)
-    {
-        $this->fC526 = $fC526;
+        $this->_f_N_26_ = $_f_N_26_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1026;
+    private $_f_C5_26_;
 
     /**
      * @return string
      */
-    public function getFC1026()
+    public function get_F_C5_26_()
     {
-        return $this->fC1026;
+        return $this->_f_C5_26_;
     }
 
     /**
-     * @param string $fC1026
+     * @param string $_f_C5_26_
      */
-    public function setFC1026($fC1026)
+    public function set_F_C5_26_($_f_C5_26_)
     {
-        $this->fC1026 = $fC1026;
+        $this->_f_C5_26_ = $_f_C5_26_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2026;
+    private $_f_C10_26_;
 
     /**
      * @return string
      */
-    public function getFC2026()
+    public function get_F_C10_26_()
     {
-        return $this->fC2026;
+        return $this->_f_C10_26_;
     }
 
     /**
-     * @param string $fC2026
+     * @param string $_f_C10_26_
      */
-    public function setFC2026($fC2026)
+    public function set_F_C10_26_($_f_C10_26_)
     {
-        $this->fC2026 = $fC2026;
+        $this->_f_C10_26_ = $_f_C10_26_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5026;
+    private $_f_C20_26_;
 
     /**
      * @return string
      */
-    public function getFC5026()
+    public function get_F_C20_26_()
     {
-        return $this->fC5026;
+        return $this->_f_C20_26_;
     }
 
     /**
-     * @param string $fC5026
+     * @param string $_f_C20_26_
      */
-    public function setFC5026($fC5026)
+    public function set_F_C20_26_($_f_C20_26_)
     {
-        $this->fC5026 = $fC5026;
+        $this->_f_C20_26_ = $_f_C20_26_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_26_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_26_()
+    {
+        return $this->_f_C50_26_;
+    }
+
+    /**
+     * @param string $_f_C50_26_
+     */
+    public function set_F_C50_26_($_f_C50_26_)
+    {
+        $this->_f_C50_26_ = $_f_C50_26_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB27;
+    private $_f_B_27_;
 
     /**
      * @return boolean
      */
-    public function getFB27()
+    public function get_F_B_27_()
     {
-        return $this->fB27;
+        return $this->_f_B_27_;
     }
 
     /**
-     * @param boolean $fB27
+     * @param boolean $_f_B_27_
      */
-    public function setFB27($fB27)
+    public function set_F_B_27_($_f_B_27_)
     {
-        $this->fB27 = $fB27;
+        $this->_f_B_27_ = $_f_B_27_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI27;
+    private $_f_I_27_;
 
     /**
      * @return integer
      */
-    public function getFI27()
+    public function get_F_I_27_()
     {
-        return $this->fI27;
+        return $this->_f_I_27_;
     }
 
     /**
-     * @param integer $fI27
+     * @param integer $_f_I_27_
      */
-    public function setFI27($fI27)
+    public function set_F_I_27_($_f_I_27_)
     {
-        $this->fI27 = $fI27;
+        $this->_f_I_27_ = $_f_I_27_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL27;
+    private $_f_L_27_;
 
     /**
      * @return Long
      */
-    public function getFL27()
+    public function get_F_L_27_()
     {
-        return $this->fL27;
+        return $this->_f_L_27_;
     }
 
     /**
-     * @param Long $fL27
+     * @param Long $_f_L_27_
      */
-    public function setFL27($fL27)
+    public function set_F_L_27_($_f_L_27_)
     {
-        $this->fL27 = $fL27;
+        $this->_f_L_27_ = $_f_L_27_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN27;
+    private $_f_N_27_;
 
     /**
      * @return Decimal
      */
-    public function getFN27()
+    public function get_F_N_27_()
     {
-        return $this->fN27;
+        return $this->_f_N_27_;
     }
 
     /**
-     * @param Decimal $fN27
+     * @param Decimal $_f_N_27_
      */
-    public function setFN27($fN27)
+    public function set_F_N_27_($_f_N_27_)
     {
-        $this->fN27 = $fN27;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC527;
-
-    /**
-     * @return string
-     */
-    public function getFC527()
-    {
-        return $this->fC527;
-    }
-
-    /**
-     * @param string $fC527
-     */
-    public function setFC527($fC527)
-    {
-        $this->fC527 = $fC527;
+        $this->_f_N_27_ = $_f_N_27_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1027;
+    private $_f_C5_27_;
 
     /**
      * @return string
      */
-    public function getFC1027()
+    public function get_F_C5_27_()
     {
-        return $this->fC1027;
+        return $this->_f_C5_27_;
     }
 
     /**
-     * @param string $fC1027
+     * @param string $_f_C5_27_
      */
-    public function setFC1027($fC1027)
+    public function set_F_C5_27_($_f_C5_27_)
     {
-        $this->fC1027 = $fC1027;
+        $this->_f_C5_27_ = $_f_C5_27_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2027;
+    private $_f_C10_27_;
 
     /**
      * @return string
      */
-    public function getFC2027()
+    public function get_F_C10_27_()
     {
-        return $this->fC2027;
+        return $this->_f_C10_27_;
     }
 
     /**
-     * @param string $fC2027
+     * @param string $_f_C10_27_
      */
-    public function setFC2027($fC2027)
+    public function set_F_C10_27_($_f_C10_27_)
     {
-        $this->fC2027 = $fC2027;
+        $this->_f_C10_27_ = $_f_C10_27_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5027;
+    private $_f_C20_27_;
 
     /**
      * @return string
      */
-    public function getFC5027()
+    public function get_F_C20_27_()
     {
-        return $this->fC5027;
+        return $this->_f_C20_27_;
     }
 
     /**
-     * @param string $fC5027
+     * @param string $_f_C20_27_
      */
-    public function setFC5027($fC5027)
+    public function set_F_C20_27_($_f_C20_27_)
     {
-        $this->fC5027 = $fC5027;
+        $this->_f_C20_27_ = $_f_C20_27_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_27_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_27_()
+    {
+        return $this->_f_C50_27_;
+    }
+
+    /**
+     * @param string $_f_C50_27_
+     */
+    public function set_F_C50_27_($_f_C50_27_)
+    {
+        $this->_f_C50_27_ = $_f_C50_27_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB28;
+    private $_f_B_28_;
 
     /**
      * @return boolean
      */
-    public function getFB28()
+    public function get_F_B_28_()
     {
-        return $this->fB28;
+        return $this->_f_B_28_;
     }
 
     /**
-     * @param boolean $fB28
+     * @param boolean $_f_B_28_
      */
-    public function setFB28($fB28)
+    public function set_F_B_28_($_f_B_28_)
     {
-        $this->fB28 = $fB28;
+        $this->_f_B_28_ = $_f_B_28_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI28;
+    private $_f_I_28_;
 
     /**
      * @return integer
      */
-    public function getFI28()
+    public function get_F_I_28_()
     {
-        return $this->fI28;
+        return $this->_f_I_28_;
     }
 
     /**
-     * @param integer $fI28
+     * @param integer $_f_I_28_
      */
-    public function setFI28($fI28)
+    public function set_F_I_28_($_f_I_28_)
     {
-        $this->fI28 = $fI28;
+        $this->_f_I_28_ = $_f_I_28_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL28;
+    private $_f_L_28_;
 
     /**
      * @return Long
      */
-    public function getFL28()
+    public function get_F_L_28_()
     {
-        return $this->fL28;
+        return $this->_f_L_28_;
     }
 
     /**
-     * @param Long $fL28
+     * @param Long $_f_L_28_
      */
-    public function setFL28($fL28)
+    public function set_F_L_28_($_f_L_28_)
     {
-        $this->fL28 = $fL28;
+        $this->_f_L_28_ = $_f_L_28_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN28;
+    private $_f_N_28_;
 
     /**
      * @return Decimal
      */
-    public function getFN28()
+    public function get_F_N_28_()
     {
-        return $this->fN28;
+        return $this->_f_N_28_;
     }
 
     /**
-     * @param Decimal $fN28
+     * @param Decimal $_f_N_28_
      */
-    public function setFN28($fN28)
+    public function set_F_N_28_($_f_N_28_)
     {
-        $this->fN28 = $fN28;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC528;
-
-    /**
-     * @return string
-     */
-    public function getFC528()
-    {
-        return $this->fC528;
-    }
-
-    /**
-     * @param string $fC528
-     */
-    public function setFC528($fC528)
-    {
-        $this->fC528 = $fC528;
+        $this->_f_N_28_ = $_f_N_28_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1028;
+    private $_f_C5_28_;
 
     /**
      * @return string
      */
-    public function getFC1028()
+    public function get_F_C5_28_()
     {
-        return $this->fC1028;
+        return $this->_f_C5_28_;
     }
 
     /**
-     * @param string $fC1028
+     * @param string $_f_C5_28_
      */
-    public function setFC1028($fC1028)
+    public function set_F_C5_28_($_f_C5_28_)
     {
-        $this->fC1028 = $fC1028;
+        $this->_f_C5_28_ = $_f_C5_28_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2028;
+    private $_f_C10_28_;
 
     /**
      * @return string
      */
-    public function getFC2028()
+    public function get_F_C10_28_()
     {
-        return $this->fC2028;
+        return $this->_f_C10_28_;
     }
 
     /**
-     * @param string $fC2028
+     * @param string $_f_C10_28_
      */
-    public function setFC2028($fC2028)
+    public function set_F_C10_28_($_f_C10_28_)
     {
-        $this->fC2028 = $fC2028;
+        $this->_f_C10_28_ = $_f_C10_28_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5028;
+    private $_f_C20_28_;
 
     /**
      * @return string
      */
-    public function getFC5028()
+    public function get_F_C20_28_()
     {
-        return $this->fC5028;
+        return $this->_f_C20_28_;
     }
 
     /**
-     * @param string $fC5028
+     * @param string $_f_C20_28_
      */
-    public function setFC5028($fC5028)
+    public function set_F_C20_28_($_f_C20_28_)
     {
-        $this->fC5028 = $fC5028;
+        $this->_f_C20_28_ = $_f_C20_28_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_28_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_28_()
+    {
+        return $this->_f_C50_28_;
+    }
+
+    /**
+     * @param string $_f_C50_28_
+     */
+    public function set_F_C50_28_($_f_C50_28_)
+    {
+        $this->_f_C50_28_ = $_f_C50_28_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB29;
+    private $_f_B_29_;
 
     /**
      * @return boolean
      */
-    public function getFB29()
+    public function get_F_B_29_()
     {
-        return $this->fB29;
+        return $this->_f_B_29_;
     }
 
     /**
-     * @param boolean $fB29
+     * @param boolean $_f_B_29_
      */
-    public function setFB29($fB29)
+    public function set_F_B_29_($_f_B_29_)
     {
-        $this->fB29 = $fB29;
+        $this->_f_B_29_ = $_f_B_29_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI29;
+    private $_f_I_29_;
 
     /**
      * @return integer
      */
-    public function getFI29()
+    public function get_F_I_29_()
     {
-        return $this->fI29;
+        return $this->_f_I_29_;
     }
 
     /**
-     * @param integer $fI29
+     * @param integer $_f_I_29_
      */
-    public function setFI29($fI29)
+    public function set_F_I_29_($_f_I_29_)
     {
-        $this->fI29 = $fI29;
+        $this->_f_I_29_ = $_f_I_29_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Long")
      */
-    private $fL29;
+    private $_f_L_29_;
 
     /**
      * @return Long
      */
-    public function getFL29()
+    public function get_F_L_29_()
     {
-        return $this->fL29;
+        return $this->_f_L_29_;
     }
 
     /**
-     * @param Long $fL29
+     * @param Long $_f_L_29_
      */
-    public function setFL29($fL29)
+    public function set_F_L_29_($_f_L_29_)
     {
-        $this->fL29 = $fL29;
+        $this->_f_L_29_ = $_f_L_29_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN29;
+    private $_f_N_29_;
 
     /**
      * @return Decimal
      */
-    public function getFN29()
+    public function get_F_N_29_()
     {
-        return $this->fN29;
+        return $this->_f_N_29_;
     }
 
     /**
-     * @param Decimal $fN29
+     * @param Decimal $_f_N_29_
      */
-    public function setFN29($fN29)
+    public function set_F_N_29_($_f_N_29_)
     {
-        $this->fN29 = $fN29;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC529;
-
-    /**
-     * @return string
-     */
-    public function getFC529()
-    {
-        return $this->fC529;
-    }
-
-    /**
-     * @param string $fC529
-     */
-    public function setFC529($fC529)
-    {
-        $this->fC529 = $fC529;
+        $this->_f_N_29_ = $_f_N_29_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1029;
+    private $_f_C5_29_;
 
     /**
      * @return string
      */
-    public function getFC1029()
+    public function get_F_C5_29_()
     {
-        return $this->fC1029;
+        return $this->_f_C5_29_;
     }
 
     /**
-     * @param string $fC1029
+     * @param string $_f_C5_29_
      */
-    public function setFC1029($fC1029)
+    public function set_F_C5_29_($_f_C5_29_)
     {
-        $this->fC1029 = $fC1029;
+        $this->_f_C5_29_ = $_f_C5_29_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2029;
+    private $_f_C10_29_;
 
     /**
      * @return string
      */
-    public function getFC2029()
+    public function get_F_C10_29_()
     {
-        return $this->fC2029;
+        return $this->_f_C10_29_;
     }
 
     /**
-     * @param string $fC2029
+     * @param string $_f_C10_29_
      */
-    public function setFC2029($fC2029)
+    public function set_F_C10_29_($_f_C10_29_)
     {
-        $this->fC2029 = $fC2029;
+        $this->_f_C10_29_ = $_f_C10_29_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5029;
+    private $_f_C20_29_;
 
     /**
      * @return string
      */
-    public function getFC5029()
+    public function get_F_C20_29_()
     {
-        return $this->fC5029;
+        return $this->_f_C20_29_;
     }
 
     /**
-     * @param string $fC5029
+     * @param string $_f_C20_29_
      */
-    public function setFC5029($fC5029)
+    public function set_F_C20_29_($_f_C20_29_)
     {
-        $this->fC5029 = $fC5029;
+        $this->_f_C20_29_ = $_f_C20_29_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_29_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_29_()
+    {
+        return $this->_f_C50_29_;
+    }
+
+    /**
+     * @param string $_f_C50_29_
+     */
+    public function set_F_C50_29_($_f_C50_29_)
+    {
+        $this->_f_C50_29_ = $_f_C50_29_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB30;
+    private $_f_B_30_;
 
     /**
      * @return boolean
      */
-    public function getFB30()
+    public function get_F_B_30_()
     {
-        return $this->fB30;
+        return $this->_f_B_30_;
     }
 
     /**
-     * @param boolean $fB30
+     * @param boolean $_f_B_30_
      */
-    public function setFB30($fB30)
+    public function set_F_B_30_($_f_B_30_)
     {
-        $this->fB30 = $fB30;
+        $this->_f_B_30_ = $_f_B_30_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI30;
+    private $_f_I_30_;
 
     /**
      * @return integer
      */
-    public function getFI30()
+    public function get_F_I_30_()
     {
-        return $this->fI30;
+        return $this->_f_I_30_;
     }
 
     /**
-     * @param integer $fI30
+     * @param integer $_f_I_30_
      */
-    public function setFI30($fI30)
+    public function set_F_I_30_($_f_I_30_)
     {
-        $this->fI30 = $fI30;
+        $this->_f_I_30_ = $_f_I_30_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN30;
+    private $_f_N_30_;
 
     /**
      * @return Decimal
      */
-    public function getFN30()
+    public function get_F_N_30_()
     {
-        return $this->fN30;
+        return $this->_f_N_30_;
     }
 
     /**
-     * @param Decimal $fN30
+     * @param Decimal $_f_N_30_
      */
-    public function setFN30($fN30)
+    public function set_F_N_30_($_f_N_30_)
     {
-        $this->fN30 = $fN30;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC530;
-
-    /**
-     * @return string
-     */
-    public function getFC530()
-    {
-        return $this->fC530;
-    }
-
-    /**
-     * @param string $fC530
-     */
-    public function setFC530($fC530)
-    {
-        $this->fC530 = $fC530;
+        $this->_f_N_30_ = $_f_N_30_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1030;
+    private $_f_C5_30_;
 
     /**
      * @return string
      */
-    public function getFC1030()
+    public function get_F_C5_30_()
     {
-        return $this->fC1030;
+        return $this->_f_C5_30_;
     }
 
     /**
-     * @param string $fC1030
+     * @param string $_f_C5_30_
      */
-    public function setFC1030($fC1030)
+    public function set_F_C5_30_($_f_C5_30_)
     {
-        $this->fC1030 = $fC1030;
+        $this->_f_C5_30_ = $_f_C5_30_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2030;
+    private $_f_C10_30_;
 
     /**
      * @return string
      */
-    public function getFC2030()
+    public function get_F_C10_30_()
     {
-        return $this->fC2030;
+        return $this->_f_C10_30_;
     }
 
     /**
-     * @param string $fC2030
+     * @param string $_f_C10_30_
      */
-    public function setFC2030($fC2030)
+    public function set_F_C10_30_($_f_C10_30_)
     {
-        $this->fC2030 = $fC2030;
+        $this->_f_C10_30_ = $_f_C10_30_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5030;
+    private $_f_C20_30_;
 
     /**
      * @return string
      */
-    public function getFC5030()
+    public function get_F_C20_30_()
     {
-        return $this->fC5030;
+        return $this->_f_C20_30_;
     }
 
     /**
-     * @param string $fC5030
+     * @param string $_f_C20_30_
      */
-    public function setFC5030($fC5030)
+    public function set_F_C20_30_($_f_C20_30_)
     {
-        $this->fC5030 = $fC5030;
+        $this->_f_C20_30_ = $_f_C20_30_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_30_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_30_()
+    {
+        return $this->_f_C50_30_;
+    }
+
+    /**
+     * @param string $_f_C50_30_
+     */
+    public function set_F_C50_30_($_f_C50_30_)
+    {
+        $this->_f_C50_30_ = $_f_C50_30_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB31;
+    private $_f_B_31_;
 
     /**
      * @return boolean
      */
-    public function getFB31()
+    public function get_F_B_31_()
     {
-        return $this->fB31;
+        return $this->_f_B_31_;
     }
 
     /**
-     * @param boolean $fB31
+     * @param boolean $_f_B_31_
      */
-    public function setFB31($fB31)
+    public function set_F_B_31_($_f_B_31_)
     {
-        $this->fB31 = $fB31;
+        $this->_f_B_31_ = $_f_B_31_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI31;
+    private $_f_I_31_;
 
     /**
      * @return integer
      */
-    public function getFI31()
+    public function get_F_I_31_()
     {
-        return $this->fI31;
+        return $this->_f_I_31_;
     }
 
     /**
-     * @param integer $fI31
+     * @param integer $_f_I_31_
      */
-    public function setFI31($fI31)
+    public function set_F_I_31_($_f_I_31_)
     {
-        $this->fI31 = $fI31;
+        $this->_f_I_31_ = $_f_I_31_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN31;
+    private $_f_N_31_;
 
     /**
      * @return Decimal
      */
-    public function getFN31()
+    public function get_F_N_31_()
     {
-        return $this->fN31;
+        return $this->_f_N_31_;
     }
 
     /**
-     * @param Decimal $fN31
+     * @param Decimal $_f_N_31_
      */
-    public function setFN31($fN31)
+    public function set_F_N_31_($_f_N_31_)
     {
-        $this->fN31 = $fN31;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC531;
-
-    /**
-     * @return string
-     */
-    public function getFC531()
-    {
-        return $this->fC531;
-    }
-
-    /**
-     * @param string $fC531
-     */
-    public function setFC531($fC531)
-    {
-        $this->fC531 = $fC531;
+        $this->_f_N_31_ = $_f_N_31_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1031;
+    private $_f_C5_31_;
 
     /**
      * @return string
      */
-    public function getFC1031()
+    public function get_F_C5_31_()
     {
-        return $this->fC1031;
+        return $this->_f_C5_31_;
     }
 
     /**
-     * @param string $fC1031
+     * @param string $_f_C5_31_
      */
-    public function setFC1031($fC1031)
+    public function set_F_C5_31_($_f_C5_31_)
     {
-        $this->fC1031 = $fC1031;
+        $this->_f_C5_31_ = $_f_C5_31_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2031;
+    private $_f_C10_31_;
 
     /**
      * @return string
      */
-    public function getFC2031()
+    public function get_F_C10_31_()
     {
-        return $this->fC2031;
+        return $this->_f_C10_31_;
     }
 
     /**
-     * @param string $fC2031
+     * @param string $_f_C10_31_
      */
-    public function setFC2031($fC2031)
+    public function set_F_C10_31_($_f_C10_31_)
     {
-        $this->fC2031 = $fC2031;
+        $this->_f_C10_31_ = $_f_C10_31_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5031;
+    private $_f_C20_31_;
 
     /**
      * @return string
      */
-    public function getFC5031()
+    public function get_F_C20_31_()
     {
-        return $this->fC5031;
+        return $this->_f_C20_31_;
     }
 
     /**
-     * @param string $fC5031
+     * @param string $_f_C20_31_
      */
-    public function setFC5031($fC5031)
+    public function set_F_C20_31_($_f_C20_31_)
     {
-        $this->fC5031 = $fC5031;
+        $this->_f_C20_31_ = $_f_C20_31_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_31_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_31_()
+    {
+        return $this->_f_C50_31_;
+    }
+
+    /**
+     * @param string $_f_C50_31_
+     */
+    public function set_F_C50_31_($_f_C50_31_)
+    {
+        $this->_f_C50_31_ = $_f_C50_31_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB32;
+    private $_f_B_32_;
 
     /**
      * @return boolean
      */
-    public function getFB32()
+    public function get_F_B_32_()
     {
-        return $this->fB32;
+        return $this->_f_B_32_;
     }
 
     /**
-     * @param boolean $fB32
+     * @param boolean $_f_B_32_
      */
-    public function setFB32($fB32)
+    public function set_F_B_32_($_f_B_32_)
     {
-        $this->fB32 = $fB32;
+        $this->_f_B_32_ = $_f_B_32_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI32;
+    private $_f_I_32_;
 
     /**
      * @return integer
      */
-    public function getFI32()
+    public function get_F_I_32_()
     {
-        return $this->fI32;
+        return $this->_f_I_32_;
     }
 
     /**
-     * @param integer $fI32
+     * @param integer $_f_I_32_
      */
-    public function setFI32($fI32)
+    public function set_F_I_32_($_f_I_32_)
     {
-        $this->fI32 = $fI32;
+        $this->_f_I_32_ = $_f_I_32_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN32;
+    private $_f_N_32_;
 
     /**
      * @return Decimal
      */
-    public function getFN32()
+    public function get_F_N_32_()
     {
-        return $this->fN32;
+        return $this->_f_N_32_;
     }
 
     /**
-     * @param Decimal $fN32
+     * @param Decimal $_f_N_32_
      */
-    public function setFN32($fN32)
+    public function set_F_N_32_($_f_N_32_)
     {
-        $this->fN32 = $fN32;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC532;
-
-    /**
-     * @return string
-     */
-    public function getFC532()
-    {
-        return $this->fC532;
-    }
-
-    /**
-     * @param string $fC532
-     */
-    public function setFC532($fC532)
-    {
-        $this->fC532 = $fC532;
+        $this->_f_N_32_ = $_f_N_32_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1032;
+    private $_f_C5_32_;
 
     /**
      * @return string
      */
-    public function getFC1032()
+    public function get_F_C5_32_()
     {
-        return $this->fC1032;
+        return $this->_f_C5_32_;
     }
 
     /**
-     * @param string $fC1032
+     * @param string $_f_C5_32_
      */
-    public function setFC1032($fC1032)
+    public function set_F_C5_32_($_f_C5_32_)
     {
-        $this->fC1032 = $fC1032;
+        $this->_f_C5_32_ = $_f_C5_32_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2032;
+    private $_f_C10_32_;
 
     /**
      * @return string
      */
-    public function getFC2032()
+    public function get_F_C10_32_()
     {
-        return $this->fC2032;
+        return $this->_f_C10_32_;
     }
 
     /**
-     * @param string $fC2032
+     * @param string $_f_C10_32_
      */
-    public function setFC2032($fC2032)
+    public function set_F_C10_32_($_f_C10_32_)
     {
-        $this->fC2032 = $fC2032;
+        $this->_f_C10_32_ = $_f_C10_32_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5032;
+    private $_f_C20_32_;
 
     /**
      * @return string
      */
-    public function getFC5032()
+    public function get_F_C20_32_()
     {
-        return $this->fC5032;
+        return $this->_f_C20_32_;
     }
 
     /**
-     * @param string $fC5032
+     * @param string $_f_C20_32_
      */
-    public function setFC5032($fC5032)
+    public function set_F_C20_32_($_f_C20_32_)
     {
-        $this->fC5032 = $fC5032;
+        $this->_f_C20_32_ = $_f_C20_32_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_32_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_32_()
+    {
+        return $this->_f_C50_32_;
+    }
+
+    /**
+     * @param string $_f_C50_32_
+     */
+    public function set_F_C50_32_($_f_C50_32_)
+    {
+        $this->_f_C50_32_ = $_f_C50_32_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB33;
+    private $_f_B_33_;
 
     /**
      * @return boolean
      */
-    public function getFB33()
+    public function get_F_B_33_()
     {
-        return $this->fB33;
+        return $this->_f_B_33_;
     }
 
     /**
-     * @param boolean $fB33
+     * @param boolean $_f_B_33_
      */
-    public function setFB33($fB33)
+    public function set_F_B_33_($_f_B_33_)
     {
-        $this->fB33 = $fB33;
+        $this->_f_B_33_ = $_f_B_33_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI33;
+    private $_f_I_33_;
 
     /**
      * @return integer
      */
-    public function getFI33()
+    public function get_F_I_33_()
     {
-        return $this->fI33;
+        return $this->_f_I_33_;
     }
 
     /**
-     * @param integer $fI33
+     * @param integer $_f_I_33_
      */
-    public function setFI33($fI33)
+    public function set_F_I_33_($_f_I_33_)
     {
-        $this->fI33 = $fI33;
+        $this->_f_I_33_ = $_f_I_33_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN33;
+    private $_f_N_33_;
 
     /**
      * @return Decimal
      */
-    public function getFN33()
+    public function get_F_N_33_()
     {
-        return $this->fN33;
+        return $this->_f_N_33_;
     }
 
     /**
-     * @param Decimal $fN33
+     * @param Decimal $_f_N_33_
      */
-    public function setFN33($fN33)
+    public function set_F_N_33_($_f_N_33_)
     {
-        $this->fN33 = $fN33;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC533;
-
-    /**
-     * @return string
-     */
-    public function getFC533()
-    {
-        return $this->fC533;
-    }
-
-    /**
-     * @param string $fC533
-     */
-    public function setFC533($fC533)
-    {
-        $this->fC533 = $fC533;
+        $this->_f_N_33_ = $_f_N_33_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1033;
+    private $_f_C5_33_;
 
     /**
      * @return string
      */
-    public function getFC1033()
+    public function get_F_C5_33_()
     {
-        return $this->fC1033;
+        return $this->_f_C5_33_;
     }
 
     /**
-     * @param string $fC1033
+     * @param string $_f_C5_33_
      */
-    public function setFC1033($fC1033)
+    public function set_F_C5_33_($_f_C5_33_)
     {
-        $this->fC1033 = $fC1033;
+        $this->_f_C5_33_ = $_f_C5_33_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2033;
+    private $_f_C10_33_;
 
     /**
      * @return string
      */
-    public function getFC2033()
+    public function get_F_C10_33_()
     {
-        return $this->fC2033;
+        return $this->_f_C10_33_;
     }
 
     /**
-     * @param string $fC2033
+     * @param string $_f_C10_33_
      */
-    public function setFC2033($fC2033)
+    public function set_F_C10_33_($_f_C10_33_)
     {
-        $this->fC2033 = $fC2033;
+        $this->_f_C10_33_ = $_f_C10_33_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5033;
+    private $_f_C20_33_;
 
     /**
      * @return string
      */
-    public function getFC5033()
+    public function get_F_C20_33_()
     {
-        return $this->fC5033;
+        return $this->_f_C20_33_;
     }
 
     /**
-     * @param string $fC5033
+     * @param string $_f_C20_33_
      */
-    public function setFC5033($fC5033)
+    public function set_F_C20_33_($_f_C20_33_)
     {
-        $this->fC5033 = $fC5033;
+        $this->_f_C20_33_ = $_f_C20_33_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_33_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_33_()
+    {
+        return $this->_f_C50_33_;
+    }
+
+    /**
+     * @param string $_f_C50_33_
+     */
+    public function set_F_C50_33_($_f_C50_33_)
+    {
+        $this->_f_C50_33_ = $_f_C50_33_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB34;
+    private $_f_B_34_;
 
     /**
      * @return boolean
      */
-    public function getFB34()
+    public function get_F_B_34_()
     {
-        return $this->fB34;
+        return $this->_f_B_34_;
     }
 
     /**
-     * @param boolean $fB34
+     * @param boolean $_f_B_34_
      */
-    public function setFB34($fB34)
+    public function set_F_B_34_($_f_B_34_)
     {
-        $this->fB34 = $fB34;
+        $this->_f_B_34_ = $_f_B_34_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI34;
+    private $_f_I_34_;
 
     /**
      * @return integer
      */
-    public function getFI34()
+    public function get_F_I_34_()
     {
-        return $this->fI34;
+        return $this->_f_I_34_;
     }
 
     /**
-     * @param integer $fI34
+     * @param integer $_f_I_34_
      */
-    public function setFI34($fI34)
+    public function set_F_I_34_($_f_I_34_)
     {
-        $this->fI34 = $fI34;
+        $this->_f_I_34_ = $_f_I_34_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN34;
+    private $_f_N_34_;
 
     /**
      * @return Decimal
      */
-    public function getFN34()
+    public function get_F_N_34_()
     {
-        return $this->fN34;
+        return $this->_f_N_34_;
     }
 
     /**
-     * @param Decimal $fN34
+     * @param Decimal $_f_N_34_
      */
-    public function setFN34($fN34)
+    public function set_F_N_34_($_f_N_34_)
     {
-        $this->fN34 = $fN34;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC534;
-
-    /**
-     * @return string
-     */
-    public function getFC534()
-    {
-        return $this->fC534;
-    }
-
-    /**
-     * @param string $fC534
-     */
-    public function setFC534($fC534)
-    {
-        $this->fC534 = $fC534;
+        $this->_f_N_34_ = $_f_N_34_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1034;
+    private $_f_C5_34_;
 
     /**
      * @return string
      */
-    public function getFC1034()
+    public function get_F_C5_34_()
     {
-        return $this->fC1034;
+        return $this->_f_C5_34_;
     }
 
     /**
-     * @param string $fC1034
+     * @param string $_f_C5_34_
      */
-    public function setFC1034($fC1034)
+    public function set_F_C5_34_($_f_C5_34_)
     {
-        $this->fC1034 = $fC1034;
+        $this->_f_C5_34_ = $_f_C5_34_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2034;
+    private $_f_C10_34_;
 
     /**
      * @return string
      */
-    public function getFC2034()
+    public function get_F_C10_34_()
     {
-        return $this->fC2034;
+        return $this->_f_C10_34_;
     }
 
     /**
-     * @param string $fC2034
+     * @param string $_f_C10_34_
      */
-    public function setFC2034($fC2034)
+    public function set_F_C10_34_($_f_C10_34_)
     {
-        $this->fC2034 = $fC2034;
+        $this->_f_C10_34_ = $_f_C10_34_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5034;
+    private $_f_C20_34_;
 
     /**
      * @return string
      */
-    public function getFC5034()
+    public function get_F_C20_34_()
     {
-        return $this->fC5034;
+        return $this->_f_C20_34_;
     }
 
     /**
-     * @param string $fC5034
+     * @param string $_f_C20_34_
      */
-    public function setFC5034($fC5034)
+    public function set_F_C20_34_($_f_C20_34_)
     {
-        $this->fC5034 = $fC5034;
+        $this->_f_C20_34_ = $_f_C20_34_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_34_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_34_()
+    {
+        return $this->_f_C50_34_;
+    }
+
+    /**
+     * @param string $_f_C50_34_
+     */
+    public function set_F_C50_34_($_f_C50_34_)
+    {
+        $this->_f_C50_34_ = $_f_C50_34_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB35;
+    private $_f_B_35_;
 
     /**
      * @return boolean
      */
-    public function getFB35()
+    public function get_F_B_35_()
     {
-        return $this->fB35;
+        return $this->_f_B_35_;
     }
 
     /**
-     * @param boolean $fB35
+     * @param boolean $_f_B_35_
      */
-    public function setFB35($fB35)
+    public function set_F_B_35_($_f_B_35_)
     {
-        $this->fB35 = $fB35;
+        $this->_f_B_35_ = $_f_B_35_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI35;
+    private $_f_I_35_;
 
     /**
      * @return integer
      */
-    public function getFI35()
+    public function get_F_I_35_()
     {
-        return $this->fI35;
+        return $this->_f_I_35_;
     }
 
     /**
-     * @param integer $fI35
+     * @param integer $_f_I_35_
      */
-    public function setFI35($fI35)
+    public function set_F_I_35_($_f_I_35_)
     {
-        $this->fI35 = $fI35;
+        $this->_f_I_35_ = $_f_I_35_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN35;
+    private $_f_N_35_;
 
     /**
      * @return Decimal
      */
-    public function getFN35()
+    public function get_F_N_35_()
     {
-        return $this->fN35;
+        return $this->_f_N_35_;
     }
 
     /**
-     * @param Decimal $fN35
+     * @param Decimal $_f_N_35_
      */
-    public function setFN35($fN35)
+    public function set_F_N_35_($_f_N_35_)
     {
-        $this->fN35 = $fN35;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC535;
-
-    /**
-     * @return string
-     */
-    public function getFC535()
-    {
-        return $this->fC535;
-    }
-
-    /**
-     * @param string $fC535
-     */
-    public function setFC535($fC535)
-    {
-        $this->fC535 = $fC535;
+        $this->_f_N_35_ = $_f_N_35_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1035;
+    private $_f_C5_35_;
 
     /**
      * @return string
      */
-    public function getFC1035()
+    public function get_F_C5_35_()
     {
-        return $this->fC1035;
+        return $this->_f_C5_35_;
     }
 
     /**
-     * @param string $fC1035
+     * @param string $_f_C5_35_
      */
-    public function setFC1035($fC1035)
+    public function set_F_C5_35_($_f_C5_35_)
     {
-        $this->fC1035 = $fC1035;
+        $this->_f_C5_35_ = $_f_C5_35_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2035;
+    private $_f_C10_35_;
 
     /**
      * @return string
      */
-    public function getFC2035()
+    public function get_F_C10_35_()
     {
-        return $this->fC2035;
+        return $this->_f_C10_35_;
     }
 
     /**
-     * @param string $fC2035
+     * @param string $_f_C10_35_
      */
-    public function setFC2035($fC2035)
+    public function set_F_C10_35_($_f_C10_35_)
     {
-        $this->fC2035 = $fC2035;
+        $this->_f_C10_35_ = $_f_C10_35_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5035;
+    private $_f_C20_35_;
 
     /**
      * @return string
      */
-    public function getFC5035()
+    public function get_F_C20_35_()
     {
-        return $this->fC5035;
+        return $this->_f_C20_35_;
     }
 
     /**
-     * @param string $fC5035
+     * @param string $_f_C20_35_
      */
-    public function setFC5035($fC5035)
+    public function set_F_C20_35_($_f_C20_35_)
     {
-        $this->fC5035 = $fC5035;
+        $this->_f_C20_35_ = $_f_C20_35_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_35_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_35_()
+    {
+        return $this->_f_C50_35_;
+    }
+
+    /**
+     * @param string $_f_C50_35_
+     */
+    public function set_F_C50_35_($_f_C50_35_)
+    {
+        $this->_f_C50_35_ = $_f_C50_35_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB36;
+    private $_f_B_36_;
 
     /**
      * @return boolean
      */
-    public function getFB36()
+    public function get_F_B_36_()
     {
-        return $this->fB36;
+        return $this->_f_B_36_;
     }
 
     /**
-     * @param boolean $fB36
+     * @param boolean $_f_B_36_
      */
-    public function setFB36($fB36)
+    public function set_F_B_36_($_f_B_36_)
     {
-        $this->fB36 = $fB36;
+        $this->_f_B_36_ = $_f_B_36_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI36;
+    private $_f_I_36_;
 
     /**
      * @return integer
      */
-    public function getFI36()
+    public function get_F_I_36_()
     {
-        return $this->fI36;
+        return $this->_f_I_36_;
     }
 
     /**
-     * @param integer $fI36
+     * @param integer $_f_I_36_
      */
-    public function setFI36($fI36)
+    public function set_F_I_36_($_f_I_36_)
     {
-        $this->fI36 = $fI36;
+        $this->_f_I_36_ = $_f_I_36_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN36;
+    private $_f_N_36_;
 
     /**
      * @return Decimal
      */
-    public function getFN36()
+    public function get_F_N_36_()
     {
-        return $this->fN36;
+        return $this->_f_N_36_;
     }
 
     /**
-     * @param Decimal $fN36
+     * @param Decimal $_f_N_36_
      */
-    public function setFN36($fN36)
+    public function set_F_N_36_($_f_N_36_)
     {
-        $this->fN36 = $fN36;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC536;
-
-    /**
-     * @return string
-     */
-    public function getFC536()
-    {
-        return $this->fC536;
-    }
-
-    /**
-     * @param string $fC536
-     */
-    public function setFC536($fC536)
-    {
-        $this->fC536 = $fC536;
+        $this->_f_N_36_ = $_f_N_36_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1036;
+    private $_f_C5_36_;
 
     /**
      * @return string
      */
-    public function getFC1036()
+    public function get_F_C5_36_()
     {
-        return $this->fC1036;
+        return $this->_f_C5_36_;
     }
 
     /**
-     * @param string $fC1036
+     * @param string $_f_C5_36_
      */
-    public function setFC1036($fC1036)
+    public function set_F_C5_36_($_f_C5_36_)
     {
-        $this->fC1036 = $fC1036;
+        $this->_f_C5_36_ = $_f_C5_36_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2036;
+    private $_f_C10_36_;
 
     /**
      * @return string
      */
-    public function getFC2036()
+    public function get_F_C10_36_()
     {
-        return $this->fC2036;
+        return $this->_f_C10_36_;
     }
 
     /**
-     * @param string $fC2036
+     * @param string $_f_C10_36_
      */
-    public function setFC2036($fC2036)
+    public function set_F_C10_36_($_f_C10_36_)
     {
-        $this->fC2036 = $fC2036;
+        $this->_f_C10_36_ = $_f_C10_36_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5036;
+    private $_f_C20_36_;
 
     /**
      * @return string
      */
-    public function getFC5036()
+    public function get_F_C20_36_()
     {
-        return $this->fC5036;
+        return $this->_f_C20_36_;
     }
 
     /**
-     * @param string $fC5036
+     * @param string $_f_C20_36_
      */
-    public function setFC5036($fC5036)
+    public function set_F_C20_36_($_f_C20_36_)
     {
-        $this->fC5036 = $fC5036;
+        $this->_f_C20_36_ = $_f_C20_36_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_36_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_36_()
+    {
+        return $this->_f_C50_36_;
+    }
+
+    /**
+     * @param string $_f_C50_36_
+     */
+    public function set_F_C50_36_($_f_C50_36_)
+    {
+        $this->_f_C50_36_ = $_f_C50_36_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB37;
+    private $_f_B_37_;
 
     /**
      * @return boolean
      */
-    public function getFB37()
+    public function get_F_B_37_()
     {
-        return $this->fB37;
+        return $this->_f_B_37_;
     }
 
     /**
-     * @param boolean $fB37
+     * @param boolean $_f_B_37_
      */
-    public function setFB37($fB37)
+    public function set_F_B_37_($_f_B_37_)
     {
-        $this->fB37 = $fB37;
+        $this->_f_B_37_ = $_f_B_37_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI37;
+    private $_f_I_37_;
 
     /**
      * @return integer
      */
-    public function getFI37()
+    public function get_F_I_37_()
     {
-        return $this->fI37;
+        return $this->_f_I_37_;
     }
 
     /**
-     * @param integer $fI37
+     * @param integer $_f_I_37_
      */
-    public function setFI37($fI37)
+    public function set_F_I_37_($_f_I_37_)
     {
-        $this->fI37 = $fI37;
+        $this->_f_I_37_ = $_f_I_37_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN37;
+    private $_f_N_37_;
 
     /**
      * @return Decimal
      */
-    public function getFN37()
+    public function get_F_N_37_()
     {
-        return $this->fN37;
+        return $this->_f_N_37_;
     }
 
     /**
-     * @param Decimal $fN37
+     * @param Decimal $_f_N_37_
      */
-    public function setFN37($fN37)
+    public function set_F_N_37_($_f_N_37_)
     {
-        $this->fN37 = $fN37;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC537;
-
-    /**
-     * @return string
-     */
-    public function getFC537()
-    {
-        return $this->fC537;
-    }
-
-    /**
-     * @param string $fC537
-     */
-    public function setFC537($fC537)
-    {
-        $this->fC537 = $fC537;
+        $this->_f_N_37_ = $_f_N_37_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1037;
+    private $_f_C5_37_;
 
     /**
      * @return string
      */
-    public function getFC1037()
+    public function get_F_C5_37_()
     {
-        return $this->fC1037;
+        return $this->_f_C5_37_;
     }
 
     /**
-     * @param string $fC1037
+     * @param string $_f_C5_37_
      */
-    public function setFC1037($fC1037)
+    public function set_F_C5_37_($_f_C5_37_)
     {
-        $this->fC1037 = $fC1037;
+        $this->_f_C5_37_ = $_f_C5_37_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2037;
+    private $_f_C10_37_;
 
     /**
      * @return string
      */
-    public function getFC2037()
+    public function get_F_C10_37_()
     {
-        return $this->fC2037;
+        return $this->_f_C10_37_;
     }
 
     /**
-     * @param string $fC2037
+     * @param string $_f_C10_37_
      */
-    public function setFC2037($fC2037)
+    public function set_F_C10_37_($_f_C10_37_)
     {
-        $this->fC2037 = $fC2037;
+        $this->_f_C10_37_ = $_f_C10_37_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5037;
+    private $_f_C20_37_;
 
     /**
      * @return string
      */
-    public function getFC5037()
+    public function get_F_C20_37_()
     {
-        return $this->fC5037;
+        return $this->_f_C20_37_;
     }
 
     /**
-     * @param string $fC5037
+     * @param string $_f_C20_37_
      */
-    public function setFC5037($fC5037)
+    public function set_F_C20_37_($_f_C20_37_)
     {
-        $this->fC5037 = $fC5037;
+        $this->_f_C20_37_ = $_f_C20_37_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_37_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_37_()
+    {
+        return $this->_f_C50_37_;
+    }
+
+    /**
+     * @param string $_f_C50_37_
+     */
+    public function set_F_C50_37_($_f_C50_37_)
+    {
+        $this->_f_C50_37_ = $_f_C50_37_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB38;
+    private $_f_B_38_;
 
     /**
      * @return boolean
      */
-    public function getFB38()
+    public function get_F_B_38_()
     {
-        return $this->fB38;
+        return $this->_f_B_38_;
     }
 
     /**
-     * @param boolean $fB38
+     * @param boolean $_f_B_38_
      */
-    public function setFB38($fB38)
+    public function set_F_B_38_($_f_B_38_)
     {
-        $this->fB38 = $fB38;
+        $this->_f_B_38_ = $_f_B_38_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI38;
+    private $_f_I_38_;
 
     /**
      * @return integer
      */
-    public function getFI38()
+    public function get_F_I_38_()
     {
-        return $this->fI38;
+        return $this->_f_I_38_;
     }
 
     /**
-     * @param integer $fI38
+     * @param integer $_f_I_38_
      */
-    public function setFI38($fI38)
+    public function set_F_I_38_($_f_I_38_)
     {
-        $this->fI38 = $fI38;
+        $this->_f_I_38_ = $_f_I_38_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN38;
+    private $_f_N_38_;
 
     /**
      * @return Decimal
      */
-    public function getFN38()
+    public function get_F_N_38_()
     {
-        return $this->fN38;
+        return $this->_f_N_38_;
     }
 
     /**
-     * @param Decimal $fN38
+     * @param Decimal $_f_N_38_
      */
-    public function setFN38($fN38)
+    public function set_F_N_38_($_f_N_38_)
     {
-        $this->fN38 = $fN38;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC538;
-
-    /**
-     * @return string
-     */
-    public function getFC538()
-    {
-        return $this->fC538;
-    }
-
-    /**
-     * @param string $fC538
-     */
-    public function setFC538($fC538)
-    {
-        $this->fC538 = $fC538;
+        $this->_f_N_38_ = $_f_N_38_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1038;
+    private $_f_C5_38_;
 
     /**
      * @return string
      */
-    public function getFC1038()
+    public function get_F_C5_38_()
     {
-        return $this->fC1038;
+        return $this->_f_C5_38_;
     }
 
     /**
-     * @param string $fC1038
+     * @param string $_f_C5_38_
      */
-    public function setFC1038($fC1038)
+    public function set_F_C5_38_($_f_C5_38_)
     {
-        $this->fC1038 = $fC1038;
+        $this->_f_C5_38_ = $_f_C5_38_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2038;
+    private $_f_C10_38_;
 
     /**
      * @return string
      */
-    public function getFC2038()
+    public function get_F_C10_38_()
     {
-        return $this->fC2038;
+        return $this->_f_C10_38_;
     }
 
     /**
-     * @param string $fC2038
+     * @param string $_f_C10_38_
      */
-    public function setFC2038($fC2038)
+    public function set_F_C10_38_($_f_C10_38_)
     {
-        $this->fC2038 = $fC2038;
+        $this->_f_C10_38_ = $_f_C10_38_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5038;
+    private $_f_C20_38_;
 
     /**
      * @return string
      */
-    public function getFC5038()
+    public function get_F_C20_38_()
     {
-        return $this->fC5038;
+        return $this->_f_C20_38_;
     }
 
     /**
-     * @param string $fC5038
+     * @param string $_f_C20_38_
      */
-    public function setFC5038($fC5038)
+    public function set_F_C20_38_($_f_C20_38_)
     {
-        $this->fC5038 = $fC5038;
+        $this->_f_C20_38_ = $_f_C20_38_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_38_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_38_()
+    {
+        return $this->_f_C50_38_;
+    }
+
+    /**
+     * @param string $_f_C50_38_
+     */
+    public function set_F_C50_38_($_f_C50_38_)
+    {
+        $this->_f_C50_38_ = $_f_C50_38_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB39;
+    private $_f_B_39_;
 
     /**
      * @return boolean
      */
-    public function getFB39()
+    public function get_F_B_39_()
     {
-        return $this->fB39;
+        return $this->_f_B_39_;
     }
 
     /**
-     * @param boolean $fB39
+     * @param boolean $_f_B_39_
      */
-    public function setFB39($fB39)
+    public function set_F_B_39_($_f_B_39_)
     {
-        $this->fB39 = $fB39;
+        $this->_f_B_39_ = $_f_B_39_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI39;
+    private $_f_I_39_;
 
     /**
      * @return integer
      */
-    public function getFI39()
+    public function get_F_I_39_()
     {
-        return $this->fI39;
+        return $this->_f_I_39_;
     }
 
     /**
-     * @param integer $fI39
+     * @param integer $_f_I_39_
      */
-    public function setFI39($fI39)
+    public function set_F_I_39_($_f_I_39_)
     {
-        $this->fI39 = $fI39;
+        $this->_f_I_39_ = $_f_I_39_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN39;
+    private $_f_N_39_;
 
     /**
      * @return Decimal
      */
-    public function getFN39()
+    public function get_F_N_39_()
     {
-        return $this->fN39;
+        return $this->_f_N_39_;
     }
 
     /**
-     * @param Decimal $fN39
+     * @param Decimal $_f_N_39_
      */
-    public function setFN39($fN39)
+    public function set_F_N_39_($_f_N_39_)
     {
-        $this->fN39 = $fN39;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC539;
-
-    /**
-     * @return string
-     */
-    public function getFC539()
-    {
-        return $this->fC539;
-    }
-
-    /**
-     * @param string $fC539
-     */
-    public function setFC539($fC539)
-    {
-        $this->fC539 = $fC539;
+        $this->_f_N_39_ = $_f_N_39_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1039;
+    private $_f_C5_39_;
 
     /**
      * @return string
      */
-    public function getFC1039()
+    public function get_F_C5_39_()
     {
-        return $this->fC1039;
+        return $this->_f_C5_39_;
     }
 
     /**
-     * @param string $fC1039
+     * @param string $_f_C5_39_
      */
-    public function setFC1039($fC1039)
+    public function set_F_C5_39_($_f_C5_39_)
     {
-        $this->fC1039 = $fC1039;
+        $this->_f_C5_39_ = $_f_C5_39_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2039;
+    private $_f_C10_39_;
 
     /**
      * @return string
      */
-    public function getFC2039()
+    public function get_F_C10_39_()
     {
-        return $this->fC2039;
+        return $this->_f_C10_39_;
     }
 
     /**
-     * @param string $fC2039
+     * @param string $_f_C10_39_
      */
-    public function setFC2039($fC2039)
+    public function set_F_C10_39_($_f_C10_39_)
     {
-        $this->fC2039 = $fC2039;
+        $this->_f_C10_39_ = $_f_C10_39_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5039;
+    private $_f_C20_39_;
 
     /**
      * @return string
      */
-    public function getFC5039()
+    public function get_F_C20_39_()
     {
-        return $this->fC5039;
+        return $this->_f_C20_39_;
     }
 
     /**
-     * @param string $fC5039
+     * @param string $_f_C20_39_
      */
-    public function setFC5039($fC5039)
+    public function set_F_C20_39_($_f_C20_39_)
     {
-        $this->fC5039 = $fC5039;
+        $this->_f_C20_39_ = $_f_C20_39_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_39_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_39_()
+    {
+        return $this->_f_C50_39_;
+    }
+
+    /**
+     * @param string $_f_C50_39_
+     */
+    public function set_F_C50_39_($_f_C50_39_)
+    {
+        $this->_f_C50_39_ = $_f_C50_39_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB40;
+    private $_f_B_40_;
 
     /**
      * @return boolean
      */
-    public function getFB40()
+    public function get_F_B_40_()
     {
-        return $this->fB40;
+        return $this->_f_B_40_;
     }
 
     /**
-     * @param boolean $fB40
+     * @param boolean $_f_B_40_
      */
-    public function setFB40($fB40)
+    public function set_F_B_40_($_f_B_40_)
     {
-        $this->fB40 = $fB40;
+        $this->_f_B_40_ = $_f_B_40_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI40;
+    private $_f_I_40_;
 
     /**
      * @return integer
      */
-    public function getFI40()
+    public function get_F_I_40_()
     {
-        return $this->fI40;
+        return $this->_f_I_40_;
     }
 
     /**
-     * @param integer $fI40
+     * @param integer $_f_I_40_
      */
-    public function setFI40($fI40)
+    public function set_F_I_40_($_f_I_40_)
     {
-        $this->fI40 = $fI40;
+        $this->_f_I_40_ = $_f_I_40_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN40;
+    private $_f_N_40_;
 
     /**
      * @return Decimal
      */
-    public function getFN40()
+    public function get_F_N_40_()
     {
-        return $this->fN40;
+        return $this->_f_N_40_;
     }
 
     /**
-     * @param Decimal $fN40
+     * @param Decimal $_f_N_40_
      */
-    public function setFN40($fN40)
+    public function set_F_N_40_($_f_N_40_)
     {
-        $this->fN40 = $fN40;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC540;
-
-    /**
-     * @return string
-     */
-    public function getFC540()
-    {
-        return $this->fC540;
-    }
-
-    /**
-     * @param string $fC540
-     */
-    public function setFC540($fC540)
-    {
-        $this->fC540 = $fC540;
+        $this->_f_N_40_ = $_f_N_40_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1040;
+    private $_f_C5_40_;
 
     /**
      * @return string
      */
-    public function getFC1040()
+    public function get_F_C5_40_()
     {
-        return $this->fC1040;
+        return $this->_f_C5_40_;
     }
 
     /**
-     * @param string $fC1040
+     * @param string $_f_C5_40_
      */
-    public function setFC1040($fC1040)
+    public function set_F_C5_40_($_f_C5_40_)
     {
-        $this->fC1040 = $fC1040;
+        $this->_f_C5_40_ = $_f_C5_40_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2040;
+    private $_f_C10_40_;
 
     /**
      * @return string
      */
-    public function getFC2040()
+    public function get_F_C10_40_()
     {
-        return $this->fC2040;
+        return $this->_f_C10_40_;
     }
 
     /**
-     * @param string $fC2040
+     * @param string $_f_C10_40_
      */
-    public function setFC2040($fC2040)
+    public function set_F_C10_40_($_f_C10_40_)
     {
-        $this->fC2040 = $fC2040;
+        $this->_f_C10_40_ = $_f_C10_40_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5040;
+    private $_f_C20_40_;
 
     /**
      * @return string
      */
-    public function getFC5040()
+    public function get_F_C20_40_()
     {
-        return $this->fC5040;
+        return $this->_f_C20_40_;
     }
 
     /**
-     * @param string $fC5040
+     * @param string $_f_C20_40_
      */
-    public function setFC5040($fC5040)
+    public function set_F_C20_40_($_f_C20_40_)
     {
-        $this->fC5040 = $fC5040;
+        $this->_f_C20_40_ = $_f_C20_40_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_40_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_40_()
+    {
+        return $this->_f_C50_40_;
+    }
+
+    /**
+     * @param string $_f_C50_40_
+     */
+    public function set_F_C50_40_($_f_C50_40_)
+    {
+        $this->_f_C50_40_ = $_f_C50_40_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB41;
+    private $_f_B_41_;
 
     /**
      * @return boolean
      */
-    public function getFB41()
+    public function get_F_B_41_()
     {
-        return $this->fB41;
+        return $this->_f_B_41_;
     }
 
     /**
-     * @param boolean $fB41
+     * @param boolean $_f_B_41_
      */
-    public function setFB41($fB41)
+    public function set_F_B_41_($_f_B_41_)
     {
-        $this->fB41 = $fB41;
+        $this->_f_B_41_ = $_f_B_41_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI41;
+    private $_f_I_41_;
 
     /**
      * @return integer
      */
-    public function getFI41()
+    public function get_F_I_41_()
     {
-        return $this->fI41;
+        return $this->_f_I_41_;
     }
 
     /**
-     * @param integer $fI41
+     * @param integer $_f_I_41_
      */
-    public function setFI41($fI41)
+    public function set_F_I_41_($_f_I_41_)
     {
-        $this->fI41 = $fI41;
+        $this->_f_I_41_ = $_f_I_41_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN41;
+    private $_f_N_41_;
 
     /**
      * @return Decimal
      */
-    public function getFN41()
+    public function get_F_N_41_()
     {
-        return $this->fN41;
+        return $this->_f_N_41_;
     }
 
     /**
-     * @param Decimal $fN41
+     * @param Decimal $_f_N_41_
      */
-    public function setFN41($fN41)
+    public function set_F_N_41_($_f_N_41_)
     {
-        $this->fN41 = $fN41;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC541;
-
-    /**
-     * @return string
-     */
-    public function getFC541()
-    {
-        return $this->fC541;
-    }
-
-    /**
-     * @param string $fC541
-     */
-    public function setFC541($fC541)
-    {
-        $this->fC541 = $fC541;
+        $this->_f_N_41_ = $_f_N_41_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1041;
+    private $_f_C5_41_;
 
     /**
      * @return string
      */
-    public function getFC1041()
+    public function get_F_C5_41_()
     {
-        return $this->fC1041;
+        return $this->_f_C5_41_;
     }
 
     /**
-     * @param string $fC1041
+     * @param string $_f_C5_41_
      */
-    public function setFC1041($fC1041)
+    public function set_F_C5_41_($_f_C5_41_)
     {
-        $this->fC1041 = $fC1041;
+        $this->_f_C5_41_ = $_f_C5_41_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2041;
+    private $_f_C10_41_;
 
     /**
      * @return string
      */
-    public function getFC2041()
+    public function get_F_C10_41_()
     {
-        return $this->fC2041;
+        return $this->_f_C10_41_;
     }
 
     /**
-     * @param string $fC2041
+     * @param string $_f_C10_41_
      */
-    public function setFC2041($fC2041)
+    public function set_F_C10_41_($_f_C10_41_)
     {
-        $this->fC2041 = $fC2041;
+        $this->_f_C10_41_ = $_f_C10_41_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5041;
+    private $_f_C20_41_;
 
     /**
      * @return string
      */
-    public function getFC5041()
+    public function get_F_C20_41_()
     {
-        return $this->fC5041;
+        return $this->_f_C20_41_;
     }
 
     /**
-     * @param string $fC5041
+     * @param string $_f_C20_41_
      */
-    public function setFC5041($fC5041)
+    public function set_F_C20_41_($_f_C20_41_)
     {
-        $this->fC5041 = $fC5041;
+        $this->_f_C20_41_ = $_f_C20_41_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_41_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_41_()
+    {
+        return $this->_f_C50_41_;
+    }
+
+    /**
+     * @param string $_f_C50_41_
+     */
+    public function set_F_C50_41_($_f_C50_41_)
+    {
+        $this->_f_C50_41_ = $_f_C50_41_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB42;
+    private $_f_B_42_;
 
     /**
      * @return boolean
      */
-    public function getFB42()
+    public function get_F_B_42_()
     {
-        return $this->fB42;
+        return $this->_f_B_42_;
     }
 
     /**
-     * @param boolean $fB42
+     * @param boolean $_f_B_42_
      */
-    public function setFB42($fB42)
+    public function set_F_B_42_($_f_B_42_)
     {
-        $this->fB42 = $fB42;
+        $this->_f_B_42_ = $_f_B_42_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI42;
+    private $_f_I_42_;
 
     /**
      * @return integer
      */
-    public function getFI42()
+    public function get_F_I_42_()
     {
-        return $this->fI42;
+        return $this->_f_I_42_;
     }
 
     /**
-     * @param integer $fI42
+     * @param integer $_f_I_42_
      */
-    public function setFI42($fI42)
+    public function set_F_I_42_($_f_I_42_)
     {
-        $this->fI42 = $fI42;
+        $this->_f_I_42_ = $_f_I_42_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN42;
+    private $_f_N_42_;
 
     /**
      * @return Decimal
      */
-    public function getFN42()
+    public function get_F_N_42_()
     {
-        return $this->fN42;
+        return $this->_f_N_42_;
     }
 
     /**
-     * @param Decimal $fN42
+     * @param Decimal $_f_N_42_
      */
-    public function setFN42($fN42)
+    public function set_F_N_42_($_f_N_42_)
     {
-        $this->fN42 = $fN42;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC542;
-
-    /**
-     * @return string
-     */
-    public function getFC542()
-    {
-        return $this->fC542;
-    }
-
-    /**
-     * @param string $fC542
-     */
-    public function setFC542($fC542)
-    {
-        $this->fC542 = $fC542;
+        $this->_f_N_42_ = $_f_N_42_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1042;
+    private $_f_C5_42_;
 
     /**
      * @return string
      */
-    public function getFC1042()
+    public function get_F_C5_42_()
     {
-        return $this->fC1042;
+        return $this->_f_C5_42_;
     }
 
     /**
-     * @param string $fC1042
+     * @param string $_f_C5_42_
      */
-    public function setFC1042($fC1042)
+    public function set_F_C5_42_($_f_C5_42_)
     {
-        $this->fC1042 = $fC1042;
+        $this->_f_C5_42_ = $_f_C5_42_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2042;
+    private $_f_C10_42_;
 
     /**
      * @return string
      */
-    public function getFC2042()
+    public function get_F_C10_42_()
     {
-        return $this->fC2042;
+        return $this->_f_C10_42_;
     }
 
     /**
-     * @param string $fC2042
+     * @param string $_f_C10_42_
      */
-    public function setFC2042($fC2042)
+    public function set_F_C10_42_($_f_C10_42_)
     {
-        $this->fC2042 = $fC2042;
+        $this->_f_C10_42_ = $_f_C10_42_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5042;
+    private $_f_C20_42_;
 
     /**
      * @return string
      */
-    public function getFC5042()
+    public function get_F_C20_42_()
     {
-        return $this->fC5042;
+        return $this->_f_C20_42_;
     }
 
     /**
-     * @param string $fC5042
+     * @param string $_f_C20_42_
      */
-    public function setFC5042($fC5042)
+    public function set_F_C20_42_($_f_C20_42_)
     {
-        $this->fC5042 = $fC5042;
+        $this->_f_C20_42_ = $_f_C20_42_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_42_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_42_()
+    {
+        return $this->_f_C50_42_;
+    }
+
+    /**
+     * @param string $_f_C50_42_
+     */
+    public function set_F_C50_42_($_f_C50_42_)
+    {
+        $this->_f_C50_42_ = $_f_C50_42_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB43;
+    private $_f_B_43_;
 
     /**
      * @return boolean
      */
-    public function getFB43()
+    public function get_F_B_43_()
     {
-        return $this->fB43;
+        return $this->_f_B_43_;
     }
 
     /**
-     * @param boolean $fB43
+     * @param boolean $_f_B_43_
      */
-    public function setFB43($fB43)
+    public function set_F_B_43_($_f_B_43_)
     {
-        $this->fB43 = $fB43;
+        $this->_f_B_43_ = $_f_B_43_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI43;
+    private $_f_I_43_;
 
     /**
      * @return integer
      */
-    public function getFI43()
+    public function get_F_I_43_()
     {
-        return $this->fI43;
+        return $this->_f_I_43_;
     }
 
     /**
-     * @param integer $fI43
+     * @param integer $_f_I_43_
      */
-    public function setFI43($fI43)
+    public function set_F_I_43_($_f_I_43_)
     {
-        $this->fI43 = $fI43;
+        $this->_f_I_43_ = $_f_I_43_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN43;
+    private $_f_N_43_;
 
     /**
      * @return Decimal
      */
-    public function getFN43()
+    public function get_F_N_43_()
     {
-        return $this->fN43;
+        return $this->_f_N_43_;
     }
 
     /**
-     * @param Decimal $fN43
+     * @param Decimal $_f_N_43_
      */
-    public function setFN43($fN43)
+    public function set_F_N_43_($_f_N_43_)
     {
-        $this->fN43 = $fN43;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC543;
-
-    /**
-     * @return string
-     */
-    public function getFC543()
-    {
-        return $this->fC543;
-    }
-
-    /**
-     * @param string $fC543
-     */
-    public function setFC543($fC543)
-    {
-        $this->fC543 = $fC543;
+        $this->_f_N_43_ = $_f_N_43_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1043;
+    private $_f_C5_43_;
 
     /**
      * @return string
      */
-    public function getFC1043()
+    public function get_F_C5_43_()
     {
-        return $this->fC1043;
+        return $this->_f_C5_43_;
     }
 
     /**
-     * @param string $fC1043
+     * @param string $_f_C5_43_
      */
-    public function setFC1043($fC1043)
+    public function set_F_C5_43_($_f_C5_43_)
     {
-        $this->fC1043 = $fC1043;
+        $this->_f_C5_43_ = $_f_C5_43_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2043;
+    private $_f_C10_43_;
 
     /**
      * @return string
      */
-    public function getFC2043()
+    public function get_F_C10_43_()
     {
-        return $this->fC2043;
+        return $this->_f_C10_43_;
     }
 
     /**
-     * @param string $fC2043
+     * @param string $_f_C10_43_
      */
-    public function setFC2043($fC2043)
+    public function set_F_C10_43_($_f_C10_43_)
     {
-        $this->fC2043 = $fC2043;
+        $this->_f_C10_43_ = $_f_C10_43_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5043;
+    private $_f_C20_43_;
 
     /**
      * @return string
      */
-    public function getFC5043()
+    public function get_F_C20_43_()
     {
-        return $this->fC5043;
+        return $this->_f_C20_43_;
     }
 
     /**
-     * @param string $fC5043
+     * @param string $_f_C20_43_
      */
-    public function setFC5043($fC5043)
+    public function set_F_C20_43_($_f_C20_43_)
     {
-        $this->fC5043 = $fC5043;
+        $this->_f_C20_43_ = $_f_C20_43_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_43_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_43_()
+    {
+        return $this->_f_C50_43_;
+    }
+
+    /**
+     * @param string $_f_C50_43_
+     */
+    public function set_F_C50_43_($_f_C50_43_)
+    {
+        $this->_f_C50_43_ = $_f_C50_43_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB44;
+    private $_f_B_44_;
 
     /**
      * @return boolean
      */
-    public function getFB44()
+    public function get_F_B_44_()
     {
-        return $this->fB44;
+        return $this->_f_B_44_;
     }
 
     /**
-     * @param boolean $fB44
+     * @param boolean $_f_B_44_
      */
-    public function setFB44($fB44)
+    public function set_F_B_44_($_f_B_44_)
     {
-        $this->fB44 = $fB44;
+        $this->_f_B_44_ = $_f_B_44_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI44;
+    private $_f_I_44_;
 
     /**
      * @return integer
      */
-    public function getFI44()
+    public function get_F_I_44_()
     {
-        return $this->fI44;
+        return $this->_f_I_44_;
     }
 
     /**
-     * @param integer $fI44
+     * @param integer $_f_I_44_
      */
-    public function setFI44($fI44)
+    public function set_F_I_44_($_f_I_44_)
     {
-        $this->fI44 = $fI44;
+        $this->_f_I_44_ = $_f_I_44_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN44;
+    private $_f_N_44_;
 
     /**
      * @return Decimal
      */
-    public function getFN44()
+    public function get_F_N_44_()
     {
-        return $this->fN44;
+        return $this->_f_N_44_;
     }
 
     /**
-     * @param Decimal $fN44
+     * @param Decimal $_f_N_44_
      */
-    public function setFN44($fN44)
+    public function set_F_N_44_($_f_N_44_)
     {
-        $this->fN44 = $fN44;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC544;
-
-    /**
-     * @return string
-     */
-    public function getFC544()
-    {
-        return $this->fC544;
-    }
-
-    /**
-     * @param string $fC544
-     */
-    public function setFC544($fC544)
-    {
-        $this->fC544 = $fC544;
+        $this->_f_N_44_ = $_f_N_44_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1044;
+    private $_f_C5_44_;
 
     /**
      * @return string
      */
-    public function getFC1044()
+    public function get_F_C5_44_()
     {
-        return $this->fC1044;
+        return $this->_f_C5_44_;
     }
 
     /**
-     * @param string $fC1044
+     * @param string $_f_C5_44_
      */
-    public function setFC1044($fC1044)
+    public function set_F_C5_44_($_f_C5_44_)
     {
-        $this->fC1044 = $fC1044;
+        $this->_f_C5_44_ = $_f_C5_44_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2044;
+    private $_f_C10_44_;
 
     /**
      * @return string
      */
-    public function getFC2044()
+    public function get_F_C10_44_()
     {
-        return $this->fC2044;
+        return $this->_f_C10_44_;
     }
 
     /**
-     * @param string $fC2044
+     * @param string $_f_C10_44_
      */
-    public function setFC2044($fC2044)
+    public function set_F_C10_44_($_f_C10_44_)
     {
-        $this->fC2044 = $fC2044;
+        $this->_f_C10_44_ = $_f_C10_44_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5044;
+    private $_f_C20_44_;
 
     /**
      * @return string
      */
-    public function getFC5044()
+    public function get_F_C20_44_()
     {
-        return $this->fC5044;
+        return $this->_f_C20_44_;
     }
 
     /**
-     * @param string $fC5044
+     * @param string $_f_C20_44_
      */
-    public function setFC5044($fC5044)
+    public function set_F_C20_44_($_f_C20_44_)
     {
-        $this->fC5044 = $fC5044;
+        $this->_f_C20_44_ = $_f_C20_44_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_44_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_44_()
+    {
+        return $this->_f_C50_44_;
+    }
+
+    /**
+     * @param string $_f_C50_44_
+     */
+    public function set_F_C50_44_($_f_C50_44_)
+    {
+        $this->_f_C50_44_ = $_f_C50_44_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB45;
+    private $_f_B_45_;
 
     /**
      * @return boolean
      */
-    public function getFB45()
+    public function get_F_B_45_()
     {
-        return $this->fB45;
+        return $this->_f_B_45_;
     }
 
     /**
-     * @param boolean $fB45
+     * @param boolean $_f_B_45_
      */
-    public function setFB45($fB45)
+    public function set_F_B_45_($_f_B_45_)
     {
-        $this->fB45 = $fB45;
+        $this->_f_B_45_ = $_f_B_45_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI45;
+    private $_f_I_45_;
 
     /**
      * @return integer
      */
-    public function getFI45()
+    public function get_F_I_45_()
     {
-        return $this->fI45;
+        return $this->_f_I_45_;
     }
 
     /**
-     * @param integer $fI45
+     * @param integer $_f_I_45_
      */
-    public function setFI45($fI45)
+    public function set_F_I_45_($_f_I_45_)
     {
-        $this->fI45 = $fI45;
+        $this->_f_I_45_ = $_f_I_45_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN45;
+    private $_f_N_45_;
 
     /**
      * @return Decimal
      */
-    public function getFN45()
+    public function get_F_N_45_()
     {
-        return $this->fN45;
+        return $this->_f_N_45_;
     }
 
     /**
-     * @param Decimal $fN45
+     * @param Decimal $_f_N_45_
      */
-    public function setFN45($fN45)
+    public function set_F_N_45_($_f_N_45_)
     {
-        $this->fN45 = $fN45;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC545;
-
-    /**
-     * @return string
-     */
-    public function getFC545()
-    {
-        return $this->fC545;
-    }
-
-    /**
-     * @param string $fC545
-     */
-    public function setFC545($fC545)
-    {
-        $this->fC545 = $fC545;
+        $this->_f_N_45_ = $_f_N_45_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1045;
+    private $_f_C5_45_;
 
     /**
      * @return string
      */
-    public function getFC1045()
+    public function get_F_C5_45_()
     {
-        return $this->fC1045;
+        return $this->_f_C5_45_;
     }
 
     /**
-     * @param string $fC1045
+     * @param string $_f_C5_45_
      */
-    public function setFC1045($fC1045)
+    public function set_F_C5_45_($_f_C5_45_)
     {
-        $this->fC1045 = $fC1045;
+        $this->_f_C5_45_ = $_f_C5_45_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2045;
+    private $_f_C10_45_;
 
     /**
      * @return string
      */
-    public function getFC2045()
+    public function get_F_C10_45_()
     {
-        return $this->fC2045;
+        return $this->_f_C10_45_;
     }
 
     /**
-     * @param string $fC2045
+     * @param string $_f_C10_45_
      */
-    public function setFC2045($fC2045)
+    public function set_F_C10_45_($_f_C10_45_)
     {
-        $this->fC2045 = $fC2045;
+        $this->_f_C10_45_ = $_f_C10_45_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5045;
+    private $_f_C20_45_;
 
     /**
      * @return string
      */
-    public function getFC5045()
+    public function get_F_C20_45_()
     {
-        return $this->fC5045;
+        return $this->_f_C20_45_;
     }
 
     /**
-     * @param string $fC5045
+     * @param string $_f_C20_45_
      */
-    public function setFC5045($fC5045)
+    public function set_F_C20_45_($_f_C20_45_)
     {
-        $this->fC5045 = $fC5045;
+        $this->_f_C20_45_ = $_f_C20_45_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_45_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_45_()
+    {
+        return $this->_f_C50_45_;
+    }
+
+    /**
+     * @param string $_f_C50_45_
+     */
+    public function set_F_C50_45_($_f_C50_45_)
+    {
+        $this->_f_C50_45_ = $_f_C50_45_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB46;
+    private $_f_B_46_;
 
     /**
      * @return boolean
      */
-    public function getFB46()
+    public function get_F_B_46_()
     {
-        return $this->fB46;
+        return $this->_f_B_46_;
     }
 
     /**
-     * @param boolean $fB46
+     * @param boolean $_f_B_46_
      */
-    public function setFB46($fB46)
+    public function set_F_B_46_($_f_B_46_)
     {
-        $this->fB46 = $fB46;
+        $this->_f_B_46_ = $_f_B_46_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI46;
+    private $_f_I_46_;
 
     /**
      * @return integer
      */
-    public function getFI46()
+    public function get_F_I_46_()
     {
-        return $this->fI46;
+        return $this->_f_I_46_;
     }
 
     /**
-     * @param integer $fI46
+     * @param integer $_f_I_46_
      */
-    public function setFI46($fI46)
+    public function set_F_I_46_($_f_I_46_)
     {
-        $this->fI46 = $fI46;
+        $this->_f_I_46_ = $_f_I_46_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN46;
+    private $_f_N_46_;
 
     /**
      * @return Decimal
      */
-    public function getFN46()
+    public function get_F_N_46_()
     {
-        return $this->fN46;
+        return $this->_f_N_46_;
     }
 
     /**
-     * @param Decimal $fN46
+     * @param Decimal $_f_N_46_
      */
-    public function setFN46($fN46)
+    public function set_F_N_46_($_f_N_46_)
     {
-        $this->fN46 = $fN46;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC546;
-
-    /**
-     * @return string
-     */
-    public function getFC546()
-    {
-        return $this->fC546;
-    }
-
-    /**
-     * @param string $fC546
-     */
-    public function setFC546($fC546)
-    {
-        $this->fC546 = $fC546;
+        $this->_f_N_46_ = $_f_N_46_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1046;
+    private $_f_C5_46_;
 
     /**
      * @return string
      */
-    public function getFC1046()
+    public function get_F_C5_46_()
     {
-        return $this->fC1046;
+        return $this->_f_C5_46_;
     }
 
     /**
-     * @param string $fC1046
+     * @param string $_f_C5_46_
      */
-    public function setFC1046($fC1046)
+    public function set_F_C5_46_($_f_C5_46_)
     {
-        $this->fC1046 = $fC1046;
+        $this->_f_C5_46_ = $_f_C5_46_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2046;
+    private $_f_C10_46_;
 
     /**
      * @return string
      */
-    public function getFC2046()
+    public function get_F_C10_46_()
     {
-        return $this->fC2046;
+        return $this->_f_C10_46_;
     }
 
     /**
-     * @param string $fC2046
+     * @param string $_f_C10_46_
      */
-    public function setFC2046($fC2046)
+    public function set_F_C10_46_($_f_C10_46_)
     {
-        $this->fC2046 = $fC2046;
+        $this->_f_C10_46_ = $_f_C10_46_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5046;
+    private $_f_C20_46_;
 
     /**
      * @return string
      */
-    public function getFC5046()
+    public function get_F_C20_46_()
     {
-        return $this->fC5046;
+        return $this->_f_C20_46_;
     }
 
     /**
-     * @param string $fC5046
+     * @param string $_f_C20_46_
      */
-    public function setFC5046($fC5046)
+    public function set_F_C20_46_($_f_C20_46_)
     {
-        $this->fC5046 = $fC5046;
+        $this->_f_C20_46_ = $_f_C20_46_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_46_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_46_()
+    {
+        return $this->_f_C50_46_;
+    }
+
+    /**
+     * @param string $_f_C50_46_
+     */
+    public function set_F_C50_46_($_f_C50_46_)
+    {
+        $this->_f_C50_46_ = $_f_C50_46_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB47;
+    private $_f_B_47_;
 
     /**
      * @return boolean
      */
-    public function getFB47()
+    public function get_F_B_47_()
     {
-        return $this->fB47;
+        return $this->_f_B_47_;
     }
 
     /**
-     * @param boolean $fB47
+     * @param boolean $_f_B_47_
      */
-    public function setFB47($fB47)
+    public function set_F_B_47_($_f_B_47_)
     {
-        $this->fB47 = $fB47;
+        $this->_f_B_47_ = $_f_B_47_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI47;
+    private $_f_I_47_;
 
     /**
      * @return integer
      */
-    public function getFI47()
+    public function get_F_I_47_()
     {
-        return $this->fI47;
+        return $this->_f_I_47_;
     }
 
     /**
-     * @param integer $fI47
+     * @param integer $_f_I_47_
      */
-    public function setFI47($fI47)
+    public function set_F_I_47_($_f_I_47_)
     {
-        $this->fI47 = $fI47;
+        $this->_f_I_47_ = $_f_I_47_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN47;
+    private $_f_N_47_;
 
     /**
      * @return Decimal
      */
-    public function getFN47()
+    public function get_F_N_47_()
     {
-        return $this->fN47;
+        return $this->_f_N_47_;
     }
 
     /**
-     * @param Decimal $fN47
+     * @param Decimal $_f_N_47_
      */
-    public function setFN47($fN47)
+    public function set_F_N_47_($_f_N_47_)
     {
-        $this->fN47 = $fN47;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC547;
-
-    /**
-     * @return string
-     */
-    public function getFC547()
-    {
-        return $this->fC547;
-    }
-
-    /**
-     * @param string $fC547
-     */
-    public function setFC547($fC547)
-    {
-        $this->fC547 = $fC547;
+        $this->_f_N_47_ = $_f_N_47_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1047;
+    private $_f_C5_47_;
 
     /**
      * @return string
      */
-    public function getFC1047()
+    public function get_F_C5_47_()
     {
-        return $this->fC1047;
+        return $this->_f_C5_47_;
     }
 
     /**
-     * @param string $fC1047
+     * @param string $_f_C5_47_
      */
-    public function setFC1047($fC1047)
+    public function set_F_C5_47_($_f_C5_47_)
     {
-        $this->fC1047 = $fC1047;
+        $this->_f_C5_47_ = $_f_C5_47_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2047;
+    private $_f_C10_47_;
 
     /**
      * @return string
      */
-    public function getFC2047()
+    public function get_F_C10_47_()
     {
-        return $this->fC2047;
+        return $this->_f_C10_47_;
     }
 
     /**
-     * @param string $fC2047
+     * @param string $_f_C10_47_
      */
-    public function setFC2047($fC2047)
+    public function set_F_C10_47_($_f_C10_47_)
     {
-        $this->fC2047 = $fC2047;
+        $this->_f_C10_47_ = $_f_C10_47_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5047;
+    private $_f_C20_47_;
 
     /**
      * @return string
      */
-    public function getFC5047()
+    public function get_F_C20_47_()
     {
-        return $this->fC5047;
+        return $this->_f_C20_47_;
     }
 
     /**
-     * @param string $fC5047
+     * @param string $_f_C20_47_
      */
-    public function setFC5047($fC5047)
+    public function set_F_C20_47_($_f_C20_47_)
     {
-        $this->fC5047 = $fC5047;
+        $this->_f_C20_47_ = $_f_C20_47_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_47_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_47_()
+    {
+        return $this->_f_C50_47_;
+    }
+
+    /**
+     * @param string $_f_C50_47_
+     */
+    public function set_F_C50_47_($_f_C50_47_)
+    {
+        $this->_f_C50_47_ = $_f_C50_47_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB48;
+    private $_f_B_48_;
 
     /**
      * @return boolean
      */
-    public function getFB48()
+    public function get_F_B_48_()
     {
-        return $this->fB48;
+        return $this->_f_B_48_;
     }
 
     /**
-     * @param boolean $fB48
+     * @param boolean $_f_B_48_
      */
-    public function setFB48($fB48)
+    public function set_F_B_48_($_f_B_48_)
     {
-        $this->fB48 = $fB48;
+        $this->_f_B_48_ = $_f_B_48_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI48;
+    private $_f_I_48_;
 
     /**
      * @return integer
      */
-    public function getFI48()
+    public function get_F_I_48_()
     {
-        return $this->fI48;
+        return $this->_f_I_48_;
     }
 
     /**
-     * @param integer $fI48
+     * @param integer $_f_I_48_
      */
-    public function setFI48($fI48)
+    public function set_F_I_48_($_f_I_48_)
     {
-        $this->fI48 = $fI48;
+        $this->_f_I_48_ = $_f_I_48_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN48;
+    private $_f_N_48_;
 
     /**
      * @return Decimal
      */
-    public function getFN48()
+    public function get_F_N_48_()
     {
-        return $this->fN48;
+        return $this->_f_N_48_;
     }
 
     /**
-     * @param Decimal $fN48
+     * @param Decimal $_f_N_48_
      */
-    public function setFN48($fN48)
+    public function set_F_N_48_($_f_N_48_)
     {
-        $this->fN48 = $fN48;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC548;
-
-    /**
-     * @return string
-     */
-    public function getFC548()
-    {
-        return $this->fC548;
-    }
-
-    /**
-     * @param string $fC548
-     */
-    public function setFC548($fC548)
-    {
-        $this->fC548 = $fC548;
+        $this->_f_N_48_ = $_f_N_48_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1048;
+    private $_f_C5_48_;
 
     /**
      * @return string
      */
-    public function getFC1048()
+    public function get_F_C5_48_()
     {
-        return $this->fC1048;
+        return $this->_f_C5_48_;
     }
 
     /**
-     * @param string $fC1048
+     * @param string $_f_C5_48_
      */
-    public function setFC1048($fC1048)
+    public function set_F_C5_48_($_f_C5_48_)
     {
-        $this->fC1048 = $fC1048;
+        $this->_f_C5_48_ = $_f_C5_48_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2048;
+    private $_f_C10_48_;
 
     /**
      * @return string
      */
-    public function getFC2048()
+    public function get_F_C10_48_()
     {
-        return $this->fC2048;
+        return $this->_f_C10_48_;
     }
 
     /**
-     * @param string $fC2048
+     * @param string $_f_C10_48_
      */
-    public function setFC2048($fC2048)
+    public function set_F_C10_48_($_f_C10_48_)
     {
-        $this->fC2048 = $fC2048;
+        $this->_f_C10_48_ = $_f_C10_48_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5048;
+    private $_f_C20_48_;
 
     /**
      * @return string
      */
-    public function getFC5048()
+    public function get_F_C20_48_()
     {
-        return $this->fC5048;
+        return $this->_f_C20_48_;
     }
 
     /**
-     * @param string $fC5048
+     * @param string $_f_C20_48_
      */
-    public function setFC5048($fC5048)
+    public function set_F_C20_48_($_f_C20_48_)
     {
-        $this->fC5048 = $fC5048;
+        $this->_f_C20_48_ = $_f_C20_48_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_48_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_48_()
+    {
+        return $this->_f_C50_48_;
+    }
+
+    /**
+     * @param string $_f_C50_48_
+     */
+    public function set_F_C50_48_($_f_C50_48_)
+    {
+        $this->_f_C50_48_ = $_f_C50_48_;
     }
 
     /**
      * @Type("boolean")
      */
-    private $fB49;
+    private $_f_B_49_;
 
     /**
      * @return boolean
      */
-    public function getFB49()
+    public function get_F_B_49_()
     {
-        return $this->fB49;
+        return $this->_f_B_49_;
     }
 
     /**
-     * @param boolean $fB49
+     * @param boolean $_f_B_49_
      */
-    public function setFB49($fB49)
+    public function set_F_B_49_($_f_B_49_)
     {
-        $this->fB49 = $fB49;
+        $this->_f_B_49_ = $_f_B_49_;
     }
 
     /**
      * @Type("integer")
      */
-    private $fI49;
+    private $_f_I_49_;
 
     /**
      * @return integer
      */
-    public function getFI49()
+    public function get_F_I_49_()
     {
-        return $this->fI49;
+        return $this->_f_I_49_;
     }
 
     /**
-     * @param integer $fI49
+     * @param integer $_f_I_49_
      */
-    public function setFI49($fI49)
+    public function set_F_I_49_($_f_I_49_)
     {
-        $this->fI49 = $fI49;
+        $this->_f_I_49_ = $_f_I_49_;
     }
 
     /**
      * @Type("Dddml\Serializer\Type\Decimal")
      */
-    private $fN49;
+    private $_f_N_49_;
 
     /**
      * @return Decimal
      */
-    public function getFN49()
+    public function get_F_N_49_()
     {
-        return $this->fN49;
+        return $this->_f_N_49_;
     }
 
     /**
-     * @param Decimal $fN49
+     * @param Decimal $_f_N_49_
      */
-    public function setFN49($fN49)
+    public function set_F_N_49_($_f_N_49_)
     {
-        $this->fN49 = $fN49;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $fC549;
-
-    /**
-     * @return string
-     */
-    public function getFC549()
-    {
-        return $this->fC549;
-    }
-
-    /**
-     * @param string $fC549
-     */
-    public function setFC549($fC549)
-    {
-        $this->fC549 = $fC549;
+        $this->_f_N_49_ = $_f_N_49_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC1049;
+    private $_f_C5_49_;
 
     /**
      * @return string
      */
-    public function getFC1049()
+    public function get_F_C5_49_()
     {
-        return $this->fC1049;
+        return $this->_f_C5_49_;
     }
 
     /**
-     * @param string $fC1049
+     * @param string $_f_C5_49_
      */
-    public function setFC1049($fC1049)
+    public function set_F_C5_49_($_f_C5_49_)
     {
-        $this->fC1049 = $fC1049;
+        $this->_f_C5_49_ = $_f_C5_49_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC2049;
+    private $_f_C10_49_;
 
     /**
      * @return string
      */
-    public function getFC2049()
+    public function get_F_C10_49_()
     {
-        return $this->fC2049;
+        return $this->_f_C10_49_;
     }
 
     /**
-     * @param string $fC2049
+     * @param string $_f_C10_49_
      */
-    public function setFC2049($fC2049)
+    public function set_F_C10_49_($_f_C10_49_)
     {
-        $this->fC2049 = $fC2049;
+        $this->_f_C10_49_ = $_f_C10_49_;
     }
 
     /**
      * @Type("string")
      */
-    private $fC5049;
+    private $_f_C20_49_;
 
     /**
      * @return string
      */
-    public function getFC5049()
+    public function get_F_C20_49_()
     {
-        return $this->fC5049;
+        return $this->_f_C20_49_;
     }
 
     /**
-     * @param string $fC5049
+     * @param string $_f_C20_49_
      */
-    public function setFC5049($fC5049)
+    public function set_F_C20_49_($_f_C20_49_)
     {
-        $this->fC5049 = $fC5049;
+        $this->_f_C20_49_ = $_f_C20_49_;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $_f_C50_49_;
+
+    /**
+     * @return string
+     */
+    public function get_F_C50_49_()
+    {
+        return $this->_f_C50_49_;
+    }
+
+    /**
+     * @param string $_f_C50_49_
+     */
+    public function set_F_C50_49_($_f_C50_49_)
+    {
+        $this->_f_C50_49_ = $_f_C50_49_;
     }
 
     /**

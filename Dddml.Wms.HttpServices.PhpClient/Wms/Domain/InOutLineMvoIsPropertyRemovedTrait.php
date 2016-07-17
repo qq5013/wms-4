@@ -448,22 +448,22 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutIsSoTransactionRemoved = null;
+    private $isPropertyInOutIsSOTransactionRemoved = null;
 
     /**
      * @return boolean
      */
-    public function getIsPropertyInOutIsSoTransactionRemoved()
+    public function getIsPropertyInOutIsSOTransactionRemoved()
     {
-        return $this->isPropertyInOutIsSoTransactionRemoved;
+        return $this->isPropertyInOutIsSOTransactionRemoved;
     }
 
     /**
-     * @param boolean $isPropertyInOutIsSoTransactionRemoved
+     * @param boolean $isPropertyInOutIsSOTransactionRemoved
      */
-    public function setIsPropertyInOutIsSoTransactionRemoved($isPropertyInOutIsSoTransactionRemoved)
+    public function setIsPropertyInOutIsSOTransactionRemoved($isPropertyInOutIsSOTransactionRemoved)
     {
-        $this->isPropertyInOutIsSoTransactionRemoved = $isPropertyInOutIsSoTransactionRemoved;
+        $this->isPropertyInOutIsSOTransactionRemoved = $isPropertyInOutIsSOTransactionRemoved;
     }
 
     /**
@@ -747,22 +747,22 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutPoReferenceRemoved = null;
+    private $isPropertyInOutPOReferenceRemoved = null;
 
     /**
      * @return boolean
      */
-    public function getIsPropertyInOutPoReferenceRemoved()
+    public function getIsPropertyInOutPOReferenceRemoved()
     {
-        return $this->isPropertyInOutPoReferenceRemoved;
+        return $this->isPropertyInOutPOReferenceRemoved;
     }
 
     /**
-     * @param boolean $isPropertyInOutPoReferenceRemoved
+     * @param boolean $isPropertyInOutPOReferenceRemoved
      */
-    public function setIsPropertyInOutPoReferenceRemoved($isPropertyInOutPoReferenceRemoved)
+    public function setIsPropertyInOutPOReferenceRemoved($isPropertyInOutPOReferenceRemoved)
     {
-        $this->isPropertyInOutPoReferenceRemoved = $isPropertyInOutPoReferenceRemoved;
+        $this->isPropertyInOutPOReferenceRemoved = $isPropertyInOutPOReferenceRemoved;
     }
 
     /**

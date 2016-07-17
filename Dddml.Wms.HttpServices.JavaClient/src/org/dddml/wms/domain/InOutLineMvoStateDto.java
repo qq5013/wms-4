@@ -250,16 +250,16 @@ public class InOutLineMvoStateDto
         this.active = active;
     }
 
-    private Boolean inOutIsSoTransaction;
+    private Boolean inOutIsSOTransaction;
 
-    public Boolean getInOutIsSoTransaction()
+    public Boolean getInOutIsSOTransaction()
     {
-        return this.inOutIsSoTransaction;
+        return this.inOutIsSOTransaction;
     }
 
-    public void setInOutIsSoTransaction(Boolean inOutIsSoTransaction)
+    public void setInOutIsSOTransaction(Boolean inOutIsSOTransaction)
     {
-        this.inOutIsSoTransaction = inOutIsSoTransaction;
+        this.inOutIsSOTransaction = inOutIsSOTransaction;
     }
 
     private String inOutDocumentStatus;
@@ -418,16 +418,16 @@ public class InOutLineMvoStateDto
         this.inOutWarehouseId = inOutWarehouseId;
     }
 
-    private String inOutPoReference;
+    private String inOutPOReference;
 
-    public String getInOutPoReference()
+    public String getInOutPOReference()
     {
-        return this.inOutPoReference;
+        return this.inOutPOReference;
     }
 
-    public void setInOutPoReference(String inOutPoReference)
+    public void setInOutPOReference(String inOutPOReference)
     {
-        this.inOutPoReference = inOutPoReference;
+        this.inOutPOReference = inOutPOReference;
     }
 
     private Money inOutFreightAmount;

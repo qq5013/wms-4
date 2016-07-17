@@ -162,232 +162,232 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo extends AbstractAt
     /**
      * @Type("string")
      */
-    private $attrSetInstEfGroupFieldType;
+    private $attrSetInstEFGroupFieldType;
 
     /**
      * @return string
      */
-    public function getAttrSetInstEfGroupFieldType()
+    public function getAttrSetInstEFGroupFieldType()
     {
-        return $this->attrSetInstEfGroupFieldType;
+        return $this->attrSetInstEFGroupFieldType;
     }
 
     /**
-     * @param string $attrSetInstEfGroupFieldType
+     * @param string $attrSetInstEFGroupFieldType
      */
-    public function setAttrSetInstEfGroupFieldType($attrSetInstEfGroupFieldType)
+    public function setAttrSetInstEFGroupFieldType($attrSetInstEFGroupFieldType)
     {
-        $this->attrSetInstEfGroupFieldType = $attrSetInstEfGroupFieldType;
+        $this->attrSetInstEFGroupFieldType = $attrSetInstEFGroupFieldType;
     }
 
     /**
      * @Type("integer")
      */
-    private $attrSetInstEfGroupFieldLength;
+    private $attrSetInstEFGroupFieldLength;
 
     /**
      * @return integer
      */
-    public function getAttrSetInstEfGroupFieldLength()
+    public function getAttrSetInstEFGroupFieldLength()
     {
-        return $this->attrSetInstEfGroupFieldLength;
+        return $this->attrSetInstEFGroupFieldLength;
     }
 
     /**
-     * @param integer $attrSetInstEfGroupFieldLength
+     * @param integer $attrSetInstEFGroupFieldLength
      */
-    public function setAttrSetInstEfGroupFieldLength($attrSetInstEfGroupFieldLength)
+    public function setAttrSetInstEFGroupFieldLength($attrSetInstEFGroupFieldLength)
     {
-        $this->attrSetInstEfGroupFieldLength = $attrSetInstEfGroupFieldLength;
+        $this->attrSetInstEFGroupFieldLength = $attrSetInstEFGroupFieldLength;
     }
 
     /**
      * @Type("integer")
      */
-    private $attrSetInstEfGroupFieldCount;
+    private $attrSetInstEFGroupFieldCount;
 
     /**
      * @return integer
      */
-    public function getAttrSetInstEfGroupFieldCount()
+    public function getAttrSetInstEFGroupFieldCount()
     {
-        return $this->attrSetInstEfGroupFieldCount;
+        return $this->attrSetInstEFGroupFieldCount;
     }
 
     /**
-     * @param integer $attrSetInstEfGroupFieldCount
+     * @param integer $attrSetInstEFGroupFieldCount
      */
-    public function setAttrSetInstEfGroupFieldCount($attrSetInstEfGroupFieldCount)
+    public function setAttrSetInstEFGroupFieldCount($attrSetInstEFGroupFieldCount)
     {
-        $this->attrSetInstEfGroupFieldCount = $attrSetInstEfGroupFieldCount;
-    }
-
-    /**
-     * @Type("string")
-     */
-    private $attrSetInstEfGroupNameFormat;
-
-    /**
-     * @return string
-     */
-    public function getAttrSetInstEfGroupNameFormat()
-    {
-        return $this->attrSetInstEfGroupNameFormat;
-    }
-
-    /**
-     * @param string $attrSetInstEfGroupNameFormat
-     */
-    public function setAttrSetInstEfGroupNameFormat($attrSetInstEfGroupNameFormat)
-    {
-        $this->attrSetInstEfGroupNameFormat = $attrSetInstEfGroupNameFormat;
+        $this->attrSetInstEFGroupFieldCount = $attrSetInstEFGroupFieldCount;
     }
 
     /**
      * @Type("string")
      */
-    private $attrSetInstEfGroupDescription;
+    private $attrSetInstEFGroupNameFormat;
 
     /**
      * @return string
      */
-    public function getAttrSetInstEfGroupDescription()
+    public function getAttrSetInstEFGroupNameFormat()
     {
-        return $this->attrSetInstEfGroupDescription;
+        return $this->attrSetInstEFGroupNameFormat;
     }
 
     /**
-     * @param string $attrSetInstEfGroupDescription
+     * @param string $attrSetInstEFGroupNameFormat
      */
-    public function setAttrSetInstEfGroupDescription($attrSetInstEfGroupDescription)
+    public function setAttrSetInstEFGroupNameFormat($attrSetInstEFGroupNameFormat)
     {
-        $this->attrSetInstEfGroupDescription = $attrSetInstEfGroupDescription;
+        $this->attrSetInstEFGroupNameFormat = $attrSetInstEFGroupNameFormat;
     }
 
     /**
      * @Type("string")
      */
-    private $attrSetInstEfGroupCreatedBy;
+    private $attrSetInstEFGroupDescription;
 
     /**
      * @return string
      */
-    public function getAttrSetInstEfGroupCreatedBy()
+    public function getAttrSetInstEFGroupDescription()
     {
-        return $this->attrSetInstEfGroupCreatedBy;
+        return $this->attrSetInstEFGroupDescription;
     }
 
     /**
-     * @param string $attrSetInstEfGroupCreatedBy
+     * @param string $attrSetInstEFGroupDescription
      */
-    public function setAttrSetInstEfGroupCreatedBy($attrSetInstEfGroupCreatedBy)
+    public function setAttrSetInstEFGroupDescription($attrSetInstEFGroupDescription)
     {
-        $this->attrSetInstEfGroupCreatedBy = $attrSetInstEfGroupCreatedBy;
+        $this->attrSetInstEFGroupDescription = $attrSetInstEFGroupDescription;
+    }
+
+    /**
+     * @Type("string")
+     */
+    private $attrSetInstEFGroupCreatedBy;
+
+    /**
+     * @return string
+     */
+    public function getAttrSetInstEFGroupCreatedBy()
+    {
+        return $this->attrSetInstEFGroupCreatedBy;
+    }
+
+    /**
+     * @param string $attrSetInstEFGroupCreatedBy
+     */
+    public function setAttrSetInstEFGroupCreatedBy($attrSetInstEFGroupCreatedBy)
+    {
+        $this->attrSetInstEFGroupCreatedBy = $attrSetInstEFGroupCreatedBy;
     }
 
     /**
      * @Type("\DateTime")
      */
-    private $attrSetInstEfGroupCreatedAt;
+    private $attrSetInstEFGroupCreatedAt;
 
     /**
      * @return \DateTime
      */
-    public function getAttrSetInstEfGroupCreatedAt()
+    public function getAttrSetInstEFGroupCreatedAt()
     {
-        return $this->attrSetInstEfGroupCreatedAt;
+        return $this->attrSetInstEFGroupCreatedAt;
     }
 
     /**
-     * @param \DateTime $attrSetInstEfGroupCreatedAt
+     * @param \DateTime $attrSetInstEFGroupCreatedAt
      */
-    public function setAttrSetInstEfGroupCreatedAt($attrSetInstEfGroupCreatedAt)
+    public function setAttrSetInstEFGroupCreatedAt($attrSetInstEFGroupCreatedAt)
     {
-        $this->attrSetInstEfGroupCreatedAt = $attrSetInstEfGroupCreatedAt;
+        $this->attrSetInstEFGroupCreatedAt = $attrSetInstEFGroupCreatedAt;
     }
 
     /**
      * @Type("string")
      */
-    private $attrSetInstEfGroupUpdatedBy;
+    private $attrSetInstEFGroupUpdatedBy;
 
     /**
      * @return string
      */
-    public function getAttrSetInstEfGroupUpdatedBy()
+    public function getAttrSetInstEFGroupUpdatedBy()
     {
-        return $this->attrSetInstEfGroupUpdatedBy;
+        return $this->attrSetInstEFGroupUpdatedBy;
     }
 
     /**
-     * @param string $attrSetInstEfGroupUpdatedBy
+     * @param string $attrSetInstEFGroupUpdatedBy
      */
-    public function setAttrSetInstEfGroupUpdatedBy($attrSetInstEfGroupUpdatedBy)
+    public function setAttrSetInstEFGroupUpdatedBy($attrSetInstEFGroupUpdatedBy)
     {
-        $this->attrSetInstEfGroupUpdatedBy = $attrSetInstEfGroupUpdatedBy;
+        $this->attrSetInstEFGroupUpdatedBy = $attrSetInstEFGroupUpdatedBy;
     }
 
     /**
      * @Type("\DateTime")
      */
-    private $attrSetInstEfGroupUpdatedAt;
+    private $attrSetInstEFGroupUpdatedAt;
 
     /**
      * @return \DateTime
      */
-    public function getAttrSetInstEfGroupUpdatedAt()
+    public function getAttrSetInstEFGroupUpdatedAt()
     {
-        return $this->attrSetInstEfGroupUpdatedAt;
+        return $this->attrSetInstEFGroupUpdatedAt;
     }
 
     /**
-     * @param \DateTime $attrSetInstEfGroupUpdatedAt
+     * @param \DateTime $attrSetInstEFGroupUpdatedAt
      */
-    public function setAttrSetInstEfGroupUpdatedAt($attrSetInstEfGroupUpdatedAt)
+    public function setAttrSetInstEFGroupUpdatedAt($attrSetInstEFGroupUpdatedAt)
     {
-        $this->attrSetInstEfGroupUpdatedAt = $attrSetInstEfGroupUpdatedAt;
-    }
-
-    /**
-     * @Type("boolean")
-     */
-    private $attrSetInstEfGroupActive;
-
-    /**
-     * @return boolean
-     */
-    public function getAttrSetInstEfGroupActive()
-    {
-        return $this->attrSetInstEfGroupActive;
-    }
-
-    /**
-     * @param boolean $attrSetInstEfGroupActive
-     */
-    public function setAttrSetInstEfGroupActive($attrSetInstEfGroupActive)
-    {
-        $this->attrSetInstEfGroupActive = $attrSetInstEfGroupActive;
+        $this->attrSetInstEFGroupUpdatedAt = $attrSetInstEFGroupUpdatedAt;
     }
 
     /**
      * @Type("boolean")
      */
-    private $attrSetInstEfGroupDeleted;
+    private $attrSetInstEFGroupActive;
 
     /**
      * @return boolean
      */
-    public function getAttrSetInstEfGroupDeleted()
+    public function getAttrSetInstEFGroupActive()
     {
-        return $this->attrSetInstEfGroupDeleted;
+        return $this->attrSetInstEFGroupActive;
     }
 
     /**
-     * @param boolean $attrSetInstEfGroupDeleted
+     * @param boolean $attrSetInstEFGroupActive
      */
-    public function setAttrSetInstEfGroupDeleted($attrSetInstEfGroupDeleted)
+    public function setAttrSetInstEFGroupActive($attrSetInstEFGroupActive)
     {
-        $this->attrSetInstEfGroupDeleted = $attrSetInstEfGroupDeleted;
+        $this->attrSetInstEFGroupActive = $attrSetInstEFGroupActive;
+    }
+
+    /**
+     * @Type("boolean")
+     */
+    private $attrSetInstEFGroupDeleted;
+
+    /**
+     * @return boolean
+     */
+    public function getAttrSetInstEFGroupDeleted()
+    {
+        return $this->attrSetInstEFGroupDeleted;
+    }
+
+    /**
+     * @param boolean $attrSetInstEFGroupDeleted
+     */
+    public function setAttrSetInstEFGroupDeleted($attrSetInstEFGroupDeleted)
+    {
+        $this->attrSetInstEFGroupDeleted = $attrSetInstEFGroupDeleted;
     }
 
 

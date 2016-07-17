@@ -35,22 +35,22 @@ trait InOutStatePropertiesTrait
     /**
      * @Type("boolean")
      */
-    private $isSoTransaction;
+    private $isSOTransaction;
 
     /**
      * @return boolean
      */
-    public function getIsSoTransaction()
+    public function getIsSOTransaction()
     {
-        return $this->isSoTransaction;
+        return $this->isSOTransaction;
     }
 
     /**
-     * @param boolean $isSoTransaction
+     * @param boolean $isSOTransaction
      */
-    public function setIsSoTransaction($isSoTransaction)
+    public function setIsSOTransaction($isSOTransaction)
     {
-        $this->isSoTransaction = $isSoTransaction;
+        $this->isSOTransaction = $isSOTransaction;
     }
 
     /**
@@ -329,22 +329,22 @@ trait InOutStatePropertiesTrait
     /**
      * @Type("string")
      */
-    private $poReference;
+    private $pOReference;
 
     /**
      * @return string
      */
-    public function getPoReference()
+    public function getPOReference()
     {
-        return $this->poReference;
+        return $this->pOReference;
     }
 
     /**
-     * @param string $poReference
+     * @param string $pOReference
      */
-    public function setPoReference($poReference)
+    public function setPOReference($pOReference)
     {
-        $this->poReference = $poReference;
+        $this->pOReference = $pOReference;
     }
 
     /**

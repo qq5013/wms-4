@@ -32,14 +32,14 @@ public class AttributeSetInstanceExtensionFieldMvoStateEventIdDto
         this.value.setAttributeSetInstanceExtensionFieldId(attributeSetInstanceExtensionFieldId.toAttributeSetInstanceExtensionFieldId());
     }
 
-    public Long getAttrSetInstEfGroupVersion()
+    public Long getAttrSetInstEFGroupVersion()
     {
-        return this.value.getAttrSetInstEfGroupVersion();
+        return this.value.getAttrSetInstEFGroupVersion();
     }
 
-    public void setAttrSetInstEfGroupVersion(Long attrSetInstEfGroupVersion)
+    public void setAttrSetInstEFGroupVersion(Long attrSetInstEFGroupVersion)
     {
-        this.value.setAttrSetInstEfGroupVersion(attrSetInstEfGroupVersion);
+        this.value.setAttrSetInstEFGroupVersion(attrSetInstEFGroupVersion);
     }
 
 

@@ -172,22 +172,22 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttrSetInstEfGroupFieldTypeRemoved = null;
+    private $isPropertyAttrSetInstEFGroupFieldTypeRemoved = null;
 
     /**
      * @return boolean
      */
-    public function getIsPropertyAttrSetInstEfGroupFieldTypeRemoved()
+    public function getIsPropertyAttrSetInstEFGroupFieldTypeRemoved()
     {
-        return $this->isPropertyAttrSetInstEfGroupFieldTypeRemoved;
+        return $this->isPropertyAttrSetInstEFGroupFieldTypeRemoved;
     }
 
     /**
-     * @param boolean $isPropertyAttrSetInstEfGroupFieldTypeRemoved
+     * @param boolean $isPropertyAttrSetInstEFGroupFieldTypeRemoved
      */
-    public function setIsPropertyAttrSetInstEfGroupFieldTypeRemoved($isPropertyAttrSetInstEfGroupFieldTypeRemoved)
+    public function setIsPropertyAttrSetInstEFGroupFieldTypeRemoved($isPropertyAttrSetInstEFGroupFieldTypeRemoved)
     {
-        $this->isPropertyAttrSetInstEfGroupFieldTypeRemoved = $isPropertyAttrSetInstEfGroupFieldTypeRemoved;
+        $this->isPropertyAttrSetInstEFGroupFieldTypeRemoved = $isPropertyAttrSetInstEFGroupFieldTypeRemoved;
     }
 
     /**
@@ -195,22 +195,22 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttrSetInstEfGroupFieldLengthRemoved = null;
+    private $isPropertyAttrSetInstEFGroupFieldLengthRemoved = null;
 
     /**
      * @return boolean
      */
-    public function getIsPropertyAttrSetInstEfGroupFieldLengthRemoved()
+    public function getIsPropertyAttrSetInstEFGroupFieldLengthRemoved()
     {
-        return $this->isPropertyAttrSetInstEfGroupFieldLengthRemoved;
+        return $this->isPropertyAttrSetInstEFGroupFieldLengthRemoved;
     }
 
     /**
-     * @param boolean $isPropertyAttrSetInstEfGroupFieldLengthRemoved
+     * @param boolean $isPropertyAttrSetInstEFGroupFieldLengthRemoved
      */
-    public function setIsPropertyAttrSetInstEfGroupFieldLengthRemoved($isPropertyAttrSetInstEfGroupFieldLengthRemoved)
+    public function setIsPropertyAttrSetInstEFGroupFieldLengthRemoved($isPropertyAttrSetInstEFGroupFieldLengthRemoved)
     {
-        $this->isPropertyAttrSetInstEfGroupFieldLengthRemoved = $isPropertyAttrSetInstEfGroupFieldLengthRemoved;
+        $this->isPropertyAttrSetInstEFGroupFieldLengthRemoved = $isPropertyAttrSetInstEFGroupFieldLengthRemoved;
     }
 
     /**
@@ -218,22 +218,22 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttrSetInstEfGroupFieldCountRemoved = null;
+    private $isPropertyAttrSetInstEFGroupFieldCountRemoved = null;
 
     /**
      * @return boolean
      */
-    public function getIsPropertyAttrSetInstEfGroupFieldCountRemoved()
+    public function getIsPropertyAttrSetInstEFGroupFieldCountRemoved()
     {
-        return $this->isPropertyAttrSetInstEfGroupFieldCountRemoved;
+        return $this->isPropertyAttrSetInstEFGroupFieldCountRemoved;
     }
 
     /**
-     * @param boolean $isPropertyAttrSetInstEfGroupFieldCountRemoved
+     * @param boolean $isPropertyAttrSetInstEFGroupFieldCountRemoved
      */
-    public function setIsPropertyAttrSetInstEfGroupFieldCountRemoved($isPropertyAttrSetInstEfGroupFieldCountRemoved)
+    public function setIsPropertyAttrSetInstEFGroupFieldCountRemoved($isPropertyAttrSetInstEFGroupFieldCountRemoved)
     {
-        $this->isPropertyAttrSetInstEfGroupFieldCountRemoved = $isPropertyAttrSetInstEfGroupFieldCountRemoved;
+        $this->isPropertyAttrSetInstEFGroupFieldCountRemoved = $isPropertyAttrSetInstEFGroupFieldCountRemoved;
     }
 
     /**
@@ -241,22 +241,22 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttrSetInstEfGroupNameFormatRemoved = null;
+    private $isPropertyAttrSetInstEFGroupNameFormatRemoved = null;
 
     /**
      * @return boolean
      */
-    public function getIsPropertyAttrSetInstEfGroupNameFormatRemoved()
+    public function getIsPropertyAttrSetInstEFGroupNameFormatRemoved()
     {
-        return $this->isPropertyAttrSetInstEfGroupNameFormatRemoved;
+        return $this->isPropertyAttrSetInstEFGroupNameFormatRemoved;
     }
 
     /**
-     * @param boolean $isPropertyAttrSetInstEfGroupNameFormatRemoved
+     * @param boolean $isPropertyAttrSetInstEFGroupNameFormatRemoved
      */
-    public function setIsPropertyAttrSetInstEfGroupNameFormatRemoved($isPropertyAttrSetInstEfGroupNameFormatRemoved)
+    public function setIsPropertyAttrSetInstEFGroupNameFormatRemoved($isPropertyAttrSetInstEFGroupNameFormatRemoved)
     {
-        $this->isPropertyAttrSetInstEfGroupNameFormatRemoved = $isPropertyAttrSetInstEfGroupNameFormatRemoved;
+        $this->isPropertyAttrSetInstEFGroupNameFormatRemoved = $isPropertyAttrSetInstEFGroupNameFormatRemoved;
     }
 
     /**
@@ -264,22 +264,22 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttrSetInstEfGroupDescriptionRemoved = null;
+    private $isPropertyAttrSetInstEFGroupDescriptionRemoved = null;
 
     /**
      * @return boolean
      */
-    public function getIsPropertyAttrSetInstEfGroupDescriptionRemoved()
+    public function getIsPropertyAttrSetInstEFGroupDescriptionRemoved()
     {
-        return $this->isPropertyAttrSetInstEfGroupDescriptionRemoved;
+        return $this->isPropertyAttrSetInstEFGroupDescriptionRemoved;
     }
 
     /**
-     * @param boolean $isPropertyAttrSetInstEfGroupDescriptionRemoved
+     * @param boolean $isPropertyAttrSetInstEFGroupDescriptionRemoved
      */
-    public function setIsPropertyAttrSetInstEfGroupDescriptionRemoved($isPropertyAttrSetInstEfGroupDescriptionRemoved)
+    public function setIsPropertyAttrSetInstEFGroupDescriptionRemoved($isPropertyAttrSetInstEFGroupDescriptionRemoved)
     {
-        $this->isPropertyAttrSetInstEfGroupDescriptionRemoved = $isPropertyAttrSetInstEfGroupDescriptionRemoved;
+        $this->isPropertyAttrSetInstEFGroupDescriptionRemoved = $isPropertyAttrSetInstEFGroupDescriptionRemoved;
     }
 
     /**
@@ -287,22 +287,22 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttrSetInstEfGroupCreatedByRemoved = null;
+    private $isPropertyAttrSetInstEFGroupCreatedByRemoved = null;
 
     /**
      * @return boolean
      */
-    public function getIsPropertyAttrSetInstEfGroupCreatedByRemoved()
+    public function getIsPropertyAttrSetInstEFGroupCreatedByRemoved()
     {
-        return $this->isPropertyAttrSetInstEfGroupCreatedByRemoved;
+        return $this->isPropertyAttrSetInstEFGroupCreatedByRemoved;
     }
 
     /**
-     * @param boolean $isPropertyAttrSetInstEfGroupCreatedByRemoved
+     * @param boolean $isPropertyAttrSetInstEFGroupCreatedByRemoved
      */
-    public function setIsPropertyAttrSetInstEfGroupCreatedByRemoved($isPropertyAttrSetInstEfGroupCreatedByRemoved)
+    public function setIsPropertyAttrSetInstEFGroupCreatedByRemoved($isPropertyAttrSetInstEFGroupCreatedByRemoved)
     {
-        $this->isPropertyAttrSetInstEfGroupCreatedByRemoved = $isPropertyAttrSetInstEfGroupCreatedByRemoved;
+        $this->isPropertyAttrSetInstEFGroupCreatedByRemoved = $isPropertyAttrSetInstEFGroupCreatedByRemoved;
     }
 
     /**
@@ -310,22 +310,22 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttrSetInstEfGroupCreatedAtRemoved = null;
+    private $isPropertyAttrSetInstEFGroupCreatedAtRemoved = null;
 
     /**
      * @return boolean
      */
-    public function getIsPropertyAttrSetInstEfGroupCreatedAtRemoved()
+    public function getIsPropertyAttrSetInstEFGroupCreatedAtRemoved()
     {
-        return $this->isPropertyAttrSetInstEfGroupCreatedAtRemoved;
+        return $this->isPropertyAttrSetInstEFGroupCreatedAtRemoved;
     }
 
     /**
-     * @param boolean $isPropertyAttrSetInstEfGroupCreatedAtRemoved
+     * @param boolean $isPropertyAttrSetInstEFGroupCreatedAtRemoved
      */
-    public function setIsPropertyAttrSetInstEfGroupCreatedAtRemoved($isPropertyAttrSetInstEfGroupCreatedAtRemoved)
+    public function setIsPropertyAttrSetInstEFGroupCreatedAtRemoved($isPropertyAttrSetInstEFGroupCreatedAtRemoved)
     {
-        $this->isPropertyAttrSetInstEfGroupCreatedAtRemoved = $isPropertyAttrSetInstEfGroupCreatedAtRemoved;
+        $this->isPropertyAttrSetInstEFGroupCreatedAtRemoved = $isPropertyAttrSetInstEFGroupCreatedAtRemoved;
     }
 
     /**
@@ -333,22 +333,22 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttrSetInstEfGroupUpdatedByRemoved = null;
+    private $isPropertyAttrSetInstEFGroupUpdatedByRemoved = null;
 
     /**
      * @return boolean
      */
-    public function getIsPropertyAttrSetInstEfGroupUpdatedByRemoved()
+    public function getIsPropertyAttrSetInstEFGroupUpdatedByRemoved()
     {
-        return $this->isPropertyAttrSetInstEfGroupUpdatedByRemoved;
+        return $this->isPropertyAttrSetInstEFGroupUpdatedByRemoved;
     }
 
     /**
-     * @param boolean $isPropertyAttrSetInstEfGroupUpdatedByRemoved
+     * @param boolean $isPropertyAttrSetInstEFGroupUpdatedByRemoved
      */
-    public function setIsPropertyAttrSetInstEfGroupUpdatedByRemoved($isPropertyAttrSetInstEfGroupUpdatedByRemoved)
+    public function setIsPropertyAttrSetInstEFGroupUpdatedByRemoved($isPropertyAttrSetInstEFGroupUpdatedByRemoved)
     {
-        $this->isPropertyAttrSetInstEfGroupUpdatedByRemoved = $isPropertyAttrSetInstEfGroupUpdatedByRemoved;
+        $this->isPropertyAttrSetInstEFGroupUpdatedByRemoved = $isPropertyAttrSetInstEFGroupUpdatedByRemoved;
     }
 
     /**
@@ -356,22 +356,22 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttrSetInstEfGroupUpdatedAtRemoved = null;
+    private $isPropertyAttrSetInstEFGroupUpdatedAtRemoved = null;
 
     /**
      * @return boolean
      */
-    public function getIsPropertyAttrSetInstEfGroupUpdatedAtRemoved()
+    public function getIsPropertyAttrSetInstEFGroupUpdatedAtRemoved()
     {
-        return $this->isPropertyAttrSetInstEfGroupUpdatedAtRemoved;
+        return $this->isPropertyAttrSetInstEFGroupUpdatedAtRemoved;
     }
 
     /**
-     * @param boolean $isPropertyAttrSetInstEfGroupUpdatedAtRemoved
+     * @param boolean $isPropertyAttrSetInstEFGroupUpdatedAtRemoved
      */
-    public function setIsPropertyAttrSetInstEfGroupUpdatedAtRemoved($isPropertyAttrSetInstEfGroupUpdatedAtRemoved)
+    public function setIsPropertyAttrSetInstEFGroupUpdatedAtRemoved($isPropertyAttrSetInstEFGroupUpdatedAtRemoved)
     {
-        $this->isPropertyAttrSetInstEfGroupUpdatedAtRemoved = $isPropertyAttrSetInstEfGroupUpdatedAtRemoved;
+        $this->isPropertyAttrSetInstEFGroupUpdatedAtRemoved = $isPropertyAttrSetInstEFGroupUpdatedAtRemoved;
     }
 
     /**
@@ -379,22 +379,22 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttrSetInstEfGroupActiveRemoved = null;
+    private $isPropertyAttrSetInstEFGroupActiveRemoved = null;
 
     /**
      * @return boolean
      */
-    public function getIsPropertyAttrSetInstEfGroupActiveRemoved()
+    public function getIsPropertyAttrSetInstEFGroupActiveRemoved()
     {
-        return $this->isPropertyAttrSetInstEfGroupActiveRemoved;
+        return $this->isPropertyAttrSetInstEFGroupActiveRemoved;
     }
 
     /**
-     * @param boolean $isPropertyAttrSetInstEfGroupActiveRemoved
+     * @param boolean $isPropertyAttrSetInstEFGroupActiveRemoved
      */
-    public function setIsPropertyAttrSetInstEfGroupActiveRemoved($isPropertyAttrSetInstEfGroupActiveRemoved)
+    public function setIsPropertyAttrSetInstEFGroupActiveRemoved($isPropertyAttrSetInstEFGroupActiveRemoved)
     {
-        $this->isPropertyAttrSetInstEfGroupActiveRemoved = $isPropertyAttrSetInstEfGroupActiveRemoved;
+        $this->isPropertyAttrSetInstEFGroupActiveRemoved = $isPropertyAttrSetInstEFGroupActiveRemoved;
     }
 
     /**
@@ -402,22 +402,22 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttrSetInstEfGroupDeletedRemoved = null;
+    private $isPropertyAttrSetInstEFGroupDeletedRemoved = null;
 
     /**
      * @return boolean
      */
-    public function getIsPropertyAttrSetInstEfGroupDeletedRemoved()
+    public function getIsPropertyAttrSetInstEFGroupDeletedRemoved()
     {
-        return $this->isPropertyAttrSetInstEfGroupDeletedRemoved;
+        return $this->isPropertyAttrSetInstEFGroupDeletedRemoved;
     }
 
     /**
-     * @param boolean $isPropertyAttrSetInstEfGroupDeletedRemoved
+     * @param boolean $isPropertyAttrSetInstEFGroupDeletedRemoved
      */
-    public function setIsPropertyAttrSetInstEfGroupDeletedRemoved($isPropertyAttrSetInstEfGroupDeletedRemoved)
+    public function setIsPropertyAttrSetInstEFGroupDeletedRemoved($isPropertyAttrSetInstEFGroupDeletedRemoved)
     {
-        $this->isPropertyAttrSetInstEfGroupDeletedRemoved = $isPropertyAttrSetInstEfGroupDeletedRemoved;
+        $this->isPropertyAttrSetInstEFGroupDeletedRemoved = $isPropertyAttrSetInstEFGroupDeletedRemoved;
     }
 
 

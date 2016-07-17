@@ -5,7 +5,7 @@ namespace Wms\Domain\Metadata;
 
 class AttributeSetInstanceExtensionFieldMvoMetadata
 {
-    const VERSION      = 'attrSetInstEfGroupVersion';
+    const VERSION      = 'attrSetInstEFGroupVersion';
     const ACTIVE       = 'active';
     const DELETED      = 'deleted';
     const CREATED_BY   = 'createdBy';

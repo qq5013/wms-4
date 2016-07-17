@@ -11,22 +11,22 @@ trait InOutIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyIsSoTransactionRemoved = null;
+    private $isPropertyIsSOTransactionRemoved = null;
 
     /**
      * @return boolean
      */
-    public function getIsPropertyIsSoTransactionRemoved()
+    public function getIsPropertyIsSOTransactionRemoved()
     {
-        return $this->isPropertyIsSoTransactionRemoved;
+        return $this->isPropertyIsSOTransactionRemoved;
     }
 
     /**
-     * @param boolean $isPropertyIsSoTransactionRemoved
+     * @param boolean $isPropertyIsSOTransactionRemoved
      */
-    public function setIsPropertyIsSoTransactionRemoved($isPropertyIsSoTransactionRemoved)
+    public function setIsPropertyIsSOTransactionRemoved($isPropertyIsSOTransactionRemoved)
     {
-        $this->isPropertyIsSoTransactionRemoved = $isPropertyIsSoTransactionRemoved;
+        $this->isPropertyIsSOTransactionRemoved = $isPropertyIsSOTransactionRemoved;
     }
 
     /**
@@ -310,22 +310,22 @@ trait InOutIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyPoReferenceRemoved = null;
+    private $isPropertyPOReferenceRemoved = null;
 
     /**
      * @return boolean
      */
-    public function getIsPropertyPoReferenceRemoved()
+    public function getIsPropertyPOReferenceRemoved()
     {
-        return $this->isPropertyPoReferenceRemoved;
+        return $this->isPropertyPOReferenceRemoved;
     }
 
     /**
-     * @param boolean $isPropertyPoReferenceRemoved
+     * @param boolean $isPropertyPOReferenceRemoved
      */
-    public function setIsPropertyPoReferenceRemoved($isPropertyPoReferenceRemoved)
+    public function setIsPropertyPOReferenceRemoved($isPropertyPOReferenceRemoved)
     {
-        $this->isPropertyPoReferenceRemoved = $isPropertyPoReferenceRemoved;
+        $this->isPropertyPOReferenceRemoved = $isPropertyPOReferenceRemoved;
     }
 
     /**

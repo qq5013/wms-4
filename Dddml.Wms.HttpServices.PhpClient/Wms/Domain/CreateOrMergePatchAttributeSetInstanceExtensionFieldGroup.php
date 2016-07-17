@@ -139,7 +139,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldGroup extends Abstract
 
     /**
      * @Type("array<Wms\Domain\CreateOrMergePatchAttributeSetInstanceExtensionField>")
-     * @var AttributeSetInstanceExtensionField[]
+     * @var CreateOrMergePatchAttributeSetInstanceExtensionField[]
      */
     private $fields;
 

@@ -269,7 +269,7 @@ class CreateOrMergePatchUser extends AbstractUserCommand
 
     /**
      * @Type("array<Wms\Domain\CreateOrMergePatchUserRole>")
-     * @var UserRole[]
+     * @var CreateOrMergePatchUserRole[]
      */
     private $userRoles;
 
@@ -291,7 +291,7 @@ class CreateOrMergePatchUser extends AbstractUserCommand
 
     /**
      * @Type("array<Wms\Domain\CreateOrMergePatchUserClaim>")
-     * @var UserClaim[]
+     * @var CreateOrMergePatchUserClaim[]
      */
     private $userClaims;
 
@@ -313,7 +313,7 @@ class CreateOrMergePatchUser extends AbstractUserCommand
 
     /**
      * @Type("array<Wms\Domain\CreateOrMergePatchUserPermission>")
-     * @var UserPermission[]
+     * @var CreateOrMergePatchUserPermission[]
      */
     private $userPermissions;
 
@@ -335,7 +335,7 @@ class CreateOrMergePatchUser extends AbstractUserCommand
 
     /**
      * @Type("array<Wms\Domain\CreateOrMergePatchUserLogin>")
-     * @var UserLogin[]
+     * @var CreateOrMergePatchUserLogin[]
      */
     private $userLogins;
 

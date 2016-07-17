@@ -750,7 +750,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
 
     /**
      * @Type("array<Wms\Domain\CreateOrMergePatchInOutLine>")
-     * @var InOutLine[]
+     * @var CreateOrMergePatchInOutLine[]
      */
     private $inOutLines;
 

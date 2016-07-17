@@ -160,7 +160,7 @@ class CreateOrMergePatchAttributeSet extends AbstractAttributeSetCommand
 
     /**
      * @Type("array<Wms\Domain\CreateOrMergePatchAttributeUse>")
-     * @var AttributeUse[]
+     * @var CreateOrMergePatchAttributeUse[]
      */
     private $attributeUses;
 

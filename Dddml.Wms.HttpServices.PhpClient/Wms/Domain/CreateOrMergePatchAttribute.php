@@ -244,7 +244,7 @@ class CreateOrMergePatchAttribute extends AbstractAttributeCommand
 
     /**
      * @Type("array<Wms\Domain\CreateOrMergePatchAttributeValue>")
-     * @var AttributeValue[]
+     * @var CreateOrMergePatchAttributeValue[]
      */
     private $attributeValues;
 

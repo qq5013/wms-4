@@ -8,49 +8,46 @@ use Wms\Domain\SkuId;
 class InOutLineIdFlattenedDto
 {
 
-
-    public function getPropertyNames()
-    {
-        return [
-            'inOutDocumentNumber',
-            'skuIdProductId',
-            'skuIdAttributeSetInstanceId',
+    const PROPERTIES = [
+            'inOutDocumentNumber' => 'string',
+            'skuIdProductId' => 'string',
+            'skuIdAttributeSetInstanceId' => 'string',
         ];
+
+    public static function getPropertyNames()
+    {
+        return array_keys(static::PROPERTIES);
     }
 
-    public function getPropertyTypes()
+    public static function getPropertyTypes()
     {
-        return [
-            'string',
-            'string',
-            'string',
-        ];
+        return array_values(static::PROPERTIES);
     }
+
 	
     /**
      * @var InOutLineId
      */
     private $value;
 
-    public function __construct()
+    /**
+     * @param InOutLineId $value
+     */
+    public function __construct(InOutLineId $value = null)
     {
-        $this->value = new InOutLineId();
+        if ($value) {
+            $this->value = $value;
+        } else {
+            $this->value = new InOutLineId();
+        }
     }
 
     /**
      * @return InOutLineId
      */
-    public function _getValue()
+    public function toInOutLineId()
     {
         return $this->value;
-    }
-
-    /**
-     * @param InOutLineId $value
-     */
-    public function _setValue($value)
-    {
-        $this->value = $value;
     }
 
     /**

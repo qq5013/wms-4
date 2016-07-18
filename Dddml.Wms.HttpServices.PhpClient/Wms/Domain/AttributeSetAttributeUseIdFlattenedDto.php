@@ -7,47 +7,45 @@ use JMS\Serializer\Annotation\Type;
 class AttributeSetAttributeUseIdFlattenedDto
 {
 
-
-    public function getPropertyNames()
-    {
-        return [
-            'attributeSetId',
-            'attributeId',
+    const PROPERTIES = [
+            'attributeSetId' => 'string',
+            'attributeId' => 'string',
         ];
+
+    public static function getPropertyNames()
+    {
+        return array_keys(static::PROPERTIES);
     }
 
-    public function getPropertyTypes()
+    public static function getPropertyTypes()
     {
-        return [
-            'string',
-            'string',
-        ];
+        return array_values(static::PROPERTIES);
     }
+
 	
     /**
      * @var AttributeSetAttributeUseId
      */
     private $value;
 
-    public function __construct()
+    /**
+     * @param AttributeSetAttributeUseId $value
+     */
+    public function __construct(AttributeSetAttributeUseId $value = null)
     {
-        $this->value = new AttributeSetAttributeUseId();
+        if ($value) {
+            $this->value = $value;
+        } else {
+            $this->value = new AttributeSetAttributeUseId();
+        }
     }
 
     /**
      * @return AttributeSetAttributeUseId
      */
-    public function _getValue()
+    public function toAttributeSetAttributeUseId()
     {
         return $this->value;
-    }
-
-    /**
-     * @param AttributeSetAttributeUseId $value
-     */
-    public function _setValue($value)
-    {
-        $this->value = $value;
     }
 
     /**

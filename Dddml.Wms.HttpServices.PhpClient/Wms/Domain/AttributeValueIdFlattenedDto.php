@@ -7,47 +7,45 @@ use JMS\Serializer\Annotation\Type;
 class AttributeValueIdFlattenedDto
 {
 
-
-    public function getPropertyNames()
-    {
-        return [
-            'attributeId',
-            'value',
+    const PROPERTIES = [
+            'attributeId' => 'string',
+            'value' => 'string',
         ];
+
+    public static function getPropertyNames()
+    {
+        return array_keys(static::PROPERTIES);
     }
 
-    public function getPropertyTypes()
+    public static function getPropertyTypes()
     {
-        return [
-            'string',
-            'string',
-        ];
+        return array_values(static::PROPERTIES);
     }
+
 	
     /**
      * @var AttributeValueId
      */
     private $value;
 
-    public function __construct()
+    /**
+     * @param AttributeValueId $value
+     */
+    public function __construct(AttributeValueId $value = null)
     {
-        $this->value = new AttributeValueId();
+        if ($value) {
+            $this->value = $value;
+        } else {
+            $this->value = new AttributeValueId();
+        }
     }
 
     /**
      * @return AttributeValueId
      */
-    public function _getValue()
+    public function toAttributeValueId()
     {
         return $this->value;
-    }
-
-    /**
-     * @param AttributeValueId $value
-     */
-    public function _setValue($value)
-    {
-        $this->value = $value;
     }
 
     /**

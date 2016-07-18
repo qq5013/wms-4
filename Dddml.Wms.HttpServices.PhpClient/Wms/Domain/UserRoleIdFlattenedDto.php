@@ -7,47 +7,45 @@ use JMS\Serializer\Annotation\Type;
 class UserRoleIdFlattenedDto
 {
 
-
-    public function getPropertyNames()
-    {
-        return [
-            'userId',
-            'roleId',
+    const PROPERTIES = [
+            'userId' => 'string',
+            'roleId' => 'string',
         ];
+
+    public static function getPropertyNames()
+    {
+        return array_keys(static::PROPERTIES);
     }
 
-    public function getPropertyTypes()
+    public static function getPropertyTypes()
     {
-        return [
-            'string',
-            'string',
-        ];
+        return array_values(static::PROPERTIES);
     }
+
 	
     /**
      * @var UserRoleId
      */
     private $value;
 
-    public function __construct()
+    /**
+     * @param UserRoleId $value
+     */
+    public function __construct(UserRoleId $value = null)
     {
-        $this->value = new UserRoleId();
+        if ($value) {
+            $this->value = $value;
+        } else {
+            $this->value = new UserRoleId();
+        }
     }
 
     /**
      * @return UserRoleId
      */
-    public function _getValue()
+    public function toUserRoleId()
     {
         return $this->value;
-    }
-
-    /**
-     * @param UserRoleId $value
-     */
-    public function _setValue($value)
-    {
-        $this->value = $value;
     }
 
     /**

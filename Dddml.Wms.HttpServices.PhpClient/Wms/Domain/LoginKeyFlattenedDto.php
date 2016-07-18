@@ -7,47 +7,45 @@ use JMS\Serializer\Annotation\Type;
 class LoginKeyFlattenedDto
 {
 
-
-    public function getPropertyNames()
-    {
-        return [
-            'loginProvider',
-            'providerKey',
+    const PROPERTIES = [
+            'loginProvider' => 'string',
+            'providerKey' => 'string',
         ];
+
+    public static function getPropertyNames()
+    {
+        return array_keys(static::PROPERTIES);
     }
 
-    public function getPropertyTypes()
+    public static function getPropertyTypes()
     {
-        return [
-            'string',
-            'string',
-        ];
+        return array_values(static::PROPERTIES);
     }
+
 	
     /**
      * @var LoginKey
      */
     private $value;
 
-    public function __construct()
+    /**
+     * @param LoginKey $value
+     */
+    public function __construct(LoginKey $value = null)
     {
-        $this->value = new LoginKey();
+        if ($value) {
+            $this->value = $value;
+        } else {
+            $this->value = new LoginKey();
+        }
     }
 
     /**
      * @return LoginKey
      */
-    public function _getValue()
+    public function toLoginKey()
     {
         return $this->value;
-    }
-
-    /**
-     * @param LoginKey $value
-     */
-    public function _setValue($value)
-    {
-        $this->value = $value;
     }
 
     /**

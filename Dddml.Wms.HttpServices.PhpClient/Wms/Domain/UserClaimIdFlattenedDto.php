@@ -7,47 +7,45 @@ use JMS\Serializer\Annotation\Type;
 class UserClaimIdFlattenedDto
 {
 
-
-    public function getPropertyNames()
-    {
-        return [
-            'userId',
-            'claimId',
+    const PROPERTIES = [
+            'userId' => 'string',
+            'claimId' => 'integer',
         ];
+
+    public static function getPropertyNames()
+    {
+        return array_keys(static::PROPERTIES);
     }
 
-    public function getPropertyTypes()
+    public static function getPropertyTypes()
     {
-        return [
-            'string',
-            'integer',
-        ];
+        return array_values(static::PROPERTIES);
     }
+
 	
     /**
      * @var UserClaimId
      */
     private $value;
 
-    public function __construct()
+    /**
+     * @param UserClaimId $value
+     */
+    public function __construct(UserClaimId $value = null)
     {
-        $this->value = new UserClaimId();
+        if ($value) {
+            $this->value = $value;
+        } else {
+            $this->value = new UserClaimId();
+        }
     }
 
     /**
      * @return UserClaimId
      */
-    public function _getValue()
+    public function toUserClaimId()
     {
         return $this->value;
-    }
-
-    /**
-     * @param UserClaimId $value
-     */
-    public function _setValue($value)
-    {
-        $this->value = $value;
     }
 
     /**

@@ -8,49 +8,46 @@ use Wms\Domain\LoginKey;
 class UserLoginIdFlattenedDto
 {
 
-
-    public function getPropertyNames()
-    {
-        return [
-            'userId',
-            'loginKeyLoginProvider',
-            'loginKeyProviderKey',
+    const PROPERTIES = [
+            'userId' => 'string',
+            'loginKeyLoginProvider' => 'string',
+            'loginKeyProviderKey' => 'string',
         ];
+
+    public static function getPropertyNames()
+    {
+        return array_keys(static::PROPERTIES);
     }
 
-    public function getPropertyTypes()
+    public static function getPropertyTypes()
     {
-        return [
-            'string',
-            'string',
-            'string',
-        ];
+        return array_values(static::PROPERTIES);
     }
+
 	
     /**
      * @var UserLoginId
      */
     private $value;
 
-    public function __construct()
+    /**
+     * @param UserLoginId $value
+     */
+    public function __construct(UserLoginId $value = null)
     {
-        $this->value = new UserLoginId();
+        if ($value) {
+            $this->value = $value;
+        } else {
+            $this->value = new UserLoginId();
+        }
     }
 
     /**
      * @return UserLoginId
      */
-    public function _getValue()
+    public function toUserLoginId()
     {
         return $this->value;
-    }
-
-    /**
-     * @param UserLoginId $value
-     */
-    public function _setValue($value)
-    {
-        $this->value = $value;
     }
 
     /**

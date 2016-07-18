@@ -7,49 +7,46 @@ use JMS\Serializer\Annotation\Type;
 class OrganizationStructureIdFlattenedDto
 {
 
-
-    public function getPropertyNames()
-    {
-        return [
-            'organizationStructureTypeId',
-            'parentId',
-            'subsidiaryId',
+    const PROPERTIES = [
+            'organizationStructureTypeId' => 'string',
+            'parentId' => 'string',
+            'subsidiaryId' => 'string',
         ];
+
+    public static function getPropertyNames()
+    {
+        return array_keys(static::PROPERTIES);
     }
 
-    public function getPropertyTypes()
+    public static function getPropertyTypes()
     {
-        return [
-            'string',
-            'string',
-            'string',
-        ];
+        return array_values(static::PROPERTIES);
     }
+
 	
     /**
      * @var OrganizationStructureId
      */
     private $value;
 
-    public function __construct()
+    /**
+     * @param OrganizationStructureId $value
+     */
+    public function __construct(OrganizationStructureId $value = null)
     {
-        $this->value = new OrganizationStructureId();
+        if ($value) {
+            $this->value = $value;
+        } else {
+            $this->value = new OrganizationStructureId();
+        }
     }
 
     /**
      * @return OrganizationStructureId
      */
-    public function _getValue()
+    public function toOrganizationStructureId()
     {
         return $this->value;
-    }
-
-    /**
-     * @param OrganizationStructureId $value
-     */
-    public function _setValue($value)
-    {
-        $this->value = $value;
     }
 
     /**

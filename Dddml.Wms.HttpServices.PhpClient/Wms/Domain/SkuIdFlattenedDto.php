@@ -7,47 +7,45 @@ use JMS\Serializer\Annotation\Type;
 class SkuIdFlattenedDto
 {
 
-
-    public function getPropertyNames()
-    {
-        return [
-            'productId',
-            'attributeSetInstanceId',
+    const PROPERTIES = [
+            'productId' => 'string',
+            'attributeSetInstanceId' => 'string',
         ];
+
+    public static function getPropertyNames()
+    {
+        return array_keys(static::PROPERTIES);
     }
 
-    public function getPropertyTypes()
+    public static function getPropertyTypes()
     {
-        return [
-            'string',
-            'string',
-        ];
+        return array_values(static::PROPERTIES);
     }
+
 	
     /**
      * @var SkuId
      */
     private $value;
 
-    public function __construct()
+    /**
+     * @param SkuId $value
+     */
+    public function __construct(SkuId $value = null)
     {
-        $this->value = new SkuId();
+        if ($value) {
+            $this->value = $value;
+        } else {
+            $this->value = new SkuId();
+        }
     }
 
     /**
      * @return SkuId
      */
-    public function _getValue()
+    public function toSkuId()
     {
         return $this->value;
-    }
-
-    /**
-     * @param SkuId $value
-     */
-    public function _setValue($value)
-    {
-        $this->value = $value;
     }
 
     /**

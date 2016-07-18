@@ -7,47 +7,45 @@ use JMS\Serializer\Annotation\Type;
 class UserPermissionIdFlattenedDto
 {
 
-
-    public function getPropertyNames()
-    {
-        return [
-            'userId',
-            'permissionId',
+    const PROPERTIES = [
+            'userId' => 'string',
+            'permissionId' => 'string',
         ];
+
+    public static function getPropertyNames()
+    {
+        return array_keys(static::PROPERTIES);
     }
 
-    public function getPropertyTypes()
+    public static function getPropertyTypes()
     {
-        return [
-            'string',
-            'string',
-        ];
+        return array_values(static::PROPERTIES);
     }
+
 	
     /**
      * @var UserPermissionId
      */
     private $value;
 
-    public function __construct()
+    /**
+     * @param UserPermissionId $value
+     */
+    public function __construct(UserPermissionId $value = null)
     {
-        $this->value = new UserPermissionId();
+        if ($value) {
+            $this->value = $value;
+        } else {
+            $this->value = new UserPermissionId();
+        }
     }
 
     /**
      * @return UserPermissionId
      */
-    public function _getValue()
+    public function toUserPermissionId()
     {
         return $this->value;
-    }
-
-    /**
-     * @param UserPermissionId $value
-     */
-    public function _setValue($value)
-    {
-        $this->value = $value;
     }
 
     /**

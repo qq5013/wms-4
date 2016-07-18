@@ -8,7 +8,6 @@ trait UserClaimFilteringFieldsTrait
     public function getFilteringFields()
     {
         return [
-            'ClaimId' => 'integer',
             'ClaimType' => 'string',
             'ClaimValue' => 'string',
             'Version' => 'Long',

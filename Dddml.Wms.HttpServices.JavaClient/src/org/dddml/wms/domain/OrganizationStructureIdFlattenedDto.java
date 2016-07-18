@@ -1,30 +1,31 @@
 package org.dddml.wms.domain;
 
+import java.util.HashMap;
+import java.util.Map;
 
 public class OrganizationStructureIdFlattenedDto
 {
 
 
-    private static String[] _propertyNames = new String[]{
+    public static final String[] propertyNames = new String[]{
             "organizationStructureTypeId",
             "parentId",
             "subsidiaryId",
         };
 
-    private static String[] _propertyTypes = new String[]{
+    public static final String[] propertyTypes = new String[]{
             "String",
             "String",
             "String",
         };
 
-    public static String[] getPropertyNames()
-    {
-        return _propertyNames;
-    }
+    public static final Map<String, String> propertyTypeMap;
 
-    public static String[] getPropertyTypes()
-    {
-        return _propertyTypes;
+    static {
+        propertyTypeMap = new HashMap<String, String>();
+        for (int i = 0; i < propertyNames.length; i++ ) {
+            propertyTypeMap.put(propertyNames[i], propertyTypes[i]);
+        }
     }
 	
     private OrganizationStructureId value;

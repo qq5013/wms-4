@@ -8,7 +8,6 @@ trait UserRoleFilteringFieldsTrait
     public function getFilteringFields()
     {
         return [
-            'RoleId' => 'string',
             'Version' => 'Long',
             'CreatedBy' => 'string',
             'CreatedAt' => '\DateTime',

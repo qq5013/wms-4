@@ -10,7 +10,7 @@ public final class OrganizationFilteringProperties
     {
     }
 
-    public final static String[] propertyNames = new String[] {
+    public static final String[] propertyNames = new String[] {
             "OrganizationId",
             "Name",
             "Description",
@@ -25,7 +25,7 @@ public final class OrganizationFilteringProperties
             "Deleted",
     };
 
-    public final static String[] propertyTypes = new String[] {
+    public static final String[] propertyTypes = new String[] {
             "String",
             "String",
             "String",
@@ -40,12 +40,12 @@ public final class OrganizationFilteringProperties
             "Boolean",
     };
 
-    public final static Map<String, String> propertyMap;
+    public static final Map<String, String> propertyTypeMap;
 
     static {
-        propertyMap = new HashMap<String, String>();
+        propertyTypeMap = new HashMap<String, String>();
         for (int i = 0; i < propertyNames.length; i++ ) {
-            propertyMap.put(propertyNames[i], propertyTypes[i]);
+            propertyTypeMap.put(propertyNames[i], propertyTypes[i]);
         }
     }
 

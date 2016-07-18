@@ -43,7 +43,7 @@ namespace Dddml.Wms.Domain.Metadata
                     IsReservedPropertyCreatedAt = false,
                     IsReservedPropertyUpdatedBy = false,
                     IsReservedPropertyUpdatedAt = false,
-                    IsFilteringProperty = true,
+                    IsFilteringProperty = false,
                 },
                 new PropertyMetadata {
                     Name = "ClaimType",

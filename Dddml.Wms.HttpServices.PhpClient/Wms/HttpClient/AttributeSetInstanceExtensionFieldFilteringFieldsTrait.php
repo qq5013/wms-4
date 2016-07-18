@@ -8,7 +8,6 @@ trait AttributeSetInstanceExtensionFieldFilteringFieldsTrait
     public function getFilteringFields()
     {
         return [
-            'Index' => 'string',
             'Name' => 'string',
             'Type' => 'string',
             'Length' => 'integer',

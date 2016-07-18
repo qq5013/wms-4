@@ -10,7 +10,7 @@ public final class OrganizationStructureTypeFilteringProperties
     {
     }
 
-    public final static String[] propertyNames = new String[] {
+    public static final String[] propertyNames = new String[] {
             "Id",
             "Version",
             "CreatedBy",
@@ -21,7 +21,7 @@ public final class OrganizationStructureTypeFilteringProperties
             "Deleted",
     };
 
-    public final static String[] propertyTypes = new String[] {
+    public static final String[] propertyTypes = new String[] {
             "String",
             "Long",
             "String",
@@ -32,12 +32,12 @@ public final class OrganizationStructureTypeFilteringProperties
             "Boolean",
     };
 
-    public final static Map<String, String> propertyMap;
+    public static final Map<String, String> propertyTypeMap;
 
     static {
-        propertyMap = new HashMap<String, String>();
+        propertyTypeMap = new HashMap<String, String>();
         for (int i = 0; i < propertyNames.length; i++ ) {
-            propertyMap.put(propertyNames[i], propertyTypes[i]);
+            propertyTypeMap.put(propertyNames[i], propertyTypes[i]);
         }
     }
 

@@ -10,8 +10,7 @@ public final class AttributeUseFilteringProperties
     {
     }
 
-    public final static String[] propertyNames = new String[] {
-            "AttributeId",
+    public static final String[] propertyNames = new String[] {
             "SequenceNumber",
             "Version",
             "CreatedBy",
@@ -25,8 +24,7 @@ public final class AttributeUseFilteringProperties
             "AttributeSetAttributeUseId.AttributeId",
     };
 
-    public final static String[] propertyTypes = new String[] {
-            "String",
+    public static final String[] propertyTypes = new String[] {
             "Integer",
             "Long",
             "String",
@@ -40,12 +38,12 @@ public final class AttributeUseFilteringProperties
             "String",
     };
 
-    public final static Map<String, String> propertyMap;
+    public static final Map<String, String> propertyTypeMap;
 
     static {
-        propertyMap = new HashMap<String, String>();
+        propertyTypeMap = new HashMap<String, String>();
         for (int i = 0; i < propertyNames.length; i++ ) {
-            propertyMap.put(propertyNames[i], propertyTypes[i]);
+            propertyTypeMap.put(propertyNames[i], propertyTypes[i]);
         }
     }
 

@@ -8,7 +8,6 @@ trait AttributeUseFilteringFieldsTrait
     public function getFilteringFields()
     {
         return [
-            'AttributeId' => 'string',
             'SequenceNumber' => 'integer',
             'Version' => 'Long',
             'CreatedBy' => 'string',

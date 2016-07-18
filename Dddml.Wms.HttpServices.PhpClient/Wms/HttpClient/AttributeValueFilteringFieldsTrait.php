@@ -8,7 +8,6 @@ trait AttributeValueFilteringFieldsTrait
     public function getFilteringFields()
     {
         return [
-            'Value' => 'string',
             'Name' => 'string',
             'Description' => 'string',
             'ReferenceId' => 'string',

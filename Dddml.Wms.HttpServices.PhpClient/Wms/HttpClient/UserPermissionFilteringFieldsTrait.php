@@ -8,7 +8,6 @@ trait UserPermissionFilteringFieldsTrait
     public function getFilteringFields()
     {
         return [
-            'PermissionId' => 'string',
             'Version' => 'Long',
             'CreatedBy' => 'string',
             'CreatedAt' => '\DateTime',

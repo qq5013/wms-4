@@ -329,7 +329,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @Type("NodaMoney\Money")
+     * @Type("Dddml\Serializer\Type\Money")
      */
     private $freightAmount;
 
@@ -371,7 +371,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @Type("NodaMoney\Money")
+     * @Type("Dddml\Serializer\Type\Money")
      */
     private $chargeAmount;
 

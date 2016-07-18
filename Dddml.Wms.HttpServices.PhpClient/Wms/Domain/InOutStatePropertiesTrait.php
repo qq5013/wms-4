@@ -348,7 +348,7 @@ trait InOutStatePropertiesTrait
     }
 
     /**
-     * @Type("NodaMoney\Money")
+     * @Type("Dddml\Serializer\Type\Money")
      */
     private $freightAmount;
 
@@ -390,7 +390,7 @@ trait InOutStatePropertiesTrait
     }
 
     /**
-     * @Type("NodaMoney\Money")
+     * @Type("Dddml\Serializer\Type\Money")
      */
     private $chargeAmount;
 

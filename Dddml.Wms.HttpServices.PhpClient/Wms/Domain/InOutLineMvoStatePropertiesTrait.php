@@ -747,7 +747,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("NodaMoney\Money")
+     * @Type("Dddml\Serializer\Type\Money")
      */
     private $inOutFreightAmount;
 
@@ -789,7 +789,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("NodaMoney\Money")
+     * @Type("Dddml\Serializer\Type\Money")
      */
     private $inOutChargeAmount;
 

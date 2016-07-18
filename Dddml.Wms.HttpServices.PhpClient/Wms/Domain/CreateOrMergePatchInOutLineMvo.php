@@ -728,7 +728,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("NodaMoney\Money")
+     * @Type("Dddml\Serializer\Type\Money")
      */
     private $inOutFreightAmount;
 
@@ -770,7 +770,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("NodaMoney\Money")
+     * @Type("Dddml\Serializer\Type\Money")
      */
     private $inOutChargeAmount;
 

@@ -91,6 +91,7 @@
                 dict["decimal?"] = "Dddml\\Serializer\\Type\\Decimal";
                 dict["long"] = "Dddml\\Serializer\\Type\\Long";
                 dict["long?"] = "Dddml\\Serializer\\Type\\Long";
+                dict["Money"] = "Dddml\\Serializer\\Type\\Money";
 
 			return dict;
 	}
@@ -115,6 +116,13 @@
 			return dict;
 	}
 
+	private IDictionary<string, string> GetTypeNamespaces()
+	{
+		var typeNamespaces = new Dictionary<string, string>();
+		typeNamespaces.Add("Money", "NodaMoney");
+		return typeNamespaces;
+	}
+
 	//private IDictionary<string, NHibernateType> GetNHibernateTypes()
 	//{
 		//var nhibernateTypes = new Dictionary<string, NHibernateType>();
@@ -133,12 +141,5 @@
 		//var clrValueTypes = new string[]{ "Money" };
 		//return clrValueTypes;
 	//}
-
-	private IDictionary<string, string> GetTypeNamespaces()
-	{
-		var typeNamespaces = new Dictionary<string, string>();
-		typeNamespaces.Add("Money", "NodaMoney");
-		return typeNamespaces;
-	}
 
 #>

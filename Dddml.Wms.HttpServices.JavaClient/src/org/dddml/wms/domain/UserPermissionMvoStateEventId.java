@@ -28,5 +28,26 @@ public class UserPermissionMvoStateEventId
         this.userVersion = userVersion;
     }
 
+    public String getUserPermissionIdUserId()
+    {
+        return getUserPermissionId().getUserId();
+    }
+
+    public void setUserPermissionIdUserId(String userPermissionIdUserId)
+    {
+        getUserPermissionId().setUserId(userPermissionIdUserId);
+    }
+
+    public String getUserPermissionIdPermissionId()
+    {
+        return getUserPermissionId().getPermissionId();
+    }
+
+    public void setUserPermissionIdPermissionId(String userPermissionIdPermissionId)
+    {
+        getUserPermissionId().setPermissionId(userPermissionIdPermissionId);
+    }
+
+
 }
 

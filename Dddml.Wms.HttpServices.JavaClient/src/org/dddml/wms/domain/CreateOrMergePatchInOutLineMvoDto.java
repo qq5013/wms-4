@@ -1413,5 +1413,23 @@ public class CreateOrMergePatchInOutLineMvoDto extends AbstractInOutLineMvoComma
     }
 
 
+    public static class CreateInOutLineMvoDto extends CreateOrMergePatchInOutLineMvoDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_CREATE;
+        }
+
+    }
+
+    public static class MergePatchInOutLineMvoDto extends CreateOrMergePatchInOutLineMvoDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_MERGE_PATCH;
+        }
+
+    }
+
 }
 

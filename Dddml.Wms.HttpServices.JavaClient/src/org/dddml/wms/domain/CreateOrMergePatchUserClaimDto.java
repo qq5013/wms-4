@@ -77,5 +77,23 @@ public class CreateOrMergePatchUserClaimDto extends AbstractUserClaimCommandDto
     }
 
 
+    public static class CreateUserClaimDto extends CreateOrMergePatchUserClaimDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_CREATE;
+        }
+
+    }
+
+    public static class MergePatchUserClaimDto extends CreateOrMergePatchUserClaimDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_MERGE_PATCH;
+        }
+
+    }
+
 }
 

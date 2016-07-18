@@ -511,5 +511,23 @@ public class CreateOrMergePatchAttributeValueMvoDto extends AbstractAttributeVal
     }
 
 
+    public static class CreateAttributeValueMvoDto extends CreateOrMergePatchAttributeValueMvoDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_CREATE;
+        }
+
+    }
+
+    public static class MergePatchAttributeValueMvoDto extends CreateOrMergePatchAttributeValueMvoDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_MERGE_PATCH;
+        }
+
+    }
+
 }
 

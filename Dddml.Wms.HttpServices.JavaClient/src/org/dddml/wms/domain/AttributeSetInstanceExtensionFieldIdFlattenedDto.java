@@ -44,7 +44,6 @@ public class AttributeSetInstanceExtensionFieldIdFlattenedDto
     }
 
 
-
     public String getGroupId()
     {
         return this.value.getGroupId();
@@ -54,7 +53,6 @@ public class AttributeSetInstanceExtensionFieldIdFlattenedDto
     {
         this.value.setGroupId(groupId);
     }
-
 
     public String getIndex()
     {

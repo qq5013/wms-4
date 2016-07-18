@@ -44,7 +44,6 @@ public class UserRoleIdFlattenedDto
     }
 
 
-
     public String getUserId()
     {
         return this.value.getUserId();
@@ -54,7 +53,6 @@ public class UserRoleIdFlattenedDto
     {
         this.value.setUserId(userId);
     }
-
 
     public String getRoleId()
     {

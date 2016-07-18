@@ -39,5 +39,6 @@ public class UserPermissionStateEventId
         this.userVersion = userVersion;
     }
 
+
 }
 

@@ -28,5 +28,26 @@ public class AttributeUseMvoStateEventId
         this.attributeSetVersion = attributeSetVersion;
     }
 
+    public String getAttributeSetAttributeUseIdAttributeSetId()
+    {
+        return getAttributeSetAttributeUseId().getAttributeSetId();
+    }
+
+    public void setAttributeSetAttributeUseIdAttributeSetId(String attributeSetAttributeUseIdAttributeSetId)
+    {
+        getAttributeSetAttributeUseId().setAttributeSetId(attributeSetAttributeUseIdAttributeSetId);
+    }
+
+    public String getAttributeSetAttributeUseIdAttributeId()
+    {
+        return getAttributeSetAttributeUseId().getAttributeId();
+    }
+
+    public void setAttributeSetAttributeUseIdAttributeId(String attributeSetAttributeUseIdAttributeId)
+    {
+        getAttributeSetAttributeUseId().setAttributeId(attributeSetAttributeUseIdAttributeId);
+    }
+
+
 }
 

@@ -27,5 +27,6 @@ public class UserRoleId
         this.roleId = roleId;
     }
 
+
 }
 

@@ -439,5 +439,23 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvoDto extends 
     }
 
 
+    public static class CreateAttributeSetInstanceExtensionFieldMvoDto extends CreateOrMergePatchAttributeSetInstanceExtensionFieldMvoDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_CREATE;
+        }
+
+    }
+
+    public static class MergePatchAttributeSetInstanceExtensionFieldMvoDto extends CreateOrMergePatchAttributeSetInstanceExtensionFieldMvoDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_MERGE_PATCH;
+        }
+
+    }
+
 }
 

@@ -28,5 +28,26 @@ public class RolePermissionStateEventId
         this.version = version;
     }
 
+    public String getIdRoleId()
+    {
+        return getId().getRoleId();
+    }
+
+    public void setIdRoleId(String idRoleId)
+    {
+        getId().setRoleId(idRoleId);
+    }
+
+    public String getIdPermissionId()
+    {
+        return getId().getPermissionId();
+    }
+
+    public void setIdPermissionId(String idPermissionId)
+    {
+        getId().setPermissionId(idPermissionId);
+    }
+
+
 }
 

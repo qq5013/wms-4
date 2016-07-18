@@ -47,7 +47,6 @@ public class UserLoginIdFlattenedDto
     }
 
 
-
     public String getUserId()
     {
         return this.value.getUserId();
@@ -58,7 +57,6 @@ public class UserLoginIdFlattenedDto
         this.value.setUserId(userId);
     }
 
-
     public String getLoginKeyLoginProvider()
     {
         return this.value.getLoginKey().getLoginProvider();
@@ -68,7 +66,6 @@ public class UserLoginIdFlattenedDto
     {
         this.value.getLoginKey().setLoginProvider(loginKeyLoginProvider);
     }
-
 
     public String getLoginKeyProviderKey()
     {

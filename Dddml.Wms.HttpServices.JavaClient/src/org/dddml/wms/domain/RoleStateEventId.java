@@ -27,5 +27,6 @@ public class RoleStateEventId
         this.version = version;
     }
 
+
 }
 

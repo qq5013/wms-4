@@ -44,7 +44,6 @@ public class AttributeSetAttributeUseIdFlattenedDto
     }
 
 
-
     public String getAttributeSetId()
     {
         return this.value.getAttributeSetId();
@@ -54,7 +53,6 @@ public class AttributeSetAttributeUseIdFlattenedDto
     {
         this.value.setAttributeSetId(attributeSetId);
     }
-
 
     public String getAttributeId()
     {

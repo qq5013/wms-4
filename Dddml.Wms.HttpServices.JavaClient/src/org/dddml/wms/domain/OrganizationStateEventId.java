@@ -27,5 +27,6 @@ public class OrganizationStateEventId
         this.version = version;
     }
 
+
 }
 

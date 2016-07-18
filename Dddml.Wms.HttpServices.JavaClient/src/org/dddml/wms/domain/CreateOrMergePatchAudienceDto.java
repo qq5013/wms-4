@@ -77,5 +77,23 @@ public class CreateOrMergePatchAudienceDto extends AbstractAudienceCommandDto
     }
 
 
+    public static class CreateAudienceDto extends CreateOrMergePatchAudienceDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_CREATE;
+        }
+
+    }
+
+    public static class MergePatchAudienceDto extends CreateOrMergePatchAudienceDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_MERGE_PATCH;
+        }
+
+    }
+
 }
 

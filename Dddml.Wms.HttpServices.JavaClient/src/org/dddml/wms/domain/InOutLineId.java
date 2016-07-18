@@ -28,5 +28,26 @@ public class InOutLineId
         this.skuId = skuId;
     }
 
+    public String getSkuIdProductId()
+    {
+        return getSkuId().getProductId();
+    }
+
+    public void setSkuIdProductId(String skuIdProductId)
+    {
+        getSkuId().setProductId(skuIdProductId);
+    }
+
+    public String getSkuIdAttributeSetInstanceId()
+    {
+        return getSkuId().getAttributeSetInstanceId();
+    }
+
+    public void setSkuIdAttributeSetInstanceId(String skuIdAttributeSetInstanceId)
+    {
+        getSkuId().setAttributeSetInstanceId(skuIdAttributeSetInstanceId);
+    }
+
+
 }
 

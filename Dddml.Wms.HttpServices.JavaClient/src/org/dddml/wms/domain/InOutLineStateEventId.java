@@ -40,5 +40,26 @@ public class InOutLineStateEventId
         this.inOutVersion = inOutVersion;
     }
 
+    public String getSkuIdProductId()
+    {
+        return getSkuId().getProductId();
+    }
+
+    public void setSkuIdProductId(String skuIdProductId)
+    {
+        getSkuId().setProductId(skuIdProductId);
+    }
+
+    public String getSkuIdAttributeSetInstanceId()
+    {
+        return getSkuId().getAttributeSetInstanceId();
+    }
+
+    public void setSkuIdAttributeSetInstanceId(String skuIdAttributeSetInstanceId)
+    {
+        getSkuId().setAttributeSetInstanceId(skuIdAttributeSetInstanceId);
+    }
+
+
 }
 

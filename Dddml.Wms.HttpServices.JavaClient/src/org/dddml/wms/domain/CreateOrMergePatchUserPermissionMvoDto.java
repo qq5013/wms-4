@@ -466,5 +466,23 @@ public class CreateOrMergePatchUserPermissionMvoDto extends AbstractUserPermissi
     }
 
 
+    public static class CreateUserPermissionMvoDto extends CreateOrMergePatchUserPermissionMvoDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_CREATE;
+        }
+
+    }
+
+    public static class MergePatchUserPermissionMvoDto extends CreateOrMergePatchUserPermissionMvoDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_MERGE_PATCH;
+        }
+
+    }
+
 }
 

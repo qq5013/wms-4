@@ -39,5 +39,6 @@ public class AttributeSetInstanceExtensionFieldStateEventId
         this.attributeSetInstanceExtensionFieldGroupVersion = attributeSetInstanceExtensionFieldGroupVersion;
     }
 
+
 }
 

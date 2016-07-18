@@ -39,5 +39,6 @@ public class UserRoleStateEventId
         this.userVersion = userVersion;
     }
 
+
 }
 

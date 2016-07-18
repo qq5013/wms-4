@@ -27,5 +27,6 @@ public class AudienceStateEventId
         this.version = version;
     }
 
+
 }
 

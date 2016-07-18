@@ -125,5 +125,23 @@ public class CreateOrMergePatchOrganizationDto extends AbstractOrganizationComma
     }
 
 
+    public static class CreateOrganizationDto extends CreateOrMergePatchOrganizationDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_CREATE;
+        }
+
+    }
+
+    public static class MergePatchOrganizationDto extends CreateOrMergePatchOrganizationDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_MERGE_PATCH;
+        }
+
+    }
+
 }
 

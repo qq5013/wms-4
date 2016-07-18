@@ -28,5 +28,36 @@ public class OrganizationStructureStateEventId
         this.version = version;
     }
 
+    public String getIdOrganizationStructureTypeId()
+    {
+        return getId().getOrganizationStructureTypeId();
+    }
+
+    public void setIdOrganizationStructureTypeId(String idOrganizationStructureTypeId)
+    {
+        getId().setOrganizationStructureTypeId(idOrganizationStructureTypeId);
+    }
+
+    public String getIdParentId()
+    {
+        return getId().getParentId();
+    }
+
+    public void setIdParentId(String idParentId)
+    {
+        getId().setParentId(idParentId);
+    }
+
+    public String getIdSubsidiaryId()
+    {
+        return getId().getSubsidiaryId();
+    }
+
+    public void setIdSubsidiaryId(String idSubsidiaryId)
+    {
+        getId().setSubsidiaryId(idSubsidiaryId);
+    }
+
+
 }
 

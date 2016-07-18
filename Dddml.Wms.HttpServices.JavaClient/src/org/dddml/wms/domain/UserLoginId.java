@@ -28,5 +28,26 @@ public class UserLoginId
         this.loginKey = loginKey;
     }
 
+    public String getLoginKeyLoginProvider()
+    {
+        return getLoginKey().getLoginProvider();
+    }
+
+    public void setLoginKeyLoginProvider(String loginKeyLoginProvider)
+    {
+        getLoginKey().setLoginProvider(loginKeyLoginProvider);
+    }
+
+    public String getLoginKeyProviderKey()
+    {
+        return getLoginKey().getProviderKey();
+    }
+
+    public void setLoginKeyProviderKey(String loginKeyProviderKey)
+    {
+        getLoginKey().setProviderKey(loginKeyProviderKey);
+    }
+
+
 }
 

@@ -44,7 +44,6 @@ public class UserClaimIdFlattenedDto
     }
 
 
-
     public String getUserId()
     {
         return this.value.getUserId();
@@ -54,7 +53,6 @@ public class UserClaimIdFlattenedDto
     {
         this.value.setUserId(userId);
     }
-
 
     public Integer getClaimId()
     {

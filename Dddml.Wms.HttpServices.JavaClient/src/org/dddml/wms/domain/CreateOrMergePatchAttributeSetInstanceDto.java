@@ -11118,5 +11118,23 @@ public class CreateOrMergePatchAttributeSetInstanceDto extends AbstractAttribute
     }
 
 
+    public static class CreateAttributeSetInstanceDto extends CreateOrMergePatchAttributeSetInstanceDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_CREATE;
+        }
+
+    }
+
+    public static class MergePatchAttributeSetInstanceDto extends CreateOrMergePatchAttributeSetInstanceDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_MERGE_PATCH;
+        }
+
+    }
+
 }
 

@@ -186,5 +186,23 @@ public class CreateOrMergePatchAttributeSetDto extends AbstractAttributeSetComma
     }
 
 
+    public static class CreateAttributeSetDto extends CreateOrMergePatchAttributeSetDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_CREATE;
+        }
+
+    }
+
+    public static class MergePatchAttributeSetDto extends CreateOrMergePatchAttributeSetDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_MERGE_PATCH;
+        }
+
+    }
+
 }
 

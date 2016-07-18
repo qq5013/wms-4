@@ -30,5 +30,23 @@ public class CreateOrMergePatchRolePermissionDto extends AbstractRolePermissionC
     }
 
 
+    public static class CreateRolePermissionDto extends CreateOrMergePatchRolePermissionDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_CREATE;
+        }
+
+    }
+
+    public static class MergePatchRolePermissionDto extends CreateOrMergePatchRolePermissionDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_MERGE_PATCH;
+        }
+
+    }
+
 }
 

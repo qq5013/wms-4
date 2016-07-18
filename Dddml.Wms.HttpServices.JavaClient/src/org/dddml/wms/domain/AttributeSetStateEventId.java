@@ -27,5 +27,6 @@ public class AttributeSetStateEventId
         this.version = version;
     }
 
+
 }
 

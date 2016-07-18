@@ -28,5 +28,26 @@ public class AttributeSetInstanceExtensionFieldMvoStateEventId
         this.attrSetInstEFGroupVersion = attrSetInstEFGroupVersion;
     }
 
+    public String getAttributeSetInstanceExtensionFieldIdGroupId()
+    {
+        return getAttributeSetInstanceExtensionFieldId().getGroupId();
+    }
+
+    public void setAttributeSetInstanceExtensionFieldIdGroupId(String attributeSetInstanceExtensionFieldIdGroupId)
+    {
+        getAttributeSetInstanceExtensionFieldId().setGroupId(attributeSetInstanceExtensionFieldIdGroupId);
+    }
+
+    public String getAttributeSetInstanceExtensionFieldIdIndex()
+    {
+        return getAttributeSetInstanceExtensionFieldId().getIndex();
+    }
+
+    public void setAttributeSetInstanceExtensionFieldIdIndex(String attributeSetInstanceExtensionFieldIdIndex)
+    {
+        getAttributeSetInstanceExtensionFieldId().setIndex(attributeSetInstanceExtensionFieldIdIndex);
+    }
+
+
 }
 

@@ -30,5 +30,23 @@ public class CreateOrMergePatchUserLoginDto extends AbstractUserLoginCommandDto
     }
 
 
+    public static class CreateUserLoginDto extends CreateOrMergePatchUserLoginDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_CREATE;
+        }
+
+    }
+
+    public static class MergePatchUserLoginDto extends CreateOrMergePatchUserLoginDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_MERGE_PATCH;
+        }
+
+    }
+
 }
 

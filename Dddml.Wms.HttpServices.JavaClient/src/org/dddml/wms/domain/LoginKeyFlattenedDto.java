@@ -44,7 +44,6 @@ public class LoginKeyFlattenedDto
     }
 
 
-
     public String getLoginProvider()
     {
         return this.value.getLoginProvider();
@@ -54,7 +53,6 @@ public class LoginKeyFlattenedDto
     {
         this.value.setLoginProvider(loginProvider);
     }
-
 
     public String getProviderKey()
     {

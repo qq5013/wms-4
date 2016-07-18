@@ -77,5 +77,23 @@ public class CreateOrMergePatchRoleDto extends AbstractRoleCommandDto
     }
 
 
+    public static class CreateRoleDto extends CreateOrMergePatchRoleDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_CREATE;
+        }
+
+    }
+
+    public static class MergePatchRoleDto extends CreateOrMergePatchRoleDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_MERGE_PATCH;
+        }
+
+    }
+
 }
 

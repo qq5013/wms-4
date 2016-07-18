@@ -28,5 +28,26 @@ public class UserRoleMvoStateEventId
         this.userVersion = userVersion;
     }
 
+    public String getUserRoleIdUserId()
+    {
+        return getUserRoleId().getUserId();
+    }
+
+    public void setUserRoleIdUserId(String userRoleIdUserId)
+    {
+        getUserRoleId().setUserId(userRoleIdUserId);
+    }
+
+    public String getUserRoleIdRoleId()
+    {
+        return getUserRoleId().getRoleId();
+    }
+
+    public void setUserRoleIdRoleId(String userRoleIdRoleId)
+    {
+        getUserRoleId().setRoleId(userRoleIdRoleId);
+    }
+
+
 }
 

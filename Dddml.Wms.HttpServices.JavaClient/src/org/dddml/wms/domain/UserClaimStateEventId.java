@@ -39,5 +39,6 @@ public class UserClaimStateEventId
         this.userVersion = userVersion;
     }
 
+
 }
 

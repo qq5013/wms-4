@@ -39,5 +39,6 @@ public class AttributeUseStateEventId
         this.attributeSetVersion = attributeSetVersion;
     }
 
+
 }
 

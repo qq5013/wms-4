@@ -29,5 +29,23 @@ public class CreateOrMergePatchUserRoleDto extends AbstractUserRoleCommandDto
     }
 
 
+    public static class CreateUserRoleDto extends CreateOrMergePatchUserRoleDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_CREATE;
+        }
+
+    }
+
+    public static class MergePatchUserRoleDto extends CreateOrMergePatchUserRoleDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_MERGE_PATCH;
+        }
+
+    }
+
 }
 

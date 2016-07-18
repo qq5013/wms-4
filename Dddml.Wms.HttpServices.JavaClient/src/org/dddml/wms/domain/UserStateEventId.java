@@ -27,5 +27,6 @@ public class UserStateEventId
         this.version = version;
     }
 
+
 }
 

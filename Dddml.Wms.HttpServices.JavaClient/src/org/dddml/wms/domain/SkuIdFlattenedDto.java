@@ -44,7 +44,6 @@ public class SkuIdFlattenedDto
     }
 
 
-
     public String getProductId()
     {
         return this.value.getProductId();
@@ -54,7 +53,6 @@ public class SkuIdFlattenedDto
     {
         this.value.setProductId(productId);
     }
-
 
     public String getAttributeSetInstanceId()
     {

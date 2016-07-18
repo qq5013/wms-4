@@ -30,5 +30,23 @@ public class CreateOrMergePatchOrganizationStructureDto extends AbstractOrganiza
     }
 
 
+    public static class CreateOrganizationStructureDto extends CreateOrMergePatchOrganizationStructureDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_CREATE;
+        }
+
+    }
+
+    public static class MergePatchOrganizationStructureDto extends CreateOrMergePatchOrganizationStructureDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_MERGE_PATCH;
+        }
+
+    }
+
 }
 

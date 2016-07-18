@@ -28,5 +28,26 @@ public class UserClaimMvoStateEventId
         this.userVersion = userVersion;
     }
 
+    public String getUserClaimIdUserId()
+    {
+        return getUserClaimId().getUserId();
+    }
+
+    public void setUserClaimIdUserId(String userClaimIdUserId)
+    {
+        getUserClaimId().setUserId(userClaimIdUserId);
+    }
+
+    public Integer getUserClaimIdClaimId()
+    {
+        return getUserClaimId().getClaimId();
+    }
+
+    public void setUserClaimIdClaimId(Integer userClaimIdClaimId)
+    {
+        getUserClaimId().setClaimId(userClaimIdClaimId);
+    }
+
+
 }
 

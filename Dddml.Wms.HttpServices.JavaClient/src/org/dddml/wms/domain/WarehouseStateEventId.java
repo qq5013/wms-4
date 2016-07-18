@@ -27,5 +27,6 @@ public class WarehouseStateEventId
         this.version = version;
     }
 
+
 }
 

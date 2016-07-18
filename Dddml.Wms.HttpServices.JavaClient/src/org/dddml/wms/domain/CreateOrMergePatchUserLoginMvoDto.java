@@ -466,5 +466,23 @@ public class CreateOrMergePatchUserLoginMvoDto extends AbstractUserLoginMvoComma
     }
 
 
+    public static class CreateUserLoginMvoDto extends CreateOrMergePatchUserLoginMvoDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_CREATE;
+        }
+
+    }
+
+    public static class MergePatchUserLoginMvoDto extends CreateOrMergePatchUserLoginMvoDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_MERGE_PATCH;
+        }
+
+    }
+
 }
 

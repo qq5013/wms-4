@@ -28,5 +28,26 @@ public class AttributeValueMvoStateEventId
         this.attributeVersion = attributeVersion;
     }
 
+    public String getAttributeValueIdAttributeId()
+    {
+        return getAttributeValueId().getAttributeId();
+    }
+
+    public void setAttributeValueIdAttributeId(String attributeValueIdAttributeId)
+    {
+        getAttributeValueId().setAttributeId(attributeValueIdAttributeId);
+    }
+
+    public String getAttributeValueIdValue()
+    {
+        return getAttributeValueId().getValue();
+    }
+
+    public void setAttributeValueIdValue(String attributeValueIdValue)
+    {
+        getAttributeValueId().setValue(attributeValueIdValue);
+    }
+
+
 }
 

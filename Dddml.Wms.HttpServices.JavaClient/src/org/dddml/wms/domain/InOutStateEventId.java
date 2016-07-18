@@ -27,5 +27,6 @@ public class InOutStateEventId
         this.version = version;
     }
 
+
 }
 

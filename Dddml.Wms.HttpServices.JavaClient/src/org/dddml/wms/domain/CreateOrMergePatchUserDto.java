@@ -346,5 +346,23 @@ public class CreateOrMergePatchUserDto extends AbstractUserCommandDto
     }
 
 
+    public static class CreateUserDto extends CreateOrMergePatchUserDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_CREATE;
+        }
+
+    }
+
+    public static class MergePatchUserDto extends CreateOrMergePatchUserDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_MERGE_PATCH;
+        }
+
+    }
+
 }
 

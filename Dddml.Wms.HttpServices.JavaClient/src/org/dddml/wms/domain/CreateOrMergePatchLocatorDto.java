@@ -221,5 +221,23 @@ public class CreateOrMergePatchLocatorDto extends AbstractLocatorCommandDto
     }
 
 
+    public static class CreateLocatorDto extends CreateOrMergePatchLocatorDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_CREATE;
+        }
+
+    }
+
+    public static class MergePatchLocatorDto extends CreateOrMergePatchLocatorDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_MERGE_PATCH;
+        }
+
+    }
+
 }
 

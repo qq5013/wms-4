@@ -101,5 +101,23 @@ public class CreateOrMergePatchAttributeValueDto extends AbstractAttributeValueC
     }
 
 
+    public static class CreateAttributeValueDto extends CreateOrMergePatchAttributeValueDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_CREATE;
+        }
+
+    }
+
+    public static class MergePatchAttributeValueDto extends CreateOrMergePatchAttributeValueDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_MERGE_PATCH;
+        }
+
+    }
+
 }
 

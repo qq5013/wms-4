@@ -28,5 +28,36 @@ public class UserLoginMvoStateEventId
         this.userVersion = userVersion;
     }
 
+    public String getUserLoginIdUserId()
+    {
+        return getUserLoginId().getUserId();
+    }
+
+    public void setUserLoginIdUserId(String userLoginIdUserId)
+    {
+        getUserLoginId().setUserId(userLoginIdUserId);
+    }
+
+    public String getUserLoginIdLoginKeyLoginProvider()
+    {
+        return getUserLoginId().getLoginKey().getLoginProvider();
+    }
+
+    public void setUserLoginIdLoginKeyLoginProvider(String userLoginIdLoginKeyLoginProvider)
+    {
+        getUserLoginId().getLoginKey().setLoginProvider(userLoginIdLoginKeyLoginProvider);
+    }
+
+    public String getUserLoginIdLoginKeyProviderKey()
+    {
+        return getUserLoginId().getLoginKey().getProviderKey();
+    }
+
+    public void setUserLoginIdLoginKeyProviderKey(String userLoginIdLoginKeyProviderKey)
+    {
+        getUserLoginId().getLoginKey().setProviderKey(userLoginIdLoginKeyProviderKey);
+    }
+
+
 }
 

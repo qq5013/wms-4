@@ -46,7 +46,6 @@ public class OrganizationStructureIdFlattenedDto
     }
 
 
-
     public String getOrganizationStructureTypeId()
     {
         return this.value.getOrganizationStructureTypeId();
@@ -57,7 +56,6 @@ public class OrganizationStructureIdFlattenedDto
         this.value.setOrganizationStructureTypeId(organizationStructureTypeId);
     }
 
-
     public String getParentId()
     {
         return this.value.getParentId();
@@ -67,7 +65,6 @@ public class OrganizationStructureIdFlattenedDto
     {
         this.value.setParentId(parentId);
     }
-
 
     public String getSubsidiaryId()
     {

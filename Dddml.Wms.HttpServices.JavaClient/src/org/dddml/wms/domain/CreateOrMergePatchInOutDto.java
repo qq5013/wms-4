@@ -849,5 +849,23 @@ public class CreateOrMergePatchInOutDto extends AbstractInOutCommandDto
     }
 
 
+    public static class CreateInOutDto extends CreateOrMergePatchInOutDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_CREATE;
+        }
+
+    }
+
+    public static class MergePatchInOutDto extends CreateOrMergePatchInOutDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_MERGE_PATCH;
+        }
+
+    }
+
 }
 

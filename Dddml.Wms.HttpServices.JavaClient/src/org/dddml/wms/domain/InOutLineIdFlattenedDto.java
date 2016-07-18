@@ -47,7 +47,6 @@ public class InOutLineIdFlattenedDto
     }
 
 
-
     public String getInOutDocumentNumber()
     {
         return this.value.getInOutDocumentNumber();
@@ -58,7 +57,6 @@ public class InOutLineIdFlattenedDto
         this.value.setInOutDocumentNumber(inOutDocumentNumber);
     }
 
-
     public String getSkuIdProductId()
     {
         return this.value.getSkuId().getProductId();
@@ -68,7 +66,6 @@ public class InOutLineIdFlattenedDto
     {
         this.value.getSkuId().setProductId(skuIdProductId);
     }
-
 
     public String getSkuIdAttributeSetInstanceId()
     {

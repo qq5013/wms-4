@@ -101,5 +101,23 @@ public class CreateOrMergePatchWarehouseDto extends AbstractWarehouseCommandDto
     }
 
 
+    public static class CreateWarehouseDto extends CreateOrMergePatchWarehouseDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_CREATE;
+        }
+
+    }
+
+    public static class MergePatchWarehouseDto extends CreateOrMergePatchWarehouseDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_MERGE_PATCH;
+        }
+
+    }
+
 }
 

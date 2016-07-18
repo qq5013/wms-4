@@ -27,5 +27,6 @@ public class SkuId
         this.attributeSetInstanceId = attributeSetInstanceId;
     }
 
+
 }
 

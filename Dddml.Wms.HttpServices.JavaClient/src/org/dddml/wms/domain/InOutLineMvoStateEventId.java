@@ -28,5 +28,36 @@ public class InOutLineMvoStateEventId
         this.inOutVersion = inOutVersion;
     }
 
+    public String getInOutLineIdInOutDocumentNumber()
+    {
+        return getInOutLineId().getInOutDocumentNumber();
+    }
+
+    public void setInOutLineIdInOutDocumentNumber(String inOutLineIdInOutDocumentNumber)
+    {
+        getInOutLineId().setInOutDocumentNumber(inOutLineIdInOutDocumentNumber);
+    }
+
+    public String getInOutLineIdSkuIdProductId()
+    {
+        return getInOutLineId().getSkuId().getProductId();
+    }
+
+    public void setInOutLineIdSkuIdProductId(String inOutLineIdSkuIdProductId)
+    {
+        getInOutLineId().getSkuId().setProductId(inOutLineIdSkuIdProductId);
+    }
+
+    public String getInOutLineIdSkuIdAttributeSetInstanceId()
+    {
+        return getInOutLineId().getSkuId().getAttributeSetInstanceId();
+    }
+
+    public void setInOutLineIdSkuIdAttributeSetInstanceId(String inOutLineIdSkuIdAttributeSetInstanceId)
+    {
+        getInOutLineId().getSkuId().setAttributeSetInstanceId(inOutLineIdSkuIdAttributeSetInstanceId);
+    }
+
+
 }
 

@@ -367,5 +367,23 @@ public class CreateOrMergePatchAttributeUseMvoDto extends AbstractAttributeUseMv
     }
 
 
+    public static class CreateAttributeUseMvoDto extends CreateOrMergePatchAttributeUseMvoDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_CREATE;
+        }
+
+    }
+
+    public static class MergePatchAttributeUseMvoDto extends CreateOrMergePatchAttributeUseMvoDto
+    {
+        @Override
+        public String getCommandType() {
+            return AbstractCommandDto.COMMAND_TYPE_MERGE_PATCH;
+        }
+
+    }
+
 }
 

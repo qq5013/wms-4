@@ -8,7 +8,13 @@ use Wms\Domain\CommandTrait;
 class RemoveAttributeValue extends CreateOrMergePatchAttributeValue
 {
 
-// /////////////////////////// TODO //////////////////////////////////////////
+    /**
+     * @return string
+     */
+    public function getCommandType()
+    {
+        return 'Remove';
+    }
 
 
 }

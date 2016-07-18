@@ -19,10 +19,9 @@ class DeleteUserClaimMvoRequest implements CommandRequestInterface
     use RouteTrait;
 
     /**
-     * @var  DeleteUserClaimMvo
+     * @var DeleteUserClaimMvo
      */
     private $command;
-// ///////////////////// TODO //////////////////////////
 
     public function __construct()
     {
@@ -35,11 +34,15 @@ class DeleteUserClaimMvoRequest implements CommandRequestInterface
     }
 
     /**
-     * @return null
+     * @return DeleteUserClaimMvo
      */
-    public function getBody()
+    public function getCommand()
     {
-        return null;
+        if (!$this->command) {
+            $this->command = new DeleteUserClaimMvo();
+        }
+
+        return $this->command;
     }
 
 }

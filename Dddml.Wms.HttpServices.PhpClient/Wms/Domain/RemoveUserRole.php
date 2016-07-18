@@ -8,7 +8,13 @@ use Wms\Domain\CommandTrait;
 class RemoveUserRole extends CreateOrMergePatchUserRole
 {
 
-// /////////////////////////// TODO //////////////////////////////////////////
+    /**
+     * @return string
+     */
+    public function getCommandType()
+    {
+        return 'Remove';
+    }
 
 
 }

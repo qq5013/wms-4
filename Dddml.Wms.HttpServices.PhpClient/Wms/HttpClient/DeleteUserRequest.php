@@ -19,10 +19,9 @@ class DeleteUserRequest implements CommandRequestInterface
     use RouteTrait;
 
     /**
-     * @var  DeleteUser
+     * @var DeleteUser
      */
     private $command;
-// ///////////////////// TODO //////////////////////////
 
     public function __construct()
     {
@@ -35,11 +34,15 @@ class DeleteUserRequest implements CommandRequestInterface
     }
 
     /**
-     * @return null
+     * @return DeleteUser
      */
-    public function getBody()
+    public function getCommand()
     {
-        return null;
+        if (!$this->command) {
+            $this->command = new DeleteUser();
+        }
+
+        return $this->command;
     }
 
 }

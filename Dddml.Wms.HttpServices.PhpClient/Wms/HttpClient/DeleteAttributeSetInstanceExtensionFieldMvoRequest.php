@@ -16,10 +16,9 @@ class DeleteAttributeSetInstanceExtensionFieldMvoRequest implements CommandReque
     use RouteTrait;
 
     /**
-     * @var  DeleteAttributeSetInstanceExtensionFieldMvo
+     * @var DeleteAttributeSetInstanceExtensionFieldMvo
      */
     private $command;
-// ///////////////////// TODO //////////////////////////
 
     public function __construct()
     {
@@ -32,11 +31,15 @@ class DeleteAttributeSetInstanceExtensionFieldMvoRequest implements CommandReque
     }
 
     /**
-     * @return null
+     * @return DeleteAttributeSetInstanceExtensionFieldMvo
      */
-    public function getBody()
+    public function getCommand()
     {
-        return null;
+        if (!$this->command) {
+            $this->command = new DeleteAttributeSetInstanceExtensionFieldMvo();
+        }
+
+        return $this->command;
     }
 
 }

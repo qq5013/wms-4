@@ -16,10 +16,9 @@ class DeleteAttributeUseMvoRequest implements CommandRequestInterface
     use RouteTrait;
 
     /**
-     * @var  DeleteAttributeUseMvo
+     * @var DeleteAttributeUseMvo
      */
     private $command;
-// ///////////////////// TODO //////////////////////////
 
     public function __construct()
     {
@@ -32,11 +31,15 @@ class DeleteAttributeUseMvoRequest implements CommandRequestInterface
     }
 
     /**
-     * @return null
+     * @return DeleteAttributeUseMvo
      */
-    public function getBody()
+    public function getCommand()
     {
-        return null;
+        if (!$this->command) {
+            $this->command = new DeleteAttributeUseMvo();
+        }
+
+        return $this->command;
     }
 
 }

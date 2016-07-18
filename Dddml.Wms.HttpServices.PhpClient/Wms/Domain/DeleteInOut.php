@@ -11,7 +11,13 @@ use Wms\Domain\CommandTrait;
 class DeleteInOut extends AbstractInOutCommand
 {
 
-// /////////////////////////// TODO //////////////////////////////////////////
+    /**
+     * @return string
+     */
+    public function getCommandType()
+    {
+        return 'Delete';
+    }
 
 
 }

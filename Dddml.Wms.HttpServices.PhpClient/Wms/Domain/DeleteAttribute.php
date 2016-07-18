@@ -9,7 +9,13 @@ use Wms\Domain\CommandTrait;
 class DeleteAttribute extends AbstractAttributeCommand
 {
 
-// /////////////////////////// TODO //////////////////////////////////////////
+    /**
+     * @return string
+     */
+    public function getCommandType()
+    {
+        return 'Delete';
+    }
 
 
 }

@@ -14,10 +14,9 @@ class DeleteAudienceRequest implements CommandRequestInterface
     use RouteTrait;
 
     /**
-     * @var  DeleteAudience
+     * @var DeleteAudience
      */
     private $command;
-// ///////////////////// TODO //////////////////////////
 
     public function __construct()
     {
@@ -30,11 +29,15 @@ class DeleteAudienceRequest implements CommandRequestInterface
     }
 
     /**
-     * @return null
+     * @return DeleteAudience
      */
-    public function getBody()
+    public function getCommand()
     {
-        return null;
+        if (!$this->command) {
+            $this->command = new DeleteAudience();
+        }
+
+        return $this->command;
     }
 
 }

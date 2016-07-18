@@ -8,7 +8,13 @@ use Wms\Domain\CommandTrait;
 class DeletePermission extends AbstractPermissionCommand
 {
 
-// /////////////////////////// TODO //////////////////////////////////////////
+    /**
+     * @return string
+     */
+    public function getCommandType()
+    {
+        return 'Delete';
+    }
 
 
 }

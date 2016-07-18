@@ -8,7 +8,13 @@ use Wms\Domain\CommandTrait;
 class RemoveUserPermission extends CreateOrMergePatchUserPermission
 {
 
-// /////////////////////////// TODO //////////////////////////////////////////
+    /**
+     * @return string
+     */
+    public function getCommandType()
+    {
+        return 'Remove';
+    }
 
 
 }

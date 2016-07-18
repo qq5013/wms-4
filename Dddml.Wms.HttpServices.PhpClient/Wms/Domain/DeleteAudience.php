@@ -8,7 +8,13 @@ use Wms\Domain\CommandTrait;
 class DeleteAudience extends AbstractAudienceCommand
 {
 
-// /////////////////////////// TODO //////////////////////////////////////////
+    /**
+     * @return string
+     */
+    public function getCommandType()
+    {
+        return 'Delete';
+    }
 
 
 }

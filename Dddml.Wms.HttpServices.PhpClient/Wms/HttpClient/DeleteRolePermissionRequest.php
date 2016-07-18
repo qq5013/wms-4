@@ -15,10 +15,9 @@ class DeleteRolePermissionRequest implements CommandRequestInterface
     use RouteTrait;
 
     /**
-     * @var  DeleteRolePermission
+     * @var DeleteRolePermission
      */
     private $command;
-// ///////////////////// TODO //////////////////////////
 
     public function __construct()
     {
@@ -31,11 +30,15 @@ class DeleteRolePermissionRequest implements CommandRequestInterface
     }
 
     /**
-     * @return null
+     * @return DeleteRolePermission
      */
-    public function getBody()
+    public function getCommand()
     {
-        return null;
+        if (!$this->command) {
+            $this->command = new DeleteRolePermission();
+        }
+
+        return $this->command;
     }
 
 }

@@ -17,10 +17,9 @@ class DeleteInOutLineMvoRequest implements CommandRequestInterface
     use RouteTrait;
 
     /**
-     * @var  DeleteInOutLineMvo
+     * @var DeleteInOutLineMvo
      */
     private $command;
-// ///////////////////// TODO //////////////////////////
 
     public function __construct()
     {
@@ -33,11 +32,15 @@ class DeleteInOutLineMvoRequest implements CommandRequestInterface
     }
 
     /**
-     * @return null
+     * @return DeleteInOutLineMvo
      */
-    public function getBody()
+    public function getCommand()
     {
-        return null;
+        if (!$this->command) {
+            $this->command = new DeleteInOutLineMvo();
+        }
+
+        return $this->command;
     }
 
 }

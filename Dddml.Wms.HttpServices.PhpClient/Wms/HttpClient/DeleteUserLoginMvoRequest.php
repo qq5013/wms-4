@@ -19,10 +19,9 @@ class DeleteUserLoginMvoRequest implements CommandRequestInterface
     use RouteTrait;
 
     /**
-     * @var  DeleteUserLoginMvo
+     * @var DeleteUserLoginMvo
      */
     private $command;
-// ///////////////////// TODO //////////////////////////
 
     public function __construct()
     {
@@ -35,11 +34,15 @@ class DeleteUserLoginMvoRequest implements CommandRequestInterface
     }
 
     /**
-     * @return null
+     * @return DeleteUserLoginMvo
      */
-    public function getBody()
+    public function getCommand()
     {
-        return null;
+        if (!$this->command) {
+            $this->command = new DeleteUserLoginMvo();
+        }
+
+        return $this->command;
     }
 
 }

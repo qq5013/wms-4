@@ -9,7 +9,13 @@ use Wms\Domain\CommandTrait;
 class RemoveUserLogin extends CreateOrMergePatchUserLogin
 {
 
-// /////////////////////////// TODO //////////////////////////////////////////
+    /**
+     * @return string
+     */
+    public function getCommandType()
+    {
+        return 'Remove';
+    }
 
 
 }

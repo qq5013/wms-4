@@ -14,10 +14,9 @@ class DeleteLocatorRequest implements CommandRequestInterface
     use RouteTrait;
 
     /**
-     * @var  DeleteLocator
+     * @var DeleteLocator
      */
     private $command;
-// ///////////////////// TODO //////////////////////////
 
     public function __construct()
     {
@@ -30,11 +29,15 @@ class DeleteLocatorRequest implements CommandRequestInterface
     }
 
     /**
-     * @return null
+     * @return DeleteLocator
      */
-    public function getBody()
+    public function getCommand()
     {
-        return null;
+        if (!$this->command) {
+            $this->command = new DeleteLocator();
+        }
+
+        return $this->command;
     }
 
 }

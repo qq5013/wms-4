@@ -8,7 +8,13 @@ use Wms\Domain\CommandTrait;
 class DeleteAttributeSetInstance extends AbstractAttributeSetInstanceCommand
 {
 
-// /////////////////////////// TODO //////////////////////////////////////////
+    /**
+     * @return string
+     */
+    public function getCommandType()
+    {
+        return 'Delete';
+    }
 
 
 }

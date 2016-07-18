@@ -17,10 +17,9 @@ class DeleteInOutRequest implements CommandRequestInterface
     use RouteTrait;
 
     /**
-     * @var  DeleteInOut
+     * @var DeleteInOut
      */
     private $command;
-// ///////////////////// TODO //////////////////////////
 
     public function __construct()
     {
@@ -33,11 +32,15 @@ class DeleteInOutRequest implements CommandRequestInterface
     }
 
     /**
-     * @return null
+     * @return DeleteInOut
      */
-    public function getBody()
+    public function getCommand()
     {
-        return null;
+        if (!$this->command) {
+            $this->command = new DeleteInOut();
+        }
+
+        return $this->command;
     }
 
 }

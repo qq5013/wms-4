@@ -9,7 +9,13 @@ use Wms\Domain\CommandTrait;
 class DeleteOrganizationStructure extends AbstractOrganizationStructureCommand
 {
 
-// /////////////////////////// TODO //////////////////////////////////////////
+    /**
+     * @return string
+     */
+    public function getCommandType()
+    {
+        return 'Delete';
+    }
 
 
 }

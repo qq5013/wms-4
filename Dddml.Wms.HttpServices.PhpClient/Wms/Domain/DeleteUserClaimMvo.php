@@ -13,7 +13,13 @@ use Wms\Domain\CommandTrait;
 class DeleteUserClaimMvo extends AbstractUserClaimMvoCommand
 {
 
-// /////////////////////////// TODO //////////////////////////////////////////
+    /**
+     * @return string
+     */
+    public function getCommandType()
+    {
+        return 'Delete';
+    }
 
 
 }

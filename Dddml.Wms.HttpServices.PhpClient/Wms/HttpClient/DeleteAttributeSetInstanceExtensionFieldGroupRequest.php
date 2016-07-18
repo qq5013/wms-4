@@ -15,10 +15,9 @@ class DeleteAttributeSetInstanceExtensionFieldGroupRequest implements CommandReq
     use RouteTrait;
 
     /**
-     * @var  DeleteAttributeSetInstanceExtensionFieldGroup
+     * @var DeleteAttributeSetInstanceExtensionFieldGroup
      */
     private $command;
-// ///////////////////// TODO //////////////////////////
 
     public function __construct()
     {
@@ -31,11 +30,15 @@ class DeleteAttributeSetInstanceExtensionFieldGroupRequest implements CommandReq
     }
 
     /**
-     * @return null
+     * @return DeleteAttributeSetInstanceExtensionFieldGroup
      */
-    public function getBody()
+    public function getCommand()
     {
-        return null;
+        if (!$this->command) {
+            $this->command = new DeleteAttributeSetInstanceExtensionFieldGroup();
+        }
+
+        return $this->command;
     }
 
 }

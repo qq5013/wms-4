@@ -8,7 +8,13 @@ use Wms\Domain\CommandTrait;
 class RemoveUserClaim extends CreateOrMergePatchUserClaim
 {
 
-// /////////////////////////// TODO //////////////////////////////////////////
+    /**
+     * @return string
+     */
+    public function getCommandType()
+    {
+        return 'Remove';
+    }
 
 
 }

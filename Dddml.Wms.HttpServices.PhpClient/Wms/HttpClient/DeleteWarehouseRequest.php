@@ -14,10 +14,9 @@ class DeleteWarehouseRequest implements CommandRequestInterface
     use RouteTrait;
 
     /**
-     * @var  DeleteWarehouse
+     * @var DeleteWarehouse
      */
     private $command;
-// ///////////////////// TODO //////////////////////////
 
     public function __construct()
     {
@@ -30,11 +29,15 @@ class DeleteWarehouseRequest implements CommandRequestInterface
     }
 
     /**
-     * @return null
+     * @return DeleteWarehouse
      */
-    public function getBody()
+    public function getCommand()
     {
-        return null;
+        if (!$this->command) {
+            $this->command = new DeleteWarehouse();
+        }
+
+        return $this->command;
     }
 
 }

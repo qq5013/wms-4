@@ -9,7 +9,13 @@ use Wms\Domain\CommandTrait;
 class RemoveInOutLine extends CreateOrMergePatchInOutLine
 {
 
-// /////////////////////////// TODO //////////////////////////////////////////
+    /**
+     * @return string
+     */
+    public function getCommandType()
+    {
+        return 'Remove';
+    }
 
 
 }

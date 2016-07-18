@@ -14,10 +14,9 @@ class DeleteRoleRequest implements CommandRequestInterface
     use RouteTrait;
 
     /**
-     * @var  DeleteRole
+     * @var DeleteRole
      */
     private $command;
-// ///////////////////// TODO //////////////////////////
 
     public function __construct()
     {
@@ -30,11 +29,15 @@ class DeleteRoleRequest implements CommandRequestInterface
     }
 
     /**
-     * @return null
+     * @return DeleteRole
      */
-    public function getBody()
+    public function getCommand()
     {
-        return null;
+        if (!$this->command) {
+            $this->command = new DeleteRole();
+        }
+
+        return $this->command;
     }
 
 }

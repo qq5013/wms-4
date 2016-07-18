@@ -11,7 +11,13 @@ use Wms\Domain\CommandTrait;
 class DeleteInOutLineMvo extends AbstractInOutLineMvoCommand
 {
 
-// /////////////////////////// TODO //////////////////////////////////////////
+    /**
+     * @return string
+     */
+    public function getCommandType()
+    {
+        return 'Delete';
+    }
 
 
 }

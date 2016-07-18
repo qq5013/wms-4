@@ -8,7 +8,13 @@ use Wms\Domain\CommandTrait;
 class RemoveAttributeSetInstanceExtensionField extends CreateOrMergePatchAttributeSetInstanceExtensionField
 {
 
-// /////////////////////////// TODO //////////////////////////////////////////
+    /**
+     * @return string
+     */
+    public function getCommandType()
+    {
+        return 'Remove';
+    }
 
 
 }

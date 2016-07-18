@@ -8,7 +8,13 @@ use Wms\Domain\CommandTrait;
 class DeleteLocator extends AbstractLocatorCommand
 {
 
-// /////////////////////////// TODO //////////////////////////////////////////
+    /**
+     * @return string
+     */
+    public function getCommandType()
+    {
+        return 'Delete';
+    }
 
 
 }

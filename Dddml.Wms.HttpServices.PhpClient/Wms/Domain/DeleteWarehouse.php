@@ -8,7 +8,13 @@ use Wms\Domain\CommandTrait;
 class DeleteWarehouse extends AbstractWarehouseCommand
 {
 
-// /////////////////////////// TODO //////////////////////////////////////////
+    /**
+     * @return string
+     */
+    public function getCommandType()
+    {
+        return 'Delete';
+    }
 
 
 }

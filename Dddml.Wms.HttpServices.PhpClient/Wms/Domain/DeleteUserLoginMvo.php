@@ -13,7 +13,13 @@ use Wms\Domain\CommandTrait;
 class DeleteUserLoginMvo extends AbstractUserLoginMvoCommand
 {
 
-// /////////////////////////// TODO //////////////////////////////////////////
+    /**
+     * @return string
+     */
+    public function getCommandType()
+    {
+        return 'Delete';
+    }
 
 
 }

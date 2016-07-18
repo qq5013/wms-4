@@ -8,7 +8,13 @@ use Wms\Domain\CommandTrait;
 class DeleteRole extends AbstractRoleCommand
 {
 
-// /////////////////////////// TODO //////////////////////////////////////////
+    /**
+     * @return string
+     */
+    public function getCommandType()
+    {
+        return 'Delete';
+    }
 
 
 }

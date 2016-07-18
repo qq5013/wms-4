@@ -14,10 +14,9 @@ class DeleteOrganizationRequest implements CommandRequestInterface
     use RouteTrait;
 
     /**
-     * @var  DeleteOrganization
+     * @var DeleteOrganization
      */
     private $command;
-// ///////////////////// TODO //////////////////////////
 
     public function __construct()
     {
@@ -30,11 +29,15 @@ class DeleteOrganizationRequest implements CommandRequestInterface
     }
 
     /**
-     * @return null
+     * @return DeleteOrganization
      */
-    public function getBody()
+    public function getCommand()
     {
-        return null;
+        if (!$this->command) {
+            $this->command = new DeleteOrganization();
+        }
+
+        return $this->command;
     }
 
 }

@@ -13,7 +13,13 @@ use Wms\Domain\CommandTrait;
 class DeleteUserPermissionMvo extends AbstractUserPermissionMvoCommand
 {
 
-// /////////////////////////// TODO //////////////////////////////////////////
+    /**
+     * @return string
+     */
+    public function getCommandType()
+    {
+        return 'Delete';
+    }
 
 
 }

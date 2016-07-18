@@ -10,7 +10,13 @@ use Wms\Domain\CommandTrait;
 class DeleteAttributeUseMvo extends AbstractAttributeUseMvoCommand
 {
 
-// /////////////////////////// TODO //////////////////////////////////////////
+    /**
+     * @return string
+     */
+    public function getCommandType()
+    {
+        return 'Delete';
+    }
 
 
 }

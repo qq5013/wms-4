@@ -14,10 +14,9 @@ class DeleteAttributeSetInstanceRequest implements CommandRequestInterface
     use RouteTrait;
 
     /**
-     * @var  DeleteAttributeSetInstance
+     * @var DeleteAttributeSetInstance
      */
     private $command;
-// ///////////////////// TODO //////////////////////////
 
     public function __construct()
     {
@@ -30,11 +29,15 @@ class DeleteAttributeSetInstanceRequest implements CommandRequestInterface
     }
 
     /**
-     * @return null
+     * @return DeleteAttributeSetInstance
      */
-    public function getBody()
+    public function getCommand()
     {
-        return null;
+        if (!$this->command) {
+            $this->command = new DeleteAttributeSetInstance();
+        }
+
+        return $this->command;
     }
 
 }

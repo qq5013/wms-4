@@ -13,7 +13,13 @@ use Wms\Domain\CommandTrait;
 class DeleteUser extends AbstractUserCommand
 {
 
-// /////////////////////////// TODO //////////////////////////////////////////
+    /**
+     * @return string
+     */
+    public function getCommandType()
+    {
+        return 'Delete';
+    }
 
 
 }

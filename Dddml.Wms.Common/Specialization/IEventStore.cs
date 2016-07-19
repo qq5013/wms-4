@@ -10,9 +10,9 @@ namespace Dddml.Wms.Specialization
 
 		void AppendEvents(IEventStoreAggregateId aggregateId, long version, ICollection<IEvent> events, Action afterEventsAppended);
 
-        IEvent FindLastEvent(Type eventType, IEventStoreAggregateId eventStoreAaggregateId, long version);
+        IEvent FindLastEvent(Type eventType, IEventStoreAggregateId eventStoreAggregateId, long version);
 
-        IEvent GetStateEvent(IEventStoreAggregateId eventStoreAaggregateId, long version);
+        IEvent GetStateEvent(IEventStoreAggregateId eventStoreAggregateId, long version);
     }
 }
 

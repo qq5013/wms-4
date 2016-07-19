@@ -27,23 +27,23 @@ namespace Dddml.Wms.Domain
 			var state = StateRepository.Get(aggregateId);
 			var aggregate = GetUserClaimMvoAggregate(state);
 
-			var eventStoreAaggregateId = ToEventStoreAaggregateId(aggregateId);
+			var eventStoreAggregateId = ToEventStoreAggregateId(aggregateId);
 
-			var repeated = IsRepeatedCommand(c, eventStoreAaggregateId, state);
+			var repeated = IsRepeatedCommand(c, eventStoreAggregateId, state);
 			if (repeated) { return; }
 
 			aggregate.ThrowOnInvalidStateTransition(c);
 			action(aggregate);
-			EventStore.AppendEvents(ToEventStoreAaggregateId(aggregateId), ((IUserClaimMvoStateProperties)state).UserVersion, aggregate.Changes, () => { StateRepository.Save(state); });
+			EventStore.AppendEvents(ToEventStoreAggregateId(aggregateId), ((IUserClaimMvoStateProperties)state).UserVersion, aggregate.Changes, () => { StateRepository.Save(state); });
 		}
 
 
-		protected bool IsRepeatedCommand(IUserClaimMvoCommand command, IEventStoreAggregateId eventStoreAaggregateId, IUserClaimMvoState state)
+		protected bool IsRepeatedCommand(IUserClaimMvoCommand command, IEventStoreAggregateId eventStoreAggregateId, IUserClaimMvoState state)
 		{
 			bool repeated = false;
 			if (((IUserClaimMvoStateProperties)state).UserVersion > command.AggregateVersion)
 			{
-				var lastEvent = EventStore.FindLastEvent(typeof(IUserClaimMvoStateEvent), eventStoreAaggregateId, command.AggregateVersion);
+				var lastEvent = EventStore.FindLastEvent(typeof(IUserClaimMvoStateEvent), eventStoreAggregateId, command.AggregateVersion);
 				if (lastEvent != null && lastEvent.CommandId == command.CommandId)
 				{
 					repeated = true;
@@ -119,7 +119,7 @@ namespace Dddml.Wms.Domain
 
 	    public virtual IUserClaimMvoStateEvent GetStateEvent(UserClaimId userClaimId, long version)
         {
-            var e = (IUserClaimMvoStateEvent)EventStore.GetStateEvent(ToEventStoreAaggregateId(userClaimId), version);
+            var e = (IUserClaimMvoStateEvent)EventStore.GetStateEvent(ToEventStoreAggregateId(userClaimId), version);
             if (e != null)
             {
                 e.ReadOnly = true;
@@ -130,7 +130,7 @@ namespace Dddml.Wms.Domain
 
 		public abstract IUserClaimMvoAggregate GetUserClaimMvoAggregate(IUserClaimMvoState state);
 
-		public abstract IEventStoreAggregateId ToEventStoreAaggregateId(UserClaimId aggregateId);
+		public abstract IEventStoreAggregateId ToEventStoreAggregateId(UserClaimId aggregateId);
 
 
 	}

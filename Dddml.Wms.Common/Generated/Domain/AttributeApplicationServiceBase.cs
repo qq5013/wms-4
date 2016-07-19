@@ -27,23 +27,23 @@ namespace Dddml.Wms.Domain
 			var state = StateRepository.Get(aggregateId);
 			var aggregate = GetAttributeAggregate(state);
 
-			var eventStoreAaggregateId = ToEventStoreAaggregateId(aggregateId);
+			var eventStoreAggregateId = ToEventStoreAggregateId(aggregateId);
 
-			var repeated = IsRepeatedCommand(c, eventStoreAaggregateId, state);
+			var repeated = IsRepeatedCommand(c, eventStoreAggregateId, state);
 			if (repeated) { return; }
 
 			aggregate.ThrowOnInvalidStateTransition(c);
 			action(aggregate);
-			EventStore.AppendEvents(ToEventStoreAaggregateId(aggregateId), ((IAttributeStateProperties)state).Version, aggregate.Changes, () => { StateRepository.Save(state); });
+			EventStore.AppendEvents(ToEventStoreAggregateId(aggregateId), ((IAttributeStateProperties)state).Version, aggregate.Changes, () => { StateRepository.Save(state); });
 		}
 
 
-		protected bool IsRepeatedCommand(IAttributeCommand command, IEventStoreAggregateId eventStoreAaggregateId, IAttributeState state)
+		protected bool IsRepeatedCommand(IAttributeCommand command, IEventStoreAggregateId eventStoreAggregateId, IAttributeState state)
 		{
 			bool repeated = false;
 			if (((IAttributeStateProperties)state).Version > command.AggregateVersion)
 			{
-				var lastEvent = EventStore.FindLastEvent(typeof(IAttributeStateEvent), eventStoreAaggregateId, command.AggregateVersion);
+				var lastEvent = EventStore.FindLastEvent(typeof(IAttributeStateEvent), eventStoreAggregateId, command.AggregateVersion);
 				if (lastEvent != null && lastEvent.CommandId == command.CommandId)
 				{
 					repeated = true;
@@ -119,7 +119,7 @@ namespace Dddml.Wms.Domain
 
 	    public virtual IAttributeStateEvent GetStateEvent(string attributeId, long version)
         {
-            var e = (IAttributeStateEvent)EventStore.GetStateEvent(ToEventStoreAaggregateId(attributeId), version);
+            var e = (IAttributeStateEvent)EventStore.GetStateEvent(ToEventStoreAggregateId(attributeId), version);
             if (e != null)
             {
                 e.ReadOnly = true;
@@ -130,7 +130,7 @@ namespace Dddml.Wms.Domain
 
 		public abstract IAttributeAggregate GetAttributeAggregate(IAttributeState state);
 
-		public abstract IEventStoreAggregateId ToEventStoreAaggregateId(string aggregateId);
+		public abstract IEventStoreAggregateId ToEventStoreAggregateId(string aggregateId);
 
 
 	}

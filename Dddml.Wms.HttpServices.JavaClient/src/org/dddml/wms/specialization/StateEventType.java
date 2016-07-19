@@ -5,12 +5,12 @@ package org.dddml.wms.specialization;
  */
 public interface StateEventType {
 
-    public static final String CREATED = "Created";
+    String CREATED = "Created";
 
-    public static final String MERGE_PATCHED = "MergePatched";
+    String MERGE_PATCHED = "MergePatched";
 
-    public static final String DELETED = "Deleted";
+    String DELETED = "Deleted";
 
-    public static  final String REMOVED ="Removed";
+    String REMOVED ="Removed";
 
 }

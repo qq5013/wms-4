@@ -5,12 +5,12 @@ package org.dddml.wms.specialization;
  */
 public interface CommandType {
 
-    public static final String CREATE = "Create";
+    String CREATE = "Create";
 
-    public static final String MERGE_PATCH = "MergePatch";
+    String MERGE_PATCH = "MergePatch";
 
-    public static final String DELETE = "Delete";
+    String DELETE = "Delete";
 
-    public static  final String REMOVE ="Remove";
+    String REMOVE ="Remove";
 
 }

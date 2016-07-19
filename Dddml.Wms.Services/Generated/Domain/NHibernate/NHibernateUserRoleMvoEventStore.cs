@@ -16,9 +16,9 @@ namespace Dddml.Wms.Domain.NHibernate
 
 	public class NHibernateUserRoleMvoEventStore : NHibernateEventStoreBase
 	{
-		public override object GetEventId(IEventStoreAggregateId eventStoreAaggregateId, long version)
+		public override object GetEventId(IEventStoreAggregateId eventStoreAggregateId, long version)
 		{
-			return new UserRoleMvoStateEventId((UserRoleId)(eventStoreAaggregateId as EventStoreAggregateId).Id, (long)version);
+			return new UserRoleMvoStateEventId((UserRoleId)(eventStoreAggregateId as EventStoreAggregateId).Id, (long)version);
 		}
 
 		public override Type GetSupportedStateEventType()

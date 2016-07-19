@@ -28,23 +28,23 @@ namespace Dddml.Wms.Domain
 			var state = StateRepository.Get(aggregateId);
 			var aggregate = GetInOutAggregate(state);
 
-			var eventStoreAaggregateId = ToEventStoreAaggregateId(aggregateId);
+			var eventStoreAggregateId = ToEventStoreAggregateId(aggregateId);
 
-			var repeated = IsRepeatedCommand(c, eventStoreAaggregateId, state);
+			var repeated = IsRepeatedCommand(c, eventStoreAggregateId, state);
 			if (repeated) { return; }
 
 			aggregate.ThrowOnInvalidStateTransition(c);
 			action(aggregate);
-			EventStore.AppendEvents(ToEventStoreAaggregateId(aggregateId), ((IInOutStateProperties)state).Version, aggregate.Changes, () => { StateRepository.Save(state); });
+			EventStore.AppendEvents(ToEventStoreAggregateId(aggregateId), ((IInOutStateProperties)state).Version, aggregate.Changes, () => { StateRepository.Save(state); });
 		}
 
 
-		protected bool IsRepeatedCommand(IInOutCommand command, IEventStoreAggregateId eventStoreAaggregateId, IInOutState state)
+		protected bool IsRepeatedCommand(IInOutCommand command, IEventStoreAggregateId eventStoreAggregateId, IInOutState state)
 		{
 			bool repeated = false;
 			if (((IInOutStateProperties)state).Version > command.AggregateVersion)
 			{
-				var lastEvent = EventStore.FindLastEvent(typeof(IInOutStateEvent), eventStoreAaggregateId, command.AggregateVersion);
+				var lastEvent = EventStore.FindLastEvent(typeof(IInOutStateEvent), eventStoreAggregateId, command.AggregateVersion);
 				if (lastEvent != null && lastEvent.CommandId == command.CommandId)
 				{
 					repeated = true;
@@ -120,7 +120,7 @@ namespace Dddml.Wms.Domain
 
 	    public virtual IInOutStateEvent GetStateEvent(string documentNumber, long version)
         {
-            var e = (IInOutStateEvent)EventStore.GetStateEvent(ToEventStoreAaggregateId(documentNumber), version);
+            var e = (IInOutStateEvent)EventStore.GetStateEvent(ToEventStoreAggregateId(documentNumber), version);
             if (e != null)
             {
                 e.ReadOnly = true;
@@ -131,7 +131,7 @@ namespace Dddml.Wms.Domain
 
 		public abstract IInOutAggregate GetInOutAggregate(IInOutState state);
 
-		public abstract IEventStoreAggregateId ToEventStoreAaggregateId(string aggregateId);
+		public abstract IEventStoreAggregateId ToEventStoreAggregateId(string aggregateId);
 
 
 	}

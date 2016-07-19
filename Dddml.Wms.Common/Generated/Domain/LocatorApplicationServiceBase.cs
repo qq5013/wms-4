@@ -27,23 +27,23 @@ namespace Dddml.Wms.Domain
 			var state = StateRepository.Get(aggregateId);
 			var aggregate = GetLocatorAggregate(state);
 
-			var eventStoreAaggregateId = ToEventStoreAaggregateId(aggregateId);
+			var eventStoreAggregateId = ToEventStoreAggregateId(aggregateId);
 
-			var repeated = IsRepeatedCommand(c, eventStoreAaggregateId, state);
+			var repeated = IsRepeatedCommand(c, eventStoreAggregateId, state);
 			if (repeated) { return; }
 
 			aggregate.ThrowOnInvalidStateTransition(c);
 			action(aggregate);
-			EventStore.AppendEvents(ToEventStoreAaggregateId(aggregateId), ((ILocatorStateProperties)state).Version, aggregate.Changes, () => { StateRepository.Save(state); });
+			EventStore.AppendEvents(ToEventStoreAggregateId(aggregateId), ((ILocatorStateProperties)state).Version, aggregate.Changes, () => { StateRepository.Save(state); });
 		}
 
 
-		protected bool IsRepeatedCommand(ILocatorCommand command, IEventStoreAggregateId eventStoreAaggregateId, ILocatorState state)
+		protected bool IsRepeatedCommand(ILocatorCommand command, IEventStoreAggregateId eventStoreAggregateId, ILocatorState state)
 		{
 			bool repeated = false;
 			if (((ILocatorStateProperties)state).Version > command.AggregateVersion)
 			{
-				var lastEvent = EventStore.FindLastEvent(typeof(ILocatorStateEvent), eventStoreAaggregateId, command.AggregateVersion);
+				var lastEvent = EventStore.FindLastEvent(typeof(ILocatorStateEvent), eventStoreAggregateId, command.AggregateVersion);
 				if (lastEvent != null && lastEvent.CommandId == command.CommandId)
 				{
 					repeated = true;
@@ -119,7 +119,7 @@ namespace Dddml.Wms.Domain
 
 	    public virtual ILocatorStateEvent GetStateEvent(string locatorId, long version)
         {
-            var e = (ILocatorStateEvent)EventStore.GetStateEvent(ToEventStoreAaggregateId(locatorId), version);
+            var e = (ILocatorStateEvent)EventStore.GetStateEvent(ToEventStoreAggregateId(locatorId), version);
             if (e != null)
             {
                 e.ReadOnly = true;
@@ -130,7 +130,7 @@ namespace Dddml.Wms.Domain
 
 		public abstract ILocatorAggregate GetLocatorAggregate(ILocatorState state);
 
-		public abstract IEventStoreAggregateId ToEventStoreAaggregateId(string aggregateId);
+		public abstract IEventStoreAggregateId ToEventStoreAggregateId(string aggregateId);
 
 
 	}

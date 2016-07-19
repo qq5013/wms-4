@@ -27,23 +27,23 @@ namespace Dddml.Wms.Domain
 			var state = StateRepository.Get(aggregateId);
 			var aggregate = GetUserPermissionMvoAggregate(state);
 
-			var eventStoreAaggregateId = ToEventStoreAaggregateId(aggregateId);
+			var eventStoreAggregateId = ToEventStoreAggregateId(aggregateId);
 
-			var repeated = IsRepeatedCommand(c, eventStoreAaggregateId, state);
+			var repeated = IsRepeatedCommand(c, eventStoreAggregateId, state);
 			if (repeated) { return; }
 
 			aggregate.ThrowOnInvalidStateTransition(c);
 			action(aggregate);
-			EventStore.AppendEvents(ToEventStoreAaggregateId(aggregateId), ((IUserPermissionMvoStateProperties)state).UserVersion, aggregate.Changes, () => { StateRepository.Save(state); });
+			EventStore.AppendEvents(ToEventStoreAggregateId(aggregateId), ((IUserPermissionMvoStateProperties)state).UserVersion, aggregate.Changes, () => { StateRepository.Save(state); });
 		}
 
 
-		protected bool IsRepeatedCommand(IUserPermissionMvoCommand command, IEventStoreAggregateId eventStoreAaggregateId, IUserPermissionMvoState state)
+		protected bool IsRepeatedCommand(IUserPermissionMvoCommand command, IEventStoreAggregateId eventStoreAggregateId, IUserPermissionMvoState state)
 		{
 			bool repeated = false;
 			if (((IUserPermissionMvoStateProperties)state).UserVersion > command.AggregateVersion)
 			{
-				var lastEvent = EventStore.FindLastEvent(typeof(IUserPermissionMvoStateEvent), eventStoreAaggregateId, command.AggregateVersion);
+				var lastEvent = EventStore.FindLastEvent(typeof(IUserPermissionMvoStateEvent), eventStoreAggregateId, command.AggregateVersion);
 				if (lastEvent != null && lastEvent.CommandId == command.CommandId)
 				{
 					repeated = true;
@@ -119,7 +119,7 @@ namespace Dddml.Wms.Domain
 
 	    public virtual IUserPermissionMvoStateEvent GetStateEvent(UserPermissionId userPermissionId, long version)
         {
-            var e = (IUserPermissionMvoStateEvent)EventStore.GetStateEvent(ToEventStoreAaggregateId(userPermissionId), version);
+            var e = (IUserPermissionMvoStateEvent)EventStore.GetStateEvent(ToEventStoreAggregateId(userPermissionId), version);
             if (e != null)
             {
                 e.ReadOnly = true;
@@ -130,7 +130,7 @@ namespace Dddml.Wms.Domain
 
 		public abstract IUserPermissionMvoAggregate GetUserPermissionMvoAggregate(IUserPermissionMvoState state);
 
-		public abstract IEventStoreAggregateId ToEventStoreAaggregateId(UserPermissionId aggregateId);
+		public abstract IEventStoreAggregateId ToEventStoreAggregateId(UserPermissionId aggregateId);
 
 
 	}

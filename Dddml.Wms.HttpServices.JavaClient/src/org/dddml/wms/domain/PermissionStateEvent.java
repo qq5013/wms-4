@@ -1,6 +1,5 @@
 package org.dddml.wms.domain;
 
-import java.util.Iterator;
 import java.util.Date;
 import org.dddml.wms.specialization.Event;
 

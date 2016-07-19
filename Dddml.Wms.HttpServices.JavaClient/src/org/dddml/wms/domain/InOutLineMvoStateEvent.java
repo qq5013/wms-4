@@ -1,6 +1,5 @@
 package org.dddml.wms.domain;
 
-import java.util.Iterator;
 import java.math.BigDecimal;
 import java.util.Date;
 import nodamoney.Money;

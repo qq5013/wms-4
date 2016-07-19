@@ -1,6 +1,5 @@
 package org.dddml.wms.domain;
 
-import org.dddml.wms.domain.SkuIdDto;
 import java.math.BigDecimal;
 import java.util.Date;
 

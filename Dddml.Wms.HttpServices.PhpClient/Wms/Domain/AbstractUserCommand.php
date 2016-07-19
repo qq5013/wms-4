@@ -4,11 +4,6 @@ namespace Wms\Domain;
 
 use Dddml\Command\CommandInterface;
 use JMS\Serializer\Annotation\Type;
-use Wms\Domain\UserRole;
-use Wms\Domain\UserClaim;
-use Wms\Domain\UserPermission;
-use Wms\Domain\UserLogin;
-use Wms\Domain\LoginKey;
 use Wms\Domain\CommandTrait;
 
 abstract class AbstractUserCommand implements CommandInterface

@@ -2,9 +2,7 @@ package org.dddml.wms.domain;
 
 import nodamoney.Money;
 import java.math.BigDecimal;
-import org.dddml.wms.domain.InOutLineStateDto;
 import java.util.Date;
-import org.dddml.wms.domain.SkuIdDto;
 
 public class CreateOrMergePatchInOutDto extends AbstractInOutCommandDto
 {

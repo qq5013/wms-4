@@ -1,8 +1,6 @@
 package org.dddml.wms.domain;
 
-import org.dddml.wms.domain.AttributeSetInstanceExtensionFieldIdDto;
 import java.util.Date;
-import org.dddml.wms.domain.AttributeSetInstanceExtensionFieldStateDto;
 import org.dddml.wms.domain.AbstractCommandDto;
 
 public abstract class AbstractAttributeSetInstanceExtensionFieldMvoCommandDto extends AbstractCommandDto

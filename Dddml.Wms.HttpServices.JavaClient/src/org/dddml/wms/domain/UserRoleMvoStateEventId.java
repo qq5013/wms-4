@@ -1,6 +1,5 @@
 package org.dddml.wms.domain;
 
-import org.dddml.wms.domain.UserRoleId;
 
 public class UserRoleMvoStateEventId
 {

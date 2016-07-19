@@ -6,7 +6,6 @@ use Dddml\Command\CommandExecutor;
 use Dddml\Executor\Http\CommandRequestInterface;
 use Dddml\Routing\RouteTrait;
 use Symfony\Component\Routing\Route;
-use Wms\Domain\AttributeUse;
 use Wms\Domain\DeleteAttributeSet;
 
 

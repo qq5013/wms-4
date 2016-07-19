@@ -2,7 +2,6 @@
 
 namespace Wms\HttpClient;
 
-use Wms\Domain\RolePermissionId;
 
 class RolePermissionsQueryRequest extends AbstractQueryRequest
 {

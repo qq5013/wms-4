@@ -3,7 +3,6 @@
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
-use Wms\Domain\UserRoleId;
 
 class UserRoleMvoStateEventId
 {

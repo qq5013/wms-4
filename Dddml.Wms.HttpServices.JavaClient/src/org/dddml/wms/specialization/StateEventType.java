@@ -11,6 +11,6 @@ public interface StateEventType {
 
     String DELETED = "Deleted";
 
-    String REMOVED ="Removed";
+    String REMOVED = "Removed";
 
 }

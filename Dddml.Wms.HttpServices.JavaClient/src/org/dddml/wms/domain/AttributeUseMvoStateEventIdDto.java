@@ -1,6 +1,5 @@
 package org.dddml.wms.domain;
 
-import org.dddml.wms.domain.AttributeSetAttributeUseIdDto;
 
 public class AttributeUseMvoStateEventIdDto
 {

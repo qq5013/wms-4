@@ -1,8 +1,6 @@
 package org.dddml.wms.domain;
 
-import org.dddml.wms.domain.AttributeSetAttributeUseIdDto;
 import java.util.Date;
-import org.dddml.wms.domain.AttributeUseStateDto;
 
 public class CreateOrMergePatchAttributeUseMvoDto extends AbstractAttributeUseMvoCommandDto
 {

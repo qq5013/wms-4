@@ -11,6 +11,6 @@ public interface CommandType {
 
     String DELETE = "Delete";
 
-    String REMOVE ="Remove";
+    String REMOVE = "Remove";
 
 }

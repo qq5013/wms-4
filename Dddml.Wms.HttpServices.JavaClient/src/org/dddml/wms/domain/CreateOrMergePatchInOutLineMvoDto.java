@@ -1,10 +1,8 @@
 package org.dddml.wms.domain;
 
-import org.dddml.wms.domain.InOutLineIdDto;
 import java.math.BigDecimal;
 import java.util.Date;
 import nodamoney.Money;
-import org.dddml.wms.domain.InOutLineStateDto;
 
 public class CreateOrMergePatchInOutLineMvoDto extends AbstractInOutLineMvoCommandDto
 {

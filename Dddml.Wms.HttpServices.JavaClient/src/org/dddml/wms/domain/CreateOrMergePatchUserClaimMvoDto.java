@@ -1,11 +1,6 @@
 package org.dddml.wms.domain;
 
-import org.dddml.wms.domain.UserClaimIdDto;
 import java.util.Date;
-import org.dddml.wms.domain.UserRoleStateDto;
-import org.dddml.wms.domain.UserClaimStateDto;
-import org.dddml.wms.domain.UserPermissionStateDto;
-import org.dddml.wms.domain.UserLoginStateDto;
 
 public class CreateOrMergePatchUserClaimMvoDto extends AbstractUserClaimMvoCommandDto
 {

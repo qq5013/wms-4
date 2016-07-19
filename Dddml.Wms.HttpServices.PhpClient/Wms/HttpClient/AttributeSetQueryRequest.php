@@ -2,7 +2,6 @@
 
 namespace Wms\HttpClient;
 
-use Wms\Domain\AttributeUse;
 
 class AttributeSetQueryRequest extends AbstractQueryRequest
 {

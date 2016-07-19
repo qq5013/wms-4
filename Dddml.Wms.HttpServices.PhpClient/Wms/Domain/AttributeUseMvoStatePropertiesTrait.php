@@ -3,8 +3,6 @@
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
-use Wms\Domain\AttributeSetAttributeUseId;
-use Wms\Domain\AttributeUse;
 
 
 trait AttributeUseMvoStatePropertiesTrait

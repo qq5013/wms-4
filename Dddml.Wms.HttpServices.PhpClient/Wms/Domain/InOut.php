@@ -4,8 +4,6 @@ namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
 use NodaMoney\Money;
-use Wms\Domain\InOutLine;
-use Wms\Domain\SkuId;
 
 class InOut
 {

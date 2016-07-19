@@ -7,8 +7,6 @@ use Dddml\Executor\Http\CommandRequestInterface;
 use Dddml\Routing\RouteTrait;
 use JMS\Serializer\Annotation\Type;
 use Symfony\Component\Routing\Route;
-use Wms\Domain\AttributeValueId;
-use Wms\Domain\AttributeValue;
 use Wms\Domain\CreateOrMergePatchAttributeValueMvo;
 
 

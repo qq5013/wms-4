@@ -257,6 +257,7 @@ namespace Dddml.Wms.Domain
                         AddUserRoleEvent(e);
                     }
                 }
+                else { this._userRoleEvents.Clear(); }
             }
         }
 	
@@ -306,6 +307,7 @@ namespace Dddml.Wms.Domain
                         AddUserClaimEvent(e);
                     }
                 }
+                else { this._userClaimEvents.Clear(); }
             }
         }
 	
@@ -355,6 +357,7 @@ namespace Dddml.Wms.Domain
                         AddUserPermissionEvent(e);
                     }
                 }
+                else { this._userPermissionEvents.Clear(); }
             }
         }
 	
@@ -404,6 +407,7 @@ namespace Dddml.Wms.Domain
                         AddUserLoginEvent(e);
                     }
                 }
+                else { this._userLoginEvents.Clear(); }
             }
         }
 	
@@ -512,6 +516,7 @@ namespace Dddml.Wms.Domain
                         AddUserRoleEvent(e);
                     }
                 }
+                else { this._userRoleEvents.Clear(); }
             }
         }
 
@@ -573,6 +578,7 @@ namespace Dddml.Wms.Domain
                         AddUserClaimEvent(e);
                     }
                 }
+                else { this._userClaimEvents.Clear(); }
             }
         }
 
@@ -634,6 +640,7 @@ namespace Dddml.Wms.Domain
                         AddUserPermissionEvent(e);
                     }
                 }
+                else { this._userPermissionEvents.Clear(); }
             }
         }
 
@@ -695,6 +702,7 @@ namespace Dddml.Wms.Domain
                         AddUserLoginEvent(e);
                     }
                 }
+                else { this._userLoginEvents.Clear(); }
             }
         }
 
@@ -795,6 +803,7 @@ namespace Dddml.Wms.Domain
                         AddUserRoleEvent(e);
                     }
                 }
+                else { this._userRoleEvents.Clear(); }
             }
         }
 	
@@ -844,6 +853,7 @@ namespace Dddml.Wms.Domain
                         AddUserClaimEvent(e);
                     }
                 }
+                else { this._userClaimEvents.Clear(); }
             }
         }
 	
@@ -893,6 +903,7 @@ namespace Dddml.Wms.Domain
                         AddUserPermissionEvent(e);
                     }
                 }
+                else { this._userPermissionEvents.Clear(); }
             }
         }
 	
@@ -942,6 +953,7 @@ namespace Dddml.Wms.Domain
                         AddUserLoginEvent(e);
                     }
                 }
+                else { this._userLoginEvents.Clear(); }
             }
         }
 	

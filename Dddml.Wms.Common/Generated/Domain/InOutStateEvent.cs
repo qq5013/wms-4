@@ -223,6 +223,7 @@ namespace Dddml.Wms.Domain
                         AddInOutLineEvent(e);
                     }
                 }
+                else { this._inOutLineEvents.Clear(); }
             }
         }
 	
@@ -368,6 +369,7 @@ namespace Dddml.Wms.Domain
                         AddInOutLineEvent(e);
                     }
                 }
+                else { this._inOutLineEvents.Clear(); }
             }
         }
 
@@ -459,6 +461,7 @@ namespace Dddml.Wms.Domain
                         AddInOutLineEvent(e);
                     }
                 }
+                else { this._inOutLineEvents.Clear(); }
             }
         }
 	

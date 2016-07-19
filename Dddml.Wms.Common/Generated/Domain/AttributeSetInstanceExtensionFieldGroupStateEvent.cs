@@ -164,6 +164,7 @@ namespace Dddml.Wms.Domain
                         AddAttributeSetInstanceExtensionFieldEvent(e);
                     }
                 }
+                else { this._attributeSetInstanceExtensionFieldEvents.Clear(); }
             }
         }
 	
@@ -251,6 +252,7 @@ namespace Dddml.Wms.Domain
                         AddAttributeSetInstanceExtensionFieldEvent(e);
                     }
                 }
+                else { this._attributeSetInstanceExtensionFieldEvents.Clear(); }
             }
         }
 
@@ -342,6 +344,7 @@ namespace Dddml.Wms.Domain
                         AddAttributeSetInstanceExtensionFieldEvent(e);
                     }
                 }
+                else { this._attributeSetInstanceExtensionFieldEvents.Clear(); }
             }
         }
 	

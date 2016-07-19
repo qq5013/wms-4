@@ -17,7 +17,7 @@
 
 	boundedContext.SetBoundedContextPackage("org.dddml.wms");
 
-    boundedContext.SetJavaSpecializationPackage("org.dddml.specialization");
+    boundedContext.SetJavaSpecializationPackage("org.dddml.wms.specialization");
 
 	boundedContext.IsUsingSeparatedDomainAggregateNamespace = false;
 

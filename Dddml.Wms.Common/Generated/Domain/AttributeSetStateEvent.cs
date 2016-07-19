@@ -166,6 +166,7 @@ namespace Dddml.Wms.Domain
                         AddAttributeUseEvent(e);
                     }
                 }
+                else { this._attributeUseEvents.Clear(); }
             }
         }
 	
@@ -255,6 +256,7 @@ namespace Dddml.Wms.Domain
                         AddAttributeUseEvent(e);
                     }
                 }
+                else { this._attributeUseEvents.Clear(); }
             }
         }
 
@@ -346,6 +348,7 @@ namespace Dddml.Wms.Domain
                         AddAttributeUseEvent(e);
                     }
                 }
+                else { this._attributeUseEvents.Clear(); }
             }
         }
 	

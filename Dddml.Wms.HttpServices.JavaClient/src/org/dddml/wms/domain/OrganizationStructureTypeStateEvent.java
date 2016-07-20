@@ -33,7 +33,6 @@ public interface OrganizationStructureTypeStateEvent extends Event
 
     }
 
-
     interface OrganizationStructureTypeStateDeleted extends OrganizationStructureTypeStateEvent
     {
     }

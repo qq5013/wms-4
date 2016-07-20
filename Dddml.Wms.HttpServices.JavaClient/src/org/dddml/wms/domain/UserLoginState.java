@@ -7,6 +7,7 @@ import org.dddml.wms.domain.UserLoginStateEvent.*;
 
 public interface UserLoginState
 {
+    Long VERSION_ZERO = 0L;
 
     UserLoginId getUserLoginId();
 
@@ -52,14 +53,13 @@ public interface UserLoginState
     boolean isStateUnsaved();
 
 
+    void mutate(Event e);
+
     void when(UserLoginStateCreated e);
 
     void when(UserLoginStateMergePatched e);
 
     void when(UserLoginStateRemoved e);
-
-    void mutate(Event e);
-
     
 }
 

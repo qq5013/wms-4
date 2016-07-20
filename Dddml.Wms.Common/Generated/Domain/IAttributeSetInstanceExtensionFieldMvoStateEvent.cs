@@ -102,7 +102,6 @@ namespace Dddml.Wms.Domain
 
 	}
 
-
 	public interface IAttributeSetInstanceExtensionFieldMvoStateDeleted : IAttributeSetInstanceExtensionFieldMvoStateEvent
 	{
 	}

@@ -9,6 +9,7 @@ import org.dddml.wms.domain.InOutLineMvoStateEvent.*;
 
 public interface InOutLineMvoState
 {
+    Long VERSION_ZERO = 0L;
 
     InOutLineId getInOutLineId();
 
@@ -278,14 +279,13 @@ public interface InOutLineMvoState
     boolean isStateUnsaved();
 
 
+    void mutate(Event e);
+
     void when(InOutLineMvoStateCreated e);
 
     void when(InOutLineMvoStateMergePatched e);
 
     void when(InOutLineMvoStateDeleted e);
-
-    void mutate(Event e);
-
     
 }
 

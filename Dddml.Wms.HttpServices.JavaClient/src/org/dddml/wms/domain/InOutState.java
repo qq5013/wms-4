@@ -9,6 +9,7 @@ import org.dddml.wms.domain.InOutStateEvent.*;
 
 public interface InOutState
 {
+    Long VERSION_ZERO = 0L;
 
     String getDocumentNumber();
 
@@ -184,14 +185,13 @@ public interface InOutState
     InOutLineStates getInOutLines();
 
 
+    void mutate(Event e);
+
     void when(InOutStateCreated e);
 
     void when(InOutStateMergePatched e);
 
     void when(InOutStateDeleted e);
-
-    void mutate(Event e);
-
     
 }
 

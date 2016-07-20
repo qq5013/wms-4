@@ -46,7 +46,6 @@ namespace Dddml.Wms.Domain
 
 	}
 
-
 	public interface IWarehouseStateDeleted : IWarehouseStateEvent
 	{
 	}

@@ -193,7 +193,6 @@ public interface AttributeValueMvoStateEvent extends Event
 
     }
 
-
     interface AttributeValueMvoStateDeleted extends AttributeValueMvoStateEvent
     {
     }

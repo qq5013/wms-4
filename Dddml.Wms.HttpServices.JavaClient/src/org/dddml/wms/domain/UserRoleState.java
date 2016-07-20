@@ -7,6 +7,7 @@ import org.dddml.wms.domain.UserRoleStateEvent.*;
 
 public interface UserRoleState
 {
+    Long VERSION_ZERO = 0L;
 
     UserRoleId getUserRoleId();
 
@@ -52,14 +53,13 @@ public interface UserRoleState
     boolean isStateUnsaved();
 
 
+    void mutate(Event e);
+
     void when(UserRoleStateCreated e);
 
     void when(UserRoleStateMergePatched e);
 
     void when(UserRoleStateRemoved e);
-
-    void mutate(Event e);
-
     
 }
 

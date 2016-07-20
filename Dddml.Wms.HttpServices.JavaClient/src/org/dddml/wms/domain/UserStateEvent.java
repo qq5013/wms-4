@@ -185,7 +185,6 @@ public interface UserStateEvent extends Event
 
     }
 
-
     interface UserStateDeleted extends UserStateEvent
     {
         Iterable<UserRoleStateEvent.UserRoleStateRemoved> getUserRoleEvents();

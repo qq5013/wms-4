@@ -7,6 +7,7 @@ import org.dddml.wms.domain.AttributeSetInstanceExtensionFieldGroupStateEvent.*;
 
 public interface AttributeSetInstanceExtensionFieldGroupState
 {
+    Long VERSION_ZERO = 0L;
 
     String getId();
 
@@ -66,14 +67,13 @@ public interface AttributeSetInstanceExtensionFieldGroupState
     AttributeSetInstanceExtensionFieldStates getFields();
 
 
+    void mutate(Event e);
+
     void when(AttributeSetInstanceExtensionFieldGroupStateCreated e);
 
     void when(AttributeSetInstanceExtensionFieldGroupStateMergePatched e);
 
     void when(AttributeSetInstanceExtensionFieldGroupStateDeleted e);
-
-    void mutate(Event e);
-
     
 }
 

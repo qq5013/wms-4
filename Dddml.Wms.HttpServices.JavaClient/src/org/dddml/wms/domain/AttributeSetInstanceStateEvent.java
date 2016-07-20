@@ -3730,7 +3730,6 @@ public interface AttributeSetInstanceStateEvent extends Event
 
     }
 
-
     interface AttributeSetInstanceStateDeleted extends AttributeSetInstanceStateEvent
     {
     }

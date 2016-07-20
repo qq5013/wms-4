@@ -7,6 +7,7 @@ import org.dddml.wms.domain.AudienceStateEvent.*;
 
 public interface AudienceState
 {
+    Long VERSION_ZERO = 0L;
 
     String getClientId();
 
@@ -52,14 +53,13 @@ public interface AudienceState
     boolean isStateUnsaved();
 
 
+    void mutate(Event e);
+
     void when(AudienceStateCreated e);
 
     void when(AudienceStateMergePatched e);
 
     void when(AudienceStateDeleted e);
-
-    void mutate(Event e);
-
     
 }
 

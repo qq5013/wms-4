@@ -193,7 +193,6 @@ public interface UserClaimMvoStateEvent extends Event
 
     }
 
-
     interface UserClaimMvoStateDeleted extends UserClaimMvoStateEvent
     {
     }

@@ -177,7 +177,6 @@ public interface UserPermissionMvoStateEvent extends Event
 
     }
 
-
     interface UserPermissionMvoStateDeleted extends UserPermissionMvoStateEvent
     {
     }

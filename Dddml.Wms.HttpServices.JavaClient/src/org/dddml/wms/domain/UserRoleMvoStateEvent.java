@@ -177,7 +177,6 @@ public interface UserRoleMvoStateEvent extends Event
 
     }
 
-
     interface UserRoleMvoStateDeleted extends UserRoleMvoStateEvent
     {
     }

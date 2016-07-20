@@ -70,7 +70,6 @@ namespace Dddml.Wms.Domain
 
 	}
 
-
 	public interface IAttributeSetInstanceExtensionFieldGroupStateDeleted : IAttributeSetInstanceExtensionFieldGroupStateEvent
 	{
 		IEnumerable<IAttributeSetInstanceExtensionFieldStateRemoved> AttributeSetInstanceExtensionFieldEvents { get; }

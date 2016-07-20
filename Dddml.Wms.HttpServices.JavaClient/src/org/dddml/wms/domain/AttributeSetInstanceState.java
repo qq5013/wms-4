@@ -8,6 +8,7 @@ import org.dddml.wms.domain.AttributeSetInstanceStateEvent.*;
 
 public interface AttributeSetInstanceState
 {
+    Long VERSION_ZERO = 0L;
 
     String getAttributeSetInstanceId();
 
@@ -1893,14 +1894,13 @@ public interface AttributeSetInstanceState
     boolean isStateUnsaved();
 
 
+    void mutate(Event e);
+
     void when(AttributeSetInstanceStateCreated e);
 
     void when(AttributeSetInstanceStateMergePatched e);
 
     void when(AttributeSetInstanceStateDeleted e);
-
-    void mutate(Event e);
-
     
 }
 

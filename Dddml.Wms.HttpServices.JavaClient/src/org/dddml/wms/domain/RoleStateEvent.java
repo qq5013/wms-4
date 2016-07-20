@@ -49,7 +49,6 @@ public interface RoleStateEvent extends Event
 
     }
 
-
     interface RoleStateDeleted extends RoleStateEvent
     {
     }

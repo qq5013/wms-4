@@ -33,7 +33,6 @@ public interface RolePermissionStateEvent extends Event
 
     }
 
-
     interface RolePermissionStateDeleted extends RolePermissionStateEvent
     {
     }

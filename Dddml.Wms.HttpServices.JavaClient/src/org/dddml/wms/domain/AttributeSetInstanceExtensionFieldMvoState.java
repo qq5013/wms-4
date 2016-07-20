@@ -7,6 +7,7 @@ import org.dddml.wms.domain.AttributeSetInstanceExtensionFieldMvoStateEvent.*;
 
 public interface AttributeSetInstanceExtensionFieldMvoState
 {
+    Long VERSION_ZERO = 0L;
 
     AttributeSetInstanceExtensionFieldId getAttributeSetInstanceExtensionFieldId();
 
@@ -112,14 +113,13 @@ public interface AttributeSetInstanceExtensionFieldMvoState
     boolean isStateUnsaved();
 
 
+    void mutate(Event e);
+
     void when(AttributeSetInstanceExtensionFieldMvoStateCreated e);
 
     void when(AttributeSetInstanceExtensionFieldMvoStateMergePatched e);
 
     void when(AttributeSetInstanceExtensionFieldMvoStateDeleted e);
-
-    void mutate(Event e);
-
     
 }
 

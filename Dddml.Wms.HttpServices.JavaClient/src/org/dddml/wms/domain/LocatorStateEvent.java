@@ -97,7 +97,6 @@ public interface LocatorStateEvent extends Event
 
     }
 
-
     interface LocatorStateDeleted extends LocatorStateEvent
     {
     }

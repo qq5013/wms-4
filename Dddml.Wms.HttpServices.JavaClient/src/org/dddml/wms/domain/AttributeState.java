@@ -7,6 +7,7 @@ import org.dddml.wms.domain.AttributeStateEvent.*;
 
 public interface AttributeState
 {
+    Long VERSION_ZERO = 0L;
 
     String getAttributeId();
 
@@ -86,14 +87,13 @@ public interface AttributeState
     AttributeValueStates getAttributeValues();
 
 
+    void mutate(Event e);
+
     void when(AttributeStateCreated e);
 
     void when(AttributeStateMergePatched e);
 
     void when(AttributeStateDeleted e);
-
-    void mutate(Event e);
-
     
 }
 

@@ -323,7 +323,6 @@ public interface InOutStateEvent extends Event
 
     }
 
-
     interface InOutStateDeleted extends InOutStateEvent
     {
         Iterable<InOutLineStateEvent.InOutLineStateRemoved> getInOutLineEvents();

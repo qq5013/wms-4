@@ -65,7 +65,6 @@ public interface OrganizationStateEvent extends Event
 
     }
 
-
     interface OrganizationStateDeleted extends OrganizationStateEvent
     {
     }

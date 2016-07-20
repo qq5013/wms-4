@@ -74,7 +74,6 @@ namespace Dddml.Wms.Domain
 
 	}
 
-
 	public interface IAttributeSetStateDeleted : IAttributeSetStateEvent
 	{
 		IEnumerable<IAttributeUseStateRemoved> AttributeUseEvents { get; }

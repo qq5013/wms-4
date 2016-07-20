@@ -499,7 +499,6 @@ public interface InOutLineMvoStateEvent extends Event
 
     }
 
-
     interface InOutLineMvoStateDeleted extends InOutLineMvoStateEvent
     {
     }

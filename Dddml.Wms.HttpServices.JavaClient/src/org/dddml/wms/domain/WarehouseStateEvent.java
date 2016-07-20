@@ -57,7 +57,6 @@ public interface WarehouseStateEvent extends Event
 
     }
 
-
     interface WarehouseStateDeleted extends WarehouseStateEvent
     {
     }

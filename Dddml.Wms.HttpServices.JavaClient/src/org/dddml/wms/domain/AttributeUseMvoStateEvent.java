@@ -145,7 +145,6 @@ public interface AttributeUseMvoStateEvent extends Event
 
     }
 
-
     interface AttributeUseMvoStateDeleted extends AttributeUseMvoStateEvent
     {
     }

@@ -129,7 +129,6 @@ public interface AttributeStateEvent extends Event
 
     }
 
-
     interface AttributeStateDeleted extends AttributeStateEvent
     {
         Iterable<AttributeValueStateEvent.AttributeValueStateRemoved> getAttributeValueEvents();

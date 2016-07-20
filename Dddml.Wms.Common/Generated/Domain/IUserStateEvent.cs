@@ -142,7 +142,6 @@ namespace Dddml.Wms.Domain
 
 	}
 
-
 	public interface IUserStateDeleted : IUserStateEvent
 	{
 		IEnumerable<IUserRoleStateRemoved> UserRoleEvents { get; }

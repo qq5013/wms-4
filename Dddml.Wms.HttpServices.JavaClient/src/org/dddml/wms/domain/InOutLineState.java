@@ -8,6 +8,7 @@ import org.dddml.wms.domain.InOutLineStateEvent.*;
 
 public interface InOutLineState
 {
+    Long VERSION_ZERO = 0L;
 
     InOutLineId getInOutLineId();
 
@@ -121,14 +122,13 @@ public interface InOutLineState
     boolean isStateUnsaved();
 
 
+    void mutate(Event e);
+
     void when(InOutLineStateCreated e);
 
     void when(InOutLineStateMergePatched e);
 
     void when(InOutLineStateRemoved e);
-
-    void mutate(Event e);
-
     
 }
 

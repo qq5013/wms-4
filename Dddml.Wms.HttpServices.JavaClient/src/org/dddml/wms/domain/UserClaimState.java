@@ -7,6 +7,7 @@ import org.dddml.wms.domain.UserClaimStateEvent.*;
 
 public interface UserClaimState
 {
+    Long VERSION_ZERO = 0L;
 
     UserClaimId getUserClaimId();
 
@@ -60,14 +61,13 @@ public interface UserClaimState
     boolean isStateUnsaved();
 
 
+    void mutate(Event e);
+
     void when(UserClaimStateCreated e);
 
     void when(UserClaimStateMergePatched e);
 
     void when(UserClaimStateRemoved e);
-
-    void mutate(Event e);
-
     
 }
 

@@ -34,7 +34,6 @@ namespace Dddml.Wms.Domain
 
 	}
 
-
 	public interface IOrganizationStructureTypeStateDeleted : IOrganizationStructureTypeStateEvent
 	{
 	}

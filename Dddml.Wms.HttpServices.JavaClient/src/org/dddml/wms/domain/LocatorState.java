@@ -7,6 +7,7 @@ import org.dddml.wms.domain.LocatorStateEvent.*;
 
 public interface LocatorState
 {
+    Long VERSION_ZERO = 0L;
 
     String getLocatorId();
 
@@ -76,14 +77,13 @@ public interface LocatorState
     boolean isStateUnsaved();
 
 
+    void mutate(Event e);
+
     void when(LocatorStateCreated e);
 
     void when(LocatorStateMergePatched e);
 
     void when(LocatorStateDeleted e);
-
-    void mutate(Event e);
-
     
 }
 

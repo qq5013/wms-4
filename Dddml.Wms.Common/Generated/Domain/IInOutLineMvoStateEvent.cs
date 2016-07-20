@@ -267,7 +267,6 @@ namespace Dddml.Wms.Domain
 
 	}
 
-
 	public interface IInOutLineMvoStateDeleted : IInOutLineMvoStateEvent
 	{
 	}

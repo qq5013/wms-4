@@ -7,6 +7,7 @@ import org.dddml.wms.domain.RoleStateEvent.*;
 
 public interface RoleState
 {
+    Long VERSION_ZERO = 0L;
 
     String getRoleId();
 
@@ -52,14 +53,13 @@ public interface RoleState
     boolean isStateUnsaved();
 
 
+    void mutate(Event e);
+
     void when(RoleStateCreated e);
 
     void when(RoleStateMergePatched e);
 
     void when(RoleStateDeleted e);
-
-    void mutate(Event e);
-
     
 }
 

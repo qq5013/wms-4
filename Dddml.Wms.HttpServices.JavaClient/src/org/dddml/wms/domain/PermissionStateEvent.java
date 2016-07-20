@@ -57,7 +57,6 @@ public interface PermissionStateEvent extends Event
 
     }
 
-
     interface PermissionStateDeleted extends PermissionStateEvent
     {
     }

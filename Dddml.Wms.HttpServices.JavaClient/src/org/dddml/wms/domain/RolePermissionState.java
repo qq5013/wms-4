@@ -7,6 +7,7 @@ import org.dddml.wms.domain.RolePermissionStateEvent.*;
 
 public interface RolePermissionState
 {
+    Long VERSION_ZERO = 0L;
 
     RolePermissionId getId();
 
@@ -44,14 +45,13 @@ public interface RolePermissionState
     boolean isStateUnsaved();
 
 
+    void mutate(Event e);
+
     void when(RolePermissionStateCreated e);
 
     void when(RolePermissionStateMergePatched e);
 
     void when(RolePermissionStateDeleted e);
-
-    void mutate(Event e);
-
     
 }
 

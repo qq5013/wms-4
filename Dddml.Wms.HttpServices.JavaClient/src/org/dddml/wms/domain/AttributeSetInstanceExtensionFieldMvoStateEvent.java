@@ -169,7 +169,6 @@ public interface AttributeSetInstanceExtensionFieldMvoStateEvent extends Event
 
     }
 
-
     interface AttributeSetInstanceExtensionFieldMvoStateDeleted extends AttributeSetInstanceExtensionFieldMvoStateEvent
     {
     }

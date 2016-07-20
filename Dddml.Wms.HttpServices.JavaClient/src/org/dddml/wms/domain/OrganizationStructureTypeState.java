@@ -7,6 +7,7 @@ import org.dddml.wms.domain.OrganizationStructureTypeStateEvent.*;
 
 public interface OrganizationStructureTypeState
 {
+    Long VERSION_ZERO = 0L;
 
     String getId();
 
@@ -44,14 +45,13 @@ public interface OrganizationStructureTypeState
     boolean isStateUnsaved();
 
 
+    void mutate(Event e);
+
     void when(OrganizationStructureTypeStateCreated e);
 
     void when(OrganizationStructureTypeStateMergePatched e);
 
     void when(OrganizationStructureTypeStateDeleted e);
-
-    void mutate(Event e);
-
     
 }
 

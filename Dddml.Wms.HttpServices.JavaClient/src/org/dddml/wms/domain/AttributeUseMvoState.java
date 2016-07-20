@@ -7,6 +7,7 @@ import org.dddml.wms.domain.AttributeUseMvoStateEvent.*;
 
 public interface AttributeUseMvoState
 {
+    Long VERSION_ZERO = 0L;
 
     AttributeSetAttributeUseId getAttributeSetAttributeUseId();
 
@@ -100,14 +101,13 @@ public interface AttributeUseMvoState
     boolean isStateUnsaved();
 
 
+    void mutate(Event e);
+
     void when(AttributeUseMvoStateCreated e);
 
     void when(AttributeUseMvoStateMergePatched e);
 
     void when(AttributeUseMvoStateDeleted e);
-
-    void mutate(Event e);
-
     
 }
 

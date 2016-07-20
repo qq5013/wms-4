@@ -89,7 +89,6 @@ public interface AttributeSetInstanceExtensionFieldGroupStateEvent extends Event
 
     }
 
-
     interface AttributeSetInstanceExtensionFieldGroupStateDeleted extends AttributeSetInstanceExtensionFieldGroupStateEvent
     {
         Iterable<AttributeSetInstanceExtensionFieldStateEvent.AttributeSetInstanceExtensionFieldStateRemoved> getAttributeSetInstanceExtensionFieldEvents();

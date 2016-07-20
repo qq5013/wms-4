@@ -7,6 +7,7 @@ import org.dddml.wms.domain.PermissionStateEvent.*;
 
 public interface PermissionState
 {
+    Long VERSION_ZERO = 0L;
 
     String getPermissionId();
 
@@ -56,14 +57,13 @@ public interface PermissionState
     boolean isStateUnsaved();
 
 
+    void mutate(Event e);
+
     void when(PermissionStateCreated e);
 
     void when(PermissionStateMergePatched e);
 
     void when(PermissionStateDeleted e);
-
-    void mutate(Event e);
-
     
 }
 

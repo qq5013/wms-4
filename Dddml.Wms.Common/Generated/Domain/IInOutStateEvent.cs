@@ -187,7 +187,6 @@ namespace Dddml.Wms.Domain
 
 	}
 
-
 	public interface IInOutStateDeleted : IInOutStateEvent
 	{
 		IEnumerable<IInOutLineStateRemoved> InOutLineEvents { get; }

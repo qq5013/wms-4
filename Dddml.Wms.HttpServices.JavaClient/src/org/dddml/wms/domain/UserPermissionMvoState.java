@@ -7,6 +7,7 @@ import org.dddml.wms.domain.UserPermissionMvoStateEvent.*;
 
 public interface UserPermissionMvoState
 {
+    Long VERSION_ZERO = 0L;
 
     UserPermissionId getUserPermissionId();
 
@@ -116,14 +117,13 @@ public interface UserPermissionMvoState
     boolean isStateUnsaved();
 
 
+    void mutate(Event e);
+
     void when(UserPermissionMvoStateCreated e);
 
     void when(UserPermissionMvoStateMergePatched e);
 
     void when(UserPermissionMvoStateDeleted e);
-
-    void mutate(Event e);
-
     
 }
 

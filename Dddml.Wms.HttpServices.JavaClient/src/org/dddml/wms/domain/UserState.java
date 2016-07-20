@@ -7,6 +7,7 @@ import org.dddml.wms.domain.UserStateEvent.*;
 
 public interface UserState
 {
+    Long VERSION_ZERO = 0L;
 
     String getUserId();
 
@@ -96,14 +97,13 @@ public interface UserState
     UserLoginStates getUserLogins();
 
 
+    void mutate(Event e);
+
     void when(UserStateCreated e);
 
     void when(UserStateMergePatched e);
 
     void when(UserStateDeleted e);
-
-    void mutate(Event e);
-
     
 }
 

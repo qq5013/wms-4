@@ -7,6 +7,7 @@ import org.dddml.wms.domain.AttributeValueMvoStateEvent.*;
 
 public interface AttributeValueMvoState
 {
+    Long VERSION_ZERO = 0L;
 
     AttributeValueId getAttributeValueId();
 
@@ -124,14 +125,13 @@ public interface AttributeValueMvoState
     boolean isStateUnsaved();
 
 
+    void mutate(Event e);
+
     void when(AttributeValueMvoStateCreated e);
 
     void when(AttributeValueMvoStateMergePatched e);
 
     void when(AttributeValueMvoStateDeleted e);
-
-    void mutate(Event e);
-
     
 }
 

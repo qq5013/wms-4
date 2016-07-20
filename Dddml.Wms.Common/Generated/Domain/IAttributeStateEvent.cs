@@ -90,7 +90,6 @@ namespace Dddml.Wms.Domain
 
 	}
 
-
 	public interface IAttributeStateDeleted : IAttributeStateEvent
 	{
 		IEnumerable<IAttributeValueStateRemoved> AttributeValueEvents { get; }

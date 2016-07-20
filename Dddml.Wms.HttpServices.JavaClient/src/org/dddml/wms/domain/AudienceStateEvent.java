@@ -49,7 +49,6 @@ public interface AudienceStateEvent extends Event
 
     }
 
-
     interface AudienceStateDeleted extends AudienceStateEvent
     {
     }

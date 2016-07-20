@@ -4,7 +4,7 @@ namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
 
-class LoginKeyFlattenedDto
+class LoginKeyFlattenedDto implements \Serializable
 {
 
     const PROPERTIES = [
@@ -80,6 +80,21 @@ class LoginKeyFlattenedDto
         $this->value->setProviderKey($providerKey);
     }
 
+    public function serialize()
+    {
+        $pValues = [
+            $this->getLoginProvider(),
+            $this->getProviderKey(),
+        ];
+        return implode(',', $pValues);
+    }
+
+    public function unserialize($data)
+    {
+        $pValues = explode(',', $data);
+        $this->setLoginProvider($pValues[0]);
+        $this->setProviderKey($pValues[1]);
+    }
 
 }
 

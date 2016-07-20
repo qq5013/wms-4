@@ -4,7 +4,7 @@ namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
 
-class UserClaimIdFlattenedDto
+class UserClaimIdFlattenedDto implements \Serializable
 {
 
     const PROPERTIES = [
@@ -80,6 +80,21 @@ class UserClaimIdFlattenedDto
         $this->value->setClaimId($claimId);
     }
 
+    public function serialize()
+    {
+        $pValues = [
+            $this->getUserId(),
+            $this->getClaimId(),
+        ];
+        return implode(',', $pValues);
+    }
+
+    public function unserialize($data)
+    {
+        $pValues = explode(',', $data);
+        $this->setUserId($pValues[0]);
+        $this->setClaimId($pValues[1]);
+    }
 
 }
 

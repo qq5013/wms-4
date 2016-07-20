@@ -4,7 +4,7 @@ namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
 
-class AttributeValueIdFlattenedDto
+class AttributeValueIdFlattenedDto implements \Serializable
 {
 
     const PROPERTIES = [
@@ -80,6 +80,21 @@ class AttributeValueIdFlattenedDto
         $this->value->setValue($value);
     }
 
+    public function serialize()
+    {
+        $pValues = [
+            $this->getAttributeId(),
+            $this->getValue(),
+        ];
+        return implode(',', $pValues);
+    }
+
+    public function unserialize($data)
+    {
+        $pValues = explode(',', $data);
+        $this->setAttributeId($pValues[0]);
+        $this->setValue($pValues[1]);
+    }
 
 }
 

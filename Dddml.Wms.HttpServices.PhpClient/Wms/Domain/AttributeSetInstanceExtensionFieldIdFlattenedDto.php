@@ -4,7 +4,7 @@ namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
 
-class AttributeSetInstanceExtensionFieldIdFlattenedDto
+class AttributeSetInstanceExtensionFieldIdFlattenedDto implements \Serializable
 {
 
     const PROPERTIES = [
@@ -80,6 +80,21 @@ class AttributeSetInstanceExtensionFieldIdFlattenedDto
         $this->value->setIndex($index);
     }
 
+    public function serialize()
+    {
+        $pValues = [
+            $this->getGroupId(),
+            $this->getIndex(),
+        ];
+        return implode(',', $pValues);
+    }
+
+    public function unserialize($data)
+    {
+        $pValues = explode(',', $data);
+        $this->setGroupId($pValues[0]);
+        $this->setIndex($pValues[1]);
+    }
 
 }
 

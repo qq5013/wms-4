@@ -4,7 +4,7 @@ namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
 
-class OrganizationStructureIdFlattenedDto
+class OrganizationStructureIdFlattenedDto implements \Serializable
 {
 
     const PROPERTIES = [
@@ -97,6 +97,23 @@ class OrganizationStructureIdFlattenedDto
         $this->value->setSubsidiaryId($subsidiaryId);
     }
 
+    public function serialize()
+    {
+        $pValues = [
+            $this->getOrganizationStructureTypeId(),
+            $this->getParentId(),
+            $this->getSubsidiaryId(),
+        ];
+        return implode(',', $pValues);
+    }
+
+    public function unserialize($data)
+    {
+        $pValues = explode(',', $data);
+        $this->setOrganizationStructureTypeId($pValues[0]);
+        $this->setParentId($pValues[1]);
+        $this->setSubsidiaryId($pValues[2]);
+    }
 
 }
 

@@ -4,7 +4,7 @@ namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
 
-class UserPermissionIdFlattenedDto
+class UserPermissionIdFlattenedDto implements \Serializable
 {
 
     const PROPERTIES = [
@@ -80,6 +80,21 @@ class UserPermissionIdFlattenedDto
         $this->value->setPermissionId($permissionId);
     }
 
+    public function serialize()
+    {
+        $pValues = [
+            $this->getUserId(),
+            $this->getPermissionId(),
+        ];
+        return implode(',', $pValues);
+    }
+
+    public function unserialize($data)
+    {
+        $pValues = explode(',', $data);
+        $this->setUserId($pValues[0]);
+        $this->setPermissionId($pValues[1]);
+    }
 
 }
 

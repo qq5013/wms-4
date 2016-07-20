@@ -532,6 +532,16 @@ public abstract class AbstractInOutState implements InOutState
     }
 
 
+    public AbstractInOutState()
+    {
+        inOutLines = new SimpleInOutLineStates(this);
+
+        initializeProperties();
+    }
+    
+    protected void initializeProperties() {
+    }
+
     public abstract void mutate(Event e);
 
     public abstract void when(InOutStateCreated e);
@@ -539,6 +549,15 @@ public abstract class AbstractInOutState implements InOutState
     public abstract void when(InOutStateMergePatched e);
 
     public abstract void when(InOutStateDeleted e);
-    
+
+    public static class SimpleInOutLineStates extends AbstractInOutLineStates
+    {
+        public SimpleInOutLineStates(InOutState outerState)
+        {
+            super(outerState);
+        }
+    }
+
+
 }
 

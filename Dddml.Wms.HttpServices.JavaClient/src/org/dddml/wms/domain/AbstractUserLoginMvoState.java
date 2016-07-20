@@ -326,6 +326,14 @@ public abstract class AbstractUserLoginMvoState implements UserLoginMvoState
     }
 
 
+    public AbstractUserLoginMvoState()
+    {
+        initializeProperties();
+    }
+    
+    protected void initializeProperties() {
+    }
+
     public abstract void mutate(Event e);
 
     public abstract void when(UserLoginMvoStateCreated e);
@@ -333,6 +341,7 @@ public abstract class AbstractUserLoginMvoState implements UserLoginMvoState
     public abstract void when(UserLoginMvoStateMergePatched e);
 
     public abstract void when(UserLoginMvoStateDeleted e);
-    
+
+
 }
 

@@ -134,6 +134,14 @@ public abstract class AbstractAudienceState implements AudienceState
     }
 
 
+    public AbstractAudienceState()
+    {
+        initializeProperties();
+    }
+    
+    protected void initializeProperties() {
+    }
+
     public abstract void mutate(Event e);
 
     public abstract void when(AudienceStateCreated e);
@@ -141,6 +149,7 @@ public abstract class AbstractAudienceState implements AudienceState
     public abstract void when(AudienceStateMergePatched e);
 
     public abstract void when(AudienceStateDeleted e);
-    
+
+
 }
 

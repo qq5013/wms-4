@@ -110,6 +110,14 @@ public abstract class AbstractOrganizationStructureTypeState implements Organiza
     }
 
 
+    public AbstractOrganizationStructureTypeState()
+    {
+        initializeProperties();
+    }
+    
+    protected void initializeProperties() {
+    }
+
     public abstract void mutate(Event e);
 
     public abstract void when(OrganizationStructureTypeStateCreated e);
@@ -117,6 +125,7 @@ public abstract class AbstractOrganizationStructureTypeState implements Organiza
     public abstract void when(OrganizationStructureTypeStateMergePatched e);
 
     public abstract void when(OrganizationStructureTypeStateDeleted e);
-    
+
+
 }
 

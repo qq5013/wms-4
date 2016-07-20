@@ -110,6 +110,14 @@ public abstract class AbstractRolePermissionState implements RolePermissionState
     }
 
 
+    public AbstractRolePermissionState()
+    {
+        initializeProperties();
+    }
+    
+    protected void initializeProperties() {
+    }
+
     public abstract void mutate(Event e);
 
     public abstract void when(RolePermissionStateCreated e);
@@ -117,6 +125,7 @@ public abstract class AbstractRolePermissionState implements RolePermissionState
     public abstract void when(RolePermissionStateMergePatched e);
 
     public abstract void when(RolePermissionStateDeleted e);
-    
+
+
 }
 

@@ -326,6 +326,14 @@ public abstract class AbstractUserPermissionMvoState implements UserPermissionMv
     }
 
 
+    public AbstractUserPermissionMvoState()
+    {
+        initializeProperties();
+    }
+    
+    protected void initializeProperties() {
+    }
+
     public abstract void mutate(Event e);
 
     public abstract void when(UserPermissionMvoStateCreated e);
@@ -333,6 +341,7 @@ public abstract class AbstractUserPermissionMvoState implements UserPermissionMv
     public abstract void when(UserPermissionMvoStateMergePatched e);
 
     public abstract void when(UserPermissionMvoStateDeleted e);
-    
+
+
 }
 

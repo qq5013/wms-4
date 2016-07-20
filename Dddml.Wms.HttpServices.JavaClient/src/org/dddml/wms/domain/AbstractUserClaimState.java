@@ -156,6 +156,14 @@ public abstract class AbstractUserClaimState implements UserClaimState
     }
 
 
+    public AbstractUserClaimState()
+    {
+        initializeProperties();
+    }
+    
+    protected void initializeProperties() {
+    }
+
     public abstract void mutate(Event e);
 
     public abstract void when(UserClaimStateCreated e);
@@ -163,6 +171,7 @@ public abstract class AbstractUserClaimState implements UserClaimState
     public abstract void when(UserClaimStateMergePatched e);
 
     public abstract void when(UserClaimStateRemoved e);
-    
+
+
 }
 

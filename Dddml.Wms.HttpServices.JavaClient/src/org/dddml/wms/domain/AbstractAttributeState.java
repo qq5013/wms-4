@@ -242,6 +242,16 @@ public abstract class AbstractAttributeState implements AttributeState
     }
 
 
+    public AbstractAttributeState()
+    {
+        attributeValues = new SimpleAttributeValueStates(this);
+
+        initializeProperties();
+    }
+    
+    protected void initializeProperties() {
+    }
+
     public abstract void mutate(Event e);
 
     public abstract void when(AttributeStateCreated e);
@@ -249,6 +259,15 @@ public abstract class AbstractAttributeState implements AttributeState
     public abstract void when(AttributeStateMergePatched e);
 
     public abstract void when(AttributeStateDeleted e);
-    
+
+    public static class SimpleAttributeValueStates extends AbstractAttributeValueStates
+    {
+        public SimpleAttributeValueStates(AttributeState outerState)
+        {
+            super(outerState);
+        }
+    }
+
+
 }
 

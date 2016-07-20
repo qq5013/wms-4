@@ -206,6 +206,14 @@ public abstract class AbstractLocatorState implements LocatorState
     }
 
 
+    public AbstractLocatorState()
+    {
+        initializeProperties();
+    }
+    
+    protected void initializeProperties() {
+    }
+
     public abstract void mutate(Event e);
 
     public abstract void when(LocatorStateCreated e);
@@ -213,6 +221,7 @@ public abstract class AbstractLocatorState implements LocatorState
     public abstract void when(LocatorStateMergePatched e);
 
     public abstract void when(LocatorStateDeleted e);
-    
+
+
 }
 

@@ -132,6 +132,14 @@ public abstract class AbstractUserLoginState implements UserLoginState
     }
 
 
+    public AbstractUserLoginState()
+    {
+        initializeProperties();
+    }
+    
+    protected void initializeProperties() {
+    }
+
     public abstract void mutate(Event e);
 
     public abstract void when(UserLoginStateCreated e);
@@ -139,6 +147,7 @@ public abstract class AbstractUserLoginState implements UserLoginState
     public abstract void when(UserLoginStateMergePatched e);
 
     public abstract void when(UserLoginStateRemoved e);
-    
+
+
 }
 

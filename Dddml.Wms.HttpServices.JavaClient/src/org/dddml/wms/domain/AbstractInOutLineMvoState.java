@@ -808,6 +808,14 @@ public abstract class AbstractInOutLineMvoState implements InOutLineMvoState
     }
 
 
+    public AbstractInOutLineMvoState()
+    {
+        initializeProperties();
+    }
+    
+    protected void initializeProperties() {
+    }
+
     public abstract void mutate(Event e);
 
     public abstract void when(InOutLineMvoStateCreated e);
@@ -815,6 +823,7 @@ public abstract class AbstractInOutLineMvoState implements InOutLineMvoState
     public abstract void when(InOutLineMvoStateMergePatched e);
 
     public abstract void when(InOutLineMvoStateDeleted e);
-    
+
+
 }
 

@@ -192,6 +192,14 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldState implements
     }
 
 
+    public AbstractAttributeSetInstanceExtensionFieldState()
+    {
+        initializeProperties();
+    }
+    
+    protected void initializeProperties() {
+    }
+
     public abstract void mutate(Event e);
 
     public abstract void when(AttributeSetInstanceExtensionFieldStateCreated e);
@@ -199,6 +207,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldState implements
     public abstract void when(AttributeSetInstanceExtensionFieldStateMergePatched e);
 
     public abstract void when(AttributeSetInstanceExtensionFieldStateRemoved e);
-    
+
+
 }
 

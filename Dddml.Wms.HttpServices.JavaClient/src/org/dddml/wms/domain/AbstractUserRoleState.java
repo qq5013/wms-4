@@ -132,6 +132,14 @@ public abstract class AbstractUserRoleState implements UserRoleState
     }
 
 
+    public AbstractUserRoleState()
+    {
+        initializeProperties();
+    }
+    
+    protected void initializeProperties() {
+    }
+
     public abstract void mutate(Event e);
 
     public abstract void when(UserRoleStateCreated e);
@@ -139,6 +147,7 @@ public abstract class AbstractUserRoleState implements UserRoleState
     public abstract void when(UserRoleStateMergePatched e);
 
     public abstract void when(UserRoleStateRemoved e);
-    
+
+
 }
 

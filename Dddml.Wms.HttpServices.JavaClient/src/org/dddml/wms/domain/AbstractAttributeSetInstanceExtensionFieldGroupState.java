@@ -182,6 +182,16 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldGroupState imple
     }
 
 
+    public AbstractAttributeSetInstanceExtensionFieldGroupState()
+    {
+        fields = new SimpleAttributeSetInstanceExtensionFieldStates(this);
+
+        initializeProperties();
+    }
+    
+    protected void initializeProperties() {
+    }
+
     public abstract void mutate(Event e);
 
     public abstract void when(AttributeSetInstanceExtensionFieldGroupStateCreated e);
@@ -189,6 +199,15 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldGroupState imple
     public abstract void when(AttributeSetInstanceExtensionFieldGroupStateMergePatched e);
 
     public abstract void when(AttributeSetInstanceExtensionFieldGroupStateDeleted e);
-    
+
+    public static class SimpleAttributeSetInstanceExtensionFieldStates extends AbstractAttributeSetInstanceExtensionFieldStates
+    {
+        public SimpleAttributeSetInstanceExtensionFieldStates(AttributeSetInstanceExtensionFieldGroupState outerState)
+        {
+            super(outerState);
+        }
+    }
+
+
 }
 

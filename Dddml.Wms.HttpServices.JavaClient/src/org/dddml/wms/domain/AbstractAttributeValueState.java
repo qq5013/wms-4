@@ -168,6 +168,14 @@ public abstract class AbstractAttributeValueState implements AttributeValueState
     }
 
 
+    public AbstractAttributeValueState()
+    {
+        initializeProperties();
+    }
+    
+    protected void initializeProperties() {
+    }
+
     public abstract void mutate(Event e);
 
     public abstract void when(AttributeValueStateCreated e);
@@ -175,6 +183,7 @@ public abstract class AbstractAttributeValueState implements AttributeValueState
     public abstract void when(AttributeValueStateMergePatched e);
 
     public abstract void when(AttributeValueStateRemoved e);
-    
+
+
 }
 

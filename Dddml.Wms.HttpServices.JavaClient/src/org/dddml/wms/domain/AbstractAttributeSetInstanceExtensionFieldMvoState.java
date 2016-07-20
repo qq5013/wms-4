@@ -314,6 +314,14 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoState impleme
     }
 
 
+    public AbstractAttributeSetInstanceExtensionFieldMvoState()
+    {
+        initializeProperties();
+    }
+    
+    protected void initializeProperties() {
+    }
+
     public abstract void mutate(Event e);
 
     public abstract void when(AttributeSetInstanceExtensionFieldMvoStateCreated e);
@@ -321,6 +329,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoState impleme
     public abstract void when(AttributeSetInstanceExtensionFieldMvoStateMergePatched e);
 
     public abstract void when(AttributeSetInstanceExtensionFieldMvoStateDeleted e);
-    
+
+
 }
 

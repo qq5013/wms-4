@@ -350,6 +350,14 @@ public abstract class AbstractAttributeValueMvoState implements AttributeValueMv
     }
 
 
+    public AbstractAttributeValueMvoState()
+    {
+        initializeProperties();
+    }
+    
+    protected void initializeProperties() {
+    }
+
     public abstract void mutate(Event e);
 
     public abstract void when(AttributeValueMvoStateCreated e);
@@ -357,6 +365,7 @@ public abstract class AbstractAttributeValueMvoState implements AttributeValueMv
     public abstract void when(AttributeValueMvoStateMergePatched e);
 
     public abstract void when(AttributeValueMvoStateDeleted e);
-    
+
+
 }
 

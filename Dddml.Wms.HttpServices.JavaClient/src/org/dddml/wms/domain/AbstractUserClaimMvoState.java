@@ -350,6 +350,14 @@ public abstract class AbstractUserClaimMvoState implements UserClaimMvoState
     }
 
 
+    public AbstractUserClaimMvoState()
+    {
+        initializeProperties();
+    }
+    
+    protected void initializeProperties() {
+    }
+
     public abstract void mutate(Event e);
 
     public abstract void when(UserClaimMvoStateCreated e);
@@ -357,6 +365,7 @@ public abstract class AbstractUserClaimMvoState implements UserClaimMvoState
     public abstract void when(UserClaimMvoStateMergePatched e);
 
     public abstract void when(UserClaimMvoStateDeleted e);
-    
+
+
 }
 

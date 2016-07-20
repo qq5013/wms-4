@@ -194,6 +194,16 @@ public abstract class AbstractAttributeSetState implements AttributeSetState
     }
 
 
+    public AbstractAttributeSetState()
+    {
+        attributeUses = new SimpleAttributeUseStates(this);
+
+        initializeProperties();
+    }
+    
+    protected void initializeProperties() {
+    }
+
     public abstract void mutate(Event e);
 
     public abstract void when(AttributeSetStateCreated e);
@@ -201,6 +211,15 @@ public abstract class AbstractAttributeSetState implements AttributeSetState
     public abstract void when(AttributeSetStateMergePatched e);
 
     public abstract void when(AttributeSetStateDeleted e);
-    
+
+    public static class SimpleAttributeUseStates extends AbstractAttributeUseStates
+    {
+        public SimpleAttributeUseStates(AttributeSetState outerState)
+        {
+            super(outerState);
+        }
+    }
+
+
 }
 

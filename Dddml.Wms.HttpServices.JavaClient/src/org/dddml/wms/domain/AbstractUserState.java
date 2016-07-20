@@ -290,6 +290,22 @@ public abstract class AbstractUserState implements UserState
     }
 
 
+    public AbstractUserState()
+    {
+        userRoles = new SimpleUserRoleStates(this);
+
+        userClaims = new SimpleUserClaimStates(this);
+
+        userPermissions = new SimpleUserPermissionStates(this);
+
+        userLogins = new SimpleUserLoginStates(this);
+
+        initializeProperties();
+    }
+    
+    protected void initializeProperties() {
+    }
+
     public abstract void mutate(Event e);
 
     public abstract void when(UserStateCreated e);
@@ -297,6 +313,39 @@ public abstract class AbstractUserState implements UserState
     public abstract void when(UserStateMergePatched e);
 
     public abstract void when(UserStateDeleted e);
-    
+
+    public static class SimpleUserRoleStates extends AbstractUserRoleStates
+    {
+        public SimpleUserRoleStates(UserState outerState)
+        {
+            super(outerState);
+        }
+    }
+
+    public static class SimpleUserClaimStates extends AbstractUserClaimStates
+    {
+        public SimpleUserClaimStates(UserState outerState)
+        {
+            super(outerState);
+        }
+    }
+
+    public static class SimpleUserPermissionStates extends AbstractUserPermissionStates
+    {
+        public SimpleUserPermissionStates(UserState outerState)
+        {
+            super(outerState);
+        }
+    }
+
+    public static class SimpleUserLoginStates extends AbstractUserLoginStates
+    {
+        public SimpleUserLoginStates(UserState outerState)
+        {
+            super(outerState);
+        }
+    }
+
+
 }
 

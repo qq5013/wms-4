@@ -337,6 +337,14 @@ public abstract class AbstractInOutLineState implements InOutLineState
     }
 
 
+    public AbstractInOutLineState()
+    {
+        initializeProperties();
+    }
+    
+    protected void initializeProperties() {
+    }
+
     public abstract void mutate(Event e);
 
     public abstract void when(InOutLineStateCreated e);
@@ -344,6 +352,7 @@ public abstract class AbstractInOutLineState implements InOutLineState
     public abstract void when(InOutLineStateMergePatched e);
 
     public abstract void when(InOutLineStateRemoved e);
-    
+
+
 }
 

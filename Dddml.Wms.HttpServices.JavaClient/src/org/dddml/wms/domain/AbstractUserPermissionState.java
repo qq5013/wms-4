@@ -132,6 +132,14 @@ public abstract class AbstractUserPermissionState implements UserPermissionState
     }
 
 
+    public AbstractUserPermissionState()
+    {
+        initializeProperties();
+    }
+    
+    protected void initializeProperties() {
+    }
+
     public abstract void mutate(Event e);
 
     public abstract void when(UserPermissionStateCreated e);
@@ -139,6 +147,7 @@ public abstract class AbstractUserPermissionState implements UserPermissionState
     public abstract void when(UserPermissionStateMergePatched e);
 
     public abstract void when(UserPermissionStateRemoved e);
-    
+
+
 }
 

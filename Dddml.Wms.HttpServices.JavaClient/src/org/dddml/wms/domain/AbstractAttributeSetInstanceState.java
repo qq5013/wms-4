@@ -5655,6 +5655,14 @@ public abstract class AbstractAttributeSetInstanceState implements AttributeSetI
     }
 
 
+    public AbstractAttributeSetInstanceState()
+    {
+        initializeProperties();
+    }
+    
+    protected void initializeProperties() {
+    }
+
     public abstract void mutate(Event e);
 
     public abstract void when(AttributeSetInstanceStateCreated e);
@@ -5662,6 +5670,7 @@ public abstract class AbstractAttributeSetInstanceState implements AttributeSetI
     public abstract void when(AttributeSetInstanceStateMergePatched e);
 
     public abstract void when(AttributeSetInstanceStateDeleted e);
-    
+
+
 }
 

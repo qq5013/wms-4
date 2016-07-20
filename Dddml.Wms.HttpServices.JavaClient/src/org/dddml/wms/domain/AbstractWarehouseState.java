@@ -146,6 +146,14 @@ public abstract class AbstractWarehouseState implements WarehouseState
     }
 
 
+    public AbstractWarehouseState()
+    {
+        initializeProperties();
+    }
+    
+    protected void initializeProperties() {
+    }
+
     public abstract void mutate(Event e);
 
     public abstract void when(WarehouseStateCreated e);
@@ -153,6 +161,7 @@ public abstract class AbstractWarehouseState implements WarehouseState
     public abstract void when(WarehouseStateMergePatched e);
 
     public abstract void when(WarehouseStateDeleted e);
-    
+
+
 }
 

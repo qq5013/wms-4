@@ -278,6 +278,14 @@ public abstract class AbstractAttributeUseMvoState implements AttributeUseMvoSta
     }
 
 
+    public AbstractAttributeUseMvoState()
+    {
+        initializeProperties();
+    }
+    
+    protected void initializeProperties() {
+    }
+
     public abstract void mutate(Event e);
 
     public abstract void when(AttributeUseMvoStateCreated e);
@@ -285,6 +293,7 @@ public abstract class AbstractAttributeUseMvoState implements AttributeUseMvoSta
     public abstract void when(AttributeUseMvoStateMergePatched e);
 
     public abstract void when(AttributeUseMvoStateDeleted e);
-    
+
+
 }
 

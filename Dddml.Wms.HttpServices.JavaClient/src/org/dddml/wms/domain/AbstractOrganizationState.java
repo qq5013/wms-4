@@ -158,6 +158,14 @@ public abstract class AbstractOrganizationState implements OrganizationState
     }
 
 
+    public AbstractOrganizationState()
+    {
+        initializeProperties();
+    }
+    
+    protected void initializeProperties() {
+    }
+
     public abstract void mutate(Event e);
 
     public abstract void when(OrganizationStateCreated e);
@@ -165,6 +173,7 @@ public abstract class AbstractOrganizationState implements OrganizationState
     public abstract void when(OrganizationStateMergePatched e);
 
     public abstract void when(OrganizationStateDeleted e);
-    
+
+
 }
 

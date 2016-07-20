@@ -144,6 +144,14 @@ public abstract class AbstractAttributeUseState implements AttributeUseState
     }
 
 
+    public AbstractAttributeUseState()
+    {
+        initializeProperties();
+    }
+    
+    protected void initializeProperties() {
+    }
+
     public abstract void mutate(Event e);
 
     public abstract void when(AttributeUseStateCreated e);
@@ -151,6 +159,7 @@ public abstract class AbstractAttributeUseState implements AttributeUseState
     public abstract void when(AttributeUseStateMergePatched e);
 
     public abstract void when(AttributeUseStateRemoved e);
-    
+
+
 }
 

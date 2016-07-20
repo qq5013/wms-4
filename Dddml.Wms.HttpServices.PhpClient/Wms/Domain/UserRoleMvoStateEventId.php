@@ -16,6 +16,9 @@ class UserRoleMvoStateEventId
      */
     public function getUserRoleId()
     {
+        if(!$this->userRoleId) {
+            $this->userRoleId = new UserRoleId(); 
+        }
         return $this->userRoleId;
     }
 

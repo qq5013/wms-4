@@ -16,6 +16,9 @@ class AttributeSetInstanceExtensionFieldMvoStateEventId
      */
     public function getAttributeSetInstanceExtensionFieldId()
     {
+        if(!$this->attributeSetInstanceExtensionFieldId) {
+            $this->attributeSetInstanceExtensionFieldId = new AttributeSetInstanceExtensionFieldId(); 
+        }
         return $this->attributeSetInstanceExtensionFieldId;
     }
 

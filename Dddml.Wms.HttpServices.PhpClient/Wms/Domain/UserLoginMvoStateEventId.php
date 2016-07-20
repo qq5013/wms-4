@@ -16,6 +16,9 @@ class UserLoginMvoStateEventId
      */
     public function getUserLoginId()
     {
+        if(!$this->userLoginId) {
+            $this->userLoginId = new UserLoginId(); 
+        }
         return $this->userLoginId;
     }
 

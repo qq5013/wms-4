@@ -16,6 +16,9 @@ class AttributeUseMvoStateEventId
      */
     public function getAttributeSetAttributeUseId()
     {
+        if(!$this->attributeSetAttributeUseId) {
+            $this->attributeSetAttributeUseId = new AttributeSetAttributeUseId(); 
+        }
         return $this->attributeSetAttributeUseId;
     }
 

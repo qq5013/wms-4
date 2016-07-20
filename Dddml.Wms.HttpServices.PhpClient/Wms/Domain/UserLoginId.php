@@ -37,6 +37,9 @@ class UserLoginId
      */
     public function getLoginKey()
     {
+        if(!$this->loginKey) {
+            $this->loginKey = new LoginKey(); 
+        }
         return $this->loginKey;
     }
 

@@ -16,6 +16,9 @@ class OrganizationStructureStateEventId
      */
     public function getId()
     {
+        if(!$this->id) {
+            $this->id = new OrganizationStructureId(); 
+        }
         return $this->id;
     }
 

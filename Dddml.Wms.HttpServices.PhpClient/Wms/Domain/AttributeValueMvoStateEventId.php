@@ -16,6 +16,9 @@ class AttributeValueMvoStateEventId
      */
     public function getAttributeValueId()
     {
+        if(!$this->attributeValueId) {
+            $this->attributeValueId = new AttributeValueId(); 
+        }
         return $this->attributeValueId;
     }
 

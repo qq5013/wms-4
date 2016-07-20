@@ -16,6 +16,9 @@ class RolePermissionStateEventId
      */
     public function getId()
     {
+        if(!$this->id) {
+            $this->id = new RolePermissionId(); 
+        }
         return $this->id;
     }
 

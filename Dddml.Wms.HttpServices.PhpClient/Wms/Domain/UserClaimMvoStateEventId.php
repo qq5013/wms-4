@@ -16,6 +16,9 @@ class UserClaimMvoStateEventId
      */
     public function getUserClaimId()
     {
+        if(!$this->userClaimId) {
+            $this->userClaimId = new UserClaimId(); 
+        }
         return $this->userClaimId;
     }
 

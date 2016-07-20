@@ -16,6 +16,9 @@ class UserPermissionMvoStateEventId
      */
     public function getUserPermissionId()
     {
+        if(!$this->userPermissionId) {
+            $this->userPermissionId = new UserPermissionId(); 
+        }
         return $this->userPermissionId;
     }
 

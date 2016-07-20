@@ -16,6 +16,9 @@ class InOutLineMvoStateEventId
      */
     public function getInOutLineId()
     {
+        if(!$this->inOutLineId) {
+            $this->inOutLineId = new InOutLineId(); 
+        }
         return $this->inOutLineId;
     }
 

@@ -37,6 +37,9 @@ class InOutLineId
      */
     public function getSkuId()
     {
+        if(!$this->skuId) {
+            $this->skuId = new SkuId(); 
+        }
         return $this->skuId;
     }
 

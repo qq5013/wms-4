@@ -24,5 +24,31 @@ public class DocumentAction
         this.name = name;
     }
 
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        DocumentAction other = (DocumentAction)obj;
+        return true 
+            && (name == other.name || (name != null && name.equals(other.name)))
+            ;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        int hash = 0;
+        if (this.name != null) {
+            hash += 13 * this.name.hashCode();
+        }
+        return hash;
+    }
+
 }
 

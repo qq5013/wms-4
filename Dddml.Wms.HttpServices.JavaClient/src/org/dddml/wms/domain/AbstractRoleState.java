@@ -3,6 +3,7 @@ package org.dddml.wms.domain;
 import java.util.Set;
 import java.util.Date;
 import org.dddml.wms.specialization.Event;
+import org.dddml.wms.specialization.DomainError;
 import org.dddml.wms.domain.RoleStateEvent.*;
 
 public abstract class AbstractRoleState implements RoleState
@@ -142,13 +143,41 @@ public abstract class AbstractRoleState implements RoleState
     protected void initializeProperties() {
     }
 
-    public abstract void mutate(Event e);
+
+    public void mutate(Event e) {
+        if (e instanceof RoleStateCreated) {
+            when((RoleStateCreated) e);
+        } else if (e instanceof RoleStateMergePatched) {
+            when((RoleStateMergePatched) e);
+        } else if (e instanceof RoleStateDeleted) {
+            when((RoleStateDeleted) e);
+        }
+    }
 
     public abstract void when(RoleStateCreated e);
 
     public abstract void when(RoleStateMergePatched e);
 
     public abstract void when(RoleStateDeleted e);
+
+
+    protected void throwOnWrongEvent(RoleStateEvent stateEvent)
+    {
+        String stateEntityId = this.getRoleId(); // Aggregate Id
+        String eventEntityId = stateEvent.getStateEventId().getRoleId(); // EntityBase.Aggregate.GetStateEventIdPropertyIdName();
+        if (!stateEntityId.equals(eventEntityId))
+        {
+            DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
+        }
+
+        Long stateVersion = this.getVersion();
+        Long eventVersion = stateEvent.getStateEventId().getVersion();
+        if (!stateVersion.equals(eventVersion))
+        {
+            throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);
+        }
+
+    }
 
 
 }

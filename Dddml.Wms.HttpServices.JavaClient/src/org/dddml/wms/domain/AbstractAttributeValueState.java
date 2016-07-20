@@ -3,6 +3,7 @@ package org.dddml.wms.domain;
 import java.util.Set;
 import java.util.Date;
 import org.dddml.wms.specialization.Event;
+import org.dddml.wms.specialization.DomainError;
 import org.dddml.wms.domain.AttributeValueStateEvent.*;
 
 public abstract class AbstractAttributeValueState implements AttributeValueState
@@ -176,13 +177,53 @@ public abstract class AbstractAttributeValueState implements AttributeValueState
     protected void initializeProperties() {
     }
 
-    public abstract void mutate(Event e);
+
+    public void mutate(Event e) {
+        if (e instanceof AttributeValueStateCreated) {
+            when((AttributeValueStateCreated) e);
+        } else if (e instanceof AttributeValueStateMergePatched) {
+            when((AttributeValueStateMergePatched) e);
+        } else if (e instanceof AttributeValueStateRemoved) {
+            when((AttributeValueStateRemoved) e);
+        }
+    }
 
     public abstract void when(AttributeValueStateCreated e);
 
     public abstract void when(AttributeValueStateMergePatched e);
 
     public abstract void when(AttributeValueStateRemoved e);
+
+
+    protected void throwOnWrongEvent(AttributeValueStateEvent stateEvent)
+    {
+        String stateEntityIdAttributeId = this.getAttributeValueId().getAttributeId();
+        String eventEntityIdAttributeId = stateEvent.getStateEventId().getAttributeId();
+        if (stateEntityIdAttributeId != eventEntityIdAttributeId)
+        {
+            DomainError.named("mutateWrongEntity", "Entity Id AttributeId %1$s in state but entity id AttributeId %2$s in event", stateEntityIdAttributeId, eventEntityIdAttributeId);
+        }
+
+        String stateEntityIdValue = this.getAttributeValueId().getValue();
+        String eventEntityIdValue = stateEvent.getStateEventId().getValue();
+        if (stateEntityIdValue != eventEntityIdValue)
+        {
+            DomainError.named("mutateWrongEntity", "Entity Id Value %1$s in state but entity id Value %2$s in event", stateEntityIdValue, eventEntityIdValue);
+        }
+
+        Long stateVersion = this.getVersion();
+        Long eventVersion = stateEvent.getVersion();
+        if (AttributeValueState.VERSION_ZERO.equals(eventVersion))
+        {
+            stateEvent.setVersion(stateVersion);
+            eventVersion = stateVersion;
+        }
+        if (!stateVersion.equals(eventVersion))
+        {
+            throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);
+        }
+
+    }
 
 
 }

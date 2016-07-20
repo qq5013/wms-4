@@ -3,6 +3,7 @@ package org.dddml.wms.domain;
 import java.util.Set;
 import java.util.Date;
 import org.dddml.wms.specialization.Event;
+import org.dddml.wms.specialization.DomainError;
 import org.dddml.wms.domain.AttributeUseMvoStateEvent.*;
 
 public abstract class AbstractAttributeUseMvoState implements AttributeUseMvoState
@@ -286,13 +287,41 @@ public abstract class AbstractAttributeUseMvoState implements AttributeUseMvoSta
     protected void initializeProperties() {
     }
 
-    public abstract void mutate(Event e);
+
+    public void mutate(Event e) {
+        if (e instanceof AttributeUseMvoStateCreated) {
+            when((AttributeUseMvoStateCreated) e);
+        } else if (e instanceof AttributeUseMvoStateMergePatched) {
+            when((AttributeUseMvoStateMergePatched) e);
+        } else if (e instanceof AttributeUseMvoStateDeleted) {
+            when((AttributeUseMvoStateDeleted) e);
+        }
+    }
 
     public abstract void when(AttributeUseMvoStateCreated e);
 
     public abstract void when(AttributeUseMvoStateMergePatched e);
 
     public abstract void when(AttributeUseMvoStateDeleted e);
+
+
+    protected void throwOnWrongEvent(AttributeUseMvoStateEvent stateEvent)
+    {
+        AttributeSetAttributeUseId stateEntityId = this.getAttributeSetAttributeUseId(); // Aggregate Id
+        AttributeSetAttributeUseId eventEntityId = stateEvent.getStateEventId().getAttributeSetAttributeUseId(); // EntityBase.Aggregate.GetStateEventIdPropertyIdName();
+        if (!stateEntityId.equals(eventEntityId))
+        {
+            DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
+        }
+
+        Long stateVersion = this.getAttributeSetVersion();
+        Long eventVersion = stateEvent.getStateEventId().getAttributeSetVersion();
+        if (!stateVersion.equals(eventVersion))
+        {
+            throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);
+        }
+
+    }
 
 
 }

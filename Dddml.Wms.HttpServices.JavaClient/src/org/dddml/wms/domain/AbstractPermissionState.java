@@ -3,6 +3,7 @@ package org.dddml.wms.domain;
 import java.util.Set;
 import java.util.Date;
 import org.dddml.wms.specialization.Event;
+import org.dddml.wms.specialization.DomainError;
 import org.dddml.wms.domain.PermissionStateEvent.*;
 
 public abstract class AbstractPermissionState implements PermissionState
@@ -154,13 +155,41 @@ public abstract class AbstractPermissionState implements PermissionState
     protected void initializeProperties() {
     }
 
-    public abstract void mutate(Event e);
+
+    public void mutate(Event e) {
+        if (e instanceof PermissionStateCreated) {
+            when((PermissionStateCreated) e);
+        } else if (e instanceof PermissionStateMergePatched) {
+            when((PermissionStateMergePatched) e);
+        } else if (e instanceof PermissionStateDeleted) {
+            when((PermissionStateDeleted) e);
+        }
+    }
 
     public abstract void when(PermissionStateCreated e);
 
     public abstract void when(PermissionStateMergePatched e);
 
     public abstract void when(PermissionStateDeleted e);
+
+
+    protected void throwOnWrongEvent(PermissionStateEvent stateEvent)
+    {
+        String stateEntityId = this.getPermissionId(); // Aggregate Id
+        String eventEntityId = stateEvent.getStateEventId().getPermissionId(); // EntityBase.Aggregate.GetStateEventIdPropertyIdName();
+        if (!stateEntityId.equals(eventEntityId))
+        {
+            DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
+        }
+
+        Long stateVersion = this.getVersion();
+        Long eventVersion = stateEvent.getStateEventId().getVersion();
+        if (!stateVersion.equals(eventVersion))
+        {
+            throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);
+        }
+
+    }
 
 
 }

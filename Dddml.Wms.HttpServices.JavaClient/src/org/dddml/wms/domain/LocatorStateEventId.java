@@ -37,5 +37,35 @@ public class LocatorStateEventId
         this.version = version;
     }
 
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        LocatorStateEventId other = (LocatorStateEventId)obj;
+        return true 
+            && (locatorId == other.locatorId || (locatorId != null && locatorId.equals(other.locatorId)))
+            && (version == other.version || (version != null && version.equals(other.version)))
+            ;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        int hash = 0;
+        if (this.locatorId != null) {
+            hash += 13 * this.locatorId.hashCode();
+        }
+        if (this.version != null) {
+            hash += 13 * this.version.hashCode();
+        }
+        return hash;
+    }
+
 }
 

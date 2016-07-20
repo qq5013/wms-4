@@ -3,6 +3,7 @@ package org.dddml.wms.domain;
 import java.util.Set;
 import java.util.Date;
 import org.dddml.wms.specialization.Event;
+import org.dddml.wms.specialization.DomainError;
 import org.dddml.wms.domain.OrganizationStructureTypeStateEvent.*;
 
 public abstract class AbstractOrganizationStructureTypeState implements OrganizationStructureTypeState
@@ -118,13 +119,41 @@ public abstract class AbstractOrganizationStructureTypeState implements Organiza
     protected void initializeProperties() {
     }
 
-    public abstract void mutate(Event e);
+
+    public void mutate(Event e) {
+        if (e instanceof OrganizationStructureTypeStateCreated) {
+            when((OrganizationStructureTypeStateCreated) e);
+        } else if (e instanceof OrganizationStructureTypeStateMergePatched) {
+            when((OrganizationStructureTypeStateMergePatched) e);
+        } else if (e instanceof OrganizationStructureTypeStateDeleted) {
+            when((OrganizationStructureTypeStateDeleted) e);
+        }
+    }
 
     public abstract void when(OrganizationStructureTypeStateCreated e);
 
     public abstract void when(OrganizationStructureTypeStateMergePatched e);
 
     public abstract void when(OrganizationStructureTypeStateDeleted e);
+
+
+    protected void throwOnWrongEvent(OrganizationStructureTypeStateEvent stateEvent)
+    {
+        String stateEntityId = this.getId(); // Aggregate Id
+        String eventEntityId = stateEvent.getStateEventId().getId(); // EntityBase.Aggregate.GetStateEventIdPropertyIdName();
+        if (!stateEntityId.equals(eventEntityId))
+        {
+            DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
+        }
+
+        Long stateVersion = this.getVersion();
+        Long eventVersion = stateEvent.getStateEventId().getVersion();
+        if (!stateVersion.equals(eventVersion))
+        {
+            throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);
+        }
+
+    }
 
 
 }

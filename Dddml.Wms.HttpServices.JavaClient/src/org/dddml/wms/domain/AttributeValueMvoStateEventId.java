@@ -57,5 +57,35 @@ public class AttributeValueMvoStateEventId
         this.attributeVersion = attributeVersion;
     }
 
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        AttributeValueMvoStateEventId other = (AttributeValueMvoStateEventId)obj;
+        return true 
+            && (attributeValueId == other.attributeValueId || (attributeValueId != null && attributeValueId.equals(other.attributeValueId)))
+            && (attributeVersion == other.attributeVersion || (attributeVersion != null && attributeVersion.equals(other.attributeVersion)))
+            ;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        int hash = 0;
+        if (this.attributeValueId != null) {
+            hash += 13 * this.attributeValueId.hashCode();
+        }
+        if (this.attributeVersion != null) {
+            hash += 13 * this.attributeVersion.hashCode();
+        }
+        return hash;
+    }
+
 }
 

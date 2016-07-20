@@ -4,6 +4,7 @@ import java.util.Set;
 import java.math.BigDecimal;
 import java.util.Date;
 import org.dddml.wms.specialization.Event;
+import org.dddml.wms.specialization.DomainError;
 import org.dddml.wms.domain.InOutLineStateEvent.*;
 
 public abstract class AbstractInOutLineState implements InOutLineState
@@ -345,13 +346,53 @@ public abstract class AbstractInOutLineState implements InOutLineState
     protected void initializeProperties() {
     }
 
-    public abstract void mutate(Event e);
+
+    public void mutate(Event e) {
+        if (e instanceof InOutLineStateCreated) {
+            when((InOutLineStateCreated) e);
+        } else if (e instanceof InOutLineStateMergePatched) {
+            when((InOutLineStateMergePatched) e);
+        } else if (e instanceof InOutLineStateRemoved) {
+            when((InOutLineStateRemoved) e);
+        }
+    }
 
     public abstract void when(InOutLineStateCreated e);
 
     public abstract void when(InOutLineStateMergePatched e);
 
     public abstract void when(InOutLineStateRemoved e);
+
+
+    protected void throwOnWrongEvent(InOutLineStateEvent stateEvent)
+    {
+        String stateEntityIdInOutDocumentNumber = this.getInOutLineId().getInOutDocumentNumber();
+        String eventEntityIdInOutDocumentNumber = stateEvent.getStateEventId().getInOutDocumentNumber();
+        if (stateEntityIdInOutDocumentNumber != eventEntityIdInOutDocumentNumber)
+        {
+            DomainError.named("mutateWrongEntity", "Entity Id InOutDocumentNumber %1$s in state but entity id InOutDocumentNumber %2$s in event", stateEntityIdInOutDocumentNumber, eventEntityIdInOutDocumentNumber);
+        }
+
+        SkuId stateEntityIdSkuId = this.getInOutLineId().getSkuId();
+        SkuId eventEntityIdSkuId = stateEvent.getStateEventId().getSkuId();
+        if (stateEntityIdSkuId != eventEntityIdSkuId)
+        {
+            DomainError.named("mutateWrongEntity", "Entity Id SkuId %1$s in state but entity id SkuId %2$s in event", stateEntityIdSkuId, eventEntityIdSkuId);
+        }
+
+        Long stateVersion = this.getVersion();
+        Long eventVersion = stateEvent.getVersion();
+        if (InOutLineState.VERSION_ZERO.equals(eventVersion))
+        {
+            stateEvent.setVersion(stateVersion);
+            eventVersion = stateVersion;
+        }
+        if (!stateVersion.equals(eventVersion))
+        {
+            throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);
+        }
+
+    }
 
 
 }

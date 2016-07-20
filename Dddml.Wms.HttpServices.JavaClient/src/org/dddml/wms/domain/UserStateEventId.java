@@ -37,5 +37,35 @@ public class UserStateEventId
         this.version = version;
     }
 
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        UserStateEventId other = (UserStateEventId)obj;
+        return true 
+            && (userId == other.userId || (userId != null && userId.equals(other.userId)))
+            && (version == other.version || (version != null && version.equals(other.version)))
+            ;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        int hash = 0;
+        if (this.userId != null) {
+            hash += 13 * this.userId.hashCode();
+        }
+        if (this.version != null) {
+            hash += 13 * this.version.hashCode();
+        }
+        return hash;
+    }
+
 }
 

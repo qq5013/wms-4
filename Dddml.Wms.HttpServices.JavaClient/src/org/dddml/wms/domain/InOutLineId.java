@@ -57,5 +57,35 @@ public class InOutLineId
         this.skuId = skuId;
     }
 
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        InOutLineId other = (InOutLineId)obj;
+        return true 
+            && (inOutDocumentNumber == other.inOutDocumentNumber || (inOutDocumentNumber != null && inOutDocumentNumber.equals(other.inOutDocumentNumber)))
+            && (skuId == other.skuId || (skuId != null && skuId.equals(other.skuId)))
+            ;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        int hash = 0;
+        if (this.inOutDocumentNumber != null) {
+            hash += 13 * this.inOutDocumentNumber.hashCode();
+        }
+        if (this.skuId != null) {
+            hash += 13 * this.skuId.hashCode();
+        }
+        return hash;
+    }
+
 }
 

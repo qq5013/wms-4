@@ -37,5 +37,35 @@ public class AttributeStateEventId
         this.version = version;
     }
 
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        AttributeStateEventId other = (AttributeStateEventId)obj;
+        return true 
+            && (attributeId == other.attributeId || (attributeId != null && attributeId.equals(other.attributeId)))
+            && (version == other.version || (version != null && version.equals(other.version)))
+            ;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        int hash = 0;
+        if (this.attributeId != null) {
+            hash += 13 * this.attributeId.hashCode();
+        }
+        if (this.version != null) {
+            hash += 13 * this.version.hashCode();
+        }
+        return hash;
+    }
+
 }
 

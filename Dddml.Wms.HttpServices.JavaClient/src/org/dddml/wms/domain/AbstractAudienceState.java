@@ -3,6 +3,7 @@ package org.dddml.wms.domain;
 import java.util.Set;
 import java.util.Date;
 import org.dddml.wms.specialization.Event;
+import org.dddml.wms.specialization.DomainError;
 import org.dddml.wms.domain.AudienceStateEvent.*;
 
 public abstract class AbstractAudienceState implements AudienceState
@@ -142,13 +143,41 @@ public abstract class AbstractAudienceState implements AudienceState
     protected void initializeProperties() {
     }
 
-    public abstract void mutate(Event e);
+
+    public void mutate(Event e) {
+        if (e instanceof AudienceStateCreated) {
+            when((AudienceStateCreated) e);
+        } else if (e instanceof AudienceStateMergePatched) {
+            when((AudienceStateMergePatched) e);
+        } else if (e instanceof AudienceStateDeleted) {
+            when((AudienceStateDeleted) e);
+        }
+    }
 
     public abstract void when(AudienceStateCreated e);
 
     public abstract void when(AudienceStateMergePatched e);
 
     public abstract void when(AudienceStateDeleted e);
+
+
+    protected void throwOnWrongEvent(AudienceStateEvent stateEvent)
+    {
+        String stateEntityId = this.getClientId(); // Aggregate Id
+        String eventEntityId = stateEvent.getStateEventId().getClientId(); // EntityBase.Aggregate.GetStateEventIdPropertyIdName();
+        if (!stateEntityId.equals(eventEntityId))
+        {
+            DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
+        }
+
+        Long stateVersion = this.getVersion();
+        Long eventVersion = stateEvent.getStateEventId().getVersion();
+        if (!stateVersion.equals(eventVersion))
+        {
+            throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);
+        }
+
+    }
 
 
 }

@@ -3,6 +3,7 @@ package org.dddml.wms.domain;
 import java.util.Set;
 import java.util.Date;
 import org.dddml.wms.specialization.Event;
+import org.dddml.wms.specialization.DomainError;
 import org.dddml.wms.domain.UserPermissionStateEvent.*;
 
 public abstract class AbstractUserPermissionState implements UserPermissionState
@@ -140,13 +141,53 @@ public abstract class AbstractUserPermissionState implements UserPermissionState
     protected void initializeProperties() {
     }
 
-    public abstract void mutate(Event e);
+
+    public void mutate(Event e) {
+        if (e instanceof UserPermissionStateCreated) {
+            when((UserPermissionStateCreated) e);
+        } else if (e instanceof UserPermissionStateMergePatched) {
+            when((UserPermissionStateMergePatched) e);
+        } else if (e instanceof UserPermissionStateRemoved) {
+            when((UserPermissionStateRemoved) e);
+        }
+    }
 
     public abstract void when(UserPermissionStateCreated e);
 
     public abstract void when(UserPermissionStateMergePatched e);
 
     public abstract void when(UserPermissionStateRemoved e);
+
+
+    protected void throwOnWrongEvent(UserPermissionStateEvent stateEvent)
+    {
+        String stateEntityIdUserId = this.getUserPermissionId().getUserId();
+        String eventEntityIdUserId = stateEvent.getStateEventId().getUserId();
+        if (stateEntityIdUserId != eventEntityIdUserId)
+        {
+            DomainError.named("mutateWrongEntity", "Entity Id UserId %1$s in state but entity id UserId %2$s in event", stateEntityIdUserId, eventEntityIdUserId);
+        }
+
+        String stateEntityIdPermissionId = this.getUserPermissionId().getPermissionId();
+        String eventEntityIdPermissionId = stateEvent.getStateEventId().getPermissionId();
+        if (stateEntityIdPermissionId != eventEntityIdPermissionId)
+        {
+            DomainError.named("mutateWrongEntity", "Entity Id PermissionId %1$s in state but entity id PermissionId %2$s in event", stateEntityIdPermissionId, eventEntityIdPermissionId);
+        }
+
+        Long stateVersion = this.getVersion();
+        Long eventVersion = stateEvent.getVersion();
+        if (UserPermissionState.VERSION_ZERO.equals(eventVersion))
+        {
+            stateEvent.setVersion(stateVersion);
+            eventVersion = stateVersion;
+        }
+        if (!stateVersion.equals(eventVersion))
+        {
+            throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);
+        }
+
+    }
 
 
 }

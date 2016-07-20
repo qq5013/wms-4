@@ -57,5 +57,35 @@ public class RolePermissionStateEventId
         this.version = version;
     }
 
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        RolePermissionStateEventId other = (RolePermissionStateEventId)obj;
+        return true 
+            && (id == other.id || (id != null && id.equals(other.id)))
+            && (version == other.version || (version != null && version.equals(other.version)))
+            ;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        int hash = 0;
+        if (this.id != null) {
+            hash += 13 * this.id.hashCode();
+        }
+        if (this.version != null) {
+            hash += 13 * this.version.hashCode();
+        }
+        return hash;
+    }
+
 }
 

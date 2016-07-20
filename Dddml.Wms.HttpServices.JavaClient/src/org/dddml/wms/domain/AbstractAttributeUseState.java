@@ -3,6 +3,7 @@ package org.dddml.wms.domain;
 import java.util.Set;
 import java.util.Date;
 import org.dddml.wms.specialization.Event;
+import org.dddml.wms.specialization.DomainError;
 import org.dddml.wms.domain.AttributeUseStateEvent.*;
 
 public abstract class AbstractAttributeUseState implements AttributeUseState
@@ -152,13 +153,53 @@ public abstract class AbstractAttributeUseState implements AttributeUseState
     protected void initializeProperties() {
     }
 
-    public abstract void mutate(Event e);
+
+    public void mutate(Event e) {
+        if (e instanceof AttributeUseStateCreated) {
+            when((AttributeUseStateCreated) e);
+        } else if (e instanceof AttributeUseStateMergePatched) {
+            when((AttributeUseStateMergePatched) e);
+        } else if (e instanceof AttributeUseStateRemoved) {
+            when((AttributeUseStateRemoved) e);
+        }
+    }
 
     public abstract void when(AttributeUseStateCreated e);
 
     public abstract void when(AttributeUseStateMergePatched e);
 
     public abstract void when(AttributeUseStateRemoved e);
+
+
+    protected void throwOnWrongEvent(AttributeUseStateEvent stateEvent)
+    {
+        String stateEntityIdAttributeSetId = this.getAttributeSetAttributeUseId().getAttributeSetId();
+        String eventEntityIdAttributeSetId = stateEvent.getStateEventId().getAttributeSetId();
+        if (stateEntityIdAttributeSetId != eventEntityIdAttributeSetId)
+        {
+            DomainError.named("mutateWrongEntity", "Entity Id AttributeSetId %1$s in state but entity id AttributeSetId %2$s in event", stateEntityIdAttributeSetId, eventEntityIdAttributeSetId);
+        }
+
+        String stateEntityIdAttributeId = this.getAttributeSetAttributeUseId().getAttributeId();
+        String eventEntityIdAttributeId = stateEvent.getStateEventId().getAttributeId();
+        if (stateEntityIdAttributeId != eventEntityIdAttributeId)
+        {
+            DomainError.named("mutateWrongEntity", "Entity Id AttributeId %1$s in state but entity id AttributeId %2$s in event", stateEntityIdAttributeId, eventEntityIdAttributeId);
+        }
+
+        Long stateVersion = this.getVersion();
+        Long eventVersion = stateEvent.getVersion();
+        if (AttributeUseState.VERSION_ZERO.equals(eventVersion))
+        {
+            stateEvent.setVersion(stateVersion);
+            eventVersion = stateVersion;
+        }
+        if (!stateVersion.equals(eventVersion))
+        {
+            throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);
+        }
+
+    }
 
 
 }

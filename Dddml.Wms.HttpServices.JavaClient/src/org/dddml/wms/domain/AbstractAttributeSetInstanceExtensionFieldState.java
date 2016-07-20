@@ -3,6 +3,7 @@ package org.dddml.wms.domain;
 import java.util.Set;
 import java.util.Date;
 import org.dddml.wms.specialization.Event;
+import org.dddml.wms.specialization.DomainError;
 import org.dddml.wms.domain.AttributeSetInstanceExtensionFieldStateEvent.*;
 
 public abstract class AbstractAttributeSetInstanceExtensionFieldState implements AttributeSetInstanceExtensionFieldState
@@ -200,13 +201,53 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldState implements
     protected void initializeProperties() {
     }
 
-    public abstract void mutate(Event e);
+
+    public void mutate(Event e) {
+        if (e instanceof AttributeSetInstanceExtensionFieldStateCreated) {
+            when((AttributeSetInstanceExtensionFieldStateCreated) e);
+        } else if (e instanceof AttributeSetInstanceExtensionFieldStateMergePatched) {
+            when((AttributeSetInstanceExtensionFieldStateMergePatched) e);
+        } else if (e instanceof AttributeSetInstanceExtensionFieldStateRemoved) {
+            when((AttributeSetInstanceExtensionFieldStateRemoved) e);
+        }
+    }
 
     public abstract void when(AttributeSetInstanceExtensionFieldStateCreated e);
 
     public abstract void when(AttributeSetInstanceExtensionFieldStateMergePatched e);
 
     public abstract void when(AttributeSetInstanceExtensionFieldStateRemoved e);
+
+
+    protected void throwOnWrongEvent(AttributeSetInstanceExtensionFieldStateEvent stateEvent)
+    {
+        String stateEntityIdGroupId = this.getAttributeSetInstanceExtensionFieldId().getGroupId();
+        String eventEntityIdGroupId = stateEvent.getStateEventId().getGroupId();
+        if (stateEntityIdGroupId != eventEntityIdGroupId)
+        {
+            DomainError.named("mutateWrongEntity", "Entity Id GroupId %1$s in state but entity id GroupId %2$s in event", stateEntityIdGroupId, eventEntityIdGroupId);
+        }
+
+        String stateEntityIdIndex = this.getAttributeSetInstanceExtensionFieldId().getIndex();
+        String eventEntityIdIndex = stateEvent.getStateEventId().getIndex();
+        if (stateEntityIdIndex != eventEntityIdIndex)
+        {
+            DomainError.named("mutateWrongEntity", "Entity Id Index %1$s in state but entity id Index %2$s in event", stateEntityIdIndex, eventEntityIdIndex);
+        }
+
+        Long stateVersion = this.getVersion();
+        Long eventVersion = stateEvent.getVersion();
+        if (AttributeSetInstanceExtensionFieldState.VERSION_ZERO.equals(eventVersion))
+        {
+            stateEvent.setVersion(stateVersion);
+            eventVersion = stateVersion;
+        }
+        if (!stateVersion.equals(eventVersion))
+        {
+            throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);
+        }
+
+    }
 
 
 }

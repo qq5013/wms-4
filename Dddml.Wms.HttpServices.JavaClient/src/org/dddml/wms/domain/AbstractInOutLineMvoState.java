@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 import nodamoney.Money;
 import org.dddml.wms.specialization.Event;
+import org.dddml.wms.specialization.DomainError;
 import org.dddml.wms.domain.InOutLineMvoStateEvent.*;
 
 public abstract class AbstractInOutLineMvoState implements InOutLineMvoState
@@ -816,13 +817,41 @@ public abstract class AbstractInOutLineMvoState implements InOutLineMvoState
     protected void initializeProperties() {
     }
 
-    public abstract void mutate(Event e);
+
+    public void mutate(Event e) {
+        if (e instanceof InOutLineMvoStateCreated) {
+            when((InOutLineMvoStateCreated) e);
+        } else if (e instanceof InOutLineMvoStateMergePatched) {
+            when((InOutLineMvoStateMergePatched) e);
+        } else if (e instanceof InOutLineMvoStateDeleted) {
+            when((InOutLineMvoStateDeleted) e);
+        }
+    }
 
     public abstract void when(InOutLineMvoStateCreated e);
 
     public abstract void when(InOutLineMvoStateMergePatched e);
 
     public abstract void when(InOutLineMvoStateDeleted e);
+
+
+    protected void throwOnWrongEvent(InOutLineMvoStateEvent stateEvent)
+    {
+        InOutLineId stateEntityId = this.getInOutLineId(); // Aggregate Id
+        InOutLineId eventEntityId = stateEvent.getStateEventId().getInOutLineId(); // EntityBase.Aggregate.GetStateEventIdPropertyIdName();
+        if (!stateEntityId.equals(eventEntityId))
+        {
+            DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
+        }
+
+        Long stateVersion = this.getInOutVersion();
+        Long eventVersion = stateEvent.getStateEventId().getInOutVersion();
+        if (!stateVersion.equals(eventVersion))
+        {
+            throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);
+        }
+
+    }
 
 
 }

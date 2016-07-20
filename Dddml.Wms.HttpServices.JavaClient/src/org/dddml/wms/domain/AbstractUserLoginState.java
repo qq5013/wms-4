@@ -3,6 +3,7 @@ package org.dddml.wms.domain;
 import java.util.Set;
 import java.util.Date;
 import org.dddml.wms.specialization.Event;
+import org.dddml.wms.specialization.DomainError;
 import org.dddml.wms.domain.UserLoginStateEvent.*;
 
 public abstract class AbstractUserLoginState implements UserLoginState
@@ -140,13 +141,53 @@ public abstract class AbstractUserLoginState implements UserLoginState
     protected void initializeProperties() {
     }
 
-    public abstract void mutate(Event e);
+
+    public void mutate(Event e) {
+        if (e instanceof UserLoginStateCreated) {
+            when((UserLoginStateCreated) e);
+        } else if (e instanceof UserLoginStateMergePatched) {
+            when((UserLoginStateMergePatched) e);
+        } else if (e instanceof UserLoginStateRemoved) {
+            when((UserLoginStateRemoved) e);
+        }
+    }
 
     public abstract void when(UserLoginStateCreated e);
 
     public abstract void when(UserLoginStateMergePatched e);
 
     public abstract void when(UserLoginStateRemoved e);
+
+
+    protected void throwOnWrongEvent(UserLoginStateEvent stateEvent)
+    {
+        String stateEntityIdUserId = this.getUserLoginId().getUserId();
+        String eventEntityIdUserId = stateEvent.getStateEventId().getUserId();
+        if (stateEntityIdUserId != eventEntityIdUserId)
+        {
+            DomainError.named("mutateWrongEntity", "Entity Id UserId %1$s in state but entity id UserId %2$s in event", stateEntityIdUserId, eventEntityIdUserId);
+        }
+
+        LoginKey stateEntityIdLoginKey = this.getUserLoginId().getLoginKey();
+        LoginKey eventEntityIdLoginKey = stateEvent.getStateEventId().getLoginKey();
+        if (stateEntityIdLoginKey != eventEntityIdLoginKey)
+        {
+            DomainError.named("mutateWrongEntity", "Entity Id LoginKey %1$s in state but entity id LoginKey %2$s in event", stateEntityIdLoginKey, eventEntityIdLoginKey);
+        }
+
+        Long stateVersion = this.getVersion();
+        Long eventVersion = stateEvent.getVersion();
+        if (UserLoginState.VERSION_ZERO.equals(eventVersion))
+        {
+            stateEvent.setVersion(stateVersion);
+            eventVersion = stateVersion;
+        }
+        if (!stateVersion.equals(eventVersion))
+        {
+            throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);
+        }
+
+    }
 
 
 }

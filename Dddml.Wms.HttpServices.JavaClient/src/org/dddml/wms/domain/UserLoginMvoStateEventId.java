@@ -67,5 +67,35 @@ public class UserLoginMvoStateEventId
         this.userVersion = userVersion;
     }
 
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        UserLoginMvoStateEventId other = (UserLoginMvoStateEventId)obj;
+        return true 
+            && (userLoginId == other.userLoginId || (userLoginId != null && userLoginId.equals(other.userLoginId)))
+            && (userVersion == other.userVersion || (userVersion != null && userVersion.equals(other.userVersion)))
+            ;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        int hash = 0;
+        if (this.userLoginId != null) {
+            hash += 13 * this.userLoginId.hashCode();
+        }
+        if (this.userVersion != null) {
+            hash += 13 * this.userVersion.hashCode();
+        }
+        return hash;
+    }
+
 }
 

@@ -3,6 +3,7 @@ package org.dddml.wms.domain;
 import java.util.Set;
 import java.util.Date;
 import org.dddml.wms.specialization.Event;
+import org.dddml.wms.specialization.DomainError;
 import org.dddml.wms.domain.AttributeSetInstanceExtensionFieldGroupStateEvent.*;
 
 public abstract class AbstractAttributeSetInstanceExtensionFieldGroupState implements AttributeSetInstanceExtensionFieldGroupState
@@ -192,13 +193,41 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldGroupState imple
     protected void initializeProperties() {
     }
 
-    public abstract void mutate(Event e);
+
+    public void mutate(Event e) {
+        if (e instanceof AttributeSetInstanceExtensionFieldGroupStateCreated) {
+            when((AttributeSetInstanceExtensionFieldGroupStateCreated) e);
+        } else if (e instanceof AttributeSetInstanceExtensionFieldGroupStateMergePatched) {
+            when((AttributeSetInstanceExtensionFieldGroupStateMergePatched) e);
+        } else if (e instanceof AttributeSetInstanceExtensionFieldGroupStateDeleted) {
+            when((AttributeSetInstanceExtensionFieldGroupStateDeleted) e);
+        }
+    }
 
     public abstract void when(AttributeSetInstanceExtensionFieldGroupStateCreated e);
 
     public abstract void when(AttributeSetInstanceExtensionFieldGroupStateMergePatched e);
 
     public abstract void when(AttributeSetInstanceExtensionFieldGroupStateDeleted e);
+
+
+    protected void throwOnWrongEvent(AttributeSetInstanceExtensionFieldGroupStateEvent stateEvent)
+    {
+        String stateEntityId = this.getId(); // Aggregate Id
+        String eventEntityId = stateEvent.getStateEventId().getId(); // EntityBase.Aggregate.GetStateEventIdPropertyIdName();
+        if (!stateEntityId.equals(eventEntityId))
+        {
+            DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
+        }
+
+        Long stateVersion = this.getVersion();
+        Long eventVersion = stateEvent.getStateEventId().getVersion();
+        if (!stateVersion.equals(eventVersion))
+        {
+            throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);
+        }
+
+    }
 
     public static class SimpleAttributeSetInstanceExtensionFieldStates extends AbstractAttributeSetInstanceExtensionFieldStates
     {

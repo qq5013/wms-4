@@ -3,6 +3,7 @@ package org.dddml.wms.domain;
 import java.util.Set;
 import java.util.Date;
 import org.dddml.wms.specialization.Event;
+import org.dddml.wms.specialization.DomainError;
 import org.dddml.wms.domain.UserPermissionMvoStateEvent.*;
 
 public abstract class AbstractUserPermissionMvoState implements UserPermissionMvoState
@@ -334,13 +335,41 @@ public abstract class AbstractUserPermissionMvoState implements UserPermissionMv
     protected void initializeProperties() {
     }
 
-    public abstract void mutate(Event e);
+
+    public void mutate(Event e) {
+        if (e instanceof UserPermissionMvoStateCreated) {
+            when((UserPermissionMvoStateCreated) e);
+        } else if (e instanceof UserPermissionMvoStateMergePatched) {
+            when((UserPermissionMvoStateMergePatched) e);
+        } else if (e instanceof UserPermissionMvoStateDeleted) {
+            when((UserPermissionMvoStateDeleted) e);
+        }
+    }
 
     public abstract void when(UserPermissionMvoStateCreated e);
 
     public abstract void when(UserPermissionMvoStateMergePatched e);
 
     public abstract void when(UserPermissionMvoStateDeleted e);
+
+
+    protected void throwOnWrongEvent(UserPermissionMvoStateEvent stateEvent)
+    {
+        UserPermissionId stateEntityId = this.getUserPermissionId(); // Aggregate Id
+        UserPermissionId eventEntityId = stateEvent.getStateEventId().getUserPermissionId(); // EntityBase.Aggregate.GetStateEventIdPropertyIdName();
+        if (!stateEntityId.equals(eventEntityId))
+        {
+            DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
+        }
+
+        Long stateVersion = this.getUserVersion();
+        Long eventVersion = stateEvent.getStateEventId().getUserVersion();
+        if (!stateVersion.equals(eventVersion))
+        {
+            throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);
+        }
+
+    }
 
 
 }

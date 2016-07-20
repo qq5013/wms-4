@@ -57,5 +57,35 @@ public class AttributeSetInstanceExtensionFieldMvoStateEventId
         this.attrSetInstEFGroupVersion = attrSetInstEFGroupVersion;
     }
 
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        AttributeSetInstanceExtensionFieldMvoStateEventId other = (AttributeSetInstanceExtensionFieldMvoStateEventId)obj;
+        return true 
+            && (attributeSetInstanceExtensionFieldId == other.attributeSetInstanceExtensionFieldId || (attributeSetInstanceExtensionFieldId != null && attributeSetInstanceExtensionFieldId.equals(other.attributeSetInstanceExtensionFieldId)))
+            && (attrSetInstEFGroupVersion == other.attrSetInstEFGroupVersion || (attrSetInstEFGroupVersion != null && attrSetInstEFGroupVersion.equals(other.attrSetInstEFGroupVersion)))
+            ;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        int hash = 0;
+        if (this.attributeSetInstanceExtensionFieldId != null) {
+            hash += 13 * this.attributeSetInstanceExtensionFieldId.hashCode();
+        }
+        if (this.attrSetInstEFGroupVersion != null) {
+            hash += 13 * this.attrSetInstEFGroupVersion.hashCode();
+        }
+        return hash;
+    }
+
 }
 

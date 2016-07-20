@@ -3,6 +3,7 @@ package org.dddml.wms.domain;
 import java.util.Set;
 import java.util.Date;
 import org.dddml.wms.specialization.Event;
+import org.dddml.wms.specialization.DomainError;
 import org.dddml.wms.domain.UserRoleStateEvent.*;
 
 public abstract class AbstractUserRoleState implements UserRoleState
@@ -140,13 +141,53 @@ public abstract class AbstractUserRoleState implements UserRoleState
     protected void initializeProperties() {
     }
 
-    public abstract void mutate(Event e);
+
+    public void mutate(Event e) {
+        if (e instanceof UserRoleStateCreated) {
+            when((UserRoleStateCreated) e);
+        } else if (e instanceof UserRoleStateMergePatched) {
+            when((UserRoleStateMergePatched) e);
+        } else if (e instanceof UserRoleStateRemoved) {
+            when((UserRoleStateRemoved) e);
+        }
+    }
 
     public abstract void when(UserRoleStateCreated e);
 
     public abstract void when(UserRoleStateMergePatched e);
 
     public abstract void when(UserRoleStateRemoved e);
+
+
+    protected void throwOnWrongEvent(UserRoleStateEvent stateEvent)
+    {
+        String stateEntityIdUserId = this.getUserRoleId().getUserId();
+        String eventEntityIdUserId = stateEvent.getStateEventId().getUserId();
+        if (stateEntityIdUserId != eventEntityIdUserId)
+        {
+            DomainError.named("mutateWrongEntity", "Entity Id UserId %1$s in state but entity id UserId %2$s in event", stateEntityIdUserId, eventEntityIdUserId);
+        }
+
+        String stateEntityIdRoleId = this.getUserRoleId().getRoleId();
+        String eventEntityIdRoleId = stateEvent.getStateEventId().getRoleId();
+        if (stateEntityIdRoleId != eventEntityIdRoleId)
+        {
+            DomainError.named("mutateWrongEntity", "Entity Id RoleId %1$s in state but entity id RoleId %2$s in event", stateEntityIdRoleId, eventEntityIdRoleId);
+        }
+
+        Long stateVersion = this.getVersion();
+        Long eventVersion = stateEvent.getVersion();
+        if (UserRoleState.VERSION_ZERO.equals(eventVersion))
+        {
+            stateEvent.setVersion(stateVersion);
+            eventVersion = stateVersion;
+        }
+        if (!stateVersion.equals(eventVersion))
+        {
+            throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);
+        }
+
+    }
 
 
 }

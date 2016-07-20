@@ -52,5 +52,25 @@ public class InOutLineStateEventIdDto
     }
 
 
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        InOutLineStateEventIdDto other = (InOutLineStateEventIdDto)obj;
+        return value.equals(other.value);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return value.hashCode();
+    }
+
 }
 

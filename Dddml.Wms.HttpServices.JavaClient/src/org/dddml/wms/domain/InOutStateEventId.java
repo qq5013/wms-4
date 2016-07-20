@@ -37,5 +37,35 @@ public class InOutStateEventId
         this.version = version;
     }
 
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        InOutStateEventId other = (InOutStateEventId)obj;
+        return true 
+            && (documentNumber == other.documentNumber || (documentNumber != null && documentNumber.equals(other.documentNumber)))
+            && (version == other.version || (version != null && version.equals(other.version)))
+            ;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        int hash = 0;
+        if (this.documentNumber != null) {
+            hash += 13 * this.documentNumber.hashCode();
+        }
+        if (this.version != null) {
+            hash += 13 * this.version.hashCode();
+        }
+        return hash;
+    }
+
 }
 

@@ -42,5 +42,25 @@ public class AttributeSetInstanceExtensionFieldGroupStateEventIdDto
     }
 
 
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        AttributeSetInstanceExtensionFieldGroupStateEventIdDto other = (AttributeSetInstanceExtensionFieldGroupStateEventIdDto)obj;
+        return value.equals(other.value);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return value.hashCode();
+    }
+
 }
 

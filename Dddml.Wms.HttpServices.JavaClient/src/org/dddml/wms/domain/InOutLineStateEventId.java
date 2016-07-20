@@ -70,5 +70,39 @@ public class InOutLineStateEventId
         this.inOutVersion = inOutVersion;
     }
 
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        InOutLineStateEventId other = (InOutLineStateEventId)obj;
+        return true 
+            && (inOutDocumentNumber == other.inOutDocumentNumber || (inOutDocumentNumber != null && inOutDocumentNumber.equals(other.inOutDocumentNumber)))
+            && (skuId == other.skuId || (skuId != null && skuId.equals(other.skuId)))
+            && (inOutVersion == other.inOutVersion || (inOutVersion != null && inOutVersion.equals(other.inOutVersion)))
+            ;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        int hash = 0;
+        if (this.inOutDocumentNumber != null) {
+            hash += 13 * this.inOutDocumentNumber.hashCode();
+        }
+        if (this.skuId != null) {
+            hash += 13 * this.skuId.hashCode();
+        }
+        if (this.inOutVersion != null) {
+            hash += 13 * this.inOutVersion.hashCode();
+        }
+        return hash;
+    }
+
 }
 

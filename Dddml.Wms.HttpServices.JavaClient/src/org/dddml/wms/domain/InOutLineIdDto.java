@@ -42,5 +42,25 @@ public class InOutLineIdDto
     }
 
 
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        InOutLineIdDto other = (InOutLineIdDto)obj;
+        return value.equals(other.value);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return value.hashCode();
+    }
+
 }
 

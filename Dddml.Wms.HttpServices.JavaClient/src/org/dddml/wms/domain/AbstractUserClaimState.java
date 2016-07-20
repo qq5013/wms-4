@@ -196,7 +196,7 @@ public abstract class AbstractUserClaimState implements UserClaimState
 
         if (e.getClaimType() == null)
         {
-            if (e.isPropertyClaimTypeRemoved() != null && e.isPropertyClaimTypeRemoved())
+            if (e.getIsPropertyClaimTypeRemoved() != null && e.getIsPropertyClaimTypeRemoved())
             {
                 this.setClaimType(null);
             }
@@ -207,7 +207,7 @@ public abstract class AbstractUserClaimState implements UserClaimState
         }
         if (e.getClaimValue() == null)
         {
-            if (e.isPropertyClaimValueRemoved() != null && e.isPropertyClaimValueRemoved())
+            if (e.getIsPropertyClaimValueRemoved() != null && e.getIsPropertyClaimValueRemoved())
             {
                 this.setClaimValue(null);
             }
@@ -218,7 +218,7 @@ public abstract class AbstractUserClaimState implements UserClaimState
         }
         if (e.getActive() == null)
         {
-            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            if (e.getIsPropertyActiveRemoved() != null && e.getIsPropertyActiveRemoved())
             {
                 this.setActive(null);
             }

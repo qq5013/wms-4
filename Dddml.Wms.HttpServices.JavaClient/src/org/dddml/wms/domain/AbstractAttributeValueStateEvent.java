@@ -145,28 +145,62 @@ public abstract class AbstractAttributeValueStateEvent implements AttributeValue
     }
 
 
-/*
     public static abstract class AbstractAttributeValueStateMergePatched extends AbstractAttributeValueStateEvent implements AttributeValueStateMergePatched
     {
-        Boolean isPropertyNameRemoved();
+        public AbstractAttributeValueStateMergePatched() {
+        }
 
-        void setPropertyNameRemoved(Boolean removed);
+        public AbstractAttributeValueStateMergePatched(AttributeValueStateEventId stateEventId) {
+            super(stateEventId);
+        }
 
-        Boolean isPropertyDescriptionRemoved();
+        public String getStateEventType() {
+            return StateEventType.MERGE_PATCHED;
+        }
 
-        void setPropertyDescriptionRemoved(Boolean removed);
+        private Boolean isPropertyNameRemoved;
 
-        Boolean isPropertyReferenceIdRemoved();
+        public Boolean getIsPropertyNameRemoved() {
+            return this.isPropertyNameRemoved;
+        }
 
-        void setPropertyReferenceIdRemoved(Boolean removed);
+        public void setIsPropertyNameRemoved(Boolean removed) {
+            this.isPropertyNameRemoved = removed;
+        }
 
-        Boolean isPropertyActiveRemoved();
+        private Boolean isPropertyDescriptionRemoved;
 
-        void setPropertyActiveRemoved(Boolean removed);
+        public Boolean getIsPropertyDescriptionRemoved() {
+            return this.isPropertyDescriptionRemoved;
+        }
+
+        public void setIsPropertyDescriptionRemoved(Boolean removed) {
+            this.isPropertyDescriptionRemoved = removed;
+        }
+
+        private Boolean isPropertyReferenceIdRemoved;
+
+        public Boolean getIsPropertyReferenceIdRemoved() {
+            return this.isPropertyReferenceIdRemoved;
+        }
+
+        public void setIsPropertyReferenceIdRemoved(Boolean removed) {
+            this.isPropertyReferenceIdRemoved = removed;
+        }
+
+        private Boolean isPropertyActiveRemoved;
+
+        public Boolean getIsPropertyActiveRemoved() {
+            return this.isPropertyActiveRemoved;
+        }
+
+        public void setIsPropertyActiveRemoved(Boolean removed) {
+            this.isPropertyActiveRemoved = removed;
+        }
 
 
     }
-*/
+
 
     public static abstract class AbstractAttributeValueStateRemoved extends AbstractAttributeValueStateEvent implements AttributeValueStateRemoved
     {
@@ -182,6 +216,5 @@ public abstract class AbstractAttributeValueStateEvent implements AttributeValue
         }
 
     }
-
 }
 

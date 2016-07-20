@@ -23,7 +23,7 @@
 
 	boundedContext.IsGenericTypeAsType = true;
 
-	//boundedContext.Aggregates["AttributeSetInstance"].SetPersistingStateEventRemovedPropertiesAsSet(true);
+	boundedContext.Aggregates["AttributeSetInstance"].SetPersistingStateEventRemovedPropertiesAsSet(true);
 
 	//boundedContext.Aggregates["AttributeSetInstance"].AuthorizationEnabled = true;
 	//boundedContext.Aggregates["AttributeSetInstance"].AnonymousAllowed = true;

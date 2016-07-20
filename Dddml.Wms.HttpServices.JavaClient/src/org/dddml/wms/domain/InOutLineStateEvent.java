@@ -110,77 +110,77 @@ public interface InOutLineStateEvent extends Event
 
     interface InOutLineStateMergePatched extends InOutLineStateEvent
     {
-        Boolean isPropertyLineNumberRemoved();
+        Boolean getIsPropertyLineNumberRemoved();
 
-        void setPropertyLineNumberRemoved(Boolean removed);
+        void setIsPropertyLineNumberRemoved(Boolean removed);
 
-        Boolean isPropertyDescriptionRemoved();
+        Boolean getIsPropertyDescriptionRemoved();
 
-        void setPropertyDescriptionRemoved(Boolean removed);
+        void setIsPropertyDescriptionRemoved(Boolean removed);
 
-        Boolean isPropertyLocatorIdRemoved();
+        Boolean getIsPropertyLocatorIdRemoved();
 
-        void setPropertyLocatorIdRemoved(Boolean removed);
+        void setIsPropertyLocatorIdRemoved(Boolean removed);
 
-        Boolean isPropertyProductRemoved();
+        Boolean getIsPropertyProductRemoved();
 
-        void setPropertyProductRemoved(Boolean removed);
+        void setIsPropertyProductRemoved(Boolean removed);
 
-        Boolean isPropertyUomIdRemoved();
+        Boolean getIsPropertyUomIdRemoved();
 
-        void setPropertyUomIdRemoved(Boolean removed);
+        void setIsPropertyUomIdRemoved(Boolean removed);
 
-        Boolean isPropertyMovementQuantityRemoved();
+        Boolean getIsPropertyMovementQuantityRemoved();
 
-        void setPropertyMovementQuantityRemoved(Boolean removed);
+        void setIsPropertyMovementQuantityRemoved(Boolean removed);
 
-        Boolean isPropertyConfirmedQuantityRemoved();
+        Boolean getIsPropertyConfirmedQuantityRemoved();
 
-        void setPropertyConfirmedQuantityRemoved(Boolean removed);
+        void setIsPropertyConfirmedQuantityRemoved(Boolean removed);
 
-        Boolean isPropertyScrappedQuantityRemoved();
+        Boolean getIsPropertyScrappedQuantityRemoved();
 
-        void setPropertyScrappedQuantityRemoved(Boolean removed);
+        void setIsPropertyScrappedQuantityRemoved(Boolean removed);
 
-        Boolean isPropertyTargetQuantityRemoved();
+        Boolean getIsPropertyTargetQuantityRemoved();
 
-        void setPropertyTargetQuantityRemoved(Boolean removed);
+        void setIsPropertyTargetQuantityRemoved(Boolean removed);
 
-        Boolean isPropertyPickedQuantityRemoved();
+        Boolean getIsPropertyPickedQuantityRemoved();
 
-        void setPropertyPickedQuantityRemoved(Boolean removed);
+        void setIsPropertyPickedQuantityRemoved(Boolean removed);
 
-        Boolean isPropertyIsInvoicedRemoved();
+        Boolean getIsPropertyIsInvoicedRemoved();
 
-        void setPropertyIsInvoicedRemoved(Boolean removed);
+        void setIsPropertyIsInvoicedRemoved(Boolean removed);
 
-        Boolean isPropertyAttributeSetInstanceIdRemoved();
+        Boolean getIsPropertyAttributeSetInstanceIdRemoved();
 
-        void setPropertyAttributeSetInstanceIdRemoved(Boolean removed);
+        void setIsPropertyAttributeSetInstanceIdRemoved(Boolean removed);
 
-        Boolean isPropertyIsDescriptionRemoved();
+        Boolean getIsPropertyIsDescriptionRemoved();
 
-        void setPropertyIsDescriptionRemoved(Boolean removed);
+        void setIsPropertyIsDescriptionRemoved(Boolean removed);
 
-        Boolean isPropertyProcessedRemoved();
+        Boolean getIsPropertyProcessedRemoved();
 
-        void setPropertyProcessedRemoved(Boolean removed);
+        void setIsPropertyProcessedRemoved(Boolean removed);
 
-        Boolean isPropertyQuantityEnteredRemoved();
+        Boolean getIsPropertyQuantityEnteredRemoved();
 
-        void setPropertyQuantityEnteredRemoved(Boolean removed);
+        void setIsPropertyQuantityEnteredRemoved(Boolean removed);
 
-        Boolean isPropertyRmaLineNumberRemoved();
+        Boolean getIsPropertyRmaLineNumberRemoved();
 
-        void setPropertyRmaLineNumberRemoved(Boolean removed);
+        void setIsPropertyRmaLineNumberRemoved(Boolean removed);
 
-        Boolean isPropertyReversalLineNumberRemoved();
+        Boolean getIsPropertyReversalLineNumberRemoved();
 
-        void setPropertyReversalLineNumberRemoved(Boolean removed);
+        void setIsPropertyReversalLineNumberRemoved(Boolean removed);
 
-        Boolean isPropertyActiveRemoved();
+        Boolean getIsPropertyActiveRemoved();
 
-        void setPropertyActiveRemoved(Boolean removed);
+        void setIsPropertyActiveRemoved(Boolean removed);
 
 
     }

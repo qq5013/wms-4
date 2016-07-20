@@ -174,7 +174,7 @@ public abstract class AbstractAudienceState implements AudienceState
 
         if (e.getName() == null)
         {
-            if (e.isPropertyNameRemoved() != null && e.isPropertyNameRemoved())
+            if (e.getIsPropertyNameRemoved() != null && e.getIsPropertyNameRemoved())
             {
                 this.setName(null);
             }
@@ -185,7 +185,7 @@ public abstract class AbstractAudienceState implements AudienceState
         }
         if (e.getBase64Secret() == null)
         {
-            if (e.isPropertyBase64SecretRemoved() != null && e.isPropertyBase64SecretRemoved())
+            if (e.getIsPropertyBase64SecretRemoved() != null && e.getIsPropertyBase64SecretRemoved())
             {
                 this.setBase64Secret(null);
             }
@@ -196,7 +196,7 @@ public abstract class AbstractAudienceState implements AudienceState
         }
         if (e.getActive() == null)
         {
-            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            if (e.getIsPropertyActiveRemoved() != null && e.getIsPropertyActiveRemoved())
             {
                 this.setActive(null);
             }

@@ -325,96 +325,232 @@ public abstract class AbstractUserClaimMvoStateEvent implements UserClaimMvoStat
     }
 
 
-/*
     public static abstract class AbstractUserClaimMvoStateMergePatched extends AbstractUserClaimMvoStateEvent implements UserClaimMvoStateMergePatched
     {
-        Boolean isPropertyClaimTypeRemoved();
+        public AbstractUserClaimMvoStateMergePatched() {
+        }
 
-        void setPropertyClaimTypeRemoved(Boolean removed);
+        public AbstractUserClaimMvoStateMergePatched(UserClaimMvoStateEventId stateEventId) {
+            super(stateEventId);
+        }
 
-        Boolean isPropertyClaimValueRemoved();
+        public String getStateEventType() {
+            return StateEventType.MERGE_PATCHED;
+        }
 
-        void setPropertyClaimValueRemoved(Boolean removed);
+        private Boolean isPropertyClaimTypeRemoved;
 
-        Boolean isPropertyVersionRemoved();
+        public Boolean getIsPropertyClaimTypeRemoved() {
+            return this.isPropertyClaimTypeRemoved;
+        }
 
-        void setPropertyVersionRemoved(Boolean removed);
+        public void setIsPropertyClaimTypeRemoved(Boolean removed) {
+            this.isPropertyClaimTypeRemoved = removed;
+        }
 
-        Boolean isPropertyActiveRemoved();
+        private Boolean isPropertyClaimValueRemoved;
 
-        void setPropertyActiveRemoved(Boolean removed);
+        public Boolean getIsPropertyClaimValueRemoved() {
+            return this.isPropertyClaimValueRemoved;
+        }
 
-        Boolean isPropertyUserUserNameRemoved();
+        public void setIsPropertyClaimValueRemoved(Boolean removed) {
+            this.isPropertyClaimValueRemoved = removed;
+        }
 
-        void setPropertyUserUserNameRemoved(Boolean removed);
+        private Boolean isPropertyVersionRemoved;
 
-        Boolean isPropertyUserAccessFailedCountRemoved();
+        public Boolean getIsPropertyVersionRemoved() {
+            return this.isPropertyVersionRemoved;
+        }
 
-        void setPropertyUserAccessFailedCountRemoved(Boolean removed);
+        public void setIsPropertyVersionRemoved(Boolean removed) {
+            this.isPropertyVersionRemoved = removed;
+        }
 
-        Boolean isPropertyUserEmailRemoved();
+        private Boolean isPropertyActiveRemoved;
 
-        void setPropertyUserEmailRemoved(Boolean removed);
+        public Boolean getIsPropertyActiveRemoved() {
+            return this.isPropertyActiveRemoved;
+        }
 
-        Boolean isPropertyUserEmailConfirmedRemoved();
+        public void setIsPropertyActiveRemoved(Boolean removed) {
+            this.isPropertyActiveRemoved = removed;
+        }
 
-        void setPropertyUserEmailConfirmedRemoved(Boolean removed);
+        private Boolean isPropertyUserUserNameRemoved;
 
-        Boolean isPropertyUserLockoutEnabledRemoved();
+        public Boolean getIsPropertyUserUserNameRemoved() {
+            return this.isPropertyUserUserNameRemoved;
+        }
 
-        void setPropertyUserLockoutEnabledRemoved(Boolean removed);
+        public void setIsPropertyUserUserNameRemoved(Boolean removed) {
+            this.isPropertyUserUserNameRemoved = removed;
+        }
 
-        Boolean isPropertyUserLockoutEndDateUtcRemoved();
+        private Boolean isPropertyUserAccessFailedCountRemoved;
 
-        void setPropertyUserLockoutEndDateUtcRemoved(Boolean removed);
+        public Boolean getIsPropertyUserAccessFailedCountRemoved() {
+            return this.isPropertyUserAccessFailedCountRemoved;
+        }
 
-        Boolean isPropertyUserPasswordHashRemoved();
+        public void setIsPropertyUserAccessFailedCountRemoved(Boolean removed) {
+            this.isPropertyUserAccessFailedCountRemoved = removed;
+        }
 
-        void setPropertyUserPasswordHashRemoved(Boolean removed);
+        private Boolean isPropertyUserEmailRemoved;
 
-        Boolean isPropertyUserPhoneNumberRemoved();
+        public Boolean getIsPropertyUserEmailRemoved() {
+            return this.isPropertyUserEmailRemoved;
+        }
 
-        void setPropertyUserPhoneNumberRemoved(Boolean removed);
+        public void setIsPropertyUserEmailRemoved(Boolean removed) {
+            this.isPropertyUserEmailRemoved = removed;
+        }
 
-        Boolean isPropertyUserPhoneNumberConfirmedRemoved();
+        private Boolean isPropertyUserEmailConfirmedRemoved;
 
-        void setPropertyUserPhoneNumberConfirmedRemoved(Boolean removed);
+        public Boolean getIsPropertyUserEmailConfirmedRemoved() {
+            return this.isPropertyUserEmailConfirmedRemoved;
+        }
 
-        Boolean isPropertyUserTwoFactorEnabledRemoved();
+        public void setIsPropertyUserEmailConfirmedRemoved(Boolean removed) {
+            this.isPropertyUserEmailConfirmedRemoved = removed;
+        }
 
-        void setPropertyUserTwoFactorEnabledRemoved(Boolean removed);
+        private Boolean isPropertyUserLockoutEnabledRemoved;
 
-        Boolean isPropertyUserSecurityStampRemoved();
+        public Boolean getIsPropertyUserLockoutEnabledRemoved() {
+            return this.isPropertyUserLockoutEnabledRemoved;
+        }
 
-        void setPropertyUserSecurityStampRemoved(Boolean removed);
+        public void setIsPropertyUserLockoutEnabledRemoved(Boolean removed) {
+            this.isPropertyUserLockoutEnabledRemoved = removed;
+        }
 
-        Boolean isPropertyUserCreatedByRemoved();
+        private Boolean isPropertyUserLockoutEndDateUtcRemoved;
 
-        void setPropertyUserCreatedByRemoved(Boolean removed);
+        public Boolean getIsPropertyUserLockoutEndDateUtcRemoved() {
+            return this.isPropertyUserLockoutEndDateUtcRemoved;
+        }
 
-        Boolean isPropertyUserCreatedAtRemoved();
+        public void setIsPropertyUserLockoutEndDateUtcRemoved(Boolean removed) {
+            this.isPropertyUserLockoutEndDateUtcRemoved = removed;
+        }
 
-        void setPropertyUserCreatedAtRemoved(Boolean removed);
+        private Boolean isPropertyUserPasswordHashRemoved;
 
-        Boolean isPropertyUserUpdatedByRemoved();
+        public Boolean getIsPropertyUserPasswordHashRemoved() {
+            return this.isPropertyUserPasswordHashRemoved;
+        }
 
-        void setPropertyUserUpdatedByRemoved(Boolean removed);
+        public void setIsPropertyUserPasswordHashRemoved(Boolean removed) {
+            this.isPropertyUserPasswordHashRemoved = removed;
+        }
 
-        Boolean isPropertyUserUpdatedAtRemoved();
+        private Boolean isPropertyUserPhoneNumberRemoved;
 
-        void setPropertyUserUpdatedAtRemoved(Boolean removed);
+        public Boolean getIsPropertyUserPhoneNumberRemoved() {
+            return this.isPropertyUserPhoneNumberRemoved;
+        }
 
-        Boolean isPropertyUserActiveRemoved();
+        public void setIsPropertyUserPhoneNumberRemoved(Boolean removed) {
+            this.isPropertyUserPhoneNumberRemoved = removed;
+        }
 
-        void setPropertyUserActiveRemoved(Boolean removed);
+        private Boolean isPropertyUserPhoneNumberConfirmedRemoved;
 
-        Boolean isPropertyUserDeletedRemoved();
+        public Boolean getIsPropertyUserPhoneNumberConfirmedRemoved() {
+            return this.isPropertyUserPhoneNumberConfirmedRemoved;
+        }
 
-        void setPropertyUserDeletedRemoved(Boolean removed);
+        public void setIsPropertyUserPhoneNumberConfirmedRemoved(Boolean removed) {
+            this.isPropertyUserPhoneNumberConfirmedRemoved = removed;
+        }
+
+        private Boolean isPropertyUserTwoFactorEnabledRemoved;
+
+        public Boolean getIsPropertyUserTwoFactorEnabledRemoved() {
+            return this.isPropertyUserTwoFactorEnabledRemoved;
+        }
+
+        public void setIsPropertyUserTwoFactorEnabledRemoved(Boolean removed) {
+            this.isPropertyUserTwoFactorEnabledRemoved = removed;
+        }
+
+        private Boolean isPropertyUserSecurityStampRemoved;
+
+        public Boolean getIsPropertyUserSecurityStampRemoved() {
+            return this.isPropertyUserSecurityStampRemoved;
+        }
+
+        public void setIsPropertyUserSecurityStampRemoved(Boolean removed) {
+            this.isPropertyUserSecurityStampRemoved = removed;
+        }
+
+        private Boolean isPropertyUserCreatedByRemoved;
+
+        public Boolean getIsPropertyUserCreatedByRemoved() {
+            return this.isPropertyUserCreatedByRemoved;
+        }
+
+        public void setIsPropertyUserCreatedByRemoved(Boolean removed) {
+            this.isPropertyUserCreatedByRemoved = removed;
+        }
+
+        private Boolean isPropertyUserCreatedAtRemoved;
+
+        public Boolean getIsPropertyUserCreatedAtRemoved() {
+            return this.isPropertyUserCreatedAtRemoved;
+        }
+
+        public void setIsPropertyUserCreatedAtRemoved(Boolean removed) {
+            this.isPropertyUserCreatedAtRemoved = removed;
+        }
+
+        private Boolean isPropertyUserUpdatedByRemoved;
+
+        public Boolean getIsPropertyUserUpdatedByRemoved() {
+            return this.isPropertyUserUpdatedByRemoved;
+        }
+
+        public void setIsPropertyUserUpdatedByRemoved(Boolean removed) {
+            this.isPropertyUserUpdatedByRemoved = removed;
+        }
+
+        private Boolean isPropertyUserUpdatedAtRemoved;
+
+        public Boolean getIsPropertyUserUpdatedAtRemoved() {
+            return this.isPropertyUserUpdatedAtRemoved;
+        }
+
+        public void setIsPropertyUserUpdatedAtRemoved(Boolean removed) {
+            this.isPropertyUserUpdatedAtRemoved = removed;
+        }
+
+        private Boolean isPropertyUserActiveRemoved;
+
+        public Boolean getIsPropertyUserActiveRemoved() {
+            return this.isPropertyUserActiveRemoved;
+        }
+
+        public void setIsPropertyUserActiveRemoved(Boolean removed) {
+            this.isPropertyUserActiveRemoved = removed;
+        }
+
+        private Boolean isPropertyUserDeletedRemoved;
+
+        public Boolean getIsPropertyUserDeletedRemoved() {
+            return this.isPropertyUserDeletedRemoved;
+        }
+
+        public void setIsPropertyUserDeletedRemoved(Boolean removed) {
+            this.isPropertyUserDeletedRemoved = removed;
+        }
 
 
     }
-*/
+
 
     public static abstract class AbstractUserClaimMvoStateDeleted extends AbstractUserClaimMvoStateEvent implements UserClaimMvoStateDeleted
     {
@@ -430,6 +566,5 @@ public abstract class AbstractUserClaimMvoStateEvent implements UserClaimMvoStat
         }
 
     }
-
 }
 

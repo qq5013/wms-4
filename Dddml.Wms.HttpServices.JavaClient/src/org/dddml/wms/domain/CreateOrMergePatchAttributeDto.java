@@ -155,9 +155,9 @@ public class CreateOrMergePatchAttributeDto extends AbstractAttributeCommandDto
         return this.isPropertyNameRemoved;
     }
 
-    public void setIsPropertyNameRemoved(Boolean isPropertyNameRemoved)
+    public void setIsPropertyNameRemoved(Boolean removed)
     {
-        this.isPropertyNameRemoved = isPropertyNameRemoved;
+        this.isPropertyNameRemoved = removed;
     }
 
     private Boolean isPropertyOrganizationIdRemoved;
@@ -167,9 +167,9 @@ public class CreateOrMergePatchAttributeDto extends AbstractAttributeCommandDto
         return this.isPropertyOrganizationIdRemoved;
     }
 
-    public void setIsPropertyOrganizationIdRemoved(Boolean isPropertyOrganizationIdRemoved)
+    public void setIsPropertyOrganizationIdRemoved(Boolean removed)
     {
-        this.isPropertyOrganizationIdRemoved = isPropertyOrganizationIdRemoved;
+        this.isPropertyOrganizationIdRemoved = removed;
     }
 
     private Boolean isPropertyDescriptionRemoved;
@@ -179,9 +179,9 @@ public class CreateOrMergePatchAttributeDto extends AbstractAttributeCommandDto
         return this.isPropertyDescriptionRemoved;
     }
 
-    public void setIsPropertyDescriptionRemoved(Boolean isPropertyDescriptionRemoved)
+    public void setIsPropertyDescriptionRemoved(Boolean removed)
     {
-        this.isPropertyDescriptionRemoved = isPropertyDescriptionRemoved;
+        this.isPropertyDescriptionRemoved = removed;
     }
 
     private Boolean isPropertyIsMandatoryRemoved;
@@ -191,9 +191,9 @@ public class CreateOrMergePatchAttributeDto extends AbstractAttributeCommandDto
         return this.isPropertyIsMandatoryRemoved;
     }
 
-    public void setIsPropertyIsMandatoryRemoved(Boolean isPropertyIsMandatoryRemoved)
+    public void setIsPropertyIsMandatoryRemoved(Boolean removed)
     {
-        this.isPropertyIsMandatoryRemoved = isPropertyIsMandatoryRemoved;
+        this.isPropertyIsMandatoryRemoved = removed;
     }
 
     private Boolean isPropertyIsInstanceAttributeRemoved;
@@ -203,9 +203,9 @@ public class CreateOrMergePatchAttributeDto extends AbstractAttributeCommandDto
         return this.isPropertyIsInstanceAttributeRemoved;
     }
 
-    public void setIsPropertyIsInstanceAttributeRemoved(Boolean isPropertyIsInstanceAttributeRemoved)
+    public void setIsPropertyIsInstanceAttributeRemoved(Boolean removed)
     {
-        this.isPropertyIsInstanceAttributeRemoved = isPropertyIsInstanceAttributeRemoved;
+        this.isPropertyIsInstanceAttributeRemoved = removed;
     }
 
     private Boolean isPropertyAttributeValueTypeRemoved;
@@ -215,9 +215,9 @@ public class CreateOrMergePatchAttributeDto extends AbstractAttributeCommandDto
         return this.isPropertyAttributeValueTypeRemoved;
     }
 
-    public void setIsPropertyAttributeValueTypeRemoved(Boolean isPropertyAttributeValueTypeRemoved)
+    public void setIsPropertyAttributeValueTypeRemoved(Boolean removed)
     {
-        this.isPropertyAttributeValueTypeRemoved = isPropertyAttributeValueTypeRemoved;
+        this.isPropertyAttributeValueTypeRemoved = removed;
     }
 
     private Boolean isPropertyAttributeValueLengthRemoved;
@@ -227,9 +227,9 @@ public class CreateOrMergePatchAttributeDto extends AbstractAttributeCommandDto
         return this.isPropertyAttributeValueLengthRemoved;
     }
 
-    public void setIsPropertyAttributeValueLengthRemoved(Boolean isPropertyAttributeValueLengthRemoved)
+    public void setIsPropertyAttributeValueLengthRemoved(Boolean removed)
     {
-        this.isPropertyAttributeValueLengthRemoved = isPropertyAttributeValueLengthRemoved;
+        this.isPropertyAttributeValueLengthRemoved = removed;
     }
 
     private Boolean isPropertyIsListRemoved;
@@ -239,9 +239,9 @@ public class CreateOrMergePatchAttributeDto extends AbstractAttributeCommandDto
         return this.isPropertyIsListRemoved;
     }
 
-    public void setIsPropertyIsListRemoved(Boolean isPropertyIsListRemoved)
+    public void setIsPropertyIsListRemoved(Boolean removed)
     {
-        this.isPropertyIsListRemoved = isPropertyIsListRemoved;
+        this.isPropertyIsListRemoved = removed;
     }
 
     private Boolean isPropertyFieldNameRemoved;
@@ -251,9 +251,9 @@ public class CreateOrMergePatchAttributeDto extends AbstractAttributeCommandDto
         return this.isPropertyFieldNameRemoved;
     }
 
-    public void setIsPropertyFieldNameRemoved(Boolean isPropertyFieldNameRemoved)
+    public void setIsPropertyFieldNameRemoved(Boolean removed)
     {
-        this.isPropertyFieldNameRemoved = isPropertyFieldNameRemoved;
+        this.isPropertyFieldNameRemoved = removed;
     }
 
     private Boolean isPropertyReferenceIdRemoved;
@@ -263,9 +263,9 @@ public class CreateOrMergePatchAttributeDto extends AbstractAttributeCommandDto
         return this.isPropertyReferenceIdRemoved;
     }
 
-    public void setIsPropertyReferenceIdRemoved(Boolean isPropertyReferenceIdRemoved)
+    public void setIsPropertyReferenceIdRemoved(Boolean removed)
     {
-        this.isPropertyReferenceIdRemoved = isPropertyReferenceIdRemoved;
+        this.isPropertyReferenceIdRemoved = removed;
     }
 
     private Boolean isPropertyActiveRemoved;
@@ -275,9 +275,9 @@ public class CreateOrMergePatchAttributeDto extends AbstractAttributeCommandDto
         return this.isPropertyActiveRemoved;
     }
 
-    public void setIsPropertyActiveRemoved(Boolean isPropertyActiveRemoved)
+    public void setIsPropertyActiveRemoved(Boolean removed)
     {
-        this.isPropertyActiveRemoved = isPropertyActiveRemoved;
+        this.isPropertyActiveRemoved = removed;
     }
 
 

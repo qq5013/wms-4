@@ -296,7 +296,7 @@ public abstract class AbstractAttributeState implements AttributeState
 
         if (e.getName() == null)
         {
-            if (e.isPropertyNameRemoved() != null && e.isPropertyNameRemoved())
+            if (e.getIsPropertyNameRemoved() != null && e.getIsPropertyNameRemoved())
             {
                 this.setName(null);
             }
@@ -307,7 +307,7 @@ public abstract class AbstractAttributeState implements AttributeState
         }
         if (e.getOrganizationId() == null)
         {
-            if (e.isPropertyOrganizationIdRemoved() != null && e.isPropertyOrganizationIdRemoved())
+            if (e.getIsPropertyOrganizationIdRemoved() != null && e.getIsPropertyOrganizationIdRemoved())
             {
                 this.setOrganizationId(null);
             }
@@ -318,7 +318,7 @@ public abstract class AbstractAttributeState implements AttributeState
         }
         if (e.getDescription() == null)
         {
-            if (e.isPropertyDescriptionRemoved() != null && e.isPropertyDescriptionRemoved())
+            if (e.getIsPropertyDescriptionRemoved() != null && e.getIsPropertyDescriptionRemoved())
             {
                 this.setDescription(null);
             }
@@ -329,7 +329,7 @@ public abstract class AbstractAttributeState implements AttributeState
         }
         if (e.getIsMandatory() == null)
         {
-            if (e.isPropertyIsMandatoryRemoved() != null && e.isPropertyIsMandatoryRemoved())
+            if (e.getIsPropertyIsMandatoryRemoved() != null && e.getIsPropertyIsMandatoryRemoved())
             {
                 this.setIsMandatory(null);
             }
@@ -340,7 +340,7 @@ public abstract class AbstractAttributeState implements AttributeState
         }
         if (e.getIsInstanceAttribute() == null)
         {
-            if (e.isPropertyIsInstanceAttributeRemoved() != null && e.isPropertyIsInstanceAttributeRemoved())
+            if (e.getIsPropertyIsInstanceAttributeRemoved() != null && e.getIsPropertyIsInstanceAttributeRemoved())
             {
                 this.setIsInstanceAttribute(null);
             }
@@ -351,7 +351,7 @@ public abstract class AbstractAttributeState implements AttributeState
         }
         if (e.getAttributeValueType() == null)
         {
-            if (e.isPropertyAttributeValueTypeRemoved() != null && e.isPropertyAttributeValueTypeRemoved())
+            if (e.getIsPropertyAttributeValueTypeRemoved() != null && e.getIsPropertyAttributeValueTypeRemoved())
             {
                 this.setAttributeValueType(null);
             }
@@ -362,7 +362,7 @@ public abstract class AbstractAttributeState implements AttributeState
         }
         if (e.getAttributeValueLength() == null)
         {
-            if (e.isPropertyAttributeValueLengthRemoved() != null && e.isPropertyAttributeValueLengthRemoved())
+            if (e.getIsPropertyAttributeValueLengthRemoved() != null && e.getIsPropertyAttributeValueLengthRemoved())
             {
                 this.setAttributeValueLength(null);
             }
@@ -373,7 +373,7 @@ public abstract class AbstractAttributeState implements AttributeState
         }
         if (e.getIsList() == null)
         {
-            if (e.isPropertyIsListRemoved() != null && e.isPropertyIsListRemoved())
+            if (e.getIsPropertyIsListRemoved() != null && e.getIsPropertyIsListRemoved())
             {
                 this.setIsList(null);
             }
@@ -384,7 +384,7 @@ public abstract class AbstractAttributeState implements AttributeState
         }
         if (e.getFieldName() == null)
         {
-            if (e.isPropertyFieldNameRemoved() != null && e.isPropertyFieldNameRemoved())
+            if (e.getIsPropertyFieldNameRemoved() != null && e.getIsPropertyFieldNameRemoved())
             {
                 this.setFieldName(null);
             }
@@ -395,7 +395,7 @@ public abstract class AbstractAttributeState implements AttributeState
         }
         if (e.getReferenceId() == null)
         {
-            if (e.isPropertyReferenceIdRemoved() != null && e.isPropertyReferenceIdRemoved())
+            if (e.getIsPropertyReferenceIdRemoved() != null && e.getIsPropertyReferenceIdRemoved())
             {
                 this.setReferenceId(null);
             }
@@ -406,7 +406,7 @@ public abstract class AbstractAttributeState implements AttributeState
         }
         if (e.getActive() == null)
         {
-            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            if (e.getIsPropertyActiveRemoved() != null && e.getIsPropertyActiveRemoved())
             {
                 this.setActive(null);
             }

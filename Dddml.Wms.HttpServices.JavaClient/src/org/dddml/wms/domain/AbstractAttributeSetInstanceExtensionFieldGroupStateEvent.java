@@ -151,6 +151,18 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldGroupStateEvent 
         }
     }
 
+    public AttributeSetInstanceExtensionFieldStateEvent.AttributeSetInstanceExtensionFieldStateCreated newAttributeSetInstanceExtensionFieldStateCreated(String index) {
+        return new SimpleAttributeSetInstanceExtensionFieldStateCreated(newAttributeSetInstanceExtensionFieldStateEventId(index));
+    }
+
+    public AttributeSetInstanceExtensionFieldStateEvent.AttributeSetInstanceExtensionFieldStateMergePatched newAttributeSetInstanceExtensionFieldStateMergePatched(String index) {
+        return new SimpleAttributeSetInstanceExtensionFieldStateMergePatched(newAttributeSetInstanceExtensionFieldStateEventId(index));
+    }
+
+    public AttributeSetInstanceExtensionFieldStateEvent.AttributeSetInstanceExtensionFieldStateRemoved newAttributeSetInstanceExtensionFieldStateRemoved(String index) {
+        return new SimpleAttributeSetInstanceExtensionFieldStateRemoved(newAttributeSetInstanceExtensionFieldStateEventId(index));
+    }
+
 
     public abstract String getStateEventType();
 
@@ -210,11 +222,6 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldGroupStateEvent 
             this.attributeSetInstanceExtensionFieldEvents.put(e.getStateEventId(), e);
         }
 
-        public abstract AttributeSetInstanceExtensionFieldStateEvent.AttributeSetInstanceExtensionFieldStateCreated newAttributeSetInstanceExtensionFieldStateCreated(String index);
-//        {
-//            return new AttributeSetInstanceExtensionFieldStateEvent.AttributeSetInstanceExtensionFieldStateCreated(newAttributeSetInstanceExtensionFieldStateEventId(index));
-//        }
-
         public void save()
         {
             for (AttributeSetInstanceExtensionFieldStateEvent.AttributeSetInstanceExtensionFieldStateCreated e : this.getAttributeSetInstanceExtensionFieldEvents()) {
@@ -224,46 +231,124 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldGroupStateEvent 
     }
 
 
-/*
     public static abstract class AbstractAttributeSetInstanceExtensionFieldGroupStateMergePatched extends AbstractAttributeSetInstanceExtensionFieldGroupStateEvent implements AttributeSetInstanceExtensionFieldGroupStateMergePatched, Saveable
     {
-        Boolean isPropertyFieldTypeRemoved();
+        public AbstractAttributeSetInstanceExtensionFieldGroupStateMergePatched() {
+        }
 
-        void setPropertyFieldTypeRemoved(Boolean removed);
+        public AbstractAttributeSetInstanceExtensionFieldGroupStateMergePatched(AttributeSetInstanceExtensionFieldGroupStateEventId stateEventId) {
+            super(stateEventId);
+        }
 
-        Boolean isPropertyFieldLengthRemoved();
+        public String getStateEventType() {
+            return StateEventType.MERGE_PATCHED;
+        }
 
-        void setPropertyFieldLengthRemoved(Boolean removed);
+        private Boolean isPropertyFieldTypeRemoved;
 
-        Boolean isPropertyFieldCountRemoved();
+        public Boolean getIsPropertyFieldTypeRemoved() {
+            return this.isPropertyFieldTypeRemoved;
+        }
 
-        void setPropertyFieldCountRemoved(Boolean removed);
+        public void setIsPropertyFieldTypeRemoved(Boolean removed) {
+            this.isPropertyFieldTypeRemoved = removed;
+        }
 
-        Boolean isPropertyNameFormatRemoved();
+        private Boolean isPropertyFieldLengthRemoved;
 
-        void setPropertyNameFormatRemoved(Boolean removed);
+        public Boolean getIsPropertyFieldLengthRemoved() {
+            return this.isPropertyFieldLengthRemoved;
+        }
 
-        Boolean isPropertyDescriptionRemoved();
+        public void setIsPropertyFieldLengthRemoved(Boolean removed) {
+            this.isPropertyFieldLengthRemoved = removed;
+        }
 
-        void setPropertyDescriptionRemoved(Boolean removed);
+        private Boolean isPropertyFieldCountRemoved;
 
-        Boolean isPropertyActiveRemoved();
+        public Boolean getIsPropertyFieldCountRemoved() {
+            return this.isPropertyFieldCountRemoved;
+        }
 
-        void setPropertyActiveRemoved(Boolean removed);
+        public void setIsPropertyFieldCountRemoved(Boolean removed) {
+            this.isPropertyFieldCountRemoved = removed;
+        }
 
-        Iterable<AttributeSetInstanceExtensionFieldStateEvent> getAttributeSetInstanceExtensionFieldEvents();
+        private Boolean isPropertyNameFormatRemoved;
+
+        public Boolean getIsPropertyNameFormatRemoved() {
+            return this.isPropertyNameFormatRemoved;
+        }
+
+        public void setIsPropertyNameFormatRemoved(Boolean removed) {
+            this.isPropertyNameFormatRemoved = removed;
+        }
+
+        private Boolean isPropertyDescriptionRemoved;
+
+        public Boolean getIsPropertyDescriptionRemoved() {
+            return this.isPropertyDescriptionRemoved;
+        }
+
+        public void setIsPropertyDescriptionRemoved(Boolean removed) {
+            this.isPropertyDescriptionRemoved = removed;
+        }
+
+        private Boolean isPropertyActiveRemoved;
+
+        public Boolean getIsPropertyActiveRemoved() {
+            return this.isPropertyActiveRemoved;
+        }
+
+        public void setIsPropertyActiveRemoved(Boolean removed) {
+            this.isPropertyActiveRemoved = removed;
+        }
+
+        private Map<AttributeSetInstanceExtensionFieldStateEventId, AttributeSetInstanceExtensionFieldStateEvent> attributeSetInstanceExtensionFieldEvents = new HashMap<AttributeSetInstanceExtensionFieldStateEventId, AttributeSetInstanceExtensionFieldStateEvent>();
         
-        void addAttributeSetInstanceExtensionFieldEvent(AttributeSetInstanceExtensionFieldStateEvent e);
+        private Iterable<AttributeSetInstanceExtensionFieldStateEvent> readOnlyAttributeSetInstanceExtensionFieldEvents;
 
-        AttributeSetInstanceExtensionFieldStateEvent.AttributeSetInstanceExtensionFieldStateCreated newAttributeSetInstanceExtensionFieldStateCreated(String index);
+        public Iterable<AttributeSetInstanceExtensionFieldStateEvent> getAttributeSetInstanceExtensionFieldEvents()
+        {
+            if (!getStateEventReadOnly())
+            {
+                return this.attributeSetInstanceExtensionFieldEvents.values();
+            }
+            else
+            {
+                if (readOnlyAttributeSetInstanceExtensionFieldEvents != null) { return readOnlyAttributeSetInstanceExtensionFieldEvents; }
+                AttributeSetInstanceExtensionFieldStateEventDao eventDao = getAttributeSetInstanceExtensionFieldStateEventDao();
+                List<AttributeSetInstanceExtensionFieldStateEvent> eL = new ArrayList<AttributeSetInstanceExtensionFieldStateEvent>();
+                for (AttributeSetInstanceExtensionFieldStateEvent e : eventDao.findByAttributeSetInstanceExtensionFieldGroupStateEventId(this.getStateEventId()))
+                {
+                    e.setStateEventReadOnly(true);
+                    eL.add((AttributeSetInstanceExtensionFieldStateEvent)e);
+                }
+                return (readOnlyAttributeSetInstanceExtensionFieldEvents = eL);
+            }
+        }
 
-        AttributeSetInstanceExtensionFieldStateEvent.AttributeSetInstanceExtensionFieldStateMergePatched newAttributeSetInstanceExtensionFieldStateMergePatched(String index);
-
-        AttributeSetInstanceExtensionFieldStateEvent.AttributeSetInstanceExtensionFieldStateRemoved newAttributeSetInstanceExtensionFieldStateRemoved(String index);
+        public void setAttributeSetInstanceExtensionFieldEvents(Iterable<AttributeSetInstanceExtensionFieldStateEvent> es)
+        {
+            if (es != null)
+            {
+                for (AttributeSetInstanceExtensionFieldStateEvent e : es)
+                {
+                    addAttributeSetInstanceExtensionFieldEvent(e);
+                }
+            }
+            else { this.attributeSetInstanceExtensionFieldEvents.clear(); }
+        }
+        
+        public void addAttributeSetInstanceExtensionFieldEvent(AttributeSetInstanceExtensionFieldStateEvent e)
+        {
+            throwOnInconsistentEventIds(e);
+            this.attributeSetInstanceExtensionFieldEvents.put(e.getStateEventId(), e);
+        }
 
 
     }
-*/
+
 
     public static abstract class AbstractAttributeSetInstanceExtensionFieldGroupStateDeleted extends AbstractAttributeSetInstanceExtensionFieldGroupStateEvent implements AttributeSetInstanceExtensionFieldGroupStateDeleted, Saveable
     {
@@ -321,11 +406,6 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldGroupStateEvent 
             this.attributeSetInstanceExtensionFieldEvents.put(e.getStateEventId(), e);
         }
 
-        public abstract AttributeSetInstanceExtensionFieldStateEvent.AttributeSetInstanceExtensionFieldStateRemoved newAttributeSetInstanceExtensionFieldStateRemoved(String index);
-//        {
-//            return new AttributeSetInstanceExtensionFieldStateEvent.AttributeSetInstanceExtensionFieldStateRemoved(newAttributeSetInstanceExtensionFieldStateEventId(index));
-//        }
-
         public void save()
         {
             for (AttributeSetInstanceExtensionFieldStateEvent.AttributeSetInstanceExtensionFieldStateRemoved e : this.getAttributeSetInstanceExtensionFieldEvents()) {
@@ -333,6 +413,35 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldGroupStateEvent 
             }
         }
     }
+        public static class SimpleAttributeSetInstanceExtensionFieldStateCreated extends AbstractAttributeSetInstanceExtensionFieldStateEvent.AbstractAttributeSetInstanceExtensionFieldStateCreated
+        {
+			public SimpleAttributeSetInstanceExtensionFieldStateCreated() {
+			}
+
+			public SimpleAttributeSetInstanceExtensionFieldStateCreated(AttributeSetInstanceExtensionFieldStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleAttributeSetInstanceExtensionFieldStateMergePatched extends AbstractAttributeSetInstanceExtensionFieldStateEvent.AbstractAttributeSetInstanceExtensionFieldStateMergePatched
+        {
+			public SimpleAttributeSetInstanceExtensionFieldStateMergePatched() {
+			}
+
+			public SimpleAttributeSetInstanceExtensionFieldStateMergePatched(AttributeSetInstanceExtensionFieldStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleAttributeSetInstanceExtensionFieldStateRemoved extends AbstractAttributeSetInstanceExtensionFieldStateEvent.AbstractAttributeSetInstanceExtensionFieldStateRemoved
+        {
+			public SimpleAttributeSetInstanceExtensionFieldStateRemoved() {
+			}
+
+			public SimpleAttributeSetInstanceExtensionFieldStateRemoved(AttributeSetInstanceExtensionFieldStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
 
 }
 

@@ -382,7 +382,7 @@ public abstract class AbstractUserRoleMvoState implements UserRoleMvoState
 
         if (e.getVersion() == null)
         {
-            if (e.isPropertyVersionRemoved() != null && e.isPropertyVersionRemoved())
+            if (e.getIsPropertyVersionRemoved() != null && e.getIsPropertyVersionRemoved())
             {
                 this.setVersion(null);
             }
@@ -393,7 +393,7 @@ public abstract class AbstractUserRoleMvoState implements UserRoleMvoState
         }
         if (e.getActive() == null)
         {
-            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            if (e.getIsPropertyActiveRemoved() != null && e.getIsPropertyActiveRemoved())
             {
                 this.setActive(null);
             }
@@ -404,7 +404,7 @@ public abstract class AbstractUserRoleMvoState implements UserRoleMvoState
         }
         if (e.getUserUserName() == null)
         {
-            if (e.isPropertyUserUserNameRemoved() != null && e.isPropertyUserUserNameRemoved())
+            if (e.getIsPropertyUserUserNameRemoved() != null && e.getIsPropertyUserUserNameRemoved())
             {
                 this.setUserUserName(null);
             }
@@ -415,7 +415,7 @@ public abstract class AbstractUserRoleMvoState implements UserRoleMvoState
         }
         if (e.getUserAccessFailedCount() == null)
         {
-            if (e.isPropertyUserAccessFailedCountRemoved() != null && e.isPropertyUserAccessFailedCountRemoved())
+            if (e.getIsPropertyUserAccessFailedCountRemoved() != null && e.getIsPropertyUserAccessFailedCountRemoved())
             {
                 this.setUserAccessFailedCount(null);
             }
@@ -426,7 +426,7 @@ public abstract class AbstractUserRoleMvoState implements UserRoleMvoState
         }
         if (e.getUserEmail() == null)
         {
-            if (e.isPropertyUserEmailRemoved() != null && e.isPropertyUserEmailRemoved())
+            if (e.getIsPropertyUserEmailRemoved() != null && e.getIsPropertyUserEmailRemoved())
             {
                 this.setUserEmail(null);
             }
@@ -437,7 +437,7 @@ public abstract class AbstractUserRoleMvoState implements UserRoleMvoState
         }
         if (e.getUserEmailConfirmed() == null)
         {
-            if (e.isPropertyUserEmailConfirmedRemoved() != null && e.isPropertyUserEmailConfirmedRemoved())
+            if (e.getIsPropertyUserEmailConfirmedRemoved() != null && e.getIsPropertyUserEmailConfirmedRemoved())
             {
                 this.setUserEmailConfirmed(null);
             }
@@ -448,7 +448,7 @@ public abstract class AbstractUserRoleMvoState implements UserRoleMvoState
         }
         if (e.getUserLockoutEnabled() == null)
         {
-            if (e.isPropertyUserLockoutEnabledRemoved() != null && e.isPropertyUserLockoutEnabledRemoved())
+            if (e.getIsPropertyUserLockoutEnabledRemoved() != null && e.getIsPropertyUserLockoutEnabledRemoved())
             {
                 this.setUserLockoutEnabled(null);
             }
@@ -459,7 +459,7 @@ public abstract class AbstractUserRoleMvoState implements UserRoleMvoState
         }
         if (e.getUserLockoutEndDateUtc() == null)
         {
-            if (e.isPropertyUserLockoutEndDateUtcRemoved() != null && e.isPropertyUserLockoutEndDateUtcRemoved())
+            if (e.getIsPropertyUserLockoutEndDateUtcRemoved() != null && e.getIsPropertyUserLockoutEndDateUtcRemoved())
             {
                 this.setUserLockoutEndDateUtc(null);
             }
@@ -470,7 +470,7 @@ public abstract class AbstractUserRoleMvoState implements UserRoleMvoState
         }
         if (e.getUserPasswordHash() == null)
         {
-            if (e.isPropertyUserPasswordHashRemoved() != null && e.isPropertyUserPasswordHashRemoved())
+            if (e.getIsPropertyUserPasswordHashRemoved() != null && e.getIsPropertyUserPasswordHashRemoved())
             {
                 this.setUserPasswordHash(null);
             }
@@ -481,7 +481,7 @@ public abstract class AbstractUserRoleMvoState implements UserRoleMvoState
         }
         if (e.getUserPhoneNumber() == null)
         {
-            if (e.isPropertyUserPhoneNumberRemoved() != null && e.isPropertyUserPhoneNumberRemoved())
+            if (e.getIsPropertyUserPhoneNumberRemoved() != null && e.getIsPropertyUserPhoneNumberRemoved())
             {
                 this.setUserPhoneNumber(null);
             }
@@ -492,7 +492,7 @@ public abstract class AbstractUserRoleMvoState implements UserRoleMvoState
         }
         if (e.getUserPhoneNumberConfirmed() == null)
         {
-            if (e.isPropertyUserPhoneNumberConfirmedRemoved() != null && e.isPropertyUserPhoneNumberConfirmedRemoved())
+            if (e.getIsPropertyUserPhoneNumberConfirmedRemoved() != null && e.getIsPropertyUserPhoneNumberConfirmedRemoved())
             {
                 this.setUserPhoneNumberConfirmed(null);
             }
@@ -503,7 +503,7 @@ public abstract class AbstractUserRoleMvoState implements UserRoleMvoState
         }
         if (e.getUserTwoFactorEnabled() == null)
         {
-            if (e.isPropertyUserTwoFactorEnabledRemoved() != null && e.isPropertyUserTwoFactorEnabledRemoved())
+            if (e.getIsPropertyUserTwoFactorEnabledRemoved() != null && e.getIsPropertyUserTwoFactorEnabledRemoved())
             {
                 this.setUserTwoFactorEnabled(null);
             }
@@ -514,7 +514,7 @@ public abstract class AbstractUserRoleMvoState implements UserRoleMvoState
         }
         if (e.getUserSecurityStamp() == null)
         {
-            if (e.isPropertyUserSecurityStampRemoved() != null && e.isPropertyUserSecurityStampRemoved())
+            if (e.getIsPropertyUserSecurityStampRemoved() != null && e.getIsPropertyUserSecurityStampRemoved())
             {
                 this.setUserSecurityStamp(null);
             }
@@ -525,7 +525,7 @@ public abstract class AbstractUserRoleMvoState implements UserRoleMvoState
         }
         if (e.getUserCreatedBy() == null)
         {
-            if (e.isPropertyUserCreatedByRemoved() != null && e.isPropertyUserCreatedByRemoved())
+            if (e.getIsPropertyUserCreatedByRemoved() != null && e.getIsPropertyUserCreatedByRemoved())
             {
                 this.setUserCreatedBy(null);
             }
@@ -536,7 +536,7 @@ public abstract class AbstractUserRoleMvoState implements UserRoleMvoState
         }
         if (e.getUserCreatedAt() == null)
         {
-            if (e.isPropertyUserCreatedAtRemoved() != null && e.isPropertyUserCreatedAtRemoved())
+            if (e.getIsPropertyUserCreatedAtRemoved() != null && e.getIsPropertyUserCreatedAtRemoved())
             {
                 this.setUserCreatedAt(null);
             }
@@ -547,7 +547,7 @@ public abstract class AbstractUserRoleMvoState implements UserRoleMvoState
         }
         if (e.getUserUpdatedBy() == null)
         {
-            if (e.isPropertyUserUpdatedByRemoved() != null && e.isPropertyUserUpdatedByRemoved())
+            if (e.getIsPropertyUserUpdatedByRemoved() != null && e.getIsPropertyUserUpdatedByRemoved())
             {
                 this.setUserUpdatedBy(null);
             }
@@ -558,7 +558,7 @@ public abstract class AbstractUserRoleMvoState implements UserRoleMvoState
         }
         if (e.getUserUpdatedAt() == null)
         {
-            if (e.isPropertyUserUpdatedAtRemoved() != null && e.isPropertyUserUpdatedAtRemoved())
+            if (e.getIsPropertyUserUpdatedAtRemoved() != null && e.getIsPropertyUserUpdatedAtRemoved())
             {
                 this.setUserUpdatedAt(null);
             }
@@ -569,7 +569,7 @@ public abstract class AbstractUserRoleMvoState implements UserRoleMvoState
         }
         if (e.getUserActive() == null)
         {
-            if (e.isPropertyUserActiveRemoved() != null && e.isPropertyUserActiveRemoved())
+            if (e.getIsPropertyUserActiveRemoved() != null && e.getIsPropertyUserActiveRemoved())
             {
                 this.setUserActive(null);
             }
@@ -580,7 +580,7 @@ public abstract class AbstractUserRoleMvoState implements UserRoleMvoState
         }
         if (e.getUserDeleted() == null)
         {
-            if (e.isPropertyUserDeletedRemoved() != null && e.isPropertyUserDeletedRemoved())
+            if (e.getIsPropertyUserDeletedRemoved() != null && e.getIsPropertyUserDeletedRemoved())
             {
                 this.setUserDeleted(null);
             }

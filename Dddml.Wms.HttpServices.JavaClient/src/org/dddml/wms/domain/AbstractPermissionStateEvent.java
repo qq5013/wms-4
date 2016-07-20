@@ -121,28 +121,62 @@ public abstract class AbstractPermissionStateEvent implements PermissionStateEve
     }
 
 
-/*
     public static abstract class AbstractPermissionStateMergePatched extends AbstractPermissionStateEvent implements PermissionStateMergePatched
     {
-        Boolean isPropertyNameRemoved();
+        public AbstractPermissionStateMergePatched() {
+        }
 
-        void setPropertyNameRemoved(Boolean removed);
+        public AbstractPermissionStateMergePatched(PermissionStateEventId stateEventId) {
+            super(stateEventId);
+        }
 
-        Boolean isPropertyParentPermissionIdRemoved();
+        public String getStateEventType() {
+            return StateEventType.MERGE_PATCHED;
+        }
 
-        void setPropertyParentPermissionIdRemoved(Boolean removed);
+        private Boolean isPropertyNameRemoved;
 
-        Boolean isPropertyDescriptionRemoved();
+        public Boolean getIsPropertyNameRemoved() {
+            return this.isPropertyNameRemoved;
+        }
 
-        void setPropertyDescriptionRemoved(Boolean removed);
+        public void setIsPropertyNameRemoved(Boolean removed) {
+            this.isPropertyNameRemoved = removed;
+        }
 
-        Boolean isPropertyActiveRemoved();
+        private Boolean isPropertyParentPermissionIdRemoved;
 
-        void setPropertyActiveRemoved(Boolean removed);
+        public Boolean getIsPropertyParentPermissionIdRemoved() {
+            return this.isPropertyParentPermissionIdRemoved;
+        }
+
+        public void setIsPropertyParentPermissionIdRemoved(Boolean removed) {
+            this.isPropertyParentPermissionIdRemoved = removed;
+        }
+
+        private Boolean isPropertyDescriptionRemoved;
+
+        public Boolean getIsPropertyDescriptionRemoved() {
+            return this.isPropertyDescriptionRemoved;
+        }
+
+        public void setIsPropertyDescriptionRemoved(Boolean removed) {
+            this.isPropertyDescriptionRemoved = removed;
+        }
+
+        private Boolean isPropertyActiveRemoved;
+
+        public Boolean getIsPropertyActiveRemoved() {
+            return this.isPropertyActiveRemoved;
+        }
+
+        public void setIsPropertyActiveRemoved(Boolean removed) {
+            this.isPropertyActiveRemoved = removed;
+        }
 
 
     }
-*/
+
 
     public static abstract class AbstractPermissionStateDeleted extends AbstractPermissionStateEvent implements PermissionStateDeleted
     {
@@ -158,6 +192,5 @@ public abstract class AbstractPermissionStateEvent implements PermissionStateEve
         }
 
     }
-
 }
 

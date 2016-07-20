@@ -89,65 +89,65 @@ public interface AttributeUseMvoStateEvent extends Event
 
     interface AttributeUseMvoStateMergePatched extends AttributeUseMvoStateEvent
     {
-        Boolean isPropertySequenceNumberRemoved();
+        Boolean getIsPropertySequenceNumberRemoved();
 
-        void setPropertySequenceNumberRemoved(Boolean removed);
+        void setIsPropertySequenceNumberRemoved(Boolean removed);
 
-        Boolean isPropertyVersionRemoved();
+        Boolean getIsPropertyVersionRemoved();
 
-        void setPropertyVersionRemoved(Boolean removed);
+        void setIsPropertyVersionRemoved(Boolean removed);
 
-        Boolean isPropertyActiveRemoved();
+        Boolean getIsPropertyActiveRemoved();
 
-        void setPropertyActiveRemoved(Boolean removed);
+        void setIsPropertyActiveRemoved(Boolean removed);
 
-        Boolean isPropertyAttributeSetNameRemoved();
+        Boolean getIsPropertyAttributeSetNameRemoved();
 
-        void setPropertyAttributeSetNameRemoved(Boolean removed);
+        void setIsPropertyAttributeSetNameRemoved(Boolean removed);
 
-        Boolean isPropertyAttributeSetOrganizationIdRemoved();
+        Boolean getIsPropertyAttributeSetOrganizationIdRemoved();
 
-        void setPropertyAttributeSetOrganizationIdRemoved(Boolean removed);
+        void setIsPropertyAttributeSetOrganizationIdRemoved(Boolean removed);
 
-        Boolean isPropertyAttributeSetDescriptionRemoved();
+        Boolean getIsPropertyAttributeSetDescriptionRemoved();
 
-        void setPropertyAttributeSetDescriptionRemoved(Boolean removed);
+        void setIsPropertyAttributeSetDescriptionRemoved(Boolean removed);
 
-        Boolean isPropertyAttributeSetSerialNumberAttributeIdRemoved();
+        Boolean getIsPropertyAttributeSetSerialNumberAttributeIdRemoved();
 
-        void setPropertyAttributeSetSerialNumberAttributeIdRemoved(Boolean removed);
+        void setIsPropertyAttributeSetSerialNumberAttributeIdRemoved(Boolean removed);
 
-        Boolean isPropertyAttributeSetLotAttributeIdRemoved();
+        Boolean getIsPropertyAttributeSetLotAttributeIdRemoved();
 
-        void setPropertyAttributeSetLotAttributeIdRemoved(Boolean removed);
+        void setIsPropertyAttributeSetLotAttributeIdRemoved(Boolean removed);
 
-        Boolean isPropertyAttributeSetReferenceIdRemoved();
+        Boolean getIsPropertyAttributeSetReferenceIdRemoved();
 
-        void setPropertyAttributeSetReferenceIdRemoved(Boolean removed);
+        void setIsPropertyAttributeSetReferenceIdRemoved(Boolean removed);
 
-        Boolean isPropertyAttributeSetCreatedByRemoved();
+        Boolean getIsPropertyAttributeSetCreatedByRemoved();
 
-        void setPropertyAttributeSetCreatedByRemoved(Boolean removed);
+        void setIsPropertyAttributeSetCreatedByRemoved(Boolean removed);
 
-        Boolean isPropertyAttributeSetCreatedAtRemoved();
+        Boolean getIsPropertyAttributeSetCreatedAtRemoved();
 
-        void setPropertyAttributeSetCreatedAtRemoved(Boolean removed);
+        void setIsPropertyAttributeSetCreatedAtRemoved(Boolean removed);
 
-        Boolean isPropertyAttributeSetUpdatedByRemoved();
+        Boolean getIsPropertyAttributeSetUpdatedByRemoved();
 
-        void setPropertyAttributeSetUpdatedByRemoved(Boolean removed);
+        void setIsPropertyAttributeSetUpdatedByRemoved(Boolean removed);
 
-        Boolean isPropertyAttributeSetUpdatedAtRemoved();
+        Boolean getIsPropertyAttributeSetUpdatedAtRemoved();
 
-        void setPropertyAttributeSetUpdatedAtRemoved(Boolean removed);
+        void setIsPropertyAttributeSetUpdatedAtRemoved(Boolean removed);
 
-        Boolean isPropertyAttributeSetActiveRemoved();
+        Boolean getIsPropertyAttributeSetActiveRemoved();
 
-        void setPropertyAttributeSetActiveRemoved(Boolean removed);
+        void setIsPropertyAttributeSetActiveRemoved(Boolean removed);
 
-        Boolean isPropertyAttributeSetDeletedRemoved();
+        Boolean getIsPropertyAttributeSetDeletedRemoved();
 
-        void setPropertyAttributeSetDeletedRemoved(Boolean removed);
+        void setIsPropertyAttributeSetDeletedRemoved(Boolean removed);
 
 
     }

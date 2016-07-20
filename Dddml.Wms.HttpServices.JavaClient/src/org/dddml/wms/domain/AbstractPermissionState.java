@@ -187,7 +187,7 @@ public abstract class AbstractPermissionState implements PermissionState
 
         if (e.getName() == null)
         {
-            if (e.isPropertyNameRemoved() != null && e.isPropertyNameRemoved())
+            if (e.getIsPropertyNameRemoved() != null && e.getIsPropertyNameRemoved())
             {
                 this.setName(null);
             }
@@ -198,7 +198,7 @@ public abstract class AbstractPermissionState implements PermissionState
         }
         if (e.getParentPermissionId() == null)
         {
-            if (e.isPropertyParentPermissionIdRemoved() != null && e.isPropertyParentPermissionIdRemoved())
+            if (e.getIsPropertyParentPermissionIdRemoved() != null && e.getIsPropertyParentPermissionIdRemoved())
             {
                 this.setParentPermissionId(null);
             }
@@ -209,7 +209,7 @@ public abstract class AbstractPermissionState implements PermissionState
         }
         if (e.getDescription() == null)
         {
-            if (e.isPropertyDescriptionRemoved() != null && e.isPropertyDescriptionRemoved())
+            if (e.getIsPropertyDescriptionRemoved() != null && e.getIsPropertyDescriptionRemoved())
             {
                 this.setDescription(null);
             }
@@ -220,7 +220,7 @@ public abstract class AbstractPermissionState implements PermissionState
         }
         if (e.getActive() == null)
         {
-            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            if (e.getIsPropertyActiveRemoved() != null && e.getIsPropertyActiveRemoved())
             {
                 this.setActive(null);
             }

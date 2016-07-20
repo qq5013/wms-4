@@ -235,7 +235,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldState implements
 
         if (e.getName() == null)
         {
-            if (e.isPropertyNameRemoved() != null && e.isPropertyNameRemoved())
+            if (e.getIsPropertyNameRemoved() != null && e.getIsPropertyNameRemoved())
             {
                 this.setName(null);
             }
@@ -246,7 +246,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldState implements
         }
         if (e.getType() == null)
         {
-            if (e.isPropertyTypeRemoved() != null && e.isPropertyTypeRemoved())
+            if (e.getIsPropertyTypeRemoved() != null && e.getIsPropertyTypeRemoved())
             {
                 this.setType(null);
             }
@@ -257,7 +257,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldState implements
         }
         if (e.getLength() == null)
         {
-            if (e.isPropertyLengthRemoved() != null && e.isPropertyLengthRemoved())
+            if (e.getIsPropertyLengthRemoved() != null && e.getIsPropertyLengthRemoved())
             {
                 this.setLength(null);
             }
@@ -268,7 +268,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldState implements
         }
         if (e.getAlias() == null)
         {
-            if (e.isPropertyAliasRemoved() != null && e.isPropertyAliasRemoved())
+            if (e.getIsPropertyAliasRemoved() != null && e.getIsPropertyAliasRemoved())
             {
                 this.setAlias(null);
             }
@@ -279,7 +279,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldState implements
         }
         if (e.getDescription() == null)
         {
-            if (e.isPropertyDescriptionRemoved() != null && e.isPropertyDescriptionRemoved())
+            if (e.getIsPropertyDescriptionRemoved() != null && e.getIsPropertyDescriptionRemoved())
             {
                 this.setDescription(null);
             }
@@ -290,7 +290,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldState implements
         }
         if (e.getActive() == null)
         {
-            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            if (e.getIsPropertyActiveRemoved() != null && e.getIsPropertyActiveRemoved())
             {
                 this.setActive(null);
             }

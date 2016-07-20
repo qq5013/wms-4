@@ -83,9 +83,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldDto extends Abs
         return this.isPropertyNameRemoved;
     }
 
-    public void setIsPropertyNameRemoved(Boolean isPropertyNameRemoved)
+    public void setIsPropertyNameRemoved(Boolean removed)
     {
-        this.isPropertyNameRemoved = isPropertyNameRemoved;
+        this.isPropertyNameRemoved = removed;
     }
 
     private Boolean isPropertyTypeRemoved;
@@ -95,9 +95,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldDto extends Abs
         return this.isPropertyTypeRemoved;
     }
 
-    public void setIsPropertyTypeRemoved(Boolean isPropertyTypeRemoved)
+    public void setIsPropertyTypeRemoved(Boolean removed)
     {
-        this.isPropertyTypeRemoved = isPropertyTypeRemoved;
+        this.isPropertyTypeRemoved = removed;
     }
 
     private Boolean isPropertyLengthRemoved;
@@ -107,9 +107,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldDto extends Abs
         return this.isPropertyLengthRemoved;
     }
 
-    public void setIsPropertyLengthRemoved(Boolean isPropertyLengthRemoved)
+    public void setIsPropertyLengthRemoved(Boolean removed)
     {
-        this.isPropertyLengthRemoved = isPropertyLengthRemoved;
+        this.isPropertyLengthRemoved = removed;
     }
 
     private Boolean isPropertyAliasRemoved;
@@ -119,9 +119,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldDto extends Abs
         return this.isPropertyAliasRemoved;
     }
 
-    public void setIsPropertyAliasRemoved(Boolean isPropertyAliasRemoved)
+    public void setIsPropertyAliasRemoved(Boolean removed)
     {
-        this.isPropertyAliasRemoved = isPropertyAliasRemoved;
+        this.isPropertyAliasRemoved = removed;
     }
 
     private Boolean isPropertyDescriptionRemoved;
@@ -131,9 +131,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldDto extends Abs
         return this.isPropertyDescriptionRemoved;
     }
 
-    public void setIsPropertyDescriptionRemoved(Boolean isPropertyDescriptionRemoved)
+    public void setIsPropertyDescriptionRemoved(Boolean removed)
     {
-        this.isPropertyDescriptionRemoved = isPropertyDescriptionRemoved;
+        this.isPropertyDescriptionRemoved = removed;
     }
 
     private Boolean isPropertyActiveRemoved;
@@ -143,9 +143,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldDto extends Abs
         return this.isPropertyActiveRemoved;
     }
 
-    public void setIsPropertyActiveRemoved(Boolean isPropertyActiveRemoved)
+    public void setIsPropertyActiveRemoved(Boolean removed)
     {
-        this.isPropertyActiveRemoved = isPropertyActiveRemoved;
+        this.isPropertyActiveRemoved = removed;
     }
 
 

@@ -392,7 +392,7 @@ public abstract class AbstractInOutLineState implements InOutLineState
 
         if (e.getLineNumber() == null)
         {
-            if (e.isPropertyLineNumberRemoved() != null && e.isPropertyLineNumberRemoved())
+            if (e.getIsPropertyLineNumberRemoved() != null && e.getIsPropertyLineNumberRemoved())
             {
                 this.setLineNumber(null);
             }
@@ -403,7 +403,7 @@ public abstract class AbstractInOutLineState implements InOutLineState
         }
         if (e.getDescription() == null)
         {
-            if (e.isPropertyDescriptionRemoved() != null && e.isPropertyDescriptionRemoved())
+            if (e.getIsPropertyDescriptionRemoved() != null && e.getIsPropertyDescriptionRemoved())
             {
                 this.setDescription(null);
             }
@@ -414,7 +414,7 @@ public abstract class AbstractInOutLineState implements InOutLineState
         }
         if (e.getLocatorId() == null)
         {
-            if (e.isPropertyLocatorIdRemoved() != null && e.isPropertyLocatorIdRemoved())
+            if (e.getIsPropertyLocatorIdRemoved() != null && e.getIsPropertyLocatorIdRemoved())
             {
                 this.setLocatorId(null);
             }
@@ -425,7 +425,7 @@ public abstract class AbstractInOutLineState implements InOutLineState
         }
         if (e.getProduct() == null)
         {
-            if (e.isPropertyProductRemoved() != null && e.isPropertyProductRemoved())
+            if (e.getIsPropertyProductRemoved() != null && e.getIsPropertyProductRemoved())
             {
                 this.setProduct(null);
             }
@@ -436,7 +436,7 @@ public abstract class AbstractInOutLineState implements InOutLineState
         }
         if (e.getUomId() == null)
         {
-            if (e.isPropertyUomIdRemoved() != null && e.isPropertyUomIdRemoved())
+            if (e.getIsPropertyUomIdRemoved() != null && e.getIsPropertyUomIdRemoved())
             {
                 this.setUomId(null);
             }
@@ -447,7 +447,7 @@ public abstract class AbstractInOutLineState implements InOutLineState
         }
         if (e.getMovementQuantity() == null)
         {
-            if (e.isPropertyMovementQuantityRemoved() != null && e.isPropertyMovementQuantityRemoved())
+            if (e.getIsPropertyMovementQuantityRemoved() != null && e.getIsPropertyMovementQuantityRemoved())
             {
                 this.setMovementQuantity(null);
             }
@@ -458,7 +458,7 @@ public abstract class AbstractInOutLineState implements InOutLineState
         }
         if (e.getConfirmedQuantity() == null)
         {
-            if (e.isPropertyConfirmedQuantityRemoved() != null && e.isPropertyConfirmedQuantityRemoved())
+            if (e.getIsPropertyConfirmedQuantityRemoved() != null && e.getIsPropertyConfirmedQuantityRemoved())
             {
                 this.setConfirmedQuantity(null);
             }
@@ -469,7 +469,7 @@ public abstract class AbstractInOutLineState implements InOutLineState
         }
         if (e.getScrappedQuantity() == null)
         {
-            if (e.isPropertyScrappedQuantityRemoved() != null && e.isPropertyScrappedQuantityRemoved())
+            if (e.getIsPropertyScrappedQuantityRemoved() != null && e.getIsPropertyScrappedQuantityRemoved())
             {
                 this.setScrappedQuantity(null);
             }
@@ -480,7 +480,7 @@ public abstract class AbstractInOutLineState implements InOutLineState
         }
         if (e.getTargetQuantity() == null)
         {
-            if (e.isPropertyTargetQuantityRemoved() != null && e.isPropertyTargetQuantityRemoved())
+            if (e.getIsPropertyTargetQuantityRemoved() != null && e.getIsPropertyTargetQuantityRemoved())
             {
                 this.setTargetQuantity(null);
             }
@@ -491,7 +491,7 @@ public abstract class AbstractInOutLineState implements InOutLineState
         }
         if (e.getPickedQuantity() == null)
         {
-            if (e.isPropertyPickedQuantityRemoved() != null && e.isPropertyPickedQuantityRemoved())
+            if (e.getIsPropertyPickedQuantityRemoved() != null && e.getIsPropertyPickedQuantityRemoved())
             {
                 this.setPickedQuantity(null);
             }
@@ -502,7 +502,7 @@ public abstract class AbstractInOutLineState implements InOutLineState
         }
         if (e.getIsInvoiced() == null)
         {
-            if (e.isPropertyIsInvoicedRemoved() != null && e.isPropertyIsInvoicedRemoved())
+            if (e.getIsPropertyIsInvoicedRemoved() != null && e.getIsPropertyIsInvoicedRemoved())
             {
                 this.setIsInvoiced(null);
             }
@@ -513,7 +513,7 @@ public abstract class AbstractInOutLineState implements InOutLineState
         }
         if (e.getAttributeSetInstanceId() == null)
         {
-            if (e.isPropertyAttributeSetInstanceIdRemoved() != null && e.isPropertyAttributeSetInstanceIdRemoved())
+            if (e.getIsPropertyAttributeSetInstanceIdRemoved() != null && e.getIsPropertyAttributeSetInstanceIdRemoved())
             {
                 this.setAttributeSetInstanceId(null);
             }
@@ -524,7 +524,7 @@ public abstract class AbstractInOutLineState implements InOutLineState
         }
         if (e.getIsDescription() == null)
         {
-            if (e.isPropertyIsDescriptionRemoved() != null && e.isPropertyIsDescriptionRemoved())
+            if (e.getIsPropertyIsDescriptionRemoved() != null && e.getIsPropertyIsDescriptionRemoved())
             {
                 this.setIsDescription(null);
             }
@@ -535,7 +535,7 @@ public abstract class AbstractInOutLineState implements InOutLineState
         }
         if (e.getProcessed() == null)
         {
-            if (e.isPropertyProcessedRemoved() != null && e.isPropertyProcessedRemoved())
+            if (e.getIsPropertyProcessedRemoved() != null && e.getIsPropertyProcessedRemoved())
             {
                 this.setProcessed(null);
             }
@@ -546,7 +546,7 @@ public abstract class AbstractInOutLineState implements InOutLineState
         }
         if (e.getQuantityEntered() == null)
         {
-            if (e.isPropertyQuantityEnteredRemoved() != null && e.isPropertyQuantityEnteredRemoved())
+            if (e.getIsPropertyQuantityEnteredRemoved() != null && e.getIsPropertyQuantityEnteredRemoved())
             {
                 this.setQuantityEntered(null);
             }
@@ -557,7 +557,7 @@ public abstract class AbstractInOutLineState implements InOutLineState
         }
         if (e.getRmaLineNumber() == null)
         {
-            if (e.isPropertyRmaLineNumberRemoved() != null && e.isPropertyRmaLineNumberRemoved())
+            if (e.getIsPropertyRmaLineNumberRemoved() != null && e.getIsPropertyRmaLineNumberRemoved())
             {
                 this.setRmaLineNumber(null);
             }
@@ -568,7 +568,7 @@ public abstract class AbstractInOutLineState implements InOutLineState
         }
         if (e.getReversalLineNumber() == null)
         {
-            if (e.isPropertyReversalLineNumberRemoved() != null && e.isPropertyReversalLineNumberRemoved())
+            if (e.getIsPropertyReversalLineNumberRemoved() != null && e.getIsPropertyReversalLineNumberRemoved())
             {
                 this.setReversalLineNumber(null);
             }
@@ -579,7 +579,7 @@ public abstract class AbstractInOutLineState implements InOutLineState
         }
         if (e.getActive() == null)
         {
-            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            if (e.getIsPropertyActiveRemoved() != null && e.getIsPropertyActiveRemoved())
             {
                 this.setActive(null);
             }

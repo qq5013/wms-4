@@ -244,7 +244,7 @@ public abstract class AbstractAttributeSetState implements AttributeSetState
 
         if (e.getName() == null)
         {
-            if (e.isPropertyNameRemoved() != null && e.isPropertyNameRemoved())
+            if (e.getIsPropertyNameRemoved() != null && e.getIsPropertyNameRemoved())
             {
                 this.setName(null);
             }
@@ -255,7 +255,7 @@ public abstract class AbstractAttributeSetState implements AttributeSetState
         }
         if (e.getOrganizationId() == null)
         {
-            if (e.isPropertyOrganizationIdRemoved() != null && e.isPropertyOrganizationIdRemoved())
+            if (e.getIsPropertyOrganizationIdRemoved() != null && e.getIsPropertyOrganizationIdRemoved())
             {
                 this.setOrganizationId(null);
             }
@@ -266,7 +266,7 @@ public abstract class AbstractAttributeSetState implements AttributeSetState
         }
         if (e.getDescription() == null)
         {
-            if (e.isPropertyDescriptionRemoved() != null && e.isPropertyDescriptionRemoved())
+            if (e.getIsPropertyDescriptionRemoved() != null && e.getIsPropertyDescriptionRemoved())
             {
                 this.setDescription(null);
             }
@@ -277,7 +277,7 @@ public abstract class AbstractAttributeSetState implements AttributeSetState
         }
         if (e.getSerialNumberAttributeId() == null)
         {
-            if (e.isPropertySerialNumberAttributeIdRemoved() != null && e.isPropertySerialNumberAttributeIdRemoved())
+            if (e.getIsPropertySerialNumberAttributeIdRemoved() != null && e.getIsPropertySerialNumberAttributeIdRemoved())
             {
                 this.setSerialNumberAttributeId(null);
             }
@@ -288,7 +288,7 @@ public abstract class AbstractAttributeSetState implements AttributeSetState
         }
         if (e.getLotAttributeId() == null)
         {
-            if (e.isPropertyLotAttributeIdRemoved() != null && e.isPropertyLotAttributeIdRemoved())
+            if (e.getIsPropertyLotAttributeIdRemoved() != null && e.getIsPropertyLotAttributeIdRemoved())
             {
                 this.setLotAttributeId(null);
             }
@@ -299,7 +299,7 @@ public abstract class AbstractAttributeSetState implements AttributeSetState
         }
         if (e.getReferenceId() == null)
         {
-            if (e.isPropertyReferenceIdRemoved() != null && e.isPropertyReferenceIdRemoved())
+            if (e.getIsPropertyReferenceIdRemoved() != null && e.getIsPropertyReferenceIdRemoved())
             {
                 this.setReferenceId(null);
             }
@@ -310,7 +310,7 @@ public abstract class AbstractAttributeSetState implements AttributeSetState
         }
         if (e.getActive() == null)
         {
-            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            if (e.getIsPropertyActiveRemoved() != null && e.getIsPropertyActiveRemoved())
             {
                 this.setActive(null);
             }

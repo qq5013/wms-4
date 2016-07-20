@@ -109,24 +109,52 @@ public abstract class AbstractAudienceStateEvent implements AudienceStateEvent
     }
 
 
-/*
     public static abstract class AbstractAudienceStateMergePatched extends AbstractAudienceStateEvent implements AudienceStateMergePatched
     {
-        Boolean isPropertyNameRemoved();
+        public AbstractAudienceStateMergePatched() {
+        }
 
-        void setPropertyNameRemoved(Boolean removed);
+        public AbstractAudienceStateMergePatched(AudienceStateEventId stateEventId) {
+            super(stateEventId);
+        }
 
-        Boolean isPropertyBase64SecretRemoved();
+        public String getStateEventType() {
+            return StateEventType.MERGE_PATCHED;
+        }
 
-        void setPropertyBase64SecretRemoved(Boolean removed);
+        private Boolean isPropertyNameRemoved;
 
-        Boolean isPropertyActiveRemoved();
+        public Boolean getIsPropertyNameRemoved() {
+            return this.isPropertyNameRemoved;
+        }
 
-        void setPropertyActiveRemoved(Boolean removed);
+        public void setIsPropertyNameRemoved(Boolean removed) {
+            this.isPropertyNameRemoved = removed;
+        }
+
+        private Boolean isPropertyBase64SecretRemoved;
+
+        public Boolean getIsPropertyBase64SecretRemoved() {
+            return this.isPropertyBase64SecretRemoved;
+        }
+
+        public void setIsPropertyBase64SecretRemoved(Boolean removed) {
+            this.isPropertyBase64SecretRemoved = removed;
+        }
+
+        private Boolean isPropertyActiveRemoved;
+
+        public Boolean getIsPropertyActiveRemoved() {
+            return this.isPropertyActiveRemoved;
+        }
+
+        public void setIsPropertyActiveRemoved(Boolean removed) {
+            this.isPropertyActiveRemoved = removed;
+        }
 
 
     }
-*/
+
 
     public static abstract class AbstractAudienceStateDeleted extends AbstractAudienceStateEvent implements AudienceStateDeleted
     {
@@ -142,6 +170,5 @@ public abstract class AbstractAudienceStateEvent implements AudienceStateEvent
         }
 
     }
-
 }
 

@@ -121,20 +121,42 @@ public abstract class AbstractAttributeUseStateEvent implements AttributeUseStat
     }
 
 
-/*
     public static abstract class AbstractAttributeUseStateMergePatched extends AbstractAttributeUseStateEvent implements AttributeUseStateMergePatched
     {
-        Boolean isPropertySequenceNumberRemoved();
+        public AbstractAttributeUseStateMergePatched() {
+        }
 
-        void setPropertySequenceNumberRemoved(Boolean removed);
+        public AbstractAttributeUseStateMergePatched(AttributeUseStateEventId stateEventId) {
+            super(stateEventId);
+        }
 
-        Boolean isPropertyActiveRemoved();
+        public String getStateEventType() {
+            return StateEventType.MERGE_PATCHED;
+        }
 
-        void setPropertyActiveRemoved(Boolean removed);
+        private Boolean isPropertySequenceNumberRemoved;
+
+        public Boolean getIsPropertySequenceNumberRemoved() {
+            return this.isPropertySequenceNumberRemoved;
+        }
+
+        public void setIsPropertySequenceNumberRemoved(Boolean removed) {
+            this.isPropertySequenceNumberRemoved = removed;
+        }
+
+        private Boolean isPropertyActiveRemoved;
+
+        public Boolean getIsPropertyActiveRemoved() {
+            return this.isPropertyActiveRemoved;
+        }
+
+        public void setIsPropertyActiveRemoved(Boolean removed) {
+            this.isPropertyActiveRemoved = removed;
+        }
 
 
     }
-*/
+
 
     public static abstract class AbstractAttributeUseStateRemoved extends AbstractAttributeUseStateEvent implements AttributeUseStateRemoved
     {
@@ -150,6 +172,5 @@ public abstract class AbstractAttributeUseStateEvent implements AttributeUseStat
         }
 
     }
-
 }
 

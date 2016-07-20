@@ -169,36 +169,82 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldStateEvent imple
     }
 
 
-/*
     public static abstract class AbstractAttributeSetInstanceExtensionFieldStateMergePatched extends AbstractAttributeSetInstanceExtensionFieldStateEvent implements AttributeSetInstanceExtensionFieldStateMergePatched
     {
-        Boolean isPropertyNameRemoved();
+        public AbstractAttributeSetInstanceExtensionFieldStateMergePatched() {
+        }
 
-        void setPropertyNameRemoved(Boolean removed);
+        public AbstractAttributeSetInstanceExtensionFieldStateMergePatched(AttributeSetInstanceExtensionFieldStateEventId stateEventId) {
+            super(stateEventId);
+        }
 
-        Boolean isPropertyTypeRemoved();
+        public String getStateEventType() {
+            return StateEventType.MERGE_PATCHED;
+        }
 
-        void setPropertyTypeRemoved(Boolean removed);
+        private Boolean isPropertyNameRemoved;
 
-        Boolean isPropertyLengthRemoved();
+        public Boolean getIsPropertyNameRemoved() {
+            return this.isPropertyNameRemoved;
+        }
 
-        void setPropertyLengthRemoved(Boolean removed);
+        public void setIsPropertyNameRemoved(Boolean removed) {
+            this.isPropertyNameRemoved = removed;
+        }
 
-        Boolean isPropertyAliasRemoved();
+        private Boolean isPropertyTypeRemoved;
 
-        void setPropertyAliasRemoved(Boolean removed);
+        public Boolean getIsPropertyTypeRemoved() {
+            return this.isPropertyTypeRemoved;
+        }
 
-        Boolean isPropertyDescriptionRemoved();
+        public void setIsPropertyTypeRemoved(Boolean removed) {
+            this.isPropertyTypeRemoved = removed;
+        }
 
-        void setPropertyDescriptionRemoved(Boolean removed);
+        private Boolean isPropertyLengthRemoved;
 
-        Boolean isPropertyActiveRemoved();
+        public Boolean getIsPropertyLengthRemoved() {
+            return this.isPropertyLengthRemoved;
+        }
 
-        void setPropertyActiveRemoved(Boolean removed);
+        public void setIsPropertyLengthRemoved(Boolean removed) {
+            this.isPropertyLengthRemoved = removed;
+        }
+
+        private Boolean isPropertyAliasRemoved;
+
+        public Boolean getIsPropertyAliasRemoved() {
+            return this.isPropertyAliasRemoved;
+        }
+
+        public void setIsPropertyAliasRemoved(Boolean removed) {
+            this.isPropertyAliasRemoved = removed;
+        }
+
+        private Boolean isPropertyDescriptionRemoved;
+
+        public Boolean getIsPropertyDescriptionRemoved() {
+            return this.isPropertyDescriptionRemoved;
+        }
+
+        public void setIsPropertyDescriptionRemoved(Boolean removed) {
+            this.isPropertyDescriptionRemoved = removed;
+        }
+
+        private Boolean isPropertyActiveRemoved;
+
+        public Boolean getIsPropertyActiveRemoved() {
+            return this.isPropertyActiveRemoved;
+        }
+
+        public void setIsPropertyActiveRemoved(Boolean removed) {
+            this.isPropertyActiveRemoved = removed;
+        }
 
 
     }
-*/
+
 
     public static abstract class AbstractAttributeSetInstanceExtensionFieldStateRemoved extends AbstractAttributeSetInstanceExtensionFieldStateEvent implements AttributeSetInstanceExtensionFieldStateRemoved
     {
@@ -214,6 +260,5 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldStateEvent imple
         }
 
     }
-
 }
 

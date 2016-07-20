@@ -85,16 +85,32 @@ public abstract class AbstractRolePermissionStateEvent implements RolePermission
     }
 
 
-/*
     public static abstract class AbstractRolePermissionStateMergePatched extends AbstractRolePermissionStateEvent implements RolePermissionStateMergePatched
     {
-        Boolean isPropertyActiveRemoved();
+        public AbstractRolePermissionStateMergePatched() {
+        }
 
-        void setPropertyActiveRemoved(Boolean removed);
+        public AbstractRolePermissionStateMergePatched(RolePermissionStateEventId stateEventId) {
+            super(stateEventId);
+        }
+
+        public String getStateEventType() {
+            return StateEventType.MERGE_PATCHED;
+        }
+
+        private Boolean isPropertyActiveRemoved;
+
+        public Boolean getIsPropertyActiveRemoved() {
+            return this.isPropertyActiveRemoved;
+        }
+
+        public void setIsPropertyActiveRemoved(Boolean removed) {
+            this.isPropertyActiveRemoved = removed;
+        }
 
 
     }
-*/
+
 
     public static abstract class AbstractRolePermissionStateDeleted extends AbstractRolePermissionStateEvent implements RolePermissionStateDeleted
     {
@@ -110,6 +126,5 @@ public abstract class AbstractRolePermissionStateEvent implements RolePermission
         }
 
     }
-
 }
 

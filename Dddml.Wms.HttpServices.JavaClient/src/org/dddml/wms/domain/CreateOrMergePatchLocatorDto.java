@@ -119,9 +119,9 @@ public class CreateOrMergePatchLocatorDto extends AbstractLocatorCommandDto
         return this.isPropertyWarehouseIdRemoved;
     }
 
-    public void setIsPropertyWarehouseIdRemoved(Boolean isPropertyWarehouseIdRemoved)
+    public void setIsPropertyWarehouseIdRemoved(Boolean removed)
     {
-        this.isPropertyWarehouseIdRemoved = isPropertyWarehouseIdRemoved;
+        this.isPropertyWarehouseIdRemoved = removed;
     }
 
     private Boolean isPropertyParentLocatorIdRemoved;
@@ -131,9 +131,9 @@ public class CreateOrMergePatchLocatorDto extends AbstractLocatorCommandDto
         return this.isPropertyParentLocatorIdRemoved;
     }
 
-    public void setIsPropertyParentLocatorIdRemoved(Boolean isPropertyParentLocatorIdRemoved)
+    public void setIsPropertyParentLocatorIdRemoved(Boolean removed)
     {
-        this.isPropertyParentLocatorIdRemoved = isPropertyParentLocatorIdRemoved;
+        this.isPropertyParentLocatorIdRemoved = removed;
     }
 
     private Boolean isPropertyLocatorTypeRemoved;
@@ -143,9 +143,9 @@ public class CreateOrMergePatchLocatorDto extends AbstractLocatorCommandDto
         return this.isPropertyLocatorTypeRemoved;
     }
 
-    public void setIsPropertyLocatorTypeRemoved(Boolean isPropertyLocatorTypeRemoved)
+    public void setIsPropertyLocatorTypeRemoved(Boolean removed)
     {
-        this.isPropertyLocatorTypeRemoved = isPropertyLocatorTypeRemoved;
+        this.isPropertyLocatorTypeRemoved = removed;
     }
 
     private Boolean isPropertyPriorityNumberRemoved;
@@ -155,9 +155,9 @@ public class CreateOrMergePatchLocatorDto extends AbstractLocatorCommandDto
         return this.isPropertyPriorityNumberRemoved;
     }
 
-    public void setIsPropertyPriorityNumberRemoved(Boolean isPropertyPriorityNumberRemoved)
+    public void setIsPropertyPriorityNumberRemoved(Boolean removed)
     {
-        this.isPropertyPriorityNumberRemoved = isPropertyPriorityNumberRemoved;
+        this.isPropertyPriorityNumberRemoved = removed;
     }
 
     private Boolean isPropertyIsDefaultRemoved;
@@ -167,9 +167,9 @@ public class CreateOrMergePatchLocatorDto extends AbstractLocatorCommandDto
         return this.isPropertyIsDefaultRemoved;
     }
 
-    public void setIsPropertyIsDefaultRemoved(Boolean isPropertyIsDefaultRemoved)
+    public void setIsPropertyIsDefaultRemoved(Boolean removed)
     {
-        this.isPropertyIsDefaultRemoved = isPropertyIsDefaultRemoved;
+        this.isPropertyIsDefaultRemoved = removed;
     }
 
     private Boolean isPropertyXRemoved;
@@ -179,9 +179,9 @@ public class CreateOrMergePatchLocatorDto extends AbstractLocatorCommandDto
         return this.isPropertyXRemoved;
     }
 
-    public void setIsPropertyXRemoved(Boolean isPropertyXRemoved)
+    public void setIsPropertyXRemoved(Boolean removed)
     {
-        this.isPropertyXRemoved = isPropertyXRemoved;
+        this.isPropertyXRemoved = removed;
     }
 
     private Boolean isPropertyYRemoved;
@@ -191,9 +191,9 @@ public class CreateOrMergePatchLocatorDto extends AbstractLocatorCommandDto
         return this.isPropertyYRemoved;
     }
 
-    public void setIsPropertyYRemoved(Boolean isPropertyYRemoved)
+    public void setIsPropertyYRemoved(Boolean removed)
     {
-        this.isPropertyYRemoved = isPropertyYRemoved;
+        this.isPropertyYRemoved = removed;
     }
 
     private Boolean isPropertyZRemoved;
@@ -203,9 +203,9 @@ public class CreateOrMergePatchLocatorDto extends AbstractLocatorCommandDto
         return this.isPropertyZRemoved;
     }
 
-    public void setIsPropertyZRemoved(Boolean isPropertyZRemoved)
+    public void setIsPropertyZRemoved(Boolean removed)
     {
-        this.isPropertyZRemoved = isPropertyZRemoved;
+        this.isPropertyZRemoved = removed;
     }
 
     private Boolean isPropertyActiveRemoved;
@@ -215,9 +215,9 @@ public class CreateOrMergePatchLocatorDto extends AbstractLocatorCommandDto
         return this.isPropertyActiveRemoved;
     }
 
-    public void setIsPropertyActiveRemoved(Boolean isPropertyActiveRemoved)
+    public void setIsPropertyActiveRemoved(Boolean removed)
     {
-        this.isPropertyActiveRemoved = isPropertyActiveRemoved;
+        this.isPropertyActiveRemoved = removed;
     }
 
 

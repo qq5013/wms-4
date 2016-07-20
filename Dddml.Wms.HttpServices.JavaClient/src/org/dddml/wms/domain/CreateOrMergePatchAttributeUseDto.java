@@ -35,9 +35,9 @@ public class CreateOrMergePatchAttributeUseDto extends AbstractAttributeUseComma
         return this.isPropertySequenceNumberRemoved;
     }
 
-    public void setIsPropertySequenceNumberRemoved(Boolean isPropertySequenceNumberRemoved)
+    public void setIsPropertySequenceNumberRemoved(Boolean removed)
     {
-        this.isPropertySequenceNumberRemoved = isPropertySequenceNumberRemoved;
+        this.isPropertySequenceNumberRemoved = removed;
     }
 
     private Boolean isPropertyActiveRemoved;
@@ -47,9 +47,9 @@ public class CreateOrMergePatchAttributeUseDto extends AbstractAttributeUseComma
         return this.isPropertyActiveRemoved;
     }
 
-    public void setIsPropertyActiveRemoved(Boolean isPropertyActiveRemoved)
+    public void setIsPropertyActiveRemoved(Boolean removed)
     {
-        this.isPropertyActiveRemoved = isPropertyActiveRemoved;
+        this.isPropertyActiveRemoved = removed;
     }
 
 

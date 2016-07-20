@@ -33,9 +33,9 @@ public interface OrganizationStructureStateEvent extends Event
 
     interface OrganizationStructureStateMergePatched extends OrganizationStructureStateEvent
     {
-        Boolean isPropertyActiveRemoved();
+        Boolean getIsPropertyActiveRemoved();
 
-        void setPropertyActiveRemoved(Boolean removed);
+        void setIsPropertyActiveRemoved(Boolean removed);
 
 
     }

@@ -53,21 +53,21 @@ public interface AttributeValueStateEvent extends Event
 
     interface AttributeValueStateMergePatched extends AttributeValueStateEvent
     {
-        Boolean isPropertyNameRemoved();
+        Boolean getIsPropertyNameRemoved();
 
-        void setPropertyNameRemoved(Boolean removed);
+        void setIsPropertyNameRemoved(Boolean removed);
 
-        Boolean isPropertyDescriptionRemoved();
+        Boolean getIsPropertyDescriptionRemoved();
 
-        void setPropertyDescriptionRemoved(Boolean removed);
+        void setIsPropertyDescriptionRemoved(Boolean removed);
 
-        Boolean isPropertyReferenceIdRemoved();
+        Boolean getIsPropertyReferenceIdRemoved();
 
-        void setPropertyReferenceIdRemoved(Boolean removed);
+        void setIsPropertyReferenceIdRemoved(Boolean removed);
 
-        Boolean isPropertyActiveRemoved();
+        Boolean getIsPropertyActiveRemoved();
 
-        void setPropertyActiveRemoved(Boolean removed);
+        void setIsPropertyActiveRemoved(Boolean removed);
 
 
     }

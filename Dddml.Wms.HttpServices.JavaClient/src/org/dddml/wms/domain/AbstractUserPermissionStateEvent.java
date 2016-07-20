@@ -109,16 +109,32 @@ public abstract class AbstractUserPermissionStateEvent implements UserPermission
     }
 
 
-/*
     public static abstract class AbstractUserPermissionStateMergePatched extends AbstractUserPermissionStateEvent implements UserPermissionStateMergePatched
     {
-        Boolean isPropertyActiveRemoved();
+        public AbstractUserPermissionStateMergePatched() {
+        }
 
-        void setPropertyActiveRemoved(Boolean removed);
+        public AbstractUserPermissionStateMergePatched(UserPermissionStateEventId stateEventId) {
+            super(stateEventId);
+        }
+
+        public String getStateEventType() {
+            return StateEventType.MERGE_PATCHED;
+        }
+
+        private Boolean isPropertyActiveRemoved;
+
+        public Boolean getIsPropertyActiveRemoved() {
+            return this.isPropertyActiveRemoved;
+        }
+
+        public void setIsPropertyActiveRemoved(Boolean removed) {
+            this.isPropertyActiveRemoved = removed;
+        }
 
 
     }
-*/
+
 
     public static abstract class AbstractUserPermissionStateRemoved extends AbstractUserPermissionStateEvent implements UserPermissionStateRemoved
     {
@@ -134,6 +150,5 @@ public abstract class AbstractUserPermissionStateEvent implements UserPermission
         }
 
     }
-
 }
 

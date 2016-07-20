@@ -41,17 +41,17 @@ public interface AudienceStateEvent extends Event
 
     interface AudienceStateMergePatched extends AudienceStateEvent
     {
-        Boolean isPropertyNameRemoved();
+        Boolean getIsPropertyNameRemoved();
 
-        void setPropertyNameRemoved(Boolean removed);
+        void setIsPropertyNameRemoved(Boolean removed);
 
-        Boolean isPropertyBase64SecretRemoved();
+        Boolean getIsPropertyBase64SecretRemoved();
 
-        void setPropertyBase64SecretRemoved(Boolean removed);
+        void setIsPropertyBase64SecretRemoved(Boolean removed);
 
-        Boolean isPropertyActiveRemoved();
+        Boolean getIsPropertyActiveRemoved();
 
-        void setPropertyActiveRemoved(Boolean removed);
+        void setIsPropertyActiveRemoved(Boolean removed);
 
 
     }

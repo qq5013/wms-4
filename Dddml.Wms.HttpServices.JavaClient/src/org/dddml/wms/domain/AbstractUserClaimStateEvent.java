@@ -133,24 +133,52 @@ public abstract class AbstractUserClaimStateEvent implements UserClaimStateEvent
     }
 
 
-/*
     public static abstract class AbstractUserClaimStateMergePatched extends AbstractUserClaimStateEvent implements UserClaimStateMergePatched
     {
-        Boolean isPropertyClaimTypeRemoved();
+        public AbstractUserClaimStateMergePatched() {
+        }
 
-        void setPropertyClaimTypeRemoved(Boolean removed);
+        public AbstractUserClaimStateMergePatched(UserClaimStateEventId stateEventId) {
+            super(stateEventId);
+        }
 
-        Boolean isPropertyClaimValueRemoved();
+        public String getStateEventType() {
+            return StateEventType.MERGE_PATCHED;
+        }
 
-        void setPropertyClaimValueRemoved(Boolean removed);
+        private Boolean isPropertyClaimTypeRemoved;
 
-        Boolean isPropertyActiveRemoved();
+        public Boolean getIsPropertyClaimTypeRemoved() {
+            return this.isPropertyClaimTypeRemoved;
+        }
 
-        void setPropertyActiveRemoved(Boolean removed);
+        public void setIsPropertyClaimTypeRemoved(Boolean removed) {
+            this.isPropertyClaimTypeRemoved = removed;
+        }
+
+        private Boolean isPropertyClaimValueRemoved;
+
+        public Boolean getIsPropertyClaimValueRemoved() {
+            return this.isPropertyClaimValueRemoved;
+        }
+
+        public void setIsPropertyClaimValueRemoved(Boolean removed) {
+            this.isPropertyClaimValueRemoved = removed;
+        }
+
+        private Boolean isPropertyActiveRemoved;
+
+        public Boolean getIsPropertyActiveRemoved() {
+            return this.isPropertyActiveRemoved;
+        }
+
+        public void setIsPropertyActiveRemoved(Boolean removed) {
+            this.isPropertyActiveRemoved = removed;
+        }
 
 
     }
-*/
+
 
     public static abstract class AbstractUserClaimStateRemoved extends AbstractUserClaimStateEvent implements UserClaimStateRemoved
     {
@@ -166,6 +194,5 @@ public abstract class AbstractUserClaimStateEvent implements UserClaimStateEvent
         }
 
     }
-
 }
 

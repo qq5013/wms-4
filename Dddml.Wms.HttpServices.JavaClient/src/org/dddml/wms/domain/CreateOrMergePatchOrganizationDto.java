@@ -71,9 +71,9 @@ public class CreateOrMergePatchOrganizationDto extends AbstractOrganizationComma
         return this.isPropertyNameRemoved;
     }
 
-    public void setIsPropertyNameRemoved(Boolean isPropertyNameRemoved)
+    public void setIsPropertyNameRemoved(Boolean removed)
     {
-        this.isPropertyNameRemoved = isPropertyNameRemoved;
+        this.isPropertyNameRemoved = removed;
     }
 
     private Boolean isPropertyDescriptionRemoved;
@@ -83,9 +83,9 @@ public class CreateOrMergePatchOrganizationDto extends AbstractOrganizationComma
         return this.isPropertyDescriptionRemoved;
     }
 
-    public void setIsPropertyDescriptionRemoved(Boolean isPropertyDescriptionRemoved)
+    public void setIsPropertyDescriptionRemoved(Boolean removed)
     {
-        this.isPropertyDescriptionRemoved = isPropertyDescriptionRemoved;
+        this.isPropertyDescriptionRemoved = removed;
     }
 
     private Boolean isPropertyTypeRemoved;
@@ -95,9 +95,9 @@ public class CreateOrMergePatchOrganizationDto extends AbstractOrganizationComma
         return this.isPropertyTypeRemoved;
     }
 
-    public void setIsPropertyTypeRemoved(Boolean isPropertyTypeRemoved)
+    public void setIsPropertyTypeRemoved(Boolean removed)
     {
-        this.isPropertyTypeRemoved = isPropertyTypeRemoved;
+        this.isPropertyTypeRemoved = removed;
     }
 
     private Boolean isPropertyIsSummaryRemoved;
@@ -107,9 +107,9 @@ public class CreateOrMergePatchOrganizationDto extends AbstractOrganizationComma
         return this.isPropertyIsSummaryRemoved;
     }
 
-    public void setIsPropertyIsSummaryRemoved(Boolean isPropertyIsSummaryRemoved)
+    public void setIsPropertyIsSummaryRemoved(Boolean removed)
     {
-        this.isPropertyIsSummaryRemoved = isPropertyIsSummaryRemoved;
+        this.isPropertyIsSummaryRemoved = removed;
     }
 
     private Boolean isPropertyActiveRemoved;
@@ -119,9 +119,9 @@ public class CreateOrMergePatchOrganizationDto extends AbstractOrganizationComma
         return this.isPropertyActiveRemoved;
     }
 
-    public void setIsPropertyActiveRemoved(Boolean isPropertyActiveRemoved)
+    public void setIsPropertyActiveRemoved(Boolean removed)
     {
-        this.isPropertyActiveRemoved = isPropertyActiveRemoved;
+        this.isPropertyActiveRemoved = removed;
     }
 
 

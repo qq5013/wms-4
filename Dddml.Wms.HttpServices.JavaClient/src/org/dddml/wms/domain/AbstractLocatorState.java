@@ -252,7 +252,7 @@ public abstract class AbstractLocatorState implements LocatorState
 
         if (e.getWarehouseId() == null)
         {
-            if (e.isPropertyWarehouseIdRemoved() != null && e.isPropertyWarehouseIdRemoved())
+            if (e.getIsPropertyWarehouseIdRemoved() != null && e.getIsPropertyWarehouseIdRemoved())
             {
                 this.setWarehouseId(null);
             }
@@ -263,7 +263,7 @@ public abstract class AbstractLocatorState implements LocatorState
         }
         if (e.getParentLocatorId() == null)
         {
-            if (e.isPropertyParentLocatorIdRemoved() != null && e.isPropertyParentLocatorIdRemoved())
+            if (e.getIsPropertyParentLocatorIdRemoved() != null && e.getIsPropertyParentLocatorIdRemoved())
             {
                 this.setParentLocatorId(null);
             }
@@ -274,7 +274,7 @@ public abstract class AbstractLocatorState implements LocatorState
         }
         if (e.getLocatorType() == null)
         {
-            if (e.isPropertyLocatorTypeRemoved() != null && e.isPropertyLocatorTypeRemoved())
+            if (e.getIsPropertyLocatorTypeRemoved() != null && e.getIsPropertyLocatorTypeRemoved())
             {
                 this.setLocatorType(null);
             }
@@ -285,7 +285,7 @@ public abstract class AbstractLocatorState implements LocatorState
         }
         if (e.getPriorityNumber() == null)
         {
-            if (e.isPropertyPriorityNumberRemoved() != null && e.isPropertyPriorityNumberRemoved())
+            if (e.getIsPropertyPriorityNumberRemoved() != null && e.getIsPropertyPriorityNumberRemoved())
             {
                 this.setPriorityNumber(null);
             }
@@ -296,7 +296,7 @@ public abstract class AbstractLocatorState implements LocatorState
         }
         if (e.getIsDefault() == null)
         {
-            if (e.isPropertyIsDefaultRemoved() != null && e.isPropertyIsDefaultRemoved())
+            if (e.getIsPropertyIsDefaultRemoved() != null && e.getIsPropertyIsDefaultRemoved())
             {
                 this.setIsDefault(null);
             }
@@ -307,7 +307,7 @@ public abstract class AbstractLocatorState implements LocatorState
         }
         if (e.getX() == null)
         {
-            if (e.isPropertyXRemoved() != null && e.isPropertyXRemoved())
+            if (e.getIsPropertyXRemoved() != null && e.getIsPropertyXRemoved())
             {
                 this.setX(null);
             }
@@ -318,7 +318,7 @@ public abstract class AbstractLocatorState implements LocatorState
         }
         if (e.getY() == null)
         {
-            if (e.isPropertyYRemoved() != null && e.isPropertyYRemoved())
+            if (e.getIsPropertyYRemoved() != null && e.getIsPropertyYRemoved())
             {
                 this.setY(null);
             }
@@ -329,7 +329,7 @@ public abstract class AbstractLocatorState implements LocatorState
         }
         if (e.getZ() == null)
         {
-            if (e.isPropertyZRemoved() != null && e.isPropertyZRemoved())
+            if (e.getIsPropertyZRemoved() != null && e.getIsPropertyZRemoved())
             {
                 this.setZ(null);
             }
@@ -340,7 +340,7 @@ public abstract class AbstractLocatorState implements LocatorState
         }
         if (e.getActive() == null)
         {
-            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            if (e.getIsPropertyActiveRemoved() != null && e.getIsPropertyActiveRemoved())
             {
                 this.setActive(null);
             }

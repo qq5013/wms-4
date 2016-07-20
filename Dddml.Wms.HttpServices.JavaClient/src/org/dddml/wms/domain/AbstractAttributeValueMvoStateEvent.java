@@ -325,96 +325,232 @@ public abstract class AbstractAttributeValueMvoStateEvent implements AttributeVa
     }
 
 
-/*
     public static abstract class AbstractAttributeValueMvoStateMergePatched extends AbstractAttributeValueMvoStateEvent implements AttributeValueMvoStateMergePatched
     {
-        Boolean isPropertyNameRemoved();
+        public AbstractAttributeValueMvoStateMergePatched() {
+        }
 
-        void setPropertyNameRemoved(Boolean removed);
+        public AbstractAttributeValueMvoStateMergePatched(AttributeValueMvoStateEventId stateEventId) {
+            super(stateEventId);
+        }
 
-        Boolean isPropertyDescriptionRemoved();
+        public String getStateEventType() {
+            return StateEventType.MERGE_PATCHED;
+        }
 
-        void setPropertyDescriptionRemoved(Boolean removed);
+        private Boolean isPropertyNameRemoved;
 
-        Boolean isPropertyReferenceIdRemoved();
+        public Boolean getIsPropertyNameRemoved() {
+            return this.isPropertyNameRemoved;
+        }
 
-        void setPropertyReferenceIdRemoved(Boolean removed);
+        public void setIsPropertyNameRemoved(Boolean removed) {
+            this.isPropertyNameRemoved = removed;
+        }
 
-        Boolean isPropertyVersionRemoved();
+        private Boolean isPropertyDescriptionRemoved;
 
-        void setPropertyVersionRemoved(Boolean removed);
+        public Boolean getIsPropertyDescriptionRemoved() {
+            return this.isPropertyDescriptionRemoved;
+        }
 
-        Boolean isPropertyActiveRemoved();
+        public void setIsPropertyDescriptionRemoved(Boolean removed) {
+            this.isPropertyDescriptionRemoved = removed;
+        }
 
-        void setPropertyActiveRemoved(Boolean removed);
+        private Boolean isPropertyReferenceIdRemoved;
 
-        Boolean isPropertyAttributeNameRemoved();
+        public Boolean getIsPropertyReferenceIdRemoved() {
+            return this.isPropertyReferenceIdRemoved;
+        }
 
-        void setPropertyAttributeNameRemoved(Boolean removed);
+        public void setIsPropertyReferenceIdRemoved(Boolean removed) {
+            this.isPropertyReferenceIdRemoved = removed;
+        }
 
-        Boolean isPropertyAttributeOrganizationIdRemoved();
+        private Boolean isPropertyVersionRemoved;
 
-        void setPropertyAttributeOrganizationIdRemoved(Boolean removed);
+        public Boolean getIsPropertyVersionRemoved() {
+            return this.isPropertyVersionRemoved;
+        }
 
-        Boolean isPropertyAttributeDescriptionRemoved();
+        public void setIsPropertyVersionRemoved(Boolean removed) {
+            this.isPropertyVersionRemoved = removed;
+        }
 
-        void setPropertyAttributeDescriptionRemoved(Boolean removed);
+        private Boolean isPropertyActiveRemoved;
 
-        Boolean isPropertyAttributeIsMandatoryRemoved();
+        public Boolean getIsPropertyActiveRemoved() {
+            return this.isPropertyActiveRemoved;
+        }
 
-        void setPropertyAttributeIsMandatoryRemoved(Boolean removed);
+        public void setIsPropertyActiveRemoved(Boolean removed) {
+            this.isPropertyActiveRemoved = removed;
+        }
 
-        Boolean isPropertyAttributeIsInstanceAttributeRemoved();
+        private Boolean isPropertyAttributeNameRemoved;
 
-        void setPropertyAttributeIsInstanceAttributeRemoved(Boolean removed);
+        public Boolean getIsPropertyAttributeNameRemoved() {
+            return this.isPropertyAttributeNameRemoved;
+        }
 
-        Boolean isPropertyAttributeAttributeValueTypeRemoved();
+        public void setIsPropertyAttributeNameRemoved(Boolean removed) {
+            this.isPropertyAttributeNameRemoved = removed;
+        }
 
-        void setPropertyAttributeAttributeValueTypeRemoved(Boolean removed);
+        private Boolean isPropertyAttributeOrganizationIdRemoved;
 
-        Boolean isPropertyAttributeAttributeValueLengthRemoved();
+        public Boolean getIsPropertyAttributeOrganizationIdRemoved() {
+            return this.isPropertyAttributeOrganizationIdRemoved;
+        }
 
-        void setPropertyAttributeAttributeValueLengthRemoved(Boolean removed);
+        public void setIsPropertyAttributeOrganizationIdRemoved(Boolean removed) {
+            this.isPropertyAttributeOrganizationIdRemoved = removed;
+        }
 
-        Boolean isPropertyAttributeIsListRemoved();
+        private Boolean isPropertyAttributeDescriptionRemoved;
 
-        void setPropertyAttributeIsListRemoved(Boolean removed);
+        public Boolean getIsPropertyAttributeDescriptionRemoved() {
+            return this.isPropertyAttributeDescriptionRemoved;
+        }
 
-        Boolean isPropertyAttributeFieldNameRemoved();
+        public void setIsPropertyAttributeDescriptionRemoved(Boolean removed) {
+            this.isPropertyAttributeDescriptionRemoved = removed;
+        }
 
-        void setPropertyAttributeFieldNameRemoved(Boolean removed);
+        private Boolean isPropertyAttributeIsMandatoryRemoved;
 
-        Boolean isPropertyAttributeReferenceIdRemoved();
+        public Boolean getIsPropertyAttributeIsMandatoryRemoved() {
+            return this.isPropertyAttributeIsMandatoryRemoved;
+        }
 
-        void setPropertyAttributeReferenceIdRemoved(Boolean removed);
+        public void setIsPropertyAttributeIsMandatoryRemoved(Boolean removed) {
+            this.isPropertyAttributeIsMandatoryRemoved = removed;
+        }
 
-        Boolean isPropertyAttributeCreatedByRemoved();
+        private Boolean isPropertyAttributeIsInstanceAttributeRemoved;
 
-        void setPropertyAttributeCreatedByRemoved(Boolean removed);
+        public Boolean getIsPropertyAttributeIsInstanceAttributeRemoved() {
+            return this.isPropertyAttributeIsInstanceAttributeRemoved;
+        }
 
-        Boolean isPropertyAttributeCreatedAtRemoved();
+        public void setIsPropertyAttributeIsInstanceAttributeRemoved(Boolean removed) {
+            this.isPropertyAttributeIsInstanceAttributeRemoved = removed;
+        }
 
-        void setPropertyAttributeCreatedAtRemoved(Boolean removed);
+        private Boolean isPropertyAttributeAttributeValueTypeRemoved;
 
-        Boolean isPropertyAttributeUpdatedByRemoved();
+        public Boolean getIsPropertyAttributeAttributeValueTypeRemoved() {
+            return this.isPropertyAttributeAttributeValueTypeRemoved;
+        }
 
-        void setPropertyAttributeUpdatedByRemoved(Boolean removed);
+        public void setIsPropertyAttributeAttributeValueTypeRemoved(Boolean removed) {
+            this.isPropertyAttributeAttributeValueTypeRemoved = removed;
+        }
 
-        Boolean isPropertyAttributeUpdatedAtRemoved();
+        private Boolean isPropertyAttributeAttributeValueLengthRemoved;
 
-        void setPropertyAttributeUpdatedAtRemoved(Boolean removed);
+        public Boolean getIsPropertyAttributeAttributeValueLengthRemoved() {
+            return this.isPropertyAttributeAttributeValueLengthRemoved;
+        }
 
-        Boolean isPropertyAttributeActiveRemoved();
+        public void setIsPropertyAttributeAttributeValueLengthRemoved(Boolean removed) {
+            this.isPropertyAttributeAttributeValueLengthRemoved = removed;
+        }
 
-        void setPropertyAttributeActiveRemoved(Boolean removed);
+        private Boolean isPropertyAttributeIsListRemoved;
 
-        Boolean isPropertyAttributeDeletedRemoved();
+        public Boolean getIsPropertyAttributeIsListRemoved() {
+            return this.isPropertyAttributeIsListRemoved;
+        }
 
-        void setPropertyAttributeDeletedRemoved(Boolean removed);
+        public void setIsPropertyAttributeIsListRemoved(Boolean removed) {
+            this.isPropertyAttributeIsListRemoved = removed;
+        }
+
+        private Boolean isPropertyAttributeFieldNameRemoved;
+
+        public Boolean getIsPropertyAttributeFieldNameRemoved() {
+            return this.isPropertyAttributeFieldNameRemoved;
+        }
+
+        public void setIsPropertyAttributeFieldNameRemoved(Boolean removed) {
+            this.isPropertyAttributeFieldNameRemoved = removed;
+        }
+
+        private Boolean isPropertyAttributeReferenceIdRemoved;
+
+        public Boolean getIsPropertyAttributeReferenceIdRemoved() {
+            return this.isPropertyAttributeReferenceIdRemoved;
+        }
+
+        public void setIsPropertyAttributeReferenceIdRemoved(Boolean removed) {
+            this.isPropertyAttributeReferenceIdRemoved = removed;
+        }
+
+        private Boolean isPropertyAttributeCreatedByRemoved;
+
+        public Boolean getIsPropertyAttributeCreatedByRemoved() {
+            return this.isPropertyAttributeCreatedByRemoved;
+        }
+
+        public void setIsPropertyAttributeCreatedByRemoved(Boolean removed) {
+            this.isPropertyAttributeCreatedByRemoved = removed;
+        }
+
+        private Boolean isPropertyAttributeCreatedAtRemoved;
+
+        public Boolean getIsPropertyAttributeCreatedAtRemoved() {
+            return this.isPropertyAttributeCreatedAtRemoved;
+        }
+
+        public void setIsPropertyAttributeCreatedAtRemoved(Boolean removed) {
+            this.isPropertyAttributeCreatedAtRemoved = removed;
+        }
+
+        private Boolean isPropertyAttributeUpdatedByRemoved;
+
+        public Boolean getIsPropertyAttributeUpdatedByRemoved() {
+            return this.isPropertyAttributeUpdatedByRemoved;
+        }
+
+        public void setIsPropertyAttributeUpdatedByRemoved(Boolean removed) {
+            this.isPropertyAttributeUpdatedByRemoved = removed;
+        }
+
+        private Boolean isPropertyAttributeUpdatedAtRemoved;
+
+        public Boolean getIsPropertyAttributeUpdatedAtRemoved() {
+            return this.isPropertyAttributeUpdatedAtRemoved;
+        }
+
+        public void setIsPropertyAttributeUpdatedAtRemoved(Boolean removed) {
+            this.isPropertyAttributeUpdatedAtRemoved = removed;
+        }
+
+        private Boolean isPropertyAttributeActiveRemoved;
+
+        public Boolean getIsPropertyAttributeActiveRemoved() {
+            return this.isPropertyAttributeActiveRemoved;
+        }
+
+        public void setIsPropertyAttributeActiveRemoved(Boolean removed) {
+            this.isPropertyAttributeActiveRemoved = removed;
+        }
+
+        private Boolean isPropertyAttributeDeletedRemoved;
+
+        public Boolean getIsPropertyAttributeDeletedRemoved() {
+            return this.isPropertyAttributeDeletedRemoved;
+        }
+
+        public void setIsPropertyAttributeDeletedRemoved(Boolean removed) {
+            this.isPropertyAttributeDeletedRemoved = removed;
+        }
 
 
     }
-*/
+
 
     public static abstract class AbstractAttributeValueMvoStateDeleted extends AbstractAttributeValueMvoStateEvent implements AttributeValueMvoStateDeleted
     {
@@ -430,6 +566,5 @@ public abstract class AbstractAttributeValueMvoStateEvent implements AttributeVa
         }
 
     }
-
 }
 

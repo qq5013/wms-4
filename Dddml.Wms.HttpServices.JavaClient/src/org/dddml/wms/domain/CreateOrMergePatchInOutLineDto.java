@@ -228,9 +228,9 @@ public class CreateOrMergePatchInOutLineDto extends AbstractInOutLineCommandDto
         return this.isPropertyLineNumberRemoved;
     }
 
-    public void setIsPropertyLineNumberRemoved(Boolean isPropertyLineNumberRemoved)
+    public void setIsPropertyLineNumberRemoved(Boolean removed)
     {
-        this.isPropertyLineNumberRemoved = isPropertyLineNumberRemoved;
+        this.isPropertyLineNumberRemoved = removed;
     }
 
     private Boolean isPropertyDescriptionRemoved;
@@ -240,9 +240,9 @@ public class CreateOrMergePatchInOutLineDto extends AbstractInOutLineCommandDto
         return this.isPropertyDescriptionRemoved;
     }
 
-    public void setIsPropertyDescriptionRemoved(Boolean isPropertyDescriptionRemoved)
+    public void setIsPropertyDescriptionRemoved(Boolean removed)
     {
-        this.isPropertyDescriptionRemoved = isPropertyDescriptionRemoved;
+        this.isPropertyDescriptionRemoved = removed;
     }
 
     private Boolean isPropertyLocatorIdRemoved;
@@ -252,9 +252,9 @@ public class CreateOrMergePatchInOutLineDto extends AbstractInOutLineCommandDto
         return this.isPropertyLocatorIdRemoved;
     }
 
-    public void setIsPropertyLocatorIdRemoved(Boolean isPropertyLocatorIdRemoved)
+    public void setIsPropertyLocatorIdRemoved(Boolean removed)
     {
-        this.isPropertyLocatorIdRemoved = isPropertyLocatorIdRemoved;
+        this.isPropertyLocatorIdRemoved = removed;
     }
 
     private Boolean isPropertyProductRemoved;
@@ -264,9 +264,9 @@ public class CreateOrMergePatchInOutLineDto extends AbstractInOutLineCommandDto
         return this.isPropertyProductRemoved;
     }
 
-    public void setIsPropertyProductRemoved(Boolean isPropertyProductRemoved)
+    public void setIsPropertyProductRemoved(Boolean removed)
     {
-        this.isPropertyProductRemoved = isPropertyProductRemoved;
+        this.isPropertyProductRemoved = removed;
     }
 
     private Boolean isPropertyUomIdRemoved;
@@ -276,9 +276,9 @@ public class CreateOrMergePatchInOutLineDto extends AbstractInOutLineCommandDto
         return this.isPropertyUomIdRemoved;
     }
 
-    public void setIsPropertyUomIdRemoved(Boolean isPropertyUomIdRemoved)
+    public void setIsPropertyUomIdRemoved(Boolean removed)
     {
-        this.isPropertyUomIdRemoved = isPropertyUomIdRemoved;
+        this.isPropertyUomIdRemoved = removed;
     }
 
     private Boolean isPropertyMovementQuantityRemoved;
@@ -288,9 +288,9 @@ public class CreateOrMergePatchInOutLineDto extends AbstractInOutLineCommandDto
         return this.isPropertyMovementQuantityRemoved;
     }
 
-    public void setIsPropertyMovementQuantityRemoved(Boolean isPropertyMovementQuantityRemoved)
+    public void setIsPropertyMovementQuantityRemoved(Boolean removed)
     {
-        this.isPropertyMovementQuantityRemoved = isPropertyMovementQuantityRemoved;
+        this.isPropertyMovementQuantityRemoved = removed;
     }
 
     private Boolean isPropertyConfirmedQuantityRemoved;
@@ -300,9 +300,9 @@ public class CreateOrMergePatchInOutLineDto extends AbstractInOutLineCommandDto
         return this.isPropertyConfirmedQuantityRemoved;
     }
 
-    public void setIsPropertyConfirmedQuantityRemoved(Boolean isPropertyConfirmedQuantityRemoved)
+    public void setIsPropertyConfirmedQuantityRemoved(Boolean removed)
     {
-        this.isPropertyConfirmedQuantityRemoved = isPropertyConfirmedQuantityRemoved;
+        this.isPropertyConfirmedQuantityRemoved = removed;
     }
 
     private Boolean isPropertyScrappedQuantityRemoved;
@@ -312,9 +312,9 @@ public class CreateOrMergePatchInOutLineDto extends AbstractInOutLineCommandDto
         return this.isPropertyScrappedQuantityRemoved;
     }
 
-    public void setIsPropertyScrappedQuantityRemoved(Boolean isPropertyScrappedQuantityRemoved)
+    public void setIsPropertyScrappedQuantityRemoved(Boolean removed)
     {
-        this.isPropertyScrappedQuantityRemoved = isPropertyScrappedQuantityRemoved;
+        this.isPropertyScrappedQuantityRemoved = removed;
     }
 
     private Boolean isPropertyTargetQuantityRemoved;
@@ -324,9 +324,9 @@ public class CreateOrMergePatchInOutLineDto extends AbstractInOutLineCommandDto
         return this.isPropertyTargetQuantityRemoved;
     }
 
-    public void setIsPropertyTargetQuantityRemoved(Boolean isPropertyTargetQuantityRemoved)
+    public void setIsPropertyTargetQuantityRemoved(Boolean removed)
     {
-        this.isPropertyTargetQuantityRemoved = isPropertyTargetQuantityRemoved;
+        this.isPropertyTargetQuantityRemoved = removed;
     }
 
     private Boolean isPropertyPickedQuantityRemoved;
@@ -336,9 +336,9 @@ public class CreateOrMergePatchInOutLineDto extends AbstractInOutLineCommandDto
         return this.isPropertyPickedQuantityRemoved;
     }
 
-    public void setIsPropertyPickedQuantityRemoved(Boolean isPropertyPickedQuantityRemoved)
+    public void setIsPropertyPickedQuantityRemoved(Boolean removed)
     {
-        this.isPropertyPickedQuantityRemoved = isPropertyPickedQuantityRemoved;
+        this.isPropertyPickedQuantityRemoved = removed;
     }
 
     private Boolean isPropertyIsInvoicedRemoved;
@@ -348,9 +348,9 @@ public class CreateOrMergePatchInOutLineDto extends AbstractInOutLineCommandDto
         return this.isPropertyIsInvoicedRemoved;
     }
 
-    public void setIsPropertyIsInvoicedRemoved(Boolean isPropertyIsInvoicedRemoved)
+    public void setIsPropertyIsInvoicedRemoved(Boolean removed)
     {
-        this.isPropertyIsInvoicedRemoved = isPropertyIsInvoicedRemoved;
+        this.isPropertyIsInvoicedRemoved = removed;
     }
 
     private Boolean isPropertyAttributeSetInstanceIdRemoved;
@@ -360,9 +360,9 @@ public class CreateOrMergePatchInOutLineDto extends AbstractInOutLineCommandDto
         return this.isPropertyAttributeSetInstanceIdRemoved;
     }
 
-    public void setIsPropertyAttributeSetInstanceIdRemoved(Boolean isPropertyAttributeSetInstanceIdRemoved)
+    public void setIsPropertyAttributeSetInstanceIdRemoved(Boolean removed)
     {
-        this.isPropertyAttributeSetInstanceIdRemoved = isPropertyAttributeSetInstanceIdRemoved;
+        this.isPropertyAttributeSetInstanceIdRemoved = removed;
     }
 
     private Boolean isPropertyIsDescriptionRemoved;
@@ -372,9 +372,9 @@ public class CreateOrMergePatchInOutLineDto extends AbstractInOutLineCommandDto
         return this.isPropertyIsDescriptionRemoved;
     }
 
-    public void setIsPropertyIsDescriptionRemoved(Boolean isPropertyIsDescriptionRemoved)
+    public void setIsPropertyIsDescriptionRemoved(Boolean removed)
     {
-        this.isPropertyIsDescriptionRemoved = isPropertyIsDescriptionRemoved;
+        this.isPropertyIsDescriptionRemoved = removed;
     }
 
     private Boolean isPropertyProcessedRemoved;
@@ -384,9 +384,9 @@ public class CreateOrMergePatchInOutLineDto extends AbstractInOutLineCommandDto
         return this.isPropertyProcessedRemoved;
     }
 
-    public void setIsPropertyProcessedRemoved(Boolean isPropertyProcessedRemoved)
+    public void setIsPropertyProcessedRemoved(Boolean removed)
     {
-        this.isPropertyProcessedRemoved = isPropertyProcessedRemoved;
+        this.isPropertyProcessedRemoved = removed;
     }
 
     private Boolean isPropertyQuantityEnteredRemoved;
@@ -396,9 +396,9 @@ public class CreateOrMergePatchInOutLineDto extends AbstractInOutLineCommandDto
         return this.isPropertyQuantityEnteredRemoved;
     }
 
-    public void setIsPropertyQuantityEnteredRemoved(Boolean isPropertyQuantityEnteredRemoved)
+    public void setIsPropertyQuantityEnteredRemoved(Boolean removed)
     {
-        this.isPropertyQuantityEnteredRemoved = isPropertyQuantityEnteredRemoved;
+        this.isPropertyQuantityEnteredRemoved = removed;
     }
 
     private Boolean isPropertyRmaLineNumberRemoved;
@@ -408,9 +408,9 @@ public class CreateOrMergePatchInOutLineDto extends AbstractInOutLineCommandDto
         return this.isPropertyRmaLineNumberRemoved;
     }
 
-    public void setIsPropertyRmaLineNumberRemoved(Boolean isPropertyRmaLineNumberRemoved)
+    public void setIsPropertyRmaLineNumberRemoved(Boolean removed)
     {
-        this.isPropertyRmaLineNumberRemoved = isPropertyRmaLineNumberRemoved;
+        this.isPropertyRmaLineNumberRemoved = removed;
     }
 
     private Boolean isPropertyReversalLineNumberRemoved;
@@ -420,9 +420,9 @@ public class CreateOrMergePatchInOutLineDto extends AbstractInOutLineCommandDto
         return this.isPropertyReversalLineNumberRemoved;
     }
 
-    public void setIsPropertyReversalLineNumberRemoved(Boolean isPropertyReversalLineNumberRemoved)
+    public void setIsPropertyReversalLineNumberRemoved(Boolean removed)
     {
-        this.isPropertyReversalLineNumberRemoved = isPropertyReversalLineNumberRemoved;
+        this.isPropertyReversalLineNumberRemoved = removed;
     }
 
     private Boolean isPropertyActiveRemoved;
@@ -432,9 +432,9 @@ public class CreateOrMergePatchInOutLineDto extends AbstractInOutLineCommandDto
         return this.isPropertyActiveRemoved;
     }
 
-    public void setIsPropertyActiveRemoved(Boolean isPropertyActiveRemoved)
+    public void setIsPropertyActiveRemoved(Boolean removed)
     {
-        this.isPropertyActiveRemoved = isPropertyActiveRemoved;
+        this.isPropertyActiveRemoved = removed;
     }
 
 

@@ -289,84 +289,202 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoStateEvent im
     }
 
 
-/*
     public static abstract class AbstractAttributeSetInstanceExtensionFieldMvoStateMergePatched extends AbstractAttributeSetInstanceExtensionFieldMvoStateEvent implements AttributeSetInstanceExtensionFieldMvoStateMergePatched
     {
-        Boolean isPropertyNameRemoved();
+        public AbstractAttributeSetInstanceExtensionFieldMvoStateMergePatched() {
+        }
 
-        void setPropertyNameRemoved(Boolean removed);
+        public AbstractAttributeSetInstanceExtensionFieldMvoStateMergePatched(AttributeSetInstanceExtensionFieldMvoStateEventId stateEventId) {
+            super(stateEventId);
+        }
 
-        Boolean isPropertyTypeRemoved();
+        public String getStateEventType() {
+            return StateEventType.MERGE_PATCHED;
+        }
 
-        void setPropertyTypeRemoved(Boolean removed);
+        private Boolean isPropertyNameRemoved;
 
-        Boolean isPropertyLengthRemoved();
+        public Boolean getIsPropertyNameRemoved() {
+            return this.isPropertyNameRemoved;
+        }
 
-        void setPropertyLengthRemoved(Boolean removed);
+        public void setIsPropertyNameRemoved(Boolean removed) {
+            this.isPropertyNameRemoved = removed;
+        }
 
-        Boolean isPropertyAliasRemoved();
+        private Boolean isPropertyTypeRemoved;
 
-        void setPropertyAliasRemoved(Boolean removed);
+        public Boolean getIsPropertyTypeRemoved() {
+            return this.isPropertyTypeRemoved;
+        }
 
-        Boolean isPropertyDescriptionRemoved();
+        public void setIsPropertyTypeRemoved(Boolean removed) {
+            this.isPropertyTypeRemoved = removed;
+        }
 
-        void setPropertyDescriptionRemoved(Boolean removed);
+        private Boolean isPropertyLengthRemoved;
 
-        Boolean isPropertyVersionRemoved();
+        public Boolean getIsPropertyLengthRemoved() {
+            return this.isPropertyLengthRemoved;
+        }
 
-        void setPropertyVersionRemoved(Boolean removed);
+        public void setIsPropertyLengthRemoved(Boolean removed) {
+            this.isPropertyLengthRemoved = removed;
+        }
 
-        Boolean isPropertyActiveRemoved();
+        private Boolean isPropertyAliasRemoved;
 
-        void setPropertyActiveRemoved(Boolean removed);
+        public Boolean getIsPropertyAliasRemoved() {
+            return this.isPropertyAliasRemoved;
+        }
 
-        Boolean isPropertyAttrSetInstEFGroupFieldTypeRemoved();
+        public void setIsPropertyAliasRemoved(Boolean removed) {
+            this.isPropertyAliasRemoved = removed;
+        }
 
-        void setPropertyAttrSetInstEFGroupFieldTypeRemoved(Boolean removed);
+        private Boolean isPropertyDescriptionRemoved;
 
-        Boolean isPropertyAttrSetInstEFGroupFieldLengthRemoved();
+        public Boolean getIsPropertyDescriptionRemoved() {
+            return this.isPropertyDescriptionRemoved;
+        }
 
-        void setPropertyAttrSetInstEFGroupFieldLengthRemoved(Boolean removed);
+        public void setIsPropertyDescriptionRemoved(Boolean removed) {
+            this.isPropertyDescriptionRemoved = removed;
+        }
 
-        Boolean isPropertyAttrSetInstEFGroupFieldCountRemoved();
+        private Boolean isPropertyVersionRemoved;
 
-        void setPropertyAttrSetInstEFGroupFieldCountRemoved(Boolean removed);
+        public Boolean getIsPropertyVersionRemoved() {
+            return this.isPropertyVersionRemoved;
+        }
 
-        Boolean isPropertyAttrSetInstEFGroupNameFormatRemoved();
+        public void setIsPropertyVersionRemoved(Boolean removed) {
+            this.isPropertyVersionRemoved = removed;
+        }
 
-        void setPropertyAttrSetInstEFGroupNameFormatRemoved(Boolean removed);
+        private Boolean isPropertyActiveRemoved;
 
-        Boolean isPropertyAttrSetInstEFGroupDescriptionRemoved();
+        public Boolean getIsPropertyActiveRemoved() {
+            return this.isPropertyActiveRemoved;
+        }
 
-        void setPropertyAttrSetInstEFGroupDescriptionRemoved(Boolean removed);
+        public void setIsPropertyActiveRemoved(Boolean removed) {
+            this.isPropertyActiveRemoved = removed;
+        }
 
-        Boolean isPropertyAttrSetInstEFGroupCreatedByRemoved();
+        private Boolean isPropertyAttrSetInstEFGroupFieldTypeRemoved;
 
-        void setPropertyAttrSetInstEFGroupCreatedByRemoved(Boolean removed);
+        public Boolean getIsPropertyAttrSetInstEFGroupFieldTypeRemoved() {
+            return this.isPropertyAttrSetInstEFGroupFieldTypeRemoved;
+        }
 
-        Boolean isPropertyAttrSetInstEFGroupCreatedAtRemoved();
+        public void setIsPropertyAttrSetInstEFGroupFieldTypeRemoved(Boolean removed) {
+            this.isPropertyAttrSetInstEFGroupFieldTypeRemoved = removed;
+        }
 
-        void setPropertyAttrSetInstEFGroupCreatedAtRemoved(Boolean removed);
+        private Boolean isPropertyAttrSetInstEFGroupFieldLengthRemoved;
 
-        Boolean isPropertyAttrSetInstEFGroupUpdatedByRemoved();
+        public Boolean getIsPropertyAttrSetInstEFGroupFieldLengthRemoved() {
+            return this.isPropertyAttrSetInstEFGroupFieldLengthRemoved;
+        }
 
-        void setPropertyAttrSetInstEFGroupUpdatedByRemoved(Boolean removed);
+        public void setIsPropertyAttrSetInstEFGroupFieldLengthRemoved(Boolean removed) {
+            this.isPropertyAttrSetInstEFGroupFieldLengthRemoved = removed;
+        }
 
-        Boolean isPropertyAttrSetInstEFGroupUpdatedAtRemoved();
+        private Boolean isPropertyAttrSetInstEFGroupFieldCountRemoved;
 
-        void setPropertyAttrSetInstEFGroupUpdatedAtRemoved(Boolean removed);
+        public Boolean getIsPropertyAttrSetInstEFGroupFieldCountRemoved() {
+            return this.isPropertyAttrSetInstEFGroupFieldCountRemoved;
+        }
 
-        Boolean isPropertyAttrSetInstEFGroupActiveRemoved();
+        public void setIsPropertyAttrSetInstEFGroupFieldCountRemoved(Boolean removed) {
+            this.isPropertyAttrSetInstEFGroupFieldCountRemoved = removed;
+        }
 
-        void setPropertyAttrSetInstEFGroupActiveRemoved(Boolean removed);
+        private Boolean isPropertyAttrSetInstEFGroupNameFormatRemoved;
 
-        Boolean isPropertyAttrSetInstEFGroupDeletedRemoved();
+        public Boolean getIsPropertyAttrSetInstEFGroupNameFormatRemoved() {
+            return this.isPropertyAttrSetInstEFGroupNameFormatRemoved;
+        }
 
-        void setPropertyAttrSetInstEFGroupDeletedRemoved(Boolean removed);
+        public void setIsPropertyAttrSetInstEFGroupNameFormatRemoved(Boolean removed) {
+            this.isPropertyAttrSetInstEFGroupNameFormatRemoved = removed;
+        }
+
+        private Boolean isPropertyAttrSetInstEFGroupDescriptionRemoved;
+
+        public Boolean getIsPropertyAttrSetInstEFGroupDescriptionRemoved() {
+            return this.isPropertyAttrSetInstEFGroupDescriptionRemoved;
+        }
+
+        public void setIsPropertyAttrSetInstEFGroupDescriptionRemoved(Boolean removed) {
+            this.isPropertyAttrSetInstEFGroupDescriptionRemoved = removed;
+        }
+
+        private Boolean isPropertyAttrSetInstEFGroupCreatedByRemoved;
+
+        public Boolean getIsPropertyAttrSetInstEFGroupCreatedByRemoved() {
+            return this.isPropertyAttrSetInstEFGroupCreatedByRemoved;
+        }
+
+        public void setIsPropertyAttrSetInstEFGroupCreatedByRemoved(Boolean removed) {
+            this.isPropertyAttrSetInstEFGroupCreatedByRemoved = removed;
+        }
+
+        private Boolean isPropertyAttrSetInstEFGroupCreatedAtRemoved;
+
+        public Boolean getIsPropertyAttrSetInstEFGroupCreatedAtRemoved() {
+            return this.isPropertyAttrSetInstEFGroupCreatedAtRemoved;
+        }
+
+        public void setIsPropertyAttrSetInstEFGroupCreatedAtRemoved(Boolean removed) {
+            this.isPropertyAttrSetInstEFGroupCreatedAtRemoved = removed;
+        }
+
+        private Boolean isPropertyAttrSetInstEFGroupUpdatedByRemoved;
+
+        public Boolean getIsPropertyAttrSetInstEFGroupUpdatedByRemoved() {
+            return this.isPropertyAttrSetInstEFGroupUpdatedByRemoved;
+        }
+
+        public void setIsPropertyAttrSetInstEFGroupUpdatedByRemoved(Boolean removed) {
+            this.isPropertyAttrSetInstEFGroupUpdatedByRemoved = removed;
+        }
+
+        private Boolean isPropertyAttrSetInstEFGroupUpdatedAtRemoved;
+
+        public Boolean getIsPropertyAttrSetInstEFGroupUpdatedAtRemoved() {
+            return this.isPropertyAttrSetInstEFGroupUpdatedAtRemoved;
+        }
+
+        public void setIsPropertyAttrSetInstEFGroupUpdatedAtRemoved(Boolean removed) {
+            this.isPropertyAttrSetInstEFGroupUpdatedAtRemoved = removed;
+        }
+
+        private Boolean isPropertyAttrSetInstEFGroupActiveRemoved;
+
+        public Boolean getIsPropertyAttrSetInstEFGroupActiveRemoved() {
+            return this.isPropertyAttrSetInstEFGroupActiveRemoved;
+        }
+
+        public void setIsPropertyAttrSetInstEFGroupActiveRemoved(Boolean removed) {
+            this.isPropertyAttrSetInstEFGroupActiveRemoved = removed;
+        }
+
+        private Boolean isPropertyAttrSetInstEFGroupDeletedRemoved;
+
+        public Boolean getIsPropertyAttrSetInstEFGroupDeletedRemoved() {
+            return this.isPropertyAttrSetInstEFGroupDeletedRemoved;
+        }
+
+        public void setIsPropertyAttrSetInstEFGroupDeletedRemoved(Boolean removed) {
+            this.isPropertyAttrSetInstEFGroupDeletedRemoved = removed;
+        }
 
 
     }
-*/
+
 
     public static abstract class AbstractAttributeSetInstanceExtensionFieldMvoStateDeleted extends AbstractAttributeSetInstanceExtensionFieldMvoStateEvent implements AttributeSetInstanceExtensionFieldMvoStateDeleted
     {
@@ -382,6 +500,5 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoStateEvent im
         }
 
     }
-
 }
 

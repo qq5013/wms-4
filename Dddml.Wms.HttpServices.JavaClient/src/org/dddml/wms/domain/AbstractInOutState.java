@@ -610,7 +610,7 @@ public abstract class AbstractInOutState implements InOutState
 
         if (e.getIsSOTransaction() == null)
         {
-            if (e.isPropertyIsSOTransactionRemoved() != null && e.isPropertyIsSOTransactionRemoved())
+            if (e.getIsPropertyIsSOTransactionRemoved() != null && e.getIsPropertyIsSOTransactionRemoved())
             {
                 this.setIsSOTransaction(null);
             }
@@ -621,7 +621,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getDocumentStatus() == null)
         {
-            if (e.isPropertyDocumentStatusRemoved() != null && e.isPropertyDocumentStatusRemoved())
+            if (e.getIsPropertyDocumentStatusRemoved() != null && e.getIsPropertyDocumentStatusRemoved())
             {
                 this.setDocumentStatus(null);
             }
@@ -632,7 +632,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getPosted() == null)
         {
-            if (e.isPropertyPostedRemoved() != null && e.isPropertyPostedRemoved())
+            if (e.getIsPropertyPostedRemoved() != null && e.getIsPropertyPostedRemoved())
             {
                 this.setPosted(null);
             }
@@ -643,7 +643,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getProcessing() == null)
         {
-            if (e.isPropertyProcessingRemoved() != null && e.isPropertyProcessingRemoved())
+            if (e.getIsPropertyProcessingRemoved() != null && e.getIsPropertyProcessingRemoved())
             {
                 this.setProcessing(null);
             }
@@ -654,7 +654,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getProcessed() == null)
         {
-            if (e.isPropertyProcessedRemoved() != null && e.isPropertyProcessedRemoved())
+            if (e.getIsPropertyProcessedRemoved() != null && e.getIsPropertyProcessedRemoved())
             {
                 this.setProcessed(null);
             }
@@ -665,7 +665,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getDocumentType() == null)
         {
-            if (e.isPropertyDocumentTypeRemoved() != null && e.isPropertyDocumentTypeRemoved())
+            if (e.getIsPropertyDocumentTypeRemoved() != null && e.getIsPropertyDocumentTypeRemoved())
             {
                 this.setDocumentType(null);
             }
@@ -676,7 +676,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getDescription() == null)
         {
-            if (e.isPropertyDescriptionRemoved() != null && e.isPropertyDescriptionRemoved())
+            if (e.getIsPropertyDescriptionRemoved() != null && e.getIsPropertyDescriptionRemoved())
             {
                 this.setDescription(null);
             }
@@ -687,7 +687,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getOrderNumber() == null)
         {
-            if (e.isPropertyOrderNumberRemoved() != null && e.isPropertyOrderNumberRemoved())
+            if (e.getIsPropertyOrderNumberRemoved() != null && e.getIsPropertyOrderNumberRemoved())
             {
                 this.setOrderNumber(null);
             }
@@ -698,7 +698,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getDateOrdered() == null)
         {
-            if (e.isPropertyDateOrderedRemoved() != null && e.isPropertyDateOrderedRemoved())
+            if (e.getIsPropertyDateOrderedRemoved() != null && e.getIsPropertyDateOrderedRemoved())
             {
                 this.setDateOrdered(null);
             }
@@ -709,7 +709,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getIsPrinted() == null)
         {
-            if (e.isPropertyIsPrintedRemoved() != null && e.isPropertyIsPrintedRemoved())
+            if (e.getIsPropertyIsPrintedRemoved() != null && e.getIsPropertyIsPrintedRemoved())
             {
                 this.setIsPrinted(null);
             }
@@ -720,7 +720,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getMovementType() == null)
         {
-            if (e.isPropertyMovementTypeRemoved() != null && e.isPropertyMovementTypeRemoved())
+            if (e.getIsPropertyMovementTypeRemoved() != null && e.getIsPropertyMovementTypeRemoved())
             {
                 this.setMovementType(null);
             }
@@ -731,7 +731,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getMovementDate() == null)
         {
-            if (e.isPropertyMovementDateRemoved() != null && e.isPropertyMovementDateRemoved())
+            if (e.getIsPropertyMovementDateRemoved() != null && e.getIsPropertyMovementDateRemoved())
             {
                 this.setMovementDate(null);
             }
@@ -742,7 +742,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getBusinessPartnerId() == null)
         {
-            if (e.isPropertyBusinessPartnerIdRemoved() != null && e.isPropertyBusinessPartnerIdRemoved())
+            if (e.getIsPropertyBusinessPartnerIdRemoved() != null && e.getIsPropertyBusinessPartnerIdRemoved())
             {
                 this.setBusinessPartnerId(null);
             }
@@ -753,7 +753,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getWarehouseId() == null)
         {
-            if (e.isPropertyWarehouseIdRemoved() != null && e.isPropertyWarehouseIdRemoved())
+            if (e.getIsPropertyWarehouseIdRemoved() != null && e.getIsPropertyWarehouseIdRemoved())
             {
                 this.setWarehouseId(null);
             }
@@ -764,7 +764,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getPOReference() == null)
         {
-            if (e.isPropertyPOReferenceRemoved() != null && e.isPropertyPOReferenceRemoved())
+            if (e.getIsPropertyPOReferenceRemoved() != null && e.getIsPropertyPOReferenceRemoved())
             {
                 this.setPOReference(null);
             }
@@ -775,7 +775,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getFreightAmount() == null)
         {
-            if (e.isPropertyFreightAmountRemoved() != null && e.isPropertyFreightAmountRemoved())
+            if (e.getIsPropertyFreightAmountRemoved() != null && e.getIsPropertyFreightAmountRemoved())
             {
                 this.setFreightAmount(null);
             }
@@ -786,7 +786,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getShipperId() == null)
         {
-            if (e.isPropertyShipperIdRemoved() != null && e.isPropertyShipperIdRemoved())
+            if (e.getIsPropertyShipperIdRemoved() != null && e.getIsPropertyShipperIdRemoved())
             {
                 this.setShipperId(null);
             }
@@ -797,7 +797,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getChargeAmount() == null)
         {
-            if (e.isPropertyChargeAmountRemoved() != null && e.isPropertyChargeAmountRemoved())
+            if (e.getIsPropertyChargeAmountRemoved() != null && e.getIsPropertyChargeAmountRemoved())
             {
                 this.setChargeAmount(null);
             }
@@ -808,7 +808,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getDatePrinted() == null)
         {
-            if (e.isPropertyDatePrintedRemoved() != null && e.isPropertyDatePrintedRemoved())
+            if (e.getIsPropertyDatePrintedRemoved() != null && e.getIsPropertyDatePrintedRemoved())
             {
                 this.setDatePrinted(null);
             }
@@ -819,7 +819,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getSalesRepresentative() == null)
         {
-            if (e.isPropertySalesRepresentativeRemoved() != null && e.isPropertySalesRepresentativeRemoved())
+            if (e.getIsPropertySalesRepresentativeRemoved() != null && e.getIsPropertySalesRepresentativeRemoved())
             {
                 this.setSalesRepresentative(null);
             }
@@ -830,7 +830,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getNumberOfPackages() == null)
         {
-            if (e.isPropertyNumberOfPackagesRemoved() != null && e.isPropertyNumberOfPackagesRemoved())
+            if (e.getIsPropertyNumberOfPackagesRemoved() != null && e.getIsPropertyNumberOfPackagesRemoved())
             {
                 this.setNumberOfPackages(null);
             }
@@ -841,7 +841,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getPickDate() == null)
         {
-            if (e.isPropertyPickDateRemoved() != null && e.isPropertyPickDateRemoved())
+            if (e.getIsPropertyPickDateRemoved() != null && e.getIsPropertyPickDateRemoved())
             {
                 this.setPickDate(null);
             }
@@ -852,7 +852,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getShipDate() == null)
         {
-            if (e.isPropertyShipDateRemoved() != null && e.isPropertyShipDateRemoved())
+            if (e.getIsPropertyShipDateRemoved() != null && e.getIsPropertyShipDateRemoved())
             {
                 this.setShipDate(null);
             }
@@ -863,7 +863,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getTrackingNumber() == null)
         {
-            if (e.isPropertyTrackingNumberRemoved() != null && e.isPropertyTrackingNumberRemoved())
+            if (e.getIsPropertyTrackingNumberRemoved() != null && e.getIsPropertyTrackingNumberRemoved())
             {
                 this.setTrackingNumber(null);
             }
@@ -874,7 +874,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getDateReceived() == null)
         {
-            if (e.isPropertyDateReceivedRemoved() != null && e.isPropertyDateReceivedRemoved())
+            if (e.getIsPropertyDateReceivedRemoved() != null && e.getIsPropertyDateReceivedRemoved())
             {
                 this.setDateReceived(null);
             }
@@ -885,7 +885,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getIsInTransit() == null)
         {
-            if (e.isPropertyIsInTransitRemoved() != null && e.isPropertyIsInTransitRemoved())
+            if (e.getIsPropertyIsInTransitRemoved() != null && e.getIsPropertyIsInTransitRemoved())
             {
                 this.setIsInTransit(null);
             }
@@ -896,7 +896,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getIsApproved() == null)
         {
-            if (e.isPropertyIsApprovedRemoved() != null && e.isPropertyIsApprovedRemoved())
+            if (e.getIsPropertyIsApprovedRemoved() != null && e.getIsPropertyIsApprovedRemoved())
             {
                 this.setIsApproved(null);
             }
@@ -907,7 +907,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getIsInDispute() == null)
         {
-            if (e.isPropertyIsInDisputeRemoved() != null && e.isPropertyIsInDisputeRemoved())
+            if (e.getIsPropertyIsInDisputeRemoved() != null && e.getIsPropertyIsInDisputeRemoved())
             {
                 this.setIsInDispute(null);
             }
@@ -918,7 +918,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getVolume() == null)
         {
-            if (e.isPropertyVolumeRemoved() != null && e.isPropertyVolumeRemoved())
+            if (e.getIsPropertyVolumeRemoved() != null && e.getIsPropertyVolumeRemoved())
             {
                 this.setVolume(null);
             }
@@ -929,7 +929,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getWeight() == null)
         {
-            if (e.isPropertyWeightRemoved() != null && e.isPropertyWeightRemoved())
+            if (e.getIsPropertyWeightRemoved() != null && e.getIsPropertyWeightRemoved())
             {
                 this.setWeight(null);
             }
@@ -940,7 +940,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getRmaNumber() == null)
         {
-            if (e.isPropertyRmaNumberRemoved() != null && e.isPropertyRmaNumberRemoved())
+            if (e.getIsPropertyRmaNumberRemoved() != null && e.getIsPropertyRmaNumberRemoved())
             {
                 this.setRmaNumber(null);
             }
@@ -951,7 +951,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getReversalNumber() == null)
         {
-            if (e.isPropertyReversalNumberRemoved() != null && e.isPropertyReversalNumberRemoved())
+            if (e.getIsPropertyReversalNumberRemoved() != null && e.getIsPropertyReversalNumberRemoved())
             {
                 this.setReversalNumber(null);
             }
@@ -962,7 +962,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getIsDropShip() == null)
         {
-            if (e.isPropertyIsDropShipRemoved() != null && e.isPropertyIsDropShipRemoved())
+            if (e.getIsPropertyIsDropShipRemoved() != null && e.getIsPropertyIsDropShipRemoved())
             {
                 this.setIsDropShip(null);
             }
@@ -973,7 +973,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getDropShipBusinessPartnerId() == null)
         {
-            if (e.isPropertyDropShipBusinessPartnerIdRemoved() != null && e.isPropertyDropShipBusinessPartnerIdRemoved())
+            if (e.getIsPropertyDropShipBusinessPartnerIdRemoved() != null && e.getIsPropertyDropShipBusinessPartnerIdRemoved())
             {
                 this.setDropShipBusinessPartnerId(null);
             }
@@ -984,7 +984,7 @@ public abstract class AbstractInOutState implements InOutState
         }
         if (e.getActive() == null)
         {
-            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            if (e.getIsPropertyActiveRemoved() != null && e.getIsPropertyActiveRemoved())
             {
                 this.setActive(null);
             }

@@ -177,145 +177,145 @@ public interface InOutStateEvent extends Event
 
     interface InOutStateMergePatched extends InOutStateEvent
     {
-        Boolean isPropertyIsSOTransactionRemoved();
+        Boolean getIsPropertyIsSOTransactionRemoved();
 
-        void setPropertyIsSOTransactionRemoved(Boolean removed);
+        void setIsPropertyIsSOTransactionRemoved(Boolean removed);
 
-        Boolean isPropertyDocumentStatusRemoved();
+        Boolean getIsPropertyDocumentStatusRemoved();
 
-        void setPropertyDocumentStatusRemoved(Boolean removed);
+        void setIsPropertyDocumentStatusRemoved(Boolean removed);
 
-        Boolean isPropertyPostedRemoved();
+        Boolean getIsPropertyPostedRemoved();
 
-        void setPropertyPostedRemoved(Boolean removed);
+        void setIsPropertyPostedRemoved(Boolean removed);
 
-        Boolean isPropertyProcessingRemoved();
+        Boolean getIsPropertyProcessingRemoved();
 
-        void setPropertyProcessingRemoved(Boolean removed);
+        void setIsPropertyProcessingRemoved(Boolean removed);
 
-        Boolean isPropertyProcessedRemoved();
+        Boolean getIsPropertyProcessedRemoved();
 
-        void setPropertyProcessedRemoved(Boolean removed);
+        void setIsPropertyProcessedRemoved(Boolean removed);
 
-        Boolean isPropertyDocumentTypeRemoved();
+        Boolean getIsPropertyDocumentTypeRemoved();
 
-        void setPropertyDocumentTypeRemoved(Boolean removed);
+        void setIsPropertyDocumentTypeRemoved(Boolean removed);
 
-        Boolean isPropertyDescriptionRemoved();
+        Boolean getIsPropertyDescriptionRemoved();
 
-        void setPropertyDescriptionRemoved(Boolean removed);
+        void setIsPropertyDescriptionRemoved(Boolean removed);
 
-        Boolean isPropertyOrderNumberRemoved();
+        Boolean getIsPropertyOrderNumberRemoved();
 
-        void setPropertyOrderNumberRemoved(Boolean removed);
+        void setIsPropertyOrderNumberRemoved(Boolean removed);
 
-        Boolean isPropertyDateOrderedRemoved();
+        Boolean getIsPropertyDateOrderedRemoved();
 
-        void setPropertyDateOrderedRemoved(Boolean removed);
+        void setIsPropertyDateOrderedRemoved(Boolean removed);
 
-        Boolean isPropertyIsPrintedRemoved();
+        Boolean getIsPropertyIsPrintedRemoved();
 
-        void setPropertyIsPrintedRemoved(Boolean removed);
+        void setIsPropertyIsPrintedRemoved(Boolean removed);
 
-        Boolean isPropertyMovementTypeRemoved();
+        Boolean getIsPropertyMovementTypeRemoved();
 
-        void setPropertyMovementTypeRemoved(Boolean removed);
+        void setIsPropertyMovementTypeRemoved(Boolean removed);
 
-        Boolean isPropertyMovementDateRemoved();
+        Boolean getIsPropertyMovementDateRemoved();
 
-        void setPropertyMovementDateRemoved(Boolean removed);
+        void setIsPropertyMovementDateRemoved(Boolean removed);
 
-        Boolean isPropertyBusinessPartnerIdRemoved();
+        Boolean getIsPropertyBusinessPartnerIdRemoved();
 
-        void setPropertyBusinessPartnerIdRemoved(Boolean removed);
+        void setIsPropertyBusinessPartnerIdRemoved(Boolean removed);
 
-        Boolean isPropertyWarehouseIdRemoved();
+        Boolean getIsPropertyWarehouseIdRemoved();
 
-        void setPropertyWarehouseIdRemoved(Boolean removed);
+        void setIsPropertyWarehouseIdRemoved(Boolean removed);
 
-        Boolean isPropertyPOReferenceRemoved();
+        Boolean getIsPropertyPOReferenceRemoved();
 
-        void setPropertyPOReferenceRemoved(Boolean removed);
+        void setIsPropertyPOReferenceRemoved(Boolean removed);
 
-        Boolean isPropertyFreightAmountRemoved();
+        Boolean getIsPropertyFreightAmountRemoved();
 
-        void setPropertyFreightAmountRemoved(Boolean removed);
+        void setIsPropertyFreightAmountRemoved(Boolean removed);
 
-        Boolean isPropertyShipperIdRemoved();
+        Boolean getIsPropertyShipperIdRemoved();
 
-        void setPropertyShipperIdRemoved(Boolean removed);
+        void setIsPropertyShipperIdRemoved(Boolean removed);
 
-        Boolean isPropertyChargeAmountRemoved();
+        Boolean getIsPropertyChargeAmountRemoved();
 
-        void setPropertyChargeAmountRemoved(Boolean removed);
+        void setIsPropertyChargeAmountRemoved(Boolean removed);
 
-        Boolean isPropertyDatePrintedRemoved();
+        Boolean getIsPropertyDatePrintedRemoved();
 
-        void setPropertyDatePrintedRemoved(Boolean removed);
+        void setIsPropertyDatePrintedRemoved(Boolean removed);
 
-        Boolean isPropertySalesRepresentativeRemoved();
+        Boolean getIsPropertySalesRepresentativeRemoved();
 
-        void setPropertySalesRepresentativeRemoved(Boolean removed);
+        void setIsPropertySalesRepresentativeRemoved(Boolean removed);
 
-        Boolean isPropertyNumberOfPackagesRemoved();
+        Boolean getIsPropertyNumberOfPackagesRemoved();
 
-        void setPropertyNumberOfPackagesRemoved(Boolean removed);
+        void setIsPropertyNumberOfPackagesRemoved(Boolean removed);
 
-        Boolean isPropertyPickDateRemoved();
+        Boolean getIsPropertyPickDateRemoved();
 
-        void setPropertyPickDateRemoved(Boolean removed);
+        void setIsPropertyPickDateRemoved(Boolean removed);
 
-        Boolean isPropertyShipDateRemoved();
+        Boolean getIsPropertyShipDateRemoved();
 
-        void setPropertyShipDateRemoved(Boolean removed);
+        void setIsPropertyShipDateRemoved(Boolean removed);
 
-        Boolean isPropertyTrackingNumberRemoved();
+        Boolean getIsPropertyTrackingNumberRemoved();
 
-        void setPropertyTrackingNumberRemoved(Boolean removed);
+        void setIsPropertyTrackingNumberRemoved(Boolean removed);
 
-        Boolean isPropertyDateReceivedRemoved();
+        Boolean getIsPropertyDateReceivedRemoved();
 
-        void setPropertyDateReceivedRemoved(Boolean removed);
+        void setIsPropertyDateReceivedRemoved(Boolean removed);
 
-        Boolean isPropertyIsInTransitRemoved();
+        Boolean getIsPropertyIsInTransitRemoved();
 
-        void setPropertyIsInTransitRemoved(Boolean removed);
+        void setIsPropertyIsInTransitRemoved(Boolean removed);
 
-        Boolean isPropertyIsApprovedRemoved();
+        Boolean getIsPropertyIsApprovedRemoved();
 
-        void setPropertyIsApprovedRemoved(Boolean removed);
+        void setIsPropertyIsApprovedRemoved(Boolean removed);
 
-        Boolean isPropertyIsInDisputeRemoved();
+        Boolean getIsPropertyIsInDisputeRemoved();
 
-        void setPropertyIsInDisputeRemoved(Boolean removed);
+        void setIsPropertyIsInDisputeRemoved(Boolean removed);
 
-        Boolean isPropertyVolumeRemoved();
+        Boolean getIsPropertyVolumeRemoved();
 
-        void setPropertyVolumeRemoved(Boolean removed);
+        void setIsPropertyVolumeRemoved(Boolean removed);
 
-        Boolean isPropertyWeightRemoved();
+        Boolean getIsPropertyWeightRemoved();
 
-        void setPropertyWeightRemoved(Boolean removed);
+        void setIsPropertyWeightRemoved(Boolean removed);
 
-        Boolean isPropertyRmaNumberRemoved();
+        Boolean getIsPropertyRmaNumberRemoved();
 
-        void setPropertyRmaNumberRemoved(Boolean removed);
+        void setIsPropertyRmaNumberRemoved(Boolean removed);
 
-        Boolean isPropertyReversalNumberRemoved();
+        Boolean getIsPropertyReversalNumberRemoved();
 
-        void setPropertyReversalNumberRemoved(Boolean removed);
+        void setIsPropertyReversalNumberRemoved(Boolean removed);
 
-        Boolean isPropertyIsDropShipRemoved();
+        Boolean getIsPropertyIsDropShipRemoved();
 
-        void setPropertyIsDropShipRemoved(Boolean removed);
+        void setIsPropertyIsDropShipRemoved(Boolean removed);
 
-        Boolean isPropertyDropShipBusinessPartnerIdRemoved();
+        Boolean getIsPropertyDropShipBusinessPartnerIdRemoved();
 
-        void setPropertyDropShipBusinessPartnerIdRemoved(Boolean removed);
+        void setIsPropertyDropShipBusinessPartnerIdRemoved(Boolean removed);
 
-        Boolean isPropertyActiveRemoved();
+        Boolean getIsPropertyActiveRemoved();
 
-        void setPropertyActiveRemoved(Boolean removed);
+        void setIsPropertyActiveRemoved(Boolean removed);
 
         Iterable<InOutLineStateEvent> getInOutLineEvents();
         

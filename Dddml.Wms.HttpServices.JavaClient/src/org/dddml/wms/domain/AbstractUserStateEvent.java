@@ -301,6 +301,54 @@ public abstract class AbstractUserStateEvent implements UserStateEvent
         }
     }
 
+    public UserRoleStateEvent.UserRoleStateCreated newUserRoleStateCreated(String roleId) {
+        return new SimpleUserRoleStateCreated(newUserRoleStateEventId(roleId));
+    }
+
+    public UserRoleStateEvent.UserRoleStateMergePatched newUserRoleStateMergePatched(String roleId) {
+        return new SimpleUserRoleStateMergePatched(newUserRoleStateEventId(roleId));
+    }
+
+    public UserRoleStateEvent.UserRoleStateRemoved newUserRoleStateRemoved(String roleId) {
+        return new SimpleUserRoleStateRemoved(newUserRoleStateEventId(roleId));
+    }
+
+    public UserClaimStateEvent.UserClaimStateCreated newUserClaimStateCreated(Integer claimId) {
+        return new SimpleUserClaimStateCreated(newUserClaimStateEventId(claimId));
+    }
+
+    public UserClaimStateEvent.UserClaimStateMergePatched newUserClaimStateMergePatched(Integer claimId) {
+        return new SimpleUserClaimStateMergePatched(newUserClaimStateEventId(claimId));
+    }
+
+    public UserClaimStateEvent.UserClaimStateRemoved newUserClaimStateRemoved(Integer claimId) {
+        return new SimpleUserClaimStateRemoved(newUserClaimStateEventId(claimId));
+    }
+
+    public UserPermissionStateEvent.UserPermissionStateCreated newUserPermissionStateCreated(String permissionId) {
+        return new SimpleUserPermissionStateCreated(newUserPermissionStateEventId(permissionId));
+    }
+
+    public UserPermissionStateEvent.UserPermissionStateMergePatched newUserPermissionStateMergePatched(String permissionId) {
+        return new SimpleUserPermissionStateMergePatched(newUserPermissionStateEventId(permissionId));
+    }
+
+    public UserPermissionStateEvent.UserPermissionStateRemoved newUserPermissionStateRemoved(String permissionId) {
+        return new SimpleUserPermissionStateRemoved(newUserPermissionStateEventId(permissionId));
+    }
+
+    public UserLoginStateEvent.UserLoginStateCreated newUserLoginStateCreated(LoginKey loginKey) {
+        return new SimpleUserLoginStateCreated(newUserLoginStateEventId(loginKey));
+    }
+
+    public UserLoginStateEvent.UserLoginStateMergePatched newUserLoginStateMergePatched(LoginKey loginKey) {
+        return new SimpleUserLoginStateMergePatched(newUserLoginStateEventId(loginKey));
+    }
+
+    public UserLoginStateEvent.UserLoginStateRemoved newUserLoginStateRemoved(LoginKey loginKey) {
+        return new SimpleUserLoginStateRemoved(newUserLoginStateEventId(loginKey));
+    }
+
 
     public abstract String getStateEventType();
 
@@ -360,11 +408,6 @@ public abstract class AbstractUserStateEvent implements UserStateEvent
             this.userRoleEvents.put(e.getStateEventId(), e);
         }
 
-        public abstract UserRoleStateEvent.UserRoleStateCreated newUserRoleStateCreated(String roleId);
-//        {
-//            return new UserRoleStateEvent.UserRoleStateCreated(newUserRoleStateEventId(roleId));
-//        }
-
         private Map<UserClaimStateEventId, UserClaimStateEvent.UserClaimStateCreated> userClaimEvents = new HashMap<UserClaimStateEventId, UserClaimStateEvent.UserClaimStateCreated>();
         
         private Iterable<UserClaimStateEvent.UserClaimStateCreated> readOnlyUserClaimEvents;
@@ -406,11 +449,6 @@ public abstract class AbstractUserStateEvent implements UserStateEvent
             throwOnInconsistentEventIds(e);
             this.userClaimEvents.put(e.getStateEventId(), e);
         }
-
-        public abstract UserClaimStateEvent.UserClaimStateCreated newUserClaimStateCreated(Integer claimId);
-//        {
-//            return new UserClaimStateEvent.UserClaimStateCreated(newUserClaimStateEventId(claimId));
-//        }
 
         private Map<UserPermissionStateEventId, UserPermissionStateEvent.UserPermissionStateCreated> userPermissionEvents = new HashMap<UserPermissionStateEventId, UserPermissionStateEvent.UserPermissionStateCreated>();
         
@@ -454,11 +492,6 @@ public abstract class AbstractUserStateEvent implements UserStateEvent
             this.userPermissionEvents.put(e.getStateEventId(), e);
         }
 
-        public abstract UserPermissionStateEvent.UserPermissionStateCreated newUserPermissionStateCreated(String permissionId);
-//        {
-//            return new UserPermissionStateEvent.UserPermissionStateCreated(newUserPermissionStateEventId(permissionId));
-//        }
-
         private Map<UserLoginStateEventId, UserLoginStateEvent.UserLoginStateCreated> userLoginEvents = new HashMap<UserLoginStateEventId, UserLoginStateEvent.UserLoginStateCreated>();
         
         private Iterable<UserLoginStateEvent.UserLoginStateCreated> readOnlyUserLoginEvents;
@@ -501,11 +534,6 @@ public abstract class AbstractUserStateEvent implements UserStateEvent
             this.userLoginEvents.put(e.getStateEventId(), e);
         }
 
-        public abstract UserLoginStateEvent.UserLoginStateCreated newUserLoginStateCreated(LoginKey loginKey);
-//        {
-//            return new UserLoginStateEvent.UserLoginStateCreated(newUserLoginStateEventId(loginKey));
-//        }
-
         public void save()
         {
             for (UserRoleStateEvent.UserRoleStateCreated e : this.getUserRoleEvents()) {
@@ -524,100 +552,310 @@ public abstract class AbstractUserStateEvent implements UserStateEvent
     }
 
 
-/*
     public static abstract class AbstractUserStateMergePatched extends AbstractUserStateEvent implements UserStateMergePatched, Saveable
     {
-        Boolean isPropertyUserNameRemoved();
+        public AbstractUserStateMergePatched() {
+        }
 
-        void setPropertyUserNameRemoved(Boolean removed);
+        public AbstractUserStateMergePatched(UserStateEventId stateEventId) {
+            super(stateEventId);
+        }
 
-        Boolean isPropertyAccessFailedCountRemoved();
+        public String getStateEventType() {
+            return StateEventType.MERGE_PATCHED;
+        }
 
-        void setPropertyAccessFailedCountRemoved(Boolean removed);
+        private Boolean isPropertyUserNameRemoved;
 
-        Boolean isPropertyEmailRemoved();
+        public Boolean getIsPropertyUserNameRemoved() {
+            return this.isPropertyUserNameRemoved;
+        }
 
-        void setPropertyEmailRemoved(Boolean removed);
+        public void setIsPropertyUserNameRemoved(Boolean removed) {
+            this.isPropertyUserNameRemoved = removed;
+        }
 
-        Boolean isPropertyEmailConfirmedRemoved();
+        private Boolean isPropertyAccessFailedCountRemoved;
 
-        void setPropertyEmailConfirmedRemoved(Boolean removed);
+        public Boolean getIsPropertyAccessFailedCountRemoved() {
+            return this.isPropertyAccessFailedCountRemoved;
+        }
 
-        Boolean isPropertyLockoutEnabledRemoved();
+        public void setIsPropertyAccessFailedCountRemoved(Boolean removed) {
+            this.isPropertyAccessFailedCountRemoved = removed;
+        }
 
-        void setPropertyLockoutEnabledRemoved(Boolean removed);
+        private Boolean isPropertyEmailRemoved;
 
-        Boolean isPropertyLockoutEndDateUtcRemoved();
+        public Boolean getIsPropertyEmailRemoved() {
+            return this.isPropertyEmailRemoved;
+        }
 
-        void setPropertyLockoutEndDateUtcRemoved(Boolean removed);
+        public void setIsPropertyEmailRemoved(Boolean removed) {
+            this.isPropertyEmailRemoved = removed;
+        }
 
-        Boolean isPropertyPasswordHashRemoved();
+        private Boolean isPropertyEmailConfirmedRemoved;
 
-        void setPropertyPasswordHashRemoved(Boolean removed);
+        public Boolean getIsPropertyEmailConfirmedRemoved() {
+            return this.isPropertyEmailConfirmedRemoved;
+        }
 
-        Boolean isPropertyPhoneNumberRemoved();
+        public void setIsPropertyEmailConfirmedRemoved(Boolean removed) {
+            this.isPropertyEmailConfirmedRemoved = removed;
+        }
 
-        void setPropertyPhoneNumberRemoved(Boolean removed);
+        private Boolean isPropertyLockoutEnabledRemoved;
 
-        Boolean isPropertyPhoneNumberConfirmedRemoved();
+        public Boolean getIsPropertyLockoutEnabledRemoved() {
+            return this.isPropertyLockoutEnabledRemoved;
+        }
 
-        void setPropertyPhoneNumberConfirmedRemoved(Boolean removed);
+        public void setIsPropertyLockoutEnabledRemoved(Boolean removed) {
+            this.isPropertyLockoutEnabledRemoved = removed;
+        }
 
-        Boolean isPropertyTwoFactorEnabledRemoved();
+        private Boolean isPropertyLockoutEndDateUtcRemoved;
 
-        void setPropertyTwoFactorEnabledRemoved(Boolean removed);
+        public Boolean getIsPropertyLockoutEndDateUtcRemoved() {
+            return this.isPropertyLockoutEndDateUtcRemoved;
+        }
 
-        Boolean isPropertySecurityStampRemoved();
+        public void setIsPropertyLockoutEndDateUtcRemoved(Boolean removed) {
+            this.isPropertyLockoutEndDateUtcRemoved = removed;
+        }
 
-        void setPropertySecurityStampRemoved(Boolean removed);
+        private Boolean isPropertyPasswordHashRemoved;
 
-        Boolean isPropertyActiveRemoved();
+        public Boolean getIsPropertyPasswordHashRemoved() {
+            return this.isPropertyPasswordHashRemoved;
+        }
 
-        void setPropertyActiveRemoved(Boolean removed);
+        public void setIsPropertyPasswordHashRemoved(Boolean removed) {
+            this.isPropertyPasswordHashRemoved = removed;
+        }
 
-        Iterable<UserRoleStateEvent> getUserRoleEvents();
+        private Boolean isPropertyPhoneNumberRemoved;
+
+        public Boolean getIsPropertyPhoneNumberRemoved() {
+            return this.isPropertyPhoneNumberRemoved;
+        }
+
+        public void setIsPropertyPhoneNumberRemoved(Boolean removed) {
+            this.isPropertyPhoneNumberRemoved = removed;
+        }
+
+        private Boolean isPropertyPhoneNumberConfirmedRemoved;
+
+        public Boolean getIsPropertyPhoneNumberConfirmedRemoved() {
+            return this.isPropertyPhoneNumberConfirmedRemoved;
+        }
+
+        public void setIsPropertyPhoneNumberConfirmedRemoved(Boolean removed) {
+            this.isPropertyPhoneNumberConfirmedRemoved = removed;
+        }
+
+        private Boolean isPropertyTwoFactorEnabledRemoved;
+
+        public Boolean getIsPropertyTwoFactorEnabledRemoved() {
+            return this.isPropertyTwoFactorEnabledRemoved;
+        }
+
+        public void setIsPropertyTwoFactorEnabledRemoved(Boolean removed) {
+            this.isPropertyTwoFactorEnabledRemoved = removed;
+        }
+
+        private Boolean isPropertySecurityStampRemoved;
+
+        public Boolean getIsPropertySecurityStampRemoved() {
+            return this.isPropertySecurityStampRemoved;
+        }
+
+        public void setIsPropertySecurityStampRemoved(Boolean removed) {
+            this.isPropertySecurityStampRemoved = removed;
+        }
+
+        private Boolean isPropertyActiveRemoved;
+
+        public Boolean getIsPropertyActiveRemoved() {
+            return this.isPropertyActiveRemoved;
+        }
+
+        public void setIsPropertyActiveRemoved(Boolean removed) {
+            this.isPropertyActiveRemoved = removed;
+        }
+
+        private Map<UserRoleStateEventId, UserRoleStateEvent> userRoleEvents = new HashMap<UserRoleStateEventId, UserRoleStateEvent>();
         
-        void addUserRoleEvent(UserRoleStateEvent e);
+        private Iterable<UserRoleStateEvent> readOnlyUserRoleEvents;
 
-        UserRoleStateEvent.UserRoleStateCreated newUserRoleStateCreated(String roleId);
+        public Iterable<UserRoleStateEvent> getUserRoleEvents()
+        {
+            if (!getStateEventReadOnly())
+            {
+                return this.userRoleEvents.values();
+            }
+            else
+            {
+                if (readOnlyUserRoleEvents != null) { return readOnlyUserRoleEvents; }
+                UserRoleStateEventDao eventDao = getUserRoleStateEventDao();
+                List<UserRoleStateEvent> eL = new ArrayList<UserRoleStateEvent>();
+                for (UserRoleStateEvent e : eventDao.findByUserStateEventId(this.getStateEventId()))
+                {
+                    e.setStateEventReadOnly(true);
+                    eL.add((UserRoleStateEvent)e);
+                }
+                return (readOnlyUserRoleEvents = eL);
+            }
+        }
 
-        UserRoleStateEvent.UserRoleStateMergePatched newUserRoleStateMergePatched(String roleId);
-
-        UserRoleStateEvent.UserRoleStateRemoved newUserRoleStateRemoved(String roleId);
-
-        Iterable<UserClaimStateEvent> getUserClaimEvents();
+        public void setUserRoleEvents(Iterable<UserRoleStateEvent> es)
+        {
+            if (es != null)
+            {
+                for (UserRoleStateEvent e : es)
+                {
+                    addUserRoleEvent(e);
+                }
+            }
+            else { this.userRoleEvents.clear(); }
+        }
         
-        void addUserClaimEvent(UserClaimStateEvent e);
+        public void addUserRoleEvent(UserRoleStateEvent e)
+        {
+            throwOnInconsistentEventIds(e);
+            this.userRoleEvents.put(e.getStateEventId(), e);
+        }
 
-        UserClaimStateEvent.UserClaimStateCreated newUserClaimStateCreated(Integer claimId);
-
-        UserClaimStateEvent.UserClaimStateMergePatched newUserClaimStateMergePatched(Integer claimId);
-
-        UserClaimStateEvent.UserClaimStateRemoved newUserClaimStateRemoved(Integer claimId);
-
-        Iterable<UserPermissionStateEvent> getUserPermissionEvents();
+        private Map<UserClaimStateEventId, UserClaimStateEvent> userClaimEvents = new HashMap<UserClaimStateEventId, UserClaimStateEvent>();
         
-        void addUserPermissionEvent(UserPermissionStateEvent e);
+        private Iterable<UserClaimStateEvent> readOnlyUserClaimEvents;
 
-        UserPermissionStateEvent.UserPermissionStateCreated newUserPermissionStateCreated(String permissionId);
+        public Iterable<UserClaimStateEvent> getUserClaimEvents()
+        {
+            if (!getStateEventReadOnly())
+            {
+                return this.userClaimEvents.values();
+            }
+            else
+            {
+                if (readOnlyUserClaimEvents != null) { return readOnlyUserClaimEvents; }
+                UserClaimStateEventDao eventDao = getUserClaimStateEventDao();
+                List<UserClaimStateEvent> eL = new ArrayList<UserClaimStateEvent>();
+                for (UserClaimStateEvent e : eventDao.findByUserStateEventId(this.getStateEventId()))
+                {
+                    e.setStateEventReadOnly(true);
+                    eL.add((UserClaimStateEvent)e);
+                }
+                return (readOnlyUserClaimEvents = eL);
+            }
+        }
 
-        UserPermissionStateEvent.UserPermissionStateMergePatched newUserPermissionStateMergePatched(String permissionId);
-
-        UserPermissionStateEvent.UserPermissionStateRemoved newUserPermissionStateRemoved(String permissionId);
-
-        Iterable<UserLoginStateEvent> getUserLoginEvents();
+        public void setUserClaimEvents(Iterable<UserClaimStateEvent> es)
+        {
+            if (es != null)
+            {
+                for (UserClaimStateEvent e : es)
+                {
+                    addUserClaimEvent(e);
+                }
+            }
+            else { this.userClaimEvents.clear(); }
+        }
         
-        void addUserLoginEvent(UserLoginStateEvent e);
+        public void addUserClaimEvent(UserClaimStateEvent e)
+        {
+            throwOnInconsistentEventIds(e);
+            this.userClaimEvents.put(e.getStateEventId(), e);
+        }
 
-        UserLoginStateEvent.UserLoginStateCreated newUserLoginStateCreated(LoginKey loginKey);
+        private Map<UserPermissionStateEventId, UserPermissionStateEvent> userPermissionEvents = new HashMap<UserPermissionStateEventId, UserPermissionStateEvent>();
+        
+        private Iterable<UserPermissionStateEvent> readOnlyUserPermissionEvents;
 
-        UserLoginStateEvent.UserLoginStateMergePatched newUserLoginStateMergePatched(LoginKey loginKey);
+        public Iterable<UserPermissionStateEvent> getUserPermissionEvents()
+        {
+            if (!getStateEventReadOnly())
+            {
+                return this.userPermissionEvents.values();
+            }
+            else
+            {
+                if (readOnlyUserPermissionEvents != null) { return readOnlyUserPermissionEvents; }
+                UserPermissionStateEventDao eventDao = getUserPermissionStateEventDao();
+                List<UserPermissionStateEvent> eL = new ArrayList<UserPermissionStateEvent>();
+                for (UserPermissionStateEvent e : eventDao.findByUserStateEventId(this.getStateEventId()))
+                {
+                    e.setStateEventReadOnly(true);
+                    eL.add((UserPermissionStateEvent)e);
+                }
+                return (readOnlyUserPermissionEvents = eL);
+            }
+        }
 
-        UserLoginStateEvent.UserLoginStateRemoved newUserLoginStateRemoved(LoginKey loginKey);
+        public void setUserPermissionEvents(Iterable<UserPermissionStateEvent> es)
+        {
+            if (es != null)
+            {
+                for (UserPermissionStateEvent e : es)
+                {
+                    addUserPermissionEvent(e);
+                }
+            }
+            else { this.userPermissionEvents.clear(); }
+        }
+        
+        public void addUserPermissionEvent(UserPermissionStateEvent e)
+        {
+            throwOnInconsistentEventIds(e);
+            this.userPermissionEvents.put(e.getStateEventId(), e);
+        }
+
+        private Map<UserLoginStateEventId, UserLoginStateEvent> userLoginEvents = new HashMap<UserLoginStateEventId, UserLoginStateEvent>();
+        
+        private Iterable<UserLoginStateEvent> readOnlyUserLoginEvents;
+
+        public Iterable<UserLoginStateEvent> getUserLoginEvents()
+        {
+            if (!getStateEventReadOnly())
+            {
+                return this.userLoginEvents.values();
+            }
+            else
+            {
+                if (readOnlyUserLoginEvents != null) { return readOnlyUserLoginEvents; }
+                UserLoginStateEventDao eventDao = getUserLoginStateEventDao();
+                List<UserLoginStateEvent> eL = new ArrayList<UserLoginStateEvent>();
+                for (UserLoginStateEvent e : eventDao.findByUserStateEventId(this.getStateEventId()))
+                {
+                    e.setStateEventReadOnly(true);
+                    eL.add((UserLoginStateEvent)e);
+                }
+                return (readOnlyUserLoginEvents = eL);
+            }
+        }
+
+        public void setUserLoginEvents(Iterable<UserLoginStateEvent> es)
+        {
+            if (es != null)
+            {
+                for (UserLoginStateEvent e : es)
+                {
+                    addUserLoginEvent(e);
+                }
+            }
+            else { this.userLoginEvents.clear(); }
+        }
+        
+        public void addUserLoginEvent(UserLoginStateEvent e)
+        {
+            throwOnInconsistentEventIds(e);
+            this.userLoginEvents.put(e.getStateEventId(), e);
+        }
 
 
     }
-*/
+
 
     public static abstract class AbstractUserStateDeleted extends AbstractUserStateEvent implements UserStateDeleted, Saveable
     {
@@ -675,11 +913,6 @@ public abstract class AbstractUserStateEvent implements UserStateEvent
             this.userRoleEvents.put(e.getStateEventId(), e);
         }
 
-        public abstract UserRoleStateEvent.UserRoleStateRemoved newUserRoleStateRemoved(String roleId);
-//        {
-//            return new UserRoleStateEvent.UserRoleStateRemoved(newUserRoleStateEventId(roleId));
-//        }
-
 		
         private Map<UserClaimStateEventId, UserClaimStateEvent.UserClaimStateRemoved> userClaimEvents = new HashMap<UserClaimStateEventId, UserClaimStateEvent.UserClaimStateRemoved>();
         
@@ -722,11 +955,6 @@ public abstract class AbstractUserStateEvent implements UserStateEvent
             throwOnInconsistentEventIds(e);
             this.userClaimEvents.put(e.getStateEventId(), e);
         }
-
-        public abstract UserClaimStateEvent.UserClaimStateRemoved newUserClaimStateRemoved(Integer claimId);
-//        {
-//            return new UserClaimStateEvent.UserClaimStateRemoved(newUserClaimStateEventId(claimId));
-//        }
 
 		
         private Map<UserPermissionStateEventId, UserPermissionStateEvent.UserPermissionStateRemoved> userPermissionEvents = new HashMap<UserPermissionStateEventId, UserPermissionStateEvent.UserPermissionStateRemoved>();
@@ -771,11 +999,6 @@ public abstract class AbstractUserStateEvent implements UserStateEvent
             this.userPermissionEvents.put(e.getStateEventId(), e);
         }
 
-        public abstract UserPermissionStateEvent.UserPermissionStateRemoved newUserPermissionStateRemoved(String permissionId);
-//        {
-//            return new UserPermissionStateEvent.UserPermissionStateRemoved(newUserPermissionStateEventId(permissionId));
-//        }
-
 		
         private Map<UserLoginStateEventId, UserLoginStateEvent.UserLoginStateRemoved> userLoginEvents = new HashMap<UserLoginStateEventId, UserLoginStateEvent.UserLoginStateRemoved>();
         
@@ -819,11 +1042,6 @@ public abstract class AbstractUserStateEvent implements UserStateEvent
             this.userLoginEvents.put(e.getStateEventId(), e);
         }
 
-        public abstract UserLoginStateEvent.UserLoginStateRemoved newUserLoginStateRemoved(LoginKey loginKey);
-//        {
-//            return new UserLoginStateEvent.UserLoginStateRemoved(newUserLoginStateEventId(loginKey));
-//        }
-
         public void save()
         {
             for (UserRoleStateEvent.UserRoleStateRemoved e : this.getUserRoleEvents()) {
@@ -840,6 +1058,125 @@ public abstract class AbstractUserStateEvent implements UserStateEvent
             }
         }
     }
+        public static class SimpleUserRoleStateCreated extends AbstractUserRoleStateEvent.AbstractUserRoleStateCreated
+        {
+			public SimpleUserRoleStateCreated() {
+			}
+
+			public SimpleUserRoleStateCreated(UserRoleStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleUserRoleStateMergePatched extends AbstractUserRoleStateEvent.AbstractUserRoleStateMergePatched
+        {
+			public SimpleUserRoleStateMergePatched() {
+			}
+
+			public SimpleUserRoleStateMergePatched(UserRoleStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleUserRoleStateRemoved extends AbstractUserRoleStateEvent.AbstractUserRoleStateRemoved
+        {
+			public SimpleUserRoleStateRemoved() {
+			}
+
+			public SimpleUserRoleStateRemoved(UserRoleStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleUserClaimStateCreated extends AbstractUserClaimStateEvent.AbstractUserClaimStateCreated
+        {
+			public SimpleUserClaimStateCreated() {
+			}
+
+			public SimpleUserClaimStateCreated(UserClaimStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleUserClaimStateMergePatched extends AbstractUserClaimStateEvent.AbstractUserClaimStateMergePatched
+        {
+			public SimpleUserClaimStateMergePatched() {
+			}
+
+			public SimpleUserClaimStateMergePatched(UserClaimStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleUserClaimStateRemoved extends AbstractUserClaimStateEvent.AbstractUserClaimStateRemoved
+        {
+			public SimpleUserClaimStateRemoved() {
+			}
+
+			public SimpleUserClaimStateRemoved(UserClaimStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleUserPermissionStateCreated extends AbstractUserPermissionStateEvent.AbstractUserPermissionStateCreated
+        {
+			public SimpleUserPermissionStateCreated() {
+			}
+
+			public SimpleUserPermissionStateCreated(UserPermissionStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleUserPermissionStateMergePatched extends AbstractUserPermissionStateEvent.AbstractUserPermissionStateMergePatched
+        {
+			public SimpleUserPermissionStateMergePatched() {
+			}
+
+			public SimpleUserPermissionStateMergePatched(UserPermissionStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleUserPermissionStateRemoved extends AbstractUserPermissionStateEvent.AbstractUserPermissionStateRemoved
+        {
+			public SimpleUserPermissionStateRemoved() {
+			}
+
+			public SimpleUserPermissionStateRemoved(UserPermissionStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleUserLoginStateCreated extends AbstractUserLoginStateEvent.AbstractUserLoginStateCreated
+        {
+			public SimpleUserLoginStateCreated() {
+			}
+
+			public SimpleUserLoginStateCreated(UserLoginStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleUserLoginStateMergePatched extends AbstractUserLoginStateEvent.AbstractUserLoginStateMergePatched
+        {
+			public SimpleUserLoginStateMergePatched() {
+			}
+
+			public SimpleUserLoginStateMergePatched(UserLoginStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleUserLoginStateRemoved extends AbstractUserLoginStateEvent.AbstractUserLoginStateRemoved
+        {
+			public SimpleUserLoginStateRemoved() {
+			}
+
+			public SimpleUserLoginStateRemoved(UserLoginStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
 
 }
 

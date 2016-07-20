@@ -369,7 +369,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoState impleme
 
         if (e.getName() == null)
         {
-            if (e.isPropertyNameRemoved() != null && e.isPropertyNameRemoved())
+            if (e.getIsPropertyNameRemoved() != null && e.getIsPropertyNameRemoved())
             {
                 this.setName(null);
             }
@@ -380,7 +380,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoState impleme
         }
         if (e.getType() == null)
         {
-            if (e.isPropertyTypeRemoved() != null && e.isPropertyTypeRemoved())
+            if (e.getIsPropertyTypeRemoved() != null && e.getIsPropertyTypeRemoved())
             {
                 this.setType(null);
             }
@@ -391,7 +391,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoState impleme
         }
         if (e.getLength() == null)
         {
-            if (e.isPropertyLengthRemoved() != null && e.isPropertyLengthRemoved())
+            if (e.getIsPropertyLengthRemoved() != null && e.getIsPropertyLengthRemoved())
             {
                 this.setLength(null);
             }
@@ -402,7 +402,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoState impleme
         }
         if (e.getAlias() == null)
         {
-            if (e.isPropertyAliasRemoved() != null && e.isPropertyAliasRemoved())
+            if (e.getIsPropertyAliasRemoved() != null && e.getIsPropertyAliasRemoved())
             {
                 this.setAlias(null);
             }
@@ -413,7 +413,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoState impleme
         }
         if (e.getDescription() == null)
         {
-            if (e.isPropertyDescriptionRemoved() != null && e.isPropertyDescriptionRemoved())
+            if (e.getIsPropertyDescriptionRemoved() != null && e.getIsPropertyDescriptionRemoved())
             {
                 this.setDescription(null);
             }
@@ -424,7 +424,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoState impleme
         }
         if (e.getVersion() == null)
         {
-            if (e.isPropertyVersionRemoved() != null && e.isPropertyVersionRemoved())
+            if (e.getIsPropertyVersionRemoved() != null && e.getIsPropertyVersionRemoved())
             {
                 this.setVersion(null);
             }
@@ -435,7 +435,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoState impleme
         }
         if (e.getActive() == null)
         {
-            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            if (e.getIsPropertyActiveRemoved() != null && e.getIsPropertyActiveRemoved())
             {
                 this.setActive(null);
             }
@@ -446,7 +446,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoState impleme
         }
         if (e.getAttrSetInstEFGroupFieldType() == null)
         {
-            if (e.isPropertyAttrSetInstEFGroupFieldTypeRemoved() != null && e.isPropertyAttrSetInstEFGroupFieldTypeRemoved())
+            if (e.getIsPropertyAttrSetInstEFGroupFieldTypeRemoved() != null && e.getIsPropertyAttrSetInstEFGroupFieldTypeRemoved())
             {
                 this.setAttrSetInstEFGroupFieldType(null);
             }
@@ -457,7 +457,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoState impleme
         }
         if (e.getAttrSetInstEFGroupFieldLength() == null)
         {
-            if (e.isPropertyAttrSetInstEFGroupFieldLengthRemoved() != null && e.isPropertyAttrSetInstEFGroupFieldLengthRemoved())
+            if (e.getIsPropertyAttrSetInstEFGroupFieldLengthRemoved() != null && e.getIsPropertyAttrSetInstEFGroupFieldLengthRemoved())
             {
                 this.setAttrSetInstEFGroupFieldLength(null);
             }
@@ -468,7 +468,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoState impleme
         }
         if (e.getAttrSetInstEFGroupFieldCount() == null)
         {
-            if (e.isPropertyAttrSetInstEFGroupFieldCountRemoved() != null && e.isPropertyAttrSetInstEFGroupFieldCountRemoved())
+            if (e.getIsPropertyAttrSetInstEFGroupFieldCountRemoved() != null && e.getIsPropertyAttrSetInstEFGroupFieldCountRemoved())
             {
                 this.setAttrSetInstEFGroupFieldCount(null);
             }
@@ -479,7 +479,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoState impleme
         }
         if (e.getAttrSetInstEFGroupNameFormat() == null)
         {
-            if (e.isPropertyAttrSetInstEFGroupNameFormatRemoved() != null && e.isPropertyAttrSetInstEFGroupNameFormatRemoved())
+            if (e.getIsPropertyAttrSetInstEFGroupNameFormatRemoved() != null && e.getIsPropertyAttrSetInstEFGroupNameFormatRemoved())
             {
                 this.setAttrSetInstEFGroupNameFormat(null);
             }
@@ -490,7 +490,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoState impleme
         }
         if (e.getAttrSetInstEFGroupDescription() == null)
         {
-            if (e.isPropertyAttrSetInstEFGroupDescriptionRemoved() != null && e.isPropertyAttrSetInstEFGroupDescriptionRemoved())
+            if (e.getIsPropertyAttrSetInstEFGroupDescriptionRemoved() != null && e.getIsPropertyAttrSetInstEFGroupDescriptionRemoved())
             {
                 this.setAttrSetInstEFGroupDescription(null);
             }
@@ -501,7 +501,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoState impleme
         }
         if (e.getAttrSetInstEFGroupCreatedBy() == null)
         {
-            if (e.isPropertyAttrSetInstEFGroupCreatedByRemoved() != null && e.isPropertyAttrSetInstEFGroupCreatedByRemoved())
+            if (e.getIsPropertyAttrSetInstEFGroupCreatedByRemoved() != null && e.getIsPropertyAttrSetInstEFGroupCreatedByRemoved())
             {
                 this.setAttrSetInstEFGroupCreatedBy(null);
             }
@@ -512,7 +512,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoState impleme
         }
         if (e.getAttrSetInstEFGroupCreatedAt() == null)
         {
-            if (e.isPropertyAttrSetInstEFGroupCreatedAtRemoved() != null && e.isPropertyAttrSetInstEFGroupCreatedAtRemoved())
+            if (e.getIsPropertyAttrSetInstEFGroupCreatedAtRemoved() != null && e.getIsPropertyAttrSetInstEFGroupCreatedAtRemoved())
             {
                 this.setAttrSetInstEFGroupCreatedAt(null);
             }
@@ -523,7 +523,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoState impleme
         }
         if (e.getAttrSetInstEFGroupUpdatedBy() == null)
         {
-            if (e.isPropertyAttrSetInstEFGroupUpdatedByRemoved() != null && e.isPropertyAttrSetInstEFGroupUpdatedByRemoved())
+            if (e.getIsPropertyAttrSetInstEFGroupUpdatedByRemoved() != null && e.getIsPropertyAttrSetInstEFGroupUpdatedByRemoved())
             {
                 this.setAttrSetInstEFGroupUpdatedBy(null);
             }
@@ -534,7 +534,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoState impleme
         }
         if (e.getAttrSetInstEFGroupUpdatedAt() == null)
         {
-            if (e.isPropertyAttrSetInstEFGroupUpdatedAtRemoved() != null && e.isPropertyAttrSetInstEFGroupUpdatedAtRemoved())
+            if (e.getIsPropertyAttrSetInstEFGroupUpdatedAtRemoved() != null && e.getIsPropertyAttrSetInstEFGroupUpdatedAtRemoved())
             {
                 this.setAttrSetInstEFGroupUpdatedAt(null);
             }
@@ -545,7 +545,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoState impleme
         }
         if (e.getAttrSetInstEFGroupActive() == null)
         {
-            if (e.isPropertyAttrSetInstEFGroupActiveRemoved() != null && e.isPropertyAttrSetInstEFGroupActiveRemoved())
+            if (e.getIsPropertyAttrSetInstEFGroupActiveRemoved() != null && e.getIsPropertyAttrSetInstEFGroupActiveRemoved())
             {
                 this.setAttrSetInstEFGroupActive(null);
             }
@@ -556,7 +556,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoState impleme
         }
         if (e.getAttrSetInstEFGroupDeleted() == null)
         {
-            if (e.isPropertyAttrSetInstEFGroupDeletedRemoved() != null && e.isPropertyAttrSetInstEFGroupDeletedRemoved())
+            if (e.getIsPropertyAttrSetInstEFGroupDeletedRemoved() != null && e.getIsPropertyAttrSetInstEFGroupDeletedRemoved())
             {
                 this.setAttrSetInstEFGroupDeleted(null);
             }

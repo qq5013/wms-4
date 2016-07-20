@@ -47,9 +47,9 @@ public class CreateOrMergePatchRoleDto extends AbstractRoleCommandDto
         return this.isPropertyNameRemoved;
     }
 
-    public void setIsPropertyNameRemoved(Boolean isPropertyNameRemoved)
+    public void setIsPropertyNameRemoved(Boolean removed)
     {
-        this.isPropertyNameRemoved = isPropertyNameRemoved;
+        this.isPropertyNameRemoved = removed;
     }
 
     private Boolean isPropertyDescriptionRemoved;
@@ -59,9 +59,9 @@ public class CreateOrMergePatchRoleDto extends AbstractRoleCommandDto
         return this.isPropertyDescriptionRemoved;
     }
 
-    public void setIsPropertyDescriptionRemoved(Boolean isPropertyDescriptionRemoved)
+    public void setIsPropertyDescriptionRemoved(Boolean removed)
     {
-        this.isPropertyDescriptionRemoved = isPropertyDescriptionRemoved;
+        this.isPropertyDescriptionRemoved = removed;
     }
 
     private Boolean isPropertyActiveRemoved;
@@ -71,9 +71,9 @@ public class CreateOrMergePatchRoleDto extends AbstractRoleCommandDto
         return this.isPropertyActiveRemoved;
     }
 
-    public void setIsPropertyActiveRemoved(Boolean isPropertyActiveRemoved)
+    public void setIsPropertyActiveRemoved(Boolean removed)
     {
-        this.isPropertyActiveRemoved = isPropertyActiveRemoved;
+        this.isPropertyActiveRemoved = removed;
     }
 
 

@@ -408,7 +408,7 @@ public abstract class AbstractAttributeValueMvoState implements AttributeValueMv
 
         if (e.getName() == null)
         {
-            if (e.isPropertyNameRemoved() != null && e.isPropertyNameRemoved())
+            if (e.getIsPropertyNameRemoved() != null && e.getIsPropertyNameRemoved())
             {
                 this.setName(null);
             }
@@ -419,7 +419,7 @@ public abstract class AbstractAttributeValueMvoState implements AttributeValueMv
         }
         if (e.getDescription() == null)
         {
-            if (e.isPropertyDescriptionRemoved() != null && e.isPropertyDescriptionRemoved())
+            if (e.getIsPropertyDescriptionRemoved() != null && e.getIsPropertyDescriptionRemoved())
             {
                 this.setDescription(null);
             }
@@ -430,7 +430,7 @@ public abstract class AbstractAttributeValueMvoState implements AttributeValueMv
         }
         if (e.getReferenceId() == null)
         {
-            if (e.isPropertyReferenceIdRemoved() != null && e.isPropertyReferenceIdRemoved())
+            if (e.getIsPropertyReferenceIdRemoved() != null && e.getIsPropertyReferenceIdRemoved())
             {
                 this.setReferenceId(null);
             }
@@ -441,7 +441,7 @@ public abstract class AbstractAttributeValueMvoState implements AttributeValueMv
         }
         if (e.getVersion() == null)
         {
-            if (e.isPropertyVersionRemoved() != null && e.isPropertyVersionRemoved())
+            if (e.getIsPropertyVersionRemoved() != null && e.getIsPropertyVersionRemoved())
             {
                 this.setVersion(null);
             }
@@ -452,7 +452,7 @@ public abstract class AbstractAttributeValueMvoState implements AttributeValueMv
         }
         if (e.getActive() == null)
         {
-            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            if (e.getIsPropertyActiveRemoved() != null && e.getIsPropertyActiveRemoved())
             {
                 this.setActive(null);
             }
@@ -463,7 +463,7 @@ public abstract class AbstractAttributeValueMvoState implements AttributeValueMv
         }
         if (e.getAttributeName() == null)
         {
-            if (e.isPropertyAttributeNameRemoved() != null && e.isPropertyAttributeNameRemoved())
+            if (e.getIsPropertyAttributeNameRemoved() != null && e.getIsPropertyAttributeNameRemoved())
             {
                 this.setAttributeName(null);
             }
@@ -474,7 +474,7 @@ public abstract class AbstractAttributeValueMvoState implements AttributeValueMv
         }
         if (e.getAttributeOrganizationId() == null)
         {
-            if (e.isPropertyAttributeOrganizationIdRemoved() != null && e.isPropertyAttributeOrganizationIdRemoved())
+            if (e.getIsPropertyAttributeOrganizationIdRemoved() != null && e.getIsPropertyAttributeOrganizationIdRemoved())
             {
                 this.setAttributeOrganizationId(null);
             }
@@ -485,7 +485,7 @@ public abstract class AbstractAttributeValueMvoState implements AttributeValueMv
         }
         if (e.getAttributeDescription() == null)
         {
-            if (e.isPropertyAttributeDescriptionRemoved() != null && e.isPropertyAttributeDescriptionRemoved())
+            if (e.getIsPropertyAttributeDescriptionRemoved() != null && e.getIsPropertyAttributeDescriptionRemoved())
             {
                 this.setAttributeDescription(null);
             }
@@ -496,7 +496,7 @@ public abstract class AbstractAttributeValueMvoState implements AttributeValueMv
         }
         if (e.getAttributeIsMandatory() == null)
         {
-            if (e.isPropertyAttributeIsMandatoryRemoved() != null && e.isPropertyAttributeIsMandatoryRemoved())
+            if (e.getIsPropertyAttributeIsMandatoryRemoved() != null && e.getIsPropertyAttributeIsMandatoryRemoved())
             {
                 this.setAttributeIsMandatory(null);
             }
@@ -507,7 +507,7 @@ public abstract class AbstractAttributeValueMvoState implements AttributeValueMv
         }
         if (e.getAttributeIsInstanceAttribute() == null)
         {
-            if (e.isPropertyAttributeIsInstanceAttributeRemoved() != null && e.isPropertyAttributeIsInstanceAttributeRemoved())
+            if (e.getIsPropertyAttributeIsInstanceAttributeRemoved() != null && e.getIsPropertyAttributeIsInstanceAttributeRemoved())
             {
                 this.setAttributeIsInstanceAttribute(null);
             }
@@ -518,7 +518,7 @@ public abstract class AbstractAttributeValueMvoState implements AttributeValueMv
         }
         if (e.getAttributeAttributeValueType() == null)
         {
-            if (e.isPropertyAttributeAttributeValueTypeRemoved() != null && e.isPropertyAttributeAttributeValueTypeRemoved())
+            if (e.getIsPropertyAttributeAttributeValueTypeRemoved() != null && e.getIsPropertyAttributeAttributeValueTypeRemoved())
             {
                 this.setAttributeAttributeValueType(null);
             }
@@ -529,7 +529,7 @@ public abstract class AbstractAttributeValueMvoState implements AttributeValueMv
         }
         if (e.getAttributeAttributeValueLength() == null)
         {
-            if (e.isPropertyAttributeAttributeValueLengthRemoved() != null && e.isPropertyAttributeAttributeValueLengthRemoved())
+            if (e.getIsPropertyAttributeAttributeValueLengthRemoved() != null && e.getIsPropertyAttributeAttributeValueLengthRemoved())
             {
                 this.setAttributeAttributeValueLength(null);
             }
@@ -540,7 +540,7 @@ public abstract class AbstractAttributeValueMvoState implements AttributeValueMv
         }
         if (e.getAttributeIsList() == null)
         {
-            if (e.isPropertyAttributeIsListRemoved() != null && e.isPropertyAttributeIsListRemoved())
+            if (e.getIsPropertyAttributeIsListRemoved() != null && e.getIsPropertyAttributeIsListRemoved())
             {
                 this.setAttributeIsList(null);
             }
@@ -551,7 +551,7 @@ public abstract class AbstractAttributeValueMvoState implements AttributeValueMv
         }
         if (e.getAttributeFieldName() == null)
         {
-            if (e.isPropertyAttributeFieldNameRemoved() != null && e.isPropertyAttributeFieldNameRemoved())
+            if (e.getIsPropertyAttributeFieldNameRemoved() != null && e.getIsPropertyAttributeFieldNameRemoved())
             {
                 this.setAttributeFieldName(null);
             }
@@ -562,7 +562,7 @@ public abstract class AbstractAttributeValueMvoState implements AttributeValueMv
         }
         if (e.getAttributeReferenceId() == null)
         {
-            if (e.isPropertyAttributeReferenceIdRemoved() != null && e.isPropertyAttributeReferenceIdRemoved())
+            if (e.getIsPropertyAttributeReferenceIdRemoved() != null && e.getIsPropertyAttributeReferenceIdRemoved())
             {
                 this.setAttributeReferenceId(null);
             }
@@ -573,7 +573,7 @@ public abstract class AbstractAttributeValueMvoState implements AttributeValueMv
         }
         if (e.getAttributeCreatedBy() == null)
         {
-            if (e.isPropertyAttributeCreatedByRemoved() != null && e.isPropertyAttributeCreatedByRemoved())
+            if (e.getIsPropertyAttributeCreatedByRemoved() != null && e.getIsPropertyAttributeCreatedByRemoved())
             {
                 this.setAttributeCreatedBy(null);
             }
@@ -584,7 +584,7 @@ public abstract class AbstractAttributeValueMvoState implements AttributeValueMv
         }
         if (e.getAttributeCreatedAt() == null)
         {
-            if (e.isPropertyAttributeCreatedAtRemoved() != null && e.isPropertyAttributeCreatedAtRemoved())
+            if (e.getIsPropertyAttributeCreatedAtRemoved() != null && e.getIsPropertyAttributeCreatedAtRemoved())
             {
                 this.setAttributeCreatedAt(null);
             }
@@ -595,7 +595,7 @@ public abstract class AbstractAttributeValueMvoState implements AttributeValueMv
         }
         if (e.getAttributeUpdatedBy() == null)
         {
-            if (e.isPropertyAttributeUpdatedByRemoved() != null && e.isPropertyAttributeUpdatedByRemoved())
+            if (e.getIsPropertyAttributeUpdatedByRemoved() != null && e.getIsPropertyAttributeUpdatedByRemoved())
             {
                 this.setAttributeUpdatedBy(null);
             }
@@ -606,7 +606,7 @@ public abstract class AbstractAttributeValueMvoState implements AttributeValueMv
         }
         if (e.getAttributeUpdatedAt() == null)
         {
-            if (e.isPropertyAttributeUpdatedAtRemoved() != null && e.isPropertyAttributeUpdatedAtRemoved())
+            if (e.getIsPropertyAttributeUpdatedAtRemoved() != null && e.getIsPropertyAttributeUpdatedAtRemoved())
             {
                 this.setAttributeUpdatedAt(null);
             }
@@ -617,7 +617,7 @@ public abstract class AbstractAttributeValueMvoState implements AttributeValueMv
         }
         if (e.getAttributeActive() == null)
         {
-            if (e.isPropertyAttributeActiveRemoved() != null && e.isPropertyAttributeActiveRemoved())
+            if (e.getIsPropertyAttributeActiveRemoved() != null && e.getIsPropertyAttributeActiveRemoved())
             {
                 this.setAttributeActive(null);
             }
@@ -628,7 +628,7 @@ public abstract class AbstractAttributeValueMvoState implements AttributeValueMv
         }
         if (e.getAttributeDeleted() == null)
         {
-            if (e.isPropertyAttributeDeletedRemoved() != null && e.isPropertyAttributeDeletedRemoved())
+            if (e.getIsPropertyAttributeDeletedRemoved() != null && e.getIsPropertyAttributeDeletedRemoved())
             {
                 this.setAttributeDeleted(null);
             }

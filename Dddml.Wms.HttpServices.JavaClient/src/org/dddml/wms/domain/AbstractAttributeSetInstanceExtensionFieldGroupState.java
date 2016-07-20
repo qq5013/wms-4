@@ -231,7 +231,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldGroupState imple
 
         if (e.getFieldType() == null)
         {
-            if (e.isPropertyFieldTypeRemoved() != null && e.isPropertyFieldTypeRemoved())
+            if (e.getIsPropertyFieldTypeRemoved() != null && e.getIsPropertyFieldTypeRemoved())
             {
                 this.setFieldType(null);
             }
@@ -242,7 +242,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldGroupState imple
         }
         if (e.getFieldLength() == null)
         {
-            if (e.isPropertyFieldLengthRemoved() != null && e.isPropertyFieldLengthRemoved())
+            if (e.getIsPropertyFieldLengthRemoved() != null && e.getIsPropertyFieldLengthRemoved())
             {
                 this.setFieldLength(null);
             }
@@ -253,7 +253,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldGroupState imple
         }
         if (e.getFieldCount() == null)
         {
-            if (e.isPropertyFieldCountRemoved() != null && e.isPropertyFieldCountRemoved())
+            if (e.getIsPropertyFieldCountRemoved() != null && e.getIsPropertyFieldCountRemoved())
             {
                 this.setFieldCount(null);
             }
@@ -264,7 +264,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldGroupState imple
         }
         if (e.getNameFormat() == null)
         {
-            if (e.isPropertyNameFormatRemoved() != null && e.isPropertyNameFormatRemoved())
+            if (e.getIsPropertyNameFormatRemoved() != null && e.getIsPropertyNameFormatRemoved())
             {
                 this.setNameFormat(null);
             }
@@ -275,7 +275,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldGroupState imple
         }
         if (e.getDescription() == null)
         {
-            if (e.isPropertyDescriptionRemoved() != null && e.isPropertyDescriptionRemoved())
+            if (e.getIsPropertyDescriptionRemoved() != null && e.getIsPropertyDescriptionRemoved())
             {
                 this.setDescription(null);
             }
@@ -286,7 +286,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldGroupState imple
         }
         if (e.getActive() == null)
         {
-            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            if (e.getIsPropertyActiveRemoved() != null && e.getIsPropertyActiveRemoved())
             {
                 this.setActive(null);
             }

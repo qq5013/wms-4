@@ -203,9 +203,9 @@ public class CreateOrMergePatchUserDto extends AbstractUserCommandDto
         return this.isPropertyUserNameRemoved;
     }
 
-    public void setIsPropertyUserNameRemoved(Boolean isPropertyUserNameRemoved)
+    public void setIsPropertyUserNameRemoved(Boolean removed)
     {
-        this.isPropertyUserNameRemoved = isPropertyUserNameRemoved;
+        this.isPropertyUserNameRemoved = removed;
     }
 
     private Boolean isPropertyAccessFailedCountRemoved;
@@ -215,9 +215,9 @@ public class CreateOrMergePatchUserDto extends AbstractUserCommandDto
         return this.isPropertyAccessFailedCountRemoved;
     }
 
-    public void setIsPropertyAccessFailedCountRemoved(Boolean isPropertyAccessFailedCountRemoved)
+    public void setIsPropertyAccessFailedCountRemoved(Boolean removed)
     {
-        this.isPropertyAccessFailedCountRemoved = isPropertyAccessFailedCountRemoved;
+        this.isPropertyAccessFailedCountRemoved = removed;
     }
 
     private Boolean isPropertyEmailRemoved;
@@ -227,9 +227,9 @@ public class CreateOrMergePatchUserDto extends AbstractUserCommandDto
         return this.isPropertyEmailRemoved;
     }
 
-    public void setIsPropertyEmailRemoved(Boolean isPropertyEmailRemoved)
+    public void setIsPropertyEmailRemoved(Boolean removed)
     {
-        this.isPropertyEmailRemoved = isPropertyEmailRemoved;
+        this.isPropertyEmailRemoved = removed;
     }
 
     private Boolean isPropertyEmailConfirmedRemoved;
@@ -239,9 +239,9 @@ public class CreateOrMergePatchUserDto extends AbstractUserCommandDto
         return this.isPropertyEmailConfirmedRemoved;
     }
 
-    public void setIsPropertyEmailConfirmedRemoved(Boolean isPropertyEmailConfirmedRemoved)
+    public void setIsPropertyEmailConfirmedRemoved(Boolean removed)
     {
-        this.isPropertyEmailConfirmedRemoved = isPropertyEmailConfirmedRemoved;
+        this.isPropertyEmailConfirmedRemoved = removed;
     }
 
     private Boolean isPropertyLockoutEnabledRemoved;
@@ -251,9 +251,9 @@ public class CreateOrMergePatchUserDto extends AbstractUserCommandDto
         return this.isPropertyLockoutEnabledRemoved;
     }
 
-    public void setIsPropertyLockoutEnabledRemoved(Boolean isPropertyLockoutEnabledRemoved)
+    public void setIsPropertyLockoutEnabledRemoved(Boolean removed)
     {
-        this.isPropertyLockoutEnabledRemoved = isPropertyLockoutEnabledRemoved;
+        this.isPropertyLockoutEnabledRemoved = removed;
     }
 
     private Boolean isPropertyLockoutEndDateUtcRemoved;
@@ -263,9 +263,9 @@ public class CreateOrMergePatchUserDto extends AbstractUserCommandDto
         return this.isPropertyLockoutEndDateUtcRemoved;
     }
 
-    public void setIsPropertyLockoutEndDateUtcRemoved(Boolean isPropertyLockoutEndDateUtcRemoved)
+    public void setIsPropertyLockoutEndDateUtcRemoved(Boolean removed)
     {
-        this.isPropertyLockoutEndDateUtcRemoved = isPropertyLockoutEndDateUtcRemoved;
+        this.isPropertyLockoutEndDateUtcRemoved = removed;
     }
 
     private Boolean isPropertyPasswordHashRemoved;
@@ -275,9 +275,9 @@ public class CreateOrMergePatchUserDto extends AbstractUserCommandDto
         return this.isPropertyPasswordHashRemoved;
     }
 
-    public void setIsPropertyPasswordHashRemoved(Boolean isPropertyPasswordHashRemoved)
+    public void setIsPropertyPasswordHashRemoved(Boolean removed)
     {
-        this.isPropertyPasswordHashRemoved = isPropertyPasswordHashRemoved;
+        this.isPropertyPasswordHashRemoved = removed;
     }
 
     private Boolean isPropertyPhoneNumberRemoved;
@@ -287,9 +287,9 @@ public class CreateOrMergePatchUserDto extends AbstractUserCommandDto
         return this.isPropertyPhoneNumberRemoved;
     }
 
-    public void setIsPropertyPhoneNumberRemoved(Boolean isPropertyPhoneNumberRemoved)
+    public void setIsPropertyPhoneNumberRemoved(Boolean removed)
     {
-        this.isPropertyPhoneNumberRemoved = isPropertyPhoneNumberRemoved;
+        this.isPropertyPhoneNumberRemoved = removed;
     }
 
     private Boolean isPropertyPhoneNumberConfirmedRemoved;
@@ -299,9 +299,9 @@ public class CreateOrMergePatchUserDto extends AbstractUserCommandDto
         return this.isPropertyPhoneNumberConfirmedRemoved;
     }
 
-    public void setIsPropertyPhoneNumberConfirmedRemoved(Boolean isPropertyPhoneNumberConfirmedRemoved)
+    public void setIsPropertyPhoneNumberConfirmedRemoved(Boolean removed)
     {
-        this.isPropertyPhoneNumberConfirmedRemoved = isPropertyPhoneNumberConfirmedRemoved;
+        this.isPropertyPhoneNumberConfirmedRemoved = removed;
     }
 
     private Boolean isPropertyTwoFactorEnabledRemoved;
@@ -311,9 +311,9 @@ public class CreateOrMergePatchUserDto extends AbstractUserCommandDto
         return this.isPropertyTwoFactorEnabledRemoved;
     }
 
-    public void setIsPropertyTwoFactorEnabledRemoved(Boolean isPropertyTwoFactorEnabledRemoved)
+    public void setIsPropertyTwoFactorEnabledRemoved(Boolean removed)
     {
-        this.isPropertyTwoFactorEnabledRemoved = isPropertyTwoFactorEnabledRemoved;
+        this.isPropertyTwoFactorEnabledRemoved = removed;
     }
 
     private Boolean isPropertySecurityStampRemoved;
@@ -323,9 +323,9 @@ public class CreateOrMergePatchUserDto extends AbstractUserCommandDto
         return this.isPropertySecurityStampRemoved;
     }
 
-    public void setIsPropertySecurityStampRemoved(Boolean isPropertySecurityStampRemoved)
+    public void setIsPropertySecurityStampRemoved(Boolean removed)
     {
-        this.isPropertySecurityStampRemoved = isPropertySecurityStampRemoved;
+        this.isPropertySecurityStampRemoved = removed;
     }
 
     private Boolean isPropertyActiveRemoved;
@@ -335,9 +335,9 @@ public class CreateOrMergePatchUserDto extends AbstractUserCommandDto
         return this.isPropertyActiveRemoved;
     }
 
-    public void setIsPropertyActiveRemoved(Boolean isPropertyActiveRemoved)
+    public void setIsPropertyActiveRemoved(Boolean removed)
     {
-        this.isPropertyActiveRemoved = isPropertyActiveRemoved;
+        this.isPropertyActiveRemoved = removed;
     }
 
 

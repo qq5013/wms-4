@@ -253,72 +253,172 @@ public abstract class AbstractAttributeUseMvoStateEvent implements AttributeUseM
     }
 
 
-/*
     public static abstract class AbstractAttributeUseMvoStateMergePatched extends AbstractAttributeUseMvoStateEvent implements AttributeUseMvoStateMergePatched
     {
-        Boolean isPropertySequenceNumberRemoved();
+        public AbstractAttributeUseMvoStateMergePatched() {
+        }
 
-        void setPropertySequenceNumberRemoved(Boolean removed);
+        public AbstractAttributeUseMvoStateMergePatched(AttributeUseMvoStateEventId stateEventId) {
+            super(stateEventId);
+        }
 
-        Boolean isPropertyVersionRemoved();
+        public String getStateEventType() {
+            return StateEventType.MERGE_PATCHED;
+        }
 
-        void setPropertyVersionRemoved(Boolean removed);
+        private Boolean isPropertySequenceNumberRemoved;
 
-        Boolean isPropertyActiveRemoved();
+        public Boolean getIsPropertySequenceNumberRemoved() {
+            return this.isPropertySequenceNumberRemoved;
+        }
 
-        void setPropertyActiveRemoved(Boolean removed);
+        public void setIsPropertySequenceNumberRemoved(Boolean removed) {
+            this.isPropertySequenceNumberRemoved = removed;
+        }
 
-        Boolean isPropertyAttributeSetNameRemoved();
+        private Boolean isPropertyVersionRemoved;
 
-        void setPropertyAttributeSetNameRemoved(Boolean removed);
+        public Boolean getIsPropertyVersionRemoved() {
+            return this.isPropertyVersionRemoved;
+        }
 
-        Boolean isPropertyAttributeSetOrganizationIdRemoved();
+        public void setIsPropertyVersionRemoved(Boolean removed) {
+            this.isPropertyVersionRemoved = removed;
+        }
 
-        void setPropertyAttributeSetOrganizationIdRemoved(Boolean removed);
+        private Boolean isPropertyActiveRemoved;
 
-        Boolean isPropertyAttributeSetDescriptionRemoved();
+        public Boolean getIsPropertyActiveRemoved() {
+            return this.isPropertyActiveRemoved;
+        }
 
-        void setPropertyAttributeSetDescriptionRemoved(Boolean removed);
+        public void setIsPropertyActiveRemoved(Boolean removed) {
+            this.isPropertyActiveRemoved = removed;
+        }
 
-        Boolean isPropertyAttributeSetSerialNumberAttributeIdRemoved();
+        private Boolean isPropertyAttributeSetNameRemoved;
 
-        void setPropertyAttributeSetSerialNumberAttributeIdRemoved(Boolean removed);
+        public Boolean getIsPropertyAttributeSetNameRemoved() {
+            return this.isPropertyAttributeSetNameRemoved;
+        }
 
-        Boolean isPropertyAttributeSetLotAttributeIdRemoved();
+        public void setIsPropertyAttributeSetNameRemoved(Boolean removed) {
+            this.isPropertyAttributeSetNameRemoved = removed;
+        }
 
-        void setPropertyAttributeSetLotAttributeIdRemoved(Boolean removed);
+        private Boolean isPropertyAttributeSetOrganizationIdRemoved;
 
-        Boolean isPropertyAttributeSetReferenceIdRemoved();
+        public Boolean getIsPropertyAttributeSetOrganizationIdRemoved() {
+            return this.isPropertyAttributeSetOrganizationIdRemoved;
+        }
 
-        void setPropertyAttributeSetReferenceIdRemoved(Boolean removed);
+        public void setIsPropertyAttributeSetOrganizationIdRemoved(Boolean removed) {
+            this.isPropertyAttributeSetOrganizationIdRemoved = removed;
+        }
 
-        Boolean isPropertyAttributeSetCreatedByRemoved();
+        private Boolean isPropertyAttributeSetDescriptionRemoved;
 
-        void setPropertyAttributeSetCreatedByRemoved(Boolean removed);
+        public Boolean getIsPropertyAttributeSetDescriptionRemoved() {
+            return this.isPropertyAttributeSetDescriptionRemoved;
+        }
 
-        Boolean isPropertyAttributeSetCreatedAtRemoved();
+        public void setIsPropertyAttributeSetDescriptionRemoved(Boolean removed) {
+            this.isPropertyAttributeSetDescriptionRemoved = removed;
+        }
 
-        void setPropertyAttributeSetCreatedAtRemoved(Boolean removed);
+        private Boolean isPropertyAttributeSetSerialNumberAttributeIdRemoved;
 
-        Boolean isPropertyAttributeSetUpdatedByRemoved();
+        public Boolean getIsPropertyAttributeSetSerialNumberAttributeIdRemoved() {
+            return this.isPropertyAttributeSetSerialNumberAttributeIdRemoved;
+        }
 
-        void setPropertyAttributeSetUpdatedByRemoved(Boolean removed);
+        public void setIsPropertyAttributeSetSerialNumberAttributeIdRemoved(Boolean removed) {
+            this.isPropertyAttributeSetSerialNumberAttributeIdRemoved = removed;
+        }
 
-        Boolean isPropertyAttributeSetUpdatedAtRemoved();
+        private Boolean isPropertyAttributeSetLotAttributeIdRemoved;
 
-        void setPropertyAttributeSetUpdatedAtRemoved(Boolean removed);
+        public Boolean getIsPropertyAttributeSetLotAttributeIdRemoved() {
+            return this.isPropertyAttributeSetLotAttributeIdRemoved;
+        }
 
-        Boolean isPropertyAttributeSetActiveRemoved();
+        public void setIsPropertyAttributeSetLotAttributeIdRemoved(Boolean removed) {
+            this.isPropertyAttributeSetLotAttributeIdRemoved = removed;
+        }
 
-        void setPropertyAttributeSetActiveRemoved(Boolean removed);
+        private Boolean isPropertyAttributeSetReferenceIdRemoved;
 
-        Boolean isPropertyAttributeSetDeletedRemoved();
+        public Boolean getIsPropertyAttributeSetReferenceIdRemoved() {
+            return this.isPropertyAttributeSetReferenceIdRemoved;
+        }
 
-        void setPropertyAttributeSetDeletedRemoved(Boolean removed);
+        public void setIsPropertyAttributeSetReferenceIdRemoved(Boolean removed) {
+            this.isPropertyAttributeSetReferenceIdRemoved = removed;
+        }
+
+        private Boolean isPropertyAttributeSetCreatedByRemoved;
+
+        public Boolean getIsPropertyAttributeSetCreatedByRemoved() {
+            return this.isPropertyAttributeSetCreatedByRemoved;
+        }
+
+        public void setIsPropertyAttributeSetCreatedByRemoved(Boolean removed) {
+            this.isPropertyAttributeSetCreatedByRemoved = removed;
+        }
+
+        private Boolean isPropertyAttributeSetCreatedAtRemoved;
+
+        public Boolean getIsPropertyAttributeSetCreatedAtRemoved() {
+            return this.isPropertyAttributeSetCreatedAtRemoved;
+        }
+
+        public void setIsPropertyAttributeSetCreatedAtRemoved(Boolean removed) {
+            this.isPropertyAttributeSetCreatedAtRemoved = removed;
+        }
+
+        private Boolean isPropertyAttributeSetUpdatedByRemoved;
+
+        public Boolean getIsPropertyAttributeSetUpdatedByRemoved() {
+            return this.isPropertyAttributeSetUpdatedByRemoved;
+        }
+
+        public void setIsPropertyAttributeSetUpdatedByRemoved(Boolean removed) {
+            this.isPropertyAttributeSetUpdatedByRemoved = removed;
+        }
+
+        private Boolean isPropertyAttributeSetUpdatedAtRemoved;
+
+        public Boolean getIsPropertyAttributeSetUpdatedAtRemoved() {
+            return this.isPropertyAttributeSetUpdatedAtRemoved;
+        }
+
+        public void setIsPropertyAttributeSetUpdatedAtRemoved(Boolean removed) {
+            this.isPropertyAttributeSetUpdatedAtRemoved = removed;
+        }
+
+        private Boolean isPropertyAttributeSetActiveRemoved;
+
+        public Boolean getIsPropertyAttributeSetActiveRemoved() {
+            return this.isPropertyAttributeSetActiveRemoved;
+        }
+
+        public void setIsPropertyAttributeSetActiveRemoved(Boolean removed) {
+            this.isPropertyAttributeSetActiveRemoved = removed;
+        }
+
+        private Boolean isPropertyAttributeSetDeletedRemoved;
+
+        public Boolean getIsPropertyAttributeSetDeletedRemoved() {
+            return this.isPropertyAttributeSetDeletedRemoved;
+        }
+
+        public void setIsPropertyAttributeSetDeletedRemoved(Boolean removed) {
+            this.isPropertyAttributeSetDeletedRemoved = removed;
+        }
 
 
     }
-*/
+
 
     public static abstract class AbstractAttributeUseMvoStateDeleted extends AbstractAttributeUseMvoStateEvent implements AttributeUseMvoStateDeleted
     {
@@ -334,6 +434,5 @@ public abstract class AbstractAttributeUseMvoStateEvent implements AttributeUseM
         }
 
     }
-
 }
 

@@ -63,33 +63,33 @@ public interface AttributeSetStateEvent extends Event
 
     interface AttributeSetStateMergePatched extends AttributeSetStateEvent
     {
-        Boolean isPropertyNameRemoved();
+        Boolean getIsPropertyNameRemoved();
 
-        void setPropertyNameRemoved(Boolean removed);
+        void setIsPropertyNameRemoved(Boolean removed);
 
-        Boolean isPropertyOrganizationIdRemoved();
+        Boolean getIsPropertyOrganizationIdRemoved();
 
-        void setPropertyOrganizationIdRemoved(Boolean removed);
+        void setIsPropertyOrganizationIdRemoved(Boolean removed);
 
-        Boolean isPropertyDescriptionRemoved();
+        Boolean getIsPropertyDescriptionRemoved();
 
-        void setPropertyDescriptionRemoved(Boolean removed);
+        void setIsPropertyDescriptionRemoved(Boolean removed);
 
-        Boolean isPropertySerialNumberAttributeIdRemoved();
+        Boolean getIsPropertySerialNumberAttributeIdRemoved();
 
-        void setPropertySerialNumberAttributeIdRemoved(Boolean removed);
+        void setIsPropertySerialNumberAttributeIdRemoved(Boolean removed);
 
-        Boolean isPropertyLotAttributeIdRemoved();
+        Boolean getIsPropertyLotAttributeIdRemoved();
 
-        void setPropertyLotAttributeIdRemoved(Boolean removed);
+        void setIsPropertyLotAttributeIdRemoved(Boolean removed);
 
-        Boolean isPropertyReferenceIdRemoved();
+        Boolean getIsPropertyReferenceIdRemoved();
 
-        void setPropertyReferenceIdRemoved(Boolean removed);
+        void setIsPropertyReferenceIdRemoved(Boolean removed);
 
-        Boolean isPropertyActiveRemoved();
+        Boolean getIsPropertyActiveRemoved();
 
-        void setPropertyActiveRemoved(Boolean removed);
+        void setIsPropertyActiveRemoved(Boolean removed);
 
         Iterable<AttributeUseStateEvent> getAttributeUseEvents();
         

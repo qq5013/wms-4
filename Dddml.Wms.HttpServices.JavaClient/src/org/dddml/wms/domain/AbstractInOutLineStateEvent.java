@@ -314,84 +314,202 @@ public abstract class AbstractInOutLineStateEvent implements InOutLineStateEvent
     }
 
 
-/*
     public static abstract class AbstractInOutLineStateMergePatched extends AbstractInOutLineStateEvent implements InOutLineStateMergePatched
     {
-        Boolean isPropertyLineNumberRemoved();
+        public AbstractInOutLineStateMergePatched() {
+        }
 
-        void setPropertyLineNumberRemoved(Boolean removed);
+        public AbstractInOutLineStateMergePatched(InOutLineStateEventId stateEventId) {
+            super(stateEventId);
+        }
 
-        Boolean isPropertyDescriptionRemoved();
+        public String getStateEventType() {
+            return StateEventType.MERGE_PATCHED;
+        }
 
-        void setPropertyDescriptionRemoved(Boolean removed);
+        private Boolean isPropertyLineNumberRemoved;
 
-        Boolean isPropertyLocatorIdRemoved();
+        public Boolean getIsPropertyLineNumberRemoved() {
+            return this.isPropertyLineNumberRemoved;
+        }
 
-        void setPropertyLocatorIdRemoved(Boolean removed);
+        public void setIsPropertyLineNumberRemoved(Boolean removed) {
+            this.isPropertyLineNumberRemoved = removed;
+        }
 
-        Boolean isPropertyProductRemoved();
+        private Boolean isPropertyDescriptionRemoved;
 
-        void setPropertyProductRemoved(Boolean removed);
+        public Boolean getIsPropertyDescriptionRemoved() {
+            return this.isPropertyDescriptionRemoved;
+        }
 
-        Boolean isPropertyUomIdRemoved();
+        public void setIsPropertyDescriptionRemoved(Boolean removed) {
+            this.isPropertyDescriptionRemoved = removed;
+        }
 
-        void setPropertyUomIdRemoved(Boolean removed);
+        private Boolean isPropertyLocatorIdRemoved;
 
-        Boolean isPropertyMovementQuantityRemoved();
+        public Boolean getIsPropertyLocatorIdRemoved() {
+            return this.isPropertyLocatorIdRemoved;
+        }
 
-        void setPropertyMovementQuantityRemoved(Boolean removed);
+        public void setIsPropertyLocatorIdRemoved(Boolean removed) {
+            this.isPropertyLocatorIdRemoved = removed;
+        }
 
-        Boolean isPropertyConfirmedQuantityRemoved();
+        private Boolean isPropertyProductRemoved;
 
-        void setPropertyConfirmedQuantityRemoved(Boolean removed);
+        public Boolean getIsPropertyProductRemoved() {
+            return this.isPropertyProductRemoved;
+        }
 
-        Boolean isPropertyScrappedQuantityRemoved();
+        public void setIsPropertyProductRemoved(Boolean removed) {
+            this.isPropertyProductRemoved = removed;
+        }
 
-        void setPropertyScrappedQuantityRemoved(Boolean removed);
+        private Boolean isPropertyUomIdRemoved;
 
-        Boolean isPropertyTargetQuantityRemoved();
+        public Boolean getIsPropertyUomIdRemoved() {
+            return this.isPropertyUomIdRemoved;
+        }
 
-        void setPropertyTargetQuantityRemoved(Boolean removed);
+        public void setIsPropertyUomIdRemoved(Boolean removed) {
+            this.isPropertyUomIdRemoved = removed;
+        }
 
-        Boolean isPropertyPickedQuantityRemoved();
+        private Boolean isPropertyMovementQuantityRemoved;
 
-        void setPropertyPickedQuantityRemoved(Boolean removed);
+        public Boolean getIsPropertyMovementQuantityRemoved() {
+            return this.isPropertyMovementQuantityRemoved;
+        }
 
-        Boolean isPropertyIsInvoicedRemoved();
+        public void setIsPropertyMovementQuantityRemoved(Boolean removed) {
+            this.isPropertyMovementQuantityRemoved = removed;
+        }
 
-        void setPropertyIsInvoicedRemoved(Boolean removed);
+        private Boolean isPropertyConfirmedQuantityRemoved;
 
-        Boolean isPropertyAttributeSetInstanceIdRemoved();
+        public Boolean getIsPropertyConfirmedQuantityRemoved() {
+            return this.isPropertyConfirmedQuantityRemoved;
+        }
 
-        void setPropertyAttributeSetInstanceIdRemoved(Boolean removed);
+        public void setIsPropertyConfirmedQuantityRemoved(Boolean removed) {
+            this.isPropertyConfirmedQuantityRemoved = removed;
+        }
 
-        Boolean isPropertyIsDescriptionRemoved();
+        private Boolean isPropertyScrappedQuantityRemoved;
 
-        void setPropertyIsDescriptionRemoved(Boolean removed);
+        public Boolean getIsPropertyScrappedQuantityRemoved() {
+            return this.isPropertyScrappedQuantityRemoved;
+        }
 
-        Boolean isPropertyProcessedRemoved();
+        public void setIsPropertyScrappedQuantityRemoved(Boolean removed) {
+            this.isPropertyScrappedQuantityRemoved = removed;
+        }
 
-        void setPropertyProcessedRemoved(Boolean removed);
+        private Boolean isPropertyTargetQuantityRemoved;
 
-        Boolean isPropertyQuantityEnteredRemoved();
+        public Boolean getIsPropertyTargetQuantityRemoved() {
+            return this.isPropertyTargetQuantityRemoved;
+        }
 
-        void setPropertyQuantityEnteredRemoved(Boolean removed);
+        public void setIsPropertyTargetQuantityRemoved(Boolean removed) {
+            this.isPropertyTargetQuantityRemoved = removed;
+        }
 
-        Boolean isPropertyRmaLineNumberRemoved();
+        private Boolean isPropertyPickedQuantityRemoved;
 
-        void setPropertyRmaLineNumberRemoved(Boolean removed);
+        public Boolean getIsPropertyPickedQuantityRemoved() {
+            return this.isPropertyPickedQuantityRemoved;
+        }
 
-        Boolean isPropertyReversalLineNumberRemoved();
+        public void setIsPropertyPickedQuantityRemoved(Boolean removed) {
+            this.isPropertyPickedQuantityRemoved = removed;
+        }
 
-        void setPropertyReversalLineNumberRemoved(Boolean removed);
+        private Boolean isPropertyIsInvoicedRemoved;
 
-        Boolean isPropertyActiveRemoved();
+        public Boolean getIsPropertyIsInvoicedRemoved() {
+            return this.isPropertyIsInvoicedRemoved;
+        }
 
-        void setPropertyActiveRemoved(Boolean removed);
+        public void setIsPropertyIsInvoicedRemoved(Boolean removed) {
+            this.isPropertyIsInvoicedRemoved = removed;
+        }
+
+        private Boolean isPropertyAttributeSetInstanceIdRemoved;
+
+        public Boolean getIsPropertyAttributeSetInstanceIdRemoved() {
+            return this.isPropertyAttributeSetInstanceIdRemoved;
+        }
+
+        public void setIsPropertyAttributeSetInstanceIdRemoved(Boolean removed) {
+            this.isPropertyAttributeSetInstanceIdRemoved = removed;
+        }
+
+        private Boolean isPropertyIsDescriptionRemoved;
+
+        public Boolean getIsPropertyIsDescriptionRemoved() {
+            return this.isPropertyIsDescriptionRemoved;
+        }
+
+        public void setIsPropertyIsDescriptionRemoved(Boolean removed) {
+            this.isPropertyIsDescriptionRemoved = removed;
+        }
+
+        private Boolean isPropertyProcessedRemoved;
+
+        public Boolean getIsPropertyProcessedRemoved() {
+            return this.isPropertyProcessedRemoved;
+        }
+
+        public void setIsPropertyProcessedRemoved(Boolean removed) {
+            this.isPropertyProcessedRemoved = removed;
+        }
+
+        private Boolean isPropertyQuantityEnteredRemoved;
+
+        public Boolean getIsPropertyQuantityEnteredRemoved() {
+            return this.isPropertyQuantityEnteredRemoved;
+        }
+
+        public void setIsPropertyQuantityEnteredRemoved(Boolean removed) {
+            this.isPropertyQuantityEnteredRemoved = removed;
+        }
+
+        private Boolean isPropertyRmaLineNumberRemoved;
+
+        public Boolean getIsPropertyRmaLineNumberRemoved() {
+            return this.isPropertyRmaLineNumberRemoved;
+        }
+
+        public void setIsPropertyRmaLineNumberRemoved(Boolean removed) {
+            this.isPropertyRmaLineNumberRemoved = removed;
+        }
+
+        private Boolean isPropertyReversalLineNumberRemoved;
+
+        public Boolean getIsPropertyReversalLineNumberRemoved() {
+            return this.isPropertyReversalLineNumberRemoved;
+        }
+
+        public void setIsPropertyReversalLineNumberRemoved(Boolean removed) {
+            this.isPropertyReversalLineNumberRemoved = removed;
+        }
+
+        private Boolean isPropertyActiveRemoved;
+
+        public Boolean getIsPropertyActiveRemoved() {
+            return this.isPropertyActiveRemoved;
+        }
+
+        public void setIsPropertyActiveRemoved(Boolean removed) {
+            this.isPropertyActiveRemoved = removed;
+        }
 
 
     }
-*/
+
 
     public static abstract class AbstractInOutLineStateRemoved extends AbstractInOutLineStateEvent implements InOutLineStateRemoved
     {
@@ -407,6 +525,5 @@ public abstract class AbstractInOutLineStateEvent implements InOutLineStateEvent
         }
 
     }
-
 }
 

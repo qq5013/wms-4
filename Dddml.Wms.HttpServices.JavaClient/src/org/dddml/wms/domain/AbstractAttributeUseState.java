@@ -183,7 +183,7 @@ public abstract class AbstractAttributeUseState implements AttributeUseState
 
         if (e.getSequenceNumber() == null)
         {
-            if (e.isPropertySequenceNumberRemoved() != null && e.isPropertySequenceNumberRemoved())
+            if (e.getIsPropertySequenceNumberRemoved() != null && e.getIsPropertySequenceNumberRemoved())
             {
                 this.setSequenceNumber(null);
             }
@@ -194,7 +194,7 @@ public abstract class AbstractAttributeUseState implements AttributeUseState
         }
         if (e.getActive() == null)
         {
-            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            if (e.getIsPropertyActiveRemoved() != null && e.getIsPropertyActiveRemoved())
             {
                 this.setActive(null);
             }

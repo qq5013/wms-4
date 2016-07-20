@@ -65,41 +65,41 @@ public interface LocatorStateEvent extends Event
 
     interface LocatorStateMergePatched extends LocatorStateEvent
     {
-        Boolean isPropertyWarehouseIdRemoved();
+        Boolean getIsPropertyWarehouseIdRemoved();
 
-        void setPropertyWarehouseIdRemoved(Boolean removed);
+        void setIsPropertyWarehouseIdRemoved(Boolean removed);
 
-        Boolean isPropertyParentLocatorIdRemoved();
+        Boolean getIsPropertyParentLocatorIdRemoved();
 
-        void setPropertyParentLocatorIdRemoved(Boolean removed);
+        void setIsPropertyParentLocatorIdRemoved(Boolean removed);
 
-        Boolean isPropertyLocatorTypeRemoved();
+        Boolean getIsPropertyLocatorTypeRemoved();
 
-        void setPropertyLocatorTypeRemoved(Boolean removed);
+        void setIsPropertyLocatorTypeRemoved(Boolean removed);
 
-        Boolean isPropertyPriorityNumberRemoved();
+        Boolean getIsPropertyPriorityNumberRemoved();
 
-        void setPropertyPriorityNumberRemoved(Boolean removed);
+        void setIsPropertyPriorityNumberRemoved(Boolean removed);
 
-        Boolean isPropertyIsDefaultRemoved();
+        Boolean getIsPropertyIsDefaultRemoved();
 
-        void setPropertyIsDefaultRemoved(Boolean removed);
+        void setIsPropertyIsDefaultRemoved(Boolean removed);
 
-        Boolean isPropertyXRemoved();
+        Boolean getIsPropertyXRemoved();
 
-        void setPropertyXRemoved(Boolean removed);
+        void setIsPropertyXRemoved(Boolean removed);
 
-        Boolean isPropertyYRemoved();
+        Boolean getIsPropertyYRemoved();
 
-        void setPropertyYRemoved(Boolean removed);
+        void setIsPropertyYRemoved(Boolean removed);
 
-        Boolean isPropertyZRemoved();
+        Boolean getIsPropertyZRemoved();
 
-        void setPropertyZRemoved(Boolean removed);
+        void setIsPropertyZRemoved(Boolean removed);
 
-        Boolean isPropertyActiveRemoved();
+        Boolean getIsPropertyActiveRemoved();
 
-        void setPropertyActiveRemoved(Boolean removed);
+        void setIsPropertyActiveRemoved(Boolean removed);
 
 
     }

@@ -45,21 +45,21 @@ public interface WarehouseStateEvent extends Event
 
     interface WarehouseStateMergePatched extends WarehouseStateEvent
     {
-        Boolean isPropertyNameRemoved();
+        Boolean getIsPropertyNameRemoved();
 
-        void setPropertyNameRemoved(Boolean removed);
+        void setIsPropertyNameRemoved(Boolean removed);
 
-        Boolean isPropertyDescriptionRemoved();
+        Boolean getIsPropertyDescriptionRemoved();
 
-        void setPropertyDescriptionRemoved(Boolean removed);
+        void setIsPropertyDescriptionRemoved(Boolean removed);
 
-        Boolean isPropertyIsInTransitRemoved();
+        Boolean getIsPropertyIsInTransitRemoved();
 
-        void setPropertyIsInTransitRemoved(Boolean removed);
+        void setIsPropertyIsInTransitRemoved(Boolean removed);
 
-        Boolean isPropertyActiveRemoved();
+        Boolean getIsPropertyActiveRemoved();
 
-        void setPropertyActiveRemoved(Boolean removed);
+        void setIsPropertyActiveRemoved(Boolean removed);
 
 
     }

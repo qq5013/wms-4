@@ -363,7 +363,7 @@ public abstract class AbstractUserState implements UserState
 
         if (e.getUserName() == null)
         {
-            if (e.isPropertyUserNameRemoved() != null && e.isPropertyUserNameRemoved())
+            if (e.getIsPropertyUserNameRemoved() != null && e.getIsPropertyUserNameRemoved())
             {
                 this.setUserName(null);
             }
@@ -374,7 +374,7 @@ public abstract class AbstractUserState implements UserState
         }
         if (e.getAccessFailedCount() == null)
         {
-            if (e.isPropertyAccessFailedCountRemoved() != null && e.isPropertyAccessFailedCountRemoved())
+            if (e.getIsPropertyAccessFailedCountRemoved() != null && e.getIsPropertyAccessFailedCountRemoved())
             {
                 this.setAccessFailedCount(null);
             }
@@ -385,7 +385,7 @@ public abstract class AbstractUserState implements UserState
         }
         if (e.getEmail() == null)
         {
-            if (e.isPropertyEmailRemoved() != null && e.isPropertyEmailRemoved())
+            if (e.getIsPropertyEmailRemoved() != null && e.getIsPropertyEmailRemoved())
             {
                 this.setEmail(null);
             }
@@ -396,7 +396,7 @@ public abstract class AbstractUserState implements UserState
         }
         if (e.getEmailConfirmed() == null)
         {
-            if (e.isPropertyEmailConfirmedRemoved() != null && e.isPropertyEmailConfirmedRemoved())
+            if (e.getIsPropertyEmailConfirmedRemoved() != null && e.getIsPropertyEmailConfirmedRemoved())
             {
                 this.setEmailConfirmed(null);
             }
@@ -407,7 +407,7 @@ public abstract class AbstractUserState implements UserState
         }
         if (e.getLockoutEnabled() == null)
         {
-            if (e.isPropertyLockoutEnabledRemoved() != null && e.isPropertyLockoutEnabledRemoved())
+            if (e.getIsPropertyLockoutEnabledRemoved() != null && e.getIsPropertyLockoutEnabledRemoved())
             {
                 this.setLockoutEnabled(null);
             }
@@ -418,7 +418,7 @@ public abstract class AbstractUserState implements UserState
         }
         if (e.getLockoutEndDateUtc() == null)
         {
-            if (e.isPropertyLockoutEndDateUtcRemoved() != null && e.isPropertyLockoutEndDateUtcRemoved())
+            if (e.getIsPropertyLockoutEndDateUtcRemoved() != null && e.getIsPropertyLockoutEndDateUtcRemoved())
             {
                 this.setLockoutEndDateUtc(null);
             }
@@ -429,7 +429,7 @@ public abstract class AbstractUserState implements UserState
         }
         if (e.getPasswordHash() == null)
         {
-            if (e.isPropertyPasswordHashRemoved() != null && e.isPropertyPasswordHashRemoved())
+            if (e.getIsPropertyPasswordHashRemoved() != null && e.getIsPropertyPasswordHashRemoved())
             {
                 this.setPasswordHash(null);
             }
@@ -440,7 +440,7 @@ public abstract class AbstractUserState implements UserState
         }
         if (e.getPhoneNumber() == null)
         {
-            if (e.isPropertyPhoneNumberRemoved() != null && e.isPropertyPhoneNumberRemoved())
+            if (e.getIsPropertyPhoneNumberRemoved() != null && e.getIsPropertyPhoneNumberRemoved())
             {
                 this.setPhoneNumber(null);
             }
@@ -451,7 +451,7 @@ public abstract class AbstractUserState implements UserState
         }
         if (e.getPhoneNumberConfirmed() == null)
         {
-            if (e.isPropertyPhoneNumberConfirmedRemoved() != null && e.isPropertyPhoneNumberConfirmedRemoved())
+            if (e.getIsPropertyPhoneNumberConfirmedRemoved() != null && e.getIsPropertyPhoneNumberConfirmedRemoved())
             {
                 this.setPhoneNumberConfirmed(null);
             }
@@ -462,7 +462,7 @@ public abstract class AbstractUserState implements UserState
         }
         if (e.getTwoFactorEnabled() == null)
         {
-            if (e.isPropertyTwoFactorEnabledRemoved() != null && e.isPropertyTwoFactorEnabledRemoved())
+            if (e.getIsPropertyTwoFactorEnabledRemoved() != null && e.getIsPropertyTwoFactorEnabledRemoved())
             {
                 this.setTwoFactorEnabled(null);
             }
@@ -473,7 +473,7 @@ public abstract class AbstractUserState implements UserState
         }
         if (e.getSecurityStamp() == null)
         {
-            if (e.isPropertySecurityStampRemoved() != null && e.isPropertySecurityStampRemoved())
+            if (e.getIsPropertySecurityStampRemoved() != null && e.getIsPropertySecurityStampRemoved())
             {
                 this.setSecurityStamp(null);
             }
@@ -484,7 +484,7 @@ public abstract class AbstractUserState implements UserState
         }
         if (e.getActive() == null)
         {
-            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            if (e.getIsPropertyActiveRemoved() != null && e.getIsPropertyActiveRemoved())
             {
                 this.setActive(null);
             }

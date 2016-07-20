@@ -133,32 +133,72 @@ public abstract class AbstractOrganizationStateEvent implements OrganizationStat
     }
 
 
-/*
     public static abstract class AbstractOrganizationStateMergePatched extends AbstractOrganizationStateEvent implements OrganizationStateMergePatched
     {
-        Boolean isPropertyNameRemoved();
+        public AbstractOrganizationStateMergePatched() {
+        }
 
-        void setPropertyNameRemoved(Boolean removed);
+        public AbstractOrganizationStateMergePatched(OrganizationStateEventId stateEventId) {
+            super(stateEventId);
+        }
 
-        Boolean isPropertyDescriptionRemoved();
+        public String getStateEventType() {
+            return StateEventType.MERGE_PATCHED;
+        }
 
-        void setPropertyDescriptionRemoved(Boolean removed);
+        private Boolean isPropertyNameRemoved;
 
-        Boolean isPropertyTypeRemoved();
+        public Boolean getIsPropertyNameRemoved() {
+            return this.isPropertyNameRemoved;
+        }
 
-        void setPropertyTypeRemoved(Boolean removed);
+        public void setIsPropertyNameRemoved(Boolean removed) {
+            this.isPropertyNameRemoved = removed;
+        }
 
-        Boolean isPropertyIsSummaryRemoved();
+        private Boolean isPropertyDescriptionRemoved;
 
-        void setPropertyIsSummaryRemoved(Boolean removed);
+        public Boolean getIsPropertyDescriptionRemoved() {
+            return this.isPropertyDescriptionRemoved;
+        }
 
-        Boolean isPropertyActiveRemoved();
+        public void setIsPropertyDescriptionRemoved(Boolean removed) {
+            this.isPropertyDescriptionRemoved = removed;
+        }
 
-        void setPropertyActiveRemoved(Boolean removed);
+        private Boolean isPropertyTypeRemoved;
+
+        public Boolean getIsPropertyTypeRemoved() {
+            return this.isPropertyTypeRemoved;
+        }
+
+        public void setIsPropertyTypeRemoved(Boolean removed) {
+            this.isPropertyTypeRemoved = removed;
+        }
+
+        private Boolean isPropertyIsSummaryRemoved;
+
+        public Boolean getIsPropertyIsSummaryRemoved() {
+            return this.isPropertyIsSummaryRemoved;
+        }
+
+        public void setIsPropertyIsSummaryRemoved(Boolean removed) {
+            this.isPropertyIsSummaryRemoved = removed;
+        }
+
+        private Boolean isPropertyActiveRemoved;
+
+        public Boolean getIsPropertyActiveRemoved() {
+            return this.isPropertyActiveRemoved;
+        }
+
+        public void setIsPropertyActiveRemoved(Boolean removed) {
+            this.isPropertyActiveRemoved = removed;
+        }
 
 
     }
-*/
+
 
     public static abstract class AbstractOrganizationStateDeleted extends AbstractOrganizationStateEvent implements OrganizationStateDeleted
     {
@@ -174,6 +214,5 @@ public abstract class AbstractOrganizationStateEvent implements OrganizationStat
         }
 
     }
-
 }
 

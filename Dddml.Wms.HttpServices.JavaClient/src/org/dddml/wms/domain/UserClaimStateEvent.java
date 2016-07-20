@@ -49,17 +49,17 @@ public interface UserClaimStateEvent extends Event
 
     interface UserClaimStateMergePatched extends UserClaimStateEvent
     {
-        Boolean isPropertyClaimTypeRemoved();
+        Boolean getIsPropertyClaimTypeRemoved();
 
-        void setPropertyClaimTypeRemoved(Boolean removed);
+        void setIsPropertyClaimTypeRemoved(Boolean removed);
 
-        Boolean isPropertyClaimValueRemoved();
+        Boolean getIsPropertyClaimValueRemoved();
 
-        void setPropertyClaimValueRemoved(Boolean removed);
+        void setIsPropertyClaimValueRemoved(Boolean removed);
 
-        Boolean isPropertyActiveRemoved();
+        Boolean getIsPropertyActiveRemoved();
 
-        void setPropertyActiveRemoved(Boolean removed);
+        void setIsPropertyActiveRemoved(Boolean removed);
 
 
     }

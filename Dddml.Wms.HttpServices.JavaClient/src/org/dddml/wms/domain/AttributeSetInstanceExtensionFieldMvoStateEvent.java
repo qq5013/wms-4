@@ -101,77 +101,77 @@ public interface AttributeSetInstanceExtensionFieldMvoStateEvent extends Event
 
     interface AttributeSetInstanceExtensionFieldMvoStateMergePatched extends AttributeSetInstanceExtensionFieldMvoStateEvent
     {
-        Boolean isPropertyNameRemoved();
+        Boolean getIsPropertyNameRemoved();
 
-        void setPropertyNameRemoved(Boolean removed);
+        void setIsPropertyNameRemoved(Boolean removed);
 
-        Boolean isPropertyTypeRemoved();
+        Boolean getIsPropertyTypeRemoved();
 
-        void setPropertyTypeRemoved(Boolean removed);
+        void setIsPropertyTypeRemoved(Boolean removed);
 
-        Boolean isPropertyLengthRemoved();
+        Boolean getIsPropertyLengthRemoved();
 
-        void setPropertyLengthRemoved(Boolean removed);
+        void setIsPropertyLengthRemoved(Boolean removed);
 
-        Boolean isPropertyAliasRemoved();
+        Boolean getIsPropertyAliasRemoved();
 
-        void setPropertyAliasRemoved(Boolean removed);
+        void setIsPropertyAliasRemoved(Boolean removed);
 
-        Boolean isPropertyDescriptionRemoved();
+        Boolean getIsPropertyDescriptionRemoved();
 
-        void setPropertyDescriptionRemoved(Boolean removed);
+        void setIsPropertyDescriptionRemoved(Boolean removed);
 
-        Boolean isPropertyVersionRemoved();
+        Boolean getIsPropertyVersionRemoved();
 
-        void setPropertyVersionRemoved(Boolean removed);
+        void setIsPropertyVersionRemoved(Boolean removed);
 
-        Boolean isPropertyActiveRemoved();
+        Boolean getIsPropertyActiveRemoved();
 
-        void setPropertyActiveRemoved(Boolean removed);
+        void setIsPropertyActiveRemoved(Boolean removed);
 
-        Boolean isPropertyAttrSetInstEFGroupFieldTypeRemoved();
+        Boolean getIsPropertyAttrSetInstEFGroupFieldTypeRemoved();
 
-        void setPropertyAttrSetInstEFGroupFieldTypeRemoved(Boolean removed);
+        void setIsPropertyAttrSetInstEFGroupFieldTypeRemoved(Boolean removed);
 
-        Boolean isPropertyAttrSetInstEFGroupFieldLengthRemoved();
+        Boolean getIsPropertyAttrSetInstEFGroupFieldLengthRemoved();
 
-        void setPropertyAttrSetInstEFGroupFieldLengthRemoved(Boolean removed);
+        void setIsPropertyAttrSetInstEFGroupFieldLengthRemoved(Boolean removed);
 
-        Boolean isPropertyAttrSetInstEFGroupFieldCountRemoved();
+        Boolean getIsPropertyAttrSetInstEFGroupFieldCountRemoved();
 
-        void setPropertyAttrSetInstEFGroupFieldCountRemoved(Boolean removed);
+        void setIsPropertyAttrSetInstEFGroupFieldCountRemoved(Boolean removed);
 
-        Boolean isPropertyAttrSetInstEFGroupNameFormatRemoved();
+        Boolean getIsPropertyAttrSetInstEFGroupNameFormatRemoved();
 
-        void setPropertyAttrSetInstEFGroupNameFormatRemoved(Boolean removed);
+        void setIsPropertyAttrSetInstEFGroupNameFormatRemoved(Boolean removed);
 
-        Boolean isPropertyAttrSetInstEFGroupDescriptionRemoved();
+        Boolean getIsPropertyAttrSetInstEFGroupDescriptionRemoved();
 
-        void setPropertyAttrSetInstEFGroupDescriptionRemoved(Boolean removed);
+        void setIsPropertyAttrSetInstEFGroupDescriptionRemoved(Boolean removed);
 
-        Boolean isPropertyAttrSetInstEFGroupCreatedByRemoved();
+        Boolean getIsPropertyAttrSetInstEFGroupCreatedByRemoved();
 
-        void setPropertyAttrSetInstEFGroupCreatedByRemoved(Boolean removed);
+        void setIsPropertyAttrSetInstEFGroupCreatedByRemoved(Boolean removed);
 
-        Boolean isPropertyAttrSetInstEFGroupCreatedAtRemoved();
+        Boolean getIsPropertyAttrSetInstEFGroupCreatedAtRemoved();
 
-        void setPropertyAttrSetInstEFGroupCreatedAtRemoved(Boolean removed);
+        void setIsPropertyAttrSetInstEFGroupCreatedAtRemoved(Boolean removed);
 
-        Boolean isPropertyAttrSetInstEFGroupUpdatedByRemoved();
+        Boolean getIsPropertyAttrSetInstEFGroupUpdatedByRemoved();
 
-        void setPropertyAttrSetInstEFGroupUpdatedByRemoved(Boolean removed);
+        void setIsPropertyAttrSetInstEFGroupUpdatedByRemoved(Boolean removed);
 
-        Boolean isPropertyAttrSetInstEFGroupUpdatedAtRemoved();
+        Boolean getIsPropertyAttrSetInstEFGroupUpdatedAtRemoved();
 
-        void setPropertyAttrSetInstEFGroupUpdatedAtRemoved(Boolean removed);
+        void setIsPropertyAttrSetInstEFGroupUpdatedAtRemoved(Boolean removed);
 
-        Boolean isPropertyAttrSetInstEFGroupActiveRemoved();
+        Boolean getIsPropertyAttrSetInstEFGroupActiveRemoved();
 
-        void setPropertyAttrSetInstEFGroupActiveRemoved(Boolean removed);
+        void setIsPropertyAttrSetInstEFGroupActiveRemoved(Boolean removed);
 
-        Boolean isPropertyAttrSetInstEFGroupDeletedRemoved();
+        Boolean getIsPropertyAttrSetInstEFGroupDeletedRemoved();
 
-        void setPropertyAttrSetInstEFGroupDeletedRemoved(Boolean removed);
+        void setIsPropertyAttrSetInstEFGroupDeletedRemoved(Boolean removed);
 
 
     }

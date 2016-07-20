@@ -109,16 +109,32 @@ public abstract class AbstractUserLoginStateEvent implements UserLoginStateEvent
     }
 
 
-/*
     public static abstract class AbstractUserLoginStateMergePatched extends AbstractUserLoginStateEvent implements UserLoginStateMergePatched
     {
-        Boolean isPropertyActiveRemoved();
+        public AbstractUserLoginStateMergePatched() {
+        }
 
-        void setPropertyActiveRemoved(Boolean removed);
+        public AbstractUserLoginStateMergePatched(UserLoginStateEventId stateEventId) {
+            super(stateEventId);
+        }
+
+        public String getStateEventType() {
+            return StateEventType.MERGE_PATCHED;
+        }
+
+        private Boolean isPropertyActiveRemoved;
+
+        public Boolean getIsPropertyActiveRemoved() {
+            return this.isPropertyActiveRemoved;
+        }
+
+        public void setIsPropertyActiveRemoved(Boolean removed) {
+            this.isPropertyActiveRemoved = removed;
+        }
 
 
     }
-*/
+
 
     public static abstract class AbstractUserLoginStateRemoved extends AbstractUserLoginStateEvent implements UserLoginStateRemoved
     {
@@ -134,6 +150,5 @@ public abstract class AbstractUserLoginStateEvent implements UserLoginStateEvent
         }
 
     }
-
 }
 

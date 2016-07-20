@@ -85,16 +85,32 @@ public abstract class AbstractOrganizationStructureStateEvent implements Organiz
     }
 
 
-/*
     public static abstract class AbstractOrganizationStructureStateMergePatched extends AbstractOrganizationStructureStateEvent implements OrganizationStructureStateMergePatched
     {
-        Boolean isPropertyActiveRemoved();
+        public AbstractOrganizationStructureStateMergePatched() {
+        }
 
-        void setPropertyActiveRemoved(Boolean removed);
+        public AbstractOrganizationStructureStateMergePatched(OrganizationStructureStateEventId stateEventId) {
+            super(stateEventId);
+        }
+
+        public String getStateEventType() {
+            return StateEventType.MERGE_PATCHED;
+        }
+
+        private Boolean isPropertyActiveRemoved;
+
+        public Boolean getIsPropertyActiveRemoved() {
+            return this.isPropertyActiveRemoved;
+        }
+
+        public void setIsPropertyActiveRemoved(Boolean removed) {
+            this.isPropertyActiveRemoved = removed;
+        }
 
 
     }
-*/
+
 
     public static abstract class AbstractOrganizationStructureStateDeleted extends AbstractOrganizationStructureStateEvent implements OrganizationStructureStateDeleted
     {
@@ -110,6 +126,5 @@ public abstract class AbstractOrganizationStructureStateEvent implements Organiz
         }
 
     }
-
 }
 

@@ -163,6 +163,18 @@ public abstract class AbstractAttributeSetStateEvent implements AttributeSetStat
         }
     }
 
+    public AttributeUseStateEvent.AttributeUseStateCreated newAttributeUseStateCreated(String attributeId) {
+        return new SimpleAttributeUseStateCreated(newAttributeUseStateEventId(attributeId));
+    }
+
+    public AttributeUseStateEvent.AttributeUseStateMergePatched newAttributeUseStateMergePatched(String attributeId) {
+        return new SimpleAttributeUseStateMergePatched(newAttributeUseStateEventId(attributeId));
+    }
+
+    public AttributeUseStateEvent.AttributeUseStateRemoved newAttributeUseStateRemoved(String attributeId) {
+        return new SimpleAttributeUseStateRemoved(newAttributeUseStateEventId(attributeId));
+    }
+
 
     public abstract String getStateEventType();
 
@@ -222,11 +234,6 @@ public abstract class AbstractAttributeSetStateEvent implements AttributeSetStat
             this.attributeUseEvents.put(e.getStateEventId(), e);
         }
 
-        public abstract AttributeUseStateEvent.AttributeUseStateCreated newAttributeUseStateCreated(String attributeId);
-//        {
-//            return new AttributeUseStateEvent.AttributeUseStateCreated(newAttributeUseStateEventId(attributeId));
-//        }
-
         public void save()
         {
             for (AttributeUseStateEvent.AttributeUseStateCreated e : this.getAttributeUseEvents()) {
@@ -236,50 +243,134 @@ public abstract class AbstractAttributeSetStateEvent implements AttributeSetStat
     }
 
 
-/*
     public static abstract class AbstractAttributeSetStateMergePatched extends AbstractAttributeSetStateEvent implements AttributeSetStateMergePatched, Saveable
     {
-        Boolean isPropertyNameRemoved();
+        public AbstractAttributeSetStateMergePatched() {
+        }
 
-        void setPropertyNameRemoved(Boolean removed);
+        public AbstractAttributeSetStateMergePatched(AttributeSetStateEventId stateEventId) {
+            super(stateEventId);
+        }
 
-        Boolean isPropertyOrganizationIdRemoved();
+        public String getStateEventType() {
+            return StateEventType.MERGE_PATCHED;
+        }
 
-        void setPropertyOrganizationIdRemoved(Boolean removed);
+        private Boolean isPropertyNameRemoved;
 
-        Boolean isPropertyDescriptionRemoved();
+        public Boolean getIsPropertyNameRemoved() {
+            return this.isPropertyNameRemoved;
+        }
 
-        void setPropertyDescriptionRemoved(Boolean removed);
+        public void setIsPropertyNameRemoved(Boolean removed) {
+            this.isPropertyNameRemoved = removed;
+        }
 
-        Boolean isPropertySerialNumberAttributeIdRemoved();
+        private Boolean isPropertyOrganizationIdRemoved;
 
-        void setPropertySerialNumberAttributeIdRemoved(Boolean removed);
+        public Boolean getIsPropertyOrganizationIdRemoved() {
+            return this.isPropertyOrganizationIdRemoved;
+        }
 
-        Boolean isPropertyLotAttributeIdRemoved();
+        public void setIsPropertyOrganizationIdRemoved(Boolean removed) {
+            this.isPropertyOrganizationIdRemoved = removed;
+        }
 
-        void setPropertyLotAttributeIdRemoved(Boolean removed);
+        private Boolean isPropertyDescriptionRemoved;
 
-        Boolean isPropertyReferenceIdRemoved();
+        public Boolean getIsPropertyDescriptionRemoved() {
+            return this.isPropertyDescriptionRemoved;
+        }
 
-        void setPropertyReferenceIdRemoved(Boolean removed);
+        public void setIsPropertyDescriptionRemoved(Boolean removed) {
+            this.isPropertyDescriptionRemoved = removed;
+        }
 
-        Boolean isPropertyActiveRemoved();
+        private Boolean isPropertySerialNumberAttributeIdRemoved;
 
-        void setPropertyActiveRemoved(Boolean removed);
+        public Boolean getIsPropertySerialNumberAttributeIdRemoved() {
+            return this.isPropertySerialNumberAttributeIdRemoved;
+        }
 
-        Iterable<AttributeUseStateEvent> getAttributeUseEvents();
+        public void setIsPropertySerialNumberAttributeIdRemoved(Boolean removed) {
+            this.isPropertySerialNumberAttributeIdRemoved = removed;
+        }
+
+        private Boolean isPropertyLotAttributeIdRemoved;
+
+        public Boolean getIsPropertyLotAttributeIdRemoved() {
+            return this.isPropertyLotAttributeIdRemoved;
+        }
+
+        public void setIsPropertyLotAttributeIdRemoved(Boolean removed) {
+            this.isPropertyLotAttributeIdRemoved = removed;
+        }
+
+        private Boolean isPropertyReferenceIdRemoved;
+
+        public Boolean getIsPropertyReferenceIdRemoved() {
+            return this.isPropertyReferenceIdRemoved;
+        }
+
+        public void setIsPropertyReferenceIdRemoved(Boolean removed) {
+            this.isPropertyReferenceIdRemoved = removed;
+        }
+
+        private Boolean isPropertyActiveRemoved;
+
+        public Boolean getIsPropertyActiveRemoved() {
+            return this.isPropertyActiveRemoved;
+        }
+
+        public void setIsPropertyActiveRemoved(Boolean removed) {
+            this.isPropertyActiveRemoved = removed;
+        }
+
+        private Map<AttributeUseStateEventId, AttributeUseStateEvent> attributeUseEvents = new HashMap<AttributeUseStateEventId, AttributeUseStateEvent>();
         
-        void addAttributeUseEvent(AttributeUseStateEvent e);
+        private Iterable<AttributeUseStateEvent> readOnlyAttributeUseEvents;
 
-        AttributeUseStateEvent.AttributeUseStateCreated newAttributeUseStateCreated(String attributeId);
+        public Iterable<AttributeUseStateEvent> getAttributeUseEvents()
+        {
+            if (!getStateEventReadOnly())
+            {
+                return this.attributeUseEvents.values();
+            }
+            else
+            {
+                if (readOnlyAttributeUseEvents != null) { return readOnlyAttributeUseEvents; }
+                AttributeUseStateEventDao eventDao = getAttributeUseStateEventDao();
+                List<AttributeUseStateEvent> eL = new ArrayList<AttributeUseStateEvent>();
+                for (AttributeUseStateEvent e : eventDao.findByAttributeSetStateEventId(this.getStateEventId()))
+                {
+                    e.setStateEventReadOnly(true);
+                    eL.add((AttributeUseStateEvent)e);
+                }
+                return (readOnlyAttributeUseEvents = eL);
+            }
+        }
 
-        AttributeUseStateEvent.AttributeUseStateMergePatched newAttributeUseStateMergePatched(String attributeId);
-
-        AttributeUseStateEvent.AttributeUseStateRemoved newAttributeUseStateRemoved(String attributeId);
+        public void setAttributeUseEvents(Iterable<AttributeUseStateEvent> es)
+        {
+            if (es != null)
+            {
+                for (AttributeUseStateEvent e : es)
+                {
+                    addAttributeUseEvent(e);
+                }
+            }
+            else { this.attributeUseEvents.clear(); }
+        }
+        
+        public void addAttributeUseEvent(AttributeUseStateEvent e)
+        {
+            throwOnInconsistentEventIds(e);
+            this.attributeUseEvents.put(e.getStateEventId(), e);
+        }
 
 
     }
-*/
+
 
     public static abstract class AbstractAttributeSetStateDeleted extends AbstractAttributeSetStateEvent implements AttributeSetStateDeleted, Saveable
     {
@@ -337,11 +428,6 @@ public abstract class AbstractAttributeSetStateEvent implements AttributeSetStat
             this.attributeUseEvents.put(e.getStateEventId(), e);
         }
 
-        public abstract AttributeUseStateEvent.AttributeUseStateRemoved newAttributeUseStateRemoved(String attributeId);
-//        {
-//            return new AttributeUseStateEvent.AttributeUseStateRemoved(newAttributeUseStateEventId(attributeId));
-//        }
-
         public void save()
         {
             for (AttributeUseStateEvent.AttributeUseStateRemoved e : this.getAttributeUseEvents()) {
@@ -349,6 +435,35 @@ public abstract class AbstractAttributeSetStateEvent implements AttributeSetStat
             }
         }
     }
+        public static class SimpleAttributeUseStateCreated extends AbstractAttributeUseStateEvent.AbstractAttributeUseStateCreated
+        {
+			public SimpleAttributeUseStateCreated() {
+			}
+
+			public SimpleAttributeUseStateCreated(AttributeUseStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleAttributeUseStateMergePatched extends AbstractAttributeUseStateEvent.AbstractAttributeUseStateMergePatched
+        {
+			public SimpleAttributeUseStateMergePatched() {
+			}
+
+			public SimpleAttributeUseStateMergePatched(AttributeUseStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleAttributeUseStateRemoved extends AbstractAttributeUseStateEvent.AbstractAttributeUseStateRemoved
+        {
+			public SimpleAttributeUseStateRemoved() {
+			}
+
+			public SimpleAttributeUseStateRemoved(AttributeUseStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
 
 }
 

@@ -47,9 +47,9 @@ public class CreateOrMergePatchAudienceDto extends AbstractAudienceCommandDto
         return this.isPropertyNameRemoved;
     }
 
-    public void setIsPropertyNameRemoved(Boolean isPropertyNameRemoved)
+    public void setIsPropertyNameRemoved(Boolean removed)
     {
-        this.isPropertyNameRemoved = isPropertyNameRemoved;
+        this.isPropertyNameRemoved = removed;
     }
 
     private Boolean isPropertyBase64SecretRemoved;
@@ -59,9 +59,9 @@ public class CreateOrMergePatchAudienceDto extends AbstractAudienceCommandDto
         return this.isPropertyBase64SecretRemoved;
     }
 
-    public void setIsPropertyBase64SecretRemoved(Boolean isPropertyBase64SecretRemoved)
+    public void setIsPropertyBase64SecretRemoved(Boolean removed)
     {
-        this.isPropertyBase64SecretRemoved = isPropertyBase64SecretRemoved;
+        this.isPropertyBase64SecretRemoved = removed;
     }
 
     private Boolean isPropertyActiveRemoved;
@@ -71,9 +71,9 @@ public class CreateOrMergePatchAudienceDto extends AbstractAudienceCommandDto
         return this.isPropertyActiveRemoved;
     }
 
-    public void setIsPropertyActiveRemoved(Boolean isPropertyActiveRemoved)
+    public void setIsPropertyActiveRemoved(Boolean removed)
     {
-        this.isPropertyActiveRemoved = isPropertyActiveRemoved;
+        this.isPropertyActiveRemoved = removed;
     }
 
 

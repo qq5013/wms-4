@@ -41,9 +41,9 @@ public interface UserPermissionStateEvent extends Event
 
     interface UserPermissionStateMergePatched extends UserPermissionStateEvent
     {
-        Boolean isPropertyActiveRemoved();
+        Boolean getIsPropertyActiveRemoved();
 
-        void setPropertyActiveRemoved(Boolean removed);
+        void setIsPropertyActiveRemoved(Boolean removed);
 
 
     }

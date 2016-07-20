@@ -121,28 +121,62 @@ public abstract class AbstractWarehouseStateEvent implements WarehouseStateEvent
     }
 
 
-/*
     public static abstract class AbstractWarehouseStateMergePatched extends AbstractWarehouseStateEvent implements WarehouseStateMergePatched
     {
-        Boolean isPropertyNameRemoved();
+        public AbstractWarehouseStateMergePatched() {
+        }
 
-        void setPropertyNameRemoved(Boolean removed);
+        public AbstractWarehouseStateMergePatched(WarehouseStateEventId stateEventId) {
+            super(stateEventId);
+        }
 
-        Boolean isPropertyDescriptionRemoved();
+        public String getStateEventType() {
+            return StateEventType.MERGE_PATCHED;
+        }
 
-        void setPropertyDescriptionRemoved(Boolean removed);
+        private Boolean isPropertyNameRemoved;
 
-        Boolean isPropertyIsInTransitRemoved();
+        public Boolean getIsPropertyNameRemoved() {
+            return this.isPropertyNameRemoved;
+        }
 
-        void setPropertyIsInTransitRemoved(Boolean removed);
+        public void setIsPropertyNameRemoved(Boolean removed) {
+            this.isPropertyNameRemoved = removed;
+        }
 
-        Boolean isPropertyActiveRemoved();
+        private Boolean isPropertyDescriptionRemoved;
 
-        void setPropertyActiveRemoved(Boolean removed);
+        public Boolean getIsPropertyDescriptionRemoved() {
+            return this.isPropertyDescriptionRemoved;
+        }
+
+        public void setIsPropertyDescriptionRemoved(Boolean removed) {
+            this.isPropertyDescriptionRemoved = removed;
+        }
+
+        private Boolean isPropertyIsInTransitRemoved;
+
+        public Boolean getIsPropertyIsInTransitRemoved() {
+            return this.isPropertyIsInTransitRemoved;
+        }
+
+        public void setIsPropertyIsInTransitRemoved(Boolean removed) {
+            this.isPropertyIsInTransitRemoved = removed;
+        }
+
+        private Boolean isPropertyActiveRemoved;
+
+        public Boolean getIsPropertyActiveRemoved() {
+            return this.isPropertyActiveRemoved;
+        }
+
+        public void setIsPropertyActiveRemoved(Boolean removed) {
+            this.isPropertyActiveRemoved = removed;
+        }
 
 
     }
-*/
+
 
     public static abstract class AbstractWarehouseStateDeleted extends AbstractWarehouseStateEvent implements WarehouseStateDeleted
     {
@@ -158,6 +192,5 @@ public abstract class AbstractWarehouseStateEvent implements WarehouseStateEvent
         }
 
     }
-
 }
 

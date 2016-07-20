@@ -109,16 +109,32 @@ public abstract class AbstractUserRoleStateEvent implements UserRoleStateEvent
     }
 
 
-/*
     public static abstract class AbstractUserRoleStateMergePatched extends AbstractUserRoleStateEvent implements UserRoleStateMergePatched
     {
-        Boolean isPropertyActiveRemoved();
+        public AbstractUserRoleStateMergePatched() {
+        }
 
-        void setPropertyActiveRemoved(Boolean removed);
+        public AbstractUserRoleStateMergePatched(UserRoleStateEventId stateEventId) {
+            super(stateEventId);
+        }
+
+        public String getStateEventType() {
+            return StateEventType.MERGE_PATCHED;
+        }
+
+        private Boolean isPropertyActiveRemoved;
+
+        public Boolean getIsPropertyActiveRemoved() {
+            return this.isPropertyActiveRemoved;
+        }
+
+        public void setIsPropertyActiveRemoved(Boolean removed) {
+            this.isPropertyActiveRemoved = removed;
+        }
 
 
     }
-*/
+
 
     public static abstract class AbstractUserRoleStateRemoved extends AbstractUserRoleStateEvent implements UserRoleStateRemoved
     {
@@ -134,6 +150,5 @@ public abstract class AbstractUserRoleStateEvent implements UserRoleStateEvent
         }
 
     }
-
 }
 

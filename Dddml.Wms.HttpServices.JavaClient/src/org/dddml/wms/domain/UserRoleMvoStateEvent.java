@@ -105,81 +105,81 @@ public interface UserRoleMvoStateEvent extends Event
 
     interface UserRoleMvoStateMergePatched extends UserRoleMvoStateEvent
     {
-        Boolean isPropertyVersionRemoved();
+        Boolean getIsPropertyVersionRemoved();
 
-        void setPropertyVersionRemoved(Boolean removed);
+        void setIsPropertyVersionRemoved(Boolean removed);
 
-        Boolean isPropertyActiveRemoved();
+        Boolean getIsPropertyActiveRemoved();
 
-        void setPropertyActiveRemoved(Boolean removed);
+        void setIsPropertyActiveRemoved(Boolean removed);
 
-        Boolean isPropertyUserUserNameRemoved();
+        Boolean getIsPropertyUserUserNameRemoved();
 
-        void setPropertyUserUserNameRemoved(Boolean removed);
+        void setIsPropertyUserUserNameRemoved(Boolean removed);
 
-        Boolean isPropertyUserAccessFailedCountRemoved();
+        Boolean getIsPropertyUserAccessFailedCountRemoved();
 
-        void setPropertyUserAccessFailedCountRemoved(Boolean removed);
+        void setIsPropertyUserAccessFailedCountRemoved(Boolean removed);
 
-        Boolean isPropertyUserEmailRemoved();
+        Boolean getIsPropertyUserEmailRemoved();
 
-        void setPropertyUserEmailRemoved(Boolean removed);
+        void setIsPropertyUserEmailRemoved(Boolean removed);
 
-        Boolean isPropertyUserEmailConfirmedRemoved();
+        Boolean getIsPropertyUserEmailConfirmedRemoved();
 
-        void setPropertyUserEmailConfirmedRemoved(Boolean removed);
+        void setIsPropertyUserEmailConfirmedRemoved(Boolean removed);
 
-        Boolean isPropertyUserLockoutEnabledRemoved();
+        Boolean getIsPropertyUserLockoutEnabledRemoved();
 
-        void setPropertyUserLockoutEnabledRemoved(Boolean removed);
+        void setIsPropertyUserLockoutEnabledRemoved(Boolean removed);
 
-        Boolean isPropertyUserLockoutEndDateUtcRemoved();
+        Boolean getIsPropertyUserLockoutEndDateUtcRemoved();
 
-        void setPropertyUserLockoutEndDateUtcRemoved(Boolean removed);
+        void setIsPropertyUserLockoutEndDateUtcRemoved(Boolean removed);
 
-        Boolean isPropertyUserPasswordHashRemoved();
+        Boolean getIsPropertyUserPasswordHashRemoved();
 
-        void setPropertyUserPasswordHashRemoved(Boolean removed);
+        void setIsPropertyUserPasswordHashRemoved(Boolean removed);
 
-        Boolean isPropertyUserPhoneNumberRemoved();
+        Boolean getIsPropertyUserPhoneNumberRemoved();
 
-        void setPropertyUserPhoneNumberRemoved(Boolean removed);
+        void setIsPropertyUserPhoneNumberRemoved(Boolean removed);
 
-        Boolean isPropertyUserPhoneNumberConfirmedRemoved();
+        Boolean getIsPropertyUserPhoneNumberConfirmedRemoved();
 
-        void setPropertyUserPhoneNumberConfirmedRemoved(Boolean removed);
+        void setIsPropertyUserPhoneNumberConfirmedRemoved(Boolean removed);
 
-        Boolean isPropertyUserTwoFactorEnabledRemoved();
+        Boolean getIsPropertyUserTwoFactorEnabledRemoved();
 
-        void setPropertyUserTwoFactorEnabledRemoved(Boolean removed);
+        void setIsPropertyUserTwoFactorEnabledRemoved(Boolean removed);
 
-        Boolean isPropertyUserSecurityStampRemoved();
+        Boolean getIsPropertyUserSecurityStampRemoved();
 
-        void setPropertyUserSecurityStampRemoved(Boolean removed);
+        void setIsPropertyUserSecurityStampRemoved(Boolean removed);
 
-        Boolean isPropertyUserCreatedByRemoved();
+        Boolean getIsPropertyUserCreatedByRemoved();
 
-        void setPropertyUserCreatedByRemoved(Boolean removed);
+        void setIsPropertyUserCreatedByRemoved(Boolean removed);
 
-        Boolean isPropertyUserCreatedAtRemoved();
+        Boolean getIsPropertyUserCreatedAtRemoved();
 
-        void setPropertyUserCreatedAtRemoved(Boolean removed);
+        void setIsPropertyUserCreatedAtRemoved(Boolean removed);
 
-        Boolean isPropertyUserUpdatedByRemoved();
+        Boolean getIsPropertyUserUpdatedByRemoved();
 
-        void setPropertyUserUpdatedByRemoved(Boolean removed);
+        void setIsPropertyUserUpdatedByRemoved(Boolean removed);
 
-        Boolean isPropertyUserUpdatedAtRemoved();
+        Boolean getIsPropertyUserUpdatedAtRemoved();
 
-        void setPropertyUserUpdatedAtRemoved(Boolean removed);
+        void setIsPropertyUserUpdatedAtRemoved(Boolean removed);
 
-        Boolean isPropertyUserActiveRemoved();
+        Boolean getIsPropertyUserActiveRemoved();
 
-        void setPropertyUserActiveRemoved(Boolean removed);
+        void setIsPropertyUserActiveRemoved(Boolean removed);
 
-        Boolean isPropertyUserDeletedRemoved();
+        Boolean getIsPropertyUserDeletedRemoved();
 
-        void setPropertyUserDeletedRemoved(Boolean removed);
+        void setIsPropertyUserDeletedRemoved(Boolean removed);
 
 
     }

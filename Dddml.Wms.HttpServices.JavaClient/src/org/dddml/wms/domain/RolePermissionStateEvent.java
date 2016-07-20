@@ -33,9 +33,9 @@ public interface RolePermissionStateEvent extends Event
 
     interface RolePermissionStateMergePatched extends RolePermissionStateEvent
     {
-        Boolean isPropertyActiveRemoved();
+        Boolean getIsPropertyActiveRemoved();
 
-        void setPropertyActiveRemoved(Boolean removed);
+        void setIsPropertyActiveRemoved(Boolean removed);
 
 
     }

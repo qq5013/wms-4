@@ -41,9 +41,9 @@ public interface UserLoginStateEvent extends Event
 
     interface UserLoginStateMergePatched extends UserLoginStateEvent
     {
-        Boolean isPropertyActiveRemoved();
+        Boolean getIsPropertyActiveRemoved();
 
-        void setPropertyActiveRemoved(Boolean removed);
+        void setIsPropertyActiveRemoved(Boolean removed);
 
 
     }

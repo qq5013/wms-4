@@ -101,53 +101,53 @@ public interface UserStateEvent extends Event
 
     interface UserStateMergePatched extends UserStateEvent
     {
-        Boolean isPropertyUserNameRemoved();
+        Boolean getIsPropertyUserNameRemoved();
 
-        void setPropertyUserNameRemoved(Boolean removed);
+        void setIsPropertyUserNameRemoved(Boolean removed);
 
-        Boolean isPropertyAccessFailedCountRemoved();
+        Boolean getIsPropertyAccessFailedCountRemoved();
 
-        void setPropertyAccessFailedCountRemoved(Boolean removed);
+        void setIsPropertyAccessFailedCountRemoved(Boolean removed);
 
-        Boolean isPropertyEmailRemoved();
+        Boolean getIsPropertyEmailRemoved();
 
-        void setPropertyEmailRemoved(Boolean removed);
+        void setIsPropertyEmailRemoved(Boolean removed);
 
-        Boolean isPropertyEmailConfirmedRemoved();
+        Boolean getIsPropertyEmailConfirmedRemoved();
 
-        void setPropertyEmailConfirmedRemoved(Boolean removed);
+        void setIsPropertyEmailConfirmedRemoved(Boolean removed);
 
-        Boolean isPropertyLockoutEnabledRemoved();
+        Boolean getIsPropertyLockoutEnabledRemoved();
 
-        void setPropertyLockoutEnabledRemoved(Boolean removed);
+        void setIsPropertyLockoutEnabledRemoved(Boolean removed);
 
-        Boolean isPropertyLockoutEndDateUtcRemoved();
+        Boolean getIsPropertyLockoutEndDateUtcRemoved();
 
-        void setPropertyLockoutEndDateUtcRemoved(Boolean removed);
+        void setIsPropertyLockoutEndDateUtcRemoved(Boolean removed);
 
-        Boolean isPropertyPasswordHashRemoved();
+        Boolean getIsPropertyPasswordHashRemoved();
 
-        void setPropertyPasswordHashRemoved(Boolean removed);
+        void setIsPropertyPasswordHashRemoved(Boolean removed);
 
-        Boolean isPropertyPhoneNumberRemoved();
+        Boolean getIsPropertyPhoneNumberRemoved();
 
-        void setPropertyPhoneNumberRemoved(Boolean removed);
+        void setIsPropertyPhoneNumberRemoved(Boolean removed);
 
-        Boolean isPropertyPhoneNumberConfirmedRemoved();
+        Boolean getIsPropertyPhoneNumberConfirmedRemoved();
 
-        void setPropertyPhoneNumberConfirmedRemoved(Boolean removed);
+        void setIsPropertyPhoneNumberConfirmedRemoved(Boolean removed);
 
-        Boolean isPropertyTwoFactorEnabledRemoved();
+        Boolean getIsPropertyTwoFactorEnabledRemoved();
 
-        void setPropertyTwoFactorEnabledRemoved(Boolean removed);
+        void setIsPropertyTwoFactorEnabledRemoved(Boolean removed);
 
-        Boolean isPropertySecurityStampRemoved();
+        Boolean getIsPropertySecurityStampRemoved();
 
-        void setPropertySecurityStampRemoved(Boolean removed);
+        void setIsPropertySecurityStampRemoved(Boolean removed);
 
-        Boolean isPropertyActiveRemoved();
+        Boolean getIsPropertyActiveRemoved();
 
-        void setPropertyActiveRemoved(Boolean removed);
+        void setIsPropertyActiveRemoved(Boolean removed);
 
         Iterable<UserRoleStateEvent> getUserRoleEvents();
         

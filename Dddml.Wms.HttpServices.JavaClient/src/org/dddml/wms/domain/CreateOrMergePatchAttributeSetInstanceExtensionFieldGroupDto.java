@@ -95,9 +95,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldGroupDto extend
         return this.isPropertyFieldTypeRemoved;
     }
 
-    public void setIsPropertyFieldTypeRemoved(Boolean isPropertyFieldTypeRemoved)
+    public void setIsPropertyFieldTypeRemoved(Boolean removed)
     {
-        this.isPropertyFieldTypeRemoved = isPropertyFieldTypeRemoved;
+        this.isPropertyFieldTypeRemoved = removed;
     }
 
     private Boolean isPropertyFieldLengthRemoved;
@@ -107,9 +107,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldGroupDto extend
         return this.isPropertyFieldLengthRemoved;
     }
 
-    public void setIsPropertyFieldLengthRemoved(Boolean isPropertyFieldLengthRemoved)
+    public void setIsPropertyFieldLengthRemoved(Boolean removed)
     {
-        this.isPropertyFieldLengthRemoved = isPropertyFieldLengthRemoved;
+        this.isPropertyFieldLengthRemoved = removed;
     }
 
     private Boolean isPropertyFieldCountRemoved;
@@ -119,9 +119,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldGroupDto extend
         return this.isPropertyFieldCountRemoved;
     }
 
-    public void setIsPropertyFieldCountRemoved(Boolean isPropertyFieldCountRemoved)
+    public void setIsPropertyFieldCountRemoved(Boolean removed)
     {
-        this.isPropertyFieldCountRemoved = isPropertyFieldCountRemoved;
+        this.isPropertyFieldCountRemoved = removed;
     }
 
     private Boolean isPropertyNameFormatRemoved;
@@ -131,9 +131,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldGroupDto extend
         return this.isPropertyNameFormatRemoved;
     }
 
-    public void setIsPropertyNameFormatRemoved(Boolean isPropertyNameFormatRemoved)
+    public void setIsPropertyNameFormatRemoved(Boolean removed)
     {
-        this.isPropertyNameFormatRemoved = isPropertyNameFormatRemoved;
+        this.isPropertyNameFormatRemoved = removed;
     }
 
     private Boolean isPropertyDescriptionRemoved;
@@ -143,9 +143,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldGroupDto extend
         return this.isPropertyDescriptionRemoved;
     }
 
-    public void setIsPropertyDescriptionRemoved(Boolean isPropertyDescriptionRemoved)
+    public void setIsPropertyDescriptionRemoved(Boolean removed)
     {
-        this.isPropertyDescriptionRemoved = isPropertyDescriptionRemoved;
+        this.isPropertyDescriptionRemoved = removed;
     }
 
     private Boolean isPropertyActiveRemoved;
@@ -155,9 +155,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldGroupDto extend
         return this.isPropertyActiveRemoved;
     }
 
-    public void setIsPropertyActiveRemoved(Boolean isPropertyActiveRemoved)
+    public void setIsPropertyActiveRemoved(Boolean removed)
     {
-        this.isPropertyActiveRemoved = isPropertyActiveRemoved;
+        this.isPropertyActiveRemoved = removed;
     }
 
 

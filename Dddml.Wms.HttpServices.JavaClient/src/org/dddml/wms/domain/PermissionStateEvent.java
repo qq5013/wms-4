@@ -45,21 +45,21 @@ public interface PermissionStateEvent extends Event
 
     interface PermissionStateMergePatched extends PermissionStateEvent
     {
-        Boolean isPropertyNameRemoved();
+        Boolean getIsPropertyNameRemoved();
 
-        void setPropertyNameRemoved(Boolean removed);
+        void setIsPropertyNameRemoved(Boolean removed);
 
-        Boolean isPropertyParentPermissionIdRemoved();
+        Boolean getIsPropertyParentPermissionIdRemoved();
 
-        void setPropertyParentPermissionIdRemoved(Boolean removed);
+        void setIsPropertyParentPermissionIdRemoved(Boolean removed);
 
-        Boolean isPropertyDescriptionRemoved();
+        Boolean getIsPropertyDescriptionRemoved();
 
-        void setPropertyDescriptionRemoved(Boolean removed);
+        void setIsPropertyDescriptionRemoved(Boolean removed);
 
-        Boolean isPropertyActiveRemoved();
+        Boolean getIsPropertyActiveRemoved();
 
-        void setPropertyActiveRemoved(Boolean removed);
+        void setIsPropertyActiveRemoved(Boolean removed);
 
 
     }

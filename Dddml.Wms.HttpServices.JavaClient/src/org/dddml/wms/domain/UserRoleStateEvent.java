@@ -41,9 +41,9 @@ public interface UserRoleStateEvent extends Event
 
     interface UserRoleStateMergePatched extends UserRoleStateEvent
     {
-        Boolean isPropertyActiveRemoved();
+        Boolean getIsPropertyActiveRemoved();
 
-        void setPropertyActiveRemoved(Boolean removed);
+        void setIsPropertyActiveRemoved(Boolean removed);
 
 
     }

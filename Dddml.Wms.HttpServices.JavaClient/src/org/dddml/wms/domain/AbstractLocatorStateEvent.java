@@ -181,48 +181,112 @@ public abstract class AbstractLocatorStateEvent implements LocatorStateEvent
     }
 
 
-/*
     public static abstract class AbstractLocatorStateMergePatched extends AbstractLocatorStateEvent implements LocatorStateMergePatched
     {
-        Boolean isPropertyWarehouseIdRemoved();
+        public AbstractLocatorStateMergePatched() {
+        }
 
-        void setPropertyWarehouseIdRemoved(Boolean removed);
+        public AbstractLocatorStateMergePatched(LocatorStateEventId stateEventId) {
+            super(stateEventId);
+        }
 
-        Boolean isPropertyParentLocatorIdRemoved();
+        public String getStateEventType() {
+            return StateEventType.MERGE_PATCHED;
+        }
 
-        void setPropertyParentLocatorIdRemoved(Boolean removed);
+        private Boolean isPropertyWarehouseIdRemoved;
 
-        Boolean isPropertyLocatorTypeRemoved();
+        public Boolean getIsPropertyWarehouseIdRemoved() {
+            return this.isPropertyWarehouseIdRemoved;
+        }
 
-        void setPropertyLocatorTypeRemoved(Boolean removed);
+        public void setIsPropertyWarehouseIdRemoved(Boolean removed) {
+            this.isPropertyWarehouseIdRemoved = removed;
+        }
 
-        Boolean isPropertyPriorityNumberRemoved();
+        private Boolean isPropertyParentLocatorIdRemoved;
 
-        void setPropertyPriorityNumberRemoved(Boolean removed);
+        public Boolean getIsPropertyParentLocatorIdRemoved() {
+            return this.isPropertyParentLocatorIdRemoved;
+        }
 
-        Boolean isPropertyIsDefaultRemoved();
+        public void setIsPropertyParentLocatorIdRemoved(Boolean removed) {
+            this.isPropertyParentLocatorIdRemoved = removed;
+        }
 
-        void setPropertyIsDefaultRemoved(Boolean removed);
+        private Boolean isPropertyLocatorTypeRemoved;
 
-        Boolean isPropertyXRemoved();
+        public Boolean getIsPropertyLocatorTypeRemoved() {
+            return this.isPropertyLocatorTypeRemoved;
+        }
 
-        void setPropertyXRemoved(Boolean removed);
+        public void setIsPropertyLocatorTypeRemoved(Boolean removed) {
+            this.isPropertyLocatorTypeRemoved = removed;
+        }
 
-        Boolean isPropertyYRemoved();
+        private Boolean isPropertyPriorityNumberRemoved;
 
-        void setPropertyYRemoved(Boolean removed);
+        public Boolean getIsPropertyPriorityNumberRemoved() {
+            return this.isPropertyPriorityNumberRemoved;
+        }
 
-        Boolean isPropertyZRemoved();
+        public void setIsPropertyPriorityNumberRemoved(Boolean removed) {
+            this.isPropertyPriorityNumberRemoved = removed;
+        }
 
-        void setPropertyZRemoved(Boolean removed);
+        private Boolean isPropertyIsDefaultRemoved;
 
-        Boolean isPropertyActiveRemoved();
+        public Boolean getIsPropertyIsDefaultRemoved() {
+            return this.isPropertyIsDefaultRemoved;
+        }
 
-        void setPropertyActiveRemoved(Boolean removed);
+        public void setIsPropertyIsDefaultRemoved(Boolean removed) {
+            this.isPropertyIsDefaultRemoved = removed;
+        }
+
+        private Boolean isPropertyXRemoved;
+
+        public Boolean getIsPropertyXRemoved() {
+            return this.isPropertyXRemoved;
+        }
+
+        public void setIsPropertyXRemoved(Boolean removed) {
+            this.isPropertyXRemoved = removed;
+        }
+
+        private Boolean isPropertyYRemoved;
+
+        public Boolean getIsPropertyYRemoved() {
+            return this.isPropertyYRemoved;
+        }
+
+        public void setIsPropertyYRemoved(Boolean removed) {
+            this.isPropertyYRemoved = removed;
+        }
+
+        private Boolean isPropertyZRemoved;
+
+        public Boolean getIsPropertyZRemoved() {
+            return this.isPropertyZRemoved;
+        }
+
+        public void setIsPropertyZRemoved(Boolean removed) {
+            this.isPropertyZRemoved = removed;
+        }
+
+        private Boolean isPropertyActiveRemoved;
+
+        public Boolean getIsPropertyActiveRemoved() {
+            return this.isPropertyActiveRemoved;
+        }
+
+        public void setIsPropertyActiveRemoved(Boolean removed) {
+            this.isPropertyActiveRemoved = removed;
+        }
 
 
     }
-*/
+
 
     public static abstract class AbstractLocatorStateDeleted extends AbstractLocatorStateEvent implements LocatorStateDeleted
     {
@@ -238,6 +302,5 @@ public abstract class AbstractLocatorStateEvent implements LocatorStateEvent
         }
 
     }
-
 }
 

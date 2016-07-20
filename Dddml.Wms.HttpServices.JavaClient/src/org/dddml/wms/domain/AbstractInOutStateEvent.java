@@ -501,6 +501,18 @@ public abstract class AbstractInOutStateEvent implements InOutStateEvent
         }
     }
 
+    public InOutLineStateEvent.InOutLineStateCreated newInOutLineStateCreated(SkuId skuId) {
+        return new SimpleInOutLineStateCreated(newInOutLineStateEventId(skuId));
+    }
+
+    public InOutLineStateEvent.InOutLineStateMergePatched newInOutLineStateMergePatched(SkuId skuId) {
+        return new SimpleInOutLineStateMergePatched(newInOutLineStateEventId(skuId));
+    }
+
+    public InOutLineStateEvent.InOutLineStateRemoved newInOutLineStateRemoved(SkuId skuId) {
+        return new SimpleInOutLineStateRemoved(newInOutLineStateEventId(skuId));
+    }
+
 
     public abstract String getStateEventType();
 
@@ -560,11 +572,6 @@ public abstract class AbstractInOutStateEvent implements InOutStateEvent
             this.inOutLineEvents.put(e.getStateEventId(), e);
         }
 
-        public abstract InOutLineStateEvent.InOutLineStateCreated newInOutLineStateCreated(SkuId skuId);
-//        {
-//            return new InOutLineStateEvent.InOutLineStateCreated(newInOutLineStateEventId(skuId));
-//        }
-
         public void save()
         {
             for (InOutLineStateEvent.InOutLineStateCreated e : this.getInOutLineEvents()) {
@@ -574,162 +581,414 @@ public abstract class AbstractInOutStateEvent implements InOutStateEvent
     }
 
 
-/*
     public static abstract class AbstractInOutStateMergePatched extends AbstractInOutStateEvent implements InOutStateMergePatched, Saveable
     {
-        Boolean isPropertyIsSOTransactionRemoved();
+        public AbstractInOutStateMergePatched() {
+        }
 
-        void setPropertyIsSOTransactionRemoved(Boolean removed);
+        public AbstractInOutStateMergePatched(InOutStateEventId stateEventId) {
+            super(stateEventId);
+        }
 
-        Boolean isPropertyDocumentStatusRemoved();
+        public String getStateEventType() {
+            return StateEventType.MERGE_PATCHED;
+        }
 
-        void setPropertyDocumentStatusRemoved(Boolean removed);
+        private Boolean isPropertyIsSOTransactionRemoved;
 
-        Boolean isPropertyPostedRemoved();
+        public Boolean getIsPropertyIsSOTransactionRemoved() {
+            return this.isPropertyIsSOTransactionRemoved;
+        }
 
-        void setPropertyPostedRemoved(Boolean removed);
+        public void setIsPropertyIsSOTransactionRemoved(Boolean removed) {
+            this.isPropertyIsSOTransactionRemoved = removed;
+        }
 
-        Boolean isPropertyProcessingRemoved();
+        private Boolean isPropertyDocumentStatusRemoved;
 
-        void setPropertyProcessingRemoved(Boolean removed);
+        public Boolean getIsPropertyDocumentStatusRemoved() {
+            return this.isPropertyDocumentStatusRemoved;
+        }
 
-        Boolean isPropertyProcessedRemoved();
+        public void setIsPropertyDocumentStatusRemoved(Boolean removed) {
+            this.isPropertyDocumentStatusRemoved = removed;
+        }
 
-        void setPropertyProcessedRemoved(Boolean removed);
+        private Boolean isPropertyPostedRemoved;
 
-        Boolean isPropertyDocumentTypeRemoved();
+        public Boolean getIsPropertyPostedRemoved() {
+            return this.isPropertyPostedRemoved;
+        }
 
-        void setPropertyDocumentTypeRemoved(Boolean removed);
+        public void setIsPropertyPostedRemoved(Boolean removed) {
+            this.isPropertyPostedRemoved = removed;
+        }
 
-        Boolean isPropertyDescriptionRemoved();
+        private Boolean isPropertyProcessingRemoved;
 
-        void setPropertyDescriptionRemoved(Boolean removed);
+        public Boolean getIsPropertyProcessingRemoved() {
+            return this.isPropertyProcessingRemoved;
+        }
 
-        Boolean isPropertyOrderNumberRemoved();
+        public void setIsPropertyProcessingRemoved(Boolean removed) {
+            this.isPropertyProcessingRemoved = removed;
+        }
 
-        void setPropertyOrderNumberRemoved(Boolean removed);
+        private Boolean isPropertyProcessedRemoved;
 
-        Boolean isPropertyDateOrderedRemoved();
+        public Boolean getIsPropertyProcessedRemoved() {
+            return this.isPropertyProcessedRemoved;
+        }
 
-        void setPropertyDateOrderedRemoved(Boolean removed);
+        public void setIsPropertyProcessedRemoved(Boolean removed) {
+            this.isPropertyProcessedRemoved = removed;
+        }
 
-        Boolean isPropertyIsPrintedRemoved();
+        private Boolean isPropertyDocumentTypeRemoved;
 
-        void setPropertyIsPrintedRemoved(Boolean removed);
+        public Boolean getIsPropertyDocumentTypeRemoved() {
+            return this.isPropertyDocumentTypeRemoved;
+        }
 
-        Boolean isPropertyMovementTypeRemoved();
+        public void setIsPropertyDocumentTypeRemoved(Boolean removed) {
+            this.isPropertyDocumentTypeRemoved = removed;
+        }
 
-        void setPropertyMovementTypeRemoved(Boolean removed);
+        private Boolean isPropertyDescriptionRemoved;
 
-        Boolean isPropertyMovementDateRemoved();
+        public Boolean getIsPropertyDescriptionRemoved() {
+            return this.isPropertyDescriptionRemoved;
+        }
 
-        void setPropertyMovementDateRemoved(Boolean removed);
+        public void setIsPropertyDescriptionRemoved(Boolean removed) {
+            this.isPropertyDescriptionRemoved = removed;
+        }
 
-        Boolean isPropertyBusinessPartnerIdRemoved();
+        private Boolean isPropertyOrderNumberRemoved;
 
-        void setPropertyBusinessPartnerIdRemoved(Boolean removed);
+        public Boolean getIsPropertyOrderNumberRemoved() {
+            return this.isPropertyOrderNumberRemoved;
+        }
 
-        Boolean isPropertyWarehouseIdRemoved();
+        public void setIsPropertyOrderNumberRemoved(Boolean removed) {
+            this.isPropertyOrderNumberRemoved = removed;
+        }
 
-        void setPropertyWarehouseIdRemoved(Boolean removed);
+        private Boolean isPropertyDateOrderedRemoved;
 
-        Boolean isPropertyPOReferenceRemoved();
+        public Boolean getIsPropertyDateOrderedRemoved() {
+            return this.isPropertyDateOrderedRemoved;
+        }
 
-        void setPropertyPOReferenceRemoved(Boolean removed);
+        public void setIsPropertyDateOrderedRemoved(Boolean removed) {
+            this.isPropertyDateOrderedRemoved = removed;
+        }
 
-        Boolean isPropertyFreightAmountRemoved();
+        private Boolean isPropertyIsPrintedRemoved;
 
-        void setPropertyFreightAmountRemoved(Boolean removed);
+        public Boolean getIsPropertyIsPrintedRemoved() {
+            return this.isPropertyIsPrintedRemoved;
+        }
 
-        Boolean isPropertyShipperIdRemoved();
+        public void setIsPropertyIsPrintedRemoved(Boolean removed) {
+            this.isPropertyIsPrintedRemoved = removed;
+        }
 
-        void setPropertyShipperIdRemoved(Boolean removed);
+        private Boolean isPropertyMovementTypeRemoved;
 
-        Boolean isPropertyChargeAmountRemoved();
+        public Boolean getIsPropertyMovementTypeRemoved() {
+            return this.isPropertyMovementTypeRemoved;
+        }
 
-        void setPropertyChargeAmountRemoved(Boolean removed);
+        public void setIsPropertyMovementTypeRemoved(Boolean removed) {
+            this.isPropertyMovementTypeRemoved = removed;
+        }
 
-        Boolean isPropertyDatePrintedRemoved();
+        private Boolean isPropertyMovementDateRemoved;
 
-        void setPropertyDatePrintedRemoved(Boolean removed);
+        public Boolean getIsPropertyMovementDateRemoved() {
+            return this.isPropertyMovementDateRemoved;
+        }
 
-        Boolean isPropertySalesRepresentativeRemoved();
+        public void setIsPropertyMovementDateRemoved(Boolean removed) {
+            this.isPropertyMovementDateRemoved = removed;
+        }
 
-        void setPropertySalesRepresentativeRemoved(Boolean removed);
+        private Boolean isPropertyBusinessPartnerIdRemoved;
 
-        Boolean isPropertyNumberOfPackagesRemoved();
+        public Boolean getIsPropertyBusinessPartnerIdRemoved() {
+            return this.isPropertyBusinessPartnerIdRemoved;
+        }
 
-        void setPropertyNumberOfPackagesRemoved(Boolean removed);
+        public void setIsPropertyBusinessPartnerIdRemoved(Boolean removed) {
+            this.isPropertyBusinessPartnerIdRemoved = removed;
+        }
 
-        Boolean isPropertyPickDateRemoved();
+        private Boolean isPropertyWarehouseIdRemoved;
 
-        void setPropertyPickDateRemoved(Boolean removed);
+        public Boolean getIsPropertyWarehouseIdRemoved() {
+            return this.isPropertyWarehouseIdRemoved;
+        }
 
-        Boolean isPropertyShipDateRemoved();
+        public void setIsPropertyWarehouseIdRemoved(Boolean removed) {
+            this.isPropertyWarehouseIdRemoved = removed;
+        }
 
-        void setPropertyShipDateRemoved(Boolean removed);
+        private Boolean isPropertyPOReferenceRemoved;
 
-        Boolean isPropertyTrackingNumberRemoved();
+        public Boolean getIsPropertyPOReferenceRemoved() {
+            return this.isPropertyPOReferenceRemoved;
+        }
 
-        void setPropertyTrackingNumberRemoved(Boolean removed);
+        public void setIsPropertyPOReferenceRemoved(Boolean removed) {
+            this.isPropertyPOReferenceRemoved = removed;
+        }
 
-        Boolean isPropertyDateReceivedRemoved();
+        private Boolean isPropertyFreightAmountRemoved;
 
-        void setPropertyDateReceivedRemoved(Boolean removed);
+        public Boolean getIsPropertyFreightAmountRemoved() {
+            return this.isPropertyFreightAmountRemoved;
+        }
 
-        Boolean isPropertyIsInTransitRemoved();
+        public void setIsPropertyFreightAmountRemoved(Boolean removed) {
+            this.isPropertyFreightAmountRemoved = removed;
+        }
 
-        void setPropertyIsInTransitRemoved(Boolean removed);
+        private Boolean isPropertyShipperIdRemoved;
 
-        Boolean isPropertyIsApprovedRemoved();
+        public Boolean getIsPropertyShipperIdRemoved() {
+            return this.isPropertyShipperIdRemoved;
+        }
 
-        void setPropertyIsApprovedRemoved(Boolean removed);
+        public void setIsPropertyShipperIdRemoved(Boolean removed) {
+            this.isPropertyShipperIdRemoved = removed;
+        }
 
-        Boolean isPropertyIsInDisputeRemoved();
+        private Boolean isPropertyChargeAmountRemoved;
 
-        void setPropertyIsInDisputeRemoved(Boolean removed);
+        public Boolean getIsPropertyChargeAmountRemoved() {
+            return this.isPropertyChargeAmountRemoved;
+        }
 
-        Boolean isPropertyVolumeRemoved();
+        public void setIsPropertyChargeAmountRemoved(Boolean removed) {
+            this.isPropertyChargeAmountRemoved = removed;
+        }
 
-        void setPropertyVolumeRemoved(Boolean removed);
+        private Boolean isPropertyDatePrintedRemoved;
 
-        Boolean isPropertyWeightRemoved();
+        public Boolean getIsPropertyDatePrintedRemoved() {
+            return this.isPropertyDatePrintedRemoved;
+        }
 
-        void setPropertyWeightRemoved(Boolean removed);
+        public void setIsPropertyDatePrintedRemoved(Boolean removed) {
+            this.isPropertyDatePrintedRemoved = removed;
+        }
 
-        Boolean isPropertyRmaNumberRemoved();
+        private Boolean isPropertySalesRepresentativeRemoved;
 
-        void setPropertyRmaNumberRemoved(Boolean removed);
+        public Boolean getIsPropertySalesRepresentativeRemoved() {
+            return this.isPropertySalesRepresentativeRemoved;
+        }
 
-        Boolean isPropertyReversalNumberRemoved();
+        public void setIsPropertySalesRepresentativeRemoved(Boolean removed) {
+            this.isPropertySalesRepresentativeRemoved = removed;
+        }
 
-        void setPropertyReversalNumberRemoved(Boolean removed);
+        private Boolean isPropertyNumberOfPackagesRemoved;
 
-        Boolean isPropertyIsDropShipRemoved();
+        public Boolean getIsPropertyNumberOfPackagesRemoved() {
+            return this.isPropertyNumberOfPackagesRemoved;
+        }
 
-        void setPropertyIsDropShipRemoved(Boolean removed);
+        public void setIsPropertyNumberOfPackagesRemoved(Boolean removed) {
+            this.isPropertyNumberOfPackagesRemoved = removed;
+        }
 
-        Boolean isPropertyDropShipBusinessPartnerIdRemoved();
+        private Boolean isPropertyPickDateRemoved;
 
-        void setPropertyDropShipBusinessPartnerIdRemoved(Boolean removed);
+        public Boolean getIsPropertyPickDateRemoved() {
+            return this.isPropertyPickDateRemoved;
+        }
 
-        Boolean isPropertyActiveRemoved();
+        public void setIsPropertyPickDateRemoved(Boolean removed) {
+            this.isPropertyPickDateRemoved = removed;
+        }
 
-        void setPropertyActiveRemoved(Boolean removed);
+        private Boolean isPropertyShipDateRemoved;
 
-        Iterable<InOutLineStateEvent> getInOutLineEvents();
+        public Boolean getIsPropertyShipDateRemoved() {
+            return this.isPropertyShipDateRemoved;
+        }
+
+        public void setIsPropertyShipDateRemoved(Boolean removed) {
+            this.isPropertyShipDateRemoved = removed;
+        }
+
+        private Boolean isPropertyTrackingNumberRemoved;
+
+        public Boolean getIsPropertyTrackingNumberRemoved() {
+            return this.isPropertyTrackingNumberRemoved;
+        }
+
+        public void setIsPropertyTrackingNumberRemoved(Boolean removed) {
+            this.isPropertyTrackingNumberRemoved = removed;
+        }
+
+        private Boolean isPropertyDateReceivedRemoved;
+
+        public Boolean getIsPropertyDateReceivedRemoved() {
+            return this.isPropertyDateReceivedRemoved;
+        }
+
+        public void setIsPropertyDateReceivedRemoved(Boolean removed) {
+            this.isPropertyDateReceivedRemoved = removed;
+        }
+
+        private Boolean isPropertyIsInTransitRemoved;
+
+        public Boolean getIsPropertyIsInTransitRemoved() {
+            return this.isPropertyIsInTransitRemoved;
+        }
+
+        public void setIsPropertyIsInTransitRemoved(Boolean removed) {
+            this.isPropertyIsInTransitRemoved = removed;
+        }
+
+        private Boolean isPropertyIsApprovedRemoved;
+
+        public Boolean getIsPropertyIsApprovedRemoved() {
+            return this.isPropertyIsApprovedRemoved;
+        }
+
+        public void setIsPropertyIsApprovedRemoved(Boolean removed) {
+            this.isPropertyIsApprovedRemoved = removed;
+        }
+
+        private Boolean isPropertyIsInDisputeRemoved;
+
+        public Boolean getIsPropertyIsInDisputeRemoved() {
+            return this.isPropertyIsInDisputeRemoved;
+        }
+
+        public void setIsPropertyIsInDisputeRemoved(Boolean removed) {
+            this.isPropertyIsInDisputeRemoved = removed;
+        }
+
+        private Boolean isPropertyVolumeRemoved;
+
+        public Boolean getIsPropertyVolumeRemoved() {
+            return this.isPropertyVolumeRemoved;
+        }
+
+        public void setIsPropertyVolumeRemoved(Boolean removed) {
+            this.isPropertyVolumeRemoved = removed;
+        }
+
+        private Boolean isPropertyWeightRemoved;
+
+        public Boolean getIsPropertyWeightRemoved() {
+            return this.isPropertyWeightRemoved;
+        }
+
+        public void setIsPropertyWeightRemoved(Boolean removed) {
+            this.isPropertyWeightRemoved = removed;
+        }
+
+        private Boolean isPropertyRmaNumberRemoved;
+
+        public Boolean getIsPropertyRmaNumberRemoved() {
+            return this.isPropertyRmaNumberRemoved;
+        }
+
+        public void setIsPropertyRmaNumberRemoved(Boolean removed) {
+            this.isPropertyRmaNumberRemoved = removed;
+        }
+
+        private Boolean isPropertyReversalNumberRemoved;
+
+        public Boolean getIsPropertyReversalNumberRemoved() {
+            return this.isPropertyReversalNumberRemoved;
+        }
+
+        public void setIsPropertyReversalNumberRemoved(Boolean removed) {
+            this.isPropertyReversalNumberRemoved = removed;
+        }
+
+        private Boolean isPropertyIsDropShipRemoved;
+
+        public Boolean getIsPropertyIsDropShipRemoved() {
+            return this.isPropertyIsDropShipRemoved;
+        }
+
+        public void setIsPropertyIsDropShipRemoved(Boolean removed) {
+            this.isPropertyIsDropShipRemoved = removed;
+        }
+
+        private Boolean isPropertyDropShipBusinessPartnerIdRemoved;
+
+        public Boolean getIsPropertyDropShipBusinessPartnerIdRemoved() {
+            return this.isPropertyDropShipBusinessPartnerIdRemoved;
+        }
+
+        public void setIsPropertyDropShipBusinessPartnerIdRemoved(Boolean removed) {
+            this.isPropertyDropShipBusinessPartnerIdRemoved = removed;
+        }
+
+        private Boolean isPropertyActiveRemoved;
+
+        public Boolean getIsPropertyActiveRemoved() {
+            return this.isPropertyActiveRemoved;
+        }
+
+        public void setIsPropertyActiveRemoved(Boolean removed) {
+            this.isPropertyActiveRemoved = removed;
+        }
+
+        private Map<InOutLineStateEventId, InOutLineStateEvent> inOutLineEvents = new HashMap<InOutLineStateEventId, InOutLineStateEvent>();
         
-        void addInOutLineEvent(InOutLineStateEvent e);
+        private Iterable<InOutLineStateEvent> readOnlyInOutLineEvents;
 
-        InOutLineStateEvent.InOutLineStateCreated newInOutLineStateCreated(SkuId skuId);
+        public Iterable<InOutLineStateEvent> getInOutLineEvents()
+        {
+            if (!getStateEventReadOnly())
+            {
+                return this.inOutLineEvents.values();
+            }
+            else
+            {
+                if (readOnlyInOutLineEvents != null) { return readOnlyInOutLineEvents; }
+                InOutLineStateEventDao eventDao = getInOutLineStateEventDao();
+                List<InOutLineStateEvent> eL = new ArrayList<InOutLineStateEvent>();
+                for (InOutLineStateEvent e : eventDao.findByInOutStateEventId(this.getStateEventId()))
+                {
+                    e.setStateEventReadOnly(true);
+                    eL.add((InOutLineStateEvent)e);
+                }
+                return (readOnlyInOutLineEvents = eL);
+            }
+        }
 
-        InOutLineStateEvent.InOutLineStateMergePatched newInOutLineStateMergePatched(SkuId skuId);
-
-        InOutLineStateEvent.InOutLineStateRemoved newInOutLineStateRemoved(SkuId skuId);
+        public void setInOutLineEvents(Iterable<InOutLineStateEvent> es)
+        {
+            if (es != null)
+            {
+                for (InOutLineStateEvent e : es)
+                {
+                    addInOutLineEvent(e);
+                }
+            }
+            else { this.inOutLineEvents.clear(); }
+        }
+        
+        public void addInOutLineEvent(InOutLineStateEvent e)
+        {
+            throwOnInconsistentEventIds(e);
+            this.inOutLineEvents.put(e.getStateEventId(), e);
+        }
 
 
     }
-*/
+
 
     public static abstract class AbstractInOutStateDeleted extends AbstractInOutStateEvent implements InOutStateDeleted, Saveable
     {
@@ -787,11 +1046,6 @@ public abstract class AbstractInOutStateEvent implements InOutStateEvent
             this.inOutLineEvents.put(e.getStateEventId(), e);
         }
 
-        public abstract InOutLineStateEvent.InOutLineStateRemoved newInOutLineStateRemoved(SkuId skuId);
-//        {
-//            return new InOutLineStateEvent.InOutLineStateRemoved(newInOutLineStateEventId(skuId));
-//        }
-
         public void save()
         {
             for (InOutLineStateEvent.InOutLineStateRemoved e : this.getInOutLineEvents()) {
@@ -799,6 +1053,35 @@ public abstract class AbstractInOutStateEvent implements InOutStateEvent
             }
         }
     }
+        public static class SimpleInOutLineStateCreated extends AbstractInOutLineStateEvent.AbstractInOutLineStateCreated
+        {
+			public SimpleInOutLineStateCreated() {
+			}
+
+			public SimpleInOutLineStateCreated(InOutLineStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleInOutLineStateMergePatched extends AbstractInOutLineStateEvent.AbstractInOutLineStateMergePatched
+        {
+			public SimpleInOutLineStateMergePatched() {
+			}
+
+			public SimpleInOutLineStateMergePatched(InOutLineStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleInOutLineStateRemoved extends AbstractInOutLineStateEvent.AbstractInOutLineStateRemoved
+        {
+			public SimpleInOutLineStateRemoved() {
+			}
+
+			public SimpleInOutLineStateRemoved(InOutLineStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
 
 }
 

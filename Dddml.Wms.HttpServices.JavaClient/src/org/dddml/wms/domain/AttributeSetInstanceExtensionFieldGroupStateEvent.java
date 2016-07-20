@@ -59,29 +59,29 @@ public interface AttributeSetInstanceExtensionFieldGroupStateEvent extends Event
 
     interface AttributeSetInstanceExtensionFieldGroupStateMergePatched extends AttributeSetInstanceExtensionFieldGroupStateEvent
     {
-        Boolean isPropertyFieldTypeRemoved();
+        Boolean getIsPropertyFieldTypeRemoved();
 
-        void setPropertyFieldTypeRemoved(Boolean removed);
+        void setIsPropertyFieldTypeRemoved(Boolean removed);
 
-        Boolean isPropertyFieldLengthRemoved();
+        Boolean getIsPropertyFieldLengthRemoved();
 
-        void setPropertyFieldLengthRemoved(Boolean removed);
+        void setIsPropertyFieldLengthRemoved(Boolean removed);
 
-        Boolean isPropertyFieldCountRemoved();
+        Boolean getIsPropertyFieldCountRemoved();
 
-        void setPropertyFieldCountRemoved(Boolean removed);
+        void setIsPropertyFieldCountRemoved(Boolean removed);
 
-        Boolean isPropertyNameFormatRemoved();
+        Boolean getIsPropertyNameFormatRemoved();
 
-        void setPropertyNameFormatRemoved(Boolean removed);
+        void setIsPropertyNameFormatRemoved(Boolean removed);
 
-        Boolean isPropertyDescriptionRemoved();
+        Boolean getIsPropertyDescriptionRemoved();
 
-        void setPropertyDescriptionRemoved(Boolean removed);
+        void setIsPropertyDescriptionRemoved(Boolean removed);
 
-        Boolean isPropertyActiveRemoved();
+        Boolean getIsPropertyActiveRemoved();
 
-        void setPropertyActiveRemoved(Boolean removed);
+        void setIsPropertyActiveRemoved(Boolean removed);
 
         Iterable<AttributeSetInstanceExtensionFieldStateEvent> getAttributeSetInstanceExtensionFieldEvents();
         

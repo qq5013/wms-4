@@ -45,13 +45,13 @@ public interface AttributeUseStateEvent extends Event
 
     interface AttributeUseStateMergePatched extends AttributeUseStateEvent
     {
-        Boolean isPropertySequenceNumberRemoved();
+        Boolean getIsPropertySequenceNumberRemoved();
 
-        void setPropertySequenceNumberRemoved(Boolean removed);
+        void setIsPropertySequenceNumberRemoved(Boolean removed);
 
-        Boolean isPropertyActiveRemoved();
+        Boolean getIsPropertyActiveRemoved();
 
-        void setPropertyActiveRemoved(Boolean removed);
+        void setIsPropertyActiveRemoved(Boolean removed);
 
 
     }

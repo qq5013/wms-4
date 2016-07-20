@@ -187,7 +187,7 @@ public abstract class AbstractWarehouseState implements WarehouseState
 
         if (e.getName() == null)
         {
-            if (e.isPropertyNameRemoved() != null && e.isPropertyNameRemoved())
+            if (e.getIsPropertyNameRemoved() != null && e.getIsPropertyNameRemoved())
             {
                 this.setName(null);
             }
@@ -198,7 +198,7 @@ public abstract class AbstractWarehouseState implements WarehouseState
         }
         if (e.getDescription() == null)
         {
-            if (e.isPropertyDescriptionRemoved() != null && e.isPropertyDescriptionRemoved())
+            if (e.getIsPropertyDescriptionRemoved() != null && e.getIsPropertyDescriptionRemoved())
             {
                 this.setDescription(null);
             }
@@ -209,7 +209,7 @@ public abstract class AbstractWarehouseState implements WarehouseState
         }
         if (e.getIsInTransit() == null)
         {
-            if (e.isPropertyIsInTransitRemoved() != null && e.isPropertyIsInTransitRemoved())
+            if (e.getIsPropertyIsInTransitRemoved() != null && e.getIsPropertyIsInTransitRemoved())
             {
                 this.setIsInTransit(null);
             }
@@ -220,7 +220,7 @@ public abstract class AbstractWarehouseState implements WarehouseState
         }
         if (e.getActive() == null)
         {
-            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            if (e.getIsPropertyActiveRemoved() != null && e.getIsPropertyActiveRemoved())
             {
                 this.setActive(null);
             }

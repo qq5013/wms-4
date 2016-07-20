@@ -130,12 +130,48 @@ public abstract class AbstractOrganizationStructureState implements Organization
         }
     }
 
-    public abstract void when(OrganizationStructureStateCreated e);
+    public void when(OrganizationStructureStateCreated e)
+    {
+        throwOnWrongEvent(e);
+        this.setActive(e.getActive());
 
-    public abstract void when(OrganizationStructureStateMergePatched e);
+        this.setDeleted(false);
 
-    public abstract void when(OrganizationStructureStateDeleted e);
+        this.setCreatedBy(e.getCreatedBy());
+        this.setCreatedAt(e.getCreatedAt());
 
+    }
+
+    public void when(OrganizationStructureStateMergePatched e)
+    {
+        throwOnWrongEvent(e);
+
+        if (e.getActive() == null)
+        {
+            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            {
+                this.setActive(null);
+            }
+        }
+        else
+        {
+            this.setActive(e.getActive());
+        }
+
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
+
+    public void when(OrganizationStructureStateDeleted e)
+    {
+        throwOnWrongEvent(e);
+
+        this.setDeleted(true);
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
 
     protected void throwOnWrongEvent(OrganizationStructureStateEvent stateEvent)
     {
@@ -143,7 +179,7 @@ public abstract class AbstractOrganizationStructureState implements Organization
         OrganizationStructureId eventEntityId = stateEvent.getStateEventId().getId(); // EntityBase.Aggregate.GetStateEventIdPropertyIdName();
         if (!stateEntityId.equals(eventEntityId))
         {
-            DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
+            throw DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
         }
 
         Long stateVersion = this.getVersion();

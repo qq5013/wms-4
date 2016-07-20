@@ -16,6 +16,14 @@ public interface UserRoleMvoStateEvent extends Event
 
     void setVersion(Long version);
 
+    String getCreatedBy();
+
+    void setCreatedBy(String createdBy);
+
+    Date getCreatedAt();
+
+    void setCreatedAt(Date createdAt);
+
     Boolean getActive();
 
     void setActive(Boolean active);

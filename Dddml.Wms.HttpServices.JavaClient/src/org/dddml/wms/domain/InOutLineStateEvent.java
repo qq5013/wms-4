@@ -85,6 +85,14 @@ public interface InOutLineStateEvent extends Event
 
     void setReversalLineNumber(Long reversalLineNumber);
 
+    String getCreatedBy();
+
+    void setCreatedBy(String createdBy);
+
+    Date getCreatedAt();
+
+    void setCreatedAt(Date createdAt);
+
     Boolean getActive();
 
     void setActive(Boolean active);

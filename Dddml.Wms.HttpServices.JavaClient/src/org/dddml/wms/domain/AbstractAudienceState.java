@@ -154,12 +154,72 @@ public abstract class AbstractAudienceState implements AudienceState
         }
     }
 
-    public abstract void when(AudienceStateCreated e);
+    public void when(AudienceStateCreated e)
+    {
+        throwOnWrongEvent(e);
+        this.setName(e.getName());
+        this.setBase64Secret(e.getBase64Secret());
+        this.setActive(e.getActive());
 
-    public abstract void when(AudienceStateMergePatched e);
+        this.setDeleted(false);
 
-    public abstract void when(AudienceStateDeleted e);
+        this.setCreatedBy(e.getCreatedBy());
+        this.setCreatedAt(e.getCreatedAt());
 
+    }
+
+    public void when(AudienceStateMergePatched e)
+    {
+        throwOnWrongEvent(e);
+
+        if (e.getName() == null)
+        {
+            if (e.isPropertyNameRemoved() != null && e.isPropertyNameRemoved())
+            {
+                this.setName(null);
+            }
+        }
+        else
+        {
+            this.setName(e.getName());
+        }
+        if (e.getBase64Secret() == null)
+        {
+            if (e.isPropertyBase64SecretRemoved() != null && e.isPropertyBase64SecretRemoved())
+            {
+                this.setBase64Secret(null);
+            }
+        }
+        else
+        {
+            this.setBase64Secret(e.getBase64Secret());
+        }
+        if (e.getActive() == null)
+        {
+            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            {
+                this.setActive(null);
+            }
+        }
+        else
+        {
+            this.setActive(e.getActive());
+        }
+
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
+
+    public void when(AudienceStateDeleted e)
+    {
+        throwOnWrongEvent(e);
+
+        this.setDeleted(true);
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
 
     protected void throwOnWrongEvent(AudienceStateEvent stateEvent)
     {
@@ -167,7 +227,7 @@ public abstract class AbstractAudienceState implements AudienceState
         String eventEntityId = stateEvent.getStateEventId().getClientId(); // EntityBase.Aggregate.GetStateEventIdPropertyIdName();
         if (!stateEntityId.equals(eventEntityId))
         {
-            DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
+            throw DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
         }
 
         Long stateVersion = this.getVersion();

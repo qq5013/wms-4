@@ -130,12 +130,48 @@ public abstract class AbstractRolePermissionState implements RolePermissionState
         }
     }
 
-    public abstract void when(RolePermissionStateCreated e);
+    public void when(RolePermissionStateCreated e)
+    {
+        throwOnWrongEvent(e);
+        this.setActive(e.getActive());
 
-    public abstract void when(RolePermissionStateMergePatched e);
+        this.setDeleted(false);
 
-    public abstract void when(RolePermissionStateDeleted e);
+        this.setCreatedBy(e.getCreatedBy());
+        this.setCreatedAt(e.getCreatedAt());
 
+    }
+
+    public void when(RolePermissionStateMergePatched e)
+    {
+        throwOnWrongEvent(e);
+
+        if (e.getActive() == null)
+        {
+            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            {
+                this.setActive(null);
+            }
+        }
+        else
+        {
+            this.setActive(e.getActive());
+        }
+
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
+
+    public void when(RolePermissionStateDeleted e)
+    {
+        throwOnWrongEvent(e);
+
+        this.setDeleted(true);
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
 
     protected void throwOnWrongEvent(RolePermissionStateEvent stateEvent)
     {
@@ -143,7 +179,7 @@ public abstract class AbstractRolePermissionState implements RolePermissionState
         RolePermissionId eventEntityId = stateEvent.getStateEventId().getId(); // EntityBase.Aggregate.GetStateEventIdPropertyIdName();
         if (!stateEntityId.equals(eventEntityId))
         {
-            DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
+            throw DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
         }
 
         Long stateVersion = this.getVersion();

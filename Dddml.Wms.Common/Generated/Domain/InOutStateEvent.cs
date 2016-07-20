@@ -163,7 +163,7 @@ namespace Dddml.Wms.Domain
 		{
 			if (!oe.StateEventId.DocumentNumber.Equals(e.StateEventId.InOutDocumentNumber))
 			{ 
-				DomainError.Named("inconsistentEventIds", "Outer Id DocumentNumber {0} but inner id InOutDocumentNumber {1}", 
+				throw DomainError.Named("inconsistentEventIds", "Outer Id DocumentNumber {0} but inner id InOutDocumentNumber {1}", 
 					oe.StateEventId.DocumentNumber, e.StateEventId.InOutDocumentNumber);
 			}
 		}

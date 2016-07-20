@@ -279,14 +279,14 @@ namespace Dddml.Wms.Domain
 				var eventEntityIdAttributeId = stateEvent.StateEventId.AttributeId;
 				if (stateEntityIdAttributeId != eventEntityIdAttributeId)
 				{
-					DomainError.Named("mutateWrongEntity", "Entity Id AttributeId {0} in state but entity id AttributeId {1} in event", stateEntityIdAttributeId, eventEntityIdAttributeId);
+					throw DomainError.Named("mutateWrongEntity", "Entity Id AttributeId {0} in state but entity id AttributeId {1} in event", stateEntityIdAttributeId, eventEntityIdAttributeId);
 				}
 
 				var stateEntityIdValue = (this as IGlobalIdentity<AttributeValueId>).GlobalId.Value;
 				var eventEntityIdValue = stateEvent.StateEventId.Value;
 				if (stateEntityIdValue != eventEntityIdValue)
 				{
-					DomainError.Named("mutateWrongEntity", "Entity Id Value {0} in state but entity id Value {1} in event", stateEntityIdValue, eventEntityIdValue);
+					throw DomainError.Named("mutateWrongEntity", "Entity Id Value {0} in state but entity id Value {1} in event", stateEntityIdValue, eventEntityIdValue);
 				}
 
 			var stateVersion = this.Version;

@@ -334,12 +334,252 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoState impleme
         }
     }
 
-    public abstract void when(AttributeSetInstanceExtensionFieldMvoStateCreated e);
+    public void when(AttributeSetInstanceExtensionFieldMvoStateCreated e)
+    {
+        throwOnWrongEvent(e);
+        this.setName(e.getName());
+        this.setType(e.getType());
+        this.setLength(e.getLength());
+        this.setAlias(e.getAlias());
+        this.setDescription(e.getDescription());
+        this.setVersion(e.getVersion());
+        this.setActive(e.getActive());
+        this.setAttrSetInstEFGroupFieldType(e.getAttrSetInstEFGroupFieldType());
+        this.setAttrSetInstEFGroupFieldLength(e.getAttrSetInstEFGroupFieldLength());
+        this.setAttrSetInstEFGroupFieldCount(e.getAttrSetInstEFGroupFieldCount());
+        this.setAttrSetInstEFGroupNameFormat(e.getAttrSetInstEFGroupNameFormat());
+        this.setAttrSetInstEFGroupDescription(e.getAttrSetInstEFGroupDescription());
+        this.setAttrSetInstEFGroupCreatedBy(e.getAttrSetInstEFGroupCreatedBy());
+        this.setAttrSetInstEFGroupCreatedAt(e.getAttrSetInstEFGroupCreatedAt());
+        this.setAttrSetInstEFGroupUpdatedBy(e.getAttrSetInstEFGroupUpdatedBy());
+        this.setAttrSetInstEFGroupUpdatedAt(e.getAttrSetInstEFGroupUpdatedAt());
+        this.setAttrSetInstEFGroupActive(e.getAttrSetInstEFGroupActive());
+        this.setAttrSetInstEFGroupDeleted(e.getAttrSetInstEFGroupDeleted());
 
-    public abstract void when(AttributeSetInstanceExtensionFieldMvoStateMergePatched e);
+        this.setDeleted(false);
 
-    public abstract void when(AttributeSetInstanceExtensionFieldMvoStateDeleted e);
+        this.setCreatedBy(e.getCreatedBy());
+        this.setCreatedAt(e.getCreatedAt());
 
+    }
+
+    public void when(AttributeSetInstanceExtensionFieldMvoStateMergePatched e)
+    {
+        throwOnWrongEvent(e);
+
+        if (e.getName() == null)
+        {
+            if (e.isPropertyNameRemoved() != null && e.isPropertyNameRemoved())
+            {
+                this.setName(null);
+            }
+        }
+        else
+        {
+            this.setName(e.getName());
+        }
+        if (e.getType() == null)
+        {
+            if (e.isPropertyTypeRemoved() != null && e.isPropertyTypeRemoved())
+            {
+                this.setType(null);
+            }
+        }
+        else
+        {
+            this.setType(e.getType());
+        }
+        if (e.getLength() == null)
+        {
+            if (e.isPropertyLengthRemoved() != null && e.isPropertyLengthRemoved())
+            {
+                this.setLength(null);
+            }
+        }
+        else
+        {
+            this.setLength(e.getLength());
+        }
+        if (e.getAlias() == null)
+        {
+            if (e.isPropertyAliasRemoved() != null && e.isPropertyAliasRemoved())
+            {
+                this.setAlias(null);
+            }
+        }
+        else
+        {
+            this.setAlias(e.getAlias());
+        }
+        if (e.getDescription() == null)
+        {
+            if (e.isPropertyDescriptionRemoved() != null && e.isPropertyDescriptionRemoved())
+            {
+                this.setDescription(null);
+            }
+        }
+        else
+        {
+            this.setDescription(e.getDescription());
+        }
+        if (e.getVersion() == null)
+        {
+            if (e.isPropertyVersionRemoved() != null && e.isPropertyVersionRemoved())
+            {
+                this.setVersion(null);
+            }
+        }
+        else
+        {
+            this.setVersion(e.getVersion());
+        }
+        if (e.getActive() == null)
+        {
+            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            {
+                this.setActive(null);
+            }
+        }
+        else
+        {
+            this.setActive(e.getActive());
+        }
+        if (e.getAttrSetInstEFGroupFieldType() == null)
+        {
+            if (e.isPropertyAttrSetInstEFGroupFieldTypeRemoved() != null && e.isPropertyAttrSetInstEFGroupFieldTypeRemoved())
+            {
+                this.setAttrSetInstEFGroupFieldType(null);
+            }
+        }
+        else
+        {
+            this.setAttrSetInstEFGroupFieldType(e.getAttrSetInstEFGroupFieldType());
+        }
+        if (e.getAttrSetInstEFGroupFieldLength() == null)
+        {
+            if (e.isPropertyAttrSetInstEFGroupFieldLengthRemoved() != null && e.isPropertyAttrSetInstEFGroupFieldLengthRemoved())
+            {
+                this.setAttrSetInstEFGroupFieldLength(null);
+            }
+        }
+        else
+        {
+            this.setAttrSetInstEFGroupFieldLength(e.getAttrSetInstEFGroupFieldLength());
+        }
+        if (e.getAttrSetInstEFGroupFieldCount() == null)
+        {
+            if (e.isPropertyAttrSetInstEFGroupFieldCountRemoved() != null && e.isPropertyAttrSetInstEFGroupFieldCountRemoved())
+            {
+                this.setAttrSetInstEFGroupFieldCount(null);
+            }
+        }
+        else
+        {
+            this.setAttrSetInstEFGroupFieldCount(e.getAttrSetInstEFGroupFieldCount());
+        }
+        if (e.getAttrSetInstEFGroupNameFormat() == null)
+        {
+            if (e.isPropertyAttrSetInstEFGroupNameFormatRemoved() != null && e.isPropertyAttrSetInstEFGroupNameFormatRemoved())
+            {
+                this.setAttrSetInstEFGroupNameFormat(null);
+            }
+        }
+        else
+        {
+            this.setAttrSetInstEFGroupNameFormat(e.getAttrSetInstEFGroupNameFormat());
+        }
+        if (e.getAttrSetInstEFGroupDescription() == null)
+        {
+            if (e.isPropertyAttrSetInstEFGroupDescriptionRemoved() != null && e.isPropertyAttrSetInstEFGroupDescriptionRemoved())
+            {
+                this.setAttrSetInstEFGroupDescription(null);
+            }
+        }
+        else
+        {
+            this.setAttrSetInstEFGroupDescription(e.getAttrSetInstEFGroupDescription());
+        }
+        if (e.getAttrSetInstEFGroupCreatedBy() == null)
+        {
+            if (e.isPropertyAttrSetInstEFGroupCreatedByRemoved() != null && e.isPropertyAttrSetInstEFGroupCreatedByRemoved())
+            {
+                this.setAttrSetInstEFGroupCreatedBy(null);
+            }
+        }
+        else
+        {
+            this.setAttrSetInstEFGroupCreatedBy(e.getAttrSetInstEFGroupCreatedBy());
+        }
+        if (e.getAttrSetInstEFGroupCreatedAt() == null)
+        {
+            if (e.isPropertyAttrSetInstEFGroupCreatedAtRemoved() != null && e.isPropertyAttrSetInstEFGroupCreatedAtRemoved())
+            {
+                this.setAttrSetInstEFGroupCreatedAt(null);
+            }
+        }
+        else
+        {
+            this.setAttrSetInstEFGroupCreatedAt(e.getAttrSetInstEFGroupCreatedAt());
+        }
+        if (e.getAttrSetInstEFGroupUpdatedBy() == null)
+        {
+            if (e.isPropertyAttrSetInstEFGroupUpdatedByRemoved() != null && e.isPropertyAttrSetInstEFGroupUpdatedByRemoved())
+            {
+                this.setAttrSetInstEFGroupUpdatedBy(null);
+            }
+        }
+        else
+        {
+            this.setAttrSetInstEFGroupUpdatedBy(e.getAttrSetInstEFGroupUpdatedBy());
+        }
+        if (e.getAttrSetInstEFGroupUpdatedAt() == null)
+        {
+            if (e.isPropertyAttrSetInstEFGroupUpdatedAtRemoved() != null && e.isPropertyAttrSetInstEFGroupUpdatedAtRemoved())
+            {
+                this.setAttrSetInstEFGroupUpdatedAt(null);
+            }
+        }
+        else
+        {
+            this.setAttrSetInstEFGroupUpdatedAt(e.getAttrSetInstEFGroupUpdatedAt());
+        }
+        if (e.getAttrSetInstEFGroupActive() == null)
+        {
+            if (e.isPropertyAttrSetInstEFGroupActiveRemoved() != null && e.isPropertyAttrSetInstEFGroupActiveRemoved())
+            {
+                this.setAttrSetInstEFGroupActive(null);
+            }
+        }
+        else
+        {
+            this.setAttrSetInstEFGroupActive(e.getAttrSetInstEFGroupActive());
+        }
+        if (e.getAttrSetInstEFGroupDeleted() == null)
+        {
+            if (e.isPropertyAttrSetInstEFGroupDeletedRemoved() != null && e.isPropertyAttrSetInstEFGroupDeletedRemoved())
+            {
+                this.setAttrSetInstEFGroupDeleted(null);
+            }
+        }
+        else
+        {
+            this.setAttrSetInstEFGroupDeleted(e.getAttrSetInstEFGroupDeleted());
+        }
+
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
+
+    public void when(AttributeSetInstanceExtensionFieldMvoStateDeleted e)
+    {
+        throwOnWrongEvent(e);
+
+        this.setDeleted(true);
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
 
     protected void throwOnWrongEvent(AttributeSetInstanceExtensionFieldMvoStateEvent stateEvent)
     {
@@ -347,7 +587,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoState impleme
         AttributeSetInstanceExtensionFieldId eventEntityId = stateEvent.getStateEventId().getAttributeSetInstanceExtensionFieldId(); // EntityBase.Aggregate.GetStateEventIdPropertyIdName();
         if (!stateEntityId.equals(eventEntityId))
         {
-            DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
+            throw DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
         }
 
         Long stateVersion = this.getAttrSetInstEFGroupVersion();

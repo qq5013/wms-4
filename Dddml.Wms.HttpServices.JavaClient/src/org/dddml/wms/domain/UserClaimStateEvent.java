@@ -24,6 +24,14 @@ public interface UserClaimStateEvent extends Event
 
     void setClaimValue(String claimValue);
 
+    String getCreatedBy();
+
+    void setCreatedBy(String createdBy);
+
+    Date getCreatedAt();
+
+    void setCreatedAt(Date createdAt);
+
     Boolean getActive();
 
     void setActive(Boolean active);

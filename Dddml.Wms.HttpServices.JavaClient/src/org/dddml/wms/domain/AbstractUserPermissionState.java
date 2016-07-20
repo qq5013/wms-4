@@ -152,12 +152,48 @@ public abstract class AbstractUserPermissionState implements UserPermissionState
         }
     }
 
-    public abstract void when(UserPermissionStateCreated e);
+    public void when(UserPermissionStateCreated e)
+    {
+        throwOnWrongEvent(e);
+        this.setActive(e.getActive());
 
-    public abstract void when(UserPermissionStateMergePatched e);
+        this.setDeleted(false);
 
-    public abstract void when(UserPermissionStateRemoved e);
+        this.setCreatedBy(e.getCreatedBy());
+        this.setCreatedAt(e.getCreatedAt());
 
+    }
+
+    public void when(UserPermissionStateMergePatched e)
+    {
+        throwOnWrongEvent(e);
+
+        if (e.getActive() == null)
+        {
+            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            {
+                this.setActive(null);
+            }
+        }
+        else
+        {
+            this.setActive(e.getActive());
+        }
+
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
+
+    public void when(UserPermissionStateRemoved e)
+    {
+        throwOnWrongEvent(e);
+
+        this.setDeleted(true);
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
 
     protected void throwOnWrongEvent(UserPermissionStateEvent stateEvent)
     {
@@ -165,14 +201,14 @@ public abstract class AbstractUserPermissionState implements UserPermissionState
         String eventEntityIdUserId = stateEvent.getStateEventId().getUserId();
         if (stateEntityIdUserId != eventEntityIdUserId)
         {
-            DomainError.named("mutateWrongEntity", "Entity Id UserId %1$s in state but entity id UserId %2$s in event", stateEntityIdUserId, eventEntityIdUserId);
+            throw DomainError.named("mutateWrongEntity", "Entity Id UserId %1$s in state but entity id UserId %2$s in event", stateEntityIdUserId, eventEntityIdUserId);
         }
 
         String stateEntityIdPermissionId = this.getUserPermissionId().getPermissionId();
         String eventEntityIdPermissionId = stateEvent.getStateEventId().getPermissionId();
         if (stateEntityIdPermissionId != eventEntityIdPermissionId)
         {
-            DomainError.named("mutateWrongEntity", "Entity Id PermissionId %1$s in state but entity id PermissionId %2$s in event", stateEntityIdPermissionId, eventEntityIdPermissionId);
+            throw DomainError.named("mutateWrongEntity", "Entity Id PermissionId %1$s in state but entity id PermissionId %2$s in event", stateEntityIdPermissionId, eventEntityIdPermissionId);
         }
 
         Long stateVersion = this.getVersion();

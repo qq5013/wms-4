@@ -216,12 +216,143 @@ public abstract class AbstractAttributeSetState implements AttributeSetState
         }
     }
 
-    public abstract void when(AttributeSetStateCreated e);
+    public void when(AttributeSetStateCreated e)
+    {
+        throwOnWrongEvent(e);
+        this.setName(e.getName());
+        this.setOrganizationId(e.getOrganizationId());
+        this.setDescription(e.getDescription());
+        this.setSerialNumberAttributeId(e.getSerialNumberAttributeId());
+        this.setLotAttributeId(e.getLotAttributeId());
+        this.setReferenceId(e.getReferenceId());
+        this.setActive(e.getActive());
 
-    public abstract void when(AttributeSetStateMergePatched e);
+        this.setDeleted(false);
 
-    public abstract void when(AttributeSetStateDeleted e);
+        this.setCreatedBy(e.getCreatedBy());
+        this.setCreatedAt(e.getCreatedAt());
 
+        for (AttributeUseStateEvent.AttributeUseStateCreated innerEvent : e.getAttributeUseEvents()) {
+            AttributeUseState innerState = this.getAttributeUses().get(innerEvent.getStateEventId().getAttributeId());
+            innerState.mutate(innerEvent);
+        }
+    }
+
+    public void when(AttributeSetStateMergePatched e)
+    {
+        throwOnWrongEvent(e);
+
+        if (e.getName() == null)
+        {
+            if (e.isPropertyNameRemoved() != null && e.isPropertyNameRemoved())
+            {
+                this.setName(null);
+            }
+        }
+        else
+        {
+            this.setName(e.getName());
+        }
+        if (e.getOrganizationId() == null)
+        {
+            if (e.isPropertyOrganizationIdRemoved() != null && e.isPropertyOrganizationIdRemoved())
+            {
+                this.setOrganizationId(null);
+            }
+        }
+        else
+        {
+            this.setOrganizationId(e.getOrganizationId());
+        }
+        if (e.getDescription() == null)
+        {
+            if (e.isPropertyDescriptionRemoved() != null && e.isPropertyDescriptionRemoved())
+            {
+                this.setDescription(null);
+            }
+        }
+        else
+        {
+            this.setDescription(e.getDescription());
+        }
+        if (e.getSerialNumberAttributeId() == null)
+        {
+            if (e.isPropertySerialNumberAttributeIdRemoved() != null && e.isPropertySerialNumberAttributeIdRemoved())
+            {
+                this.setSerialNumberAttributeId(null);
+            }
+        }
+        else
+        {
+            this.setSerialNumberAttributeId(e.getSerialNumberAttributeId());
+        }
+        if (e.getLotAttributeId() == null)
+        {
+            if (e.isPropertyLotAttributeIdRemoved() != null && e.isPropertyLotAttributeIdRemoved())
+            {
+                this.setLotAttributeId(null);
+            }
+        }
+        else
+        {
+            this.setLotAttributeId(e.getLotAttributeId());
+        }
+        if (e.getReferenceId() == null)
+        {
+            if (e.isPropertyReferenceIdRemoved() != null && e.isPropertyReferenceIdRemoved())
+            {
+                this.setReferenceId(null);
+            }
+        }
+        else
+        {
+            this.setReferenceId(e.getReferenceId());
+        }
+        if (e.getActive() == null)
+        {
+            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            {
+                this.setActive(null);
+            }
+        }
+        else
+        {
+            this.setActive(e.getActive());
+        }
+
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+        for (AttributeUseStateEvent innerEvent : e.getAttributeUseEvents()) {
+            AttributeUseState innerState = this.getAttributeUses().get(innerEvent.getStateEventId().getAttributeId());
+            innerState.mutate(innerEvent);
+            if (innerEvent instanceof AttributeUseStateEvent.AttributeUseStateRemoved)
+            {
+                //AttributeUseStateEvent.AttributeUseStateRemoved removed = (AttributeUseStateEvent.AttributeUseStateRemoved)innerEvent;
+                this.getAttributeUses().remove(innerState);
+            }
+        }
+    }
+
+    public void when(AttributeSetStateDeleted e)
+    {
+        throwOnWrongEvent(e);
+
+        this.setDeleted(true);
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+        for (AttributeUseState innerState : this.getAttributeUses())
+        {
+            this.getAttributeUses().remove(innerState);
+        
+            AttributeUseStateEvent.AttributeUseStateRemoved innerE = e.newAttributeUseStateRemoved(innerState.getAttributeId());
+            innerE.setCreatedAt(e.getCreatedAt());
+            innerE.setCreatedBy(e.getCreatedBy());
+            innerState.when(innerE);
+            //e.addAttributeUseEvent(innerE);
+        }
+    }
 
     protected void throwOnWrongEvent(AttributeSetStateEvent stateEvent)
     {
@@ -229,7 +360,7 @@ public abstract class AbstractAttributeSetState implements AttributeSetState
         String eventEntityId = stateEvent.getStateEventId().getAttributeSetId(); // EntityBase.Aggregate.GetStateEventIdPropertyIdName();
         if (!stateEntityId.equals(eventEntityId))
         {
-            DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
+            throw DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
         }
 
         Long stateVersion = this.getVersion();

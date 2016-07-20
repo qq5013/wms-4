@@ -318,12 +318,272 @@ public abstract class AbstractUserState implements UserState
         }
     }
 
-    public abstract void when(UserStateCreated e);
+    public void when(UserStateCreated e)
+    {
+        throwOnWrongEvent(e);
+        this.setUserName(e.getUserName());
+        this.setAccessFailedCount(e.getAccessFailedCount());
+        this.setEmail(e.getEmail());
+        this.setEmailConfirmed(e.getEmailConfirmed());
+        this.setLockoutEnabled(e.getLockoutEnabled());
+        this.setLockoutEndDateUtc(e.getLockoutEndDateUtc());
+        this.setPasswordHash(e.getPasswordHash());
+        this.setPhoneNumber(e.getPhoneNumber());
+        this.setPhoneNumberConfirmed(e.getPhoneNumberConfirmed());
+        this.setTwoFactorEnabled(e.getTwoFactorEnabled());
+        this.setSecurityStamp(e.getSecurityStamp());
+        this.setActive(e.getActive());
 
-    public abstract void when(UserStateMergePatched e);
+        this.setDeleted(false);
 
-    public abstract void when(UserStateDeleted e);
+        this.setCreatedBy(e.getCreatedBy());
+        this.setCreatedAt(e.getCreatedAt());
 
+        for (UserRoleStateEvent.UserRoleStateCreated innerEvent : e.getUserRoleEvents()) {
+            UserRoleState innerState = this.getUserRoles().get(innerEvent.getStateEventId().getRoleId());
+            innerState.mutate(innerEvent);
+        }
+        for (UserClaimStateEvent.UserClaimStateCreated innerEvent : e.getUserClaimEvents()) {
+            UserClaimState innerState = this.getUserClaims().get(innerEvent.getStateEventId().getClaimId());
+            innerState.mutate(innerEvent);
+        }
+        for (UserPermissionStateEvent.UserPermissionStateCreated innerEvent : e.getUserPermissionEvents()) {
+            UserPermissionState innerState = this.getUserPermissions().get(innerEvent.getStateEventId().getPermissionId());
+            innerState.mutate(innerEvent);
+        }
+        for (UserLoginStateEvent.UserLoginStateCreated innerEvent : e.getUserLoginEvents()) {
+            UserLoginState innerState = this.getUserLogins().get(innerEvent.getStateEventId().getLoginKey());
+            innerState.mutate(innerEvent);
+        }
+    }
+
+    public void when(UserStateMergePatched e)
+    {
+        throwOnWrongEvent(e);
+
+        if (e.getUserName() == null)
+        {
+            if (e.isPropertyUserNameRemoved() != null && e.isPropertyUserNameRemoved())
+            {
+                this.setUserName(null);
+            }
+        }
+        else
+        {
+            this.setUserName(e.getUserName());
+        }
+        if (e.getAccessFailedCount() == null)
+        {
+            if (e.isPropertyAccessFailedCountRemoved() != null && e.isPropertyAccessFailedCountRemoved())
+            {
+                this.setAccessFailedCount(null);
+            }
+        }
+        else
+        {
+            this.setAccessFailedCount(e.getAccessFailedCount());
+        }
+        if (e.getEmail() == null)
+        {
+            if (e.isPropertyEmailRemoved() != null && e.isPropertyEmailRemoved())
+            {
+                this.setEmail(null);
+            }
+        }
+        else
+        {
+            this.setEmail(e.getEmail());
+        }
+        if (e.getEmailConfirmed() == null)
+        {
+            if (e.isPropertyEmailConfirmedRemoved() != null && e.isPropertyEmailConfirmedRemoved())
+            {
+                this.setEmailConfirmed(null);
+            }
+        }
+        else
+        {
+            this.setEmailConfirmed(e.getEmailConfirmed());
+        }
+        if (e.getLockoutEnabled() == null)
+        {
+            if (e.isPropertyLockoutEnabledRemoved() != null && e.isPropertyLockoutEnabledRemoved())
+            {
+                this.setLockoutEnabled(null);
+            }
+        }
+        else
+        {
+            this.setLockoutEnabled(e.getLockoutEnabled());
+        }
+        if (e.getLockoutEndDateUtc() == null)
+        {
+            if (e.isPropertyLockoutEndDateUtcRemoved() != null && e.isPropertyLockoutEndDateUtcRemoved())
+            {
+                this.setLockoutEndDateUtc(null);
+            }
+        }
+        else
+        {
+            this.setLockoutEndDateUtc(e.getLockoutEndDateUtc());
+        }
+        if (e.getPasswordHash() == null)
+        {
+            if (e.isPropertyPasswordHashRemoved() != null && e.isPropertyPasswordHashRemoved())
+            {
+                this.setPasswordHash(null);
+            }
+        }
+        else
+        {
+            this.setPasswordHash(e.getPasswordHash());
+        }
+        if (e.getPhoneNumber() == null)
+        {
+            if (e.isPropertyPhoneNumberRemoved() != null && e.isPropertyPhoneNumberRemoved())
+            {
+                this.setPhoneNumber(null);
+            }
+        }
+        else
+        {
+            this.setPhoneNumber(e.getPhoneNumber());
+        }
+        if (e.getPhoneNumberConfirmed() == null)
+        {
+            if (e.isPropertyPhoneNumberConfirmedRemoved() != null && e.isPropertyPhoneNumberConfirmedRemoved())
+            {
+                this.setPhoneNumberConfirmed(null);
+            }
+        }
+        else
+        {
+            this.setPhoneNumberConfirmed(e.getPhoneNumberConfirmed());
+        }
+        if (e.getTwoFactorEnabled() == null)
+        {
+            if (e.isPropertyTwoFactorEnabledRemoved() != null && e.isPropertyTwoFactorEnabledRemoved())
+            {
+                this.setTwoFactorEnabled(null);
+            }
+        }
+        else
+        {
+            this.setTwoFactorEnabled(e.getTwoFactorEnabled());
+        }
+        if (e.getSecurityStamp() == null)
+        {
+            if (e.isPropertySecurityStampRemoved() != null && e.isPropertySecurityStampRemoved())
+            {
+                this.setSecurityStamp(null);
+            }
+        }
+        else
+        {
+            this.setSecurityStamp(e.getSecurityStamp());
+        }
+        if (e.getActive() == null)
+        {
+            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            {
+                this.setActive(null);
+            }
+        }
+        else
+        {
+            this.setActive(e.getActive());
+        }
+
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+        for (UserRoleStateEvent innerEvent : e.getUserRoleEvents()) {
+            UserRoleState innerState = this.getUserRoles().get(innerEvent.getStateEventId().getRoleId());
+            innerState.mutate(innerEvent);
+            if (innerEvent instanceof UserRoleStateEvent.UserRoleStateRemoved)
+            {
+                //UserRoleStateEvent.UserRoleStateRemoved removed = (UserRoleStateEvent.UserRoleStateRemoved)innerEvent;
+                this.getUserRoles().remove(innerState);
+            }
+        }
+        for (UserClaimStateEvent innerEvent : e.getUserClaimEvents()) {
+            UserClaimState innerState = this.getUserClaims().get(innerEvent.getStateEventId().getClaimId());
+            innerState.mutate(innerEvent);
+            if (innerEvent instanceof UserClaimStateEvent.UserClaimStateRemoved)
+            {
+                //UserClaimStateEvent.UserClaimStateRemoved removed = (UserClaimStateEvent.UserClaimStateRemoved)innerEvent;
+                this.getUserClaims().remove(innerState);
+            }
+        }
+        for (UserPermissionStateEvent innerEvent : e.getUserPermissionEvents()) {
+            UserPermissionState innerState = this.getUserPermissions().get(innerEvent.getStateEventId().getPermissionId());
+            innerState.mutate(innerEvent);
+            if (innerEvent instanceof UserPermissionStateEvent.UserPermissionStateRemoved)
+            {
+                //UserPermissionStateEvent.UserPermissionStateRemoved removed = (UserPermissionStateEvent.UserPermissionStateRemoved)innerEvent;
+                this.getUserPermissions().remove(innerState);
+            }
+        }
+        for (UserLoginStateEvent innerEvent : e.getUserLoginEvents()) {
+            UserLoginState innerState = this.getUserLogins().get(innerEvent.getStateEventId().getLoginKey());
+            innerState.mutate(innerEvent);
+            if (innerEvent instanceof UserLoginStateEvent.UserLoginStateRemoved)
+            {
+                //UserLoginStateEvent.UserLoginStateRemoved removed = (UserLoginStateEvent.UserLoginStateRemoved)innerEvent;
+                this.getUserLogins().remove(innerState);
+            }
+        }
+    }
+
+    public void when(UserStateDeleted e)
+    {
+        throwOnWrongEvent(e);
+
+        this.setDeleted(true);
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+        for (UserRoleState innerState : this.getUserRoles())
+        {
+            this.getUserRoles().remove(innerState);
+        
+            UserRoleStateEvent.UserRoleStateRemoved innerE = e.newUserRoleStateRemoved(innerState.getRoleId());
+            innerE.setCreatedAt(e.getCreatedAt());
+            innerE.setCreatedBy(e.getCreatedBy());
+            innerState.when(innerE);
+            //e.addUserRoleEvent(innerE);
+        }
+        for (UserClaimState innerState : this.getUserClaims())
+        {
+            this.getUserClaims().remove(innerState);
+        
+            UserClaimStateEvent.UserClaimStateRemoved innerE = e.newUserClaimStateRemoved(innerState.getClaimId());
+            innerE.setCreatedAt(e.getCreatedAt());
+            innerE.setCreatedBy(e.getCreatedBy());
+            innerState.when(innerE);
+            //e.addUserClaimEvent(innerE);
+        }
+        for (UserPermissionState innerState : this.getUserPermissions())
+        {
+            this.getUserPermissions().remove(innerState);
+        
+            UserPermissionStateEvent.UserPermissionStateRemoved innerE = e.newUserPermissionStateRemoved(innerState.getPermissionId());
+            innerE.setCreatedAt(e.getCreatedAt());
+            innerE.setCreatedBy(e.getCreatedBy());
+            innerState.when(innerE);
+            //e.addUserPermissionEvent(innerE);
+        }
+        for (UserLoginState innerState : this.getUserLogins())
+        {
+            this.getUserLogins().remove(innerState);
+        
+            UserLoginStateEvent.UserLoginStateRemoved innerE = e.newUserLoginStateRemoved(innerState.getLoginKey());
+            innerE.setCreatedAt(e.getCreatedAt());
+            innerE.setCreatedBy(e.getCreatedBy());
+            innerState.when(innerE);
+            //e.addUserLoginEvent(innerE);
+        }
+    }
 
     protected void throwOnWrongEvent(UserStateEvent stateEvent)
     {
@@ -331,7 +591,7 @@ public abstract class AbstractUserState implements UserState
         String eventEntityId = stateEvent.getStateEventId().getUserId(); // EntityBase.Aggregate.GetStateEventIdPropertyIdName();
         if (!stateEntityId.equals(eventEntityId))
         {
-            DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
+            throw DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
         }
 
         Long stateVersion = this.getVersion();

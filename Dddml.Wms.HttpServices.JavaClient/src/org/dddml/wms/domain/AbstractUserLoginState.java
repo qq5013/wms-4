@@ -152,12 +152,48 @@ public abstract class AbstractUserLoginState implements UserLoginState
         }
     }
 
-    public abstract void when(UserLoginStateCreated e);
+    public void when(UserLoginStateCreated e)
+    {
+        throwOnWrongEvent(e);
+        this.setActive(e.getActive());
 
-    public abstract void when(UserLoginStateMergePatched e);
+        this.setDeleted(false);
 
-    public abstract void when(UserLoginStateRemoved e);
+        this.setCreatedBy(e.getCreatedBy());
+        this.setCreatedAt(e.getCreatedAt());
 
+    }
+
+    public void when(UserLoginStateMergePatched e)
+    {
+        throwOnWrongEvent(e);
+
+        if (e.getActive() == null)
+        {
+            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            {
+                this.setActive(null);
+            }
+        }
+        else
+        {
+            this.setActive(e.getActive());
+        }
+
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
+
+    public void when(UserLoginStateRemoved e)
+    {
+        throwOnWrongEvent(e);
+
+        this.setDeleted(true);
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
 
     protected void throwOnWrongEvent(UserLoginStateEvent stateEvent)
     {
@@ -165,14 +201,14 @@ public abstract class AbstractUserLoginState implements UserLoginState
         String eventEntityIdUserId = stateEvent.getStateEventId().getUserId();
         if (stateEntityIdUserId != eventEntityIdUserId)
         {
-            DomainError.named("mutateWrongEntity", "Entity Id UserId %1$s in state but entity id UserId %2$s in event", stateEntityIdUserId, eventEntityIdUserId);
+            throw DomainError.named("mutateWrongEntity", "Entity Id UserId %1$s in state but entity id UserId %2$s in event", stateEntityIdUserId, eventEntityIdUserId);
         }
 
         LoginKey stateEntityIdLoginKey = this.getUserLoginId().getLoginKey();
         LoginKey eventEntityIdLoginKey = stateEvent.getStateEventId().getLoginKey();
         if (stateEntityIdLoginKey != eventEntityIdLoginKey)
         {
-            DomainError.named("mutateWrongEntity", "Entity Id LoginKey %1$s in state but entity id LoginKey %2$s in event", stateEntityIdLoginKey, eventEntityIdLoginKey);
+            throw DomainError.named("mutateWrongEntity", "Entity Id LoginKey %1$s in state but entity id LoginKey %2$s in event", stateEntityIdLoginKey, eventEntityIdLoginKey);
         }
 
         Long stateVersion = this.getVersion();

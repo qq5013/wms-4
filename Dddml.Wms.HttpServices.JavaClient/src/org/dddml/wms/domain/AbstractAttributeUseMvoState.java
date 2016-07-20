@@ -298,12 +298,216 @@ public abstract class AbstractAttributeUseMvoState implements AttributeUseMvoSta
         }
     }
 
-    public abstract void when(AttributeUseMvoStateCreated e);
+    public void when(AttributeUseMvoStateCreated e)
+    {
+        throwOnWrongEvent(e);
+        this.setSequenceNumber(e.getSequenceNumber());
+        this.setVersion(e.getVersion());
+        this.setActive(e.getActive());
+        this.setAttributeSetName(e.getAttributeSetName());
+        this.setAttributeSetOrganizationId(e.getAttributeSetOrganizationId());
+        this.setAttributeSetDescription(e.getAttributeSetDescription());
+        this.setAttributeSetSerialNumberAttributeId(e.getAttributeSetSerialNumberAttributeId());
+        this.setAttributeSetLotAttributeId(e.getAttributeSetLotAttributeId());
+        this.setAttributeSetReferenceId(e.getAttributeSetReferenceId());
+        this.setAttributeSetCreatedBy(e.getAttributeSetCreatedBy());
+        this.setAttributeSetCreatedAt(e.getAttributeSetCreatedAt());
+        this.setAttributeSetUpdatedBy(e.getAttributeSetUpdatedBy());
+        this.setAttributeSetUpdatedAt(e.getAttributeSetUpdatedAt());
+        this.setAttributeSetActive(e.getAttributeSetActive());
+        this.setAttributeSetDeleted(e.getAttributeSetDeleted());
 
-    public abstract void when(AttributeUseMvoStateMergePatched e);
+        this.setDeleted(false);
 
-    public abstract void when(AttributeUseMvoStateDeleted e);
+        this.setCreatedBy(e.getCreatedBy());
+        this.setCreatedAt(e.getCreatedAt());
 
+    }
+
+    public void when(AttributeUseMvoStateMergePatched e)
+    {
+        throwOnWrongEvent(e);
+
+        if (e.getSequenceNumber() == null)
+        {
+            if (e.isPropertySequenceNumberRemoved() != null && e.isPropertySequenceNumberRemoved())
+            {
+                this.setSequenceNumber(null);
+            }
+        }
+        else
+        {
+            this.setSequenceNumber(e.getSequenceNumber());
+        }
+        if (e.getVersion() == null)
+        {
+            if (e.isPropertyVersionRemoved() != null && e.isPropertyVersionRemoved())
+            {
+                this.setVersion(null);
+            }
+        }
+        else
+        {
+            this.setVersion(e.getVersion());
+        }
+        if (e.getActive() == null)
+        {
+            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            {
+                this.setActive(null);
+            }
+        }
+        else
+        {
+            this.setActive(e.getActive());
+        }
+        if (e.getAttributeSetName() == null)
+        {
+            if (e.isPropertyAttributeSetNameRemoved() != null && e.isPropertyAttributeSetNameRemoved())
+            {
+                this.setAttributeSetName(null);
+            }
+        }
+        else
+        {
+            this.setAttributeSetName(e.getAttributeSetName());
+        }
+        if (e.getAttributeSetOrganizationId() == null)
+        {
+            if (e.isPropertyAttributeSetOrganizationIdRemoved() != null && e.isPropertyAttributeSetOrganizationIdRemoved())
+            {
+                this.setAttributeSetOrganizationId(null);
+            }
+        }
+        else
+        {
+            this.setAttributeSetOrganizationId(e.getAttributeSetOrganizationId());
+        }
+        if (e.getAttributeSetDescription() == null)
+        {
+            if (e.isPropertyAttributeSetDescriptionRemoved() != null && e.isPropertyAttributeSetDescriptionRemoved())
+            {
+                this.setAttributeSetDescription(null);
+            }
+        }
+        else
+        {
+            this.setAttributeSetDescription(e.getAttributeSetDescription());
+        }
+        if (e.getAttributeSetSerialNumberAttributeId() == null)
+        {
+            if (e.isPropertyAttributeSetSerialNumberAttributeIdRemoved() != null && e.isPropertyAttributeSetSerialNumberAttributeIdRemoved())
+            {
+                this.setAttributeSetSerialNumberAttributeId(null);
+            }
+        }
+        else
+        {
+            this.setAttributeSetSerialNumberAttributeId(e.getAttributeSetSerialNumberAttributeId());
+        }
+        if (e.getAttributeSetLotAttributeId() == null)
+        {
+            if (e.isPropertyAttributeSetLotAttributeIdRemoved() != null && e.isPropertyAttributeSetLotAttributeIdRemoved())
+            {
+                this.setAttributeSetLotAttributeId(null);
+            }
+        }
+        else
+        {
+            this.setAttributeSetLotAttributeId(e.getAttributeSetLotAttributeId());
+        }
+        if (e.getAttributeSetReferenceId() == null)
+        {
+            if (e.isPropertyAttributeSetReferenceIdRemoved() != null && e.isPropertyAttributeSetReferenceIdRemoved())
+            {
+                this.setAttributeSetReferenceId(null);
+            }
+        }
+        else
+        {
+            this.setAttributeSetReferenceId(e.getAttributeSetReferenceId());
+        }
+        if (e.getAttributeSetCreatedBy() == null)
+        {
+            if (e.isPropertyAttributeSetCreatedByRemoved() != null && e.isPropertyAttributeSetCreatedByRemoved())
+            {
+                this.setAttributeSetCreatedBy(null);
+            }
+        }
+        else
+        {
+            this.setAttributeSetCreatedBy(e.getAttributeSetCreatedBy());
+        }
+        if (e.getAttributeSetCreatedAt() == null)
+        {
+            if (e.isPropertyAttributeSetCreatedAtRemoved() != null && e.isPropertyAttributeSetCreatedAtRemoved())
+            {
+                this.setAttributeSetCreatedAt(null);
+            }
+        }
+        else
+        {
+            this.setAttributeSetCreatedAt(e.getAttributeSetCreatedAt());
+        }
+        if (e.getAttributeSetUpdatedBy() == null)
+        {
+            if (e.isPropertyAttributeSetUpdatedByRemoved() != null && e.isPropertyAttributeSetUpdatedByRemoved())
+            {
+                this.setAttributeSetUpdatedBy(null);
+            }
+        }
+        else
+        {
+            this.setAttributeSetUpdatedBy(e.getAttributeSetUpdatedBy());
+        }
+        if (e.getAttributeSetUpdatedAt() == null)
+        {
+            if (e.isPropertyAttributeSetUpdatedAtRemoved() != null && e.isPropertyAttributeSetUpdatedAtRemoved())
+            {
+                this.setAttributeSetUpdatedAt(null);
+            }
+        }
+        else
+        {
+            this.setAttributeSetUpdatedAt(e.getAttributeSetUpdatedAt());
+        }
+        if (e.getAttributeSetActive() == null)
+        {
+            if (e.isPropertyAttributeSetActiveRemoved() != null && e.isPropertyAttributeSetActiveRemoved())
+            {
+                this.setAttributeSetActive(null);
+            }
+        }
+        else
+        {
+            this.setAttributeSetActive(e.getAttributeSetActive());
+        }
+        if (e.getAttributeSetDeleted() == null)
+        {
+            if (e.isPropertyAttributeSetDeletedRemoved() != null && e.isPropertyAttributeSetDeletedRemoved())
+            {
+                this.setAttributeSetDeleted(null);
+            }
+        }
+        else
+        {
+            this.setAttributeSetDeleted(e.getAttributeSetDeleted());
+        }
+
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
+
+    public void when(AttributeUseMvoStateDeleted e)
+    {
+        throwOnWrongEvent(e);
+
+        this.setDeleted(true);
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
 
     protected void throwOnWrongEvent(AttributeUseMvoStateEvent stateEvent)
     {
@@ -311,7 +515,7 @@ public abstract class AbstractAttributeUseMvoState implements AttributeUseMvoSta
         AttributeSetAttributeUseId eventEntityId = stateEvent.getStateEventId().getAttributeSetAttributeUseId(); // EntityBase.Aggregate.GetStateEventIdPropertyIdName();
         if (!stateEntityId.equals(eventEntityId))
         {
-            DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
+            throw DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
         }
 
         Long stateVersion = this.getAttributeSetVersion();

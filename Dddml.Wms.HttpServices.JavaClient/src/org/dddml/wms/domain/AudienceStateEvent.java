@@ -20,6 +20,14 @@ public interface AudienceStateEvent extends Event
 
     void setBase64Secret(String base64Secret);
 
+    String getCreatedBy();
+
+    void setCreatedBy(String createdBy);
+
+    Date getCreatedAt();
+
+    void setCreatedAt(Date createdAt);
+
     Boolean getActive();
 
     void setActive(Boolean active);

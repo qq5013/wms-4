@@ -152,12 +152,48 @@ public abstract class AbstractUserRoleState implements UserRoleState
         }
     }
 
-    public abstract void when(UserRoleStateCreated e);
+    public void when(UserRoleStateCreated e)
+    {
+        throwOnWrongEvent(e);
+        this.setActive(e.getActive());
 
-    public abstract void when(UserRoleStateMergePatched e);
+        this.setDeleted(false);
 
-    public abstract void when(UserRoleStateRemoved e);
+        this.setCreatedBy(e.getCreatedBy());
+        this.setCreatedAt(e.getCreatedAt());
 
+    }
+
+    public void when(UserRoleStateMergePatched e)
+    {
+        throwOnWrongEvent(e);
+
+        if (e.getActive() == null)
+        {
+            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            {
+                this.setActive(null);
+            }
+        }
+        else
+        {
+            this.setActive(e.getActive());
+        }
+
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
+
+    public void when(UserRoleStateRemoved e)
+    {
+        throwOnWrongEvent(e);
+
+        this.setDeleted(true);
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
 
     protected void throwOnWrongEvent(UserRoleStateEvent stateEvent)
     {
@@ -165,14 +201,14 @@ public abstract class AbstractUserRoleState implements UserRoleState
         String eventEntityIdUserId = stateEvent.getStateEventId().getUserId();
         if (stateEntityIdUserId != eventEntityIdUserId)
         {
-            DomainError.named("mutateWrongEntity", "Entity Id UserId %1$s in state but entity id UserId %2$s in event", stateEntityIdUserId, eventEntityIdUserId);
+            throw DomainError.named("mutateWrongEntity", "Entity Id UserId %1$s in state but entity id UserId %2$s in event", stateEntityIdUserId, eventEntityIdUserId);
         }
 
         String stateEntityIdRoleId = this.getUserRoleId().getRoleId();
         String eventEntityIdRoleId = stateEvent.getStateEventId().getRoleId();
         if (stateEntityIdRoleId != eventEntityIdRoleId)
         {
-            DomainError.named("mutateWrongEntity", "Entity Id RoleId %1$s in state but entity id RoleId %2$s in event", stateEntityIdRoleId, eventEntityIdRoleId);
+            throw DomainError.named("mutateWrongEntity", "Entity Id RoleId %1$s in state but entity id RoleId %2$s in event", stateEntityIdRoleId, eventEntityIdRoleId);
         }
 
         Long stateVersion = this.getVersion();

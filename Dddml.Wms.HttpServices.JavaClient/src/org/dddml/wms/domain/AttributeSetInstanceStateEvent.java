@@ -1861,6 +1861,14 @@ public interface AttributeSetInstanceStateEvent extends Event
 
     void set_F_C50_49_(String _f_C50_49_);
 
+    String getCreatedBy();
+
+    void setCreatedBy(String createdBy);
+
+    Date getCreatedAt();
+
+    void setCreatedAt(Date createdAt);
+
     Boolean getActive();
 
     void setActive(Boolean active);

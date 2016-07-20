@@ -24,6 +24,14 @@ public interface WarehouseStateEvent extends Event
 
     void setIsInTransit(Boolean isInTransit);
 
+    String getCreatedBy();
+
+    void setCreatedBy(String createdBy);
+
+    Date getCreatedAt();
+
+    void setCreatedAt(Date createdAt);
+
     Boolean getActive();
 
     void setActive(Boolean active);

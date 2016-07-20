@@ -204,12 +204,131 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldGroupState imple
         }
     }
 
-    public abstract void when(AttributeSetInstanceExtensionFieldGroupStateCreated e);
+    public void when(AttributeSetInstanceExtensionFieldGroupStateCreated e)
+    {
+        throwOnWrongEvent(e);
+        this.setFieldType(e.getFieldType());
+        this.setFieldLength(e.getFieldLength());
+        this.setFieldCount(e.getFieldCount());
+        this.setNameFormat(e.getNameFormat());
+        this.setDescription(e.getDescription());
+        this.setActive(e.getActive());
 
-    public abstract void when(AttributeSetInstanceExtensionFieldGroupStateMergePatched e);
+        this.setDeleted(false);
 
-    public abstract void when(AttributeSetInstanceExtensionFieldGroupStateDeleted e);
+        this.setCreatedBy(e.getCreatedBy());
+        this.setCreatedAt(e.getCreatedAt());
 
+        for (AttributeSetInstanceExtensionFieldStateEvent.AttributeSetInstanceExtensionFieldStateCreated innerEvent : e.getAttributeSetInstanceExtensionFieldEvents()) {
+            AttributeSetInstanceExtensionFieldState innerState = this.getFields().get(innerEvent.getStateEventId().getIndex());
+            innerState.mutate(innerEvent);
+        }
+    }
+
+    public void when(AttributeSetInstanceExtensionFieldGroupStateMergePatched e)
+    {
+        throwOnWrongEvent(e);
+
+        if (e.getFieldType() == null)
+        {
+            if (e.isPropertyFieldTypeRemoved() != null && e.isPropertyFieldTypeRemoved())
+            {
+                this.setFieldType(null);
+            }
+        }
+        else
+        {
+            this.setFieldType(e.getFieldType());
+        }
+        if (e.getFieldLength() == null)
+        {
+            if (e.isPropertyFieldLengthRemoved() != null && e.isPropertyFieldLengthRemoved())
+            {
+                this.setFieldLength(null);
+            }
+        }
+        else
+        {
+            this.setFieldLength(e.getFieldLength());
+        }
+        if (e.getFieldCount() == null)
+        {
+            if (e.isPropertyFieldCountRemoved() != null && e.isPropertyFieldCountRemoved())
+            {
+                this.setFieldCount(null);
+            }
+        }
+        else
+        {
+            this.setFieldCount(e.getFieldCount());
+        }
+        if (e.getNameFormat() == null)
+        {
+            if (e.isPropertyNameFormatRemoved() != null && e.isPropertyNameFormatRemoved())
+            {
+                this.setNameFormat(null);
+            }
+        }
+        else
+        {
+            this.setNameFormat(e.getNameFormat());
+        }
+        if (e.getDescription() == null)
+        {
+            if (e.isPropertyDescriptionRemoved() != null && e.isPropertyDescriptionRemoved())
+            {
+                this.setDescription(null);
+            }
+        }
+        else
+        {
+            this.setDescription(e.getDescription());
+        }
+        if (e.getActive() == null)
+        {
+            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            {
+                this.setActive(null);
+            }
+        }
+        else
+        {
+            this.setActive(e.getActive());
+        }
+
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+        for (AttributeSetInstanceExtensionFieldStateEvent innerEvent : e.getAttributeSetInstanceExtensionFieldEvents()) {
+            AttributeSetInstanceExtensionFieldState innerState = this.getFields().get(innerEvent.getStateEventId().getIndex());
+            innerState.mutate(innerEvent);
+            if (innerEvent instanceof AttributeSetInstanceExtensionFieldStateEvent.AttributeSetInstanceExtensionFieldStateRemoved)
+            {
+                //AttributeSetInstanceExtensionFieldStateEvent.AttributeSetInstanceExtensionFieldStateRemoved removed = (AttributeSetInstanceExtensionFieldStateEvent.AttributeSetInstanceExtensionFieldStateRemoved)innerEvent;
+                this.getFields().remove(innerState);
+            }
+        }
+    }
+
+    public void when(AttributeSetInstanceExtensionFieldGroupStateDeleted e)
+    {
+        throwOnWrongEvent(e);
+
+        this.setDeleted(true);
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+        for (AttributeSetInstanceExtensionFieldState innerState : this.getFields())
+        {
+            this.getFields().remove(innerState);
+        
+            AttributeSetInstanceExtensionFieldStateEvent.AttributeSetInstanceExtensionFieldStateRemoved innerE = e.newAttributeSetInstanceExtensionFieldStateRemoved(innerState.getIndex());
+            innerE.setCreatedAt(e.getCreatedAt());
+            innerE.setCreatedBy(e.getCreatedBy());
+            innerState.when(innerE);
+            //e.addAttributeSetInstanceExtensionFieldEvent(innerE);
+        }
+    }
 
     protected void throwOnWrongEvent(AttributeSetInstanceExtensionFieldGroupStateEvent stateEvent)
     {
@@ -217,7 +336,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldGroupState imple
         String eventEntityId = stateEvent.getStateEventId().getId(); // EntityBase.Aggregate.GetStateEventIdPropertyIdName();
         if (!stateEntityId.equals(eventEntityId))
         {
-            DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
+            throw DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
         }
 
         Long stateVersion = this.getVersion();

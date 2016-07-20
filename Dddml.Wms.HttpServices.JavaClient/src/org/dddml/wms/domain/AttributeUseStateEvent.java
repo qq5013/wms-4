@@ -20,6 +20,14 @@ public interface AttributeUseStateEvent extends Event
 
     void setSequenceNumber(Integer sequenceNumber);
 
+    String getCreatedBy();
+
+    void setCreatedBy(String createdBy);
+
+    Date getCreatedAt();
+
+    void setCreatedAt(Date createdAt);
+
     Boolean getActive();
 
     void setActive(Boolean active);

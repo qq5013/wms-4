@@ -400,7 +400,7 @@ namespace Dddml.Wms.Domain
 			var eventEntityId = stateEvent.StateEventId.AttributeSetAttributeUseId; // EntityBase.Aggregate.GetStateEventIdPropertyIdName();
 			if (stateEntityId != eventEntityId)
 			{
-				DomainError.Named("mutateWrongEntity", "Entity Id {0} in state but entity id {1} in event", stateEntityId, eventEntityId);
+				throw DomainError.Named("mutateWrongEntity", "Entity Id {0} in state but entity id {1} in event", stateEntityId, eventEntityId);
 			}
 
 			var stateVersion = this.AttributeSetVersion;

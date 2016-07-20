@@ -357,12 +357,252 @@ public abstract class AbstractInOutLineState implements InOutLineState
         }
     }
 
-    public abstract void when(InOutLineStateCreated e);
+    public void when(InOutLineStateCreated e)
+    {
+        throwOnWrongEvent(e);
+        this.setLineNumber(e.getLineNumber());
+        this.setDescription(e.getDescription());
+        this.setLocatorId(e.getLocatorId());
+        this.setProduct(e.getProduct());
+        this.setUomId(e.getUomId());
+        this.setMovementQuantity(e.getMovementQuantity());
+        this.setConfirmedQuantity(e.getConfirmedQuantity());
+        this.setScrappedQuantity(e.getScrappedQuantity());
+        this.setTargetQuantity(e.getTargetQuantity());
+        this.setPickedQuantity(e.getPickedQuantity());
+        this.setIsInvoiced(e.getIsInvoiced());
+        this.setAttributeSetInstanceId(e.getAttributeSetInstanceId());
+        this.setIsDescription(e.getIsDescription());
+        this.setProcessed(e.getProcessed());
+        this.setQuantityEntered(e.getQuantityEntered());
+        this.setRmaLineNumber(e.getRmaLineNumber());
+        this.setReversalLineNumber(e.getReversalLineNumber());
+        this.setActive(e.getActive());
 
-    public abstract void when(InOutLineStateMergePatched e);
+        this.setDeleted(false);
 
-    public abstract void when(InOutLineStateRemoved e);
+        this.setCreatedBy(e.getCreatedBy());
+        this.setCreatedAt(e.getCreatedAt());
 
+    }
+
+    public void when(InOutLineStateMergePatched e)
+    {
+        throwOnWrongEvent(e);
+
+        if (e.getLineNumber() == null)
+        {
+            if (e.isPropertyLineNumberRemoved() != null && e.isPropertyLineNumberRemoved())
+            {
+                this.setLineNumber(null);
+            }
+        }
+        else
+        {
+            this.setLineNumber(e.getLineNumber());
+        }
+        if (e.getDescription() == null)
+        {
+            if (e.isPropertyDescriptionRemoved() != null && e.isPropertyDescriptionRemoved())
+            {
+                this.setDescription(null);
+            }
+        }
+        else
+        {
+            this.setDescription(e.getDescription());
+        }
+        if (e.getLocatorId() == null)
+        {
+            if (e.isPropertyLocatorIdRemoved() != null && e.isPropertyLocatorIdRemoved())
+            {
+                this.setLocatorId(null);
+            }
+        }
+        else
+        {
+            this.setLocatorId(e.getLocatorId());
+        }
+        if (e.getProduct() == null)
+        {
+            if (e.isPropertyProductRemoved() != null && e.isPropertyProductRemoved())
+            {
+                this.setProduct(null);
+            }
+        }
+        else
+        {
+            this.setProduct(e.getProduct());
+        }
+        if (e.getUomId() == null)
+        {
+            if (e.isPropertyUomIdRemoved() != null && e.isPropertyUomIdRemoved())
+            {
+                this.setUomId(null);
+            }
+        }
+        else
+        {
+            this.setUomId(e.getUomId());
+        }
+        if (e.getMovementQuantity() == null)
+        {
+            if (e.isPropertyMovementQuantityRemoved() != null && e.isPropertyMovementQuantityRemoved())
+            {
+                this.setMovementQuantity(null);
+            }
+        }
+        else
+        {
+            this.setMovementQuantity(e.getMovementQuantity());
+        }
+        if (e.getConfirmedQuantity() == null)
+        {
+            if (e.isPropertyConfirmedQuantityRemoved() != null && e.isPropertyConfirmedQuantityRemoved())
+            {
+                this.setConfirmedQuantity(null);
+            }
+        }
+        else
+        {
+            this.setConfirmedQuantity(e.getConfirmedQuantity());
+        }
+        if (e.getScrappedQuantity() == null)
+        {
+            if (e.isPropertyScrappedQuantityRemoved() != null && e.isPropertyScrappedQuantityRemoved())
+            {
+                this.setScrappedQuantity(null);
+            }
+        }
+        else
+        {
+            this.setScrappedQuantity(e.getScrappedQuantity());
+        }
+        if (e.getTargetQuantity() == null)
+        {
+            if (e.isPropertyTargetQuantityRemoved() != null && e.isPropertyTargetQuantityRemoved())
+            {
+                this.setTargetQuantity(null);
+            }
+        }
+        else
+        {
+            this.setTargetQuantity(e.getTargetQuantity());
+        }
+        if (e.getPickedQuantity() == null)
+        {
+            if (e.isPropertyPickedQuantityRemoved() != null && e.isPropertyPickedQuantityRemoved())
+            {
+                this.setPickedQuantity(null);
+            }
+        }
+        else
+        {
+            this.setPickedQuantity(e.getPickedQuantity());
+        }
+        if (e.getIsInvoiced() == null)
+        {
+            if (e.isPropertyIsInvoicedRemoved() != null && e.isPropertyIsInvoicedRemoved())
+            {
+                this.setIsInvoiced(null);
+            }
+        }
+        else
+        {
+            this.setIsInvoiced(e.getIsInvoiced());
+        }
+        if (e.getAttributeSetInstanceId() == null)
+        {
+            if (e.isPropertyAttributeSetInstanceIdRemoved() != null && e.isPropertyAttributeSetInstanceIdRemoved())
+            {
+                this.setAttributeSetInstanceId(null);
+            }
+        }
+        else
+        {
+            this.setAttributeSetInstanceId(e.getAttributeSetInstanceId());
+        }
+        if (e.getIsDescription() == null)
+        {
+            if (e.isPropertyIsDescriptionRemoved() != null && e.isPropertyIsDescriptionRemoved())
+            {
+                this.setIsDescription(null);
+            }
+        }
+        else
+        {
+            this.setIsDescription(e.getIsDescription());
+        }
+        if (e.getProcessed() == null)
+        {
+            if (e.isPropertyProcessedRemoved() != null && e.isPropertyProcessedRemoved())
+            {
+                this.setProcessed(null);
+            }
+        }
+        else
+        {
+            this.setProcessed(e.getProcessed());
+        }
+        if (e.getQuantityEntered() == null)
+        {
+            if (e.isPropertyQuantityEnteredRemoved() != null && e.isPropertyQuantityEnteredRemoved())
+            {
+                this.setQuantityEntered(null);
+            }
+        }
+        else
+        {
+            this.setQuantityEntered(e.getQuantityEntered());
+        }
+        if (e.getRmaLineNumber() == null)
+        {
+            if (e.isPropertyRmaLineNumberRemoved() != null && e.isPropertyRmaLineNumberRemoved())
+            {
+                this.setRmaLineNumber(null);
+            }
+        }
+        else
+        {
+            this.setRmaLineNumber(e.getRmaLineNumber());
+        }
+        if (e.getReversalLineNumber() == null)
+        {
+            if (e.isPropertyReversalLineNumberRemoved() != null && e.isPropertyReversalLineNumberRemoved())
+            {
+                this.setReversalLineNumber(null);
+            }
+        }
+        else
+        {
+            this.setReversalLineNumber(e.getReversalLineNumber());
+        }
+        if (e.getActive() == null)
+        {
+            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            {
+                this.setActive(null);
+            }
+        }
+        else
+        {
+            this.setActive(e.getActive());
+        }
+
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
+
+    public void when(InOutLineStateRemoved e)
+    {
+        throwOnWrongEvent(e);
+
+        this.setDeleted(true);
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
 
     protected void throwOnWrongEvent(InOutLineStateEvent stateEvent)
     {
@@ -370,14 +610,14 @@ public abstract class AbstractInOutLineState implements InOutLineState
         String eventEntityIdInOutDocumentNumber = stateEvent.getStateEventId().getInOutDocumentNumber();
         if (stateEntityIdInOutDocumentNumber != eventEntityIdInOutDocumentNumber)
         {
-            DomainError.named("mutateWrongEntity", "Entity Id InOutDocumentNumber %1$s in state but entity id InOutDocumentNumber %2$s in event", stateEntityIdInOutDocumentNumber, eventEntityIdInOutDocumentNumber);
+            throw DomainError.named("mutateWrongEntity", "Entity Id InOutDocumentNumber %1$s in state but entity id InOutDocumentNumber %2$s in event", stateEntityIdInOutDocumentNumber, eventEntityIdInOutDocumentNumber);
         }
 
         SkuId stateEntityIdSkuId = this.getInOutLineId().getSkuId();
         SkuId eventEntityIdSkuId = stateEvent.getStateEventId().getSkuId();
         if (stateEntityIdSkuId != eventEntityIdSkuId)
         {
-            DomainError.named("mutateWrongEntity", "Entity Id SkuId %1$s in state but entity id SkuId %2$s in event", stateEntityIdSkuId, eventEntityIdSkuId);
+            throw DomainError.named("mutateWrongEntity", "Entity Id SkuId %1$s in state but entity id SkuId %2$s in event", stateEntityIdSkuId, eventEntityIdSkuId);
         }
 
         Long stateVersion = this.getVersion();

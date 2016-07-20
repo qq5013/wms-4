@@ -226,12 +226,144 @@ public abstract class AbstractLocatorState implements LocatorState
         }
     }
 
-    public abstract void when(LocatorStateCreated e);
+    public void when(LocatorStateCreated e)
+    {
+        throwOnWrongEvent(e);
+        this.setWarehouseId(e.getWarehouseId());
+        this.setParentLocatorId(e.getParentLocatorId());
+        this.setLocatorType(e.getLocatorType());
+        this.setPriorityNumber(e.getPriorityNumber());
+        this.setIsDefault(e.getIsDefault());
+        this.setX(e.getX());
+        this.setY(e.getY());
+        this.setZ(e.getZ());
+        this.setActive(e.getActive());
 
-    public abstract void when(LocatorStateMergePatched e);
+        this.setDeleted(false);
 
-    public abstract void when(LocatorStateDeleted e);
+        this.setCreatedBy(e.getCreatedBy());
+        this.setCreatedAt(e.getCreatedAt());
 
+    }
+
+    public void when(LocatorStateMergePatched e)
+    {
+        throwOnWrongEvent(e);
+
+        if (e.getWarehouseId() == null)
+        {
+            if (e.isPropertyWarehouseIdRemoved() != null && e.isPropertyWarehouseIdRemoved())
+            {
+                this.setWarehouseId(null);
+            }
+        }
+        else
+        {
+            this.setWarehouseId(e.getWarehouseId());
+        }
+        if (e.getParentLocatorId() == null)
+        {
+            if (e.isPropertyParentLocatorIdRemoved() != null && e.isPropertyParentLocatorIdRemoved())
+            {
+                this.setParentLocatorId(null);
+            }
+        }
+        else
+        {
+            this.setParentLocatorId(e.getParentLocatorId());
+        }
+        if (e.getLocatorType() == null)
+        {
+            if (e.isPropertyLocatorTypeRemoved() != null && e.isPropertyLocatorTypeRemoved())
+            {
+                this.setLocatorType(null);
+            }
+        }
+        else
+        {
+            this.setLocatorType(e.getLocatorType());
+        }
+        if (e.getPriorityNumber() == null)
+        {
+            if (e.isPropertyPriorityNumberRemoved() != null && e.isPropertyPriorityNumberRemoved())
+            {
+                this.setPriorityNumber(null);
+            }
+        }
+        else
+        {
+            this.setPriorityNumber(e.getPriorityNumber());
+        }
+        if (e.getIsDefault() == null)
+        {
+            if (e.isPropertyIsDefaultRemoved() != null && e.isPropertyIsDefaultRemoved())
+            {
+                this.setIsDefault(null);
+            }
+        }
+        else
+        {
+            this.setIsDefault(e.getIsDefault());
+        }
+        if (e.getX() == null)
+        {
+            if (e.isPropertyXRemoved() != null && e.isPropertyXRemoved())
+            {
+                this.setX(null);
+            }
+        }
+        else
+        {
+            this.setX(e.getX());
+        }
+        if (e.getY() == null)
+        {
+            if (e.isPropertyYRemoved() != null && e.isPropertyYRemoved())
+            {
+                this.setY(null);
+            }
+        }
+        else
+        {
+            this.setY(e.getY());
+        }
+        if (e.getZ() == null)
+        {
+            if (e.isPropertyZRemoved() != null && e.isPropertyZRemoved())
+            {
+                this.setZ(null);
+            }
+        }
+        else
+        {
+            this.setZ(e.getZ());
+        }
+        if (e.getActive() == null)
+        {
+            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            {
+                this.setActive(null);
+            }
+        }
+        else
+        {
+            this.setActive(e.getActive());
+        }
+
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
+
+    public void when(LocatorStateDeleted e)
+    {
+        throwOnWrongEvent(e);
+
+        this.setDeleted(true);
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
 
     protected void throwOnWrongEvent(LocatorStateEvent stateEvent)
     {
@@ -239,7 +371,7 @@ public abstract class AbstractLocatorState implements LocatorState
         String eventEntityId = stateEvent.getStateEventId().getLocatorId(); // EntityBase.Aggregate.GetStateEventIdPropertyIdName();
         if (!stateEntityId.equals(eventEntityId))
         {
-            DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
+            throw DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
         }
 
         Long stateVersion = this.getVersion();

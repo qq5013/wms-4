@@ -106,7 +106,7 @@ namespace Dddml.Wms.Domain
 		{
 			if (!oe.StateEventId.AttributeSetId.Equals(e.StateEventId.AttributeSetId))
 			{ 
-				DomainError.Named("inconsistentEventIds", "Outer Id AttributeSetId {0} but inner id AttributeSetId {1}", 
+				throw DomainError.Named("inconsistentEventIds", "Outer Id AttributeSetId {0} but inner id AttributeSetId {1}", 
 					oe.StateEventId.AttributeSetId, e.StateEventId.AttributeSetId);
 			}
 		}

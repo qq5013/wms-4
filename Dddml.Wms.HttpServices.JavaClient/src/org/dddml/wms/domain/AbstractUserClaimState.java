@@ -176,12 +176,72 @@ public abstract class AbstractUserClaimState implements UserClaimState
         }
     }
 
-    public abstract void when(UserClaimStateCreated e);
+    public void when(UserClaimStateCreated e)
+    {
+        throwOnWrongEvent(e);
+        this.setClaimType(e.getClaimType());
+        this.setClaimValue(e.getClaimValue());
+        this.setActive(e.getActive());
 
-    public abstract void when(UserClaimStateMergePatched e);
+        this.setDeleted(false);
 
-    public abstract void when(UserClaimStateRemoved e);
+        this.setCreatedBy(e.getCreatedBy());
+        this.setCreatedAt(e.getCreatedAt());
 
+    }
+
+    public void when(UserClaimStateMergePatched e)
+    {
+        throwOnWrongEvent(e);
+
+        if (e.getClaimType() == null)
+        {
+            if (e.isPropertyClaimTypeRemoved() != null && e.isPropertyClaimTypeRemoved())
+            {
+                this.setClaimType(null);
+            }
+        }
+        else
+        {
+            this.setClaimType(e.getClaimType());
+        }
+        if (e.getClaimValue() == null)
+        {
+            if (e.isPropertyClaimValueRemoved() != null && e.isPropertyClaimValueRemoved())
+            {
+                this.setClaimValue(null);
+            }
+        }
+        else
+        {
+            this.setClaimValue(e.getClaimValue());
+        }
+        if (e.getActive() == null)
+        {
+            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            {
+                this.setActive(null);
+            }
+        }
+        else
+        {
+            this.setActive(e.getActive());
+        }
+
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
+
+    public void when(UserClaimStateRemoved e)
+    {
+        throwOnWrongEvent(e);
+
+        this.setDeleted(true);
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
 
     protected void throwOnWrongEvent(UserClaimStateEvent stateEvent)
     {
@@ -189,14 +249,14 @@ public abstract class AbstractUserClaimState implements UserClaimState
         String eventEntityIdUserId = stateEvent.getStateEventId().getUserId();
         if (stateEntityIdUserId != eventEntityIdUserId)
         {
-            DomainError.named("mutateWrongEntity", "Entity Id UserId %1$s in state but entity id UserId %2$s in event", stateEntityIdUserId, eventEntityIdUserId);
+            throw DomainError.named("mutateWrongEntity", "Entity Id UserId %1$s in state but entity id UserId %2$s in event", stateEntityIdUserId, eventEntityIdUserId);
         }
 
         Integer stateEntityIdClaimId = this.getUserClaimId().getClaimId();
         Integer eventEntityIdClaimId = stateEvent.getStateEventId().getClaimId();
         if (stateEntityIdClaimId != eventEntityIdClaimId)
         {
-            DomainError.named("mutateWrongEntity", "Entity Id ClaimId %1$s in state but entity id ClaimId %2$s in event", stateEntityIdClaimId, eventEntityIdClaimId);
+            throw DomainError.named("mutateWrongEntity", "Entity Id ClaimId %1$s in state but entity id ClaimId %2$s in event", stateEntityIdClaimId, eventEntityIdClaimId);
         }
 
         Long stateVersion = this.getVersion();

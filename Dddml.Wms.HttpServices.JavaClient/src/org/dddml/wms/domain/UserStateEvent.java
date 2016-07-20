@@ -56,6 +56,14 @@ public interface UserStateEvent extends Event
 
     void setSecurityStamp(String securityStamp);
 
+    String getCreatedBy();
+
+    void setCreatedBy(String createdBy);
+
+    Date getCreatedAt();
+
+    void setCreatedAt(Date createdAt);
+
     Boolean getActive();
 
     void setActive(Boolean active);

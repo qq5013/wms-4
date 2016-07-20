@@ -150,6 +150,14 @@ public interface InOutStateEvent extends Event
 
     void setDropShipBusinessPartnerId(String dropShipBusinessPartnerId);
 
+    String getCreatedBy();
+
+    void setCreatedBy(String createdBy);
+
+    Date getCreatedAt();
+
+    void setCreatedAt(Date createdAt);
+
     Boolean getActive();
 
     void setActive(Boolean active);

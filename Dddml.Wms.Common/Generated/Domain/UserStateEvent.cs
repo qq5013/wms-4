@@ -116,7 +116,7 @@ namespace Dddml.Wms.Domain
 		{
 			if (!oe.StateEventId.UserId.Equals(e.StateEventId.UserId))
 			{ 
-				DomainError.Named("inconsistentEventIds", "Outer Id UserId {0} but inner id UserId {1}", 
+				throw DomainError.Named("inconsistentEventIds", "Outer Id UserId {0} but inner id UserId {1}", 
 					oe.StateEventId.UserId, e.StateEventId.UserId);
 			}
 		}
@@ -143,7 +143,7 @@ namespace Dddml.Wms.Domain
 		{
 			if (!oe.StateEventId.UserId.Equals(e.StateEventId.UserId))
 			{ 
-				DomainError.Named("inconsistentEventIds", "Outer Id UserId {0} but inner id UserId {1}", 
+				throw DomainError.Named("inconsistentEventIds", "Outer Id UserId {0} but inner id UserId {1}", 
 					oe.StateEventId.UserId, e.StateEventId.UserId);
 			}
 		}
@@ -170,7 +170,7 @@ namespace Dddml.Wms.Domain
 		{
 			if (!oe.StateEventId.UserId.Equals(e.StateEventId.UserId))
 			{ 
-				DomainError.Named("inconsistentEventIds", "Outer Id UserId {0} but inner id UserId {1}", 
+				throw DomainError.Named("inconsistentEventIds", "Outer Id UserId {0} but inner id UserId {1}", 
 					oe.StateEventId.UserId, e.StateEventId.UserId);
 			}
 		}
@@ -197,7 +197,7 @@ namespace Dddml.Wms.Domain
 		{
 			if (!oe.StateEventId.UserId.Equals(e.StateEventId.UserId))
 			{ 
-				DomainError.Named("inconsistentEventIds", "Outer Id UserId {0} but inner id UserId {1}", 
+				throw DomainError.Named("inconsistentEventIds", "Outer Id UserId {0} but inner id UserId {1}", 
 					oe.StateEventId.UserId, e.StateEventId.UserId);
 			}
 		}

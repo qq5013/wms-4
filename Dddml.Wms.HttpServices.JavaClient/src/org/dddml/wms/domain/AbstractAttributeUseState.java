@@ -164,12 +164,60 @@ public abstract class AbstractAttributeUseState implements AttributeUseState
         }
     }
 
-    public abstract void when(AttributeUseStateCreated e);
+    public void when(AttributeUseStateCreated e)
+    {
+        throwOnWrongEvent(e);
+        this.setSequenceNumber(e.getSequenceNumber());
+        this.setActive(e.getActive());
 
-    public abstract void when(AttributeUseStateMergePatched e);
+        this.setDeleted(false);
 
-    public abstract void when(AttributeUseStateRemoved e);
+        this.setCreatedBy(e.getCreatedBy());
+        this.setCreatedAt(e.getCreatedAt());
 
+    }
+
+    public void when(AttributeUseStateMergePatched e)
+    {
+        throwOnWrongEvent(e);
+
+        if (e.getSequenceNumber() == null)
+        {
+            if (e.isPropertySequenceNumberRemoved() != null && e.isPropertySequenceNumberRemoved())
+            {
+                this.setSequenceNumber(null);
+            }
+        }
+        else
+        {
+            this.setSequenceNumber(e.getSequenceNumber());
+        }
+        if (e.getActive() == null)
+        {
+            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            {
+                this.setActive(null);
+            }
+        }
+        else
+        {
+            this.setActive(e.getActive());
+        }
+
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
+
+    public void when(AttributeUseStateRemoved e)
+    {
+        throwOnWrongEvent(e);
+
+        this.setDeleted(true);
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
 
     protected void throwOnWrongEvent(AttributeUseStateEvent stateEvent)
     {
@@ -177,14 +225,14 @@ public abstract class AbstractAttributeUseState implements AttributeUseState
         String eventEntityIdAttributeSetId = stateEvent.getStateEventId().getAttributeSetId();
         if (stateEntityIdAttributeSetId != eventEntityIdAttributeSetId)
         {
-            DomainError.named("mutateWrongEntity", "Entity Id AttributeSetId %1$s in state but entity id AttributeSetId %2$s in event", stateEntityIdAttributeSetId, eventEntityIdAttributeSetId);
+            throw DomainError.named("mutateWrongEntity", "Entity Id AttributeSetId %1$s in state but entity id AttributeSetId %2$s in event", stateEntityIdAttributeSetId, eventEntityIdAttributeSetId);
         }
 
         String stateEntityIdAttributeId = this.getAttributeSetAttributeUseId().getAttributeId();
         String eventEntityIdAttributeId = stateEvent.getStateEventId().getAttributeId();
         if (stateEntityIdAttributeId != eventEntityIdAttributeId)
         {
-            DomainError.named("mutateWrongEntity", "Entity Id AttributeId %1$s in state but entity id AttributeId %2$s in event", stateEntityIdAttributeId, eventEntityIdAttributeId);
+            throw DomainError.named("mutateWrongEntity", "Entity Id AttributeId %1$s in state but entity id AttributeId %2$s in event", stateEntityIdAttributeId, eventEntityIdAttributeId);
         }
 
         Long stateVersion = this.getVersion();

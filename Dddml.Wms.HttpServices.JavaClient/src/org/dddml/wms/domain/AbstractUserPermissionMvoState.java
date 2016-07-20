@@ -346,12 +346,264 @@ public abstract class AbstractUserPermissionMvoState implements UserPermissionMv
         }
     }
 
-    public abstract void when(UserPermissionMvoStateCreated e);
+    public void when(UserPermissionMvoStateCreated e)
+    {
+        throwOnWrongEvent(e);
+        this.setVersion(e.getVersion());
+        this.setActive(e.getActive());
+        this.setUserUserName(e.getUserUserName());
+        this.setUserAccessFailedCount(e.getUserAccessFailedCount());
+        this.setUserEmail(e.getUserEmail());
+        this.setUserEmailConfirmed(e.getUserEmailConfirmed());
+        this.setUserLockoutEnabled(e.getUserLockoutEnabled());
+        this.setUserLockoutEndDateUtc(e.getUserLockoutEndDateUtc());
+        this.setUserPasswordHash(e.getUserPasswordHash());
+        this.setUserPhoneNumber(e.getUserPhoneNumber());
+        this.setUserPhoneNumberConfirmed(e.getUserPhoneNumberConfirmed());
+        this.setUserTwoFactorEnabled(e.getUserTwoFactorEnabled());
+        this.setUserSecurityStamp(e.getUserSecurityStamp());
+        this.setUserCreatedBy(e.getUserCreatedBy());
+        this.setUserCreatedAt(e.getUserCreatedAt());
+        this.setUserUpdatedBy(e.getUserUpdatedBy());
+        this.setUserUpdatedAt(e.getUserUpdatedAt());
+        this.setUserActive(e.getUserActive());
+        this.setUserDeleted(e.getUserDeleted());
 
-    public abstract void when(UserPermissionMvoStateMergePatched e);
+        this.setDeleted(false);
 
-    public abstract void when(UserPermissionMvoStateDeleted e);
+        this.setCreatedBy(e.getCreatedBy());
+        this.setCreatedAt(e.getCreatedAt());
 
+    }
+
+    public void when(UserPermissionMvoStateMergePatched e)
+    {
+        throwOnWrongEvent(e);
+
+        if (e.getVersion() == null)
+        {
+            if (e.isPropertyVersionRemoved() != null && e.isPropertyVersionRemoved())
+            {
+                this.setVersion(null);
+            }
+        }
+        else
+        {
+            this.setVersion(e.getVersion());
+        }
+        if (e.getActive() == null)
+        {
+            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            {
+                this.setActive(null);
+            }
+        }
+        else
+        {
+            this.setActive(e.getActive());
+        }
+        if (e.getUserUserName() == null)
+        {
+            if (e.isPropertyUserUserNameRemoved() != null && e.isPropertyUserUserNameRemoved())
+            {
+                this.setUserUserName(null);
+            }
+        }
+        else
+        {
+            this.setUserUserName(e.getUserUserName());
+        }
+        if (e.getUserAccessFailedCount() == null)
+        {
+            if (e.isPropertyUserAccessFailedCountRemoved() != null && e.isPropertyUserAccessFailedCountRemoved())
+            {
+                this.setUserAccessFailedCount(null);
+            }
+        }
+        else
+        {
+            this.setUserAccessFailedCount(e.getUserAccessFailedCount());
+        }
+        if (e.getUserEmail() == null)
+        {
+            if (e.isPropertyUserEmailRemoved() != null && e.isPropertyUserEmailRemoved())
+            {
+                this.setUserEmail(null);
+            }
+        }
+        else
+        {
+            this.setUserEmail(e.getUserEmail());
+        }
+        if (e.getUserEmailConfirmed() == null)
+        {
+            if (e.isPropertyUserEmailConfirmedRemoved() != null && e.isPropertyUserEmailConfirmedRemoved())
+            {
+                this.setUserEmailConfirmed(null);
+            }
+        }
+        else
+        {
+            this.setUserEmailConfirmed(e.getUserEmailConfirmed());
+        }
+        if (e.getUserLockoutEnabled() == null)
+        {
+            if (e.isPropertyUserLockoutEnabledRemoved() != null && e.isPropertyUserLockoutEnabledRemoved())
+            {
+                this.setUserLockoutEnabled(null);
+            }
+        }
+        else
+        {
+            this.setUserLockoutEnabled(e.getUserLockoutEnabled());
+        }
+        if (e.getUserLockoutEndDateUtc() == null)
+        {
+            if (e.isPropertyUserLockoutEndDateUtcRemoved() != null && e.isPropertyUserLockoutEndDateUtcRemoved())
+            {
+                this.setUserLockoutEndDateUtc(null);
+            }
+        }
+        else
+        {
+            this.setUserLockoutEndDateUtc(e.getUserLockoutEndDateUtc());
+        }
+        if (e.getUserPasswordHash() == null)
+        {
+            if (e.isPropertyUserPasswordHashRemoved() != null && e.isPropertyUserPasswordHashRemoved())
+            {
+                this.setUserPasswordHash(null);
+            }
+        }
+        else
+        {
+            this.setUserPasswordHash(e.getUserPasswordHash());
+        }
+        if (e.getUserPhoneNumber() == null)
+        {
+            if (e.isPropertyUserPhoneNumberRemoved() != null && e.isPropertyUserPhoneNumberRemoved())
+            {
+                this.setUserPhoneNumber(null);
+            }
+        }
+        else
+        {
+            this.setUserPhoneNumber(e.getUserPhoneNumber());
+        }
+        if (e.getUserPhoneNumberConfirmed() == null)
+        {
+            if (e.isPropertyUserPhoneNumberConfirmedRemoved() != null && e.isPropertyUserPhoneNumberConfirmedRemoved())
+            {
+                this.setUserPhoneNumberConfirmed(null);
+            }
+        }
+        else
+        {
+            this.setUserPhoneNumberConfirmed(e.getUserPhoneNumberConfirmed());
+        }
+        if (e.getUserTwoFactorEnabled() == null)
+        {
+            if (e.isPropertyUserTwoFactorEnabledRemoved() != null && e.isPropertyUserTwoFactorEnabledRemoved())
+            {
+                this.setUserTwoFactorEnabled(null);
+            }
+        }
+        else
+        {
+            this.setUserTwoFactorEnabled(e.getUserTwoFactorEnabled());
+        }
+        if (e.getUserSecurityStamp() == null)
+        {
+            if (e.isPropertyUserSecurityStampRemoved() != null && e.isPropertyUserSecurityStampRemoved())
+            {
+                this.setUserSecurityStamp(null);
+            }
+        }
+        else
+        {
+            this.setUserSecurityStamp(e.getUserSecurityStamp());
+        }
+        if (e.getUserCreatedBy() == null)
+        {
+            if (e.isPropertyUserCreatedByRemoved() != null && e.isPropertyUserCreatedByRemoved())
+            {
+                this.setUserCreatedBy(null);
+            }
+        }
+        else
+        {
+            this.setUserCreatedBy(e.getUserCreatedBy());
+        }
+        if (e.getUserCreatedAt() == null)
+        {
+            if (e.isPropertyUserCreatedAtRemoved() != null && e.isPropertyUserCreatedAtRemoved())
+            {
+                this.setUserCreatedAt(null);
+            }
+        }
+        else
+        {
+            this.setUserCreatedAt(e.getUserCreatedAt());
+        }
+        if (e.getUserUpdatedBy() == null)
+        {
+            if (e.isPropertyUserUpdatedByRemoved() != null && e.isPropertyUserUpdatedByRemoved())
+            {
+                this.setUserUpdatedBy(null);
+            }
+        }
+        else
+        {
+            this.setUserUpdatedBy(e.getUserUpdatedBy());
+        }
+        if (e.getUserUpdatedAt() == null)
+        {
+            if (e.isPropertyUserUpdatedAtRemoved() != null && e.isPropertyUserUpdatedAtRemoved())
+            {
+                this.setUserUpdatedAt(null);
+            }
+        }
+        else
+        {
+            this.setUserUpdatedAt(e.getUserUpdatedAt());
+        }
+        if (e.getUserActive() == null)
+        {
+            if (e.isPropertyUserActiveRemoved() != null && e.isPropertyUserActiveRemoved())
+            {
+                this.setUserActive(null);
+            }
+        }
+        else
+        {
+            this.setUserActive(e.getUserActive());
+        }
+        if (e.getUserDeleted() == null)
+        {
+            if (e.isPropertyUserDeletedRemoved() != null && e.isPropertyUserDeletedRemoved())
+            {
+                this.setUserDeleted(null);
+            }
+        }
+        else
+        {
+            this.setUserDeleted(e.getUserDeleted());
+        }
+
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
+
+    public void when(UserPermissionMvoStateDeleted e)
+    {
+        throwOnWrongEvent(e);
+
+        this.setDeleted(true);
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
 
     protected void throwOnWrongEvent(UserPermissionMvoStateEvent stateEvent)
     {
@@ -359,7 +611,7 @@ public abstract class AbstractUserPermissionMvoState implements UserPermissionMv
         UserPermissionId eventEntityId = stateEvent.getStateEventId().getUserPermissionId(); // EntityBase.Aggregate.GetStateEventIdPropertyIdName();
         if (!stateEntityId.equals(eventEntityId))
         {
-            DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
+            throw DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
         }
 
         Long stateVersion = this.getUserVersion();

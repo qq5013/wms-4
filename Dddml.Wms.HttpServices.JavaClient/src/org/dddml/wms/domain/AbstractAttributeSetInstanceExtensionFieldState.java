@@ -212,12 +212,108 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldState implements
         }
     }
 
-    public abstract void when(AttributeSetInstanceExtensionFieldStateCreated e);
+    public void when(AttributeSetInstanceExtensionFieldStateCreated e)
+    {
+        throwOnWrongEvent(e);
+        this.setName(e.getName());
+        this.setType(e.getType());
+        this.setLength(e.getLength());
+        this.setAlias(e.getAlias());
+        this.setDescription(e.getDescription());
+        this.setActive(e.getActive());
 
-    public abstract void when(AttributeSetInstanceExtensionFieldStateMergePatched e);
+        this.setDeleted(false);
 
-    public abstract void when(AttributeSetInstanceExtensionFieldStateRemoved e);
+        this.setCreatedBy(e.getCreatedBy());
+        this.setCreatedAt(e.getCreatedAt());
 
+    }
+
+    public void when(AttributeSetInstanceExtensionFieldStateMergePatched e)
+    {
+        throwOnWrongEvent(e);
+
+        if (e.getName() == null)
+        {
+            if (e.isPropertyNameRemoved() != null && e.isPropertyNameRemoved())
+            {
+                this.setName(null);
+            }
+        }
+        else
+        {
+            this.setName(e.getName());
+        }
+        if (e.getType() == null)
+        {
+            if (e.isPropertyTypeRemoved() != null && e.isPropertyTypeRemoved())
+            {
+                this.setType(null);
+            }
+        }
+        else
+        {
+            this.setType(e.getType());
+        }
+        if (e.getLength() == null)
+        {
+            if (e.isPropertyLengthRemoved() != null && e.isPropertyLengthRemoved())
+            {
+                this.setLength(null);
+            }
+        }
+        else
+        {
+            this.setLength(e.getLength());
+        }
+        if (e.getAlias() == null)
+        {
+            if (e.isPropertyAliasRemoved() != null && e.isPropertyAliasRemoved())
+            {
+                this.setAlias(null);
+            }
+        }
+        else
+        {
+            this.setAlias(e.getAlias());
+        }
+        if (e.getDescription() == null)
+        {
+            if (e.isPropertyDescriptionRemoved() != null && e.isPropertyDescriptionRemoved())
+            {
+                this.setDescription(null);
+            }
+        }
+        else
+        {
+            this.setDescription(e.getDescription());
+        }
+        if (e.getActive() == null)
+        {
+            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            {
+                this.setActive(null);
+            }
+        }
+        else
+        {
+            this.setActive(e.getActive());
+        }
+
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
+
+    public void when(AttributeSetInstanceExtensionFieldStateRemoved e)
+    {
+        throwOnWrongEvent(e);
+
+        this.setDeleted(true);
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
 
     protected void throwOnWrongEvent(AttributeSetInstanceExtensionFieldStateEvent stateEvent)
     {
@@ -225,14 +321,14 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldState implements
         String eventEntityIdGroupId = stateEvent.getStateEventId().getGroupId();
         if (stateEntityIdGroupId != eventEntityIdGroupId)
         {
-            DomainError.named("mutateWrongEntity", "Entity Id GroupId %1$s in state but entity id GroupId %2$s in event", stateEntityIdGroupId, eventEntityIdGroupId);
+            throw DomainError.named("mutateWrongEntity", "Entity Id GroupId %1$s in state but entity id GroupId %2$s in event", stateEntityIdGroupId, eventEntityIdGroupId);
         }
 
         String stateEntityIdIndex = this.getAttributeSetInstanceExtensionFieldId().getIndex();
         String eventEntityIdIndex = stateEvent.getStateEventId().getIndex();
         if (stateEntityIdIndex != eventEntityIdIndex)
         {
-            DomainError.named("mutateWrongEntity", "Entity Id Index %1$s in state but entity id Index %2$s in event", stateEntityIdIndex, eventEntityIdIndex);
+            throw DomainError.named("mutateWrongEntity", "Entity Id Index %1$s in state but entity id Index %2$s in event", stateEntityIdIndex, eventEntityIdIndex);
         }
 
         Long stateVersion = this.getVersion();

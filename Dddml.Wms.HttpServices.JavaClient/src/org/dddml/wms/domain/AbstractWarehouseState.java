@@ -166,12 +166,84 @@ public abstract class AbstractWarehouseState implements WarehouseState
         }
     }
 
-    public abstract void when(WarehouseStateCreated e);
+    public void when(WarehouseStateCreated e)
+    {
+        throwOnWrongEvent(e);
+        this.setName(e.getName());
+        this.setDescription(e.getDescription());
+        this.setIsInTransit(e.getIsInTransit());
+        this.setActive(e.getActive());
 
-    public abstract void when(WarehouseStateMergePatched e);
+        this.setDeleted(false);
 
-    public abstract void when(WarehouseStateDeleted e);
+        this.setCreatedBy(e.getCreatedBy());
+        this.setCreatedAt(e.getCreatedAt());
 
+    }
+
+    public void when(WarehouseStateMergePatched e)
+    {
+        throwOnWrongEvent(e);
+
+        if (e.getName() == null)
+        {
+            if (e.isPropertyNameRemoved() != null && e.isPropertyNameRemoved())
+            {
+                this.setName(null);
+            }
+        }
+        else
+        {
+            this.setName(e.getName());
+        }
+        if (e.getDescription() == null)
+        {
+            if (e.isPropertyDescriptionRemoved() != null && e.isPropertyDescriptionRemoved())
+            {
+                this.setDescription(null);
+            }
+        }
+        else
+        {
+            this.setDescription(e.getDescription());
+        }
+        if (e.getIsInTransit() == null)
+        {
+            if (e.isPropertyIsInTransitRemoved() != null && e.isPropertyIsInTransitRemoved())
+            {
+                this.setIsInTransit(null);
+            }
+        }
+        else
+        {
+            this.setIsInTransit(e.getIsInTransit());
+        }
+        if (e.getActive() == null)
+        {
+            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            {
+                this.setActive(null);
+            }
+        }
+        else
+        {
+            this.setActive(e.getActive());
+        }
+
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
+
+    public void when(WarehouseStateDeleted e)
+    {
+        throwOnWrongEvent(e);
+
+        this.setDeleted(true);
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
 
     protected void throwOnWrongEvent(WarehouseStateEvent stateEvent)
     {
@@ -179,7 +251,7 @@ public abstract class AbstractWarehouseState implements WarehouseState
         String eventEntityId = stateEvent.getStateEventId().getWarehouseId(); // EntityBase.Aggregate.GetStateEventIdPropertyIdName();
         if (!stateEntityId.equals(eventEntityId))
         {
-            DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
+            throw DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
         }
 
         Long stateVersion = this.getVersion();

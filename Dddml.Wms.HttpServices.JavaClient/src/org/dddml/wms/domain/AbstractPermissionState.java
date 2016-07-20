@@ -166,12 +166,84 @@ public abstract class AbstractPermissionState implements PermissionState
         }
     }
 
-    public abstract void when(PermissionStateCreated e);
+    public void when(PermissionStateCreated e)
+    {
+        throwOnWrongEvent(e);
+        this.setName(e.getName());
+        this.setParentPermissionId(e.getParentPermissionId());
+        this.setDescription(e.getDescription());
+        this.setActive(e.getActive());
 
-    public abstract void when(PermissionStateMergePatched e);
+        this.setDeleted(false);
 
-    public abstract void when(PermissionStateDeleted e);
+        this.setCreatedBy(e.getCreatedBy());
+        this.setCreatedAt(e.getCreatedAt());
 
+    }
+
+    public void when(PermissionStateMergePatched e)
+    {
+        throwOnWrongEvent(e);
+
+        if (e.getName() == null)
+        {
+            if (e.isPropertyNameRemoved() != null && e.isPropertyNameRemoved())
+            {
+                this.setName(null);
+            }
+        }
+        else
+        {
+            this.setName(e.getName());
+        }
+        if (e.getParentPermissionId() == null)
+        {
+            if (e.isPropertyParentPermissionIdRemoved() != null && e.isPropertyParentPermissionIdRemoved())
+            {
+                this.setParentPermissionId(null);
+            }
+        }
+        else
+        {
+            this.setParentPermissionId(e.getParentPermissionId());
+        }
+        if (e.getDescription() == null)
+        {
+            if (e.isPropertyDescriptionRemoved() != null && e.isPropertyDescriptionRemoved())
+            {
+                this.setDescription(null);
+            }
+        }
+        else
+        {
+            this.setDescription(e.getDescription());
+        }
+        if (e.getActive() == null)
+        {
+            if (e.isPropertyActiveRemoved() != null && e.isPropertyActiveRemoved())
+            {
+                this.setActive(null);
+            }
+        }
+        else
+        {
+            this.setActive(e.getActive());
+        }
+
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
+
+    public void when(PermissionStateDeleted e)
+    {
+        throwOnWrongEvent(e);
+
+        this.setDeleted(true);
+        this.setUpdatedBy(e.getCreatedBy());
+        this.setUpdatedAt(e.getCreatedAt());
+
+    }
 
     protected void throwOnWrongEvent(PermissionStateEvent stateEvent)
     {
@@ -179,7 +251,7 @@ public abstract class AbstractPermissionState implements PermissionState
         String eventEntityId = stateEvent.getStateEventId().getPermissionId(); // EntityBase.Aggregate.GetStateEventIdPropertyIdName();
         if (!stateEntityId.equals(eventEntityId))
         {
-            DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
+            throw DomainError.named("mutateWrongEntity", "Entity Id %1$s in state but entity id %2$s in event", stateEntityId, eventEntityId);
         }
 
         Long stateVersion = this.getVersion();

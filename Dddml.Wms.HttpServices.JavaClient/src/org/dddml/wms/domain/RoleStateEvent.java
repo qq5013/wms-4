@@ -20,6 +20,14 @@ public interface RoleStateEvent extends Event
 
     void setDescription(String description);
 
+    String getCreatedBy();
+
+    void setCreatedBy(String createdBy);
+
+    Date getCreatedAt();
+
+    void setCreatedAt(Date createdAt);
+
     Boolean getActive();
 
     void setActive(Boolean active);

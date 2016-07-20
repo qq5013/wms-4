@@ -10,7 +10,7 @@ public abstract class AbstractStateEventDto
 
     public static final String STATE_EVENT_TYPE_DELETED = StateEventType.DELETED;
 
-    public static  final String STATE_EVENT_TYPE_REMOVED = StateEventType.REMOVED;
+    public static final String STATE_EVENT_TYPE_REMOVED = StateEventType.REMOVED;
 
     private String stateEventType;
 

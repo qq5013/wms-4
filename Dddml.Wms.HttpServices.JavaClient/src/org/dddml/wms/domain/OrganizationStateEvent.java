@@ -5,7 +5,6 @@ import org.dddml.wms.specialization.Event;
 
 public interface OrganizationStateEvent extends Event
 {
-
     OrganizationStateEventId getStateEventId();
 
     boolean getStateEventReadOnly();

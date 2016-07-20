@@ -6,7 +6,6 @@ import org.dddml.wms.specialization.Event;
 
 public interface AttributeSetInstanceStateEvent extends Event
 {
-
     AttributeSetInstanceStateEventId getStateEventId();
 
     boolean getStateEventReadOnly();

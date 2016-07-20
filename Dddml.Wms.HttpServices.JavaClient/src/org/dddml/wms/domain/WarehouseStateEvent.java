@@ -5,7 +5,6 @@ import org.dddml.wms.specialization.Event;
 
 public interface WarehouseStateEvent extends Event
 {
-
     WarehouseStateEventId getStateEventId();
 
     boolean getStateEventReadOnly();

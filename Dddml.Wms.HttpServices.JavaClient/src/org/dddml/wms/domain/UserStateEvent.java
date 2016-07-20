@@ -5,7 +5,6 @@ import org.dddml.wms.specialization.Event;
 
 public interface UserStateEvent extends Event
 {
-
     UserStateEventId getStateEventId();
 
     boolean getStateEventReadOnly();

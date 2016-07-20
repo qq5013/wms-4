@@ -5,7 +5,6 @@ import org.dddml.wms.specialization.Event;
 
 public interface RoleStateEvent extends Event
 {
-
     RoleStateEventId getStateEventId();
 
     boolean getStateEventReadOnly();

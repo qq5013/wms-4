@@ -10,7 +10,7 @@ public abstract class AbstractCommandDto
 
     public static final String COMMAND_TYPE_DELETE = CommandType.DELETE;
 
-    public static  final String COMMAND_TYPE_REMOVE = CommandType.REMOVE;
+    public static final String COMMAND_TYPE_REMOVE = CommandType.REMOVE;
 
     private String commandType;
 

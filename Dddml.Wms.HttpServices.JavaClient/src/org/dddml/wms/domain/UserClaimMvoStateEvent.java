@@ -5,7 +5,6 @@ import org.dddml.wms.specialization.Event;
 
 public interface UserClaimMvoStateEvent extends Event
 {
-
     UserClaimMvoStateEventId getStateEventId();
 
     boolean getStateEventReadOnly();

@@ -27,6 +27,15 @@ public class OrganizationStateEventId
         this.version = version;
     }
 
+    OrganizationStateEventId ()
+    {
+    }
+
+    public OrganizationStateEventId (String organizationId, Long version)
+    {
+        this.organizationId = organizationId;
+        this.version = version;
+    }
 
 }
 

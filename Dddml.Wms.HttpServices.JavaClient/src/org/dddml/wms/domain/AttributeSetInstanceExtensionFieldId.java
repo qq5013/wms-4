@@ -27,6 +27,15 @@ public class AttributeSetInstanceExtensionFieldId
         this.index = index;
     }
 
+    AttributeSetInstanceExtensionFieldId ()
+    {
+    }
+
+    public AttributeSetInstanceExtensionFieldId (String groupId, String index)
+    {
+        this.groupId = groupId;
+        this.index = index;
+    }
 
 }
 

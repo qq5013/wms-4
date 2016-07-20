@@ -7,6 +7,11 @@ import org.dddml.wms.domain.AttributeUseStateEvent.*;
 
 public interface AttributeUseState
 {
+
+    AttributeSetAttributeUseId getAttributeSetAttributeUseId();
+
+    void setAttributeSetAttributeUseId(AttributeSetAttributeUseId attributeSetAttributeUseId);
+
     String getAttributeId();
 
     void setAttributeId(String attributeId);
@@ -19,9 +24,29 @@ public interface AttributeUseState
 
     void setVersion(Long version);
 
+    String getCreatedBy();
+
+    void setCreatedBy(String createdBy);
+
+    Date getCreatedAt();
+
+    void setCreatedAt(Date createdAt);
+
+    String getUpdatedBy();
+
+    void setUpdatedBy(String updatedBy);
+
+    Date getUpdatedAt();
+
+    void setUpdatedAt(Date updatedAt);
+
     Boolean getActive();
 
     void setActive(Boolean active);
+
+    Boolean getDeleted();
+
+    void setDeleted(Boolean deleted);
 
     String getAttributeSetId();
 

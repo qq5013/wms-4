@@ -57,6 +57,15 @@ public class UserLoginMvoStateEventId
         getUserLoginId().getLoginKey().setProviderKey(userLoginIdLoginKeyProviderKey);
     }
 
+    UserLoginMvoStateEventId ()
+    {
+    }
+
+    public UserLoginMvoStateEventId (UserLoginId userLoginId, Long userVersion)
+    {
+        this.userLoginId = userLoginId;
+        this.userVersion = userVersion;
+    }
 
 }
 

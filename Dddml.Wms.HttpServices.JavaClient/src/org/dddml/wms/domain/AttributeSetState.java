@@ -7,6 +7,7 @@ import org.dddml.wms.domain.AttributeSetStateEvent.*;
 
 public interface AttributeSetState
 {
+
     String getAttributeSetId();
 
     void setAttributeSetId(String attributeSetId);
@@ -39,9 +40,29 @@ public interface AttributeSetState
 
     void setVersion(Long version);
 
+    String getCreatedBy();
+
+    void setCreatedBy(String createdBy);
+
+    Date getCreatedAt();
+
+    void setCreatedAt(Date createdAt);
+
+    String getUpdatedBy();
+
+    void setUpdatedBy(String updatedBy);
+
+    Date getUpdatedAt();
+
+    void setUpdatedAt(Date updatedAt);
+
     Boolean getActive();
 
     void setActive(Boolean active);
+
+    Boolean getDeleted();
+
+    void setDeleted(Boolean deleted);
 
 
     boolean isStateUnsaved();

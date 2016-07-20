@@ -39,6 +39,16 @@ public class AttributeSetInstanceExtensionFieldStateEventId
         this.attributeSetInstanceExtensionFieldGroupVersion = attributeSetInstanceExtensionFieldGroupVersion;
     }
 
+    AttributeSetInstanceExtensionFieldStateEventId ()
+    {
+    }
+
+    public AttributeSetInstanceExtensionFieldStateEventId (String groupId, String index, Long attributeSetInstanceExtensionFieldGroupVersion)
+    {
+        this.groupId = groupId;
+        this.index = index;
+        this.attributeSetInstanceExtensionFieldGroupVersion = attributeSetInstanceExtensionFieldGroupVersion;
+    }
 
 }
 

@@ -59,6 +59,16 @@ public class InOutLineStateEventId
         getSkuId().setAttributeSetInstanceId(skuIdAttributeSetInstanceId);
     }
 
+    InOutLineStateEventId ()
+    {
+    }
+
+    public InOutLineStateEventId (String inOutDocumentNumber, SkuId skuId, Long inOutVersion)
+    {
+        this.inOutDocumentNumber = inOutDocumentNumber;
+        this.skuId = skuId;
+        this.inOutVersion = inOutVersion;
+    }
 
 }
 

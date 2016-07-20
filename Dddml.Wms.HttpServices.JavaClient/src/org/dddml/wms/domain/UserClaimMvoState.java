@@ -7,6 +7,7 @@ import org.dddml.wms.domain.UserClaimMvoStateEvent.*;
 
 public interface UserClaimMvoState
 {
+
     UserClaimId getUserClaimId();
 
     void setUserClaimId(UserClaimId userClaimId);
@@ -23,9 +24,29 @@ public interface UserClaimMvoState
 
     void setVersion(Long version);
 
+    String getCreatedBy();
+
+    void setCreatedBy(String createdBy);
+
+    Date getCreatedAt();
+
+    void setCreatedAt(Date createdAt);
+
+    String getUpdatedBy();
+
+    void setUpdatedBy(String updatedBy);
+
+    Date getUpdatedAt();
+
+    void setUpdatedAt(Date updatedAt);
+
     Boolean getActive();
 
     void setActive(Boolean active);
+
+    Boolean getDeleted();
+
+    void setDeleted(Boolean deleted);
 
     String getUserUserName();
 

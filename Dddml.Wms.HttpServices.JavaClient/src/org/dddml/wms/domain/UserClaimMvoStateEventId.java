@@ -47,6 +47,15 @@ public class UserClaimMvoStateEventId
         getUserClaimId().setClaimId(userClaimIdClaimId);
     }
 
+    UserClaimMvoStateEventId ()
+    {
+    }
+
+    public UserClaimMvoStateEventId (UserClaimId userClaimId, Long userVersion)
+    {
+        this.userClaimId = userClaimId;
+        this.userVersion = userVersion;
+    }
 
 }
 

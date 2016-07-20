@@ -7,6 +7,7 @@ import org.dddml.wms.domain.UserRoleMvoStateEvent.*;
 
 public interface UserRoleMvoState
 {
+
     UserRoleId getUserRoleId();
 
     void setUserRoleId(UserRoleId userRoleId);
@@ -15,9 +16,29 @@ public interface UserRoleMvoState
 
     void setVersion(Long version);
 
+    String getCreatedBy();
+
+    void setCreatedBy(String createdBy);
+
+    Date getCreatedAt();
+
+    void setCreatedAt(Date createdAt);
+
+    String getUpdatedBy();
+
+    void setUpdatedBy(String updatedBy);
+
+    Date getUpdatedAt();
+
+    void setUpdatedAt(Date updatedAt);
+
     Boolean getActive();
 
     void setActive(Boolean active);
+
+    Boolean getDeleted();
+
+    void setDeleted(Boolean deleted);
 
     String getUserUserName();
 

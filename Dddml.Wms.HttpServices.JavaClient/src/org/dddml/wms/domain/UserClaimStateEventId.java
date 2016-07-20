@@ -39,6 +39,16 @@ public class UserClaimStateEventId
         this.userVersion = userVersion;
     }
 
+    UserClaimStateEventId ()
+    {
+    }
+
+    public UserClaimStateEventId (String userId, Integer claimId, Long userVersion)
+    {
+        this.userId = userId;
+        this.claimId = claimId;
+        this.userVersion = userVersion;
+    }
 
 }
 

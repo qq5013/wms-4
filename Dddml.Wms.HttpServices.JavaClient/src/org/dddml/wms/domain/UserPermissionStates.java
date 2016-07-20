@@ -5,11 +5,11 @@ import org.dddml.wms.specialization.Saveable;
 
 public interface UserPermissionStates extends Iterable<UserPermissionState>, Saveable
 {
-        UserPermissionState get(String permissionId);
+    UserPermissionState get(String permissionId);
         
-        void remove(UserPermissionState state);
+    void remove(UserPermissionState state);
 
-        void addToSave(UserPermissionState state);
+    void addToSave(UserPermissionState state);
 
 }
 

@@ -27,6 +27,15 @@ public class InOutStateEventId
         this.version = version;
     }
 
+    InOutStateEventId ()
+    {
+    }
+
+    public InOutStateEventId (String documentNumber, Long version)
+    {
+        this.documentNumber = documentNumber;
+        this.version = version;
+    }
 
 }
 

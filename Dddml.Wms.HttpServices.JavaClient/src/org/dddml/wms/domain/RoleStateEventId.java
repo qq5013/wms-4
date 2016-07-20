@@ -27,6 +27,15 @@ public class RoleStateEventId
         this.version = version;
     }
 
+    RoleStateEventId ()
+    {
+    }
+
+    public RoleStateEventId (String roleId, Long version)
+    {
+        this.roleId = roleId;
+        this.version = version;
+    }
 
 }
 

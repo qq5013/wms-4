@@ -27,6 +27,15 @@ public class UserPermissionId
         this.permissionId = permissionId;
     }
 
+    UserPermissionId ()
+    {
+    }
+
+    public UserPermissionId (String userId, String permissionId)
+    {
+        this.userId = userId;
+        this.permissionId = permissionId;
+    }
 
 }
 

@@ -47,6 +47,15 @@ public class InOutLineId
         getSkuId().setAttributeSetInstanceId(skuIdAttributeSetInstanceId);
     }
 
+    InOutLineId ()
+    {
+    }
+
+    public InOutLineId (String inOutDocumentNumber, SkuId skuId)
+    {
+        this.inOutDocumentNumber = inOutDocumentNumber;
+        this.skuId = skuId;
+    }
 
 }
 

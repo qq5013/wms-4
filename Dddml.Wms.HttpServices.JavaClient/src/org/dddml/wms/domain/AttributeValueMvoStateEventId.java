@@ -47,6 +47,15 @@ public class AttributeValueMvoStateEventId
         getAttributeValueId().setValue(attributeValueIdValue);
     }
 
+    AttributeValueMvoStateEventId ()
+    {
+    }
+
+    public AttributeValueMvoStateEventId (AttributeValueId attributeValueId, Long attributeVersion)
+    {
+        this.attributeValueId = attributeValueId;
+        this.attributeVersion = attributeVersion;
+    }
 
 }
 

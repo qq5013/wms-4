@@ -47,6 +47,15 @@ public class RolePermissionStateEventId
         getId().setPermissionId(idPermissionId);
     }
 
+    RolePermissionStateEventId ()
+    {
+    }
+
+    public RolePermissionStateEventId (RolePermissionId id, Long version)
+    {
+        this.id = id;
+        this.version = version;
+    }
 
 }
 

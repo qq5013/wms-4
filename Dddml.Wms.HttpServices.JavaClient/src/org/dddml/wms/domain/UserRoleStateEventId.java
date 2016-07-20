@@ -39,6 +39,16 @@ public class UserRoleStateEventId
         this.userVersion = userVersion;
     }
 
+    UserRoleStateEventId ()
+    {
+    }
+
+    public UserRoleStateEventId (String userId, String roleId, Long userVersion)
+    {
+        this.userId = userId;
+        this.roleId = roleId;
+        this.userVersion = userVersion;
+    }
 
 }
 

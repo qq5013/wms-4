@@ -59,6 +59,16 @@ public class UserLoginStateEventId
         getLoginKey().setProviderKey(loginKeyProviderKey);
     }
 
+    UserLoginStateEventId ()
+    {
+    }
+
+    public UserLoginStateEventId (String userId, LoginKey loginKey, Long userVersion)
+    {
+        this.userId = userId;
+        this.loginKey = loginKey;
+        this.userVersion = userVersion;
+    }
 
 }
 

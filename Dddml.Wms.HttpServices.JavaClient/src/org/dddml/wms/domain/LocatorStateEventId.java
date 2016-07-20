@@ -27,6 +27,15 @@ public class LocatorStateEventId
         this.version = version;
     }
 
+    LocatorStateEventId ()
+    {
+    }
+
+    public LocatorStateEventId (String locatorId, Long version)
+    {
+        this.locatorId = locatorId;
+        this.version = version;
+    }
 
 }
 

@@ -27,6 +27,15 @@ public class RolePermissionId
         this.permissionId = permissionId;
     }
 
+    RolePermissionId ()
+    {
+    }
+
+    public RolePermissionId (String roleId, String permissionId)
+    {
+        this.roleId = roleId;
+        this.permissionId = permissionId;
+    }
 
 }
 

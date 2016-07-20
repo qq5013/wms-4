@@ -57,6 +57,15 @@ public class InOutLineMvoStateEventId
         getInOutLineId().getSkuId().setAttributeSetInstanceId(inOutLineIdSkuIdAttributeSetInstanceId);
     }
 
+    InOutLineMvoStateEventId ()
+    {
+    }
+
+    public InOutLineMvoStateEventId (InOutLineId inOutLineId, Long inOutVersion)
+    {
+        this.inOutLineId = inOutLineId;
+        this.inOutVersion = inOutVersion;
+    }
 
 }
 

@@ -7,6 +7,11 @@ import org.dddml.wms.domain.UserLoginStateEvent.*;
 
 public interface UserLoginState
 {
+
+    UserLoginId getUserLoginId();
+
+    void setUserLoginId(UserLoginId userLoginId);
+
     LoginKey getLoginKey();
 
     void setLoginKey(LoginKey loginKey);
@@ -15,9 +20,29 @@ public interface UserLoginState
 
     void setVersion(Long version);
 
+    String getCreatedBy();
+
+    void setCreatedBy(String createdBy);
+
+    Date getCreatedAt();
+
+    void setCreatedAt(Date createdAt);
+
+    String getUpdatedBy();
+
+    void setUpdatedBy(String updatedBy);
+
+    Date getUpdatedAt();
+
+    void setUpdatedAt(Date updatedAt);
+
     Boolean getActive();
 
     void setActive(Boolean active);
+
+    Boolean getDeleted();
+
+    void setDeleted(Boolean deleted);
 
     String getUserId();
 

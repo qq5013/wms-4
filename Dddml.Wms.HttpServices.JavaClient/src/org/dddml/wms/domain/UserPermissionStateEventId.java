@@ -39,6 +39,16 @@ public class UserPermissionStateEventId
         this.userVersion = userVersion;
     }
 
+    UserPermissionStateEventId ()
+    {
+    }
+
+    public UserPermissionStateEventId (String userId, String permissionId, Long userVersion)
+    {
+        this.userId = userId;
+        this.permissionId = permissionId;
+        this.userVersion = userVersion;
+    }
 
 }
 

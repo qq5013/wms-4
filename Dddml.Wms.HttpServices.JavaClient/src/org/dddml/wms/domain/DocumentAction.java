@@ -15,6 +15,14 @@ public class DocumentAction
         this.name = name;
     }
 
+    DocumentAction ()
+    {
+    }
+
+    public DocumentAction (String name)
+    {
+        this.name = name;
+    }
 
 }
 

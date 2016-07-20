@@ -27,6 +27,15 @@ public class PermissionStateEventId
         this.version = version;
     }
 
+    PermissionStateEventId ()
+    {
+    }
+
+    public PermissionStateEventId (String permissionId, Long version)
+    {
+        this.permissionId = permissionId;
+        this.version = version;
+    }
 
 }
 

@@ -39,6 +39,16 @@ public class OrganizationStructureId
         this.subsidiaryId = subsidiaryId;
     }
 
+    OrganizationStructureId ()
+    {
+    }
+
+    public OrganizationStructureId (String organizationStructureTypeId, String parentId, String subsidiaryId)
+    {
+        this.organizationStructureTypeId = organizationStructureTypeId;
+        this.parentId = parentId;
+        this.subsidiaryId = subsidiaryId;
+    }
 
 }
 

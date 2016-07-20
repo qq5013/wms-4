@@ -47,6 +47,15 @@ public class AttributeUseMvoStateEventId
         getAttributeSetAttributeUseId().setAttributeId(attributeSetAttributeUseIdAttributeId);
     }
 
+    AttributeUseMvoStateEventId ()
+    {
+    }
+
+    public AttributeUseMvoStateEventId (AttributeSetAttributeUseId attributeSetAttributeUseId, Long attributeSetVersion)
+    {
+        this.attributeSetAttributeUseId = attributeSetAttributeUseId;
+        this.attributeSetVersion = attributeSetVersion;
+    }
 
 }
 

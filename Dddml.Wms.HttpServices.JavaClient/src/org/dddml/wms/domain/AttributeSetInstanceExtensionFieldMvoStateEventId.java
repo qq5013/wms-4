@@ -47,6 +47,15 @@ public class AttributeSetInstanceExtensionFieldMvoStateEventId
         getAttributeSetInstanceExtensionFieldId().setIndex(attributeSetInstanceExtensionFieldIdIndex);
     }
 
+    AttributeSetInstanceExtensionFieldMvoStateEventId ()
+    {
+    }
+
+    public AttributeSetInstanceExtensionFieldMvoStateEventId (AttributeSetInstanceExtensionFieldId attributeSetInstanceExtensionFieldId, Long attrSetInstEFGroupVersion)
+    {
+        this.attributeSetInstanceExtensionFieldId = attributeSetInstanceExtensionFieldId;
+        this.attrSetInstEFGroupVersion = attrSetInstEFGroupVersion;
+    }
 
 }
 

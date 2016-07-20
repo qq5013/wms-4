@@ -57,6 +57,15 @@ public class OrganizationStructureStateEventId
         getId().setSubsidiaryId(idSubsidiaryId);
     }
 
+    OrganizationStructureStateEventId ()
+    {
+    }
+
+    public OrganizationStructureStateEventId (OrganizationStructureId id, Long version)
+    {
+        this.id = id;
+        this.version = version;
+    }
 
 }
 

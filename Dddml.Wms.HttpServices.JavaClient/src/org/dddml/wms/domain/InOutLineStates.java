@@ -6,11 +6,11 @@ import org.dddml.wms.specialization.Saveable;
 
 public interface InOutLineStates extends Iterable<InOutLineState>, Saveable
 {
-        InOutLineState get(SkuId skuId);
+    InOutLineState get(SkuId skuId);
         
-        void remove(InOutLineState state);
+    void remove(InOutLineState state);
 
-        void addToSave(InOutLineState state);
+    void addToSave(InOutLineState state);
 
 }
 

@@ -47,6 +47,15 @@ public class UserPermissionMvoStateEventId
         getUserPermissionId().setPermissionId(userPermissionIdPermissionId);
     }
 
+    UserPermissionMvoStateEventId ()
+    {
+    }
+
+    public UserPermissionMvoStateEventId (UserPermissionId userPermissionId, Long userVersion)
+    {
+        this.userPermissionId = userPermissionId;
+        this.userVersion = userVersion;
+    }
 
 }
 

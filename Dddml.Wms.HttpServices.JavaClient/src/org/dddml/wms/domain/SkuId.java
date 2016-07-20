@@ -27,6 +27,15 @@ public class SkuId
         this.attributeSetInstanceId = attributeSetInstanceId;
     }
 
+    SkuId ()
+    {
+    }
+
+    public SkuId (String productId, String attributeSetInstanceId)
+    {
+        this.productId = productId;
+        this.attributeSetInstanceId = attributeSetInstanceId;
+    }
 
 }
 

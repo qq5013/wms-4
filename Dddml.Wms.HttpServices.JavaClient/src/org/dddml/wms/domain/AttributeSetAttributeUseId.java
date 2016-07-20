@@ -27,6 +27,15 @@ public class AttributeSetAttributeUseId
         this.attributeId = attributeId;
     }
 
+    AttributeSetAttributeUseId ()
+    {
+    }
+
+    public AttributeSetAttributeUseId (String attributeSetId, String attributeId)
+    {
+        this.attributeSetId = attributeSetId;
+        this.attributeId = attributeId;
+    }
 
 }
 

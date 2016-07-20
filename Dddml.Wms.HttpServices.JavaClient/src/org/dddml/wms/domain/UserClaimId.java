@@ -27,6 +27,15 @@ public class UserClaimId
         this.claimId = claimId;
     }
 
+    UserClaimId ()
+    {
+    }
+
+    public UserClaimId (String userId, Integer claimId)
+    {
+        this.userId = userId;
+        this.claimId = claimId;
+    }
 
 }
 

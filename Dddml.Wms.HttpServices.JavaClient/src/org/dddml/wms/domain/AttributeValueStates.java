@@ -5,11 +5,11 @@ import org.dddml.wms.specialization.Saveable;
 
 public interface AttributeValueStates extends Iterable<AttributeValueState>, Saveable
 {
-        AttributeValueState get(String value);
+    AttributeValueState get(String value);
         
-        void remove(AttributeValueState state);
+    void remove(AttributeValueState state);
 
-        void addToSave(AttributeValueState state);
+    void addToSave(AttributeValueState state);
 
 }
 

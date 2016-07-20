@@ -27,6 +27,15 @@ public class AttributeValueId
         this.value = value;
     }
 
+    AttributeValueId ()
+    {
+    }
+
+    public AttributeValueId (String attributeId, String value)
+    {
+        this.attributeId = attributeId;
+        this.value = value;
+    }
 
 }
 

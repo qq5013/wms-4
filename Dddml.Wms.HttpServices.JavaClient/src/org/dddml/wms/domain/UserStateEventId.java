@@ -27,6 +27,15 @@ public class UserStateEventId
         this.version = version;
     }
 
+    UserStateEventId ()
+    {
+    }
+
+    public UserStateEventId (String userId, Long version)
+    {
+        this.userId = userId;
+        this.version = version;
+    }
 
 }
 

@@ -7,6 +7,11 @@ import org.dddml.wms.domain.AttributeSetInstanceExtensionFieldStateEvent.*;
 
 public interface AttributeSetInstanceExtensionFieldState
 {
+
+    AttributeSetInstanceExtensionFieldId getAttributeSetInstanceExtensionFieldId();
+
+    void setAttributeSetInstanceExtensionFieldId(AttributeSetInstanceExtensionFieldId attributeSetInstanceExtensionFieldId);
+
     String getIndex();
 
     void setIndex(String index);
@@ -35,9 +40,29 @@ public interface AttributeSetInstanceExtensionFieldState
 
     void setVersion(Long version);
 
+    String getCreatedBy();
+
+    void setCreatedBy(String createdBy);
+
+    Date getCreatedAt();
+
+    void setCreatedAt(Date createdAt);
+
+    String getUpdatedBy();
+
+    void setUpdatedBy(String updatedBy);
+
+    Date getUpdatedAt();
+
+    void setUpdatedAt(Date updatedAt);
+
     Boolean getActive();
 
     void setActive(Boolean active);
+
+    Boolean getDeleted();
+
+    void setDeleted(Boolean deleted);
 
     String getGroupId();
 

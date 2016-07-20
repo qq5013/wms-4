@@ -27,6 +27,15 @@ public class AttributeSetStateEventId
         this.version = version;
     }
 
+    AttributeSetStateEventId ()
+    {
+    }
+
+    public AttributeSetStateEventId (String attributeSetId, Long version)
+    {
+        this.attributeSetId = attributeSetId;
+        this.version = version;
+    }
 
 }
 

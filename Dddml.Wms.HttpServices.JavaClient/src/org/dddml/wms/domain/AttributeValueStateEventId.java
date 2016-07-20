@@ -39,6 +39,16 @@ public class AttributeValueStateEventId
         this.attributeVersion = attributeVersion;
     }
 
+    AttributeValueStateEventId ()
+    {
+    }
+
+    public AttributeValueStateEventId (String attributeId, String value, Long attributeVersion)
+    {
+        this.attributeId = attributeId;
+        this.value = value;
+        this.attributeVersion = attributeVersion;
+    }
 
 }
 

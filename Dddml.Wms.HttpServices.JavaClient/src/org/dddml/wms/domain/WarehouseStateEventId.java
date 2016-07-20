@@ -27,6 +27,15 @@ public class WarehouseStateEventId
         this.version = version;
     }
 
+    WarehouseStateEventId ()
+    {
+    }
+
+    public WarehouseStateEventId (String warehouseId, Long version)
+    {
+        this.warehouseId = warehouseId;
+        this.version = version;
+    }
 
 }
 

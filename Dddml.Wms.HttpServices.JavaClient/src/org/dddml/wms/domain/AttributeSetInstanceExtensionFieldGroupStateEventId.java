@@ -27,6 +27,15 @@ public class AttributeSetInstanceExtensionFieldGroupStateEventId
         this.version = version;
     }
 
+    AttributeSetInstanceExtensionFieldGroupStateEventId ()
+    {
+    }
+
+    public AttributeSetInstanceExtensionFieldGroupStateEventId (String id, Long version)
+    {
+        this.id = id;
+        this.version = version;
+    }
 
 }
 

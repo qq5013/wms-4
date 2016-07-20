@@ -7,6 +7,7 @@ import org.dddml.wms.domain.OrganizationStateEvent.*;
 
 public interface OrganizationState
 {
+
     String getOrganizationId();
 
     void setOrganizationId(String organizationId);
@@ -31,9 +32,29 @@ public interface OrganizationState
 
     void setVersion(Long version);
 
+    String getCreatedBy();
+
+    void setCreatedBy(String createdBy);
+
+    Date getCreatedAt();
+
+    void setCreatedAt(Date createdAt);
+
+    String getUpdatedBy();
+
+    void setUpdatedBy(String updatedBy);
+
+    Date getUpdatedAt();
+
+    void setUpdatedAt(Date updatedAt);
+
     Boolean getActive();
 
     void setActive(Boolean active);
+
+    Boolean getDeleted();
+
+    void setDeleted(Boolean deleted);
 
 
     boolean isStateUnsaved();

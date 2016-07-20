@@ -7,6 +7,7 @@ import org.dddml.wms.domain.LocatorStateEvent.*;
 
 public interface LocatorState
 {
+
     String getLocatorId();
 
     void setLocatorId(String locatorId);
@@ -47,9 +48,29 @@ public interface LocatorState
 
     void setVersion(Long version);
 
+    String getCreatedBy();
+
+    void setCreatedBy(String createdBy);
+
+    Date getCreatedAt();
+
+    void setCreatedAt(Date createdAt);
+
+    String getUpdatedBy();
+
+    void setUpdatedBy(String updatedBy);
+
+    Date getUpdatedAt();
+
+    void setUpdatedAt(Date updatedAt);
+
     Boolean getActive();
 
     void setActive(Boolean active);
+
+    Boolean getDeleted();
+
+    void setDeleted(Boolean deleted);
 
 
     boolean isStateUnsaved();

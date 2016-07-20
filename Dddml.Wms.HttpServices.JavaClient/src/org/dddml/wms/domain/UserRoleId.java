@@ -27,6 +27,15 @@ public class UserRoleId
         this.roleId = roleId;
     }
 
+    UserRoleId ()
+    {
+    }
+
+    public UserRoleId (String userId, String roleId)
+    {
+        this.userId = userId;
+        this.roleId = roleId;
+    }
 
 }
 

@@ -27,6 +27,15 @@ public class LoginKey
         this.providerKey = providerKey;
     }
 
+    LoginKey ()
+    {
+    }
+
+    public LoginKey (String loginProvider, String providerKey)
+    {
+        this.loginProvider = loginProvider;
+        this.providerKey = providerKey;
+    }
 
 }
 

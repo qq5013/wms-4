@@ -3,8 +3,9 @@
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
+use Dddml\FlattenedDtoInterface;
 
-class SkuIdFlattenedDto implements \Serializable
+class SkuIdFlattenedDto implements FlattenedDtoInterface
 {
 
     const PROPERTIES = [
@@ -80,7 +81,7 @@ class SkuIdFlattenedDto implements \Serializable
         $this->value->setAttributeSetInstanceId($attributeSetInstanceId);
     }
 
-    public function serialize()
+    public function toString()
     {
         $pValues = [
             $this->getProductId(),
@@ -89,7 +90,7 @@ class SkuIdFlattenedDto implements \Serializable
         return implode(',', $pValues);
     }
 
-    public function unserialize($data)
+    public function fromString($data)
     {
         $pValues = explode(',', $data);
         $this->setProductId($pValues[0]);

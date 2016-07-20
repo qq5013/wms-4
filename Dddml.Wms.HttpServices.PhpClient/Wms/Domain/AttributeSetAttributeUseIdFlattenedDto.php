@@ -3,8 +3,9 @@
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
+use Dddml\FlattenedDtoInterface;
 
-class AttributeSetAttributeUseIdFlattenedDto implements \Serializable
+class AttributeSetAttributeUseIdFlattenedDto implements FlattenedDtoInterface
 {
 
     const PROPERTIES = [
@@ -80,7 +81,7 @@ class AttributeSetAttributeUseIdFlattenedDto implements \Serializable
         $this->value->setAttributeId($attributeId);
     }
 
-    public function serialize()
+    public function toString()
     {
         $pValues = [
             $this->getAttributeSetId(),
@@ -89,7 +90,7 @@ class AttributeSetAttributeUseIdFlattenedDto implements \Serializable
         return implode(',', $pValues);
     }
 
-    public function unserialize($data)
+    public function fromString($data)
     {
         $pValues = explode(',', $data);
         $this->setAttributeSetId($pValues[0]);

@@ -3,8 +3,9 @@
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
+use Dddml\FlattenedDtoInterface;
 
-class UserLoginIdFlattenedDto implements \Serializable
+class UserLoginIdFlattenedDto implements FlattenedDtoInterface
 {
 
     const PROPERTIES = [
@@ -97,7 +98,7 @@ class UserLoginIdFlattenedDto implements \Serializable
         $this->value->getLoginKey()->setProviderKey($loginKeyProviderKey);
     }
 
-    public function serialize()
+    public function toString()
     {
         $pValues = [
             $this->getUserId(),
@@ -107,7 +108,7 @@ class UserLoginIdFlattenedDto implements \Serializable
         return implode(',', $pValues);
     }
 
-    public function unserialize($data)
+    public function fromString($data)
     {
         $pValues = explode(',', $data);
         $this->setUserId($pValues[0]);

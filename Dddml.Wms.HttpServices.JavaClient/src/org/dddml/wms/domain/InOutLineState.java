@@ -9,7 +9,9 @@ import org.dddml.wms.domain.InOutLineStateEvent.*;
 public interface InOutLineState
 {
 
+    InOutLineId getInOutLineId();
 
+    void setInOutLineId(InOutLineId inOutLineId);
 
     SkuId getSkuId();
 

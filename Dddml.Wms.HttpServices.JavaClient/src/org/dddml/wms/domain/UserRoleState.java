@@ -8,7 +8,9 @@ import org.dddml.wms.domain.UserRoleStateEvent.*;
 public interface UserRoleState
 {
 
+    UserRoleId getUserRoleId();
 
+    void setUserRoleId(UserRoleId userRoleId);
 
     String getRoleId();
 

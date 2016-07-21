@@ -302,51 +302,51 @@ public abstract class AbstractUserStateEvent implements UserStateEvent
     }
 
     public UserRoleStateEvent.UserRoleStateCreated newUserRoleStateCreated(String roleId) {
-        return new SimpleUserRoleStateCreated(newUserRoleStateEventId(roleId));
+        return new AbstractUserRoleStateEvent.SimpleUserRoleStateCreated(newUserRoleStateEventId(roleId));
     }
 
     public UserRoleStateEvent.UserRoleStateMergePatched newUserRoleStateMergePatched(String roleId) {
-        return new SimpleUserRoleStateMergePatched(newUserRoleStateEventId(roleId));
+        return new AbstractUserRoleStateEvent.SimpleUserRoleStateMergePatched(newUserRoleStateEventId(roleId));
     }
 
     public UserRoleStateEvent.UserRoleStateRemoved newUserRoleStateRemoved(String roleId) {
-        return new SimpleUserRoleStateRemoved(newUserRoleStateEventId(roleId));
+        return new AbstractUserRoleStateEvent.SimpleUserRoleStateRemoved(newUserRoleStateEventId(roleId));
     }
 
     public UserClaimStateEvent.UserClaimStateCreated newUserClaimStateCreated(Integer claimId) {
-        return new SimpleUserClaimStateCreated(newUserClaimStateEventId(claimId));
+        return new AbstractUserClaimStateEvent.SimpleUserClaimStateCreated(newUserClaimStateEventId(claimId));
     }
 
     public UserClaimStateEvent.UserClaimStateMergePatched newUserClaimStateMergePatched(Integer claimId) {
-        return new SimpleUserClaimStateMergePatched(newUserClaimStateEventId(claimId));
+        return new AbstractUserClaimStateEvent.SimpleUserClaimStateMergePatched(newUserClaimStateEventId(claimId));
     }
 
     public UserClaimStateEvent.UserClaimStateRemoved newUserClaimStateRemoved(Integer claimId) {
-        return new SimpleUserClaimStateRemoved(newUserClaimStateEventId(claimId));
+        return new AbstractUserClaimStateEvent.SimpleUserClaimStateRemoved(newUserClaimStateEventId(claimId));
     }
 
     public UserPermissionStateEvent.UserPermissionStateCreated newUserPermissionStateCreated(String permissionId) {
-        return new SimpleUserPermissionStateCreated(newUserPermissionStateEventId(permissionId));
+        return new AbstractUserPermissionStateEvent.SimpleUserPermissionStateCreated(newUserPermissionStateEventId(permissionId));
     }
 
     public UserPermissionStateEvent.UserPermissionStateMergePatched newUserPermissionStateMergePatched(String permissionId) {
-        return new SimpleUserPermissionStateMergePatched(newUserPermissionStateEventId(permissionId));
+        return new AbstractUserPermissionStateEvent.SimpleUserPermissionStateMergePatched(newUserPermissionStateEventId(permissionId));
     }
 
     public UserPermissionStateEvent.UserPermissionStateRemoved newUserPermissionStateRemoved(String permissionId) {
-        return new SimpleUserPermissionStateRemoved(newUserPermissionStateEventId(permissionId));
+        return new AbstractUserPermissionStateEvent.SimpleUserPermissionStateRemoved(newUserPermissionStateEventId(permissionId));
     }
 
     public UserLoginStateEvent.UserLoginStateCreated newUserLoginStateCreated(LoginKey loginKey) {
-        return new SimpleUserLoginStateCreated(newUserLoginStateEventId(loginKey));
+        return new AbstractUserLoginStateEvent.SimpleUserLoginStateCreated(newUserLoginStateEventId(loginKey));
     }
 
     public UserLoginStateEvent.UserLoginStateMergePatched newUserLoginStateMergePatched(LoginKey loginKey) {
-        return new SimpleUserLoginStateMergePatched(newUserLoginStateEventId(loginKey));
+        return new AbstractUserLoginStateEvent.SimpleUserLoginStateMergePatched(newUserLoginStateEventId(loginKey));
     }
 
     public UserLoginStateEvent.UserLoginStateRemoved newUserLoginStateRemoved(LoginKey loginKey) {
-        return new SimpleUserLoginStateRemoved(newUserLoginStateEventId(loginKey));
+        return new AbstractUserLoginStateEvent.SimpleUserLoginStateRemoved(newUserLoginStateEventId(loginKey));
     }
 
 
@@ -853,7 +853,21 @@ public abstract class AbstractUserStateEvent implements UserStateEvent
             this.userLoginEvents.put(e.getStateEventId(), e);
         }
 
-
+        public void save()
+        {
+            for (UserRoleStateEvent e : this.getUserRoleEvents()) {
+                getUserRoleStateEventDao().save(e);
+            }
+            for (UserClaimStateEvent e : this.getUserClaimEvents()) {
+                getUserClaimStateEventDao().save(e);
+            }
+            for (UserPermissionStateEvent e : this.getUserPermissionEvents()) {
+                getUserPermissionStateEventDao().save(e);
+            }
+            for (UserLoginStateEvent e : this.getUserLoginEvents()) {
+                getUserLoginStateEventDao().save(e);
+            }
+        }
     }
 
 
@@ -1058,122 +1072,32 @@ public abstract class AbstractUserStateEvent implements UserStateEvent
             }
         }
     }
-        public static class SimpleUserRoleStateCreated extends AbstractUserRoleStateEvent.AbstractUserRoleStateCreated
+        public static class SimpleUserStateCreated extends AbstractUserStateCreated
         {
-			public SimpleUserRoleStateCreated() {
+			public SimpleUserStateCreated() {
 			}
 
-			public SimpleUserRoleStateCreated(UserRoleStateEventId stateEventId) {
+			public SimpleUserStateCreated(UserStateEventId stateEventId) {
 				super(stateEventId);
 			}
         }
 
-        public static class SimpleUserRoleStateMergePatched extends AbstractUserRoleStateEvent.AbstractUserRoleStateMergePatched
+        public static class SimpleUserStateMergePatched extends AbstractUserStateMergePatched
         {
-			public SimpleUserRoleStateMergePatched() {
+			public SimpleUserStateMergePatched() {
 			}
 
-			public SimpleUserRoleStateMergePatched(UserRoleStateEventId stateEventId) {
+			public SimpleUserStateMergePatched(UserStateEventId stateEventId) {
 				super(stateEventId);
 			}
         }
 
-        public static class SimpleUserRoleStateRemoved extends AbstractUserRoleStateEvent.AbstractUserRoleStateRemoved
+        public static class SimpleUserStateDeleted extends AbstractUserStateDeleted
         {
-			public SimpleUserRoleStateRemoved() {
+			public SimpleUserStateDeleted() {
 			}
 
-			public SimpleUserRoleStateRemoved(UserRoleStateEventId stateEventId) {
-				super(stateEventId);
-			}
-        }
-
-        public static class SimpleUserClaimStateCreated extends AbstractUserClaimStateEvent.AbstractUserClaimStateCreated
-        {
-			public SimpleUserClaimStateCreated() {
-			}
-
-			public SimpleUserClaimStateCreated(UserClaimStateEventId stateEventId) {
-				super(stateEventId);
-			}
-        }
-
-        public static class SimpleUserClaimStateMergePatched extends AbstractUserClaimStateEvent.AbstractUserClaimStateMergePatched
-        {
-			public SimpleUserClaimStateMergePatched() {
-			}
-
-			public SimpleUserClaimStateMergePatched(UserClaimStateEventId stateEventId) {
-				super(stateEventId);
-			}
-        }
-
-        public static class SimpleUserClaimStateRemoved extends AbstractUserClaimStateEvent.AbstractUserClaimStateRemoved
-        {
-			public SimpleUserClaimStateRemoved() {
-			}
-
-			public SimpleUserClaimStateRemoved(UserClaimStateEventId stateEventId) {
-				super(stateEventId);
-			}
-        }
-
-        public static class SimpleUserPermissionStateCreated extends AbstractUserPermissionStateEvent.AbstractUserPermissionStateCreated
-        {
-			public SimpleUserPermissionStateCreated() {
-			}
-
-			public SimpleUserPermissionStateCreated(UserPermissionStateEventId stateEventId) {
-				super(stateEventId);
-			}
-        }
-
-        public static class SimpleUserPermissionStateMergePatched extends AbstractUserPermissionStateEvent.AbstractUserPermissionStateMergePatched
-        {
-			public SimpleUserPermissionStateMergePatched() {
-			}
-
-			public SimpleUserPermissionStateMergePatched(UserPermissionStateEventId stateEventId) {
-				super(stateEventId);
-			}
-        }
-
-        public static class SimpleUserPermissionStateRemoved extends AbstractUserPermissionStateEvent.AbstractUserPermissionStateRemoved
-        {
-			public SimpleUserPermissionStateRemoved() {
-			}
-
-			public SimpleUserPermissionStateRemoved(UserPermissionStateEventId stateEventId) {
-				super(stateEventId);
-			}
-        }
-
-        public static class SimpleUserLoginStateCreated extends AbstractUserLoginStateEvent.AbstractUserLoginStateCreated
-        {
-			public SimpleUserLoginStateCreated() {
-			}
-
-			public SimpleUserLoginStateCreated(UserLoginStateEventId stateEventId) {
-				super(stateEventId);
-			}
-        }
-
-        public static class SimpleUserLoginStateMergePatched extends AbstractUserLoginStateEvent.AbstractUserLoginStateMergePatched
-        {
-			public SimpleUserLoginStateMergePatched() {
-			}
-
-			public SimpleUserLoginStateMergePatched(UserLoginStateEventId stateEventId) {
-				super(stateEventId);
-			}
-        }
-
-        public static class SimpleUserLoginStateRemoved extends AbstractUserLoginStateEvent.AbstractUserLoginStateRemoved
-        {
-			public SimpleUserLoginStateRemoved() {
-			}
-
-			public SimpleUserLoginStateRemoved(UserLoginStateEventId stateEventId) {
+			public SimpleUserStateDeleted(UserStateEventId stateEventId) {
 				super(stateEventId);
 			}
         }

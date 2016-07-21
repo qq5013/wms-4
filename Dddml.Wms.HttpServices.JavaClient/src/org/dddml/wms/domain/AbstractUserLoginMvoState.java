@@ -623,6 +623,10 @@ public abstract class AbstractUserLoginMvoState implements UserLoginMvoState
 
     }
 
+    public static class SimpleUserLoginMvoState extends AbstractUserLoginMvoState
+    {
+    }
+
 
 }
 

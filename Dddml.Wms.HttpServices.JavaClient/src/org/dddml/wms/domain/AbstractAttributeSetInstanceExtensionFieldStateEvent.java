@@ -242,7 +242,6 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldStateEvent imple
             this.isPropertyActiveRemoved = removed;
         }
 
-
     }
 
 
@@ -260,5 +259,35 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldStateEvent imple
         }
 
     }
+        public static class SimpleAttributeSetInstanceExtensionFieldStateCreated extends AbstractAttributeSetInstanceExtensionFieldStateCreated
+        {
+			public SimpleAttributeSetInstanceExtensionFieldStateCreated() {
+			}
+
+			public SimpleAttributeSetInstanceExtensionFieldStateCreated(AttributeSetInstanceExtensionFieldStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleAttributeSetInstanceExtensionFieldStateMergePatched extends AbstractAttributeSetInstanceExtensionFieldStateMergePatched
+        {
+			public SimpleAttributeSetInstanceExtensionFieldStateMergePatched() {
+			}
+
+			public SimpleAttributeSetInstanceExtensionFieldStateMergePatched(AttributeSetInstanceExtensionFieldStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleAttributeSetInstanceExtensionFieldStateRemoved extends AbstractAttributeSetInstanceExtensionFieldStateRemoved
+        {
+			public SimpleAttributeSetInstanceExtensionFieldStateRemoved() {
+			}
+
+			public SimpleAttributeSetInstanceExtensionFieldStateRemoved(AttributeSetInstanceExtensionFieldStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
 }
 

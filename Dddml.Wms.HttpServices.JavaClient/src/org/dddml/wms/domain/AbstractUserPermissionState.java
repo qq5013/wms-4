@@ -225,6 +225,10 @@ public abstract class AbstractUserPermissionState implements UserPermissionState
 
     }
 
+    public static class SimpleUserPermissionState extends AbstractUserPermissionState
+    {
+    }
+
 
 }
 

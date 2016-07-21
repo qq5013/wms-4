@@ -603,7 +603,11 @@ public abstract class AbstractUserState implements UserState
 
     }
 
-    public static class SimpleUserRoleStates extends AbstractUserRoleStates
+    public static class SimpleUserState extends AbstractUserState
+    {
+    }
+
+    static class SimpleUserRoleStates extends AbstractUserRoleStates
     {
         public SimpleUserRoleStates(UserState outerState)
         {
@@ -611,7 +615,7 @@ public abstract class AbstractUserState implements UserState
         }
     }
 
-    public static class SimpleUserClaimStates extends AbstractUserClaimStates
+    static class SimpleUserClaimStates extends AbstractUserClaimStates
     {
         public SimpleUserClaimStates(UserState outerState)
         {
@@ -619,7 +623,7 @@ public abstract class AbstractUserState implements UserState
         }
     }
 
-    public static class SimpleUserPermissionStates extends AbstractUserPermissionStates
+    static class SimpleUserPermissionStates extends AbstractUserPermissionStates
     {
         public SimpleUserPermissionStates(UserState outerState)
         {
@@ -627,7 +631,7 @@ public abstract class AbstractUserState implements UserState
         }
     }
 
-    public static class SimpleUserLoginStates extends AbstractUserLoginStates
+    static class SimpleUserLoginStates extends AbstractUserLoginStates
     {
         public SimpleUserLoginStates(UserState outerState)
         {

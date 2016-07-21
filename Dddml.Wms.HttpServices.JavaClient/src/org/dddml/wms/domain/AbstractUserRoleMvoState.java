@@ -623,6 +623,10 @@ public abstract class AbstractUserRoleMvoState implements UserRoleMvoState
 
     }
 
+    public static class SimpleUserRoleMvoState extends AbstractUserRoleMvoState
+    {
+    }
+
 
 }
 

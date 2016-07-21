@@ -1585,6 +1585,10 @@ public abstract class AbstractInOutLineMvoState implements InOutLineMvoState
 
     }
 
+    public static class SimpleInOutLineMvoState extends AbstractInOutLineMvoState
+    {
+    }
+
 
 }
 

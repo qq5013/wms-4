@@ -9353,7 +9353,6 @@ public abstract class AbstractAttributeSetInstanceStateEvent implements Attribut
             if (removed) { removedPropertyNames.add("Active"); } else { removedPropertyNames.remove("Active"); } 
         }
 
-
     }
 
 
@@ -9371,5 +9370,35 @@ public abstract class AbstractAttributeSetInstanceStateEvent implements Attribut
         }
 
     }
+        public static class SimpleAttributeSetInstanceStateCreated extends AbstractAttributeSetInstanceStateCreated
+        {
+			public SimpleAttributeSetInstanceStateCreated() {
+			}
+
+			public SimpleAttributeSetInstanceStateCreated(AttributeSetInstanceStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleAttributeSetInstanceStateMergePatched extends AbstractAttributeSetInstanceStateMergePatched
+        {
+			public SimpleAttributeSetInstanceStateMergePatched() {
+			}
+
+			public SimpleAttributeSetInstanceStateMergePatched(AttributeSetInstanceStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleAttributeSetInstanceStateDeleted extends AbstractAttributeSetInstanceStateDeleted
+        {
+			public SimpleAttributeSetInstanceStateDeleted() {
+			}
+
+			public SimpleAttributeSetInstanceStateDeleted(AttributeSetInstanceStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
 }
 

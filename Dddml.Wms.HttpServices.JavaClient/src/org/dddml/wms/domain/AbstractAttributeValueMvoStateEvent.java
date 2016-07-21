@@ -548,7 +548,6 @@ public abstract class AbstractAttributeValueMvoStateEvent implements AttributeVa
             this.isPropertyAttributeDeletedRemoved = removed;
         }
 
-
     }
 
 
@@ -566,5 +565,35 @@ public abstract class AbstractAttributeValueMvoStateEvent implements AttributeVa
         }
 
     }
+        public static class SimpleAttributeValueMvoStateCreated extends AbstractAttributeValueMvoStateCreated
+        {
+			public SimpleAttributeValueMvoStateCreated() {
+			}
+
+			public SimpleAttributeValueMvoStateCreated(AttributeValueMvoStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleAttributeValueMvoStateMergePatched extends AbstractAttributeValueMvoStateMergePatched
+        {
+			public SimpleAttributeValueMvoStateMergePatched() {
+			}
+
+			public SimpleAttributeValueMvoStateMergePatched(AttributeValueMvoStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleAttributeValueMvoStateDeleted extends AbstractAttributeValueMvoStateDeleted
+        {
+			public SimpleAttributeValueMvoStateDeleted() {
+			}
+
+			public SimpleAttributeValueMvoStateDeleted(AttributeValueMvoStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
 }
 

@@ -504,7 +504,6 @@ public abstract class AbstractUserLoginMvoStateEvent implements UserLoginMvoStat
             this.isPropertyUserDeletedRemoved = removed;
         }
 
-
     }
 
 
@@ -522,5 +521,35 @@ public abstract class AbstractUserLoginMvoStateEvent implements UserLoginMvoStat
         }
 
     }
+        public static class SimpleUserLoginMvoStateCreated extends AbstractUserLoginMvoStateCreated
+        {
+			public SimpleUserLoginMvoStateCreated() {
+			}
+
+			public SimpleUserLoginMvoStateCreated(UserLoginMvoStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleUserLoginMvoStateMergePatched extends AbstractUserLoginMvoStateMergePatched
+        {
+			public SimpleUserLoginMvoStateMergePatched() {
+			}
+
+			public SimpleUserLoginMvoStateMergePatched(UserLoginMvoStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleUserLoginMvoStateDeleted extends AbstractUserLoginMvoStateDeleted
+        {
+			public SimpleUserLoginMvoStateDeleted() {
+			}
+
+			public SimpleUserLoginMvoStateDeleted(UserLoginMvoStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
 }
 

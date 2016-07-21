@@ -634,6 +634,10 @@ public abstract class AbstractInOutLineState implements InOutLineState
 
     }
 
+    public static class SimpleInOutLineState extends AbstractInOutLineState
+    {
+    }
+
 
 }
 

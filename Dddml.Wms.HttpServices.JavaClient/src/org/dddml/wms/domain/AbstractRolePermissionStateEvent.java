@@ -108,7 +108,6 @@ public abstract class AbstractRolePermissionStateEvent implements RolePermission
             this.isPropertyActiveRemoved = removed;
         }
 
-
     }
 
 
@@ -126,5 +125,35 @@ public abstract class AbstractRolePermissionStateEvent implements RolePermission
         }
 
     }
+        public static class SimpleRolePermissionStateCreated extends AbstractRolePermissionStateCreated
+        {
+			public SimpleRolePermissionStateCreated() {
+			}
+
+			public SimpleRolePermissionStateCreated(RolePermissionStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleRolePermissionStateMergePatched extends AbstractRolePermissionStateMergePatched
+        {
+			public SimpleRolePermissionStateMergePatched() {
+			}
+
+			public SimpleRolePermissionStateMergePatched(RolePermissionStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleRolePermissionStateDeleted extends AbstractRolePermissionStateDeleted
+        {
+			public SimpleRolePermissionStateDeleted() {
+			}
+
+			public SimpleRolePermissionStateDeleted(RolePermissionStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
 }
 

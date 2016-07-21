@@ -504,7 +504,6 @@ public abstract class AbstractUserPermissionMvoStateEvent implements UserPermiss
             this.isPropertyUserDeletedRemoved = removed;
         }
 
-
     }
 
 
@@ -522,5 +521,35 @@ public abstract class AbstractUserPermissionMvoStateEvent implements UserPermiss
         }
 
     }
+        public static class SimpleUserPermissionMvoStateCreated extends AbstractUserPermissionMvoStateCreated
+        {
+			public SimpleUserPermissionMvoStateCreated() {
+			}
+
+			public SimpleUserPermissionMvoStateCreated(UserPermissionMvoStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleUserPermissionMvoStateMergePatched extends AbstractUserPermissionMvoStateMergePatched
+        {
+			public SimpleUserPermissionMvoStateMergePatched() {
+			}
+
+			public SimpleUserPermissionMvoStateMergePatched(UserPermissionMvoStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleUserPermissionMvoStateDeleted extends AbstractUserPermissionMvoStateDeleted
+        {
+			public SimpleUserPermissionMvoStateDeleted() {
+			}
+
+			public SimpleUserPermissionMvoStateDeleted(UserPermissionMvoStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
 }
 

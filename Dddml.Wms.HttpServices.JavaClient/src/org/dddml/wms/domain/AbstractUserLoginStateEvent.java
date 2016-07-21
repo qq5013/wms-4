@@ -132,7 +132,6 @@ public abstract class AbstractUserLoginStateEvent implements UserLoginStateEvent
             this.isPropertyActiveRemoved = removed;
         }
 
-
     }
 
 
@@ -150,5 +149,35 @@ public abstract class AbstractUserLoginStateEvent implements UserLoginStateEvent
         }
 
     }
+        public static class SimpleUserLoginStateCreated extends AbstractUserLoginStateCreated
+        {
+			public SimpleUserLoginStateCreated() {
+			}
+
+			public SimpleUserLoginStateCreated(UserLoginStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleUserLoginStateMergePatched extends AbstractUserLoginStateMergePatched
+        {
+			public SimpleUserLoginStateMergePatched() {
+			}
+
+			public SimpleUserLoginStateMergePatched(UserLoginStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleUserLoginStateRemoved extends AbstractUserLoginStateRemoved
+        {
+			public SimpleUserLoginStateRemoved() {
+			}
+
+			public SimpleUserLoginStateRemoved(UserLoginStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
 }
 

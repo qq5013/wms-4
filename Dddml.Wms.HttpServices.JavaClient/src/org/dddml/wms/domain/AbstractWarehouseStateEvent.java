@@ -174,7 +174,6 @@ public abstract class AbstractWarehouseStateEvent implements WarehouseStateEvent
             this.isPropertyActiveRemoved = removed;
         }
 
-
     }
 
 
@@ -192,5 +191,35 @@ public abstract class AbstractWarehouseStateEvent implements WarehouseStateEvent
         }
 
     }
+        public static class SimpleWarehouseStateCreated extends AbstractWarehouseStateCreated
+        {
+			public SimpleWarehouseStateCreated() {
+			}
+
+			public SimpleWarehouseStateCreated(WarehouseStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleWarehouseStateMergePatched extends AbstractWarehouseStateMergePatched
+        {
+			public SimpleWarehouseStateMergePatched() {
+			}
+
+			public SimpleWarehouseStateMergePatched(WarehouseStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleWarehouseStateDeleted extends AbstractWarehouseStateDeleted
+        {
+			public SimpleWarehouseStateDeleted() {
+			}
+
+			public SimpleWarehouseStateDeleted(WarehouseStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
 }
 

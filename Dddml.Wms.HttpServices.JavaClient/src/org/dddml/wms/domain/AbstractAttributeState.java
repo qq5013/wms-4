@@ -468,7 +468,11 @@ public abstract class AbstractAttributeState implements AttributeState
 
     }
 
-    public static class SimpleAttributeValueStates extends AbstractAttributeValueStates
+    public static class SimpleAttributeState extends AbstractAttributeState
+    {
+    }
+
+    static class SimpleAttributeValueStates extends AbstractAttributeValueStates
     {
         public SimpleAttributeValueStates(AttributeState outerState)
         {

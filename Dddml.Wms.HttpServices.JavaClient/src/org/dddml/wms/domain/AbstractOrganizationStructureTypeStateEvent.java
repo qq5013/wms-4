@@ -108,7 +108,6 @@ public abstract class AbstractOrganizationStructureTypeStateEvent implements Org
             this.isPropertyActiveRemoved = removed;
         }
 
-
     }
 
 
@@ -126,5 +125,35 @@ public abstract class AbstractOrganizationStructureTypeStateEvent implements Org
         }
 
     }
+        public static class SimpleOrganizationStructureTypeStateCreated extends AbstractOrganizationStructureTypeStateCreated
+        {
+			public SimpleOrganizationStructureTypeStateCreated() {
+			}
+
+			public SimpleOrganizationStructureTypeStateCreated(OrganizationStructureTypeStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleOrganizationStructureTypeStateMergePatched extends AbstractOrganizationStructureTypeStateMergePatched
+        {
+			public SimpleOrganizationStructureTypeStateMergePatched() {
+			}
+
+			public SimpleOrganizationStructureTypeStateMergePatched(OrganizationStructureTypeStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleOrganizationStructureTypeStateDeleted extends AbstractOrganizationStructureTypeStateDeleted
+        {
+			public SimpleOrganizationStructureTypeStateDeleted() {
+			}
+
+			public SimpleOrganizationStructureTypeStateDeleted(OrganizationStructureTypeStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
 }
 

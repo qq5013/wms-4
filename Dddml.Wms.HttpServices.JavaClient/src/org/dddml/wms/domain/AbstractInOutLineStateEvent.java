@@ -507,7 +507,6 @@ public abstract class AbstractInOutLineStateEvent implements InOutLineStateEvent
             this.isPropertyActiveRemoved = removed;
         }
 
-
     }
 
 
@@ -525,5 +524,35 @@ public abstract class AbstractInOutLineStateEvent implements InOutLineStateEvent
         }
 
     }
+        public static class SimpleInOutLineStateCreated extends AbstractInOutLineStateCreated
+        {
+			public SimpleInOutLineStateCreated() {
+			}
+
+			public SimpleInOutLineStateCreated(InOutLineStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleInOutLineStateMergePatched extends AbstractInOutLineStateMergePatched
+        {
+			public SimpleInOutLineStateMergePatched() {
+			}
+
+			public SimpleInOutLineStateMergePatched(InOutLineStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleInOutLineStateRemoved extends AbstractInOutLineStateRemoved
+        {
+			public SimpleInOutLineStateRemoved() {
+			}
+
+			public SimpleInOutLineStateRemoved(InOutLineStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
 }
 

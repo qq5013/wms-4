@@ -383,6 +383,10 @@ public abstract class AbstractLocatorState implements LocatorState
 
     }
 
+    public static class SimpleLocatorState extends AbstractLocatorState
+    {
+    }
+
 
 }
 

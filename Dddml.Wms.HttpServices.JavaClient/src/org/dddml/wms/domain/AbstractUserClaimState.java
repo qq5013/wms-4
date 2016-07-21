@@ -273,6 +273,10 @@ public abstract class AbstractUserClaimState implements UserClaimState
 
     }
 
+    public static class SimpleUserClaimState extends AbstractUserClaimState
+    {
+    }
+
 
 }
 

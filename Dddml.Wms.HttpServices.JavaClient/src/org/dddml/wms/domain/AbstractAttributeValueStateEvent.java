@@ -198,7 +198,6 @@ public abstract class AbstractAttributeValueStateEvent implements AttributeValue
             this.isPropertyActiveRemoved = removed;
         }
 
-
     }
 
 
@@ -216,5 +215,35 @@ public abstract class AbstractAttributeValueStateEvent implements AttributeValue
         }
 
     }
+        public static class SimpleAttributeValueStateCreated extends AbstractAttributeValueStateCreated
+        {
+			public SimpleAttributeValueStateCreated() {
+			}
+
+			public SimpleAttributeValueStateCreated(AttributeValueStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleAttributeValueStateMergePatched extends AbstractAttributeValueStateMergePatched
+        {
+			public SimpleAttributeValueStateMergePatched() {
+			}
+
+			public SimpleAttributeValueStateMergePatched(AttributeValueStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleAttributeValueStateRemoved extends AbstractAttributeValueStateRemoved
+        {
+			public SimpleAttributeValueStateRemoved() {
+			}
+
+			public SimpleAttributeValueStateRemoved(AttributeValueStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
 }
 

@@ -482,7 +482,6 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoStateEvent im
             this.isPropertyAttrSetInstEFGroupDeletedRemoved = removed;
         }
 
-
     }
 
 
@@ -500,5 +499,35 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoStateEvent im
         }
 
     }
+        public static class SimpleAttributeSetInstanceExtensionFieldMvoStateCreated extends AbstractAttributeSetInstanceExtensionFieldMvoStateCreated
+        {
+			public SimpleAttributeSetInstanceExtensionFieldMvoStateCreated() {
+			}
+
+			public SimpleAttributeSetInstanceExtensionFieldMvoStateCreated(AttributeSetInstanceExtensionFieldMvoStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleAttributeSetInstanceExtensionFieldMvoStateMergePatched extends AbstractAttributeSetInstanceExtensionFieldMvoStateMergePatched
+        {
+			public SimpleAttributeSetInstanceExtensionFieldMvoStateMergePatched() {
+			}
+
+			public SimpleAttributeSetInstanceExtensionFieldMvoStateMergePatched(AttributeSetInstanceExtensionFieldMvoStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleAttributeSetInstanceExtensionFieldMvoStateDeleted extends AbstractAttributeSetInstanceExtensionFieldMvoStateDeleted
+        {
+			public SimpleAttributeSetInstanceExtensionFieldMvoStateDeleted() {
+			}
+
+			public SimpleAttributeSetInstanceExtensionFieldMvoStateDeleted(AttributeSetInstanceExtensionFieldMvoStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
 }
 

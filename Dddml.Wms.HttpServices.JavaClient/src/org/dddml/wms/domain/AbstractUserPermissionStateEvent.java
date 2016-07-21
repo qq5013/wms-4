@@ -132,7 +132,6 @@ public abstract class AbstractUserPermissionStateEvent implements UserPermission
             this.isPropertyActiveRemoved = removed;
         }
 
-
     }
 
 
@@ -150,5 +149,35 @@ public abstract class AbstractUserPermissionStateEvent implements UserPermission
         }
 
     }
+        public static class SimpleUserPermissionStateCreated extends AbstractUserPermissionStateCreated
+        {
+			public SimpleUserPermissionStateCreated() {
+			}
+
+			public SimpleUserPermissionStateCreated(UserPermissionStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleUserPermissionStateMergePatched extends AbstractUserPermissionStateMergePatched
+        {
+			public SimpleUserPermissionStateMergePatched() {
+			}
+
+			public SimpleUserPermissionStateMergePatched(UserPermissionStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleUserPermissionStateRemoved extends AbstractUserPermissionStateRemoved
+        {
+			public SimpleUserPermissionStateRemoved() {
+			}
+
+			public SimpleUserPermissionStateRemoved(UserPermissionStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
 }
 

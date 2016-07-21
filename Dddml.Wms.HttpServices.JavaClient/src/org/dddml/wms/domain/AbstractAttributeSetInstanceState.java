@@ -11280,6 +11280,10 @@ public abstract class AbstractAttributeSetInstanceState implements AttributeSetI
 
     }
 
+    public static class SimpleAttributeSetInstanceState extends AbstractAttributeSetInstanceState
+    {
+    }
+
 
 }
 

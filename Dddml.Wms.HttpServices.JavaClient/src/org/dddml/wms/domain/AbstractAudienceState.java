@@ -239,6 +239,10 @@ public abstract class AbstractAudienceState implements AudienceState
 
     }
 
+    public static class SimpleAudienceState extends AbstractAudienceState
+    {
+    }
+
 
 }
 

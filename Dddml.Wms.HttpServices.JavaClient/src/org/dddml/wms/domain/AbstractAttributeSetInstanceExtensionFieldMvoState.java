@@ -599,6 +599,10 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoState impleme
 
     }
 
+    public static class SimpleAttributeSetInstanceExtensionFieldMvoState extends AbstractAttributeSetInstanceExtensionFieldMvoState
+    {
+    }
+
 
 }
 

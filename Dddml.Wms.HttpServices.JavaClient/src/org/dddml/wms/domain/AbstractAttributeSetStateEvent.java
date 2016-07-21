@@ -164,15 +164,15 @@ public abstract class AbstractAttributeSetStateEvent implements AttributeSetStat
     }
 
     public AttributeUseStateEvent.AttributeUseStateCreated newAttributeUseStateCreated(String attributeId) {
-        return new SimpleAttributeUseStateCreated(newAttributeUseStateEventId(attributeId));
+        return new AbstractAttributeUseStateEvent.SimpleAttributeUseStateCreated(newAttributeUseStateEventId(attributeId));
     }
 
     public AttributeUseStateEvent.AttributeUseStateMergePatched newAttributeUseStateMergePatched(String attributeId) {
-        return new SimpleAttributeUseStateMergePatched(newAttributeUseStateEventId(attributeId));
+        return new AbstractAttributeUseStateEvent.SimpleAttributeUseStateMergePatched(newAttributeUseStateEventId(attributeId));
     }
 
     public AttributeUseStateEvent.AttributeUseStateRemoved newAttributeUseStateRemoved(String attributeId) {
-        return new SimpleAttributeUseStateRemoved(newAttributeUseStateEventId(attributeId));
+        return new AbstractAttributeUseStateEvent.SimpleAttributeUseStateRemoved(newAttributeUseStateEventId(attributeId));
     }
 
 
@@ -368,7 +368,12 @@ public abstract class AbstractAttributeSetStateEvent implements AttributeSetStat
             this.attributeUseEvents.put(e.getStateEventId(), e);
         }
 
-
+        public void save()
+        {
+            for (AttributeUseStateEvent e : this.getAttributeUseEvents()) {
+                getAttributeUseStateEventDao().save(e);
+            }
+        }
     }
 
 
@@ -435,32 +440,32 @@ public abstract class AbstractAttributeSetStateEvent implements AttributeSetStat
             }
         }
     }
-        public static class SimpleAttributeUseStateCreated extends AbstractAttributeUseStateEvent.AbstractAttributeUseStateCreated
+        public static class SimpleAttributeSetStateCreated extends AbstractAttributeSetStateCreated
         {
-			public SimpleAttributeUseStateCreated() {
+			public SimpleAttributeSetStateCreated() {
 			}
 
-			public SimpleAttributeUseStateCreated(AttributeUseStateEventId stateEventId) {
+			public SimpleAttributeSetStateCreated(AttributeSetStateEventId stateEventId) {
 				super(stateEventId);
 			}
         }
 
-        public static class SimpleAttributeUseStateMergePatched extends AbstractAttributeUseStateEvent.AbstractAttributeUseStateMergePatched
+        public static class SimpleAttributeSetStateMergePatched extends AbstractAttributeSetStateMergePatched
         {
-			public SimpleAttributeUseStateMergePatched() {
+			public SimpleAttributeSetStateMergePatched() {
 			}
 
-			public SimpleAttributeUseStateMergePatched(AttributeUseStateEventId stateEventId) {
+			public SimpleAttributeSetStateMergePatched(AttributeSetStateEventId stateEventId) {
 				super(stateEventId);
 			}
         }
 
-        public static class SimpleAttributeUseStateRemoved extends AbstractAttributeUseStateEvent.AbstractAttributeUseStateRemoved
+        public static class SimpleAttributeSetStateDeleted extends AbstractAttributeSetStateDeleted
         {
-			public SimpleAttributeUseStateRemoved() {
+			public SimpleAttributeSetStateDeleted() {
 			}
 
-			public SimpleAttributeUseStateRemoved(AttributeUseStateEventId stateEventId) {
+			public SimpleAttributeSetStateDeleted(AttributeSetStateEventId stateEventId) {
 				super(stateEventId);
 			}
         }

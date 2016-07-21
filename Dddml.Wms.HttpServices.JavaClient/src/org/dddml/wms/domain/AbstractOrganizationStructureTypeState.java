@@ -191,6 +191,10 @@ public abstract class AbstractOrganizationStructureTypeState implements Organiza
 
     }
 
+    public static class SimpleOrganizationStructureTypeState extends AbstractOrganizationStructureTypeState
+    {
+    }
+
 
 }
 

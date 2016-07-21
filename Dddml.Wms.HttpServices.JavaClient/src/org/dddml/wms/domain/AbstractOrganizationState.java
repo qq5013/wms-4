@@ -287,6 +287,10 @@ public abstract class AbstractOrganizationState implements OrganizationState
 
     }
 
+    public static class SimpleOrganizationState extends AbstractOrganizationState
+    {
+    }
+
 
 }
 

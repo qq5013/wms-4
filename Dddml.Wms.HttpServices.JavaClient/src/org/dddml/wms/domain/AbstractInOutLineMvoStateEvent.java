@@ -1386,7 +1386,6 @@ public abstract class AbstractInOutLineMvoStateEvent implements InOutLineMvoStat
             this.isPropertyInOutDeletedRemoved = removed;
         }
 
-
     }
 
 
@@ -1404,5 +1403,35 @@ public abstract class AbstractInOutLineMvoStateEvent implements InOutLineMvoStat
         }
 
     }
+        public static class SimpleInOutLineMvoStateCreated extends AbstractInOutLineMvoStateCreated
+        {
+			public SimpleInOutLineMvoStateCreated() {
+			}
+
+			public SimpleInOutLineMvoStateCreated(InOutLineMvoStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleInOutLineMvoStateMergePatched extends AbstractInOutLineMvoStateMergePatched
+        {
+			public SimpleInOutLineMvoStateMergePatched() {
+			}
+
+			public SimpleInOutLineMvoStateMergePatched(InOutLineMvoStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleInOutLineMvoStateDeleted extends AbstractInOutLineMvoStateDeleted
+        {
+			public SimpleInOutLineMvoStateDeleted() {
+			}
+
+			public SimpleInOutLineMvoStateDeleted(InOutLineMvoStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
 }
 

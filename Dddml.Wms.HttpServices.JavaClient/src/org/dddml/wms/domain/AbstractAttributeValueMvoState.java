@@ -671,6 +671,10 @@ public abstract class AbstractAttributeValueMvoState implements AttributeValueMv
 
     }
 
+    public static class SimpleAttributeValueMvoState extends AbstractAttributeValueMvoState
+    {
+    }
+
 
 }
 

@@ -502,15 +502,15 @@ public abstract class AbstractInOutStateEvent implements InOutStateEvent
     }
 
     public InOutLineStateEvent.InOutLineStateCreated newInOutLineStateCreated(SkuId skuId) {
-        return new SimpleInOutLineStateCreated(newInOutLineStateEventId(skuId));
+        return new AbstractInOutLineStateEvent.SimpleInOutLineStateCreated(newInOutLineStateEventId(skuId));
     }
 
     public InOutLineStateEvent.InOutLineStateMergePatched newInOutLineStateMergePatched(SkuId skuId) {
-        return new SimpleInOutLineStateMergePatched(newInOutLineStateEventId(skuId));
+        return new AbstractInOutLineStateEvent.SimpleInOutLineStateMergePatched(newInOutLineStateEventId(skuId));
     }
 
     public InOutLineStateEvent.InOutLineStateRemoved newInOutLineStateRemoved(SkuId skuId) {
-        return new SimpleInOutLineStateRemoved(newInOutLineStateEventId(skuId));
+        return new AbstractInOutLineStateEvent.SimpleInOutLineStateRemoved(newInOutLineStateEventId(skuId));
     }
 
 
@@ -986,7 +986,12 @@ public abstract class AbstractInOutStateEvent implements InOutStateEvent
             this.inOutLineEvents.put(e.getStateEventId(), e);
         }
 
-
+        public void save()
+        {
+            for (InOutLineStateEvent e : this.getInOutLineEvents()) {
+                getInOutLineStateEventDao().save(e);
+            }
+        }
     }
 
 
@@ -1053,32 +1058,32 @@ public abstract class AbstractInOutStateEvent implements InOutStateEvent
             }
         }
     }
-        public static class SimpleInOutLineStateCreated extends AbstractInOutLineStateEvent.AbstractInOutLineStateCreated
+        public static class SimpleInOutStateCreated extends AbstractInOutStateCreated
         {
-			public SimpleInOutLineStateCreated() {
+			public SimpleInOutStateCreated() {
 			}
 
-			public SimpleInOutLineStateCreated(InOutLineStateEventId stateEventId) {
+			public SimpleInOutStateCreated(InOutStateEventId stateEventId) {
 				super(stateEventId);
 			}
         }
 
-        public static class SimpleInOutLineStateMergePatched extends AbstractInOutLineStateEvent.AbstractInOutLineStateMergePatched
+        public static class SimpleInOutStateMergePatched extends AbstractInOutStateMergePatched
         {
-			public SimpleInOutLineStateMergePatched() {
+			public SimpleInOutStateMergePatched() {
 			}
 
-			public SimpleInOutLineStateMergePatched(InOutLineStateEventId stateEventId) {
+			public SimpleInOutStateMergePatched(InOutStateEventId stateEventId) {
 				super(stateEventId);
 			}
         }
 
-        public static class SimpleInOutLineStateRemoved extends AbstractInOutLineStateEvent.AbstractInOutLineStateRemoved
+        public static class SimpleInOutStateDeleted extends AbstractInOutStateDeleted
         {
-			public SimpleInOutLineStateRemoved() {
+			public SimpleInOutStateDeleted() {
 			}
 
-			public SimpleInOutLineStateRemoved(InOutLineStateEventId stateEventId) {
+			public SimpleInOutStateDeleted(InOutStateEventId stateEventId) {
 				super(stateEventId);
 			}
         }

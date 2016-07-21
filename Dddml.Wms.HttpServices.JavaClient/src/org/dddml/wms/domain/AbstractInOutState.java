@@ -1046,7 +1046,11 @@ public abstract class AbstractInOutState implements InOutState
 
     }
 
-    public static class SimpleInOutLineStates extends AbstractInOutLineStates
+    public static class SimpleInOutState extends AbstractInOutState
+    {
+    }
+
+    static class SimpleInOutLineStates extends AbstractInOutLineStates
     {
         public SimpleInOutLineStates(InOutState outerState)
         {

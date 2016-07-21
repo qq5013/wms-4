@@ -152,7 +152,6 @@ public abstract class AbstractAudienceStateEvent implements AudienceStateEvent
             this.isPropertyActiveRemoved = removed;
         }
 
-
     }
 
 
@@ -170,5 +169,35 @@ public abstract class AbstractAudienceStateEvent implements AudienceStateEvent
         }
 
     }
+        public static class SimpleAudienceStateCreated extends AbstractAudienceStateCreated
+        {
+			public SimpleAudienceStateCreated() {
+			}
+
+			public SimpleAudienceStateCreated(AudienceStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleAudienceStateMergePatched extends AbstractAudienceStateMergePatched
+        {
+			public SimpleAudienceStateMergePatched() {
+			}
+
+			public SimpleAudienceStateMergePatched(AudienceStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleAudienceStateDeleted extends AbstractAudienceStateDeleted
+        {
+			public SimpleAudienceStateDeleted() {
+			}
+
+			public SimpleAudienceStateDeleted(AudienceStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
 }
 

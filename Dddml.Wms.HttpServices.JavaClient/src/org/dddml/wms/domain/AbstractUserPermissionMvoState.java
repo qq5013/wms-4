@@ -623,6 +623,10 @@ public abstract class AbstractUserPermissionMvoState implements UserPermissionMv
 
     }
 
+    public static class SimpleUserPermissionMvoState extends AbstractUserPermissionMvoState
+    {
+    }
+
 
 }
 

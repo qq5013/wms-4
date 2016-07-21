@@ -176,7 +176,6 @@ public abstract class AbstractUserClaimStateEvent implements UserClaimStateEvent
             this.isPropertyActiveRemoved = removed;
         }
 
-
     }
 
 
@@ -194,5 +193,35 @@ public abstract class AbstractUserClaimStateEvent implements UserClaimStateEvent
         }
 
     }
+        public static class SimpleUserClaimStateCreated extends AbstractUserClaimStateCreated
+        {
+			public SimpleUserClaimStateCreated() {
+			}
+
+			public SimpleUserClaimStateCreated(UserClaimStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleUserClaimStateMergePatched extends AbstractUserClaimStateMergePatched
+        {
+			public SimpleUserClaimStateMergePatched() {
+			}
+
+			public SimpleUserClaimStateMergePatched(UserClaimStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleUserClaimStateRemoved extends AbstractUserClaimStateRemoved
+        {
+			public SimpleUserClaimStateRemoved() {
+			}
+
+			public SimpleUserClaimStateRemoved(UserClaimStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
 }
 

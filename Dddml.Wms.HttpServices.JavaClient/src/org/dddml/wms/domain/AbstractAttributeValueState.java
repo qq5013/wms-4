@@ -297,6 +297,10 @@ public abstract class AbstractAttributeValueState implements AttributeValueState
 
     }
 
+    public static class SimpleAttributeValueState extends AbstractAttributeValueState
+    {
+    }
+
 
 }
 

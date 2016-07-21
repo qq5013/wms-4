@@ -284,7 +284,6 @@ public abstract class AbstractLocatorStateEvent implements LocatorStateEvent
             this.isPropertyActiveRemoved = removed;
         }
 
-
     }
 
 
@@ -302,5 +301,35 @@ public abstract class AbstractLocatorStateEvent implements LocatorStateEvent
         }
 
     }
+        public static class SimpleLocatorStateCreated extends AbstractLocatorStateCreated
+        {
+			public SimpleLocatorStateCreated() {
+			}
+
+			public SimpleLocatorStateCreated(LocatorStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleLocatorStateMergePatched extends AbstractLocatorStateMergePatched
+        {
+			public SimpleLocatorStateMergePatched() {
+			}
+
+			public SimpleLocatorStateMergePatched(LocatorStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleLocatorStateDeleted extends AbstractLocatorStateDeleted
+        {
+			public SimpleLocatorStateDeleted() {
+			}
+
+			public SimpleLocatorStateDeleted(LocatorStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
 }
 

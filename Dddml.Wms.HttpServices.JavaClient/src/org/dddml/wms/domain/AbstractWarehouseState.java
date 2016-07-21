@@ -263,6 +263,10 @@ public abstract class AbstractWarehouseState implements WarehouseState
 
     }
 
+    public static class SimpleWarehouseState extends AbstractWarehouseState
+    {
+    }
+
 
 }
 

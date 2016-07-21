@@ -416,7 +416,6 @@ public abstract class AbstractAttributeUseMvoStateEvent implements AttributeUseM
             this.isPropertyAttributeSetDeletedRemoved = removed;
         }
 
-
     }
 
 
@@ -434,5 +433,35 @@ public abstract class AbstractAttributeUseMvoStateEvent implements AttributeUseM
         }
 
     }
+        public static class SimpleAttributeUseMvoStateCreated extends AbstractAttributeUseMvoStateCreated
+        {
+			public SimpleAttributeUseMvoStateCreated() {
+			}
+
+			public SimpleAttributeUseMvoStateCreated(AttributeUseMvoStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleAttributeUseMvoStateMergePatched extends AbstractAttributeUseMvoStateMergePatched
+        {
+			public SimpleAttributeUseMvoStateMergePatched() {
+			}
+
+			public SimpleAttributeUseMvoStateMergePatched(AttributeUseMvoStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleAttributeUseMvoStateDeleted extends AbstractAttributeUseMvoStateDeleted
+        {
+			public SimpleAttributeUseMvoStateDeleted() {
+			}
+
+			public SimpleAttributeUseMvoStateDeleted(AttributeUseMvoStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
 }
 

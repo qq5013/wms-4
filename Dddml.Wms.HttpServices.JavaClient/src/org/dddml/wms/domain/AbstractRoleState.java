@@ -239,6 +239,10 @@ public abstract class AbstractRoleState implements RoleState
 
     }
 
+    public static class SimpleRoleState extends AbstractRoleState
+    {
+    }
+
 
 }
 

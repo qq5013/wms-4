@@ -191,6 +191,10 @@ public abstract class AbstractRolePermissionState implements RolePermissionState
 
     }
 
+    public static class SimpleRolePermissionState extends AbstractRolePermissionState
+    {
+    }
+
 
 }
 

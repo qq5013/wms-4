@@ -196,7 +196,6 @@ public abstract class AbstractOrganizationStateEvent implements OrganizationStat
             this.isPropertyActiveRemoved = removed;
         }
 
-
     }
 
 
@@ -214,5 +213,35 @@ public abstract class AbstractOrganizationStateEvent implements OrganizationStat
         }
 
     }
+        public static class SimpleOrganizationStateCreated extends AbstractOrganizationStateCreated
+        {
+			public SimpleOrganizationStateCreated() {
+			}
+
+			public SimpleOrganizationStateCreated(OrganizationStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleOrganizationStateMergePatched extends AbstractOrganizationStateMergePatched
+        {
+			public SimpleOrganizationStateMergePatched() {
+			}
+
+			public SimpleOrganizationStateMergePatched(OrganizationStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleOrganizationStateDeleted extends AbstractOrganizationStateDeleted
+        {
+			public SimpleOrganizationStateDeleted() {
+			}
+
+			public SimpleOrganizationStateDeleted(OrganizationStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
 }
 

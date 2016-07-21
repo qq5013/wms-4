@@ -263,6 +263,10 @@ public abstract class AbstractPermissionState implements PermissionState
 
     }
 
+    public static class SimplePermissionState extends AbstractPermissionState
+    {
+    }
+
 
 }
 

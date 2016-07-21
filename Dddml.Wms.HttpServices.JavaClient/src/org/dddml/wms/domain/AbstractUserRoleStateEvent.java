@@ -132,7 +132,6 @@ public abstract class AbstractUserRoleStateEvent implements UserRoleStateEvent
             this.isPropertyActiveRemoved = removed;
         }
 
-
     }
 
 
@@ -150,5 +149,35 @@ public abstract class AbstractUserRoleStateEvent implements UserRoleStateEvent
         }
 
     }
+        public static class SimpleUserRoleStateCreated extends AbstractUserRoleStateCreated
+        {
+			public SimpleUserRoleStateCreated() {
+			}
+
+			public SimpleUserRoleStateCreated(UserRoleStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleUserRoleStateMergePatched extends AbstractUserRoleStateMergePatched
+        {
+			public SimpleUserRoleStateMergePatched() {
+			}
+
+			public SimpleUserRoleStateMergePatched(UserRoleStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleUserRoleStateRemoved extends AbstractUserRoleStateRemoved
+        {
+			public SimpleUserRoleStateRemoved() {
+			}
+
+			public SimpleUserRoleStateRemoved(UserRoleStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
 }
 

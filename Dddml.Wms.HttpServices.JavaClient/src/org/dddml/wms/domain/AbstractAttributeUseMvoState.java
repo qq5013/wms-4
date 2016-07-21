@@ -527,6 +527,10 @@ public abstract class AbstractAttributeUseMvoState implements AttributeUseMvoSta
 
     }
 
+    public static class SimpleAttributeUseMvoState extends AbstractAttributeUseMvoState
+    {
+    }
+
 
 }
 

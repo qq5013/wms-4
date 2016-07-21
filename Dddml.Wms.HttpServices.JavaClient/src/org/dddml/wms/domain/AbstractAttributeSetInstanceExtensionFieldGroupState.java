@@ -348,7 +348,11 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldGroupState imple
 
     }
 
-    public static class SimpleAttributeSetInstanceExtensionFieldStates extends AbstractAttributeSetInstanceExtensionFieldStates
+    public static class SimpleAttributeSetInstanceExtensionFieldGroupState extends AbstractAttributeSetInstanceExtensionFieldGroupState
+    {
+    }
+
+    static class SimpleAttributeSetInstanceExtensionFieldStates extends AbstractAttributeSetInstanceExtensionFieldStates
     {
         public SimpleAttributeSetInstanceExtensionFieldStates(AttributeSetInstanceExtensionFieldGroupState outerState)
         {

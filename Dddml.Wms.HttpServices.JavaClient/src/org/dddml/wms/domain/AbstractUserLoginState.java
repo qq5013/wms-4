@@ -225,6 +225,10 @@ public abstract class AbstractUserLoginState implements UserLoginState
 
     }
 
+    public static class SimpleUserLoginState extends AbstractUserLoginState
+    {
+    }
+
 
 }
 

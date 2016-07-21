@@ -548,7 +548,6 @@ public abstract class AbstractUserClaimMvoStateEvent implements UserClaimMvoStat
             this.isPropertyUserDeletedRemoved = removed;
         }
 
-
     }
 
 
@@ -566,5 +565,35 @@ public abstract class AbstractUserClaimMvoStateEvent implements UserClaimMvoStat
         }
 
     }
+        public static class SimpleUserClaimMvoStateCreated extends AbstractUserClaimMvoStateCreated
+        {
+			public SimpleUserClaimMvoStateCreated() {
+			}
+
+			public SimpleUserClaimMvoStateCreated(UserClaimMvoStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleUserClaimMvoStateMergePatched extends AbstractUserClaimMvoStateMergePatched
+        {
+			public SimpleUserClaimMvoStateMergePatched() {
+			}
+
+			public SimpleUserClaimMvoStateMergePatched(UserClaimMvoStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
+        public static class SimpleUserClaimMvoStateDeleted extends AbstractUserClaimMvoStateDeleted
+        {
+			public SimpleUserClaimMvoStateDeleted() {
+			}
+
+			public SimpleUserClaimMvoStateDeleted(UserClaimMvoStateEventId stateEventId) {
+				super(stateEventId);
+			}
+        }
+
 }
 

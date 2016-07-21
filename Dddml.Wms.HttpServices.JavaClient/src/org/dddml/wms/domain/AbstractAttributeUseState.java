@@ -249,6 +249,10 @@ public abstract class AbstractAttributeUseState implements AttributeUseState
 
     }
 
+    public static class SimpleAttributeUseState extends AbstractAttributeUseState
+    {
+    }
+
 
 }
 

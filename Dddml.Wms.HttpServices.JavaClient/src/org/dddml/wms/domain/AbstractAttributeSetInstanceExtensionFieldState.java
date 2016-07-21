@@ -345,6 +345,10 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldState implements
 
     }
 
+    public static class SimpleAttributeSetInstanceExtensionFieldState extends AbstractAttributeSetInstanceExtensionFieldState
+    {
+    }
+
 
 }
 

@@ -671,6 +671,10 @@ public abstract class AbstractUserClaimMvoState implements UserClaimMvoState
 
     }
 
+    public static class SimpleUserClaimMvoState extends AbstractUserClaimMvoState
+    {
+    }
+
 
 }
 

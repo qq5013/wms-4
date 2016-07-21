@@ -1,10 +1,11 @@
-﻿<?php
+<?php
 
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
+use Dddml\StringIdInterface;
 
-class UserStateEventId
+class UserStateEventId implements StringIdInterface
 {
     /**
      * @Type("string")
@@ -47,6 +48,38 @@ class UserStateEventId
     {
         $this->version = $version;
     }
+
+
+
+    /**
+     * @var UserStateEventIdFlattenedDto
+     */
+    private $idFlattenedDto;
+
+    /**
+     * @return string
+     */
+    public function toString()
+    {
+        if (!$this->idFlattenedDto) {
+            $this->idFlattenedDto = new UserStateEventIdFlattenedDto($this);
+        }
+
+        return $this->idFlattenedDto->toString();
+    }
+
+    /**
+     * @param string $idStr
+     *
+     * @return UserStateEventId
+     */
+    public static function createFromString($idStr)
+    {
+        return (new UserStateEventIdFlattenedDto())
+            ->fromString($idStr)
+            ->toUserStateEventId();
+    }
+
 
 }
 

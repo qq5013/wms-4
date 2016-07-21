@@ -1,10 +1,11 @@
-﻿<?php
+<?php
 
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
+use Dddml\StringIdInterface;
 
-class InOutLineMvoStateEventId
+class InOutLineMvoStateEventId implements StringIdInterface
 {
     /**
      * @Type("Wms\Domain\InOutLineId")
@@ -50,6 +51,38 @@ class InOutLineMvoStateEventId
     {
         $this->inOutVersion = $inOutVersion;
     }
+
+
+
+    /**
+     * @var InOutLineMvoStateEventIdFlattenedDto
+     */
+    private $idFlattenedDto;
+
+    /**
+     * @return string
+     */
+    public function toString()
+    {
+        if (!$this->idFlattenedDto) {
+            $this->idFlattenedDto = new InOutLineMvoStateEventIdFlattenedDto($this);
+        }
+
+        return $this->idFlattenedDto->toString();
+    }
+
+    /**
+     * @param string $idStr
+     *
+     * @return InOutLineMvoStateEventId
+     */
+    public static function createFromString($idStr)
+    {
+        return (new InOutLineMvoStateEventIdFlattenedDto())
+            ->fromString($idStr)
+            ->toInOutLineMvoStateEventId();
+    }
+
 
 }
 

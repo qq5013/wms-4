@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 namespace Wms\Domain;
 
@@ -98,6 +98,9 @@ class InOutLineIdFlattenedDto implements FlattenedDtoInterface
         $this->value->getSkuId()->setAttributeSetInstanceId($skuIdAttributeSetInstanceId);
     }
 
+    /**
+     * @return string
+     */
     public function toString()
     {
         $pValues = [
@@ -108,12 +111,18 @@ class InOutLineIdFlattenedDto implements FlattenedDtoInterface
         return implode(',', $pValues);
     }
 
+    /**
+     * @param string $data
+     *
+     * @return InOutLineIdFlattenedDto
+     */
     public function fromString($data)
     {
         $pValues = explode(',', $data);
         $this->setInOutDocumentNumber($pValues[0]);
         $this->setSkuIdProductId($pValues[1]);
         $this->setSkuIdAttributeSetInstanceId($pValues[2]);
+        return $this;
     }
 
 }

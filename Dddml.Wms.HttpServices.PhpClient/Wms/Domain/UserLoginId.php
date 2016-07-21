@@ -1,10 +1,11 @@
-﻿<?php
+<?php
 
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
+use Dddml\StringIdInterface;
 
-class UserLoginId
+class UserLoginId implements StringIdInterface
 {
     /**
      * @Type("string")
@@ -50,6 +51,38 @@ class UserLoginId
     {
         $this->loginKey = $loginKey;
     }
+
+
+
+    /**
+     * @var UserLoginIdFlattenedDto
+     */
+    private $idFlattenedDto;
+
+    /**
+     * @return string
+     */
+    public function toString()
+    {
+        if (!$this->idFlattenedDto) {
+            $this->idFlattenedDto = new UserLoginIdFlattenedDto($this);
+        }
+
+        return $this->idFlattenedDto->toString();
+    }
+
+    /**
+     * @param string $idStr
+     *
+     * @return UserLoginId
+     */
+    public static function createFromString($idStr)
+    {
+        return (new UserLoginIdFlattenedDto())
+            ->fromString($idStr)
+            ->toUserLoginId();
+    }
+
 
 }
 

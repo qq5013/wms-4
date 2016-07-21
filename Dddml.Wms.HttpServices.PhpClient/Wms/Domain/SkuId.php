@@ -1,8 +1,9 @@
-﻿<?php
+<?php
 
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
+use Dddml\StringIdInterface;
 
 class SkuId
 {
@@ -47,6 +48,7 @@ class SkuId
     {
         $this->attributeSetInstanceId = $attributeSetInstanceId;
     }
+
 
 }
 

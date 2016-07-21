@@ -1,10 +1,11 @@
-﻿<?php
+<?php
 
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
+use Dddml\StringIdInterface;
 
-class LocatorStateEventId
+class LocatorStateEventId implements StringIdInterface
 {
     /**
      * @Type("string")
@@ -47,6 +48,38 @@ class LocatorStateEventId
     {
         $this->version = $version;
     }
+
+
+
+    /**
+     * @var LocatorStateEventIdFlattenedDto
+     */
+    private $idFlattenedDto;
+
+    /**
+     * @return string
+     */
+    public function toString()
+    {
+        if (!$this->idFlattenedDto) {
+            $this->idFlattenedDto = new LocatorStateEventIdFlattenedDto($this);
+        }
+
+        return $this->idFlattenedDto->toString();
+    }
+
+    /**
+     * @param string $idStr
+     *
+     * @return LocatorStateEventId
+     */
+    public static function createFromString($idStr)
+    {
+        return (new LocatorStateEventIdFlattenedDto())
+            ->fromString($idStr)
+            ->toLocatorStateEventId();
+    }
+
 
 }
 

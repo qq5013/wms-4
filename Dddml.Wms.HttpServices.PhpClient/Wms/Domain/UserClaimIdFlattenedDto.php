@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 namespace Wms\Domain;
 
@@ -81,6 +81,9 @@ class UserClaimIdFlattenedDto implements FlattenedDtoInterface
         $this->value->setClaimId($claimId);
     }
 
+    /**
+     * @return string
+     */
     public function toString()
     {
         $pValues = [
@@ -90,11 +93,17 @@ class UserClaimIdFlattenedDto implements FlattenedDtoInterface
         return implode(',', $pValues);
     }
 
+    /**
+     * @param string $data
+     *
+     * @return UserClaimIdFlattenedDto
+     */
     public function fromString($data)
     {
         $pValues = explode(',', $data);
         $this->setUserId($pValues[0]);
         $this->setClaimId($pValues[1]);
+        return $this;
     }
 
 }

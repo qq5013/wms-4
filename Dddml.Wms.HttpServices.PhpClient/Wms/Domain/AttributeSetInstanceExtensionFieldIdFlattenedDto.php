@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 namespace Wms\Domain;
 
@@ -81,6 +81,9 @@ class AttributeSetInstanceExtensionFieldIdFlattenedDto implements FlattenedDtoIn
         $this->value->setIndex($index);
     }
 
+    /**
+     * @return string
+     */
     public function toString()
     {
         $pValues = [
@@ -90,11 +93,17 @@ class AttributeSetInstanceExtensionFieldIdFlattenedDto implements FlattenedDtoIn
         return implode(',', $pValues);
     }
 
+    /**
+     * @param string $data
+     *
+     * @return AttributeSetInstanceExtensionFieldIdFlattenedDto
+     */
     public function fromString($data)
     {
         $pValues = explode(',', $data);
         $this->setGroupId($pValues[0]);
         $this->setIndex($pValues[1]);
+        return $this;
     }
 
 }

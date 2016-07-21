@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 namespace Wms\Domain;
 
@@ -98,6 +98,9 @@ class UserLoginIdFlattenedDto implements FlattenedDtoInterface
         $this->value->getLoginKey()->setProviderKey($loginKeyProviderKey);
     }
 
+    /**
+     * @return string
+     */
     public function toString()
     {
         $pValues = [
@@ -108,12 +111,18 @@ class UserLoginIdFlattenedDto implements FlattenedDtoInterface
         return implode(',', $pValues);
     }
 
+    /**
+     * @param string $data
+     *
+     * @return UserLoginIdFlattenedDto
+     */
     public function fromString($data)
     {
         $pValues = explode(',', $data);
         $this->setUserId($pValues[0]);
         $this->setLoginKeyLoginProvider($pValues[1]);
         $this->setLoginKeyProviderKey($pValues[2]);
+        return $this;
     }
 
 }

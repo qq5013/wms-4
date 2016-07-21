@@ -1,10 +1,11 @@
-﻿<?php
+<?php
 
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
+use Dddml\StringIdInterface;
 
-class OrganizationStructureId
+class OrganizationStructureId implements StringIdInterface
 {
     /**
      * @Type("string")
@@ -68,6 +69,38 @@ class OrganizationStructureId
     {
         $this->subsidiaryId = $subsidiaryId;
     }
+
+
+
+    /**
+     * @var OrganizationStructureIdFlattenedDto
+     */
+    private $idFlattenedDto;
+
+    /**
+     * @return string
+     */
+    public function toString()
+    {
+        if (!$this->idFlattenedDto) {
+            $this->idFlattenedDto = new OrganizationStructureIdFlattenedDto($this);
+        }
+
+        return $this->idFlattenedDto->toString();
+    }
+
+    /**
+     * @param string $idStr
+     *
+     * @return OrganizationStructureId
+     */
+    public static function createFromString($idStr)
+    {
+        return (new OrganizationStructureIdFlattenedDto())
+            ->fromString($idStr)
+            ->toOrganizationStructureId();
+    }
+
 
 }
 

@@ -1,8 +1,9 @@
-﻿<?php
+<?php
 
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
+use Dddml\StringIdInterface;
 
 class DocumentAction
 {
@@ -26,6 +27,7 @@ class DocumentAction
     {
         $this->name = $name;
     }
+
 
 }
 

@@ -1,10 +1,11 @@
-﻿<?php
+<?php
 
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
+use Dddml\StringIdInterface;
 
-class UserRoleId
+class UserRoleId implements StringIdInterface
 {
     /**
      * @Type("string")
@@ -47,6 +48,38 @@ class UserRoleId
     {
         $this->roleId = $roleId;
     }
+
+
+
+    /**
+     * @var UserRoleIdFlattenedDto
+     */
+    private $idFlattenedDto;
+
+    /**
+     * @return string
+     */
+    public function toString()
+    {
+        if (!$this->idFlattenedDto) {
+            $this->idFlattenedDto = new UserRoleIdFlattenedDto($this);
+        }
+
+        return $this->idFlattenedDto->toString();
+    }
+
+    /**
+     * @param string $idStr
+     *
+     * @return UserRoleId
+     */
+    public static function createFromString($idStr)
+    {
+        return (new UserRoleIdFlattenedDto())
+            ->fromString($idStr)
+            ->toUserRoleId();
+    }
+
 
 }
 

@@ -1,10 +1,11 @@
-﻿<?php
+<?php
 
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
+use Dddml\StringIdInterface;
 
-class UserLoginMvoStateEventId
+class UserLoginMvoStateEventId implements StringIdInterface
 {
     /**
      * @Type("Wms\Domain\UserLoginId")
@@ -50,6 +51,38 @@ class UserLoginMvoStateEventId
     {
         $this->userVersion = $userVersion;
     }
+
+
+
+    /**
+     * @var UserLoginMvoStateEventIdFlattenedDto
+     */
+    private $idFlattenedDto;
+
+    /**
+     * @return string
+     */
+    public function toString()
+    {
+        if (!$this->idFlattenedDto) {
+            $this->idFlattenedDto = new UserLoginMvoStateEventIdFlattenedDto($this);
+        }
+
+        return $this->idFlattenedDto->toString();
+    }
+
+    /**
+     * @param string $idStr
+     *
+     * @return UserLoginMvoStateEventId
+     */
+    public static function createFromString($idStr)
+    {
+        return (new UserLoginMvoStateEventIdFlattenedDto())
+            ->fromString($idStr)
+            ->toUserLoginMvoStateEventId();
+    }
+
 
 }
 

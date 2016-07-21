@@ -1,10 +1,11 @@
-﻿<?php
+<?php
 
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
+use Dddml\StringIdInterface;
 
-class AttributeSetAttributeUseId
+class AttributeSetAttributeUseId implements StringIdInterface
 {
     /**
      * @Type("string")
@@ -47,6 +48,38 @@ class AttributeSetAttributeUseId
     {
         $this->attributeId = $attributeId;
     }
+
+
+
+    /**
+     * @var AttributeSetAttributeUseIdFlattenedDto
+     */
+    private $idFlattenedDto;
+
+    /**
+     * @return string
+     */
+    public function toString()
+    {
+        if (!$this->idFlattenedDto) {
+            $this->idFlattenedDto = new AttributeSetAttributeUseIdFlattenedDto($this);
+        }
+
+        return $this->idFlattenedDto->toString();
+    }
+
+    /**
+     * @param string $idStr
+     *
+     * @return AttributeSetAttributeUseId
+     */
+    public static function createFromString($idStr)
+    {
+        return (new AttributeSetAttributeUseIdFlattenedDto())
+            ->fromString($idStr)
+            ->toAttributeSetAttributeUseId();
+    }
+
 
 }
 

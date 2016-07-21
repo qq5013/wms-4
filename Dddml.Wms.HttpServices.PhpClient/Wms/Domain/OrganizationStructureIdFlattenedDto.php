@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 namespace Wms\Domain;
 
@@ -98,6 +98,9 @@ class OrganizationStructureIdFlattenedDto implements FlattenedDtoInterface
         $this->value->setSubsidiaryId($subsidiaryId);
     }
 
+    /**
+     * @return string
+     */
     public function toString()
     {
         $pValues = [
@@ -108,12 +111,18 @@ class OrganizationStructureIdFlattenedDto implements FlattenedDtoInterface
         return implode(',', $pValues);
     }
 
+    /**
+     * @param string $data
+     *
+     * @return OrganizationStructureIdFlattenedDto
+     */
     public function fromString($data)
     {
         $pValues = explode(',', $data);
         $this->setOrganizationStructureTypeId($pValues[0]);
         $this->setParentId($pValues[1]);
         $this->setSubsidiaryId($pValues[2]);
+        return $this;
     }
 
 }

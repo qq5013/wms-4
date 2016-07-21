@@ -2,6 +2,8 @@
 
 namespace Wms\HttpClient;
 
+use Dddml\Serializer\Type\Long;
+use Dddml\Serializer\Type\Decimal;
 
 class AttributeSetInstanceQueryRequest extends AbstractQueryRequest
 {

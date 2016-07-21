@@ -4,7 +4,10 @@ namespace Wms\Domain;
 
 use Dddml\Command\CommandInterface;
 use JMS\Serializer\Annotation\Type;
+use Dddml\Serializer\Type\Long;
+use Dddml\Serializer\Type\Decimal;
 use NodaMoney\Money;
+use Dddml\Serializer\Type\Money;
 use Wms\Domain\CommandTrait;
 
 abstract class AbstractInOutLineMvoCommand implements CommandInterface

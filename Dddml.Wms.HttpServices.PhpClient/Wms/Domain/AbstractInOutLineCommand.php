@@ -4,6 +4,8 @@ namespace Wms\Domain;
 
 use Dddml\Command\CommandInterface;
 use JMS\Serializer\Annotation\Type;
+use Dddml\Serializer\Type\Long;
+use Dddml\Serializer\Type\Decimal;
 use Wms\Domain\CommandTrait;
 
 abstract class AbstractInOutLineCommand implements CommandInterface

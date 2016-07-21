@@ -6,7 +6,10 @@ use Dddml\Executor\Http\CommandExecutor;
 use Dddml\Executor\Http\CommandRequestInterface;
 use Dddml\Routing\RouteTrait;
 use Symfony\Component\Routing\Route;
+use Dddml\Serializer\Type\Long;
+use Dddml\Serializer\Type\Decimal;
 use NodaMoney\Money;
+use Dddml\Serializer\Type\Money;
 use Wms\Domain\DeleteInOutLineMvo;
 
 

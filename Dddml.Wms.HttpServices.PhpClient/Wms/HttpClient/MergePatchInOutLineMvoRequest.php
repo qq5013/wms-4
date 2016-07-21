@@ -7,7 +7,10 @@ use Dddml\Executor\Http\CommandRequestInterface;
 use Dddml\Routing\RouteTrait;
 use JMS\Serializer\Annotation\Type;
 use Symfony\Component\Routing\Route;
+use Dddml\Serializer\Type\Long;
+use Dddml\Serializer\Type\Decimal;
 use NodaMoney\Money;
+use Dddml\Serializer\Type\Money;
 use Wms\Domain\CreateOrMergePatchInOutLineMvo;
 
 class MergePatchInOutLineMvoRequest implements CommandRequestInterface

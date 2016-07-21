@@ -4,6 +4,7 @@ namespace Wms\Domain;
 
 use Dddml\Command\CommandInterface;
 use JMS\Serializer\Annotation\Type;
+use Dddml\Serializer\Type\Long;
 use Wms\Domain\CommandTrait;
 
 abstract class AbstractAttributeSetInstanceExtensionFieldCommand implements CommandInterface

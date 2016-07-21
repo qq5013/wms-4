@@ -7,8 +7,6 @@ use Dddml\Executor\Http\CommandRequestInterface;
 use Dddml\Routing\RouteTrait;
 use Symfony\Component\Routing\Route;
 use NodaMoney\Money;
-use Wms\Domain\InOutLine;
-use Wms\Domain\SkuId;
 use Wms\Domain\DeleteInOut;
 
 

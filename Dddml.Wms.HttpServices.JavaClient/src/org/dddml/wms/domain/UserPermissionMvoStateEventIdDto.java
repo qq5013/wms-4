@@ -1,6 +1,5 @@
 package org.dddml.wms.domain;
 
-import org.dddml.wms.domain.UserPermissionIdDto;
 
 public class UserPermissionMvoStateEventIdDto
 {
@@ -42,6 +41,26 @@ public class UserPermissionMvoStateEventIdDto
         this.value.setUserVersion(userVersion);
     }
 
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        UserPermissionMvoStateEventIdDto other = (UserPermissionMvoStateEventIdDto)obj;
+        return value.equals(other.value);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return value.hashCode();
+    }
 
 }
 

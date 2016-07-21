@@ -2,7 +2,6 @@
 
 namespace Wms\HttpClient;
 
-use Wms\Domain\OrganizationStructureId;
 
 class OrganizationStructuresQueryRequest extends AbstractQueryRequest
 {

@@ -3,8 +3,9 @@
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
+use Dddml\FlattenedDtoInterface;
 
-class RolePermissionIdFlattenedDto
+class RolePermissionIdFlattenedDto implements FlattenedDtoInterface
 {
 
     const PROPERTIES = [
@@ -80,6 +81,21 @@ class RolePermissionIdFlattenedDto
         $this->value->setPermissionId($permissionId);
     }
 
+    public function toString()
+    {
+        $pValues = [
+            $this->getRoleId(),
+            $this->getPermissionId(),
+        ];
+        return implode(',', $pValues);
+    }
+
+    public function fromString($data)
+    {
+        $pValues = explode(',', $data);
+        $this->setRoleId($pValues[0]);
+        $this->setPermissionId($pValues[1]);
+    }
 
 }
 

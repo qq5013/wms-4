@@ -27,23 +27,23 @@ namespace Dddml.Wms.Domain
 			var state = StateRepository.Get(aggregateId);
 			var aggregate = GetAttributeValueMvoAggregate(state);
 
-			var eventStoreAaggregateId = ToEventStoreAaggregateId(aggregateId);
+			var eventStoreAggregateId = ToEventStoreAggregateId(aggregateId);
 
-			var repeated = IsRepeatedCommand(c, eventStoreAaggregateId, state);
+			var repeated = IsRepeatedCommand(c, eventStoreAggregateId, state);
 			if (repeated) { return; }
 
 			aggregate.ThrowOnInvalidStateTransition(c);
 			action(aggregate);
-			EventStore.AppendEvents(ToEventStoreAaggregateId(aggregateId), ((IAttributeValueMvoStateProperties)state).AttributeVersion, aggregate.Changes, () => { StateRepository.Save(state); });
+			EventStore.AppendEvents(ToEventStoreAggregateId(aggregateId), ((IAttributeValueMvoStateProperties)state).AttributeVersion, aggregate.Changes, () => { StateRepository.Save(state); });
 		}
 
 
-		protected bool IsRepeatedCommand(IAttributeValueMvoCommand command, IEventStoreAggregateId eventStoreAaggregateId, IAttributeValueMvoState state)
+		protected bool IsRepeatedCommand(IAttributeValueMvoCommand command, IEventStoreAggregateId eventStoreAggregateId, IAttributeValueMvoState state)
 		{
 			bool repeated = false;
 			if (((IAttributeValueMvoStateProperties)state).AttributeVersion > command.AggregateVersion)
 			{
-				var lastEvent = EventStore.FindLastEvent(typeof(IAttributeValueMvoStateEvent), eventStoreAaggregateId, command.AggregateVersion);
+				var lastEvent = EventStore.FindLastEvent(typeof(IAttributeValueMvoStateEvent), eventStoreAggregateId, command.AggregateVersion);
 				if (lastEvent != null && lastEvent.CommandId == command.CommandId)
 				{
 					repeated = true;
@@ -119,7 +119,7 @@ namespace Dddml.Wms.Domain
 
 	    public virtual IAttributeValueMvoStateEvent GetStateEvent(AttributeValueId attributeValueId, long version)
         {
-            var e = (IAttributeValueMvoStateEvent)EventStore.GetStateEvent(ToEventStoreAaggregateId(attributeValueId), version);
+            var e = (IAttributeValueMvoStateEvent)EventStore.GetStateEvent(ToEventStoreAggregateId(attributeValueId), version);
             if (e != null)
             {
                 e.ReadOnly = true;
@@ -130,7 +130,7 @@ namespace Dddml.Wms.Domain
 
 		public abstract IAttributeValueMvoAggregate GetAttributeValueMvoAggregate(IAttributeValueMvoState state);
 
-		public abstract IEventStoreAggregateId ToEventStoreAaggregateId(AttributeValueId aggregateId);
+		public abstract IEventStoreAggregateId ToEventStoreAggregateId(AttributeValueId aggregateId);
 
 
 	}

@@ -116,7 +116,7 @@ namespace Dddml.Wms.Domain
 		{
 			if (!oe.StateEventId.UserId.Equals(e.StateEventId.UserId))
 			{ 
-				DomainError.Named("inconsistentEventIds", "Outer Id UserId {0} but inner id UserId {1}", 
+				throw DomainError.Named("inconsistentEventIds", "Outer Id UserId {0} but inner id UserId {1}", 
 					oe.StateEventId.UserId, e.StateEventId.UserId);
 			}
 		}
@@ -143,7 +143,7 @@ namespace Dddml.Wms.Domain
 		{
 			if (!oe.StateEventId.UserId.Equals(e.StateEventId.UserId))
 			{ 
-				DomainError.Named("inconsistentEventIds", "Outer Id UserId {0} but inner id UserId {1}", 
+				throw DomainError.Named("inconsistentEventIds", "Outer Id UserId {0} but inner id UserId {1}", 
 					oe.StateEventId.UserId, e.StateEventId.UserId);
 			}
 		}
@@ -170,7 +170,7 @@ namespace Dddml.Wms.Domain
 		{
 			if (!oe.StateEventId.UserId.Equals(e.StateEventId.UserId))
 			{ 
-				DomainError.Named("inconsistentEventIds", "Outer Id UserId {0} but inner id UserId {1}", 
+				throw DomainError.Named("inconsistentEventIds", "Outer Id UserId {0} but inner id UserId {1}", 
 					oe.StateEventId.UserId, e.StateEventId.UserId);
 			}
 		}
@@ -197,7 +197,7 @@ namespace Dddml.Wms.Domain
 		{
 			if (!oe.StateEventId.UserId.Equals(e.StateEventId.UserId))
 			{ 
-				DomainError.Named("inconsistentEventIds", "Outer Id UserId {0} but inner id UserId {1}", 
+				throw DomainError.Named("inconsistentEventIds", "Outer Id UserId {0} but inner id UserId {1}", 
 					oe.StateEventId.UserId, e.StateEventId.UserId);
 			}
 		}
@@ -257,6 +257,7 @@ namespace Dddml.Wms.Domain
                         AddUserRoleEvent(e);
                     }
                 }
+                else { this._userRoleEvents.Clear(); }
             }
         }
 	
@@ -306,6 +307,7 @@ namespace Dddml.Wms.Domain
                         AddUserClaimEvent(e);
                     }
                 }
+                else { this._userClaimEvents.Clear(); }
             }
         }
 	
@@ -355,6 +357,7 @@ namespace Dddml.Wms.Domain
                         AddUserPermissionEvent(e);
                     }
                 }
+                else { this._userPermissionEvents.Clear(); }
             }
         }
 	
@@ -404,6 +407,7 @@ namespace Dddml.Wms.Domain
                         AddUserLoginEvent(e);
                     }
                 }
+                else { this._userLoginEvents.Clear(); }
             }
         }
 	
@@ -512,6 +516,7 @@ namespace Dddml.Wms.Domain
                         AddUserRoleEvent(e);
                     }
                 }
+                else { this._userRoleEvents.Clear(); }
             }
         }
 
@@ -573,6 +578,7 @@ namespace Dddml.Wms.Domain
                         AddUserClaimEvent(e);
                     }
                 }
+                else { this._userClaimEvents.Clear(); }
             }
         }
 
@@ -634,6 +640,7 @@ namespace Dddml.Wms.Domain
                         AddUserPermissionEvent(e);
                     }
                 }
+                else { this._userPermissionEvents.Clear(); }
             }
         }
 
@@ -695,6 +702,7 @@ namespace Dddml.Wms.Domain
                         AddUserLoginEvent(e);
                     }
                 }
+                else { this._userLoginEvents.Clear(); }
             }
         }
 
@@ -795,6 +803,7 @@ namespace Dddml.Wms.Domain
                         AddUserRoleEvent(e);
                     }
                 }
+                else { this._userRoleEvents.Clear(); }
             }
         }
 	
@@ -844,6 +853,7 @@ namespace Dddml.Wms.Domain
                         AddUserClaimEvent(e);
                     }
                 }
+                else { this._userClaimEvents.Clear(); }
             }
         }
 	
@@ -893,6 +903,7 @@ namespace Dddml.Wms.Domain
                         AddUserPermissionEvent(e);
                     }
                 }
+                else { this._userPermissionEvents.Clear(); }
             }
         }
 	
@@ -942,6 +953,7 @@ namespace Dddml.Wms.Domain
                         AddUserLoginEvent(e);
                     }
                 }
+                else { this._userLoginEvents.Clear(); }
             }
         }
 	

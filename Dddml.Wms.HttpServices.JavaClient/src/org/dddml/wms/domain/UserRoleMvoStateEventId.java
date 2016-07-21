@@ -1,6 +1,5 @@
 package org.dddml.wms.domain;
 
-import org.dddml.wms.domain.UserRoleId;
 
 public class UserRoleMvoStateEventId
 {
@@ -48,6 +47,45 @@ public class UserRoleMvoStateEventId
         getUserRoleId().setRoleId(userRoleIdRoleId);
     }
 
+    UserRoleMvoStateEventId ()
+    {
+    }
+
+    public UserRoleMvoStateEventId (UserRoleId userRoleId, Long userVersion)
+    {
+        this.userRoleId = userRoleId;
+        this.userVersion = userVersion;
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        UserRoleMvoStateEventId other = (UserRoleMvoStateEventId)obj;
+        return true 
+            && (userRoleId == other.userRoleId || (userRoleId != null && userRoleId.equals(other.userRoleId)))
+            && (userVersion == other.userVersion || (userVersion != null && userVersion.equals(other.userVersion)))
+            ;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        int hash = 0;
+        if (this.userRoleId != null) {
+            hash += 13 * this.userRoleId.hashCode();
+        }
+        if (this.userVersion != null) {
+            hash += 13 * this.userVersion.hashCode();
+        }
+        return hash;
+    }
 
 }
 

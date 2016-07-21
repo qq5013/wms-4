@@ -2,8 +2,6 @@
 
 namespace Wms\HttpClient;
 
-use Wms\Domain\AttributeValueId;
-use Wms\Domain\AttributeValue;
 
 class AttributeValueMvosQueryRequest extends AbstractQueryRequest
 {

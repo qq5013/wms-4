@@ -27,6 +27,45 @@ public class RolePermissionId
         this.permissionId = permissionId;
     }
 
+    RolePermissionId ()
+    {
+    }
+
+    public RolePermissionId (String roleId, String permissionId)
+    {
+        this.roleId = roleId;
+        this.permissionId = permissionId;
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        RolePermissionId other = (RolePermissionId)obj;
+        return true 
+            && (roleId == other.roleId || (roleId != null && roleId.equals(other.roleId)))
+            && (permissionId == other.permissionId || (permissionId != null && permissionId.equals(other.permissionId)))
+            ;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        int hash = 0;
+        if (this.roleId != null) {
+            hash += 13 * this.roleId.hashCode();
+        }
+        if (this.permissionId != null) {
+            hash += 13 * this.permissionId.hashCode();
+        }
+        return hash;
+    }
 
 }
 

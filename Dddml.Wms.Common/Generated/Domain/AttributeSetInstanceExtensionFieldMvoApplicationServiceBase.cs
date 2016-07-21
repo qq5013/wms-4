@@ -27,23 +27,23 @@ namespace Dddml.Wms.Domain
 			var state = StateRepository.Get(aggregateId);
 			var aggregate = GetAttributeSetInstanceExtensionFieldMvoAggregate(state);
 
-			var eventStoreAaggregateId = ToEventStoreAaggregateId(aggregateId);
+			var eventStoreAggregateId = ToEventStoreAggregateId(aggregateId);
 
-			var repeated = IsRepeatedCommand(c, eventStoreAaggregateId, state);
+			var repeated = IsRepeatedCommand(c, eventStoreAggregateId, state);
 			if (repeated) { return; }
 
 			aggregate.ThrowOnInvalidStateTransition(c);
 			action(aggregate);
-			EventStore.AppendEvents(ToEventStoreAaggregateId(aggregateId), ((IAttributeSetInstanceExtensionFieldMvoStateProperties)state).AttrSetInstEFGroupVersion, aggregate.Changes, () => { StateRepository.Save(state); });
+			EventStore.AppendEvents(ToEventStoreAggregateId(aggregateId), ((IAttributeSetInstanceExtensionFieldMvoStateProperties)state).AttrSetInstEFGroupVersion, aggregate.Changes, () => { StateRepository.Save(state); });
 		}
 
 
-		protected bool IsRepeatedCommand(IAttributeSetInstanceExtensionFieldMvoCommand command, IEventStoreAggregateId eventStoreAaggregateId, IAttributeSetInstanceExtensionFieldMvoState state)
+		protected bool IsRepeatedCommand(IAttributeSetInstanceExtensionFieldMvoCommand command, IEventStoreAggregateId eventStoreAggregateId, IAttributeSetInstanceExtensionFieldMvoState state)
 		{
 			bool repeated = false;
 			if (((IAttributeSetInstanceExtensionFieldMvoStateProperties)state).AttrSetInstEFGroupVersion > command.AggregateVersion)
 			{
-				var lastEvent = EventStore.FindLastEvent(typeof(IAttributeSetInstanceExtensionFieldMvoStateEvent), eventStoreAaggregateId, command.AggregateVersion);
+				var lastEvent = EventStore.FindLastEvent(typeof(IAttributeSetInstanceExtensionFieldMvoStateEvent), eventStoreAggregateId, command.AggregateVersion);
 				if (lastEvent != null && lastEvent.CommandId == command.CommandId)
 				{
 					repeated = true;
@@ -119,7 +119,7 @@ namespace Dddml.Wms.Domain
 
 	    public virtual IAttributeSetInstanceExtensionFieldMvoStateEvent GetStateEvent(AttributeSetInstanceExtensionFieldId attributeSetInstanceExtensionFieldId, long version)
         {
-            var e = (IAttributeSetInstanceExtensionFieldMvoStateEvent)EventStore.GetStateEvent(ToEventStoreAaggregateId(attributeSetInstanceExtensionFieldId), version);
+            var e = (IAttributeSetInstanceExtensionFieldMvoStateEvent)EventStore.GetStateEvent(ToEventStoreAggregateId(attributeSetInstanceExtensionFieldId), version);
             if (e != null)
             {
                 e.ReadOnly = true;
@@ -130,7 +130,7 @@ namespace Dddml.Wms.Domain
 
 		public abstract IAttributeSetInstanceExtensionFieldMvoAggregate GetAttributeSetInstanceExtensionFieldMvoAggregate(IAttributeSetInstanceExtensionFieldMvoState state);
 
-		public abstract IEventStoreAggregateId ToEventStoreAaggregateId(AttributeSetInstanceExtensionFieldId aggregateId);
+		public abstract IEventStoreAggregateId ToEventStoreAggregateId(AttributeSetInstanceExtensionFieldId aggregateId);
 
 
 	}

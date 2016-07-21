@@ -3,8 +3,6 @@
 namespace Wms\HttpClient;
 
 use NodaMoney\Money;
-use Wms\Domain\InOutLine;
-use Wms\Domain\SkuId;
 
 class InOutQueryRequest extends AbstractQueryRequest
 {

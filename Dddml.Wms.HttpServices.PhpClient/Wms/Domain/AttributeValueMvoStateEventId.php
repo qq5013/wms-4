@@ -3,7 +3,6 @@
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
-use Wms\Domain\AttributeValueId;
 
 class AttributeValueMvoStateEventId
 {
@@ -17,6 +16,9 @@ class AttributeValueMvoStateEventId
      */
     public function getAttributeValueId()
     {
+        if(!$this->attributeValueId) {
+            $this->attributeValueId = new AttributeValueId(); 
+        }
         return $this->attributeValueId;
     }
 

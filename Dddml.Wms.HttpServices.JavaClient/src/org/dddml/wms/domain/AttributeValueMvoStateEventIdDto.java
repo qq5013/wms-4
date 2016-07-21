@@ -1,6 +1,5 @@
 package org.dddml.wms.domain;
 
-import org.dddml.wms.domain.AttributeValueIdDto;
 
 public class AttributeValueMvoStateEventIdDto
 {
@@ -42,6 +41,26 @@ public class AttributeValueMvoStateEventIdDto
         this.value.setAttributeVersion(attributeVersion);
     }
 
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        AttributeValueMvoStateEventIdDto other = (AttributeValueMvoStateEventIdDto)obj;
+        return value.equals(other.value);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return value.hashCode();
+    }
 
 }
 

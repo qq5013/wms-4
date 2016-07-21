@@ -1,6 +1,5 @@
 package org.dddml.wms.domain;
 
-import org.dddml.wms.domain.AttributeSetInstanceExtensionFieldIdDto;
 
 public class AttributeSetInstanceExtensionFieldMvoStateEventIdDto
 {
@@ -42,6 +41,26 @@ public class AttributeSetInstanceExtensionFieldMvoStateEventIdDto
         this.value.setAttrSetInstEFGroupVersion(attrSetInstEFGroupVersion);
     }
 
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        AttributeSetInstanceExtensionFieldMvoStateEventIdDto other = (AttributeSetInstanceExtensionFieldMvoStateEventIdDto)obj;
+        return value.equals(other.value);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return value.hashCode();
+    }
 
 }
 

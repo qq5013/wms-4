@@ -3,9 +3,9 @@
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
-use Wms\Domain\SkuId;
+use Dddml\FlattenedDtoInterface;
 
-class InOutLineIdFlattenedDto
+class InOutLineIdFlattenedDto implements FlattenedDtoInterface
 {
 
     const PROPERTIES = [
@@ -98,6 +98,23 @@ class InOutLineIdFlattenedDto
         $this->value->getSkuId()->setAttributeSetInstanceId($skuIdAttributeSetInstanceId);
     }
 
+    public function toString()
+    {
+        $pValues = [
+            $this->getInOutDocumentNumber(),
+            $this->getSkuIdProductId(),
+            $this->getSkuIdAttributeSetInstanceId(),
+        ];
+        return implode(',', $pValues);
+    }
+
+    public function fromString($data)
+    {
+        $pValues = explode(',', $data);
+        $this->setInOutDocumentNumber($pValues[0]);
+        $this->setSkuIdProductId($pValues[1]);
+        $this->setSkuIdAttributeSetInstanceId($pValues[2]);
+    }
 
 }
 

@@ -3,7 +3,6 @@
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
-use Wms\Domain\LoginKey;
 
 class UserLoginId
 {
@@ -38,6 +37,9 @@ class UserLoginId
      */
     public function getLoginKey()
     {
+        if(!$this->loginKey) {
+            $this->loginKey = new LoginKey(); 
+        }
         return $this->loginKey;
     }
 

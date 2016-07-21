@@ -4,7 +4,6 @@ namespace Wms\Domain;
 
 use Dddml\Command\CommandInterface;
 use JMS\Serializer\Annotation\Type;
-use Wms\Domain\OrganizationStructureId;
 use Wms\Domain\CommandTrait;
 
 abstract class AbstractOrganizationStructureCommand implements CommandInterface

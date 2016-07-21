@@ -1,6 +1,5 @@
 package org.dddml.wms.domain;
 
-import org.dddml.wms.domain.OrganizationStructureId;
 
 public class OrganizationStructureStateEventId
 {
@@ -58,6 +57,45 @@ public class OrganizationStructureStateEventId
         getId().setSubsidiaryId(idSubsidiaryId);
     }
 
+    OrganizationStructureStateEventId ()
+    {
+    }
+
+    public OrganizationStructureStateEventId (OrganizationStructureId id, Long version)
+    {
+        this.id = id;
+        this.version = version;
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        OrganizationStructureStateEventId other = (OrganizationStructureStateEventId)obj;
+        return true 
+            && (id == other.id || (id != null && id.equals(other.id)))
+            && (version == other.version || (version != null && version.equals(other.version)))
+            ;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        int hash = 0;
+        if (this.id != null) {
+            hash += 13 * this.id.hashCode();
+        }
+        if (this.version != null) {
+            hash += 13 * this.version.hashCode();
+        }
+        return hash;
+    }
 
 }
 

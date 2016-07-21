@@ -7,9 +7,7 @@ use Dddml\Executor\Http\CommandRequestInterface;
 use Dddml\Routing\RouteTrait;
 use JMS\Serializer\Annotation\Type;
 use Symfony\Component\Routing\Route;
-use Wms\Domain\InOutLineId;
 use NodaMoney\Money;
-use Wms\Domain\InOutLine;
 use Wms\Domain\CreateOrMergePatchInOutLineMvo;
 
 

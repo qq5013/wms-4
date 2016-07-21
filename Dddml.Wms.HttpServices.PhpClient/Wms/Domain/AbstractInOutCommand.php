@@ -5,8 +5,6 @@ namespace Wms\Domain;
 use Dddml\Command\CommandInterface;
 use JMS\Serializer\Annotation\Type;
 use NodaMoney\Money;
-use Wms\Domain\InOutLine;
-use Wms\Domain\SkuId;
 use Wms\Domain\CommandTrait;
 
 abstract class AbstractInOutCommand implements CommandInterface

@@ -4,7 +4,6 @@ namespace Wms\Domain;
 
 use Dddml\Command\CommandInterface;
 use JMS\Serializer\Annotation\Type;
-use Wms\Domain\AttributeUse;
 use Wms\Domain\CommandTrait;
 
 abstract class AbstractAttributeSetCommand implements CommandInterface

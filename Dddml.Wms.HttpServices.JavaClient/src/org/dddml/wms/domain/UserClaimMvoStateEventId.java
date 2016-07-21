@@ -1,6 +1,5 @@
 package org.dddml.wms.domain;
 
-import org.dddml.wms.domain.UserClaimId;
 
 public class UserClaimMvoStateEventId
 {
@@ -48,6 +47,45 @@ public class UserClaimMvoStateEventId
         getUserClaimId().setClaimId(userClaimIdClaimId);
     }
 
+    UserClaimMvoStateEventId ()
+    {
+    }
+
+    public UserClaimMvoStateEventId (UserClaimId userClaimId, Long userVersion)
+    {
+        this.userClaimId = userClaimId;
+        this.userVersion = userVersion;
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        UserClaimMvoStateEventId other = (UserClaimMvoStateEventId)obj;
+        return true 
+            && (userClaimId == other.userClaimId || (userClaimId != null && userClaimId.equals(other.userClaimId)))
+            && (userVersion == other.userVersion || (userVersion != null && userVersion.equals(other.userVersion)))
+            ;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        int hash = 0;
+        if (this.userClaimId != null) {
+            hash += 13 * this.userClaimId.hashCode();
+        }
+        if (this.userVersion != null) {
+            hash += 13 * this.userVersion.hashCode();
+        }
+        return hash;
+    }
 
 }
 

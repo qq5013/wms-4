@@ -3,8 +3,9 @@
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
+use Dddml\FlattenedDtoInterface;
 
-class AttributeSetInstanceExtensionFieldIdFlattenedDto
+class AttributeSetInstanceExtensionFieldIdFlattenedDto implements FlattenedDtoInterface
 {
 
     const PROPERTIES = [
@@ -80,6 +81,21 @@ class AttributeSetInstanceExtensionFieldIdFlattenedDto
         $this->value->setIndex($index);
     }
 
+    public function toString()
+    {
+        $pValues = [
+            $this->getGroupId(),
+            $this->getIndex(),
+        ];
+        return implode(',', $pValues);
+    }
+
+    public function fromString($data)
+    {
+        $pValues = explode(',', $data);
+        $this->setGroupId($pValues[0]);
+        $this->setIndex($pValues[1]);
+    }
 
 }
 

@@ -28,23 +28,23 @@ namespace Dddml.Wms.Domain
 			var state = StateRepository.Get(aggregateId);
 			var aggregate = GetInOutLineMvoAggregate(state);
 
-			var eventStoreAaggregateId = ToEventStoreAaggregateId(aggregateId);
+			var eventStoreAggregateId = ToEventStoreAggregateId(aggregateId);
 
-			var repeated = IsRepeatedCommand(c, eventStoreAaggregateId, state);
+			var repeated = IsRepeatedCommand(c, eventStoreAggregateId, state);
 			if (repeated) { return; }
 
 			aggregate.ThrowOnInvalidStateTransition(c);
 			action(aggregate);
-			EventStore.AppendEvents(ToEventStoreAaggregateId(aggregateId), ((IInOutLineMvoStateProperties)state).InOutVersion, aggregate.Changes, () => { StateRepository.Save(state); });
+			EventStore.AppendEvents(ToEventStoreAggregateId(aggregateId), ((IInOutLineMvoStateProperties)state).InOutVersion, aggregate.Changes, () => { StateRepository.Save(state); });
 		}
 
 
-		protected bool IsRepeatedCommand(IInOutLineMvoCommand command, IEventStoreAggregateId eventStoreAaggregateId, IInOutLineMvoState state)
+		protected bool IsRepeatedCommand(IInOutLineMvoCommand command, IEventStoreAggregateId eventStoreAggregateId, IInOutLineMvoState state)
 		{
 			bool repeated = false;
 			if (((IInOutLineMvoStateProperties)state).InOutVersion > command.AggregateVersion)
 			{
-				var lastEvent = EventStore.FindLastEvent(typeof(IInOutLineMvoStateEvent), eventStoreAaggregateId, command.AggregateVersion);
+				var lastEvent = EventStore.FindLastEvent(typeof(IInOutLineMvoStateEvent), eventStoreAggregateId, command.AggregateVersion);
 				if (lastEvent != null && lastEvent.CommandId == command.CommandId)
 				{
 					repeated = true;
@@ -120,7 +120,7 @@ namespace Dddml.Wms.Domain
 
 	    public virtual IInOutLineMvoStateEvent GetStateEvent(InOutLineId inOutLineId, long version)
         {
-            var e = (IInOutLineMvoStateEvent)EventStore.GetStateEvent(ToEventStoreAaggregateId(inOutLineId), version);
+            var e = (IInOutLineMvoStateEvent)EventStore.GetStateEvent(ToEventStoreAggregateId(inOutLineId), version);
             if (e != null)
             {
                 e.ReadOnly = true;
@@ -131,7 +131,7 @@ namespace Dddml.Wms.Domain
 
 		public abstract IInOutLineMvoAggregate GetInOutLineMvoAggregate(IInOutLineMvoState state);
 
-		public abstract IEventStoreAggregateId ToEventStoreAaggregateId(InOutLineId aggregateId);
+		public abstract IEventStoreAggregateId ToEventStoreAggregateId(InOutLineId aggregateId);
 
 
 	}

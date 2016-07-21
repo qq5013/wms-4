@@ -1,6 +1,5 @@
 package org.dddml.wms.domain;
 
-import org.dddml.wms.domain.OrganizationStructureIdDto;
 import java.util.Date;
 
 public class CreateOrMergePatchOrganizationStructureDto extends AbstractOrganizationStructureCommandDto
@@ -24,9 +23,9 @@ public class CreateOrMergePatchOrganizationStructureDto extends AbstractOrganiza
         return this.isPropertyActiveRemoved;
     }
 
-    public void setIsPropertyActiveRemoved(Boolean isPropertyActiveRemoved)
+    public void setIsPropertyActiveRemoved(Boolean removed)
     {
-        this.isPropertyActiveRemoved = isPropertyActiveRemoved;
+        this.isPropertyActiveRemoved = removed;
     }
 
 

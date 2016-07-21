@@ -2,7 +2,6 @@
 
 namespace Wms\HttpClient;
 
-use Wms\Domain\AttributeSetInstanceExtensionField;
 
 class AttributeSetInstanceExtensionFieldGroupsQueryRequest extends AbstractQueryRequest
 {

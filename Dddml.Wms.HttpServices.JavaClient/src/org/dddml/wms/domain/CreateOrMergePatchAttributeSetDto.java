@@ -1,6 +1,5 @@
 package org.dddml.wms.domain;
 
-import org.dddml.wms.domain.AttributeUseStateDto;
 import java.util.Date;
 
 public class CreateOrMergePatchAttributeSetDto extends AbstractAttributeSetCommandDto
@@ -108,9 +107,9 @@ public class CreateOrMergePatchAttributeSetDto extends AbstractAttributeSetComma
         return this.isPropertyNameRemoved;
     }
 
-    public void setIsPropertyNameRemoved(Boolean isPropertyNameRemoved)
+    public void setIsPropertyNameRemoved(Boolean removed)
     {
-        this.isPropertyNameRemoved = isPropertyNameRemoved;
+        this.isPropertyNameRemoved = removed;
     }
 
     private Boolean isPropertyOrganizationIdRemoved;
@@ -120,9 +119,9 @@ public class CreateOrMergePatchAttributeSetDto extends AbstractAttributeSetComma
         return this.isPropertyOrganizationIdRemoved;
     }
 
-    public void setIsPropertyOrganizationIdRemoved(Boolean isPropertyOrganizationIdRemoved)
+    public void setIsPropertyOrganizationIdRemoved(Boolean removed)
     {
-        this.isPropertyOrganizationIdRemoved = isPropertyOrganizationIdRemoved;
+        this.isPropertyOrganizationIdRemoved = removed;
     }
 
     private Boolean isPropertyDescriptionRemoved;
@@ -132,9 +131,9 @@ public class CreateOrMergePatchAttributeSetDto extends AbstractAttributeSetComma
         return this.isPropertyDescriptionRemoved;
     }
 
-    public void setIsPropertyDescriptionRemoved(Boolean isPropertyDescriptionRemoved)
+    public void setIsPropertyDescriptionRemoved(Boolean removed)
     {
-        this.isPropertyDescriptionRemoved = isPropertyDescriptionRemoved;
+        this.isPropertyDescriptionRemoved = removed;
     }
 
     private Boolean isPropertySerialNumberAttributeIdRemoved;
@@ -144,9 +143,9 @@ public class CreateOrMergePatchAttributeSetDto extends AbstractAttributeSetComma
         return this.isPropertySerialNumberAttributeIdRemoved;
     }
 
-    public void setIsPropertySerialNumberAttributeIdRemoved(Boolean isPropertySerialNumberAttributeIdRemoved)
+    public void setIsPropertySerialNumberAttributeIdRemoved(Boolean removed)
     {
-        this.isPropertySerialNumberAttributeIdRemoved = isPropertySerialNumberAttributeIdRemoved;
+        this.isPropertySerialNumberAttributeIdRemoved = removed;
     }
 
     private Boolean isPropertyLotAttributeIdRemoved;
@@ -156,9 +155,9 @@ public class CreateOrMergePatchAttributeSetDto extends AbstractAttributeSetComma
         return this.isPropertyLotAttributeIdRemoved;
     }
 
-    public void setIsPropertyLotAttributeIdRemoved(Boolean isPropertyLotAttributeIdRemoved)
+    public void setIsPropertyLotAttributeIdRemoved(Boolean removed)
     {
-        this.isPropertyLotAttributeIdRemoved = isPropertyLotAttributeIdRemoved;
+        this.isPropertyLotAttributeIdRemoved = removed;
     }
 
     private Boolean isPropertyReferenceIdRemoved;
@@ -168,9 +167,9 @@ public class CreateOrMergePatchAttributeSetDto extends AbstractAttributeSetComma
         return this.isPropertyReferenceIdRemoved;
     }
 
-    public void setIsPropertyReferenceIdRemoved(Boolean isPropertyReferenceIdRemoved)
+    public void setIsPropertyReferenceIdRemoved(Boolean removed)
     {
-        this.isPropertyReferenceIdRemoved = isPropertyReferenceIdRemoved;
+        this.isPropertyReferenceIdRemoved = removed;
     }
 
     private Boolean isPropertyActiveRemoved;
@@ -180,9 +179,9 @@ public class CreateOrMergePatchAttributeSetDto extends AbstractAttributeSetComma
         return this.isPropertyActiveRemoved;
     }
 
-    public void setIsPropertyActiveRemoved(Boolean isPropertyActiveRemoved)
+    public void setIsPropertyActiveRemoved(Boolean removed)
     {
-        this.isPropertyActiveRemoved = isPropertyActiveRemoved;
+        this.isPropertyActiveRemoved = removed;
     }
 
 

@@ -17,9 +17,9 @@ namespace Dddml.Wms.Domain.NHibernate
 
 	public class NHibernateInOutEventStore : NHibernateEventStoreBase
 	{
-		public override object GetEventId(IEventStoreAggregateId eventStoreAaggregateId, long version)
+		public override object GetEventId(IEventStoreAggregateId eventStoreAggregateId, long version)
 		{
-			return new InOutStateEventId((string)(eventStoreAaggregateId as EventStoreAggregateId).Id, (long)version);
+			return new InOutStateEventId((string)(eventStoreAggregateId as EventStoreAggregateId).Id, (long)version);
 		}
 
 		public override Type GetSupportedStateEventType()

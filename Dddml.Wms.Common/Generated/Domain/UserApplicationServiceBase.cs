@@ -27,23 +27,23 @@ namespace Dddml.Wms.Domain
 			var state = StateRepository.Get(aggregateId);
 			var aggregate = GetUserAggregate(state);
 
-			var eventStoreAaggregateId = ToEventStoreAaggregateId(aggregateId);
+			var eventStoreAggregateId = ToEventStoreAggregateId(aggregateId);
 
-			var repeated = IsRepeatedCommand(c, eventStoreAaggregateId, state);
+			var repeated = IsRepeatedCommand(c, eventStoreAggregateId, state);
 			if (repeated) { return; }
 
 			aggregate.ThrowOnInvalidStateTransition(c);
 			action(aggregate);
-			EventStore.AppendEvents(ToEventStoreAaggregateId(aggregateId), ((IUserStateProperties)state).Version, aggregate.Changes, () => { StateRepository.Save(state); });
+			EventStore.AppendEvents(ToEventStoreAggregateId(aggregateId), ((IUserStateProperties)state).Version, aggregate.Changes, () => { StateRepository.Save(state); });
 		}
 
 
-		protected bool IsRepeatedCommand(IUserCommand command, IEventStoreAggregateId eventStoreAaggregateId, IUserState state)
+		protected bool IsRepeatedCommand(IUserCommand command, IEventStoreAggregateId eventStoreAggregateId, IUserState state)
 		{
 			bool repeated = false;
 			if (((IUserStateProperties)state).Version > command.AggregateVersion)
 			{
-				var lastEvent = EventStore.FindLastEvent(typeof(IUserStateEvent), eventStoreAaggregateId, command.AggregateVersion);
+				var lastEvent = EventStore.FindLastEvent(typeof(IUserStateEvent), eventStoreAggregateId, command.AggregateVersion);
 				if (lastEvent != null && lastEvent.CommandId == command.CommandId)
 				{
 					repeated = true;
@@ -119,7 +119,7 @@ namespace Dddml.Wms.Domain
 
 	    public virtual IUserStateEvent GetStateEvent(string userId, long version)
         {
-            var e = (IUserStateEvent)EventStore.GetStateEvent(ToEventStoreAaggregateId(userId), version);
+            var e = (IUserStateEvent)EventStore.GetStateEvent(ToEventStoreAggregateId(userId), version);
             if (e != null)
             {
                 e.ReadOnly = true;
@@ -130,7 +130,7 @@ namespace Dddml.Wms.Domain
 
 		public abstract IUserAggregate GetUserAggregate(IUserState state);
 
-		public abstract IEventStoreAggregateId ToEventStoreAaggregateId(string aggregateId);
+		public abstract IEventStoreAggregateId ToEventStoreAggregateId(string aggregateId);
 
 
 	}

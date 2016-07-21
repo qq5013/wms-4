@@ -3,9 +3,9 @@
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
-use Wms\Domain\LoginKey;
+use Dddml\FlattenedDtoInterface;
 
-class UserLoginIdFlattenedDto
+class UserLoginIdFlattenedDto implements FlattenedDtoInterface
 {
 
     const PROPERTIES = [
@@ -98,6 +98,23 @@ class UserLoginIdFlattenedDto
         $this->value->getLoginKey()->setProviderKey($loginKeyProviderKey);
     }
 
+    public function toString()
+    {
+        $pValues = [
+            $this->getUserId(),
+            $this->getLoginKeyLoginProvider(),
+            $this->getLoginKeyProviderKey(),
+        ];
+        return implode(',', $pValues);
+    }
+
+    public function fromString($data)
+    {
+        $pValues = explode(',', $data);
+        $this->setUserId($pValues[0]);
+        $this->setLoginKeyLoginProvider($pValues[1]);
+        $this->setLoginKeyProviderKey($pValues[2]);
+    }
 
 }
 

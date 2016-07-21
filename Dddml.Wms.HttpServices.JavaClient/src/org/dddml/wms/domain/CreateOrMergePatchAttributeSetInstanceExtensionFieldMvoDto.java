@@ -1,8 +1,6 @@
 package org.dddml.wms.domain;
 
-import org.dddml.wms.domain.AttributeSetInstanceExtensionFieldIdDto;
 import java.util.Date;
-import org.dddml.wms.domain.AttributeSetInstanceExtensionFieldStateDto;
 
 public class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvoDto extends AbstractAttributeSetInstanceExtensionFieldMvoCommandDto
 {
@@ -229,9 +227,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvoDto extends 
         return this.isPropertyNameRemoved;
     }
 
-    public void setIsPropertyNameRemoved(Boolean isPropertyNameRemoved)
+    public void setIsPropertyNameRemoved(Boolean removed)
     {
-        this.isPropertyNameRemoved = isPropertyNameRemoved;
+        this.isPropertyNameRemoved = removed;
     }
 
     private Boolean isPropertyTypeRemoved;
@@ -241,9 +239,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvoDto extends 
         return this.isPropertyTypeRemoved;
     }
 
-    public void setIsPropertyTypeRemoved(Boolean isPropertyTypeRemoved)
+    public void setIsPropertyTypeRemoved(Boolean removed)
     {
-        this.isPropertyTypeRemoved = isPropertyTypeRemoved;
+        this.isPropertyTypeRemoved = removed;
     }
 
     private Boolean isPropertyLengthRemoved;
@@ -253,9 +251,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvoDto extends 
         return this.isPropertyLengthRemoved;
     }
 
-    public void setIsPropertyLengthRemoved(Boolean isPropertyLengthRemoved)
+    public void setIsPropertyLengthRemoved(Boolean removed)
     {
-        this.isPropertyLengthRemoved = isPropertyLengthRemoved;
+        this.isPropertyLengthRemoved = removed;
     }
 
     private Boolean isPropertyAliasRemoved;
@@ -265,9 +263,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvoDto extends 
         return this.isPropertyAliasRemoved;
     }
 
-    public void setIsPropertyAliasRemoved(Boolean isPropertyAliasRemoved)
+    public void setIsPropertyAliasRemoved(Boolean removed)
     {
-        this.isPropertyAliasRemoved = isPropertyAliasRemoved;
+        this.isPropertyAliasRemoved = removed;
     }
 
     private Boolean isPropertyDescriptionRemoved;
@@ -277,9 +275,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvoDto extends 
         return this.isPropertyDescriptionRemoved;
     }
 
-    public void setIsPropertyDescriptionRemoved(Boolean isPropertyDescriptionRemoved)
+    public void setIsPropertyDescriptionRemoved(Boolean removed)
     {
-        this.isPropertyDescriptionRemoved = isPropertyDescriptionRemoved;
+        this.isPropertyDescriptionRemoved = removed;
     }
 
     private Boolean isPropertyVersionRemoved;
@@ -289,9 +287,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvoDto extends 
         return this.isPropertyVersionRemoved;
     }
 
-    public void setIsPropertyVersionRemoved(Boolean isPropertyVersionRemoved)
+    public void setIsPropertyVersionRemoved(Boolean removed)
     {
-        this.isPropertyVersionRemoved = isPropertyVersionRemoved;
+        this.isPropertyVersionRemoved = removed;
     }
 
     private Boolean isPropertyActiveRemoved;
@@ -301,9 +299,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvoDto extends 
         return this.isPropertyActiveRemoved;
     }
 
-    public void setIsPropertyActiveRemoved(Boolean isPropertyActiveRemoved)
+    public void setIsPropertyActiveRemoved(Boolean removed)
     {
-        this.isPropertyActiveRemoved = isPropertyActiveRemoved;
+        this.isPropertyActiveRemoved = removed;
     }
 
     private Boolean isPropertyAttrSetInstEFGroupFieldTypeRemoved;
@@ -313,9 +311,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvoDto extends 
         return this.isPropertyAttrSetInstEFGroupFieldTypeRemoved;
     }
 
-    public void setIsPropertyAttrSetInstEFGroupFieldTypeRemoved(Boolean isPropertyAttrSetInstEFGroupFieldTypeRemoved)
+    public void setIsPropertyAttrSetInstEFGroupFieldTypeRemoved(Boolean removed)
     {
-        this.isPropertyAttrSetInstEFGroupFieldTypeRemoved = isPropertyAttrSetInstEFGroupFieldTypeRemoved;
+        this.isPropertyAttrSetInstEFGroupFieldTypeRemoved = removed;
     }
 
     private Boolean isPropertyAttrSetInstEFGroupFieldLengthRemoved;
@@ -325,9 +323,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvoDto extends 
         return this.isPropertyAttrSetInstEFGroupFieldLengthRemoved;
     }
 
-    public void setIsPropertyAttrSetInstEFGroupFieldLengthRemoved(Boolean isPropertyAttrSetInstEFGroupFieldLengthRemoved)
+    public void setIsPropertyAttrSetInstEFGroupFieldLengthRemoved(Boolean removed)
     {
-        this.isPropertyAttrSetInstEFGroupFieldLengthRemoved = isPropertyAttrSetInstEFGroupFieldLengthRemoved;
+        this.isPropertyAttrSetInstEFGroupFieldLengthRemoved = removed;
     }
 
     private Boolean isPropertyAttrSetInstEFGroupFieldCountRemoved;
@@ -337,9 +335,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvoDto extends 
         return this.isPropertyAttrSetInstEFGroupFieldCountRemoved;
     }
 
-    public void setIsPropertyAttrSetInstEFGroupFieldCountRemoved(Boolean isPropertyAttrSetInstEFGroupFieldCountRemoved)
+    public void setIsPropertyAttrSetInstEFGroupFieldCountRemoved(Boolean removed)
     {
-        this.isPropertyAttrSetInstEFGroupFieldCountRemoved = isPropertyAttrSetInstEFGroupFieldCountRemoved;
+        this.isPropertyAttrSetInstEFGroupFieldCountRemoved = removed;
     }
 
     private Boolean isPropertyAttrSetInstEFGroupNameFormatRemoved;
@@ -349,9 +347,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvoDto extends 
         return this.isPropertyAttrSetInstEFGroupNameFormatRemoved;
     }
 
-    public void setIsPropertyAttrSetInstEFGroupNameFormatRemoved(Boolean isPropertyAttrSetInstEFGroupNameFormatRemoved)
+    public void setIsPropertyAttrSetInstEFGroupNameFormatRemoved(Boolean removed)
     {
-        this.isPropertyAttrSetInstEFGroupNameFormatRemoved = isPropertyAttrSetInstEFGroupNameFormatRemoved;
+        this.isPropertyAttrSetInstEFGroupNameFormatRemoved = removed;
     }
 
     private Boolean isPropertyAttrSetInstEFGroupDescriptionRemoved;
@@ -361,9 +359,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvoDto extends 
         return this.isPropertyAttrSetInstEFGroupDescriptionRemoved;
     }
 
-    public void setIsPropertyAttrSetInstEFGroupDescriptionRemoved(Boolean isPropertyAttrSetInstEFGroupDescriptionRemoved)
+    public void setIsPropertyAttrSetInstEFGroupDescriptionRemoved(Boolean removed)
     {
-        this.isPropertyAttrSetInstEFGroupDescriptionRemoved = isPropertyAttrSetInstEFGroupDescriptionRemoved;
+        this.isPropertyAttrSetInstEFGroupDescriptionRemoved = removed;
     }
 
     private Boolean isPropertyAttrSetInstEFGroupCreatedByRemoved;
@@ -373,9 +371,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvoDto extends 
         return this.isPropertyAttrSetInstEFGroupCreatedByRemoved;
     }
 
-    public void setIsPropertyAttrSetInstEFGroupCreatedByRemoved(Boolean isPropertyAttrSetInstEFGroupCreatedByRemoved)
+    public void setIsPropertyAttrSetInstEFGroupCreatedByRemoved(Boolean removed)
     {
-        this.isPropertyAttrSetInstEFGroupCreatedByRemoved = isPropertyAttrSetInstEFGroupCreatedByRemoved;
+        this.isPropertyAttrSetInstEFGroupCreatedByRemoved = removed;
     }
 
     private Boolean isPropertyAttrSetInstEFGroupCreatedAtRemoved;
@@ -385,9 +383,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvoDto extends 
         return this.isPropertyAttrSetInstEFGroupCreatedAtRemoved;
     }
 
-    public void setIsPropertyAttrSetInstEFGroupCreatedAtRemoved(Boolean isPropertyAttrSetInstEFGroupCreatedAtRemoved)
+    public void setIsPropertyAttrSetInstEFGroupCreatedAtRemoved(Boolean removed)
     {
-        this.isPropertyAttrSetInstEFGroupCreatedAtRemoved = isPropertyAttrSetInstEFGroupCreatedAtRemoved;
+        this.isPropertyAttrSetInstEFGroupCreatedAtRemoved = removed;
     }
 
     private Boolean isPropertyAttrSetInstEFGroupUpdatedByRemoved;
@@ -397,9 +395,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvoDto extends 
         return this.isPropertyAttrSetInstEFGroupUpdatedByRemoved;
     }
 
-    public void setIsPropertyAttrSetInstEFGroupUpdatedByRemoved(Boolean isPropertyAttrSetInstEFGroupUpdatedByRemoved)
+    public void setIsPropertyAttrSetInstEFGroupUpdatedByRemoved(Boolean removed)
     {
-        this.isPropertyAttrSetInstEFGroupUpdatedByRemoved = isPropertyAttrSetInstEFGroupUpdatedByRemoved;
+        this.isPropertyAttrSetInstEFGroupUpdatedByRemoved = removed;
     }
 
     private Boolean isPropertyAttrSetInstEFGroupUpdatedAtRemoved;
@@ -409,9 +407,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvoDto extends 
         return this.isPropertyAttrSetInstEFGroupUpdatedAtRemoved;
     }
 
-    public void setIsPropertyAttrSetInstEFGroupUpdatedAtRemoved(Boolean isPropertyAttrSetInstEFGroupUpdatedAtRemoved)
+    public void setIsPropertyAttrSetInstEFGroupUpdatedAtRemoved(Boolean removed)
     {
-        this.isPropertyAttrSetInstEFGroupUpdatedAtRemoved = isPropertyAttrSetInstEFGroupUpdatedAtRemoved;
+        this.isPropertyAttrSetInstEFGroupUpdatedAtRemoved = removed;
     }
 
     private Boolean isPropertyAttrSetInstEFGroupActiveRemoved;
@@ -421,9 +419,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvoDto extends 
         return this.isPropertyAttrSetInstEFGroupActiveRemoved;
     }
 
-    public void setIsPropertyAttrSetInstEFGroupActiveRemoved(Boolean isPropertyAttrSetInstEFGroupActiveRemoved)
+    public void setIsPropertyAttrSetInstEFGroupActiveRemoved(Boolean removed)
     {
-        this.isPropertyAttrSetInstEFGroupActiveRemoved = isPropertyAttrSetInstEFGroupActiveRemoved;
+        this.isPropertyAttrSetInstEFGroupActiveRemoved = removed;
     }
 
     private Boolean isPropertyAttrSetInstEFGroupDeletedRemoved;
@@ -433,9 +431,9 @@ public class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvoDto extends 
         return this.isPropertyAttrSetInstEFGroupDeletedRemoved;
     }
 
-    public void setIsPropertyAttrSetInstEFGroupDeletedRemoved(Boolean isPropertyAttrSetInstEFGroupDeletedRemoved)
+    public void setIsPropertyAttrSetInstEFGroupDeletedRemoved(Boolean removed)
     {
-        this.isPropertyAttrSetInstEFGroupDeletedRemoved = isPropertyAttrSetInstEFGroupDeletedRemoved;
+        this.isPropertyAttrSetInstEFGroupDeletedRemoved = removed;
     }
 
 

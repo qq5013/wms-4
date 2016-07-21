@@ -3,8 +3,9 @@
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
+use Dddml\FlattenedDtoInterface;
 
-class UserClaimIdFlattenedDto
+class UserClaimIdFlattenedDto implements FlattenedDtoInterface
 {
 
     const PROPERTIES = [
@@ -80,6 +81,21 @@ class UserClaimIdFlattenedDto
         $this->value->setClaimId($claimId);
     }
 
+    public function toString()
+    {
+        $pValues = [
+            $this->getUserId(),
+            $this->getClaimId(),
+        ];
+        return implode(',', $pValues);
+    }
+
+    public function fromString($data)
+    {
+        $pValues = explode(',', $data);
+        $this->setUserId($pValues[0]);
+        $this->setClaimId($pValues[1]);
+    }
 
 }
 

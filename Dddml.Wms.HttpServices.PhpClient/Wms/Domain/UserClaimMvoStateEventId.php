@@ -3,7 +3,6 @@
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
-use Wms\Domain\UserClaimId;
 
 class UserClaimMvoStateEventId
 {
@@ -17,6 +16,9 @@ class UserClaimMvoStateEventId
      */
     public function getUserClaimId()
     {
+        if(!$this->userClaimId) {
+            $this->userClaimId = new UserClaimId(); 
+        }
         return $this->userClaimId;
     }
 

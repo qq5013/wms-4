@@ -104,7 +104,7 @@ namespace Dddml.Wms.Domain
 		{
 			if (!oe.StateEventId.Id.Equals(e.StateEventId.GroupId))
 			{ 
-				DomainError.Named("inconsistentEventIds", "Outer Id Id {0} but inner id GroupId {1}", 
+				throw DomainError.Named("inconsistentEventIds", "Outer Id Id {0} but inner id GroupId {1}", 
 					oe.StateEventId.Id, e.StateEventId.GroupId);
 			}
 		}
@@ -164,6 +164,7 @@ namespace Dddml.Wms.Domain
                         AddAttributeSetInstanceExtensionFieldEvent(e);
                     }
                 }
+                else { this._attributeSetInstanceExtensionFieldEvents.Clear(); }
             }
         }
 	
@@ -251,6 +252,7 @@ namespace Dddml.Wms.Domain
                         AddAttributeSetInstanceExtensionFieldEvent(e);
                     }
                 }
+                else { this._attributeSetInstanceExtensionFieldEvents.Clear(); }
             }
         }
 
@@ -342,6 +344,7 @@ namespace Dddml.Wms.Domain
                         AddAttributeSetInstanceExtensionFieldEvent(e);
                     }
                 }
+                else { this._attributeSetInstanceExtensionFieldEvents.Clear(); }
             }
         }
 	

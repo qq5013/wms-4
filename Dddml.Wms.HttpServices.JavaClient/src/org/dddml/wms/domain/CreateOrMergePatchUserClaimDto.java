@@ -47,9 +47,9 @@ public class CreateOrMergePatchUserClaimDto extends AbstractUserClaimCommandDto
         return this.isPropertyClaimTypeRemoved;
     }
 
-    public void setIsPropertyClaimTypeRemoved(Boolean isPropertyClaimTypeRemoved)
+    public void setIsPropertyClaimTypeRemoved(Boolean removed)
     {
-        this.isPropertyClaimTypeRemoved = isPropertyClaimTypeRemoved;
+        this.isPropertyClaimTypeRemoved = removed;
     }
 
     private Boolean isPropertyClaimValueRemoved;
@@ -59,9 +59,9 @@ public class CreateOrMergePatchUserClaimDto extends AbstractUserClaimCommandDto
         return this.isPropertyClaimValueRemoved;
     }
 
-    public void setIsPropertyClaimValueRemoved(Boolean isPropertyClaimValueRemoved)
+    public void setIsPropertyClaimValueRemoved(Boolean removed)
     {
-        this.isPropertyClaimValueRemoved = isPropertyClaimValueRemoved;
+        this.isPropertyClaimValueRemoved = removed;
     }
 
     private Boolean isPropertyActiveRemoved;
@@ -71,9 +71,9 @@ public class CreateOrMergePatchUserClaimDto extends AbstractUserClaimCommandDto
         return this.isPropertyActiveRemoved;
     }
 
-    public void setIsPropertyActiveRemoved(Boolean isPropertyActiveRemoved)
+    public void setIsPropertyActiveRemoved(Boolean removed)
     {
-        this.isPropertyActiveRemoved = isPropertyActiveRemoved;
+        this.isPropertyActiveRemoved = removed;
     }
 
 

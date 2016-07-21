@@ -27,23 +27,23 @@ namespace Dddml.Wms.Domain
 			var state = StateRepository.Get(aggregateId);
 			var aggregate = GetUserRoleMvoAggregate(state);
 
-			var eventStoreAaggregateId = ToEventStoreAaggregateId(aggregateId);
+			var eventStoreAggregateId = ToEventStoreAggregateId(aggregateId);
 
-			var repeated = IsRepeatedCommand(c, eventStoreAaggregateId, state);
+			var repeated = IsRepeatedCommand(c, eventStoreAggregateId, state);
 			if (repeated) { return; }
 
 			aggregate.ThrowOnInvalidStateTransition(c);
 			action(aggregate);
-			EventStore.AppendEvents(ToEventStoreAaggregateId(aggregateId), ((IUserRoleMvoStateProperties)state).UserVersion, aggregate.Changes, () => { StateRepository.Save(state); });
+			EventStore.AppendEvents(ToEventStoreAggregateId(aggregateId), ((IUserRoleMvoStateProperties)state).UserVersion, aggregate.Changes, () => { StateRepository.Save(state); });
 		}
 
 
-		protected bool IsRepeatedCommand(IUserRoleMvoCommand command, IEventStoreAggregateId eventStoreAaggregateId, IUserRoleMvoState state)
+		protected bool IsRepeatedCommand(IUserRoleMvoCommand command, IEventStoreAggregateId eventStoreAggregateId, IUserRoleMvoState state)
 		{
 			bool repeated = false;
 			if (((IUserRoleMvoStateProperties)state).UserVersion > command.AggregateVersion)
 			{
-				var lastEvent = EventStore.FindLastEvent(typeof(IUserRoleMvoStateEvent), eventStoreAaggregateId, command.AggregateVersion);
+				var lastEvent = EventStore.FindLastEvent(typeof(IUserRoleMvoStateEvent), eventStoreAggregateId, command.AggregateVersion);
 				if (lastEvent != null && lastEvent.CommandId == command.CommandId)
 				{
 					repeated = true;
@@ -119,7 +119,7 @@ namespace Dddml.Wms.Domain
 
 	    public virtual IUserRoleMvoStateEvent GetStateEvent(UserRoleId userRoleId, long version)
         {
-            var e = (IUserRoleMvoStateEvent)EventStore.GetStateEvent(ToEventStoreAaggregateId(userRoleId), version);
+            var e = (IUserRoleMvoStateEvent)EventStore.GetStateEvent(ToEventStoreAggregateId(userRoleId), version);
             if (e != null)
             {
                 e.ReadOnly = true;
@@ -130,7 +130,7 @@ namespace Dddml.Wms.Domain
 
 		public abstract IUserRoleMvoAggregate GetUserRoleMvoAggregate(IUserRoleMvoState state);
 
-		public abstract IEventStoreAggregateId ToEventStoreAaggregateId(UserRoleId aggregateId);
+		public abstract IEventStoreAggregateId ToEventStoreAggregateId(UserRoleId aggregateId);
 
 
 	}

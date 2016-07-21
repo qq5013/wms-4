@@ -1,6 +1,5 @@
 package org.dddml.wms.domain;
 
-import org.dddml.wms.domain.RolePermissionIdDto;
 import java.util.Date;
 import org.dddml.wms.domain.AbstractStateEventDto;
 

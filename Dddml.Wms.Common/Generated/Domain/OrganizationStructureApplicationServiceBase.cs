@@ -27,23 +27,23 @@ namespace Dddml.Wms.Domain
 			var state = StateRepository.Get(aggregateId);
 			var aggregate = GetOrganizationStructureAggregate(state);
 
-			var eventStoreAaggregateId = ToEventStoreAaggregateId(aggregateId);
+			var eventStoreAggregateId = ToEventStoreAggregateId(aggregateId);
 
-			var repeated = IsRepeatedCommand(c, eventStoreAaggregateId, state);
+			var repeated = IsRepeatedCommand(c, eventStoreAggregateId, state);
 			if (repeated) { return; }
 
 			aggregate.ThrowOnInvalidStateTransition(c);
 			action(aggregate);
-			EventStore.AppendEvents(ToEventStoreAaggregateId(aggregateId), ((IOrganizationStructureStateProperties)state).Version, aggregate.Changes, () => { StateRepository.Save(state); });
+			EventStore.AppendEvents(ToEventStoreAggregateId(aggregateId), ((IOrganizationStructureStateProperties)state).Version, aggregate.Changes, () => { StateRepository.Save(state); });
 		}
 
 
-		protected bool IsRepeatedCommand(IOrganizationStructureCommand command, IEventStoreAggregateId eventStoreAaggregateId, IOrganizationStructureState state)
+		protected bool IsRepeatedCommand(IOrganizationStructureCommand command, IEventStoreAggregateId eventStoreAggregateId, IOrganizationStructureState state)
 		{
 			bool repeated = false;
 			if (((IOrganizationStructureStateProperties)state).Version > command.AggregateVersion)
 			{
-				var lastEvent = EventStore.FindLastEvent(typeof(IOrganizationStructureStateEvent), eventStoreAaggregateId, command.AggregateVersion);
+				var lastEvent = EventStore.FindLastEvent(typeof(IOrganizationStructureStateEvent), eventStoreAggregateId, command.AggregateVersion);
 				if (lastEvent != null && lastEvent.CommandId == command.CommandId)
 				{
 					repeated = true;
@@ -119,7 +119,7 @@ namespace Dddml.Wms.Domain
 
 	    public virtual IOrganizationStructureStateEvent GetStateEvent(OrganizationStructureId id, long version)
         {
-            var e = (IOrganizationStructureStateEvent)EventStore.GetStateEvent(ToEventStoreAaggregateId(id), version);
+            var e = (IOrganizationStructureStateEvent)EventStore.GetStateEvent(ToEventStoreAggregateId(id), version);
             if (e != null)
             {
                 e.ReadOnly = true;
@@ -130,7 +130,7 @@ namespace Dddml.Wms.Domain
 
 		public abstract IOrganizationStructureAggregate GetOrganizationStructureAggregate(IOrganizationStructureState state);
 
-		public abstract IEventStoreAggregateId ToEventStoreAaggregateId(OrganizationStructureId aggregateId);
+		public abstract IEventStoreAggregateId ToEventStoreAggregateId(OrganizationStructureId aggregateId);
 
 
 	}

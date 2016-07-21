@@ -1,6 +1,5 @@
 package org.dddml.wms.domain;
 
-import org.dddml.wms.domain.LoginKeyDto;
 
 public class UserLoginStateEventIdDto
 {
@@ -52,6 +51,26 @@ public class UserLoginStateEventIdDto
         this.value.setUserVersion(userVersion);
     }
 
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        UserLoginStateEventIdDto other = (UserLoginStateEventIdDto)obj;
+        return value.equals(other.value);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return value.hashCode();
+    }
 
 }
 

@@ -27,6 +27,45 @@ public class SkuId
         this.attributeSetInstanceId = attributeSetInstanceId;
     }
 
+    SkuId ()
+    {
+    }
+
+    public SkuId (String productId, String attributeSetInstanceId)
+    {
+        this.productId = productId;
+        this.attributeSetInstanceId = attributeSetInstanceId;
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        SkuId other = (SkuId)obj;
+        return true 
+            && (productId == other.productId || (productId != null && productId.equals(other.productId)))
+            && (attributeSetInstanceId == other.attributeSetInstanceId || (attributeSetInstanceId != null && attributeSetInstanceId.equals(other.attributeSetInstanceId)))
+            ;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        int hash = 0;
+        if (this.productId != null) {
+            hash += 13 * this.productId.hashCode();
+        }
+        if (this.attributeSetInstanceId != null) {
+            hash += 13 * this.attributeSetInstanceId.hashCode();
+        }
+        return hash;
+    }
 
 }
 

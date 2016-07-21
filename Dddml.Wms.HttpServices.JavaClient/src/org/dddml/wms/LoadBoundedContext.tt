@@ -17,13 +17,13 @@
 
 	boundedContext.SetBoundedContextPackage("org.dddml.wms");
 
-    boundedContext.SetJavaSpecializationPackage("org.dddml.specialization");
+    boundedContext.SetJavaSpecializationPackage("org.dddml.wms.specialization");
 
 	boundedContext.IsUsingSeparatedDomainAggregateNamespace = false;
 
 	boundedContext.IsGenericTypeAsType = true;
 
-	//boundedContext.Aggregates["AttributeSetInstance"].SetPersistingStateEventRemovedPropertiesAsSet(true);
+	boundedContext.Aggregates["AttributeSetInstance"].SetPersistingStateEventRemovedPropertiesAsSet(true);
 
 	//boundedContext.Aggregates["AttributeSetInstance"].AuthorizationEnabled = true;
 	//boundedContext.Aggregates["AttributeSetInstance"].AnonymousAllowed = true;

@@ -1,6 +1,5 @@
 package org.dddml.wms.domain;
 
-import org.dddml.wms.domain.RolePermissionIdDto;
 import java.util.Date;
 
 public class CreateOrMergePatchRolePermissionDto extends AbstractRolePermissionCommandDto
@@ -24,9 +23,9 @@ public class CreateOrMergePatchRolePermissionDto extends AbstractRolePermissionC
         return this.isPropertyActiveRemoved;
     }
 
-    public void setIsPropertyActiveRemoved(Boolean isPropertyActiveRemoved)
+    public void setIsPropertyActiveRemoved(Boolean removed)
     {
-        this.isPropertyActiveRemoved = isPropertyActiveRemoved;
+        this.isPropertyActiveRemoved = removed;
     }
 
 

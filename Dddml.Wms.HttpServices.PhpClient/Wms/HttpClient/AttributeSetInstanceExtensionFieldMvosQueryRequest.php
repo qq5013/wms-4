@@ -2,8 +2,6 @@
 
 namespace Wms\HttpClient;
 
-use Wms\Domain\AttributeSetInstanceExtensionFieldId;
-use Wms\Domain\AttributeSetInstanceExtensionField;
 
 class AttributeSetInstanceExtensionFieldMvosQueryRequest extends AbstractQueryRequest
 {

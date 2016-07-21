@@ -1,8 +1,6 @@
 package org.dddml.wms.domain;
 
-import org.dddml.wms.domain.AttributeValueIdDto;
 import java.util.Date;
-import org.dddml.wms.domain.AttributeValueStateDto;
 import org.dddml.wms.domain.AbstractStateEventDto;
 
 public class AttributeValueMvoStateEventDto extends AbstractStateEventDto

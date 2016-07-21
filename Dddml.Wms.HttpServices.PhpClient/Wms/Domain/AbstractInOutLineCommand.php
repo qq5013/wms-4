@@ -4,7 +4,6 @@ namespace Wms\Domain;
 
 use Dddml\Command\CommandInterface;
 use JMS\Serializer\Annotation\Type;
-use Wms\Domain\SkuId;
 use Wms\Domain\CommandTrait;
 
 abstract class AbstractInOutLineCommand implements CommandInterface

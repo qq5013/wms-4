@@ -27,6 +27,45 @@ public class AttributeValueId
         this.value = value;
     }
 
+    AttributeValueId ()
+    {
+    }
+
+    public AttributeValueId (String attributeId, String value)
+    {
+        this.attributeId = attributeId;
+        this.value = value;
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        AttributeValueId other = (AttributeValueId)obj;
+        return true 
+            && (attributeId == other.attributeId || (attributeId != null && attributeId.equals(other.attributeId)))
+            && (value == other.value || (value != null && value.equals(other.value)))
+            ;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        int hash = 0;
+        if (this.attributeId != null) {
+            hash += 13 * this.attributeId.hashCode();
+        }
+        if (this.value != null) {
+            hash += 13 * this.value.hashCode();
+        }
+        return hash;
+    }
 
 }
 

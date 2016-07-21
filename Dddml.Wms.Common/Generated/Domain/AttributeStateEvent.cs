@@ -114,7 +114,7 @@ namespace Dddml.Wms.Domain
 		{
 			if (!oe.StateEventId.AttributeId.Equals(e.StateEventId.AttributeId))
 			{ 
-				DomainError.Named("inconsistentEventIds", "Outer Id AttributeId {0} but inner id AttributeId {1}", 
+				throw DomainError.Named("inconsistentEventIds", "Outer Id AttributeId {0} but inner id AttributeId {1}", 
 					oe.StateEventId.AttributeId, e.StateEventId.AttributeId);
 			}
 		}
@@ -174,6 +174,7 @@ namespace Dddml.Wms.Domain
                         AddAttributeValueEvent(e);
                     }
                 }
+                else { this._attributeValueEvents.Clear(); }
             }
         }
 	
@@ -271,6 +272,7 @@ namespace Dddml.Wms.Domain
                         AddAttributeValueEvent(e);
                     }
                 }
+                else { this._attributeValueEvents.Clear(); }
             }
         }
 
@@ -362,6 +364,7 @@ namespace Dddml.Wms.Domain
                         AddAttributeValueEvent(e);
                     }
                 }
+                else { this._attributeValueEvents.Clear(); }
             }
         }
 	

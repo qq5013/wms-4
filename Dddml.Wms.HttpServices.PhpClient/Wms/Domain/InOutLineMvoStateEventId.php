@@ -3,7 +3,6 @@
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
-use Wms\Domain\InOutLineId;
 
 class InOutLineMvoStateEventId
 {
@@ -17,6 +16,9 @@ class InOutLineMvoStateEventId
      */
     public function getInOutLineId()
     {
+        if(!$this->inOutLineId) {
+            $this->inOutLineId = new InOutLineId(); 
+        }
         return $this->inOutLineId;
     }
 

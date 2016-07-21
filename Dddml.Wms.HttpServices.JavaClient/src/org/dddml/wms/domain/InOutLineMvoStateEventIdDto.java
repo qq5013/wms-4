@@ -1,6 +1,5 @@
 package org.dddml.wms.domain;
 
-import org.dddml.wms.domain.InOutLineIdDto;
 
 public class InOutLineMvoStateEventIdDto
 {
@@ -42,6 +41,26 @@ public class InOutLineMvoStateEventIdDto
         this.value.setInOutVersion(inOutVersion);
     }
 
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        InOutLineMvoStateEventIdDto other = (InOutLineMvoStateEventIdDto)obj;
+        return value.equals(other.value);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return value.hashCode();
+    }
 
 }
 

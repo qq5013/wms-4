@@ -3,7 +3,6 @@
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
-use Wms\Domain\SkuId;
 
 class InOutLineStateEventId
 {
@@ -38,6 +37,9 @@ class InOutLineStateEventId
      */
     public function getSkuId()
     {
+        if(!$this->skuId) {
+            $this->skuId = new SkuId(); 
+        }
         return $this->skuId;
     }
 

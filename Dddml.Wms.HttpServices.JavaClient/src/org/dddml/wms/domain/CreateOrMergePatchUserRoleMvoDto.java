@@ -1,11 +1,6 @@
 package org.dddml.wms.domain;
 
-import org.dddml.wms.domain.UserRoleIdDto;
 import java.util.Date;
-import org.dddml.wms.domain.UserRoleStateDto;
-import org.dddml.wms.domain.UserClaimStateDto;
-import org.dddml.wms.domain.UserPermissionStateDto;
-import org.dddml.wms.domain.UserLoginStateDto;
 
 public class CreateOrMergePatchUserRoleMvoDto extends AbstractUserRoleMvoCommandDto
 {
@@ -244,9 +239,9 @@ public class CreateOrMergePatchUserRoleMvoDto extends AbstractUserRoleMvoCommand
         return this.isPropertyVersionRemoved;
     }
 
-    public void setIsPropertyVersionRemoved(Boolean isPropertyVersionRemoved)
+    public void setIsPropertyVersionRemoved(Boolean removed)
     {
-        this.isPropertyVersionRemoved = isPropertyVersionRemoved;
+        this.isPropertyVersionRemoved = removed;
     }
 
     private Boolean isPropertyActiveRemoved;
@@ -256,9 +251,9 @@ public class CreateOrMergePatchUserRoleMvoDto extends AbstractUserRoleMvoCommand
         return this.isPropertyActiveRemoved;
     }
 
-    public void setIsPropertyActiveRemoved(Boolean isPropertyActiveRemoved)
+    public void setIsPropertyActiveRemoved(Boolean removed)
     {
-        this.isPropertyActiveRemoved = isPropertyActiveRemoved;
+        this.isPropertyActiveRemoved = removed;
     }
 
     private Boolean isPropertyUserUserNameRemoved;
@@ -268,9 +263,9 @@ public class CreateOrMergePatchUserRoleMvoDto extends AbstractUserRoleMvoCommand
         return this.isPropertyUserUserNameRemoved;
     }
 
-    public void setIsPropertyUserUserNameRemoved(Boolean isPropertyUserUserNameRemoved)
+    public void setIsPropertyUserUserNameRemoved(Boolean removed)
     {
-        this.isPropertyUserUserNameRemoved = isPropertyUserUserNameRemoved;
+        this.isPropertyUserUserNameRemoved = removed;
     }
 
     private Boolean isPropertyUserAccessFailedCountRemoved;
@@ -280,9 +275,9 @@ public class CreateOrMergePatchUserRoleMvoDto extends AbstractUserRoleMvoCommand
         return this.isPropertyUserAccessFailedCountRemoved;
     }
 
-    public void setIsPropertyUserAccessFailedCountRemoved(Boolean isPropertyUserAccessFailedCountRemoved)
+    public void setIsPropertyUserAccessFailedCountRemoved(Boolean removed)
     {
-        this.isPropertyUserAccessFailedCountRemoved = isPropertyUserAccessFailedCountRemoved;
+        this.isPropertyUserAccessFailedCountRemoved = removed;
     }
 
     private Boolean isPropertyUserEmailRemoved;
@@ -292,9 +287,9 @@ public class CreateOrMergePatchUserRoleMvoDto extends AbstractUserRoleMvoCommand
         return this.isPropertyUserEmailRemoved;
     }
 
-    public void setIsPropertyUserEmailRemoved(Boolean isPropertyUserEmailRemoved)
+    public void setIsPropertyUserEmailRemoved(Boolean removed)
     {
-        this.isPropertyUserEmailRemoved = isPropertyUserEmailRemoved;
+        this.isPropertyUserEmailRemoved = removed;
     }
 
     private Boolean isPropertyUserEmailConfirmedRemoved;
@@ -304,9 +299,9 @@ public class CreateOrMergePatchUserRoleMvoDto extends AbstractUserRoleMvoCommand
         return this.isPropertyUserEmailConfirmedRemoved;
     }
 
-    public void setIsPropertyUserEmailConfirmedRemoved(Boolean isPropertyUserEmailConfirmedRemoved)
+    public void setIsPropertyUserEmailConfirmedRemoved(Boolean removed)
     {
-        this.isPropertyUserEmailConfirmedRemoved = isPropertyUserEmailConfirmedRemoved;
+        this.isPropertyUserEmailConfirmedRemoved = removed;
     }
 
     private Boolean isPropertyUserLockoutEnabledRemoved;
@@ -316,9 +311,9 @@ public class CreateOrMergePatchUserRoleMvoDto extends AbstractUserRoleMvoCommand
         return this.isPropertyUserLockoutEnabledRemoved;
     }
 
-    public void setIsPropertyUserLockoutEnabledRemoved(Boolean isPropertyUserLockoutEnabledRemoved)
+    public void setIsPropertyUserLockoutEnabledRemoved(Boolean removed)
     {
-        this.isPropertyUserLockoutEnabledRemoved = isPropertyUserLockoutEnabledRemoved;
+        this.isPropertyUserLockoutEnabledRemoved = removed;
     }
 
     private Boolean isPropertyUserLockoutEndDateUtcRemoved;
@@ -328,9 +323,9 @@ public class CreateOrMergePatchUserRoleMvoDto extends AbstractUserRoleMvoCommand
         return this.isPropertyUserLockoutEndDateUtcRemoved;
     }
 
-    public void setIsPropertyUserLockoutEndDateUtcRemoved(Boolean isPropertyUserLockoutEndDateUtcRemoved)
+    public void setIsPropertyUserLockoutEndDateUtcRemoved(Boolean removed)
     {
-        this.isPropertyUserLockoutEndDateUtcRemoved = isPropertyUserLockoutEndDateUtcRemoved;
+        this.isPropertyUserLockoutEndDateUtcRemoved = removed;
     }
 
     private Boolean isPropertyUserPasswordHashRemoved;
@@ -340,9 +335,9 @@ public class CreateOrMergePatchUserRoleMvoDto extends AbstractUserRoleMvoCommand
         return this.isPropertyUserPasswordHashRemoved;
     }
 
-    public void setIsPropertyUserPasswordHashRemoved(Boolean isPropertyUserPasswordHashRemoved)
+    public void setIsPropertyUserPasswordHashRemoved(Boolean removed)
     {
-        this.isPropertyUserPasswordHashRemoved = isPropertyUserPasswordHashRemoved;
+        this.isPropertyUserPasswordHashRemoved = removed;
     }
 
     private Boolean isPropertyUserPhoneNumberRemoved;
@@ -352,9 +347,9 @@ public class CreateOrMergePatchUserRoleMvoDto extends AbstractUserRoleMvoCommand
         return this.isPropertyUserPhoneNumberRemoved;
     }
 
-    public void setIsPropertyUserPhoneNumberRemoved(Boolean isPropertyUserPhoneNumberRemoved)
+    public void setIsPropertyUserPhoneNumberRemoved(Boolean removed)
     {
-        this.isPropertyUserPhoneNumberRemoved = isPropertyUserPhoneNumberRemoved;
+        this.isPropertyUserPhoneNumberRemoved = removed;
     }
 
     private Boolean isPropertyUserPhoneNumberConfirmedRemoved;
@@ -364,9 +359,9 @@ public class CreateOrMergePatchUserRoleMvoDto extends AbstractUserRoleMvoCommand
         return this.isPropertyUserPhoneNumberConfirmedRemoved;
     }
 
-    public void setIsPropertyUserPhoneNumberConfirmedRemoved(Boolean isPropertyUserPhoneNumberConfirmedRemoved)
+    public void setIsPropertyUserPhoneNumberConfirmedRemoved(Boolean removed)
     {
-        this.isPropertyUserPhoneNumberConfirmedRemoved = isPropertyUserPhoneNumberConfirmedRemoved;
+        this.isPropertyUserPhoneNumberConfirmedRemoved = removed;
     }
 
     private Boolean isPropertyUserTwoFactorEnabledRemoved;
@@ -376,9 +371,9 @@ public class CreateOrMergePatchUserRoleMvoDto extends AbstractUserRoleMvoCommand
         return this.isPropertyUserTwoFactorEnabledRemoved;
     }
 
-    public void setIsPropertyUserTwoFactorEnabledRemoved(Boolean isPropertyUserTwoFactorEnabledRemoved)
+    public void setIsPropertyUserTwoFactorEnabledRemoved(Boolean removed)
     {
-        this.isPropertyUserTwoFactorEnabledRemoved = isPropertyUserTwoFactorEnabledRemoved;
+        this.isPropertyUserTwoFactorEnabledRemoved = removed;
     }
 
     private Boolean isPropertyUserSecurityStampRemoved;
@@ -388,9 +383,9 @@ public class CreateOrMergePatchUserRoleMvoDto extends AbstractUserRoleMvoCommand
         return this.isPropertyUserSecurityStampRemoved;
     }
 
-    public void setIsPropertyUserSecurityStampRemoved(Boolean isPropertyUserSecurityStampRemoved)
+    public void setIsPropertyUserSecurityStampRemoved(Boolean removed)
     {
-        this.isPropertyUserSecurityStampRemoved = isPropertyUserSecurityStampRemoved;
+        this.isPropertyUserSecurityStampRemoved = removed;
     }
 
     private Boolean isPropertyUserCreatedByRemoved;
@@ -400,9 +395,9 @@ public class CreateOrMergePatchUserRoleMvoDto extends AbstractUserRoleMvoCommand
         return this.isPropertyUserCreatedByRemoved;
     }
 
-    public void setIsPropertyUserCreatedByRemoved(Boolean isPropertyUserCreatedByRemoved)
+    public void setIsPropertyUserCreatedByRemoved(Boolean removed)
     {
-        this.isPropertyUserCreatedByRemoved = isPropertyUserCreatedByRemoved;
+        this.isPropertyUserCreatedByRemoved = removed;
     }
 
     private Boolean isPropertyUserCreatedAtRemoved;
@@ -412,9 +407,9 @@ public class CreateOrMergePatchUserRoleMvoDto extends AbstractUserRoleMvoCommand
         return this.isPropertyUserCreatedAtRemoved;
     }
 
-    public void setIsPropertyUserCreatedAtRemoved(Boolean isPropertyUserCreatedAtRemoved)
+    public void setIsPropertyUserCreatedAtRemoved(Boolean removed)
     {
-        this.isPropertyUserCreatedAtRemoved = isPropertyUserCreatedAtRemoved;
+        this.isPropertyUserCreatedAtRemoved = removed;
     }
 
     private Boolean isPropertyUserUpdatedByRemoved;
@@ -424,9 +419,9 @@ public class CreateOrMergePatchUserRoleMvoDto extends AbstractUserRoleMvoCommand
         return this.isPropertyUserUpdatedByRemoved;
     }
 
-    public void setIsPropertyUserUpdatedByRemoved(Boolean isPropertyUserUpdatedByRemoved)
+    public void setIsPropertyUserUpdatedByRemoved(Boolean removed)
     {
-        this.isPropertyUserUpdatedByRemoved = isPropertyUserUpdatedByRemoved;
+        this.isPropertyUserUpdatedByRemoved = removed;
     }
 
     private Boolean isPropertyUserUpdatedAtRemoved;
@@ -436,9 +431,9 @@ public class CreateOrMergePatchUserRoleMvoDto extends AbstractUserRoleMvoCommand
         return this.isPropertyUserUpdatedAtRemoved;
     }
 
-    public void setIsPropertyUserUpdatedAtRemoved(Boolean isPropertyUserUpdatedAtRemoved)
+    public void setIsPropertyUserUpdatedAtRemoved(Boolean removed)
     {
-        this.isPropertyUserUpdatedAtRemoved = isPropertyUserUpdatedAtRemoved;
+        this.isPropertyUserUpdatedAtRemoved = removed;
     }
 
     private Boolean isPropertyUserActiveRemoved;
@@ -448,9 +443,9 @@ public class CreateOrMergePatchUserRoleMvoDto extends AbstractUserRoleMvoCommand
         return this.isPropertyUserActiveRemoved;
     }
 
-    public void setIsPropertyUserActiveRemoved(Boolean isPropertyUserActiveRemoved)
+    public void setIsPropertyUserActiveRemoved(Boolean removed)
     {
-        this.isPropertyUserActiveRemoved = isPropertyUserActiveRemoved;
+        this.isPropertyUserActiveRemoved = removed;
     }
 
     private Boolean isPropertyUserDeletedRemoved;
@@ -460,9 +455,9 @@ public class CreateOrMergePatchUserRoleMvoDto extends AbstractUserRoleMvoCommand
         return this.isPropertyUserDeletedRemoved;
     }
 
-    public void setIsPropertyUserDeletedRemoved(Boolean isPropertyUserDeletedRemoved)
+    public void setIsPropertyUserDeletedRemoved(Boolean removed)
     {
-        this.isPropertyUserDeletedRemoved = isPropertyUserDeletedRemoved;
+        this.isPropertyUserDeletedRemoved = removed;
     }
 
 

@@ -114,7 +114,6 @@ namespace Dddml.Wms.Domain
 
 	}
 
-
 	public interface IUserClaimMvoStateDeleted : IUserClaimMvoStateEvent
 	{
 	}

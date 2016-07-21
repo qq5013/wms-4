@@ -3,7 +3,6 @@
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
-use Wms\Domain\UserRoleId;
 
 class UserRoleMvoStateEventId
 {
@@ -17,6 +16,9 @@ class UserRoleMvoStateEventId
      */
     public function getUserRoleId()
     {
+        if(!$this->userRoleId) {
+            $this->userRoleId = new UserRoleId(); 
+        }
         return $this->userRoleId;
     }
 

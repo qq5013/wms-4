@@ -3,7 +3,6 @@
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
-use Wms\Domain\OrganizationStructureId;
 
 class OrganizationStructureStateEventId
 {
@@ -17,6 +16,9 @@ class OrganizationStructureStateEventId
      */
     public function getId()
     {
+        if(!$this->id) {
+            $this->id = new OrganizationStructureId(); 
+        }
         return $this->id;
     }
 

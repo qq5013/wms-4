@@ -1,6 +1,5 @@
 package org.dddml.wms.domain;
 
-import org.dddml.wms.domain.InOutLineId;
 
 public class InOutLineMvoStateEventId
 {
@@ -58,6 +57,45 @@ public class InOutLineMvoStateEventId
         getInOutLineId().getSkuId().setAttributeSetInstanceId(inOutLineIdSkuIdAttributeSetInstanceId);
     }
 
+    InOutLineMvoStateEventId ()
+    {
+    }
+
+    public InOutLineMvoStateEventId (InOutLineId inOutLineId, Long inOutVersion)
+    {
+        this.inOutLineId = inOutLineId;
+        this.inOutVersion = inOutVersion;
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        InOutLineMvoStateEventId other = (InOutLineMvoStateEventId)obj;
+        return true 
+            && (inOutLineId == other.inOutLineId || (inOutLineId != null && inOutLineId.equals(other.inOutLineId)))
+            && (inOutVersion == other.inOutVersion || (inOutVersion != null && inOutVersion.equals(other.inOutVersion)))
+            ;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        int hash = 0;
+        if (this.inOutLineId != null) {
+            hash += 13 * this.inOutLineId.hashCode();
+        }
+        if (this.inOutVersion != null) {
+            hash += 13 * this.inOutVersion.hashCode();
+        }
+        return hash;
+    }
 
 }
 

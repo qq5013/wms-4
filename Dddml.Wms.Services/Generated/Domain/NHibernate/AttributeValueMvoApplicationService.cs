@@ -43,7 +43,7 @@ namespace Dddml.Wms.Domain.NHibernate
 			this._stateRepository = stateRepository;
 		}
 
-		public override IEventStoreAggregateId ToEventStoreAaggregateId(AttributeValueId aggregateId)
+		public override IEventStoreAggregateId ToEventStoreAggregateId(AttributeValueId aggregateId)
 		{
 			return new EventStoreAggregateId(aggregateId);
 		}

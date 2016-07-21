@@ -1882,7 +1882,6 @@ namespace Dddml.Wms.Domain
 
 	}
 
-
 	public interface IAttributeSetInstanceStateDeleted : IAttributeSetInstanceStateEvent
 	{
 	}

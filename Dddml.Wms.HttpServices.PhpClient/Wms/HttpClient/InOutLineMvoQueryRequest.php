@@ -2,9 +2,7 @@
 
 namespace Wms\HttpClient;
 
-use Wms\Domain\InOutLineId;
 use NodaMoney\Money;
-use Wms\Domain\InOutLine;
 
 class InOutLineMvoQueryRequest extends AbstractQueryRequest
 {

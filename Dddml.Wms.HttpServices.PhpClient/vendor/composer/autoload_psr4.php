@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/type-resolver/src', $vendorDir . '/phpdocumentor/reflection-docblock/src'),
+    'Wms\\' => array($baseDir . '/Wms'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
     'Test\\' => array($baseDir . '/tests'),
     'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),

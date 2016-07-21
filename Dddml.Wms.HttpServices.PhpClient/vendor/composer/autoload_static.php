@@ -19,6 +19,7 @@ class ComposerStaticInit62b2d58e269b3d5b5b6c109e68501eed
         ),
         'W' => 
         array (
+            'Wms\\' => 4,
             'Webmozart\\Assert\\' => 17,
         ),
         'T' => 
@@ -53,6 +54,10 @@ class ComposerStaticInit62b2d58e269b3d5b5b6c109e68501eed
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+        ),
+        'Wms\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Wms',
         ),
         'Webmozart\\Assert\\' => 
         array (

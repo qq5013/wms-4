@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 namespace Wms\Domain;
 
@@ -81,6 +81,9 @@ class UserPermissionIdFlattenedDto implements FlattenedDtoInterface
         $this->value->setPermissionId($permissionId);
     }
 
+    /**
+     * @return string
+     */
     public function toString()
     {
         $pValues = [
@@ -90,11 +93,17 @@ class UserPermissionIdFlattenedDto implements FlattenedDtoInterface
         return implode(',', $pValues);
     }
 
+    /**
+     * @param string $data
+     *
+     * @return UserPermissionIdFlattenedDto
+     */
     public function fromString($data)
     {
         $pValues = explode(',', $data);
         $this->setUserId($pValues[0]);
         $this->setPermissionId($pValues[1]);
+        return $this;
     }
 
 }

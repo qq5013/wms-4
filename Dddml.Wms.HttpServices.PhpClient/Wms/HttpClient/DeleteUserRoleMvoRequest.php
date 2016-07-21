@@ -1,8 +1,8 @@
-﻿<?php
+<?php
 
 namespace Wms\HttpClient;
 
-use Dddml\Command\CommandExecutor;
+use Dddml\Executor\Http\CommandExecutor;
 use Dddml\Executor\Http\CommandRequestInterface;
 use Dddml\Routing\RouteTrait;
 use Symfony\Component\Routing\Route;

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 namespace Wms\Domain;
 
@@ -81,6 +81,9 @@ class AttributeSetAttributeUseIdFlattenedDto implements FlattenedDtoInterface
         $this->value->setAttributeId($attributeId);
     }
 
+    /**
+     * @return string
+     */
     public function toString()
     {
         $pValues = [
@@ -90,11 +93,17 @@ class AttributeSetAttributeUseIdFlattenedDto implements FlattenedDtoInterface
         return implode(',', $pValues);
     }
 
+    /**
+     * @param string $data
+     *
+     * @return AttributeSetAttributeUseIdFlattenedDto
+     */
     public function fromString($data)
     {
         $pValues = explode(',', $data);
         $this->setAttributeSetId($pValues[0]);
         $this->setAttributeId($pValues[1]);
+        return $this;
     }
 
 }

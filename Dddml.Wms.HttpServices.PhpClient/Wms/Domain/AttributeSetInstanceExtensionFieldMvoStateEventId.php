@@ -1,10 +1,11 @@
-﻿<?php
+<?php
 
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
+use Dddml\StringIdInterface;
 
-class AttributeSetInstanceExtensionFieldMvoStateEventId
+class AttributeSetInstanceExtensionFieldMvoStateEventId implements StringIdInterface
 {
     /**
      * @Type("Wms\Domain\AttributeSetInstanceExtensionFieldId")
@@ -50,6 +51,38 @@ class AttributeSetInstanceExtensionFieldMvoStateEventId
     {
         $this->attrSetInstEFGroupVersion = $attrSetInstEFGroupVersion;
     }
+
+
+
+    /**
+     * @var AttributeSetInstanceExtensionFieldMvoStateEventIdFlattenedDto
+     */
+    private $idFlattenedDto;
+
+    /**
+     * @return string
+     */
+    public function toString()
+    {
+        if (!$this->idFlattenedDto) {
+            $this->idFlattenedDto = new AttributeSetInstanceExtensionFieldMvoStateEventIdFlattenedDto($this);
+        }
+
+        return $this->idFlattenedDto->toString();
+    }
+
+    /**
+     * @param string $idStr
+     *
+     * @return AttributeSetInstanceExtensionFieldMvoStateEventId
+     */
+    public static function createFromString($idStr)
+    {
+        return (new AttributeSetInstanceExtensionFieldMvoStateEventIdFlattenedDto())
+            ->fromString($idStr)
+            ->toAttributeSetInstanceExtensionFieldMvoStateEventId();
+    }
+
 
 }
 

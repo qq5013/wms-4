@@ -1,10 +1,11 @@
-﻿<?php
+<?php
 
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
+use Dddml\StringIdInterface;
 
-class InOutLineId
+class InOutLineId implements StringIdInterface
 {
     /**
      * @Type("string")
@@ -50,6 +51,38 @@ class InOutLineId
     {
         $this->skuId = $skuId;
     }
+
+
+
+    /**
+     * @var InOutLineIdFlattenedDto
+     */
+    private $idFlattenedDto;
+
+    /**
+     * @return string
+     */
+    public function toString()
+    {
+        if (!$this->idFlattenedDto) {
+            $this->idFlattenedDto = new InOutLineIdFlattenedDto($this);
+        }
+
+        return $this->idFlattenedDto->toString();
+    }
+
+    /**
+     * @param string $idStr
+     *
+     * @return InOutLineId
+     */
+    public static function createFromString($idStr)
+    {
+        return (new InOutLineIdFlattenedDto())
+            ->fromString($idStr)
+            ->toInOutLineId();
+    }
+
 
 }
 

@@ -4,7 +4,7 @@
 <#
 	TemplatingContext.Current.CurrentAssembly = "Dddml.Wms.HttpServices";
 	
-	boundedContext.Aggregates["AttributeSetInstance"].Metadata["httpPostCreationEnabled"] = true;
+	//boundedContext.Aggregates["AttributeSetInstance"].Metadata["httpPostCreationEnabled"] = true;
 
 	//boundedContext.Aggregates["AttributeSet"].Metadata["httpPostCreationEnabled"] = true;
 

@@ -113,7 +113,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(CreateAttributeDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -153,7 +153,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(MergePatchAttributeDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -479,7 +479,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(CreateAttributeSetDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -519,7 +519,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(MergePatchAttributeSetDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -845,7 +845,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(CreateAttributeSetInstanceDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -885,7 +885,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(MergePatchAttributeSetInstanceDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -1211,7 +1211,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(CreateAttributeSetInstanceExtensionFieldGroupDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -1251,7 +1251,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(MergePatchAttributeSetInstanceExtensionFieldGroupDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -1577,7 +1577,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(CreateInOutDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -1617,7 +1617,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(MergePatchInOutDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -1943,7 +1943,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(CreateWarehouseDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -1983,7 +1983,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(MergePatchWarehouseDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -2309,7 +2309,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(CreateLocatorDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -2349,7 +2349,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(MergePatchLocatorDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -2675,7 +2675,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(CreateOrganizationDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -2715,7 +2715,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(MergePatchOrganizationDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -3041,7 +3041,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(CreateOrganizationStructureTypeDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -3081,7 +3081,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(MergePatchOrganizationStructureTypeDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -3407,7 +3407,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(CreateOrganizationStructureDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -3447,7 +3447,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(MergePatchOrganizationStructureDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -3773,7 +3773,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(CreateUserDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -3813,7 +3813,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(MergePatchUserDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -4139,7 +4139,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(CreateRoleDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -4179,7 +4179,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(MergePatchRoleDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -4505,7 +4505,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(CreatePermissionDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -4545,7 +4545,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(MergePatchPermissionDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -4871,7 +4871,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(CreateRolePermissionDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -4911,7 +4911,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(MergePatchRolePermissionDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -5237,7 +5237,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(CreateAudienceDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -5277,7 +5277,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(MergePatchAudienceDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -5603,7 +5603,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(CreateAttributeValueMvoDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -5643,7 +5643,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(MergePatchAttributeValueMvoDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -5969,7 +5969,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(CreateAttributeUseMvoDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -6009,7 +6009,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(MergePatchAttributeUseMvoDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -6335,7 +6335,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(CreateAttributeSetInstanceExtensionFieldMvoDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -6375,7 +6375,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(MergePatchAttributeSetInstanceExtensionFieldMvoDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -6701,7 +6701,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(CreateInOutLineMvoDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -6741,7 +6741,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(MergePatchInOutLineMvoDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -7067,7 +7067,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(CreateUserRoleMvoDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -7107,7 +7107,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(MergePatchUserRoleMvoDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -7433,7 +7433,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(CreateUserClaimMvoDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -7473,7 +7473,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(MergePatchUserClaimMvoDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -7799,7 +7799,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(CreateUserPermissionMvoDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -7839,7 +7839,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(MergePatchUserPermissionMvoDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -8165,7 +8165,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(CreateUserLoginMvoDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -8205,7 +8205,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
             if(request.Formatter == null)
-                request.Formatter = new JsonMediaTypeFormatter();
+                request.Formatter = proxy.GetJsonMediaTypeFormatter();
             req.Content = new ObjectContent(typeof(MergePatchUserLoginMvoDto), request.Content , request.Formatter);                           
 	        var response = await proxy.Client.SendAsync(req);
             return new ApiResponse  
@@ -8716,7 +8716,18 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
                 }
             }
         }
-        
+
+        public JsonMediaTypeFormatter GetJsonMediaTypeFormatter()
+        {
+            var formatter = new JsonMediaTypeFormatter();
+            formatter.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+            formatter.SerializerSettings.Formatting = Formatting.None;
+            formatter.SerializerSettings.DateFormatHandling = DateFormatHandling.IsoDateFormat;
+            formatter.SerializerSettings.Converters.Add(new Dddml.Wms.HttpServices.JsonConverters.LongConverter());
+            formatter.SerializerSettings.Converters.Add(new Dddml.Wms.HttpServices.JsonConverters.DecimalConverter());
+            return formatter;
+        }
+
 
         public virtual Attribute Attribute
         {

@@ -246,3 +246,4 @@ paket-files/
 
 AppSettingsSecrets.config
 Dddml.Wms.HttpServices.JavaClient/out/
+Dddml.Wms.JavaCommon/out/

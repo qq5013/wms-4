@@ -7,8 +7,8 @@
     <ProjectGuid>{BD368EED-83C7-49B0-8116-797BD98741E0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Dddml.Wms.HttpServices.JavaClient</RootNamespace>
-    <AssemblyName>Dddml.Wms.HttpServices.JavaClient</AssemblyName>
+    <RootNamespace>Dddml.Wms.HttpServices.JavaCommon</RootNamespace>
+    <AssemblyName>Dddml.Wms.HttpServices.JavaCommon</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

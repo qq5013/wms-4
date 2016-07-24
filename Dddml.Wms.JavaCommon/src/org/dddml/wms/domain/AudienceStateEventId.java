@@ -1,7 +1,8 @@
 package org.dddml.wms.domain;
 
+import java.io.Serializable;
 
-public class AudienceStateEventId
+public class AudienceStateEventId implements Serializable
 {
     private String clientId;
 

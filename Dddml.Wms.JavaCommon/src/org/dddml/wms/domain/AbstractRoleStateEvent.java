@@ -82,6 +82,17 @@ public abstract class AbstractRoleStateEvent implements RoleStateEvent
         this.active = active;
     }
 
+
+    private String commandId;
+
+    public String getCommandId() {
+        return commandId;
+    }
+
+    public void setCommandId(String commandId) {
+        this.commandId = commandId;
+    }
+
     protected AbstractRoleStateEvent() {
     }
 

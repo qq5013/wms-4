@@ -178,6 +178,17 @@ public abstract class AbstractAttributeStateEvent implements AttributeStateEvent
         this.active = active;
     }
 
+
+    private String commandId;
+
+    public String getCommandId() {
+        return commandId;
+    }
+
+    public void setCommandId(String commandId) {
+        this.commandId = commandId;
+    }
+
     protected AbstractAttributeStateEvent() {
     }
 

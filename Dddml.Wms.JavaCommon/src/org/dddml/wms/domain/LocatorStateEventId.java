@@ -1,7 +1,8 @@
 package org.dddml.wms.domain;
 
+import java.io.Serializable;
 
-public class LocatorStateEventId
+public class LocatorStateEventId implements Serializable
 {
     private String locatorId;
 

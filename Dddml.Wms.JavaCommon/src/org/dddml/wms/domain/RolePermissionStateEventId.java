@@ -1,9 +1,10 @@
 package org.dddml.wms.domain;
 
+import java.io.Serializable;
 
-public class RolePermissionStateEventId
+public class RolePermissionStateEventId implements Serializable
 {
-    private RolePermissionId id;
+    private RolePermissionId id = new RolePermissionId();
 
     public RolePermissionId getId()
     {

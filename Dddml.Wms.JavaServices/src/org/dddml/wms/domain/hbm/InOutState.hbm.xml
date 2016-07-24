@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="org.dddml.wms.domain.AbstractInOutState$SimpleInOutState" table="InOuts">
+
+	<id name="documentNumber" length="50">
+		<generator class="assigned"/>
+	</id>
+
+	<version name="version" type="long" unsaved-value="null"/>
+
+	<property name="isSOTransaction" ></property>
+
+	<property name="documentStatus" ></property>
+
+	<property name="posted" ></property>
+
+	<property name="processing" ></property>
+
+	<property name="processed" ></property>
+
+	<property name="documentType" ></property>
+
+	<property name="description" ></property>
+
+	<property name="orderNumber" ></property>
+
+	<property name="dateOrdered" ></property>
+
+	<property name="isPrinted" ></property>
+
+	<property name="movementType" ></property>
+
+	<property name="movementDate" ></property>
+
+	<property name="businessPartnerId" ></property>
+
+	<property name="warehouseId" ></property>
+
+	<property name="pOReference" ></property>
+
+	<property name="freightAmount" ></property>
+
+	<property name="shipperId" ></property>
+
+	<property name="chargeAmount" ></property>
+
+	<property name="datePrinted" ></property>
+
+	<property name="salesRepresentative" ></property>
+
+	<property name="numberOfPackages" ></property>
+
+	<property name="pickDate" ></property>
+
+	<property name="shipDate" ></property>
+
+	<property name="trackingNumber" ></property>
+
+	<property name="dateReceived" ></property>
+
+	<property name="isInTransit" ></property>
+
+	<property name="isApproved" ></property>
+
+	<property name="isInDispute" ></property>
+
+	<property name="volume" ></property>
+
+	<property name="weight" ></property>
+
+	<property name="rmaNumber" ></property>
+
+	<property name="reversalNumber" ></property>
+
+	<property name="isDropShip" ></property>
+
+	<property name="dropShipBusinessPartnerId" ></property>
+
+	<property name="createdBy" ></property>
+
+	<property name="createdAt" ></property>
+
+	<property name="updatedBy" ></property>
+
+	<property name="updatedAt" ></property>
+
+	<property name="active" ></property>
+
+	<property name="deleted" ></property>
+
+
+  </class>
+  
+</hibernate-mapping>
+

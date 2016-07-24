@@ -256,6 +256,16 @@ public class AttributeValueMvoStateEventDto extends AbstractStateEventDto
         this.createdAt = createdAt;
     }
 
+    private String commandId;
+
+    public String getCommandId() {
+        return commandId;
+    }
+
+    public void setCommandId(String commandId) {
+        this.commandId = commandId;
+    }
+
     private Boolean isPropertyNameRemoved;
 
     public Boolean getIsPropertyNameRemoved() {

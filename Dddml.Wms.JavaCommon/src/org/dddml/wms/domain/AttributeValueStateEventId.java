@@ -1,7 +1,8 @@
 package org.dddml.wms.domain;
 
+import java.io.Serializable;
 
-public class AttributeValueStateEventId
+public class AttributeValueStateEventId implements Serializable
 {
     private String attributeId;
 

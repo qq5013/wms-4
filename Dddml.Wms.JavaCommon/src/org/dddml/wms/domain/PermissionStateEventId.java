@@ -1,7 +1,8 @@
 package org.dddml.wms.domain;
 
+import java.io.Serializable;
 
-public class PermissionStateEventId
+public class PermissionStateEventId implements Serializable
 {
     private String permissionId;
 

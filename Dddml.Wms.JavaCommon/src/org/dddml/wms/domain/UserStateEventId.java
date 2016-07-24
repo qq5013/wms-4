@@ -1,7 +1,8 @@
 package org.dddml.wms.domain;
 
+import java.io.Serializable;
 
-public class UserStateEventId
+public class UserStateEventId implements Serializable
 {
     private String userId;
 

@@ -298,6 +298,17 @@ public abstract class AbstractAttributeValueMvoStateEvent implements AttributeVa
         this.attributeDeleted = attributeDeleted;
     }
 
+
+    private String commandId;
+
+    public String getCommandId() {
+        return commandId;
+    }
+
+    public void setCommandId(String commandId) {
+        this.commandId = commandId;
+    }
+
     protected AbstractAttributeValueMvoStateEvent() {
     }
 

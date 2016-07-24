@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="AbstractUserLoginStateEvent" table="UserLoginStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="stateEventId" class="org.dddml.wms.domain.UserLoginStateEventId">
+		<key-property name="userId" column="UserLoginIdUserId" length="50"/>
+		<key-property name="loginKeyLoginProvider" column="UserLoginIdLoginKeyLoginProvider" />
+		<key-property name="loginKeyProviderKey" column="UserLoginIdLoginKeyProviderKey" />
+		<key-property name="userVersion" column="UserVersion" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="string" />
+
+	<property name="active" ></property>
+
+
+    <property name="createdBy" />
+
+    <property name="createdAt" />
+
+    <property name="commandId" />
+
+    <property name="version" not-null="true" />
+
+
+    <subclass name="AbstractUserLoginStateEvent$SimpleUserLoginStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="AbstractUserLoginStateEvent$SimpleUserLoginStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="isPropertyActiveRemoved" />
+
+
+    </subclass>
+
+    <subclass name="AbstractUserLoginStateEvent$SimpleUserLoginStateRemoved"  discriminator-value="Removed">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

@@ -1,7 +1,8 @@
 package org.dddml.wms.domain;
 
+import java.io.Serializable;
 
-public class UserLoginId
+public class UserLoginId implements Serializable
 {
     private String userId;
 
@@ -15,7 +16,7 @@ public class UserLoginId
         this.userId = userId;
     }
 
-    private LoginKey loginKey;
+    private LoginKey loginKey = new LoginKey();
 
     public LoginKey getLoginKey()
     {

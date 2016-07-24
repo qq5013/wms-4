@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="AbstractAttributeValueStateEvent" table="AttributeValueStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="stateEventId" class="org.dddml.wms.domain.AttributeValueStateEventId">
+		<key-property name="attributeId" column="AttributeValueIdAttributeId" length="50"/>
+		<key-property name="value" column="AttributeValueIdValue" length="50"/>
+		<key-property name="attributeVersion" column="AttributeVersion" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="string" />
+
+	<property name="name" ></property>
+
+	<property name="description" ></property>
+
+	<property name="referenceId" ></property>
+
+	<property name="active" ></property>
+
+
+    <property name="createdBy" />
+
+    <property name="createdAt" />
+
+    <property name="commandId" />
+
+    <property name="version" not-null="true" />
+
+
+    <subclass name="AbstractAttributeValueStateEvent$SimpleAttributeValueStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="AbstractAttributeValueStateEvent$SimpleAttributeValueStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="isPropertyNameRemoved" />
+
+        <property name="isPropertyDescriptionRemoved" />
+
+        <property name="isPropertyReferenceIdRemoved" />
+
+        <property name="isPropertyActiveRemoved" />
+
+
+    </subclass>
+
+    <subclass name="AbstractAttributeValueStateEvent$SimpleAttributeValueStateRemoved"  discriminator-value="Removed">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

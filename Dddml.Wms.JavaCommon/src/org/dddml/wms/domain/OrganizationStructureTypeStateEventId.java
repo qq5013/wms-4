@@ -1,7 +1,8 @@
 package org.dddml.wms.domain;
 
+import java.io.Serializable;
 
-public class OrganizationStructureTypeStateEventId
+public class OrganizationStructureTypeStateEventId implements Serializable
 {
     private String id;
 

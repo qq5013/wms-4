@@ -1,7 +1,8 @@
 package org.dddml.wms.domain;
 
+import java.io.Serializable;
 
-public class SkuId
+public class SkuId implements Serializable
 {
     private String productId;
 

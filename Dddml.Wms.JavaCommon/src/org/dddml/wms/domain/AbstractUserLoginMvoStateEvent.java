@@ -274,6 +274,17 @@ public abstract class AbstractUserLoginMvoStateEvent implements UserLoginMvoStat
         this.userDeleted = userDeleted;
     }
 
+
+    private String commandId;
+
+    public String getCommandId() {
+        return commandId;
+    }
+
+    public void setCommandId(String commandId) {
+        this.commandId = commandId;
+    }
+
     protected AbstractUserLoginMvoStateEvent() {
     }
 

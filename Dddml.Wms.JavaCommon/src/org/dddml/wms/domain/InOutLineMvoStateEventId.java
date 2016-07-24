@@ -1,9 +1,10 @@
 package org.dddml.wms.domain;
 
+import java.io.Serializable;
 
-public class InOutLineMvoStateEventId
+public class InOutLineMvoStateEventId implements Serializable
 {
-    private InOutLineId inOutLineId;
+    private InOutLineId inOutLineId = new InOutLineId();
 
     public InOutLineId getInOutLineId()
     {

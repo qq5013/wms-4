@@ -1,0 +1,65 @@
+﻿<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="AbstractAttributeSetInstanceExtensionFieldGroupStateEvent" table="AttributeSetInstanceExtensionFieldGroupStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="stateEventId" class="org.dddml.wms.domain.AttributeSetInstanceExtensionFieldGroupStateEventId">
+		<key-property name="id" column="Id" length="50"/>
+		<key-property name="version" column="Version" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="string" />
+
+	<property name="fieldType" ></property>
+
+	<property name="fieldLength" ></property>
+
+	<property name="fieldCount" ></property>
+
+	<property name="nameFormat" ></property>
+
+	<property name="description" ></property>
+
+	<property name="active" ></property>
+
+
+    <property name="createdBy" />
+
+    <property name="createdAt" />
+
+    <property name="commandId" />
+
+
+    <subclass name="AbstractAttributeSetInstanceExtensionFieldGroupStateEvent$SimpleAttributeSetInstanceExtensionFieldGroupStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="AbstractAttributeSetInstanceExtensionFieldGroupStateEvent$SimpleAttributeSetInstanceExtensionFieldGroupStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="isPropertyFieldTypeRemoved" />
+
+        <property name="isPropertyFieldLengthRemoved" />
+
+        <property name="isPropertyFieldCountRemoved" />
+
+        <property name="isPropertyNameFormatRemoved" />
+
+        <property name="isPropertyDescriptionRemoved" />
+
+        <property name="isPropertyActiveRemoved" />
+
+
+    </subclass>
+
+    <subclass name="AbstractAttributeSetInstanceExtensionFieldGroupStateEvent$SimpleAttributeSetInstanceExtensionFieldGroupStateDeleted"  discriminator-value="Deleted">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

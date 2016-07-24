@@ -1,7 +1,8 @@
 package org.dddml.wms.domain;
 
+import java.io.Serializable;
 
-public class AttributeSetInstanceExtensionFieldGroupStateEventId
+public class AttributeSetInstanceExtensionFieldGroupStateEventId implements Serializable
 {
     private String id;
 

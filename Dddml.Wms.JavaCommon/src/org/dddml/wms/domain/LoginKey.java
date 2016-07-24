@@ -1,7 +1,8 @@
 package org.dddml.wms.domain;
 
+import java.io.Serializable;
 
-public class LoginKey
+public class LoginKey implements Serializable
 {
     private String loginProvider;
 

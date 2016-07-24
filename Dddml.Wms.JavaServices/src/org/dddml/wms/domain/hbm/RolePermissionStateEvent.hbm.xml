@@ -1,0 +1,46 @@
+﻿<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="AbstractRolePermissionStateEvent" table="RolePermissionStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="stateEventId" class="org.dddml.wms.domain.RolePermissionStateEventId">
+		<key-property name="idRoleId" column="IdRoleId" />
+		<key-property name="idPermissionId" column="IdPermissionId" />
+		<key-property name="version" column="Version" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="string" />
+
+	<property name="active" ></property>
+
+
+    <property name="createdBy" />
+
+    <property name="createdAt" />
+
+    <property name="commandId" />
+
+
+    <subclass name="AbstractRolePermissionStateEvent$SimpleRolePermissionStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="AbstractRolePermissionStateEvent$SimpleRolePermissionStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="isPropertyActiveRemoved" />
+
+
+    </subclass>
+
+    <subclass name="AbstractRolePermissionStateEvent$SimpleRolePermissionStateDeleted"  discriminator-value="Deleted">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="org.dddml.wms.domain.AbstractWarehouseState$SimpleWarehouseState" table="Warehouses">
+
+	<id name="warehouseId" length="50">
+		<generator class="assigned"/>
+	</id>
+
+	<version name="version" type="long" unsaved-value="null"/>
+
+	<property name="name" ></property>
+
+	<property name="description" ></property>
+
+	<property name="isInTransit" ></property>
+
+	<property name="createdBy" ></property>
+
+	<property name="createdAt" ></property>
+
+	<property name="updatedBy" ></property>
+
+	<property name="updatedAt" ></property>
+
+	<property name="active" ></property>
+
+	<property name="deleted" ></property>
+
+
+  </class>
+  
+</hibernate-mapping>
+

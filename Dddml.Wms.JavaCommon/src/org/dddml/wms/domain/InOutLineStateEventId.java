@@ -1,7 +1,8 @@
 package org.dddml.wms.domain;
 
+import java.io.Serializable;
 
-public class InOutLineStateEventId
+public class InOutLineStateEventId implements Serializable
 {
     private String inOutDocumentNumber;
 
@@ -15,7 +16,7 @@ public class InOutLineStateEventId
         this.inOutDocumentNumber = inOutDocumentNumber;
     }
 
-    private SkuId skuId;
+    private SkuId skuId = new SkuId();
 
     public SkuId getSkuId()
     {

@@ -1,7 +1,8 @@
 package org.dddml.wms.domain;
 
+import java.io.Serializable;
 
-public class DocumentAction
+public class DocumentAction implements Serializable
 {
     private String name;
 

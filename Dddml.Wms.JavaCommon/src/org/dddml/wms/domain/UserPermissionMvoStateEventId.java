@@ -1,9 +1,10 @@
 package org.dddml.wms.domain;
 
+import java.io.Serializable;
 
-public class UserPermissionMvoStateEventId
+public class UserPermissionMvoStateEventId implements Serializable
 {
-    private UserPermissionId userPermissionId;
+    private UserPermissionId userPermissionId = new UserPermissionId();
 
     public UserPermissionId getUserPermissionId()
     {

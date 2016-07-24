@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3C010B48-6ECA-466F-9C5B-28A01C4B88AB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dddml.Wms.JavaServices</RootNamespace>
+    <AssemblyName>Dddml.Wms.JavaServices</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\UserLoginMvoStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\UserLoginMvoState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\UserPermissionMvoStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\UserPermissionMvoState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\UserClaimMvoStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\UserClaimMvoState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\UserRoleMvoStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\UserRoleMvoState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\InOutLineMvoStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\InOutLineMvoState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\AttributeSetInstanceExtensionFieldMvoStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\AttributeSetInstanceExtensionFieldMvoState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\AttributeUseMvoStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\AttributeUseMvoState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\AttributeValueMvoStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\AttributeValueMvoState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\AudienceStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\AudienceState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\RolePermissionStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\RolePermissionState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\PermissionStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\PermissionState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\RoleStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\RoleState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\UserLoginStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\UserLoginState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\UserPermissionStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\UserPermissionState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\UserClaimStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\UserClaimState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\UserRoleStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\UserRoleState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\UserStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\UserState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\OrganizationStructureStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\OrganizationStructureState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\OrganizationStructureTypeStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\OrganizationStructureTypeState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\OrganizationStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\OrganizationState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\LocatorStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\LocatorState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\WarehouseStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\WarehouseState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\InOutLineStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\InOutLineState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\InOutStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\InOutState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\AttributeSetInstanceExtensionFieldStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\AttributeSetInstanceExtensionFieldState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\AttributeSetInstanceExtensionFieldGroupStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\AttributeSetInstanceExtensionFieldGroupState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\AttributeSetInstanceStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\AttributeSetInstanceState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\AttributeUseStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\AttributeUseState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\AttributeSetStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\AttributeSetState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\AttributeValueStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\AttributeValueState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\AttributeStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\AttributeState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="src\org\dddml\wms\domain\hbm\GenerateAggregatesHbm.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GenerateAggregatesHbm.txt</LastGenOutput>
+      <LastOutputs>
+.\AttributeSetInstanceExtensionFieldGroupState.hbm.xml
+.\AttributeSetInstanceExtensionFieldGroupStateEvent.hbm.xml
+.\AttributeSetInstanceExtensionFieldMvoState.hbm.xml
+.\AttributeSetInstanceExtensionFieldMvoStateEvent.hbm.xml
+.\AttributeSetInstanceExtensionFieldState.hbm.xml
+.\AttributeSetInstanceExtensionFieldStateEvent.hbm.xml
+.\AttributeSetInstanceState.hbm.xml
+.\AttributeSetInstanceStateEvent.hbm.xml
+.\AttributeSetState.hbm.xml
+.\AttributeSetStateEvent.hbm.xml
+.\AttributeState.hbm.xml
+.\AttributeStateEvent.hbm.xml
+.\AttributeUseMvoState.hbm.xml
+.\AttributeUseMvoStateEvent.hbm.xml
+.\AttributeUseState.hbm.xml
+.\AttributeUseStateEvent.hbm.xml
+.\AttributeValueMvoState.hbm.xml
+.\AttributeValueMvoStateEvent.hbm.xml
+.\AttributeValueState.hbm.xml
+.\AttributeValueStateEvent.hbm.xml
+.\AudienceState.hbm.xml
+.\AudienceStateEvent.hbm.xml
+.\GenerateAggregatesHbm.txt
+.\InOutLineMvoState.hbm.xml
+.\InOutLineMvoStateEvent.hbm.xml
+.\InOutLineState.hbm.xml
+.\InOutLineStateEvent.hbm.xml
+.\InOutState.hbm.xml
+.\InOutStateEvent.hbm.xml
+.\LocatorState.hbm.xml
+.\LocatorStateEvent.hbm.xml
+.\OrganizationState.hbm.xml
+.\OrganizationStateEvent.hbm.xml
+.\OrganizationStructureState.hbm.xml
+.\OrganizationStructureStateEvent.hbm.xml
+.\OrganizationStructureTypeState.hbm.xml
+.\OrganizationStructureTypeStateEvent.hbm.xml
+.\PermissionState.hbm.xml
+.\PermissionStateEvent.hbm.xml
+.\RolePermissionState.hbm.xml
+.\RolePermissionStateEvent.hbm.xml
+.\RoleState.hbm.xml
+.\RoleStateEvent.hbm.xml
+.\UserClaimMvoState.hbm.xml
+.\UserClaimMvoStateEvent.hbm.xml
+.\UserClaimState.hbm.xml
+.\UserClaimStateEvent.hbm.xml
+.\UserLoginMvoState.hbm.xml
+.\UserLoginMvoStateEvent.hbm.xml
+.\UserLoginState.hbm.xml
+.\UserLoginStateEvent.hbm.xml
+.\UserPermissionMvoState.hbm.xml
+.\UserPermissionMvoStateEvent.hbm.xml
+.\UserPermissionState.hbm.xml
+.\UserPermissionStateEvent.hbm.xml
+.\UserRoleMvoState.hbm.xml
+.\UserRoleMvoStateEvent.hbm.xml
+.\UserRoleState.hbm.xml
+.\UserRoleStateEvent.hbm.xml
+.\UserState.hbm.xml
+.\UserStateEvent.hbm.xml
+.\WarehouseState.hbm.xml
+.\WarehouseStateEvent.hbm.xml
+</LastOutputs>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\hbm\GenerateAggregatesHbm.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

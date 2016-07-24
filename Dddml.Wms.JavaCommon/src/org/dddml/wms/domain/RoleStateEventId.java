@@ -1,7 +1,8 @@
 package org.dddml.wms.domain;
 
+import java.io.Serializable;
 
-public class RoleStateEventId
+public class RoleStateEventId implements Serializable
 {
     private String roleId;
 

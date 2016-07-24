@@ -106,6 +106,16 @@ public class AttributeSetInstanceExtensionFieldGroupStateEventDto extends Abstra
         this.createdAt = createdAt;
     }
 
+    private String commandId;
+
+    public String getCommandId() {
+        return commandId;
+    }
+
+    public void setCommandId(String commandId) {
+        this.commandId = commandId;
+    }
+
     private Boolean isPropertyFieldTypeRemoved;
 
     public Boolean getIsPropertyFieldTypeRemoved() {

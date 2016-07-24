@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="AbstractAttributeSetInstanceExtensionFieldStateEvent" table="AttributeSetInstanceExtensionFieldStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="stateEventId" class="org.dddml.wms.domain.AttributeSetInstanceExtensionFieldStateEventId">
+		<key-property name="groupId" column="AttributeSetInstanceExtensionFieldIdGroupId" length="50"/>
+		<key-property name="index" column="AttributeSetInstanceExtensionFieldIdIndex" length="50"/>
+		<key-property name="attributeSetInstanceExtensionFieldGroupVersion" column="AttributeSetInstanceExtensionFieldGroupVersion" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="string" />
+
+	<property name="name" unique-key="UniqueName"></property>
+
+	<property name="type" ></property>
+
+	<property name="length" ></property>
+
+	<property name="alias" unique-key="UniqueAlias"></property>
+
+	<property name="description" ></property>
+
+	<property name="active" ></property>
+
+
+    <property name="createdBy" />
+
+    <property name="createdAt" />
+
+    <property name="commandId" />
+
+    <property name="version" not-null="true" />
+
+
+    <subclass name="AbstractAttributeSetInstanceExtensionFieldStateEvent$SimpleAttributeSetInstanceExtensionFieldStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="AbstractAttributeSetInstanceExtensionFieldStateEvent$SimpleAttributeSetInstanceExtensionFieldStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="isPropertyNameRemoved" />
+
+        <property name="isPropertyTypeRemoved" />
+
+        <property name="isPropertyLengthRemoved" />
+
+        <property name="isPropertyAliasRemoved" />
+
+        <property name="isPropertyDescriptionRemoved" />
+
+        <property name="isPropertyActiveRemoved" />
+
+
+    </subclass>
+
+    <subclass name="AbstractAttributeSetInstanceExtensionFieldStateEvent$SimpleAttributeSetInstanceExtensionFieldStateRemoved"  discriminator-value="Removed">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

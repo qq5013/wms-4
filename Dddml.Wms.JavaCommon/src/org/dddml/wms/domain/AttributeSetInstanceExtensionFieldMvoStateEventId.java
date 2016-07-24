@@ -1,9 +1,10 @@
 package org.dddml.wms.domain;
 
+import java.io.Serializable;
 
-public class AttributeSetInstanceExtensionFieldMvoStateEventId
+public class AttributeSetInstanceExtensionFieldMvoStateEventId implements Serializable
 {
-    private AttributeSetInstanceExtensionFieldId attributeSetInstanceExtensionFieldId;
+    private AttributeSetInstanceExtensionFieldId attributeSetInstanceExtensionFieldId = new AttributeSetInstanceExtensionFieldId();
 
     public AttributeSetInstanceExtensionFieldId getAttributeSetInstanceExtensionFieldId()
     {

@@ -118,6 +118,17 @@ public abstract class AbstractAttributeValueStateEvent implements AttributeValue
         this.attributeId = attributeId;
     }
 
+
+    private String commandId;
+
+    public String getCommandId() {
+        return commandId;
+    }
+
+    public void setCommandId(String commandId) {
+        this.commandId = commandId;
+    }
+
     protected AbstractAttributeValueStateEvent() {
     }
 

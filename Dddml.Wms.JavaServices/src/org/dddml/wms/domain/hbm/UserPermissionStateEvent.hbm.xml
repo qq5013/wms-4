@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="AbstractUserPermissionStateEvent" table="UserPermissionStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="stateEventId" class="org.dddml.wms.domain.UserPermissionStateEventId">
+		<key-property name="userId" column="UserPermissionIdUserId" length="50"/>
+		<key-property name="permissionId" column="UserPermissionIdPermissionId" length="50"/>
+		<key-property name="userVersion" column="UserVersion" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="string" />
+
+	<property name="active" ></property>
+
+
+    <property name="createdBy" />
+
+    <property name="createdAt" />
+
+    <property name="commandId" />
+
+    <property name="version" not-null="true" />
+
+
+    <subclass name="AbstractUserPermissionStateEvent$SimpleUserPermissionStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="AbstractUserPermissionStateEvent$SimpleUserPermissionStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="isPropertyActiveRemoved" />
+
+
+    </subclass>
+
+    <subclass name="AbstractUserPermissionStateEvent$SimpleUserPermissionStateRemoved"  discriminator-value="Removed">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

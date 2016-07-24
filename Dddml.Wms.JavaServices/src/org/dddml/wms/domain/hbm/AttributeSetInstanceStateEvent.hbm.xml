@@ -1,0 +1,975 @@
+﻿<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="AbstractAttributeSetInstanceStateEvent" table="AttributeSetInstanceStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="stateEventId" class="org.dddml.wms.domain.AttributeSetInstanceStateEventId">
+		<key-property name="attributeSetInstanceId" column="AttributeSetInstanceId" length="50"/>
+		<key-property name="version" column="Version" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="string" />
+
+	<property name="attributeSetId" ></property>
+
+	<property name="organizationId" ></property>
+
+	<property name="referenceId" ></property>
+
+	<property name="serialNumber" ></property>
+
+	<property name="lot" ></property>
+
+	<property name="description" ></property>
+
+	<property name="hash" ></property>
+
+	<property name="_F_B_0_" ></property>
+
+	<property name="_F_I_0_" ></property>
+
+	<property name="_F_L_0_" ></property>
+
+	<property name="_F_DT_0_" ></property>
+
+	<property name="_F_N_0_" ></property>
+
+	<property name="_F_C5_0_" length="5"></property>
+
+	<property name="_F_C10_0_" length="10"></property>
+
+	<property name="_F_C20_0_" length="20"></property>
+
+	<property name="_F_C50_0_" length="50"></property>
+
+	<property name="_F_C100_0_" length="100"></property>
+
+	<property name="_F_C200_0_" length="200"></property>
+
+	<property name="_F_C500_0_" length="500"></property>
+
+	<property name="_F_C1000_0_" length="1000"></property>
+
+	<property name="_F_B_1_" ></property>
+
+	<property name="_F_I_1_" ></property>
+
+	<property name="_F_L_1_" ></property>
+
+	<property name="_F_DT_1_" ></property>
+
+	<property name="_F_N_1_" ></property>
+
+	<property name="_F_C5_1_" length="5"></property>
+
+	<property name="_F_C10_1_" length="10"></property>
+
+	<property name="_F_C20_1_" length="20"></property>
+
+	<property name="_F_C50_1_" length="50"></property>
+
+	<property name="_F_C100_1_" length="100"></property>
+
+	<property name="_F_C200_1_" length="200"></property>
+
+	<property name="_F_C500_1_" length="500"></property>
+
+	<property name="_F_C1000_1_" length="1000"></property>
+
+	<property name="_F_B_2_" ></property>
+
+	<property name="_F_I_2_" ></property>
+
+	<property name="_F_L_2_" ></property>
+
+	<property name="_F_DT_2_" ></property>
+
+	<property name="_F_N_2_" ></property>
+
+	<property name="_F_C5_2_" length="5"></property>
+
+	<property name="_F_C10_2_" length="10"></property>
+
+	<property name="_F_C20_2_" length="20"></property>
+
+	<property name="_F_C50_2_" length="50"></property>
+
+	<property name="_F_C100_2_" length="100"></property>
+
+	<property name="_F_C200_2_" length="200"></property>
+
+	<property name="_F_C500_2_" length="500"></property>
+
+	<property name="_F_C1000_2_" length="1000"></property>
+
+	<property name="_F_B_3_" ></property>
+
+	<property name="_F_I_3_" ></property>
+
+	<property name="_F_L_3_" ></property>
+
+	<property name="_F_DT_3_" ></property>
+
+	<property name="_F_N_3_" ></property>
+
+	<property name="_F_C5_3_" length="5"></property>
+
+	<property name="_F_C10_3_" length="10"></property>
+
+	<property name="_F_C20_3_" length="20"></property>
+
+	<property name="_F_C50_3_" length="50"></property>
+
+	<property name="_F_C100_3_" length="100"></property>
+
+	<property name="_F_C200_3_" length="200"></property>
+
+	<property name="_F_C500_3_" length="500"></property>
+
+	<property name="_F_C1000_3_" length="1000"></property>
+
+	<property name="_F_B_4_" ></property>
+
+	<property name="_F_I_4_" ></property>
+
+	<property name="_F_L_4_" ></property>
+
+	<property name="_F_DT_4_" ></property>
+
+	<property name="_F_N_4_" ></property>
+
+	<property name="_F_C5_4_" length="5"></property>
+
+	<property name="_F_C10_4_" length="10"></property>
+
+	<property name="_F_C20_4_" length="20"></property>
+
+	<property name="_F_C50_4_" length="50"></property>
+
+	<property name="_F_C100_4_" length="100"></property>
+
+	<property name="_F_C200_4_" length="200"></property>
+
+	<property name="_F_C500_4_" length="500"></property>
+
+	<property name="_F_C1000_4_" length="1000"></property>
+
+	<property name="_F_B_5_" ></property>
+
+	<property name="_F_I_5_" ></property>
+
+	<property name="_F_L_5_" ></property>
+
+	<property name="_F_DT_5_" ></property>
+
+	<property name="_F_N_5_" ></property>
+
+	<property name="_F_C5_5_" length="5"></property>
+
+	<property name="_F_C10_5_" length="10"></property>
+
+	<property name="_F_C20_5_" length="20"></property>
+
+	<property name="_F_C50_5_" length="50"></property>
+
+	<property name="_F_C100_5_" length="100"></property>
+
+	<property name="_F_C200_5_" length="200"></property>
+
+	<property name="_F_C500_5_" length="500"></property>
+
+	<property name="_F_B_6_" ></property>
+
+	<property name="_F_I_6_" ></property>
+
+	<property name="_F_L_6_" ></property>
+
+	<property name="_F_DT_6_" ></property>
+
+	<property name="_F_N_6_" ></property>
+
+	<property name="_F_C5_6_" length="5"></property>
+
+	<property name="_F_C10_6_" length="10"></property>
+
+	<property name="_F_C20_6_" length="20"></property>
+
+	<property name="_F_C50_6_" length="50"></property>
+
+	<property name="_F_C100_6_" length="100"></property>
+
+	<property name="_F_C200_6_" length="200"></property>
+
+	<property name="_F_C500_6_" length="500"></property>
+
+	<property name="_F_B_7_" ></property>
+
+	<property name="_F_I_7_" ></property>
+
+	<property name="_F_L_7_" ></property>
+
+	<property name="_F_DT_7_" ></property>
+
+	<property name="_F_N_7_" ></property>
+
+	<property name="_F_C5_7_" length="5"></property>
+
+	<property name="_F_C10_7_" length="10"></property>
+
+	<property name="_F_C20_7_" length="20"></property>
+
+	<property name="_F_C50_7_" length="50"></property>
+
+	<property name="_F_C100_7_" length="100"></property>
+
+	<property name="_F_C200_7_" length="200"></property>
+
+	<property name="_F_C500_7_" length="500"></property>
+
+	<property name="_F_B_8_" ></property>
+
+	<property name="_F_I_8_" ></property>
+
+	<property name="_F_L_8_" ></property>
+
+	<property name="_F_DT_8_" ></property>
+
+	<property name="_F_N_8_" ></property>
+
+	<property name="_F_C5_8_" length="5"></property>
+
+	<property name="_F_C10_8_" length="10"></property>
+
+	<property name="_F_C20_8_" length="20"></property>
+
+	<property name="_F_C50_8_" length="50"></property>
+
+	<property name="_F_C100_8_" length="100"></property>
+
+	<property name="_F_C200_8_" length="200"></property>
+
+	<property name="_F_C500_8_" length="500"></property>
+
+	<property name="_F_B_9_" ></property>
+
+	<property name="_F_I_9_" ></property>
+
+	<property name="_F_L_9_" ></property>
+
+	<property name="_F_DT_9_" ></property>
+
+	<property name="_F_N_9_" ></property>
+
+	<property name="_F_C5_9_" length="5"></property>
+
+	<property name="_F_C10_9_" length="10"></property>
+
+	<property name="_F_C20_9_" length="20"></property>
+
+	<property name="_F_C50_9_" length="50"></property>
+
+	<property name="_F_C100_9_" length="100"></property>
+
+	<property name="_F_C200_9_" length="200"></property>
+
+	<property name="_F_C500_9_" length="500"></property>
+
+	<property name="_F_B_10_" ></property>
+
+	<property name="_F_I_10_" ></property>
+
+	<property name="_F_L_10_" ></property>
+
+	<property name="_F_DT_10_" ></property>
+
+	<property name="_F_N_10_" ></property>
+
+	<property name="_F_C5_10_" length="5"></property>
+
+	<property name="_F_C10_10_" length="10"></property>
+
+	<property name="_F_C20_10_" length="20"></property>
+
+	<property name="_F_C50_10_" length="50"></property>
+
+	<property name="_F_C100_10_" length="100"></property>
+
+	<property name="_F_C200_10_" length="200"></property>
+
+	<property name="_F_B_11_" ></property>
+
+	<property name="_F_I_11_" ></property>
+
+	<property name="_F_L_11_" ></property>
+
+	<property name="_F_DT_11_" ></property>
+
+	<property name="_F_N_11_" ></property>
+
+	<property name="_F_C5_11_" length="5"></property>
+
+	<property name="_F_C10_11_" length="10"></property>
+
+	<property name="_F_C20_11_" length="20"></property>
+
+	<property name="_F_C50_11_" length="50"></property>
+
+	<property name="_F_C100_11_" length="100"></property>
+
+	<property name="_F_C200_11_" length="200"></property>
+
+	<property name="_F_B_12_" ></property>
+
+	<property name="_F_I_12_" ></property>
+
+	<property name="_F_L_12_" ></property>
+
+	<property name="_F_DT_12_" ></property>
+
+	<property name="_F_N_12_" ></property>
+
+	<property name="_F_C5_12_" length="5"></property>
+
+	<property name="_F_C10_12_" length="10"></property>
+
+	<property name="_F_C20_12_" length="20"></property>
+
+	<property name="_F_C50_12_" length="50"></property>
+
+	<property name="_F_C100_12_" length="100"></property>
+
+	<property name="_F_C200_12_" length="200"></property>
+
+	<property name="_F_B_13_" ></property>
+
+	<property name="_F_I_13_" ></property>
+
+	<property name="_F_L_13_" ></property>
+
+	<property name="_F_DT_13_" ></property>
+
+	<property name="_F_N_13_" ></property>
+
+	<property name="_F_C5_13_" length="5"></property>
+
+	<property name="_F_C10_13_" length="10"></property>
+
+	<property name="_F_C20_13_" length="20"></property>
+
+	<property name="_F_C50_13_" length="50"></property>
+
+	<property name="_F_C100_13_" length="100"></property>
+
+	<property name="_F_C200_13_" length="200"></property>
+
+	<property name="_F_B_14_" ></property>
+
+	<property name="_F_I_14_" ></property>
+
+	<property name="_F_L_14_" ></property>
+
+	<property name="_F_DT_14_" ></property>
+
+	<property name="_F_N_14_" ></property>
+
+	<property name="_F_C5_14_" length="5"></property>
+
+	<property name="_F_C10_14_" length="10"></property>
+
+	<property name="_F_C20_14_" length="20"></property>
+
+	<property name="_F_C50_14_" length="50"></property>
+
+	<property name="_F_C100_14_" length="100"></property>
+
+	<property name="_F_C200_14_" length="200"></property>
+
+	<property name="_F_B_15_" ></property>
+
+	<property name="_F_I_15_" ></property>
+
+	<property name="_F_L_15_" ></property>
+
+	<property name="_F_DT_15_" ></property>
+
+	<property name="_F_N_15_" ></property>
+
+	<property name="_F_C5_15_" length="5"></property>
+
+	<property name="_F_C10_15_" length="10"></property>
+
+	<property name="_F_C20_15_" length="20"></property>
+
+	<property name="_F_C50_15_" length="50"></property>
+
+	<property name="_F_C100_15_" length="100"></property>
+
+	<property name="_F_C200_15_" length="200"></property>
+
+	<property name="_F_B_16_" ></property>
+
+	<property name="_F_I_16_" ></property>
+
+	<property name="_F_L_16_" ></property>
+
+	<property name="_F_DT_16_" ></property>
+
+	<property name="_F_N_16_" ></property>
+
+	<property name="_F_C5_16_" length="5"></property>
+
+	<property name="_F_C10_16_" length="10"></property>
+
+	<property name="_F_C20_16_" length="20"></property>
+
+	<property name="_F_C50_16_" length="50"></property>
+
+	<property name="_F_C100_16_" length="100"></property>
+
+	<property name="_F_C200_16_" length="200"></property>
+
+	<property name="_F_B_17_" ></property>
+
+	<property name="_F_I_17_" ></property>
+
+	<property name="_F_L_17_" ></property>
+
+	<property name="_F_DT_17_" ></property>
+
+	<property name="_F_N_17_" ></property>
+
+	<property name="_F_C5_17_" length="5"></property>
+
+	<property name="_F_C10_17_" length="10"></property>
+
+	<property name="_F_C20_17_" length="20"></property>
+
+	<property name="_F_C50_17_" length="50"></property>
+
+	<property name="_F_C100_17_" length="100"></property>
+
+	<property name="_F_C200_17_" length="200"></property>
+
+	<property name="_F_B_18_" ></property>
+
+	<property name="_F_I_18_" ></property>
+
+	<property name="_F_L_18_" ></property>
+
+	<property name="_F_DT_18_" ></property>
+
+	<property name="_F_N_18_" ></property>
+
+	<property name="_F_C5_18_" length="5"></property>
+
+	<property name="_F_C10_18_" length="10"></property>
+
+	<property name="_F_C20_18_" length="20"></property>
+
+	<property name="_F_C50_18_" length="50"></property>
+
+	<property name="_F_C100_18_" length="100"></property>
+
+	<property name="_F_C200_18_" length="200"></property>
+
+	<property name="_F_B_19_" ></property>
+
+	<property name="_F_I_19_" ></property>
+
+	<property name="_F_L_19_" ></property>
+
+	<property name="_F_DT_19_" ></property>
+
+	<property name="_F_N_19_" ></property>
+
+	<property name="_F_C5_19_" length="5"></property>
+
+	<property name="_F_C10_19_" length="10"></property>
+
+	<property name="_F_C20_19_" length="20"></property>
+
+	<property name="_F_C50_19_" length="50"></property>
+
+	<property name="_F_C100_19_" length="100"></property>
+
+	<property name="_F_C200_19_" length="200"></property>
+
+	<property name="_F_B_20_" ></property>
+
+	<property name="_F_I_20_" ></property>
+
+	<property name="_F_L_20_" ></property>
+
+	<property name="_F_N_20_" ></property>
+
+	<property name="_F_C5_20_" length="5"></property>
+
+	<property name="_F_C10_20_" length="10"></property>
+
+	<property name="_F_C20_20_" length="20"></property>
+
+	<property name="_F_C50_20_" length="50"></property>
+
+	<property name="_F_B_21_" ></property>
+
+	<property name="_F_I_21_" ></property>
+
+	<property name="_F_L_21_" ></property>
+
+	<property name="_F_N_21_" ></property>
+
+	<property name="_F_C5_21_" length="5"></property>
+
+	<property name="_F_C10_21_" length="10"></property>
+
+	<property name="_F_C20_21_" length="20"></property>
+
+	<property name="_F_C50_21_" length="50"></property>
+
+	<property name="_F_B_22_" ></property>
+
+	<property name="_F_I_22_" ></property>
+
+	<property name="_F_L_22_" ></property>
+
+	<property name="_F_N_22_" ></property>
+
+	<property name="_F_C5_22_" length="5"></property>
+
+	<property name="_F_C10_22_" length="10"></property>
+
+	<property name="_F_C20_22_" length="20"></property>
+
+	<property name="_F_C50_22_" length="50"></property>
+
+	<property name="_F_B_23_" ></property>
+
+	<property name="_F_I_23_" ></property>
+
+	<property name="_F_L_23_" ></property>
+
+	<property name="_F_N_23_" ></property>
+
+	<property name="_F_C5_23_" length="5"></property>
+
+	<property name="_F_C10_23_" length="10"></property>
+
+	<property name="_F_C20_23_" length="20"></property>
+
+	<property name="_F_C50_23_" length="50"></property>
+
+	<property name="_F_B_24_" ></property>
+
+	<property name="_F_I_24_" ></property>
+
+	<property name="_F_L_24_" ></property>
+
+	<property name="_F_N_24_" ></property>
+
+	<property name="_F_C5_24_" length="5"></property>
+
+	<property name="_F_C10_24_" length="10"></property>
+
+	<property name="_F_C20_24_" length="20"></property>
+
+	<property name="_F_C50_24_" length="50"></property>
+
+	<property name="_F_B_25_" ></property>
+
+	<property name="_F_I_25_" ></property>
+
+	<property name="_F_L_25_" ></property>
+
+	<property name="_F_N_25_" ></property>
+
+	<property name="_F_C5_25_" length="5"></property>
+
+	<property name="_F_C10_25_" length="10"></property>
+
+	<property name="_F_C20_25_" length="20"></property>
+
+	<property name="_F_C50_25_" length="50"></property>
+
+	<property name="_F_B_26_" ></property>
+
+	<property name="_F_I_26_" ></property>
+
+	<property name="_F_L_26_" ></property>
+
+	<property name="_F_N_26_" ></property>
+
+	<property name="_F_C5_26_" length="5"></property>
+
+	<property name="_F_C10_26_" length="10"></property>
+
+	<property name="_F_C20_26_" length="20"></property>
+
+	<property name="_F_C50_26_" length="50"></property>
+
+	<property name="_F_B_27_" ></property>
+
+	<property name="_F_I_27_" ></property>
+
+	<property name="_F_L_27_" ></property>
+
+	<property name="_F_N_27_" ></property>
+
+	<property name="_F_C5_27_" length="5"></property>
+
+	<property name="_F_C10_27_" length="10"></property>
+
+	<property name="_F_C20_27_" length="20"></property>
+
+	<property name="_F_C50_27_" length="50"></property>
+
+	<property name="_F_B_28_" ></property>
+
+	<property name="_F_I_28_" ></property>
+
+	<property name="_F_L_28_" ></property>
+
+	<property name="_F_N_28_" ></property>
+
+	<property name="_F_C5_28_" length="5"></property>
+
+	<property name="_F_C10_28_" length="10"></property>
+
+	<property name="_F_C20_28_" length="20"></property>
+
+	<property name="_F_C50_28_" length="50"></property>
+
+	<property name="_F_B_29_" ></property>
+
+	<property name="_F_I_29_" ></property>
+
+	<property name="_F_L_29_" ></property>
+
+	<property name="_F_N_29_" ></property>
+
+	<property name="_F_C5_29_" length="5"></property>
+
+	<property name="_F_C10_29_" length="10"></property>
+
+	<property name="_F_C20_29_" length="20"></property>
+
+	<property name="_F_C50_29_" length="50"></property>
+
+	<property name="_F_B_30_" ></property>
+
+	<property name="_F_I_30_" ></property>
+
+	<property name="_F_N_30_" ></property>
+
+	<property name="_F_C5_30_" length="5"></property>
+
+	<property name="_F_C10_30_" length="10"></property>
+
+	<property name="_F_C20_30_" length="20"></property>
+
+	<property name="_F_C50_30_" length="50"></property>
+
+	<property name="_F_B_31_" ></property>
+
+	<property name="_F_I_31_" ></property>
+
+	<property name="_F_N_31_" ></property>
+
+	<property name="_F_C5_31_" length="5"></property>
+
+	<property name="_F_C10_31_" length="10"></property>
+
+	<property name="_F_C20_31_" length="20"></property>
+
+	<property name="_F_C50_31_" length="50"></property>
+
+	<property name="_F_B_32_" ></property>
+
+	<property name="_F_I_32_" ></property>
+
+	<property name="_F_N_32_" ></property>
+
+	<property name="_F_C5_32_" length="5"></property>
+
+	<property name="_F_C10_32_" length="10"></property>
+
+	<property name="_F_C20_32_" length="20"></property>
+
+	<property name="_F_C50_32_" length="50"></property>
+
+	<property name="_F_B_33_" ></property>
+
+	<property name="_F_I_33_" ></property>
+
+	<property name="_F_N_33_" ></property>
+
+	<property name="_F_C5_33_" length="5"></property>
+
+	<property name="_F_C10_33_" length="10"></property>
+
+	<property name="_F_C20_33_" length="20"></property>
+
+	<property name="_F_C50_33_" length="50"></property>
+
+	<property name="_F_B_34_" ></property>
+
+	<property name="_F_I_34_" ></property>
+
+	<property name="_F_N_34_" ></property>
+
+	<property name="_F_C5_34_" length="5"></property>
+
+	<property name="_F_C10_34_" length="10"></property>
+
+	<property name="_F_C20_34_" length="20"></property>
+
+	<property name="_F_C50_34_" length="50"></property>
+
+	<property name="_F_B_35_" ></property>
+
+	<property name="_F_I_35_" ></property>
+
+	<property name="_F_N_35_" ></property>
+
+	<property name="_F_C5_35_" length="5"></property>
+
+	<property name="_F_C10_35_" length="10"></property>
+
+	<property name="_F_C20_35_" length="20"></property>
+
+	<property name="_F_C50_35_" length="50"></property>
+
+	<property name="_F_B_36_" ></property>
+
+	<property name="_F_I_36_" ></property>
+
+	<property name="_F_N_36_" ></property>
+
+	<property name="_F_C5_36_" length="5"></property>
+
+	<property name="_F_C10_36_" length="10"></property>
+
+	<property name="_F_C20_36_" length="20"></property>
+
+	<property name="_F_C50_36_" length="50"></property>
+
+	<property name="_F_B_37_" ></property>
+
+	<property name="_F_I_37_" ></property>
+
+	<property name="_F_N_37_" ></property>
+
+	<property name="_F_C5_37_" length="5"></property>
+
+	<property name="_F_C10_37_" length="10"></property>
+
+	<property name="_F_C20_37_" length="20"></property>
+
+	<property name="_F_C50_37_" length="50"></property>
+
+	<property name="_F_B_38_" ></property>
+
+	<property name="_F_I_38_" ></property>
+
+	<property name="_F_N_38_" ></property>
+
+	<property name="_F_C5_38_" length="5"></property>
+
+	<property name="_F_C10_38_" length="10"></property>
+
+	<property name="_F_C20_38_" length="20"></property>
+
+	<property name="_F_C50_38_" length="50"></property>
+
+	<property name="_F_B_39_" ></property>
+
+	<property name="_F_I_39_" ></property>
+
+	<property name="_F_N_39_" ></property>
+
+	<property name="_F_C5_39_" length="5"></property>
+
+	<property name="_F_C10_39_" length="10"></property>
+
+	<property name="_F_C20_39_" length="20"></property>
+
+	<property name="_F_C50_39_" length="50"></property>
+
+	<property name="_F_B_40_" ></property>
+
+	<property name="_F_I_40_" ></property>
+
+	<property name="_F_N_40_" ></property>
+
+	<property name="_F_C5_40_" length="5"></property>
+
+	<property name="_F_C10_40_" length="10"></property>
+
+	<property name="_F_C20_40_" length="20"></property>
+
+	<property name="_F_C50_40_" length="50"></property>
+
+	<property name="_F_B_41_" ></property>
+
+	<property name="_F_I_41_" ></property>
+
+	<property name="_F_N_41_" ></property>
+
+	<property name="_F_C5_41_" length="5"></property>
+
+	<property name="_F_C10_41_" length="10"></property>
+
+	<property name="_F_C20_41_" length="20"></property>
+
+	<property name="_F_C50_41_" length="50"></property>
+
+	<property name="_F_B_42_" ></property>
+
+	<property name="_F_I_42_" ></property>
+
+	<property name="_F_N_42_" ></property>
+
+	<property name="_F_C5_42_" length="5"></property>
+
+	<property name="_F_C10_42_" length="10"></property>
+
+	<property name="_F_C20_42_" length="20"></property>
+
+	<property name="_F_C50_42_" length="50"></property>
+
+	<property name="_F_B_43_" ></property>
+
+	<property name="_F_I_43_" ></property>
+
+	<property name="_F_N_43_" ></property>
+
+	<property name="_F_C5_43_" length="5"></property>
+
+	<property name="_F_C10_43_" length="10"></property>
+
+	<property name="_F_C20_43_" length="20"></property>
+
+	<property name="_F_C50_43_" length="50"></property>
+
+	<property name="_F_B_44_" ></property>
+
+	<property name="_F_I_44_" ></property>
+
+	<property name="_F_N_44_" ></property>
+
+	<property name="_F_C5_44_" length="5"></property>
+
+	<property name="_F_C10_44_" length="10"></property>
+
+	<property name="_F_C20_44_" length="20"></property>
+
+	<property name="_F_C50_44_" length="50"></property>
+
+	<property name="_F_B_45_" ></property>
+
+	<property name="_F_I_45_" ></property>
+
+	<property name="_F_N_45_" ></property>
+
+	<property name="_F_C5_45_" length="5"></property>
+
+	<property name="_F_C10_45_" length="10"></property>
+
+	<property name="_F_C20_45_" length="20"></property>
+
+	<property name="_F_C50_45_" length="50"></property>
+
+	<property name="_F_B_46_" ></property>
+
+	<property name="_F_I_46_" ></property>
+
+	<property name="_F_N_46_" ></property>
+
+	<property name="_F_C5_46_" length="5"></property>
+
+	<property name="_F_C10_46_" length="10"></property>
+
+	<property name="_F_C20_46_" length="20"></property>
+
+	<property name="_F_C50_46_" length="50"></property>
+
+	<property name="_F_B_47_" ></property>
+
+	<property name="_F_I_47_" ></property>
+
+	<property name="_F_N_47_" ></property>
+
+	<property name="_F_C5_47_" length="5"></property>
+
+	<property name="_F_C10_47_" length="10"></property>
+
+	<property name="_F_C20_47_" length="20"></property>
+
+	<property name="_F_C50_47_" length="50"></property>
+
+	<property name="_F_B_48_" ></property>
+
+	<property name="_F_I_48_" ></property>
+
+	<property name="_F_N_48_" ></property>
+
+	<property name="_F_C5_48_" length="5"></property>
+
+	<property name="_F_C10_48_" length="10"></property>
+
+	<property name="_F_C20_48_" length="20"></property>
+
+	<property name="_F_C50_48_" length="50"></property>
+
+	<property name="_F_B_49_" ></property>
+
+	<property name="_F_I_49_" ></property>
+
+	<property name="_F_N_49_" ></property>
+
+	<property name="_F_C5_49_" length="5"></property>
+
+	<property name="_F_C10_49_" length="10"></property>
+
+	<property name="_F_C20_49_" length="20"></property>
+
+	<property name="_F_C50_49_" length="50"></property>
+
+	<property name="active" ></property>
+
+
+    <property name="createdBy" />
+
+    <property name="createdAt" />
+
+    <property name="commandId" />
+
+
+    <subclass name="AbstractAttributeSetInstanceStateEvent$SimpleAttributeSetInstanceStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="AbstractAttributeSetInstanceStateEvent$SimpleAttributeSetInstanceStateMergePatched"  discriminator-value="MergePatched">
+
+      <set name="removedPropertyNames" table="AttributeSetInstanceStateEventRemovedProperties">
+        <key>
+          <column name="AttributeSetInstanceId" />
+          <column name="Version" />
+        </key>
+        <element column="removedPropertyName" type="string" not-null="true" />
+      </set>
+
+
+    </subclass>
+
+    <subclass name="AbstractAttributeSetInstanceStateEvent$SimpleAttributeSetInstanceStateDeleted"  discriminator-value="Deleted">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

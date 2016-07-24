@@ -756,6 +756,17 @@ public abstract class AbstractInOutLineMvoStateEvent implements InOutLineMvoStat
         this.inOutDeleted = inOutDeleted;
     }
 
+
+    private String commandId;
+
+    public String getCommandId() {
+        return commandId;
+    }
+
+    public void setCommandId(String commandId) {
+        this.commandId = commandId;
+    }
+
     protected AbstractInOutLineMvoStateEvent() {
     }
 

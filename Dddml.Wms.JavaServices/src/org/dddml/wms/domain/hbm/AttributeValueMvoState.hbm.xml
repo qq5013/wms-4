@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="org.dddml.wms.domain.AbstractAttributeValueMvoState$SimpleAttributeValueMvoState" table="AttributeValue_RV">
+
+	<composite-id name="attributeValueId" class="org.dddml.wms.domain.AttributeValueId">
+		<key-property name="attributeId" column="AttributeValueIdAttributeId" length="50"/>
+		<key-property name="value" column="AttributeValueIdValue" length="50"/>
+	</composite-id>
+
+	<version name="attributeVersion" type="long" unsaved-value="null"/>
+
+	<property name="name" ></property>
+
+	<property name="description" ></property>
+
+	<property name="referenceId" ></property>
+
+	<property name="version" ></property>
+
+	<property name="createdBy" ></property>
+
+	<property name="createdAt" ></property>
+
+	<property name="updatedBy" ></property>
+
+	<property name="updatedAt" ></property>
+
+	<property name="active" ></property>
+
+	<property name="deleted" ></property>
+
+	<property name="attributeName" ></property>
+
+	<property name="attributeOrganizationId" ></property>
+
+	<property name="attributeDescription" ></property>
+
+	<property name="attributeIsMandatory" ></property>
+
+	<property name="attributeIsInstanceAttribute" ></property>
+
+	<property name="attributeAttributeValueType" ></property>
+
+	<property name="attributeAttributeValueLength" ></property>
+
+	<property name="attributeIsList" ></property>
+
+	<property name="attributeFieldName" ></property>
+
+	<property name="attributeReferenceId" ></property>
+
+	<property name="attributeCreatedBy" ></property>
+
+	<property name="attributeCreatedAt" ></property>
+
+	<property name="attributeUpdatedBy" ></property>
+
+	<property name="attributeUpdatedAt" ></property>
+
+	<property name="attributeActive" ></property>
+
+	<property name="attributeDeleted" ></property>
+
+
+  </class>
+  
+</hibernate-mapping>
+

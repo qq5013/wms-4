@@ -96,6 +96,16 @@ public class AttributeValueStateEventDto extends AbstractStateEventDto
         this.version = version;
     }
 
+    private String commandId;
+
+    public String getCommandId() {
+        return commandId;
+    }
+
+    public void setCommandId(String commandId) {
+        this.commandId = commandId;
+    }
+
     private Boolean isPropertyNameRemoved;
 
     public Boolean getIsPropertyNameRemoved() {

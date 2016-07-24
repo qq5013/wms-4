@@ -42,13 +42,13 @@
 
 	<property name="warehouseId" ></property>
 
-	<property name="pOReference" ></property>
+	<property name="POReference" ></property>
 
-	<property name="freightAmount" ></property>
+	<property name="freightAmount" type="org.dddml.wms.domain.hibernate.usertypes.MoneyType"><column name="freightAmountAmount" /><column name="freightAmountCurrency" /></property>
 
 	<property name="shipperId" ></property>
 
-	<property name="chargeAmount" ></property>
+	<property name="chargeAmount" type="org.dddml.wms.domain.hibernate.usertypes.MoneyType"><column name="chargeAmountAmount" /><column name="chargeAmountCurrency" /></property>
 
 	<property name="datePrinted" ></property>
 

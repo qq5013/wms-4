@@ -2,7 +2,7 @@ package org.dddml.wms.domain;
 
 import java.math.BigDecimal;
 import java.util.Date;
-import nodamoney.Money;
+import org.joda.money.Money;
 import org.dddml.wms.domain.AbstractCommandDto;
 
 public abstract class AbstractInOutLineMvoCommandDto extends AbstractCommandDto

@@ -2,7 +2,7 @@ package org.dddml.wms.domain;
 
 import java.util.Map;
 import java.util.List;
-import nodamoney.Money;
+import org.joda.money.Money;
 import java.math.BigDecimal;
 import java.util.Date;
 

@@ -3,7 +3,7 @@ package org.dddml.wms.domain;
 import java.util.Set;
 import java.math.BigDecimal;
 import java.util.Date;
-import nodamoney.Money;
+import org.joda.money.Money;
 import org.dddml.wms.specialization.Event;
 import org.dddml.wms.specialization.DomainError;
 import org.dddml.wms.domain.InOutLineMvoStateEvent.*;

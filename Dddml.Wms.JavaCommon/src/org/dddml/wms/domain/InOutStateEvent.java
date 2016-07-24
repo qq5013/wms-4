@@ -1,6 +1,6 @@
 package org.dddml.wms.domain;
 
-import nodamoney.Money;
+import org.joda.money.Money;
 import java.math.BigDecimal;
 import java.util.Date;
 import org.dddml.wms.specialization.Event;
@@ -71,7 +71,7 @@ public interface InOutStateEvent extends Event
 
     String getPOReference();
 
-    void setPOReference(String pOReference);
+    void setPOReference(String poReference);
 
     Money getFreightAmount();
 

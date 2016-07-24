@@ -1,6 +1,6 @@
 package org.dddml.wms.domain;
 
-import nodamoney.Money;
+import org.joda.money.Money;
 import java.math.BigDecimal;
 import java.util.Date;
 import org.dddml.wms.domain.AbstractStateEventDto;
@@ -168,14 +168,14 @@ public class InOutStateEventDto extends AbstractStateEventDto
         this.warehouseId = warehouseId;
     }
 
-    private String pOReference;
+    private String POReference;
 
     public String getPOReference() {
-        return this.pOReference;
+        return this.POReference;
     }
 
-    public void setPOReference(String pOReference) {
-        this.pOReference = pOReference;
+    public void setPOReference(String poReference) {
+        this.POReference = poReference;
     }
 
     private Money freightAmount;

@@ -1,6 +1,6 @@
 package org.dddml.wms.domain;
 
-import nodamoney.Money;
+import org.joda.money.Money;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -174,16 +174,16 @@ public class CreateOrMergePatchInOutDto extends AbstractInOutCommandDto
         this.warehouseId = warehouseId;
     }
 
-    private String pOReference;
+    private String poReference;
 
     public String getPOReference()
     {
-        return this.pOReference;
+        return this.poReference;
     }
 
-    public void setPOReference(String pOReference)
+    public void setPOReference(String poReference)
     {
-        this.pOReference = pOReference;
+        this.poReference = poReference;
     }
 
     private Money freightAmount;

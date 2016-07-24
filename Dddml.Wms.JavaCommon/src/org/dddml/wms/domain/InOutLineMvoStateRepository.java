@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.List;
 import java.math.BigDecimal;
 import java.util.Date;
-import nodamoney.Money;
+import org.joda.money.Money;
 
 public interface InOutLineMvoStateRepository
 {

@@ -330,22 +330,22 @@ trait InOutStatePropertiesTrait
     /**
      * @Type("string")
      */
-    private $pOReference;
+    private $poReference;
 
     /**
      * @return string
      */
     public function getPOReference()
     {
-        return $this->pOReference;
+        return $this->poReference;
     }
 
     /**
-     * @param string $pOReference
+     * @param string $poReference
      */
-    public function setPOReference($pOReference)
+    public function setPOReference($poReference)
     {
-        $this->pOReference = $pOReference;
+        $this->poReference = $poReference;
     }
 
     /**

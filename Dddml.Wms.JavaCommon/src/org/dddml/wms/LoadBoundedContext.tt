@@ -11,6 +11,7 @@
 <#@ import namespace="Dddml.T4" #>
 <#@ import namespace="Dddml.T4.Extensions" #>
 <#@ import namespace="Dddml.T4.Extensions.Java" #>
+<#@ import namespace="Dddml.T4.Extensions.Hibernate" #>
 <#@ include file="T4Toolbox.tt" #>
 <#@ include file="$(SolutionDir)Dddml.Wms.Common\Generated\LoadBoundedContextFiles.tt" #>
 <#
@@ -29,8 +30,7 @@
 	//boundedContext.Aggregates["AttributeSetInstance"].AnonymousAllowed = true;
 
 	boundedContext.SetJavaTypePackages(GetTypePackages());
-	//boundedContext.SetClrValueTypes(GetClrValueTypes());
-	//boundedContext.SetNHibernateTypes(GetNHibernateTypes());
+	boundedContext.SetHibernateTypes(GetHibernateTypes());
 
 	boundedContext.Refresh();
 
@@ -52,7 +52,7 @@
 		{
 			boundedContext.Aggregates.Add(mvo.Name, mvo);
 			mvo.GenerateAggregateStateEventIdValueObject();
-			//mvo.SetClrAggregateDomainSubPackageName("MViews");
+			mvo.SetAggregateDomainSubPackageName("mviews");
 			mvo.SetStateDatabaseTableNameFormat("{0}s");
 			mvo.SetUsingRViewAsMView(true);
 			mvo.SetHttpServiceResourceCollectionNameFormat("{0}s");
@@ -110,29 +110,23 @@
 			return dict;
 	}
 
-	//private IDictionary<string, NHibernateType> GetNHibernateTypes()
-	//{
-		//var nhibernateTypes = new Dictionary<string, NHibernateType>();
-		//var nodaMoneyNHibernateType = new NHibernateType() {
-				//ActualTypeName = "Money", 
-				//AssemblyQualifiedName = "Dddml.Wms.Services.Domain.NHibernate.NodaMoneyType, Dddml.Wms.Services",
-				//PropertyNames = new string[] { "Amount", "Currency" }, 
-				//PropertyClrTypes = new string[] { "decimal", "string" }
-			//};
-		//nhibernateTypes.Add(nodaMoneyNHibernateType.ActualTypeName, nodaMoneyNHibernateType);
-		//return nhibernateTypes;
-	//}
-
-	//private string[] GetClrValueTypes()
-	//{
-		//var clrValueTypes = new string[]{ "Money" };
-		//return clrValueTypes;
-	//}
+	private IDictionary<string, HibernateType> GetHibernateTypes()
+	{
+		var hibernateTypes = new Dictionary<string, HibernateType>();
+		var jodaMoneyHibernateType = new HibernateType() {
+				ActualTypeName = "Money", 
+				QualifiedName = "org.dddml.wms.domain.hibernate.usertypes.MoneyType",
+				PropertyNames = new string[] { "Amount", "Currency" }, 
+				PropertyJavaTypes = new string[] { "BigDecimal", "String" }
+			};
+		hibernateTypes.Add(jodaMoneyHibernateType.ActualTypeName, jodaMoneyHibernateType);
+		return hibernateTypes;
+	}
 
 	private IDictionary<string, string> GetTypePackages()
 	{
 		var typePackages = new Dictionary<string, string>();
-		typePackages.Add("Money", "nodamoney");
+		typePackages.Add("Money", "org.joda.money");
 		typePackages.Add("BigDecimal", "java.math");
 		typePackages.Add("Date", "java.util");
 

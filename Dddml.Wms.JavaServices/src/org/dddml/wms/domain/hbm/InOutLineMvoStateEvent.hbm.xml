@@ -85,11 +85,11 @@
 
 	<property name="inOutPOReference" ></property>
 
-	<property name="inOutFreightAmount" ></property>
+	<property name="inOutFreightAmount" type="org.dddml.wms.domain.hibernate.usertypes.MoneyType"><column name="inOutFreightAmountAmount" /><column name="inOutFreightAmountCurrency" /></property>
 
 	<property name="inOutShipperId" ></property>
 
-	<property name="inOutChargeAmount" ></property>
+	<property name="inOutChargeAmount" type="org.dddml.wms.domain.hibernate.usertypes.MoneyType"><column name="inOutChargeAmountAmount" /><column name="inOutChargeAmountCurrency" /></property>
 
 	<property name="inOutDatePrinted" ></property>
 

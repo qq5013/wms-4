@@ -1,9 +1,9 @@
 package org.dddml.wms.domain;
 
 import java.util.Date;
-import org.dddml.wms.domain.AbstractCommandDto;
+import org.dddml.wms.domain.AbstractCommand;
 
-public abstract class AbstractAttributeCommandDto extends AbstractCommandDto
+public abstract class AbstractAttributeCommandDto extends AbstractCommand
 {
     private String attributeId;
 

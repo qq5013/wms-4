@@ -42,16 +42,31 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="src\org\dddml\wms\domain\AbstractAttributeCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractAttributeCommandDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractAttributeSetCommand.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractAttributeSetCommandDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractAttributeSetInstanceCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractAttributeSetInstanceCommandDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractAttributeSetInstanceExtensionFieldCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractAttributeSetInstanceExtensionFieldCommandDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractAttributeSetInstanceExtensionFieldGroupCommand.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractAttributeSetInstanceExtensionFieldGroupCommandDto.java">
@@ -61,6 +76,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractAttributeSetInstanceExtensionFieldGroupStateEvent.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractAttributeSetInstanceExtensionFieldMvoCommand.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractAttributeSetInstanceExtensionFieldMvoCommandDto.java">
@@ -99,7 +117,13 @@
     <Content Include="src\org\dddml\wms\domain\AbstractAttributeStateEvent.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractAttributeUseCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractAttributeUseCommandDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractAttributeUseMvoCommand.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractAttributeUseMvoCommandDto.java">
@@ -120,7 +144,13 @@
     <Content Include="src\org\dddml\wms\domain\AbstractAttributeUseStates.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractAttributeValueCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractAttributeValueCommandDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractAttributeValueMvoCommand.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractAttributeValueMvoCommandDto.java">
@@ -141,6 +171,9 @@
     <Content Include="src\org\dddml\wms\domain\AbstractAttributeValueStates.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractAudienceCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractAudienceCommandDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
@@ -150,13 +183,22 @@
     <Content Include="src\org\dddml\wms\domain\AbstractAudienceStateEvent.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
-    <Content Include="src\org\dddml\wms\domain\AbstractCommandDto.java">
+    <Content Include="src\org\dddml\wms\domain\AbstractCommand.java">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractInOutCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractInOutCommandDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractInOutLineCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractInOutLineCommandDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractInOutLineMvoCommand.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractInOutLineMvoCommandDto.java">
@@ -183,6 +225,9 @@
     <Content Include="src\org\dddml\wms\domain\AbstractInOutStateEvent.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractLocatorCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractLocatorCommandDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
@@ -190,6 +235,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractLocatorStateEvent.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractOrganizationCommand.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractOrganizationCommandDto.java">
@@ -201,6 +249,9 @@
     <Content Include="src\org\dddml\wms\domain\AbstractOrganizationStateEvent.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractOrganizationStructureCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractOrganizationStructureCommandDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
@@ -208,6 +259,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractOrganizationStructureStateEvent.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractOrganizationStructureTypeCommand.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractOrganizationStructureTypeCommandDto.java">
@@ -219,6 +273,9 @@
     <Content Include="src\org\dddml\wms\domain\AbstractOrganizationStructureTypeStateEvent.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractPermissionCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractPermissionCommandDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
@@ -228,7 +285,13 @@
     <Content Include="src\org\dddml\wms\domain\AbstractPermissionStateEvent.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractRoleCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractRoleCommandDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractRolePermissionCommand.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractRolePermissionCommandDto.java">
@@ -249,7 +312,13 @@
     <Content Include="src\org\dddml\wms\domain\AbstractStateEventDto.java">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractUserClaimCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractUserClaimCommandDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractUserClaimMvoCommand.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractUserClaimMvoCommandDto.java">
@@ -270,10 +339,19 @@
     <Content Include="src\org\dddml\wms\domain\AbstractUserClaimStates.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractUserCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractUserCommandDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractUserLoginCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractUserLoginCommandDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractUserLoginMvoCommand.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractUserLoginMvoCommandDto.java">
@@ -294,7 +372,13 @@
     <Content Include="src\org\dddml\wms\domain\AbstractUserLoginStates.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractUserPermissionCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractUserPermissionCommandDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractUserPermissionMvoCommand.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractUserPermissionMvoCommandDto.java">
@@ -315,7 +399,13 @@
     <Content Include="src\org\dddml\wms\domain\AbstractUserPermissionStates.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractUserRoleCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractUserRoleCommandDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractUserRoleMvoCommand.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractUserRoleMvoCommandDto.java">
@@ -342,6 +432,9 @@
     <Content Include="src\org\dddml\wms\domain\AbstractUserStateEvent.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractWarehouseCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractWarehouseCommandDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
@@ -351,6 +444,9 @@
     <Content Include="src\org\dddml\wms\domain\AbstractWarehouseStateEvent.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\AttributeCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\AttributeSetAttributeUseId.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
@@ -358,6 +454,18 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\AttributeSetAttributeUseIdFlattenedDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AttributeSetCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AttributeSetInstanceCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AttributeSetInstanceExtensionFieldCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AttributeSetInstanceExtensionFieldGroupCommand.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\AttributeSetInstanceExtensionFieldGroupState.java">
@@ -391,6 +499,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\AttributeSetInstanceExtensionFieldIdFlattenedDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AttributeSetInstanceExtensionFieldMvoCommand.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\AttributeSetInstanceExtensionFieldMvoState.java">
@@ -519,6 +630,12 @@
     <Content Include="src\org\dddml\wms\domain\AttributeStateRepository.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\AttributeUseCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AttributeUseMvoCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\AttributeUseMvoState.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
@@ -573,6 +690,9 @@
     <Content Include="src\org\dddml\wms\domain\AttributeUseStates.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\AttributeValueCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\AttributeValueId.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
@@ -580,6 +700,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\AttributeValueIdFlattenedDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AttributeValueMvoCommand.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\AttributeValueMvoState.java">
@@ -636,6 +759,9 @@
     <Content Include="src\org\dddml\wms\domain\AttributeValueStates.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\AudienceCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\AudienceState.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
@@ -659,6 +785,9 @@
     </Content>
     <Content Include="src\org\dddml\wms\domain\AudienceStateRepository.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\Command.java">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\CreateOrMergePatchAttributeDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
@@ -832,8 +961,9 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GenerateBoundedContextDomain.txt</LastGenOutput>
       <LastOutputs>
-.\AbstractCommandDto.java
+.\AbstractCommand.java
 .\AbstractStateEventDto.java
+.\Command.java
 .\DocumentAction.java
 .\DocumentActionDto.java
 .\GenerateBoundedContextDomain.txt
@@ -857,13 +987,19 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GenerateBoundedContextDomainAggregates.txt</LastGenOutput>
       <LastOutputs>
+.\AbstractAttributeCommand.java
 .\AbstractAttributeCommandDto.java
+.\AbstractAttributeSetCommand.java
 .\AbstractAttributeSetCommandDto.java
+.\AbstractAttributeSetInstanceCommand.java
 .\AbstractAttributeSetInstanceCommandDto.java
+.\AbstractAttributeSetInstanceExtensionFieldCommand.java
 .\AbstractAttributeSetInstanceExtensionFieldCommandDto.java
+.\AbstractAttributeSetInstanceExtensionFieldGroupCommand.java
 .\AbstractAttributeSetInstanceExtensionFieldGroupCommandDto.java
 .\AbstractAttributeSetInstanceExtensionFieldGroupState.java
 .\AbstractAttributeSetInstanceExtensionFieldGroupStateEvent.java
+.\AbstractAttributeSetInstanceExtensionFieldMvoCommand.java
 .\AbstractAttributeSetInstanceExtensionFieldMvoCommandDto.java
 .\AbstractAttributeSetInstanceExtensionFieldMvoState.java
 .\AbstractAttributeSetInstanceExtensionFieldMvoStateEvent.java
@@ -876,25 +1012,33 @@
 .\AbstractAttributeSetStateEvent.java
 .\AbstractAttributeState.java
 .\AbstractAttributeStateEvent.java
+.\AbstractAttributeUseCommand.java
 .\AbstractAttributeUseCommandDto.java
+.\AbstractAttributeUseMvoCommand.java
 .\AbstractAttributeUseMvoCommandDto.java
 .\AbstractAttributeUseMvoState.java
 .\AbstractAttributeUseMvoStateEvent.java
 .\AbstractAttributeUseState.java
 .\AbstractAttributeUseStateEvent.java
 .\AbstractAttributeUseStates.java
+.\AbstractAttributeValueCommand.java
 .\AbstractAttributeValueCommandDto.java
+.\AbstractAttributeValueMvoCommand.java
 .\AbstractAttributeValueMvoCommandDto.java
 .\AbstractAttributeValueMvoState.java
 .\AbstractAttributeValueMvoStateEvent.java
 .\AbstractAttributeValueState.java
 .\AbstractAttributeValueStateEvent.java
 .\AbstractAttributeValueStates.java
+.\AbstractAudienceCommand.java
 .\AbstractAudienceCommandDto.java
 .\AbstractAudienceState.java
 .\AbstractAudienceStateEvent.java
+.\AbstractInOutCommand.java
 .\AbstractInOutCommandDto.java
+.\AbstractInOutLineCommand.java
 .\AbstractInOutLineCommandDto.java
+.\AbstractInOutLineMvoCommand.java
 .\AbstractInOutLineMvoCommandDto.java
 .\AbstractInOutLineMvoState.java
 .\AbstractInOutLineMvoStateEvent.java
@@ -903,50 +1047,66 @@
 .\AbstractInOutLineStates.java
 .\AbstractInOutState.java
 .\AbstractInOutStateEvent.java
+.\AbstractLocatorCommand.java
 .\AbstractLocatorCommandDto.java
 .\AbstractLocatorState.java
 .\AbstractLocatorStateEvent.java
+.\AbstractOrganizationCommand.java
 .\AbstractOrganizationCommandDto.java
 .\AbstractOrganizationState.java
 .\AbstractOrganizationStateEvent.java
+.\AbstractOrganizationStructureCommand.java
 .\AbstractOrganizationStructureCommandDto.java
 .\AbstractOrganizationStructureState.java
 .\AbstractOrganizationStructureStateEvent.java
+.\AbstractOrganizationStructureTypeCommand.java
 .\AbstractOrganizationStructureTypeCommandDto.java
 .\AbstractOrganizationStructureTypeState.java
 .\AbstractOrganizationStructureTypeStateEvent.java
+.\AbstractPermissionCommand.java
 .\AbstractPermissionCommandDto.java
 .\AbstractPermissionState.java
 .\AbstractPermissionStateEvent.java
+.\AbstractRoleCommand.java
 .\AbstractRoleCommandDto.java
+.\AbstractRolePermissionCommand.java
 .\AbstractRolePermissionCommandDto.java
 .\AbstractRolePermissionState.java
 .\AbstractRolePermissionStateEvent.java
 .\AbstractRoleState.java
 .\AbstractRoleStateEvent.java
+.\AbstractUserClaimCommand.java
 .\AbstractUserClaimCommandDto.java
+.\AbstractUserClaimMvoCommand.java
 .\AbstractUserClaimMvoCommandDto.java
 .\AbstractUserClaimMvoState.java
 .\AbstractUserClaimMvoStateEvent.java
 .\AbstractUserClaimState.java
 .\AbstractUserClaimStateEvent.java
 .\AbstractUserClaimStates.java
+.\AbstractUserCommand.java
 .\AbstractUserCommandDto.java
+.\AbstractUserLoginCommand.java
 .\AbstractUserLoginCommandDto.java
+.\AbstractUserLoginMvoCommand.java
 .\AbstractUserLoginMvoCommandDto.java
 .\AbstractUserLoginMvoState.java
 .\AbstractUserLoginMvoStateEvent.java
 .\AbstractUserLoginState.java
 .\AbstractUserLoginStateEvent.java
 .\AbstractUserLoginStates.java
+.\AbstractUserPermissionCommand.java
 .\AbstractUserPermissionCommandDto.java
+.\AbstractUserPermissionMvoCommand.java
 .\AbstractUserPermissionMvoCommandDto.java
 .\AbstractUserPermissionMvoState.java
 .\AbstractUserPermissionMvoStateEvent.java
 .\AbstractUserPermissionState.java
 .\AbstractUserPermissionStateEvent.java
 .\AbstractUserPermissionStates.java
+.\AbstractUserRoleCommand.java
 .\AbstractUserRoleCommandDto.java
+.\AbstractUserRoleMvoCommand.java
 .\AbstractUserRoleMvoCommandDto.java
 .\AbstractUserRoleMvoState.java
 .\AbstractUserRoleMvoStateEvent.java
@@ -955,12 +1115,18 @@
 .\AbstractUserRoleStates.java
 .\AbstractUserState.java
 .\AbstractUserStateEvent.java
+.\AbstractWarehouseCommand.java
 .\AbstractWarehouseCommandDto.java
 .\AbstractWarehouseState.java
 .\AbstractWarehouseStateEvent.java
+.\AttributeCommand.java
 .\AttributeSetAttributeUseId.java
 .\AttributeSetAttributeUseIdDto.java
 .\AttributeSetAttributeUseIdFlattenedDto.java
+.\AttributeSetCommand.java
+.\AttributeSetInstanceCommand.java
+.\AttributeSetInstanceExtensionFieldCommand.java
+.\AttributeSetInstanceExtensionFieldGroupCommand.java
 .\AttributeSetInstanceExtensionFieldGroupState.java
 .\AttributeSetInstanceExtensionFieldGroupStateDto.java
 .\AttributeSetInstanceExtensionFieldGroupStateEvent.java
@@ -972,6 +1138,7 @@
 .\AttributeSetInstanceExtensionFieldId.java
 .\AttributeSetInstanceExtensionFieldIdDto.java
 .\AttributeSetInstanceExtensionFieldIdFlattenedDto.java
+.\AttributeSetInstanceExtensionFieldMvoCommand.java
 .\AttributeSetInstanceExtensionFieldMvoState.java
 .\AttributeSetInstanceExtensionFieldMvoStateDto.java
 .\AttributeSetInstanceExtensionFieldMvoStateEvent.java
@@ -1014,6 +1181,8 @@
 .\AttributeStateEventIdDto.java
 .\AttributeStateEventIdFlattenedDto.java
 .\AttributeStateRepository.java
+.\AttributeUseCommand.java
+.\AttributeUseMvoCommand.java
 .\AttributeUseMvoState.java
 .\AttributeUseMvoStateDto.java
 .\AttributeUseMvoStateEvent.java
@@ -1032,9 +1201,11 @@
 .\AttributeUseStateEventIdDto.java
 .\AttributeUseStateEventIdFlattenedDto.java
 .\AttributeUseStates.java
+.\AttributeValueCommand.java
 .\AttributeValueId.java
 .\AttributeValueIdDto.java
 .\AttributeValueIdFlattenedDto.java
+.\AttributeValueMvoCommand.java
 .\AttributeValueMvoState.java
 .\AttributeValueMvoStateDto.java
 .\AttributeValueMvoStateEvent.java
@@ -1053,6 +1224,7 @@
 .\AttributeValueStateEventIdDto.java
 .\AttributeValueStateEventIdFlattenedDto.java
 .\AttributeValueStates.java
+.\AudienceCommand.java
 .\AudienceState.java
 .\AudienceStateDto.java
 .\AudienceStateEvent.java
@@ -1116,9 +1288,12 @@
 .\DeleteUserRoleMvoDto.java
 .\DeleteWarehouseDto.java
 .\GenerateBoundedContextDomainAggregates.txt
+.\InOutCommand.java
+.\InOutLineCommand.java
 .\InOutLineId.java
 .\InOutLineIdDto.java
 .\InOutLineIdFlattenedDto.java
+.\InOutLineMvoCommand.java
 .\InOutLineMvoState.java
 .\InOutLineMvoStateDto.java
 .\InOutLineMvoStateEvent.java
@@ -1145,6 +1320,7 @@
 .\InOutStateEventIdDto.java
 .\InOutStateEventIdFlattenedDto.java
 .\InOutStateRepository.java
+.\LocatorCommand.java
 .\LocatorState.java
 .\LocatorStateDto.java
 .\LocatorStateEvent.java
@@ -1156,6 +1332,7 @@
 .\LoginKey.java
 .\LoginKeyDto.java
 .\LoginKeyFlattenedDto.java
+.\OrganizationCommand.java
 .\OrganizationState.java
 .\OrganizationStateDto.java
 .\OrganizationStateEvent.java
@@ -1164,6 +1341,7 @@
 .\OrganizationStateEventIdDto.java
 .\OrganizationStateEventIdFlattenedDto.java
 .\OrganizationStateRepository.java
+.\OrganizationStructureCommand.java
 .\OrganizationStructureState.java
 .\OrganizationStructureStateDto.java
 .\OrganizationStructureStateEvent.java
@@ -1172,6 +1350,7 @@
 .\OrganizationStructureStateEventIdDto.java
 .\OrganizationStructureStateEventIdFlattenedDto.java
 .\OrganizationStructureStateRepository.java
+.\OrganizationStructureTypeCommand.java
 .\OrganizationStructureTypeState.java
 .\OrganizationStructureTypeStateDto.java
 .\OrganizationStructureTypeStateEvent.java
@@ -1180,6 +1359,7 @@
 .\OrganizationStructureTypeStateEventIdDto.java
 .\OrganizationStructureTypeStateEventIdFlattenedDto.java
 .\OrganizationStructureTypeStateRepository.java
+.\PermissionCommand.java
 .\PermissionState.java
 .\PermissionStateDto.java
 .\PermissionStateEvent.java
@@ -1196,6 +1376,8 @@
 .\RemoveUserLoginDto.java
 .\RemoveUserPermissionDto.java
 .\RemoveUserRoleDto.java
+.\RoleCommand.java
+.\RolePermissionCommand.java
 .\RolePermissionState.java
 .\RolePermissionStateDto.java
 .\RolePermissionStateEvent.java
@@ -1212,9 +1394,11 @@
 .\RoleStateEventIdDto.java
 .\RoleStateEventIdFlattenedDto.java
 .\RoleStateRepository.java
+.\UserClaimCommand.java
 .\UserClaimId.java
 .\UserClaimIdDto.java
 .\UserClaimIdFlattenedDto.java
+.\UserClaimMvoCommand.java
 .\UserClaimMvoState.java
 .\UserClaimMvoStateDto.java
 .\UserClaimMvoStateEvent.java
@@ -1233,9 +1417,12 @@
 .\UserClaimStateEventIdDto.java
 .\UserClaimStateEventIdFlattenedDto.java
 .\UserClaimStates.java
+.\UserCommand.java
+.\UserLoginCommand.java
 .\UserLoginId.java
 .\UserLoginIdDto.java
 .\UserLoginIdFlattenedDto.java
+.\UserLoginMvoCommand.java
 .\UserLoginMvoState.java
 .\UserLoginMvoStateDto.java
 .\UserLoginMvoStateEvent.java
@@ -1254,9 +1441,11 @@
 .\UserLoginStateEventIdDto.java
 .\UserLoginStateEventIdFlattenedDto.java
 .\UserLoginStates.java
+.\UserPermissionCommand.java
 .\UserPermissionId.java
 .\UserPermissionIdDto.java
 .\UserPermissionIdFlattenedDto.java
+.\UserPermissionMvoCommand.java
 .\UserPermissionMvoState.java
 .\UserPermissionMvoStateDto.java
 .\UserPermissionMvoStateEvent.java
@@ -1275,9 +1464,11 @@
 .\UserPermissionStateEventIdDto.java
 .\UserPermissionStateEventIdFlattenedDto.java
 .\UserPermissionStates.java
+.\UserRoleCommand.java
 .\UserRoleId.java
 .\UserRoleIdDto.java
 .\UserRoleIdFlattenedDto.java
+.\UserRoleMvoCommand.java
 .\UserRoleMvoState.java
 .\UserRoleMvoStateDto.java
 .\UserRoleMvoStateEvent.java
@@ -1304,6 +1495,7 @@
 .\UserStateEventIdDto.java
 .\UserStateEventIdFlattenedDto.java
 .\UserStateRepository.java
+.\WarehouseCommand.java
 .\WarehouseState.java
 .\WarehouseStateDto.java
 .\WarehouseStateEvent.java
@@ -1319,6 +1511,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\InOutCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\InOutLineCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\InOutLineId.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
@@ -1326,6 +1524,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\InOutLineIdFlattenedDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\InOutLineMvoCommand.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\InOutLineMvoState.java">
@@ -1404,6 +1605,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\InOutStateRepository.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\LocatorCommand.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\LocatorState.java">
@@ -1715,6 +1919,9 @@
     <Content Include="src\org\dddml\wms\domain\meta\WarehouseMetadata.java">
       <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\OrganizationCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\OrganizationState.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
@@ -1737,6 +1944,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\OrganizationStateRepository.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\OrganizationStructureCommand.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\OrganizationStructureId.java">
@@ -1772,6 +1982,9 @@
     <Content Include="src\org\dddml\wms\domain\OrganizationStructureStateRepository.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\OrganizationStructureTypeCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\OrganizationStructureTypeState.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
@@ -1794,6 +2007,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\OrganizationStructureTypeStateRepository.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\PermissionCommand.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\PermissionState.java">
@@ -1842,6 +2058,12 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\RemoveUserRoleDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\RoleCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\RolePermissionCommand.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\RolePermissionId.java">
@@ -1910,6 +2132,9 @@
     <Content Include="src\org\dddml\wms\domain\SkuIdFlattenedDto.java">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\UserClaimCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\UserClaimId.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
@@ -1917,6 +2142,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\UserClaimIdFlattenedDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\UserClaimMvoCommand.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\UserClaimMvoState.java">
@@ -1973,6 +2201,12 @@
     <Content Include="src\org\dddml\wms\domain\UserClaimStates.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\UserCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\UserLoginCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\UserLoginId.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
@@ -1980,6 +2214,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\UserLoginIdFlattenedDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\UserLoginMvoCommand.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\UserLoginMvoState.java">
@@ -2036,6 +2273,9 @@
     <Content Include="src\org\dddml\wms\domain\UserLoginStates.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\UserPermissionCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\UserPermissionId.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
@@ -2043,6 +2283,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\UserPermissionIdFlattenedDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\UserPermissionMvoCommand.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\UserPermissionMvoState.java">
@@ -2099,6 +2342,9 @@
     <Content Include="src\org\dddml\wms\domain\UserPermissionStates.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\UserRoleCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\UserRoleId.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
@@ -2106,6 +2352,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\UserRoleIdFlattenedDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\UserRoleMvoCommand.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\UserRoleMvoState.java">
@@ -2184,6 +2433,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\UserStateRepository.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\WarehouseCommand.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\WarehouseState.java">

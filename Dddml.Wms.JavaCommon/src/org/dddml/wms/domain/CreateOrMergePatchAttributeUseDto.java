@@ -57,7 +57,7 @@ public class CreateOrMergePatchAttributeUseDto extends AbstractAttributeUseComma
     {
         @Override
         public String getCommandType() {
-            return AbstractCommandDto.COMMAND_TYPE_CREATE;
+            return COMMAND_TYPE_CREATE;
         }
 
     }
@@ -66,7 +66,7 @@ public class CreateOrMergePatchAttributeUseDto extends AbstractAttributeUseComma
     {
         @Override
         public String getCommandType() {
-            return AbstractCommandDto.COMMAND_TYPE_MERGE_PATCH;
+            return COMMAND_TYPE_MERGE_PATCH;
         }
 
     }

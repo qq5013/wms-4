@@ -513,7 +513,7 @@ public class CreateOrMergePatchUserClaimMvoDto extends AbstractUserClaimMvoComma
     {
         @Override
         public String getCommandType() {
-            return AbstractCommandDto.COMMAND_TYPE_CREATE;
+            return COMMAND_TYPE_CREATE;
         }
 
     }
@@ -522,7 +522,7 @@ public class CreateOrMergePatchUserClaimMvoDto extends AbstractUserClaimMvoComma
     {
         @Override
         public String getCommandType() {
-            return AbstractCommandDto.COMMAND_TYPE_MERGE_PATCH;
+            return COMMAND_TYPE_MERGE_PATCH;
         }
 
     }

@@ -3,9 +3,9 @@ package org.dddml.wms.domain;
 import java.math.BigDecimal;
 import java.util.Date;
 import org.joda.money.Money;
-import org.dddml.wms.domain.AbstractCommandDto;
+import org.dddml.wms.domain.AbstractCommand;
 
-public abstract class AbstractInOutLineMvoCommandDto extends AbstractCommandDto
+public abstract class AbstractInOutLineMvoCommandDto extends AbstractCommand
 {
     private InOutLineIdDto inOutLineId;
 

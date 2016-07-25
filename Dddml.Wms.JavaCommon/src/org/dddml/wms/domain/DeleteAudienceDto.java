@@ -6,7 +6,7 @@ public class DeleteAudienceDto extends AbstractAudienceCommandDto
 
     @Override
     public String getCommandType() {
-        return AbstractCommandDto.COMMAND_TYPE_DELETE;
+        return COMMAND_TYPE_DELETE;
     }
 
 }

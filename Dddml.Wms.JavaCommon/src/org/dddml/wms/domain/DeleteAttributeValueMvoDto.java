@@ -6,7 +6,7 @@ public class DeleteAttributeValueMvoDto extends AbstractAttributeValueMvoCommand
 
     @Override
     public String getCommandType() {
-        return AbstractCommandDto.COMMAND_TYPE_DELETE;
+        return COMMAND_TYPE_DELETE;
     }
 
 }

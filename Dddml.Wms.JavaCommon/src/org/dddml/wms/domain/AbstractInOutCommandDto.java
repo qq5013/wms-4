@@ -3,9 +3,9 @@ package org.dddml.wms.domain;
 import org.joda.money.Money;
 import java.math.BigDecimal;
 import java.util.Date;
-import org.dddml.wms.domain.AbstractCommandDto;
+import org.dddml.wms.domain.AbstractCommand;
 
-public abstract class AbstractInOutCommandDto extends AbstractCommandDto
+public abstract class AbstractInOutCommandDto extends AbstractCommand
 {
     private String documentNumber;
 

@@ -6,7 +6,7 @@ public class DeleteRoleDto extends AbstractRoleCommandDto
 
     @Override
     public String getCommandType() {
-        return AbstractCommandDto.COMMAND_TYPE_DELETE;
+        return COMMAND_TYPE_DELETE;
     }
 
 }

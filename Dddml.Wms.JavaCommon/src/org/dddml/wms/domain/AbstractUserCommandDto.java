@@ -1,9 +1,9 @@
 package org.dddml.wms.domain;
 
 import java.util.Date;
-import org.dddml.wms.domain.AbstractCommandDto;
+import org.dddml.wms.domain.AbstractCommand;
 
-public abstract class AbstractUserCommandDto extends AbstractCommandDto
+public abstract class AbstractUserCommandDto extends AbstractCommand
 {
     private String userId;
 

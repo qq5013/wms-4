@@ -6,7 +6,7 @@ public class RemoveUserPermissionDto extends CreateOrMergePatchUserPermissionDto
 
     @Override
     public String getCommandType() {
-        return AbstractCommandDto.COMMAND_TYPE_REMOVE;
+        return COMMAND_TYPE_REMOVE;
     }
 
 }

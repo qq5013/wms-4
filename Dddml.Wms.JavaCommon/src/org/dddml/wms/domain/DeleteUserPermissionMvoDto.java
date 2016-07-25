@@ -6,7 +6,7 @@ public class DeleteUserPermissionMvoDto extends AbstractUserPermissionMvoCommand
 
     @Override
     public String getCommandType() {
-        return AbstractCommandDto.COMMAND_TYPE_DELETE;
+        return COMMAND_TYPE_DELETE;
     }
 
 }

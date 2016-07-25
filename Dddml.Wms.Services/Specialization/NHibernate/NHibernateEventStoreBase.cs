@@ -38,11 +38,10 @@ namespace Dddml.Wms.Specialization.NHibernate
 				if (saveable != null) {
 					saveable.Save ();
 				}
-                //Console.WriteLine("####################################################");
-                afterEventsAppended();
-                //Console.WriteLine("####################################################");
-
             }
+            //Console.WriteLine("####################################################");
+            afterEventsAppended();
+            //Console.WriteLine("####################################################");
         }
 
         [Transaction(ReadOnly = true)]

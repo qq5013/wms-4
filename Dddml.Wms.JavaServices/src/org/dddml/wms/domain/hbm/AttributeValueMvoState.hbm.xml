@@ -13,7 +13,7 @@
 		<key-property name="value" column="AttributeValueIdValue" length="50"/>
 	</composite-id>
 
-	<version name="attributeVersion" type="long" unsaved-value="null"/>
+	<version name="attributeVersion" type="long" />
 
 	<property name="name" ></property>
 

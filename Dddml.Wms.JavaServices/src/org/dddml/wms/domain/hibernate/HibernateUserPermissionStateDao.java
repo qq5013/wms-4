@@ -18,7 +18,7 @@ public class HibernateUserPermissionStateDao implements UserPermissionStateDao
     @Override
     public UserPermissionState get(UserPermissionId id)
     {
-        UserPermissionState state = (UserPermissionState) getCurrentSession().get(UserPermissionState.class, id);
+        UserPermissionState state = (UserPermissionState) getCurrentSession().get(AbstractUserPermissionState.SimpleUserPermissionState.class, id);
         if (state == null)
         {
             state = new AbstractUserPermissionState.SimpleUserPermissionState();
@@ -42,7 +42,7 @@ public class HibernateUserPermissionStateDao implements UserPermissionStateDao
     @Override
     public Iterable<UserPermissionState> findByUserId(String userId)
     {
-        Criteria criteria = getCurrentSession().createCriteria(UserPermissionState.class);
+        Criteria criteria = getCurrentSession().createCriteria(AbstractUserPermissionState.SimpleUserPermissionState.class);
         Junction partIdCondition = Restrictions.conjunction()
             .add(Restrictions.eq("userPermissionId.userId", userId))
             ;

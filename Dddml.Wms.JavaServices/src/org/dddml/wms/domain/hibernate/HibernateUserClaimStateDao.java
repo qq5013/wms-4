@@ -18,7 +18,7 @@ public class HibernateUserClaimStateDao implements UserClaimStateDao
     @Override
     public UserClaimState get(UserClaimId id)
     {
-        UserClaimState state = (UserClaimState) getCurrentSession().get(UserClaimState.class, id);
+        UserClaimState state = (UserClaimState) getCurrentSession().get(AbstractUserClaimState.SimpleUserClaimState.class, id);
         if (state == null)
         {
             state = new AbstractUserClaimState.SimpleUserClaimState();
@@ -42,7 +42,7 @@ public class HibernateUserClaimStateDao implements UserClaimStateDao
     @Override
     public Iterable<UserClaimState> findByUserId(String userId)
     {
-        Criteria criteria = getCurrentSession().createCriteria(UserClaimState.class);
+        Criteria criteria = getCurrentSession().createCriteria(AbstractUserClaimState.SimpleUserClaimState.class);
         Junction partIdCondition = Restrictions.conjunction()
             .add(Restrictions.eq("userClaimId.userId", userId))
             ;

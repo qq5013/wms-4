@@ -19,7 +19,7 @@ public class HibernateInOutLineStateDao implements InOutLineStateDao
     @Override
     public InOutLineState get(InOutLineId id)
     {
-        InOutLineState state = (InOutLineState) getCurrentSession().get(InOutLineState.class, id);
+        InOutLineState state = (InOutLineState) getCurrentSession().get(AbstractInOutLineState.SimpleInOutLineState.class, id);
         if (state == null)
         {
             state = new AbstractInOutLineState.SimpleInOutLineState();
@@ -43,7 +43,7 @@ public class HibernateInOutLineStateDao implements InOutLineStateDao
     @Override
     public Iterable<InOutLineState> findByInOutDocumentNumber(String inOutDocumentNumber)
     {
-        Criteria criteria = getCurrentSession().createCriteria(InOutLineState.class);
+        Criteria criteria = getCurrentSession().createCriteria(AbstractInOutLineState.SimpleInOutLineState.class);
         Junction partIdCondition = Restrictions.conjunction()
             .add(Restrictions.eq("inOutLineId.inOutDocumentNumber", inOutDocumentNumber))
             ;

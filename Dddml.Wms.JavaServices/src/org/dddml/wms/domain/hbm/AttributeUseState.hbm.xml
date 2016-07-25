@@ -13,7 +13,7 @@
 		<key-property name="attributeId" column="AttributeSetAttributeUseIdAttributeId" length="50"/>
 	</composite-id>
 
-	<version name="version" type="long" unsaved-value="null"/>
+	<version name="version" type="long" />
 
 	<property name="sequenceNumber" ></property>
 

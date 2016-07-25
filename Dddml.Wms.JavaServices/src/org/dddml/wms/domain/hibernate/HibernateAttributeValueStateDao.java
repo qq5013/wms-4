@@ -18,7 +18,7 @@ public class HibernateAttributeValueStateDao implements AttributeValueStateDao
     @Override
     public AttributeValueState get(AttributeValueId id)
     {
-        AttributeValueState state = (AttributeValueState) getCurrentSession().get(AttributeValueState.class, id);
+        AttributeValueState state = (AttributeValueState) getCurrentSession().get(AbstractAttributeValueState.SimpleAttributeValueState.class, id);
         if (state == null)
         {
             state = new AbstractAttributeValueState.SimpleAttributeValueState();
@@ -42,7 +42,7 @@ public class HibernateAttributeValueStateDao implements AttributeValueStateDao
     @Override
     public Iterable<AttributeValueState> findByAttributeId(String attributeId)
     {
-        Criteria criteria = getCurrentSession().createCriteria(AttributeValueState.class);
+        Criteria criteria = getCurrentSession().createCriteria(AbstractAttributeValueState.SimpleAttributeValueState.class);
         Junction partIdCondition = Restrictions.conjunction()
             .add(Restrictions.eq("attributeValueId.attributeId", attributeId))
             ;

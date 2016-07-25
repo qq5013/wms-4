@@ -13,7 +13,7 @@
 		<key-property name="roleId" column="UserRoleIdRoleId" length="50"/>
 	</composite-id>
 
-	<version name="userVersion" type="long" unsaved-value="null"/>
+	<version name="userVersion" type="long" />
 
 	<property name="version" ></property>
 

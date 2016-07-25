@@ -18,7 +18,7 @@ public class HibernateUserRoleStateDao implements UserRoleStateDao
     @Override
     public UserRoleState get(UserRoleId id)
     {
-        UserRoleState state = (UserRoleState) getCurrentSession().get(UserRoleState.class, id);
+        UserRoleState state = (UserRoleState) getCurrentSession().get(AbstractUserRoleState.SimpleUserRoleState.class, id);
         if (state == null)
         {
             state = new AbstractUserRoleState.SimpleUserRoleState();
@@ -42,7 +42,7 @@ public class HibernateUserRoleStateDao implements UserRoleStateDao
     @Override
     public Iterable<UserRoleState> findByUserId(String userId)
     {
-        Criteria criteria = getCurrentSession().createCriteria(UserRoleState.class);
+        Criteria criteria = getCurrentSession().createCriteria(AbstractUserRoleState.SimpleUserRoleState.class);
         Junction partIdCondition = Restrictions.conjunction()
             .add(Restrictions.eq("userRoleId.userId", userId))
             ;

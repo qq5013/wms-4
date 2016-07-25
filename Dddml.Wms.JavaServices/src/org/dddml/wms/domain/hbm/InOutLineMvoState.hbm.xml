@@ -14,7 +14,7 @@
 		<key-property name="skuIdAttributeSetInstanceId" column="InOutLineIdSkuIdAttributeSetInstanceId" />
 	</composite-id>
 
-	<version name="inOutVersion" type="long" unsaved-value="null"/>
+	<version name="inOutVersion" type="long" />
 
 	<property name="lineNumber" ></property>
 

@@ -13,7 +13,7 @@
 		<key-property name="permissionId" column="IdPermissionId" />
 	</composite-id>
 
-	<version name="version" type="long" unsaved-value="null"/>
+	<version name="version" type="long" />
 
 	<property name="createdBy" ></property>
 

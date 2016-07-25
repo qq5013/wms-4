@@ -18,7 +18,7 @@ public class HibernateAttributeUseStateDao implements AttributeUseStateDao
     @Override
     public AttributeUseState get(AttributeSetAttributeUseId id)
     {
-        AttributeUseState state = (AttributeUseState) getCurrentSession().get(AttributeUseState.class, id);
+        AttributeUseState state = (AttributeUseState) getCurrentSession().get(AbstractAttributeUseState.SimpleAttributeUseState.class, id);
         if (state == null)
         {
             state = new AbstractAttributeUseState.SimpleAttributeUseState();
@@ -42,7 +42,7 @@ public class HibernateAttributeUseStateDao implements AttributeUseStateDao
     @Override
     public Iterable<AttributeUseState> findByAttributeSetId(String attributeSetId)
     {
-        Criteria criteria = getCurrentSession().createCriteria(AttributeUseState.class);
+        Criteria criteria = getCurrentSession().createCriteria(AbstractAttributeUseState.SimpleAttributeUseState.class);
         Junction partIdCondition = Restrictions.conjunction()
             .add(Restrictions.eq("attributeSetAttributeUseId.attributeSetId", attributeSetId))
             ;

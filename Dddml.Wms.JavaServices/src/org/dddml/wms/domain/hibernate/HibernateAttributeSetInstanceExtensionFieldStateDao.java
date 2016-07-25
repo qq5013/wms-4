@@ -18,7 +18,7 @@ public class HibernateAttributeSetInstanceExtensionFieldStateDao implements Attr
     @Override
     public AttributeSetInstanceExtensionFieldState get(AttributeSetInstanceExtensionFieldId id)
     {
-        AttributeSetInstanceExtensionFieldState state = (AttributeSetInstanceExtensionFieldState) getCurrentSession().get(AttributeSetInstanceExtensionFieldState.class, id);
+        AttributeSetInstanceExtensionFieldState state = (AttributeSetInstanceExtensionFieldState) getCurrentSession().get(AbstractAttributeSetInstanceExtensionFieldState.SimpleAttributeSetInstanceExtensionFieldState.class, id);
         if (state == null)
         {
             state = new AbstractAttributeSetInstanceExtensionFieldState.SimpleAttributeSetInstanceExtensionFieldState();
@@ -42,7 +42,7 @@ public class HibernateAttributeSetInstanceExtensionFieldStateDao implements Attr
     @Override
     public Iterable<AttributeSetInstanceExtensionFieldState> findByGroupId(String groupId)
     {
-        Criteria criteria = getCurrentSession().createCriteria(AttributeSetInstanceExtensionFieldState.class);
+        Criteria criteria = getCurrentSession().createCriteria(AbstractAttributeSetInstanceExtensionFieldState.SimpleAttributeSetInstanceExtensionFieldState.class);
         Junction partIdCondition = Restrictions.conjunction()
             .add(Restrictions.eq("attributeSetInstanceExtensionFieldId.groupId", groupId))
             ;

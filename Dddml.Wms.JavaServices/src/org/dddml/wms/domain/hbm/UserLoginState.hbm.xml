@@ -14,7 +14,7 @@
 		<key-property name="loginKeyProviderKey" column="UserLoginIdLoginKeyProviderKey" />
 	</composite-id>
 
-	<version name="version" type="long" unsaved-value="null"/>
+	<version name="version" type="long" />
 
 	<property name="createdBy" ></property>
 

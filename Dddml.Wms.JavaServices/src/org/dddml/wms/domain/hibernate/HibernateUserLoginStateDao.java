@@ -18,7 +18,7 @@ public class HibernateUserLoginStateDao implements UserLoginStateDao
     @Override
     public UserLoginState get(UserLoginId id)
     {
-        UserLoginState state = (UserLoginState) getCurrentSession().get(UserLoginState.class, id);
+        UserLoginState state = (UserLoginState) getCurrentSession().get(AbstractUserLoginState.SimpleUserLoginState.class, id);
         if (state == null)
         {
             state = new AbstractUserLoginState.SimpleUserLoginState();
@@ -42,7 +42,7 @@ public class HibernateUserLoginStateDao implements UserLoginStateDao
     @Override
     public Iterable<UserLoginState> findByUserId(String userId)
     {
-        Criteria criteria = getCurrentSession().createCriteria(UserLoginState.class);
+        Criteria criteria = getCurrentSession().createCriteria(AbstractUserLoginState.SimpleUserLoginState.class);
         Junction partIdCondition = Restrictions.conjunction()
             .add(Restrictions.eq("userLoginId.userId", userId))
             ;

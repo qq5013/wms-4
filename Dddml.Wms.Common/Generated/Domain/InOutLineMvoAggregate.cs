@@ -331,7 +331,7 @@ namespace Dddml.Wms.Domain
         {
             var pCommandHandler = this.InOutLineMvoDocumentActionCommandHandler;
             var pCmdContent = c.DocumentAction;
-            var pCmd = new PropertyCommand<DocumentAction, string> { Content = pCmdContent, GetState = () => s.InOutDocumentStatus, SetState = p => e.InOutDocumentStatus = p, OutterCommandType = CommandType.MergePatch };
+            var pCmd = new PropertyCommand<DocumentAction, string> { Content = pCmdContent, GetState = () => s.InOutDocumentStatus, SetState = p => e.InOutDocumentStatus = p, OuterCommandType = CommandType.MergePatch };
             pCommandHandler.Execute(pCmd);
         }
 
@@ -339,7 +339,7 @@ namespace Dddml.Wms.Domain
         {
             var pCommandHandler = this.InOutLineMvoDocumentActionCommandHandler;
             var pCmdContent = c.DocumentAction;
-            var pCmd = new PropertyCommand<DocumentAction, string> { Content = pCmdContent, GetState = () => s.InOutDocumentStatus, SetState = p => e.InOutDocumentStatus = p, OutterCommandType = CommandType.Create };
+            var pCmd = new PropertyCommand<DocumentAction, string> { Content = pCmdContent, GetState = () => s.InOutDocumentStatus, SetState = p => e.InOutDocumentStatus = p, OuterCommandType = CommandType.Create };
             pCommandHandler.Execute(pCmd);
         }
 

@@ -13,6 +13,6 @@ namespace Dddml.Wms.Specialization
 
         public Action<TState> SetState { get; set; }
 
-        public string OutterCommandType { get; set; }
+        public string OuterCommandType { get; set; }
     }
 }

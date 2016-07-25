@@ -37,7 +37,7 @@ namespace Dddml.Wms.Domain
             var currentState = command.GetState();
             var trigger = command.Content != null ? command.Content.Name : null;
 
-            if (command.OutterCommandType == CommandType.Create)
+            if (command.OuterCommandType == CommandType.Create)
             {
                 if (String.IsNullOrWhiteSpace(currentState))
                 { currentState = DocumentStatus.Initial; }

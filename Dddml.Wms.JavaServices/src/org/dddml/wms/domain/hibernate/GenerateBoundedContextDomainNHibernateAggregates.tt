@@ -1,0 +1,16 @@
+<#@ template language="C#" debug="True" #>
+<#@ output extension="txt" #>
+<#@ import namespace="Dddml.Core.Domain" #>
+<#@ include file="T4Toolbox.tt" #>
+<#@ include file="%DddmlDotNetToolsSolutionDir%\Dddml.T4.Templates.Java\Domain\Hibernate\AggregateDomainHibernateGenerator.tt" #>
+<#@ include file="$(SolutionDir)Dddml.Wms.JavaCommon\src\org\dddml\wms\LoadBoundedContext.tt" #>
+<#
+
+	foreach (var aggregate in boundedContext.Aggregates.Values)
+	{
+		var generator = new AggregateDomainHibernateGenerator(aggregate);
+
+	    generator.Run();
+	}
+
+#>

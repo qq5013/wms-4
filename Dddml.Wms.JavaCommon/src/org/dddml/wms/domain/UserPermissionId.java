@@ -28,11 +28,11 @@ public class UserPermissionId implements Serializable
         this.permissionId = permissionId;
     }
 
-    UserPermissionId ()
+    public UserPermissionId()
     {
     }
 
-    public UserPermissionId (String userId, String permissionId)
+    public UserPermissionId(String userId, String permissionId)
     {
         this.userId = userId;
         this.permissionId = permissionId;

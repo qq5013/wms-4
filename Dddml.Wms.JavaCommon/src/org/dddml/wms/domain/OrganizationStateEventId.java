@@ -28,11 +28,11 @@ public class OrganizationStateEventId implements Serializable
         this.version = version;
     }
 
-    OrganizationStateEventId ()
+    public OrganizationStateEventId()
     {
     }
 
-    public OrganizationStateEventId (String organizationId, Long version)
+    public OrganizationStateEventId(String organizationId, Long version)
     {
         this.organizationId = organizationId;
         this.version = version;

@@ -11,13 +11,12 @@ public interface UserRoleMvoAggregate
 
     List<Event> getChanges();
 
-    void throwOnInvalidStateTransition(Command c);
-
     void create(UserRoleMvoCommand.CreateUserRoleMvo c);
 
     void mergePatch(UserRoleMvoCommand.MergePatchUserRoleMvo c);
 
     void delete(UserRoleMvoCommand.DeleteUserRoleMvo c);
 
+    void throwOnInvalidStateTransition(Command c);
 }
 

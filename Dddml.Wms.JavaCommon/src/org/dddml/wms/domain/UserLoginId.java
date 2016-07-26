@@ -48,11 +48,11 @@ public class UserLoginId implements Serializable
         getLoginKey().setProviderKey(loginKeyProviderKey);
     }
 
-    UserLoginId ()
+    public UserLoginId()
     {
     }
 
-    public UserLoginId (String userId, LoginKey loginKey)
+    public UserLoginId(String userId, LoginKey loginKey)
     {
         this.userId = userId;
         this.loginKey = loginKey;

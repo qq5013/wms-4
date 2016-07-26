@@ -6,29 +6,34 @@ import java.util.function.Supplier;
 /**
  * Created by Yang on 2016/7/25.
  */
-public abstract class AbstractPropertyCommand<TContent, TState> {
+public abstract class AbstractPropertyCommand<TContent, TState> implements PropertyCommand<TContent, TState> {
     private TContent content;
 
+    @Override
     public TContent getContent() {
         return this.content;
     }
 
-    public void getContent(TContent content) {
+    @Override
+    public void setContent(TContent content) {
         this.content = content;
     }
 
     private Supplier<TState> stateGetter;
 
+    @Override
     public Supplier<TState> getStateGetter() {
         return this.stateGetter;
     }
 
+    @Override
     public void setStateGetter(Supplier<TState> stateGetter) {
         this.stateGetter = stateGetter;
     }
 
     private Consumer<TState> stateSetter;
 
+    @Override
     public Consumer<TState> getStateSetter() {
         return this.stateSetter;
     }

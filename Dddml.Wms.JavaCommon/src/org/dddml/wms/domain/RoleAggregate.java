@@ -11,13 +11,12 @@ public interface RoleAggregate
 
     List<Event> getChanges();
 
-    void throwOnInvalidStateTransition(Command c);
-
     void create(RoleCommand.CreateRole c);
 
     void mergePatch(RoleCommand.MergePatchRole c);
 
     void delete(RoleCommand.DeleteRole c);
 
+    void throwOnInvalidStateTransition(Command c);
 }
 

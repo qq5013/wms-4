@@ -28,11 +28,11 @@ public class InOutStateEventId implements Serializable
         this.version = version;
     }
 
-    InOutStateEventId ()
+    public InOutStateEventId()
     {
     }
 
-    public InOutStateEventId (String documentNumber, Long version)
+    public InOutStateEventId(String documentNumber, Long version)
     {
         this.documentNumber = documentNumber;
         this.version = version;

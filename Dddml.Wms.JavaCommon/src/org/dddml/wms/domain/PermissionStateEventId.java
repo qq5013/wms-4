@@ -28,11 +28,11 @@ public class PermissionStateEventId implements Serializable
         this.version = version;
     }
 
-    PermissionStateEventId ()
+    public PermissionStateEventId()
     {
     }
 
-    public PermissionStateEventId (String permissionId, Long version)
+    public PermissionStateEventId(String permissionId, Long version)
     {
         this.permissionId = permissionId;
         this.version = version;

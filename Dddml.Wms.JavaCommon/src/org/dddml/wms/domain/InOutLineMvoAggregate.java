@@ -13,13 +13,12 @@ public interface InOutLineMvoAggregate
 
     List<Event> getChanges();
 
-    void throwOnInvalidStateTransition(Command c);
-
     void create(InOutLineMvoCommand.CreateInOutLineMvo c);
 
     void mergePatch(InOutLineMvoCommand.MergePatchInOutLineMvo c);
 
     void delete(InOutLineMvoCommand.DeleteInOutLineMvo c);
 
+    void throwOnInvalidStateTransition(Command c);
 }
 

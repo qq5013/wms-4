@@ -48,11 +48,11 @@ public class AttributeValueMvoStateEventId implements Serializable
         getAttributeValueId().setValue(attributeValueIdValue);
     }
 
-    AttributeValueMvoStateEventId ()
+    public AttributeValueMvoStateEventId()
     {
     }
 
-    public AttributeValueMvoStateEventId (AttributeValueId attributeValueId, Long attributeVersion)
+    public AttributeValueMvoStateEventId(AttributeValueId attributeValueId, Long attributeVersion)
     {
         this.attributeValueId = attributeValueId;
         this.attributeVersion = attributeVersion;

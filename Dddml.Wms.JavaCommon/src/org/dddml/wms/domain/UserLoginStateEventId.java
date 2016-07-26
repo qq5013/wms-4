@@ -60,11 +60,11 @@ public class UserLoginStateEventId implements Serializable
         getLoginKey().setProviderKey(loginKeyProviderKey);
     }
 
-    UserLoginStateEventId ()
+    public UserLoginStateEventId()
     {
     }
 
-    public UserLoginStateEventId (String userId, LoginKey loginKey, Long userVersion)
+    public UserLoginStateEventId(String userId, LoginKey loginKey, Long userVersion)
     {
         this.userId = userId;
         this.loginKey = loginKey;

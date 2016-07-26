@@ -16,11 +16,11 @@ public class DocumentAction implements Serializable
         this.name = name;
     }
 
-    DocumentAction ()
+    public DocumentAction()
     {
     }
 
-    public DocumentAction (String name)
+    public DocumentAction(String name)
     {
         this.name = name;
     }

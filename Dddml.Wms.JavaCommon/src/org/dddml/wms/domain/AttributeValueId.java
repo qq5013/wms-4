@@ -28,11 +28,11 @@ public class AttributeValueId implements Serializable
         this.value = value;
     }
 
-    AttributeValueId ()
+    public AttributeValueId()
     {
     }
 
-    public AttributeValueId (String attributeId, String value)
+    public AttributeValueId(String attributeId, String value)
     {
         this.attributeId = attributeId;
         this.value = value;

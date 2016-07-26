@@ -28,11 +28,11 @@ public class UserStateEventId implements Serializable
         this.version = version;
     }
 
-    UserStateEventId ()
+    public UserStateEventId()
     {
     }
 
-    public UserStateEventId (String userId, Long version)
+    public UserStateEventId(String userId, Long version)
     {
         this.userId = userId;
         this.version = version;

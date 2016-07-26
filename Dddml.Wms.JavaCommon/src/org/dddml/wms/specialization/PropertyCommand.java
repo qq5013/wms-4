@@ -10,7 +10,7 @@ public interface PropertyCommand <TContent, TState>
 {
     TContent getContent();
 
-    void getContent(TContent content);
+    void setContent(TContent content);
 
     Supplier<TState> getStateGetter();
 
@@ -18,7 +18,7 @@ public interface PropertyCommand <TContent, TState>
 
     Consumer<TState> getStateSetter();
 
-    void getStateSetter(Consumer<TState> stateSetter);
+    void setStateSetter(Consumer<TState> stateSetter);
 
     String getOuterCommandType();
 

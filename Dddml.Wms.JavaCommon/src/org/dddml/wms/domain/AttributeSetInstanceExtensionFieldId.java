@@ -28,11 +28,11 @@ public class AttributeSetInstanceExtensionFieldId implements Serializable
         this.index = index;
     }
 
-    AttributeSetInstanceExtensionFieldId ()
+    public AttributeSetInstanceExtensionFieldId()
     {
     }
 
-    public AttributeSetInstanceExtensionFieldId (String groupId, String index)
+    public AttributeSetInstanceExtensionFieldId(String groupId, String index)
     {
         this.groupId = groupId;
         this.index = index;

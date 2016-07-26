@@ -28,11 +28,11 @@ public class WarehouseStateEventId implements Serializable
         this.version = version;
     }
 
-    WarehouseStateEventId ()
+    public WarehouseStateEventId()
     {
     }
 
-    public WarehouseStateEventId (String warehouseId, Long version)
+    public WarehouseStateEventId(String warehouseId, Long version)
     {
         this.warehouseId = warehouseId;
         this.version = version;

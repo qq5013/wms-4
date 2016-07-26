@@ -60,11 +60,11 @@ public class InOutLineStateEventId implements Serializable
         getSkuId().setAttributeSetInstanceId(skuIdAttributeSetInstanceId);
     }
 
-    InOutLineStateEventId ()
+    public InOutLineStateEventId()
     {
     }
 
-    public InOutLineStateEventId (String inOutDocumentNumber, SkuId skuId, Long inOutVersion)
+    public InOutLineStateEventId(String inOutDocumentNumber, SkuId skuId, Long inOutVersion)
     {
         this.inOutDocumentNumber = inOutDocumentNumber;
         this.skuId = skuId;

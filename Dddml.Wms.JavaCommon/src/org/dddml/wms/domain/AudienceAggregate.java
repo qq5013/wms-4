@@ -11,13 +11,12 @@ public interface AudienceAggregate
 
     List<Event> getChanges();
 
-    void throwOnInvalidStateTransition(Command c);
-
     void create(AudienceCommand.CreateAudience c);
 
     void mergePatch(AudienceCommand.MergePatchAudience c);
 
     void delete(AudienceCommand.DeleteAudience c);
 
+    void throwOnInvalidStateTransition(Command c);
 }
 

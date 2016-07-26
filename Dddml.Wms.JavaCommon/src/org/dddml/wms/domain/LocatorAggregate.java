@@ -11,13 +11,12 @@ public interface LocatorAggregate
 
     List<Event> getChanges();
 
-    void throwOnInvalidStateTransition(Command c);
-
     void create(LocatorCommand.CreateLocator c);
 
     void mergePatch(LocatorCommand.MergePatchLocator c);
 
     void delete(LocatorCommand.DeleteLocator c);
 
+    void throwOnInvalidStateTransition(Command c);
 }
 

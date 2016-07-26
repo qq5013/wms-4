@@ -58,11 +58,11 @@ public class InOutLineMvoStateEventId implements Serializable
         getInOutLineId().getSkuId().setAttributeSetInstanceId(inOutLineIdSkuIdAttributeSetInstanceId);
     }
 
-    InOutLineMvoStateEventId ()
+    public InOutLineMvoStateEventId()
     {
     }
 
-    public InOutLineMvoStateEventId (InOutLineId inOutLineId, Long inOutVersion)
+    public InOutLineMvoStateEventId(InOutLineId inOutLineId, Long inOutVersion)
     {
         this.inOutLineId = inOutLineId;
         this.inOutVersion = inOutVersion;

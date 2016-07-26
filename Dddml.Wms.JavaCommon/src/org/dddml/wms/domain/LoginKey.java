@@ -28,11 +28,11 @@ public class LoginKey implements Serializable
         this.providerKey = providerKey;
     }
 
-    LoginKey ()
+    public LoginKey()
     {
     }
 
-    public LoginKey (String loginProvider, String providerKey)
+    public LoginKey(String loginProvider, String providerKey)
     {
         this.loginProvider = loginProvider;
         this.providerKey = providerKey;

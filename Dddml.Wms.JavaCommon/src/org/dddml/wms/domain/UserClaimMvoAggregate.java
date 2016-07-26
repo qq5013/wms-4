@@ -11,13 +11,12 @@ public interface UserClaimMvoAggregate
 
     List<Event> getChanges();
 
-    void throwOnInvalidStateTransition(Command c);
-
     void create(UserClaimMvoCommand.CreateUserClaimMvo c);
 
     void mergePatch(UserClaimMvoCommand.MergePatchUserClaimMvo c);
 
     void delete(UserClaimMvoCommand.DeleteUserClaimMvo c);
 
+    void throwOnInvalidStateTransition(Command c);
 }
 

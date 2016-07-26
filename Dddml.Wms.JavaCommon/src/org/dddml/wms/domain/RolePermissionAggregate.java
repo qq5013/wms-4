@@ -11,13 +11,12 @@ public interface RolePermissionAggregate
 
     List<Event> getChanges();
 
-    void throwOnInvalidStateTransition(Command c);
-
     void create(RolePermissionCommand.CreateRolePermission c);
 
     void mergePatch(RolePermissionCommand.MergePatchRolePermission c);
 
     void delete(RolePermissionCommand.DeleteRolePermission c);
 
+    void throwOnInvalidStateTransition(Command c);
 }
 

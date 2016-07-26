@@ -58,11 +58,11 @@ public class OrganizationStructureStateEventId implements Serializable
         getId().setSubsidiaryId(idSubsidiaryId);
     }
 
-    OrganizationStructureStateEventId ()
+    public OrganizationStructureStateEventId()
     {
     }
 
-    public OrganizationStructureStateEventId (OrganizationStructureId id, Long version)
+    public OrganizationStructureStateEventId(OrganizationStructureId id, Long version)
     {
         this.id = id;
         this.version = version;

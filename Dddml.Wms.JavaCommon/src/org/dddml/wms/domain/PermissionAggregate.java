@@ -11,13 +11,12 @@ public interface PermissionAggregate
 
     List<Event> getChanges();
 
-    void throwOnInvalidStateTransition(Command c);
-
     void create(PermissionCommand.CreatePermission c);
 
     void mergePatch(PermissionCommand.MergePatchPermission c);
 
     void delete(PermissionCommand.DeletePermission c);
 
+    void throwOnInvalidStateTransition(Command c);
 }
 

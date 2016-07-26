@@ -11,13 +11,12 @@ public interface AttributeUseMvoAggregate
 
     List<Event> getChanges();
 
-    void throwOnInvalidStateTransition(Command c);
-
     void create(AttributeUseMvoCommand.CreateAttributeUseMvo c);
 
     void mergePatch(AttributeUseMvoCommand.MergePatchAttributeUseMvo c);
 
     void delete(AttributeUseMvoCommand.DeleteAttributeUseMvo c);
 
+    void throwOnInvalidStateTransition(Command c);
 }
 

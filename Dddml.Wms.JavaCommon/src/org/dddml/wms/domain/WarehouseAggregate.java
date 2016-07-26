@@ -11,13 +11,12 @@ public interface WarehouseAggregate
 
     List<Event> getChanges();
 
-    void throwOnInvalidStateTransition(Command c);
-
     void create(WarehouseCommand.CreateWarehouse c);
 
     void mergePatch(WarehouseCommand.MergePatchWarehouse c);
 
     void delete(WarehouseCommand.DeleteWarehouse c);
 
+    void throwOnInvalidStateTransition(Command c);
 }
 

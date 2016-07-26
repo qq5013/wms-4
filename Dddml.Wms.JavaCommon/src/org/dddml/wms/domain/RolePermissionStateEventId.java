@@ -48,11 +48,11 @@ public class RolePermissionStateEventId implements Serializable
         getId().setPermissionId(idPermissionId);
     }
 
-    RolePermissionStateEventId ()
+    public RolePermissionStateEventId()
     {
     }
 
-    public RolePermissionStateEventId (RolePermissionId id, Long version)
+    public RolePermissionStateEventId(RolePermissionId id, Long version)
     {
         this.id = id;
         this.version = version;

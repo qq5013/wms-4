@@ -11,13 +11,12 @@ public interface UserPermissionMvoAggregate
 
     List<Event> getChanges();
 
-    void throwOnInvalidStateTransition(Command c);
-
     void create(UserPermissionMvoCommand.CreateUserPermissionMvo c);
 
     void mergePatch(UserPermissionMvoCommand.MergePatchUserPermissionMvo c);
 
     void delete(UserPermissionMvoCommand.DeleteUserPermissionMvo c);
 
+    void throwOnInvalidStateTransition(Command c);
 }
 

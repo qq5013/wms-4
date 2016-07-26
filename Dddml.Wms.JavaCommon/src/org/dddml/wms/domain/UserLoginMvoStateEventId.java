@@ -58,11 +58,11 @@ public class UserLoginMvoStateEventId implements Serializable
         getUserLoginId().getLoginKey().setProviderKey(userLoginIdLoginKeyProviderKey);
     }
 
-    UserLoginMvoStateEventId ()
+    public UserLoginMvoStateEventId()
     {
     }
 
-    public UserLoginMvoStateEventId (UserLoginId userLoginId, Long userVersion)
+    public UserLoginMvoStateEventId(UserLoginId userLoginId, Long userVersion)
     {
         this.userLoginId = userLoginId;
         this.userVersion = userVersion;

@@ -40,11 +40,11 @@ public class UserClaimStateEventId implements Serializable
         this.userVersion = userVersion;
     }
 
-    UserClaimStateEventId ()
+    public UserClaimStateEventId()
     {
     }
 
-    public UserClaimStateEventId (String userId, Integer claimId, Long userVersion)
+    public UserClaimStateEventId(String userId, Integer claimId, Long userVersion)
     {
         this.userId = userId;
         this.claimId = claimId;

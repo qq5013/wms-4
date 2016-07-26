@@ -1,8 +1,7 @@
 <?php
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use Dddml\Command\CommandExecutor;
-use Dddml\Query\QueryExecutor;
+use Dddml\Executor\Http\QueryExecutor;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 
 $baseUri = 'http://testtenant1.wms.dddml.org:63078/api';

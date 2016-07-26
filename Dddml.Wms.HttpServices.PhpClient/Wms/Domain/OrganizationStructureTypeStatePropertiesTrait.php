@@ -94,7 +94,7 @@ trait OrganizationStructureTypeStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $createdAt;
 
@@ -136,7 +136,7 @@ trait OrganizationStructureTypeStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $updatedAt;
 

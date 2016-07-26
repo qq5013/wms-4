@@ -16,15 +16,31 @@ public abstract class AbstractLocatorAggregate extends AbstractAggregate impleme
         this.state = state;
     }
 
-    public abstract LocatorState getState();
+    public LocatorState getState() {
+        return this.state;
+    }
 
-    public abstract List<Event> getChanges();
+    public List<Event> getChanges() {
+        return this.changes;
+    }
 
-    public abstract void create(LocatorCommand.CreateLocator c);
+    public void create(LocatorCommand.CreateLocator c)
+    {
+        LocatorStateEvent.LocatorStateCreated e = map(c);
+        apply(e);
+    }
 
-    public abstract void mergePatch(LocatorCommand.MergePatchLocator c);
+    public void mergePatch(LocatorCommand.MergePatchLocator c)
+    {
+        LocatorStateEvent.LocatorStateMergePatched e = map(c);
+        apply(e);
+    }
 
-    public abstract void delete(LocatorCommand.DeleteLocator c);
+    public void delete(LocatorCommand.DeleteLocator c)
+    {
+        LocatorStateEvent.LocatorStateDeleted e = map(c);
+        apply(e);
+    }
 
     public void throwOnInvalidStateTransition(Command c)
     {
@@ -49,6 +65,65 @@ public abstract class AbstractLocatorAggregate extends AbstractAggregate impleme
         onApplying(e);
         this.state.mutate(e);
         this.changes.add(e);
+    }
+
+    protected LocatorStateEvent.LocatorStateCreated map(LocatorCommand.CreateLocator c)
+    {
+        LocatorStateEventId stateEventId = new LocatorStateEventId(c.getLocatorId(), c.getVersion());
+        LocatorStateEvent.LocatorStateCreated e = newLocatorStateCreated(stateEventId);
+        e.setWarehouseId(c.getWarehouseId());
+        e.setParentLocatorId(c.getParentLocatorId());
+        e.setLocatorType(c.getLocatorType());
+        e.setPriorityNumber(c.getPriorityNumber());
+        e.setIsDefault(c.getIsDefault());
+        e.setX(c.getX());
+        e.setY(c.getY());
+        e.setZ(c.getZ());
+        e.setActive(c.getActive());
+        ((AbstractLocatorStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        Long version = c.getVersion();
+        return e;
+    }
+
+    protected LocatorStateEvent.LocatorStateMergePatched map(LocatorCommand.MergePatchLocator c)
+    {
+        LocatorStateEventId stateEventId = new LocatorStateEventId(c.getLocatorId(), c.getVersion());
+        LocatorStateEvent.LocatorStateMergePatched e = newLocatorStateMergePatched(stateEventId);
+        e.setWarehouseId(c.getWarehouseId());
+        e.setParentLocatorId(c.getParentLocatorId());
+        e.setLocatorType(c.getLocatorType());
+        e.setPriorityNumber(c.getPriorityNumber());
+        e.setIsDefault(c.getIsDefault());
+        e.setX(c.getX());
+        e.setY(c.getY());
+        e.setZ(c.getZ());
+        e.setActive(c.getActive());
+        e.setIsPropertyWarehouseIdRemoved(c.getIsPropertyWarehouseIdRemoved());
+        e.setIsPropertyParentLocatorIdRemoved(c.getIsPropertyParentLocatorIdRemoved());
+        e.setIsPropertyLocatorTypeRemoved(c.getIsPropertyLocatorTypeRemoved());
+        e.setIsPropertyPriorityNumberRemoved(c.getIsPropertyPriorityNumberRemoved());
+        e.setIsPropertyIsDefaultRemoved(c.getIsPropertyIsDefaultRemoved());
+        e.setIsPropertyXRemoved(c.getIsPropertyXRemoved());
+        e.setIsPropertyYRemoved(c.getIsPropertyYRemoved());
+        e.setIsPropertyZRemoved(c.getIsPropertyZRemoved());
+        e.setIsPropertyActiveRemoved(c.getIsPropertyActiveRemoved());
+        ((AbstractLocatorStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        Long version = c.getVersion();
+        return e;
+    }
+
+    protected LocatorStateEvent.LocatorStateDeleted map(LocatorCommand.DeleteLocator c)
+    {
+        LocatorStateEventId stateEventId = new LocatorStateEventId(c.getLocatorId(), c.getVersion());
+        LocatorStateEvent.LocatorStateDeleted e = newLocatorStateDeleted(stateEventId);
+        ((AbstractLocatorStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        return e;
     }
 
 
@@ -100,6 +175,13 @@ public abstract class AbstractLocatorAggregate extends AbstractAggregate impleme
         return new AbstractLocatorStateEvent.SimpleLocatorStateDeleted(stateEventId);
     }
 
+
+    public static class SimpleLocatorAggregate extends AbstractLocatorAggregate
+    {
+        public SimpleLocatorAggregate(LocatorState state) {
+            super(state);
+        }
+    }
 
 }
 

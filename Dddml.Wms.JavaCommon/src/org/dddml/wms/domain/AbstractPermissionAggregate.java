@@ -16,15 +16,31 @@ public abstract class AbstractPermissionAggregate extends AbstractAggregate impl
         this.state = state;
     }
 
-    public abstract PermissionState getState();
+    public PermissionState getState() {
+        return this.state;
+    }
 
-    public abstract List<Event> getChanges();
+    public List<Event> getChanges() {
+        return this.changes;
+    }
 
-    public abstract void create(PermissionCommand.CreatePermission c);
+    public void create(PermissionCommand.CreatePermission c)
+    {
+        PermissionStateEvent.PermissionStateCreated e = map(c);
+        apply(e);
+    }
 
-    public abstract void mergePatch(PermissionCommand.MergePatchPermission c);
+    public void mergePatch(PermissionCommand.MergePatchPermission c)
+    {
+        PermissionStateEvent.PermissionStateMergePatched e = map(c);
+        apply(e);
+    }
 
-    public abstract void delete(PermissionCommand.DeletePermission c);
+    public void delete(PermissionCommand.DeletePermission c)
+    {
+        PermissionStateEvent.PermissionStateDeleted e = map(c);
+        apply(e);
+    }
 
     public void throwOnInvalidStateTransition(Command c)
     {
@@ -49,6 +65,50 @@ public abstract class AbstractPermissionAggregate extends AbstractAggregate impl
         onApplying(e);
         this.state.mutate(e);
         this.changes.add(e);
+    }
+
+    protected PermissionStateEvent.PermissionStateCreated map(PermissionCommand.CreatePermission c)
+    {
+        PermissionStateEventId stateEventId = new PermissionStateEventId(c.getPermissionId(), c.getVersion());
+        PermissionStateEvent.PermissionStateCreated e = newPermissionStateCreated(stateEventId);
+        e.setName(c.getName());
+        e.setParentPermissionId(c.getParentPermissionId());
+        e.setDescription(c.getDescription());
+        e.setActive(c.getActive());
+        ((AbstractPermissionStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        Long version = c.getVersion();
+        return e;
+    }
+
+    protected PermissionStateEvent.PermissionStateMergePatched map(PermissionCommand.MergePatchPermission c)
+    {
+        PermissionStateEventId stateEventId = new PermissionStateEventId(c.getPermissionId(), c.getVersion());
+        PermissionStateEvent.PermissionStateMergePatched e = newPermissionStateMergePatched(stateEventId);
+        e.setName(c.getName());
+        e.setParentPermissionId(c.getParentPermissionId());
+        e.setDescription(c.getDescription());
+        e.setActive(c.getActive());
+        e.setIsPropertyNameRemoved(c.getIsPropertyNameRemoved());
+        e.setIsPropertyParentPermissionIdRemoved(c.getIsPropertyParentPermissionIdRemoved());
+        e.setIsPropertyDescriptionRemoved(c.getIsPropertyDescriptionRemoved());
+        e.setIsPropertyActiveRemoved(c.getIsPropertyActiveRemoved());
+        ((AbstractPermissionStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        Long version = c.getVersion();
+        return e;
+    }
+
+    protected PermissionStateEvent.PermissionStateDeleted map(PermissionCommand.DeletePermission c)
+    {
+        PermissionStateEventId stateEventId = new PermissionStateEventId(c.getPermissionId(), c.getVersion());
+        PermissionStateEvent.PermissionStateDeleted e = newPermissionStateDeleted(stateEventId);
+        ((AbstractPermissionStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        return e;
     }
 
 
@@ -100,6 +160,13 @@ public abstract class AbstractPermissionAggregate extends AbstractAggregate impl
         return new AbstractPermissionStateEvent.SimplePermissionStateDeleted(stateEventId);
     }
 
+
+    public static class SimplePermissionAggregate extends AbstractPermissionAggregate
+    {
+        public SimplePermissionAggregate(PermissionState state) {
+            super(state);
+        }
+    }
 
 }
 

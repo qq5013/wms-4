@@ -16,15 +16,31 @@ public abstract class AbstractUserPermissionMvoAggregate extends AbstractAggrega
         this.state = state;
     }
 
-    public abstract UserPermissionMvoState getState();
+    public UserPermissionMvoState getState() {
+        return this.state;
+    }
 
-    public abstract List<Event> getChanges();
+    public List<Event> getChanges() {
+        return this.changes;
+    }
 
-    public abstract void create(UserPermissionMvoCommand.CreateUserPermissionMvo c);
+    public void create(UserPermissionMvoCommand.CreateUserPermissionMvo c)
+    {
+        UserPermissionMvoStateEvent.UserPermissionMvoStateCreated e = map(c);
+        apply(e);
+    }
 
-    public abstract void mergePatch(UserPermissionMvoCommand.MergePatchUserPermissionMvo c);
+    public void mergePatch(UserPermissionMvoCommand.MergePatchUserPermissionMvo c)
+    {
+        UserPermissionMvoStateEvent.UserPermissionMvoStateMergePatched e = map(c);
+        apply(e);
+    }
 
-    public abstract void delete(UserPermissionMvoCommand.DeleteUserPermissionMvo c);
+    public void delete(UserPermissionMvoCommand.DeleteUserPermissionMvo c)
+    {
+        UserPermissionMvoStateEvent.UserPermissionMvoStateDeleted e = map(c);
+        apply(e);
+    }
 
     public void throwOnInvalidStateTransition(Command c)
     {
@@ -49,6 +65,95 @@ public abstract class AbstractUserPermissionMvoAggregate extends AbstractAggrega
         onApplying(e);
         this.state.mutate(e);
         this.changes.add(e);
+    }
+
+    protected UserPermissionMvoStateEvent.UserPermissionMvoStateCreated map(UserPermissionMvoCommand.CreateUserPermissionMvo c)
+    {
+        UserPermissionMvoStateEventId stateEventId = new UserPermissionMvoStateEventId(c.getUserPermissionId(), c.getUserVersion());
+        UserPermissionMvoStateEvent.UserPermissionMvoStateCreated e = newUserPermissionMvoStateCreated(stateEventId);
+        e.setVersion(c.getVersion());
+        e.setActive(c.getActive());
+        e.setUserUserName(c.getUserUserName());
+        e.setUserAccessFailedCount(c.getUserAccessFailedCount());
+        e.setUserEmail(c.getUserEmail());
+        e.setUserEmailConfirmed(c.getUserEmailConfirmed());
+        e.setUserLockoutEnabled(c.getUserLockoutEnabled());
+        e.setUserLockoutEndDateUtc(c.getUserLockoutEndDateUtc());
+        e.setUserPasswordHash(c.getUserPasswordHash());
+        e.setUserPhoneNumber(c.getUserPhoneNumber());
+        e.setUserPhoneNumberConfirmed(c.getUserPhoneNumberConfirmed());
+        e.setUserTwoFactorEnabled(c.getUserTwoFactorEnabled());
+        e.setUserSecurityStamp(c.getUserSecurityStamp());
+        e.setUserCreatedBy(c.getUserCreatedBy());
+        e.setUserCreatedAt(c.getUserCreatedAt());
+        e.setUserUpdatedBy(c.getUserUpdatedBy());
+        e.setUserUpdatedAt(c.getUserUpdatedAt());
+        e.setUserActive(c.getUserActive());
+        e.setUserDeleted(c.getUserDeleted());
+        ((AbstractUserPermissionMvoStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        Long userVersion = c.getUserVersion();
+        return e;
+    }
+
+    protected UserPermissionMvoStateEvent.UserPermissionMvoStateMergePatched map(UserPermissionMvoCommand.MergePatchUserPermissionMvo c)
+    {
+        UserPermissionMvoStateEventId stateEventId = new UserPermissionMvoStateEventId(c.getUserPermissionId(), c.getUserVersion());
+        UserPermissionMvoStateEvent.UserPermissionMvoStateMergePatched e = newUserPermissionMvoStateMergePatched(stateEventId);
+        e.setVersion(c.getVersion());
+        e.setActive(c.getActive());
+        e.setUserUserName(c.getUserUserName());
+        e.setUserAccessFailedCount(c.getUserAccessFailedCount());
+        e.setUserEmail(c.getUserEmail());
+        e.setUserEmailConfirmed(c.getUserEmailConfirmed());
+        e.setUserLockoutEnabled(c.getUserLockoutEnabled());
+        e.setUserLockoutEndDateUtc(c.getUserLockoutEndDateUtc());
+        e.setUserPasswordHash(c.getUserPasswordHash());
+        e.setUserPhoneNumber(c.getUserPhoneNumber());
+        e.setUserPhoneNumberConfirmed(c.getUserPhoneNumberConfirmed());
+        e.setUserTwoFactorEnabled(c.getUserTwoFactorEnabled());
+        e.setUserSecurityStamp(c.getUserSecurityStamp());
+        e.setUserCreatedBy(c.getUserCreatedBy());
+        e.setUserCreatedAt(c.getUserCreatedAt());
+        e.setUserUpdatedBy(c.getUserUpdatedBy());
+        e.setUserUpdatedAt(c.getUserUpdatedAt());
+        e.setUserActive(c.getUserActive());
+        e.setUserDeleted(c.getUserDeleted());
+        e.setIsPropertyVersionRemoved(c.getIsPropertyVersionRemoved());
+        e.setIsPropertyActiveRemoved(c.getIsPropertyActiveRemoved());
+        e.setIsPropertyUserUserNameRemoved(c.getIsPropertyUserUserNameRemoved());
+        e.setIsPropertyUserAccessFailedCountRemoved(c.getIsPropertyUserAccessFailedCountRemoved());
+        e.setIsPropertyUserEmailRemoved(c.getIsPropertyUserEmailRemoved());
+        e.setIsPropertyUserEmailConfirmedRemoved(c.getIsPropertyUserEmailConfirmedRemoved());
+        e.setIsPropertyUserLockoutEnabledRemoved(c.getIsPropertyUserLockoutEnabledRemoved());
+        e.setIsPropertyUserLockoutEndDateUtcRemoved(c.getIsPropertyUserLockoutEndDateUtcRemoved());
+        e.setIsPropertyUserPasswordHashRemoved(c.getIsPropertyUserPasswordHashRemoved());
+        e.setIsPropertyUserPhoneNumberRemoved(c.getIsPropertyUserPhoneNumberRemoved());
+        e.setIsPropertyUserPhoneNumberConfirmedRemoved(c.getIsPropertyUserPhoneNumberConfirmedRemoved());
+        e.setIsPropertyUserTwoFactorEnabledRemoved(c.getIsPropertyUserTwoFactorEnabledRemoved());
+        e.setIsPropertyUserSecurityStampRemoved(c.getIsPropertyUserSecurityStampRemoved());
+        e.setIsPropertyUserCreatedByRemoved(c.getIsPropertyUserCreatedByRemoved());
+        e.setIsPropertyUserCreatedAtRemoved(c.getIsPropertyUserCreatedAtRemoved());
+        e.setIsPropertyUserUpdatedByRemoved(c.getIsPropertyUserUpdatedByRemoved());
+        e.setIsPropertyUserUpdatedAtRemoved(c.getIsPropertyUserUpdatedAtRemoved());
+        e.setIsPropertyUserActiveRemoved(c.getIsPropertyUserActiveRemoved());
+        e.setIsPropertyUserDeletedRemoved(c.getIsPropertyUserDeletedRemoved());
+        ((AbstractUserPermissionMvoStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        Long userVersion = c.getUserVersion();
+        return e;
+    }
+
+    protected UserPermissionMvoStateEvent.UserPermissionMvoStateDeleted map(UserPermissionMvoCommand.DeleteUserPermissionMvo c)
+    {
+        UserPermissionMvoStateEventId stateEventId = new UserPermissionMvoStateEventId(c.getUserPermissionId(), c.getUserVersion());
+        UserPermissionMvoStateEvent.UserPermissionMvoStateDeleted e = newUserPermissionMvoStateDeleted(stateEventId);
+        ((AbstractUserPermissionMvoStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        return e;
     }
 
 
@@ -100,6 +205,13 @@ public abstract class AbstractUserPermissionMvoAggregate extends AbstractAggrega
         return new AbstractUserPermissionMvoStateEvent.SimpleUserPermissionMvoStateDeleted(stateEventId);
     }
 
+
+    public static class SimpleUserPermissionMvoAggregate extends AbstractUserPermissionMvoAggregate
+    {
+        public SimpleUserPermissionMvoAggregate(UserPermissionMvoState state) {
+            super(state);
+        }
+    }
 
 }
 

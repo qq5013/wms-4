@@ -16,15 +16,31 @@ public abstract class AbstractUserClaimMvoAggregate extends AbstractAggregate im
         this.state = state;
     }
 
-    public abstract UserClaimMvoState getState();
+    public UserClaimMvoState getState() {
+        return this.state;
+    }
 
-    public abstract List<Event> getChanges();
+    public List<Event> getChanges() {
+        return this.changes;
+    }
 
-    public abstract void create(UserClaimMvoCommand.CreateUserClaimMvo c);
+    public void create(UserClaimMvoCommand.CreateUserClaimMvo c)
+    {
+        UserClaimMvoStateEvent.UserClaimMvoStateCreated e = map(c);
+        apply(e);
+    }
 
-    public abstract void mergePatch(UserClaimMvoCommand.MergePatchUserClaimMvo c);
+    public void mergePatch(UserClaimMvoCommand.MergePatchUserClaimMvo c)
+    {
+        UserClaimMvoStateEvent.UserClaimMvoStateMergePatched e = map(c);
+        apply(e);
+    }
 
-    public abstract void delete(UserClaimMvoCommand.DeleteUserClaimMvo c);
+    public void delete(UserClaimMvoCommand.DeleteUserClaimMvo c)
+    {
+        UserClaimMvoStateEvent.UserClaimMvoStateDeleted e = map(c);
+        apply(e);
+    }
 
     public void throwOnInvalidStateTransition(Command c)
     {
@@ -49,6 +65,101 @@ public abstract class AbstractUserClaimMvoAggregate extends AbstractAggregate im
         onApplying(e);
         this.state.mutate(e);
         this.changes.add(e);
+    }
+
+    protected UserClaimMvoStateEvent.UserClaimMvoStateCreated map(UserClaimMvoCommand.CreateUserClaimMvo c)
+    {
+        UserClaimMvoStateEventId stateEventId = new UserClaimMvoStateEventId(c.getUserClaimId(), c.getUserVersion());
+        UserClaimMvoStateEvent.UserClaimMvoStateCreated e = newUserClaimMvoStateCreated(stateEventId);
+        e.setClaimType(c.getClaimType());
+        e.setClaimValue(c.getClaimValue());
+        e.setVersion(c.getVersion());
+        e.setActive(c.getActive());
+        e.setUserUserName(c.getUserUserName());
+        e.setUserAccessFailedCount(c.getUserAccessFailedCount());
+        e.setUserEmail(c.getUserEmail());
+        e.setUserEmailConfirmed(c.getUserEmailConfirmed());
+        e.setUserLockoutEnabled(c.getUserLockoutEnabled());
+        e.setUserLockoutEndDateUtc(c.getUserLockoutEndDateUtc());
+        e.setUserPasswordHash(c.getUserPasswordHash());
+        e.setUserPhoneNumber(c.getUserPhoneNumber());
+        e.setUserPhoneNumberConfirmed(c.getUserPhoneNumberConfirmed());
+        e.setUserTwoFactorEnabled(c.getUserTwoFactorEnabled());
+        e.setUserSecurityStamp(c.getUserSecurityStamp());
+        e.setUserCreatedBy(c.getUserCreatedBy());
+        e.setUserCreatedAt(c.getUserCreatedAt());
+        e.setUserUpdatedBy(c.getUserUpdatedBy());
+        e.setUserUpdatedAt(c.getUserUpdatedAt());
+        e.setUserActive(c.getUserActive());
+        e.setUserDeleted(c.getUserDeleted());
+        ((AbstractUserClaimMvoStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        Long userVersion = c.getUserVersion();
+        return e;
+    }
+
+    protected UserClaimMvoStateEvent.UserClaimMvoStateMergePatched map(UserClaimMvoCommand.MergePatchUserClaimMvo c)
+    {
+        UserClaimMvoStateEventId stateEventId = new UserClaimMvoStateEventId(c.getUserClaimId(), c.getUserVersion());
+        UserClaimMvoStateEvent.UserClaimMvoStateMergePatched e = newUserClaimMvoStateMergePatched(stateEventId);
+        e.setClaimType(c.getClaimType());
+        e.setClaimValue(c.getClaimValue());
+        e.setVersion(c.getVersion());
+        e.setActive(c.getActive());
+        e.setUserUserName(c.getUserUserName());
+        e.setUserAccessFailedCount(c.getUserAccessFailedCount());
+        e.setUserEmail(c.getUserEmail());
+        e.setUserEmailConfirmed(c.getUserEmailConfirmed());
+        e.setUserLockoutEnabled(c.getUserLockoutEnabled());
+        e.setUserLockoutEndDateUtc(c.getUserLockoutEndDateUtc());
+        e.setUserPasswordHash(c.getUserPasswordHash());
+        e.setUserPhoneNumber(c.getUserPhoneNumber());
+        e.setUserPhoneNumberConfirmed(c.getUserPhoneNumberConfirmed());
+        e.setUserTwoFactorEnabled(c.getUserTwoFactorEnabled());
+        e.setUserSecurityStamp(c.getUserSecurityStamp());
+        e.setUserCreatedBy(c.getUserCreatedBy());
+        e.setUserCreatedAt(c.getUserCreatedAt());
+        e.setUserUpdatedBy(c.getUserUpdatedBy());
+        e.setUserUpdatedAt(c.getUserUpdatedAt());
+        e.setUserActive(c.getUserActive());
+        e.setUserDeleted(c.getUserDeleted());
+        e.setIsPropertyClaimTypeRemoved(c.getIsPropertyClaimTypeRemoved());
+        e.setIsPropertyClaimValueRemoved(c.getIsPropertyClaimValueRemoved());
+        e.setIsPropertyVersionRemoved(c.getIsPropertyVersionRemoved());
+        e.setIsPropertyActiveRemoved(c.getIsPropertyActiveRemoved());
+        e.setIsPropertyUserUserNameRemoved(c.getIsPropertyUserUserNameRemoved());
+        e.setIsPropertyUserAccessFailedCountRemoved(c.getIsPropertyUserAccessFailedCountRemoved());
+        e.setIsPropertyUserEmailRemoved(c.getIsPropertyUserEmailRemoved());
+        e.setIsPropertyUserEmailConfirmedRemoved(c.getIsPropertyUserEmailConfirmedRemoved());
+        e.setIsPropertyUserLockoutEnabledRemoved(c.getIsPropertyUserLockoutEnabledRemoved());
+        e.setIsPropertyUserLockoutEndDateUtcRemoved(c.getIsPropertyUserLockoutEndDateUtcRemoved());
+        e.setIsPropertyUserPasswordHashRemoved(c.getIsPropertyUserPasswordHashRemoved());
+        e.setIsPropertyUserPhoneNumberRemoved(c.getIsPropertyUserPhoneNumberRemoved());
+        e.setIsPropertyUserPhoneNumberConfirmedRemoved(c.getIsPropertyUserPhoneNumberConfirmedRemoved());
+        e.setIsPropertyUserTwoFactorEnabledRemoved(c.getIsPropertyUserTwoFactorEnabledRemoved());
+        e.setIsPropertyUserSecurityStampRemoved(c.getIsPropertyUserSecurityStampRemoved());
+        e.setIsPropertyUserCreatedByRemoved(c.getIsPropertyUserCreatedByRemoved());
+        e.setIsPropertyUserCreatedAtRemoved(c.getIsPropertyUserCreatedAtRemoved());
+        e.setIsPropertyUserUpdatedByRemoved(c.getIsPropertyUserUpdatedByRemoved());
+        e.setIsPropertyUserUpdatedAtRemoved(c.getIsPropertyUserUpdatedAtRemoved());
+        e.setIsPropertyUserActiveRemoved(c.getIsPropertyUserActiveRemoved());
+        e.setIsPropertyUserDeletedRemoved(c.getIsPropertyUserDeletedRemoved());
+        ((AbstractUserClaimMvoStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        Long userVersion = c.getUserVersion();
+        return e;
+    }
+
+    protected UserClaimMvoStateEvent.UserClaimMvoStateDeleted map(UserClaimMvoCommand.DeleteUserClaimMvo c)
+    {
+        UserClaimMvoStateEventId stateEventId = new UserClaimMvoStateEventId(c.getUserClaimId(), c.getUserVersion());
+        UserClaimMvoStateEvent.UserClaimMvoStateDeleted e = newUserClaimMvoStateDeleted(stateEventId);
+        ((AbstractUserClaimMvoStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        return e;
     }
 
 
@@ -100,6 +211,13 @@ public abstract class AbstractUserClaimMvoAggregate extends AbstractAggregate im
         return new AbstractUserClaimMvoStateEvent.SimpleUserClaimMvoStateDeleted(stateEventId);
     }
 
+
+    public static class SimpleUserClaimMvoAggregate extends AbstractUserClaimMvoAggregate
+    {
+        public SimpleUserClaimMvoAggregate(UserClaimMvoState state) {
+            super(state);
+        }
+    }
 
 }
 

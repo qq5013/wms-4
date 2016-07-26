@@ -16,15 +16,31 @@ public abstract class AbstractAttributeSetAggregate extends AbstractAggregate im
         this.state = state;
     }
 
-    public abstract AttributeSetState getState();
+    public AttributeSetState getState() {
+        return this.state;
+    }
 
-    public abstract List<Event> getChanges();
+    public List<Event> getChanges() {
+        return this.changes;
+    }
 
-    public abstract void create(AttributeSetCommand.CreateAttributeSet c);
+    public void create(AttributeSetCommand.CreateAttributeSet c)
+    {
+        AttributeSetStateEvent.AttributeSetStateCreated e = map(c);
+        apply(e);
+    }
 
-    public abstract void mergePatch(AttributeSetCommand.MergePatchAttributeSet c);
+    public void mergePatch(AttributeSetCommand.MergePatchAttributeSet c)
+    {
+        AttributeSetStateEvent.AttributeSetStateMergePatched e = map(c);
+        apply(e);
+    }
 
-    public abstract void delete(AttributeSetCommand.DeleteAttributeSet c);
+    public void delete(AttributeSetCommand.DeleteAttributeSet c)
+    {
+        AttributeSetStateEvent.AttributeSetStateDeleted e = map(c);
+        apply(e);
+    }
 
     public void throwOnInvalidStateTransition(Command c)
     {
@@ -49,6 +65,73 @@ public abstract class AbstractAttributeSetAggregate extends AbstractAggregate im
         onApplying(e);
         this.state.mutate(e);
         this.changes.add(e);
+    }
+
+    protected AttributeSetStateEvent.AttributeSetStateCreated map(AttributeSetCommand.CreateAttributeSet c)
+    {
+        AttributeSetStateEventId stateEventId = new AttributeSetStateEventId(c.getAttributeSetId(), c.getVersion());
+        AttributeSetStateEvent.AttributeSetStateCreated e = newAttributeSetStateCreated(stateEventId);
+        e.setName(c.getName());
+        e.setOrganizationId(c.getOrganizationId());
+        e.setDescription(c.getDescription());
+        e.setSerialNumberAttributeId(c.getSerialNumberAttributeId());
+        e.setLotAttributeId(c.getLotAttributeId());
+        e.setReferenceId(c.getReferenceId());
+        e.setActive(c.getActive());
+        ((AbstractAttributeSetStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        Long version = c.getVersion();
+        for (AttributeUseCommand.CreateAttributeUse innerCommand : c.getAttributeUses())
+        {
+            throwOnInconsistentCommands(c, innerCommand);
+            AttributeUseStateEvent.AttributeUseStateCreated innerEvent = mapCreate(innerCommand, c, version, this.state);
+            e.addAttributeUseEvent(innerEvent);
+        }
+
+        return e;
+    }
+
+    protected AttributeSetStateEvent.AttributeSetStateMergePatched map(AttributeSetCommand.MergePatchAttributeSet c)
+    {
+        AttributeSetStateEventId stateEventId = new AttributeSetStateEventId(c.getAttributeSetId(), c.getVersion());
+        AttributeSetStateEvent.AttributeSetStateMergePatched e = newAttributeSetStateMergePatched(stateEventId);
+        e.setName(c.getName());
+        e.setOrganizationId(c.getOrganizationId());
+        e.setDescription(c.getDescription());
+        e.setSerialNumberAttributeId(c.getSerialNumberAttributeId());
+        e.setLotAttributeId(c.getLotAttributeId());
+        e.setReferenceId(c.getReferenceId());
+        e.setActive(c.getActive());
+        e.setIsPropertyNameRemoved(c.getIsPropertyNameRemoved());
+        e.setIsPropertyOrganizationIdRemoved(c.getIsPropertyOrganizationIdRemoved());
+        e.setIsPropertyDescriptionRemoved(c.getIsPropertyDescriptionRemoved());
+        e.setIsPropertySerialNumberAttributeIdRemoved(c.getIsPropertySerialNumberAttributeIdRemoved());
+        e.setIsPropertyLotAttributeIdRemoved(c.getIsPropertyLotAttributeIdRemoved());
+        e.setIsPropertyReferenceIdRemoved(c.getIsPropertyReferenceIdRemoved());
+        e.setIsPropertyActiveRemoved(c.getIsPropertyActiveRemoved());
+        ((AbstractAttributeSetStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        Long version = c.getVersion();
+        for (AttributeUseCommand innerCommand : c.getAttributeUseCommands())
+        {
+            throwOnInconsistentCommands(c, innerCommand);
+            AttributeUseStateEvent innerEvent = map(innerCommand, c, version, this.state);
+            e.addAttributeUseEvent(innerEvent);
+        }
+
+        return e;
+    }
+
+    protected AttributeSetStateEvent.AttributeSetStateDeleted map(AttributeSetCommand.DeleteAttributeSet c)
+    {
+        AttributeSetStateEventId stateEventId = new AttributeSetStateEventId(c.getAttributeSetId(), c.getVersion());
+        AttributeSetStateEvent.AttributeSetStateDeleted e = newAttributeSetStateDeleted(stateEventId);
+        ((AbstractAttributeSetStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        return e;
     }
 
 
@@ -198,6 +281,13 @@ public abstract class AbstractAttributeSetAggregate extends AbstractAggregate im
         return new AbstractAttributeUseStateEvent.SimpleAttributeUseStateRemoved(stateEventId);
     }
 
+
+    public static class SimpleAttributeSetAggregate extends AbstractAttributeSetAggregate
+    {
+        public SimpleAttributeSetAggregate(AttributeSetState state) {
+            super(state);
+        }
+    }
 
 }
 

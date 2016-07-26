@@ -16,15 +16,31 @@ public abstract class AbstractOrganizationStructureTypeAggregate extends Abstrac
         this.state = state;
     }
 
-    public abstract OrganizationStructureTypeState getState();
+    public OrganizationStructureTypeState getState() {
+        return this.state;
+    }
 
-    public abstract List<Event> getChanges();
+    public List<Event> getChanges() {
+        return this.changes;
+    }
 
-    public abstract void create(OrganizationStructureTypeCommand.CreateOrganizationStructureType c);
+    public void create(OrganizationStructureTypeCommand.CreateOrganizationStructureType c)
+    {
+        OrganizationStructureTypeStateEvent.OrganizationStructureTypeStateCreated e = map(c);
+        apply(e);
+    }
 
-    public abstract void mergePatch(OrganizationStructureTypeCommand.MergePatchOrganizationStructureType c);
+    public void mergePatch(OrganizationStructureTypeCommand.MergePatchOrganizationStructureType c)
+    {
+        OrganizationStructureTypeStateEvent.OrganizationStructureTypeStateMergePatched e = map(c);
+        apply(e);
+    }
 
-    public abstract void delete(OrganizationStructureTypeCommand.DeleteOrganizationStructureType c);
+    public void delete(OrganizationStructureTypeCommand.DeleteOrganizationStructureType c)
+    {
+        OrganizationStructureTypeStateEvent.OrganizationStructureTypeStateDeleted e = map(c);
+        apply(e);
+    }
 
     public void throwOnInvalidStateTransition(Command c)
     {
@@ -49,6 +65,41 @@ public abstract class AbstractOrganizationStructureTypeAggregate extends Abstrac
         onApplying(e);
         this.state.mutate(e);
         this.changes.add(e);
+    }
+
+    protected OrganizationStructureTypeStateEvent.OrganizationStructureTypeStateCreated map(OrganizationStructureTypeCommand.CreateOrganizationStructureType c)
+    {
+        OrganizationStructureTypeStateEventId stateEventId = new OrganizationStructureTypeStateEventId(c.getId(), c.getVersion());
+        OrganizationStructureTypeStateEvent.OrganizationStructureTypeStateCreated e = newOrganizationStructureTypeStateCreated(stateEventId);
+        e.setActive(c.getActive());
+        ((AbstractOrganizationStructureTypeStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        Long version = c.getVersion();
+        return e;
+    }
+
+    protected OrganizationStructureTypeStateEvent.OrganizationStructureTypeStateMergePatched map(OrganizationStructureTypeCommand.MergePatchOrganizationStructureType c)
+    {
+        OrganizationStructureTypeStateEventId stateEventId = new OrganizationStructureTypeStateEventId(c.getId(), c.getVersion());
+        OrganizationStructureTypeStateEvent.OrganizationStructureTypeStateMergePatched e = newOrganizationStructureTypeStateMergePatched(stateEventId);
+        e.setActive(c.getActive());
+        e.setIsPropertyActiveRemoved(c.getIsPropertyActiveRemoved());
+        ((AbstractOrganizationStructureTypeStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        Long version = c.getVersion();
+        return e;
+    }
+
+    protected OrganizationStructureTypeStateEvent.OrganizationStructureTypeStateDeleted map(OrganizationStructureTypeCommand.DeleteOrganizationStructureType c)
+    {
+        OrganizationStructureTypeStateEventId stateEventId = new OrganizationStructureTypeStateEventId(c.getId(), c.getVersion());
+        OrganizationStructureTypeStateEvent.OrganizationStructureTypeStateDeleted e = newOrganizationStructureTypeStateDeleted(stateEventId);
+        ((AbstractOrganizationStructureTypeStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        return e;
     }
 
 
@@ -100,6 +151,13 @@ public abstract class AbstractOrganizationStructureTypeAggregate extends Abstrac
         return new AbstractOrganizationStructureTypeStateEvent.SimpleOrganizationStructureTypeStateDeleted(stateEventId);
     }
 
+
+    public static class SimpleOrganizationStructureTypeAggregate extends AbstractOrganizationStructureTypeAggregate
+    {
+        public SimpleOrganizationStructureTypeAggregate(OrganizationStructureTypeState state) {
+            super(state);
+        }
+    }
 
 }
 

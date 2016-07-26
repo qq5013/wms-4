@@ -18,15 +18,31 @@ public abstract class AbstractInOutLineMvoAggregate extends AbstractAggregate im
         this.state = state;
     }
 
-    public abstract InOutLineMvoState getState();
+    public InOutLineMvoState getState() {
+        return this.state;
+    }
 
-    public abstract List<Event> getChanges();
+    public List<Event> getChanges() {
+        return this.changes;
+    }
 
-    public abstract void create(InOutLineMvoCommand.CreateInOutLineMvo c);
+    public void create(InOutLineMvoCommand.CreateInOutLineMvo c)
+    {
+        InOutLineMvoStateEvent.InOutLineMvoStateCreated e = map(c);
+        apply(e);
+    }
 
-    public abstract void mergePatch(InOutLineMvoCommand.MergePatchInOutLineMvo c);
+    public void mergePatch(InOutLineMvoCommand.MergePatchInOutLineMvo c)
+    {
+        InOutLineMvoStateEvent.InOutLineMvoStateMergePatched e = map(c);
+        apply(e);
+    }
 
-    public abstract void delete(InOutLineMvoCommand.DeleteInOutLineMvo c);
+    public void delete(InOutLineMvoCommand.DeleteInOutLineMvo c)
+    {
+        InOutLineMvoStateEvent.InOutLineMvoStateDeleted e = map(c);
+        apply(e);
+    }
 
     public void throwOnInvalidStateTransition(Command c)
     {
@@ -51,6 +67,214 @@ public abstract class AbstractInOutLineMvoAggregate extends AbstractAggregate im
         onApplying(e);
         this.state.mutate(e);
         this.changes.add(e);
+    }
+
+    protected InOutLineMvoStateEvent.InOutLineMvoStateCreated map(InOutLineMvoCommand.CreateInOutLineMvo c)
+    {
+        InOutLineMvoStateEventId stateEventId = new InOutLineMvoStateEventId(c.getInOutLineId(), c.getInOutVersion());
+        InOutLineMvoStateEvent.InOutLineMvoStateCreated e = newInOutLineMvoStateCreated(stateEventId);
+        e.setLineNumber(c.getLineNumber());
+        e.setDescription(c.getDescription());
+        e.setLocatorId(c.getLocatorId());
+        e.setProduct(c.getProduct());
+        e.setUomId(c.getUomId());
+        e.setMovementQuantity(c.getMovementQuantity());
+        e.setConfirmedQuantity(c.getConfirmedQuantity());
+        e.setScrappedQuantity(c.getScrappedQuantity());
+        e.setTargetQuantity(c.getTargetQuantity());
+        e.setPickedQuantity(c.getPickedQuantity());
+        e.setIsInvoiced(c.getIsInvoiced());
+        e.setAttributeSetInstanceId(c.getAttributeSetInstanceId());
+        e.setIsDescription(c.getIsDescription());
+        e.setProcessed(c.getProcessed());
+        e.setQuantityEntered(c.getQuantityEntered());
+        e.setRmaLineNumber(c.getRmaLineNumber());
+        e.setReversalLineNumber(c.getReversalLineNumber());
+        e.setVersion(c.getVersion());
+        e.setActive(c.getActive());
+        e.setInOutIsSOTransaction(c.getInOutIsSOTransaction());
+        newInOutLineMvoDocumentActionCommandAndExecute(c, state, e);
+        e.setInOutPosted(c.getInOutPosted());
+        e.setInOutProcessing(c.getInOutProcessing());
+        e.setInOutProcessed(c.getInOutProcessed());
+        e.setInOutDocumentType(c.getInOutDocumentType());
+        e.setInOutDescription(c.getInOutDescription());
+        e.setInOutOrderNumber(c.getInOutOrderNumber());
+        e.setInOutDateOrdered(c.getInOutDateOrdered());
+        e.setInOutIsPrinted(c.getInOutIsPrinted());
+        e.setInOutMovementType(c.getInOutMovementType());
+        e.setInOutMovementDate(c.getInOutMovementDate());
+        e.setInOutBusinessPartnerId(c.getInOutBusinessPartnerId());
+        e.setInOutWarehouseId(c.getInOutWarehouseId());
+        e.setInOutPOReference(c.getInOutPOReference());
+        e.setInOutFreightAmount(c.getInOutFreightAmount());
+        e.setInOutShipperId(c.getInOutShipperId());
+        e.setInOutChargeAmount(c.getInOutChargeAmount());
+        e.setInOutDatePrinted(c.getInOutDatePrinted());
+        e.setInOutSalesRepresentative(c.getInOutSalesRepresentative());
+        e.setInOutNumberOfPackages(c.getInOutNumberOfPackages());
+        e.setInOutPickDate(c.getInOutPickDate());
+        e.setInOutShipDate(c.getInOutShipDate());
+        e.setInOutTrackingNumber(c.getInOutTrackingNumber());
+        e.setInOutDateReceived(c.getInOutDateReceived());
+        e.setInOutIsInTransit(c.getInOutIsInTransit());
+        e.setInOutIsApproved(c.getInOutIsApproved());
+        e.setInOutIsInDispute(c.getInOutIsInDispute());
+        e.setInOutVolume(c.getInOutVolume());
+        e.setInOutWeight(c.getInOutWeight());
+        e.setInOutRmaNumber(c.getInOutRmaNumber());
+        e.setInOutReversalNumber(c.getInOutReversalNumber());
+        e.setInOutIsDropShip(c.getInOutIsDropShip());
+        e.setInOutDropShipBusinessPartnerId(c.getInOutDropShipBusinessPartnerId());
+        e.setInOutCreatedBy(c.getInOutCreatedBy());
+        e.setInOutCreatedAt(c.getInOutCreatedAt());
+        e.setInOutUpdatedBy(c.getInOutUpdatedBy());
+        e.setInOutUpdatedAt(c.getInOutUpdatedAt());
+        e.setInOutActive(c.getInOutActive());
+        e.setInOutDeleted(c.getInOutDeleted());
+        ((AbstractInOutLineMvoStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        Long inOutVersion = c.getInOutVersion();
+        return e;
+    }
+
+    protected InOutLineMvoStateEvent.InOutLineMvoStateMergePatched map(InOutLineMvoCommand.MergePatchInOutLineMvo c)
+    {
+        InOutLineMvoStateEventId stateEventId = new InOutLineMvoStateEventId(c.getInOutLineId(), c.getInOutVersion());
+        InOutLineMvoStateEvent.InOutLineMvoStateMergePatched e = newInOutLineMvoStateMergePatched(stateEventId);
+        e.setLineNumber(c.getLineNumber());
+        e.setDescription(c.getDescription());
+        e.setLocatorId(c.getLocatorId());
+        e.setProduct(c.getProduct());
+        e.setUomId(c.getUomId());
+        e.setMovementQuantity(c.getMovementQuantity());
+        e.setConfirmedQuantity(c.getConfirmedQuantity());
+        e.setScrappedQuantity(c.getScrappedQuantity());
+        e.setTargetQuantity(c.getTargetQuantity());
+        e.setPickedQuantity(c.getPickedQuantity());
+        e.setIsInvoiced(c.getIsInvoiced());
+        e.setAttributeSetInstanceId(c.getAttributeSetInstanceId());
+        e.setIsDescription(c.getIsDescription());
+        e.setProcessed(c.getProcessed());
+        e.setQuantityEntered(c.getQuantityEntered());
+        e.setRmaLineNumber(c.getRmaLineNumber());
+        e.setReversalLineNumber(c.getReversalLineNumber());
+        e.setVersion(c.getVersion());
+        e.setActive(c.getActive());
+        e.setInOutIsSOTransaction(c.getInOutIsSOTransaction());
+        newInOutLineMvoDocumentActionCommandAndExecute(c, state, e);
+        e.setInOutPosted(c.getInOutPosted());
+        e.setInOutProcessing(c.getInOutProcessing());
+        e.setInOutProcessed(c.getInOutProcessed());
+        e.setInOutDocumentType(c.getInOutDocumentType());
+        e.setInOutDescription(c.getInOutDescription());
+        e.setInOutOrderNumber(c.getInOutOrderNumber());
+        e.setInOutDateOrdered(c.getInOutDateOrdered());
+        e.setInOutIsPrinted(c.getInOutIsPrinted());
+        e.setInOutMovementType(c.getInOutMovementType());
+        e.setInOutMovementDate(c.getInOutMovementDate());
+        e.setInOutBusinessPartnerId(c.getInOutBusinessPartnerId());
+        e.setInOutWarehouseId(c.getInOutWarehouseId());
+        e.setInOutPOReference(c.getInOutPOReference());
+        e.setInOutFreightAmount(c.getInOutFreightAmount());
+        e.setInOutShipperId(c.getInOutShipperId());
+        e.setInOutChargeAmount(c.getInOutChargeAmount());
+        e.setInOutDatePrinted(c.getInOutDatePrinted());
+        e.setInOutSalesRepresentative(c.getInOutSalesRepresentative());
+        e.setInOutNumberOfPackages(c.getInOutNumberOfPackages());
+        e.setInOutPickDate(c.getInOutPickDate());
+        e.setInOutShipDate(c.getInOutShipDate());
+        e.setInOutTrackingNumber(c.getInOutTrackingNumber());
+        e.setInOutDateReceived(c.getInOutDateReceived());
+        e.setInOutIsInTransit(c.getInOutIsInTransit());
+        e.setInOutIsApproved(c.getInOutIsApproved());
+        e.setInOutIsInDispute(c.getInOutIsInDispute());
+        e.setInOutVolume(c.getInOutVolume());
+        e.setInOutWeight(c.getInOutWeight());
+        e.setInOutRmaNumber(c.getInOutRmaNumber());
+        e.setInOutReversalNumber(c.getInOutReversalNumber());
+        e.setInOutIsDropShip(c.getInOutIsDropShip());
+        e.setInOutDropShipBusinessPartnerId(c.getInOutDropShipBusinessPartnerId());
+        e.setInOutCreatedBy(c.getInOutCreatedBy());
+        e.setInOutCreatedAt(c.getInOutCreatedAt());
+        e.setInOutUpdatedBy(c.getInOutUpdatedBy());
+        e.setInOutUpdatedAt(c.getInOutUpdatedAt());
+        e.setInOutActive(c.getInOutActive());
+        e.setInOutDeleted(c.getInOutDeleted());
+        e.setIsPropertyLineNumberRemoved(c.getIsPropertyLineNumberRemoved());
+        e.setIsPropertyDescriptionRemoved(c.getIsPropertyDescriptionRemoved());
+        e.setIsPropertyLocatorIdRemoved(c.getIsPropertyLocatorIdRemoved());
+        e.setIsPropertyProductRemoved(c.getIsPropertyProductRemoved());
+        e.setIsPropertyUomIdRemoved(c.getIsPropertyUomIdRemoved());
+        e.setIsPropertyMovementQuantityRemoved(c.getIsPropertyMovementQuantityRemoved());
+        e.setIsPropertyConfirmedQuantityRemoved(c.getIsPropertyConfirmedQuantityRemoved());
+        e.setIsPropertyScrappedQuantityRemoved(c.getIsPropertyScrappedQuantityRemoved());
+        e.setIsPropertyTargetQuantityRemoved(c.getIsPropertyTargetQuantityRemoved());
+        e.setIsPropertyPickedQuantityRemoved(c.getIsPropertyPickedQuantityRemoved());
+        e.setIsPropertyIsInvoicedRemoved(c.getIsPropertyIsInvoicedRemoved());
+        e.setIsPropertyAttributeSetInstanceIdRemoved(c.getIsPropertyAttributeSetInstanceIdRemoved());
+        e.setIsPropertyIsDescriptionRemoved(c.getIsPropertyIsDescriptionRemoved());
+        e.setIsPropertyProcessedRemoved(c.getIsPropertyProcessedRemoved());
+        e.setIsPropertyQuantityEnteredRemoved(c.getIsPropertyQuantityEnteredRemoved());
+        e.setIsPropertyRmaLineNumberRemoved(c.getIsPropertyRmaLineNumberRemoved());
+        e.setIsPropertyReversalLineNumberRemoved(c.getIsPropertyReversalLineNumberRemoved());
+        e.setIsPropertyVersionRemoved(c.getIsPropertyVersionRemoved());
+        e.setIsPropertyActiveRemoved(c.getIsPropertyActiveRemoved());
+        e.setIsPropertyInOutIsSOTransactionRemoved(c.getIsPropertyInOutIsSOTransactionRemoved());
+        e.setIsPropertyInOutPostedRemoved(c.getIsPropertyInOutPostedRemoved());
+        e.setIsPropertyInOutProcessingRemoved(c.getIsPropertyInOutProcessingRemoved());
+        e.setIsPropertyInOutProcessedRemoved(c.getIsPropertyInOutProcessedRemoved());
+        e.setIsPropertyInOutDocumentTypeRemoved(c.getIsPropertyInOutDocumentTypeRemoved());
+        e.setIsPropertyInOutDescriptionRemoved(c.getIsPropertyInOutDescriptionRemoved());
+        e.setIsPropertyInOutOrderNumberRemoved(c.getIsPropertyInOutOrderNumberRemoved());
+        e.setIsPropertyInOutDateOrderedRemoved(c.getIsPropertyInOutDateOrderedRemoved());
+        e.setIsPropertyInOutIsPrintedRemoved(c.getIsPropertyInOutIsPrintedRemoved());
+        e.setIsPropertyInOutMovementTypeRemoved(c.getIsPropertyInOutMovementTypeRemoved());
+        e.setIsPropertyInOutMovementDateRemoved(c.getIsPropertyInOutMovementDateRemoved());
+        e.setIsPropertyInOutBusinessPartnerIdRemoved(c.getIsPropertyInOutBusinessPartnerIdRemoved());
+        e.setIsPropertyInOutWarehouseIdRemoved(c.getIsPropertyInOutWarehouseIdRemoved());
+        e.setIsPropertyInOutPOReferenceRemoved(c.getIsPropertyInOutPOReferenceRemoved());
+        e.setIsPropertyInOutFreightAmountRemoved(c.getIsPropertyInOutFreightAmountRemoved());
+        e.setIsPropertyInOutShipperIdRemoved(c.getIsPropertyInOutShipperIdRemoved());
+        e.setIsPropertyInOutChargeAmountRemoved(c.getIsPropertyInOutChargeAmountRemoved());
+        e.setIsPropertyInOutDatePrintedRemoved(c.getIsPropertyInOutDatePrintedRemoved());
+        e.setIsPropertyInOutSalesRepresentativeRemoved(c.getIsPropertyInOutSalesRepresentativeRemoved());
+        e.setIsPropertyInOutNumberOfPackagesRemoved(c.getIsPropertyInOutNumberOfPackagesRemoved());
+        e.setIsPropertyInOutPickDateRemoved(c.getIsPropertyInOutPickDateRemoved());
+        e.setIsPropertyInOutShipDateRemoved(c.getIsPropertyInOutShipDateRemoved());
+        e.setIsPropertyInOutTrackingNumberRemoved(c.getIsPropertyInOutTrackingNumberRemoved());
+        e.setIsPropertyInOutDateReceivedRemoved(c.getIsPropertyInOutDateReceivedRemoved());
+        e.setIsPropertyInOutIsInTransitRemoved(c.getIsPropertyInOutIsInTransitRemoved());
+        e.setIsPropertyInOutIsApprovedRemoved(c.getIsPropertyInOutIsApprovedRemoved());
+        e.setIsPropertyInOutIsInDisputeRemoved(c.getIsPropertyInOutIsInDisputeRemoved());
+        e.setIsPropertyInOutVolumeRemoved(c.getIsPropertyInOutVolumeRemoved());
+        e.setIsPropertyInOutWeightRemoved(c.getIsPropertyInOutWeightRemoved());
+        e.setIsPropertyInOutRmaNumberRemoved(c.getIsPropertyInOutRmaNumberRemoved());
+        e.setIsPropertyInOutReversalNumberRemoved(c.getIsPropertyInOutReversalNumberRemoved());
+        e.setIsPropertyInOutIsDropShipRemoved(c.getIsPropertyInOutIsDropShipRemoved());
+        e.setIsPropertyInOutDropShipBusinessPartnerIdRemoved(c.getIsPropertyInOutDropShipBusinessPartnerIdRemoved());
+        e.setIsPropertyInOutCreatedByRemoved(c.getIsPropertyInOutCreatedByRemoved());
+        e.setIsPropertyInOutCreatedAtRemoved(c.getIsPropertyInOutCreatedAtRemoved());
+        e.setIsPropertyInOutUpdatedByRemoved(c.getIsPropertyInOutUpdatedByRemoved());
+        e.setIsPropertyInOutUpdatedAtRemoved(c.getIsPropertyInOutUpdatedAtRemoved());
+        e.setIsPropertyInOutActiveRemoved(c.getIsPropertyInOutActiveRemoved());
+        e.setIsPropertyInOutDeletedRemoved(c.getIsPropertyInOutDeletedRemoved());
+        ((AbstractInOutLineMvoStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        Long inOutVersion = c.getInOutVersion();
+        return e;
+    }
+
+    protected InOutLineMvoStateEvent.InOutLineMvoStateDeleted map(InOutLineMvoCommand.DeleteInOutLineMvo c)
+    {
+        InOutLineMvoStateEventId stateEventId = new InOutLineMvoStateEventId(c.getInOutLineId(), c.getInOutVersion());
+        InOutLineMvoStateEvent.InOutLineMvoStateDeleted e = newInOutLineMvoStateDeleted(stateEventId);
+        ((AbstractInOutLineMvoStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        return e;
     }
 
     protected void newInOutLineMvoDocumentActionCommandAndExecute(InOutLineMvoCommand.MergePatchInOutLineMvo c, InOutLineMvoState s, InOutLineMvoStateEvent.InOutLineMvoStateMergePatched e)
@@ -131,6 +355,13 @@ public abstract class AbstractInOutLineMvoAggregate extends AbstractAggregate im
         return new AbstractInOutLineMvoStateEvent.SimpleInOutLineMvoStateDeleted(stateEventId);
     }
 
+
+    public static class SimpleInOutLineMvoAggregate extends AbstractInOutLineMvoAggregate
+    {
+        public SimpleInOutLineMvoAggregate(InOutLineMvoState state) {
+            super(state);
+        }
+    }
 
 }
 

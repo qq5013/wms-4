@@ -16,15 +16,31 @@ public abstract class AbstractUserRoleMvoAggregate extends AbstractAggregate imp
         this.state = state;
     }
 
-    public abstract UserRoleMvoState getState();
+    public UserRoleMvoState getState() {
+        return this.state;
+    }
 
-    public abstract List<Event> getChanges();
+    public List<Event> getChanges() {
+        return this.changes;
+    }
 
-    public abstract void create(UserRoleMvoCommand.CreateUserRoleMvo c);
+    public void create(UserRoleMvoCommand.CreateUserRoleMvo c)
+    {
+        UserRoleMvoStateEvent.UserRoleMvoStateCreated e = map(c);
+        apply(e);
+    }
 
-    public abstract void mergePatch(UserRoleMvoCommand.MergePatchUserRoleMvo c);
+    public void mergePatch(UserRoleMvoCommand.MergePatchUserRoleMvo c)
+    {
+        UserRoleMvoStateEvent.UserRoleMvoStateMergePatched e = map(c);
+        apply(e);
+    }
 
-    public abstract void delete(UserRoleMvoCommand.DeleteUserRoleMvo c);
+    public void delete(UserRoleMvoCommand.DeleteUserRoleMvo c)
+    {
+        UserRoleMvoStateEvent.UserRoleMvoStateDeleted e = map(c);
+        apply(e);
+    }
 
     public void throwOnInvalidStateTransition(Command c)
     {
@@ -49,6 +65,95 @@ public abstract class AbstractUserRoleMvoAggregate extends AbstractAggregate imp
         onApplying(e);
         this.state.mutate(e);
         this.changes.add(e);
+    }
+
+    protected UserRoleMvoStateEvent.UserRoleMvoStateCreated map(UserRoleMvoCommand.CreateUserRoleMvo c)
+    {
+        UserRoleMvoStateEventId stateEventId = new UserRoleMvoStateEventId(c.getUserRoleId(), c.getUserVersion());
+        UserRoleMvoStateEvent.UserRoleMvoStateCreated e = newUserRoleMvoStateCreated(stateEventId);
+        e.setVersion(c.getVersion());
+        e.setActive(c.getActive());
+        e.setUserUserName(c.getUserUserName());
+        e.setUserAccessFailedCount(c.getUserAccessFailedCount());
+        e.setUserEmail(c.getUserEmail());
+        e.setUserEmailConfirmed(c.getUserEmailConfirmed());
+        e.setUserLockoutEnabled(c.getUserLockoutEnabled());
+        e.setUserLockoutEndDateUtc(c.getUserLockoutEndDateUtc());
+        e.setUserPasswordHash(c.getUserPasswordHash());
+        e.setUserPhoneNumber(c.getUserPhoneNumber());
+        e.setUserPhoneNumberConfirmed(c.getUserPhoneNumberConfirmed());
+        e.setUserTwoFactorEnabled(c.getUserTwoFactorEnabled());
+        e.setUserSecurityStamp(c.getUserSecurityStamp());
+        e.setUserCreatedBy(c.getUserCreatedBy());
+        e.setUserCreatedAt(c.getUserCreatedAt());
+        e.setUserUpdatedBy(c.getUserUpdatedBy());
+        e.setUserUpdatedAt(c.getUserUpdatedAt());
+        e.setUserActive(c.getUserActive());
+        e.setUserDeleted(c.getUserDeleted());
+        ((AbstractUserRoleMvoStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        Long userVersion = c.getUserVersion();
+        return e;
+    }
+
+    protected UserRoleMvoStateEvent.UserRoleMvoStateMergePatched map(UserRoleMvoCommand.MergePatchUserRoleMvo c)
+    {
+        UserRoleMvoStateEventId stateEventId = new UserRoleMvoStateEventId(c.getUserRoleId(), c.getUserVersion());
+        UserRoleMvoStateEvent.UserRoleMvoStateMergePatched e = newUserRoleMvoStateMergePatched(stateEventId);
+        e.setVersion(c.getVersion());
+        e.setActive(c.getActive());
+        e.setUserUserName(c.getUserUserName());
+        e.setUserAccessFailedCount(c.getUserAccessFailedCount());
+        e.setUserEmail(c.getUserEmail());
+        e.setUserEmailConfirmed(c.getUserEmailConfirmed());
+        e.setUserLockoutEnabled(c.getUserLockoutEnabled());
+        e.setUserLockoutEndDateUtc(c.getUserLockoutEndDateUtc());
+        e.setUserPasswordHash(c.getUserPasswordHash());
+        e.setUserPhoneNumber(c.getUserPhoneNumber());
+        e.setUserPhoneNumberConfirmed(c.getUserPhoneNumberConfirmed());
+        e.setUserTwoFactorEnabled(c.getUserTwoFactorEnabled());
+        e.setUserSecurityStamp(c.getUserSecurityStamp());
+        e.setUserCreatedBy(c.getUserCreatedBy());
+        e.setUserCreatedAt(c.getUserCreatedAt());
+        e.setUserUpdatedBy(c.getUserUpdatedBy());
+        e.setUserUpdatedAt(c.getUserUpdatedAt());
+        e.setUserActive(c.getUserActive());
+        e.setUserDeleted(c.getUserDeleted());
+        e.setIsPropertyVersionRemoved(c.getIsPropertyVersionRemoved());
+        e.setIsPropertyActiveRemoved(c.getIsPropertyActiveRemoved());
+        e.setIsPropertyUserUserNameRemoved(c.getIsPropertyUserUserNameRemoved());
+        e.setIsPropertyUserAccessFailedCountRemoved(c.getIsPropertyUserAccessFailedCountRemoved());
+        e.setIsPropertyUserEmailRemoved(c.getIsPropertyUserEmailRemoved());
+        e.setIsPropertyUserEmailConfirmedRemoved(c.getIsPropertyUserEmailConfirmedRemoved());
+        e.setIsPropertyUserLockoutEnabledRemoved(c.getIsPropertyUserLockoutEnabledRemoved());
+        e.setIsPropertyUserLockoutEndDateUtcRemoved(c.getIsPropertyUserLockoutEndDateUtcRemoved());
+        e.setIsPropertyUserPasswordHashRemoved(c.getIsPropertyUserPasswordHashRemoved());
+        e.setIsPropertyUserPhoneNumberRemoved(c.getIsPropertyUserPhoneNumberRemoved());
+        e.setIsPropertyUserPhoneNumberConfirmedRemoved(c.getIsPropertyUserPhoneNumberConfirmedRemoved());
+        e.setIsPropertyUserTwoFactorEnabledRemoved(c.getIsPropertyUserTwoFactorEnabledRemoved());
+        e.setIsPropertyUserSecurityStampRemoved(c.getIsPropertyUserSecurityStampRemoved());
+        e.setIsPropertyUserCreatedByRemoved(c.getIsPropertyUserCreatedByRemoved());
+        e.setIsPropertyUserCreatedAtRemoved(c.getIsPropertyUserCreatedAtRemoved());
+        e.setIsPropertyUserUpdatedByRemoved(c.getIsPropertyUserUpdatedByRemoved());
+        e.setIsPropertyUserUpdatedAtRemoved(c.getIsPropertyUserUpdatedAtRemoved());
+        e.setIsPropertyUserActiveRemoved(c.getIsPropertyUserActiveRemoved());
+        e.setIsPropertyUserDeletedRemoved(c.getIsPropertyUserDeletedRemoved());
+        ((AbstractUserRoleMvoStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        Long userVersion = c.getUserVersion();
+        return e;
+    }
+
+    protected UserRoleMvoStateEvent.UserRoleMvoStateDeleted map(UserRoleMvoCommand.DeleteUserRoleMvo c)
+    {
+        UserRoleMvoStateEventId stateEventId = new UserRoleMvoStateEventId(c.getUserRoleId(), c.getUserVersion());
+        UserRoleMvoStateEvent.UserRoleMvoStateDeleted e = newUserRoleMvoStateDeleted(stateEventId);
+        ((AbstractUserRoleMvoStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        return e;
     }
 
 
@@ -100,6 +205,13 @@ public abstract class AbstractUserRoleMvoAggregate extends AbstractAggregate imp
         return new AbstractUserRoleMvoStateEvent.SimpleUserRoleMvoStateDeleted(stateEventId);
     }
 
+
+    public static class SimpleUserRoleMvoAggregate extends AbstractUserRoleMvoAggregate
+    {
+        public SimpleUserRoleMvoAggregate(UserRoleMvoState state) {
+            super(state);
+        }
+    }
 
 }
 

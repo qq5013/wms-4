@@ -16,15 +16,31 @@ public abstract class AbstractRoleAggregate extends AbstractAggregate implements
         this.state = state;
     }
 
-    public abstract RoleState getState();
+    public RoleState getState() {
+        return this.state;
+    }
 
-    public abstract List<Event> getChanges();
+    public List<Event> getChanges() {
+        return this.changes;
+    }
 
-    public abstract void create(RoleCommand.CreateRole c);
+    public void create(RoleCommand.CreateRole c)
+    {
+        RoleStateEvent.RoleStateCreated e = map(c);
+        apply(e);
+    }
 
-    public abstract void mergePatch(RoleCommand.MergePatchRole c);
+    public void mergePatch(RoleCommand.MergePatchRole c)
+    {
+        RoleStateEvent.RoleStateMergePatched e = map(c);
+        apply(e);
+    }
 
-    public abstract void delete(RoleCommand.DeleteRole c);
+    public void delete(RoleCommand.DeleteRole c)
+    {
+        RoleStateEvent.RoleStateDeleted e = map(c);
+        apply(e);
+    }
 
     public void throwOnInvalidStateTransition(Command c)
     {
@@ -49,6 +65,47 @@ public abstract class AbstractRoleAggregate extends AbstractAggregate implements
         onApplying(e);
         this.state.mutate(e);
         this.changes.add(e);
+    }
+
+    protected RoleStateEvent.RoleStateCreated map(RoleCommand.CreateRole c)
+    {
+        RoleStateEventId stateEventId = new RoleStateEventId(c.getRoleId(), c.getVersion());
+        RoleStateEvent.RoleStateCreated e = newRoleStateCreated(stateEventId);
+        e.setName(c.getName());
+        e.setDescription(c.getDescription());
+        e.setActive(c.getActive());
+        ((AbstractRoleStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        Long version = c.getVersion();
+        return e;
+    }
+
+    protected RoleStateEvent.RoleStateMergePatched map(RoleCommand.MergePatchRole c)
+    {
+        RoleStateEventId stateEventId = new RoleStateEventId(c.getRoleId(), c.getVersion());
+        RoleStateEvent.RoleStateMergePatched e = newRoleStateMergePatched(stateEventId);
+        e.setName(c.getName());
+        e.setDescription(c.getDescription());
+        e.setActive(c.getActive());
+        e.setIsPropertyNameRemoved(c.getIsPropertyNameRemoved());
+        e.setIsPropertyDescriptionRemoved(c.getIsPropertyDescriptionRemoved());
+        e.setIsPropertyActiveRemoved(c.getIsPropertyActiveRemoved());
+        ((AbstractRoleStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        Long version = c.getVersion();
+        return e;
+    }
+
+    protected RoleStateEvent.RoleStateDeleted map(RoleCommand.DeleteRole c)
+    {
+        RoleStateEventId stateEventId = new RoleStateEventId(c.getRoleId(), c.getVersion());
+        RoleStateEvent.RoleStateDeleted e = newRoleStateDeleted(stateEventId);
+        ((AbstractRoleStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        return e;
     }
 
 
@@ -100,6 +157,13 @@ public abstract class AbstractRoleAggregate extends AbstractAggregate implements
         return new AbstractRoleStateEvent.SimpleRoleStateDeleted(stateEventId);
     }
 
+
+    public static class SimpleRoleAggregate extends AbstractRoleAggregate
+    {
+        public SimpleRoleAggregate(RoleState state) {
+            super(state);
+        }
+    }
 
 }
 

@@ -223,7 +223,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $_F_DT_0_;
 
@@ -496,7 +496,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $_F_DT_1_;
 
@@ -769,7 +769,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $_F_DT_2_;
 
@@ -1042,7 +1042,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $_F_DT_3_;
 
@@ -1315,7 +1315,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $_F_DT_4_;
 
@@ -1588,7 +1588,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $_F_DT_5_;
 
@@ -1840,7 +1840,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $_F_DT_6_;
 
@@ -2092,7 +2092,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $_F_DT_7_;
 
@@ -2344,7 +2344,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $_F_DT_8_;
 
@@ -2596,7 +2596,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $_F_DT_9_;
 
@@ -2848,7 +2848,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $_F_DT_10_;
 
@@ -3079,7 +3079,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $_F_DT_11_;
 
@@ -3310,7 +3310,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $_F_DT_12_;
 
@@ -3541,7 +3541,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $_F_DT_13_;
 
@@ -3772,7 +3772,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $_F_DT_14_;
 
@@ -4003,7 +4003,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $_F_DT_15_;
 
@@ -4234,7 +4234,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $_F_DT_16_;
 
@@ -4465,7 +4465,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $_F_DT_17_;
 
@@ -4696,7 +4696,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $_F_DT_18_;
 
@@ -4927,7 +4927,7 @@ class CreateOrMergePatchAttributeSetInstance extends AbstractAttributeSetInstanc
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $_F_DT_19_;
 

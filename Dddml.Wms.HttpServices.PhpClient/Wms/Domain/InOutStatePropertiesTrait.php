@@ -202,7 +202,7 @@ trait InOutStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $dateOrdered;
 
@@ -265,7 +265,7 @@ trait InOutStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $movementDate;
 
@@ -412,7 +412,7 @@ trait InOutStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $datePrinted;
 
@@ -475,7 +475,7 @@ trait InOutStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $pickDate;
 
@@ -496,7 +496,7 @@ trait InOutStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $shipDate;
 
@@ -538,7 +538,7 @@ trait InOutStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $dateReceived;
 
@@ -811,7 +811,7 @@ trait InOutStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $createdAt;
 
@@ -853,7 +853,7 @@ trait InOutStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $updatedAt;
 

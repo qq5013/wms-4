@@ -285,7 +285,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo extends AbstractAt
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $attrSetInstEFGroupCreatedAt;
 
@@ -327,7 +327,7 @@ class CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo extends AbstractAt
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $attrSetInstEFGroupUpdatedAt;
 

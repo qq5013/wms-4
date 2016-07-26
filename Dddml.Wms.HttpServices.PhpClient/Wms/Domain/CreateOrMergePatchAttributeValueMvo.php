@@ -348,7 +348,7 @@ class CreateOrMergePatchAttributeValueMvo extends AbstractAttributeValueMvoComma
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $attributeCreatedAt;
 
@@ -390,7 +390,7 @@ class CreateOrMergePatchAttributeValueMvo extends AbstractAttributeValueMvoComma
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $attributeUpdatedAt;
 

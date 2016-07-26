@@ -16,15 +16,31 @@ public abstract class AbstractOrganizationStructureAggregate extends AbstractAgg
         this.state = state;
     }
 
-    public abstract OrganizationStructureState getState();
+    public OrganizationStructureState getState() {
+        return this.state;
+    }
 
-    public abstract List<Event> getChanges();
+    public List<Event> getChanges() {
+        return this.changes;
+    }
 
-    public abstract void create(OrganizationStructureCommand.CreateOrganizationStructure c);
+    public void create(OrganizationStructureCommand.CreateOrganizationStructure c)
+    {
+        OrganizationStructureStateEvent.OrganizationStructureStateCreated e = map(c);
+        apply(e);
+    }
 
-    public abstract void mergePatch(OrganizationStructureCommand.MergePatchOrganizationStructure c);
+    public void mergePatch(OrganizationStructureCommand.MergePatchOrganizationStructure c)
+    {
+        OrganizationStructureStateEvent.OrganizationStructureStateMergePatched e = map(c);
+        apply(e);
+    }
 
-    public abstract void delete(OrganizationStructureCommand.DeleteOrganizationStructure c);
+    public void delete(OrganizationStructureCommand.DeleteOrganizationStructure c)
+    {
+        OrganizationStructureStateEvent.OrganizationStructureStateDeleted e = map(c);
+        apply(e);
+    }
 
     public void throwOnInvalidStateTransition(Command c)
     {
@@ -49,6 +65,41 @@ public abstract class AbstractOrganizationStructureAggregate extends AbstractAgg
         onApplying(e);
         this.state.mutate(e);
         this.changes.add(e);
+    }
+
+    protected OrganizationStructureStateEvent.OrganizationStructureStateCreated map(OrganizationStructureCommand.CreateOrganizationStructure c)
+    {
+        OrganizationStructureStateEventId stateEventId = new OrganizationStructureStateEventId(c.getId(), c.getVersion());
+        OrganizationStructureStateEvent.OrganizationStructureStateCreated e = newOrganizationStructureStateCreated(stateEventId);
+        e.setActive(c.getActive());
+        ((AbstractOrganizationStructureStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        Long version = c.getVersion();
+        return e;
+    }
+
+    protected OrganizationStructureStateEvent.OrganizationStructureStateMergePatched map(OrganizationStructureCommand.MergePatchOrganizationStructure c)
+    {
+        OrganizationStructureStateEventId stateEventId = new OrganizationStructureStateEventId(c.getId(), c.getVersion());
+        OrganizationStructureStateEvent.OrganizationStructureStateMergePatched e = newOrganizationStructureStateMergePatched(stateEventId);
+        e.setActive(c.getActive());
+        e.setIsPropertyActiveRemoved(c.getIsPropertyActiveRemoved());
+        ((AbstractOrganizationStructureStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        Long version = c.getVersion();
+        return e;
+    }
+
+    protected OrganizationStructureStateEvent.OrganizationStructureStateDeleted map(OrganizationStructureCommand.DeleteOrganizationStructure c)
+    {
+        OrganizationStructureStateEventId stateEventId = new OrganizationStructureStateEventId(c.getId(), c.getVersion());
+        OrganizationStructureStateEvent.OrganizationStructureStateDeleted e = newOrganizationStructureStateDeleted(stateEventId);
+        ((AbstractOrganizationStructureStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        return e;
     }
 
 
@@ -100,6 +151,13 @@ public abstract class AbstractOrganizationStructureAggregate extends AbstractAgg
         return new AbstractOrganizationStructureStateEvent.SimpleOrganizationStructureStateDeleted(stateEventId);
     }
 
+
+    public static class SimpleOrganizationStructureAggregate extends AbstractOrganizationStructureAggregate
+    {
+        public SimpleOrganizationStructureAggregate(OrganizationStructureState state) {
+            super(state);
+        }
+    }
 
 }
 

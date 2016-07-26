@@ -16,15 +16,31 @@ public abstract class AbstractAudienceAggregate extends AbstractAggregate implem
         this.state = state;
     }
 
-    public abstract AudienceState getState();
+    public AudienceState getState() {
+        return this.state;
+    }
 
-    public abstract List<Event> getChanges();
+    public List<Event> getChanges() {
+        return this.changes;
+    }
 
-    public abstract void create(AudienceCommand.CreateAudience c);
+    public void create(AudienceCommand.CreateAudience c)
+    {
+        AudienceStateEvent.AudienceStateCreated e = map(c);
+        apply(e);
+    }
 
-    public abstract void mergePatch(AudienceCommand.MergePatchAudience c);
+    public void mergePatch(AudienceCommand.MergePatchAudience c)
+    {
+        AudienceStateEvent.AudienceStateMergePatched e = map(c);
+        apply(e);
+    }
 
-    public abstract void delete(AudienceCommand.DeleteAudience c);
+    public void delete(AudienceCommand.DeleteAudience c)
+    {
+        AudienceStateEvent.AudienceStateDeleted e = map(c);
+        apply(e);
+    }
 
     public void throwOnInvalidStateTransition(Command c)
     {
@@ -49,6 +65,47 @@ public abstract class AbstractAudienceAggregate extends AbstractAggregate implem
         onApplying(e);
         this.state.mutate(e);
         this.changes.add(e);
+    }
+
+    protected AudienceStateEvent.AudienceStateCreated map(AudienceCommand.CreateAudience c)
+    {
+        AudienceStateEventId stateEventId = new AudienceStateEventId(c.getClientId(), c.getVersion());
+        AudienceStateEvent.AudienceStateCreated e = newAudienceStateCreated(stateEventId);
+        e.setName(c.getName());
+        e.setBase64Secret(c.getBase64Secret());
+        e.setActive(c.getActive());
+        ((AbstractAudienceStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        Long version = c.getVersion();
+        return e;
+    }
+
+    protected AudienceStateEvent.AudienceStateMergePatched map(AudienceCommand.MergePatchAudience c)
+    {
+        AudienceStateEventId stateEventId = new AudienceStateEventId(c.getClientId(), c.getVersion());
+        AudienceStateEvent.AudienceStateMergePatched e = newAudienceStateMergePatched(stateEventId);
+        e.setName(c.getName());
+        e.setBase64Secret(c.getBase64Secret());
+        e.setActive(c.getActive());
+        e.setIsPropertyNameRemoved(c.getIsPropertyNameRemoved());
+        e.setIsPropertyBase64SecretRemoved(c.getIsPropertyBase64SecretRemoved());
+        e.setIsPropertyActiveRemoved(c.getIsPropertyActiveRemoved());
+        ((AbstractAudienceStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        Long version = c.getVersion();
+        return e;
+    }
+
+    protected AudienceStateEvent.AudienceStateDeleted map(AudienceCommand.DeleteAudience c)
+    {
+        AudienceStateEventId stateEventId = new AudienceStateEventId(c.getClientId(), c.getVersion());
+        AudienceStateEvent.AudienceStateDeleted e = newAudienceStateDeleted(stateEventId);
+        ((AbstractAudienceStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        return e;
     }
 
 
@@ -100,6 +157,13 @@ public abstract class AbstractAudienceAggregate extends AbstractAggregate implem
         return new AbstractAudienceStateEvent.SimpleAudienceStateDeleted(stateEventId);
     }
 
+
+    public static class SimpleAudienceAggregate extends AbstractAudienceAggregate
+    {
+        public SimpleAudienceAggregate(AudienceState state) {
+            super(state);
+        }
+    }
 
 }
 

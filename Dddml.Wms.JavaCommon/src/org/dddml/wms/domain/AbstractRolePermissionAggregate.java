@@ -16,15 +16,31 @@ public abstract class AbstractRolePermissionAggregate extends AbstractAggregate 
         this.state = state;
     }
 
-    public abstract RolePermissionState getState();
+    public RolePermissionState getState() {
+        return this.state;
+    }
 
-    public abstract List<Event> getChanges();
+    public List<Event> getChanges() {
+        return this.changes;
+    }
 
-    public abstract void create(RolePermissionCommand.CreateRolePermission c);
+    public void create(RolePermissionCommand.CreateRolePermission c)
+    {
+        RolePermissionStateEvent.RolePermissionStateCreated e = map(c);
+        apply(e);
+    }
 
-    public abstract void mergePatch(RolePermissionCommand.MergePatchRolePermission c);
+    public void mergePatch(RolePermissionCommand.MergePatchRolePermission c)
+    {
+        RolePermissionStateEvent.RolePermissionStateMergePatched e = map(c);
+        apply(e);
+    }
 
-    public abstract void delete(RolePermissionCommand.DeleteRolePermission c);
+    public void delete(RolePermissionCommand.DeleteRolePermission c)
+    {
+        RolePermissionStateEvent.RolePermissionStateDeleted e = map(c);
+        apply(e);
+    }
 
     public void throwOnInvalidStateTransition(Command c)
     {
@@ -49,6 +65,41 @@ public abstract class AbstractRolePermissionAggregate extends AbstractAggregate 
         onApplying(e);
         this.state.mutate(e);
         this.changes.add(e);
+    }
+
+    protected RolePermissionStateEvent.RolePermissionStateCreated map(RolePermissionCommand.CreateRolePermission c)
+    {
+        RolePermissionStateEventId stateEventId = new RolePermissionStateEventId(c.getId(), c.getVersion());
+        RolePermissionStateEvent.RolePermissionStateCreated e = newRolePermissionStateCreated(stateEventId);
+        e.setActive(c.getActive());
+        ((AbstractRolePermissionStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        Long version = c.getVersion();
+        return e;
+    }
+
+    protected RolePermissionStateEvent.RolePermissionStateMergePatched map(RolePermissionCommand.MergePatchRolePermission c)
+    {
+        RolePermissionStateEventId stateEventId = new RolePermissionStateEventId(c.getId(), c.getVersion());
+        RolePermissionStateEvent.RolePermissionStateMergePatched e = newRolePermissionStateMergePatched(stateEventId);
+        e.setActive(c.getActive());
+        e.setIsPropertyActiveRemoved(c.getIsPropertyActiveRemoved());
+        ((AbstractRolePermissionStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        Long version = c.getVersion();
+        return e;
+    }
+
+    protected RolePermissionStateEvent.RolePermissionStateDeleted map(RolePermissionCommand.DeleteRolePermission c)
+    {
+        RolePermissionStateEventId stateEventId = new RolePermissionStateEventId(c.getId(), c.getVersion());
+        RolePermissionStateEvent.RolePermissionStateDeleted e = newRolePermissionStateDeleted(stateEventId);
+        ((AbstractRolePermissionStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        return e;
     }
 
 
@@ -100,6 +151,13 @@ public abstract class AbstractRolePermissionAggregate extends AbstractAggregate 
         return new AbstractRolePermissionStateEvent.SimpleRolePermissionStateDeleted(stateEventId);
     }
 
+
+    public static class SimpleRolePermissionAggregate extends AbstractRolePermissionAggregate
+    {
+        public SimpleRolePermissionAggregate(RolePermissionState state) {
+            super(state);
+        }
+    }
 
 }
 

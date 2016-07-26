@@ -117,7 +117,7 @@ class CreateOrMergePatchUser extends AbstractUserCommand
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $lockoutEndDateUtc;
 

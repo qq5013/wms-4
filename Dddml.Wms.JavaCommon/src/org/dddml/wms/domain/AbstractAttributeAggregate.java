@@ -16,15 +16,31 @@ public abstract class AbstractAttributeAggregate extends AbstractAggregate imple
         this.state = state;
     }
 
-    public abstract AttributeState getState();
+    public AttributeState getState() {
+        return this.state;
+    }
 
-    public abstract List<Event> getChanges();
+    public List<Event> getChanges() {
+        return this.changes;
+    }
 
-    public abstract void create(AttributeCommand.CreateAttribute c);
+    public void create(AttributeCommand.CreateAttribute c)
+    {
+        AttributeStateEvent.AttributeStateCreated e = map(c);
+        apply(e);
+    }
 
-    public abstract void mergePatch(AttributeCommand.MergePatchAttribute c);
+    public void mergePatch(AttributeCommand.MergePatchAttribute c)
+    {
+        AttributeStateEvent.AttributeStateMergePatched e = map(c);
+        apply(e);
+    }
 
-    public abstract void delete(AttributeCommand.DeleteAttribute c);
+    public void delete(AttributeCommand.DeleteAttribute c)
+    {
+        AttributeStateEvent.AttributeStateDeleted e = map(c);
+        apply(e);
+    }
 
     public void throwOnInvalidStateTransition(Command c)
     {
@@ -49,6 +65,85 @@ public abstract class AbstractAttributeAggregate extends AbstractAggregate imple
         onApplying(e);
         this.state.mutate(e);
         this.changes.add(e);
+    }
+
+    protected AttributeStateEvent.AttributeStateCreated map(AttributeCommand.CreateAttribute c)
+    {
+        AttributeStateEventId stateEventId = new AttributeStateEventId(c.getAttributeId(), c.getVersion());
+        AttributeStateEvent.AttributeStateCreated e = newAttributeStateCreated(stateEventId);
+        e.setName(c.getName());
+        e.setOrganizationId(c.getOrganizationId());
+        e.setDescription(c.getDescription());
+        e.setIsMandatory(c.getIsMandatory());
+        e.setIsInstanceAttribute(c.getIsInstanceAttribute());
+        e.setAttributeValueType(c.getAttributeValueType());
+        e.setAttributeValueLength(c.getAttributeValueLength());
+        e.setIsList(c.getIsList());
+        e.setFieldName(c.getFieldName());
+        e.setReferenceId(c.getReferenceId());
+        e.setActive(c.getActive());
+        ((AbstractAttributeStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        Long version = c.getVersion();
+        for (AttributeValueCommand.CreateAttributeValue innerCommand : c.getAttributeValues())
+        {
+            throwOnInconsistentCommands(c, innerCommand);
+            AttributeValueStateEvent.AttributeValueStateCreated innerEvent = mapCreate(innerCommand, c, version, this.state);
+            e.addAttributeValueEvent(innerEvent);
+        }
+
+        return e;
+    }
+
+    protected AttributeStateEvent.AttributeStateMergePatched map(AttributeCommand.MergePatchAttribute c)
+    {
+        AttributeStateEventId stateEventId = new AttributeStateEventId(c.getAttributeId(), c.getVersion());
+        AttributeStateEvent.AttributeStateMergePatched e = newAttributeStateMergePatched(stateEventId);
+        e.setName(c.getName());
+        e.setOrganizationId(c.getOrganizationId());
+        e.setDescription(c.getDescription());
+        e.setIsMandatory(c.getIsMandatory());
+        e.setIsInstanceAttribute(c.getIsInstanceAttribute());
+        e.setAttributeValueType(c.getAttributeValueType());
+        e.setAttributeValueLength(c.getAttributeValueLength());
+        e.setIsList(c.getIsList());
+        e.setFieldName(c.getFieldName());
+        e.setReferenceId(c.getReferenceId());
+        e.setActive(c.getActive());
+        e.setIsPropertyNameRemoved(c.getIsPropertyNameRemoved());
+        e.setIsPropertyOrganizationIdRemoved(c.getIsPropertyOrganizationIdRemoved());
+        e.setIsPropertyDescriptionRemoved(c.getIsPropertyDescriptionRemoved());
+        e.setIsPropertyIsMandatoryRemoved(c.getIsPropertyIsMandatoryRemoved());
+        e.setIsPropertyIsInstanceAttributeRemoved(c.getIsPropertyIsInstanceAttributeRemoved());
+        e.setIsPropertyAttributeValueTypeRemoved(c.getIsPropertyAttributeValueTypeRemoved());
+        e.setIsPropertyAttributeValueLengthRemoved(c.getIsPropertyAttributeValueLengthRemoved());
+        e.setIsPropertyIsListRemoved(c.getIsPropertyIsListRemoved());
+        e.setIsPropertyFieldNameRemoved(c.getIsPropertyFieldNameRemoved());
+        e.setIsPropertyReferenceIdRemoved(c.getIsPropertyReferenceIdRemoved());
+        e.setIsPropertyActiveRemoved(c.getIsPropertyActiveRemoved());
+        ((AbstractAttributeStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        Long version = c.getVersion();
+        for (AttributeValueCommand innerCommand : c.getAttributeValueCommands())
+        {
+            throwOnInconsistentCommands(c, innerCommand);
+            AttributeValueStateEvent innerEvent = map(innerCommand, c, version, this.state);
+            e.addAttributeValueEvent(innerEvent);
+        }
+
+        return e;
+    }
+
+    protected AttributeStateEvent.AttributeStateDeleted map(AttributeCommand.DeleteAttribute c)
+    {
+        AttributeStateEventId stateEventId = new AttributeStateEventId(c.getAttributeId(), c.getVersion());
+        AttributeStateEvent.AttributeStateDeleted e = newAttributeStateDeleted(stateEventId);
+        ((AbstractAttributeStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        return e;
     }
 
 
@@ -204,6 +299,13 @@ public abstract class AbstractAttributeAggregate extends AbstractAggregate imple
         return new AbstractAttributeValueStateEvent.SimpleAttributeValueStateRemoved(stateEventId);
     }
 
+
+    public static class SimpleAttributeAggregate extends AbstractAttributeAggregate
+    {
+        public SimpleAttributeAggregate(AttributeState state) {
+            super(state);
+        }
+    }
 
 }
 

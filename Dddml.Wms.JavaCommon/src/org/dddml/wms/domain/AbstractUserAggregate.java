@@ -16,15 +16,31 @@ public abstract class AbstractUserAggregate extends AbstractAggregate implements
         this.state = state;
     }
 
-    public abstract UserState getState();
+    public UserState getState() {
+        return this.state;
+    }
 
-    public abstract List<Event> getChanges();
+    public List<Event> getChanges() {
+        return this.changes;
+    }
 
-    public abstract void create(UserCommand.CreateUser c);
+    public void create(UserCommand.CreateUser c)
+    {
+        UserStateEvent.UserStateCreated e = map(c);
+        apply(e);
+    }
 
-    public abstract void mergePatch(UserCommand.MergePatchUser c);
+    public void mergePatch(UserCommand.MergePatchUser c)
+    {
+        UserStateEvent.UserStateMergePatched e = map(c);
+        apply(e);
+    }
 
-    public abstract void delete(UserCommand.DeleteUser c);
+    public void delete(UserCommand.DeleteUser c)
+    {
+        UserStateEvent.UserStateDeleted e = map(c);
+        apply(e);
+    }
 
     public void throwOnInvalidStateTransition(Command c)
     {
@@ -49,6 +65,130 @@ public abstract class AbstractUserAggregate extends AbstractAggregate implements
         onApplying(e);
         this.state.mutate(e);
         this.changes.add(e);
+    }
+
+    protected UserStateEvent.UserStateCreated map(UserCommand.CreateUser c)
+    {
+        UserStateEventId stateEventId = new UserStateEventId(c.getUserId(), c.getVersion());
+        UserStateEvent.UserStateCreated e = newUserStateCreated(stateEventId);
+        e.setUserName(c.getUserName());
+        e.setAccessFailedCount(c.getAccessFailedCount());
+        e.setEmail(c.getEmail());
+        e.setEmailConfirmed(c.getEmailConfirmed());
+        e.setLockoutEnabled(c.getLockoutEnabled());
+        e.setLockoutEndDateUtc(c.getLockoutEndDateUtc());
+        e.setPasswordHash(c.getPasswordHash());
+        e.setPhoneNumber(c.getPhoneNumber());
+        e.setPhoneNumberConfirmed(c.getPhoneNumberConfirmed());
+        e.setTwoFactorEnabled(c.getTwoFactorEnabled());
+        e.setSecurityStamp(c.getSecurityStamp());
+        e.setActive(c.getActive());
+        ((AbstractUserStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        Long version = c.getVersion();
+        for (UserRoleCommand.CreateUserRole innerCommand : c.getUserRoles())
+        {
+            throwOnInconsistentCommands(c, innerCommand);
+            UserRoleStateEvent.UserRoleStateCreated innerEvent = mapCreate(innerCommand, c, version, this.state);
+            e.addUserRoleEvent(innerEvent);
+        }
+
+        for (UserClaimCommand.CreateUserClaim innerCommand : c.getUserClaims())
+        {
+            throwOnInconsistentCommands(c, innerCommand);
+            UserClaimStateEvent.UserClaimStateCreated innerEvent = mapCreate(innerCommand, c, version, this.state);
+            e.addUserClaimEvent(innerEvent);
+        }
+
+        for (UserPermissionCommand.CreateUserPermission innerCommand : c.getUserPermissions())
+        {
+            throwOnInconsistentCommands(c, innerCommand);
+            UserPermissionStateEvent.UserPermissionStateCreated innerEvent = mapCreate(innerCommand, c, version, this.state);
+            e.addUserPermissionEvent(innerEvent);
+        }
+
+        for (UserLoginCommand.CreateUserLogin innerCommand : c.getUserLogins())
+        {
+            throwOnInconsistentCommands(c, innerCommand);
+            UserLoginStateEvent.UserLoginStateCreated innerEvent = mapCreate(innerCommand, c, version, this.state);
+            e.addUserLoginEvent(innerEvent);
+        }
+
+        return e;
+    }
+
+    protected UserStateEvent.UserStateMergePatched map(UserCommand.MergePatchUser c)
+    {
+        UserStateEventId stateEventId = new UserStateEventId(c.getUserId(), c.getVersion());
+        UserStateEvent.UserStateMergePatched e = newUserStateMergePatched(stateEventId);
+        e.setUserName(c.getUserName());
+        e.setAccessFailedCount(c.getAccessFailedCount());
+        e.setEmail(c.getEmail());
+        e.setEmailConfirmed(c.getEmailConfirmed());
+        e.setLockoutEnabled(c.getLockoutEnabled());
+        e.setLockoutEndDateUtc(c.getLockoutEndDateUtc());
+        e.setPasswordHash(c.getPasswordHash());
+        e.setPhoneNumber(c.getPhoneNumber());
+        e.setPhoneNumberConfirmed(c.getPhoneNumberConfirmed());
+        e.setTwoFactorEnabled(c.getTwoFactorEnabled());
+        e.setSecurityStamp(c.getSecurityStamp());
+        e.setActive(c.getActive());
+        e.setIsPropertyUserNameRemoved(c.getIsPropertyUserNameRemoved());
+        e.setIsPropertyAccessFailedCountRemoved(c.getIsPropertyAccessFailedCountRemoved());
+        e.setIsPropertyEmailRemoved(c.getIsPropertyEmailRemoved());
+        e.setIsPropertyEmailConfirmedRemoved(c.getIsPropertyEmailConfirmedRemoved());
+        e.setIsPropertyLockoutEnabledRemoved(c.getIsPropertyLockoutEnabledRemoved());
+        e.setIsPropertyLockoutEndDateUtcRemoved(c.getIsPropertyLockoutEndDateUtcRemoved());
+        e.setIsPropertyPasswordHashRemoved(c.getIsPropertyPasswordHashRemoved());
+        e.setIsPropertyPhoneNumberRemoved(c.getIsPropertyPhoneNumberRemoved());
+        e.setIsPropertyPhoneNumberConfirmedRemoved(c.getIsPropertyPhoneNumberConfirmedRemoved());
+        e.setIsPropertyTwoFactorEnabledRemoved(c.getIsPropertyTwoFactorEnabledRemoved());
+        e.setIsPropertySecurityStampRemoved(c.getIsPropertySecurityStampRemoved());
+        e.setIsPropertyActiveRemoved(c.getIsPropertyActiveRemoved());
+        ((AbstractUserStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        Long version = c.getVersion();
+        for (UserRoleCommand innerCommand : c.getUserRoleCommands())
+        {
+            throwOnInconsistentCommands(c, innerCommand);
+            UserRoleStateEvent innerEvent = map(innerCommand, c, version, this.state);
+            e.addUserRoleEvent(innerEvent);
+        }
+
+        for (UserClaimCommand innerCommand : c.getUserClaimCommands())
+        {
+            throwOnInconsistentCommands(c, innerCommand);
+            UserClaimStateEvent innerEvent = map(innerCommand, c, version, this.state);
+            e.addUserClaimEvent(innerEvent);
+        }
+
+        for (UserPermissionCommand innerCommand : c.getUserPermissionCommands())
+        {
+            throwOnInconsistentCommands(c, innerCommand);
+            UserPermissionStateEvent innerEvent = map(innerCommand, c, version, this.state);
+            e.addUserPermissionEvent(innerEvent);
+        }
+
+        for (UserLoginCommand innerCommand : c.getUserLoginCommands())
+        {
+            throwOnInconsistentCommands(c, innerCommand);
+            UserLoginStateEvent innerEvent = map(innerCommand, c, version, this.state);
+            e.addUserLoginEvent(innerEvent);
+        }
+
+        return e;
+    }
+
+    protected UserStateEvent.UserStateDeleted map(UserCommand.DeleteUser c)
+    {
+        UserStateEventId stateEventId = new UserStateEventId(c.getUserId(), c.getVersion());
+        UserStateEvent.UserStateDeleted e = newUserStateDeleted(stateEventId);
+        ((AbstractUserStateEvent)e).setCommandId(c.getCommandId());
+        e.setCreatedBy(c.getRequesterId());
+        e.setCreatedAt(new Date());
+        return e;
     }
 
 
@@ -486,6 +626,13 @@ public abstract class AbstractUserAggregate extends AbstractAggregate implements
         return new AbstractUserLoginStateEvent.SimpleUserLoginStateRemoved(stateEventId);
     }
 
+
+    public static class SimpleUserAggregate extends AbstractUserAggregate
+    {
+        public SimpleUserAggregate(UserState state) {
+            super(state);
+        }
+    }
 
 }
 

@@ -220,7 +220,7 @@ trait AttributeSetInstanceExtensionFieldStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $createdAt;
 
@@ -262,7 +262,7 @@ trait AttributeSetInstanceExtensionFieldStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $updatedAt;
 

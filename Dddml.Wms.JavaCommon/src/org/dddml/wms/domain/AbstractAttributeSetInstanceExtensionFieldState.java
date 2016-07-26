@@ -332,7 +332,13 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldState implements
         }
 
         Long stateVersion = this.getVersion();
+        if(stateVersion == null) {
+            stateVersion = AttributeSetInstanceExtensionFieldState.VERSION_ZERO;
+        }
         Long eventVersion = stateEvent.getVersion();
+        if(eventVersion == null) {
+            eventVersion = AttributeSetInstanceExtensionFieldState.VERSION_ZERO;
+        }
         if (AttributeSetInstanceExtensionFieldState.VERSION_ZERO.equals(eventVersion))
         {
             stateEvent.setVersion(stateVersion);

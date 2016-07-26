@@ -232,7 +232,9 @@ public abstract class AbstractAttributeAggregate extends AbstractAggregate imple
         if (innerAttributeIdValue == null) {
             innerProperties.setAttributeId(outerAttributeIdValue);
         }
-        else if (innerAttributeIdValue != outerAttributeIdValue && innerAttributeIdValue != null && !innerAttributeIdValue.equals(outerAttributeIdValue)) {
+        else if (innerAttributeIdValue != outerAttributeIdValue 
+            && (innerAttributeIdValue == null || innerAttributeIdValue != null && !innerAttributeIdValue.equals(outerAttributeIdValue))) 
+        {
             throw DomainError.named("inconsistentId", "Outer %1$s %2$s NOT equals inner %3$s %4$s", outerAttributeIdName, outerAttributeIdValue, innerAttributeIdName, innerAttributeIdValue);
         }
     }// END throwOnInconsistentCommands /////////////////////

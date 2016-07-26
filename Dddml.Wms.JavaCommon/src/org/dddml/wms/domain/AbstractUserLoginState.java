@@ -212,7 +212,13 @@ public abstract class AbstractUserLoginState implements UserLoginState
         }
 
         Long stateVersion = this.getVersion();
+        if(stateVersion == null) {
+            stateVersion = UserLoginState.VERSION_ZERO;
+        }
         Long eventVersion = stateEvent.getVersion();
+        if(eventVersion == null) {
+            eventVersion = UserLoginState.VERSION_ZERO;
+        }
         if (UserLoginState.VERSION_ZERO.equals(eventVersion))
         {
             stateEvent.setVersion(stateVersion);

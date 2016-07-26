@@ -212,7 +212,13 @@ public abstract class AbstractUserRoleState implements UserRoleState
         }
 
         Long stateVersion = this.getVersion();
+        if(stateVersion == null) {
+            stateVersion = UserRoleState.VERSION_ZERO;
+        }
         Long eventVersion = stateEvent.getVersion();
+        if(eventVersion == null) {
+            eventVersion = UserRoleState.VERSION_ZERO;
+        }
         if (UserRoleState.VERSION_ZERO.equals(eventVersion))
         {
             stateEvent.setVersion(stateVersion);

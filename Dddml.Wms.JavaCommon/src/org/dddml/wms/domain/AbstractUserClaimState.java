@@ -260,7 +260,13 @@ public abstract class AbstractUserClaimState implements UserClaimState
         }
 
         Long stateVersion = this.getVersion();
+        if(stateVersion == null) {
+            stateVersion = UserClaimState.VERSION_ZERO;
+        }
         Long eventVersion = stateEvent.getVersion();
+        if(eventVersion == null) {
+            eventVersion = UserClaimState.VERSION_ZERO;
+        }
         if (UserClaimState.VERSION_ZERO.equals(eventVersion))
         {
             stateEvent.setVersion(stateVersion);

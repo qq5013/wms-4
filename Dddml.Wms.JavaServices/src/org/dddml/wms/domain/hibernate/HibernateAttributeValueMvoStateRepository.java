@@ -39,7 +39,11 @@ public class HibernateAttributeValueMvoStateRepository implements AttributeValue
     //[Transaction]
     public void save(AttributeValueMvoState state)
     {
-        getCurrentSession().saveOrUpdate(state);
+        if(state.getAttributeVersion() == null || state.getAttributeVersion().equals(AttributeValueMvoState.VERSION_ZERO)) {
+            getCurrentSession().save(state);
+        }else {
+            getCurrentSession().update(state);
+        }
 
         if (state instanceof Saveable)
         {

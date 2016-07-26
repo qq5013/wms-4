@@ -39,7 +39,11 @@ public class HibernateAttributeStateRepository implements AttributeStateReposito
     //[Transaction]
     public void save(AttributeState state)
     {
-        getCurrentSession().saveOrUpdate(state);
+        if(state.getVersion() == null || state.getVersion().equals(AttributeState.VERSION_ZERO)) {
+            getCurrentSession().save(state);
+        }else {
+            getCurrentSession().update(state);
+        }
 
         if (state instanceof Saveable)
         {

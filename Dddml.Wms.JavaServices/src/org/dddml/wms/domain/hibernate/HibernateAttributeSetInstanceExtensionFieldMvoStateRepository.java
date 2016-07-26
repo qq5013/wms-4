@@ -39,7 +39,11 @@ public class HibernateAttributeSetInstanceExtensionFieldMvoStateRepository imple
     //[Transaction]
     public void save(AttributeSetInstanceExtensionFieldMvoState state)
     {
-        getCurrentSession().saveOrUpdate(state);
+        if(state.getAttrSetInstEFGroupVersion() == null || state.getAttrSetInstEFGroupVersion().equals(AttributeSetInstanceExtensionFieldMvoState.VERSION_ZERO)) {
+            getCurrentSession().save(state);
+        }else {
+            getCurrentSession().update(state);
+        }
 
         if (state instanceof Saveable)
         {

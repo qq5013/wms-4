@@ -212,7 +212,13 @@ public abstract class AbstractUserPermissionState implements UserPermissionState
         }
 
         Long stateVersion = this.getVersion();
+        if(stateVersion == null) {
+            stateVersion = UserPermissionState.VERSION_ZERO;
+        }
         Long eventVersion = stateEvent.getVersion();
+        if(eventVersion == null) {
+            eventVersion = UserPermissionState.VERSION_ZERO;
+        }
         if (UserPermissionState.VERSION_ZERO.equals(eventVersion))
         {
             stateEvent.setVersion(stateVersion);

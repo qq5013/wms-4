@@ -39,7 +39,11 @@ public class HibernateLocatorStateRepository implements LocatorStateRepository
     //[Transaction]
     public void save(LocatorState state)
     {
-        getCurrentSession().saveOrUpdate(state);
+        if(state.getVersion() == null || state.getVersion().equals(LocatorState.VERSION_ZERO)) {
+            getCurrentSession().save(state);
+        }else {
+            getCurrentSession().update(state);
+        }
 
         if (state instanceof Saveable)
         {

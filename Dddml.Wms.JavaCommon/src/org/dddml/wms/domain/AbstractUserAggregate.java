@@ -469,7 +469,9 @@ public abstract class AbstractUserAggregate extends AbstractAggregate implements
         if (innerUserIdValue == null) {
             innerProperties.setUserId(outerUserIdValue);
         }
-        else if (innerUserIdValue != outerUserIdValue && innerUserIdValue != null && !innerUserIdValue.equals(outerUserIdValue)) {
+        else if (innerUserIdValue != outerUserIdValue 
+            && (innerUserIdValue == null || innerUserIdValue != null && !innerUserIdValue.equals(outerUserIdValue))) 
+        {
             throw DomainError.named("inconsistentId", "Outer %1$s %2$s NOT equals inner %3$s %4$s", outerUserIdName, outerUserIdValue, innerUserIdName, innerUserIdValue);
         }
     }// END throwOnInconsistentCommands /////////////////////
@@ -486,7 +488,9 @@ public abstract class AbstractUserAggregate extends AbstractAggregate implements
         if (innerUserIdValue == null) {
             innerProperties.setUserId(outerUserIdValue);
         }
-        else if (innerUserIdValue != outerUserIdValue && innerUserIdValue != null && !innerUserIdValue.equals(outerUserIdValue)) {
+        else if (innerUserIdValue != outerUserIdValue 
+            && (innerUserIdValue == null || innerUserIdValue != null && !innerUserIdValue.equals(outerUserIdValue))) 
+        {
             throw DomainError.named("inconsistentId", "Outer %1$s %2$s NOT equals inner %3$s %4$s", outerUserIdName, outerUserIdValue, innerUserIdName, innerUserIdValue);
         }
     }// END throwOnInconsistentCommands /////////////////////
@@ -503,7 +507,9 @@ public abstract class AbstractUserAggregate extends AbstractAggregate implements
         if (innerUserIdValue == null) {
             innerProperties.setUserId(outerUserIdValue);
         }
-        else if (innerUserIdValue != outerUserIdValue && innerUserIdValue != null && !innerUserIdValue.equals(outerUserIdValue)) {
+        else if (innerUserIdValue != outerUserIdValue 
+            && (innerUserIdValue == null || innerUserIdValue != null && !innerUserIdValue.equals(outerUserIdValue))) 
+        {
             throw DomainError.named("inconsistentId", "Outer %1$s %2$s NOT equals inner %3$s %4$s", outerUserIdName, outerUserIdValue, innerUserIdName, innerUserIdValue);
         }
     }// END throwOnInconsistentCommands /////////////////////
@@ -520,7 +526,9 @@ public abstract class AbstractUserAggregate extends AbstractAggregate implements
         if (innerUserIdValue == null) {
             innerProperties.setUserId(outerUserIdValue);
         }
-        else if (innerUserIdValue != outerUserIdValue && innerUserIdValue != null && !innerUserIdValue.equals(outerUserIdValue)) {
+        else if (innerUserIdValue != outerUserIdValue 
+            && (innerUserIdValue == null || innerUserIdValue != null && !innerUserIdValue.equals(outerUserIdValue))) 
+        {
             throw DomainError.named("inconsistentId", "Outer %1$s %2$s NOT equals inner %3$s %4$s", outerUserIdName, outerUserIdValue, innerUserIdName, innerUserIdValue);
         }
     }// END throwOnInconsistentCommands /////////////////////

@@ -39,7 +39,11 @@ public class HibernateUserRoleMvoStateRepository implements UserRoleMvoStateRepo
     //[Transaction]
     public void save(UserRoleMvoState state)
     {
-        getCurrentSession().saveOrUpdate(state);
+        if(state.getUserVersion() == null || state.getUserVersion().equals(UserRoleMvoState.VERSION_ZERO)) {
+            getCurrentSession().save(state);
+        }else {
+            getCurrentSession().update(state);
+        }
 
         if (state instanceof Saveable)
         {

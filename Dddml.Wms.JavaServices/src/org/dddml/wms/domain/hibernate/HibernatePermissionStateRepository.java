@@ -39,7 +39,11 @@ public class HibernatePermissionStateRepository implements PermissionStateReposi
     //[Transaction]
     public void save(PermissionState state)
     {
-        getCurrentSession().saveOrUpdate(state);
+        if(state.getVersion() == null || state.getVersion().equals(PermissionState.VERSION_ZERO)) {
+            getCurrentSession().save(state);
+        }else {
+            getCurrentSession().update(state);
+        }
 
         if (state instanceof Saveable)
         {

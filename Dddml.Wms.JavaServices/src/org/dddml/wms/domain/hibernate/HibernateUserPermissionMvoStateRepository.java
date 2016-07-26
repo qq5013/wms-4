@@ -39,7 +39,11 @@ public class HibernateUserPermissionMvoStateRepository implements UserPermission
     //[Transaction]
     public void save(UserPermissionMvoState state)
     {
-        getCurrentSession().saveOrUpdate(state);
+        if(state.getUserVersion() == null || state.getUserVersion().equals(UserPermissionMvoState.VERSION_ZERO)) {
+            getCurrentSession().save(state);
+        }else {
+            getCurrentSession().update(state);
+        }
 
         if (state instanceof Saveable)
         {

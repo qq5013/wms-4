@@ -39,7 +39,11 @@ public class HibernateAttributeUseMvoStateRepository implements AttributeUseMvoS
     //[Transaction]
     public void save(AttributeUseMvoState state)
     {
-        getCurrentSession().saveOrUpdate(state);
+        if(state.getAttributeSetVersion() == null || state.getAttributeSetVersion().equals(AttributeUseMvoState.VERSION_ZERO)) {
+            getCurrentSession().save(state);
+        }else {
+            getCurrentSession().update(state);
+        }
 
         if (state instanceof Saveable)
         {

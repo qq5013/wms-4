@@ -39,7 +39,11 @@ public class HibernateAudienceStateRepository implements AudienceStateRepository
     //[Transaction]
     public void save(AudienceState state)
     {
-        getCurrentSession().saveOrUpdate(state);
+        if(state.getVersion() == null || state.getVersion().equals(AudienceState.VERSION_ZERO)) {
+            getCurrentSession().save(state);
+        }else {
+            getCurrentSession().update(state);
+        }
 
         if (state instanceof Saveable)
         {

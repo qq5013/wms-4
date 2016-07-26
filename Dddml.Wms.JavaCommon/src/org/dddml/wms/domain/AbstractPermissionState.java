@@ -255,7 +255,14 @@ public abstract class AbstractPermissionState implements PermissionState
         }
 
         Long stateVersion = this.getVersion();
-        Long eventVersion = stateEvent.getStateEventId().getVersion();
+        if(stateVersion == null) {
+            stateVersion = PermissionState.VERSION_ZERO;
+        }
+        Long eventVersion = stateEvent.getStateEventId().getVersion();// Aggregate Version
+        if(eventVersion == null) {
+            eventVersion = PermissionState.VERSION_ZERO;
+            stateEvent.getStateEventId().setVersion(eventVersion);
+        }
         if (!stateVersion.equals(eventVersion))
         {
             throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);

@@ -615,7 +615,14 @@ public abstract class AbstractUserPermissionMvoState implements UserPermissionMv
         }
 
         Long stateVersion = this.getUserVersion();
-        Long eventVersion = stateEvent.getStateEventId().getUserVersion();
+        if(stateVersion == null) {
+            stateVersion = UserPermissionMvoState.VERSION_ZERO;
+        }
+        Long eventVersion = stateEvent.getStateEventId().getUserVersion();// Aggregate Version
+        if(eventVersion == null) {
+            eventVersion = UserPermissionMvoState.VERSION_ZERO;
+            stateEvent.getStateEventId().setUserVersion(eventVersion);
+        }
         if (!stateVersion.equals(eventVersion))
         {
             throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);

@@ -39,7 +39,11 @@ public class HibernateOrganizationStateRepository implements OrganizationStateRe
     //[Transaction]
     public void save(OrganizationState state)
     {
-        getCurrentSession().saveOrUpdate(state);
+        if(state.getVersion() == null || state.getVersion().equals(OrganizationState.VERSION_ZERO)) {
+            getCurrentSession().save(state);
+        }else {
+            getCurrentSession().update(state);
+        }
 
         if (state instanceof Saveable)
         {

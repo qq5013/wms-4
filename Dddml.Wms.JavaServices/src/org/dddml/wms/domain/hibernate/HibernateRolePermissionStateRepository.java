@@ -39,7 +39,11 @@ public class HibernateRolePermissionStateRepository implements RolePermissionSta
     //[Transaction]
     public void save(RolePermissionState state)
     {
-        getCurrentSession().saveOrUpdate(state);
+        if(state.getVersion() == null || state.getVersion().equals(RolePermissionState.VERSION_ZERO)) {
+            getCurrentSession().save(state);
+        }else {
+            getCurrentSession().update(state);
+        }
 
         if (state instanceof Saveable)
         {

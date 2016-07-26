@@ -41,7 +41,11 @@ public class HibernateInOutStateRepository implements InOutStateRepository
     //[Transaction]
     public void save(InOutState state)
     {
-        getCurrentSession().saveOrUpdate(state);
+        if(state.getVersion() == null || state.getVersion().equals(InOutState.VERSION_ZERO)) {
+            getCurrentSession().save(state);
+        }else {
+            getCurrentSession().update(state);
+        }
 
         if (state instanceof Saveable)
         {

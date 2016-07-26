@@ -41,7 +41,11 @@ public class HibernateInOutLineMvoStateRepository implements InOutLineMvoStateRe
     //[Transaction]
     public void save(InOutLineMvoState state)
     {
-        getCurrentSession().saveOrUpdate(state);
+        if(state.getInOutVersion() == null || state.getInOutVersion().equals(InOutLineMvoState.VERSION_ZERO)) {
+            getCurrentSession().save(state);
+        }else {
+            getCurrentSession().update(state);
+        }
 
         if (state instanceof Saveable)
         {

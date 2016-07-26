@@ -591,7 +591,14 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoState impleme
         }
 
         Long stateVersion = this.getAttrSetInstEFGroupVersion();
-        Long eventVersion = stateEvent.getStateEventId().getAttrSetInstEFGroupVersion();
+        if(stateVersion == null) {
+            stateVersion = AttributeSetInstanceExtensionFieldMvoState.VERSION_ZERO;
+        }
+        Long eventVersion = stateEvent.getStateEventId().getAttrSetInstEFGroupVersion();// Aggregate Version
+        if(eventVersion == null) {
+            eventVersion = AttributeSetInstanceExtensionFieldMvoState.VERSION_ZERO;
+            stateEvent.getStateEventId().setAttrSetInstEFGroupVersion(eventVersion);
+        }
         if (!stateVersion.equals(eventVersion))
         {
             throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);

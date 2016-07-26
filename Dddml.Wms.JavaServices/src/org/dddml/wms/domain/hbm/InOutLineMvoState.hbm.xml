@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="org.dddml.wms.domain.AbstractInOutLineMvoState$SimpleInOutLineMvoState" table="InOutLine_RV">
+
+	<composite-id name="inOutLineId" class="org.dddml.wms.domain.InOutLineId">
+		<key-property name="inOutDocumentNumber" column="InOutLineIdInOutDocumentNumber" length="50"/>
+		<key-property name="skuIdProductId" column="InOutLineIdSkuIdProductId" />
+		<key-property name="skuIdAttributeSetInstanceId" column="InOutLineIdSkuIdAttributeSetInstanceId" />
+	</composite-id>
+
+	<version name="inOutVersion" type="long" />
+
+	<property name="lineNumber" ></property>
+
+	<property name="description" ></property>
+
+	<property name="locatorId" ></property>
+
+	<property name="product" ></property>
+
+	<property name="uomId" ></property>
+
+	<property name="movementQuantity" ></property>
+
+	<property name="confirmedQuantity" ></property>
+
+	<property name="scrappedQuantity" ></property>
+
+	<property name="targetQuantity" ></property>
+
+	<property name="pickedQuantity" ></property>
+
+	<property name="isInvoiced" ></property>
+
+	<property name="attributeSetInstanceId" ></property>
+
+	<property name="isDescription" ></property>
+
+	<property name="processed" ></property>
+
+	<property name="quantityEntered" ></property>
+
+	<property name="rmaLineNumber" ></property>
+
+	<property name="reversalLineNumber" ></property>
+
+	<property name="version" ></property>
+
+	<property name="createdBy" ></property>
+
+	<property name="createdAt" ></property>
+
+	<property name="updatedBy" ></property>
+
+	<property name="updatedAt" ></property>
+
+	<property name="active" ></property>
+
+	<property name="deleted" ></property>
+
+	<property name="inOutIsSOTransaction" ></property>
+
+	<property name="inOutDocumentStatus" ></property>
+
+	<property name="inOutPosted" ></property>
+
+	<property name="inOutProcessing" ></property>
+
+	<property name="inOutProcessed" ></property>
+
+	<property name="inOutDocumentType" ></property>
+
+	<property name="inOutDescription" ></property>
+
+	<property name="inOutOrderNumber" ></property>
+
+	<property name="inOutDateOrdered" ></property>
+
+	<property name="inOutIsPrinted" ></property>
+
+	<property name="inOutMovementType" ></property>
+
+	<property name="inOutMovementDate" ></property>
+
+	<property name="inOutBusinessPartnerId" ></property>
+
+	<property name="inOutWarehouseId" ></property>
+
+	<property name="inOutPOReference" ></property>
+
+	<property name="inOutFreightAmount" type="org.dddml.wms.domain.hibernate.usertypes.MoneyType"><column name="inOutFreightAmountAmount" /><column name="inOutFreightAmountCurrency" /></property>
+
+	<property name="inOutShipperId" ></property>
+
+	<property name="inOutChargeAmount" type="org.dddml.wms.domain.hibernate.usertypes.MoneyType"><column name="inOutChargeAmountAmount" /><column name="inOutChargeAmountCurrency" /></property>
+
+	<property name="inOutDatePrinted" ></property>
+
+	<property name="inOutSalesRepresentative" ></property>
+
+	<property name="inOutNumberOfPackages" ></property>
+
+	<property name="inOutPickDate" ></property>
+
+	<property name="inOutShipDate" ></property>
+
+	<property name="inOutTrackingNumber" ></property>
+
+	<property name="inOutDateReceived" ></property>
+
+	<property name="inOutIsInTransit" ></property>
+
+	<property name="inOutIsApproved" ></property>
+
+	<property name="inOutIsInDispute" ></property>
+
+	<property name="inOutVolume" ></property>
+
+	<property name="inOutWeight" ></property>
+
+	<property name="inOutRmaNumber" ></property>
+
+	<property name="inOutReversalNumber" ></property>
+
+	<property name="inOutIsDropShip" ></property>
+
+	<property name="inOutDropShipBusinessPartnerId" ></property>
+
+	<property name="inOutCreatedBy" ></property>
+
+	<property name="inOutCreatedAt" ></property>
+
+	<property name="inOutUpdatedBy" ></property>
+
+	<property name="inOutUpdatedAt" ></property>
+
+	<property name="inOutActive" ></property>
+
+	<property name="inOutDeleted" ></property>
+
+
+  </class>
+  
+</hibernate-mapping>
+

@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="AbstractInOutLineStateEvent" table="InOutLineStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="stateEventId" class="org.dddml.wms.domain.InOutLineStateEventId">
+		<key-property name="inOutDocumentNumber" column="InOutLineIdInOutDocumentNumber" length="50"/>
+		<key-property name="skuIdProductId" column="InOutLineIdSkuIdProductId" />
+		<key-property name="skuIdAttributeSetInstanceId" column="InOutLineIdSkuIdAttributeSetInstanceId" />
+		<key-property name="inOutVersion" column="InOutVersion" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="string" />
+
+	<property name="lineNumber" ></property>
+
+	<property name="description" ></property>
+
+	<property name="locatorId" ></property>
+
+	<property name="product" ></property>
+
+	<property name="uomId" ></property>
+
+	<property name="movementQuantity" ></property>
+
+	<property name="confirmedQuantity" ></property>
+
+	<property name="scrappedQuantity" ></property>
+
+	<property name="targetQuantity" ></property>
+
+	<property name="pickedQuantity" ></property>
+
+	<property name="isInvoiced" ></property>
+
+	<property name="attributeSetInstanceId" ></property>
+
+	<property name="isDescription" ></property>
+
+	<property name="processed" ></property>
+
+	<property name="quantityEntered" ></property>
+
+	<property name="rmaLineNumber" ></property>
+
+	<property name="reversalLineNumber" ></property>
+
+	<property name="active" ></property>
+
+
+    <property name="createdBy" />
+
+    <property name="createdAt" />
+
+    <property name="commandId" />
+
+    <property name="version" not-null="true" />
+
+
+    <subclass name="AbstractInOutLineStateEvent$SimpleInOutLineStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="AbstractInOutLineStateEvent$SimpleInOutLineStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="isPropertyLineNumberRemoved" />
+
+        <property name="isPropertyDescriptionRemoved" />
+
+        <property name="isPropertyLocatorIdRemoved" />
+
+        <property name="isPropertyProductRemoved" />
+
+        <property name="isPropertyUomIdRemoved" />
+
+        <property name="isPropertyMovementQuantityRemoved" />
+
+        <property name="isPropertyConfirmedQuantityRemoved" />
+
+        <property name="isPropertyScrappedQuantityRemoved" />
+
+        <property name="isPropertyTargetQuantityRemoved" />
+
+        <property name="isPropertyPickedQuantityRemoved" />
+
+        <property name="isPropertyIsInvoicedRemoved" />
+
+        <property name="isPropertyAttributeSetInstanceIdRemoved" />
+
+        <property name="isPropertyIsDescriptionRemoved" />
+
+        <property name="isPropertyProcessedRemoved" />
+
+        <property name="isPropertyQuantityEnteredRemoved" />
+
+        <property name="isPropertyRmaLineNumberRemoved" />
+
+        <property name="isPropertyReversalLineNumberRemoved" />
+
+        <property name="isPropertyActiveRemoved" />
+
+
+    </subclass>
+
+    <subclass name="AbstractInOutLineStateEvent$SimpleInOutLineStateRemoved"  discriminator-value="Removed">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

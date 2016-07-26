@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="org.dddml.wms.domain.AbstractRolePermissionState$SimpleRolePermissionState" table="RolePermissions">
+
+	<composite-id name="id" class="org.dddml.wms.domain.RolePermissionId">
+		<key-property name="roleId" column="IdRoleId" />
+		<key-property name="permissionId" column="IdPermissionId" />
+	</composite-id>
+
+	<version name="version" type="long" />
+
+	<property name="createdBy" ></property>
+
+	<property name="createdAt" ></property>
+
+	<property name="updatedBy" ></property>
+
+	<property name="updatedAt" ></property>
+
+	<property name="active" ></property>
+
+	<property name="deleted" ></property>
+
+
+  </class>
+  
+</hibernate-mapping>
+

@@ -15,14 +15,17 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
 {
     public class TestApplicationContext : ApplicationContext
     {
-
-        private string _authzServerEndpointUrl = "http://testtenant1.localhost:58760/";
-
-        private string _endpointUrl = "http://testtenant1.localhost:63078/api/"; 
-
         //private string _authzServerEndpointUrl = "http://localhost:58760/";
 
         //private string _endpointUrl = "http://localhost:63078/api/"; //注意，最后的斜杠是必须的！
+
+        //private string _authzServerEndpointUrl = "http://testtenant1.localhost:58760/";
+
+        //private string _endpointUrl = "http://testtenant1.localhost:63078/api/"; 
+
+        private string _authzServerEndpointUrl = "http://testtenant1.wms.dddml.org:58760/";
+
+        private string _endpointUrl = "http://testtenant1.wms.dddml.org:63078/api/"; 
 
         private string _oAuthBearerToken;
 

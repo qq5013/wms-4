@@ -80,6 +80,13 @@
 	boundedContext.SetHttpServicesAuthorizationEnabled(true);
 	boundedContext.SetClrHttpServiceSetRequesterIdAttributeEnabled(true);
 
+	boundedContext.Aggregates["AttributeSetInstance"].Metadata["httpPostCreationEnabled"] = true;
+
+	boundedContext.SetHttpServiceJsonConverters(new string[] {
+		"Dddml.Wms.HttpServices.JsonConverters.LongConverter",
+		"Dddml.Wms.HttpServices.JsonConverters.DecimalConverter",
+	});
+
 #>
 <#+
 	

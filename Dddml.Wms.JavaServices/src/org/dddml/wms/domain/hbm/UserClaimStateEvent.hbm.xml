@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="AbstractUserClaimStateEvent" table="UserClaimStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="stateEventId" class="org.dddml.wms.domain.UserClaimStateEventId">
+		<key-property name="userId" column="UserClaimIdUserId" length="50"/>
+		<key-property name="claimId" column="UserClaimIdClaimId" />
+		<key-property name="userVersion" column="UserVersion" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="string" />
+
+	<property name="claimType" ></property>
+
+	<property name="claimValue" ></property>
+
+	<property name="active" ></property>
+
+
+    <property name="createdBy" />
+
+    <property name="createdAt" />
+
+    <property name="commandId" />
+
+    <property name="version" not-null="true" />
+
+
+    <subclass name="AbstractUserClaimStateEvent$SimpleUserClaimStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="AbstractUserClaimStateEvent$SimpleUserClaimStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="isPropertyClaimTypeRemoved" />
+
+        <property name="isPropertyClaimValueRemoved" />
+
+        <property name="isPropertyActiveRemoved" />
+
+
+    </subclass>
+
+    <subclass name="AbstractUserClaimStateEvent$SimpleUserClaimStateRemoved"  discriminator-value="Removed">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

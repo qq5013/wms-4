@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="org.dddml.wms.domain.AbstractUserClaimState$SimpleUserClaimState" table="UserClaims">
+
+	<composite-id name="userClaimId" class="org.dddml.wms.domain.UserClaimId">
+		<key-property name="userId" column="UserClaimIdUserId" length="50"/>
+		<key-property name="claimId" column="UserClaimIdClaimId" />
+	</composite-id>
+
+	<version name="version" type="long" />
+
+	<property name="claimType" ></property>
+
+	<property name="claimValue" ></property>
+
+	<property name="createdBy" ></property>
+
+	<property name="createdAt" ></property>
+
+	<property name="updatedBy" ></property>
+
+	<property name="updatedAt" ></property>
+
+	<property name="active" ></property>
+
+	<property name="deleted" ></property>
+
+
+  </class>
+  
+</hibernate-mapping>
+

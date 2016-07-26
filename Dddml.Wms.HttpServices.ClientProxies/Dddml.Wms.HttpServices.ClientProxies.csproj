@@ -207,6 +207,10 @@
       <Project>{31471bcf-d6c3-4bae-8ec5-2e9ac01edd5c}</Project>
       <Name>Dddml.Wms.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Dddml.Wms.HttpServices.JsonConverters\Dddml.Wms.HttpServices.JsonConverters.csproj">
+      <Project>{e5e7c73a-5de3-4bc6-9a92-bf7a6d24ddf5}</Project>
+      <Name>Dddml.Wms.HttpServices.JsonConverters</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

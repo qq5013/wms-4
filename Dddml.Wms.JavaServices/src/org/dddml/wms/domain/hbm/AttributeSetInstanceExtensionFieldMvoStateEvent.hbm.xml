@@ -1,0 +1,114 @@
+﻿<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="AbstractAttributeSetInstanceExtensionFieldMvoStateEvent" table="AttributeSetInstanceExtensionFieldMvoStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="stateEventId" class="org.dddml.wms.domain.AttributeSetInstanceExtensionFieldMvoStateEventId">
+		<key-property name="attributeSetInstanceExtensionFieldIdGroupId" column="AttributeSetInstanceExtensionFieldIdGroupId" length="50"/>
+		<key-property name="attributeSetInstanceExtensionFieldIdIndex" column="AttributeSetInstanceExtensionFieldIdIndex" length="50"/>
+		<key-property name="attrSetInstEFGroupVersion" column="AttrSetInstEFGroupVersion" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="string" />
+
+	<property name="name" unique-key="UniqueName"></property>
+
+	<property name="type" ></property>
+
+	<property name="length" ></property>
+
+	<property name="alias" unique-key="UniqueAlias"></property>
+
+	<property name="description" ></property>
+
+	<property name="version" ></property>
+
+	<property name="active" ></property>
+
+	<property name="attrSetInstEFGroupFieldType" ></property>
+
+	<property name="attrSetInstEFGroupFieldLength" ></property>
+
+	<property name="attrSetInstEFGroupFieldCount" ></property>
+
+	<property name="attrSetInstEFGroupNameFormat" ></property>
+
+	<property name="attrSetInstEFGroupDescription" ></property>
+
+	<property name="attrSetInstEFGroupCreatedBy" ></property>
+
+	<property name="attrSetInstEFGroupCreatedAt" ></property>
+
+	<property name="attrSetInstEFGroupUpdatedBy" ></property>
+
+	<property name="attrSetInstEFGroupUpdatedAt" ></property>
+
+	<property name="attrSetInstEFGroupActive" ></property>
+
+	<property name="attrSetInstEFGroupDeleted" ></property>
+
+
+    <property name="createdBy" />
+
+    <property name="createdAt" />
+
+    <property name="commandId" />
+
+
+    <subclass name="AbstractAttributeSetInstanceExtensionFieldMvoStateEvent$SimpleAttributeSetInstanceExtensionFieldMvoStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="AbstractAttributeSetInstanceExtensionFieldMvoStateEvent$SimpleAttributeSetInstanceExtensionFieldMvoStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="isPropertyNameRemoved" />
+
+        <property name="isPropertyTypeRemoved" />
+
+        <property name="isPropertyLengthRemoved" />
+
+        <property name="isPropertyAliasRemoved" />
+
+        <property name="isPropertyDescriptionRemoved" />
+
+        <property name="isPropertyVersionRemoved" />
+
+        <property name="isPropertyActiveRemoved" />
+
+        <property name="isPropertyAttrSetInstEFGroupFieldTypeRemoved" />
+
+        <property name="isPropertyAttrSetInstEFGroupFieldLengthRemoved" />
+
+        <property name="isPropertyAttrSetInstEFGroupFieldCountRemoved" />
+
+        <property name="isPropertyAttrSetInstEFGroupNameFormatRemoved" />
+
+        <property name="isPropertyAttrSetInstEFGroupDescriptionRemoved" />
+
+        <property name="isPropertyAttrSetInstEFGroupCreatedByRemoved" />
+
+        <property name="isPropertyAttrSetInstEFGroupCreatedAtRemoved" />
+
+        <property name="isPropertyAttrSetInstEFGroupUpdatedByRemoved" />
+
+        <property name="isPropertyAttrSetInstEFGroupUpdatedAtRemoved" />
+
+        <property name="isPropertyAttrSetInstEFGroupActiveRemoved" />
+
+        <property name="isPropertyAttrSetInstEFGroupDeletedRemoved" />
+
+
+    </subclass>
+
+    <subclass name="AbstractAttributeSetInstanceExtensionFieldMvoStateEvent$SimpleAttributeSetInstanceExtensionFieldMvoStateDeleted"  discriminator-value="Deleted">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

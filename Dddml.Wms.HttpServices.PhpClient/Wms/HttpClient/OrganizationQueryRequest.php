@@ -2,6 +2,7 @@
 
 namespace Wms\HttpClient;
 
+use Dddml\Serializer\Type\Long;
 
 class OrganizationQueryRequest extends AbstractQueryRequest
 {

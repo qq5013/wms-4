@@ -1,0 +1,102 @@
+﻿<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="AbstractAttributeUseMvoStateEvent" table="AttributeUseMvoStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="stateEventId" class="org.dddml.wms.domain.AttributeUseMvoStateEventId">
+		<key-property name="attributeSetAttributeUseIdAttributeSetId" column="AttributeSetAttributeUseIdAttributeSetId" length="50"/>
+		<key-property name="attributeSetAttributeUseIdAttributeId" column="AttributeSetAttributeUseIdAttributeId" length="50"/>
+		<key-property name="attributeSetVersion" column="AttributeSetVersion" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="string" />
+
+	<property name="sequenceNumber" ></property>
+
+	<property name="version" ></property>
+
+	<property name="active" ></property>
+
+	<property name="attributeSetName" ></property>
+
+	<property name="attributeSetOrganizationId" ></property>
+
+	<property name="attributeSetDescription" ></property>
+
+	<property name="attributeSetSerialNumberAttributeId" ></property>
+
+	<property name="attributeSetLotAttributeId" ></property>
+
+	<property name="attributeSetReferenceId" ></property>
+
+	<property name="attributeSetCreatedBy" ></property>
+
+	<property name="attributeSetCreatedAt" ></property>
+
+	<property name="attributeSetUpdatedBy" ></property>
+
+	<property name="attributeSetUpdatedAt" ></property>
+
+	<property name="attributeSetActive" ></property>
+
+	<property name="attributeSetDeleted" ></property>
+
+
+    <property name="createdBy" />
+
+    <property name="createdAt" />
+
+    <property name="commandId" />
+
+
+    <subclass name="AbstractAttributeUseMvoStateEvent$SimpleAttributeUseMvoStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="AbstractAttributeUseMvoStateEvent$SimpleAttributeUseMvoStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="isPropertySequenceNumberRemoved" />
+
+        <property name="isPropertyVersionRemoved" />
+
+        <property name="isPropertyActiveRemoved" />
+
+        <property name="isPropertyAttributeSetNameRemoved" />
+
+        <property name="isPropertyAttributeSetOrganizationIdRemoved" />
+
+        <property name="isPropertyAttributeSetDescriptionRemoved" />
+
+        <property name="isPropertyAttributeSetSerialNumberAttributeIdRemoved" />
+
+        <property name="isPropertyAttributeSetLotAttributeIdRemoved" />
+
+        <property name="isPropertyAttributeSetReferenceIdRemoved" />
+
+        <property name="isPropertyAttributeSetCreatedByRemoved" />
+
+        <property name="isPropertyAttributeSetCreatedAtRemoved" />
+
+        <property name="isPropertyAttributeSetUpdatedByRemoved" />
+
+        <property name="isPropertyAttributeSetUpdatedAtRemoved" />
+
+        <property name="isPropertyAttributeSetActiveRemoved" />
+
+        <property name="isPropertyAttributeSetDeletedRemoved" />
+
+
+    </subclass>
+
+    <subclass name="AbstractAttributeUseMvoStateEvent$SimpleAttributeUseMvoStateDeleted"  discriminator-value="Deleted">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

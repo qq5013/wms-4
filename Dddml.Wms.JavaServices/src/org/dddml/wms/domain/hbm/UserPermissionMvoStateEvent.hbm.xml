@@ -1,0 +1,118 @@
+﻿<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="AbstractUserPermissionMvoStateEvent" table="UserPermissionMvoStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="stateEventId" class="org.dddml.wms.domain.UserPermissionMvoStateEventId">
+		<key-property name="userPermissionIdUserId" column="UserPermissionIdUserId" length="50"/>
+		<key-property name="userPermissionIdPermissionId" column="UserPermissionIdPermissionId" length="50"/>
+		<key-property name="userVersion" column="UserVersion" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="string" />
+
+	<property name="version" ></property>
+
+	<property name="active" ></property>
+
+	<property name="userUserName" ></property>
+
+	<property name="userAccessFailedCount" ></property>
+
+	<property name="userEmail" ></property>
+
+	<property name="userEmailConfirmed" ></property>
+
+	<property name="userLockoutEnabled" ></property>
+
+	<property name="userLockoutEndDateUtc" ></property>
+
+	<property name="userPasswordHash" ></property>
+
+	<property name="userPhoneNumber" ></property>
+
+	<property name="userPhoneNumberConfirmed" ></property>
+
+	<property name="userTwoFactorEnabled" ></property>
+
+	<property name="userSecurityStamp" ></property>
+
+	<property name="userCreatedBy" ></property>
+
+	<property name="userCreatedAt" ></property>
+
+	<property name="userUpdatedBy" ></property>
+
+	<property name="userUpdatedAt" ></property>
+
+	<property name="userActive" ></property>
+
+	<property name="userDeleted" ></property>
+
+
+    <property name="createdBy" />
+
+    <property name="createdAt" />
+
+    <property name="commandId" />
+
+
+    <subclass name="AbstractUserPermissionMvoStateEvent$SimpleUserPermissionMvoStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="AbstractUserPermissionMvoStateEvent$SimpleUserPermissionMvoStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="isPropertyVersionRemoved" />
+
+        <property name="isPropertyActiveRemoved" />
+
+        <property name="isPropertyUserUserNameRemoved" />
+
+        <property name="isPropertyUserAccessFailedCountRemoved" />
+
+        <property name="isPropertyUserEmailRemoved" />
+
+        <property name="isPropertyUserEmailConfirmedRemoved" />
+
+        <property name="isPropertyUserLockoutEnabledRemoved" />
+
+        <property name="isPropertyUserLockoutEndDateUtcRemoved" />
+
+        <property name="isPropertyUserPasswordHashRemoved" />
+
+        <property name="isPropertyUserPhoneNumberRemoved" />
+
+        <property name="isPropertyUserPhoneNumberConfirmedRemoved" />
+
+        <property name="isPropertyUserTwoFactorEnabledRemoved" />
+
+        <property name="isPropertyUserSecurityStampRemoved" />
+
+        <property name="isPropertyUserCreatedByRemoved" />
+
+        <property name="isPropertyUserCreatedAtRemoved" />
+
+        <property name="isPropertyUserUpdatedByRemoved" />
+
+        <property name="isPropertyUserUpdatedAtRemoved" />
+
+        <property name="isPropertyUserActiveRemoved" />
+
+        <property name="isPropertyUserDeletedRemoved" />
+
+
+    </subclass>
+
+    <subclass name="AbstractUserPermissionMvoStateEvent$SimpleUserPermissionMvoStateDeleted"  discriminator-value="Deleted">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

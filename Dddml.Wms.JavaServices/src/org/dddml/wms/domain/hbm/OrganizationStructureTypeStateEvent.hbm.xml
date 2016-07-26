@@ -1,0 +1,45 @@
+﻿<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="AbstractOrganizationStructureTypeStateEvent" table="OrganizationStructureTypeStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="stateEventId" class="org.dddml.wms.domain.OrganizationStructureTypeStateEventId">
+		<key-property name="id" column="Id" length="50"/>
+		<key-property name="version" column="Version" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="string" />
+
+	<property name="active" ></property>
+
+
+    <property name="createdBy" />
+
+    <property name="createdAt" />
+
+    <property name="commandId" />
+
+
+    <subclass name="AbstractOrganizationStructureTypeStateEvent$SimpleOrganizationStructureTypeStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="AbstractOrganizationStructureTypeStateEvent$SimpleOrganizationStructureTypeStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="isPropertyActiveRemoved" />
+
+
+    </subclass>
+
+    <subclass name="AbstractOrganizationStructureTypeStateEvent$SimpleOrganizationStructureTypeStateDeleted"  discriminator-value="Deleted">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

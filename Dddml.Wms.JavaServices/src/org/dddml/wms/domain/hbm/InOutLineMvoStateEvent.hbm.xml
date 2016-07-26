@@ -1,0 +1,279 @@
+﻿<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="AbstractInOutLineMvoStateEvent" table="InOutLineMvoStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="stateEventId" class="org.dddml.wms.domain.InOutLineMvoStateEventId">
+		<key-property name="inOutLineIdInOutDocumentNumber" column="InOutLineIdInOutDocumentNumber" length="50"/>
+		<key-property name="inOutLineIdSkuIdProductId" column="InOutLineIdSkuIdProductId" />
+		<key-property name="inOutLineIdSkuIdAttributeSetInstanceId" column="InOutLineIdSkuIdAttributeSetInstanceId" />
+		<key-property name="inOutVersion" column="InOutVersion" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="string" />
+
+	<property name="lineNumber" ></property>
+
+	<property name="description" ></property>
+
+	<property name="locatorId" ></property>
+
+	<property name="product" ></property>
+
+	<property name="uomId" ></property>
+
+	<property name="movementQuantity" ></property>
+
+	<property name="confirmedQuantity" ></property>
+
+	<property name="scrappedQuantity" ></property>
+
+	<property name="targetQuantity" ></property>
+
+	<property name="pickedQuantity" ></property>
+
+	<property name="isInvoiced" ></property>
+
+	<property name="attributeSetInstanceId" ></property>
+
+	<property name="isDescription" ></property>
+
+	<property name="processed" ></property>
+
+	<property name="quantityEntered" ></property>
+
+	<property name="rmaLineNumber" ></property>
+
+	<property name="reversalLineNumber" ></property>
+
+	<property name="version" ></property>
+
+	<property name="active" ></property>
+
+	<property name="inOutIsSOTransaction" ></property>
+
+	<property name="inOutDocumentStatus" ></property>
+
+	<property name="inOutPosted" ></property>
+
+	<property name="inOutProcessing" ></property>
+
+	<property name="inOutProcessed" ></property>
+
+	<property name="inOutDocumentType" ></property>
+
+	<property name="inOutDescription" ></property>
+
+	<property name="inOutOrderNumber" ></property>
+
+	<property name="inOutDateOrdered" ></property>
+
+	<property name="inOutIsPrinted" ></property>
+
+	<property name="inOutMovementType" ></property>
+
+	<property name="inOutMovementDate" ></property>
+
+	<property name="inOutBusinessPartnerId" ></property>
+
+	<property name="inOutWarehouseId" ></property>
+
+	<property name="inOutPOReference" ></property>
+
+	<property name="inOutFreightAmount" type="org.dddml.wms.domain.hibernate.usertypes.MoneyType"><column name="inOutFreightAmountAmount" /><column name="inOutFreightAmountCurrency" /></property>
+
+	<property name="inOutShipperId" ></property>
+
+	<property name="inOutChargeAmount" type="org.dddml.wms.domain.hibernate.usertypes.MoneyType"><column name="inOutChargeAmountAmount" /><column name="inOutChargeAmountCurrency" /></property>
+
+	<property name="inOutDatePrinted" ></property>
+
+	<property name="inOutSalesRepresentative" ></property>
+
+	<property name="inOutNumberOfPackages" ></property>
+
+	<property name="inOutPickDate" ></property>
+
+	<property name="inOutShipDate" ></property>
+
+	<property name="inOutTrackingNumber" ></property>
+
+	<property name="inOutDateReceived" ></property>
+
+	<property name="inOutIsInTransit" ></property>
+
+	<property name="inOutIsApproved" ></property>
+
+	<property name="inOutIsInDispute" ></property>
+
+	<property name="inOutVolume" ></property>
+
+	<property name="inOutWeight" ></property>
+
+	<property name="inOutRmaNumber" ></property>
+
+	<property name="inOutReversalNumber" ></property>
+
+	<property name="inOutIsDropShip" ></property>
+
+	<property name="inOutDropShipBusinessPartnerId" ></property>
+
+	<property name="inOutCreatedBy" ></property>
+
+	<property name="inOutCreatedAt" ></property>
+
+	<property name="inOutUpdatedBy" ></property>
+
+	<property name="inOutUpdatedAt" ></property>
+
+	<property name="inOutActive" ></property>
+
+	<property name="inOutDeleted" ></property>
+
+
+    <property name="createdBy" />
+
+    <property name="createdAt" />
+
+    <property name="commandId" />
+
+
+    <subclass name="AbstractInOutLineMvoStateEvent$SimpleInOutLineMvoStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="AbstractInOutLineMvoStateEvent$SimpleInOutLineMvoStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="isPropertyLineNumberRemoved" />
+
+        <property name="isPropertyDescriptionRemoved" />
+
+        <property name="isPropertyLocatorIdRemoved" />
+
+        <property name="isPropertyProductRemoved" />
+
+        <property name="isPropertyUomIdRemoved" />
+
+        <property name="isPropertyMovementQuantityRemoved" />
+
+        <property name="isPropertyConfirmedQuantityRemoved" />
+
+        <property name="isPropertyScrappedQuantityRemoved" />
+
+        <property name="isPropertyTargetQuantityRemoved" />
+
+        <property name="isPropertyPickedQuantityRemoved" />
+
+        <property name="isPropertyIsInvoicedRemoved" />
+
+        <property name="isPropertyAttributeSetInstanceIdRemoved" />
+
+        <property name="isPropertyIsDescriptionRemoved" />
+
+        <property name="isPropertyProcessedRemoved" />
+
+        <property name="isPropertyQuantityEnteredRemoved" />
+
+        <property name="isPropertyRmaLineNumberRemoved" />
+
+        <property name="isPropertyReversalLineNumberRemoved" />
+
+        <property name="isPropertyVersionRemoved" />
+
+        <property name="isPropertyActiveRemoved" />
+
+        <property name="isPropertyInOutIsSOTransactionRemoved" />
+
+        <property name="isPropertyInOutDocumentStatusRemoved" />
+
+        <property name="isPropertyInOutPostedRemoved" />
+
+        <property name="isPropertyInOutProcessingRemoved" />
+
+        <property name="isPropertyInOutProcessedRemoved" />
+
+        <property name="isPropertyInOutDocumentTypeRemoved" />
+
+        <property name="isPropertyInOutDescriptionRemoved" />
+
+        <property name="isPropertyInOutOrderNumberRemoved" />
+
+        <property name="isPropertyInOutDateOrderedRemoved" />
+
+        <property name="isPropertyInOutIsPrintedRemoved" />
+
+        <property name="isPropertyInOutMovementTypeRemoved" />
+
+        <property name="isPropertyInOutMovementDateRemoved" />
+
+        <property name="isPropertyInOutBusinessPartnerIdRemoved" />
+
+        <property name="isPropertyInOutWarehouseIdRemoved" />
+
+        <property name="isPropertyInOutPOReferenceRemoved" />
+
+        <property name="isPropertyInOutFreightAmountRemoved" />
+
+        <property name="isPropertyInOutShipperIdRemoved" />
+
+        <property name="isPropertyInOutChargeAmountRemoved" />
+
+        <property name="isPropertyInOutDatePrintedRemoved" />
+
+        <property name="isPropertyInOutSalesRepresentativeRemoved" />
+
+        <property name="isPropertyInOutNumberOfPackagesRemoved" />
+
+        <property name="isPropertyInOutPickDateRemoved" />
+
+        <property name="isPropertyInOutShipDateRemoved" />
+
+        <property name="isPropertyInOutTrackingNumberRemoved" />
+
+        <property name="isPropertyInOutDateReceivedRemoved" />
+
+        <property name="isPropertyInOutIsInTransitRemoved" />
+
+        <property name="isPropertyInOutIsApprovedRemoved" />
+
+        <property name="isPropertyInOutIsInDisputeRemoved" />
+
+        <property name="isPropertyInOutVolumeRemoved" />
+
+        <property name="isPropertyInOutWeightRemoved" />
+
+        <property name="isPropertyInOutRmaNumberRemoved" />
+
+        <property name="isPropertyInOutReversalNumberRemoved" />
+
+        <property name="isPropertyInOutIsDropShipRemoved" />
+
+        <property name="isPropertyInOutDropShipBusinessPartnerIdRemoved" />
+
+        <property name="isPropertyInOutCreatedByRemoved" />
+
+        <property name="isPropertyInOutCreatedAtRemoved" />
+
+        <property name="isPropertyInOutUpdatedByRemoved" />
+
+        <property name="isPropertyInOutUpdatedAtRemoved" />
+
+        <property name="isPropertyInOutActiveRemoved" />
+
+        <property name="isPropertyInOutDeletedRemoved" />
+
+
+    </subclass>
+
+    <subclass name="AbstractInOutLineMvoStateEvent$SimpleInOutLineMvoStateDeleted"  discriminator-value="Deleted">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

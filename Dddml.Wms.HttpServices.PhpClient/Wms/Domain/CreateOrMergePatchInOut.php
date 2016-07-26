@@ -4,6 +4,9 @@ namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
 use NodaMoney\Money;
+use Dddml\Serializer\Type\Money;
+use Dddml\Serializer\Type\Decimal;
+use Dddml\Serializer\Type\Long;
 use Wms\Domain\CommandTrait;
 
 class CreateOrMergePatchInOut extends AbstractInOutCommand
@@ -308,22 +311,22 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     /**
      * @Type("string")
      */
-    private $pOReference;
+    private $poReference;
 
     /**
      * @return string
      */
     public function getPOReference()
     {
-        return $this->pOReference;
+        return $this->poReference;
     }
 
     /**
-     * @param string $pOReference
+     * @param string $poReference
      */
-    public function setPOReference($pOReference)
+    public function setPOReference($poReference)
     {
-        $this->pOReference = $pOReference;
+        $this->poReference = $poReference;
     }
 
     /**

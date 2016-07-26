@@ -7,6 +7,9 @@ use Dddml\Executor\Http\CommandRequestInterface;
 use Dddml\Routing\RouteTrait;
 use Symfony\Component\Routing\Route;
 use NodaMoney\Money;
+use Dddml\Serializer\Type\Money;
+use Dddml\Serializer\Type\Decimal;
+use Dddml\Serializer\Type\Long;
 use Wms\Domain\DeleteInOut;
 
 

@@ -1096,6 +1096,10 @@
       <Project>{cef7bb89-917c-4a08-bacc-6b3ed6020944}</Project>
       <Name>Dddml.Wms.HttpServices.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Dddml.Wms.HttpServices.JsonConverters\Dddml.Wms.HttpServices.JsonConverters.csproj">
+      <Project>{e5e7c73a-5de3-4bc6-9a92-bf7a6d24ddf5}</Project>
+      <Name>Dddml.Wms.HttpServices.JsonConverters</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Dddml.Wms.Services\Dddml.Wms.Services.csproj">
       <Project>{26ba5188-b72d-4ece-9984-4f76a3eb74c3}</Project>
       <Name>Dddml.Wms.Services</Name>

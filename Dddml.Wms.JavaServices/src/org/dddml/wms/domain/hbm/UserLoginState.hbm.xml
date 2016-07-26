@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="org.dddml.wms.domain.AbstractUserLoginState$SimpleUserLoginState" table="UserLogins">
+
+	<composite-id name="userLoginId" class="org.dddml.wms.domain.UserLoginId">
+		<key-property name="userId" column="UserLoginIdUserId" length="50"/>
+		<key-property name="loginKeyLoginProvider" column="UserLoginIdLoginKeyLoginProvider" />
+		<key-property name="loginKeyProviderKey" column="UserLoginIdLoginKeyProviderKey" />
+	</composite-id>
+
+	<version name="version" type="long" />
+
+	<property name="createdBy" ></property>
+
+	<property name="createdAt" ></property>
+
+	<property name="updatedBy" ></property>
+
+	<property name="updatedAt" ></property>
+
+	<property name="active" ></property>
+
+	<property name="deleted" ></property>
+
+
+  </class>
+  
+</hibernate-mapping>
+

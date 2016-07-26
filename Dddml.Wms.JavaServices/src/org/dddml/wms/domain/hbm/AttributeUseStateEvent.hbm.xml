@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="AbstractAttributeUseStateEvent" table="AttributeUseStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="stateEventId" class="org.dddml.wms.domain.AttributeUseStateEventId">
+		<key-property name="attributeSetId" column="AttributeSetAttributeUseIdAttributeSetId" length="50"/>
+		<key-property name="attributeId" column="AttributeSetAttributeUseIdAttributeId" length="50"/>
+		<key-property name="attributeSetVersion" column="AttributeSetVersion" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="string" />
+
+	<property name="sequenceNumber" ></property>
+
+	<property name="active" ></property>
+
+
+    <property name="createdBy" />
+
+    <property name="createdAt" />
+
+    <property name="commandId" />
+
+    <property name="version" not-null="true" />
+
+
+    <subclass name="AbstractAttributeUseStateEvent$SimpleAttributeUseStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="AbstractAttributeUseStateEvent$SimpleAttributeUseStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="isPropertySequenceNumberRemoved" />
+
+        <property name="isPropertyActiveRemoved" />
+
+
+    </subclass>
+
+    <subclass name="AbstractAttributeUseStateEvent$SimpleAttributeUseStateRemoved"  discriminator-value="Removed">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

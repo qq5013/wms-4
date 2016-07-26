@@ -1,0 +1,77 @@
+﻿<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="AbstractLocatorStateEvent" table="LocatorStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="stateEventId" class="org.dddml.wms.domain.LocatorStateEventId">
+		<key-property name="locatorId" column="LocatorId" length="50"/>
+		<key-property name="version" column="Version" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="string" />
+
+	<property name="warehouseId" not-null="true"></property>
+
+	<property name="parentLocatorId" ></property>
+
+	<property name="locatorType" ></property>
+
+	<property name="priorityNumber" ></property>
+
+	<property name="isDefault" ></property>
+
+	<property name="x" ></property>
+
+	<property name="y" ></property>
+
+	<property name="z" ></property>
+
+	<property name="active" ></property>
+
+
+    <property name="createdBy" />
+
+    <property name="createdAt" />
+
+    <property name="commandId" />
+
+
+    <subclass name="AbstractLocatorStateEvent$SimpleLocatorStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="AbstractLocatorStateEvent$SimpleLocatorStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="isPropertyWarehouseIdRemoved" />
+
+        <property name="isPropertyParentLocatorIdRemoved" />
+
+        <property name="isPropertyLocatorTypeRemoved" />
+
+        <property name="isPropertyPriorityNumberRemoved" />
+
+        <property name="isPropertyIsDefaultRemoved" />
+
+        <property name="isPropertyXRemoved" />
+
+        <property name="isPropertyYRemoved" />
+
+        <property name="isPropertyZRemoved" />
+
+        <property name="isPropertyActiveRemoved" />
+
+
+    </subclass>
+
+    <subclass name="AbstractLocatorStateEvent$SimpleLocatorStateDeleted"  discriminator-value="Deleted">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

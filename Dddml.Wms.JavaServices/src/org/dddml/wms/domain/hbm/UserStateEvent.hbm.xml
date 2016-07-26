@@ -1,0 +1,89 @@
+﻿<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="AbstractUserStateEvent" table="UserStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="stateEventId" class="org.dddml.wms.domain.UserStateEventId">
+		<key-property name="userId" column="UserId" length="50"/>
+		<key-property name="version" column="Version" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="string" />
+
+	<property name="userName" unique-key="UniqueUserName"></property>
+
+	<property name="accessFailedCount" ></property>
+
+	<property name="email" ></property>
+
+	<property name="emailConfirmed" ></property>
+
+	<property name="lockoutEnabled" ></property>
+
+	<property name="lockoutEndDateUtc" ></property>
+
+	<property name="passwordHash" ></property>
+
+	<property name="phoneNumber" ></property>
+
+	<property name="phoneNumberConfirmed" ></property>
+
+	<property name="twoFactorEnabled" ></property>
+
+	<property name="securityStamp" ></property>
+
+	<property name="active" ></property>
+
+
+    <property name="createdBy" />
+
+    <property name="createdAt" />
+
+    <property name="commandId" />
+
+
+    <subclass name="AbstractUserStateEvent$SimpleUserStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="AbstractUserStateEvent$SimpleUserStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="isPropertyUserNameRemoved" />
+
+        <property name="isPropertyAccessFailedCountRemoved" />
+
+        <property name="isPropertyEmailRemoved" />
+
+        <property name="isPropertyEmailConfirmedRemoved" />
+
+        <property name="isPropertyLockoutEnabledRemoved" />
+
+        <property name="isPropertyLockoutEndDateUtcRemoved" />
+
+        <property name="isPropertyPasswordHashRemoved" />
+
+        <property name="isPropertyPhoneNumberRemoved" />
+
+        <property name="isPropertyPhoneNumberConfirmedRemoved" />
+
+        <property name="isPropertyTwoFactorEnabledRemoved" />
+
+        <property name="isPropertySecurityStampRemoved" />
+
+        <property name="isPropertyActiveRemoved" />
+
+
+    </subclass>
+
+    <subclass name="AbstractUserStateEvent$SimpleUserStateDeleted"  discriminator-value="Deleted">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

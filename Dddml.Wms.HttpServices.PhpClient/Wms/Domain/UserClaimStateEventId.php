@@ -3,6 +3,7 @@
 namespace Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
+use Dddml\Serializer\Type\Long;
 use Dddml\StringIdInterface;
 
 class UserClaimStateEventId implements StringIdInterface

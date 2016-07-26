@@ -1,0 +1,85 @@
+﻿<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="AbstractAttributeStateEvent" table="AttributeStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="stateEventId" class="org.dddml.wms.domain.AttributeStateEventId">
+		<key-property name="attributeId" column="AttributeId" length="50"/>
+		<key-property name="version" column="Version" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="string" />
+
+	<property name="name" ></property>
+
+	<property name="organizationId" ></property>
+
+	<property name="description" ></property>
+
+	<property name="isMandatory" ></property>
+
+	<property name="isInstanceAttribute" ></property>
+
+	<property name="attributeValueType" ></property>
+
+	<property name="attributeValueLength" ></property>
+
+	<property name="isList" ></property>
+
+	<property name="fieldName" unique-key="UniqueFieldName"></property>
+
+	<property name="referenceId" ></property>
+
+	<property name="active" ></property>
+
+
+    <property name="createdBy" />
+
+    <property name="createdAt" />
+
+    <property name="commandId" />
+
+
+    <subclass name="AbstractAttributeStateEvent$SimpleAttributeStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="AbstractAttributeStateEvent$SimpleAttributeStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="isPropertyNameRemoved" />
+
+        <property name="isPropertyOrganizationIdRemoved" />
+
+        <property name="isPropertyDescriptionRemoved" />
+
+        <property name="isPropertyIsMandatoryRemoved" />
+
+        <property name="isPropertyIsInstanceAttributeRemoved" />
+
+        <property name="isPropertyAttributeValueTypeRemoved" />
+
+        <property name="isPropertyAttributeValueLengthRemoved" />
+
+        <property name="isPropertyIsListRemoved" />
+
+        <property name="isPropertyFieldNameRemoved" />
+
+        <property name="isPropertyReferenceIdRemoved" />
+
+        <property name="isPropertyActiveRemoved" />
+
+
+    </subclass>
+
+    <subclass name="AbstractAttributeStateEvent$SimpleAttributeStateDeleted"  discriminator-value="Deleted">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

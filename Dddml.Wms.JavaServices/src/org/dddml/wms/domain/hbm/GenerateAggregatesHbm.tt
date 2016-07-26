@@ -1,0 +1,25 @@
+<#@ template language="C#" debug="True" #>
+<#@ output extension="txt" #>
+<#@ import namespace="Dddml.Core.Domain" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ include file="T4Toolbox.tt" #>
+<#@ include file="%DddmlDotNetToolsSolutionDir%\Dddml.T4.Templates.Java\Hibernate\Mappings\AggregateHbmGenerator.tt" #>
+<#@ include file="$(SolutionDir)Dddml.Wms.JavaCommon\src\org\dddml\wms\LoadBoundedContext.tt" #>
+<#
+
+	var generatedFiles = new List<string>();
+	foreach (var aggregate in boundedContext.Aggregates.Values)
+	{
+	    var generator = new AggregateHbmGenerator(aggregate);
+	    generator.Run();
+		
+		generatedFiles.AddRange(generator.GeneratedFiles);
+	}
+
+	foreach (var f in generatedFiles)
+	{	
+#>
+        <mapping resource="<#= boundedContext.GetDomainPackage().Replace(".", "/") #>/hbm/<#= f #>"/>
+<#
+	}
+#>

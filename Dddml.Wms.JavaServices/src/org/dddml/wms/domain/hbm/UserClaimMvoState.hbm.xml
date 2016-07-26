@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="org.dddml.wms.domain.AbstractUserClaimMvoState$SimpleUserClaimMvoState" table="UserClaim_RV">
+
+	<composite-id name="userClaimId" class="org.dddml.wms.domain.UserClaimId">
+		<key-property name="userId" column="UserClaimIdUserId" length="50"/>
+		<key-property name="claimId" column="UserClaimIdClaimId" />
+	</composite-id>
+
+	<version name="userVersion" type="long" />
+
+	<property name="claimType" ></property>
+
+	<property name="claimValue" ></property>
+
+	<property name="version" ></property>
+
+	<property name="createdBy" ></property>
+
+	<property name="createdAt" ></property>
+
+	<property name="updatedBy" ></property>
+
+	<property name="updatedAt" ></property>
+
+	<property name="active" ></property>
+
+	<property name="deleted" ></property>
+
+	<property name="userUserName" ></property>
+
+	<property name="userAccessFailedCount" ></property>
+
+	<property name="userEmail" ></property>
+
+	<property name="userEmailConfirmed" ></property>
+
+	<property name="userLockoutEnabled" ></property>
+
+	<property name="userLockoutEndDateUtc" ></property>
+
+	<property name="userPasswordHash" ></property>
+
+	<property name="userPhoneNumber" ></property>
+
+	<property name="userPhoneNumberConfirmed" ></property>
+
+	<property name="userTwoFactorEnabled" ></property>
+
+	<property name="userSecurityStamp" ></property>
+
+	<property name="userCreatedBy" ></property>
+
+	<property name="userCreatedAt" ></property>
+
+	<property name="userUpdatedBy" ></property>
+
+	<property name="userUpdatedAt" ></property>
+
+	<property name="userActive" ></property>
+
+	<property name="userDeleted" ></property>
+
+
+  </class>
+  
+</hibernate-mapping>
+

@@ -8,6 +8,9 @@ use Dddml\Routing\RouteTrait;
 use JMS\Serializer\Annotation\Type;
 use Symfony\Component\Routing\Route;
 use NodaMoney\Money;
+use Dddml\Serializer\Type\Money;
+use Dddml\Serializer\Type\Decimal;
+use Dddml\Serializer\Type\Long;
 use Wms\Domain\CreateOrMergePatchInOut;
 
 class MergePatchInOutRequest implements CommandRequestInterface

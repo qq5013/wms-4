@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="org.dddml.wms.domain.AbstractAttributeUseMvoState$SimpleAttributeUseMvoState" table="AttributeUse_RV">
+
+	<composite-id name="attributeSetAttributeUseId" class="org.dddml.wms.domain.AttributeSetAttributeUseId">
+		<key-property name="attributeSetId" column="AttributeSetAttributeUseIdAttributeSetId" length="50"/>
+		<key-property name="attributeId" column="AttributeSetAttributeUseIdAttributeId" length="50"/>
+	</composite-id>
+
+	<version name="attributeSetVersion" type="long" />
+
+	<property name="sequenceNumber" ></property>
+
+	<property name="version" ></property>
+
+	<property name="createdBy" ></property>
+
+	<property name="createdAt" ></property>
+
+	<property name="updatedBy" ></property>
+
+	<property name="updatedAt" ></property>
+
+	<property name="active" ></property>
+
+	<property name="deleted" ></property>
+
+	<property name="attributeSetName" ></property>
+
+	<property name="attributeSetOrganizationId" ></property>
+
+	<property name="attributeSetDescription" ></property>
+
+	<property name="attributeSetSerialNumberAttributeId" ></property>
+
+	<property name="attributeSetLotAttributeId" ></property>
+
+	<property name="attributeSetReferenceId" ></property>
+
+	<property name="attributeSetCreatedBy" ></property>
+
+	<property name="attributeSetCreatedAt" ></property>
+
+	<property name="attributeSetUpdatedBy" ></property>
+
+	<property name="attributeSetUpdatedAt" ></property>
+
+	<property name="attributeSetActive" ></property>
+
+	<property name="attributeSetDeleted" ></property>
+
+
+  </class>
+  
+</hibernate-mapping>
+

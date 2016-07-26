@@ -100,6 +100,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Tests
             Console.WriteLine("==================== Object [name = " + name + "] : ====================");
             Console.WriteLine(jObj.ToString());
             Console.WriteLine("==================== End Of Object [name = " + name + "] ====================");
+            
         }
 
 

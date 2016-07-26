@@ -1,8 +1,9 @@
 <?php
-/** @var CommandExecutor $executor */
+
 use Dddml\Executor\Http\CommandExecutor;
 use Wms\HttpClient\CreateRoleRequest;
 
+/** @var CommandExecutor $executor */
 $executor = require_once __DIR__ . '/wms_command_bootstrap.php';
 
 $roleId = 'testManager1';

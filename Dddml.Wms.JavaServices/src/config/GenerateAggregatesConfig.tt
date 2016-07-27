@@ -1,0 +1,69 @@
+<#@ template language="C#" debug="True" #>
+<#@ output extension="txt" #>
+<#@ import namespace="Dddml.Core.Domain" #>
+<#@ include file="T4Toolbox.tt" #>
+<#@ include file="%DddmlDotNetToolsSolutionDir%\Dddml.T4.Templates.Java\Hibernate\Spring\AggregatesHibernateSpringConfigGenerator.tt" #>
+<#@ include file="$(SolutionDir)Dddml.Wms.JavaCommon\src\org\dddml\wms\LoadBoundedContext.tt" #>
+<#
+//include file="%DddmlDotNetToolsSolutionDir%\Dddml.T4.Templates\Spring\AggregatesArbitraryStringIdGeneratorSpringConfigGenerator.tt"
+
+	//foreach (var aggregate in boundedContext.Aggregates.Values)
+	//{
+    var generator = new AggregatesHibernateSpringConfigGenerator(boundedContext.Aggregates.Values);
+    generator.Run();
+	//}
+	
+	//var AggregatesArbitraryStringIdGeneratorSpringConfigGenerator = new AggregatesArbitraryStringIdGeneratorSpringConfigGenerator(boundedContext.Aggregates.Values);
+	//AggregatesArbitraryStringIdGeneratorSpringConfigGenerator.Run();
+
+#> 
+<!-- TODO TODO TODO TODO TODO TODO TODO TODO  -->
+  <spring>
+
+    <context>
+      <resource uri="config://spring/objects" />
+      <resource uri="assembly://_PATH_/<#= boundedContext.DefaultModule #>.Services.Config/DatabaseConfig.xml" />
+
+      <!-- Can copy this to App.config/spring/context -->
+
+<# 
+	foreach (var aggregate in boundedContext.Aggregates.Values)
+	{
+	  if (false)
+	  {
+#>
+      <resource uri="assembly://_PATH_/<#= boundedContext.DefaultModule #>.Services.Config/<#= aggregate.Name #>AggregateConfig.xml"/>
+<#
+	  }
+	}
+#>
+      <resource uri="assembly://_PATH_/<#= boundedContext.DefaultModule #>.Services.Config/AggregatesHibernateConfig.xml"/>
+
+      <resource uri="assembly://_PATH_/<#= boundedContext.DefaultModule #>.Services.Config/AggregatesIdGeneratorConfig.xml"/>
+
+    </context>
+
+    <objects xmlns="http://www.springframework.net">
+      <!-- Property placeholder configurer for database settings -->
+      <object type="Spring.Objects.Factory.Config.PropertyPlaceholderConfigurer, Spring.Core">
+        <property name="ConfigSections" value="databaseSettings" />
+      </object>
+
+<#
+	foreach (var aggregate in boundedContext.Aggregates.Values)
+	{
+		bool httpPostCreationEnabled = aggregate.GetHttpPostCreationEnabled();
+		if (httpPostCreationEnabled || (aggregate.Id.IsServerSideGenerated && !aggregate.Id.Arbitrary))
+		{
+#>
+      <!-- You maybe NEED a custom <#= aggregate.Name #>IdGenerator! -->
+
+<#
+		}
+	}
+#>
+
+    </objects>
+
+  </spring>
+

@@ -2,7 +2,7 @@ package org.dddml.wms.domain;
 
 import org.dddml.wms.specialization.StateEventType;
 
-public abstract class AbstractStateEventDto
+public abstract class AbstractStateEvent
 {
     public static final String STATE_EVENT_TYPE_CREATED = StateEventType.CREATED;
 

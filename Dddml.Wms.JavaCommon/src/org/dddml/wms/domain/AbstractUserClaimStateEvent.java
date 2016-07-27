@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.Date;
 import org.dddml.wms.specialization.*;
 
-public abstract class AbstractUserClaimStateEvent implements UserClaimStateEvent
+public abstract class AbstractUserClaimStateEvent extends AbstractStateEvent implements UserClaimStateEvent 
 {
     private UserClaimStateEventId stateEventId;
 

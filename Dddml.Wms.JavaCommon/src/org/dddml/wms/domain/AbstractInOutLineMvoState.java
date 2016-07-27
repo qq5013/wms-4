@@ -1577,7 +1577,14 @@ public abstract class AbstractInOutLineMvoState implements InOutLineMvoState
         }
 
         Long stateVersion = this.getInOutVersion();
-        Long eventVersion = stateEvent.getStateEventId().getInOutVersion();
+        if(stateVersion == null) {
+            stateVersion = InOutLineMvoState.VERSION_ZERO;
+        }
+        Long eventVersion = stateEvent.getStateEventId().getInOutVersion();// Aggregate Version
+        if(eventVersion == null) {
+            eventVersion = InOutLineMvoState.VERSION_ZERO;
+            stateEvent.getStateEventId().setInOutVersion(eventVersion);
+        }
         if (!stateVersion.equals(eventVersion))
         {
             throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);

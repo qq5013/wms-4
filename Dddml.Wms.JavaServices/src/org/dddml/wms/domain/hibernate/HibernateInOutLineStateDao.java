@@ -9,7 +9,11 @@ import org.dddml.wms.specialization.*;
 
 public class HibernateInOutLineStateDao implements InOutLineStateDao
 {
-    public SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
+
+    public SessionFactory getSessionFactory() { return this.sessionFactory; }
+
+    public void setSessionFactory(SessionFactory sessionFactory) { this.sessionFactory = sessionFactory; }
 
     protected Session getCurrentSession() {
         return this.sessionFactory.getCurrentSession();
@@ -31,7 +35,12 @@ public class HibernateInOutLineStateDao implements InOutLineStateDao
     @Override
     public void save(InOutLineState state)
     {
-        getCurrentSession().saveOrUpdate(state);
+        if(state.getVersion() == null || state.getVersion().equals(InOutLineState.VERSION_ZERO)) {
+            getCurrentSession().save(state);
+        }else {
+            getCurrentSession().update(state);
+        }
+
         if (state instanceof Saveable)
         {
             Saveable saveable = (Saveable) state;

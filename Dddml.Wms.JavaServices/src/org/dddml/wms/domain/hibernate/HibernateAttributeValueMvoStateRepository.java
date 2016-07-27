@@ -9,7 +9,11 @@ import org.dddml.wms.specialization.*;
 
 public class HibernateAttributeValueMvoStateRepository implements AttributeValueMvoStateRepository
 {
-    public SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
+
+    public SessionFactory getSessionFactory() { return this.sessionFactory; }
+
+    public void setSessionFactory(SessionFactory sessionFactory) { this.sessionFactory = sessionFactory; }
 
     protected Session getCurrentSession() {
         return this.sessionFactory.getCurrentSession();
@@ -39,7 +43,11 @@ public class HibernateAttributeValueMvoStateRepository implements AttributeValue
     //[Transaction]
     public void save(AttributeValueMvoState state)
     {
-        getCurrentSession().saveOrUpdate(state);
+        if(state.getAttributeVersion() == null || state.getAttributeVersion().equals(AttributeValueMvoState.VERSION_ZERO)) {
+            getCurrentSession().save(state);
+        }else {
+            getCurrentSession().update(state);
+        }
 
         if (state instanceof Saveable)
         {

@@ -621,7 +621,13 @@ public abstract class AbstractInOutLineState implements InOutLineState
         }
 
         Long stateVersion = this.getVersion();
+        if(stateVersion == null) {
+            stateVersion = InOutLineState.VERSION_ZERO;
+        }
         Long eventVersion = stateEvent.getVersion();
+        if(eventVersion == null) {
+            eventVersion = InOutLineState.VERSION_ZERO;
+        }
         if (InOutLineState.VERSION_ZERO.equals(eventVersion))
         {
             stateEvent.setVersion(stateVersion);

@@ -6,7 +6,7 @@ import java.util.Date;
 import org.joda.money.Money;
 import org.dddml.wms.specialization.*;
 
-public abstract class AbstractInOutLineMvoStateEvent implements InOutLineMvoStateEvent
+public abstract class AbstractInOutLineMvoStateEvent extends AbstractStateEvent implements InOutLineMvoStateEvent 
 {
     private InOutLineMvoStateEventId stateEventId;
 

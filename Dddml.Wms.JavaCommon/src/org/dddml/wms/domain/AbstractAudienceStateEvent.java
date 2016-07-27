@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.Date;
 import org.dddml.wms.specialization.*;
 
-public abstract class AbstractAudienceStateEvent implements AudienceStateEvent
+public abstract class AbstractAudienceStateEvent extends AbstractStateEvent implements AudienceStateEvent 
 {
     private AudienceStateEventId stateEventId;
 

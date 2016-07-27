@@ -9,7 +9,11 @@ import org.dddml.wms.specialization.*;
 
 public class HibernateUserClaimMvoStateRepository implements UserClaimMvoStateRepository
 {
-    public SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
+
+    public SessionFactory getSessionFactory() { return this.sessionFactory; }
+
+    public void setSessionFactory(SessionFactory sessionFactory) { this.sessionFactory = sessionFactory; }
 
     protected Session getCurrentSession() {
         return this.sessionFactory.getCurrentSession();
@@ -39,7 +43,11 @@ public class HibernateUserClaimMvoStateRepository implements UserClaimMvoStateRe
     //[Transaction]
     public void save(UserClaimMvoState state)
     {
-        getCurrentSession().saveOrUpdate(state);
+        if(state.getUserVersion() == null || state.getUserVersion().equals(UserClaimMvoState.VERSION_ZERO)) {
+            getCurrentSession().save(state);
+        }else {
+            getCurrentSession().update(state);
+        }
 
         if (state instanceof Saveable)
         {

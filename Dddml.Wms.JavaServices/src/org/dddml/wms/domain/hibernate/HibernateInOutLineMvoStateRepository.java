@@ -11,7 +11,11 @@ import org.dddml.wms.specialization.*;
 
 public class HibernateInOutLineMvoStateRepository implements InOutLineMvoStateRepository
 {
-    public SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
+
+    public SessionFactory getSessionFactory() { return this.sessionFactory; }
+
+    public void setSessionFactory(SessionFactory sessionFactory) { this.sessionFactory = sessionFactory; }
 
     protected Session getCurrentSession() {
         return this.sessionFactory.getCurrentSession();
@@ -41,7 +45,11 @@ public class HibernateInOutLineMvoStateRepository implements InOutLineMvoStateRe
     //[Transaction]
     public void save(InOutLineMvoState state)
     {
-        getCurrentSession().saveOrUpdate(state);
+        if(state.getInOutVersion() == null || state.getInOutVersion().equals(InOutLineMvoState.VERSION_ZERO)) {
+            getCurrentSession().save(state);
+        }else {
+            getCurrentSession().update(state);
+        }
 
         if (state instanceof Saveable)
         {

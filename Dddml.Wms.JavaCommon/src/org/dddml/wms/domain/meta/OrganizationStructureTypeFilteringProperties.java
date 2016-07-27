@@ -11,14 +11,14 @@ public final class OrganizationStructureTypeFilteringProperties
     }
 
     public static final String[] propertyNames = new String[] {
-            "Id",
-            "Version",
-            "CreatedBy",
-            "CreatedAt",
-            "UpdatedBy",
-            "UpdatedAt",
-            "Active",
-            "Deleted",
+            "id",
+            "version",
+            "createdBy",
+            "createdAt",
+            "updatedBy",
+            "updatedAt",
+            "active",
+            "deleted",
     };
 
     public static final String[] propertyTypes = new String[] {

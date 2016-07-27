@@ -11,19 +11,19 @@ public final class AttributeValueFilteringProperties
     }
 
     public static final String[] propertyNames = new String[] {
-            "Name",
-            "Description",
-            "ReferenceId",
-            "Version",
-            "CreatedBy",
-            "CreatedAt",
-            "UpdatedBy",
-            "UpdatedAt",
-            "Active",
-            "Deleted",
-            "AttributeId",
-            "AttributeValueId.AttributeId",
-            "AttributeValueId.Value",
+            "name",
+            "description",
+            "referenceId",
+            "version",
+            "createdBy",
+            "createdAt",
+            "updatedBy",
+            "updatedAt",
+            "active",
+            "deleted",
+            "attributeId",
+            "attributeValueId.attributeId",
+            "attributeValueId.value",
     };
 
     public static final String[] propertyTypes = new String[] {

@@ -24,10 +24,6 @@ public interface InOutApplicationService
 
     //Iterable<InOutState> get(Criterion filter, List<String> orders, Integer firstResult, Integer maxResults);
 
-    InOutState getFirst(Iterable<Map.Entry<String, Object>> filter, List<String> orders);
-
-    InOutState getFirst(Map.Entry<String, Object> keyValue, List<String> orders);
-
     Iterable<InOutState> getByProperty(String propertyName, Object propertyValue, List<String> orders, Integer firstResult, Integer maxResults);
 
     long getCount(Iterable<Map.Entry<String, Object>> filter);

@@ -22,10 +22,6 @@ public interface RoleApplicationService
 
     //Iterable<RoleState> get(Criterion filter, List<String> orders, Integer firstResult, Integer maxResults);
 
-    RoleState getFirst(Iterable<Map.Entry<String, Object>> filter, List<String> orders);
-
-    RoleState getFirst(Map.Entry<String, Object> keyValue, List<String> orders);
-
     Iterable<RoleState> getByProperty(String propertyName, Object propertyValue, List<String> orders, Integer firstResult, Integer maxResults);
 
     long getCount(Iterable<Map.Entry<String, Object>> filter);

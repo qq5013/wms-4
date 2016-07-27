@@ -223,7 +223,9 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldGroupAggregate e
         if (innerGroupIdValue == null) {
             innerProperties.setGroupId(outerIdValue);
         }
-        else if (innerGroupIdValue != outerIdValue && innerGroupIdValue != null && !innerGroupIdValue.equals(outerIdValue)) {
+        else if (innerGroupIdValue != outerIdValue 
+            && (innerGroupIdValue == null || innerGroupIdValue != null && !innerGroupIdValue.equals(outerIdValue))) 
+        {
             throw DomainError.named("inconsistentId", "Outer %1$s %2$s NOT equals inner %3$s %4$s", outerIdName, outerIdValue, innerGroupIdName, innerGroupIdValue);
         }
     }// END throwOnInconsistentCommands /////////////////////

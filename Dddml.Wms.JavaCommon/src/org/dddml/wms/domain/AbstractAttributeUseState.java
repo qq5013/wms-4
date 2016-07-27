@@ -236,7 +236,13 @@ public abstract class AbstractAttributeUseState implements AttributeUseState
         }
 
         Long stateVersion = this.getVersion();
+        if(stateVersion == null) {
+            stateVersion = AttributeUseState.VERSION_ZERO;
+        }
         Long eventVersion = stateEvent.getVersion();
+        if(eventVersion == null) {
+            eventVersion = AttributeUseState.VERSION_ZERO;
+        }
         if (AttributeUseState.VERSION_ZERO.equals(eventVersion))
         {
             stateEvent.setVersion(stateVersion);

@@ -22,10 +22,6 @@ public interface UserRoleMvoApplicationService
 
     //Iterable<UserRoleMvoState> get(Criterion filter, List<String> orders, Integer firstResult, Integer maxResults);
 
-    UserRoleMvoState getFirst(Iterable<Map.Entry<String, Object>> filter, List<String> orders);
-
-    UserRoleMvoState getFirst(Map.Entry<String, Object> keyValue, List<String> orders);
-
     Iterable<UserRoleMvoState> getByProperty(String propertyName, Object propertyValue, List<String> orders, Integer firstResult, Integer maxResults);
 
     long getCount(Iterable<Map.Entry<String, Object>> filter);

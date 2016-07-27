@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 import org.dddml.wms.specialization.*;
 
-public abstract class AbstractAttributeSetInstanceStateEvent implements AttributeSetInstanceStateEvent
+public abstract class AbstractAttributeSetInstanceStateEvent extends AbstractStateEvent implements AttributeSetInstanceStateEvent 
 {
     private AttributeSetInstanceStateEventId stateEventId;
 

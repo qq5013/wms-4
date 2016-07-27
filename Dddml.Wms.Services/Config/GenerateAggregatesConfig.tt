@@ -3,7 +3,7 @@
 <#@ import namespace="Dddml.Core.Domain" #>
 <#@ include file="T4Toolbox.tt" #>
 <#@ include file="%DddmlDotNetToolsSolutionDir%\Dddml.T4.Templates\NHibernate\Spring\AggregatesNHibernateSpringConfigGenerator.tt" #>
-<#@ include file="%DddmlDotNetToolsSolutionDir%\Dddml.T4.Templates\Spring\AggregatesArbitraryStringIdGeneratorSpringConfigGenerator.tt" #>
+<#@ include file="%DddmlDotNetToolsSolutionDir%\Dddml.T4.Templates\Spring.Net\AggregatesArbitraryStringIdGeneratorSpringConfigGenerator.tt" #>
 <#@ include file="..\LoadBoundedContext.tt" #>
 <#
 

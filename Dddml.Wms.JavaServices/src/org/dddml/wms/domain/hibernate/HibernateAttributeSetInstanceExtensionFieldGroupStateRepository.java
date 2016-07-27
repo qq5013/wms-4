@@ -9,7 +9,11 @@ import org.dddml.wms.specialization.*;
 
 public class HibernateAttributeSetInstanceExtensionFieldGroupStateRepository implements AttributeSetInstanceExtensionFieldGroupStateRepository
 {
-    public SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
+
+    public SessionFactory getSessionFactory() { return this.sessionFactory; }
+
+    public void setSessionFactory(SessionFactory sessionFactory) { this.sessionFactory = sessionFactory; }
 
     protected Session getCurrentSession() {
         return this.sessionFactory.getCurrentSession();
@@ -39,7 +43,11 @@ public class HibernateAttributeSetInstanceExtensionFieldGroupStateRepository imp
     //[Transaction]
     public void save(AttributeSetInstanceExtensionFieldGroupState state)
     {
-        getCurrentSession().saveOrUpdate(state);
+        if(state.getVersion() == null || state.getVersion().equals(AttributeSetInstanceExtensionFieldGroupState.VERSION_ZERO)) {
+            getCurrentSession().save(state);
+        }else {
+            getCurrentSession().update(state);
+        }
 
         if (state instanceof Saveable)
         {

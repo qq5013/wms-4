@@ -1,9 +1,9 @@
 package org.dddml.wms.domain;
 
 import java.util.Date;
-import org.dddml.wms.domain.AbstractStateEventDto;
+import org.dddml.wms.domain.AbstractStateEvent;
 
-public class UserPermissionMvoStateEventDto extends AbstractStateEventDto
+public class UserPermissionMvoStateEventDto extends AbstractStateEvent
 {
     private String stateEventType;
 
@@ -442,7 +442,7 @@ public class UserPermissionMvoStateEventDto extends AbstractStateEventDto
         @Override
         public String getStateEventType()
         {
-            return AbstractStateEventDto.STATE_EVENT_TYPE_CREATED;
+            return STATE_EVENT_TYPE_CREATED;
         }
 
 	}
@@ -453,7 +453,7 @@ public class UserPermissionMvoStateEventDto extends AbstractStateEventDto
         @Override
         public String getStateEventType()
         {
-            return AbstractStateEventDto.STATE_EVENT_TYPE_MERGE_PATCHED;
+            return STATE_EVENT_TYPE_MERGE_PATCHED;
         }
 
 	}
@@ -464,7 +464,7 @@ public class UserPermissionMvoStateEventDto extends AbstractStateEventDto
         @Override
         public String getStateEventType()
         {
-            return AbstractStateEventDto.STATE_EVENT_TYPE_DELETED;
+            return STATE_EVENT_TYPE_DELETED;
         }
 
 	}

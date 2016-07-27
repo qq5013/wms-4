@@ -11,19 +11,19 @@ public final class AttributeSetInstanceExtensionFieldGroupFilteringProperties
     }
 
     public static final String[] propertyNames = new String[] {
-            "Id",
-            "FieldType",
-            "FieldLength",
-            "FieldCount",
-            "NameFormat",
-            "Description",
-            "Version",
-            "CreatedBy",
-            "CreatedAt",
-            "UpdatedBy",
-            "UpdatedAt",
-            "Active",
-            "Deleted",
+            "id",
+            "fieldType",
+            "fieldLength",
+            "fieldCount",
+            "nameFormat",
+            "description",
+            "version",
+            "createdBy",
+            "createdAt",
+            "updatedBy",
+            "updatedAt",
+            "active",
+            "deleted",
     };
 
     public static final String[] propertyTypes = new String[] {

@@ -3,9 +3,9 @@ package org.dddml.wms.domain;
 import org.joda.money.Money;
 import java.math.BigDecimal;
 import java.util.Date;
-import org.dddml.wms.domain.AbstractStateEventDto;
+import org.dddml.wms.domain.AbstractStateEvent;
 
-public class InOutStateEventDto extends AbstractStateEventDto
+public class InOutStateEventDto extends AbstractStateEvent
 {
     private String stateEventType;
 
@@ -775,7 +775,7 @@ public class InOutStateEventDto extends AbstractStateEventDto
         @Override
         public String getStateEventType()
         {
-            return AbstractStateEventDto.STATE_EVENT_TYPE_CREATED;
+            return STATE_EVENT_TYPE_CREATED;
         }
 
 	}
@@ -786,7 +786,7 @@ public class InOutStateEventDto extends AbstractStateEventDto
         @Override
         public String getStateEventType()
         {
-            return AbstractStateEventDto.STATE_EVENT_TYPE_MERGE_PATCHED;
+            return STATE_EVENT_TYPE_MERGE_PATCHED;
         }
 
 	}
@@ -797,7 +797,7 @@ public class InOutStateEventDto extends AbstractStateEventDto
         @Override
         public String getStateEventType()
         {
-            return AbstractStateEventDto.STATE_EVENT_TYPE_DELETED;
+            return STATE_EVENT_TYPE_DELETED;
         }
 
 	}

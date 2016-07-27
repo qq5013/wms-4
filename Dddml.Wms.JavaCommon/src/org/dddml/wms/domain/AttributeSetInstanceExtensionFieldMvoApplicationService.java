@@ -22,10 +22,6 @@ public interface AttributeSetInstanceExtensionFieldMvoApplicationService
 
     //Iterable<AttributeSetInstanceExtensionFieldMvoState> get(Criterion filter, List<String> orders, Integer firstResult, Integer maxResults);
 
-    AttributeSetInstanceExtensionFieldMvoState getFirst(Iterable<Map.Entry<String, Object>> filter, List<String> orders);
-
-    AttributeSetInstanceExtensionFieldMvoState getFirst(Map.Entry<String, Object> keyValue, List<String> orders);
-
     Iterable<AttributeSetInstanceExtensionFieldMvoState> getByProperty(String propertyName, Object propertyValue, List<String> orders, Integer firstResult, Integer maxResults);
 
     long getCount(Iterable<Map.Entry<String, Object>> filter);

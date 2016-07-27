@@ -11,13 +11,13 @@ public final class AttributeSetInstanceFilteringProperties
     }
 
     public static final String[] propertyNames = new String[] {
-            "AttributeSetInstanceId",
-            "AttributeSetId",
-            "OrganizationId",
-            "ReferenceId",
-            "SerialNumber",
-            "Lot",
-            "Description",
+            "attributeSetInstanceId",
+            "attributeSetId",
+            "organizationId",
+            "referenceId",
+            "serialNumber",
+            "lot",
+            "description",
             "_F_B_0_",
             "_F_I_0_",
             "_F_L_0_",
@@ -473,13 +473,13 @@ public final class AttributeSetInstanceFilteringProperties
             "_F_C10_49_",
             "_F_C20_49_",
             "_F_C50_49_",
-            "Version",
-            "CreatedBy",
-            "CreatedAt",
-            "UpdatedBy",
-            "UpdatedAt",
-            "Active",
-            "Deleted",
+            "version",
+            "createdBy",
+            "createdAt",
+            "updatedBy",
+            "updatedAt",
+            "active",
+            "deleted",
     };
 
     public static final String[] propertyTypes = new String[] {

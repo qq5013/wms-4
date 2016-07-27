@@ -11,15 +11,15 @@ public final class RolePermissionFilteringProperties
     }
 
     public static final String[] propertyNames = new String[] {
-            "Version",
-            "CreatedBy",
-            "CreatedAt",
-            "UpdatedBy",
-            "UpdatedAt",
-            "Active",
-            "Deleted",
-            "Id.RoleId",
-            "Id.PermissionId",
+            "version",
+            "createdBy",
+            "createdAt",
+            "updatedBy",
+            "updatedAt",
+            "active",
+            "deleted",
+            "id.roleId",
+            "id.permissionId",
     };
 
     public static final String[] propertyTypes = new String[] {

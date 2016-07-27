@@ -214,7 +214,9 @@ public abstract class AbstractAttributeSetAggregate extends AbstractAggregate im
         if (innerAttributeSetIdValue == null) {
             innerProperties.setAttributeSetId(outerAttributeSetIdValue);
         }
-        else if (innerAttributeSetIdValue != outerAttributeSetIdValue && innerAttributeSetIdValue != null && !innerAttributeSetIdValue.equals(outerAttributeSetIdValue)) {
+        else if (innerAttributeSetIdValue != outerAttributeSetIdValue 
+            && (innerAttributeSetIdValue == null || innerAttributeSetIdValue != null && !innerAttributeSetIdValue.equals(outerAttributeSetIdValue))) 
+        {
             throw DomainError.named("inconsistentId", "Outer %1$s %2$s NOT equals inner %3$s %4$s", outerAttributeSetIdName, outerAttributeSetIdValue, innerAttributeSetIdName, innerAttributeSetIdValue);
         }
     }// END throwOnInconsistentCommands /////////////////////

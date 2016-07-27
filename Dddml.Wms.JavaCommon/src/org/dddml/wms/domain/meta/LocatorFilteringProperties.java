@@ -11,22 +11,22 @@ public final class LocatorFilteringProperties
     }
 
     public static final String[] propertyNames = new String[] {
-            "LocatorId",
-            "WarehouseId",
-            "ParentLocatorId",
-            "LocatorType",
-            "PriorityNumber",
-            "IsDefault",
-            "X",
-            "Y",
-            "Z",
-            "Version",
-            "CreatedBy",
-            "CreatedAt",
-            "UpdatedBy",
-            "UpdatedAt",
-            "Active",
-            "Deleted",
+            "locatorId",
+            "warehouseId",
+            "parentLocatorId",
+            "locatorType",
+            "priorityNumber",
+            "isDefault",
+            "x",
+            "y",
+            "z",
+            "version",
+            "createdBy",
+            "createdAt",
+            "updatedBy",
+            "updatedAt",
+            "active",
+            "deleted",
     };
 
     public static final String[] propertyTypes = new String[] {

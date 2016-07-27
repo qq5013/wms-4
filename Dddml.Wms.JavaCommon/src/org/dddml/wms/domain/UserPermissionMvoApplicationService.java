@@ -22,10 +22,6 @@ public interface UserPermissionMvoApplicationService
 
     //Iterable<UserPermissionMvoState> get(Criterion filter, List<String> orders, Integer firstResult, Integer maxResults);
 
-    UserPermissionMvoState getFirst(Iterable<Map.Entry<String, Object>> filter, List<String> orders);
-
-    UserPermissionMvoState getFirst(Map.Entry<String, Object> keyValue, List<String> orders);
-
     Iterable<UserPermissionMvoState> getByProperty(String propertyName, Object propertyValue, List<String> orders, Integer firstResult, Integer maxResults);
 
     long getCount(Iterable<Map.Entry<String, Object>> filter);

@@ -213,7 +213,7 @@ namespace Dddml.Wms.Domain
             {
                 ReflectUtils.SetPropertyValue(innerIdName, innerObject, outerIdValue);
             }
-            else if (innerIdValue != outerIdValue)
+            else if (!Object.Equals(innerIdValue, outerIdValue))
             {
                 if (innerIdValue is string && outerIdValue is string && ((string)innerIdValue).Normalize() == ((string)outerIdValue).Normalize())
                 {

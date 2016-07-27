@@ -22,10 +22,6 @@ public interface RolePermissionApplicationService
 
     //Iterable<RolePermissionState> get(Criterion filter, List<String> orders, Integer firstResult, Integer maxResults);
 
-    RolePermissionState getFirst(Iterable<Map.Entry<String, Object>> filter, List<String> orders);
-
-    RolePermissionState getFirst(Map.Entry<String, Object> keyValue, List<String> orders);
-
     Iterable<RolePermissionState> getByProperty(String propertyName, Object propertyValue, List<String> orders, Integer firstResult, Integer maxResults);
 
     long getCount(Iterable<Map.Entry<String, Object>> filter);

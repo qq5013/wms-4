@@ -347,7 +347,9 @@ public abstract class AbstractInOutAggregate extends AbstractAggregate implement
         if (innerInOutDocumentNumberValue == null) {
             innerProperties.setInOutDocumentNumber(outerDocumentNumberValue);
         }
-        else if (innerInOutDocumentNumberValue != outerDocumentNumberValue && innerInOutDocumentNumberValue != null && !innerInOutDocumentNumberValue.equals(outerDocumentNumberValue)) {
+        else if (innerInOutDocumentNumberValue != outerDocumentNumberValue 
+            && (innerInOutDocumentNumberValue == null || innerInOutDocumentNumberValue != null && !innerInOutDocumentNumberValue.equals(outerDocumentNumberValue))) 
+        {
             throw DomainError.named("inconsistentId", "Outer %1$s %2$s NOT equals inner %3$s %4$s", outerDocumentNumberName, outerDocumentNumberValue, innerInOutDocumentNumberName, innerInOutDocumentNumberValue);
         }
     }// END throwOnInconsistentCommands /////////////////////

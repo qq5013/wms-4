@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.Date;
 import org.dddml.wms.specialization.*;
 
-public abstract class AbstractUserPermissionStateEvent implements UserPermissionStateEvent
+public abstract class AbstractUserPermissionStateEvent extends AbstractStateEvent implements UserPermissionStateEvent 
 {
     private UserPermissionStateEventId stateEventId;
 

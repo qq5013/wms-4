@@ -519,7 +519,14 @@ public abstract class AbstractAttributeUseMvoState implements AttributeUseMvoSta
         }
 
         Long stateVersion = this.getAttributeSetVersion();
-        Long eventVersion = stateEvent.getStateEventId().getAttributeSetVersion();
+        if(stateVersion == null) {
+            stateVersion = AttributeUseMvoState.VERSION_ZERO;
+        }
+        Long eventVersion = stateEvent.getStateEventId().getAttributeSetVersion();// Aggregate Version
+        if(eventVersion == null) {
+            eventVersion = AttributeUseMvoState.VERSION_ZERO;
+            stateEvent.getStateEventId().setAttributeSetVersion(eventVersion);
+        }
         if (!stateVersion.equals(eventVersion))
         {
             throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);

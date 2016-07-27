@@ -11,16 +11,16 @@ public final class UserPermissionFilteringProperties
     }
 
     public static final String[] propertyNames = new String[] {
-            "Version",
-            "CreatedBy",
-            "CreatedAt",
-            "UpdatedBy",
-            "UpdatedAt",
-            "Active",
-            "Deleted",
-            "UserId",
-            "UserPermissionId.UserId",
-            "UserPermissionId.PermissionId",
+            "version",
+            "createdBy",
+            "createdAt",
+            "updatedBy",
+            "updatedAt",
+            "active",
+            "deleted",
+            "userId",
+            "userPermissionId.userId",
+            "userPermissionId.permissionId",
     };
 
     public static final String[] propertyTypes = new String[] {

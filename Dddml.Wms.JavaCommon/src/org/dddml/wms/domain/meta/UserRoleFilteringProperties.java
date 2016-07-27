@@ -11,16 +11,16 @@ public final class UserRoleFilteringProperties
     }
 
     public static final String[] propertyNames = new String[] {
-            "Version",
-            "CreatedBy",
-            "CreatedAt",
-            "UpdatedBy",
-            "UpdatedAt",
-            "Active",
-            "Deleted",
-            "UserId",
-            "UserRoleId.UserId",
-            "UserRoleId.RoleId",
+            "version",
+            "createdBy",
+            "createdAt",
+            "updatedBy",
+            "updatedAt",
+            "active",
+            "deleted",
+            "userId",
+            "userRoleId.userId",
+            "userRoleId.roleId",
     };
 
     public static final String[] propertyTypes = new String[] {

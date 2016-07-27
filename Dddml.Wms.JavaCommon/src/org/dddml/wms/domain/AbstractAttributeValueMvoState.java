@@ -663,7 +663,14 @@ public abstract class AbstractAttributeValueMvoState implements AttributeValueMv
         }
 
         Long stateVersion = this.getAttributeVersion();
-        Long eventVersion = stateEvent.getStateEventId().getAttributeVersion();
+        if(stateVersion == null) {
+            stateVersion = AttributeValueMvoState.VERSION_ZERO;
+        }
+        Long eventVersion = stateEvent.getStateEventId().getAttributeVersion();// Aggregate Version
+        if(eventVersion == null) {
+            eventVersion = AttributeValueMvoState.VERSION_ZERO;
+            stateEvent.getStateEventId().setAttributeVersion(eventVersion);
+        }
         if (!stateVersion.equals(eventVersion))
         {
             throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);

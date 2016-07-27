@@ -43,6 +43,22 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <EmbeddedResource Include="src\config\AggregatesHibernateConfig.xml">
+      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="src\config\GenerateAggregatesConfig.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GenerateAggregatesConfig.txt</LastGenOutput>
+      <LastOutputs>
+.\AggregatesHibernateConfig.xml
+.\GenerateAggregatesConfig.txt
+</LastOutputs>
+    </Content>
+    <Content Include="src\config\GenerateAggregatesConfig.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\hibernate\HibernateAttributeSetEventStore.java">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Content>

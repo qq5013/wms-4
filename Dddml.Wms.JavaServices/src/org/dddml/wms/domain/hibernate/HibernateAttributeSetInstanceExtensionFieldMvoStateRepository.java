@@ -9,7 +9,11 @@ import org.dddml.wms.specialization.*;
 
 public class HibernateAttributeSetInstanceExtensionFieldMvoStateRepository implements AttributeSetInstanceExtensionFieldMvoStateRepository
 {
-    public SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
+
+    public SessionFactory getSessionFactory() { return this.sessionFactory; }
+
+    public void setSessionFactory(SessionFactory sessionFactory) { this.sessionFactory = sessionFactory; }
 
     protected Session getCurrentSession() {
         return this.sessionFactory.getCurrentSession();
@@ -39,7 +43,11 @@ public class HibernateAttributeSetInstanceExtensionFieldMvoStateRepository imple
     //[Transaction]
     public void save(AttributeSetInstanceExtensionFieldMvoState state)
     {
-        getCurrentSession().saveOrUpdate(state);
+        if(state.getAttrSetInstEFGroupVersion() == null || state.getAttrSetInstEFGroupVersion().equals(AttributeSetInstanceExtensionFieldMvoState.VERSION_ZERO)) {
+            getCurrentSession().save(state);
+        }else {
+            getCurrentSession().update(state);
+        }
 
         if (state instanceof Saveable)
         {

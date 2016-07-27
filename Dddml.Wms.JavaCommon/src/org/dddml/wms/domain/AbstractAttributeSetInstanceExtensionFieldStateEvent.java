@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.Date;
 import org.dddml.wms.specialization.*;
 
-public abstract class AbstractAttributeSetInstanceExtensionFieldStateEvent implements AttributeSetInstanceExtensionFieldStateEvent
+public abstract class AbstractAttributeSetInstanceExtensionFieldStateEvent extends AbstractStateEvent implements AttributeSetInstanceExtensionFieldStateEvent 
 {
     private AttributeSetInstanceExtensionFieldStateEventId stateEventId;
 

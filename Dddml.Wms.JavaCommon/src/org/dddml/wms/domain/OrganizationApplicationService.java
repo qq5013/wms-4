@@ -22,10 +22,6 @@ public interface OrganizationApplicationService
 
     //Iterable<OrganizationState> get(Criterion filter, List<String> orders, Integer firstResult, Integer maxResults);
 
-    OrganizationState getFirst(Iterable<Map.Entry<String, Object>> filter, List<String> orders);
-
-    OrganizationState getFirst(Map.Entry<String, Object> keyValue, List<String> orders);
-
     Iterable<OrganizationState> getByProperty(String propertyName, Object propertyValue, List<String> orders, Integer firstResult, Integer maxResults);
 
     long getCount(Iterable<Map.Entry<String, Object>> filter);

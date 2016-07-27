@@ -23,10 +23,6 @@ public interface AttributeSetInstanceApplicationService
 
     //Iterable<AttributeSetInstanceState> get(Criterion filter, List<String> orders, Integer firstResult, Integer maxResults);
 
-    AttributeSetInstanceState getFirst(Iterable<Map.Entry<String, Object>> filter, List<String> orders);
-
-    AttributeSetInstanceState getFirst(Map.Entry<String, Object> keyValue, List<String> orders);
-
     Iterable<AttributeSetInstanceState> getByProperty(String propertyName, Object propertyValue, List<String> orders, Integer firstResult, Integer maxResults);
 
     long getCount(Iterable<Map.Entry<String, Object>> filter);

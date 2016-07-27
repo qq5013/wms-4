@@ -284,7 +284,13 @@ public abstract class AbstractAttributeValueState implements AttributeValueState
         }
 
         Long stateVersion = this.getVersion();
+        if(stateVersion == null) {
+            stateVersion = AttributeValueState.VERSION_ZERO;
+        }
         Long eventVersion = stateEvent.getVersion();
+        if(eventVersion == null) {
+            eventVersion = AttributeValueState.VERSION_ZERO;
+        }
         if (AttributeValueState.VERSION_ZERO.equals(eventVersion))
         {
             stateEvent.setVersion(stateVersion);

@@ -663,7 +663,14 @@ public abstract class AbstractUserClaimMvoState implements UserClaimMvoState
         }
 
         Long stateVersion = this.getUserVersion();
-        Long eventVersion = stateEvent.getStateEventId().getUserVersion();
+        if(stateVersion == null) {
+            stateVersion = UserClaimMvoState.VERSION_ZERO;
+        }
+        Long eventVersion = stateEvent.getStateEventId().getUserVersion();// Aggregate Version
+        if(eventVersion == null) {
+            eventVersion = UserClaimMvoState.VERSION_ZERO;
+            stateEvent.getStateEventId().setUserVersion(eventVersion);
+        }
         if (!stateVersion.equals(eventVersion))
         {
             throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);

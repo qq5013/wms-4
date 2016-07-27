@@ -10,7 +10,11 @@ import org.dddml.wms.specialization.*;
 
 public class HibernateAttributeSetInstanceStateRepository implements AttributeSetInstanceStateRepository
 {
-    public SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
+
+    public SessionFactory getSessionFactory() { return this.sessionFactory; }
+
+    public void setSessionFactory(SessionFactory sessionFactory) { this.sessionFactory = sessionFactory; }
 
     protected Session getCurrentSession() {
         return this.sessionFactory.getCurrentSession();
@@ -40,7 +44,11 @@ public class HibernateAttributeSetInstanceStateRepository implements AttributeSe
     //[Transaction]
     public void save(AttributeSetInstanceState state)
     {
-        getCurrentSession().saveOrUpdate(state);
+        if(state.getVersion() == null || state.getVersion().equals(AttributeSetInstanceState.VERSION_ZERO)) {
+            getCurrentSession().save(state);
+        }else {
+            getCurrentSession().update(state);
+        }
 
         if (state instanceof Saveable)
         {

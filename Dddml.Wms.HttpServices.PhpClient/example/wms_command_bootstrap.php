@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../../Dddml.Wms.AdminUI/site/vendor/autoload.php';
 
 use Dddml\Executor\Http\CommandExecutor;
 use Doctrine\Common\Annotations\AnnotationRegistry;

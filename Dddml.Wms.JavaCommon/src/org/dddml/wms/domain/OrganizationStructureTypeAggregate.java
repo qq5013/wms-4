@@ -11,13 +11,12 @@ public interface OrganizationStructureTypeAggregate
 
     List<Event> getChanges();
 
-    void throwOnInvalidStateTransition(Command c);
-
     void create(OrganizationStructureTypeCommand.CreateOrganizationStructureType c);
 
     void mergePatch(OrganizationStructureTypeCommand.MergePatchOrganizationStructureType c);
 
     void delete(OrganizationStructureTypeCommand.DeleteOrganizationStructureType c);
 
+    void throwOnInvalidStateTransition(Command c);
 }
 

@@ -222,7 +222,7 @@ class CreateOrMergePatchAttributeUseMvo extends AbstractAttributeUseMvoCommand
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $attributeSetCreatedAt;
 
@@ -264,7 +264,7 @@ class CreateOrMergePatchAttributeUseMvo extends AbstractAttributeUseMvoCommand
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $attributeSetUpdatedAt;
 

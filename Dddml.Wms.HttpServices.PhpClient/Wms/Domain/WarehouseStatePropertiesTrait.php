@@ -157,7 +157,7 @@ trait WarehouseStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $createdAt;
 
@@ -199,7 +199,7 @@ trait WarehouseStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $updatedAt;
 

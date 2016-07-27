@@ -582,7 +582,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $inOutDateOrdered;
 
@@ -645,7 +645,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $inOutMovementDate;
 
@@ -792,7 +792,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $inOutDatePrinted;
 
@@ -855,7 +855,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $inOutPickDate;
 
@@ -876,7 +876,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $inOutShipDate;
 
@@ -918,7 +918,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $inOutDateReceived;
 
@@ -1149,7 +1149,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $inOutCreatedAt;
 
@@ -1191,7 +1191,7 @@ class CreateOrMergePatchInOutLineMvo extends AbstractInOutLineMvoCommand
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $inOutUpdatedAt;
 

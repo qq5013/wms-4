@@ -48,11 +48,11 @@ public class UserClaimMvoStateEventId implements Serializable
         getUserClaimId().setClaimId(userClaimIdClaimId);
     }
 
-    UserClaimMvoStateEventId ()
+    public UserClaimMvoStateEventId()
     {
     }
 
-    public UserClaimMvoStateEventId (UserClaimId userClaimId, Long userVersion)
+    public UserClaimMvoStateEventId(UserClaimId userClaimId, Long userVersion)
     {
         this.userClaimId = userClaimId;
         this.userVersion = userVersion;

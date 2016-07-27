@@ -241,7 +241,7 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $attributeSetCreatedAt;
 
@@ -283,7 +283,7 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $attributeSetUpdatedAt;
 
@@ -388,7 +388,7 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $createdAt;
 
@@ -430,7 +430,7 @@ trait AttributeUseMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $updatedAt;
 

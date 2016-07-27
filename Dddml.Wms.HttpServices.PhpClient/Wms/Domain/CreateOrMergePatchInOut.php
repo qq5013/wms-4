@@ -183,7 +183,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $dateOrdered;
 
@@ -246,7 +246,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $movementDate;
 
@@ -393,7 +393,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $datePrinted;
 
@@ -456,7 +456,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $pickDate;
 
@@ -477,7 +477,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $shipDate;
 
@@ -519,7 +519,7 @@ class CreateOrMergePatchInOut extends AbstractInOutCommand
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $dateReceived;
 

@@ -199,7 +199,7 @@ trait AttributeSetInstanceExtensionFieldGroupStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $createdAt;
 
@@ -241,7 +241,7 @@ trait AttributeSetInstanceExtensionFieldGroupStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $updatedAt;
 

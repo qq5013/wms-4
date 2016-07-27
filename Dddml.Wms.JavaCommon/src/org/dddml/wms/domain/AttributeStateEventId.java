@@ -28,11 +28,11 @@ public class AttributeStateEventId implements Serializable
         this.version = version;
     }
 
-    AttributeStateEventId ()
+    public AttributeStateEventId()
     {
     }
 
-    public AttributeStateEventId (String attributeId, Long version)
+    public AttributeStateEventId(String attributeId, Long version)
     {
         this.attributeId = attributeId;
         this.version = version;

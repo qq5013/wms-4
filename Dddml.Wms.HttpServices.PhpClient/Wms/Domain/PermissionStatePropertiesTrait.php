@@ -157,7 +157,7 @@ trait PermissionStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $createdAt;
 
@@ -199,7 +199,7 @@ trait PermissionStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $updatedAt;
 

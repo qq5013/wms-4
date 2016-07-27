@@ -48,11 +48,11 @@ public class InOutLineId implements Serializable
         getSkuId().setAttributeSetInstanceId(skuIdAttributeSetInstanceId);
     }
 
-    InOutLineId ()
+    public InOutLineId()
     {
     }
 
-    public InOutLineId (String inOutDocumentNumber, SkuId skuId)
+    public InOutLineId(String inOutDocumentNumber, SkuId skuId)
     {
         this.inOutDocumentNumber = inOutDocumentNumber;
         this.skuId = skuId;

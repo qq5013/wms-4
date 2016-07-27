@@ -40,11 +40,11 @@ public class OrganizationStructureId implements Serializable
         this.subsidiaryId = subsidiaryId;
     }
 
-    OrganizationStructureId ()
+    public OrganizationStructureId()
     {
     }
 
-    public OrganizationStructureId (String organizationStructureTypeId, String parentId, String subsidiaryId)
+    public OrganizationStructureId(String organizationStructureTypeId, String parentId, String subsidiaryId)
     {
         this.organizationStructureTypeId = organizationStructureTypeId;
         this.parentId = parentId;

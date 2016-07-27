@@ -28,11 +28,11 @@ public class LocatorStateEventId implements Serializable
         this.version = version;
     }
 
-    LocatorStateEventId ()
+    public LocatorStateEventId()
     {
     }
 
-    public LocatorStateEventId (String locatorId, Long version)
+    public LocatorStateEventId(String locatorId, Long version)
     {
         this.locatorId = locatorId;
         this.version = version;

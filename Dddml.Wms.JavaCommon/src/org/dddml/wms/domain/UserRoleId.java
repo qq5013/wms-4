@@ -28,11 +28,11 @@ public class UserRoleId implements Serializable
         this.roleId = roleId;
     }
 
-    UserRoleId ()
+    public UserRoleId()
     {
     }
 
-    public UserRoleId (String userId, String roleId)
+    public UserRoleId(String userId, String roleId)
     {
         this.userId = userId;
         this.roleId = roleId;

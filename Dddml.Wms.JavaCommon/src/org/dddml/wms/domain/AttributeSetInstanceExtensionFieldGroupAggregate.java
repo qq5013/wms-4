@@ -11,13 +11,12 @@ public interface AttributeSetInstanceExtensionFieldGroupAggregate
 
     List<Event> getChanges();
 
-    void throwOnInvalidStateTransition(Command c);
-
     void create(AttributeSetInstanceExtensionFieldGroupCommand.CreateAttributeSetInstanceExtensionFieldGroup c);
 
     void mergePatch(AttributeSetInstanceExtensionFieldGroupCommand.MergePatchAttributeSetInstanceExtensionFieldGroup c);
 
     void delete(AttributeSetInstanceExtensionFieldGroupCommand.DeleteAttributeSetInstanceExtensionFieldGroup c);
 
+    void throwOnInvalidStateTransition(Command c);
 }
 

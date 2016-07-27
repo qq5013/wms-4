@@ -28,11 +28,11 @@ public class AttributeSetInstanceExtensionFieldGroupStateEventId implements Seri
         this.version = version;
     }
 
-    AttributeSetInstanceExtensionFieldGroupStateEventId ()
+    public AttributeSetInstanceExtensionFieldGroupStateEventId()
     {
     }
 
-    public AttributeSetInstanceExtensionFieldGroupStateEventId (String id, Long version)
+    public AttributeSetInstanceExtensionFieldGroupStateEventId(String id, Long version)
     {
         this.id = id;
         this.version = version;

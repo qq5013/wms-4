@@ -28,11 +28,11 @@ public class AttributeSetAttributeUseId implements Serializable
         this.attributeId = attributeId;
     }
 
-    AttributeSetAttributeUseId ()
+    public AttributeSetAttributeUseId()
     {
     }
 
-    public AttributeSetAttributeUseId (String attributeSetId, String attributeId)
+    public AttributeSetAttributeUseId(String attributeSetId, String attributeId)
     {
         this.attributeSetId = attributeSetId;
         this.attributeId = attributeId;

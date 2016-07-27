@@ -48,11 +48,11 @@ public class AttributeSetInstanceExtensionFieldMvoStateEventId implements Serial
         getAttributeSetInstanceExtensionFieldId().setIndex(attributeSetInstanceExtensionFieldIdIndex);
     }
 
-    AttributeSetInstanceExtensionFieldMvoStateEventId ()
+    public AttributeSetInstanceExtensionFieldMvoStateEventId()
     {
     }
 
-    public AttributeSetInstanceExtensionFieldMvoStateEventId (AttributeSetInstanceExtensionFieldId attributeSetInstanceExtensionFieldId, Long attrSetInstEFGroupVersion)
+    public AttributeSetInstanceExtensionFieldMvoStateEventId(AttributeSetInstanceExtensionFieldId attributeSetInstanceExtensionFieldId, Long attrSetInstEFGroupVersion)
     {
         this.attributeSetInstanceExtensionFieldId = attributeSetInstanceExtensionFieldId;
         this.attrSetInstEFGroupVersion = attrSetInstEFGroupVersion;

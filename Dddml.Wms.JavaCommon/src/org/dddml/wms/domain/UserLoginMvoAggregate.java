@@ -11,13 +11,12 @@ public interface UserLoginMvoAggregate
 
     List<Event> getChanges();
 
-    void throwOnInvalidStateTransition(Command c);
-
     void create(UserLoginMvoCommand.CreateUserLoginMvo c);
 
     void mergePatch(UserLoginMvoCommand.MergePatchUserLoginMvo c);
 
     void delete(UserLoginMvoCommand.DeleteUserLoginMvo c);
 
+    void throwOnInvalidStateTransition(Command c);
 }
 

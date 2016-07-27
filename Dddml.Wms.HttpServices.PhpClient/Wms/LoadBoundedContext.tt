@@ -87,31 +87,33 @@
 	{
             var dict = GetPhpTypes();
 
-                dict["decimal"] = "Dddml\\Serializer\\Type\\Decimal";
-                dict["decimal?"] = "Dddml\\Serializer\\Type\\Decimal";
-                dict["long"] = "Dddml\\Serializer\\Type\\Long";
-                dict["long?"] = "Dddml\\Serializer\\Type\\Long";
-                dict["Money"] = "Dddml\\Serializer\\Type\\Money";
+			dict["decimal"] = "Dddml\\Serializer\\Type\\Decimal";
+			dict["decimal?"] = "Dddml\\Serializer\\Type\\Decimal";
+			dict["long"] = "Dddml\\Serializer\\Type\\Long";
+			dict["long?"] = "Dddml\\Serializer\\Type\\Long";
+			dict["Money"] = "Dddml\\Serializer\\Type\\Money";
+			dict["DateTime"] = "DateTime";
+			dict["DateTime?"] = "DateTime";
 
 			return dict;
 	}
 
 	private IDictionary<string, string> GetPhpTypes()
 	{
-            var dict = new Dictionary<string, string>();
+			var dict = new Dictionary<string, string>();
            
-                dict.Add("bool", "boolean");
-                dict.Add("bool?", "boolean");
-                dict.Add("DateTime", "\\DateTime");
-                dict.Add("DateTime?", "\\DateTime");
-                dict.Add("decimal", "Decimal");
-                dict.Add("decimal?", "Decimal");
-                dict.Add("int", "integer");
-                dict.Add("int?", "integer");
-                dict.Add("long", "Long");
-                dict.Add("long?", "Long");
-                //dict.Add("Money", "_MONEY_");
-                dict.Add("string", "string");
+			dict.Add("bool", "boolean");
+			dict.Add("bool?", "boolean");
+			dict.Add("DateTime", "\\DateTime");
+			dict.Add("DateTime?", "\\DateTime");
+			dict.Add("decimal", "Decimal");
+			dict.Add("decimal?", "Decimal");
+			dict.Add("int", "integer");
+			dict.Add("int?", "integer");
+			dict.Add("long", "Long");
+			dict.Add("long?", "Long");
+			//dict.Add("Money", "_MONEY_");
+			dict.Add("string", "string");
 			
 			return dict;
 	}

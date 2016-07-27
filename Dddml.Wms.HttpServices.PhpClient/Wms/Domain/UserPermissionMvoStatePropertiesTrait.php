@@ -178,7 +178,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $userLockoutEndDateUtc;
 
@@ -325,7 +325,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $userCreatedAt;
 
@@ -367,7 +367,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $userUpdatedAt;
 
@@ -472,7 +472,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $createdAt;
 
@@ -514,7 +514,7 @@ trait UserPermissionMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $updatedAt;
 

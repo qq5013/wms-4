@@ -201,7 +201,7 @@ class CreateOrMergePatchUserClaimMvo extends AbstractUserClaimMvoCommand
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $userLockoutEndDateUtc;
 
@@ -348,7 +348,7 @@ class CreateOrMergePatchUserClaimMvo extends AbstractUserClaimMvoCommand
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $userCreatedAt;
 
@@ -390,7 +390,7 @@ class CreateOrMergePatchUserClaimMvo extends AbstractUserClaimMvoCommand
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $userUpdatedAt;
 

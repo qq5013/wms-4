@@ -601,7 +601,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $inOutDateOrdered;
 
@@ -664,7 +664,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $inOutMovementDate;
 
@@ -811,7 +811,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $inOutDatePrinted;
 
@@ -874,7 +874,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $inOutPickDate;
 
@@ -895,7 +895,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $inOutShipDate;
 
@@ -937,7 +937,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $inOutDateReceived;
 
@@ -1168,7 +1168,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $inOutCreatedAt;
 
@@ -1210,7 +1210,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $inOutUpdatedAt;
 
@@ -1315,7 +1315,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $createdAt;
 
@@ -1357,7 +1357,7 @@ trait InOutLineMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $updatedAt;
 

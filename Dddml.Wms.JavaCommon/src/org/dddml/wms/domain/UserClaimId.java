@@ -28,11 +28,11 @@ public class UserClaimId implements Serializable
         this.claimId = claimId;
     }
 
-    UserClaimId ()
+    public UserClaimId()
     {
     }
 
-    public UserClaimId (String userId, Integer claimId)
+    public UserClaimId(String userId, Integer claimId)
     {
         this.userId = userId;
         this.claimId = claimId;

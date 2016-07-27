@@ -40,11 +40,11 @@ public class UserPermissionStateEventId implements Serializable
         this.userVersion = userVersion;
     }
 
-    UserPermissionStateEventId ()
+    public UserPermissionStateEventId()
     {
     }
 
-    public UserPermissionStateEventId (String userId, String permissionId, Long userVersion)
+    public UserPermissionStateEventId(String userId, String permissionId, Long userVersion)
     {
         this.userId = userId;
         this.permissionId = permissionId;

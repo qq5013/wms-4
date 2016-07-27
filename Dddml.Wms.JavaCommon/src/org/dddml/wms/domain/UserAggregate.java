@@ -11,13 +11,12 @@ public interface UserAggregate
 
     List<Event> getChanges();
 
-    void throwOnInvalidStateTransition(Command c);
-
     void create(UserCommand.CreateUser c);
 
     void mergePatch(UserCommand.MergePatchUser c);
 
     void delete(UserCommand.DeleteUser c);
 
+    void throwOnInvalidStateTransition(Command c);
 }
 

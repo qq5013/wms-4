@@ -159,7 +159,7 @@ class CreateOrMergePatchUserRoleMvo extends AbstractUserRoleMvoCommand
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $userLockoutEndDateUtc;
 
@@ -306,7 +306,7 @@ class CreateOrMergePatchUserRoleMvo extends AbstractUserRoleMvoCommand
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $userCreatedAt;
 
@@ -348,7 +348,7 @@ class CreateOrMergePatchUserRoleMvo extends AbstractUserRoleMvoCommand
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $userUpdatedAt;
 

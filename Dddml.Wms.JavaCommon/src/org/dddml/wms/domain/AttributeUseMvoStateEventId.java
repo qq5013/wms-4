@@ -48,11 +48,11 @@ public class AttributeUseMvoStateEventId implements Serializable
         getAttributeSetAttributeUseId().setAttributeId(attributeSetAttributeUseIdAttributeId);
     }
 
-    AttributeUseMvoStateEventId ()
+    public AttributeUseMvoStateEventId()
     {
     }
 
-    public AttributeUseMvoStateEventId (AttributeSetAttributeUseId attributeSetAttributeUseId, Long attributeSetVersion)
+    public AttributeUseMvoStateEventId(AttributeSetAttributeUseId attributeSetAttributeUseId, Long attributeSetVersion)
     {
         this.attributeSetAttributeUseId = attributeSetAttributeUseId;
         this.attributeSetVersion = attributeSetVersion;

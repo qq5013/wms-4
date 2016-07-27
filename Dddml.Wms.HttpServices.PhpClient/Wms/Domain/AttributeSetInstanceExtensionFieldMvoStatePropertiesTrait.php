@@ -304,7 +304,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $attrSetInstEFGroupCreatedAt;
 
@@ -346,7 +346,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $attrSetInstEFGroupUpdatedAt;
 
@@ -451,7 +451,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $createdAt;
 
@@ -493,7 +493,7 @@ trait AttributeSetInstanceExtensionFieldMvoStatePropertiesTrait
     }
 
     /**
-     * @Type("\DateTime")
+     * @Type("DateTime")
      */
     private $updatedAt;
 

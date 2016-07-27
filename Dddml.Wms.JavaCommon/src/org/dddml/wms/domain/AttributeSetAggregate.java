@@ -11,13 +11,12 @@ public interface AttributeSetAggregate
 
     List<Event> getChanges();
 
-    void throwOnInvalidStateTransition(Command c);
-
     void create(AttributeSetCommand.CreateAttributeSet c);
 
     void mergePatch(AttributeSetCommand.MergePatchAttributeSet c);
 
     void delete(AttributeSetCommand.DeleteAttributeSet c);
 
+    void throwOnInvalidStateTransition(Command c);
 }
 

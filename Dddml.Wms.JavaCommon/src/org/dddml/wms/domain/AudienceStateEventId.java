@@ -28,11 +28,11 @@ public class AudienceStateEventId implements Serializable
         this.version = version;
     }
 
-    AudienceStateEventId ()
+    public AudienceStateEventId()
     {
     }
 
-    public AudienceStateEventId (String clientId, Long version)
+    public AudienceStateEventId(String clientId, Long version)
     {
         this.clientId = clientId;
         this.version = version;

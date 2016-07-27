@@ -13,13 +13,12 @@ public interface InOutAggregate
 
     List<Event> getChanges();
 
-    void throwOnInvalidStateTransition(Command c);
-
     void create(InOutCommand.CreateInOut c);
 
     void mergePatch(InOutCommand.MergePatchInOut c);
 
     void delete(InOutCommand.DeleteInOut c);
 
+    void throwOnInvalidStateTransition(Command c);
 }
 

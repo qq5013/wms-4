@@ -40,11 +40,11 @@ public class AttributeSetInstanceExtensionFieldStateEventId implements Serializa
         this.attributeSetInstanceExtensionFieldGroupVersion = attributeSetInstanceExtensionFieldGroupVersion;
     }
 
-    AttributeSetInstanceExtensionFieldStateEventId ()
+    public AttributeSetInstanceExtensionFieldStateEventId()
     {
     }
 
-    public AttributeSetInstanceExtensionFieldStateEventId (String groupId, String index, Long attributeSetInstanceExtensionFieldGroupVersion)
+    public AttributeSetInstanceExtensionFieldStateEventId(String groupId, String index, Long attributeSetInstanceExtensionFieldGroupVersion)
     {
         this.groupId = groupId;
         this.index = index;

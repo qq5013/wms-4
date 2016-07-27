@@ -48,11 +48,11 @@ public class UserPermissionMvoStateEventId implements Serializable
         getUserPermissionId().setPermissionId(userPermissionIdPermissionId);
     }
 
-    UserPermissionMvoStateEventId ()
+    public UserPermissionMvoStateEventId()
     {
     }
 
-    public UserPermissionMvoStateEventId (UserPermissionId userPermissionId, Long userVersion)
+    public UserPermissionMvoStateEventId(UserPermissionId userPermissionId, Long userVersion)
     {
         this.userPermissionId = userPermissionId;
         this.userVersion = userVersion;

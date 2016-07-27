@@ -48,11 +48,11 @@ public class UserRoleMvoStateEventId implements Serializable
         getUserRoleId().setRoleId(userRoleIdRoleId);
     }
 
-    UserRoleMvoStateEventId ()
+    public UserRoleMvoStateEventId()
     {
     }
 
-    public UserRoleMvoStateEventId (UserRoleId userRoleId, Long userVersion)
+    public UserRoleMvoStateEventId(UserRoleId userRoleId, Long userVersion)
     {
         this.userRoleId = userRoleId;
         this.userVersion = userVersion;

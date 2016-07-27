@@ -28,11 +28,11 @@ public class SkuId implements Serializable
         this.attributeSetInstanceId = attributeSetInstanceId;
     }
 
-    SkuId ()
+    public SkuId()
     {
     }
 
-    public SkuId (String productId, String attributeSetInstanceId)
+    public SkuId(String productId, String attributeSetInstanceId)
     {
         this.productId = productId;
         this.attributeSetInstanceId = attributeSetInstanceId;

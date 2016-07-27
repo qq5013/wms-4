@@ -40,11 +40,11 @@ public class UserRoleStateEventId implements Serializable
         this.userVersion = userVersion;
     }
 
-    UserRoleStateEventId ()
+    public UserRoleStateEventId()
     {
     }
 
-    public UserRoleStateEventId (String userId, String roleId, Long userVersion)
+    public UserRoleStateEventId(String userId, String roleId, Long userVersion)
     {
         this.userId = userId;
         this.roleId = roleId;

@@ -17,4 +17,6 @@ $app['twig'] = $app->extend('twig', function ($twig, $app) {
     return $twig;
 });
 
+$app->register(new \ServiceProvider\DddmlServiceProvider());
+
 return $app;

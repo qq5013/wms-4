@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.Date;
 import org.dddml.wms.specialization.*;
 
-public abstract class AbstractLocatorStateEvent implements LocatorStateEvent
+public abstract class AbstractLocatorStateEvent extends AbstractStateEvent implements LocatorStateEvent 
 {
     private LocatorStateEventId stateEventId;
 

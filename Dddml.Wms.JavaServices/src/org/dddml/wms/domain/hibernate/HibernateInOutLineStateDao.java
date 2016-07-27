@@ -31,7 +31,12 @@ public class HibernateInOutLineStateDao implements InOutLineStateDao
     @Override
     public void save(InOutLineState state)
     {
-        getCurrentSession().saveOrUpdate(state);
+        if(state.getVersion() == null || state.getVersion().equals(InOutLineState.VERSION_ZERO)) {
+            getCurrentSession().save(state);
+        }else {
+            getCurrentSession().update(state);
+        }
+
         if (state instanceof Saveable)
         {
             Saveable saveable = (Saveable) state;

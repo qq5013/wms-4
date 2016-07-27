@@ -22,10 +22,6 @@ public interface PermissionApplicationService
 
     //Iterable<PermissionState> get(Criterion filter, List<String> orders, Integer firstResult, Integer maxResults);
 
-    PermissionState getFirst(Iterable<Map.Entry<String, Object>> filter, List<String> orders);
-
-    PermissionState getFirst(Map.Entry<String, Object> keyValue, List<String> orders);
-
     Iterable<PermissionState> getByProperty(String propertyName, Object propertyValue, List<String> orders, Integer firstResult, Integer maxResults);
 
     long getCount(Iterable<Map.Entry<String, Object>> filter);

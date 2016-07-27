@@ -22,10 +22,6 @@ public interface AttributeSetInstanceExtensionFieldGroupApplicationService
 
     //Iterable<AttributeSetInstanceExtensionFieldGroupState> get(Criterion filter, List<String> orders, Integer firstResult, Integer maxResults);
 
-    AttributeSetInstanceExtensionFieldGroupState getFirst(Iterable<Map.Entry<String, Object>> filter, List<String> orders);
-
-    AttributeSetInstanceExtensionFieldGroupState getFirst(Map.Entry<String, Object> keyValue, List<String> orders);
-
     Iterable<AttributeSetInstanceExtensionFieldGroupState> getByProperty(String propertyName, Object propertyValue, List<String> orders, Integer firstResult, Integer maxResults);
 
     long getCount(Iterable<Map.Entry<String, Object>> filter);

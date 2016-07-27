@@ -22,10 +22,6 @@ public interface LocatorApplicationService
 
     //Iterable<LocatorState> get(Criterion filter, List<String> orders, Integer firstResult, Integer maxResults);
 
-    LocatorState getFirst(Iterable<Map.Entry<String, Object>> filter, List<String> orders);
-
-    LocatorState getFirst(Map.Entry<String, Object> keyValue, List<String> orders);
-
     Iterable<LocatorState> getByProperty(String propertyName, Object propertyValue, List<String> orders, Integer firstResult, Integer maxResults);
 
     long getCount(Iterable<Map.Entry<String, Object>> filter);

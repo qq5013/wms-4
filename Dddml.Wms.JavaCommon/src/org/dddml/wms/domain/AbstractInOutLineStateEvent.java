@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 import org.dddml.wms.specialization.*;
 
-public abstract class AbstractInOutLineStateEvent implements InOutLineStateEvent
+public abstract class AbstractInOutLineStateEvent extends AbstractStateEvent implements InOutLineStateEvent 
 {
     private InOutLineStateEventId stateEventId;
 

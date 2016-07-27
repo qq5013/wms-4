@@ -30,7 +30,12 @@ public class HibernateAttributeUseStateDao implements AttributeUseStateDao
     @Override
     public void save(AttributeUseState state)
     {
-        getCurrentSession().saveOrUpdate(state);
+        if(state.getVersion() == null || state.getVersion().equals(AttributeUseState.VERSION_ZERO)) {
+            getCurrentSession().save(state);
+        }else {
+            getCurrentSession().update(state);
+        }
+
         if (state instanceof Saveable)
         {
             Saveable saveable = (Saveable) state;

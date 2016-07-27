@@ -30,7 +30,12 @@ public class HibernateAttributeSetInstanceExtensionFieldStateDao implements Attr
     @Override
     public void save(AttributeSetInstanceExtensionFieldState state)
     {
-        getCurrentSession().saveOrUpdate(state);
+        if(state.getVersion() == null || state.getVersion().equals(AttributeSetInstanceExtensionFieldState.VERSION_ZERO)) {
+            getCurrentSession().save(state);
+        }else {
+            getCurrentSession().update(state);
+        }
+
         if (state instanceof Saveable)
         {
             Saveable saveable = (Saveable) state;

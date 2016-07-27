@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.Date;
 import org.dddml.wms.specialization.*;
 
-public abstract class AbstractAttributeStateEvent implements AttributeStateEvent
+public abstract class AbstractAttributeStateEvent extends AbstractStateEvent implements AttributeStateEvent 
 {
     private AttributeStateEventId stateEventId;
 

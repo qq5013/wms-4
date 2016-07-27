@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.Date;
 import org.dddml.wms.specialization.*;
 
-public abstract class AbstractWarehouseStateEvent implements WarehouseStateEvent
+public abstract class AbstractWarehouseStateEvent extends AbstractStateEvent implements WarehouseStateEvent 
 {
     private WarehouseStateEventId stateEventId;
 

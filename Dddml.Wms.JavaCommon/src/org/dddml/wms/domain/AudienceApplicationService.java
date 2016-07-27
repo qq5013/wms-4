@@ -22,10 +22,6 @@ public interface AudienceApplicationService
 
     //Iterable<AudienceState> get(Criterion filter, List<String> orders, Integer firstResult, Integer maxResults);
 
-    AudienceState getFirst(Iterable<Map.Entry<String, Object>> filter, List<String> orders);
-
-    AudienceState getFirst(Map.Entry<String, Object> keyValue, List<String> orders);
-
     Iterable<AudienceState> getByProperty(String propertyName, Object propertyValue, List<String> orders, Integer firstResult, Integer maxResults);
 
     long getCount(Iterable<Map.Entry<String, Object>> filter);

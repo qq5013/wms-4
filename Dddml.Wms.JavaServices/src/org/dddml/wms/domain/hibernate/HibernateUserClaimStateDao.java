@@ -30,7 +30,12 @@ public class HibernateUserClaimStateDao implements UserClaimStateDao
     @Override
     public void save(UserClaimState state)
     {
-        getCurrentSession().saveOrUpdate(state);
+        if(state.getVersion() == null || state.getVersion().equals(UserClaimState.VERSION_ZERO)) {
+            getCurrentSession().save(state);
+        }else {
+            getCurrentSession().update(state);
+        }
+
         if (state instanceof Saveable)
         {
             Saveable saveable = (Saveable) state;

@@ -30,7 +30,12 @@ public class HibernateUserLoginStateDao implements UserLoginStateDao
     @Override
     public void save(UserLoginState state)
     {
-        getCurrentSession().saveOrUpdate(state);
+        if(state.getVersion() == null || state.getVersion().equals(UserLoginState.VERSION_ZERO)) {
+            getCurrentSession().save(state);
+        }else {
+            getCurrentSession().update(state);
+        }
+
         if (state instanceof Saveable)
         {
             Saveable saveable = (Saveable) state;

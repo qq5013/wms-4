@@ -1,9 +1,9 @@
 package org.dddml.wms.domain;
 
 import java.util.Date;
-import org.dddml.wms.domain.AbstractStateEventDto;
+import org.dddml.wms.domain.AbstractStateEvent;
 
-public class AttributeSetInstanceExtensionFieldStateEventDto extends AbstractStateEventDto
+public class AttributeSetInstanceExtensionFieldStateEventDto extends AbstractStateEvent
 {
     private String stateEventType;
 
@@ -192,7 +192,7 @@ public class AttributeSetInstanceExtensionFieldStateEventDto extends AbstractSta
         @Override
         public String getStateEventType()
         {
-            return AbstractStateEventDto.STATE_EVENT_TYPE_CREATED;
+            return STATE_EVENT_TYPE_CREATED;
         }
 
 	}
@@ -203,7 +203,7 @@ public class AttributeSetInstanceExtensionFieldStateEventDto extends AbstractSta
         @Override
         public String getStateEventType()
         {
-            return AbstractStateEventDto.STATE_EVENT_TYPE_MERGE_PATCHED;
+            return STATE_EVENT_TYPE_MERGE_PATCHED;
         }
 
 	}
@@ -214,7 +214,7 @@ public class AttributeSetInstanceExtensionFieldStateEventDto extends AbstractSta
         @Override
         public String getStateEventType()
         {
-            return AbstractStateEventDto.STATE_EVENT_TYPE_REMOVED;
+            return STATE_EVENT_TYPE_REMOVED;
         }
 
 	}

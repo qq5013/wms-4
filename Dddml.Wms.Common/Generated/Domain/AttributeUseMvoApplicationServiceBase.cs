@@ -34,7 +34,7 @@ namespace Dddml.Wms.Domain
 
 			aggregate.ThrowOnInvalidStateTransition(c);
 			action(aggregate);
-			EventStore.AppendEvents(ToEventStoreAggregateId(aggregateId), ((IAttributeUseMvoStateProperties)state).AttributeSetVersion, aggregate.Changes, () => { StateRepository.Save(state); });
+			EventStore.AppendEvents(eventStoreAggregateId, ((IAttributeUseMvoStateProperties)state).AttributeSetVersion, aggregate.Changes, () => { StateRepository.Save(state); });
 		}
 
 

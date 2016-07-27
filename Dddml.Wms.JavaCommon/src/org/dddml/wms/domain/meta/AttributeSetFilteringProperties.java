@@ -11,20 +11,20 @@ public final class AttributeSetFilteringProperties
     }
 
     public static final String[] propertyNames = new String[] {
-            "AttributeSetId",
-            "Name",
-            "OrganizationId",
-            "Description",
-            "SerialNumberAttributeId",
-            "LotAttributeId",
-            "ReferenceId",
-            "Version",
-            "CreatedBy",
-            "CreatedAt",
-            "UpdatedBy",
-            "UpdatedAt",
-            "Active",
-            "Deleted",
+            "attributeSetId",
+            "name",
+            "organizationId",
+            "description",
+            "serialNumberAttributeId",
+            "lotAttributeId",
+            "referenceId",
+            "version",
+            "createdBy",
+            "createdAt",
+            "updatedBy",
+            "updatedAt",
+            "active",
+            "deleted",
     };
 
     public static final String[] propertyTypes = new String[] {

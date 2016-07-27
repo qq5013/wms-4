@@ -11,18 +11,18 @@ public final class UserClaimFilteringProperties
     }
 
     public static final String[] propertyNames = new String[] {
-            "ClaimType",
-            "ClaimValue",
-            "Version",
-            "CreatedBy",
-            "CreatedAt",
-            "UpdatedBy",
-            "UpdatedAt",
-            "Active",
-            "Deleted",
-            "UserId",
-            "UserClaimId.UserId",
-            "UserClaimId.ClaimId",
+            "claimType",
+            "claimValue",
+            "version",
+            "createdBy",
+            "createdAt",
+            "updatedBy",
+            "updatedAt",
+            "active",
+            "deleted",
+            "userId",
+            "userClaimId.userId",
+            "userClaimId.claimId",
     };
 
     public static final String[] propertyTypes = new String[] {

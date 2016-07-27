@@ -11,21 +11,21 @@ public final class AttributeSetInstanceExtensionFieldFilteringProperties
     }
 
     public static final String[] propertyNames = new String[] {
-            "Name",
-            "Type",
-            "Length",
-            "Alias",
-            "Description",
-            "Version",
-            "CreatedBy",
-            "CreatedAt",
-            "UpdatedBy",
-            "UpdatedAt",
-            "Active",
-            "Deleted",
-            "GroupId",
-            "AttributeSetInstanceExtensionFieldId.GroupId",
-            "AttributeSetInstanceExtensionFieldId.Index",
+            "name",
+            "type",
+            "length",
+            "alias",
+            "description",
+            "version",
+            "createdBy",
+            "createdAt",
+            "updatedBy",
+            "updatedAt",
+            "active",
+            "deleted",
+            "groupId",
+            "attributeSetInstanceExtensionFieldId.groupId",
+            "attributeSetInstanceExtensionFieldId.index",
     };
 
     public static final String[] propertyTypes = new String[] {

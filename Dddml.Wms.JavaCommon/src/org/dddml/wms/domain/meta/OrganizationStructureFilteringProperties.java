@@ -11,16 +11,16 @@ public final class OrganizationStructureFilteringProperties
     }
 
     public static final String[] propertyNames = new String[] {
-            "Version",
-            "CreatedBy",
-            "CreatedAt",
-            "UpdatedBy",
-            "UpdatedAt",
-            "Active",
-            "Deleted",
-            "Id.OrganizationStructureTypeId",
-            "Id.ParentId",
-            "Id.SubsidiaryId",
+            "version",
+            "createdBy",
+            "createdAt",
+            "updatedBy",
+            "updatedAt",
+            "active",
+            "deleted",
+            "id.organizationStructureTypeId",
+            "id.parentId",
+            "id.subsidiaryId",
     };
 
     public static final String[] propertyTypes = new String[] {

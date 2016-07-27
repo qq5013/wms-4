@@ -11,7 +11,11 @@ import java.util.function.Consumer;
  * Created by Yang on 2016/7/25.
  */
 public abstract class AbstractHibernateEventStore implements EventStore {
-    public SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
+
+    public SessionFactory getSessionFactory() { return this.sessionFactory; }
+
+    public void setSessionFactory(SessionFactory sessionFactory) { this.sessionFactory = sessionFactory; }
 
     protected Session getCurrentSession() {
         return this.sessionFactory.getCurrentSession();

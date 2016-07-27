@@ -2848,7 +2848,6 @@
     <Content Include="src\org\dddml\wms\specialization\EventStream.java" />
     <Content Include="src\org\dddml\wms\specialization\Saveable.java" />
     <Content Include="src\org\dddml\wms\specialization\StateEventType.java" />
-    <Content Include="src\org\dddml\wms\TestMain.java" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -1,0 +1,32 @@
+﻿
+
+
+
+
+ 
+<!-- TODO TODO TODO TODO TODO TODO TODO TODO  -->
+  <spring>
+
+    <context>
+      <resource uri="config://spring/objects" />
+      <resource uri="assembly://_PATH_/Dddml.Wms.Services.Config/DatabaseConfig.xml" />
+
+      <!-- Can copy this to App.config/spring/context -->
+
+      <resource uri="assembly://_PATH_/Dddml.Wms.Services.Config/AggregatesHibernateConfig.xml"/>
+
+      <resource uri="assembly://_PATH_/Dddml.Wms.Services.Config/AggregatesIdGeneratorConfig.xml"/>
+
+    </context>
+
+    <objects xmlns="http://www.springframework.net">
+      <!-- Property placeholder configurer for database settings -->
+      <object type="Spring.Objects.Factory.Config.PropertyPlaceholderConfigurer, Spring.Core">
+        <property name="ConfigSections" value="databaseSettings" />
+      </object>
+
+
+    </objects>
+
+  </spring>
+

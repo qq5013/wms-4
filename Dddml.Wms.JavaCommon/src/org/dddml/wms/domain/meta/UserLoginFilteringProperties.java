@@ -11,19 +11,19 @@ public final class UserLoginFilteringProperties
     }
 
     public static final String[] propertyNames = new String[] {
-            "Version",
-            "CreatedBy",
-            "CreatedAt",
-            "UpdatedBy",
-            "UpdatedAt",
-            "Active",
-            "Deleted",
-            "UserId",
-            "LoginKey.LoginProvider",
-            "LoginKey.ProviderKey",
-            "UserLoginId.UserId",
-            "UserLoginId.LoginKeyLoginProvider",
-            "UserLoginId.LoginKeyProviderKey",
+            "version",
+            "createdBy",
+            "createdAt",
+            "updatedBy",
+            "updatedAt",
+            "active",
+            "deleted",
+            "userId",
+            "loginKey.loginProvider",
+            "loginKey.providerKey",
+            "userLoginId.userId",
+            "userLoginId.loginKeyLoginProvider",
+            "userLoginId.loginKeyProviderKey",
     };
 
     public static final String[] propertyTypes = new String[] {

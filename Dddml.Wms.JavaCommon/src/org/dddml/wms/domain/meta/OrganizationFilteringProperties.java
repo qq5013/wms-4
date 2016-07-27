@@ -11,18 +11,18 @@ public final class OrganizationFilteringProperties
     }
 
     public static final String[] propertyNames = new String[] {
-            "OrganizationId",
-            "Name",
-            "Description",
-            "Type",
-            "IsSummary",
-            "Version",
-            "CreatedBy",
-            "CreatedAt",
-            "UpdatedBy",
-            "UpdatedAt",
-            "Active",
-            "Deleted",
+            "organizationId",
+            "name",
+            "description",
+            "type",
+            "isSummary",
+            "version",
+            "createdBy",
+            "createdAt",
+            "updatedBy",
+            "updatedAt",
+            "active",
+            "deleted",
     };
 
     public static final String[] propertyTypes = new String[] {

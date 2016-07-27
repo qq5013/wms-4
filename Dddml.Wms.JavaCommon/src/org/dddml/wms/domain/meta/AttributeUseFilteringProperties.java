@@ -11,17 +11,17 @@ public final class AttributeUseFilteringProperties
     }
 
     public static final String[] propertyNames = new String[] {
-            "SequenceNumber",
-            "Version",
-            "CreatedBy",
-            "CreatedAt",
-            "UpdatedBy",
-            "UpdatedAt",
-            "Active",
-            "Deleted",
-            "AttributeSetId",
-            "AttributeSetAttributeUseId.AttributeSetId",
-            "AttributeSetAttributeUseId.AttributeId",
+            "sequenceNumber",
+            "version",
+            "createdBy",
+            "createdAt",
+            "updatedBy",
+            "updatedAt",
+            "active",
+            "deleted",
+            "attributeSetId",
+            "attributeSetAttributeUseId.attributeSetId",
+            "attributeSetAttributeUseId.attributeId",
     };
 
     public static final String[] propertyTypes = new String[] {

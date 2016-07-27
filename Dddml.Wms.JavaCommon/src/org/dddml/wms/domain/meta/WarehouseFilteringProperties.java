@@ -11,17 +11,17 @@ public final class WarehouseFilteringProperties
     }
 
     public static final String[] propertyNames = new String[] {
-            "WarehouseId",
-            "Name",
-            "Description",
-            "IsInTransit",
-            "Version",
-            "CreatedBy",
-            "CreatedAt",
-            "UpdatedBy",
-            "UpdatedAt",
-            "Active",
-            "Deleted",
+            "warehouseId",
+            "name",
+            "description",
+            "isInTransit",
+            "version",
+            "createdBy",
+            "createdAt",
+            "updatedBy",
+            "updatedAt",
+            "active",
+            "deleted",
     };
 
     public static final String[] propertyTypes = new String[] {

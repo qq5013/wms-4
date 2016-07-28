@@ -39,7 +39,7 @@ public abstract class AbstractUserPermissionStates implements UserPermissionStat
 
     @Override
     public Iterator<UserPermissionState> iterator() {
-        return innerIterable.iterator();
+        return getInnerIterable().iterator();
     }
 
     public UserPermissionState get(String permissionId)

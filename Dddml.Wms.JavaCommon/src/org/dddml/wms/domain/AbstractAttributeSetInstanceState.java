@@ -3,8 +3,7 @@ package org.dddml.wms.domain;
 import java.util.Set;
 import java.math.BigDecimal;
 import java.util.Date;
-import org.dddml.wms.specialization.Event;
-import org.dddml.wms.specialization.DomainError;
+import org.dddml.wms.specialization.*;
 import org.dddml.wms.domain.AttributeSetInstanceStateEvent.*;
 
 public abstract class AbstractAttributeSetInstanceState implements AttributeSetInstanceState
@@ -11262,6 +11261,10 @@ public abstract class AbstractAttributeSetInstanceState implements AttributeSetI
 
     }
 
+    public void save()
+    {
+    }
+
     protected void throwOnWrongEvent(AttributeSetInstanceStateEvent stateEvent)
     {
         String stateEntityId = this.getAttributeSetInstanceId(); // Aggregate Id
@@ -11273,9 +11276,12 @@ public abstract class AbstractAttributeSetInstanceState implements AttributeSetI
 
         Long stateVersion = this.getVersion();
         Long eventVersion = stateEvent.getStateEventId().getVersion();// Aggregate Version
-        if (!(stateVersion == null && eventVersion == AttributeSetInstanceState.VERSION_NULL) && stateVersion != eventVersion)
+        if (eventVersion == null) {
+            throw new NullPointerException("stateEvent.getStateEventId().getVersion() == null");
+        }
+        if (!(stateVersion == null && eventVersion.equals(AttributeSetInstanceState.VERSION_NULL)) && !eventVersion.equals(stateVersion))
         {
-            throw DomainError.named("concurrencyConflict", "Conflict between state version (%1$s) and event version (%2$s + 1)", stateVersion, eventVersion);
+            throw DomainError.named("concurrencyConflict", "Conflict between state version (%1$s) and event version (%2$s)", stateVersion, eventVersion);
         }
 
     }

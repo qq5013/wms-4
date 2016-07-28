@@ -6,8 +6,9 @@ use NodaMoney\Money;
 use Dddml\Serializer\Type\Money;
 use Dddml\Serializer\Type\Decimal;
 use Dddml\Serializer\Type\Long;
+use Dddml\Executor\Http\QueryCountRequestInterface;
 
-class InOutQueryRequest extends AbstractQueryRequest
+class InOutQueryRequest extends AbstractQueryRequest implements QueryCountRequestInterface
 {
     use InOutFilteringFieldsTrait;
 

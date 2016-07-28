@@ -39,7 +39,7 @@ public abstract class AbstractUserRoleStates implements UserRoleStates
 
     @Override
     public Iterator<UserRoleState> iterator() {
-        return innerIterable.iterator();
+        return getInnerIterable().iterator();
     }
 
     public UserRoleState get(String roleId)

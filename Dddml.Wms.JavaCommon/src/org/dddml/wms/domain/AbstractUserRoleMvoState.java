@@ -2,8 +2,7 @@ package org.dddml.wms.domain;
 
 import java.util.Set;
 import java.util.Date;
-import org.dddml.wms.specialization.Event;
-import org.dddml.wms.specialization.DomainError;
+import org.dddml.wms.specialization.*;
 import org.dddml.wms.domain.UserRoleMvoStateEvent.*;
 
 public abstract class AbstractUserRoleMvoState implements UserRoleMvoState
@@ -605,6 +604,10 @@ public abstract class AbstractUserRoleMvoState implements UserRoleMvoState
 
     }
 
+    public void save()
+    {
+    }
+
     protected void throwOnWrongEvent(UserRoleMvoStateEvent stateEvent)
     {
         UserRoleId stateEntityId = this.getUserRoleId(); // Aggregate Id
@@ -616,9 +619,12 @@ public abstract class AbstractUserRoleMvoState implements UserRoleMvoState
 
         Long stateVersion = this.getUserVersion();
         Long eventVersion = stateEvent.getStateEventId().getUserVersion();// Aggregate Version
-        if (!(stateVersion == null && eventVersion == UserRoleMvoState.VERSION_NULL) && stateVersion != eventVersion)
+        if (eventVersion == null) {
+            throw new NullPointerException("stateEvent.getStateEventId().getUserVersion() == null");
+        }
+        if (!(stateVersion == null && eventVersion.equals(UserRoleMvoState.VERSION_NULL)) && !eventVersion.equals(stateVersion))
         {
-            throw DomainError.named("concurrencyConflict", "Conflict between state version (%1$s) and event version (%2$s + 1)", stateVersion, eventVersion);
+            throw DomainError.named("concurrencyConflict", "Conflict between state version (%1$s) and event version (%2$s)", stateVersion, eventVersion);
         }
 
     }

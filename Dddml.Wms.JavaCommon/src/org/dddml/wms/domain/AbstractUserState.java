@@ -2,11 +2,10 @@ package org.dddml.wms.domain;
 
 import java.util.Set;
 import java.util.Date;
-import org.dddml.wms.specialization.Event;
-import org.dddml.wms.specialization.DomainError;
+import org.dddml.wms.specialization.*;
 import org.dddml.wms.domain.UserStateEvent.*;
 
-public abstract class AbstractUserState implements UserState
+public abstract class AbstractUserState implements UserState, Saveable
 {
 
     private String userId;
@@ -585,6 +584,18 @@ public abstract class AbstractUserState implements UserState
         }
     }
 
+    public void save()
+    {
+        userRoles.save();
+
+        userClaims.save();
+
+        userPermissions.save();
+
+        userLogins.save();
+
+    }
+
     protected void throwOnWrongEvent(UserStateEvent stateEvent)
     {
         String stateEntityId = this.getUserId(); // Aggregate Id
@@ -596,9 +607,12 @@ public abstract class AbstractUserState implements UserState
 
         Long stateVersion = this.getVersion();
         Long eventVersion = stateEvent.getStateEventId().getVersion();// Aggregate Version
-        if (!(stateVersion == null && eventVersion == UserState.VERSION_NULL) && stateVersion != eventVersion)
+        if (eventVersion == null) {
+            throw new NullPointerException("stateEvent.getStateEventId().getVersion() == null");
+        }
+        if (!(stateVersion == null && eventVersion.equals(UserState.VERSION_NULL)) && !eventVersion.equals(stateVersion))
         {
-            throw DomainError.named("concurrencyConflict", "Conflict between state version (%1$s) and event version (%2$s + 1)", stateVersion, eventVersion);
+            throw DomainError.named("concurrencyConflict", "Conflict between state version (%1$s) and event version (%2$s)", stateVersion, eventVersion);
         }
 
     }

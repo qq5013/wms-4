@@ -3,8 +3,7 @@ package org.dddml.wms.domain;
 import java.util.Set;
 import java.math.BigDecimal;
 import java.util.Date;
-import org.dddml.wms.specialization.Event;
-import org.dddml.wms.specialization.DomainError;
+import org.dddml.wms.specialization.*;
 import org.dddml.wms.domain.InOutLineStateEvent.*;
 
 public abstract class AbstractInOutLineState implements InOutLineState
@@ -20,16 +19,20 @@ public abstract class AbstractInOutLineState implements InOutLineState
         this.inOutLineId = inOutLineId;
     }
 
-    private SkuId skuId;
-
-    public SkuId getSkuId()
-    {
-        return this.skuId;
+    public String getInOutDocumentNumber() {
+        return this.getInOutLineId().getInOutDocumentNumber();
+    }
+        
+    public void setInOutDocumentNumber(String inOutDocumentNumber) {
+        this.getInOutLineId().setInOutDocumentNumber(inOutDocumentNumber);
     }
 
-    public void setSkuId(SkuId skuId)
-    {
-        this.skuId = skuId;
+    public SkuId getSkuId() {
+        return this.getInOutLineId().getSkuId();
+    }
+        
+    public void setSkuId(SkuId skuId) {
+        this.getInOutLineId().setSkuId(skuId);
     }
 
     private Long lineNumber;
@@ -320,18 +323,6 @@ public abstract class AbstractInOutLineState implements InOutLineState
         this.deleted = deleted;
     }
 
-    private String inOutDocumentNumber;
-
-    public String getInOutDocumentNumber()
-    {
-        return this.inOutDocumentNumber;
-    }
-
-    public void setInOutDocumentNumber(String inOutDocumentNumber)
-    {
-        this.inOutDocumentNumber = inOutDocumentNumber;
-    }
-
     public boolean isStateUnsaved() 
     {
         return this.getVersion() == null;
@@ -604,6 +595,10 @@ public abstract class AbstractInOutLineState implements InOutLineState
 
     }
 
+    public void save()
+    {
+    }
+
     protected void throwOnWrongEvent(InOutLineStateEvent stateEvent)
     {
         String stateEntityIdInOutDocumentNumber = this.getInOutLineId().getInOutDocumentNumber();
@@ -622,9 +617,13 @@ public abstract class AbstractInOutLineState implements InOutLineState
 
         Long stateVersion = this.getVersion();
         Long eventVersion = stateEvent.getVersion();
-        if (!(stateVersion == null && eventVersion == InOutLineState.VERSION_NULL) && stateVersion != eventVersion)
+        if (eventVersion == null) {
+            eventVersion = stateVersion == null ? InOutLineState.VERSION_NULL : stateVersion;
+            stateEvent.setVersion(eventVersion);
+        }
+        if (!(stateVersion == null && eventVersion.equals(InOutLineState.VERSION_NULL)) && !eventVersion.equals(stateVersion))
         {
-            throw DomainError.named("concurrencyConflict", "Conflict between state version (%1$s) and event version (%2$s + 1)", stateVersion, eventVersion);
+            throw DomainError.named("concurrencyConflict", "Conflict between state version (%1$s) and event version (%2$s)", stateVersion, eventVersion);
         }
 
     }

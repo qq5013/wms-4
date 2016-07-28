@@ -39,7 +39,7 @@ public abstract class AbstractAttributeValueStates implements AttributeValueStat
 
     @Override
     public Iterator<AttributeValueState> iterator() {
-        return innerIterable.iterator();
+        return getInnerIterable().iterator();
     }
 
     public AttributeValueState get(String value)

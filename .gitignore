@@ -248,3 +248,5 @@ AppSettingsSecrets.config
 Dddml.Wms.HttpServices.JavaClient/out/
 Dddml.Wms.JavaCommon/out/
 Dddml.Wms.JavaServices/out/
+Dddml.Wms.JavaServices.Tests/lib/
+Dddml.Wms.JavaServices.Tests/out/

@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://localhost/test?characterEncoding=utf8</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">123456</property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">1</property>
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!-- Disable the second-level cache  -->
+        <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <property name="hbm2ddl.auto">none</property>
+
+        <mapping resource="org/dddml/wms/domain/hbm/AttributeState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/AttributeStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/AttributeValueState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/AttributeValueStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/AttributeSetState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/AttributeSetStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/AttributeUseState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/AttributeUseStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/AttributeSetInstanceState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/AttributeSetInstanceStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/AttributeSetInstanceExtensionFieldGroupState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/AttributeSetInstanceExtensionFieldGroupStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/AttributeSetInstanceExtensionFieldState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/AttributeSetInstanceExtensionFieldStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/InOutState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/InOutStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/InOutLineState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/InOutLineStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/WarehouseState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/WarehouseStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/LocatorState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/LocatorStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/OrganizationState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/OrganizationStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/OrganizationStructureTypeState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/OrganizationStructureTypeStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/OrganizationStructureState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/OrganizationStructureStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/UserState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/UserStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/UserRoleState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/UserRoleStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/UserClaimState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/UserClaimStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/UserPermissionState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/UserPermissionStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/UserLoginState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/UserLoginStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/RoleState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/RoleStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/PermissionState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/PermissionStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/RolePermissionState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/RolePermissionStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/AudienceState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/AudienceStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/AttributeValueMvoState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/AttributeValueMvoStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/AttributeUseMvoState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/AttributeUseMvoStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/AttributeSetInstanceExtensionFieldMvoState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/AttributeSetInstanceExtensionFieldMvoStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/InOutLineMvoState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/InOutLineMvoStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/UserRoleMvoState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/UserRoleMvoStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/UserClaimMvoState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/UserClaimMvoStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/UserPermissionMvoState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/UserPermissionMvoStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/UserLoginMvoState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/UserLoginMvoStateEvent.hbm.xml"/>
+
+    </session-factory>
+</hibernate-configuration>

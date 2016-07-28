@@ -129,7 +129,7 @@ public abstract class AbstractUserLoginState implements UserLoginState
 
     public boolean isStateUnsaved() 
     {
-        return VERSION_ZERO.equals(this.getVersion());
+        return this.getVersion() == null;
     }
 
 
@@ -212,21 +212,10 @@ public abstract class AbstractUserLoginState implements UserLoginState
         }
 
         Long stateVersion = this.getVersion();
-        if(stateVersion == null) {
-            stateVersion = UserLoginState.VERSION_ZERO;
-        }
         Long eventVersion = stateEvent.getVersion();
-        if(eventVersion == null) {
-            eventVersion = UserLoginState.VERSION_ZERO;
-        }
-        if (UserLoginState.VERSION_ZERO.equals(eventVersion))
+        if (!(stateVersion == null && eventVersion == UserLoginState.VERSION_NULL) && stateVersion != eventVersion)
         {
-            stateEvent.setVersion(stateVersion);
-            eventVersion = stateVersion;
-        }
-        if (!stateVersion.equals(eventVersion))
-        {
-            throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);
+            throw DomainError.named("concurrencyConflict", "Conflict between state version (%1$s) and event version (%2$s + 1)", stateVersion, eventVersion);
         }
 
     }

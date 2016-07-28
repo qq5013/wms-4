@@ -96,14 +96,16 @@ public abstract class AbstractLocatorApplicationService implements LocatorApplic
 
         aggregate.throwOnInvalidStateTransition(c);
         action.accept(aggregate);
-        getEventStore().appendEvents(eventStoreAggregateId, state.getVersion(), aggregate.getChanges(), (events) -> { getStateRepository().save(state); });
+        getEventStore().appendEvents(eventStoreAggregateId, c.getVersion(), // State version may be null!
+            aggregate.getChanges(), (events) -> { getStateRepository().save(state); });
         
     }
 
     protected boolean isRepeatedCommand(LocatorCommand command, EventStoreAggregateId eventStoreAggregateId, LocatorState state)
     {
         boolean repeated = false;
-        if (state.getVersion() > command.getVersion())
+        if (command.getVersion() == null) { command.setVersion(LocatorState.VERSION_NULL); }
+        if (state.getVersion() != null && state.getVersion() > command.getVersion())
         {
             Event lastEvent = getEventStore().findLastEvent(LocatorStateEvent.class, eventStoreAggregateId, command.getVersion());
             if (lastEvent != null && lastEvent instanceof AbstractStateEvent && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))

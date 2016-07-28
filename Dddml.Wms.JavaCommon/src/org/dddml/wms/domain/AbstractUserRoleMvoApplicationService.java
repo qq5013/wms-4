@@ -96,14 +96,16 @@ public abstract class AbstractUserRoleMvoApplicationService implements UserRoleM
 
         aggregate.throwOnInvalidStateTransition(c);
         action.accept(aggregate);
-        getEventStore().appendEvents(eventStoreAggregateId, state.getUserVersion(), aggregate.getChanges(), (events) -> { getStateRepository().save(state); });
+        getEventStore().appendEvents(eventStoreAggregateId, c.getUserVersion(), // State version may be null!
+            aggregate.getChanges(), (events) -> { getStateRepository().save(state); });
         
     }
 
     protected boolean isRepeatedCommand(UserRoleMvoCommand command, EventStoreAggregateId eventStoreAggregateId, UserRoleMvoState state)
     {
         boolean repeated = false;
-        if (state.getUserVersion() > command.getUserVersion())
+        if (command.getUserVersion() == null) { command.setUserVersion(UserRoleMvoState.VERSION_NULL); }
+        if (state.getUserVersion() != null && state.getUserVersion() > command.getUserVersion())
         {
             Event lastEvent = getEventStore().findLastEvent(UserRoleMvoStateEvent.class, eventStoreAggregateId, command.getUserVersion());
             if (lastEvent != null && lastEvent instanceof AbstractStateEvent && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))

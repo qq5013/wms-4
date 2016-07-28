@@ -7,12 +7,18 @@ public interface UserLoginCommand extends Command
 {
     LoginKey getLoginKey();
 
+    void setLoginKey(LoginKey loginKey);
+
     String getUserId();
+
+    void setUserId(String userId);
 
 
     interface CreateOrMergePatchUserLogin extends UserLoginCommand
     {
         Boolean getActive();
+
+        void setActive(Boolean active);
 
     }
 
@@ -23,6 +29,8 @@ public interface UserLoginCommand extends Command
     interface MergePatchUserLogin extends CreateOrMergePatchUserLogin
     {
         Boolean getIsPropertyActiveRemoved();
+
+        void setIsPropertyActiveRemoved(Boolean removed);
 
     }
 

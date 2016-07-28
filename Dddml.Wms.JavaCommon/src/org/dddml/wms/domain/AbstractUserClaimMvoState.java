@@ -347,7 +347,7 @@ public abstract class AbstractUserClaimMvoState implements UserClaimMvoState
 
     public boolean isStateUnsaved() 
     {
-        return VERSION_ZERO.equals(this.getUserVersion());
+        return this.getUserVersion() == null;
     }
 
 
@@ -663,17 +663,10 @@ public abstract class AbstractUserClaimMvoState implements UserClaimMvoState
         }
 
         Long stateVersion = this.getUserVersion();
-        if(stateVersion == null) {
-            stateVersion = UserClaimMvoState.VERSION_ZERO;
-        }
         Long eventVersion = stateEvent.getStateEventId().getUserVersion();// Aggregate Version
-        if(eventVersion == null) {
-            eventVersion = UserClaimMvoState.VERSION_ZERO;
-            stateEvent.getStateEventId().setUserVersion(eventVersion);
-        }
-        if (!stateVersion.equals(eventVersion))
+        if (!(stateVersion == null && eventVersion == UserClaimMvoState.VERSION_NULL) && stateVersion != eventVersion)
         {
-            throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);
+            throw DomainError.named("concurrencyConflict", "Conflict between state version (%1$s) and event version (%2$s + 1)", stateVersion, eventVersion);
         }
 
     }

@@ -9,6 +9,8 @@ public interface OrganizationStructureState
 {
     Long VERSION_ZERO = 0L;
 
+    Long VERSION_NULL = VERSION_ZERO - 1;
+
     OrganizationStructureId getId();
 
     void setId(OrganizationStructureId id);

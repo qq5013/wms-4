@@ -6,6 +6,7 @@ import org.hibernate.*;
 import org.hibernate.criterion.*;
 import org.dddml.wms.domain.*;
 import org.dddml.wms.specialization.*;
+import org.springframework.transaction.annotation.Transactional;
 
 public class HibernateUserPermissionMvoStateRepository implements UserPermissionMvoStateRepository
 {
@@ -19,7 +20,7 @@ public class HibernateUserPermissionMvoStateRepository implements UserPermission
         return this.sessionFactory.getCurrentSession();
     }
     
-    //[Transaction (ReadOnly = true)]
+    @Transactional(readOnly = true)
     public UserPermissionMvoState get(UserPermissionId id)
     {
         UserPermissionMvoState state = (UserPermissionMvoState)getCurrentSession().get(AbstractUserPermissionMvoState.SimpleUserPermissionMvoState.class, id);
@@ -30,7 +31,7 @@ public class HibernateUserPermissionMvoStateRepository implements UserPermission
         return state;
     }
 
-    //[Transaction(ReadOnly = true)]
+    @Transactional(readOnly = true)
     public Iterable<UserPermissionMvoState> getAll(Integer firstResult, Integer maxResults)
     {
         Criteria criteria = getCurrentSession().createCriteria(AbstractUserPermissionMvoState.SimpleUserPermissionMvoState.class);
@@ -40,10 +41,10 @@ public class HibernateUserPermissionMvoStateRepository implements UserPermission
         return criteria.list();
     }
 
-    //[Transaction]
+    //@Transactional
     public void save(UserPermissionMvoState state)
     {
-        if(state.getUserVersion() == null || state.getUserVersion().equals(UserPermissionMvoState.VERSION_ZERO)) {
+        if(state.getUserVersion() == null) {
             getCurrentSession().save(state);
         }else {
             getCurrentSession().update(state);
@@ -76,7 +77,7 @@ public class HibernateUserPermissionMvoStateRepository implements UserPermission
     //long getCount(Criterion filter);
 
 /*
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IEnumerable<IUserPermissionMvoState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
             var criteria = CurrentSession.CreateCriteria<UserPermissionMvoState>();
@@ -86,7 +87,7 @@ public class HibernateUserPermissionMvoStateRepository implements UserPermission
             return criteria.List<UserPermissionMvoState>();
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IEnumerable<IUserPermissionMvoState> Get(Dddml.Support.Criterion.ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
             var criteria = CurrentSession.CreateCriteria<UserPermissionMvoState>();
@@ -97,7 +98,7 @@ public class HibernateUserPermissionMvoStateRepository implements UserPermission
         }
 
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IUserPermissionMvoState GetFirst(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null)
         {
             var list = (IList<UserPermissionMvoState>)Get(filter, orders, 0, 1);
@@ -108,20 +109,20 @@ public class HibernateUserPermissionMvoStateRepository implements UserPermission
             return list[0];
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IUserPermissionMvoState GetFirst(KeyValuePair<string, object> keyValue, IList<string> orders = null)
         {
             return GetFirst(new KeyValuePair<string, object>[] { keyValue }, orders);
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IEnumerable<IUserPermissionMvoState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
             var filter = new KeyValuePair<string, object>[] { new KeyValuePair<string, object>(propertyName, propertyValue) };
             return Get(filter, orders, firstResult, maxResults);
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
         {
             var criteria = CurrentSession.CreateCriteria<UserPermissionMvoState>();
@@ -131,7 +132,7 @@ public class HibernateUserPermissionMvoStateRepository implements UserPermission
             return criteria.UniqueResult<long>();
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual long GetCount(Dddml.Support.Criterion.ICriterion filter)
         {
             var criteria = CurrentSession.CreateCriteria<UserPermissionMvoState>();

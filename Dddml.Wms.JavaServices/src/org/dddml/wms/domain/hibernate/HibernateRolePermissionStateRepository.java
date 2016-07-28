@@ -6,6 +6,7 @@ import org.hibernate.*;
 import org.hibernate.criterion.*;
 import org.dddml.wms.domain.*;
 import org.dddml.wms.specialization.*;
+import org.springframework.transaction.annotation.Transactional;
 
 public class HibernateRolePermissionStateRepository implements RolePermissionStateRepository
 {
@@ -19,7 +20,7 @@ public class HibernateRolePermissionStateRepository implements RolePermissionSta
         return this.sessionFactory.getCurrentSession();
     }
     
-    //[Transaction (ReadOnly = true)]
+    @Transactional(readOnly = true)
     public RolePermissionState get(RolePermissionId id)
     {
         RolePermissionState state = (RolePermissionState)getCurrentSession().get(AbstractRolePermissionState.SimpleRolePermissionState.class, id);
@@ -30,7 +31,7 @@ public class HibernateRolePermissionStateRepository implements RolePermissionSta
         return state;
     }
 
-    //[Transaction(ReadOnly = true)]
+    @Transactional(readOnly = true)
     public Iterable<RolePermissionState> getAll(Integer firstResult, Integer maxResults)
     {
         Criteria criteria = getCurrentSession().createCriteria(AbstractRolePermissionState.SimpleRolePermissionState.class);
@@ -40,10 +41,10 @@ public class HibernateRolePermissionStateRepository implements RolePermissionSta
         return criteria.list();
     }
 
-    //[Transaction]
+    //@Transactional
     public void save(RolePermissionState state)
     {
-        if(state.getVersion() == null || state.getVersion().equals(RolePermissionState.VERSION_ZERO)) {
+        if(state.getVersion() == null) {
             getCurrentSession().save(state);
         }else {
             getCurrentSession().update(state);
@@ -76,7 +77,7 @@ public class HibernateRolePermissionStateRepository implements RolePermissionSta
     //long getCount(Criterion filter);
 
 /*
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IEnumerable<IRolePermissionState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
             var criteria = CurrentSession.CreateCriteria<RolePermissionState>();
@@ -86,7 +87,7 @@ public class HibernateRolePermissionStateRepository implements RolePermissionSta
             return criteria.List<RolePermissionState>();
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IEnumerable<IRolePermissionState> Get(Dddml.Support.Criterion.ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
             var criteria = CurrentSession.CreateCriteria<RolePermissionState>();
@@ -97,7 +98,7 @@ public class HibernateRolePermissionStateRepository implements RolePermissionSta
         }
 
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IRolePermissionState GetFirst(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null)
         {
             var list = (IList<RolePermissionState>)Get(filter, orders, 0, 1);
@@ -108,20 +109,20 @@ public class HibernateRolePermissionStateRepository implements RolePermissionSta
             return list[0];
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IRolePermissionState GetFirst(KeyValuePair<string, object> keyValue, IList<string> orders = null)
         {
             return GetFirst(new KeyValuePair<string, object>[] { keyValue }, orders);
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IEnumerable<IRolePermissionState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
             var filter = new KeyValuePair<string, object>[] { new KeyValuePair<string, object>(propertyName, propertyValue) };
             return Get(filter, orders, firstResult, maxResults);
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
         {
             var criteria = CurrentSession.CreateCriteria<RolePermissionState>();
@@ -131,7 +132,7 @@ public class HibernateRolePermissionStateRepository implements RolePermissionSta
             return criteria.UniqueResult<long>();
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual long GetCount(Dddml.Support.Criterion.ICriterion filter)
         {
             var criteria = CurrentSession.CreateCriteria<RolePermissionState>();

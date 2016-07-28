@@ -5,6 +5,7 @@ import org.hibernate.*;
 import org.hibernate.criterion.*;
 import org.dddml.wms.domain.*;
 import org.dddml.wms.specialization.*;
+import org.springframework.transaction.annotation.Transactional;
 
 public class HibernateAttributeSetInstanceExtensionFieldStateDao implements AttributeSetInstanceExtensionFieldStateDao
 {
@@ -18,7 +19,7 @@ public class HibernateAttributeSetInstanceExtensionFieldStateDao implements Attr
         return this.sessionFactory.getCurrentSession();
     }
 
-    //[Transaction(ReadOnly = true)]
+    @Transactional(readOnly = true)
     @Override
     public AttributeSetInstanceExtensionFieldState get(AttributeSetInstanceExtensionFieldId id)
     {
@@ -34,7 +35,7 @@ public class HibernateAttributeSetInstanceExtensionFieldStateDao implements Attr
     @Override
     public void save(AttributeSetInstanceExtensionFieldState state)
     {
-        if(state.getVersion() == null || state.getVersion().equals(AttributeSetInstanceExtensionFieldState.VERSION_ZERO)) {
+        if(state.getVersion() == null) {
             getCurrentSession().save(state);
         }else {
             getCurrentSession().update(state);
@@ -47,7 +48,7 @@ public class HibernateAttributeSetInstanceExtensionFieldStateDao implements Attr
         }
     }
 
-    //[Transaction(ReadOnly = true)]
+    @Transactional(readOnly = true)
     @Override
     public Iterable<AttributeSetInstanceExtensionFieldState> findByGroupId(String groupId)
     {

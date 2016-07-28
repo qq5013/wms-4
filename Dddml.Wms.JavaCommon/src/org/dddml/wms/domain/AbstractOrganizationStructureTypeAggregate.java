@@ -26,6 +26,7 @@ public abstract class AbstractOrganizationStructureTypeAggregate extends Abstrac
 
     public void create(OrganizationStructureTypeCommand.CreateOrganizationStructureType c)
     {
+        if (c.getVersion() == null) { c.setVersion(OrganizationStructureTypeState.VERSION_NULL); }
         OrganizationStructureTypeStateEvent.OrganizationStructureTypeStateCreated e = map(c);
         apply(e);
     }
@@ -44,7 +45,7 @@ public abstract class AbstractOrganizationStructureTypeAggregate extends Abstrac
 
     public void throwOnInvalidStateTransition(Command c)
     {
-        if (this.state.getVersion() == null || this.state.getVersion().equals(OrganizationStructureTypeState.VERSION_ZERO))
+        if (this.state.getVersion() == null)
         {
             if (isCommandCreate((OrganizationStructureTypeCommand)c))
             {
@@ -63,8 +64,8 @@ public abstract class AbstractOrganizationStructureTypeAggregate extends Abstrac
     protected void apply(Event e)
     {
         onApplying(e);
-        this.state.mutate(e);
-        this.changes.add(e);
+        state.mutate(e);
+        changes.add(e);
     }
 
     protected OrganizationStructureTypeStateEvent.OrganizationStructureTypeStateCreated map(OrganizationStructureTypeCommand.CreateOrganizationStructureType c)
@@ -105,7 +106,8 @@ public abstract class AbstractOrganizationStructureTypeAggregate extends Abstrac
 
     private static boolean isCommandCreate(OrganizationStructureTypeCommand c)
     {
-        return c.getVersion() == null || c.getVersion().equals(OrganizationStructureTypeState.VERSION_ZERO);
+        return ((c instanceof OrganizationStructureTypeCommand.CreateOrganizationStructureType) 
+            && c.getVersion().equals(OrganizationStructureTypeState.VERSION_NULL));
     }
 
 

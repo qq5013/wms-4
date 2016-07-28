@@ -275,7 +275,7 @@ public abstract class AbstractAttributeUseMvoState implements AttributeUseMvoSta
 
     public boolean isStateUnsaved() 
     {
-        return VERSION_ZERO.equals(this.getAttributeSetVersion());
+        return this.getAttributeSetVersion() == null;
     }
 
 
@@ -519,17 +519,10 @@ public abstract class AbstractAttributeUseMvoState implements AttributeUseMvoSta
         }
 
         Long stateVersion = this.getAttributeSetVersion();
-        if(stateVersion == null) {
-            stateVersion = AttributeUseMvoState.VERSION_ZERO;
-        }
         Long eventVersion = stateEvent.getStateEventId().getAttributeSetVersion();// Aggregate Version
-        if(eventVersion == null) {
-            eventVersion = AttributeUseMvoState.VERSION_ZERO;
-            stateEvent.getStateEventId().setAttributeSetVersion(eventVersion);
-        }
-        if (!stateVersion.equals(eventVersion))
+        if (!(stateVersion == null && eventVersion == AttributeUseMvoState.VERSION_NULL) && stateVersion != eventVersion)
         {
-            throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);
+            throw DomainError.named("concurrencyConflict", "Conflict between state version (%1$s) and event version (%2$s + 1)", stateVersion, eventVersion);
         }
 
     }

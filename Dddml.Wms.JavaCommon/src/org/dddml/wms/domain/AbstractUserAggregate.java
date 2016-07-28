@@ -26,6 +26,7 @@ public abstract class AbstractUserAggregate extends AbstractAggregate implements
 
     public void create(UserCommand.CreateUser c)
     {
+        if (c.getVersion() == null) { c.setVersion(UserState.VERSION_NULL); }
         UserStateEvent.UserStateCreated e = map(c);
         apply(e);
     }
@@ -44,7 +45,7 @@ public abstract class AbstractUserAggregate extends AbstractAggregate implements
 
     public void throwOnInvalidStateTransition(Command c)
     {
-        if (this.state.getVersion() == null || this.state.getVersion().equals(UserState.VERSION_ZERO))
+        if (this.state.getVersion() == null)
         {
             if (isCommandCreate((UserCommand)c))
             {
@@ -63,8 +64,8 @@ public abstract class AbstractUserAggregate extends AbstractAggregate implements
     protected void apply(Event e)
     {
         onApplying(e);
-        this.state.mutate(e);
-        this.changes.add(e);
+        state.mutate(e);
+        changes.add(e);
     }
 
     protected UserStateEvent.UserStateCreated map(UserCommand.CreateUser c)
@@ -536,7 +537,8 @@ public abstract class AbstractUserAggregate extends AbstractAggregate implements
 
     private static boolean isCommandCreate(UserCommand c)
     {
-        return c.getVersion() == null || c.getVersion().equals(UserState.VERSION_ZERO);
+        return ((c instanceof UserCommand.CreateUser) 
+            && c.getVersion().equals(UserState.VERSION_NULL));
     }
 
 

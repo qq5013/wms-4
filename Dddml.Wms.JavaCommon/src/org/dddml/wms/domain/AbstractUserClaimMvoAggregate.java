@@ -26,6 +26,7 @@ public abstract class AbstractUserClaimMvoAggregate extends AbstractAggregate im
 
     public void create(UserClaimMvoCommand.CreateUserClaimMvo c)
     {
+        if (c.getUserVersion() == null) { c.setUserVersion(UserClaimMvoState.VERSION_NULL); }
         UserClaimMvoStateEvent.UserClaimMvoStateCreated e = map(c);
         apply(e);
     }
@@ -44,7 +45,7 @@ public abstract class AbstractUserClaimMvoAggregate extends AbstractAggregate im
 
     public void throwOnInvalidStateTransition(Command c)
     {
-        if (this.state.getUserVersion() == null || this.state.getUserVersion().equals(UserClaimMvoState.VERSION_ZERO))
+        if (this.state.getUserVersion() == null)
         {
             if (isCommandCreate((UserClaimMvoCommand)c))
             {
@@ -63,8 +64,8 @@ public abstract class AbstractUserClaimMvoAggregate extends AbstractAggregate im
     protected void apply(Event e)
     {
         onApplying(e);
-        this.state.mutate(e);
-        this.changes.add(e);
+        state.mutate(e);
+        changes.add(e);
     }
 
     protected UserClaimMvoStateEvent.UserClaimMvoStateCreated map(UserClaimMvoCommand.CreateUserClaimMvo c)
@@ -165,7 +166,8 @@ public abstract class AbstractUserClaimMvoAggregate extends AbstractAggregate im
 
     private static boolean isCommandCreate(UserClaimMvoCommand c)
     {
-        return c.getUserVersion() == null || c.getUserVersion().equals(UserClaimMvoState.VERSION_ZERO);
+        return ((c instanceof UserClaimMvoCommand.CreateUserClaimMvo) 
+            && c.getUserVersion().equals(UserClaimMvoState.VERSION_NULL));
     }
 
 

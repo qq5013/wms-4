@@ -7,14 +7,22 @@ public interface AttributeUseCommand extends Command
 {
     String getAttributeId();
 
+    void setAttributeId(String attributeId);
+
     String getAttributeSetId();
+
+    void setAttributeSetId(String attributeSetId);
 
 
     interface CreateOrMergePatchAttributeUse extends AttributeUseCommand
     {
         Integer getSequenceNumber();
 
+        void setSequenceNumber(Integer sequenceNumber);
+
         Boolean getActive();
+
+        void setActive(Boolean active);
 
     }
 
@@ -26,7 +34,11 @@ public interface AttributeUseCommand extends Command
     {
         Boolean getIsPropertySequenceNumberRemoved();
 
+        void setIsPropertySequenceNumberRemoved(Boolean removed);
+
         Boolean getIsPropertyActiveRemoved();
+
+        void setIsPropertyActiveRemoved(Boolean removed);
 
     }
 

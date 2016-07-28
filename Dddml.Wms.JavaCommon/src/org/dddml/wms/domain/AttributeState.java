@@ -9,6 +9,8 @@ public interface AttributeState
 {
     Long VERSION_ZERO = 0L;
 
+    Long VERSION_NULL = VERSION_ZERO - 1;
+
     String getAttributeId();
 
     void setAttributeId(String attributeId);

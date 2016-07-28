@@ -26,6 +26,7 @@ public abstract class AbstractWarehouseAggregate extends AbstractAggregate imple
 
     public void create(WarehouseCommand.CreateWarehouse c)
     {
+        if (c.getVersion() == null) { c.setVersion(WarehouseState.VERSION_NULL); }
         WarehouseStateEvent.WarehouseStateCreated e = map(c);
         apply(e);
     }
@@ -44,7 +45,7 @@ public abstract class AbstractWarehouseAggregate extends AbstractAggregate imple
 
     public void throwOnInvalidStateTransition(Command c)
     {
-        if (this.state.getVersion() == null || this.state.getVersion().equals(WarehouseState.VERSION_ZERO))
+        if (this.state.getVersion() == null)
         {
             if (isCommandCreate((WarehouseCommand)c))
             {
@@ -63,8 +64,8 @@ public abstract class AbstractWarehouseAggregate extends AbstractAggregate imple
     protected void apply(Event e)
     {
         onApplying(e);
-        this.state.mutate(e);
-        this.changes.add(e);
+        state.mutate(e);
+        changes.add(e);
     }
 
     protected WarehouseStateEvent.WarehouseStateCreated map(WarehouseCommand.CreateWarehouse c)
@@ -114,7 +115,8 @@ public abstract class AbstractWarehouseAggregate extends AbstractAggregate imple
 
     private static boolean isCommandCreate(WarehouseCommand c)
     {
-        return c.getVersion() == null || c.getVersion().equals(WarehouseState.VERSION_ZERO);
+        return ((c instanceof WarehouseCommand.CreateWarehouse) 
+            && c.getVersion().equals(WarehouseState.VERSION_NULL));
     }
 
 

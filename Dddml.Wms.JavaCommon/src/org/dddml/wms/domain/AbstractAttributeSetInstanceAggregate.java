@@ -27,6 +27,7 @@ public abstract class AbstractAttributeSetInstanceAggregate extends AbstractAggr
 
     public void create(AttributeSetInstanceCommand.CreateAttributeSetInstance c)
     {
+        if (c.getVersion() == null) { c.setVersion(AttributeSetInstanceState.VERSION_NULL); }
         AttributeSetInstanceStateEvent.AttributeSetInstanceStateCreated e = map(c);
         apply(e);
     }
@@ -45,7 +46,7 @@ public abstract class AbstractAttributeSetInstanceAggregate extends AbstractAggr
 
     public void throwOnInvalidStateTransition(Command c)
     {
-        if (this.state.getVersion() == null || this.state.getVersion().equals(AttributeSetInstanceState.VERSION_ZERO))
+        if (this.state.getVersion() == null)
         {
             if (isCommandCreate((AttributeSetInstanceCommand)c))
             {
@@ -64,8 +65,8 @@ public abstract class AbstractAttributeSetInstanceAggregate extends AbstractAggr
     protected void apply(Event e)
     {
         onApplying(e);
-        this.state.mutate(e);
-        this.changes.add(e);
+        state.mutate(e);
+        changes.add(e);
     }
 
     protected AttributeSetInstanceStateEvent.AttributeSetInstanceStateCreated map(AttributeSetInstanceCommand.CreateAttributeSetInstance c)
@@ -1492,7 +1493,8 @@ public abstract class AbstractAttributeSetInstanceAggregate extends AbstractAggr
 
     private static boolean isCommandCreate(AttributeSetInstanceCommand c)
     {
-        return c.getVersion() == null || c.getVersion().equals(AttributeSetInstanceState.VERSION_ZERO);
+        return ((c instanceof AttributeSetInstanceCommand.CreateAttributeSetInstance) 
+            && c.getVersion().equals(AttributeSetInstanceState.VERSION_NULL));
     }
 
 

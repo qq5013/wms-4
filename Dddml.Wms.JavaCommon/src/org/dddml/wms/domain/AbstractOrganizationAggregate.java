@@ -26,6 +26,7 @@ public abstract class AbstractOrganizationAggregate extends AbstractAggregate im
 
     public void create(OrganizationCommand.CreateOrganization c)
     {
+        if (c.getVersion() == null) { c.setVersion(OrganizationState.VERSION_NULL); }
         OrganizationStateEvent.OrganizationStateCreated e = map(c);
         apply(e);
     }
@@ -44,7 +45,7 @@ public abstract class AbstractOrganizationAggregate extends AbstractAggregate im
 
     public void throwOnInvalidStateTransition(Command c)
     {
-        if (this.state.getVersion() == null || this.state.getVersion().equals(OrganizationState.VERSION_ZERO))
+        if (this.state.getVersion() == null)
         {
             if (isCommandCreate((OrganizationCommand)c))
             {
@@ -63,8 +64,8 @@ public abstract class AbstractOrganizationAggregate extends AbstractAggregate im
     protected void apply(Event e)
     {
         onApplying(e);
-        this.state.mutate(e);
-        this.changes.add(e);
+        state.mutate(e);
+        changes.add(e);
     }
 
     protected OrganizationStateEvent.OrganizationStateCreated map(OrganizationCommand.CreateOrganization c)
@@ -117,7 +118,8 @@ public abstract class AbstractOrganizationAggregate extends AbstractAggregate im
 
     private static boolean isCommandCreate(OrganizationCommand c)
     {
-        return c.getVersion() == null || c.getVersion().equals(OrganizationState.VERSION_ZERO);
+        return ((c instanceof OrganizationCommand.CreateOrganization) 
+            && c.getVersion().equals(OrganizationState.VERSION_NULL));
     }
 
 

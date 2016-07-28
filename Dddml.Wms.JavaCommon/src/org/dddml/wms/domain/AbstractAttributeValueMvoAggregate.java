@@ -26,6 +26,7 @@ public abstract class AbstractAttributeValueMvoAggregate extends AbstractAggrega
 
     public void create(AttributeValueMvoCommand.CreateAttributeValueMvo c)
     {
+        if (c.getAttributeVersion() == null) { c.setAttributeVersion(AttributeValueMvoState.VERSION_NULL); }
         AttributeValueMvoStateEvent.AttributeValueMvoStateCreated e = map(c);
         apply(e);
     }
@@ -44,7 +45,7 @@ public abstract class AbstractAttributeValueMvoAggregate extends AbstractAggrega
 
     public void throwOnInvalidStateTransition(Command c)
     {
-        if (this.state.getAttributeVersion() == null || this.state.getAttributeVersion().equals(AttributeValueMvoState.VERSION_ZERO))
+        if (this.state.getAttributeVersion() == null)
         {
             if (isCommandCreate((AttributeValueMvoCommand)c))
             {
@@ -63,8 +64,8 @@ public abstract class AbstractAttributeValueMvoAggregate extends AbstractAggrega
     protected void apply(Event e)
     {
         onApplying(e);
-        this.state.mutate(e);
-        this.changes.add(e);
+        state.mutate(e);
+        changes.add(e);
     }
 
     protected AttributeValueMvoStateEvent.AttributeValueMvoStateCreated map(AttributeValueMvoCommand.CreateAttributeValueMvo c)
@@ -165,7 +166,8 @@ public abstract class AbstractAttributeValueMvoAggregate extends AbstractAggrega
 
     private static boolean isCommandCreate(AttributeValueMvoCommand c)
     {
-        return c.getAttributeVersion() == null || c.getAttributeVersion().equals(AttributeValueMvoState.VERSION_ZERO);
+        return ((c instanceof AttributeValueMvoCommand.CreateAttributeValueMvo) 
+            && c.getAttributeVersion().equals(AttributeValueMvoState.VERSION_NULL));
     }
 
 

@@ -26,6 +26,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldGroupAggregate e
 
     public void create(AttributeSetInstanceExtensionFieldGroupCommand.CreateAttributeSetInstanceExtensionFieldGroup c)
     {
+        if (c.getVersion() == null) { c.setVersion(AttributeSetInstanceExtensionFieldGroupState.VERSION_NULL); }
         AttributeSetInstanceExtensionFieldGroupStateEvent.AttributeSetInstanceExtensionFieldGroupStateCreated e = map(c);
         apply(e);
     }
@@ -44,7 +45,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldGroupAggregate e
 
     public void throwOnInvalidStateTransition(Command c)
     {
-        if (this.state.getVersion() == null || this.state.getVersion().equals(AttributeSetInstanceExtensionFieldGroupState.VERSION_ZERO))
+        if (this.state.getVersion() == null)
         {
             if (isCommandCreate((AttributeSetInstanceExtensionFieldGroupCommand)c))
             {
@@ -63,8 +64,8 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldGroupAggregate e
     protected void apply(Event e)
     {
         onApplying(e);
-        this.state.mutate(e);
-        this.changes.add(e);
+        state.mutate(e);
+        changes.add(e);
     }
 
     protected AttributeSetInstanceExtensionFieldGroupStateEvent.AttributeSetInstanceExtensionFieldGroupStateCreated map(AttributeSetInstanceExtensionFieldGroupCommand.CreateAttributeSetInstanceExtensionFieldGroup c)
@@ -233,7 +234,8 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldGroupAggregate e
 
     private static boolean isCommandCreate(AttributeSetInstanceExtensionFieldGroupCommand c)
     {
-        return c.getVersion() == null || c.getVersion().equals(AttributeSetInstanceExtensionFieldGroupState.VERSION_ZERO);
+        return ((c instanceof AttributeSetInstanceExtensionFieldGroupCommand.CreateAttributeSetInstanceExtensionFieldGroup) 
+            && c.getVersion().equals(AttributeSetInstanceExtensionFieldGroupState.VERSION_NULL));
     }
 
 

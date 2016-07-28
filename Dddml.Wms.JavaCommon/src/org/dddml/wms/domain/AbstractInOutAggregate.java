@@ -28,6 +28,7 @@ public abstract class AbstractInOutAggregate extends AbstractAggregate implement
 
     public void create(InOutCommand.CreateInOut c)
     {
+        if (c.getVersion() == null) { c.setVersion(InOutState.VERSION_NULL); }
         InOutStateEvent.InOutStateCreated e = map(c);
         apply(e);
     }
@@ -46,7 +47,7 @@ public abstract class AbstractInOutAggregate extends AbstractAggregate implement
 
     public void throwOnInvalidStateTransition(Command c)
     {
-        if (this.state.getVersion() == null || this.state.getVersion().equals(InOutState.VERSION_ZERO))
+        if (this.state.getVersion() == null)
         {
             if (isCommandCreate((InOutCommand)c))
             {
@@ -65,8 +66,8 @@ public abstract class AbstractInOutAggregate extends AbstractAggregate implement
     protected void apply(Event e)
     {
         onApplying(e);
-        this.state.mutate(e);
-        this.changes.add(e);
+        state.mutate(e);
+        changes.add(e);
     }
 
     protected InOutStateEvent.InOutStateCreated map(InOutCommand.CreateInOut c)
@@ -386,7 +387,8 @@ public abstract class AbstractInOutAggregate extends AbstractAggregate implement
 
     private static boolean isCommandCreate(InOutCommand c)
     {
-        return c.getVersion() == null || c.getVersion().equals(InOutState.VERSION_ZERO);
+        return ((c instanceof InOutCommand.CreateInOut) 
+            && c.getVersion().equals(InOutState.VERSION_NULL));
     }
 
 

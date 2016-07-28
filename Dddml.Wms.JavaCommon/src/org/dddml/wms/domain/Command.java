@@ -14,10 +14,15 @@ public interface Command
 
     String getCommandType();
 
+    void setCommandType(String commandType);
+
     String getCommandId();
+
+    void setCommandId(String commandId);
 
     String getRequesterId();
 
+    void setRequesterId(String requesterId);
 }
 
 

@@ -9,6 +9,8 @@ public interface AttributeUseState
 {
     Long VERSION_ZERO = 0L;
 
+    Long VERSION_NULL = VERSION_ZERO - 1;
+
     AttributeSetAttributeUseId getAttributeSetAttributeUseId();
 
     void setAttributeSetAttributeUseId(AttributeSetAttributeUseId attributeSetAttributeUseId);

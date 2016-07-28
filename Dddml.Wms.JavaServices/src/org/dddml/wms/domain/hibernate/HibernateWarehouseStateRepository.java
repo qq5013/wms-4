@@ -6,6 +6,7 @@ import org.hibernate.*;
 import org.hibernate.criterion.*;
 import org.dddml.wms.domain.*;
 import org.dddml.wms.specialization.*;
+import org.springframework.transaction.annotation.Transactional;
 
 public class HibernateWarehouseStateRepository implements WarehouseStateRepository
 {
@@ -19,7 +20,7 @@ public class HibernateWarehouseStateRepository implements WarehouseStateReposito
         return this.sessionFactory.getCurrentSession();
     }
     
-    //[Transaction (ReadOnly = true)]
+    @Transactional(readOnly = true)
     public WarehouseState get(String id)
     {
         WarehouseState state = (WarehouseState)getCurrentSession().get(AbstractWarehouseState.SimpleWarehouseState.class, id);
@@ -30,7 +31,7 @@ public class HibernateWarehouseStateRepository implements WarehouseStateReposito
         return state;
     }
 
-    //[Transaction(ReadOnly = true)]
+    @Transactional(readOnly = true)
     public Iterable<WarehouseState> getAll(Integer firstResult, Integer maxResults)
     {
         Criteria criteria = getCurrentSession().createCriteria(AbstractWarehouseState.SimpleWarehouseState.class);
@@ -40,10 +41,10 @@ public class HibernateWarehouseStateRepository implements WarehouseStateReposito
         return criteria.list();
     }
 
-    //[Transaction]
+    //@Transactional
     public void save(WarehouseState state)
     {
-        if(state.getVersion() == null || state.getVersion().equals(WarehouseState.VERSION_ZERO)) {
+        if(state.getVersion() == null) {
             getCurrentSession().save(state);
         }else {
             getCurrentSession().update(state);
@@ -76,7 +77,7 @@ public class HibernateWarehouseStateRepository implements WarehouseStateReposito
     //long getCount(Criterion filter);
 
 /*
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IEnumerable<IWarehouseState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
             var criteria = CurrentSession.CreateCriteria<WarehouseState>();
@@ -86,7 +87,7 @@ public class HibernateWarehouseStateRepository implements WarehouseStateReposito
             return criteria.List<WarehouseState>();
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IEnumerable<IWarehouseState> Get(Dddml.Support.Criterion.ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
             var criteria = CurrentSession.CreateCriteria<WarehouseState>();
@@ -97,7 +98,7 @@ public class HibernateWarehouseStateRepository implements WarehouseStateReposito
         }
 
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IWarehouseState GetFirst(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null)
         {
             var list = (IList<WarehouseState>)Get(filter, orders, 0, 1);
@@ -108,20 +109,20 @@ public class HibernateWarehouseStateRepository implements WarehouseStateReposito
             return list[0];
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IWarehouseState GetFirst(KeyValuePair<string, object> keyValue, IList<string> orders = null)
         {
             return GetFirst(new KeyValuePair<string, object>[] { keyValue }, orders);
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IEnumerable<IWarehouseState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
             var filter = new KeyValuePair<string, object>[] { new KeyValuePair<string, object>(propertyName, propertyValue) };
             return Get(filter, orders, firstResult, maxResults);
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
         {
             var criteria = CurrentSession.CreateCriteria<WarehouseState>();
@@ -131,7 +132,7 @@ public class HibernateWarehouseStateRepository implements WarehouseStateReposito
             return criteria.UniqueResult<long>();
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual long GetCount(Dddml.Support.Criterion.ICriterion filter)
         {
             var criteria = CurrentSession.CreateCriteria<WarehouseState>();

@@ -5,6 +5,7 @@ import org.hibernate.*;
 import org.hibernate.criterion.*;
 import org.dddml.wms.domain.*;
 import org.dddml.wms.specialization.*;
+import org.springframework.transaction.annotation.Transactional;
 
 public class HibernateUserPermissionStateEventDao implements UserPermissionStateEventDao
 {
@@ -30,7 +31,7 @@ public class HibernateUserPermissionStateEventDao implements UserPermissionState
     }
 
 
-    //[Transaction(ReadOnly = true)]
+    @Transactional(readOnly = true)
     @Override
     public Iterable<UserPermissionStateEvent> findByUserStateEventId(UserStateEventId userStateEventId)
     {

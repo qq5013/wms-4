@@ -5,6 +5,7 @@ import org.hibernate.*;
 import org.hibernate.criterion.*;
 import org.dddml.wms.domain.*;
 import org.dddml.wms.specialization.*;
+import org.springframework.transaction.annotation.Transactional;
 
 public class HibernateUserClaimStateEventDao implements UserClaimStateEventDao
 {
@@ -30,7 +31,7 @@ public class HibernateUserClaimStateEventDao implements UserClaimStateEventDao
     }
 
 
-    //[Transaction(ReadOnly = true)]
+    @Transactional(readOnly = true)
     @Override
     public Iterable<UserClaimStateEvent> findByUserStateEventId(UserStateEventId userStateEventId)
     {

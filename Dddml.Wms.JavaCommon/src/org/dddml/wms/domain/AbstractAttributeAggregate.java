@@ -26,6 +26,7 @@ public abstract class AbstractAttributeAggregate extends AbstractAggregate imple
 
     public void create(AttributeCommand.CreateAttribute c)
     {
+        if (c.getVersion() == null) { c.setVersion(AttributeState.VERSION_NULL); }
         AttributeStateEvent.AttributeStateCreated e = map(c);
         apply(e);
     }
@@ -44,7 +45,7 @@ public abstract class AbstractAttributeAggregate extends AbstractAggregate imple
 
     public void throwOnInvalidStateTransition(Command c)
     {
-        if (this.state.getVersion() == null || this.state.getVersion().equals(AttributeState.VERSION_ZERO))
+        if (this.state.getVersion() == null)
         {
             if (isCommandCreate((AttributeCommand)c))
             {
@@ -63,8 +64,8 @@ public abstract class AbstractAttributeAggregate extends AbstractAggregate imple
     protected void apply(Event e)
     {
         onApplying(e);
-        this.state.mutate(e);
-        this.changes.add(e);
+        state.mutate(e);
+        changes.add(e);
     }
 
     protected AttributeStateEvent.AttributeStateCreated map(AttributeCommand.CreateAttribute c)
@@ -242,7 +243,8 @@ public abstract class AbstractAttributeAggregate extends AbstractAggregate imple
 
     private static boolean isCommandCreate(AttributeCommand c)
     {
-        return c.getVersion() == null || c.getVersion().equals(AttributeState.VERSION_ZERO);
+        return ((c instanceof AttributeCommand.CreateAttribute) 
+            && c.getVersion().equals(AttributeState.VERSION_NULL));
     }
 
 

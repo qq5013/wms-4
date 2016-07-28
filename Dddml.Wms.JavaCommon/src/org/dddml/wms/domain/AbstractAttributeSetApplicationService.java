@@ -96,14 +96,16 @@ public abstract class AbstractAttributeSetApplicationService implements Attribut
 
         aggregate.throwOnInvalidStateTransition(c);
         action.accept(aggregate);
-        getEventStore().appendEvents(eventStoreAggregateId, state.getVersion(), aggregate.getChanges(), (events) -> { getStateRepository().save(state); });
+        getEventStore().appendEvents(eventStoreAggregateId, c.getVersion(), // State version may be null!
+            aggregate.getChanges(), (events) -> { getStateRepository().save(state); });
         
     }
 
     protected boolean isRepeatedCommand(AttributeSetCommand command, EventStoreAggregateId eventStoreAggregateId, AttributeSetState state)
     {
         boolean repeated = false;
-        if (state.getVersion() > command.getVersion())
+        if (command.getVersion() == null) { command.setVersion(AttributeSetState.VERSION_NULL); }
+        if (state.getVersion() != null && state.getVersion() > command.getVersion())
         {
             Event lastEvent = getEventStore().findLastEvent(AttributeSetStateEvent.class, eventStoreAggregateId, command.getVersion());
             if (lastEvent != null && lastEvent instanceof AbstractStateEvent && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))

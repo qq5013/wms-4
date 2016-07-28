@@ -96,14 +96,16 @@ public abstract class AbstractUserLoginMvoApplicationService implements UserLogi
 
         aggregate.throwOnInvalidStateTransition(c);
         action.accept(aggregate);
-        getEventStore().appendEvents(eventStoreAggregateId, state.getUserVersion(), aggregate.getChanges(), (events) -> { getStateRepository().save(state); });
+        getEventStore().appendEvents(eventStoreAggregateId, c.getUserVersion(), // State version may be null!
+            aggregate.getChanges(), (events) -> { getStateRepository().save(state); });
         
     }
 
     protected boolean isRepeatedCommand(UserLoginMvoCommand command, EventStoreAggregateId eventStoreAggregateId, UserLoginMvoState state)
     {
         boolean repeated = false;
-        if (state.getUserVersion() > command.getUserVersion())
+        if (command.getUserVersion() == null) { command.setUserVersion(UserLoginMvoState.VERSION_NULL); }
+        if (state.getUserVersion() != null && state.getUserVersion() > command.getUserVersion())
         {
             Event lastEvent = getEventStore().findLastEvent(UserLoginMvoStateEvent.class, eventStoreAggregateId, command.getUserVersion());
             if (lastEvent != null && lastEvent instanceof AbstractStateEvent && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))

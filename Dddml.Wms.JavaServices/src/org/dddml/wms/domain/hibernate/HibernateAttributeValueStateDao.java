@@ -5,6 +5,7 @@ import org.hibernate.*;
 import org.hibernate.criterion.*;
 import org.dddml.wms.domain.*;
 import org.dddml.wms.specialization.*;
+import org.springframework.transaction.annotation.Transactional;
 
 public class HibernateAttributeValueStateDao implements AttributeValueStateDao
 {
@@ -18,7 +19,7 @@ public class HibernateAttributeValueStateDao implements AttributeValueStateDao
         return this.sessionFactory.getCurrentSession();
     }
 
-    //[Transaction(ReadOnly = true)]
+    @Transactional(readOnly = true)
     @Override
     public AttributeValueState get(AttributeValueId id)
     {
@@ -34,7 +35,7 @@ public class HibernateAttributeValueStateDao implements AttributeValueStateDao
     @Override
     public void save(AttributeValueState state)
     {
-        if(state.getVersion() == null || state.getVersion().equals(AttributeValueState.VERSION_ZERO)) {
+        if(state.getVersion() == null) {
             getCurrentSession().save(state);
         }else {
             getCurrentSession().update(state);
@@ -47,7 +48,7 @@ public class HibernateAttributeValueStateDao implements AttributeValueStateDao
         }
     }
 
-    //[Transaction(ReadOnly = true)]
+    @Transactional(readOnly = true)
     @Override
     public Iterable<AttributeValueState> findByAttributeId(String attributeId)
     {

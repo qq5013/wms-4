@@ -2,8 +2,7 @@ package org.dddml.wms.domain;
 
 import java.util.Set;
 import java.util.Date;
-import org.dddml.wms.specialization.Event;
-import org.dddml.wms.specialization.DomainError;
+import org.dddml.wms.specialization.*;
 import org.dddml.wms.domain.OrganizationStructureStateEvent.*;
 
 public abstract class AbstractOrganizationStructureState implements OrganizationStructureState
@@ -173,6 +172,10 @@ public abstract class AbstractOrganizationStructureState implements Organization
 
     }
 
+    public void save()
+    {
+    }
+
     protected void throwOnWrongEvent(OrganizationStructureStateEvent stateEvent)
     {
         OrganizationStructureId stateEntityId = this.getId(); // Aggregate Id
@@ -184,9 +187,12 @@ public abstract class AbstractOrganizationStructureState implements Organization
 
         Long stateVersion = this.getVersion();
         Long eventVersion = stateEvent.getStateEventId().getVersion();// Aggregate Version
-        if (!(stateVersion == null && eventVersion == OrganizationStructureState.VERSION_NULL) && stateVersion != eventVersion)
+        if (eventVersion == null) {
+            throw new NullPointerException("stateEvent.getStateEventId().getVersion() == null");
+        }
+        if (!(stateVersion == null && eventVersion.equals(OrganizationStructureState.VERSION_NULL)) && !eventVersion.equals(stateVersion))
         {
-            throw DomainError.named("concurrencyConflict", "Conflict between state version (%1$s) and event version (%2$s + 1)", stateVersion, eventVersion);
+            throw DomainError.named("concurrencyConflict", "Conflict between state version (%1$s) and event version (%2$s)", stateVersion, eventVersion);
         }
 
     }

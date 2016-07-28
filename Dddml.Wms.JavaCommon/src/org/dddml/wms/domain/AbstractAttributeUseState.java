@@ -2,8 +2,7 @@ package org.dddml.wms.domain;
 
 import java.util.Set;
 import java.util.Date;
-import org.dddml.wms.specialization.Event;
-import org.dddml.wms.specialization.DomainError;
+import org.dddml.wms.specialization.*;
 import org.dddml.wms.domain.AttributeUseStateEvent.*;
 
 public abstract class AbstractAttributeUseState implements AttributeUseState
@@ -19,16 +18,20 @@ public abstract class AbstractAttributeUseState implements AttributeUseState
         this.attributeSetAttributeUseId = attributeSetAttributeUseId;
     }
 
-    private String attributeId;
-
-    public String getAttributeId()
-    {
-        return this.attributeId;
+    public String getAttributeSetId() {
+        return this.getAttributeSetAttributeUseId().getAttributeSetId();
+    }
+        
+    public void setAttributeSetId(String attributeSetId) {
+        this.getAttributeSetAttributeUseId().setAttributeSetId(attributeSetId);
     }
 
-    public void setAttributeId(String attributeId)
-    {
-        this.attributeId = attributeId;
+    public String getAttributeId() {
+        return this.getAttributeSetAttributeUseId().getAttributeId();
+    }
+        
+    public void setAttributeId(String attributeId) {
+        this.getAttributeSetAttributeUseId().setAttributeId(attributeId);
     }
 
     private Integer sequenceNumber;
@@ -127,18 +130,6 @@ public abstract class AbstractAttributeUseState implements AttributeUseState
         this.deleted = deleted;
     }
 
-    private String attributeSetId;
-
-    public String getAttributeSetId()
-    {
-        return this.attributeSetId;
-    }
-
-    public void setAttributeSetId(String attributeSetId)
-    {
-        this.attributeSetId = attributeSetId;
-    }
-
     public boolean isStateUnsaved() 
     {
         return this.getVersion() == null;
@@ -219,6 +210,10 @@ public abstract class AbstractAttributeUseState implements AttributeUseState
 
     }
 
+    public void save()
+    {
+    }
+
     protected void throwOnWrongEvent(AttributeUseStateEvent stateEvent)
     {
         String stateEntityIdAttributeSetId = this.getAttributeSetAttributeUseId().getAttributeSetId();
@@ -237,9 +232,13 @@ public abstract class AbstractAttributeUseState implements AttributeUseState
 
         Long stateVersion = this.getVersion();
         Long eventVersion = stateEvent.getVersion();
-        if (!(stateVersion == null && eventVersion == AttributeUseState.VERSION_NULL) && stateVersion != eventVersion)
+        if (eventVersion == null) {
+            eventVersion = stateVersion == null ? AttributeUseState.VERSION_NULL : stateVersion;
+            stateEvent.setVersion(eventVersion);
+        }
+        if (!(stateVersion == null && eventVersion.equals(AttributeUseState.VERSION_NULL)) && !eventVersion.equals(stateVersion))
         {
-            throw DomainError.named("concurrencyConflict", "Conflict between state version (%1$s) and event version (%2$s + 1)", stateVersion, eventVersion);
+            throw DomainError.named("concurrencyConflict", "Conflict between state version (%1$s) and event version (%2$s)", stateVersion, eventVersion);
         }
 
     }

@@ -2,8 +2,7 @@ package org.dddml.wms.domain;
 
 import java.util.Set;
 import java.util.Date;
-import org.dddml.wms.specialization.Event;
-import org.dddml.wms.specialization.DomainError;
+import org.dddml.wms.specialization.*;
 import org.dddml.wms.domain.AttributeSetInstanceExtensionFieldStateEvent.*;
 
 public abstract class AbstractAttributeSetInstanceExtensionFieldState implements AttributeSetInstanceExtensionFieldState
@@ -19,16 +18,20 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldState implements
         this.attributeSetInstanceExtensionFieldId = attributeSetInstanceExtensionFieldId;
     }
 
-    private String index;
-
-    public String getIndex()
-    {
-        return this.index;
+    public String getGroupId() {
+        return this.getAttributeSetInstanceExtensionFieldId().getGroupId();
+    }
+        
+    public void setGroupId(String groupId) {
+        this.getAttributeSetInstanceExtensionFieldId().setGroupId(groupId);
     }
 
-    public void setIndex(String index)
-    {
-        this.index = index;
+    public String getIndex() {
+        return this.getAttributeSetInstanceExtensionFieldId().getIndex();
+    }
+        
+    public void setIndex(String index) {
+        this.getAttributeSetInstanceExtensionFieldId().setIndex(index);
     }
 
     private String name;
@@ -175,18 +178,6 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldState implements
         this.deleted = deleted;
     }
 
-    private String groupId;
-
-    public String getGroupId()
-    {
-        return this.groupId;
-    }
-
-    public void setGroupId(String groupId)
-    {
-        this.groupId = groupId;
-    }
-
     public boolean isStateUnsaved() 
     {
         return this.getVersion() == null;
@@ -315,6 +306,10 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldState implements
 
     }
 
+    public void save()
+    {
+    }
+
     protected void throwOnWrongEvent(AttributeSetInstanceExtensionFieldStateEvent stateEvent)
     {
         String stateEntityIdGroupId = this.getAttributeSetInstanceExtensionFieldId().getGroupId();
@@ -333,9 +328,13 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldState implements
 
         Long stateVersion = this.getVersion();
         Long eventVersion = stateEvent.getVersion();
-        if (!(stateVersion == null && eventVersion == AttributeSetInstanceExtensionFieldState.VERSION_NULL) && stateVersion != eventVersion)
+        if (eventVersion == null) {
+            eventVersion = stateVersion == null ? AttributeSetInstanceExtensionFieldState.VERSION_NULL : stateVersion;
+            stateEvent.setVersion(eventVersion);
+        }
+        if (!(stateVersion == null && eventVersion.equals(AttributeSetInstanceExtensionFieldState.VERSION_NULL)) && !eventVersion.equals(stateVersion))
         {
-            throw DomainError.named("concurrencyConflict", "Conflict between state version (%1$s) and event version (%2$s + 1)", stateVersion, eventVersion);
+            throw DomainError.named("concurrencyConflict", "Conflict between state version (%1$s) and event version (%2$s)", stateVersion, eventVersion);
         }
 
     }

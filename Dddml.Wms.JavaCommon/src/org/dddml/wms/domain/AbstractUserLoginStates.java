@@ -39,7 +39,7 @@ public abstract class AbstractUserLoginStates implements UserLoginStates
 
     @Override
     public Iterator<UserLoginState> iterator() {
-        return innerIterable.iterator();
+        return getInnerIterable().iterator();
     }
 
     public UserLoginState get(LoginKey loginKey)

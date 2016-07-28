@@ -2,8 +2,7 @@ package org.dddml.wms.domain;
 
 import java.util.Set;
 import java.util.Date;
-import org.dddml.wms.specialization.Event;
-import org.dddml.wms.specialization.DomainError;
+import org.dddml.wms.specialization.*;
 import org.dddml.wms.domain.AttributeValueStateEvent.*;
 
 public abstract class AbstractAttributeValueState implements AttributeValueState
@@ -19,16 +18,20 @@ public abstract class AbstractAttributeValueState implements AttributeValueState
         this.attributeValueId = attributeValueId;
     }
 
-    private String value;
-
-    public String getValue()
-    {
-        return this.value;
+    public String getAttributeId() {
+        return this.getAttributeValueId().getAttributeId();
+    }
+        
+    public void setAttributeId(String attributeId) {
+        this.getAttributeValueId().setAttributeId(attributeId);
     }
 
-    public void setValue(String value)
-    {
-        this.value = value;
+    public String getValue() {
+        return this.getAttributeValueId().getValue();
+    }
+        
+    public void setValue(String value) {
+        this.getAttributeValueId().setValue(value);
     }
 
     private String name;
@@ -151,18 +154,6 @@ public abstract class AbstractAttributeValueState implements AttributeValueState
         this.deleted = deleted;
     }
 
-    private String attributeId;
-
-    public String getAttributeId()
-    {
-        return this.attributeId;
-    }
-
-    public void setAttributeId(String attributeId)
-    {
-        this.attributeId = attributeId;
-    }
-
     public boolean isStateUnsaved() 
     {
         return this.getVersion() == null;
@@ -267,6 +258,10 @@ public abstract class AbstractAttributeValueState implements AttributeValueState
 
     }
 
+    public void save()
+    {
+    }
+
     protected void throwOnWrongEvent(AttributeValueStateEvent stateEvent)
     {
         String stateEntityIdAttributeId = this.getAttributeValueId().getAttributeId();
@@ -285,9 +280,13 @@ public abstract class AbstractAttributeValueState implements AttributeValueState
 
         Long stateVersion = this.getVersion();
         Long eventVersion = stateEvent.getVersion();
-        if (!(stateVersion == null && eventVersion == AttributeValueState.VERSION_NULL) && stateVersion != eventVersion)
+        if (eventVersion == null) {
+            eventVersion = stateVersion == null ? AttributeValueState.VERSION_NULL : stateVersion;
+            stateEvent.setVersion(eventVersion);
+        }
+        if (!(stateVersion == null && eventVersion.equals(AttributeValueState.VERSION_NULL)) && !eventVersion.equals(stateVersion))
         {
-            throw DomainError.named("concurrencyConflict", "Conflict between state version (%1$s) and event version (%2$s + 1)", stateVersion, eventVersion);
+            throw DomainError.named("concurrencyConflict", "Conflict between state version (%1$s) and event version (%2$s)", stateVersion, eventVersion);
         }
 
     }

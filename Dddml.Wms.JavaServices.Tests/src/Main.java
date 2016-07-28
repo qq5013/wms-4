@@ -1,4 +1,6 @@
 import org.dddml.wms.domain.*;
+import org.dddml.wms.specialization.ApplicationContext;
+import org.dddml.wms.specialization.spring.SpringApplicationContext;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.Session;
@@ -9,7 +11,6 @@ import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.util.Date;
 import java.util.Map;
 import java.util.UUID;
 
@@ -18,11 +19,73 @@ import java.util.UUID;
  */
 public class Main {
 
+    static org.springframework.context.ApplicationContext springFrameworkApplicationContext;
+
+    static { springFrameworkApplicationContext = new ClassPathXmlApplicationContext(
+            "config/DatabaseConfig.xml",
+            "config/AggregatesHibernateConfig.xml");
+    }
+
     public static void main(final String[] args) throws Exception {
-        org.springframework.context.ApplicationContext applicationContext = new ClassPathXmlApplicationContext(
-                "config/DatabaseConfig.xml",
-               "config/AggregatesHibernateConfig.xml");
-        OrganizationApplicationService organizationApplicationService = (OrganizationApplicationService)applicationContext.getBean("organizationApplicationService");
+
+        ApplicationContext.current = new SpringApplicationContext(springFrameworkApplicationContext);
+
+        //testCreateUpdateOrganization();
+
+        testCreateUpdateAttribute();
+
+    }
+
+    private static void testCreateUpdateAttribute() {
+        AttributeApplicationService attributeApplicationService = (AttributeApplicationService) springFrameworkApplicationContext.getBean("attributeApplicationService");
+        AttributeCommand.CreateAttribute createAttr = new AbstractAttributeCommand.SimpleCreateAttribute();
+        String attrId = UUID.randomUUID().toString();
+        createAttr.setAttributeId(attrId);
+        createAttr.setName("Color");
+        AttributeValueCommand.CreateAttributeValue createAttrVal_r = createAttr.newCreateAttributeValue();
+        createAttrVal_r.setValue("R");
+        createAttrVal_r.setName("Red");
+        createAttr.getAttributeValues().add(createAttrVal_r);
+        // -----
+        AttributeValueCommand.CreateAttributeValue createAttrVal_g = createAttr.newCreateAttributeValue();
+        createAttrVal_g.setValue("G");
+        createAttrVal_g.setName("Green");
+        createAttr.getAttributeValues().add(createAttrVal_g);
+        // -----
+        AttributeValueCommand.CreateAttributeValue createAttrVal_b = createAttr.newCreateAttributeValue();
+        createAttrVal_b.setValue("B");
+        createAttrVal_b.setName("Blue");
+        createAttr.getAttributeValues().add(createAttrVal_b);
+        attributeApplicationService.when(createAttr);
+        // //////////////////////////////////
+        AttributeState attrState = attributeApplicationService.get(attrId);
+        System.out.println(attrState);
+        System.out.println(attrState.getName());
+        for (AttributeValueState v : attrState.getAttributeValues()) {
+            System.out.println(v.getName() + "~~~ "  + v.getDescription());
+        }
+        ////////////////////////////////////
+        System.out.println("////////////////////////////////////");
+        AttributeCommand.MergePatchAttribute patchAttr = new AbstractAttributeCommand.SimpleMergePatchAttribute();
+        patchAttr.setAttributeId(attrId);
+        patchAttr.setVersion(attrState.getVersion());
+        AttributeValueCommand.MergePatchAttributeValue patchAttrVal =  patchAttr.newMergePatchAttributeValue();
+        patchAttrVal.setValue("B");
+        patchAttrVal.setDescription("This is colorful day!");
+        patchAttr.getAttributeValueCommands().add(patchAttrVal);
+        attributeApplicationService.when(patchAttr);
+        AttributeState attrState2 = attributeApplicationService.get(attrId);
+        System.out.println(attrState2);
+        System.out.println(attrState2.getName());
+        for (AttributeValueState v : attrState2.getAttributeValues()) {
+            System.out.println(v.getName() + "~~~ "  + v.getDescription());
+        }
+
+    }
+
+
+    private static void testCreateUpdateOrganization() {
+        OrganizationApplicationService organizationApplicationService = (OrganizationApplicationService) springFrameworkApplicationContext.getBean("organizationApplicationService");
 
         // ////////////////////////
         System.out.println("// //////////// Create a organization  /////////////");
@@ -59,7 +122,6 @@ public class Main {
         OrganizationState orgState2 = organizationApplicationService.get(orgId);
         System.out.println(orgState2);
         System.out.println(orgState2.getDescription());
-
     }
 
     static class HibernateTest {

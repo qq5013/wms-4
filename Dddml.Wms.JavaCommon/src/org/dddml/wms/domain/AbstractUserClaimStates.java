@@ -39,7 +39,7 @@ public abstract class AbstractUserClaimStates implements UserClaimStates
 
     @Override
     public Iterator<UserClaimState> iterator() {
-        return innerIterable.iterator();
+        return getInnerIterable().iterator();
     }
 
     public UserClaimState get(Integer claimId)

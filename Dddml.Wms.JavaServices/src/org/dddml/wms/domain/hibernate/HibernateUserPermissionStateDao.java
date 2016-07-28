@@ -5,6 +5,7 @@ import org.hibernate.*;
 import org.hibernate.criterion.*;
 import org.dddml.wms.domain.*;
 import org.dddml.wms.specialization.*;
+import org.springframework.transaction.annotation.Transactional;
 
 public class HibernateUserPermissionStateDao implements UserPermissionStateDao
 {
@@ -18,7 +19,7 @@ public class HibernateUserPermissionStateDao implements UserPermissionStateDao
         return this.sessionFactory.getCurrentSession();
     }
 
-    //[Transaction(ReadOnly = true)]
+    @Transactional(readOnly = true)
     @Override
     public UserPermissionState get(UserPermissionId id)
     {
@@ -34,7 +35,7 @@ public class HibernateUserPermissionStateDao implements UserPermissionStateDao
     @Override
     public void save(UserPermissionState state)
     {
-        if(state.getVersion() == null || state.getVersion().equals(UserPermissionState.VERSION_ZERO)) {
+        if(state.getVersion() == null) {
             getCurrentSession().save(state);
         }else {
             getCurrentSession().update(state);
@@ -47,7 +48,7 @@ public class HibernateUserPermissionStateDao implements UserPermissionStateDao
         }
     }
 
-    //[Transaction(ReadOnly = true)]
+    @Transactional(readOnly = true)
     @Override
     public Iterable<UserPermissionState> findByUserId(String userId)
     {

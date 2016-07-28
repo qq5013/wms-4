@@ -26,6 +26,7 @@ public abstract class AbstractRoleAggregate extends AbstractAggregate implements
 
     public void create(RoleCommand.CreateRole c)
     {
+        if (c.getVersion() == null) { c.setVersion(RoleState.VERSION_NULL); }
         RoleStateEvent.RoleStateCreated e = map(c);
         apply(e);
     }
@@ -44,7 +45,7 @@ public abstract class AbstractRoleAggregate extends AbstractAggregate implements
 
     public void throwOnInvalidStateTransition(Command c)
     {
-        if (this.state.getVersion() == null || this.state.getVersion().equals(RoleState.VERSION_ZERO))
+        if (this.state.getVersion() == null)
         {
             if (isCommandCreate((RoleCommand)c))
             {
@@ -63,8 +64,8 @@ public abstract class AbstractRoleAggregate extends AbstractAggregate implements
     protected void apply(Event e)
     {
         onApplying(e);
-        this.state.mutate(e);
-        this.changes.add(e);
+        state.mutate(e);
+        changes.add(e);
     }
 
     protected RoleStateEvent.RoleStateCreated map(RoleCommand.CreateRole c)
@@ -111,7 +112,8 @@ public abstract class AbstractRoleAggregate extends AbstractAggregate implements
 
     private static boolean isCommandCreate(RoleCommand c)
     {
-        return c.getVersion() == null || c.getVersion().equals(RoleState.VERSION_ZERO);
+        return ((c instanceof RoleCommand.CreateRole) 
+            && c.getVersion().equals(RoleState.VERSION_NULL));
     }
 
 

@@ -5,6 +5,7 @@ import org.hibernate.*;
 import org.hibernate.criterion.*;
 import org.dddml.wms.domain.*;
 import org.dddml.wms.specialization.*;
+import org.springframework.transaction.annotation.Transactional;
 
 public class HibernateUserLoginStateDao implements UserLoginStateDao
 {
@@ -18,7 +19,7 @@ public class HibernateUserLoginStateDao implements UserLoginStateDao
         return this.sessionFactory.getCurrentSession();
     }
 
-    //[Transaction(ReadOnly = true)]
+    @Transactional(readOnly = true)
     @Override
     public UserLoginState get(UserLoginId id)
     {
@@ -34,7 +35,7 @@ public class HibernateUserLoginStateDao implements UserLoginStateDao
     @Override
     public void save(UserLoginState state)
     {
-        if(state.getVersion() == null || state.getVersion().equals(UserLoginState.VERSION_ZERO)) {
+        if(state.getVersion() == null) {
             getCurrentSession().save(state);
         }else {
             getCurrentSession().update(state);
@@ -47,7 +48,7 @@ public class HibernateUserLoginStateDao implements UserLoginStateDao
         }
     }
 
-    //[Transaction(ReadOnly = true)]
+    @Transactional(readOnly = true)
     @Override
     public Iterable<UserLoginState> findByUserId(String userId)
     {

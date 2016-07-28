@@ -26,6 +26,7 @@ public abstract class AbstractUserLoginMvoAggregate extends AbstractAggregate im
 
     public void create(UserLoginMvoCommand.CreateUserLoginMvo c)
     {
+        if (c.getUserVersion() == null) { c.setUserVersion(UserLoginMvoState.VERSION_NULL); }
         UserLoginMvoStateEvent.UserLoginMvoStateCreated e = map(c);
         apply(e);
     }
@@ -44,7 +45,7 @@ public abstract class AbstractUserLoginMvoAggregate extends AbstractAggregate im
 
     public void throwOnInvalidStateTransition(Command c)
     {
-        if (this.state.getUserVersion() == null || this.state.getUserVersion().equals(UserLoginMvoState.VERSION_ZERO))
+        if (this.state.getUserVersion() == null)
         {
             if (isCommandCreate((UserLoginMvoCommand)c))
             {
@@ -63,8 +64,8 @@ public abstract class AbstractUserLoginMvoAggregate extends AbstractAggregate im
     protected void apply(Event e)
     {
         onApplying(e);
-        this.state.mutate(e);
-        this.changes.add(e);
+        state.mutate(e);
+        changes.add(e);
     }
 
     protected UserLoginMvoStateEvent.UserLoginMvoStateCreated map(UserLoginMvoCommand.CreateUserLoginMvo c)
@@ -159,7 +160,8 @@ public abstract class AbstractUserLoginMvoAggregate extends AbstractAggregate im
 
     private static boolean isCommandCreate(UserLoginMvoCommand c)
     {
-        return c.getUserVersion() == null || c.getUserVersion().equals(UserLoginMvoState.VERSION_ZERO);
+        return ((c instanceof UserLoginMvoCommand.CreateUserLoginMvo) 
+            && c.getUserVersion().equals(UserLoginMvoState.VERSION_NULL));
     }
 
 

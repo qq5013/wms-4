@@ -96,14 +96,16 @@ public abstract class AbstractUserPermissionMvoApplicationService implements Use
 
         aggregate.throwOnInvalidStateTransition(c);
         action.accept(aggregate);
-        getEventStore().appendEvents(eventStoreAggregateId, state.getUserVersion(), aggregate.getChanges(), (events) -> { getStateRepository().save(state); });
+        getEventStore().appendEvents(eventStoreAggregateId, c.getUserVersion(), // State version may be null!
+            aggregate.getChanges(), (events) -> { getStateRepository().save(state); });
         
     }
 
     protected boolean isRepeatedCommand(UserPermissionMvoCommand command, EventStoreAggregateId eventStoreAggregateId, UserPermissionMvoState state)
     {
         boolean repeated = false;
-        if (state.getUserVersion() > command.getUserVersion())
+        if (command.getUserVersion() == null) { command.setUserVersion(UserPermissionMvoState.VERSION_NULL); }
+        if (state.getUserVersion() != null && state.getUserVersion() > command.getUserVersion())
         {
             Event lastEvent = getEventStore().findLastEvent(UserPermissionMvoStateEvent.class, eventStoreAggregateId, command.getUserVersion());
             if (lastEvent != null && lastEvent instanceof AbstractStateEvent && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))

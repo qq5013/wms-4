@@ -3,8 +3,9 @@
 namespace Wms\HttpClient;
 
 use Dddml\Serializer\Type\Long;
+use Dddml\Executor\Http\QueryCountRequestInterface;
 
-class OrganizationStructureTypeQueryRequest extends AbstractQueryRequest
+class OrganizationStructureTypeQueryRequest extends AbstractQueryRequest implements QueryCountRequestInterface
 {
     use OrganizationStructureTypeFilteringFieldsTrait;
 

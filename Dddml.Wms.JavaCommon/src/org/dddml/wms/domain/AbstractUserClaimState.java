@@ -2,8 +2,7 @@ package org.dddml.wms.domain;
 
 import java.util.Set;
 import java.util.Date;
-import org.dddml.wms.specialization.Event;
-import org.dddml.wms.specialization.DomainError;
+import org.dddml.wms.specialization.*;
 import org.dddml.wms.domain.UserClaimStateEvent.*;
 
 public abstract class AbstractUserClaimState implements UserClaimState
@@ -19,16 +18,20 @@ public abstract class AbstractUserClaimState implements UserClaimState
         this.userClaimId = userClaimId;
     }
 
-    private Integer claimId;
-
-    public Integer getClaimId()
-    {
-        return this.claimId;
+    public String getUserId() {
+        return this.getUserClaimId().getUserId();
+    }
+        
+    public void setUserId(String userId) {
+        this.getUserClaimId().setUserId(userId);
     }
 
-    public void setClaimId(Integer claimId)
-    {
-        this.claimId = claimId;
+    public Integer getClaimId() {
+        return this.getUserClaimId().getClaimId();
+    }
+        
+    public void setClaimId(Integer claimId) {
+        this.getUserClaimId().setClaimId(claimId);
     }
 
     private String claimType;
@@ -139,21 +142,9 @@ public abstract class AbstractUserClaimState implements UserClaimState
         this.deleted = deleted;
     }
 
-    private String userId;
-
-    public String getUserId()
-    {
-        return this.userId;
-    }
-
-    public void setUserId(String userId)
-    {
-        this.userId = userId;
-    }
-
     public boolean isStateUnsaved() 
     {
-        return VERSION_ZERO.equals(this.getVersion());
+        return this.getVersion() == null;
     }
 
 
@@ -243,6 +234,10 @@ public abstract class AbstractUserClaimState implements UserClaimState
 
     }
 
+    public void save()
+    {
+    }
+
     protected void throwOnWrongEvent(UserClaimStateEvent stateEvent)
     {
         String stateEntityIdUserId = this.getUserClaimId().getUserId();
@@ -260,21 +255,14 @@ public abstract class AbstractUserClaimState implements UserClaimState
         }
 
         Long stateVersion = this.getVersion();
-        if(stateVersion == null) {
-            stateVersion = UserClaimState.VERSION_ZERO;
-        }
         Long eventVersion = stateEvent.getVersion();
-        if(eventVersion == null) {
-            eventVersion = UserClaimState.VERSION_ZERO;
+        if (eventVersion == null) {
+            eventVersion = stateVersion == null ? UserClaimState.VERSION_NULL : stateVersion;
+            stateEvent.setVersion(eventVersion);
         }
-        if (UserClaimState.VERSION_ZERO.equals(eventVersion))
+        if (!(stateVersion == null && eventVersion.equals(UserClaimState.VERSION_NULL)) && !eventVersion.equals(stateVersion))
         {
-            stateEvent.setVersion(stateVersion);
-            eventVersion = stateVersion;
-        }
-        if (!stateVersion.equals(eventVersion))
-        {
-            throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);
+            throw DomainError.named("concurrencyConflict", "Conflict between state version (%1$s) and event version (%2$s)", stateVersion, eventVersion);
         }
 
     }

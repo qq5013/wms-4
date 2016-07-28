@@ -26,6 +26,7 @@ public abstract class AbstractLocatorAggregate extends AbstractAggregate impleme
 
     public void create(LocatorCommand.CreateLocator c)
     {
+        if (c.getVersion() == null) { c.setVersion(LocatorState.VERSION_NULL); }
         LocatorStateEvent.LocatorStateCreated e = map(c);
         apply(e);
     }
@@ -44,7 +45,7 @@ public abstract class AbstractLocatorAggregate extends AbstractAggregate impleme
 
     public void throwOnInvalidStateTransition(Command c)
     {
-        if (this.state.getVersion() == null || this.state.getVersion().equals(LocatorState.VERSION_ZERO))
+        if (this.state.getVersion() == null)
         {
             if (isCommandCreate((LocatorCommand)c))
             {
@@ -63,8 +64,8 @@ public abstract class AbstractLocatorAggregate extends AbstractAggregate impleme
     protected void apply(Event e)
     {
         onApplying(e);
-        this.state.mutate(e);
-        this.changes.add(e);
+        state.mutate(e);
+        changes.add(e);
     }
 
     protected LocatorStateEvent.LocatorStateCreated map(LocatorCommand.CreateLocator c)
@@ -129,7 +130,8 @@ public abstract class AbstractLocatorAggregate extends AbstractAggregate impleme
 
     private static boolean isCommandCreate(LocatorCommand c)
     {
-        return c.getVersion() == null || c.getVersion().equals(LocatorState.VERSION_ZERO);
+        return ((c instanceof LocatorCommand.CreateLocator) 
+            && c.getVersion().equals(LocatorState.VERSION_NULL));
     }
 
 

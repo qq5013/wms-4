@@ -2,8 +2,7 @@ package org.dddml.wms.domain;
 
 import java.util.Set;
 import java.util.Date;
-import org.dddml.wms.specialization.Event;
-import org.dddml.wms.specialization.DomainError;
+import org.dddml.wms.specialization.*;
 import org.dddml.wms.domain.AttributeValueMvoStateEvent.*;
 
 public abstract class AbstractAttributeValueMvoState implements AttributeValueMvoState
@@ -347,7 +346,7 @@ public abstract class AbstractAttributeValueMvoState implements AttributeValueMv
 
     public boolean isStateUnsaved() 
     {
-        return VERSION_ZERO.equals(this.getAttributeVersion());
+        return this.getAttributeVersion() == null;
     }
 
 
@@ -653,6 +652,10 @@ public abstract class AbstractAttributeValueMvoState implements AttributeValueMv
 
     }
 
+    public void save()
+    {
+    }
+
     protected void throwOnWrongEvent(AttributeValueMvoStateEvent stateEvent)
     {
         AttributeValueId stateEntityId = this.getAttributeValueId(); // Aggregate Id
@@ -663,17 +666,13 @@ public abstract class AbstractAttributeValueMvoState implements AttributeValueMv
         }
 
         Long stateVersion = this.getAttributeVersion();
-        if(stateVersion == null) {
-            stateVersion = AttributeValueMvoState.VERSION_ZERO;
-        }
         Long eventVersion = stateEvent.getStateEventId().getAttributeVersion();// Aggregate Version
-        if(eventVersion == null) {
-            eventVersion = AttributeValueMvoState.VERSION_ZERO;
-            stateEvent.getStateEventId().setAttributeVersion(eventVersion);
+        if (eventVersion == null) {
+            throw new NullPointerException("stateEvent.getStateEventId().getAttributeVersion() == null");
         }
-        if (!stateVersion.equals(eventVersion))
+        if (!(stateVersion == null && eventVersion.equals(AttributeValueMvoState.VERSION_NULL)) && !eventVersion.equals(stateVersion))
         {
-            throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);
+            throw DomainError.named("concurrencyConflict", "Conflict between state version (%1$s) and event version (%2$s)", stateVersion, eventVersion);
         }
 
     }

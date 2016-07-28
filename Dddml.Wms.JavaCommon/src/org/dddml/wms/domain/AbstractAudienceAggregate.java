@@ -26,6 +26,7 @@ public abstract class AbstractAudienceAggregate extends AbstractAggregate implem
 
     public void create(AudienceCommand.CreateAudience c)
     {
+        if (c.getVersion() == null) { c.setVersion(AudienceState.VERSION_NULL); }
         AudienceStateEvent.AudienceStateCreated e = map(c);
         apply(e);
     }
@@ -44,7 +45,7 @@ public abstract class AbstractAudienceAggregate extends AbstractAggregate implem
 
     public void throwOnInvalidStateTransition(Command c)
     {
-        if (this.state.getVersion() == null || this.state.getVersion().equals(AudienceState.VERSION_ZERO))
+        if (this.state.getVersion() == null)
         {
             if (isCommandCreate((AudienceCommand)c))
             {
@@ -63,8 +64,8 @@ public abstract class AbstractAudienceAggregate extends AbstractAggregate implem
     protected void apply(Event e)
     {
         onApplying(e);
-        this.state.mutate(e);
-        this.changes.add(e);
+        state.mutate(e);
+        changes.add(e);
     }
 
     protected AudienceStateEvent.AudienceStateCreated map(AudienceCommand.CreateAudience c)
@@ -111,7 +112,8 @@ public abstract class AbstractAudienceAggregate extends AbstractAggregate implem
 
     private static boolean isCommandCreate(AudienceCommand c)
     {
-        return c.getVersion() == null || c.getVersion().equals(AudienceState.VERSION_ZERO);
+        return ((c instanceof AudienceCommand.CreateAudience) 
+            && c.getVersion().equals(AudienceState.VERSION_NULL));
     }
 
 

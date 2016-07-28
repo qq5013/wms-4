@@ -9,6 +9,8 @@ public interface AttributeSetInstanceExtensionFieldState
 {
     Long VERSION_ZERO = 0L;
 
+    Long VERSION_NULL = VERSION_ZERO - 1;
+
     AttributeSetInstanceExtensionFieldId getAttributeSetInstanceExtensionFieldId();
 
     void setAttributeSetInstanceExtensionFieldId(AttributeSetInstanceExtensionFieldId attributeSetInstanceExtensionFieldId);

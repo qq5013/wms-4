@@ -7,12 +7,18 @@ public interface UserPermissionCommand extends Command
 {
     String getPermissionId();
 
+    void setPermissionId(String permissionId);
+
     String getUserId();
+
+    void setUserId(String userId);
 
 
     interface CreateOrMergePatchUserPermission extends UserPermissionCommand
     {
         Boolean getActive();
+
+        void setActive(Boolean active);
 
     }
 
@@ -23,6 +29,8 @@ public interface UserPermissionCommand extends Command
     interface MergePatchUserPermission extends CreateOrMergePatchUserPermission
     {
         Boolean getIsPropertyActiveRemoved();
+
+        void setIsPropertyActiveRemoved(Boolean removed);
 
     }
 

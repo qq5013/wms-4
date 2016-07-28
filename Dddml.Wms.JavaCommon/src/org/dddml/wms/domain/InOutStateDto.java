@@ -188,16 +188,16 @@ public class InOutStateDto
         this.warehouseId = warehouseId;
     }
 
-    private String poReference;
+    private String POReference;
 
     public String getPOReference()
     {
-        return this.poReference;
+        return this.POReference;
     }
 
     public void setPOReference(String poReference)
     {
-        this.poReference = poReference;
+        this.POReference = poReference;
     }
 
     private Money freightAmount;

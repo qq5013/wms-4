@@ -7,12 +7,18 @@ public interface OrganizationStructureCommand extends Command
 {
     OrganizationStructureId getId();
 
+    void setId(OrganizationStructureId id);
+
     Long getVersion();
+
+    void setVersion(Long version);
 
 
     interface CreateOrMergePatchOrganizationStructure extends OrganizationStructureCommand
     {
         Boolean getActive();
+
+        void setActive(Boolean active);
 
     }
 
@@ -23,6 +29,8 @@ public interface OrganizationStructureCommand extends Command
     interface MergePatchOrganizationStructure extends CreateOrMergePatchOrganizationStructure
     {
         Boolean getIsPropertyActiveRemoved();
+
+        void setIsPropertyActiveRemoved(Boolean removed);
 
     }
 

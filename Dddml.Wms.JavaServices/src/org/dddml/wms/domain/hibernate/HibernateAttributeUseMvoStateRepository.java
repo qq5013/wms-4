@@ -6,6 +6,7 @@ import org.hibernate.*;
 import org.hibernate.criterion.*;
 import org.dddml.wms.domain.*;
 import org.dddml.wms.specialization.*;
+import org.springframework.transaction.annotation.Transactional;
 
 public class HibernateAttributeUseMvoStateRepository implements AttributeUseMvoStateRepository
 {
@@ -19,7 +20,7 @@ public class HibernateAttributeUseMvoStateRepository implements AttributeUseMvoS
         return this.sessionFactory.getCurrentSession();
     }
     
-    //[Transaction (ReadOnly = true)]
+    @Transactional(readOnly = true)
     public AttributeUseMvoState get(AttributeSetAttributeUseId id)
     {
         AttributeUseMvoState state = (AttributeUseMvoState)getCurrentSession().get(AbstractAttributeUseMvoState.SimpleAttributeUseMvoState.class, id);
@@ -30,7 +31,7 @@ public class HibernateAttributeUseMvoStateRepository implements AttributeUseMvoS
         return state;
     }
 
-    //[Transaction(ReadOnly = true)]
+    @Transactional(readOnly = true)
     public Iterable<AttributeUseMvoState> getAll(Integer firstResult, Integer maxResults)
     {
         Criteria criteria = getCurrentSession().createCriteria(AbstractAttributeUseMvoState.SimpleAttributeUseMvoState.class);
@@ -40,10 +41,10 @@ public class HibernateAttributeUseMvoStateRepository implements AttributeUseMvoS
         return criteria.list();
     }
 
-    //[Transaction]
+    //@Transactional
     public void save(AttributeUseMvoState state)
     {
-        if(state.getAttributeSetVersion() == null || state.getAttributeSetVersion().equals(AttributeUseMvoState.VERSION_ZERO)) {
+        if(state.getAttributeSetVersion() == null) {
             getCurrentSession().save(state);
         }else {
             getCurrentSession().update(state);
@@ -76,7 +77,7 @@ public class HibernateAttributeUseMvoStateRepository implements AttributeUseMvoS
     //long getCount(Criterion filter);
 
 /*
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IEnumerable<IAttributeUseMvoState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
             var criteria = CurrentSession.CreateCriteria<AttributeUseMvoState>();
@@ -86,7 +87,7 @@ public class HibernateAttributeUseMvoStateRepository implements AttributeUseMvoS
             return criteria.List<AttributeUseMvoState>();
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IEnumerable<IAttributeUseMvoState> Get(Dddml.Support.Criterion.ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
             var criteria = CurrentSession.CreateCriteria<AttributeUseMvoState>();
@@ -97,7 +98,7 @@ public class HibernateAttributeUseMvoStateRepository implements AttributeUseMvoS
         }
 
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IAttributeUseMvoState GetFirst(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null)
         {
             var list = (IList<AttributeUseMvoState>)Get(filter, orders, 0, 1);
@@ -108,20 +109,20 @@ public class HibernateAttributeUseMvoStateRepository implements AttributeUseMvoS
             return list[0];
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IAttributeUseMvoState GetFirst(KeyValuePair<string, object> keyValue, IList<string> orders = null)
         {
             return GetFirst(new KeyValuePair<string, object>[] { keyValue }, orders);
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IEnumerable<IAttributeUseMvoState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
             var filter = new KeyValuePair<string, object>[] { new KeyValuePair<string, object>(propertyName, propertyValue) };
             return Get(filter, orders, firstResult, maxResults);
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
         {
             var criteria = CurrentSession.CreateCriteria<AttributeUseMvoState>();
@@ -131,7 +132,7 @@ public class HibernateAttributeUseMvoStateRepository implements AttributeUseMvoS
             return criteria.UniqueResult<long>();
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual long GetCount(Dddml.Support.Criterion.ICriterion filter)
         {
             var criteria = CurrentSession.CreateCriteria<AttributeUseMvoState>();

@@ -7,34 +7,62 @@ public interface UserCommand extends Command
 {
     String getUserId();
 
+    void setUserId(String userId);
+
     Long getVersion();
+
+    void setVersion(Long version);
 
 
     interface CreateOrMergePatchUser extends UserCommand
     {
         String getUserName();
 
+        void setUserName(String userName);
+
         Integer getAccessFailedCount();
+
+        void setAccessFailedCount(Integer accessFailedCount);
 
         String getEmail();
 
+        void setEmail(String email);
+
         Boolean getEmailConfirmed();
+
+        void setEmailConfirmed(Boolean emailConfirmed);
 
         Boolean getLockoutEnabled();
 
+        void setLockoutEnabled(Boolean lockoutEnabled);
+
         Date getLockoutEndDateUtc();
+
+        void setLockoutEndDateUtc(Date lockoutEndDateUtc);
 
         String getPasswordHash();
 
+        void setPasswordHash(String passwordHash);
+
         String getPhoneNumber();
+
+        void setPhoneNumber(String phoneNumber);
 
         Boolean getPhoneNumberConfirmed();
 
+        void setPhoneNumberConfirmed(Boolean phoneNumberConfirmed);
+
         Boolean getTwoFactorEnabled();
+
+        void setTwoFactorEnabled(Boolean twoFactorEnabled);
 
         String getSecurityStamp();
 
+        void setSecurityStamp(String securityStamp);
+
         Boolean getActive();
+
+        void setActive(Boolean active);
 
     }
 
@@ -62,27 +90,51 @@ public interface UserCommand extends Command
     {
         Boolean getIsPropertyUserNameRemoved();
 
+        void setIsPropertyUserNameRemoved(Boolean removed);
+
         Boolean getIsPropertyAccessFailedCountRemoved();
+
+        void setIsPropertyAccessFailedCountRemoved(Boolean removed);
 
         Boolean getIsPropertyEmailRemoved();
 
+        void setIsPropertyEmailRemoved(Boolean removed);
+
         Boolean getIsPropertyEmailConfirmedRemoved();
+
+        void setIsPropertyEmailConfirmedRemoved(Boolean removed);
 
         Boolean getIsPropertyLockoutEnabledRemoved();
 
+        void setIsPropertyLockoutEnabledRemoved(Boolean removed);
+
         Boolean getIsPropertyLockoutEndDateUtcRemoved();
+
+        void setIsPropertyLockoutEndDateUtcRemoved(Boolean removed);
 
         Boolean getIsPropertyPasswordHashRemoved();
 
+        void setIsPropertyPasswordHashRemoved(Boolean removed);
+
         Boolean getIsPropertyPhoneNumberRemoved();
+
+        void setIsPropertyPhoneNumberRemoved(Boolean removed);
 
         Boolean getIsPropertyPhoneNumberConfirmedRemoved();
 
+        void setIsPropertyPhoneNumberConfirmedRemoved(Boolean removed);
+
         Boolean getIsPropertyTwoFactorEnabledRemoved();
+
+        void setIsPropertyTwoFactorEnabledRemoved(Boolean removed);
 
         Boolean getIsPropertySecurityStampRemoved();
 
+        void setIsPropertySecurityStampRemoved(Boolean removed);
+
         Boolean getIsPropertyActiveRemoved();
+
+        void setIsPropertyActiveRemoved(Boolean removed);
 
         UserRoleCommands getUserRoleCommands();
 

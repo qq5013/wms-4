@@ -7,24 +7,42 @@ public interface AttributeSetCommand extends Command
 {
     String getAttributeSetId();
 
+    void setAttributeSetId(String attributeSetId);
+
     Long getVersion();
+
+    void setVersion(Long version);
 
 
     interface CreateOrMergePatchAttributeSet extends AttributeSetCommand
     {
         String getName();
 
+        void setName(String name);
+
         String getOrganizationId();
+
+        void setOrganizationId(String organizationId);
 
         String getDescription();
 
+        void setDescription(String description);
+
         String getSerialNumberAttributeId();
+
+        void setSerialNumberAttributeId(String serialNumberAttributeId);
 
         String getLotAttributeId();
 
+        void setLotAttributeId(String lotAttributeId);
+
         String getReferenceId();
 
+        void setReferenceId(String referenceId);
+
         Boolean getActive();
+
+        void setActive(Boolean active);
 
     }
 
@@ -40,17 +58,31 @@ public interface AttributeSetCommand extends Command
     {
         Boolean getIsPropertyNameRemoved();
 
+        void setIsPropertyNameRemoved(Boolean removed);
+
         Boolean getIsPropertyOrganizationIdRemoved();
+
+        void setIsPropertyOrganizationIdRemoved(Boolean removed);
 
         Boolean getIsPropertyDescriptionRemoved();
 
+        void setIsPropertyDescriptionRemoved(Boolean removed);
+
         Boolean getIsPropertySerialNumberAttributeIdRemoved();
+
+        void setIsPropertySerialNumberAttributeIdRemoved(Boolean removed);
 
         Boolean getIsPropertyLotAttributeIdRemoved();
 
+        void setIsPropertyLotAttributeIdRemoved(Boolean removed);
+
         Boolean getIsPropertyReferenceIdRemoved();
 
+        void setIsPropertyReferenceIdRemoved(Boolean removed);
+
         Boolean getIsPropertyActiveRemoved();
+
+        void setIsPropertyActiveRemoved(Boolean removed);
 
         AttributeUseCommands getAttributeUseCommands();
 

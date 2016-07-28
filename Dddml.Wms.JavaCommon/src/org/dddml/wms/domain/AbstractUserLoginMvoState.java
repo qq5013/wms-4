@@ -2,8 +2,7 @@ package org.dddml.wms.domain;
 
 import java.util.Set;
 import java.util.Date;
-import org.dddml.wms.specialization.Event;
-import org.dddml.wms.specialization.DomainError;
+import org.dddml.wms.specialization.*;
 import org.dddml.wms.domain.UserLoginMvoStateEvent.*;
 
 public abstract class AbstractUserLoginMvoState implements UserLoginMvoState
@@ -323,7 +322,7 @@ public abstract class AbstractUserLoginMvoState implements UserLoginMvoState
 
     public boolean isStateUnsaved() 
     {
-        return VERSION_ZERO.equals(this.getUserVersion());
+        return this.getUserVersion() == null;
     }
 
 
@@ -605,6 +604,10 @@ public abstract class AbstractUserLoginMvoState implements UserLoginMvoState
 
     }
 
+    public void save()
+    {
+    }
+
     protected void throwOnWrongEvent(UserLoginMvoStateEvent stateEvent)
     {
         UserLoginId stateEntityId = this.getUserLoginId(); // Aggregate Id
@@ -615,17 +618,13 @@ public abstract class AbstractUserLoginMvoState implements UserLoginMvoState
         }
 
         Long stateVersion = this.getUserVersion();
-        if(stateVersion == null) {
-            stateVersion = UserLoginMvoState.VERSION_ZERO;
-        }
         Long eventVersion = stateEvent.getStateEventId().getUserVersion();// Aggregate Version
-        if(eventVersion == null) {
-            eventVersion = UserLoginMvoState.VERSION_ZERO;
-            stateEvent.getStateEventId().setUserVersion(eventVersion);
+        if (eventVersion == null) {
+            throw new NullPointerException("stateEvent.getStateEventId().getUserVersion() == null");
         }
-        if (!stateVersion.equals(eventVersion))
+        if (!(stateVersion == null && eventVersion.equals(UserLoginMvoState.VERSION_NULL)) && !eventVersion.equals(stateVersion))
         {
-            throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);
+            throw DomainError.named("concurrencyConflict", "Conflict between state version (%1$s) and event version (%2$s)", stateVersion, eventVersion);
         }
 
     }

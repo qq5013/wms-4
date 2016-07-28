@@ -11,6 +11,8 @@ public interface InOutLineMvoState
 {
     Long VERSION_ZERO = 0L;
 
+    Long VERSION_NULL = VERSION_ZERO - 1;
+
     InOutLineId getInOutLineId();
 
     void setInOutLineId(InOutLineId inOutLineId);

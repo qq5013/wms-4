@@ -98,14 +98,16 @@ public abstract class AbstractInOutLineMvoApplicationService implements InOutLin
 
         aggregate.throwOnInvalidStateTransition(c);
         action.accept(aggregate);
-        getEventStore().appendEvents(eventStoreAggregateId, state.getInOutVersion(), aggregate.getChanges(), (events) -> { getStateRepository().save(state); });
+        getEventStore().appendEvents(eventStoreAggregateId, c.getInOutVersion(), // State version may be null!
+            aggregate.getChanges(), (events) -> { getStateRepository().save(state); });
         
     }
 
     protected boolean isRepeatedCommand(InOutLineMvoCommand command, EventStoreAggregateId eventStoreAggregateId, InOutLineMvoState state)
     {
         boolean repeated = false;
-        if (state.getInOutVersion() > command.getInOutVersion())
+        if (command.getInOutVersion() == null) { command.setInOutVersion(InOutLineMvoState.VERSION_NULL); }
+        if (state.getInOutVersion() != null && state.getInOutVersion() > command.getInOutVersion())
         {
             Event lastEvent = getEventStore().findLastEvent(InOutLineMvoStateEvent.class, eventStoreAggregateId, command.getInOutVersion());
             if (lastEvent != null && lastEvent instanceof AbstractStateEvent && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))

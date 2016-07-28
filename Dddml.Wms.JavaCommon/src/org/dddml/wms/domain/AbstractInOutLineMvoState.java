@@ -4,8 +4,7 @@ import java.util.Set;
 import java.math.BigDecimal;
 import java.util.Date;
 import org.joda.money.Money;
-import org.dddml.wms.specialization.Event;
-import org.dddml.wms.specialization.DomainError;
+import org.dddml.wms.specialization.*;
 import org.dddml.wms.domain.InOutLineMvoStateEvent.*;
 
 public abstract class AbstractInOutLineMvoState implements InOutLineMvoState
@@ -805,7 +804,7 @@ public abstract class AbstractInOutLineMvoState implements InOutLineMvoState
 
     public boolean isStateUnsaved() 
     {
-        return VERSION_ZERO.equals(this.getInOutVersion());
+        return this.getInOutVersion() == null;
     }
 
 
@@ -1567,6 +1566,10 @@ public abstract class AbstractInOutLineMvoState implements InOutLineMvoState
 
     }
 
+    public void save()
+    {
+    }
+
     protected void throwOnWrongEvent(InOutLineMvoStateEvent stateEvent)
     {
         InOutLineId stateEntityId = this.getInOutLineId(); // Aggregate Id
@@ -1577,17 +1580,13 @@ public abstract class AbstractInOutLineMvoState implements InOutLineMvoState
         }
 
         Long stateVersion = this.getInOutVersion();
-        if(stateVersion == null) {
-            stateVersion = InOutLineMvoState.VERSION_ZERO;
-        }
         Long eventVersion = stateEvent.getStateEventId().getInOutVersion();// Aggregate Version
-        if(eventVersion == null) {
-            eventVersion = InOutLineMvoState.VERSION_ZERO;
-            stateEvent.getStateEventId().setInOutVersion(eventVersion);
+        if (eventVersion == null) {
+            throw new NullPointerException("stateEvent.getStateEventId().getInOutVersion() == null");
         }
-        if (!stateVersion.equals(eventVersion))
+        if (!(stateVersion == null && eventVersion.equals(InOutLineMvoState.VERSION_NULL)) && !eventVersion.equals(stateVersion))
         {
-            throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);
+            throw DomainError.named("concurrencyConflict", "Conflict between state version (%1$s) and event version (%2$s)", stateVersion, eventVersion);
         }
 
     }

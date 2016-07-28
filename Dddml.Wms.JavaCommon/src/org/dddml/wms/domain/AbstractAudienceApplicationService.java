@@ -96,14 +96,16 @@ public abstract class AbstractAudienceApplicationService implements AudienceAppl
 
         aggregate.throwOnInvalidStateTransition(c);
         action.accept(aggregate);
-        getEventStore().appendEvents(eventStoreAggregateId, state.getVersion(), aggregate.getChanges(), (events) -> { getStateRepository().save(state); });
+        getEventStore().appendEvents(eventStoreAggregateId, c.getVersion(), // State version may be null!
+            aggregate.getChanges(), (events) -> { getStateRepository().save(state); });
         
     }
 
     protected boolean isRepeatedCommand(AudienceCommand command, EventStoreAggregateId eventStoreAggregateId, AudienceState state)
     {
         boolean repeated = false;
-        if (state.getVersion() > command.getVersion())
+        if (command.getVersion() == null) { command.setVersion(AudienceState.VERSION_NULL); }
+        if (state.getVersion() != null && state.getVersion() > command.getVersion())
         {
             Event lastEvent = getEventStore().findLastEvent(AudienceStateEvent.class, eventStoreAggregateId, command.getVersion());
             if (lastEvent != null && lastEvent instanceof AbstractStateEvent && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))

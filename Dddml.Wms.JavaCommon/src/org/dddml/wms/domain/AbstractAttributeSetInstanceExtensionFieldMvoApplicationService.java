@@ -96,14 +96,16 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoApplicationSe
 
         aggregate.throwOnInvalidStateTransition(c);
         action.accept(aggregate);
-        getEventStore().appendEvents(eventStoreAggregateId, state.getAttrSetInstEFGroupVersion(), aggregate.getChanges(), (events) -> { getStateRepository().save(state); });
+        getEventStore().appendEvents(eventStoreAggregateId, c.getAttrSetInstEFGroupVersion(), // State version may be null!
+            aggregate.getChanges(), (events) -> { getStateRepository().save(state); });
         
     }
 
     protected boolean isRepeatedCommand(AttributeSetInstanceExtensionFieldMvoCommand command, EventStoreAggregateId eventStoreAggregateId, AttributeSetInstanceExtensionFieldMvoState state)
     {
         boolean repeated = false;
-        if (state.getAttrSetInstEFGroupVersion() > command.getAttrSetInstEFGroupVersion())
+        if (command.getAttrSetInstEFGroupVersion() == null) { command.setAttrSetInstEFGroupVersion(AttributeSetInstanceExtensionFieldMvoState.VERSION_NULL); }
+        if (state.getAttrSetInstEFGroupVersion() != null && state.getAttrSetInstEFGroupVersion() > command.getAttrSetInstEFGroupVersion())
         {
             Event lastEvent = getEventStore().findLastEvent(AttributeSetInstanceExtensionFieldMvoStateEvent.class, eventStoreAggregateId, command.getAttrSetInstEFGroupVersion());
             if (lastEvent != null && lastEvent instanceof AbstractStateEvent && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))

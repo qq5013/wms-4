@@ -6,6 +6,7 @@ import org.hibernate.*;
 import org.hibernate.criterion.*;
 import org.dddml.wms.domain.*;
 import org.dddml.wms.specialization.*;
+import org.springframework.transaction.annotation.Transactional;
 
 public class HibernateAttributeSetInstanceExtensionFieldMvoStateRepository implements AttributeSetInstanceExtensionFieldMvoStateRepository
 {
@@ -19,7 +20,7 @@ public class HibernateAttributeSetInstanceExtensionFieldMvoStateRepository imple
         return this.sessionFactory.getCurrentSession();
     }
     
-    //[Transaction (ReadOnly = true)]
+    @Transactional(readOnly = true)
     public AttributeSetInstanceExtensionFieldMvoState get(AttributeSetInstanceExtensionFieldId id)
     {
         AttributeSetInstanceExtensionFieldMvoState state = (AttributeSetInstanceExtensionFieldMvoState)getCurrentSession().get(AbstractAttributeSetInstanceExtensionFieldMvoState.SimpleAttributeSetInstanceExtensionFieldMvoState.class, id);
@@ -30,7 +31,7 @@ public class HibernateAttributeSetInstanceExtensionFieldMvoStateRepository imple
         return state;
     }
 
-    //[Transaction(ReadOnly = true)]
+    @Transactional(readOnly = true)
     public Iterable<AttributeSetInstanceExtensionFieldMvoState> getAll(Integer firstResult, Integer maxResults)
     {
         Criteria criteria = getCurrentSession().createCriteria(AbstractAttributeSetInstanceExtensionFieldMvoState.SimpleAttributeSetInstanceExtensionFieldMvoState.class);
@@ -40,10 +41,10 @@ public class HibernateAttributeSetInstanceExtensionFieldMvoStateRepository imple
         return criteria.list();
     }
 
-    //[Transaction]
+    //@Transactional
     public void save(AttributeSetInstanceExtensionFieldMvoState state)
     {
-        if(state.getAttrSetInstEFGroupVersion() == null || state.getAttrSetInstEFGroupVersion().equals(AttributeSetInstanceExtensionFieldMvoState.VERSION_ZERO)) {
+        if(state.getAttrSetInstEFGroupVersion() == null) {
             getCurrentSession().save(state);
         }else {
             getCurrentSession().update(state);
@@ -76,7 +77,7 @@ public class HibernateAttributeSetInstanceExtensionFieldMvoStateRepository imple
     //long getCount(Criterion filter);
 
 /*
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IEnumerable<IAttributeSetInstanceExtensionFieldMvoState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
             var criteria = CurrentSession.CreateCriteria<AttributeSetInstanceExtensionFieldMvoState>();
@@ -86,7 +87,7 @@ public class HibernateAttributeSetInstanceExtensionFieldMvoStateRepository imple
             return criteria.List<AttributeSetInstanceExtensionFieldMvoState>();
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IEnumerable<IAttributeSetInstanceExtensionFieldMvoState> Get(Dddml.Support.Criterion.ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
             var criteria = CurrentSession.CreateCriteria<AttributeSetInstanceExtensionFieldMvoState>();
@@ -97,7 +98,7 @@ public class HibernateAttributeSetInstanceExtensionFieldMvoStateRepository imple
         }
 
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IAttributeSetInstanceExtensionFieldMvoState GetFirst(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null)
         {
             var list = (IList<AttributeSetInstanceExtensionFieldMvoState>)Get(filter, orders, 0, 1);
@@ -108,20 +109,20 @@ public class HibernateAttributeSetInstanceExtensionFieldMvoStateRepository imple
             return list[0];
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IAttributeSetInstanceExtensionFieldMvoState GetFirst(KeyValuePair<string, object> keyValue, IList<string> orders = null)
         {
             return GetFirst(new KeyValuePair<string, object>[] { keyValue }, orders);
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IEnumerable<IAttributeSetInstanceExtensionFieldMvoState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
             var filter = new KeyValuePair<string, object>[] { new KeyValuePair<string, object>(propertyName, propertyValue) };
             return Get(filter, orders, firstResult, maxResults);
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
         {
             var criteria = CurrentSession.CreateCriteria<AttributeSetInstanceExtensionFieldMvoState>();
@@ -131,7 +132,7 @@ public class HibernateAttributeSetInstanceExtensionFieldMvoStateRepository imple
             return criteria.UniqueResult<long>();
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual long GetCount(Dddml.Support.Criterion.ICriterion filter)
         {
             var criteria = CurrentSession.CreateCriteria<AttributeSetInstanceExtensionFieldMvoState>();

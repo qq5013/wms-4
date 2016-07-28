@@ -2,8 +2,7 @@ package org.dddml.wms.domain;
 
 import java.util.Set;
 import java.util.Date;
-import org.dddml.wms.specialization.Event;
-import org.dddml.wms.specialization.DomainError;
+import org.dddml.wms.specialization.*;
 import org.dddml.wms.domain.WarehouseStateEvent.*;
 
 public abstract class AbstractWarehouseState implements WarehouseState
@@ -143,7 +142,7 @@ public abstract class AbstractWarehouseState implements WarehouseState
 
     public boolean isStateUnsaved() 
     {
-        return VERSION_ZERO.equals(this.getVersion());
+        return this.getVersion() == null;
     }
 
 
@@ -245,6 +244,10 @@ public abstract class AbstractWarehouseState implements WarehouseState
 
     }
 
+    public void save()
+    {
+    }
+
     protected void throwOnWrongEvent(WarehouseStateEvent stateEvent)
     {
         String stateEntityId = this.getWarehouseId(); // Aggregate Id
@@ -255,17 +258,13 @@ public abstract class AbstractWarehouseState implements WarehouseState
         }
 
         Long stateVersion = this.getVersion();
-        if(stateVersion == null) {
-            stateVersion = WarehouseState.VERSION_ZERO;
-        }
         Long eventVersion = stateEvent.getStateEventId().getVersion();// Aggregate Version
-        if(eventVersion == null) {
-            eventVersion = WarehouseState.VERSION_ZERO;
-            stateEvent.getStateEventId().setVersion(eventVersion);
+        if (eventVersion == null) {
+            throw new NullPointerException("stateEvent.getStateEventId().getVersion() == null");
         }
-        if (!stateVersion.equals(eventVersion))
+        if (!(stateVersion == null && eventVersion.equals(WarehouseState.VERSION_NULL)) && !eventVersion.equals(stateVersion))
         {
-            throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);
+            throw DomainError.named("concurrencyConflict", "Conflict between state version (%1$s) and event version (%2$s)", stateVersion, eventVersion);
         }
 
     }

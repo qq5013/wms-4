@@ -6,6 +6,7 @@ import org.hibernate.*;
 import org.hibernate.criterion.*;
 import org.dddml.wms.domain.*;
 import org.dddml.wms.specialization.*;
+import org.springframework.transaction.annotation.Transactional;
 
 public class HibernateInOutLineStateDao implements InOutLineStateDao
 {
@@ -19,7 +20,7 @@ public class HibernateInOutLineStateDao implements InOutLineStateDao
         return this.sessionFactory.getCurrentSession();
     }
 
-    //[Transaction(ReadOnly = true)]
+    @Transactional(readOnly = true)
     @Override
     public InOutLineState get(InOutLineId id)
     {
@@ -35,7 +36,7 @@ public class HibernateInOutLineStateDao implements InOutLineStateDao
     @Override
     public void save(InOutLineState state)
     {
-        if(state.getVersion() == null || state.getVersion().equals(InOutLineState.VERSION_ZERO)) {
+        if(state.getVersion() == null) {
             getCurrentSession().save(state);
         }else {
             getCurrentSession().update(state);
@@ -48,7 +49,7 @@ public class HibernateInOutLineStateDao implements InOutLineStateDao
         }
     }
 
-    //[Transaction(ReadOnly = true)]
+    @Transactional(readOnly = true)
     @Override
     public Iterable<InOutLineState> findByInOutDocumentNumber(String inOutDocumentNumber)
     {

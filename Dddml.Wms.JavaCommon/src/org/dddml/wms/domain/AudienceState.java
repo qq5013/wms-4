@@ -9,6 +9,8 @@ public interface AudienceState
 {
     Long VERSION_ZERO = 0L;
 
+    Long VERSION_NULL = VERSION_ZERO - 1;
+
     String getClientId();
 
     void setClientId(String clientId);

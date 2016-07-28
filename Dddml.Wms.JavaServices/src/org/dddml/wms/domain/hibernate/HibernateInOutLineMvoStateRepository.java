@@ -8,6 +8,7 @@ import org.hibernate.*;
 import org.hibernate.criterion.*;
 import org.dddml.wms.domain.*;
 import org.dddml.wms.specialization.*;
+import org.springframework.transaction.annotation.Transactional;
 
 public class HibernateInOutLineMvoStateRepository implements InOutLineMvoStateRepository
 {
@@ -21,7 +22,7 @@ public class HibernateInOutLineMvoStateRepository implements InOutLineMvoStateRe
         return this.sessionFactory.getCurrentSession();
     }
     
-    //[Transaction (ReadOnly = true)]
+    @Transactional(readOnly = true)
     public InOutLineMvoState get(InOutLineId id)
     {
         InOutLineMvoState state = (InOutLineMvoState)getCurrentSession().get(AbstractInOutLineMvoState.SimpleInOutLineMvoState.class, id);
@@ -32,7 +33,7 @@ public class HibernateInOutLineMvoStateRepository implements InOutLineMvoStateRe
         return state;
     }
 
-    //[Transaction(ReadOnly = true)]
+    @Transactional(readOnly = true)
     public Iterable<InOutLineMvoState> getAll(Integer firstResult, Integer maxResults)
     {
         Criteria criteria = getCurrentSession().createCriteria(AbstractInOutLineMvoState.SimpleInOutLineMvoState.class);
@@ -42,10 +43,10 @@ public class HibernateInOutLineMvoStateRepository implements InOutLineMvoStateRe
         return criteria.list();
     }
 
-    //[Transaction]
+    //@Transactional
     public void save(InOutLineMvoState state)
     {
-        if(state.getInOutVersion() == null || state.getInOutVersion().equals(InOutLineMvoState.VERSION_ZERO)) {
+        if(state.getInOutVersion() == null) {
             getCurrentSession().save(state);
         }else {
             getCurrentSession().update(state);
@@ -78,7 +79,7 @@ public class HibernateInOutLineMvoStateRepository implements InOutLineMvoStateRe
     //long getCount(Criterion filter);
 
 /*
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IEnumerable<IInOutLineMvoState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
             var criteria = CurrentSession.CreateCriteria<InOutLineMvoState>();
@@ -88,7 +89,7 @@ public class HibernateInOutLineMvoStateRepository implements InOutLineMvoStateRe
             return criteria.List<InOutLineMvoState>();
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IEnumerable<IInOutLineMvoState> Get(Dddml.Support.Criterion.ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
             var criteria = CurrentSession.CreateCriteria<InOutLineMvoState>();
@@ -99,7 +100,7 @@ public class HibernateInOutLineMvoStateRepository implements InOutLineMvoStateRe
         }
 
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IInOutLineMvoState GetFirst(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null)
         {
             var list = (IList<InOutLineMvoState>)Get(filter, orders, 0, 1);
@@ -110,20 +111,20 @@ public class HibernateInOutLineMvoStateRepository implements InOutLineMvoStateRe
             return list[0];
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IInOutLineMvoState GetFirst(KeyValuePair<string, object> keyValue, IList<string> orders = null)
         {
             return GetFirst(new KeyValuePair<string, object>[] { keyValue }, orders);
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IEnumerable<IInOutLineMvoState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
             var filter = new KeyValuePair<string, object>[] { new KeyValuePair<string, object>(propertyName, propertyValue) };
             return Get(filter, orders, firstResult, maxResults);
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
         {
             var criteria = CurrentSession.CreateCriteria<InOutLineMvoState>();
@@ -133,7 +134,7 @@ public class HibernateInOutLineMvoStateRepository implements InOutLineMvoStateRe
             return criteria.UniqueResult<long>();
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual long GetCount(Dddml.Support.Criterion.ICriterion filter)
         {
             var criteria = CurrentSession.CreateCriteria<InOutLineMvoState>();

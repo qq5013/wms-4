@@ -26,6 +26,7 @@ public abstract class AbstractRolePermissionAggregate extends AbstractAggregate 
 
     public void create(RolePermissionCommand.CreateRolePermission c)
     {
+        if (c.getVersion() == null) { c.setVersion(RolePermissionState.VERSION_NULL); }
         RolePermissionStateEvent.RolePermissionStateCreated e = map(c);
         apply(e);
     }
@@ -44,7 +45,7 @@ public abstract class AbstractRolePermissionAggregate extends AbstractAggregate 
 
     public void throwOnInvalidStateTransition(Command c)
     {
-        if (this.state.getVersion() == null || this.state.getVersion().equals(RolePermissionState.VERSION_ZERO))
+        if (this.state.getVersion() == null)
         {
             if (isCommandCreate((RolePermissionCommand)c))
             {
@@ -63,8 +64,8 @@ public abstract class AbstractRolePermissionAggregate extends AbstractAggregate 
     protected void apply(Event e)
     {
         onApplying(e);
-        this.state.mutate(e);
-        this.changes.add(e);
+        state.mutate(e);
+        changes.add(e);
     }
 
     protected RolePermissionStateEvent.RolePermissionStateCreated map(RolePermissionCommand.CreateRolePermission c)
@@ -105,7 +106,8 @@ public abstract class AbstractRolePermissionAggregate extends AbstractAggregate 
 
     private static boolean isCommandCreate(RolePermissionCommand c)
     {
-        return c.getVersion() == null || c.getVersion().equals(RolePermissionState.VERSION_ZERO);
+        return ((c instanceof RolePermissionCommand.CreateRolePermission) 
+            && c.getVersion().equals(RolePermissionState.VERSION_NULL));
     }
 
 

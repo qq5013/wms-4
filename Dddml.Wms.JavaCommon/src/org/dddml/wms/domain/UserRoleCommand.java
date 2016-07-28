@@ -7,12 +7,18 @@ public interface UserRoleCommand extends Command
 {
     String getRoleId();
 
+    void setRoleId(String roleId);
+
     String getUserId();
+
+    void setUserId(String userId);
 
 
     interface CreateOrMergePatchUserRole extends UserRoleCommand
     {
         Boolean getActive();
+
+        void setActive(Boolean active);
 
     }
 
@@ -23,6 +29,8 @@ public interface UserRoleCommand extends Command
     interface MergePatchUserRole extends CreateOrMergePatchUserRole
     {
         Boolean getIsPropertyActiveRemoved();
+
+        void setIsPropertyActiveRemoved(Boolean removed);
 
     }
 

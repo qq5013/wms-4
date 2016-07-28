@@ -7,12 +7,18 @@ public interface RolePermissionCommand extends Command
 {
     RolePermissionId getId();
 
+    void setId(RolePermissionId id);
+
     Long getVersion();
+
+    void setVersion(Long version);
 
 
     interface CreateOrMergePatchRolePermission extends RolePermissionCommand
     {
         Boolean getActive();
+
+        void setActive(Boolean active);
 
     }
 
@@ -23,6 +29,8 @@ public interface RolePermissionCommand extends Command
     interface MergePatchRolePermission extends CreateOrMergePatchRolePermission
     {
         Boolean getIsPropertyActiveRemoved();
+
+        void setIsPropertyActiveRemoved(Boolean removed);
 
     }
 

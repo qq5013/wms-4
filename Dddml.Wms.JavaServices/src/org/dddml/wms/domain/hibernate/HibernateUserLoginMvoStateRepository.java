@@ -6,6 +6,7 @@ import org.hibernate.*;
 import org.hibernate.criterion.*;
 import org.dddml.wms.domain.*;
 import org.dddml.wms.specialization.*;
+import org.springframework.transaction.annotation.Transactional;
 
 public class HibernateUserLoginMvoStateRepository implements UserLoginMvoStateRepository
 {
@@ -19,7 +20,7 @@ public class HibernateUserLoginMvoStateRepository implements UserLoginMvoStateRe
         return this.sessionFactory.getCurrentSession();
     }
     
-    //[Transaction (ReadOnly = true)]
+    @Transactional(readOnly = true)
     public UserLoginMvoState get(UserLoginId id)
     {
         UserLoginMvoState state = (UserLoginMvoState)getCurrentSession().get(AbstractUserLoginMvoState.SimpleUserLoginMvoState.class, id);
@@ -30,7 +31,7 @@ public class HibernateUserLoginMvoStateRepository implements UserLoginMvoStateRe
         return state;
     }
 
-    //[Transaction(ReadOnly = true)]
+    @Transactional(readOnly = true)
     public Iterable<UserLoginMvoState> getAll(Integer firstResult, Integer maxResults)
     {
         Criteria criteria = getCurrentSession().createCriteria(AbstractUserLoginMvoState.SimpleUserLoginMvoState.class);
@@ -40,10 +41,10 @@ public class HibernateUserLoginMvoStateRepository implements UserLoginMvoStateRe
         return criteria.list();
     }
 
-    //[Transaction]
+    //@Transactional
     public void save(UserLoginMvoState state)
     {
-        if(state.getUserVersion() == null || state.getUserVersion().equals(UserLoginMvoState.VERSION_ZERO)) {
+        if(state.getUserVersion() == null) {
             getCurrentSession().save(state);
         }else {
             getCurrentSession().update(state);
@@ -76,7 +77,7 @@ public class HibernateUserLoginMvoStateRepository implements UserLoginMvoStateRe
     //long getCount(Criterion filter);
 
 /*
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IEnumerable<IUserLoginMvoState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
             var criteria = CurrentSession.CreateCriteria<UserLoginMvoState>();
@@ -86,7 +87,7 @@ public class HibernateUserLoginMvoStateRepository implements UserLoginMvoStateRe
             return criteria.List<UserLoginMvoState>();
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IEnumerable<IUserLoginMvoState> Get(Dddml.Support.Criterion.ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
             var criteria = CurrentSession.CreateCriteria<UserLoginMvoState>();
@@ -97,7 +98,7 @@ public class HibernateUserLoginMvoStateRepository implements UserLoginMvoStateRe
         }
 
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IUserLoginMvoState GetFirst(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null)
         {
             var list = (IList<UserLoginMvoState>)Get(filter, orders, 0, 1);
@@ -108,20 +109,20 @@ public class HibernateUserLoginMvoStateRepository implements UserLoginMvoStateRe
             return list[0];
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IUserLoginMvoState GetFirst(KeyValuePair<string, object> keyValue, IList<string> orders = null)
         {
             return GetFirst(new KeyValuePair<string, object>[] { keyValue }, orders);
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IEnumerable<IUserLoginMvoState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
             var filter = new KeyValuePair<string, object>[] { new KeyValuePair<string, object>(propertyName, propertyValue) };
             return Get(filter, orders, firstResult, maxResults);
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
         {
             var criteria = CurrentSession.CreateCriteria<UserLoginMvoState>();
@@ -131,7 +132,7 @@ public class HibernateUserLoginMvoStateRepository implements UserLoginMvoStateRe
             return criteria.UniqueResult<long>();
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual long GetCount(Dddml.Support.Criterion.ICriterion filter)
         {
             var criteria = CurrentSession.CreateCriteria<UserLoginMvoState>();

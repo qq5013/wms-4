@@ -2,8 +2,7 @@ package org.dddml.wms.domain;
 
 import java.util.Set;
 import java.util.Date;
-import org.dddml.wms.specialization.Event;
-import org.dddml.wms.specialization.DomainError;
+import org.dddml.wms.specialization.*;
 import org.dddml.wms.domain.UserLoginStateEvent.*;
 
 public abstract class AbstractUserLoginState implements UserLoginState
@@ -19,16 +18,20 @@ public abstract class AbstractUserLoginState implements UserLoginState
         this.userLoginId = userLoginId;
     }
 
-    private LoginKey loginKey;
-
-    public LoginKey getLoginKey()
-    {
-        return this.loginKey;
+    public String getUserId() {
+        return this.getUserLoginId().getUserId();
+    }
+        
+    public void setUserId(String userId) {
+        this.getUserLoginId().setUserId(userId);
     }
 
-    public void setLoginKey(LoginKey loginKey)
-    {
-        this.loginKey = loginKey;
+    public LoginKey getLoginKey() {
+        return this.getUserLoginId().getLoginKey();
+    }
+        
+    public void setLoginKey(LoginKey loginKey) {
+        this.getUserLoginId().setLoginKey(loginKey);
     }
 
     private Long version;
@@ -115,21 +118,9 @@ public abstract class AbstractUserLoginState implements UserLoginState
         this.deleted = deleted;
     }
 
-    private String userId;
-
-    public String getUserId()
-    {
-        return this.userId;
-    }
-
-    public void setUserId(String userId)
-    {
-        this.userId = userId;
-    }
-
     public boolean isStateUnsaved() 
     {
-        return VERSION_ZERO.equals(this.getVersion());
+        return this.getVersion() == null;
     }
 
 
@@ -195,6 +186,10 @@ public abstract class AbstractUserLoginState implements UserLoginState
 
     }
 
+    public void save()
+    {
+    }
+
     protected void throwOnWrongEvent(UserLoginStateEvent stateEvent)
     {
         String stateEntityIdUserId = this.getUserLoginId().getUserId();
@@ -212,21 +207,14 @@ public abstract class AbstractUserLoginState implements UserLoginState
         }
 
         Long stateVersion = this.getVersion();
-        if(stateVersion == null) {
-            stateVersion = UserLoginState.VERSION_ZERO;
-        }
         Long eventVersion = stateEvent.getVersion();
-        if(eventVersion == null) {
-            eventVersion = UserLoginState.VERSION_ZERO;
+        if (eventVersion == null) {
+            eventVersion = stateVersion == null ? UserLoginState.VERSION_NULL : stateVersion;
+            stateEvent.setVersion(eventVersion);
         }
-        if (UserLoginState.VERSION_ZERO.equals(eventVersion))
+        if (!(stateVersion == null && eventVersion.equals(UserLoginState.VERSION_NULL)) && !eventVersion.equals(stateVersion))
         {
-            stateEvent.setVersion(stateVersion);
-            eventVersion = stateVersion;
-        }
-        if (!stateVersion.equals(eventVersion))
-        {
-            throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);
+            throw DomainError.named("concurrencyConflict", "Conflict between state version (%1$s) and event version (%2$s)", stateVersion, eventVersion);
         }
 
     }

@@ -40,7 +40,7 @@ public abstract class AbstractInOutLineStates implements InOutLineStates
 
     @Override
     public Iterator<InOutLineState> iterator() {
-        return innerIterable.iterator();
+        return getInnerIterable().iterator();
     }
 
     public InOutLineState get(SkuId skuId)

@@ -3,8 +3,9 @@
 namespace Wms\HttpClient;
 
 use Dddml\Serializer\Type\Long;
+use Dddml\Executor\Http\QueryCountRequestInterface;
 
-class LocatorQueryRequest extends AbstractQueryRequest
+class LocatorQueryRequest extends AbstractQueryRequest implements QueryCountRequestInterface
 {
     use LocatorFilteringFieldsTrait;
 

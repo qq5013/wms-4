@@ -39,7 +39,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldStates implement
 
     @Override
     public Iterator<AttributeSetInstanceExtensionFieldState> iterator() {
-        return innerIterable.iterator();
+        return getInnerIterable().iterator();
     }
 
     public AttributeSetInstanceExtensionFieldState get(String index)

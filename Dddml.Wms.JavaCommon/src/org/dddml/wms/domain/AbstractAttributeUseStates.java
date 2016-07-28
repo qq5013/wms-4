@@ -39,7 +39,7 @@ public abstract class AbstractAttributeUseStates implements AttributeUseStates
 
     @Override
     public Iterator<AttributeUseState> iterator() {
-        return innerIterable.iterator();
+        return getInnerIterable().iterator();
     }
 
     public AttributeUseState get(String attributeId)

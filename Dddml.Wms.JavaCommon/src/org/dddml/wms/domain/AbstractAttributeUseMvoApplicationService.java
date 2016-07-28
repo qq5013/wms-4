@@ -96,14 +96,16 @@ public abstract class AbstractAttributeUseMvoApplicationService implements Attri
 
         aggregate.throwOnInvalidStateTransition(c);
         action.accept(aggregate);
-        getEventStore().appendEvents(eventStoreAggregateId, state.getAttributeSetVersion(), aggregate.getChanges(), (events) -> { getStateRepository().save(state); });
+        getEventStore().appendEvents(eventStoreAggregateId, c.getAttributeSetVersion(), // State version may be null!
+            aggregate.getChanges(), (events) -> { getStateRepository().save(state); });
         
     }
 
     protected boolean isRepeatedCommand(AttributeUseMvoCommand command, EventStoreAggregateId eventStoreAggregateId, AttributeUseMvoState state)
     {
         boolean repeated = false;
-        if (state.getAttributeSetVersion() > command.getAttributeSetVersion())
+        if (command.getAttributeSetVersion() == null) { command.setAttributeSetVersion(AttributeUseMvoState.VERSION_NULL); }
+        if (state.getAttributeSetVersion() != null && state.getAttributeSetVersion() > command.getAttributeSetVersion())
         {
             Event lastEvent = getEventStore().findLastEvent(AttributeUseMvoStateEvent.class, eventStoreAggregateId, command.getAttributeSetVersion());
             if (lastEvent != null && lastEvent instanceof AbstractStateEvent && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))

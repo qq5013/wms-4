@@ -26,6 +26,7 @@ public abstract class AbstractAttributeUseMvoAggregate extends AbstractAggregate
 
     public void create(AttributeUseMvoCommand.CreateAttributeUseMvo c)
     {
+        if (c.getAttributeSetVersion() == null) { c.setAttributeSetVersion(AttributeUseMvoState.VERSION_NULL); }
         AttributeUseMvoStateEvent.AttributeUseMvoStateCreated e = map(c);
         apply(e);
     }
@@ -44,7 +45,7 @@ public abstract class AbstractAttributeUseMvoAggregate extends AbstractAggregate
 
     public void throwOnInvalidStateTransition(Command c)
     {
-        if (this.state.getAttributeSetVersion() == null || this.state.getAttributeSetVersion().equals(AttributeUseMvoState.VERSION_ZERO))
+        if (this.state.getAttributeSetVersion() == null)
         {
             if (isCommandCreate((AttributeUseMvoCommand)c))
             {
@@ -63,8 +64,8 @@ public abstract class AbstractAttributeUseMvoAggregate extends AbstractAggregate
     protected void apply(Event e)
     {
         onApplying(e);
-        this.state.mutate(e);
-        this.changes.add(e);
+        state.mutate(e);
+        changes.add(e);
     }
 
     protected AttributeUseMvoStateEvent.AttributeUseMvoStateCreated map(AttributeUseMvoCommand.CreateAttributeUseMvo c)
@@ -147,7 +148,8 @@ public abstract class AbstractAttributeUseMvoAggregate extends AbstractAggregate
 
     private static boolean isCommandCreate(AttributeUseMvoCommand c)
     {
-        return c.getAttributeSetVersion() == null || c.getAttributeSetVersion().equals(AttributeUseMvoState.VERSION_ZERO);
+        return ((c instanceof AttributeUseMvoCommand.CreateAttributeUseMvo) 
+            && c.getAttributeSetVersion().equals(AttributeUseMvoState.VERSION_NULL));
     }
 
 

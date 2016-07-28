@@ -2,6 +2,7 @@ package org.dddml.wms.specialization.hibernate;
 
 import org.dddml.wms.specialization.*;
 import org.hibernate.*;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -21,13 +22,13 @@ public abstract class AbstractHibernateEventStore implements EventStore {
         return this.sessionFactory.getCurrentSession();
     }
 
-    //[Transaction (ReadOnly = true)]
+    @Transactional(readOnly = true)
     @Override
     public EventStream loadEventStream(EventStoreAggregateId aggregateId) {
         throw new UnsupportedOperationException();
     }
 
-    //[Transaction]
+    @Transactional
     @Override
     public void appendEvents(EventStoreAggregateId aggregateId, long version, Collection<Event> events, Consumer<Collection<Event>> afterEventsAppended) {
         for (Event e : events) {
@@ -42,7 +43,7 @@ public abstract class AbstractHibernateEventStore implements EventStore {
         //System.out.println("####################################################");
     }
 
-    //[Transaction(ReadOnly = true)]
+    @Transactional(readOnly = true)
     @Override
     public Event findLastEvent(Class eventType, EventStoreAggregateId eventStoreAggregateId, long version) {
         Class supportedEventType = getSupportedStateEventType();
@@ -53,7 +54,7 @@ public abstract class AbstractHibernateEventStore implements EventStore {
         return (Event) getCurrentSession().get(eventType, eventId);
     }
 
-    //[Transaction(ReadOnly = true)]
+    @Transactional(readOnly = true)
     @Override
     public Event getStateEvent(EventStoreAggregateId eventStoreAggregateId, long version) {
         Serializable eventId = getEventId(eventStoreAggregateId, version);

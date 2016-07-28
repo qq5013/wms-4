@@ -96,14 +96,16 @@ public abstract class AbstractUserClaimMvoApplicationService implements UserClai
 
         aggregate.throwOnInvalidStateTransition(c);
         action.accept(aggregate);
-        getEventStore().appendEvents(eventStoreAggregateId, state.getUserVersion(), aggregate.getChanges(), (events) -> { getStateRepository().save(state); });
+        getEventStore().appendEvents(eventStoreAggregateId, c.getUserVersion(), // State version may be null!
+            aggregate.getChanges(), (events) -> { getStateRepository().save(state); });
         
     }
 
     protected boolean isRepeatedCommand(UserClaimMvoCommand command, EventStoreAggregateId eventStoreAggregateId, UserClaimMvoState state)
     {
         boolean repeated = false;
-        if (state.getUserVersion() > command.getUserVersion())
+        if (command.getUserVersion() == null) { command.setUserVersion(UserClaimMvoState.VERSION_NULL); }
+        if (state.getUserVersion() != null && state.getUserVersion() > command.getUserVersion())
         {
             Event lastEvent = getEventStore().findLastEvent(UserClaimMvoStateEvent.class, eventStoreAggregateId, command.getUserVersion());
             if (lastEvent != null && lastEvent instanceof AbstractStateEvent && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))

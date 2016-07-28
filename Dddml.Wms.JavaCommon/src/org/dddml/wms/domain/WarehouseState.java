@@ -9,6 +9,8 @@ public interface WarehouseState
 {
     Long VERSION_ZERO = 0L;
 
+    Long VERSION_NULL = VERSION_ZERO - 1;
+
     String getWarehouseId();
 
     void setWarehouseId(String warehouseId);

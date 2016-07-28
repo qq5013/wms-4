@@ -26,6 +26,7 @@ public abstract class AbstractPermissionAggregate extends AbstractAggregate impl
 
     public void create(PermissionCommand.CreatePermission c)
     {
+        if (c.getVersion() == null) { c.setVersion(PermissionState.VERSION_NULL); }
         PermissionStateEvent.PermissionStateCreated e = map(c);
         apply(e);
     }
@@ -44,7 +45,7 @@ public abstract class AbstractPermissionAggregate extends AbstractAggregate impl
 
     public void throwOnInvalidStateTransition(Command c)
     {
-        if (this.state.getVersion() == null || this.state.getVersion().equals(PermissionState.VERSION_ZERO))
+        if (this.state.getVersion() == null)
         {
             if (isCommandCreate((PermissionCommand)c))
             {
@@ -63,8 +64,8 @@ public abstract class AbstractPermissionAggregate extends AbstractAggregate impl
     protected void apply(Event e)
     {
         onApplying(e);
-        this.state.mutate(e);
-        this.changes.add(e);
+        state.mutate(e);
+        changes.add(e);
     }
 
     protected PermissionStateEvent.PermissionStateCreated map(PermissionCommand.CreatePermission c)
@@ -114,7 +115,8 @@ public abstract class AbstractPermissionAggregate extends AbstractAggregate impl
 
     private static boolean isCommandCreate(PermissionCommand c)
     {
-        return c.getVersion() == null || c.getVersion().equals(PermissionState.VERSION_ZERO);
+        return ((c instanceof PermissionCommand.CreatePermission) 
+            && c.getVersion().equals(PermissionState.VERSION_NULL));
     }
 
 

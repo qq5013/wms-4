@@ -2,8 +2,7 @@ package org.dddml.wms.domain;
 
 import java.util.Set;
 import java.util.Date;
-import org.dddml.wms.specialization.Event;
-import org.dddml.wms.specialization.DomainError;
+import org.dddml.wms.specialization.*;
 import org.dddml.wms.domain.UserPermissionStateEvent.*;
 
 public abstract class AbstractUserPermissionState implements UserPermissionState
@@ -19,16 +18,20 @@ public abstract class AbstractUserPermissionState implements UserPermissionState
         this.userPermissionId = userPermissionId;
     }
 
-    private String permissionId;
-
-    public String getPermissionId()
-    {
-        return this.permissionId;
+    public String getUserId() {
+        return this.getUserPermissionId().getUserId();
+    }
+        
+    public void setUserId(String userId) {
+        this.getUserPermissionId().setUserId(userId);
     }
 
-    public void setPermissionId(String permissionId)
-    {
-        this.permissionId = permissionId;
+    public String getPermissionId() {
+        return this.getUserPermissionId().getPermissionId();
+    }
+        
+    public void setPermissionId(String permissionId) {
+        this.getUserPermissionId().setPermissionId(permissionId);
     }
 
     private Long version;
@@ -115,21 +118,9 @@ public abstract class AbstractUserPermissionState implements UserPermissionState
         this.deleted = deleted;
     }
 
-    private String userId;
-
-    public String getUserId()
-    {
-        return this.userId;
-    }
-
-    public void setUserId(String userId)
-    {
-        this.userId = userId;
-    }
-
     public boolean isStateUnsaved() 
     {
-        return VERSION_ZERO.equals(this.getVersion());
+        return this.getVersion() == null;
     }
 
 
@@ -195,6 +186,10 @@ public abstract class AbstractUserPermissionState implements UserPermissionState
 
     }
 
+    public void save()
+    {
+    }
+
     protected void throwOnWrongEvent(UserPermissionStateEvent stateEvent)
     {
         String stateEntityIdUserId = this.getUserPermissionId().getUserId();
@@ -212,21 +207,14 @@ public abstract class AbstractUserPermissionState implements UserPermissionState
         }
 
         Long stateVersion = this.getVersion();
-        if(stateVersion == null) {
-            stateVersion = UserPermissionState.VERSION_ZERO;
-        }
         Long eventVersion = stateEvent.getVersion();
-        if(eventVersion == null) {
-            eventVersion = UserPermissionState.VERSION_ZERO;
+        if (eventVersion == null) {
+            eventVersion = stateVersion == null ? UserPermissionState.VERSION_NULL : stateVersion;
+            stateEvent.setVersion(eventVersion);
         }
-        if (UserPermissionState.VERSION_ZERO.equals(eventVersion))
+        if (!(stateVersion == null && eventVersion.equals(UserPermissionState.VERSION_NULL)) && !eventVersion.equals(stateVersion))
         {
-            stateEvent.setVersion(stateVersion);
-            eventVersion = stateVersion;
-        }
-        if (!stateVersion.equals(eventVersion))
-        {
-            throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);
+            throw DomainError.named("concurrencyConflict", "Conflict between state version (%1$s) and event version (%2$s)", stateVersion, eventVersion);
         }
 
     }

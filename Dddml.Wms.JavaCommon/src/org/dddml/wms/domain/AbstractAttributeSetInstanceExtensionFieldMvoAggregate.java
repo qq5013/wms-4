@@ -26,6 +26,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoAggregate ext
 
     public void create(AttributeSetInstanceExtensionFieldMvoCommand.CreateAttributeSetInstanceExtensionFieldMvo c)
     {
+        if (c.getAttrSetInstEFGroupVersion() == null) { c.setAttrSetInstEFGroupVersion(AttributeSetInstanceExtensionFieldMvoState.VERSION_NULL); }
         AttributeSetInstanceExtensionFieldMvoStateEvent.AttributeSetInstanceExtensionFieldMvoStateCreated e = map(c);
         apply(e);
     }
@@ -44,7 +45,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoAggregate ext
 
     public void throwOnInvalidStateTransition(Command c)
     {
-        if (this.state.getAttrSetInstEFGroupVersion() == null || this.state.getAttrSetInstEFGroupVersion().equals(AttributeSetInstanceExtensionFieldMvoState.VERSION_ZERO))
+        if (this.state.getAttrSetInstEFGroupVersion() == null)
         {
             if (isCommandCreate((AttributeSetInstanceExtensionFieldMvoCommand)c))
             {
@@ -63,8 +64,8 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoAggregate ext
     protected void apply(Event e)
     {
         onApplying(e);
-        this.state.mutate(e);
-        this.changes.add(e);
+        state.mutate(e);
+        changes.add(e);
     }
 
     protected AttributeSetInstanceExtensionFieldMvoStateEvent.AttributeSetInstanceExtensionFieldMvoStateCreated map(AttributeSetInstanceExtensionFieldMvoCommand.CreateAttributeSetInstanceExtensionFieldMvo c)
@@ -156,7 +157,8 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoAggregate ext
 
     private static boolean isCommandCreate(AttributeSetInstanceExtensionFieldMvoCommand c)
     {
-        return c.getAttrSetInstEFGroupVersion() == null || c.getAttrSetInstEFGroupVersion().equals(AttributeSetInstanceExtensionFieldMvoState.VERSION_ZERO);
+        return ((c instanceof AttributeSetInstanceExtensionFieldMvoCommand.CreateAttributeSetInstanceExtensionFieldMvo) 
+            && c.getAttrSetInstEFGroupVersion().equals(AttributeSetInstanceExtensionFieldMvoState.VERSION_NULL));
     }
 
 

@@ -2,8 +2,7 @@ package org.dddml.wms.domain;
 
 import java.util.Set;
 import java.util.Date;
-import org.dddml.wms.specialization.Event;
-import org.dddml.wms.specialization.DomainError;
+import org.dddml.wms.specialization.*;
 import org.dddml.wms.domain.OrganizationStructureTypeStateEvent.*;
 
 public abstract class AbstractOrganizationStructureTypeState implements OrganizationStructureTypeState
@@ -107,7 +106,7 @@ public abstract class AbstractOrganizationStructureTypeState implements Organiza
 
     public boolean isStateUnsaved() 
     {
-        return VERSION_ZERO.equals(this.getVersion());
+        return this.getVersion() == null;
     }
 
 
@@ -173,6 +172,10 @@ public abstract class AbstractOrganizationStructureTypeState implements Organiza
 
     }
 
+    public void save()
+    {
+    }
+
     protected void throwOnWrongEvent(OrganizationStructureTypeStateEvent stateEvent)
     {
         String stateEntityId = this.getId(); // Aggregate Id
@@ -183,17 +186,13 @@ public abstract class AbstractOrganizationStructureTypeState implements Organiza
         }
 
         Long stateVersion = this.getVersion();
-        if(stateVersion == null) {
-            stateVersion = OrganizationStructureTypeState.VERSION_ZERO;
-        }
         Long eventVersion = stateEvent.getStateEventId().getVersion();// Aggregate Version
-        if(eventVersion == null) {
-            eventVersion = OrganizationStructureTypeState.VERSION_ZERO;
-            stateEvent.getStateEventId().setVersion(eventVersion);
+        if (eventVersion == null) {
+            throw new NullPointerException("stateEvent.getStateEventId().getVersion() == null");
         }
-        if (!stateVersion.equals(eventVersion))
+        if (!(stateVersion == null && eventVersion.equals(OrganizationStructureTypeState.VERSION_NULL)) && !eventVersion.equals(stateVersion))
         {
-            throw DomainError.named("concurrencyConflict", "Conflict between state version %1$s and event version %2$s", stateVersion, eventVersion);
+            throw DomainError.named("concurrencyConflict", "Conflict between state version (%1$s) and event version (%2$s)", stateVersion, eventVersion);
         }
 
     }

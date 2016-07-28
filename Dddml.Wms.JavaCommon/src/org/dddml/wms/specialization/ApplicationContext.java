@@ -15,7 +15,7 @@ public class ApplicationContext {
     //private ITypeConverter _typeConverter = new DefaultTypeConverter();
 
     public Object get(String name) {
-        return null;
+        throw new UnsupportedOperationException();
     }
 
 }

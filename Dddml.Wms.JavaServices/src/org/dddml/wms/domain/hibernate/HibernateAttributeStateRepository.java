@@ -6,6 +6,7 @@ import org.hibernate.*;
 import org.hibernate.criterion.*;
 import org.dddml.wms.domain.*;
 import org.dddml.wms.specialization.*;
+import org.springframework.transaction.annotation.Transactional;
 
 public class HibernateAttributeStateRepository implements AttributeStateRepository
 {
@@ -19,7 +20,7 @@ public class HibernateAttributeStateRepository implements AttributeStateReposito
         return this.sessionFactory.getCurrentSession();
     }
     
-    //[Transaction (ReadOnly = true)]
+    @Transactional(readOnly = true)
     public AttributeState get(String id)
     {
         AttributeState state = (AttributeState)getCurrentSession().get(AbstractAttributeState.SimpleAttributeState.class, id);
@@ -30,7 +31,7 @@ public class HibernateAttributeStateRepository implements AttributeStateReposito
         return state;
     }
 
-    //[Transaction(ReadOnly = true)]
+    @Transactional(readOnly = true)
     public Iterable<AttributeState> getAll(Integer firstResult, Integer maxResults)
     {
         Criteria criteria = getCurrentSession().createCriteria(AbstractAttributeState.SimpleAttributeState.class);
@@ -40,10 +41,10 @@ public class HibernateAttributeStateRepository implements AttributeStateReposito
         return criteria.list();
     }
 
-    //[Transaction]
+    //@Transactional
     public void save(AttributeState state)
     {
-        if(state.getVersion() == null || state.getVersion().equals(AttributeState.VERSION_ZERO)) {
+        if(state.getVersion() == null) {
             getCurrentSession().save(state);
         }else {
             getCurrentSession().update(state);
@@ -76,7 +77,7 @@ public class HibernateAttributeStateRepository implements AttributeStateReposito
     //long getCount(Criterion filter);
 
 /*
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IEnumerable<IAttributeState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
             var criteria = CurrentSession.CreateCriteria<AttributeState>();
@@ -86,7 +87,7 @@ public class HibernateAttributeStateRepository implements AttributeStateReposito
             return criteria.List<AttributeState>();
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IEnumerable<IAttributeState> Get(Dddml.Support.Criterion.ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
             var criteria = CurrentSession.CreateCriteria<AttributeState>();
@@ -97,7 +98,7 @@ public class HibernateAttributeStateRepository implements AttributeStateReposito
         }
 
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IAttributeState GetFirst(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null)
         {
             var list = (IList<AttributeState>)Get(filter, orders, 0, 1);
@@ -108,20 +109,20 @@ public class HibernateAttributeStateRepository implements AttributeStateReposito
             return list[0];
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IAttributeState GetFirst(KeyValuePair<string, object> keyValue, IList<string> orders = null)
         {
             return GetFirst(new KeyValuePair<string, object>[] { keyValue }, orders);
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual IEnumerable<IAttributeState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
         {
             var filter = new KeyValuePair<string, object>[] { new KeyValuePair<string, object>(propertyName, propertyValue) };
             return Get(filter, orders, firstResult, maxResults);
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
         {
             var criteria = CurrentSession.CreateCriteria<AttributeState>();
@@ -131,7 +132,7 @@ public class HibernateAttributeStateRepository implements AttributeStateReposito
             return criteria.UniqueResult<long>();
         }
 
-        [Transaction(ReadOnly = true)]
+        @Transactional(readOnly = true)
         public virtual long GetCount(Dddml.Support.Criterion.ICriterion filter)
         {
             var criteria = CurrentSession.CreateCriteria<AttributeState>();

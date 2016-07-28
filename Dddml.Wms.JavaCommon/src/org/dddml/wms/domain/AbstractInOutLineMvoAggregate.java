@@ -28,6 +28,7 @@ public abstract class AbstractInOutLineMvoAggregate extends AbstractAggregate im
 
     public void create(InOutLineMvoCommand.CreateInOutLineMvo c)
     {
+        if (c.getInOutVersion() == null) { c.setInOutVersion(InOutLineMvoState.VERSION_NULL); }
         InOutLineMvoStateEvent.InOutLineMvoStateCreated e = map(c);
         apply(e);
     }
@@ -46,7 +47,7 @@ public abstract class AbstractInOutLineMvoAggregate extends AbstractAggregate im
 
     public void throwOnInvalidStateTransition(Command c)
     {
-        if (this.state.getInOutVersion() == null || this.state.getInOutVersion().equals(InOutLineMvoState.VERSION_ZERO))
+        if (this.state.getInOutVersion() == null)
         {
             if (isCommandCreate((InOutLineMvoCommand)c))
             {
@@ -65,8 +66,8 @@ public abstract class AbstractInOutLineMvoAggregate extends AbstractAggregate im
     protected void apply(Event e)
     {
         onApplying(e);
-        this.state.mutate(e);
-        this.changes.add(e);
+        state.mutate(e);
+        changes.add(e);
     }
 
     protected InOutLineMvoStateEvent.InOutLineMvoStateCreated map(InOutLineMvoCommand.CreateInOutLineMvo c)
@@ -309,7 +310,8 @@ public abstract class AbstractInOutLineMvoAggregate extends AbstractAggregate im
 
     private static boolean isCommandCreate(InOutLineMvoCommand c)
     {
-        return c.getInOutVersion() == null || c.getInOutVersion().equals(InOutLineMvoState.VERSION_ZERO);
+        return ((c instanceof InOutLineMvoCommand.CreateInOutLineMvo) 
+            && c.getInOutVersion().equals(InOutLineMvoState.VERSION_NULL));
     }
 
 

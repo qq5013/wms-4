@@ -3,14 +3,14 @@
 namespace Wms\HttpClient;
 
 use Dddml\Executor\Http\CommandExecutor;
-use Dddml\Executor\Http\CommandRequestInterface;
+use Dddml\Executor\Http\AbstractCommandRequest;
 use Dddml\Routing\RouteTrait;
 use Symfony\Component\Routing\Route;
 use Dddml\Serializer\Type\Long;
 use Wms\Domain\DeleteAttributeSetInstanceExtensionFieldMvo;
 
 
-class DeleteAttributeSetInstanceExtensionFieldMvoRequest implements CommandRequestInterface
+class DeleteAttributeSetInstanceExtensionFieldMvoRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
@@ -19,8 +19,11 @@ class DeleteAttributeSetInstanceExtensionFieldMvoRequest implements CommandReque
      */
     private $command;
 
-    public function __construct()
+    public static $commandType = 'Wms\Domain\DeleteAttributeSetInstanceExtensionFieldMvo';
+
+    public function __construct(CommandExecutor $executor)
     {
+        parent::__construct($executor);
         $this->route = new Route('AttributeSetInstanceExtensionFieldMvos/{id}');
     }
 

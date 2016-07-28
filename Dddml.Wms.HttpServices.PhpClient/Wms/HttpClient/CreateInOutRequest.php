@@ -3,7 +3,7 @@
 namespace Wms\HttpClient;
 
 use Dddml\Executor\Http\CommandExecutor;
-use Dddml\Executor\Http\CommandRequestInterface;
+use Dddml\Executor\Http\AbstractCommandRequest;
 use Dddml\Routing\RouteTrait;
 use JMS\Serializer\Annotation\Type;
 use Symfony\Component\Routing\Route;
@@ -14,7 +14,7 @@ use Dddml\Serializer\Type\Long;
 use Wms\Domain\CreateOrMergePatchInOut;
 
 
-class CreateInOutRequest implements CommandRequestInterface
+class CreateInOutRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
@@ -23,8 +23,11 @@ class CreateInOutRequest implements CommandRequestInterface
      */
     private $command;
 
-    public function __construct()
+    public static $commandType = 'Wms\Domain\CreateOrMergePatchInOut';
+
+    public function __construct(CommandExecutor $executor)
     {
+        parent::__construct($executor);
         $command = $this->getCommand();
         $command->setCommandType(static::COMMAND_CREATE);
 

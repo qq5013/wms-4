@@ -3,7 +3,7 @@
 namespace Wms\HttpClient;
 
 use Dddml\Executor\Http\CommandExecutor;
-use Dddml\Executor\Http\CommandRequestInterface;
+use Dddml\Executor\Http\AbstractCommandRequest;
 use Dddml\Routing\RouteTrait;
 use JMS\Serializer\Annotation\Type;
 use Symfony\Component\Routing\Route;
@@ -11,7 +11,7 @@ use Dddml\Serializer\Type\Long;
 use Wms\Domain\CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo;
 
 
-class CreateAttributeSetInstanceExtensionFieldMvoRequest implements CommandRequestInterface
+class CreateAttributeSetInstanceExtensionFieldMvoRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
@@ -20,8 +20,11 @@ class CreateAttributeSetInstanceExtensionFieldMvoRequest implements CommandReque
      */
     private $command;
 
-    public function __construct()
+    public static $commandType = 'Wms\Domain\CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo';
+
+    public function __construct(CommandExecutor $executor)
     {
+        parent::__construct($executor);
         $command = $this->getCommand();
         $command->setCommandType(static::COMMAND_CREATE);
 

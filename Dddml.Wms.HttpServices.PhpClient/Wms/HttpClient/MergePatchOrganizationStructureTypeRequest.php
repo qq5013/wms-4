@@ -3,14 +3,14 @@
 namespace Wms\HttpClient;
 
 use Dddml\Executor\Http\CommandExecutor;
-use Dddml\Executor\Http\CommandRequestInterface;
+use Dddml\Executor\Http\AbstractCommandRequest;
 use Dddml\Routing\RouteTrait;
 use JMS\Serializer\Annotation\Type;
 use Symfony\Component\Routing\Route;
 use Dddml\Serializer\Type\Long;
 use Wms\Domain\CreateOrMergePatchOrganizationStructureType;
 
-class MergePatchOrganizationStructureTypeRequest implements CommandRequestInterface
+class MergePatchOrganizationStructureTypeRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
@@ -19,8 +19,11 @@ class MergePatchOrganizationStructureTypeRequest implements CommandRequestInterf
      */
     private $command;
 
-    public function __construct()
+    public static $commandType = 'Wms\Domain\CreateOrMergePatchOrganizationStructureType';
+
+    public function __construct(CommandExecutor $executor)
     {
+        parent::__construct($executor);
         $command = $this->getCommand();
         $command->setCommandType(static::COMMAND_MERGE_PATCH);
 

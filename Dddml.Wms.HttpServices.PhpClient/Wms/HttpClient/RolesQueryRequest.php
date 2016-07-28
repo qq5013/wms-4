@@ -3,8 +3,9 @@
 namespace Wms\HttpClient;
 
 use Dddml\Serializer\Type\Long;
+use Dddml\Executor\Http\QueryCountRequestInterface;
 
-class RolesQueryRequest extends AbstractQueryRequest
+class RolesQueryRequest extends AbstractQueryRequest implements QueryCountRequestInterface
 {
     use RoleFilteringFieldsTrait;
 

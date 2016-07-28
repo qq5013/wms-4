@@ -3,8 +3,9 @@
 namespace Wms\HttpClient;
 
 use Dddml\Serializer\Type\Long;
+use Dddml\Executor\Http\QueryCountRequestInterface;
 
-class PermissionsQueryRequest extends AbstractQueryRequest
+class PermissionsQueryRequest extends AbstractQueryRequest implements QueryCountRequestInterface
 {
     use PermissionFilteringFieldsTrait;
 

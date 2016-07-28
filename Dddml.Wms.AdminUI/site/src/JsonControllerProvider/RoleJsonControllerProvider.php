@@ -13,6 +13,7 @@ use Silex\ControllerCollection;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Wms\HttpClient\RoleQueryRequest;
+use Wms\HttpClient\RolesQueryRequest;
 
 class RoleJsonControllerProvider implements ControllerProviderInterface
 {
@@ -21,7 +22,9 @@ class RoleJsonControllerProvider implements ControllerProviderInterface
         /** @var ControllerCollection $controllers */
         $controllers = $app['controllers_factory'];
 
+        $controllers->get('roles/_count', [$this, 'getCount']);
         $controllers->get('roles/{id}', [$this, 'getRole']);
+        $controllers->get('roles', [$this, 'getRoles']);
 
         return $controllers;
     }
@@ -31,21 +34,39 @@ class RoleJsonControllerProvider implements ControllerProviderInterface
         /** @var QueryExecutor $executor */
         $executor = $app['api.query.executor'];
 
-        $singleQuery = new RoleQueryRequest();
+        $query = new RoleQueryRequest();
 
-
-        $json = $executor->executeJson($singleQuery, [
+        $json = $executor->executeJson($query, [
             'parameters' => [
                 'id' => $id,
             ],
         ]);
 
+        return $json;
+    }
+
+    public function getRoles(Application $app, Request $request)
+    {
+        /** @var QueryExecutor $executor */
+        $executor = $app['api.query.executor'];
+
+        $query = new RolesQueryRequest();
+
+        $json = $executor->executeJson($query);
+
         return new JsonResponse($json, 200, [], true);
     }
 
-    public function getRoles()
+    public function getCount(Application $app, Request $request)
     {
+        /** @var QueryExecutor $executor */
+        $executor = $app['api.query.executor'];
 
+        $query = new RolesQueryRequest();
+
+        $json = trim($executor->count($query), "\"");
+
+        return new JsonResponse($json, 200, [], true);
     }
 
     public function createRole()

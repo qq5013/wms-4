@@ -11,6 +11,7 @@ use Dddml\Serializer\Type\Long;
 use Wms\Domain\CreateOrMergePatchAttributeSetInstanceExtensionFieldGroup;
 
 
+class CreateAttributeSetInstanceExtensionFieldGroupRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 

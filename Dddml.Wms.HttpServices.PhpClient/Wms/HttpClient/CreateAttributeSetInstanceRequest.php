@@ -3,7 +3,7 @@
 namespace Wms\HttpClient;
 
 use Dddml\Executor\Http\CommandExecutor;
-use Dddml\Executor\Http\CommandRequestInterface;
+use Dddml\Executor\Http\AbstractCommandRequest;
 use Dddml\Routing\RouteTrait;
 use JMS\Serializer\Annotation\Type;
 use Symfony\Component\Routing\Route;
@@ -12,7 +12,7 @@ use Dddml\Serializer\Type\Decimal;
 use Wms\Domain\CreateOrMergePatchAttributeSetInstance;
 
 
-class CreateAttributeSetInstanceRequest implements CommandRequestInterface
+class CreateAttributeSetInstanceRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
@@ -21,8 +21,11 @@ class CreateAttributeSetInstanceRequest implements CommandRequestInterface
      */
     private $command;
 
-    public function __construct()
+    public static $commandType = 'Wms\Domain\CreateOrMergePatchAttributeSetInstance';
+
+    public function __construct(CommandExecutor $executor)
     {
+        parent::__construct($executor);
         $command = $this->getCommand();
         $command->setCommandType(static::COMMAND_CREATE);
 

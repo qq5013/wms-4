@@ -3,7 +3,7 @@
 namespace Wms\HttpClient;
 
 use Dddml\Executor\Http\CommandExecutor;
-use Dddml\Executor\Http\CommandRequestInterface;
+use Dddml\Executor\Http\AbstractCommandRequest;
 use Dddml\Routing\RouteTrait;
 use Symfony\Component\Routing\Route;
 use Dddml\Serializer\Type\Long;
@@ -13,7 +13,7 @@ use Dddml\Serializer\Type\Money;
 use Wms\Domain\DeleteInOutLineMvo;
 
 
-class DeleteInOutLineMvoRequest implements CommandRequestInterface
+class DeleteInOutLineMvoRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
@@ -22,8 +22,11 @@ class DeleteInOutLineMvoRequest implements CommandRequestInterface
      */
     private $command;
 
-    public function __construct()
+    public static $commandType = 'Wms\Domain\DeleteInOutLineMvo';
+
+    public function __construct(CommandExecutor $executor)
     {
+        parent::__construct($executor);
         $this->route = new Route('InOutLineMvos/{id}');
     }
 

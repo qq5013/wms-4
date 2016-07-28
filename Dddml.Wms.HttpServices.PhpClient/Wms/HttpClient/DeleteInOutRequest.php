@@ -3,7 +3,7 @@
 namespace Wms\HttpClient;
 
 use Dddml\Executor\Http\CommandExecutor;
-use Dddml\Executor\Http\CommandRequestInterface;
+use Dddml\Executor\Http\AbstractCommandRequest;
 use Dddml\Routing\RouteTrait;
 use Symfony\Component\Routing\Route;
 use NodaMoney\Money;
@@ -13,7 +13,7 @@ use Dddml\Serializer\Type\Long;
 use Wms\Domain\DeleteInOut;
 
 
-class DeleteInOutRequest implements CommandRequestInterface
+class DeleteInOutRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
@@ -22,8 +22,11 @@ class DeleteInOutRequest implements CommandRequestInterface
      */
     private $command;
 
-    public function __construct()
+    public static $commandType = 'Wms\Domain\DeleteInOut';
+
+    public function __construct(CommandExecutor $executor)
     {
+        parent::__construct($executor);
         $this->route = new Route('InOuts/{id}');
     }
 

@@ -3,9 +3,8 @@
 namespace Wms\HttpClient;
 
 use Dddml\Serializer\Type\Long;
-use Dddml\Executor\Http\QueryCountRequestInterface;
 
-class AttributeSetInstanceExtensionFieldMvoQueryRequest extends AbstractQueryRequest implements QueryCountRequestInterface
+class AttributeSetInstanceExtensionFieldMvoQueryRequest extends AbstractQueryRequest
 {
     use AttributeSetInstanceExtensionFieldMvoFilteringFieldsTrait;
 

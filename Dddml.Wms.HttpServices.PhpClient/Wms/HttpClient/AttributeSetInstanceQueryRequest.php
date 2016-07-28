@@ -4,9 +4,8 @@ namespace Wms\HttpClient;
 
 use Dddml\Serializer\Type\Long;
 use Dddml\Serializer\Type\Decimal;
-use Dddml\Executor\Http\QueryCountRequestInterface;
 
-class AttributeSetInstanceQueryRequest extends AbstractQueryRequest implements QueryCountRequestInterface
+class AttributeSetInstanceQueryRequest extends AbstractQueryRequest
 {
     use AttributeSetInstanceFilteringFieldsTrait;
 

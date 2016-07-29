@@ -1,6 +1,6 @@
 <?php
 
-use Silex\Application;
+use Dddml\Silex\Application;
 use Silex\Provider\AssetServiceProvider;
 use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\ServiceControllerServiceProvider;

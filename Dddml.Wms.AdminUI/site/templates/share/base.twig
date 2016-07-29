@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dddml 后台演示</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="{{ asset('/css/bootstrap/css/bootstrap.min.css') }}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('/css/font-awesome-4.5.0/css/font-awesome.min.css') }}">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="{{ asset('/css/ionicons-2.0.1/css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/js/plugins/select2/select2.min.css') }}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset('/css/admin-lte/css/AdminLTE.min.css') }}">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="{{ asset('/css/admin-lte/css/skins/_all-skins.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/js/plugins/iCheck/all.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
+
+    {% block top %}{% endblock %}
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<!-- Site wrapper -->
+<div class="wrapper">
+
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="#" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b>A</b>LT</span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg" style="font-family: 微软雅黑"><b>及至极客</b></span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        {% include 'share/block/navbar.twig' %}
+    </header>
+
+    <!-- =============================================== -->
+
+    <!-- Left side column. contains the sidebar -->
+    <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        {% include 'share/block/man_menu.twig' %}
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- =============================================== -->
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        {% block main %}{% endblock %}
+    </div>
+    <!-- /.content-wrapper -->
+
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            <b>Version</b> 0.0.1
+        </div>
+        <strong>Copyright &copy; 2016 <a href="http://jizhijike.com">及至极客</a>.</strong> All rights
+        reserved.
+    </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.0 -->
+<script src="{{ asset('/js/plugins/jQuery/jQuery-2.2.0.min.js') }}"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="{{ asset('/css/bootstrap/js/bootstrap.min.js') }}"></script>
+<!-- SlimScroll -->
+<script src="{{ asset('/js/plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>
+<!-- FastClick -->
+<script src="{{ asset('/js/plugins/fastclick/fastclick.js') }}"></script>
+<!-- AdminLTE App -->
+<script src="{{ asset('/css/admin-lte/js/app.js') }}"></script>
+{% block bottom %}{% endblock %}
+<script>
+    var path = window.location.pathname;
+    var $activeMenuItem = $("#main-menu a[href$='" + path + "']").parent('li');
+    $activeMenuItem.addClass('active');
+    $activeMenuItem.parent().parent().addClass('active');
+</script>
+</body>
+</html>

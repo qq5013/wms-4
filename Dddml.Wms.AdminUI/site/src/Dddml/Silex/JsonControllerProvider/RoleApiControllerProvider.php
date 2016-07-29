@@ -4,7 +4,7 @@
  * Date: 2016/7/27
  * Time: 15:21
  */
-namespace JsonControllerProvider;
+namespace Dddml\Silex\JsonControllerProvider;
 
 use Dddml\Executor\Http\QueryExecutor;
 use Silex\Api\ControllerProviderInterface;
@@ -12,10 +12,11 @@ use Silex\Application;
 use Silex\ControllerCollection;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Wms\HttpClient\CreateRoleRequest;
 use Wms\HttpClient\RoleQueryRequest;
 use Wms\HttpClient\RolesQueryRequest;
 
-class RoleJsonControllerProvider implements ControllerProviderInterface
+class RoleApiControllerProvider implements ControllerProviderInterface
 {
     public function connect(Application $app)
     {
@@ -25,6 +26,7 @@ class RoleJsonControllerProvider implements ControllerProviderInterface
         $controllers->get('roles/_count', [$this, 'getCount']);
         $controllers->get('roles/{id}', [$this, 'getRole']);
         $controllers->get('roles', [$this, 'getRoles']);
+        $controllers->put('roles/{id}', [$this, 'createRole']);
 
         return $controllers;
     }
@@ -69,9 +71,17 @@ class RoleJsonControllerProvider implements ControllerProviderInterface
         return new JsonResponse($json, 200, [], true);
     }
 
-    public function createRole()
+    public function createRole(Application $app, Request $request, $id)
     {
+        $json = $request->getContent();
 
+        $createRequest = new CreateRoleRequest(
+            $app['api.command.executor']
+        );
+        $command       = $createRequest->getCommandFromJson($json);
+
+        var_dump($command);
+        exit;
     }
 
     public function mergePatchRole()

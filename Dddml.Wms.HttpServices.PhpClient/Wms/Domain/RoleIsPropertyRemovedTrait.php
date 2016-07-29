@@ -11,7 +11,7 @@ trait RoleIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyNameRemoved = null;
+    private $isPropertyNameRemoved = false;
 
     /**
      * @return boolean
@@ -34,7 +34,7 @@ trait RoleIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyDescriptionRemoved = null;
+    private $isPropertyDescriptionRemoved = false;
 
     /**
      * @return boolean
@@ -57,7 +57,7 @@ trait RoleIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyActiveRemoved = null;
+    private $isPropertyActiveRemoved = false;
 
     /**
      * @return boolean

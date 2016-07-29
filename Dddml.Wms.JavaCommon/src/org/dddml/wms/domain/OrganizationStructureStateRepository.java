@@ -2,6 +2,7 @@ package org.dddml.wms.domain;
 
 import java.util.Map;
 import java.util.List;
+import org.dddml.support.criterion.Criterion;
 import java.util.Date;
 
 public interface OrganizationStructureStateRepository
@@ -14,7 +15,7 @@ public interface OrganizationStructureStateRepository
     
     Iterable<OrganizationStructureState> get(Iterable<Map.Entry<String, Object>> filter, List<String> orders, Integer firstResult, Integer maxResults);
 
-    //Iterable<OrganizationStructureState> get(Criterion filter, List<String> orders, Integer firstResult, Integer maxResults);
+    Iterable<OrganizationStructureState> get(Criterion filter, List<String> orders, Integer firstResult, Integer maxResults);
 
     OrganizationStructureState getFirst(Iterable<Map.Entry<String, Object>> filter, List<String> orders);
 
@@ -24,7 +25,7 @@ public interface OrganizationStructureStateRepository
 
     long getCount(Iterable<Map.Entry<String, Object>> filter);
 
-    //long getCount(Criterion filter);
+    long getCount(Criterion filter);
 
 }
 

@@ -2,10 +2,15 @@ package org.dddml.wms.domain.hibernate;
 
 import java.util.*;
 import java.util.Date;
-import org.hibernate.*;
-import org.hibernate.criterion.*;
+import org.hibernate.Session;
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Projections;
+import org.hibernate.SessionFactory;
 import org.dddml.wms.domain.*;
 import org.dddml.wms.specialization.*;
+import org.dddml.wms.specialization.hibernate.CriterionUtils;
 import org.springframework.transaction.annotation.Transactional;
 
 public class HibernateRolePermissionStateRepository implements RolePermissionStateRepository
@@ -35,13 +40,12 @@ public class HibernateRolePermissionStateRepository implements RolePermissionSta
     public Iterable<RolePermissionState> getAll(Integer firstResult, Integer maxResults)
     {
         Criteria criteria = getCurrentSession().createCriteria(AbstractRolePermissionState.SimpleRolePermissionState.class);
-        criteria.setFirstResult(firstResult);
-        criteria.setMaxResults(maxResults);
-         //AddNotDeletedRestriction(criteria);//todo
+        if (firstResult != null) { criteria.setFirstResult(firstResult); }
+        if (maxResults != null) { criteria.setMaxResults(maxResults); }
+         addNotDeletedRestriction(criteria);
         return criteria.list();
     }
 
-    //@Transactional
     public void save(RolePermissionState state)
     {
         if(state.getVersion() == null) {
@@ -57,194 +61,178 @@ public class HibernateRolePermissionStateRepository implements RolePermissionSta
         }
     }
 
+    @Transactional(readOnly = true)
     public Iterable<RolePermissionState> get(Iterable<Map.Entry<String, Object>> filter, List<String> orders, Integer firstResult, Integer maxResults)
-    { throw new UnsupportedOperationException(); }//todo
+    {
+        Criteria criteria = getCurrentSession().createCriteria(RolePermissionState.class);
 
-    //Iterable<RolePermissionState> get(Criterion filter, List<String> orders, Integer firstResult, Integer maxResults);
+        criteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
+        addNotDeletedRestriction(criteria);
+        return criteria.list();
+    }
 
+    @Transactional(readOnly = true)
+    public Iterable<RolePermissionState> get(org.dddml.support.criterion.Criterion filter, List<String> orders, Integer firstResult, Integer maxResults)
+    {
+        Criteria criteria = getCurrentSession().createCriteria(RolePermissionState.class);
+
+        criteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
+        addNotDeletedRestriction(criteria);
+        return criteria.list();
+    }
+
+    @Transactional(readOnly = true)
     public RolePermissionState getFirst(Iterable<Map.Entry<String, Object>> filter, List<String> orders)
-    { throw new UnsupportedOperationException(); }//todo
+    {
+        List<RolePermissionState> list = (List<RolePermissionState>)get(filter, orders, 0, 1);
+        if (list == null || list.size() <= 0)
+        {
+            return null;
+        }
+        return list.get(0);
+    }
 
+    @Transactional(readOnly = true)
     public RolePermissionState getFirst(Map.Entry<String, Object> keyValue, List<String> orders)
-    { throw new UnsupportedOperationException(); }//todo
+    {
+        List<Map.Entry<String, Object>> filter = new ArrayList<>();
+        filter.add(keyValue);
+        return getFirst(filter, orders);
+    }
 
+    @Transactional(readOnly = true)
     public Iterable<RolePermissionState> getByProperty(String propertyName, Object propertyValue, List<String> orders, Integer firstResult, Integer maxResults)
-    { throw new UnsupportedOperationException(); }//todo
+    {
+        Map.Entry<String, Object> keyValue = new java.util.AbstractMap.SimpleEntry<String, Object> (propertyName, propertyValue);
+        List<Map.Entry<String, Object>> filter = new ArrayList<Map.Entry<String, Object>>();
+        filter.add(keyValue);
+        return get(filter, orders, firstResult, maxResults);
+    }
 
+    @Transactional(readOnly = true)
     public long getCount(Iterable<Map.Entry<String, Object>> filter)
-    { throw new UnsupportedOperationException(); }//todo
+    {
+        Criteria criteria = getCurrentSession().createCriteria(RolePermissionState.class);
+        criteria.setProjection(Projections.rowCount());
+        if (filter != null) {
+            criteriaAddFilter(criteria, filter);
+        }
+        addNotDeletedRestriction(criteria);
+        return (long)criteria.uniqueResult();
+    }
 
-    //long getCount(Criterion filter);
-
-/*
-        @Transactional(readOnly = true)
-        public virtual IEnumerable<IRolePermissionState> Get(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
+    @Transactional(readOnly = true)
+    public long getCount(org.dddml.support.criterion.Criterion filter)
+    {
+        Criteria criteria = getCurrentSession().createCriteria(RolePermissionState.class);
+        criteria.setProjection(Projections.rowCount());
+        if (filter != null)
         {
-            var criteria = CurrentSession.CreateCriteria<RolePermissionState>();
+            org.hibernate.criterion.Criterion hc = CriterionUtils.toHibernateCriterion(filter);
+            criteria.add(hc);
+        }
+        addNotDeletedRestriction(criteria);
+        return (long)criteria.uniqueResult();
+    }
 
-            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
-            AddNotDeletedRestriction(criteria);
-            return criteria.List<RolePermissionState>();
+    protected static void addNotDeletedRestriction(Criteria criteria)
+    {
+        criteria.add(org.hibernate.criterion.Restrictions.eq("deleted", false));
+    }
+
+    protected void criteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(Criteria criteria, Iterable<Map.Entry<String, Object>> filter, List<String> orders, Integer firstResult, Integer maxResults)
+    {
+        if (filter != null)
+        {
+            criteriaAddFilter(criteria, filter);
+        }
+        criteriaAddOrdersAndSetFirstResultAndMaxResults(criteria, orders, firstResult, maxResults);
+    }
+
+    protected void criteriaAddFilter(Criteria criteria, Iterable<Map.Entry<String, Object>> filter)
+    {
+        for (Map.Entry<String, Object> p : filter)
+        {
+            criteriaAddFilterPair(criteria, p);
+        }
+    }
+
+    protected void criteriaAddFilterPair(Criteria criteria, Map.Entry<String, Object> filterPair)
+    {
+        if (filterPair.getValue() == null)
+        {
+            criteria.add(org.hibernate.criterion.Restrictions.isNull(filterPair.getKey()));
+        }
+        else
+        {
+            criteria.add(org.hibernate.criterion.Restrictions.eq(filterPair.getKey(), filterPair.getValue()));
+        }
+    }
+
+    protected static void criteriaAddOrders(Criteria criteria, List<String> orders)
+    {
+        for (String order : orders)
+        {
+            boolean isDesc = order.startsWith("-");
+            String pName = isDesc ? order.substring(1) : order;
+            criteria.addOrder(isDesc ? Order.desc(pName) : Order.asc(pName));
+        }
+    }
+
+    protected void disjunctionAddCriterion(org.hibernate.criterion.Disjunction disjunction, String propertyName, Object propertyValue)
+    {
+        if (propertyValue == null)
+        {
+            disjunction.add(org.hibernate.criterion.Restrictions.isNull(propertyName));
+        }
+        else
+        {
+            disjunction.add(org.hibernate.criterion.Restrictions.eq(propertyName, propertyValue));
+        }
+    }
+
+    protected void criteriaAddCriterion(Criteria criteria, String propertyName, Object propertyValue)
+    {
+        if (propertyValue == null)
+        {
+            criteria.add(org.hibernate.criterion.Restrictions.isNull(propertyName));
+        }
+        else
+        {
+            criteria.add(org.hibernate.criterion.Restrictions.eq(propertyName, propertyValue));
+        }
+    }
+
+    private static void criteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(Criteria criteria, org.dddml.support.criterion.Criterion filter, List<String> orders, Integer firstResult, Integer maxResults)
+    {
+        criteriaAddFilterAndSetFirstResultAndMaxResults(criteria, filter, firstResult, maxResults);
+        if (orders != null)
+        {
+            criteriaAddOrders(criteria, orders);
+        }
+    }
+        
+    private static void criteriaAddOrdersAndSetFirstResultAndMaxResults(Criteria criteria, List<String> orders, Integer firstResult, Integer maxResults)
+    {
+        if (orders != null)
+        {
+            criteriaAddOrders(criteria, orders);
         }
 
-        @Transactional(readOnly = true)
-        public virtual IEnumerable<IRolePermissionState> Get(Dddml.Support.Criterion.ICriterion filter, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
+        if (firstResult != null) { criteria.setFirstResult(firstResult); }
+        if (maxResults != null) { criteria.setMaxResults(maxResults); }
+    }
+
+    private static void criteriaAddFilterAndSetFirstResultAndMaxResults(Criteria criteria, org.dddml.support.criterion.Criterion filter, Integer firstResult, Integer maxResults)
+    {
+        if (filter != null)
         {
-            var criteria = CurrentSession.CreateCriteria<RolePermissionState>();
-
-            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
-            AddNotDeletedRestriction(criteria);
-            return criteria.List<RolePermissionState>();
+            org.hibernate.criterion.Criterion hc = CriterionUtils.toHibernateCriterion(filter);
+            criteria.add(hc);
         }
-
-
-        @Transactional(readOnly = true)
-        public virtual IRolePermissionState GetFirst(IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders = null)
-        {
-            var list = (IList<RolePermissionState>)Get(filter, orders, 0, 1);
-            if (list == null || list.Count <= 0)
-            {
-                return null;
-            }
-            return list[0];
-        }
-
-        @Transactional(readOnly = true)
-        public virtual IRolePermissionState GetFirst(KeyValuePair<string, object> keyValue, IList<string> orders = null)
-        {
-            return GetFirst(new KeyValuePair<string, object>[] { keyValue }, orders);
-        }
-
-        @Transactional(readOnly = true)
-        public virtual IEnumerable<IRolePermissionState> GetByProperty(string propertyName, object propertyValue, IList<string> orders = null, int firstResult = 0, int maxResults = int.MaxValue)
-        {
-            var filter = new KeyValuePair<string, object>[] { new KeyValuePair<string, object>(propertyName, propertyValue) };
-            return Get(filter, orders, firstResult, maxResults);
-        }
-
-        @Transactional(readOnly = true)
-        public virtual long GetCount(IEnumerable<KeyValuePair<string, object>> filter)
-        {
-            var criteria = CurrentSession.CreateCriteria<RolePermissionState>();
-            criteria.SetProjection(Projections.RowCountInt64());
-            CriteriaAddFilter(criteria, filter);
-            AddNotDeletedRestriction(criteria);
-            return criteria.UniqueResult<long>();
-        }
-
-        @Transactional(readOnly = true)
-        public virtual long GetCount(Dddml.Support.Criterion.ICriterion filter)
-        {
-            var criteria = CurrentSession.CreateCriteria<RolePermissionState>();
-            criteria.SetProjection(Projections.RowCountInt64());
-            if (filter != null)
-            {
-                HibernateICriterion hc = CriterionUtils.ToHibernateCriterion(filter);
-                criteria.Add(hc);
-            }
-            AddNotDeletedRestriction(criteria);
-            return criteria.UniqueResult<long>();
-        }
-
-        protected static void AddNotDeletedRestriction(ICriteria criteria)
-        {
-            criteria.Add(HibernateRestrictions.Eq("Deleted", false));
-        }
-
-        protected void CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(ICriteria criteria, IEnumerable<KeyValuePair<string, object>> filter, IList<string> orders, int firstResult, int maxResults)
-        {
-            if (filter != null)
-            {
-                CriteriaAddFilter(criteria, filter);
-            }
-            CriteriaAddOrdersAndSetFirstResultAndMaxResults(criteria, orders, firstResult, maxResults);
-        }
-
-        protected void CriteriaAddFilter(ICriteria criteria, IEnumerable<KeyValuePair<string, object>> filter)
-        {
-            foreach (KeyValuePair<string, object> p in filter)
-            {
-                CriteriaAddFilterPair(criteria, p);
-            }
-        }
-
-        protected void CriteriaAddFilterPair(ICriteria criteria, KeyValuePair<string, object> filterPair)
-        {
-            if (filterPair.Value == null)
-            {
-                criteria.Add(HibernateRestrictions.IsNull(filterPair.Key));
-            }
-            else
-            {
-                criteria.Add(HibernateRestrictions.Eq(filterPair.Key, filterPair.Value));
-            }
-        }
-
-        protected static void CriteriaAddOrders(ICriteria criteria, IList<string> orders)
-        {
-            foreach (var order in orders)
-            {
-                bool isDesc = order.StartsWith("-");
-                var pName = isDesc ? order.Substring(1) : order;
-                criteria.AddOrder(isDesc ? Order.Desc(pName) : Order.Asc(pName));
-            }
-        }
-
-        protected void DisjunctionAddCriterion(HibernateDisjunction disjunction, string propertyName, object propertyValue)
-        {
-            if (propertyValue == null)
-            {
-                disjunction.Add(HibernateRestrictions.IsNull(propertyName));
-            }
-            else
-            {
-                disjunction.Add(HibernateRestrictions.Eq(propertyName, propertyValue));
-            }
-        }
-
-        protected void CriteriaAddCriterion(ICriteria criteria, string propertyName, object propertyValue)
-        {
-            if (propertyValue == null)
-            {
-                criteria.Add(HibernateRestrictions.IsNull(propertyName));
-            }
-            else
-            {
-                criteria.Add(HibernateRestrictions.Eq(propertyName, propertyValue));
-            }
-        }
-
-        private static void CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(ICriteria criteria, Dddml.Support.Criterion.ICriterion filter, IList<string> orders, int firstResult, int maxResults)
-        {
-            CriteriaAddFilterAndSetFirstResultAndMaxResults(criteria, filter, firstResult, maxResults);
-            if (orders != null)
-            {
-                CriteriaAddOrders(criteria, orders);
-            }
-        }
-		
-        private static void CriteriaAddOrdersAndSetFirstResultAndMaxResults(ICriteria criteria, IList<string> orders, int firstResult, int maxResults)
-        {
-            if (orders != null)
-            {
-                CriteriaAddOrders(criteria, orders);
-            }
-
-            criteria.SetFirstResult(firstResult);
-            criteria.SetMaxResults(maxResults);
-        }
-
-        private static void CriteriaAddFilterAndSetFirstResultAndMaxResults(ICriteria criteria, Dddml.Support.Criterion.ICriterion filter, int firstResult, int maxResults)
-        {
-            if (filter != null)
-            {
-                HibernateICriterion hc = CriterionUtils.ToHibernateCriterion(filter);
-                criteria.Add(hc);
-            }
-            criteria.SetFirstResult(firstResult);
-            criteria.SetMaxResults(maxResults);
-        }
-*/
+        if (firstResult != null) { criteria.setFirstResult(firstResult); }
+        if (maxResults != null) { criteria.setMaxResults(maxResults); }
+    }
 
 }
 

@@ -2,6 +2,7 @@ package org.dddml.wms.domain;
 
 import java.util.Map;
 import java.util.List;
+import org.dddml.support.criterion.Criterion;
 import java.util.Date;
 
 public interface UserPermissionMvoStateRepository
@@ -14,7 +15,7 @@ public interface UserPermissionMvoStateRepository
     
     Iterable<UserPermissionMvoState> get(Iterable<Map.Entry<String, Object>> filter, List<String> orders, Integer firstResult, Integer maxResults);
 
-    //Iterable<UserPermissionMvoState> get(Criterion filter, List<String> orders, Integer firstResult, Integer maxResults);
+    Iterable<UserPermissionMvoState> get(Criterion filter, List<String> orders, Integer firstResult, Integer maxResults);
 
     UserPermissionMvoState getFirst(Iterable<Map.Entry<String, Object>> filter, List<String> orders);
 
@@ -24,7 +25,7 @@ public interface UserPermissionMvoStateRepository
 
     long getCount(Iterable<Map.Entry<String, Object>> filter);
 
-    //long getCount(Criterion filter);
+    long getCount(Criterion filter);
 
 }
 

@@ -2,6 +2,7 @@ package org.dddml.wms.domain;
 
 import java.util.*;
 import java.util.function.Consumer;
+import org.dddml.support.criterion.Criterion;
 import java.math.BigDecimal;
 import java.util.Date;
 import org.dddml.wms.specialization.*;
@@ -58,7 +59,9 @@ public abstract class AbstractAttributeSetInstanceApplicationService implements 
         return getStateRepository().get(filter, orders, firstResult, maxResults);
     }
 
-    //public Iterable<AttributeSetInstanceState> get(Criterion filter, List<String> orders, Integer firstResult, Integer maxResults);
+    public Iterable<AttributeSetInstanceState> get(Criterion filter, List<String> orders, Integer firstResult, Integer maxResults) {
+        return getStateRepository().get(filter, orders, firstResult, maxResults);
+    }
 
     public Iterable<AttributeSetInstanceState> getByProperty(String propertyName, Object propertyValue, List<String> orders, Integer firstResult, Integer maxResults) {
         return getStateRepository().getByProperty(propertyName, propertyValue, orders, firstResult, maxResults);
@@ -68,7 +71,9 @@ public abstract class AbstractAttributeSetInstanceApplicationService implements 
         return getStateRepository().getCount(filter);
     }
 
-    //public long getCount(Criterion filter);
+    public long getCount(Criterion filter) {
+        return getStateRepository().getCount(filter);
+    }
 
     public AttributeSetInstanceStateEvent getStateEvent(String attributeSetInstanceId, long version) {
         throw new UnsupportedOperationException(); //todo

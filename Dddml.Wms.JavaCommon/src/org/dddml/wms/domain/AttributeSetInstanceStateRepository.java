@@ -2,6 +2,7 @@ package org.dddml.wms.domain;
 
 import java.util.Map;
 import java.util.List;
+import org.dddml.support.criterion.Criterion;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -15,7 +16,7 @@ public interface AttributeSetInstanceStateRepository
     
     Iterable<AttributeSetInstanceState> get(Iterable<Map.Entry<String, Object>> filter, List<String> orders, Integer firstResult, Integer maxResults);
 
-    //Iterable<AttributeSetInstanceState> get(Criterion filter, List<String> orders, Integer firstResult, Integer maxResults);
+    Iterable<AttributeSetInstanceState> get(Criterion filter, List<String> orders, Integer firstResult, Integer maxResults);
 
     AttributeSetInstanceState getFirst(Iterable<Map.Entry<String, Object>> filter, List<String> orders);
 
@@ -25,7 +26,7 @@ public interface AttributeSetInstanceStateRepository
 
     long getCount(Iterable<Map.Entry<String, Object>> filter);
 
-    //long getCount(Criterion filter);
+    long getCount(Criterion filter);
 
 }
 

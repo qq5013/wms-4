@@ -2,6 +2,7 @@ package org.dddml.wms.domain;
 
 import java.util.*;
 import java.util.function.Consumer;
+import org.dddml.support.criterion.Criterion;
 import java.util.Date;
 import org.dddml.wms.specialization.*;
 import org.dddml.wms.domain.*;
@@ -57,7 +58,9 @@ public abstract class AbstractRolePermissionApplicationService implements RolePe
         return getStateRepository().get(filter, orders, firstResult, maxResults);
     }
 
-    //public Iterable<RolePermissionState> get(Criterion filter, List<String> orders, Integer firstResult, Integer maxResults);
+    public Iterable<RolePermissionState> get(Criterion filter, List<String> orders, Integer firstResult, Integer maxResults) {
+        return getStateRepository().get(filter, orders, firstResult, maxResults);
+    }
 
     public Iterable<RolePermissionState> getByProperty(String propertyName, Object propertyValue, List<String> orders, Integer firstResult, Integer maxResults) {
         return getStateRepository().getByProperty(propertyName, propertyValue, orders, firstResult, maxResults);
@@ -67,7 +70,9 @@ public abstract class AbstractRolePermissionApplicationService implements RolePe
         return getStateRepository().getCount(filter);
     }
 
-    //public long getCount(Criterion filter);
+    public long getCount(Criterion filter) {
+        return getStateRepository().getCount(filter);
+    }
 
     public RolePermissionStateEvent getStateEvent(RolePermissionId id, long version) {
         throw new UnsupportedOperationException(); //todo

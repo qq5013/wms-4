@@ -11,7 +11,7 @@ trait UserPermissionIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyActiveRemoved = null;
+    private $isPropertyActiveRemoved = false;
 
     /**
      * @return boolean

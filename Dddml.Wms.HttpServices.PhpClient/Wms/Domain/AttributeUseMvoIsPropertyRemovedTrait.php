@@ -11,7 +11,7 @@ trait AttributeUseMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertySequenceNumberRemoved = null;
+    private $isPropertySequenceNumberRemoved = false;
 
     /**
      * @return boolean
@@ -34,7 +34,7 @@ trait AttributeUseMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyVersionRemoved = null;
+    private $isPropertyVersionRemoved = false;
 
     /**
      * @return boolean
@@ -57,7 +57,7 @@ trait AttributeUseMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyActiveRemoved = null;
+    private $isPropertyActiveRemoved = false;
 
     /**
      * @return boolean
@@ -80,7 +80,7 @@ trait AttributeUseMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttributeSetNameRemoved = null;
+    private $isPropertyAttributeSetNameRemoved = false;
 
     /**
      * @return boolean
@@ -103,7 +103,7 @@ trait AttributeUseMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttributeSetOrganizationIdRemoved = null;
+    private $isPropertyAttributeSetOrganizationIdRemoved = false;
 
     /**
      * @return boolean
@@ -126,7 +126,7 @@ trait AttributeUseMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttributeSetDescriptionRemoved = null;
+    private $isPropertyAttributeSetDescriptionRemoved = false;
 
     /**
      * @return boolean
@@ -149,7 +149,7 @@ trait AttributeUseMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttributeSetSerialNumberAttributeIdRemoved = null;
+    private $isPropertyAttributeSetSerialNumberAttributeIdRemoved = false;
 
     /**
      * @return boolean
@@ -172,7 +172,7 @@ trait AttributeUseMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttributeSetLotAttributeIdRemoved = null;
+    private $isPropertyAttributeSetLotAttributeIdRemoved = false;
 
     /**
      * @return boolean
@@ -195,7 +195,7 @@ trait AttributeUseMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttributeSetReferenceIdRemoved = null;
+    private $isPropertyAttributeSetReferenceIdRemoved = false;
 
     /**
      * @return boolean
@@ -218,7 +218,7 @@ trait AttributeUseMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttributeSetCreatedByRemoved = null;
+    private $isPropertyAttributeSetCreatedByRemoved = false;
 
     /**
      * @return boolean
@@ -241,7 +241,7 @@ trait AttributeUseMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttributeSetCreatedAtRemoved = null;
+    private $isPropertyAttributeSetCreatedAtRemoved = false;
 
     /**
      * @return boolean
@@ -264,7 +264,7 @@ trait AttributeUseMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttributeSetUpdatedByRemoved = null;
+    private $isPropertyAttributeSetUpdatedByRemoved = false;
 
     /**
      * @return boolean
@@ -287,7 +287,7 @@ trait AttributeUseMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttributeSetUpdatedAtRemoved = null;
+    private $isPropertyAttributeSetUpdatedAtRemoved = false;
 
     /**
      * @return boolean
@@ -310,7 +310,7 @@ trait AttributeUseMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttributeSetActiveRemoved = null;
+    private $isPropertyAttributeSetActiveRemoved = false;
 
     /**
      * @return boolean
@@ -333,7 +333,7 @@ trait AttributeUseMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttributeSetDeletedRemoved = null;
+    private $isPropertyAttributeSetDeletedRemoved = false;
 
     /**
      * @return boolean

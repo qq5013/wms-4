@@ -11,7 +11,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyLineNumberRemoved = null;
+    private $isPropertyLineNumberRemoved = false;
 
     /**
      * @return boolean
@@ -34,7 +34,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyDescriptionRemoved = null;
+    private $isPropertyDescriptionRemoved = false;
 
     /**
      * @return boolean
@@ -57,7 +57,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyLocatorIdRemoved = null;
+    private $isPropertyLocatorIdRemoved = false;
 
     /**
      * @return boolean
@@ -80,7 +80,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyProductRemoved = null;
+    private $isPropertyProductRemoved = false;
 
     /**
      * @return boolean
@@ -103,7 +103,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyUomIdRemoved = null;
+    private $isPropertyUomIdRemoved = false;
 
     /**
      * @return boolean
@@ -126,7 +126,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyMovementQuantityRemoved = null;
+    private $isPropertyMovementQuantityRemoved = false;
 
     /**
      * @return boolean
@@ -149,7 +149,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyConfirmedQuantityRemoved = null;
+    private $isPropertyConfirmedQuantityRemoved = false;
 
     /**
      * @return boolean
@@ -172,7 +172,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyScrappedQuantityRemoved = null;
+    private $isPropertyScrappedQuantityRemoved = false;
 
     /**
      * @return boolean
@@ -195,7 +195,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyTargetQuantityRemoved = null;
+    private $isPropertyTargetQuantityRemoved = false;
 
     /**
      * @return boolean
@@ -218,7 +218,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyPickedQuantityRemoved = null;
+    private $isPropertyPickedQuantityRemoved = false;
 
     /**
      * @return boolean
@@ -241,7 +241,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyIsInvoicedRemoved = null;
+    private $isPropertyIsInvoicedRemoved = false;
 
     /**
      * @return boolean
@@ -264,7 +264,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttributeSetInstanceIdRemoved = null;
+    private $isPropertyAttributeSetInstanceIdRemoved = false;
 
     /**
      * @return boolean
@@ -287,7 +287,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyIsDescriptionRemoved = null;
+    private $isPropertyIsDescriptionRemoved = false;
 
     /**
      * @return boolean
@@ -310,7 +310,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyProcessedRemoved = null;
+    private $isPropertyProcessedRemoved = false;
 
     /**
      * @return boolean
@@ -333,7 +333,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyQuantityEnteredRemoved = null;
+    private $isPropertyQuantityEnteredRemoved = false;
 
     /**
      * @return boolean
@@ -356,7 +356,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyRmaLineNumberRemoved = null;
+    private $isPropertyRmaLineNumberRemoved = false;
 
     /**
      * @return boolean
@@ -379,7 +379,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyReversalLineNumberRemoved = null;
+    private $isPropertyReversalLineNumberRemoved = false;
 
     /**
      * @return boolean
@@ -402,7 +402,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyVersionRemoved = null;
+    private $isPropertyVersionRemoved = false;
 
     /**
      * @return boolean
@@ -425,7 +425,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyActiveRemoved = null;
+    private $isPropertyActiveRemoved = false;
 
     /**
      * @return boolean
@@ -448,7 +448,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutIsSOTransactionRemoved = null;
+    private $isPropertyInOutIsSOTransactionRemoved = false;
 
     /**
      * @return boolean
@@ -471,7 +471,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutPostedRemoved = null;
+    private $isPropertyInOutPostedRemoved = false;
 
     /**
      * @return boolean
@@ -494,7 +494,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutProcessingRemoved = null;
+    private $isPropertyInOutProcessingRemoved = false;
 
     /**
      * @return boolean
@@ -517,7 +517,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutProcessedRemoved = null;
+    private $isPropertyInOutProcessedRemoved = false;
 
     /**
      * @return boolean
@@ -540,7 +540,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutDocumentTypeRemoved = null;
+    private $isPropertyInOutDocumentTypeRemoved = false;
 
     /**
      * @return boolean
@@ -563,7 +563,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutDescriptionRemoved = null;
+    private $isPropertyInOutDescriptionRemoved = false;
 
     /**
      * @return boolean
@@ -586,7 +586,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutOrderNumberRemoved = null;
+    private $isPropertyInOutOrderNumberRemoved = false;
 
     /**
      * @return boolean
@@ -609,7 +609,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutDateOrderedRemoved = null;
+    private $isPropertyInOutDateOrderedRemoved = false;
 
     /**
      * @return boolean
@@ -632,7 +632,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutIsPrintedRemoved = null;
+    private $isPropertyInOutIsPrintedRemoved = false;
 
     /**
      * @return boolean
@@ -655,7 +655,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutMovementTypeRemoved = null;
+    private $isPropertyInOutMovementTypeRemoved = false;
 
     /**
      * @return boolean
@@ -678,7 +678,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutMovementDateRemoved = null;
+    private $isPropertyInOutMovementDateRemoved = false;
 
     /**
      * @return boolean
@@ -701,7 +701,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutBusinessPartnerIdRemoved = null;
+    private $isPropertyInOutBusinessPartnerIdRemoved = false;
 
     /**
      * @return boolean
@@ -724,7 +724,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutWarehouseIdRemoved = null;
+    private $isPropertyInOutWarehouseIdRemoved = false;
 
     /**
      * @return boolean
@@ -747,7 +747,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutPOReferenceRemoved = null;
+    private $isPropertyInOutPOReferenceRemoved = false;
 
     /**
      * @return boolean
@@ -770,7 +770,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutFreightAmountRemoved = null;
+    private $isPropertyInOutFreightAmountRemoved = false;
 
     /**
      * @return boolean
@@ -793,7 +793,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutShipperIdRemoved = null;
+    private $isPropertyInOutShipperIdRemoved = false;
 
     /**
      * @return boolean
@@ -816,7 +816,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutChargeAmountRemoved = null;
+    private $isPropertyInOutChargeAmountRemoved = false;
 
     /**
      * @return boolean
@@ -839,7 +839,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutDatePrintedRemoved = null;
+    private $isPropertyInOutDatePrintedRemoved = false;
 
     /**
      * @return boolean
@@ -862,7 +862,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutSalesRepresentativeRemoved = null;
+    private $isPropertyInOutSalesRepresentativeRemoved = false;
 
     /**
      * @return boolean
@@ -885,7 +885,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutNumberOfPackagesRemoved = null;
+    private $isPropertyInOutNumberOfPackagesRemoved = false;
 
     /**
      * @return boolean
@@ -908,7 +908,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutPickDateRemoved = null;
+    private $isPropertyInOutPickDateRemoved = false;
 
     /**
      * @return boolean
@@ -931,7 +931,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutShipDateRemoved = null;
+    private $isPropertyInOutShipDateRemoved = false;
 
     /**
      * @return boolean
@@ -954,7 +954,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutTrackingNumberRemoved = null;
+    private $isPropertyInOutTrackingNumberRemoved = false;
 
     /**
      * @return boolean
@@ -977,7 +977,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutDateReceivedRemoved = null;
+    private $isPropertyInOutDateReceivedRemoved = false;
 
     /**
      * @return boolean
@@ -1000,7 +1000,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutIsInTransitRemoved = null;
+    private $isPropertyInOutIsInTransitRemoved = false;
 
     /**
      * @return boolean
@@ -1023,7 +1023,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutIsApprovedRemoved = null;
+    private $isPropertyInOutIsApprovedRemoved = false;
 
     /**
      * @return boolean
@@ -1046,7 +1046,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutIsInDisputeRemoved = null;
+    private $isPropertyInOutIsInDisputeRemoved = false;
 
     /**
      * @return boolean
@@ -1069,7 +1069,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutVolumeRemoved = null;
+    private $isPropertyInOutVolumeRemoved = false;
 
     /**
      * @return boolean
@@ -1092,7 +1092,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutWeightRemoved = null;
+    private $isPropertyInOutWeightRemoved = false;
 
     /**
      * @return boolean
@@ -1115,7 +1115,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutRmaNumberRemoved = null;
+    private $isPropertyInOutRmaNumberRemoved = false;
 
     /**
      * @return boolean
@@ -1138,7 +1138,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutReversalNumberRemoved = null;
+    private $isPropertyInOutReversalNumberRemoved = false;
 
     /**
      * @return boolean
@@ -1161,7 +1161,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutIsDropShipRemoved = null;
+    private $isPropertyInOutIsDropShipRemoved = false;
 
     /**
      * @return boolean
@@ -1184,7 +1184,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutDropShipBusinessPartnerIdRemoved = null;
+    private $isPropertyInOutDropShipBusinessPartnerIdRemoved = false;
 
     /**
      * @return boolean
@@ -1207,7 +1207,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutCreatedByRemoved = null;
+    private $isPropertyInOutCreatedByRemoved = false;
 
     /**
      * @return boolean
@@ -1230,7 +1230,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutCreatedAtRemoved = null;
+    private $isPropertyInOutCreatedAtRemoved = false;
 
     /**
      * @return boolean
@@ -1253,7 +1253,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutUpdatedByRemoved = null;
+    private $isPropertyInOutUpdatedByRemoved = false;
 
     /**
      * @return boolean
@@ -1276,7 +1276,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutUpdatedAtRemoved = null;
+    private $isPropertyInOutUpdatedAtRemoved = false;
 
     /**
      * @return boolean
@@ -1299,7 +1299,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutActiveRemoved = null;
+    private $isPropertyInOutActiveRemoved = false;
 
     /**
      * @return boolean
@@ -1322,7 +1322,7 @@ trait InOutLineMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyInOutDeletedRemoved = null;
+    private $isPropertyInOutDeletedRemoved = false;
 
     /**
      * @return boolean

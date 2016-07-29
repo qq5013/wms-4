@@ -11,7 +11,7 @@ trait LocatorIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyWarehouseIdRemoved = null;
+    private $isPropertyWarehouseIdRemoved = false;
 
     /**
      * @return boolean
@@ -34,7 +34,7 @@ trait LocatorIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyParentLocatorIdRemoved = null;
+    private $isPropertyParentLocatorIdRemoved = false;
 
     /**
      * @return boolean
@@ -57,7 +57,7 @@ trait LocatorIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyLocatorTypeRemoved = null;
+    private $isPropertyLocatorTypeRemoved = false;
 
     /**
      * @return boolean
@@ -80,7 +80,7 @@ trait LocatorIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyPriorityNumberRemoved = null;
+    private $isPropertyPriorityNumberRemoved = false;
 
     /**
      * @return boolean
@@ -103,7 +103,7 @@ trait LocatorIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyIsDefaultRemoved = null;
+    private $isPropertyIsDefaultRemoved = false;
 
     /**
      * @return boolean
@@ -126,7 +126,7 @@ trait LocatorIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyXRemoved = null;
+    private $isPropertyXRemoved = false;
 
     /**
      * @return boolean
@@ -149,7 +149,7 @@ trait LocatorIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyYRemoved = null;
+    private $isPropertyYRemoved = false;
 
     /**
      * @return boolean
@@ -172,7 +172,7 @@ trait LocatorIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyZRemoved = null;
+    private $isPropertyZRemoved = false;
 
     /**
      * @return boolean
@@ -195,7 +195,7 @@ trait LocatorIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyActiveRemoved = null;
+    private $isPropertyActiveRemoved = false;
 
     /**
      * @return boolean

@@ -86,7 +86,7 @@ public class Main {
         {
             System.out.println(a.getName() + " "  + a.getAttributeId());
         }
-        long count = attributeApplicationService.getCount(null);
+        long count = attributeApplicationService.getCount((Iterable)null);
         System.out.println(count);
     }
 

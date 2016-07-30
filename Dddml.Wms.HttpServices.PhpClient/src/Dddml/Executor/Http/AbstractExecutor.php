@@ -13,6 +13,7 @@ use JMS\Serializer\Handler\HandlerRegistry;
 use JMS\Serializer\Naming\SerializedNameAnnotationStrategy;
 use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
+use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;
 
@@ -49,6 +50,9 @@ abstract class AbstractExecutor
      * @var  RouteCollection
      */
     protected $routes;
+
+    /** @var  ResponseInterface */
+    protected $lastResponse;
 
     public static $defaultClientOption = [
         'headers' => [

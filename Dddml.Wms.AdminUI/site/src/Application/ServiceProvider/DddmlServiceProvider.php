@@ -4,20 +4,20 @@
  * Date: 2016/7/27
  * Time: 16:33
  */
-namespace ServiceProvider;
+namespace Application\ServiceProvider;
 
 use Dddml\Auth;
 use Dddml\Executor\Http\CommandExecutor;
 use Dddml\Executor\Http\QueryExecutor;
+use Dddml\Silex\Event\JsonProxySubscriber;
+use Dddml\Silex\JsonProxy;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 use Silex\Api\BootableProviderInterface;
-use Silex\Api\EventListenerProviderInterface;
 use Silex\Application;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
-class DddmlServiceProvider implements ServiceProviderInterface, BootableProviderInterface, EventListenerProviderInterface
+class DddmlServiceProvider implements ServiceProviderInterface, BootableProviderInterface
 {
     public function register(Container $app)
     {
@@ -60,10 +60,9 @@ class DddmlServiceProvider implements ServiceProviderInterface, BootableProvider
                 $app['api.auth.clientId']
             );
         };
-    }
 
-    public function subscribe(Container $app, EventDispatcherInterface $dispatcher)
-    {
-        // TODO: Implement subscribe() method.
+        $app['api.json.proxy'] = function ($app) {
+            return new JsonProxy($app);
+        };
     }
 }

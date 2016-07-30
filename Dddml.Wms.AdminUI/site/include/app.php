@@ -1,6 +1,7 @@
 <?php
-
-use Dddml\Silex\Application;
+use Application\Application;
+use Application\EventListenerProvider\JsonProxyListenerProvider;
+use Application\ServiceProvider\DddmlServiceProvider;
 use Silex\Provider\AssetServiceProvider;
 use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\ServiceControllerServiceProvider;
@@ -17,6 +18,7 @@ $app['twig'] = $app->extend('twig', function ($twig, $app) {
     return $twig;
 });
 
-$app->register(new \ServiceProvider\DddmlServiceProvider());
+$app->register(new DddmlServiceProvider());
+$app->register(new JsonProxyListenerProvider());
 
 return $app;

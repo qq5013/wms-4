@@ -1,0 +1,71 @@
+<?php
+/**
+ * User: dongww
+ * Date: 2016/7/29
+ * Time: 17:44
+ */
+namespace Dddml\Silex;
+
+use Dddml\Executor\Http\QueryCountRequestInterface;
+use Dddml\Executor\Http\QueryExecutor;
+use Dddml\Executor\Http\QueryRequestInterface;
+use Dddml\Silex\Event\JsonProxyEvent;
+use Silex\Application;
+use Symfony\Component\EventDispatcher\EventDispatcher;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
+
+class JsonProxy
+{
+    private $app;
+    private $dispatcher;
+
+    public function __construct(Application $app)
+    {
+        $this->app = $app;
+
+        $this->dispatcher = new EventDispatcher();
+    }
+
+    public function get(QueryRequestInterface $queryRequest, Request $httpRequest, array $params = [])
+    {
+        /** @var QueryExecutor $executor */
+        $executor = $this->app['api.query.executor'];
+
+        $json = $executor->executeJson($queryRequest, [
+            'parameters' => $params,
+            'query'      => $httpRequest->query->all(),
+        ]);
+
+        $response = $executor->getLastResponse();
+
+        $event = new JsonProxyEvent($response);
+        $this->app['dispatcher']->dispatch(JsonProxyEvent::JSON_PROXY_GET, $event);
+
+        return new JsonResponse(
+            $json,
+            $response->getStatusCode(),
+            $response->getHeaders(),
+            true
+        );
+    }
+
+    public function count(QueryCountRequestInterface $queryRequest, Request $httpRequest)
+    {
+        /** @var QueryExecutor $executor */
+        $executor = $this->app['api.query.executor'];
+
+        $json = trim($executor->count($queryRequest, [
+            'query' => $httpRequest->query->all(),
+        ]), "\"");
+
+        $response = $executor->getLastResponse();
+
+        return new JsonResponse(
+            $json,
+            $response->getStatusCode(),
+            $response->getHeaders(),
+            true
+        );
+    }
+}

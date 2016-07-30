@@ -49,6 +49,12 @@ class QueryExecutor extends AbstractExecutor
         return $response->getBody()->getContents();
     }
 
+    /**
+     * @param QueryRequestInterface $request
+     * @param array                 $option
+     *
+     * @return mixed|\Psr\Http\Message\ResponseInterface
+     */
     protected function executeResponse(QueryRequestInterface $request, array $option = [])
     {
         $routes = $this->getRoutes();
@@ -64,13 +70,18 @@ class QueryExecutor extends AbstractExecutor
             isset($option['parameters']) ? $option['parameters'] : []
         );
 
-        $response = $this->client->request(
+        $this->lastResponse = $this->client->request(
             self::METHOD_GET,
             $url,
             $this->getClientOption($option)
         );
 
-        return $response;
+        return $this->lastResponse;
+    }
+
+    public function getLastResponse()
+    {
+        return $this->lastResponse;
     }
 
     /**

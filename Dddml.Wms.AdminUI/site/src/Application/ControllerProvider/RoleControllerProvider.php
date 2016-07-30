@@ -4,7 +4,7 @@
  * Date: 2016/7/29
  * Time: 14:16
  */
-namespace Dddml\Silex\ControllerProvider;
+namespace Application\ControllerProvider;
 
 use Silex\Api\ControllerProviderInterface;
 use Silex\Application;

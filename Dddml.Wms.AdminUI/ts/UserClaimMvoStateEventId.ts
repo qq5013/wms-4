@@ -5,14 +5,13 @@ namespace Dddml.Wms.Domain {
 		private UserClaimId: UserClaimId;
 
 		getUserClaimId(): UserClaimId {
+			if(!this.UserClaimId) {
+				this.UserClaimId = new UserClaimId(); 
+			}
 			return this.UserClaimId;
 		}
 
 		setUserClaimId(userClaimId: UserClaimId) {
-			// ???
-			//if(!this.UserClaimId) {
-			//    this.UserClaimId = new UserClaimId(); 
-			//}
 			this.UserClaimId = userClaimId;
 		}
 

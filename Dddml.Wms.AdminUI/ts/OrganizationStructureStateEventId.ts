@@ -5,14 +5,13 @@ namespace Dddml.Wms.Domain {
 		private Id: OrganizationStructureId;
 
 		getId(): OrganizationStructureId {
+			if(!this.Id) {
+				this.Id = new OrganizationStructureId(); 
+			}
 			return this.Id;
 		}
 
 		setId(id: OrganizationStructureId) {
-			// ???
-			//if(!this.Id) {
-			//    this.Id = new OrganizationStructureId(); 
-			//}
 			this.Id = id;
 		}
 

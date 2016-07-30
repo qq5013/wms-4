@@ -5,14 +5,13 @@ namespace Dddml.Wms.Domain {
 		private AttributeSetInstanceExtensionFieldId: AttributeSetInstanceExtensionFieldId;
 
 		getAttributeSetInstanceExtensionFieldId(): AttributeSetInstanceExtensionFieldId {
+			if(!this.AttributeSetInstanceExtensionFieldId) {
+				this.AttributeSetInstanceExtensionFieldId = new AttributeSetInstanceExtensionFieldId(); 
+			}
 			return this.AttributeSetInstanceExtensionFieldId;
 		}
 
 		setAttributeSetInstanceExtensionFieldId(attributeSetInstanceExtensionFieldId: AttributeSetInstanceExtensionFieldId) {
-			// ???
-			//if(!this.AttributeSetInstanceExtensionFieldId) {
-			//    this.AttributeSetInstanceExtensionFieldId = new AttributeSetInstanceExtensionFieldId(); 
-			//}
 			this.AttributeSetInstanceExtensionFieldId = attributeSetInstanceExtensionFieldId;
 		}
 

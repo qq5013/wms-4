@@ -5,14 +5,13 @@ namespace Dddml.Wms.Domain {
 		private AttributeSetAttributeUseId: AttributeSetAttributeUseId;
 
 		getAttributeSetAttributeUseId(): AttributeSetAttributeUseId {
+			if(!this.AttributeSetAttributeUseId) {
+				this.AttributeSetAttributeUseId = new AttributeSetAttributeUseId(); 
+			}
 			return this.AttributeSetAttributeUseId;
 		}
 
 		setAttributeSetAttributeUseId(attributeSetAttributeUseId: AttributeSetAttributeUseId) {
-			// ???
-			//if(!this.AttributeSetAttributeUseId) {
-			//    this.AttributeSetAttributeUseId = new AttributeSetAttributeUseId(); 
-			//}
 			this.AttributeSetAttributeUseId = attributeSetAttributeUseId;
 		}
 

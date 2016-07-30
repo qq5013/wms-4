@@ -5,14 +5,13 @@ namespace Dddml.Wms.Domain {
 		private InOutLineId: InOutLineId;
 
 		getInOutLineId(): InOutLineId {
+			if(!this.InOutLineId) {
+				this.InOutLineId = new InOutLineId(); 
+			}
 			return this.InOutLineId;
 		}
 
 		setInOutLineId(inOutLineId: InOutLineId) {
-			// ???
-			//if(!this.InOutLineId) {
-			//    this.InOutLineId = new InOutLineId(); 
-			//}
 			this.InOutLineId = inOutLineId;
 		}
 

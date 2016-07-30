@@ -15,14 +15,13 @@ namespace Dddml.Wms.Domain {
 		private LoginKey: LoginKey;
 
 		getLoginKey(): LoginKey {
+			if(!this.LoginKey) {
+				this.LoginKey = new LoginKey(); 
+			}
 			return this.LoginKey;
 		}
 
 		setLoginKey(loginKey: LoginKey) {
-			// ???
-			//if(!this.LoginKey) {
-			//    this.LoginKey = new LoginKey(); 
-			//}
 			this.LoginKey = loginKey;
 		}
 

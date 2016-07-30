@@ -5,14 +5,13 @@ namespace Dddml.Wms.Domain {
 		private AttributeValueId: AttributeValueId;
 
 		getAttributeValueId(): AttributeValueId {
+			if(!this.AttributeValueId) {
+				this.AttributeValueId = new AttributeValueId(); 
+			}
 			return this.AttributeValueId;
 		}
 
 		setAttributeValueId(attributeValueId: AttributeValueId) {
-			// ???
-			//if(!this.AttributeValueId) {
-			//    this.AttributeValueId = new AttributeValueId(); 
-			//}
 			this.AttributeValueId = attributeValueId;
 		}
 

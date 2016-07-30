@@ -5,14 +5,13 @@ namespace Dddml.Wms.Domain {
 		private Id: RolePermissionId;
 
 		getId(): RolePermissionId {
+			if(!this.Id) {
+				this.Id = new RolePermissionId(); 
+			}
 			return this.Id;
 		}
 
 		setId(id: RolePermissionId) {
-			// ???
-			//if(!this.Id) {
-			//    this.Id = new RolePermissionId(); 
-			//}
 			this.Id = id;
 		}
 

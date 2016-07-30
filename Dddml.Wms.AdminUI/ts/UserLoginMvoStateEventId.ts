@@ -5,14 +5,13 @@ namespace Dddml.Wms.Domain {
 		private UserLoginId: UserLoginId;
 
 		getUserLoginId(): UserLoginId {
+			if(!this.UserLoginId) {
+				this.UserLoginId = new UserLoginId(); 
+			}
 			return this.UserLoginId;
 		}
 
 		setUserLoginId(userLoginId: UserLoginId) {
-			// ???
-			//if(!this.UserLoginId) {
-			//    this.UserLoginId = new UserLoginId(); 
-			//}
 			this.UserLoginId = userLoginId;
 		}
 

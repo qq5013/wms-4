@@ -11,7 +11,7 @@ trait OrganizationIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyNameRemoved = null;
+    private $isPropertyNameRemoved = false;
 
     /**
      * @return boolean
@@ -34,7 +34,7 @@ trait OrganizationIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyDescriptionRemoved = null;
+    private $isPropertyDescriptionRemoved = false;
 
     /**
      * @return boolean
@@ -57,7 +57,7 @@ trait OrganizationIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyTypeRemoved = null;
+    private $isPropertyTypeRemoved = false;
 
     /**
      * @return boolean
@@ -80,7 +80,7 @@ trait OrganizationIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyIsSummaryRemoved = null;
+    private $isPropertyIsSummaryRemoved = false;
 
     /**
      * @return boolean
@@ -103,7 +103,7 @@ trait OrganizationIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyActiveRemoved = null;
+    private $isPropertyActiveRemoved = false;
 
     /**
      * @return boolean

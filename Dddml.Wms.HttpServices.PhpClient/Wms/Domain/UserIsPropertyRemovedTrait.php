@@ -11,7 +11,7 @@ trait UserIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyUserNameRemoved = null;
+    private $isPropertyUserNameRemoved = false;
 
     /**
      * @return boolean
@@ -34,7 +34,7 @@ trait UserIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAccessFailedCountRemoved = null;
+    private $isPropertyAccessFailedCountRemoved = false;
 
     /**
      * @return boolean
@@ -57,7 +57,7 @@ trait UserIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyEmailRemoved = null;
+    private $isPropertyEmailRemoved = false;
 
     /**
      * @return boolean
@@ -80,7 +80,7 @@ trait UserIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyEmailConfirmedRemoved = null;
+    private $isPropertyEmailConfirmedRemoved = false;
 
     /**
      * @return boolean
@@ -103,7 +103,7 @@ trait UserIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyLockoutEnabledRemoved = null;
+    private $isPropertyLockoutEnabledRemoved = false;
 
     /**
      * @return boolean
@@ -126,7 +126,7 @@ trait UserIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyLockoutEndDateUtcRemoved = null;
+    private $isPropertyLockoutEndDateUtcRemoved = false;
 
     /**
      * @return boolean
@@ -149,7 +149,7 @@ trait UserIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyPasswordHashRemoved = null;
+    private $isPropertyPasswordHashRemoved = false;
 
     /**
      * @return boolean
@@ -172,7 +172,7 @@ trait UserIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyPhoneNumberRemoved = null;
+    private $isPropertyPhoneNumberRemoved = false;
 
     /**
      * @return boolean
@@ -195,7 +195,7 @@ trait UserIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyPhoneNumberConfirmedRemoved = null;
+    private $isPropertyPhoneNumberConfirmedRemoved = false;
 
     /**
      * @return boolean
@@ -218,7 +218,7 @@ trait UserIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyTwoFactorEnabledRemoved = null;
+    private $isPropertyTwoFactorEnabledRemoved = false;
 
     /**
      * @return boolean
@@ -241,7 +241,7 @@ trait UserIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertySecurityStampRemoved = null;
+    private $isPropertySecurityStampRemoved = false;
 
     /**
      * @return boolean
@@ -264,7 +264,7 @@ trait UserIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyActiveRemoved = null;
+    private $isPropertyActiveRemoved = false;
 
     /**
      * @return boolean

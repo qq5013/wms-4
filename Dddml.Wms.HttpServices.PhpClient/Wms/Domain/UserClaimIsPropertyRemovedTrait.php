@@ -11,7 +11,7 @@ trait UserClaimIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyClaimTypeRemoved = null;
+    private $isPropertyClaimTypeRemoved = false;
 
     /**
      * @return boolean
@@ -34,7 +34,7 @@ trait UserClaimIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyClaimValueRemoved = null;
+    private $isPropertyClaimValueRemoved = false;
 
     /**
      * @return boolean
@@ -57,7 +57,7 @@ trait UserClaimIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyActiveRemoved = null;
+    private $isPropertyActiveRemoved = false;
 
     /**
      * @return boolean

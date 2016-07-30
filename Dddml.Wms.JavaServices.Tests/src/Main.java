@@ -11,6 +11,7 @@ import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -80,7 +81,13 @@ public class Main {
         for (AttributeValueState v : attrState2.getAttributeValues()) {
             System.out.println(v.getName() + "~~~ "  + v.getDescription());
         }
-
+        Iterable<AttributeState> attrs = attributeApplicationService.getByProperty("name", "Color", null, null, null);
+        for(AttributeState a : attrs)
+        {
+            System.out.println(a.getName() + " "  + a.getAttributeId());
+        }
+        long count = attributeApplicationService.getCount((Iterable)null);
+        System.out.println(count);
     }
 
 

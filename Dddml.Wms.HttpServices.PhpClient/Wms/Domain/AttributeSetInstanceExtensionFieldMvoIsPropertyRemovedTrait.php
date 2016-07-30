@@ -11,7 +11,7 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyNameRemoved = null;
+    private $isPropertyNameRemoved = false;
 
     /**
      * @return boolean
@@ -34,7 +34,7 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyTypeRemoved = null;
+    private $isPropertyTypeRemoved = false;
 
     /**
      * @return boolean
@@ -57,7 +57,7 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyLengthRemoved = null;
+    private $isPropertyLengthRemoved = false;
 
     /**
      * @return boolean
@@ -80,7 +80,7 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAliasRemoved = null;
+    private $isPropertyAliasRemoved = false;
 
     /**
      * @return boolean
@@ -103,7 +103,7 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyDescriptionRemoved = null;
+    private $isPropertyDescriptionRemoved = false;
 
     /**
      * @return boolean
@@ -126,7 +126,7 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyVersionRemoved = null;
+    private $isPropertyVersionRemoved = false;
 
     /**
      * @return boolean
@@ -149,7 +149,7 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyActiveRemoved = null;
+    private $isPropertyActiveRemoved = false;
 
     /**
      * @return boolean
@@ -172,7 +172,7 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttrSetInstEFGroupFieldTypeRemoved = null;
+    private $isPropertyAttrSetInstEFGroupFieldTypeRemoved = false;
 
     /**
      * @return boolean
@@ -195,7 +195,7 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttrSetInstEFGroupFieldLengthRemoved = null;
+    private $isPropertyAttrSetInstEFGroupFieldLengthRemoved = false;
 
     /**
      * @return boolean
@@ -218,7 +218,7 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttrSetInstEFGroupFieldCountRemoved = null;
+    private $isPropertyAttrSetInstEFGroupFieldCountRemoved = false;
 
     /**
      * @return boolean
@@ -241,7 +241,7 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttrSetInstEFGroupNameFormatRemoved = null;
+    private $isPropertyAttrSetInstEFGroupNameFormatRemoved = false;
 
     /**
      * @return boolean
@@ -264,7 +264,7 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttrSetInstEFGroupDescriptionRemoved = null;
+    private $isPropertyAttrSetInstEFGroupDescriptionRemoved = false;
 
     /**
      * @return boolean
@@ -287,7 +287,7 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttrSetInstEFGroupCreatedByRemoved = null;
+    private $isPropertyAttrSetInstEFGroupCreatedByRemoved = false;
 
     /**
      * @return boolean
@@ -310,7 +310,7 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttrSetInstEFGroupCreatedAtRemoved = null;
+    private $isPropertyAttrSetInstEFGroupCreatedAtRemoved = false;
 
     /**
      * @return boolean
@@ -333,7 +333,7 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttrSetInstEFGroupUpdatedByRemoved = null;
+    private $isPropertyAttrSetInstEFGroupUpdatedByRemoved = false;
 
     /**
      * @return boolean
@@ -356,7 +356,7 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttrSetInstEFGroupUpdatedAtRemoved = null;
+    private $isPropertyAttrSetInstEFGroupUpdatedAtRemoved = false;
 
     /**
      * @return boolean
@@ -379,7 +379,7 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttrSetInstEFGroupActiveRemoved = null;
+    private $isPropertyAttrSetInstEFGroupActiveRemoved = false;
 
     /**
      * @return boolean
@@ -402,7 +402,7 @@ trait AttributeSetInstanceExtensionFieldMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttrSetInstEFGroupDeletedRemoved = null;
+    private $isPropertyAttrSetInstEFGroupDeletedRemoved = false;
 
     /**
      * @return boolean

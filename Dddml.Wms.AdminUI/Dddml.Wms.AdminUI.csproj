@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C500182C-DF1A-4D32-BD02-498697AFD900}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dddml.Wms.AdminUI</RootNamespace>
+    <AssemblyName>Dddml.Wms.AdminUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ts\GenerateBoundedContextDomain.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GenerateBoundedContextDomain.txt</LastGenOutput>
+      <LastOutputs>
+.\DocumentAction.ts
+.\GenerateBoundedContextDomain.txt
+.\OrganizationStructureId.ts
+.\RolePermissionId.ts
+.\SkuId.ts
+</LastOutputs>
+    </Content>
+    <Content Include="ts\GenerateBoundedContextDomain.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Content>
+    <Content Include="ts\GenerateBoundedContextDomainAggregates.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GenerateBoundedContextDomainAggregates.txt</LastGenOutput>
+      <LastOutputs>
+.\Attribute.ts
+.\AttributeSet.ts
+.\AttributeSetAttributeUseId.ts
+.\AttributeSetInstance.ts
+.\AttributeSetInstanceExtensionField.ts
+.\AttributeSetInstanceExtensionFieldGroup.ts
+.\AttributeSetInstanceExtensionFieldGroupStateEventId.ts
+.\AttributeSetInstanceExtensionFieldId.ts
+.\AttributeSetInstanceExtensionFieldMvo.ts
+.\AttributeSetInstanceExtensionFieldMvoStateEventId.ts
+.\AttributeSetInstanceExtensionFieldStateEventId.ts
+.\AttributeSetInstanceStateEventId.ts
+.\AttributeSetStateEventId.ts
+.\AttributeStateEventId.ts
+.\AttributeUse.ts
+.\AttributeUseMvo.ts
+.\AttributeUseMvoStateEventId.ts
+.\AttributeUseStateEventId.ts
+.\AttributeValue.ts
+.\AttributeValueId.ts
+.\AttributeValueMvo.ts
+.\AttributeValueMvoStateEventId.ts
+.\AttributeValueStateEventId.ts
+.\Audience.ts
+.\AudienceStateEventId.ts
+.\GenerateBoundedContextDomainAggregates.txt
+.\InOut.ts
+.\InOutLine.ts
+.\InOutLineId.ts
+.\InOutLineMvo.ts
+.\InOutLineMvoStateEventId.ts
+.\InOutLineStateEventId.ts
+.\InOutStateEventId.ts
+.\Locator.ts
+.\LocatorStateEventId.ts
+.\LoginKey.ts
+.\Organization.ts
+.\OrganizationStateEventId.ts
+.\OrganizationStructure.ts
+.\OrganizationStructureStateEventId.ts
+.\OrganizationStructureType.ts
+.\OrganizationStructureTypeStateEventId.ts
+.\Permission.ts
+.\PermissionStateEventId.ts
+.\Role.ts
+.\RolePermission.ts
+.\RolePermissionStateEventId.ts
+.\RoleStateEventId.ts
+.\User.ts
+.\UserClaim.ts
+.\UserClaimId.ts
+.\UserClaimMvo.ts
+.\UserClaimMvoStateEventId.ts
+.\UserClaimStateEventId.ts
+.\UserLogin.ts
+.\UserLoginId.ts
+.\UserLoginMvo.ts
+.\UserLoginMvoStateEventId.ts
+.\UserLoginStateEventId.ts
+.\UserPermission.ts
+.\UserPermissionId.ts
+.\UserPermissionMvo.ts
+.\UserPermissionMvoStateEventId.ts
+.\UserPermissionStateEventId.ts
+.\UserRole.ts
+.\UserRoleId.ts
+.\UserRoleMvo.ts
+.\UserRoleMvoStateEventId.ts
+.\UserRoleStateEventId.ts
+.\UserStateEventId.ts
+.\Warehouse.ts
+.\WarehouseStateEventId.ts
+</LastOutputs>
+    </Content>
+    <Content Include="ts\GenerateBoundedContextDomainAggregates.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="ts\LoadBoundedContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>LoadBoundedContext.txt</LastGenOutput>
+      <LastOutputs>.\LoadBoundedContext.txt</LastOutputs>
+    </Content>
+    <Content Include="ts\LoadBoundedContext.txt">
+      <DependentUpon>LoadBoundedContext.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="ts\Attribute.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\AttributeSet.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\AttributeSetAttributeUseId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\AttributeSetInstance.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\AttributeSetInstanceExtensionField.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\AttributeSetInstanceExtensionFieldGroup.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\AttributeSetInstanceExtensionFieldGroupStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\AttributeSetInstanceExtensionFieldId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\AttributeSetInstanceExtensionFieldMvo.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\AttributeSetInstanceExtensionFieldMvoStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\AttributeSetInstanceExtensionFieldStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\AttributeSetInstanceStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\AttributeSetStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\AttributeStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\AttributeUse.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\AttributeUseMvo.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\AttributeUseMvoStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\AttributeUseStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\AttributeValue.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\AttributeValueId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\AttributeValueMvo.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\AttributeValueMvoStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\AttributeValueStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\Audience.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\AudienceStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\DocumentAction.ts">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\InOut.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\InOutLine.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\InOutLineId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\InOutLineMvo.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\InOutLineMvoStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\InOutLineStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\InOutStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\Locator.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\LocatorStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\LoginKey.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\Organization.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\OrganizationStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\OrganizationStructure.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\OrganizationStructureId.ts">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\OrganizationStructureStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\OrganizationStructureType.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\OrganizationStructureTypeStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\Permission.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\PermissionStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\Role.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\RolePermission.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\RolePermissionId.ts">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\RolePermissionStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\RoleStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\SkuId.ts">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\User.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\UserClaim.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\UserClaimId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\UserClaimMvo.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\UserClaimMvoStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\UserClaimStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\UserLogin.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\UserLoginId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\UserLoginMvo.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\UserLoginMvoStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\UserLoginStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\UserPermission.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\UserPermissionId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\UserPermissionMvo.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\UserPermissionMvoStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\UserPermissionStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\UserRole.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\UserRoleId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\UserRoleMvo.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\UserRoleMvoStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\UserRoleStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\UserStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\Warehouse.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\WarehouseStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

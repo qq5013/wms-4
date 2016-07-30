@@ -11,7 +11,7 @@ trait AttributeUseIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertySequenceNumberRemoved = null;
+    private $isPropertySequenceNumberRemoved = false;
 
     /**
      * @return boolean
@@ -34,7 +34,7 @@ trait AttributeUseIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyActiveRemoved = null;
+    private $isPropertyActiveRemoved = false;
 
     /**
      * @return boolean

@@ -11,7 +11,7 @@ trait WarehouseIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyNameRemoved = null;
+    private $isPropertyNameRemoved = false;
 
     /**
      * @return boolean
@@ -34,7 +34,7 @@ trait WarehouseIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyDescriptionRemoved = null;
+    private $isPropertyDescriptionRemoved = false;
 
     /**
      * @return boolean
@@ -57,7 +57,7 @@ trait WarehouseIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyIsInTransitRemoved = null;
+    private $isPropertyIsInTransitRemoved = false;
 
     /**
      * @return boolean
@@ -80,7 +80,7 @@ trait WarehouseIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyActiveRemoved = null;
+    private $isPropertyActiveRemoved = false;
 
     /**
      * @return boolean

@@ -2,6 +2,7 @@ package org.dddml.wms.domain;
 
 import java.util.Map;
 import java.util.List;
+import org.dddml.support.criterion.Criterion;
 import org.joda.money.Money;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -16,7 +17,7 @@ public interface InOutStateRepository
     
     Iterable<InOutState> get(Iterable<Map.Entry<String, Object>> filter, List<String> orders, Integer firstResult, Integer maxResults);
 
-    //Iterable<InOutState> get(Criterion filter, List<String> orders, Integer firstResult, Integer maxResults);
+    Iterable<InOutState> get(Criterion filter, List<String> orders, Integer firstResult, Integer maxResults);
 
     InOutState getFirst(Iterable<Map.Entry<String, Object>> filter, List<String> orders);
 
@@ -26,7 +27,7 @@ public interface InOutStateRepository
 
     long getCount(Iterable<Map.Entry<String, Object>> filter);
 
-    //long getCount(Criterion filter);
+    long getCount(Criterion filter);
 
 }
 

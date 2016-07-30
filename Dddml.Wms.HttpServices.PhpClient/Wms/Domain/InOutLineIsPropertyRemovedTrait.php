@@ -11,7 +11,7 @@ trait InOutLineIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyLineNumberRemoved = null;
+    private $isPropertyLineNumberRemoved = false;
 
     /**
      * @return boolean
@@ -34,7 +34,7 @@ trait InOutLineIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyDescriptionRemoved = null;
+    private $isPropertyDescriptionRemoved = false;
 
     /**
      * @return boolean
@@ -57,7 +57,7 @@ trait InOutLineIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyLocatorIdRemoved = null;
+    private $isPropertyLocatorIdRemoved = false;
 
     /**
      * @return boolean
@@ -80,7 +80,7 @@ trait InOutLineIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyProductRemoved = null;
+    private $isPropertyProductRemoved = false;
 
     /**
      * @return boolean
@@ -103,7 +103,7 @@ trait InOutLineIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyUomIdRemoved = null;
+    private $isPropertyUomIdRemoved = false;
 
     /**
      * @return boolean
@@ -126,7 +126,7 @@ trait InOutLineIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyMovementQuantityRemoved = null;
+    private $isPropertyMovementQuantityRemoved = false;
 
     /**
      * @return boolean
@@ -149,7 +149,7 @@ trait InOutLineIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyConfirmedQuantityRemoved = null;
+    private $isPropertyConfirmedQuantityRemoved = false;
 
     /**
      * @return boolean
@@ -172,7 +172,7 @@ trait InOutLineIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyScrappedQuantityRemoved = null;
+    private $isPropertyScrappedQuantityRemoved = false;
 
     /**
      * @return boolean
@@ -195,7 +195,7 @@ trait InOutLineIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyTargetQuantityRemoved = null;
+    private $isPropertyTargetQuantityRemoved = false;
 
     /**
      * @return boolean
@@ -218,7 +218,7 @@ trait InOutLineIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyPickedQuantityRemoved = null;
+    private $isPropertyPickedQuantityRemoved = false;
 
     /**
      * @return boolean
@@ -241,7 +241,7 @@ trait InOutLineIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyIsInvoicedRemoved = null;
+    private $isPropertyIsInvoicedRemoved = false;
 
     /**
      * @return boolean
@@ -264,7 +264,7 @@ trait InOutLineIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttributeSetInstanceIdRemoved = null;
+    private $isPropertyAttributeSetInstanceIdRemoved = false;
 
     /**
      * @return boolean
@@ -287,7 +287,7 @@ trait InOutLineIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyIsDescriptionRemoved = null;
+    private $isPropertyIsDescriptionRemoved = false;
 
     /**
      * @return boolean
@@ -310,7 +310,7 @@ trait InOutLineIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyProcessedRemoved = null;
+    private $isPropertyProcessedRemoved = false;
 
     /**
      * @return boolean
@@ -333,7 +333,7 @@ trait InOutLineIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyQuantityEnteredRemoved = null;
+    private $isPropertyQuantityEnteredRemoved = false;
 
     /**
      * @return boolean
@@ -356,7 +356,7 @@ trait InOutLineIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyRmaLineNumberRemoved = null;
+    private $isPropertyRmaLineNumberRemoved = false;
 
     /**
      * @return boolean
@@ -379,7 +379,7 @@ trait InOutLineIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyReversalLineNumberRemoved = null;
+    private $isPropertyReversalLineNumberRemoved = false;
 
     /**
      * @return boolean
@@ -402,7 +402,7 @@ trait InOutLineIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyActiveRemoved = null;
+    private $isPropertyActiveRemoved = false;
 
     /**
      * @return boolean

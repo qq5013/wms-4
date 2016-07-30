@@ -11,7 +11,7 @@ trait AudienceIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyNameRemoved = null;
+    private $isPropertyNameRemoved = false;
 
     /**
      * @return boolean
@@ -34,7 +34,7 @@ trait AudienceIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyBase64SecretRemoved = null;
+    private $isPropertyBase64SecretRemoved = false;
 
     /**
      * @return boolean
@@ -57,7 +57,7 @@ trait AudienceIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyActiveRemoved = null;
+    private $isPropertyActiveRemoved = false;
 
     /**
      * @return boolean

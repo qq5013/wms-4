@@ -2,6 +2,7 @@ package org.dddml.wms.domain;
 
 import java.util.*;
 import java.util.function.Consumer;
+import org.dddml.support.criterion.Criterion;
 import org.joda.money.Money;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -59,7 +60,9 @@ public abstract class AbstractInOutApplicationService implements InOutApplicatio
         return getStateRepository().get(filter, orders, firstResult, maxResults);
     }
 
-    //public Iterable<InOutState> get(Criterion filter, List<String> orders, Integer firstResult, Integer maxResults);
+    public Iterable<InOutState> get(Criterion filter, List<String> orders, Integer firstResult, Integer maxResults) {
+        return getStateRepository().get(filter, orders, firstResult, maxResults);
+    }
 
     public Iterable<InOutState> getByProperty(String propertyName, Object propertyValue, List<String> orders, Integer firstResult, Integer maxResults) {
         return getStateRepository().getByProperty(propertyName, propertyValue, orders, firstResult, maxResults);
@@ -69,7 +72,9 @@ public abstract class AbstractInOutApplicationService implements InOutApplicatio
         return getStateRepository().getCount(filter);
     }
 
-    //public long getCount(Criterion filter);
+    public long getCount(Criterion filter) {
+        return getStateRepository().getCount(filter);
+    }
 
     public InOutStateEvent getStateEvent(String documentNumber, long version) {
         throw new UnsupportedOperationException(); //todo

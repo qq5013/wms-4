@@ -11,7 +11,7 @@ trait AttributeIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyNameRemoved = null;
+    private $isPropertyNameRemoved = false;
 
     /**
      * @return boolean
@@ -34,7 +34,7 @@ trait AttributeIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyOrganizationIdRemoved = null;
+    private $isPropertyOrganizationIdRemoved = false;
 
     /**
      * @return boolean
@@ -57,7 +57,7 @@ trait AttributeIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyDescriptionRemoved = null;
+    private $isPropertyDescriptionRemoved = false;
 
     /**
      * @return boolean
@@ -80,7 +80,7 @@ trait AttributeIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyIsMandatoryRemoved = null;
+    private $isPropertyIsMandatoryRemoved = false;
 
     /**
      * @return boolean
@@ -103,7 +103,7 @@ trait AttributeIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyIsInstanceAttributeRemoved = null;
+    private $isPropertyIsInstanceAttributeRemoved = false;
 
     /**
      * @return boolean
@@ -126,7 +126,7 @@ trait AttributeIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttributeValueTypeRemoved = null;
+    private $isPropertyAttributeValueTypeRemoved = false;
 
     /**
      * @return boolean
@@ -149,7 +149,7 @@ trait AttributeIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAttributeValueLengthRemoved = null;
+    private $isPropertyAttributeValueLengthRemoved = false;
 
     /**
      * @return boolean
@@ -172,7 +172,7 @@ trait AttributeIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyIsListRemoved = null;
+    private $isPropertyIsListRemoved = false;
 
     /**
      * @return boolean
@@ -195,7 +195,7 @@ trait AttributeIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyFieldNameRemoved = null;
+    private $isPropertyFieldNameRemoved = false;
 
     /**
      * @return boolean
@@ -218,7 +218,7 @@ trait AttributeIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyReferenceIdRemoved = null;
+    private $isPropertyReferenceIdRemoved = false;
 
     /**
      * @return boolean
@@ -241,7 +241,7 @@ trait AttributeIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyActiveRemoved = null;
+    private $isPropertyActiveRemoved = false;
 
     /**
      * @return boolean

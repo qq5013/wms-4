@@ -11,7 +11,7 @@ trait UserPermissionMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyVersionRemoved = null;
+    private $isPropertyVersionRemoved = false;
 
     /**
      * @return boolean
@@ -34,7 +34,7 @@ trait UserPermissionMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyActiveRemoved = null;
+    private $isPropertyActiveRemoved = false;
 
     /**
      * @return boolean
@@ -57,7 +57,7 @@ trait UserPermissionMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyUserUserNameRemoved = null;
+    private $isPropertyUserUserNameRemoved = false;
 
     /**
      * @return boolean
@@ -80,7 +80,7 @@ trait UserPermissionMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyUserAccessFailedCountRemoved = null;
+    private $isPropertyUserAccessFailedCountRemoved = false;
 
     /**
      * @return boolean
@@ -103,7 +103,7 @@ trait UserPermissionMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyUserEmailRemoved = null;
+    private $isPropertyUserEmailRemoved = false;
 
     /**
      * @return boolean
@@ -126,7 +126,7 @@ trait UserPermissionMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyUserEmailConfirmedRemoved = null;
+    private $isPropertyUserEmailConfirmedRemoved = false;
 
     /**
      * @return boolean
@@ -149,7 +149,7 @@ trait UserPermissionMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyUserLockoutEnabledRemoved = null;
+    private $isPropertyUserLockoutEnabledRemoved = false;
 
     /**
      * @return boolean
@@ -172,7 +172,7 @@ trait UserPermissionMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyUserLockoutEndDateUtcRemoved = null;
+    private $isPropertyUserLockoutEndDateUtcRemoved = false;
 
     /**
      * @return boolean
@@ -195,7 +195,7 @@ trait UserPermissionMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyUserPasswordHashRemoved = null;
+    private $isPropertyUserPasswordHashRemoved = false;
 
     /**
      * @return boolean
@@ -218,7 +218,7 @@ trait UserPermissionMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyUserPhoneNumberRemoved = null;
+    private $isPropertyUserPhoneNumberRemoved = false;
 
     /**
      * @return boolean
@@ -241,7 +241,7 @@ trait UserPermissionMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyUserPhoneNumberConfirmedRemoved = null;
+    private $isPropertyUserPhoneNumberConfirmedRemoved = false;
 
     /**
      * @return boolean
@@ -264,7 +264,7 @@ trait UserPermissionMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyUserTwoFactorEnabledRemoved = null;
+    private $isPropertyUserTwoFactorEnabledRemoved = false;
 
     /**
      * @return boolean
@@ -287,7 +287,7 @@ trait UserPermissionMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyUserSecurityStampRemoved = null;
+    private $isPropertyUserSecurityStampRemoved = false;
 
     /**
      * @return boolean
@@ -310,7 +310,7 @@ trait UserPermissionMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyUserCreatedByRemoved = null;
+    private $isPropertyUserCreatedByRemoved = false;
 
     /**
      * @return boolean
@@ -333,7 +333,7 @@ trait UserPermissionMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyUserCreatedAtRemoved = null;
+    private $isPropertyUserCreatedAtRemoved = false;
 
     /**
      * @return boolean
@@ -356,7 +356,7 @@ trait UserPermissionMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyUserUpdatedByRemoved = null;
+    private $isPropertyUserUpdatedByRemoved = false;
 
     /**
      * @return boolean
@@ -379,7 +379,7 @@ trait UserPermissionMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyUserUpdatedAtRemoved = null;
+    private $isPropertyUserUpdatedAtRemoved = false;
 
     /**
      * @return boolean
@@ -402,7 +402,7 @@ trait UserPermissionMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyUserActiveRemoved = null;
+    private $isPropertyUserActiveRemoved = false;
 
     /**
      * @return boolean
@@ -425,7 +425,7 @@ trait UserPermissionMvoIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyUserDeletedRemoved = null;
+    private $isPropertyUserDeletedRemoved = false;
 
     /**
      * @return boolean

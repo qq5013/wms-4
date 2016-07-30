@@ -11,7 +11,7 @@ trait AttributeSetInstanceExtensionFieldIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyNameRemoved = null;
+    private $isPropertyNameRemoved = false;
 
     /**
      * @return boolean
@@ -34,7 +34,7 @@ trait AttributeSetInstanceExtensionFieldIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyTypeRemoved = null;
+    private $isPropertyTypeRemoved = false;
 
     /**
      * @return boolean
@@ -57,7 +57,7 @@ trait AttributeSetInstanceExtensionFieldIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyLengthRemoved = null;
+    private $isPropertyLengthRemoved = false;
 
     /**
      * @return boolean
@@ -80,7 +80,7 @@ trait AttributeSetInstanceExtensionFieldIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyAliasRemoved = null;
+    private $isPropertyAliasRemoved = false;
 
     /**
      * @return boolean
@@ -103,7 +103,7 @@ trait AttributeSetInstanceExtensionFieldIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyDescriptionRemoved = null;
+    private $isPropertyDescriptionRemoved = false;
 
     /**
      * @return boolean
@@ -126,7 +126,7 @@ trait AttributeSetInstanceExtensionFieldIsPropertyRemovedTrait
      *
      * @var boolean
      */
-    private $isPropertyActiveRemoved = null;
+    private $isPropertyActiveRemoved = false;
 
     /**
      * @return boolean

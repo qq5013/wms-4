@@ -33,7 +33,10 @@
 		string filePath8 = System.IO.Path.Combine(projectDir, "../dddml/AccessManagement.yaml");
 		string filePath9 = System.IO.Path.Combine(projectDir, "../dddml/Audience.yaml");
 
-        BoundedContext boundedContext = BoundedContextUtils.LoadFromFiles(new string[]{ filePath1, filePath2, filePath3, filePath4, filePath5, filePath6, filePath7, filePath8, filePath9});
+        BoundedContext boundedContext = BoundedContextUtils.LoadFromFiles(new string[]{ 
+			filePath1, filePath2, filePath3, filePath4, filePath5, filePath6, filePath7, filePath8, filePath9,
+			//@"C:\Users\Yang\Documents\GitHub\dddml-spec\examples\Person.yaml"
+			});
         boundedContext.DefaultModule = "Dddml.Wms";
         return boundedContext; 
     }

@@ -194,14 +194,14 @@ public abstract class AbstractUserPermissionState implements UserPermissionState
     {
         String stateEntityIdUserId = this.getUserPermissionId().getUserId();
         String eventEntityIdUserId = stateEvent.getStateEventId().getUserId();
-        if (stateEntityIdUserId != eventEntityIdUserId)
+        if (!stateEntityIdUserId.equals(eventEntityIdUserId))
         {
             throw DomainError.named("mutateWrongEntity", "Entity Id UserId %1$s in state but entity id UserId %2$s in event", stateEntityIdUserId, eventEntityIdUserId);
         }
 
         String stateEntityIdPermissionId = this.getUserPermissionId().getPermissionId();
         String eventEntityIdPermissionId = stateEvent.getStateEventId().getPermissionId();
-        if (stateEntityIdPermissionId != eventEntityIdPermissionId)
+        if (!stateEntityIdPermissionId.equals(eventEntityIdPermissionId))
         {
             throw DomainError.named("mutateWrongEntity", "Entity Id PermissionId %1$s in state but entity id PermissionId %2$s in event", stateEntityIdPermissionId, eventEntityIdPermissionId);
         }

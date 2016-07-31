@@ -194,14 +194,14 @@ public abstract class AbstractUserLoginState implements UserLoginState
     {
         String stateEntityIdUserId = this.getUserLoginId().getUserId();
         String eventEntityIdUserId = stateEvent.getStateEventId().getUserId();
-        if (stateEntityIdUserId != eventEntityIdUserId)
+        if (!stateEntityIdUserId.equals(eventEntityIdUserId))
         {
             throw DomainError.named("mutateWrongEntity", "Entity Id UserId %1$s in state but entity id UserId %2$s in event", stateEntityIdUserId, eventEntityIdUserId);
         }
 
         LoginKey stateEntityIdLoginKey = this.getUserLoginId().getLoginKey();
         LoginKey eventEntityIdLoginKey = stateEvent.getStateEventId().getLoginKey();
-        if (stateEntityIdLoginKey != eventEntityIdLoginKey)
+        if (!stateEntityIdLoginKey.equals(eventEntityIdLoginKey))
         {
             throw DomainError.named("mutateWrongEntity", "Entity Id LoginKey %1$s in state but entity id LoginKey %2$s in event", stateEntityIdLoginKey, eventEntityIdLoginKey);
         }

@@ -63,14 +63,14 @@ public class Main {
         System.out.println(attrState);
         System.out.println(attrState.getName());
         for (AttributeValueState v : attrState.getAttributeValues()) {
-            System.out.println(v.getName() + "~~~ "  + v.getDescription());
+            System.out.println(v.getName() + "~~~ " + v.getDescription());
         }
         ////////////////////////////////////
         System.out.println("////////////////////////////////////");
         AttributeCommand.MergePatchAttribute patchAttr = new AbstractAttributeCommand.SimpleMergePatchAttribute();
         patchAttr.setAttributeId(attrId);
         patchAttr.setVersion(attrState.getVersion());
-        AttributeValueCommand.MergePatchAttributeValue patchAttrVal =  patchAttr.newMergePatchAttributeValue();
+        AttributeValueCommand.MergePatchAttributeValue patchAttrVal = patchAttr.newMergePatchAttributeValue();
         patchAttrVal.setValue("B");
         patchAttrVal.setDescription("This is colorful day!");
         patchAttr.getAttributeValueCommands().add(patchAttrVal);
@@ -79,15 +79,22 @@ public class Main {
         System.out.println(attrState2);
         System.out.println(attrState2.getName());
         for (AttributeValueState v : attrState2.getAttributeValues()) {
-            System.out.println(v.getName() + "~~~ "  + v.getDescription());
+            System.out.println(v.getName() + "~~~ " + v.getDescription());
         }
         Iterable<AttributeState> attrs = attributeApplicationService.getByProperty("name", "Color", null, null, null);
-        for(AttributeState a : attrs)
-        {
-            System.out.println(a.getName() + " "  + a.getAttributeId());
+        for (AttributeState a : attrs) {
+            System.out.println(a.getName() + " " + a.getAttributeId());
         }
-        long count = attributeApplicationService.getCount((Iterable)null);
+        long count = attributeApplicationService.getCount((Iterable) null);
         System.out.println(count);
+
+        AbstractAttributeStateCommandConverter.SimpleAttributeStateCommandConverter cmdConverter = new AbstractAttributeStateCommandConverter.SimpleAttributeStateCommandConverter();
+        AttributeCommand.MergePatchAttribute patchAttr5 = (AttributeCommand.MergePatchAttribute) cmdConverter.toCreateOrMergePatchAttribute(attrState2);
+        patchAttr5.setDescription("RGB RGB RGB");
+        attributeApplicationService.when(patchAttr5);
+        AttributeState attrState5 = attributeApplicationService.get(attrId);
+        System.out.println(attrState5);
+        System.out.println(attrState5.getDescription());
     }
 
 

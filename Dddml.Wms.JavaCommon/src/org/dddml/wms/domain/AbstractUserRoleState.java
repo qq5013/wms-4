@@ -194,14 +194,14 @@ public abstract class AbstractUserRoleState implements UserRoleState
     {
         String stateEntityIdUserId = this.getUserRoleId().getUserId();
         String eventEntityIdUserId = stateEvent.getStateEventId().getUserId();
-        if (stateEntityIdUserId != eventEntityIdUserId)
+        if (!stateEntityIdUserId.equals(eventEntityIdUserId))
         {
             throw DomainError.named("mutateWrongEntity", "Entity Id UserId %1$s in state but entity id UserId %2$s in event", stateEntityIdUserId, eventEntityIdUserId);
         }
 
         String stateEntityIdRoleId = this.getUserRoleId().getRoleId();
         String eventEntityIdRoleId = stateEvent.getStateEventId().getRoleId();
-        if (stateEntityIdRoleId != eventEntityIdRoleId)
+        if (!stateEntityIdRoleId.equals(eventEntityIdRoleId))
         {
             throw DomainError.named("mutateWrongEntity", "Entity Id RoleId %1$s in state but entity id RoleId %2$s in event", stateEntityIdRoleId, eventEntityIdRoleId);
         }

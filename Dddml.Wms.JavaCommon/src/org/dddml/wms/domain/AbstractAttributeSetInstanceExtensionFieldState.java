@@ -314,14 +314,14 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldState implements
     {
         String stateEntityIdGroupId = this.getAttributeSetInstanceExtensionFieldId().getGroupId();
         String eventEntityIdGroupId = stateEvent.getStateEventId().getGroupId();
-        if (stateEntityIdGroupId != eventEntityIdGroupId)
+        if (!stateEntityIdGroupId.equals(eventEntityIdGroupId))
         {
             throw DomainError.named("mutateWrongEntity", "Entity Id GroupId %1$s in state but entity id GroupId %2$s in event", stateEntityIdGroupId, eventEntityIdGroupId);
         }
 
         String stateEntityIdIndex = this.getAttributeSetInstanceExtensionFieldId().getIndex();
         String eventEntityIdIndex = stateEvent.getStateEventId().getIndex();
-        if (stateEntityIdIndex != eventEntityIdIndex)
+        if (!stateEntityIdIndex.equals(eventEntityIdIndex))
         {
             throw DomainError.named("mutateWrongEntity", "Entity Id Index %1$s in state but entity id Index %2$s in event", stateEntityIdIndex, eventEntityIdIndex);
         }

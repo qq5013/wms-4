@@ -160,6 +160,58 @@ namespace Dddml.Wms.HttpServices.ApiControllers
           } catch (Exception ex) { var response = UsersControllerUtils.GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
+        [Route("{userId}/UserRoles/{roleId}")]
+        [HttpGet]
+        public UserRoleStateDto GetUserRole(string userId, string roleId)
+        {
+          try {
+            var state = (UserRoleState)_userApplicationService.GetUserRole(userId, roleId);
+            if (state == null) { return null; }
+            var stateDto = new UserRoleStateDto(state);
+            stateDto.AllFieldsReturned = true;
+            return stateDto;
+          } catch (Exception ex) { var response = UsersControllerUtils.GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
+        }
+
+        [Route("{userId}/UserClaims/{claimId}")]
+        [HttpGet]
+        public UserClaimStateDto GetUserClaim(string userId, int claimId)
+        {
+          try {
+            var state = (UserClaimState)_userApplicationService.GetUserClaim(userId, claimId);
+            if (state == null) { return null; }
+            var stateDto = new UserClaimStateDto(state);
+            stateDto.AllFieldsReturned = true;
+            return stateDto;
+          } catch (Exception ex) { var response = UsersControllerUtils.GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
+        }
+
+        [Route("{userId}/UserPermissions/{permissionId}")]
+        [HttpGet]
+        public UserPermissionStateDto GetUserPermission(string userId, string permissionId)
+        {
+          try {
+            var state = (UserPermissionState)_userApplicationService.GetUserPermission(userId, permissionId);
+            if (state == null) { return null; }
+            var stateDto = new UserPermissionStateDto(state);
+            stateDto.AllFieldsReturned = true;
+            return stateDto;
+          } catch (Exception ex) { var response = UsersControllerUtils.GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
+        }
+
+        [Route("{userId}/UserLogins/{loginKey}")]
+        [HttpGet]
+        public UserLoginStateDto GetUserLogin(string userId, string loginKey)
+        {
+          try {
+            var state = (UserLoginState)_userApplicationService.GetUserLogin(userId, (new LoginKeyFlattenedDtoFormatter().Parse(loginKey)).ToLoginKey());
+            if (state == null) { return null; }
+            var stateDto = new UserLoginStateDto(state);
+            stateDto.AllFieldsReturned = true;
+            return stateDto;
+          } catch (Exception ex) { var response = UsersControllerUtils.GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
+        }
+
 
 		// /////////////////////////////////////////////////
 

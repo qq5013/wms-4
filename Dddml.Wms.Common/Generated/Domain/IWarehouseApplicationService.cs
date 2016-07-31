@@ -36,6 +36,7 @@ namespace Dddml.Wms.Domain
 
         IWarehouseStateEvent GetStateEvent(string warehouseId, long version);
 
+
 	}
 
 }

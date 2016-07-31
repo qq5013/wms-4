@@ -36,6 +36,7 @@ namespace Dddml.Wms.Domain
 
         ILocatorStateEvent GetStateEvent(string locatorId, long version);
 
+
 	}
 
 }

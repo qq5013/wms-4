@@ -132,6 +132,7 @@ namespace Dddml.Wms.Domain.NHibernate
             return criteria.UniqueResult<long>();
         }
 
+
         protected static void AddNotDeletedRestriction(ICriteria criteria)
         {
             criteria.Add(NHibernateRestrictions.Eq("Deleted", false));

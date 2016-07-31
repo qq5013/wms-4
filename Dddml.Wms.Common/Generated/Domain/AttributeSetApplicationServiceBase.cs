@@ -127,6 +127,11 @@ namespace Dddml.Wms.Domain
             return e;
         }
 
+        public virtual IAttributeUseState GetAttributeUse(string attributeSetId, string attributeId)
+        {
+            return StateRepository.GetAttributeUse(attributeSetId, attributeId);
+        }
+
 
 		public abstract IAttributeSetAggregate GetAttributeSetAggregate(IAttributeSetState state);
 

@@ -263,6 +263,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return GetStateEventAsync(warehouseId, version).GetAwaiter().GetResult();
         }
 
+
         protected virtual string QueryFieldValueSeparator
         {
             get { return ","; }

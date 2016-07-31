@@ -36,6 +36,7 @@ namespace Dddml.Wms.Domain
 
         IRoleStateEvent GetStateEvent(string roleId, long version);
 
+
 	}
 
 }

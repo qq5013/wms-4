@@ -128,6 +128,11 @@ namespace Dddml.Wms.Domain
             return e;
         }
 
+        public virtual IInOutLineState GetInOutLine(string inOutDocumentNumber, SkuId skuId)
+        {
+            return StateRepository.GetInOutLine(inOutDocumentNumber, skuId);
+        }
+
 
 		public abstract IInOutAggregate GetInOutAggregate(IInOutState state);
 

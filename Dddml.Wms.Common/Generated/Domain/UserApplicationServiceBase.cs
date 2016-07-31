@@ -127,6 +127,26 @@ namespace Dddml.Wms.Domain
             return e;
         }
 
+        public virtual IUserRoleState GetUserRole(string userId, string roleId)
+        {
+            return StateRepository.GetUserRole(userId, roleId);
+        }
+
+        public virtual IUserClaimState GetUserClaim(string userId, int claimId)
+        {
+            return StateRepository.GetUserClaim(userId, claimId);
+        }
+
+        public virtual IUserPermissionState GetUserPermission(string userId, string permissionId)
+        {
+            return StateRepository.GetUserPermission(userId, permissionId);
+        }
+
+        public virtual IUserLoginState GetUserLogin(string userId, LoginKey loginKey)
+        {
+            return StateRepository.GetUserLogin(userId, loginKey);
+        }
+
 
 		public abstract IUserAggregate GetUserAggregate(IUserState state);
 

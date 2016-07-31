@@ -36,6 +36,7 @@ namespace Dddml.Wms.Domain
 
         IPermissionStateEvent GetStateEvent(string permissionId, long version);
 
+
 	}
 
 }

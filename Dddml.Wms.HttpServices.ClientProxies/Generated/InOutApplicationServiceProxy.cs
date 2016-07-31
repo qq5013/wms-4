@@ -264,6 +264,12 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return GetStateEventAsync(documentNumber, version).GetAwaiter().GetResult();
         }
 
+        public virtual IInOutLineState GetInOutLine(string inOutDocumentNumber, SkuId skuId)
+        {
+            return null;//TODO
+        }
+
+
         protected virtual string QueryFieldValueSeparator
         {
             get { return ","; }

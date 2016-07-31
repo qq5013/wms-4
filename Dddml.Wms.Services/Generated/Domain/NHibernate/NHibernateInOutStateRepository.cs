@@ -133,6 +133,14 @@ namespace Dddml.Wms.Domain.NHibernate
             return criteria.UniqueResult<long>();
         }
 
+        [Transaction(ReadOnly = true)]
+        public virtual IInOutLineState GetInOutLine(string inOutDocumentNumber, SkuId skuId)
+        {
+            var entityId = new InOutLineId(inOutDocumentNumber, skuId);
+            return CurrentSession.Get<InOutLineState>(entityId);
+        }
+
+
         protected static void AddNotDeletedRestriction(ICriteria criteria)
         {
             criteria.Add(NHibernateRestrictions.Eq("Deleted", false));

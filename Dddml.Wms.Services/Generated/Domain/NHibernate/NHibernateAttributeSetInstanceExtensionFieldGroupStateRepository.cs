@@ -132,6 +132,14 @@ namespace Dddml.Wms.Domain.NHibernate
             return criteria.UniqueResult<long>();
         }
 
+        [Transaction(ReadOnly = true)]
+        public virtual IAttributeSetInstanceExtensionFieldState GetAttributeSetInstanceExtensionField(string groupId, string index)
+        {
+            var entityId = new AttributeSetInstanceExtensionFieldId(groupId, index);
+            return CurrentSession.Get<AttributeSetInstanceExtensionFieldState>(entityId);
+        }
+
+
         protected static void AddNotDeletedRestriction(ICriteria criteria)
         {
             criteria.Add(NHibernateRestrictions.Eq("Deleted", false));

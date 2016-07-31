@@ -263,6 +263,27 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return GetStateEventAsync(userId, version).GetAwaiter().GetResult();
         }
 
+        public virtual IUserRoleState GetUserRole(string userId, string roleId)
+        {
+            return null;//TODO
+        }
+
+        public virtual IUserClaimState GetUserClaim(string userId, int claimId)
+        {
+            return null;//TODO
+        }
+
+        public virtual IUserPermissionState GetUserPermission(string userId, string permissionId)
+        {
+            return null;//TODO
+        }
+
+        public virtual IUserLoginState GetUserLogin(string userId, LoginKey loginKey)
+        {
+            return null;//TODO
+        }
+
+
         protected virtual string QueryFieldValueSeparator
         {
             get { return ","; }

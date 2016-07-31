@@ -132,6 +132,35 @@ namespace Dddml.Wms.Domain.NHibernate
             return criteria.UniqueResult<long>();
         }
 
+        [Transaction(ReadOnly = true)]
+        public virtual IUserRoleState GetUserRole(string userId, string roleId)
+        {
+            var entityId = new UserRoleId(userId, roleId);
+            return CurrentSession.Get<UserRoleState>(entityId);
+        }
+
+        [Transaction(ReadOnly = true)]
+        public virtual IUserClaimState GetUserClaim(string userId, int claimId)
+        {
+            var entityId = new UserClaimId(userId, claimId);
+            return CurrentSession.Get<UserClaimState>(entityId);
+        }
+
+        [Transaction(ReadOnly = true)]
+        public virtual IUserPermissionState GetUserPermission(string userId, string permissionId)
+        {
+            var entityId = new UserPermissionId(userId, permissionId);
+            return CurrentSession.Get<UserPermissionState>(entityId);
+        }
+
+        [Transaction(ReadOnly = true)]
+        public virtual IUserLoginState GetUserLogin(string userId, LoginKey loginKey)
+        {
+            var entityId = new UserLoginId(userId, loginKey);
+            return CurrentSession.Get<UserLoginState>(entityId);
+        }
+
+
         protected static void AddNotDeletedRestriction(ICriteria criteria)
         {
             criteria.Add(NHibernateRestrictions.Eq("Deleted", false));

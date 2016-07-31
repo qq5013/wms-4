@@ -9,9 +9,10 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.metadata.ClassMetadata;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
+import org.joda.money.CurrencyUnit;
+import org.joda.money.Money;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -35,6 +36,37 @@ public class Main {
 
         testCreateUpdateAttribute();
 
+    }
+    private static void testCreateAndVoidInout_0()
+    {
+        InOutApplicationService inOutApplicationService = (InOutApplicationService) springFrameworkApplicationContext.getBean("inOutApplicationService");
+        String documentNumber = UUID.randomUUID().toString();
+
+        InOutCommand.CreateInOut inOut = new AbstractInOutCommand.SimpleCreateInOut();
+        inOut.setDocumentNumber(documentNumber);
+        inOut.setCommandId(UUID.randomUUID().toString());
+        inOut.setDocumentAction(new DocumentAction(DocumentActionName.DRAFT));// 不能这样写：inOut.DocumentStatus = DocumentStatus.DRAFTED
+        inOut.setChargeAmount(Money.of(CurrencyUnit.getInstance("CNY"), 10000));
+        inOut.setFreightAmount(Money.of(CurrencyUnit.getInstance("CNY"), 400));
+        inOutApplicationService.when(inOut);
+
+        InOutState inOutState1 = inOutApplicationService.get(documentNumber);
+
+        InOutCommand.MergePatchInOut patchInOut = new AbstractInOutCommand.SimpleMergePatchInOut();
+        patchInOut.setDocumentNumber(documentNumber);
+        patchInOut.setDocumentAction(new DocumentAction(DocumentActionName.VOID));//不能这样写：patchInOut.DocumentStatus = DocumentStatus.VOIDED
+        patchInOut.setVersion(inOutState1.getVersion());
+        patchInOut.setCommandId(UUID.randomUUID().toString());
+
+        inOutApplicationService.when(patchInOut);
+
+        InOutState inOutResult = inOutApplicationService.get(documentNumber);
+        //System.out.println(inOutResult.DocumentNumber);
+//        Assert.AreEqual(DocumentStatus.VOIDED, inOutResult.getDocumentStatus());
+//        System.out.println(inOutResult.getFreightAmount());
+//        Assert.AreEqual(inOut.getFreightAmount(), inOutResult.getFreightAmount());
+//        System.out.println(inOutResult.getChargeAmount());
+//        Assert.AreEqual(inOut.getChargeAmount(), inOutResult.getChargeAmount());
     }
 
     private static void testCreateUpdateAttribute() {

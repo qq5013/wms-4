@@ -9,14 +9,20 @@ namespace Dddml.Wms.Domain
 {
     public class InOutDocumentActionCommandHandler : IPropertyCommandHandler<DocumentAction, string>
     {
-        [ThreadStatic]
-        private static string _currentDocumentStatus;
+        //[ThreadStatic]
+        //private static string _currentDocumentStatus;
 
-        private static StateMachine<string, string> _stateMachine;
+        //private static StateMachine<string, string> _stateMachine;
 
-        static InOutDocumentActionCommandHandler()
+        //static InOutDocumentActionCommandHandler()
+        //{
+        //    var tm = BuildStateMachine(() => _currentDocumentStatus, s => _currentDocumentStatus = s);
+        //    _stateMachine = tm;
+        //}
+
+        private static StateMachine<string, string> BuildStateMachine(Func<String> stateAccessor, Action<String> stateMutator)
         {
-            var tm = new StateMachine<string, string>(() => _currentDocumentStatus, s => _currentDocumentStatus = s);
+            var tm = new StateMachine<string, string>(stateAccessor, stateMutator);
 
             tm.Configure(DocumentStatus.Initial)
                 .Permit(DocumentActionName.Draft, DocumentStatus.Drafted);
@@ -28,8 +34,7 @@ namespace Dddml.Wms.Domain
             tm.Configure(DocumentStatus.Completed)
                 .Permit(DocumentActionName.Close, DocumentStatus.Closed)
                 .Permit(DocumentActionName.Reverse, DocumentStatus.Reversed);
-
-            _stateMachine = tm;
+            return tm;
         }
 
         public void Execute(IPropertyCommand<DocumentAction, string> command)
@@ -45,9 +50,12 @@ namespace Dddml.Wms.Domain
                 { trigger = DocumentActionName.Draft; }
             }
 
-            _currentDocumentStatus = currentState;
-            _stateMachine.Fire(trigger);
-            command.SetState(_currentDocumentStatus);
+            //TODO 这样才是线程安全的，但是效率不高，需要改进：
+            var stateMachine = BuildStateMachine(() => currentState, command.SetState);
+            stateMachine.Fire(trigger);
+            //_currentDocumentStatus = currentState;
+            //_stateMachine.Fire(trigger);
+            //command.SetState(_currentDocumentStatus);
         }
 
     }

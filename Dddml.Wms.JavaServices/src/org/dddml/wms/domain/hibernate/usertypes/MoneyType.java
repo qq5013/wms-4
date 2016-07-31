@@ -42,7 +42,7 @@ public class MoneyType implements CompositeUserType {
                 return money.getCurrencyUnit().getCurrencyCode();
             }
             default: {
-                throw new HibernateException("Invalid property index [" + propertyIndex + "]");
+                throw new HibernateException("INVALID property index [" + propertyIndex + "]");
             }
         }
     }

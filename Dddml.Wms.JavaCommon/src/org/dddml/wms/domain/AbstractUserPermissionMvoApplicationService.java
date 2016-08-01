@@ -75,7 +75,10 @@ public abstract class AbstractUserPermissionMvoApplicationService implements Use
     }
 
     public UserPermissionMvoStateEvent getStateEvent(UserPermissionId userPermissionId, long version) {
-        throw new UnsupportedOperationException(); //todo
+        UserPermissionMvoStateEvent e = (UserPermissionMvoStateEvent)getEventStore().getStateEvent(toEventStoreAggregateId(userPermissionId), version);
+        if (e != null)
+        { e.setStateEventReadOnly(true); }
+        return e;
     }
 
 

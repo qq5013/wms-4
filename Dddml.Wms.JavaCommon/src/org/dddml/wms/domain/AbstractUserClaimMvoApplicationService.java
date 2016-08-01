@@ -75,7 +75,10 @@ public abstract class AbstractUserClaimMvoApplicationService implements UserClai
     }
 
     public UserClaimMvoStateEvent getStateEvent(UserClaimId userClaimId, long version) {
-        throw new UnsupportedOperationException(); //todo
+        UserClaimMvoStateEvent e = (UserClaimMvoStateEvent)getEventStore().getStateEvent(toEventStoreAggregateId(userClaimId), version);
+        if (e != null)
+        { e.setStateEventReadOnly(true); }
+        return e;
     }
 
 

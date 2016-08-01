@@ -75,7 +75,10 @@ public abstract class AbstractLocatorApplicationService implements LocatorApplic
     }
 
     public LocatorStateEvent getStateEvent(String locatorId, long version) {
-        throw new UnsupportedOperationException(); //todo
+        LocatorStateEvent e = (LocatorStateEvent)getEventStore().getStateEvent(toEventStoreAggregateId(locatorId), version);
+        if (e != null)
+        { e.setStateEventReadOnly(true); }
+        return e;
     }
 
 

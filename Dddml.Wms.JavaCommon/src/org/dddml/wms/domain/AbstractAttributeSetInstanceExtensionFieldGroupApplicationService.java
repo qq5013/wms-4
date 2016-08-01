@@ -75,7 +75,10 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldGroupApplication
     }
 
     public AttributeSetInstanceExtensionFieldGroupStateEvent getStateEvent(String id, long version) {
-        throw new UnsupportedOperationException(); //todo
+        AttributeSetInstanceExtensionFieldGroupStateEvent e = (AttributeSetInstanceExtensionFieldGroupStateEvent)getEventStore().getStateEvent(toEventStoreAggregateId(id), version);
+        if (e != null)
+        { e.setStateEventReadOnly(true); }
+        return e;
     }
 
     public AttributeSetInstanceExtensionFieldState getAttributeSetInstanceExtensionField(String groupId, String index) {

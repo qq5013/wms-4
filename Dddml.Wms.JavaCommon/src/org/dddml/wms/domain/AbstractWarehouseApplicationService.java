@@ -75,7 +75,10 @@ public abstract class AbstractWarehouseApplicationService implements WarehouseAp
     }
 
     public WarehouseStateEvent getStateEvent(String warehouseId, long version) {
-        throw new UnsupportedOperationException(); //todo
+        WarehouseStateEvent e = (WarehouseStateEvent)getEventStore().getStateEvent(toEventStoreAggregateId(warehouseId), version);
+        if (e != null)
+        { e.setStateEventReadOnly(true); }
+        return e;
     }
 
 

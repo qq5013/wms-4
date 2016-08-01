@@ -75,7 +75,10 @@ public abstract class AbstractAudienceApplicationService implements AudienceAppl
     }
 
     public AudienceStateEvent getStateEvent(String clientId, long version) {
-        throw new UnsupportedOperationException(); //todo
+        AudienceStateEvent e = (AudienceStateEvent)getEventStore().getStateEvent(toEventStoreAggregateId(clientId), version);
+        if (e != null)
+        { e.setStateEventReadOnly(true); }
+        return e;
     }
 
 

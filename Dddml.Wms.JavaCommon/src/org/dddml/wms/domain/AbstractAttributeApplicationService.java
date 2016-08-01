@@ -75,7 +75,10 @@ public abstract class AbstractAttributeApplicationService implements AttributeAp
     }
 
     public AttributeStateEvent getStateEvent(String attributeId, long version) {
-        throw new UnsupportedOperationException(); //todo
+        AttributeStateEvent e = (AttributeStateEvent)getEventStore().getStateEvent(toEventStoreAggregateId(attributeId), version);
+        if (e != null)
+        { e.setStateEventReadOnly(true); }
+        return e;
     }
 
     public AttributeValueState getAttributeValue(String attributeId, String value) {

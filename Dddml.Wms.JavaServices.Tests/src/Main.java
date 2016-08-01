@@ -83,6 +83,13 @@ public class Main {
         //Assert.AreEqual(inOut.getFreightAmount(), inOutResult.getFreightAmount());
         System.out.println(inOutResult.getChargeAmount());
         //Assert.AreEqual(inOut.getChargeAmount(), inOutResult.getChargeAmount());
+
+        InOutStateEvent stateEvent_1 = inOutApplicationService.getStateEvent(documentNumber, -1);
+        System.out.println(stateEvent_1);
+        System.out.println(stateEvent_1.getDocumentStatus());
+        InOutStateEvent stateEvent_2 = inOutApplicationService.getStateEvent(documentNumber, 0);
+        System.out.println(stateEvent_2);
+        System.out.println(stateEvent_2.getDocumentStatus());
     }
 
     private static void testCreateUpdateAttribute() {

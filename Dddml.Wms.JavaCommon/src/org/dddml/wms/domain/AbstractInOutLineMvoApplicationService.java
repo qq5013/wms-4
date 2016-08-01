@@ -77,7 +77,10 @@ public abstract class AbstractInOutLineMvoApplicationService implements InOutLin
     }
 
     public InOutLineMvoStateEvent getStateEvent(InOutLineId inOutLineId, long version) {
-        throw new UnsupportedOperationException(); //todo
+        InOutLineMvoStateEvent e = (InOutLineMvoStateEvent)getEventStore().getStateEvent(toEventStoreAggregateId(inOutLineId), version);
+        if (e != null)
+        { e.setStateEventReadOnly(true); }
+        return e;
     }
 
 

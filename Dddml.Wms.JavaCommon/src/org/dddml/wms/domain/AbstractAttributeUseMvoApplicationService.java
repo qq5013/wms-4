@@ -75,7 +75,10 @@ public abstract class AbstractAttributeUseMvoApplicationService implements Attri
     }
 
     public AttributeUseMvoStateEvent getStateEvent(AttributeSetAttributeUseId attributeSetAttributeUseId, long version) {
-        throw new UnsupportedOperationException(); //todo
+        AttributeUseMvoStateEvent e = (AttributeUseMvoStateEvent)getEventStore().getStateEvent(toEventStoreAggregateId(attributeSetAttributeUseId), version);
+        if (e != null)
+        { e.setStateEventReadOnly(true); }
+        return e;
     }
 
 

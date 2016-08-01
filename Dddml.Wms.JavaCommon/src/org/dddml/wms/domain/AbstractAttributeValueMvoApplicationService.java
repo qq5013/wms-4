@@ -75,7 +75,10 @@ public abstract class AbstractAttributeValueMvoApplicationService implements Att
     }
 
     public AttributeValueMvoStateEvent getStateEvent(AttributeValueId attributeValueId, long version) {
-        throw new UnsupportedOperationException(); //todo
+        AttributeValueMvoStateEvent e = (AttributeValueMvoStateEvent)getEventStore().getStateEvent(toEventStoreAggregateId(attributeValueId), version);
+        if (e != null)
+        { e.setStateEventReadOnly(true); }
+        return e;
     }
 
 

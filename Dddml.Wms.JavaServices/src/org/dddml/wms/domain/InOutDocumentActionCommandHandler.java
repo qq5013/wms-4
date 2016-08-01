@@ -22,13 +22,6 @@ public class InOutDocumentActionCommandHandler implements PropertyCommandHandler
 
     static
     {
-        /*
-        StateMachine<String, String> tm = new StateMachine<String, String>(() => _currentDocumentStatus, s => _currentDocumentStatus = s);
-        tm.Configure(DocumentStatus.INITIAL).Permit(DocumentActionName.DRAFT, DocumentStatus.DRAFTED);
-        tm.Configure(DocumentStatus.DRAFTED).Permit(DocumentActionName.COMPLETE, DocumentStatus.COMPLETED).Permit(DocumentActionName.VOID, DocumentStatus.VOIDED);
-        tm.Configure(DocumentStatus.COMPLETED).Permit(DocumentActionName.CLOSE, DocumentStatus.CLOSED).Permit(DocumentActionName.REVERSE, DocumentStatus.REVERSED);
-        _stateMachine = tm;
-        */
         documentStatusStateMachineBuilder
                 = StateMachineBuilderFactory.create(DocumentStatusStateMachine.class, String.class,String.class, Object.class);
         documentStatusStateMachineBuilder.externalTransition().from(DocumentStatus.INITIAL).to(DocumentStatus.DRAFTED).on(DocumentActionName.DRAFT);

@@ -28,7 +28,7 @@
 	//boundedContext.Aggregates["AttributeSetInstance"].AuthorizationEnabled = true;
 	//boundedContext.Aggregates["AttributeSetInstance"].AnonymousAllowed = true;
 
-	boundedContext.SetTypeNamespaces(GetTypeNamespaces());
+	boundedContext.SetTypeScriptTypeNamespaces(GetTypeScriptTypeNamespaces());
 	//boundedContext.SetClrValueTypes(GetClrValueTypes());
 	//boundedContext.SetNHibernateTypes(GetNHibernateTypes());
 
@@ -112,13 +112,13 @@
 			dict.Add("double", "number");
 			dict.Add("long", "string");
 			dict.Add("long?", "string");
-			//dict.Add("Money", "_MONEY_");
+			dict.Add("Money", "Money");
 			dict.Add("string", "string");
 			
 			return dict;
 	}
 
-	private IDictionary<string, string> GetTypeNamespaces()
+	private IDictionary<string, string> GetTypeScriptTypeNamespaces()
 	{
 		var typeNamespaces = new Dictionary<string, string>();
 		typeNamespaces.Add("Money", "NodaMoney");

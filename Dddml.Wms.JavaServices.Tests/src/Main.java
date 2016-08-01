@@ -12,6 +12,8 @@ import org.hibernate.service.ServiceRegistryBuilder;
 import org.joda.money.CurrencyUnit;
 import org.joda.money.Money;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.squirrelframework.foundation.component.SquirrelProvider;
+import org.squirrelframework.foundation.fsm.DotVisitor;
 
 import java.util.Map;
 import java.util.UUID;
@@ -39,6 +41,16 @@ public class Main {
         testCreateUpdateAttribute();
 
         testCreateAndVoidInout_0();
+
+        outputDocumentStatusStateMachineDotFile();
+    }
+
+    private static void outputDocumentStatusStateMachineDotFile() {
+        DotVisitor visitor = SquirrelProvider.getInstance().newInstance(DotVisitor.class);
+        InOutDocumentActionCommandHandler.DocumentStatusStateMachine stateMachine
+                = InOutDocumentActionCommandHandler.documentStatusStateMachineBuilder.newStateMachine(DocumentStatus.INITIAL);
+        stateMachine.accept(visitor);
+        visitor.convertDotFile("DocumentStatusStateMachine");
     }
 
     private static void testCreateAndVoidInout_0()

@@ -13,12 +13,12 @@ import org.squirrelframework.foundation.fsm.impl.AbstractStateMachine;
 public class InOutDocumentActionCommandHandler implements PropertyCommandHandler<DocumentAction, String>
 {
 
-    static class DocumentStatusStateMachine extends AbstractStateMachine<DocumentStatusStateMachine, String, String, Object>
+    public static class DocumentStatusStateMachine extends AbstractStateMachine<DocumentStatusStateMachine, String, String, Object>
     {
 
     }
 
-    static StateMachineBuilder<DocumentStatusStateMachine, String, String, Object> documentStatusStateMachineBuilder;
+    public static StateMachineBuilder<DocumentStatusStateMachine, String, String, Object> documentStatusStateMachineBuilder;
 
     static
     {

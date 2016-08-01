@@ -1,0 +1,16 @@
+digraph {
+compound=true;
+subgraph cluster_StateMachine {
+label="org.dddml.wms.domain.InOutDocumentActionCommandHandler$DocumentStatusStateMachine";
+REVERSED [label="REVERSED"];
+CLOSED [label="CLOSED"];
+INITIAL [label="INITIAL"];
+DRAFTED [label="DRAFTED"];
+VOIDED [label="VOIDED"];
+COMPLETED [label="COMPLETED"];
+
+INITIAL -> DRAFTED [ label="DRAFT"];
+DRAFTED -> COMPLETED [ label="COMPLETE"];
+DRAFTED -> VOIDED [ label="VOID"];
+COMPLETED -> CLOSED [ label="CLOSE"];
+COMPLETED -> REVERSED [ label="REVERSE"];}}

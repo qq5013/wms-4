@@ -25,18 +25,22 @@ public class Main {
 
     static { springFrameworkApplicationContext = new ClassPathXmlApplicationContext(
             "config/DatabaseConfig.xml",
-            "config/AggregatesHibernateConfig.xml");
+            "config/AggregatesHibernateConfig.xml",
+            "config/DomainConfig.xml"
+            );
     }
 
     public static void main(final String[] args) throws Exception {
 
         ApplicationContext.current = new SpringApplicationContext(springFrameworkApplicationContext);
 
-        //testCreateUpdateOrganization();
+        testCreateUpdateOrganization();
 
         testCreateUpdateAttribute();
 
+        testCreateAndVoidInout_0();
     }
+
     private static void testCreateAndVoidInout_0()
     {
         InOutApplicationService inOutApplicationService = (InOutApplicationService) springFrameworkApplicationContext.getBean("inOutApplicationService");
@@ -61,12 +65,12 @@ public class Main {
         inOutApplicationService.when(patchInOut);
 
         InOutState inOutResult = inOutApplicationService.get(documentNumber);
-        //System.out.println(inOutResult.DocumentNumber);
-//        Assert.AreEqual(DocumentStatus.VOIDED, inOutResult.getDocumentStatus());
-//        System.out.println(inOutResult.getFreightAmount());
-//        Assert.AreEqual(inOut.getFreightAmount(), inOutResult.getFreightAmount());
-//        System.out.println(inOutResult.getChargeAmount());
-//        Assert.AreEqual(inOut.getChargeAmount(), inOutResult.getChargeAmount());
+        System.out.println(inOutResult.getDocumentStatus());
+        //Assert.AreEqual(DocumentStatus.VOIDED, inOutResult.getDocumentStatus());
+        System.out.println(inOutResult.getFreightAmount());
+        //Assert.AreEqual(inOut.getFreightAmount(), inOutResult.getFreightAmount());
+        System.out.println(inOutResult.getChargeAmount());
+        //Assert.AreEqual(inOut.getChargeAmount(), inOutResult.getChargeAmount());
     }
 
     private static void testCreateUpdateAttribute() {

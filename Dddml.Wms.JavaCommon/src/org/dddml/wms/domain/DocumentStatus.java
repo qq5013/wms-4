@@ -4,7 +4,7 @@ public final class DocumentStatus
 {
     private DocumentStatus() {}
 
-    public static final String INITIAL = "";
+    public static final String INITIAL = "INITIAL";
 
     /**
      草稿状态。可以添加行项。Drafted的单据可以撤销（VOID）或完成（COMPLETE）。

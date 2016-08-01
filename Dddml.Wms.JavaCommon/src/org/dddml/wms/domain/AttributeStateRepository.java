@@ -27,5 +27,7 @@ public interface AttributeStateRepository
 
     long getCount(Criterion filter);
 
+    AttributeValueState getAttributeValue(String attributeId, String value);
+
 }
 

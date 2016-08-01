@@ -78,6 +78,7 @@ public abstract class AbstractOrganizationApplicationService implements Organiza
         throw new UnsupportedOperationException(); //todo
     }
 
+
     public OrganizationAggregate getOrganizationAggregate(OrganizationState state)
     {
         return new AbstractOrganizationAggregate.SimpleOrganizationAggregate(state);

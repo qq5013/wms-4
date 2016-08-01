@@ -78,6 +78,7 @@ public abstract class AbstractAudienceApplicationService implements AudienceAppl
         throw new UnsupportedOperationException(); //todo
     }
 
+
     public AudienceAggregate getAudienceAggregate(AudienceState state)
     {
         return new AbstractAudienceAggregate.SimpleAudienceAggregate(state);

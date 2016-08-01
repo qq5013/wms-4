@@ -80,6 +80,11 @@ public abstract class AbstractInOutApplicationService implements InOutApplicatio
         throw new UnsupportedOperationException(); //todo
     }
 
+    public InOutLineState getInOutLine(String inOutDocumentNumber, SkuId skuId) {
+        return getStateRepository().getInOutLine(inOutDocumentNumber, skuId);
+    }
+
+
     public InOutAggregate getInOutAggregate(InOutState state)
     {
         return new AbstractInOutAggregate.SimpleInOutAggregate(state);

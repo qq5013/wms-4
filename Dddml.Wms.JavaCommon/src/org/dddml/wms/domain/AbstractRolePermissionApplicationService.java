@@ -78,6 +78,7 @@ public abstract class AbstractRolePermissionApplicationService implements RolePe
         throw new UnsupportedOperationException(); //todo
     }
 
+
     public RolePermissionAggregate getRolePermissionAggregate(RolePermissionState state)
     {
         return new AbstractRolePermissionAggregate.SimpleRolePermissionAggregate(state);

@@ -80,6 +80,7 @@ public abstract class AbstractInOutLineMvoApplicationService implements InOutLin
         throw new UnsupportedOperationException(); //todo
     }
 
+
     public InOutLineMvoAggregate getInOutLineMvoAggregate(InOutLineMvoState state)
     {
         return new AbstractInOutLineMvoAggregate.SimpleInOutLineMvoAggregate(state);

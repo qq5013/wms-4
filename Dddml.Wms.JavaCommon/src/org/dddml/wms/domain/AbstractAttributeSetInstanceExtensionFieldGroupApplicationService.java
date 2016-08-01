@@ -78,6 +78,11 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldGroupApplication
         throw new UnsupportedOperationException(); //todo
     }
 
+    public AttributeSetInstanceExtensionFieldState getAttributeSetInstanceExtensionField(String groupId, String index) {
+        return getStateRepository().getAttributeSetInstanceExtensionField(groupId, index);
+    }
+
+
     public AttributeSetInstanceExtensionFieldGroupAggregate getAttributeSetInstanceExtensionFieldGroupAggregate(AttributeSetInstanceExtensionFieldGroupState state)
     {
         return new AbstractAttributeSetInstanceExtensionFieldGroupAggregate.SimpleAttributeSetInstanceExtensionFieldGroupAggregate(state);

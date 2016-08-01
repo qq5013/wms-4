@@ -78,6 +78,7 @@ public abstract class AbstractWarehouseApplicationService implements WarehouseAp
         throw new UnsupportedOperationException(); //todo
     }
 
+
     public WarehouseAggregate getWarehouseAggregate(WarehouseState state)
     {
         return new AbstractWarehouseAggregate.SimpleWarehouseAggregate(state);

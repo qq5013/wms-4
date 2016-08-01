@@ -78,6 +78,7 @@ public abstract class AbstractRoleApplicationService implements RoleApplicationS
         throw new UnsupportedOperationException(); //todo
     }
 
+
     public RoleAggregate getRoleAggregate(RoleState state)
     {
         return new AbstractRoleAggregate.SimpleRoleAggregate(state);

@@ -79,6 +79,7 @@ public abstract class AbstractAttributeSetInstanceApplicationService implements 
         throw new UnsupportedOperationException(); //todo
     }
 
+
     public AttributeSetInstanceAggregate getAttributeSetInstanceAggregate(AttributeSetInstanceState state)
     {
         return new AbstractAttributeSetInstanceAggregate.SimpleAttributeSetInstanceAggregate(state);

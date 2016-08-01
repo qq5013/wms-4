@@ -78,6 +78,7 @@ public abstract class AbstractAttributeValueMvoApplicationService implements Att
         throw new UnsupportedOperationException(); //todo
     }
 
+
     public AttributeValueMvoAggregate getAttributeValueMvoAggregate(AttributeValueMvoState state)
     {
         return new AbstractAttributeValueMvoAggregate.SimpleAttributeValueMvoAggregate(state);

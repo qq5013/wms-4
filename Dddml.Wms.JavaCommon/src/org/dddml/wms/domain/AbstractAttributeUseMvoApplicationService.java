@@ -78,6 +78,7 @@ public abstract class AbstractAttributeUseMvoApplicationService implements Attri
         throw new UnsupportedOperationException(); //todo
     }
 
+
     public AttributeUseMvoAggregate getAttributeUseMvoAggregate(AttributeUseMvoState state)
     {
         return new AbstractAttributeUseMvoAggregate.SimpleAttributeUseMvoAggregate(state);

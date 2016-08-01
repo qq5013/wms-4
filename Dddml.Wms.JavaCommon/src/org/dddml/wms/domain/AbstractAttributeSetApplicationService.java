@@ -78,6 +78,11 @@ public abstract class AbstractAttributeSetApplicationService implements Attribut
         throw new UnsupportedOperationException(); //todo
     }
 
+    public AttributeUseState getAttributeUse(String attributeSetId, String attributeId) {
+        return getStateRepository().getAttributeUse(attributeSetId, attributeId);
+    }
+
+
     public AttributeSetAggregate getAttributeSetAggregate(AttributeSetState state)
     {
         return new AbstractAttributeSetAggregate.SimpleAttributeSetAggregate(state);

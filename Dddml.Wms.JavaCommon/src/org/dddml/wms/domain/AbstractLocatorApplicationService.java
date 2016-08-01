@@ -78,6 +78,7 @@ public abstract class AbstractLocatorApplicationService implements LocatorApplic
         throw new UnsupportedOperationException(); //todo
     }
 
+
     public LocatorAggregate getLocatorAggregate(LocatorState state)
     {
         return new AbstractLocatorAggregate.SimpleLocatorAggregate(state);

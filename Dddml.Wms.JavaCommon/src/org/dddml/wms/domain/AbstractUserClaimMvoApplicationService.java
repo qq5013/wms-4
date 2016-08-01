@@ -78,6 +78,7 @@ public abstract class AbstractUserClaimMvoApplicationService implements UserClai
         throw new UnsupportedOperationException(); //todo
     }
 
+
     public UserClaimMvoAggregate getUserClaimMvoAggregate(UserClaimMvoState state)
     {
         return new AbstractUserClaimMvoAggregate.SimpleUserClaimMvoAggregate(state);

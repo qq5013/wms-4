@@ -78,6 +78,11 @@ public abstract class AbstractAttributeApplicationService implements AttributeAp
         throw new UnsupportedOperationException(); //todo
     }
 
+    public AttributeValueState getAttributeValue(String attributeId, String value) {
+        return getStateRepository().getAttributeValue(attributeId, value);
+    }
+
+
     public AttributeAggregate getAttributeAggregate(AttributeState state)
     {
         return new AbstractAttributeAggregate.SimpleAttributeAggregate(state);

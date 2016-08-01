@@ -78,6 +78,7 @@ public abstract class AbstractUserLoginMvoApplicationService implements UserLogi
         throw new UnsupportedOperationException(); //todo
     }
 
+
     public UserLoginMvoAggregate getUserLoginMvoAggregate(UserLoginMvoState state)
     {
         return new AbstractUserLoginMvoAggregate.SimpleUserLoginMvoAggregate(state);

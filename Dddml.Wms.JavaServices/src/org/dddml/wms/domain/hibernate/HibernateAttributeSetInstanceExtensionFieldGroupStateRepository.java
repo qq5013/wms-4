@@ -135,6 +135,14 @@ public class HibernateAttributeSetInstanceExtensionFieldGroupStateRepository imp
         return (long)criteria.uniqueResult();
     }
 
+    @Transactional(readOnly = true)
+    public AttributeSetInstanceExtensionFieldState getAttributeSetInstanceExtensionField(String groupId, String index)
+    {
+        AttributeSetInstanceExtensionFieldId entityId = new AttributeSetInstanceExtensionFieldId(groupId, index);
+        return (AttributeSetInstanceExtensionFieldState) getCurrentSession().get(AbstractAttributeSetInstanceExtensionFieldState.SimpleAttributeSetInstanceExtensionFieldState.class, entityId);
+    }
+
+
     protected static void addNotDeletedRestriction(Criteria criteria)
     {
         criteria.add(org.hibernate.criterion.Restrictions.eq("deleted", false));

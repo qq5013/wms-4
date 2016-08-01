@@ -135,6 +135,7 @@ public class HibernateUserPermissionMvoStateRepository implements UserPermission
         return (long)criteria.uniqueResult();
     }
 
+
     protected static void addNotDeletedRestriction(Criteria criteria)
     {
         criteria.add(org.hibernate.criterion.Restrictions.eq("deleted", false));

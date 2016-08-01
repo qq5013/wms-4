@@ -78,6 +78,7 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoApplicationSe
         throw new UnsupportedOperationException(); //todo
     }
 
+
     public AttributeSetInstanceExtensionFieldMvoAggregate getAttributeSetInstanceExtensionFieldMvoAggregate(AttributeSetInstanceExtensionFieldMvoState state)
     {
         return new AbstractAttributeSetInstanceExtensionFieldMvoAggregate.SimpleAttributeSetInstanceExtensionFieldMvoAggregate(state);

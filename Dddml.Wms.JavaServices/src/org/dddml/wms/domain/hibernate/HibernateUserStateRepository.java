@@ -135,6 +135,35 @@ public class HibernateUserStateRepository implements UserStateRepository
         return (long)criteria.uniqueResult();
     }
 
+    @Transactional(readOnly = true)
+    public UserRoleState getUserRole(String userId, String roleId)
+    {
+        UserRoleId entityId = new UserRoleId(userId, roleId);
+        return (UserRoleState) getCurrentSession().get(AbstractUserRoleState.SimpleUserRoleState.class, entityId);
+    }
+
+    @Transactional(readOnly = true)
+    public UserClaimState getUserClaim(String userId, Integer claimId)
+    {
+        UserClaimId entityId = new UserClaimId(userId, claimId);
+        return (UserClaimState) getCurrentSession().get(AbstractUserClaimState.SimpleUserClaimState.class, entityId);
+    }
+
+    @Transactional(readOnly = true)
+    public UserPermissionState getUserPermission(String userId, String permissionId)
+    {
+        UserPermissionId entityId = new UserPermissionId(userId, permissionId);
+        return (UserPermissionState) getCurrentSession().get(AbstractUserPermissionState.SimpleUserPermissionState.class, entityId);
+    }
+
+    @Transactional(readOnly = true)
+    public UserLoginState getUserLogin(String userId, LoginKey loginKey)
+    {
+        UserLoginId entityId = new UserLoginId(userId, loginKey);
+        return (UserLoginState) getCurrentSession().get(AbstractUserLoginState.SimpleUserLoginState.class, entityId);
+    }
+
+
     protected static void addNotDeletedRestriction(Criteria criteria)
     {
         criteria.add(org.hibernate.criterion.Restrictions.eq("deleted", false));

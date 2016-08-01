@@ -78,6 +78,7 @@ public abstract class AbstractOrganizationStructureTypeApplicationService implem
         throw new UnsupportedOperationException(); //todo
     }
 
+
     public OrganizationStructureTypeAggregate getOrganizationStructureTypeAggregate(OrganizationStructureTypeState state)
     {
         return new AbstractOrganizationStructureTypeAggregate.SimpleOrganizationStructureTypeAggregate(state);

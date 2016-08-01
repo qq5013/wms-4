@@ -135,6 +135,14 @@ public class HibernateAttributeSetStateRepository implements AttributeSetStateRe
         return (long)criteria.uniqueResult();
     }
 
+    @Transactional(readOnly = true)
+    public AttributeUseState getAttributeUse(String attributeSetId, String attributeId)
+    {
+        AttributeSetAttributeUseId entityId = new AttributeSetAttributeUseId(attributeSetId, attributeId);
+        return (AttributeUseState) getCurrentSession().get(AbstractAttributeUseState.SimpleAttributeUseState.class, entityId);
+    }
+
+
     protected static void addNotDeletedRestriction(Criteria criteria)
     {
         criteria.add(org.hibernate.criterion.Restrictions.eq("deleted", false));

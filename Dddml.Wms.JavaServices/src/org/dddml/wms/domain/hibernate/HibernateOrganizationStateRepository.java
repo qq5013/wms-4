@@ -135,6 +135,7 @@ public class HibernateOrganizationStateRepository implements OrganizationStateRe
         return (long)criteria.uniqueResult();
     }
 
+
     protected static void addNotDeletedRestriction(Criteria criteria)
     {
         criteria.add(org.hibernate.criterion.Restrictions.eq("deleted", false));

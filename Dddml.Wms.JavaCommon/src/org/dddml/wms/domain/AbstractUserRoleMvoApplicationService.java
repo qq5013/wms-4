@@ -78,6 +78,7 @@ public abstract class AbstractUserRoleMvoApplicationService implements UserRoleM
         throw new UnsupportedOperationException(); //todo
     }
 
+
     public UserRoleMvoAggregate getUserRoleMvoAggregate(UserRoleMvoState state)
     {
         return new AbstractUserRoleMvoAggregate.SimpleUserRoleMvoAggregate(state);

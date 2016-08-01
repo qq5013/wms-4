@@ -78,6 +78,7 @@ public abstract class AbstractPermissionApplicationService implements Permission
         throw new UnsupportedOperationException(); //todo
     }
 
+
     public PermissionAggregate getPermissionAggregate(PermissionState state)
     {
         return new AbstractPermissionAggregate.SimplePermissionAggregate(state);

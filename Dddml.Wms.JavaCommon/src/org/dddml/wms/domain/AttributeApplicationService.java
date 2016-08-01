@@ -31,5 +31,7 @@ public interface AttributeApplicationService
 
     AttributeStateEvent getStateEvent(String attributeId, long version);
 
+    AttributeValueState getAttributeValue(String attributeId, String value);
+
 }
 

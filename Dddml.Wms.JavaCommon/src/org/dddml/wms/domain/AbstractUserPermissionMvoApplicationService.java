@@ -78,6 +78,7 @@ public abstract class AbstractUserPermissionMvoApplicationService implements Use
         throw new UnsupportedOperationException(); //todo
     }
 
+
     public UserPermissionMvoAggregate getUserPermissionMvoAggregate(UserPermissionMvoState state)
     {
         return new AbstractUserPermissionMvoAggregate.SimpleUserPermissionMvoAggregate(state);

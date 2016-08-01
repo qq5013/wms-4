@@ -137,6 +137,14 @@ public class HibernateInOutStateRepository implements InOutStateRepository
         return (long)criteria.uniqueResult();
     }
 
+    @Transactional(readOnly = true)
+    public InOutLineState getInOutLine(String inOutDocumentNumber, SkuId skuId)
+    {
+        InOutLineId entityId = new InOutLineId(inOutDocumentNumber, skuId);
+        return (InOutLineState) getCurrentSession().get(AbstractInOutLineState.SimpleInOutLineState.class, entityId);
+    }
+
+
     protected static void addNotDeletedRestriction(Criteria criteria)
     {
         criteria.add(org.hibernate.criterion.Restrictions.eq("deleted", false));

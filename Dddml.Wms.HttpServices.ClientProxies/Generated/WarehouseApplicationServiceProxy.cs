@@ -48,7 +48,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(CreateWarehouseDto c)
         {
-            var idObj = ((c as ICreateWarehouse).WarehouseId);
+            var idObj = (c as ICreateWarehouse).WarehouseId;
             var uriParameters = new WarehouseUriParameters();
             uriParameters.Id = idObj;
 
@@ -65,7 +65,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(MergePatchWarehouseDto c)
         {
-            var idObj = ((c as IMergePatchWarehouse).WarehouseId);
+            var idObj = (c as IMergePatchWarehouse).WarehouseId;
             var uriParameters = new WarehouseUriParameters();
             uriParameters.Id = idObj;
 
@@ -81,7 +81,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(DeleteWarehouseDto c)
         {
-            var idObj = ((c as IDeleteWarehouse).WarehouseId);
+            var idObj = (c as IDeleteWarehouse).WarehouseId;
             var uriParameters = new WarehouseUriParameters();
             uriParameters.Id = idObj;
 
@@ -120,7 +120,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         public async Task<IWarehouseState> GetAsync(string warehouseId)
         {
             IWarehouseState state = null;
-            var idObj = (warehouseId);
+            var idObj = warehouseId;
             var uriParameters = new WarehouseUriParameters();
             uriParameters.Id = idObj;
 
@@ -247,7 +247,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task<IWarehouseStateEvent> GetStateEventAsync(string warehouseId, long version)
         {
-            var idObj = (warehouseId);
+            var idObj = warehouseId;
             var uriParameters = new WarehouseStateEventUriParameters();
             uriParameters.Id = idObj;
             uriParameters.Version = version.ToString();

@@ -48,7 +48,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(CreateLocatorDto c)
         {
-            var idObj = ((c as ICreateLocator).LocatorId);
+            var idObj = (c as ICreateLocator).LocatorId;
             var uriParameters = new LocatorUriParameters();
             uriParameters.Id = idObj;
 
@@ -65,7 +65,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(MergePatchLocatorDto c)
         {
-            var idObj = ((c as IMergePatchLocator).LocatorId);
+            var idObj = (c as IMergePatchLocator).LocatorId;
             var uriParameters = new LocatorUriParameters();
             uriParameters.Id = idObj;
 
@@ -81,7 +81,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(DeleteLocatorDto c)
         {
-            var idObj = ((c as IDeleteLocator).LocatorId);
+            var idObj = (c as IDeleteLocator).LocatorId;
             var uriParameters = new LocatorUriParameters();
             uriParameters.Id = idObj;
 
@@ -120,7 +120,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         public async Task<ILocatorState> GetAsync(string locatorId)
         {
             ILocatorState state = null;
-            var idObj = (locatorId);
+            var idObj = locatorId;
             var uriParameters = new LocatorUriParameters();
             uriParameters.Id = idObj;
 
@@ -247,7 +247,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task<ILocatorStateEvent> GetStateEventAsync(string locatorId, long version)
         {
-            var idObj = (locatorId);
+            var idObj = locatorId;
             var uriParameters = new LocatorStateEventUriParameters();
             uriParameters.Id = idObj;
             uriParameters.Version = version.ToString();

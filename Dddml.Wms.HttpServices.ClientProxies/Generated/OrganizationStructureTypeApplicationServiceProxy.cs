@@ -48,7 +48,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(CreateOrganizationStructureTypeDto c)
         {
-            var idObj = ((c as ICreateOrganizationStructureType).Id);
+            var idObj = (c as ICreateOrganizationStructureType).Id;
             var uriParameters = new OrganizationStructureTypeUriParameters();
             uriParameters.Id = idObj;
 
@@ -65,7 +65,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(MergePatchOrganizationStructureTypeDto c)
         {
-            var idObj = ((c as IMergePatchOrganizationStructureType).Id);
+            var idObj = (c as IMergePatchOrganizationStructureType).Id;
             var uriParameters = new OrganizationStructureTypeUriParameters();
             uriParameters.Id = idObj;
 
@@ -81,7 +81,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(DeleteOrganizationStructureTypeDto c)
         {
-            var idObj = ((c as IDeleteOrganizationStructureType).Id);
+            var idObj = (c as IDeleteOrganizationStructureType).Id;
             var uriParameters = new OrganizationStructureTypeUriParameters();
             uriParameters.Id = idObj;
 
@@ -120,7 +120,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         public async Task<IOrganizationStructureTypeState> GetAsync(string id)
         {
             IOrganizationStructureTypeState state = null;
-            var idObj = (id);
+            var idObj = id;
             var uriParameters = new OrganizationStructureTypeUriParameters();
             uriParameters.Id = idObj;
 
@@ -247,7 +247,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task<IOrganizationStructureTypeStateEvent> GetStateEventAsync(string id, long version)
         {
-            var idObj = (id);
+            var idObj = id;
             var uriParameters = new OrganizationStructureTypeStateEventUriParameters();
             uriParameters.Id = idObj;
             uriParameters.Version = version.ToString();

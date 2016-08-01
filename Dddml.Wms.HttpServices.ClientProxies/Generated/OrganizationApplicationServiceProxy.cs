@@ -48,7 +48,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(CreateOrganizationDto c)
         {
-            var idObj = ((c as ICreateOrganization).OrganizationId);
+            var idObj = (c as ICreateOrganization).OrganizationId;
             var uriParameters = new OrganizationUriParameters();
             uriParameters.Id = idObj;
 
@@ -65,7 +65,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(MergePatchOrganizationDto c)
         {
-            var idObj = ((c as IMergePatchOrganization).OrganizationId);
+            var idObj = (c as IMergePatchOrganization).OrganizationId;
             var uriParameters = new OrganizationUriParameters();
             uriParameters.Id = idObj;
 
@@ -81,7 +81,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(DeleteOrganizationDto c)
         {
-            var idObj = ((c as IDeleteOrganization).OrganizationId);
+            var idObj = (c as IDeleteOrganization).OrganizationId;
             var uriParameters = new OrganizationUriParameters();
             uriParameters.Id = idObj;
 
@@ -120,7 +120,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         public async Task<IOrganizationState> GetAsync(string organizationId)
         {
             IOrganizationState state = null;
-            var idObj = (organizationId);
+            var idObj = organizationId;
             var uriParameters = new OrganizationUriParameters();
             uriParameters.Id = idObj;
 
@@ -247,7 +247,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task<IOrganizationStateEvent> GetStateEventAsync(string organizationId, long version)
         {
-            var idObj = (organizationId);
+            var idObj = organizationId;
             var uriParameters = new OrganizationStateEventUriParameters();
             uriParameters.Id = idObj;
             uriParameters.Version = version.ToString();

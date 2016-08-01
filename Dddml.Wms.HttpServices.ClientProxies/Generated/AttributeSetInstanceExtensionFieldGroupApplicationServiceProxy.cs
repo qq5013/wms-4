@@ -48,7 +48,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(CreateAttributeSetInstanceExtensionFieldGroupDto c)
         {
-            var idObj = ((c as ICreateAttributeSetInstanceExtensionFieldGroup).Id);
+            var idObj = (c as ICreateAttributeSetInstanceExtensionFieldGroup).Id;
             var uriParameters = new AttributeSetInstanceExtensionFieldGroupUriParameters();
             uriParameters.Id = idObj;
 
@@ -65,7 +65,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(MergePatchAttributeSetInstanceExtensionFieldGroupDto c)
         {
-            var idObj = ((c as IMergePatchAttributeSetInstanceExtensionFieldGroup).Id);
+            var idObj = (c as IMergePatchAttributeSetInstanceExtensionFieldGroup).Id;
             var uriParameters = new AttributeSetInstanceExtensionFieldGroupUriParameters();
             uriParameters.Id = idObj;
 
@@ -81,7 +81,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(DeleteAttributeSetInstanceExtensionFieldGroupDto c)
         {
-            var idObj = ((c as IDeleteAttributeSetInstanceExtensionFieldGroup).Id);
+            var idObj = (c as IDeleteAttributeSetInstanceExtensionFieldGroup).Id;
             var uriParameters = new AttributeSetInstanceExtensionFieldGroupUriParameters();
             uriParameters.Id = idObj;
 
@@ -120,7 +120,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         public async Task<IAttributeSetInstanceExtensionFieldGroupState> GetAsync(string id)
         {
             IAttributeSetInstanceExtensionFieldGroupState state = null;
-            var idObj = (id);
+            var idObj = id;
             var uriParameters = new AttributeSetInstanceExtensionFieldGroupUriParameters();
             uriParameters.Id = idObj;
 
@@ -247,7 +247,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task<IAttributeSetInstanceExtensionFieldGroupStateEvent> GetStateEventAsync(string id, long version)
         {
-            var idObj = (id);
+            var idObj = id;
             var uriParameters = new AttributeSetInstanceExtensionFieldGroupStateEventUriParameters();
             uriParameters.Id = idObj;
             uriParameters.Version = version.ToString();
@@ -263,9 +263,21 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return GetStateEventAsync(id, version).GetAwaiter().GetResult();
         }
 
+        public async virtual Task<IAttributeSetInstanceExtensionFieldState> GetAttributeSetInstanceExtensionFieldAsync(string groupId, string index)
+        {
+            var uriParameters = new AttributeSetInstanceExtensionFieldUriParameters();
+            uriParameters.GroupId = groupId;
+            uriParameters.Index = index;
+
+            var req = new AttributeSetInstanceExtensionFieldGetRequest(uriParameters);
+            var resp = await _ramlClient.AttributeSetInstanceExtensionField.Get(req);
+            AttributeSetInstanceExtensionFieldGroupProxyUtils.ThrowOnHttpResponseError(resp);
+            return resp.Content;
+        }
+
         public virtual IAttributeSetInstanceExtensionFieldState GetAttributeSetInstanceExtensionField(string groupId, string index)
         {
-            return null;//TODO
+            return GetAttributeSetInstanceExtensionFieldAsync(groupId, index).GetAwaiter().GetResult();
         }
 
 

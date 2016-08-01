@@ -48,7 +48,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(CreateAttributeDto c)
         {
-            var idObj = ((c as ICreateAttribute).AttributeId);
+            var idObj = (c as ICreateAttribute).AttributeId;
             var uriParameters = new AttributeUriParameters();
             uriParameters.Id = idObj;
 
@@ -65,7 +65,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(MergePatchAttributeDto c)
         {
-            var idObj = ((c as IMergePatchAttribute).AttributeId);
+            var idObj = (c as IMergePatchAttribute).AttributeId;
             var uriParameters = new AttributeUriParameters();
             uriParameters.Id = idObj;
 
@@ -81,7 +81,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(DeleteAttributeDto c)
         {
-            var idObj = ((c as IDeleteAttribute).AttributeId);
+            var idObj = (c as IDeleteAttribute).AttributeId;
             var uriParameters = new AttributeUriParameters();
             uriParameters.Id = idObj;
 
@@ -120,7 +120,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         public async Task<IAttributeState> GetAsync(string attributeId)
         {
             IAttributeState state = null;
-            var idObj = (attributeId);
+            var idObj = attributeId;
             var uriParameters = new AttributeUriParameters();
             uriParameters.Id = idObj;
 
@@ -247,7 +247,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task<IAttributeStateEvent> GetStateEventAsync(string attributeId, long version)
         {
-            var idObj = (attributeId);
+            var idObj = attributeId;
             var uriParameters = new AttributeStateEventUriParameters();
             uriParameters.Id = idObj;
             uriParameters.Version = version.ToString();
@@ -263,9 +263,21 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return GetStateEventAsync(attributeId, version).GetAwaiter().GetResult();
         }
 
+        public async virtual Task<IAttributeValueState> GetAttributeValueAsync(string attributeId, string value)
+        {
+            var uriParameters = new AttributeValueUriParameters();
+            uriParameters.AttributeId = attributeId;
+            uriParameters.Value = value;
+
+            var req = new AttributeValueGetRequest(uriParameters);
+            var resp = await _ramlClient.AttributeValue.Get(req);
+            AttributeProxyUtils.ThrowOnHttpResponseError(resp);
+            return resp.Content;
+        }
+
         public virtual IAttributeValueState GetAttributeValue(string attributeId, string value)
         {
-            return null;//TODO
+            return GetAttributeValueAsync(attributeId, value).GetAwaiter().GetResult();
         }
 
 

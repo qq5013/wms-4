@@ -48,7 +48,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(CreatePermissionDto c)
         {
-            var idObj = ((c as ICreatePermission).PermissionId);
+            var idObj = (c as ICreatePermission).PermissionId;
             var uriParameters = new PermissionUriParameters();
             uriParameters.Id = idObj;
 
@@ -65,7 +65,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(MergePatchPermissionDto c)
         {
-            var idObj = ((c as IMergePatchPermission).PermissionId);
+            var idObj = (c as IMergePatchPermission).PermissionId;
             var uriParameters = new PermissionUriParameters();
             uriParameters.Id = idObj;
 
@@ -81,7 +81,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(DeletePermissionDto c)
         {
-            var idObj = ((c as IDeletePermission).PermissionId);
+            var idObj = (c as IDeletePermission).PermissionId;
             var uriParameters = new PermissionUriParameters();
             uriParameters.Id = idObj;
 
@@ -120,7 +120,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         public async Task<IPermissionState> GetAsync(string permissionId)
         {
             IPermissionState state = null;
-            var idObj = (permissionId);
+            var idObj = permissionId;
             var uriParameters = new PermissionUriParameters();
             uriParameters.Id = idObj;
 
@@ -247,7 +247,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task<IPermissionStateEvent> GetStateEventAsync(string permissionId, long version)
         {
-            var idObj = (permissionId);
+            var idObj = permissionId;
             var uriParameters = new PermissionStateEventUriParameters();
             uriParameters.Id = idObj;
             uriParameters.Version = version.ToString();

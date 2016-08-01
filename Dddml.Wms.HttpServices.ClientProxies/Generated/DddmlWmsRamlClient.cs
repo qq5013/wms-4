@@ -391,6 +391,68 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
 
     }
 
+    public partial class AttributeValue
+    {
+        private readonly DddmlWmsRamlClient proxy;
+
+        internal AttributeValue(DddmlWmsRamlClient proxy)
+        {
+            this.proxy = proxy;
+        }
+
+        		/// <param name="request">Models.AttributeValueGetRequest</param>
+		/// <param name="responseFormatters">response formatters</param>
+        public virtual async Task<Models.AttributeValueGetResponse> Get(Models.AttributeValueGetRequest request, IEnumerable<MediaTypeFormatter> responseFormatters = null)
+        {
+
+            var url = "Attributes/{attributeId}/AttributeValues/{value}";
+			if(request.UriParameters == null)
+				throw new InvalidOperationException("Uri Parameters cannot be null");               
+
+			if(request.UriParameters.AttributeId == null)
+				throw new InvalidOperationException("Uri Parameter AttributeId cannot be null");
+
+            url = url.Replace("{attributeId}", request.UriParameters.AttributeId.ToString());
+
+			if(request.UriParameters.Value == null)
+				throw new InvalidOperationException("Uri Parameter Value cannot be null");
+
+            url = url.Replace("{value}", request.UriParameters.Value.ToString());
+
+            url = url.Replace("?&", "?");
+
+            var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
+
+            if(request.RawHeaders != null)
+            {
+                foreach(var header in request.RawHeaders)
+                {
+                    req.Headers.TryAddWithoutValidation(header.Key, string.Join(",", header.Value));
+                }
+            }
+	        var response = await proxy.Client.SendAsync(req);
+			if (proxy.SchemaValidation.Enabled && proxy.SchemaValidation.RaiseExceptions)
+            {
+				if(proxy.SchemaValidation.RaiseExceptions)
+				{
+					;
+				}
+				
+            }
+            return new Models.AttributeValueGetResponse  
+                                            {
+                                                RawContent = response.Content,
+                                                RawHeaders = response.Headers,
+	                                            Formatters = responseFormatters,
+                                                StatusCode = response.StatusCode,
+                                                ReasonPhrase = response.ReasonPhrase,
+												SchemaValidation = new Lazy<SchemaValidationResults>(() => new SchemaValidationResults(true), true)
+                                            };
+        }
+
+    }
+
     public partial class AttributeSet
     {
         private readonly DddmlWmsRamlClient proxy;
@@ -745,6 +807,68 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
 				
             }
             return new Models.AttributeSetStateEventGetResponse  
+                                            {
+                                                RawContent = response.Content,
+                                                RawHeaders = response.Headers,
+	                                            Formatters = responseFormatters,
+                                                StatusCode = response.StatusCode,
+                                                ReasonPhrase = response.ReasonPhrase,
+												SchemaValidation = new Lazy<SchemaValidationResults>(() => new SchemaValidationResults(true), true)
+                                            };
+        }
+
+    }
+
+    public partial class AttributeUse
+    {
+        private readonly DddmlWmsRamlClient proxy;
+
+        internal AttributeUse(DddmlWmsRamlClient proxy)
+        {
+            this.proxy = proxy;
+        }
+
+        		/// <param name="request">Models.AttributeUseGetRequest</param>
+		/// <param name="responseFormatters">response formatters</param>
+        public virtual async Task<Models.AttributeUseGetResponse> Get(Models.AttributeUseGetRequest request, IEnumerable<MediaTypeFormatter> responseFormatters = null)
+        {
+
+            var url = "AttributeSets/{attributeSetId}/AttributeUses/{attributeId}";
+			if(request.UriParameters == null)
+				throw new InvalidOperationException("Uri Parameters cannot be null");               
+
+			if(request.UriParameters.AttributeSetId == null)
+				throw new InvalidOperationException("Uri Parameter AttributeSetId cannot be null");
+
+            url = url.Replace("{attributeSetId}", request.UriParameters.AttributeSetId.ToString());
+
+			if(request.UriParameters.AttributeId == null)
+				throw new InvalidOperationException("Uri Parameter AttributeId cannot be null");
+
+            url = url.Replace("{attributeId}", request.UriParameters.AttributeId.ToString());
+
+            url = url.Replace("?&", "?");
+
+            var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
+
+            if(request.RawHeaders != null)
+            {
+                foreach(var header in request.RawHeaders)
+                {
+                    req.Headers.TryAddWithoutValidation(header.Key, string.Join(",", header.Value));
+                }
+            }
+	        var response = await proxy.Client.SendAsync(req);
+			if (proxy.SchemaValidation.Enabled && proxy.SchemaValidation.RaiseExceptions)
+            {
+				if(proxy.SchemaValidation.RaiseExceptions)
+				{
+					;
+				}
+				
+            }
+            return new Models.AttributeUseGetResponse  
                                             {
                                                 RawContent = response.Content,
                                                 RawHeaders = response.Headers,
@@ -1489,6 +1613,68 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
 
     }
 
+    public partial class AttributeSetInstanceExtensionField
+    {
+        private readonly DddmlWmsRamlClient proxy;
+
+        internal AttributeSetInstanceExtensionField(DddmlWmsRamlClient proxy)
+        {
+            this.proxy = proxy;
+        }
+
+        		/// <param name="request">Models.AttributeSetInstanceExtensionFieldGetRequest</param>
+		/// <param name="responseFormatters">response formatters</param>
+        public virtual async Task<Models.AttributeSetInstanceExtensionFieldGetResponse> Get(Models.AttributeSetInstanceExtensionFieldGetRequest request, IEnumerable<MediaTypeFormatter> responseFormatters = null)
+        {
+
+            var url = "AttributeSetInstanceExtensionFieldGroups/{groupId}/AttributeSetInstanceExtensionFields/{index}";
+			if(request.UriParameters == null)
+				throw new InvalidOperationException("Uri Parameters cannot be null");               
+
+			if(request.UriParameters.GroupId == null)
+				throw new InvalidOperationException("Uri Parameter GroupId cannot be null");
+
+            url = url.Replace("{groupId}", request.UriParameters.GroupId.ToString());
+
+			if(request.UriParameters.Index == null)
+				throw new InvalidOperationException("Uri Parameter Index cannot be null");
+
+            url = url.Replace("{index}", request.UriParameters.Index.ToString());
+
+            url = url.Replace("?&", "?");
+
+            var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
+
+            if(request.RawHeaders != null)
+            {
+                foreach(var header in request.RawHeaders)
+                {
+                    req.Headers.TryAddWithoutValidation(header.Key, string.Join(",", header.Value));
+                }
+            }
+	        var response = await proxy.Client.SendAsync(req);
+			if (proxy.SchemaValidation.Enabled && proxy.SchemaValidation.RaiseExceptions)
+            {
+				if(proxy.SchemaValidation.RaiseExceptions)
+				{
+					;
+				}
+				
+            }
+            return new Models.AttributeSetInstanceExtensionFieldGetResponse  
+                                            {
+                                                RawContent = response.Content,
+                                                RawHeaders = response.Headers,
+	                                            Formatters = responseFormatters,
+                                                StatusCode = response.StatusCode,
+                                                ReasonPhrase = response.ReasonPhrase,
+												SchemaValidation = new Lazy<SchemaValidationResults>(() => new SchemaValidationResults(true), true)
+                                            };
+        }
+
+    }
+
     public partial class InOut
     {
         private readonly DddmlWmsRamlClient proxy;
@@ -1843,6 +2029,68 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
 				
             }
             return new Models.InOutStateEventGetResponse  
+                                            {
+                                                RawContent = response.Content,
+                                                RawHeaders = response.Headers,
+	                                            Formatters = responseFormatters,
+                                                StatusCode = response.StatusCode,
+                                                ReasonPhrase = response.ReasonPhrase,
+												SchemaValidation = new Lazy<SchemaValidationResults>(() => new SchemaValidationResults(true), true)
+                                            };
+        }
+
+    }
+
+    public partial class InOutLine
+    {
+        private readonly DddmlWmsRamlClient proxy;
+
+        internal InOutLine(DddmlWmsRamlClient proxy)
+        {
+            this.proxy = proxy;
+        }
+
+        		/// <param name="request">Models.InOutLineGetRequest</param>
+		/// <param name="responseFormatters">response formatters</param>
+        public virtual async Task<Models.InOutLineGetResponse> Get(Models.InOutLineGetRequest request, IEnumerable<MediaTypeFormatter> responseFormatters = null)
+        {
+
+            var url = "InOuts/{inOutDocumentNumber}/InOutLines/{skuId}";
+			if(request.UriParameters == null)
+				throw new InvalidOperationException("Uri Parameters cannot be null");               
+
+			if(request.UriParameters.InOutDocumentNumber == null)
+				throw new InvalidOperationException("Uri Parameter InOutDocumentNumber cannot be null");
+
+            url = url.Replace("{inOutDocumentNumber}", request.UriParameters.InOutDocumentNumber.ToString());
+
+			if(request.UriParameters.SkuId == null)
+				throw new InvalidOperationException("Uri Parameter SkuId cannot be null");
+
+            url = url.Replace("{skuId}", request.UriParameters.SkuId.ToString());
+
+            url = url.Replace("?&", "?");
+
+            var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
+
+            if(request.RawHeaders != null)
+            {
+                foreach(var header in request.RawHeaders)
+                {
+                    req.Headers.TryAddWithoutValidation(header.Key, string.Join(",", header.Value));
+                }
+            }
+	        var response = await proxy.Client.SendAsync(req);
+			if (proxy.SchemaValidation.Enabled && proxy.SchemaValidation.RaiseExceptions)
+            {
+				if(proxy.SchemaValidation.RaiseExceptions)
+				{
+					;
+				}
+				
+            }
+            return new Models.InOutLineGetResponse  
                                             {
                                                 RawContent = response.Content,
                                                 RawHeaders = response.Headers,
@@ -4039,6 +4287,254 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
 				
             }
             return new Models.UserStateEventGetResponse  
+                                            {
+                                                RawContent = response.Content,
+                                                RawHeaders = response.Headers,
+	                                            Formatters = responseFormatters,
+                                                StatusCode = response.StatusCode,
+                                                ReasonPhrase = response.ReasonPhrase,
+												SchemaValidation = new Lazy<SchemaValidationResults>(() => new SchemaValidationResults(true), true)
+                                            };
+        }
+
+    }
+
+    public partial class UserRole
+    {
+        private readonly DddmlWmsRamlClient proxy;
+
+        internal UserRole(DddmlWmsRamlClient proxy)
+        {
+            this.proxy = proxy;
+        }
+
+        		/// <param name="request">Models.UserRoleGetRequest</param>
+		/// <param name="responseFormatters">response formatters</param>
+        public virtual async Task<Models.UserRoleGetResponse> Get(Models.UserRoleGetRequest request, IEnumerable<MediaTypeFormatter> responseFormatters = null)
+        {
+
+            var url = "Users/{userId}/UserRoles/{roleId}";
+			if(request.UriParameters == null)
+				throw new InvalidOperationException("Uri Parameters cannot be null");               
+
+			if(request.UriParameters.UserId == null)
+				throw new InvalidOperationException("Uri Parameter UserId cannot be null");
+
+            url = url.Replace("{userId}", request.UriParameters.UserId.ToString());
+
+			if(request.UriParameters.RoleId == null)
+				throw new InvalidOperationException("Uri Parameter RoleId cannot be null");
+
+            url = url.Replace("{roleId}", request.UriParameters.RoleId.ToString());
+
+            url = url.Replace("?&", "?");
+
+            var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
+
+            if(request.RawHeaders != null)
+            {
+                foreach(var header in request.RawHeaders)
+                {
+                    req.Headers.TryAddWithoutValidation(header.Key, string.Join(",", header.Value));
+                }
+            }
+	        var response = await proxy.Client.SendAsync(req);
+			if (proxy.SchemaValidation.Enabled && proxy.SchemaValidation.RaiseExceptions)
+            {
+				if(proxy.SchemaValidation.RaiseExceptions)
+				{
+					;
+				}
+				
+            }
+            return new Models.UserRoleGetResponse  
+                                            {
+                                                RawContent = response.Content,
+                                                RawHeaders = response.Headers,
+	                                            Formatters = responseFormatters,
+                                                StatusCode = response.StatusCode,
+                                                ReasonPhrase = response.ReasonPhrase,
+												SchemaValidation = new Lazy<SchemaValidationResults>(() => new SchemaValidationResults(true), true)
+                                            };
+        }
+
+    }
+
+    public partial class UserClaim
+    {
+        private readonly DddmlWmsRamlClient proxy;
+
+        internal UserClaim(DddmlWmsRamlClient proxy)
+        {
+            this.proxy = proxy;
+        }
+
+        		/// <param name="request">Models.UserClaimGetRequest</param>
+		/// <param name="responseFormatters">response formatters</param>
+        public virtual async Task<Models.UserClaimGetResponse> Get(Models.UserClaimGetRequest request, IEnumerable<MediaTypeFormatter> responseFormatters = null)
+        {
+
+            var url = "Users/{userId}/UserClaims/{claimId}";
+			if(request.UriParameters == null)
+				throw new InvalidOperationException("Uri Parameters cannot be null");               
+
+			if(request.UriParameters.UserId == null)
+				throw new InvalidOperationException("Uri Parameter UserId cannot be null");
+
+            url = url.Replace("{userId}", request.UriParameters.UserId.ToString());
+
+			if(request.UriParameters.ClaimId == null)
+				throw new InvalidOperationException("Uri Parameter ClaimId cannot be null");
+
+            url = url.Replace("{claimId}", request.UriParameters.ClaimId.ToString());
+
+            url = url.Replace("?&", "?");
+
+            var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
+
+            if(request.RawHeaders != null)
+            {
+                foreach(var header in request.RawHeaders)
+                {
+                    req.Headers.TryAddWithoutValidation(header.Key, string.Join(",", header.Value));
+                }
+            }
+	        var response = await proxy.Client.SendAsync(req);
+			if (proxy.SchemaValidation.Enabled && proxy.SchemaValidation.RaiseExceptions)
+            {
+				if(proxy.SchemaValidation.RaiseExceptions)
+				{
+					;
+				}
+				
+            }
+            return new Models.UserClaimGetResponse  
+                                            {
+                                                RawContent = response.Content,
+                                                RawHeaders = response.Headers,
+	                                            Formatters = responseFormatters,
+                                                StatusCode = response.StatusCode,
+                                                ReasonPhrase = response.ReasonPhrase,
+												SchemaValidation = new Lazy<SchemaValidationResults>(() => new SchemaValidationResults(true), true)
+                                            };
+        }
+
+    }
+
+    public partial class UserPermission
+    {
+        private readonly DddmlWmsRamlClient proxy;
+
+        internal UserPermission(DddmlWmsRamlClient proxy)
+        {
+            this.proxy = proxy;
+        }
+
+        		/// <param name="request">Models.UserPermissionGetRequest</param>
+		/// <param name="responseFormatters">response formatters</param>
+        public virtual async Task<Models.UserPermissionGetResponse> Get(Models.UserPermissionGetRequest request, IEnumerable<MediaTypeFormatter> responseFormatters = null)
+        {
+
+            var url = "Users/{userId}/UserPermissions/{permissionId}";
+			if(request.UriParameters == null)
+				throw new InvalidOperationException("Uri Parameters cannot be null");               
+
+			if(request.UriParameters.UserId == null)
+				throw new InvalidOperationException("Uri Parameter UserId cannot be null");
+
+            url = url.Replace("{userId}", request.UriParameters.UserId.ToString());
+
+			if(request.UriParameters.PermissionId == null)
+				throw new InvalidOperationException("Uri Parameter PermissionId cannot be null");
+
+            url = url.Replace("{permissionId}", request.UriParameters.PermissionId.ToString());
+
+            url = url.Replace("?&", "?");
+
+            var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
+
+            if(request.RawHeaders != null)
+            {
+                foreach(var header in request.RawHeaders)
+                {
+                    req.Headers.TryAddWithoutValidation(header.Key, string.Join(",", header.Value));
+                }
+            }
+	        var response = await proxy.Client.SendAsync(req);
+			if (proxy.SchemaValidation.Enabled && proxy.SchemaValidation.RaiseExceptions)
+            {
+				if(proxy.SchemaValidation.RaiseExceptions)
+				{
+					;
+				}
+				
+            }
+            return new Models.UserPermissionGetResponse  
+                                            {
+                                                RawContent = response.Content,
+                                                RawHeaders = response.Headers,
+	                                            Formatters = responseFormatters,
+                                                StatusCode = response.StatusCode,
+                                                ReasonPhrase = response.ReasonPhrase,
+												SchemaValidation = new Lazy<SchemaValidationResults>(() => new SchemaValidationResults(true), true)
+                                            };
+        }
+
+    }
+
+    public partial class UserLogin
+    {
+        private readonly DddmlWmsRamlClient proxy;
+
+        internal UserLogin(DddmlWmsRamlClient proxy)
+        {
+            this.proxy = proxy;
+        }
+
+        		/// <param name="request">Models.UserLoginGetRequest</param>
+		/// <param name="responseFormatters">response formatters</param>
+        public virtual async Task<Models.UserLoginGetResponse> Get(Models.UserLoginGetRequest request, IEnumerable<MediaTypeFormatter> responseFormatters = null)
+        {
+
+            var url = "Users/{userId}/UserLogins/{loginKey}";
+			if(request.UriParameters == null)
+				throw new InvalidOperationException("Uri Parameters cannot be null");               
+
+			if(request.UriParameters.UserId == null)
+				throw new InvalidOperationException("Uri Parameter UserId cannot be null");
+
+            url = url.Replace("{userId}", request.UriParameters.UserId.ToString());
+
+			if(request.UriParameters.LoginKey == null)
+				throw new InvalidOperationException("Uri Parameter LoginKey cannot be null");
+
+            url = url.Replace("{loginKey}", request.UriParameters.LoginKey.ToString());
+
+            url = url.Replace("?&", "?");
+
+            var req = new HttpRequestMessage(HttpMethod.Get, url);
+            proxy.SetAuthenticationHeader(req);
+
+            if(request.RawHeaders != null)
+            {
+                foreach(var header in request.RawHeaders)
+                {
+                    req.Headers.TryAddWithoutValidation(header.Key, string.Join(",", header.Value));
+                }
+            }
+	        var response = await proxy.Client.SendAsync(req);
+			if (proxy.SchemaValidation.Enabled && proxy.SchemaValidation.RaiseExceptions)
+            {
+				if(proxy.SchemaValidation.RaiseExceptions)
+				{
+					;
+				}
+				
+            }
+            return new Models.UserLoginGetResponse  
                                             {
                                                 RawContent = response.Content,
                                                 RawHeaders = response.Headers,
@@ -9281,6 +9777,54 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
         }
                 
 
+        public virtual AttributeValue AttributeValue
+        {
+            get { return new AttributeValue(this); }
+        }
+                
+
+        public virtual AttributeUse AttributeUse
+        {
+            get { return new AttributeUse(this); }
+        }
+                
+
+        public virtual AttributeSetInstanceExtensionField AttributeSetInstanceExtensionField
+        {
+            get { return new AttributeSetInstanceExtensionField(this); }
+        }
+                
+
+        public virtual InOutLine InOutLine
+        {
+            get { return new InOutLine(this); }
+        }
+                
+
+        public virtual UserRole UserRole
+        {
+            get { return new UserRole(this); }
+        }
+                
+
+        public virtual UserClaim UserClaim
+        {
+            get { return new UserClaim(this); }
+        }
+                
+
+        public virtual UserPermission UserPermission
+        {
+            get { return new UserPermission(this); }
+        }
+                
+
+        public virtual UserLogin UserLogin
+        {
+            get { return new UserLogin(this); }
+        }
+                
+
         public virtual LocatorTrees LocatorTrees
         {
             get { return new LocatorTrees(this); }
@@ -10717,6 +11261,20 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     } // end class
 
     /// <summary>
+    /// Uri Parameters for resource /Attributes/{attributeId}/AttributeValues/{value}
+    /// </summary>
+    public partial class  AttributeValueUriParameters 
+    {
+		[JsonProperty("attributeId")]
+        public string AttributeId { get; set; }
+
+		[JsonProperty("value")]
+        public string Value { get; set; }
+
+
+    } // end class
+
+    /// <summary>
     /// Uri Parameters for resource /AttributeSets/{id}
     /// </summary>
     public partial class  AttributeSetUriParameters 
@@ -10737,6 +11295,20 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 
 		[JsonProperty("version")]
         public string Version { get; set; }
+
+
+    } // end class
+
+    /// <summary>
+    /// Uri Parameters for resource /AttributeSets/{attributeSetId}/AttributeUses/{attributeId}
+    /// </summary>
+    public partial class  AttributeUseUriParameters 
+    {
+		[JsonProperty("attributeSetId")]
+        public string AttributeSetId { get; set; }
+
+		[JsonProperty("attributeId")]
+        public string AttributeId { get; set; }
 
 
     } // end class
@@ -10792,6 +11364,20 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     } // end class
 
     /// <summary>
+    /// Uri Parameters for resource /AttributeSetInstanceExtensionFieldGroups/{groupId}/AttributeSetInstanceExtensionFields/{index}
+    /// </summary>
+    public partial class  AttributeSetInstanceExtensionFieldUriParameters 
+    {
+		[JsonProperty("groupId")]
+        public string GroupId { get; set; }
+
+		[JsonProperty("index")]
+        public string Index { get; set; }
+
+
+    } // end class
+
+    /// <summary>
     /// Uri Parameters for resource /InOuts/{id}
     /// </summary>
     public partial class  InOutUriParameters 
@@ -10812,6 +11398,20 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 
 		[JsonProperty("version")]
         public string Version { get; set; }
+
+
+    } // end class
+
+    /// <summary>
+    /// Uri Parameters for resource /InOuts/{inOutDocumentNumber}/InOutLines/{skuId}
+    /// </summary>
+    public partial class  InOutLineUriParameters 
+    {
+		[JsonProperty("inOutDocumentNumber")]
+        public string InOutDocumentNumber { get; set; }
+
+		[JsonProperty("skuId")]
+        public string SkuId { get; set; }
 
 
     } // end class
@@ -10962,6 +11562,62 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
 
 		[JsonProperty("version")]
         public string Version { get; set; }
+
+
+    } // end class
+
+    /// <summary>
+    /// Uri Parameters for resource /Users/{userId}/UserRoles/{roleId}
+    /// </summary>
+    public partial class  UserRoleUriParameters 
+    {
+		[JsonProperty("userId")]
+        public string UserId { get; set; }
+
+		[JsonProperty("roleId")]
+        public string RoleId { get; set; }
+
+
+    } // end class
+
+    /// <summary>
+    /// Uri Parameters for resource /Users/{userId}/UserClaims/{claimId}
+    /// </summary>
+    public partial class  UserClaimUriParameters 
+    {
+		[JsonProperty("userId")]
+        public string UserId { get; set; }
+
+		[JsonProperty("claimId")]
+        public int? ClaimId { get; set; }
+
+
+    } // end class
+
+    /// <summary>
+    /// Uri Parameters for resource /Users/{userId}/UserPermissions/{permissionId}
+    /// </summary>
+    public partial class  UserPermissionUriParameters 
+    {
+		[JsonProperty("userId")]
+        public string UserId { get; set; }
+
+		[JsonProperty("permissionId")]
+        public string PermissionId { get; set; }
+
+
+    } // end class
+
+    /// <summary>
+    /// Uri Parameters for resource /Users/{userId}/UserLogins/{loginKey}
+    /// </summary>
+    public partial class  UserLoginUriParameters 
+    {
+		[JsonProperty("userId")]
+        public string UserId { get; set; }
+
+		[JsonProperty("loginKey")]
+        public string LoginKey { get; set; }
 
 
     } // end class
@@ -11416,6 +12072,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     } // end class
 
     /// <summary>
+    /// Request object for method Get of class AttributeValue
+    /// </summary>
+    public partial class AttributeValueGetRequest : ApiRequest
+    {
+        public AttributeValueGetRequest(AttributeValueUriParameters UriParameters)
+        {
+            this.UriParameters = UriParameters;
+        }
+
+        /// <summary>
+        /// Request Uri Parameters
+        /// </summary>
+        public AttributeValueUriParameters UriParameters { get; set; }
+
+    } // end class
+
+    /// <summary>
     /// Request object for method Get of class AttributeSet
     /// </summary>
     public partial class AttributeSetGetRequest : ApiRequest
@@ -11561,6 +12234,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
         /// Request Uri Parameters
         /// </summary>
         public AttributeSetStateEventUriParameters UriParameters { get; set; }
+
+    } // end class
+
+    /// <summary>
+    /// Request object for method Get of class AttributeUse
+    /// </summary>
+    public partial class AttributeUseGetRequest : ApiRequest
+    {
+        public AttributeUseGetRequest(AttributeUseUriParameters UriParameters)
+        {
+            this.UriParameters = UriParameters;
+        }
+
+        /// <summary>
+        /// Request Uri Parameters
+        /// </summary>
+        public AttributeUseUriParameters UriParameters { get; set; }
 
     } // end class
 
@@ -11863,6 +12553,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     } // end class
 
     /// <summary>
+    /// Request object for method Get of class AttributeSetInstanceExtensionField
+    /// </summary>
+    public partial class AttributeSetInstanceExtensionFieldGetRequest : ApiRequest
+    {
+        public AttributeSetInstanceExtensionFieldGetRequest(AttributeSetInstanceExtensionFieldUriParameters UriParameters)
+        {
+            this.UriParameters = UriParameters;
+        }
+
+        /// <summary>
+        /// Request Uri Parameters
+        /// </summary>
+        public AttributeSetInstanceExtensionFieldUriParameters UriParameters { get; set; }
+
+    } // end class
+
+    /// <summary>
     /// Request object for method Get of class InOut
     /// </summary>
     public partial class InOutGetRequest : ApiRequest
@@ -12008,6 +12715,23 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
         /// Request Uri Parameters
         /// </summary>
         public InOutStateEventUriParameters UriParameters { get; set; }
+
+    } // end class
+
+    /// <summary>
+    /// Request object for method Get of class InOutLine
+    /// </summary>
+    public partial class InOutLineGetRequest : ApiRequest
+    {
+        public InOutLineGetRequest(InOutLineUriParameters UriParameters)
+        {
+            this.UriParameters = UriParameters;
+        }
+
+        /// <summary>
+        /// Request Uri Parameters
+        /// </summary>
+        public InOutLineUriParameters UriParameters { get; set; }
 
     } // end class
 
@@ -12902,6 +13626,74 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
         /// Request Uri Parameters
         /// </summary>
         public UserStateEventUriParameters UriParameters { get; set; }
+
+    } // end class
+
+    /// <summary>
+    /// Request object for method Get of class UserRole
+    /// </summary>
+    public partial class UserRoleGetRequest : ApiRequest
+    {
+        public UserRoleGetRequest(UserRoleUriParameters UriParameters)
+        {
+            this.UriParameters = UriParameters;
+        }
+
+        /// <summary>
+        /// Request Uri Parameters
+        /// </summary>
+        public UserRoleUriParameters UriParameters { get; set; }
+
+    } // end class
+
+    /// <summary>
+    /// Request object for method Get of class UserClaim
+    /// </summary>
+    public partial class UserClaimGetRequest : ApiRequest
+    {
+        public UserClaimGetRequest(UserClaimUriParameters UriParameters)
+        {
+            this.UriParameters = UriParameters;
+        }
+
+        /// <summary>
+        /// Request Uri Parameters
+        /// </summary>
+        public UserClaimUriParameters UriParameters { get; set; }
+
+    } // end class
+
+    /// <summary>
+    /// Request object for method Get of class UserPermission
+    /// </summary>
+    public partial class UserPermissionGetRequest : ApiRequest
+    {
+        public UserPermissionGetRequest(UserPermissionUriParameters UriParameters)
+        {
+            this.UriParameters = UriParameters;
+        }
+
+        /// <summary>
+        /// Request Uri Parameters
+        /// </summary>
+        public UserPermissionUriParameters UriParameters { get; set; }
+
+    } // end class
+
+    /// <summary>
+    /// Request object for method Get of class UserLogin
+    /// </summary>
+    public partial class UserLoginGetRequest : ApiRequest
+    {
+        public UserLoginGetRequest(UserLoginUriParameters UriParameters)
+        {
+            this.UriParameters = UriParameters;
+        }
+
+        /// <summary>
+        /// Request Uri Parameters
+        /// </summary>
+        public UserLoginUriParameters UriParameters { get; set; }
 
     } // end class
 
@@ -14892,6 +15684,55 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     } // end class
 
     /// <summary>
+    /// Response object for method Get of class AttributeValue
+    /// </summary>
+
+    public partial class AttributeValueGetResponse : ApiResponse
+    {
+
+
+	    private AttributeValueStateDto typedContent;
+        /// <summary>
+        /// Typed Response content
+        /// </summary>
+        public AttributeValueStateDto Content 
+    	{
+	        get
+	        {
+		        if (typedContent != null)
+			        return typedContent;
+
+                IEnumerable<string> values = new List<string>();
+                if (RawContent != null && RawContent.Headers != null)
+                    RawContent.Headers.TryGetValues("Content-Type", out values);
+
+                if (values.Any(hv => hv.ToLowerInvariant().Contains("xml")) &&
+                    !values.Any(hv => hv.ToLowerInvariant().Contains("json")))
+                {
+                    var task = RawContent.ReadAsStreamAsync();
+
+                    var xmlStream = task.GetAwaiter().GetResult();
+                    typedContent = (AttributeValueStateDto)new XmlSerializer(typeof(AttributeValueStateDto)).Deserialize(xmlStream);
+                }
+                else
+                {
+                    var task =  Formatters != null && Formatters.Any() 
+                                ? RawContent.ReadAsAsync<AttributeValueStateDto>(Formatters).ConfigureAwait(false)
+                                : RawContent.ReadAsAsync<AttributeValueStateDto>().ConfigureAwait(false);
+		        
+		            typedContent = task.GetAwaiter().GetResult();
+                }
+
+		        return typedContent;
+	        }
+	    }
+
+		
+
+
+    } // end class
+
+    /// <summary>
     /// Response object for method Get of class AttributeSet
     /// </summary>
 
@@ -15025,6 +15866,55 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
                     var task =  Formatters != null && Formatters.Any() 
                                 ? RawContent.ReadAsAsync<AttributeSetStateCreatedOrMergePatchedOrDeletedDto>(Formatters).ConfigureAwait(false)
                                 : RawContent.ReadAsAsync<AttributeSetStateCreatedOrMergePatchedOrDeletedDto>().ConfigureAwait(false);
+		        
+		            typedContent = task.GetAwaiter().GetResult();
+                }
+
+		        return typedContent;
+	        }
+	    }
+
+		
+
+
+    } // end class
+
+    /// <summary>
+    /// Response object for method Get of class AttributeUse
+    /// </summary>
+
+    public partial class AttributeUseGetResponse : ApiResponse
+    {
+
+
+	    private AttributeUseStateDto typedContent;
+        /// <summary>
+        /// Typed Response content
+        /// </summary>
+        public AttributeUseStateDto Content 
+    	{
+	        get
+	        {
+		        if (typedContent != null)
+			        return typedContent;
+
+                IEnumerable<string> values = new List<string>();
+                if (RawContent != null && RawContent.Headers != null)
+                    RawContent.Headers.TryGetValues("Content-Type", out values);
+
+                if (values.Any(hv => hv.ToLowerInvariant().Contains("xml")) &&
+                    !values.Any(hv => hv.ToLowerInvariant().Contains("json")))
+                {
+                    var task = RawContent.ReadAsStreamAsync();
+
+                    var xmlStream = task.GetAwaiter().GetResult();
+                    typedContent = (AttributeUseStateDto)new XmlSerializer(typeof(AttributeUseStateDto)).Deserialize(xmlStream);
+                }
+                else
+                {
+                    var task =  Formatters != null && Formatters.Any() 
+                                ? RawContent.ReadAsAsync<AttributeUseStateDto>(Formatters).ConfigureAwait(false)
+                                : RawContent.ReadAsAsync<AttributeUseStateDto>().ConfigureAwait(false);
 		        
 		            typedContent = task.GetAwaiter().GetResult();
                 }
@@ -15333,6 +16223,55 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
     } // end class
 
     /// <summary>
+    /// Response object for method Get of class AttributeSetInstanceExtensionField
+    /// </summary>
+
+    public partial class AttributeSetInstanceExtensionFieldGetResponse : ApiResponse
+    {
+
+
+	    private AttributeSetInstanceExtensionFieldStateDto typedContent;
+        /// <summary>
+        /// Typed Response content
+        /// </summary>
+        public AttributeSetInstanceExtensionFieldStateDto Content 
+    	{
+	        get
+	        {
+		        if (typedContent != null)
+			        return typedContent;
+
+                IEnumerable<string> values = new List<string>();
+                if (RawContent != null && RawContent.Headers != null)
+                    RawContent.Headers.TryGetValues("Content-Type", out values);
+
+                if (values.Any(hv => hv.ToLowerInvariant().Contains("xml")) &&
+                    !values.Any(hv => hv.ToLowerInvariant().Contains("json")))
+                {
+                    var task = RawContent.ReadAsStreamAsync();
+
+                    var xmlStream = task.GetAwaiter().GetResult();
+                    typedContent = (AttributeSetInstanceExtensionFieldStateDto)new XmlSerializer(typeof(AttributeSetInstanceExtensionFieldStateDto)).Deserialize(xmlStream);
+                }
+                else
+                {
+                    var task =  Formatters != null && Formatters.Any() 
+                                ? RawContent.ReadAsAsync<AttributeSetInstanceExtensionFieldStateDto>(Formatters).ConfigureAwait(false)
+                                : RawContent.ReadAsAsync<AttributeSetInstanceExtensionFieldStateDto>().ConfigureAwait(false);
+		        
+		            typedContent = task.GetAwaiter().GetResult();
+                }
+
+		        return typedContent;
+	        }
+	    }
+
+		
+
+
+    } // end class
+
+    /// <summary>
     /// Response object for method Get of class InOut
     /// </summary>
 
@@ -15466,6 +16405,55 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
                     var task =  Formatters != null && Formatters.Any() 
                                 ? RawContent.ReadAsAsync<InOutStateCreatedOrMergePatchedOrDeletedDto>(Formatters).ConfigureAwait(false)
                                 : RawContent.ReadAsAsync<InOutStateCreatedOrMergePatchedOrDeletedDto>().ConfigureAwait(false);
+		        
+		            typedContent = task.GetAwaiter().GetResult();
+                }
+
+		        return typedContent;
+	        }
+	    }
+
+		
+
+
+    } // end class
+
+    /// <summary>
+    /// Response object for method Get of class InOutLine
+    /// </summary>
+
+    public partial class InOutLineGetResponse : ApiResponse
+    {
+
+
+	    private InOutLineStateDto typedContent;
+        /// <summary>
+        /// Typed Response content
+        /// </summary>
+        public InOutLineStateDto Content 
+    	{
+	        get
+	        {
+		        if (typedContent != null)
+			        return typedContent;
+
+                IEnumerable<string> values = new List<string>();
+                if (RawContent != null && RawContent.Headers != null)
+                    RawContent.Headers.TryGetValues("Content-Type", out values);
+
+                if (values.Any(hv => hv.ToLowerInvariant().Contains("xml")) &&
+                    !values.Any(hv => hv.ToLowerInvariant().Contains("json")))
+                {
+                    var task = RawContent.ReadAsStreamAsync();
+
+                    var xmlStream = task.GetAwaiter().GetResult();
+                    typedContent = (InOutLineStateDto)new XmlSerializer(typeof(InOutLineStateDto)).Deserialize(xmlStream);
+                }
+                else
+                {
+                    var task =  Formatters != null && Formatters.Any() 
+                                ? RawContent.ReadAsAsync<InOutLineStateDto>(Formatters).ConfigureAwait(false)
+                                : RawContent.ReadAsAsync<InOutLineStateDto>().ConfigureAwait(false);
 		        
 		            typedContent = task.GetAwaiter().GetResult();
                 }
@@ -16348,6 +17336,202 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml.Models
                     var task =  Formatters != null && Formatters.Any() 
                                 ? RawContent.ReadAsAsync<UserStateCreatedOrMergePatchedOrDeletedDto>(Formatters).ConfigureAwait(false)
                                 : RawContent.ReadAsAsync<UserStateCreatedOrMergePatchedOrDeletedDto>().ConfigureAwait(false);
+		        
+		            typedContent = task.GetAwaiter().GetResult();
+                }
+
+		        return typedContent;
+	        }
+	    }
+
+		
+
+
+    } // end class
+
+    /// <summary>
+    /// Response object for method Get of class UserRole
+    /// </summary>
+
+    public partial class UserRoleGetResponse : ApiResponse
+    {
+
+
+	    private UserRoleStateDto typedContent;
+        /// <summary>
+        /// Typed Response content
+        /// </summary>
+        public UserRoleStateDto Content 
+    	{
+	        get
+	        {
+		        if (typedContent != null)
+			        return typedContent;
+
+                IEnumerable<string> values = new List<string>();
+                if (RawContent != null && RawContent.Headers != null)
+                    RawContent.Headers.TryGetValues("Content-Type", out values);
+
+                if (values.Any(hv => hv.ToLowerInvariant().Contains("xml")) &&
+                    !values.Any(hv => hv.ToLowerInvariant().Contains("json")))
+                {
+                    var task = RawContent.ReadAsStreamAsync();
+
+                    var xmlStream = task.GetAwaiter().GetResult();
+                    typedContent = (UserRoleStateDto)new XmlSerializer(typeof(UserRoleStateDto)).Deserialize(xmlStream);
+                }
+                else
+                {
+                    var task =  Formatters != null && Formatters.Any() 
+                                ? RawContent.ReadAsAsync<UserRoleStateDto>(Formatters).ConfigureAwait(false)
+                                : RawContent.ReadAsAsync<UserRoleStateDto>().ConfigureAwait(false);
+		        
+		            typedContent = task.GetAwaiter().GetResult();
+                }
+
+		        return typedContent;
+	        }
+	    }
+
+		
+
+
+    } // end class
+
+    /// <summary>
+    /// Response object for method Get of class UserClaim
+    /// </summary>
+
+    public partial class UserClaimGetResponse : ApiResponse
+    {
+
+
+	    private UserClaimStateDto typedContent;
+        /// <summary>
+        /// Typed Response content
+        /// </summary>
+        public UserClaimStateDto Content 
+    	{
+	        get
+	        {
+		        if (typedContent != null)
+			        return typedContent;
+
+                IEnumerable<string> values = new List<string>();
+                if (RawContent != null && RawContent.Headers != null)
+                    RawContent.Headers.TryGetValues("Content-Type", out values);
+
+                if (values.Any(hv => hv.ToLowerInvariant().Contains("xml")) &&
+                    !values.Any(hv => hv.ToLowerInvariant().Contains("json")))
+                {
+                    var task = RawContent.ReadAsStreamAsync();
+
+                    var xmlStream = task.GetAwaiter().GetResult();
+                    typedContent = (UserClaimStateDto)new XmlSerializer(typeof(UserClaimStateDto)).Deserialize(xmlStream);
+                }
+                else
+                {
+                    var task =  Formatters != null && Formatters.Any() 
+                                ? RawContent.ReadAsAsync<UserClaimStateDto>(Formatters).ConfigureAwait(false)
+                                : RawContent.ReadAsAsync<UserClaimStateDto>().ConfigureAwait(false);
+		        
+		            typedContent = task.GetAwaiter().GetResult();
+                }
+
+		        return typedContent;
+	        }
+	    }
+
+		
+
+
+    } // end class
+
+    /// <summary>
+    /// Response object for method Get of class UserPermission
+    /// </summary>
+
+    public partial class UserPermissionGetResponse : ApiResponse
+    {
+
+
+	    private UserPermissionStateDto typedContent;
+        /// <summary>
+        /// Typed Response content
+        /// </summary>
+        public UserPermissionStateDto Content 
+    	{
+	        get
+	        {
+		        if (typedContent != null)
+			        return typedContent;
+
+                IEnumerable<string> values = new List<string>();
+                if (RawContent != null && RawContent.Headers != null)
+                    RawContent.Headers.TryGetValues("Content-Type", out values);
+
+                if (values.Any(hv => hv.ToLowerInvariant().Contains("xml")) &&
+                    !values.Any(hv => hv.ToLowerInvariant().Contains("json")))
+                {
+                    var task = RawContent.ReadAsStreamAsync();
+
+                    var xmlStream = task.GetAwaiter().GetResult();
+                    typedContent = (UserPermissionStateDto)new XmlSerializer(typeof(UserPermissionStateDto)).Deserialize(xmlStream);
+                }
+                else
+                {
+                    var task =  Formatters != null && Formatters.Any() 
+                                ? RawContent.ReadAsAsync<UserPermissionStateDto>(Formatters).ConfigureAwait(false)
+                                : RawContent.ReadAsAsync<UserPermissionStateDto>().ConfigureAwait(false);
+		        
+		            typedContent = task.GetAwaiter().GetResult();
+                }
+
+		        return typedContent;
+	        }
+	    }
+
+		
+
+
+    } // end class
+
+    /// <summary>
+    /// Response object for method Get of class UserLogin
+    /// </summary>
+
+    public partial class UserLoginGetResponse : ApiResponse
+    {
+
+
+	    private UserLoginStateDto typedContent;
+        /// <summary>
+        /// Typed Response content
+        /// </summary>
+        public UserLoginStateDto Content 
+    	{
+	        get
+	        {
+		        if (typedContent != null)
+			        return typedContent;
+
+                IEnumerable<string> values = new List<string>();
+                if (RawContent != null && RawContent.Headers != null)
+                    RawContent.Headers.TryGetValues("Content-Type", out values);
+
+                if (values.Any(hv => hv.ToLowerInvariant().Contains("xml")) &&
+                    !values.Any(hv => hv.ToLowerInvariant().Contains("json")))
+                {
+                    var task = RawContent.ReadAsStreamAsync();
+
+                    var xmlStream = task.GetAwaiter().GetResult();
+                    typedContent = (UserLoginStateDto)new XmlSerializer(typeof(UserLoginStateDto)).Deserialize(xmlStream);
+                }
+                else
+                {
+                    var task =  Formatters != null && Formatters.Any() 
+                                ? RawContent.ReadAsAsync<UserLoginStateDto>(Formatters).ConfigureAwait(false)
+                                : RawContent.ReadAsAsync<UserLoginStateDto>().ConfigureAwait(false);
 		        
 		            typedContent = task.GetAwaiter().GetResult();
                 }

@@ -49,7 +49,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(CreateInOutDto c)
         {
-            var idObj = ((c as ICreateInOut).DocumentNumber);
+            var idObj = (c as ICreateInOut).DocumentNumber;
             var uriParameters = new InOutUriParameters();
             uriParameters.Id = idObj;
 
@@ -66,7 +66,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(MergePatchInOutDto c)
         {
-            var idObj = ((c as IMergePatchInOut).DocumentNumber);
+            var idObj = (c as IMergePatchInOut).DocumentNumber;
             var uriParameters = new InOutUriParameters();
             uriParameters.Id = idObj;
 
@@ -82,7 +82,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(DeleteInOutDto c)
         {
-            var idObj = ((c as IDeleteInOut).DocumentNumber);
+            var idObj = (c as IDeleteInOut).DocumentNumber;
             var uriParameters = new InOutUriParameters();
             uriParameters.Id = idObj;
 
@@ -121,7 +121,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         public async Task<IInOutState> GetAsync(string documentNumber)
         {
             IInOutState state = null;
-            var idObj = (documentNumber);
+            var idObj = documentNumber;
             var uriParameters = new InOutUriParameters();
             uriParameters.Id = idObj;
 
@@ -248,7 +248,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task<IInOutStateEvent> GetStateEventAsync(string documentNumber, long version)
         {
-            var idObj = (documentNumber);
+            var idObj = documentNumber;
             var uriParameters = new InOutStateEventUriParameters();
             uriParameters.Id = idObj;
             uriParameters.Version = version.ToString();
@@ -264,9 +264,21 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return GetStateEventAsync(documentNumber, version).GetAwaiter().GetResult();
         }
 
+        public async virtual Task<IInOutLineState> GetInOutLineAsync(string inOutDocumentNumber, SkuId skuId)
+        {
+            var uriParameters = new InOutLineUriParameters();
+            uriParameters.InOutDocumentNumber = inOutDocumentNumber;
+            uriParameters.SkuId = (new SkuIdFlattenedDtoFormatter()).ToString(new SkuIdFlattenedDto(skuId));
+
+            var req = new InOutLineGetRequest(uriParameters);
+            var resp = await _ramlClient.InOutLine.Get(req);
+            InOutProxyUtils.ThrowOnHttpResponseError(resp);
+            return resp.Content;
+        }
+
         public virtual IInOutLineState GetInOutLine(string inOutDocumentNumber, SkuId skuId)
         {
-            return null;//TODO
+            return GetInOutLineAsync(inOutDocumentNumber, skuId).GetAwaiter().GetResult();
         }
 
 

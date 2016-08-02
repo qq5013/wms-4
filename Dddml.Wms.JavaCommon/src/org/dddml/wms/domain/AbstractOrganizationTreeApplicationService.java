@@ -13,7 +13,7 @@ public abstract class AbstractOrganizationTreeApplicationService implements Orga
         return this.organizationTreeRepository; 
     }
 
-    public void getOrganizationTreeRepository(OrganizationTreeRepository organizationTreeRepository) {
+    public void setOrganizationTreeRepository(OrganizationTreeRepository organizationTreeRepository) {
         this.organizationTreeRepository = organizationTreeRepository;
     }
 
@@ -71,6 +71,37 @@ public abstract class AbstractOrganizationTreeApplicationService implements Orga
     {
     }
 
+
+    public static class SimpleOrganizationTree implements OrganizationTree
+    {
+        private OrganizationState state;
+
+        private OrganizationTreeRepository repository;
+
+        public SimpleOrganizationTree(OrganizationState state, OrganizationTreeRepository repository)
+        {
+            this.state = state;
+            this.repository = repository;
+        }
+
+        //@Override
+        //public Iterable<OrganizationTree> getOrganizationTreeChildren()
+        //{
+        //}
+
+        @Override
+        public Iterable<Tree<OrganizationState>> getChildren()
+        {
+            return (Iterable) repository.getChildren(this.state.getOrganizationId(), (Iterable<Map.Entry<String, Object>>)null, null, null, null);
+        }
+
+        @Override
+        public OrganizationState getContent()
+        {
+            return state;
+        }
+
+    }
 }
 
 

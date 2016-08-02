@@ -1,3 +1,4 @@
+import jdk.nashorn.internal.runtime.arrays.IteratorAction;
 import org.dddml.wms.domain.*;
 import org.dddml.wms.specialization.ApplicationContext;
 import org.dddml.wms.specialization.spring.SpringApplicationContext;
@@ -15,12 +16,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.squirrelframework.foundation.component.SquirrelProvider;
 import org.squirrelframework.foundation.fsm.DotVisitor;
 
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
-/**
- * Created by Yang on 2016/7/21.
- */
 public class Main {
 
     static org.springframework.context.ApplicationContext springFrameworkApplicationContext;
@@ -28,7 +25,9 @@ public class Main {
     static { springFrameworkApplicationContext = new ClassPathXmlApplicationContext(
             "config/DatabaseConfig.xml",
             "config/AggregatesHibernateConfig.xml",
-            "config/DomainConfig.xml"
+            "config/DomainConfig.xml",
+            "config/TreesHibernateConfig.xml",
+            "config/TreesConfig.xml"
             );
     }
 
@@ -42,7 +41,23 @@ public class Main {
 
         testCreateAndVoidInout_0();
 
+        testGetPermissionTrees();
+
         outputDocumentStatusStateMachineDotFile();
+    }
+
+    private static void testGetPermissionTrees() {
+        PermissionTreeApplicationService permissionTreeApplicationService = (PermissionTreeApplicationService) springFrameworkApplicationContext.getBean("permissionTreeApplicationService");
+        Iterable<PermissionState> ps = permissionTreeApplicationService.getRoots((Iterable<Map.Entry<String, Object>>) null, null, null, null);
+        for (PermissionState p : ps) {
+            System.out.println(p.getPermissionId());
+            Iterable<PermissionState> childPS = permissionTreeApplicationService.getChildren(p.getPermissionId(), (Iterable<Map.Entry<String, Object>>) null, null, null, null);
+            if(childPS != null) {
+                for (PermissionState cp : childPS) {
+                    System.out.println("\t" + cp.getPermissionId());
+                }
+            }
+        }
     }
 
     private static void outputDocumentStatusStateMachineDotFile() {

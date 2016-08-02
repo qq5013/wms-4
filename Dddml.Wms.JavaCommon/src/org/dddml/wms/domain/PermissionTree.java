@@ -6,6 +6,6 @@ import org.dddml.wms.specialization.*;
 
 public interface PermissionTree extends Tree<PermissionState>
 {
-    Iterable<PermissionTree> getPermissionTreeChildren();
+    //Iterable<PermissionTree> getPermissionTreeChildren();
 }
 

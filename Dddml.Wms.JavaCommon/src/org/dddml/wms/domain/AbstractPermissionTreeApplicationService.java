@@ -13,7 +13,7 @@ public abstract class AbstractPermissionTreeApplicationService implements Permis
         return this.permissionTreeRepository; 
     }
 
-    public void getPermissionTreeRepository(PermissionTreeRepository permissionTreeRepository) {
+    public void setPermissionTreeRepository(PermissionTreeRepository permissionTreeRepository) {
         this.permissionTreeRepository = permissionTreeRepository;
     }
 
@@ -71,6 +71,37 @@ public abstract class AbstractPermissionTreeApplicationService implements Permis
     {
     }
 
+
+    public static class SimplePermissionTree implements PermissionTree
+    {
+        private PermissionState state;
+
+        private PermissionTreeRepository repository;
+
+        public SimplePermissionTree(PermissionState state, PermissionTreeRepository repository)
+        {
+            this.state = state;
+            this.repository = repository;
+        }
+
+        //@Override
+        //public Iterable<PermissionTree> getPermissionTreeChildren()
+        //{
+        //}
+
+        @Override
+        public Iterable<Tree<PermissionState>> getChildren()
+        {
+            return (Iterable) repository.getChildren(this.state.getPermissionId(), (Iterable<Map.Entry<String, Object>>)null, null, null, null);
+        }
+
+        @Override
+        public PermissionState getContent()
+        {
+            return state;
+        }
+
+    }
 }
 
 

@@ -32,7 +32,7 @@ public class HibernateTreeLocatorStateRepository extends HibernateLocatorStateRe
     {
         Criteria criteria = getCurrentSession().createCriteria(LocatorState.class);
 
-        HibernateUtils.criteriaAddCriterion(criteria, "ParentLocatorId", parentId);
+        HibernateUtils.criteriaAddCriterion(criteria, "parentLocatorId", parentId);
         HibernateUtils.criteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
         return criteria.list();
     }
@@ -52,7 +52,7 @@ public class HibernateTreeLocatorStateRepository extends HibernateLocatorStateRe
     {
         Criteria criteria = getCurrentSession().createCriteria(LocatorState.class);
 
-        HibernateUtils.criteriaAddCriterion(criteria, "ParentLocatorId", parentId);
+        HibernateUtils.criteriaAddCriterion(criteria, "parentLocatorId", parentId);
         HibernateUtils.criteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
         return criteria.list();
     }
@@ -62,14 +62,14 @@ public class HibernateTreeLocatorStateRepository extends HibernateLocatorStateRe
         Object[] rootParentIdValues = new Object[] { null, "" };
         if (rootParentIdValues.length == 1)
         {
-            HibernateUtils.criteriaAddCriterion(criteria, "ParentLocatorId", rootParentIdValues[0]);
+            HibernateUtils.criteriaAddCriterion(criteria, "parentLocatorId", rootParentIdValues[0]);
         }
         else
         {
             Disjunction j = Restrictions.disjunction();
             for (Object pIdValue : rootParentIdValues)
             {
-                HibernateUtils.disjunctionAddCriterion(j, "ParentLocatorId", pIdValue);
+                HibernateUtils.disjunctionAddCriterion(j, "parentLocatorId", pIdValue);
             }
             criteria.add(j);
         }

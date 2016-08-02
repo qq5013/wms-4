@@ -13,7 +13,7 @@ public abstract class AbstractLocatorTreeApplicationService implements LocatorTr
         return this.locatorTreeRepository; 
     }
 
-    public void getLocatorTreeRepository(LocatorTreeRepository locatorTreeRepository) {
+    public void setLocatorTreeRepository(LocatorTreeRepository locatorTreeRepository) {
         this.locatorTreeRepository = locatorTreeRepository;
     }
 
@@ -71,6 +71,37 @@ public abstract class AbstractLocatorTreeApplicationService implements LocatorTr
     {
     }
 
+
+    public static class SimpleLocatorTree implements LocatorTree
+    {
+        private LocatorState state;
+
+        private LocatorTreeRepository repository;
+
+        public SimpleLocatorTree(LocatorState state, LocatorTreeRepository repository)
+        {
+            this.state = state;
+            this.repository = repository;
+        }
+
+        //@Override
+        //public Iterable<LocatorTree> getLocatorTreeChildren()
+        //{
+        //}
+
+        @Override
+        public Iterable<Tree<LocatorState>> getChildren()
+        {
+            return (Iterable) repository.getChildren(this.state.getLocatorId(), (Iterable<Map.Entry<String, Object>>)null, null, null, null);
+        }
+
+        @Override
+        public LocatorState getContent()
+        {
+            return state;
+        }
+
+    }
 }
 
 

@@ -6,6 +6,6 @@ import org.dddml.wms.specialization.*;
 
 public interface OrganizationTree extends Tree<OrganizationState>
 {
-    Iterable<OrganizationTree> getOrganizationTreeChildren();
+    //Iterable<OrganizationTree> getOrganizationTreeChildren();
 }
 

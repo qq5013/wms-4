@@ -32,7 +32,7 @@ public class HibernateTreePermissionStateRepository extends HibernatePermissionS
     {
         Criteria criteria = getCurrentSession().createCriteria(PermissionState.class);
 
-        HibernateUtils.criteriaAddCriterion(criteria, "ParentPermissionId", parentId);
+        HibernateUtils.criteriaAddCriterion(criteria, "parentPermissionId", parentId);
         HibernateUtils.criteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
         return criteria.list();
     }
@@ -52,7 +52,7 @@ public class HibernateTreePermissionStateRepository extends HibernatePermissionS
     {
         Criteria criteria = getCurrentSession().createCriteria(PermissionState.class);
 
-        HibernateUtils.criteriaAddCriterion(criteria, "ParentPermissionId", parentId);
+        HibernateUtils.criteriaAddCriterion(criteria, "parentPermissionId", parentId);
         HibernateUtils.criteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
         return criteria.list();
     }
@@ -62,14 +62,14 @@ public class HibernateTreePermissionStateRepository extends HibernatePermissionS
         Object[] rootParentIdValues = new Object[] { null, "" };
         if (rootParentIdValues.length == 1)
         {
-            HibernateUtils.criteriaAddCriterion(criteria, "ParentPermissionId", rootParentIdValues[0]);
+            HibernateUtils.criteriaAddCriterion(criteria, "parentPermissionId", rootParentIdValues[0]);
         }
         else
         {
             Disjunction j = Restrictions.disjunction();
             for (Object pIdValue : rootParentIdValues)
             {
-                HibernateUtils.disjunctionAddCriterion(j, "ParentPermissionId", pIdValue);
+                HibernateUtils.disjunctionAddCriterion(j, "parentPermissionId", pIdValue);
             }
             criteria.add(j);
         }

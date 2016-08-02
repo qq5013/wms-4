@@ -32,7 +32,7 @@ public class HibernateTreeOrganizationStructureStateRepository extends Hibernate
     {
         Criteria criteria = getCurrentSession().createCriteria(OrganizationStructureState.class);
 
-        HibernateUtils.criteriaAddCriterion(criteria, "Id.ParentId", parentId);
+        HibernateUtils.criteriaAddCriterion(criteria, "id.ParentId", parentId);
         HibernateUtils.criteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
         return criteria.list();
     }
@@ -52,7 +52,7 @@ public class HibernateTreeOrganizationStructureStateRepository extends Hibernate
     {
         Criteria criteria = getCurrentSession().createCriteria(OrganizationStructureState.class);
 
-        HibernateUtils.criteriaAddCriterion(criteria, "Id.ParentId", parentId);
+        HibernateUtils.criteriaAddCriterion(criteria, "id.ParentId", parentId);
         HibernateUtils.criteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
         return criteria.list();
     }
@@ -62,14 +62,14 @@ public class HibernateTreeOrganizationStructureStateRepository extends Hibernate
         Object[] rootParentIdValues = new Object[] { "" };
         if (rootParentIdValues.length == 1)
         {
-            HibernateUtils.criteriaAddCriterion(criteria, "Id.ParentId", rootParentIdValues[0]);
+            HibernateUtils.criteriaAddCriterion(criteria, "id.ParentId", rootParentIdValues[0]);
         }
         else
         {
             Disjunction j = Restrictions.disjunction();
             for (Object pIdValue : rootParentIdValues)
             {
-                HibernateUtils.disjunctionAddCriterion(j, "Id.ParentId", pIdValue);
+                HibernateUtils.disjunctionAddCriterion(j, "id.ParentId", pIdValue);
             }
             criteria.add(j);
         }

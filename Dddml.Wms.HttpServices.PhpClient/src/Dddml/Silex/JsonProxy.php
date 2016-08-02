@@ -6,6 +6,9 @@
  */
 namespace Dddml\Silex;
 
+use Dddml\Executor\Http\AbstractCommandRequest;
+use Dddml\Executor\Http\CommandExecutor;
+use Dddml\Executor\Http\CommandRequestInterface;
 use Dddml\Executor\Http\QueryCountRequestInterface;
 use Dddml\Executor\Http\QueryExecutor;
 use Dddml\Executor\Http\QueryRequestInterface;
@@ -61,11 +64,42 @@ class JsonProxy
 
         $response = $executor->getLastResponse();
 
+        $event = new JsonProxyEvent($response);
+        $this->app['dispatcher']->dispatch(JsonProxyEvent::JSON_PROXY_COUNT, $event);
+
         return new JsonResponse(
             $json,
             $response->getStatusCode(),
             $response->getHeaders(),
             true
         );
+    }
+
+    public function create(AbstractCommandRequest $commandRequest, Request $httpRequest, $id)
+    {
+        /** @var CommandExecutor $executor */
+        $executor = $this->app['api.command.executor'];
+
+        $json = $httpRequest->getContent();
+
+        $command = $commandRequest->getCommandFromJson($json);
+
+        $response = $executor->execute($commandRequest, [
+            'parameters' => [
+                'id' => $id,
+            ],
+        ]);
+
+        return new JsonResponse(
+            '',
+            $response->getStatusCode(),
+            $response->getHeaders()
+        );
+    }
+
+    public function mergePatch(AbstractCommandRequest $commandRequest, Request $httpRequest, $id)
+    {
+        /** @var CommandExecutor $executor */
+        $executor = $this->app['api.command.executor'];
     }
 }

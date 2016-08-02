@@ -11,7 +11,8 @@ use Symfony\Component\EventDispatcher\Event;
 
 class JsonProxyEvent extends Event
 {
-    const JSON_PROXY_GET = 'json.proxy.get';
+    const JSON_PROXY_GET   = 'json.proxy.get';
+    const JSON_PROXY_COUNT = 'json.proxy.count';
 
     /** @var  ResponseInterface */
     private $response;

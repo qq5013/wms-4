@@ -348,6 +348,9 @@
     <Content Include="src\org\dddml\wms\domain\AbstractLocatorStateEvent.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractLocatorTreeApplicationService.java">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractOrganizationAggregate.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
@@ -411,6 +414,9 @@
     <Content Include="src\org\dddml\wms\domain\AbstractOrganizationStructureTypeStateEvent.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractOrganizationTreeApplicationService.java">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractPermissionAggregate.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
@@ -431,6 +437,9 @@
     </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractPermissionStateEvent.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractPermissionTreeApplicationService.java">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractRoleAggregate.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
@@ -1241,6 +1250,9 @@
       <LastGenOutput>GenerateBoundedContextDomain.txt</LastGenOutput>
       <LastOutputs>
 .\AbstractCommand.java
+.\AbstractLocatorTreeApplicationService.java
+.\AbstractOrganizationTreeApplicationService.java
+.\AbstractPermissionTreeApplicationService.java
 .\AbstractStateEvent.java
 .\Command.java
 .\DocumentAction.java
@@ -1793,6 +1805,9 @@
 .\RoleStateEventIdDto.java
 .\RoleStateEventIdFlattenedDto.java
 .\RoleStateRepository.java
+.\TreeLocatorStateRepository.java
+.\TreeOrganizationStructureStateRepository.java
+.\TreePermissionStateRepository.java
 .\UserAggregate.java
 .\UserApplicationService.java
 .\UserClaimCommand.java
@@ -2623,6 +2638,15 @@
     </Content>
     <Content Include="src\org\dddml\wms\domain\SkuIdFlattenedDto.java">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\TreeLocatorStateRepository.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\TreeOrganizationStructureStateRepository.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\TreePermissionStateRepository.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\UserAggregate.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>

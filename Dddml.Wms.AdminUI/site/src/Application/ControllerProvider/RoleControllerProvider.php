@@ -18,13 +18,46 @@ class RoleControllerProvider implements ControllerProviderInterface
         /** @var ControllerCollection $controllers */
         $controllers = $app['controllers_factory'];
 
-        $controllers->get('/', [$this, 'index']);
+        $controllers->get('/', [$this, 'roles'])
+            ->bind('roles');
+        $controllers->get('/{id}', [$this, 'role'])
+            ->bind('role');
 
         return $controllers;
     }
 
-    public function index(Application $app, Request $request)
+    public function roles(Application $app, Request $request)
     {
-        return $app->render('index.twig', array());
+        $firstResult = $request->get('firstResult', 0);
+        $maxResults  = $request->get('maxResults', 10);
+        $sort        = $request->get('sort', null);
+
+        $query = [
+            'firstResult' => $firstResult,
+            'maxResults'  => $maxResults,
+        ];
+
+        if ($sort) {
+            $query['sort'] = $sort;
+        }
+
+        $entities = $app['api.entity.manager']('Role')->findBy($query);
+        $count    = $app['api.entity.manager']('Role')->count();
+
+        return $app->render('roles/roles.twig', [
+            'entities'    => $entities,
+            'count'       => $count,
+            'firstResult' => $firstResult,
+            'maxResults'  => $maxResults,
+        ]);
+    }
+
+    public function role(Application $app, Request $request, $id)
+    {
+        $entity = $app['api.entity.manager']('Role')->findOne($id);
+
+        return $app->render('roles/role.twig', [
+            'entity' => $entity,
+        ]);
     }
 }

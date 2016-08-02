@@ -43,21 +43,13 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="src\config\AggregatesHibernateConfig.xml">
-      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
-    </EmbeddedResource>
-    <Content Include="src\config\GenerateAggregatesConfig.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>GenerateAggregatesConfig.txt</LastGenOutput>
-      <LastOutputs>
-.\AggregatesHibernateConfig.xml
-.\GenerateAggregatesConfig.txt
-</LastOutputs>
-    </Content>
-    <Content Include="src\config\GenerateAggregatesConfig.txt">
+    <Content Include="src\org\dddml\wms\domain\hibernate\GenerateBoundedContextDomainNHibernateAggregates.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\hibernate\HibernateAttributeEventStore.java">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\hibernate\HibernateAttributeSetEventStore.java">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
@@ -182,6 +174,15 @@
     <Content Include="src\org\dddml\wms\domain\hibernate\HibernateRoleStateRepository.java">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\hibernate\HibernateTreeLocatorStateRepository.java">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\hibernate\HibernateTreeOrganizationStructureStateRepository.java">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\hibernate\HibernateTreePermissionStateRepository.java">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\hibernate\HibernateUserClaimMvoEventStore.java">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Content>
@@ -241,6 +242,22 @@
     </Content>
     <Content Include="src\org\dddml\wms\domain\hibernate\HibernateWarehouseStateRepository.java">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Content>
+    <EmbeddedResource Include="src\config\AggregatesHibernateConfig.xml">
+      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="src\config\GenerateAggregatesConfig.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GenerateAggregatesConfig.txt</LastGenOutput>
+      <LastOutputs>
+.\AggregatesHibernateConfig.xml
+.\GenerateAggregatesConfig.txt
+</LastOutputs>
+    </Content>
+    <Content Include="src\config\GenerateAggregatesConfig.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenerateAggregatesConfig.tt</DependentUpon>
     </Content>
     <EmbeddedResource Include="src\org\dddml\wms\domain\hbm\AttributeState.hbm.xml">
       <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
@@ -480,6 +497,9 @@
 .\HibernateRolePermissionEventStore.java
 .\HibernateRolePermissionStateRepository.java
 .\HibernateRoleStateRepository.java
+.\HibernateTreeLocatorStateRepository.java
+.\HibernateTreeOrganizationStructureStateRepository.java
+.\HibernateTreePermissionStateRepository.java
 .\HibernateUserClaimMvoEventStore.java
 .\HibernateUserClaimMvoStateRepository.java
 .\HibernateUserClaimStateDao.java
@@ -570,14 +590,6 @@
 .\WarehouseState.hbm.xml
 .\WarehouseStateEvent.hbm.xml
 </LastOutputs>
-    </Content>
-    <Content Include="src\org\dddml\wms\domain\hibernate\GenerateBoundedContextDomainNHibernateAggregates.txt">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
-    </Content>
-    <Content Include="src\org\dddml\wms\domain\hibernate\HibernateAttributeEventStore.java">
-      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>

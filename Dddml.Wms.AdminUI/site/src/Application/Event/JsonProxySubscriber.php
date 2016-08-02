@@ -20,9 +20,6 @@ class JsonProxySubscriber implements EventSubscriberInterface
 
     public function onJsonProxyGet(JsonProxyEvent $event)
     {
-        echo 1;
-
-//        $event->getResponse();
         return $event;
     }
 }

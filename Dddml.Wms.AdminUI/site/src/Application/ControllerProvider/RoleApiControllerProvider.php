@@ -32,17 +32,23 @@ class RoleApiControllerProvider implements ControllerProviderInterface
 
     public function getRole(Application $app, Request $request, $id)
     {
-        return $app['api.json.proxy']->get(new RoleQueryRequest(), $request, ['id' => $id,]);
+        $response = $app['api.json.proxy']->get(new RoleQueryRequest(), $request, ['id' => $id,]);
+
+        return $response;
     }
 
     public function getRoles(Application $app, Request $request)
     {
-        return $app['api.json.proxy']->get(new RolesQueryRequest(), $request);
+        $response = $app['api.json.proxy']->get(new RolesQueryRequest(), $request);
+
+        return $response;
     }
 
     public function getCount(Application $app, Request $request)
     {
-        return $app['api.json.proxy']->count(new RolesQueryRequest(), $request);
+        $response = $app['api.json.proxy']->count(new RolesQueryRequest(), $request);
+
+        return $response;
     }
 
     public function createRole(Application $app, Request $request, $id)

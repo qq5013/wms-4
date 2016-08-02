@@ -13,6 +13,7 @@ import org.hibernate.service.ServiceRegistryBuilder;
 import org.joda.money.CurrencyUnit;
 import org.joda.money.Money;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.util.Assert;
 import org.squirrelframework.foundation.component.SquirrelProvider;
 import org.squirrelframework.foundation.fsm.DotVisitor;
 
@@ -43,13 +44,66 @@ public class Main {
 
         testGetPermissionTrees();
 
-        outputDocumentStatusStateMachineDotFile();
+        testCreateOrganizationTrees();
+
+        //outputDocumentStatusStateMachineDotFile();
+    }
+
+    private static void testCreateOrganizationTrees() {
+        OrganizationTreeApplicationService organizationTreeApplicationService = (OrganizationTreeApplicationService) springFrameworkApplicationContext.getBean("organizationTreeApplicationService");
+        Iterable<OrganizationState> os = organizationTreeApplicationService.getRoots((Iterable<Map.Entry<String, Object>>) null, null, null, null);
+        for(OrganizationState o : os){
+            System.out.println(o.getName());
+        }
+        OrganizationStructureTypeApplicationService organizationStructureTypeApplicationService = (OrganizationStructureTypeApplicationService) springFrameworkApplicationContext.getBean("organizationStructureTypeApplicationService");
+        String orgStructureTypeId = UUID.randomUUID().toString();
+        OrganizationStructureTypeCommand.CreateOrganizationStructureType orgStructureType = new AbstractOrganizationStructureTypeCommand.SimpleCreateOrganizationStructureType();
+        orgStructureType.setId(orgStructureTypeId);
+        organizationStructureTypeApplicationService.when(orgStructureType);
+
+        OrganizationApplicationService organizationApplicationService =(OrganizationApplicationService) springFrameworkApplicationContext.getBean("organizationApplicationService");
+        OrganizationCommand.CreateOrganization organization1 = new AbstractOrganizationCommand.SimpleCreateOrganization();
+        organization1.setOrganizationId(UUID.randomUUID().toString());
+        organization1.setName("Org_test_1    " + organization1.getOrganizationId());
+        organizationApplicationService.when(organization1);
+
+        OrganizationCommand.CreateOrganization organization2 = new AbstractOrganizationCommand.SimpleCreateOrganization();
+        organization2.setOrganizationId(UUID.randomUUID().toString());
+        organization2.setName("Org_test_2    " + organization2.getOrganizationId());
+        organizationApplicationService.when(organization2);
+
+        OrganizationStructureApplicationService organizationStructureApplicationService = (OrganizationStructureApplicationService) springFrameworkApplicationContext.getBean("organizationStructureApplicationService");
+        OrganizationStructureCommand.CreateOrganizationStructure orgStructure_0_1 = new AbstractOrganizationStructureCommand.SimpleCreateOrganizationStructure();
+        OrganizationStructureId orgStructure_0_1_Id = new OrganizationStructureId(orgStructureTypeId, "", organization1.getOrganizationId());
+        orgStructure_0_1.setId(orgStructure_0_1_Id);
+        organizationStructureApplicationService.when(orgStructure_0_1);
+
+        OrganizationStructureCommand.CreateOrganizationStructure orgStructure_1_2 = new AbstractOrganizationStructureCommand.SimpleCreateOrganizationStructure();
+        OrganizationStructureId orgStructure_1_2_Id = new OrganizationStructureId(orgStructureTypeId, organization1.getOrganizationId(), organization2.getOrganizationId());
+        orgStructure_1_2.setId (orgStructure_1_2_Id);
+        organizationStructureApplicationService.when(orgStructure_1_2);
+
+        Iterable<OrganizationState> roots = organizationTreeApplicationService.getRoots((Iterable<java.util.Map.Entry<String, Object>>)null, null, null, null);
+        if (roots != null)
+        {
+            for (OrganizationState o : roots)
+            {
+                System.out.println("-------------------------------------------");
+                System.out.println(o.getName());
+                Iterable<OrganizationState> children = organizationTreeApplicationService.getChildren(o.getOrganizationId(), (Iterable<java.util.Map.Entry<String, Object>>)null, null, null, null);
+                for(OrganizationState c : children)
+                {
+                    System.out.println("\t" + c.getName());
+                }
+            }
+        }
     }
 
     private static void testGetPermissionTrees() {
         PermissionTreeApplicationService permissionTreeApplicationService = (PermissionTreeApplicationService) springFrameworkApplicationContext.getBean("permissionTreeApplicationService");
         Iterable<PermissionState> ps = permissionTreeApplicationService.getRoots((Iterable<Map.Entry<String, Object>>) null, null, null, null);
         for (PermissionState p : ps) {
+            System.out.println("-------------------------------------------");
             System.out.println(p.getPermissionId());
             Iterable<PermissionState> childPS = permissionTreeApplicationService.getChildren(p.getPermissionId(), (Iterable<Map.Entry<String, Object>>) null, null, null, null);
             if(childPS != null) {

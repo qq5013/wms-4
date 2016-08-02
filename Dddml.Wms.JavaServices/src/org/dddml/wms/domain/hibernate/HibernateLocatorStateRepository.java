@@ -10,7 +10,7 @@ import org.hibernate.criterion.Projections;
 import org.hibernate.SessionFactory;
 import org.dddml.wms.domain.*;
 import org.dddml.wms.specialization.*;
-import org.dddml.wms.specialization.hibernate.CriterionUtils;
+import org.dddml.wms.specialization.hibernate.*;
 import org.springframework.transaction.annotation.Transactional;
 
 public class HibernateLocatorStateRepository implements LocatorStateRepository
@@ -66,7 +66,7 @@ public class HibernateLocatorStateRepository implements LocatorStateRepository
     {
         Criteria criteria = getCurrentSession().createCriteria(LocatorState.class);
 
-        criteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
+        HibernateUtils.criteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
         addNotDeletedRestriction(criteria);
         return criteria.list();
     }
@@ -76,7 +76,7 @@ public class HibernateLocatorStateRepository implements LocatorStateRepository
     {
         Criteria criteria = getCurrentSession().createCriteria(LocatorState.class);
 
-        criteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
+        HibernateUtils.criteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
         addNotDeletedRestriction(criteria);
         return criteria.list();
     }
@@ -115,7 +115,7 @@ public class HibernateLocatorStateRepository implements LocatorStateRepository
         Criteria criteria = getCurrentSession().createCriteria(LocatorState.class);
         criteria.setProjection(Projections.rowCount());
         if (filter != null) {
-            criteriaAddFilter(criteria, filter);
+            HibernateUtils.criteriaAddFilter(criteria, filter);
         }
         addNotDeletedRestriction(criteria);
         return (long)criteria.uniqueResult();
@@ -139,100 +139,6 @@ public class HibernateLocatorStateRepository implements LocatorStateRepository
     protected static void addNotDeletedRestriction(Criteria criteria)
     {
         criteria.add(org.hibernate.criterion.Restrictions.eq("deleted", false));
-    }
-
-    protected void criteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(Criteria criteria, Iterable<Map.Entry<String, Object>> filter, List<String> orders, Integer firstResult, Integer maxResults)
-    {
-        if (filter != null)
-        {
-            criteriaAddFilter(criteria, filter);
-        }
-        criteriaAddOrdersAndSetFirstResultAndMaxResults(criteria, orders, firstResult, maxResults);
-    }
-
-    protected void criteriaAddFilter(Criteria criteria, Iterable<Map.Entry<String, Object>> filter)
-    {
-        for (Map.Entry<String, Object> p : filter)
-        {
-            criteriaAddFilterPair(criteria, p);
-        }
-    }
-
-    protected void criteriaAddFilterPair(Criteria criteria, Map.Entry<String, Object> filterPair)
-    {
-        if (filterPair.getValue() == null)
-        {
-            criteria.add(org.hibernate.criterion.Restrictions.isNull(filterPair.getKey()));
-        }
-        else
-        {
-            criteria.add(org.hibernate.criterion.Restrictions.eq(filterPair.getKey(), filterPair.getValue()));
-        }
-    }
-
-    protected static void criteriaAddOrders(Criteria criteria, List<String> orders)
-    {
-        for (String order : orders)
-        {
-            boolean isDesc = order.startsWith("-");
-            String pName = isDesc ? order.substring(1) : order;
-            criteria.addOrder(isDesc ? Order.desc(pName) : Order.asc(pName));
-        }
-    }
-
-    protected void disjunctionAddCriterion(org.hibernate.criterion.Disjunction disjunction, String propertyName, Object propertyValue)
-    {
-        if (propertyValue == null)
-        {
-            disjunction.add(org.hibernate.criterion.Restrictions.isNull(propertyName));
-        }
-        else
-        {
-            disjunction.add(org.hibernate.criterion.Restrictions.eq(propertyName, propertyValue));
-        }
-    }
-
-    protected void criteriaAddCriterion(Criteria criteria, String propertyName, Object propertyValue)
-    {
-        if (propertyValue == null)
-        {
-            criteria.add(org.hibernate.criterion.Restrictions.isNull(propertyName));
-        }
-        else
-        {
-            criteria.add(org.hibernate.criterion.Restrictions.eq(propertyName, propertyValue));
-        }
-    }
-
-    private static void criteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(Criteria criteria, org.dddml.support.criterion.Criterion filter, List<String> orders, Integer firstResult, Integer maxResults)
-    {
-        criteriaAddFilterAndSetFirstResultAndMaxResults(criteria, filter, firstResult, maxResults);
-        if (orders != null)
-        {
-            criteriaAddOrders(criteria, orders);
-        }
-    }
-        
-    private static void criteriaAddOrdersAndSetFirstResultAndMaxResults(Criteria criteria, List<String> orders, Integer firstResult, Integer maxResults)
-    {
-        if (orders != null)
-        {
-            criteriaAddOrders(criteria, orders);
-        }
-
-        if (firstResult != null) { criteria.setFirstResult(firstResult); }
-        if (maxResults != null) { criteria.setMaxResults(maxResults); }
-    }
-
-    private static void criteriaAddFilterAndSetFirstResultAndMaxResults(Criteria criteria, org.dddml.support.criterion.Criterion filter, Integer firstResult, Integer maxResults)
-    {
-        if (filter != null)
-        {
-            org.hibernate.criterion.Criterion hc = CriterionUtils.toHibernateCriterion(filter);
-            criteria.add(hc);
-        }
-        if (firstResult != null) { criteria.setFirstResult(firstResult); }
-        if (maxResults != null) { criteria.setMaxResults(maxResults); }
     }
 
 }

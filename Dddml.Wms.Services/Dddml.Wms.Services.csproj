@@ -370,6 +370,7 @@
     <Compile Include="Specialization\NHibernate\CriterionUtils.cs" />
     <Compile Include="Specialization\NHibernate\EventStoreAggregateId.cs" />
     <Compile Include="Specialization\NHibernate\NHibernateEventStoreBase.cs" />
+    <Compile Include="Specialization\NHibernate\NHibernateUtils.cs" />
     <Compile Include="Specialization\Spring\SpringApplicationContext.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -23,7 +23,7 @@ namespace Dddml.Wms.Domain.NHibernate
             var criteria = CurrentSession.CreateCriteria<LocatorState>();
 
             CriteriaAddRootParentIdCriterion(criteria);
-            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
+            NHibernateUtils.CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
             return criteria.List<LocatorState>();
         }
 
@@ -32,8 +32,8 @@ namespace Dddml.Wms.Domain.NHibernate
         {
             var criteria = CurrentSession.CreateCriteria<LocatorState>();
 
-            CriteriaAddCriterion(criteria, "ParentLocatorId", parentId);
-            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
+            NHibernateUtils.CriteriaAddCriterion(criteria, "ParentLocatorId", parentId);
+            NHibernateUtils.CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
             return criteria.List<LocatorState>();
         }
 
@@ -43,7 +43,7 @@ namespace Dddml.Wms.Domain.NHibernate
             var criteria = CurrentSession.CreateCriteria<LocatorState>();
 
             CriteriaAddRootParentIdCriterion(criteria);
-            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
+            NHibernateUtils.CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
             return criteria.List<LocatorState>();
         }
 
@@ -52,8 +52,8 @@ namespace Dddml.Wms.Domain.NHibernate
         {
             var criteria = CurrentSession.CreateCriteria<LocatorState>();
 
-            CriteriaAddCriterion(criteria, "ParentLocatorId", parentId);
-            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
+            NHibernateUtils.CriteriaAddCriterion(criteria, "ParentLocatorId", parentId);
+            NHibernateUtils.CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
             return criteria.List<LocatorState>();
         }
 
@@ -62,14 +62,14 @@ namespace Dddml.Wms.Domain.NHibernate
             IList<object> rootParentIdValues = new object[] { null, "" };
             if (rootParentIdValues.Count == 1)
             {
-                CriteriaAddCriterion(criteria, "ParentLocatorId", rootParentIdValues[0]);
+                NHibernateUtils.CriteriaAddCriterion(criteria, "ParentLocatorId", rootParentIdValues[0]);
             }
             else
             {
                 var j = Restrictions.Disjunction();
                 foreach (var pIdValue in rootParentIdValues)
                 {
-                    DisjunctionAddCriterion(j, "ParentLocatorId", pIdValue);
+                    NHibernateUtils.DisjunctionAddCriterion(j, "ParentLocatorId", pIdValue);
                 }
                 criteria.Add(j);
             }

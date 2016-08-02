@@ -23,7 +23,7 @@ namespace Dddml.Wms.Domain.NHibernate
             var criteria = CurrentSession.CreateCriteria<OrganizationStructureState>();
 
             CriteriaAddRootParentIdCriterion(criteria);
-            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
+            NHibernateUtils.CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
             return criteria.List<OrganizationStructureState>();
         }
 
@@ -32,8 +32,8 @@ namespace Dddml.Wms.Domain.NHibernate
         {
             var criteria = CurrentSession.CreateCriteria<OrganizationStructureState>();
 
-            CriteriaAddCriterion(criteria, "Id.ParentId", parentId);
-            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
+            NHibernateUtils.CriteriaAddCriterion(criteria, "Id.ParentId", parentId);
+            NHibernateUtils.CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
             return criteria.List<OrganizationStructureState>();
         }
 
@@ -43,7 +43,7 @@ namespace Dddml.Wms.Domain.NHibernate
             var criteria = CurrentSession.CreateCriteria<OrganizationStructureState>();
 
             CriteriaAddRootParentIdCriterion(criteria);
-            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
+            NHibernateUtils.CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
             return criteria.List<OrganizationStructureState>();
         }
 
@@ -52,8 +52,8 @@ namespace Dddml.Wms.Domain.NHibernate
         {
             var criteria = CurrentSession.CreateCriteria<OrganizationStructureState>();
 
-            CriteriaAddCriterion(criteria, "Id.ParentId", parentId);
-            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
+            NHibernateUtils.CriteriaAddCriterion(criteria, "Id.ParentId", parentId);
+            NHibernateUtils.CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
             return criteria.List<OrganizationStructureState>();
         }
 
@@ -62,14 +62,14 @@ namespace Dddml.Wms.Domain.NHibernate
             IList<object> rootParentIdValues = new object[] { "" };
             if (rootParentIdValues.Count == 1)
             {
-                CriteriaAddCriterion(criteria, "Id.ParentId", rootParentIdValues[0]);
+                NHibernateUtils.CriteriaAddCriterion(criteria, "Id.ParentId", rootParentIdValues[0]);
             }
             else
             {
                 var j = Restrictions.Disjunction();
                 foreach (var pIdValue in rootParentIdValues)
                 {
-                    DisjunctionAddCriterion(j, "Id.ParentId", pIdValue);
+                    NHibernateUtils.DisjunctionAddCriterion(j, "Id.ParentId", pIdValue);
                 }
                 criteria.Add(j);
             }

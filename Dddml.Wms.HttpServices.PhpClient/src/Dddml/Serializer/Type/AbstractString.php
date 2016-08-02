@@ -26,4 +26,9 @@ abstract class AbstractString
     {
         $this->value = $value;
     }
+
+    public function __toString()
+    {
+        return $this->getValue();
+    }
 }

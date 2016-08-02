@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "amd",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "outFile": "../site/web/js/dddml.js",
+    "sourceMap": true
+  },
+  "exclude": []
+}

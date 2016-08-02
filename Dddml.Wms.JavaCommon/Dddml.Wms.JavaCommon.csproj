@@ -1246,9 +1246,18 @@
 .\DocumentAction.java
 .\DocumentActionDto.java
 .\GenerateBoundedContextDomain.txt
+.\LocatorTree.java
+.\LocatorTreeApplicationService.java
+.\LocatorTreeRepository.java
 .\OrganizationStructureId.java
 .\OrganizationStructureIdDto.java
 .\OrganizationStructureIdFlattenedDto.java
+.\OrganizationTree.java
+.\OrganizationTreeApplicationService.java
+.\OrganizationTreeRepository.java
+.\PermissionTree.java
+.\PermissionTreeApplicationService.java
+.\PermissionTreeRepository.java
 .\RolePermissionId.java
 .\RolePermissionIdDto.java
 .\RolePermissionIdFlattenedDto.java
@@ -2054,6 +2063,15 @@
     <Content Include="src\org\dddml\wms\domain\LocatorStateRepository.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\LocatorTree.java">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\LocatorTreeApplicationService.java">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\LocatorTreeRepository.java">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\LoginKey.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
@@ -2447,6 +2465,15 @@
     <Content Include="src\org\dddml\wms\domain\OrganizationStructureTypeStateRepository.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\OrganizationTree.java">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\OrganizationTreeApplicationService.java">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\OrganizationTreeRepository.java">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\PermissionAggregate.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
@@ -2479,6 +2506,15 @@
     </Content>
     <Content Include="src\org\dddml\wms\domain\PermissionStateRepository.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\PermissionTree.java">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\PermissionTreeApplicationService.java">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\PermissionTreeRepository.java">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\RemoveAttributeSetInstanceExtensionFieldDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>

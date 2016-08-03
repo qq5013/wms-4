@@ -2,134 +2,134 @@ namespace Dddml.Wms.Domain {
 
 	export class AttributeSetInstanceExtensionField {
 
-		private Index: string;
+		private index: string;
 
 		getIndex(): string {
-			return this.Index;
+			return this.index;
 		}
 
 		setIndex(index: string) {
-			this.Index = index;
+			this.index = index;
 		}
 
-		private Name: string;
+		private name: string;
 
 		getName(): string {
-			return this.Name;
+			return this.name;
 		}
 
 		setName(name: string) {
-			this.Name = name;
+			this.name = name;
 		}
 
-		private Type: string;
+		private type: string;
 
 		getType(): string {
-			return this.Type;
+			return this.type;
 		}
 
 		setType(type: string) {
-			this.Type = type;
+			this.type = type;
 		}
 
-		private Length: number;
+		private length: number;
 
 		getLength(): number {
-			return this.Length;
+			return this.length;
 		}
 
 		setLength(length: number) {
-			this.Length = length;
+			this.length = length;
 		}
 
-		private Alias: string;
+		private alias: string;
 
 		getAlias(): string {
-			return this.Alias;
+			return this.alias;
 		}
 
 		setAlias(alias: string) {
-			this.Alias = alias;
+			this.alias = alias;
 		}
 
-		private Description: string;
+		private description: string;
 
 		getDescription(): string {
-			return this.Description;
+			return this.description;
 		}
 
 		setDescription(description: string) {
-			this.Description = description;
+			this.description = description;
 		}
 
-		private Active: boolean;
+		private active: boolean;
 
 		getActive(): boolean {
-			return this.Active;
+			return this.active;
 		}
 
 		setActive(active: boolean) {
-			this.Active = active;
+			this.active = active;
 		}
 
-		private Version: string;
+		private version: string;
 
 		getVersion(): string {
-			return this.Version;
+			return this.version;
 		}
 
 		setVersion(version: string) {
-			this.Version = version;
+			this.version = version;
 		}
 
-		private GroupId: string;
+		private groupId: string;
 
 		getGroupId(): string {
-			return this.GroupId;
+			return this.groupId;
 		}
 
 		setGroupId(groupId: string) {
-			this.GroupId = groupId;
+			this.groupId = groupId;
 		}
 
-		private CreatedBy: string;
+		private createdBy: string;
 
 		getCreatedBy(): string {
-			return this.CreatedBy;
+			return this.createdBy;
 		}
 
 		setCreatedBy(createdBy: string) {
-			this.CreatedBy = createdBy;
+			this.createdBy = createdBy;
 		}
 
-		private CreatedAt: string;
+		private createdAt: string;
 
 		getCreatedAt(): string {
-			return this.CreatedAt;
+			return this.createdAt;
 		}
 
 		setCreatedAt(createdAt: string) {
-			this.CreatedAt = createdAt;
+			this.createdAt = createdAt;
 		}
 
-		private UpdatedBy: string;
+		private updatedBy: string;
 
 		getUpdatedBy(): string {
-			return this.UpdatedBy;
+			return this.updatedBy;
 		}
 
 		setUpdatedBy(updatedBy: string) {
-			this.UpdatedBy = updatedBy;
+			this.updatedBy = updatedBy;
 		}
 
-		private UpdatedAt: string;
+		private updatedAt: string;
 
 		getUpdatedAt(): string {
-			return this.UpdatedAt;
+			return this.updatedAt;
 		}
 
 		setUpdatedAt(updatedAt: string) {
-			this.UpdatedAt = updatedAt;
+			this.updatedAt = updatedAt;
 		}
 
 	}

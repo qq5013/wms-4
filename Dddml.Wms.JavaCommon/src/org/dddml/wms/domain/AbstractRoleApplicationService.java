@@ -75,8 +75,12 @@ public abstract class AbstractRoleApplicationService implements RoleApplicationS
     }
 
     public RoleStateEvent getStateEvent(String roleId, long version) {
-        throw new UnsupportedOperationException(); //todo
+        RoleStateEvent e = (RoleStateEvent)getEventStore().getStateEvent(toEventStoreAggregateId(roleId), version);
+        if (e != null)
+        { e.setStateEventReadOnly(true); }
+        return e;
     }
+
 
     public RoleAggregate getRoleAggregate(RoleState state)
     {

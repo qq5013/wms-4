@@ -5,6 +5,7 @@ namespace Wms\Domain\Metadata;
 
 class OrganizationMetadata
 {
+    const ID           = 'organizationId';
     const VERSION      = 'version';
     const ACTIVE       = 'active';
     const DELETED      = 'deleted';

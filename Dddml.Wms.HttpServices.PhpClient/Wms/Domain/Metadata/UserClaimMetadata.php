@@ -5,6 +5,7 @@ namespace Wms\Domain\Metadata;
 
 class UserClaimMetadata
 {
+    const ID           = 'claimId';
     const VERSION      = 'version';
     const ACTIVE       = 'active';
     const DELETED      = 'deleted';

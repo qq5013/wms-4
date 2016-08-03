@@ -48,7 +48,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(CreateAttributeSetInstanceDto c)
         {
-            var idObj = ((c as ICreateAttributeSetInstance).AttributeSetInstanceId);
+            var idObj = (c as ICreateAttributeSetInstance).AttributeSetInstanceId;
             var uriParameters = new AttributeSetInstanceUriParameters();
             uriParameters.Id = idObj;
 
@@ -65,7 +65,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(MergePatchAttributeSetInstanceDto c)
         {
-            var idObj = ((c as IMergePatchAttributeSetInstance).AttributeSetInstanceId);
+            var idObj = (c as IMergePatchAttributeSetInstance).AttributeSetInstanceId;
             var uriParameters = new AttributeSetInstanceUriParameters();
             uriParameters.Id = idObj;
 
@@ -81,7 +81,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(DeleteAttributeSetInstanceDto c)
         {
-            var idObj = ((c as IDeleteAttributeSetInstance).AttributeSetInstanceId);
+            var idObj = (c as IDeleteAttributeSetInstance).AttributeSetInstanceId;
             var uriParameters = new AttributeSetInstanceUriParameters();
             uriParameters.Id = idObj;
 
@@ -120,7 +120,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         public async Task<IAttributeSetInstanceState> GetAsync(string attributeSetInstanceId)
         {
             IAttributeSetInstanceState state = null;
-            var idObj = (attributeSetInstanceId);
+            var idObj = attributeSetInstanceId;
             var uriParameters = new AttributeSetInstanceUriParameters();
             uriParameters.Id = idObj;
 
@@ -247,7 +247,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task<IAttributeSetInstanceStateEvent> GetStateEventAsync(string attributeSetInstanceId, long version)
         {
-            var idObj = (attributeSetInstanceId);
+            var idObj = attributeSetInstanceId;
             var uriParameters = new AttributeSetInstanceStateEventUriParameters();
             uriParameters.Id = idObj;
             uriParameters.Version = version.ToString();
@@ -262,6 +262,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         {
             return GetStateEventAsync(attributeSetInstanceId, version).GetAwaiter().GetResult();
         }
+
 
         protected virtual string QueryFieldValueSeparator
         {

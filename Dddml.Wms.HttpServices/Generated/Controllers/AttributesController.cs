@@ -171,6 +171,19 @@ namespace Dddml.Wms.HttpServices.ApiControllers
           } catch (Exception ex) { var response = AttributesControllerUtils.GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
         }
 
+        [Route("{attributeId}/AttributeValues/{value}")]
+        [HttpGet]
+        public AttributeValueStateDto GetAttributeValue(string attributeId, string value)
+        {
+          try {
+            var state = (AttributeValueState)_attributeApplicationService.GetAttributeValue(attributeId, value);
+            if (state == null) { return null; }
+            var stateDto = new AttributeValueStateDto(state);
+            stateDto.AllFieldsReturned = true;
+            return stateDto;
+          } catch (Exception ex) { var response = AttributesControllerUtils.GetErrorHttpResponseMessage(ex); throw new HttpResponseException(response); }
+        }
+
 
 		// /////////////////////////////////////////////////
 

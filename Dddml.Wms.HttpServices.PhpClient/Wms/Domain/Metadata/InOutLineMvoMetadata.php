@@ -5,6 +5,7 @@ namespace Wms\Domain\Metadata;
 
 class InOutLineMvoMetadata
 {
+    const ID           = 'inOutLineId';
     const VERSION      = 'inOutVersion';
     const ACTIVE       = 'active';
     const DELETED      = 'deleted';

@@ -36,6 +36,7 @@ namespace Dddml.Wms.Domain
 
         IAttributeValueMvoStateEvent GetStateEvent(AttributeValueId attributeValueId, long version);
 
+
 	}
 
 }

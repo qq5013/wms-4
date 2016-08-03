@@ -75,8 +75,16 @@ public abstract class AbstractAttributeSetApplicationService implements Attribut
     }
 
     public AttributeSetStateEvent getStateEvent(String attributeSetId, long version) {
-        throw new UnsupportedOperationException(); //todo
+        AttributeSetStateEvent e = (AttributeSetStateEvent)getEventStore().getStateEvent(toEventStoreAggregateId(attributeSetId), version);
+        if (e != null)
+        { e.setStateEventReadOnly(true); }
+        return e;
     }
+
+    public AttributeUseState getAttributeUse(String attributeSetId, String attributeId) {
+        return getStateRepository().getAttributeUse(attributeSetId, attributeId);
+    }
+
 
     public AttributeSetAggregate getAttributeSetAggregate(AttributeSetState state)
     {

@@ -2,424 +2,424 @@ namespace Dddml.Wms.Domain {
 
 	export class InOut {
 
-		private DocumentNumber: string;
+		private documentNumber: string;
 
 		getDocumentNumber(): string {
-			return this.DocumentNumber;
+			return this.documentNumber;
 		}
 
 		setDocumentNumber(documentNumber: string) {
-			this.DocumentNumber = documentNumber;
+			this.documentNumber = documentNumber;
 		}
 
-		private IsSOTransaction: boolean;
+		private isSOTransaction: boolean;
 
 		getIsSOTransaction(): boolean {
-			return this.IsSOTransaction;
+			return this.isSOTransaction;
 		}
 
 		setIsSOTransaction(isSOTransaction: boolean) {
-			this.IsSOTransaction = isSOTransaction;
+			this.isSOTransaction = isSOTransaction;
 		}
 
-		private DocumentStatus: string;
+		private documentStatus: string;
 
 		getDocumentStatus(): string {
-			return this.DocumentStatus;
+			return this.documentStatus;
 		}
 
 		setDocumentStatus(documentStatus: string) {
-			this.DocumentStatus = documentStatus;
+			this.documentStatus = documentStatus;
 		}
 
-		private Posted: boolean;
+		private posted: boolean;
 
 		getPosted(): boolean {
-			return this.Posted;
+			return this.posted;
 		}
 
 		setPosted(posted: boolean) {
-			this.Posted = posted;
+			this.posted = posted;
 		}
 
-		private Processing: boolean;
+		private processing: boolean;
 
 		getProcessing(): boolean {
-			return this.Processing;
+			return this.processing;
 		}
 
 		setProcessing(processing: boolean) {
-			this.Processing = processing;
+			this.processing = processing;
 		}
 
-		private Processed: boolean;
+		private processed: boolean;
 
 		getProcessed(): boolean {
-			return this.Processed;
+			return this.processed;
 		}
 
 		setProcessed(processed: boolean) {
-			this.Processed = processed;
+			this.processed = processed;
 		}
 
-		private DocumentType: number;
+		private documentType: number;
 
 		getDocumentType(): number {
-			return this.DocumentType;
+			return this.documentType;
 		}
 
 		setDocumentType(documentType: number) {
-			this.DocumentType = documentType;
+			this.documentType = documentType;
 		}
 
-		private Description: string;
+		private description: string;
 
 		getDescription(): string {
-			return this.Description;
+			return this.description;
 		}
 
 		setDescription(description: string) {
-			this.Description = description;
+			this.description = description;
 		}
 
-		private OrderNumber: string;
+		private orderNumber: string;
 
 		getOrderNumber(): string {
-			return this.OrderNumber;
+			return this.orderNumber;
 		}
 
 		setOrderNumber(orderNumber: string) {
-			this.OrderNumber = orderNumber;
+			this.orderNumber = orderNumber;
 		}
 
-		private DateOrdered: string;
+		private dateOrdered: string;
 
 		getDateOrdered(): string {
-			return this.DateOrdered;
+			return this.dateOrdered;
 		}
 
 		setDateOrdered(dateOrdered: string) {
-			this.DateOrdered = dateOrdered;
+			this.dateOrdered = dateOrdered;
 		}
 
-		private IsPrinted: boolean;
+		private isPrinted: boolean;
 
 		getIsPrinted(): boolean {
-			return this.IsPrinted;
+			return this.isPrinted;
 		}
 
 		setIsPrinted(isPrinted: boolean) {
-			this.IsPrinted = isPrinted;
+			this.isPrinted = isPrinted;
 		}
 
-		private MovementType: string;
+		private movementType: string;
 
 		getMovementType(): string {
-			return this.MovementType;
+			return this.movementType;
 		}
 
 		setMovementType(movementType: string) {
-			this.MovementType = movementType;
+			this.movementType = movementType;
 		}
 
-		private MovementDate: string;
+		private movementDate: string;
 
 		getMovementDate(): string {
-			return this.MovementDate;
+			return this.movementDate;
 		}
 
 		setMovementDate(movementDate: string) {
-			this.MovementDate = movementDate;
+			this.movementDate = movementDate;
 		}
 
-		private BusinessPartnerId: string;
+		private businessPartnerId: string;
 
 		getBusinessPartnerId(): string {
-			return this.BusinessPartnerId;
+			return this.businessPartnerId;
 		}
 
 		setBusinessPartnerId(businessPartnerId: string) {
-			this.BusinessPartnerId = businessPartnerId;
+			this.businessPartnerId = businessPartnerId;
 		}
 
-		private WarehouseId: string;
+		private warehouseId: string;
 
 		getWarehouseId(): string {
-			return this.WarehouseId;
+			return this.warehouseId;
 		}
 
 		setWarehouseId(warehouseId: string) {
-			this.WarehouseId = warehouseId;
+			this.warehouseId = warehouseId;
 		}
 
-		private POReference: string;
+		private poReference: string;
 
 		getPOReference(): string {
-			return this.POReference;
+			return this.poReference;
 		}
 
 		setPOReference(poReference: string) {
-			this.POReference = poReference;
+			this.poReference = poReference;
 		}
 
-		private FreightAmount: Money;
+		private freightAmount: Money;
 
 		getFreightAmount(): Money {
-			return this.FreightAmount;
+			return this.freightAmount;
 		}
 
 		setFreightAmount(freightAmount: Money) {
-			this.FreightAmount = freightAmount;
+			this.freightAmount = freightAmount;
 		}
 
-		private ShipperId: string;
+		private shipperId: string;
 
 		getShipperId(): string {
-			return this.ShipperId;
+			return this.shipperId;
 		}
 
 		setShipperId(shipperId: string) {
-			this.ShipperId = shipperId;
+			this.shipperId = shipperId;
 		}
 
-		private ChargeAmount: Money;
+		private chargeAmount: Money;
 
 		getChargeAmount(): Money {
-			return this.ChargeAmount;
+			return this.chargeAmount;
 		}
 
 		setChargeAmount(chargeAmount: Money) {
-			this.ChargeAmount = chargeAmount;
+			this.chargeAmount = chargeAmount;
 		}
 
-		private DatePrinted: string;
+		private datePrinted: string;
 
 		getDatePrinted(): string {
-			return this.DatePrinted;
+			return this.datePrinted;
 		}
 
 		setDatePrinted(datePrinted: string) {
-			this.DatePrinted = datePrinted;
+			this.datePrinted = datePrinted;
 		}
 
-		private SalesRepresentative: string;
+		private salesRepresentative: string;
 
 		getSalesRepresentative(): string {
-			return this.SalesRepresentative;
+			return this.salesRepresentative;
 		}
 
 		setSalesRepresentative(salesRepresentative: string) {
-			this.SalesRepresentative = salesRepresentative;
+			this.salesRepresentative = salesRepresentative;
 		}
 
-		private NumberOfPackages: number;
+		private numberOfPackages: number;
 
 		getNumberOfPackages(): number {
-			return this.NumberOfPackages;
+			return this.numberOfPackages;
 		}
 
 		setNumberOfPackages(numberOfPackages: number) {
-			this.NumberOfPackages = numberOfPackages;
+			this.numberOfPackages = numberOfPackages;
 		}
 
-		private PickDate: string;
+		private pickDate: string;
 
 		getPickDate(): string {
-			return this.PickDate;
+			return this.pickDate;
 		}
 
 		setPickDate(pickDate: string) {
-			this.PickDate = pickDate;
+			this.pickDate = pickDate;
 		}
 
-		private ShipDate: string;
+		private shipDate: string;
 
 		getShipDate(): string {
-			return this.ShipDate;
+			return this.shipDate;
 		}
 
 		setShipDate(shipDate: string) {
-			this.ShipDate = shipDate;
+			this.shipDate = shipDate;
 		}
 
-		private TrackingNumber: string;
+		private trackingNumber: string;
 
 		getTrackingNumber(): string {
-			return this.TrackingNumber;
+			return this.trackingNumber;
 		}
 
 		setTrackingNumber(trackingNumber: string) {
-			this.TrackingNumber = trackingNumber;
+			this.trackingNumber = trackingNumber;
 		}
 
-		private DateReceived: string;
+		private dateReceived: string;
 
 		getDateReceived(): string {
-			return this.DateReceived;
+			return this.dateReceived;
 		}
 
 		setDateReceived(dateReceived: string) {
-			this.DateReceived = dateReceived;
+			this.dateReceived = dateReceived;
 		}
 
-		private IsInTransit: boolean;
+		private isInTransit: boolean;
 
 		getIsInTransit(): boolean {
-			return this.IsInTransit;
+			return this.isInTransit;
 		}
 
 		setIsInTransit(isInTransit: boolean) {
-			this.IsInTransit = isInTransit;
+			this.isInTransit = isInTransit;
 		}
 
-		private IsApproved: boolean;
+		private isApproved: boolean;
 
 		getIsApproved(): boolean {
-			return this.IsApproved;
+			return this.isApproved;
 		}
 
 		setIsApproved(isApproved: boolean) {
-			this.IsApproved = isApproved;
+			this.isApproved = isApproved;
 		}
 
-		private IsInDispute: boolean;
+		private isInDispute: boolean;
 
 		getIsInDispute(): boolean {
-			return this.IsInDispute;
+			return this.isInDispute;
 		}
 
 		setIsInDispute(isInDispute: boolean) {
-			this.IsInDispute = isInDispute;
+			this.isInDispute = isInDispute;
 		}
 
-		private Volume: string;
+		private volume: string;
 
 		getVolume(): string {
-			return this.Volume;
+			return this.volume;
 		}
 
 		setVolume(volume: string) {
-			this.Volume = volume;
+			this.volume = volume;
 		}
 
-		private Weight: string;
+		private weight: string;
 
 		getWeight(): string {
-			return this.Weight;
+			return this.weight;
 		}
 
 		setWeight(weight: string) {
-			this.Weight = weight;
+			this.weight = weight;
 		}
 
-		private RmaNumber: string;
+		private rmaNumber: string;
 
 		getRmaNumber(): string {
-			return this.RmaNumber;
+			return this.rmaNumber;
 		}
 
 		setRmaNumber(rmaNumber: string) {
-			this.RmaNumber = rmaNumber;
+			this.rmaNumber = rmaNumber;
 		}
 
-		private ReversalNumber: string;
+		private reversalNumber: string;
 
 		getReversalNumber(): string {
-			return this.ReversalNumber;
+			return this.reversalNumber;
 		}
 
 		setReversalNumber(reversalNumber: string) {
-			this.ReversalNumber = reversalNumber;
+			this.reversalNumber = reversalNumber;
 		}
 
-		private IsDropShip: boolean;
+		private isDropShip: boolean;
 
 		getIsDropShip(): boolean {
-			return this.IsDropShip;
+			return this.isDropShip;
 		}
 
 		setIsDropShip(isDropShip: boolean) {
-			this.IsDropShip = isDropShip;
+			this.isDropShip = isDropShip;
 		}
 
-		private DropShipBusinessPartnerId: string;
+		private dropShipBusinessPartnerId: string;
 
 		getDropShipBusinessPartnerId(): string {
-			return this.DropShipBusinessPartnerId;
+			return this.dropShipBusinessPartnerId;
 		}
 
 		setDropShipBusinessPartnerId(dropShipBusinessPartnerId: string) {
-			this.DropShipBusinessPartnerId = dropShipBusinessPartnerId;
+			this.dropShipBusinessPartnerId = dropShipBusinessPartnerId;
 		}
 
-		private Active: boolean;
+		private active: boolean;
 
 		getActive(): boolean {
-			return this.Active;
+			return this.active;
 		}
 
 		setActive(active: boolean) {
-			this.Active = active;
+			this.active = active;
 		}
 
-		private Version: string;
+		private version: string;
 
 		getVersion(): string {
-			return this.Version;
+			return this.version;
 		}
 
 		setVersion(version: string) {
-			this.Version = version;
+			this.version = version;
 		}
 
-		private CreatedBy: string;
+		private createdBy: string;
 
 		getCreatedBy(): string {
-			return this.CreatedBy;
+			return this.createdBy;
 		}
 
 		setCreatedBy(createdBy: string) {
-			this.CreatedBy = createdBy;
+			this.createdBy = createdBy;
 		}
 
-		private CreatedAt: string;
+		private createdAt: string;
 
 		getCreatedAt(): string {
-			return this.CreatedAt;
+			return this.createdAt;
 		}
 
 		setCreatedAt(createdAt: string) {
-			this.CreatedAt = createdAt;
+			this.createdAt = createdAt;
 		}
 
-		private UpdatedBy: string;
+		private updatedBy: string;
 
 		getUpdatedBy(): string {
-			return this.UpdatedBy;
+			return this.updatedBy;
 		}
 
 		setUpdatedBy(updatedBy: string) {
-			this.UpdatedBy = updatedBy;
+			this.updatedBy = updatedBy;
 		}
 
-		private UpdatedAt: string;
+		private updatedAt: string;
 
 		getUpdatedAt(): string {
-			return this.UpdatedAt;
+			return this.updatedAt;
 		}
 
 		setUpdatedAt(updatedAt: string) {
-			this.UpdatedAt = updatedAt;
+			this.updatedAt = updatedAt;
 		}
 
-		private InOutLines: Array<InOutLine>;
+		private inOutLines: Array<InOutLine>;
 
 		getInOutLines() {
-			return this.InOutLines;
+			return this.inOutLines;
 		}
 	
 		setInOutLines(inOutLines: Array<InOutLine>){
-			this.InOutLines = inOutLines;
+			this.inOutLines = inOutLines;
 		}
 
 	}

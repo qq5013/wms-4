@@ -2,244 +2,244 @@ namespace Dddml.Wms.Domain {
 
 	export class AttributeSetInstanceExtensionFieldMvo {
 
-		private AttributeSetInstanceExtensionFieldId: AttributeSetInstanceExtensionFieldId;
+		private attributeSetInstanceExtensionFieldId: AttributeSetInstanceExtensionFieldId;
 
 		getAttributeSetInstanceExtensionFieldId(): AttributeSetInstanceExtensionFieldId {
-			return this.AttributeSetInstanceExtensionFieldId;
+			return this.attributeSetInstanceExtensionFieldId;
 		}
 
 		setAttributeSetInstanceExtensionFieldId(attributeSetInstanceExtensionFieldId: AttributeSetInstanceExtensionFieldId) {
-			this.AttributeSetInstanceExtensionFieldId = attributeSetInstanceExtensionFieldId;
+			this.attributeSetInstanceExtensionFieldId = attributeSetInstanceExtensionFieldId;
 		}
 
-		private Name: string;
+		private name: string;
 
 		getName(): string {
-			return this.Name;
+			return this.name;
 		}
 
 		setName(name: string) {
-			this.Name = name;
+			this.name = name;
 		}
 
-		private Type: string;
+		private type: string;
 
 		getType(): string {
-			return this.Type;
+			return this.type;
 		}
 
 		setType(type: string) {
-			this.Type = type;
+			this.type = type;
 		}
 
-		private Length: number;
+		private length: number;
 
 		getLength(): number {
-			return this.Length;
+			return this.length;
 		}
 
 		setLength(length: number) {
-			this.Length = length;
+			this.length = length;
 		}
 
-		private Alias: string;
+		private alias: string;
 
 		getAlias(): string {
-			return this.Alias;
+			return this.alias;
 		}
 
 		setAlias(alias: string) {
-			this.Alias = alias;
+			this.alias = alias;
 		}
 
-		private Description: string;
+		private description: string;
 
 		getDescription(): string {
-			return this.Description;
+			return this.description;
 		}
 
 		setDescription(description: string) {
-			this.Description = description;
+			this.description = description;
 		}
 
-		private Version: string;
+		private version: string;
 
 		getVersion(): string {
-			return this.Version;
+			return this.version;
 		}
 
 		setVersion(version: string) {
-			this.Version = version;
+			this.version = version;
 		}
 
-		private Active: boolean;
+		private active: boolean;
 
 		getActive(): boolean {
-			return this.Active;
+			return this.active;
 		}
 
 		setActive(active: boolean) {
-			this.Active = active;
+			this.active = active;
 		}
 
-		private AttrSetInstEFGroupFieldType: string;
+		private attrSetInstEFGroupFieldType: string;
 
 		getAttrSetInstEFGroupFieldType(): string {
-			return this.AttrSetInstEFGroupFieldType;
+			return this.attrSetInstEFGroupFieldType;
 		}
 
 		setAttrSetInstEFGroupFieldType(attrSetInstEFGroupFieldType: string) {
-			this.AttrSetInstEFGroupFieldType = attrSetInstEFGroupFieldType;
+			this.attrSetInstEFGroupFieldType = attrSetInstEFGroupFieldType;
 		}
 
-		private AttrSetInstEFGroupFieldLength: number;
+		private attrSetInstEFGroupFieldLength: number;
 
 		getAttrSetInstEFGroupFieldLength(): number {
-			return this.AttrSetInstEFGroupFieldLength;
+			return this.attrSetInstEFGroupFieldLength;
 		}
 
 		setAttrSetInstEFGroupFieldLength(attrSetInstEFGroupFieldLength: number) {
-			this.AttrSetInstEFGroupFieldLength = attrSetInstEFGroupFieldLength;
+			this.attrSetInstEFGroupFieldLength = attrSetInstEFGroupFieldLength;
 		}
 
-		private AttrSetInstEFGroupFieldCount: number;
+		private attrSetInstEFGroupFieldCount: number;
 
 		getAttrSetInstEFGroupFieldCount(): number {
-			return this.AttrSetInstEFGroupFieldCount;
+			return this.attrSetInstEFGroupFieldCount;
 		}
 
 		setAttrSetInstEFGroupFieldCount(attrSetInstEFGroupFieldCount: number) {
-			this.AttrSetInstEFGroupFieldCount = attrSetInstEFGroupFieldCount;
+			this.attrSetInstEFGroupFieldCount = attrSetInstEFGroupFieldCount;
 		}
 
-		private AttrSetInstEFGroupNameFormat: string;
+		private attrSetInstEFGroupNameFormat: string;
 
 		getAttrSetInstEFGroupNameFormat(): string {
-			return this.AttrSetInstEFGroupNameFormat;
+			return this.attrSetInstEFGroupNameFormat;
 		}
 
 		setAttrSetInstEFGroupNameFormat(attrSetInstEFGroupNameFormat: string) {
-			this.AttrSetInstEFGroupNameFormat = attrSetInstEFGroupNameFormat;
+			this.attrSetInstEFGroupNameFormat = attrSetInstEFGroupNameFormat;
 		}
 
-		private AttrSetInstEFGroupDescription: string;
+		private attrSetInstEFGroupDescription: string;
 
 		getAttrSetInstEFGroupDescription(): string {
-			return this.AttrSetInstEFGroupDescription;
+			return this.attrSetInstEFGroupDescription;
 		}
 
 		setAttrSetInstEFGroupDescription(attrSetInstEFGroupDescription: string) {
-			this.AttrSetInstEFGroupDescription = attrSetInstEFGroupDescription;
+			this.attrSetInstEFGroupDescription = attrSetInstEFGroupDescription;
 		}
 
-		private AttrSetInstEFGroupCreatedBy: string;
+		private attrSetInstEFGroupCreatedBy: string;
 
 		getAttrSetInstEFGroupCreatedBy(): string {
-			return this.AttrSetInstEFGroupCreatedBy;
+			return this.attrSetInstEFGroupCreatedBy;
 		}
 
 		setAttrSetInstEFGroupCreatedBy(attrSetInstEFGroupCreatedBy: string) {
-			this.AttrSetInstEFGroupCreatedBy = attrSetInstEFGroupCreatedBy;
+			this.attrSetInstEFGroupCreatedBy = attrSetInstEFGroupCreatedBy;
 		}
 
-		private AttrSetInstEFGroupCreatedAt: string;
+		private attrSetInstEFGroupCreatedAt: string;
 
 		getAttrSetInstEFGroupCreatedAt(): string {
-			return this.AttrSetInstEFGroupCreatedAt;
+			return this.attrSetInstEFGroupCreatedAt;
 		}
 
 		setAttrSetInstEFGroupCreatedAt(attrSetInstEFGroupCreatedAt: string) {
-			this.AttrSetInstEFGroupCreatedAt = attrSetInstEFGroupCreatedAt;
+			this.attrSetInstEFGroupCreatedAt = attrSetInstEFGroupCreatedAt;
 		}
 
-		private AttrSetInstEFGroupUpdatedBy: string;
+		private attrSetInstEFGroupUpdatedBy: string;
 
 		getAttrSetInstEFGroupUpdatedBy(): string {
-			return this.AttrSetInstEFGroupUpdatedBy;
+			return this.attrSetInstEFGroupUpdatedBy;
 		}
 
 		setAttrSetInstEFGroupUpdatedBy(attrSetInstEFGroupUpdatedBy: string) {
-			this.AttrSetInstEFGroupUpdatedBy = attrSetInstEFGroupUpdatedBy;
+			this.attrSetInstEFGroupUpdatedBy = attrSetInstEFGroupUpdatedBy;
 		}
 
-		private AttrSetInstEFGroupUpdatedAt: string;
+		private attrSetInstEFGroupUpdatedAt: string;
 
 		getAttrSetInstEFGroupUpdatedAt(): string {
-			return this.AttrSetInstEFGroupUpdatedAt;
+			return this.attrSetInstEFGroupUpdatedAt;
 		}
 
 		setAttrSetInstEFGroupUpdatedAt(attrSetInstEFGroupUpdatedAt: string) {
-			this.AttrSetInstEFGroupUpdatedAt = attrSetInstEFGroupUpdatedAt;
+			this.attrSetInstEFGroupUpdatedAt = attrSetInstEFGroupUpdatedAt;
 		}
 
-		private AttrSetInstEFGroupActive: boolean;
+		private attrSetInstEFGroupActive: boolean;
 
 		getAttrSetInstEFGroupActive(): boolean {
-			return this.AttrSetInstEFGroupActive;
+			return this.attrSetInstEFGroupActive;
 		}
 
 		setAttrSetInstEFGroupActive(attrSetInstEFGroupActive: boolean) {
-			this.AttrSetInstEFGroupActive = attrSetInstEFGroupActive;
+			this.attrSetInstEFGroupActive = attrSetInstEFGroupActive;
 		}
 
-		private AttrSetInstEFGroupDeleted: boolean;
+		private attrSetInstEFGroupDeleted: boolean;
 
 		getAttrSetInstEFGroupDeleted(): boolean {
-			return this.AttrSetInstEFGroupDeleted;
+			return this.attrSetInstEFGroupDeleted;
 		}
 
 		setAttrSetInstEFGroupDeleted(attrSetInstEFGroupDeleted: boolean) {
-			this.AttrSetInstEFGroupDeleted = attrSetInstEFGroupDeleted;
+			this.attrSetInstEFGroupDeleted = attrSetInstEFGroupDeleted;
 		}
 
-		private AttrSetInstEFGroupVersion: string;
+		private attrSetInstEFGroupVersion: string;
 
 		getAttrSetInstEFGroupVersion(): string {
-			return this.AttrSetInstEFGroupVersion;
+			return this.attrSetInstEFGroupVersion;
 		}
 
 		setAttrSetInstEFGroupVersion(attrSetInstEFGroupVersion: string) {
-			this.AttrSetInstEFGroupVersion = attrSetInstEFGroupVersion;
+			this.attrSetInstEFGroupVersion = attrSetInstEFGroupVersion;
 		}
 
-		private CreatedBy: string;
+		private createdBy: string;
 
 		getCreatedBy(): string {
-			return this.CreatedBy;
+			return this.createdBy;
 		}
 
 		setCreatedBy(createdBy: string) {
-			this.CreatedBy = createdBy;
+			this.createdBy = createdBy;
 		}
 
-		private CreatedAt: string;
+		private createdAt: string;
 
 		getCreatedAt(): string {
-			return this.CreatedAt;
+			return this.createdAt;
 		}
 
 		setCreatedAt(createdAt: string) {
-			this.CreatedAt = createdAt;
+			this.createdAt = createdAt;
 		}
 
-		private UpdatedBy: string;
+		private updatedBy: string;
 
 		getUpdatedBy(): string {
-			return this.UpdatedBy;
+			return this.updatedBy;
 		}
 
 		setUpdatedBy(updatedBy: string) {
-			this.UpdatedBy = updatedBy;
+			this.updatedBy = updatedBy;
 		}
 
-		private UpdatedAt: string;
+		private updatedAt: string;
 
 		getUpdatedAt(): string {
-			return this.UpdatedAt;
+			return this.updatedAt;
 		}
 
 		setUpdatedAt(updatedAt: string) {
-			this.UpdatedAt = updatedAt;
+			this.updatedAt = updatedAt;
 		}
 
 	}

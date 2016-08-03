@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,13 @@ namespace Dddml.Wms.HttpServices
     {
         public static string GetConnectionRoutingKey(System.Uri requestUri, string virtualPathRoot)
         {
+#if DEBUG
+            string testFixedConnectionRoutingKey = ConfigurationManager.AppSettings["test.fixed.ConnectionRoutingKey"] as string;
+            if (!String.IsNullOrWhiteSpace(testFixedConnectionRoutingKey)) 
+            {
+                return testFixedConnectionRoutingKey;
+            }
+#endif
             // 需要从“请求”映射到 Tenant Id，然后使用 Tennat Id 作为 RoutingKey。
 
             var host = requestUri.Host;

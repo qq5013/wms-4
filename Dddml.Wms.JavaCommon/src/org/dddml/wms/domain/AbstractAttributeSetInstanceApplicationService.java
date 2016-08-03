@@ -76,8 +76,12 @@ public abstract class AbstractAttributeSetInstanceApplicationService implements 
     }
 
     public AttributeSetInstanceStateEvent getStateEvent(String attributeSetInstanceId, long version) {
-        throw new UnsupportedOperationException(); //todo
+        AttributeSetInstanceStateEvent e = (AttributeSetInstanceStateEvent)getEventStore().getStateEvent(toEventStoreAggregateId(attributeSetInstanceId), version);
+        if (e != null)
+        { e.setStateEventReadOnly(true); }
+        return e;
     }
+
 
     public AttributeSetInstanceAggregate getAttributeSetInstanceAggregate(AttributeSetInstanceState state)
     {

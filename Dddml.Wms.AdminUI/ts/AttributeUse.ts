@@ -2,94 +2,94 @@ namespace Dddml.Wms.Domain {
 
 	export class AttributeUse {
 
-		private AttributeId: string;
+		private attributeId: string;
 
 		getAttributeId(): string {
-			return this.AttributeId;
+			return this.attributeId;
 		}
 
 		setAttributeId(attributeId: string) {
-			this.AttributeId = attributeId;
+			this.attributeId = attributeId;
 		}
 
-		private SequenceNumber: number;
+		private sequenceNumber: number;
 
 		getSequenceNumber(): number {
-			return this.SequenceNumber;
+			return this.sequenceNumber;
 		}
 
 		setSequenceNumber(sequenceNumber: number) {
-			this.SequenceNumber = sequenceNumber;
+			this.sequenceNumber = sequenceNumber;
 		}
 
-		private Active: boolean;
+		private active: boolean;
 
 		getActive(): boolean {
-			return this.Active;
+			return this.active;
 		}
 
 		setActive(active: boolean) {
-			this.Active = active;
+			this.active = active;
 		}
 
-		private Version: string;
+		private version: string;
 
 		getVersion(): string {
-			return this.Version;
+			return this.version;
 		}
 
 		setVersion(version: string) {
-			this.Version = version;
+			this.version = version;
 		}
 
-		private AttributeSetId: string;
+		private attributeSetId: string;
 
 		getAttributeSetId(): string {
-			return this.AttributeSetId;
+			return this.attributeSetId;
 		}
 
 		setAttributeSetId(attributeSetId: string) {
-			this.AttributeSetId = attributeSetId;
+			this.attributeSetId = attributeSetId;
 		}
 
-		private CreatedBy: string;
+		private createdBy: string;
 
 		getCreatedBy(): string {
-			return this.CreatedBy;
+			return this.createdBy;
 		}
 
 		setCreatedBy(createdBy: string) {
-			this.CreatedBy = createdBy;
+			this.createdBy = createdBy;
 		}
 
-		private CreatedAt: string;
+		private createdAt: string;
 
 		getCreatedAt(): string {
-			return this.CreatedAt;
+			return this.createdAt;
 		}
 
 		setCreatedAt(createdAt: string) {
-			this.CreatedAt = createdAt;
+			this.createdAt = createdAt;
 		}
 
-		private UpdatedBy: string;
+		private updatedBy: string;
 
 		getUpdatedBy(): string {
-			return this.UpdatedBy;
+			return this.updatedBy;
 		}
 
 		setUpdatedBy(updatedBy: string) {
-			this.UpdatedBy = updatedBy;
+			this.updatedBy = updatedBy;
 		}
 
-		private UpdatedAt: string;
+		private updatedAt: string;
 
 		getUpdatedAt(): string {
-			return this.UpdatedAt;
+			return this.updatedAt;
 		}
 
 		setUpdatedAt(updatedAt: string) {
-			this.UpdatedAt = updatedAt;
+			this.updatedAt = updatedAt;
 		}
 
 	}

@@ -5,6 +5,7 @@ namespace Wms\Domain\Metadata;
 
 class WarehouseMetadata
 {
+    const ID           = 'warehouseId';
     const VERSION      = 'version';
     const ACTIVE       = 'active';
     const DELETED      = 'deleted';

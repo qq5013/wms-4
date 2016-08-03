@@ -32,6 +32,15 @@ namespace Dddml.Wms.Domain
         long GetCount(IEnumerable<KeyValuePair<string, object>> filter);
 
         long GetCount(ICriterion filter);
+
+        IUserRoleState GetUserRole(string userId, string roleId);
+
+        IUserClaimState GetUserClaim(string userId, int claimId);
+
+        IUserPermissionState GetUserPermission(string userId, string permissionId);
+
+        IUserLoginState GetUserLogin(string userId, LoginKey loginKey);
+
 	}
 
 }

@@ -31,5 +31,13 @@ public interface UserApplicationService
 
     UserStateEvent getStateEvent(String userId, long version);
 
+    UserRoleState getUserRole(String userId, String roleId);
+
+    UserClaimState getUserClaim(String userId, Integer claimId);
+
+    UserPermissionState getUserPermission(String userId, String permissionId);
+
+    UserLoginState getUserLogin(String userId, LoginKey loginKey);
+
 }
 

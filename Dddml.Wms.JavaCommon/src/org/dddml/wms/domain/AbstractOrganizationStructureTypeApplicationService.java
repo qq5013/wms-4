@@ -75,8 +75,12 @@ public abstract class AbstractOrganizationStructureTypeApplicationService implem
     }
 
     public OrganizationStructureTypeStateEvent getStateEvent(String id, long version) {
-        throw new UnsupportedOperationException(); //todo
+        OrganizationStructureTypeStateEvent e = (OrganizationStructureTypeStateEvent)getEventStore().getStateEvent(toEventStoreAggregateId(id), version);
+        if (e != null)
+        { e.setStateEventReadOnly(true); }
+        return e;
     }
+
 
     public OrganizationStructureTypeAggregate getOrganizationStructureTypeAggregate(OrganizationStructureTypeState state)
     {

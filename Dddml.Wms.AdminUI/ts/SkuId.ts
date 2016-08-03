@@ -2,24 +2,24 @@ namespace Dddml.Wms.Domain {
 
 	export class SkuId {
 
-		private ProductId: string;
+		private productId: string;
 
 		getProductId(): string {
-			return this.ProductId;
+			return this.productId;
 		}
 
 		setProductId(productId: string) {
-			this.ProductId = productId;
+			this.productId = productId;
 		}
 
-		private AttributeSetInstanceId: string;
+		private attributeSetInstanceId: string;
 
 		getAttributeSetInstanceId(): string {
-			return this.AttributeSetInstanceId;
+			return this.attributeSetInstanceId;
 		}
 
 		setAttributeSetInstanceId(attributeSetInstanceId: string) {
-			this.AttributeSetInstanceId = attributeSetInstanceId;
+			this.attributeSetInstanceId = attributeSetInstanceId;
 		}
 
 	}

@@ -23,7 +23,7 @@ namespace Dddml.Wms.Domain.NHibernate
             var criteria = CurrentSession.CreateCriteria<PermissionState>();
 
             CriteriaAddRootParentIdCriterion(criteria);
-            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
+            NHibernateUtils.CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
             return criteria.List<PermissionState>();
         }
 
@@ -32,8 +32,8 @@ namespace Dddml.Wms.Domain.NHibernate
         {
             var criteria = CurrentSession.CreateCriteria<PermissionState>();
 
-            CriteriaAddCriterion(criteria, "ParentPermissionId", parentId);
-            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
+            NHibernateUtils.CriteriaAddCriterion(criteria, "ParentPermissionId", parentId);
+            NHibernateUtils.CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
             return criteria.List<PermissionState>();
         }
 
@@ -43,7 +43,7 @@ namespace Dddml.Wms.Domain.NHibernate
             var criteria = CurrentSession.CreateCriteria<PermissionState>();
 
             CriteriaAddRootParentIdCriterion(criteria);
-            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
+            NHibernateUtils.CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
             return criteria.List<PermissionState>();
         }
 
@@ -52,8 +52,8 @@ namespace Dddml.Wms.Domain.NHibernate
         {
             var criteria = CurrentSession.CreateCriteria<PermissionState>();
 
-            CriteriaAddCriterion(criteria, "ParentPermissionId", parentId);
-            CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
+            NHibernateUtils.CriteriaAddCriterion(criteria, "ParentPermissionId", parentId);
+            NHibernateUtils.CriteriaAddFilterAndOrdersAndSetFirstResultAndMaxResults(criteria, filter, orders, firstResult, maxResults);
             return criteria.List<PermissionState>();
         }
 
@@ -62,14 +62,14 @@ namespace Dddml.Wms.Domain.NHibernate
             IList<object> rootParentIdValues = new object[] { null, "" };
             if (rootParentIdValues.Count == 1)
             {
-                CriteriaAddCriterion(criteria, "ParentPermissionId", rootParentIdValues[0]);
+                NHibernateUtils.CriteriaAddCriterion(criteria, "ParentPermissionId", rootParentIdValues[0]);
             }
             else
             {
                 var j = Restrictions.Disjunction();
                 foreach (var pIdValue in rootParentIdValues)
                 {
-                    DisjunctionAddCriterion(j, "ParentPermissionId", pIdValue);
+                    NHibernateUtils.DisjunctionAddCriterion(j, "ParentPermissionId", pIdValue);
                 }
                 criteria.Add(j);
             }

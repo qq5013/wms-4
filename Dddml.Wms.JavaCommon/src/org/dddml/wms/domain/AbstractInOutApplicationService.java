@@ -77,8 +77,16 @@ public abstract class AbstractInOutApplicationService implements InOutApplicatio
     }
 
     public InOutStateEvent getStateEvent(String documentNumber, long version) {
-        throw new UnsupportedOperationException(); //todo
+        InOutStateEvent e = (InOutStateEvent)getEventStore().getStateEvent(toEventStoreAggregateId(documentNumber), version);
+        if (e != null)
+        { e.setStateEventReadOnly(true); }
+        return e;
     }
+
+    public InOutLineState getInOutLine(String inOutDocumentNumber, SkuId skuId) {
+        return getStateRepository().getInOutLine(inOutDocumentNumber, skuId);
+    }
+
 
     public InOutAggregate getInOutAggregate(InOutState state)
     {

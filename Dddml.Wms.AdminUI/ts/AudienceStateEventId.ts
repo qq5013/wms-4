@@ -2,24 +2,24 @@ namespace Dddml.Wms.Domain {
 
 	export class AudienceStateEventId {
 
-		private ClientId: string;
+		private clientId: string;
 
 		getClientId(): string {
-			return this.ClientId;
+			return this.clientId;
 		}
 
 		setClientId(clientId: string) {
-			this.ClientId = clientId;
+			this.clientId = clientId;
 		}
 
-		private Version: string;
+		private version: string;
 
 		getVersion(): string {
-			return this.Version;
+			return this.version;
 		}
 
 		setVersion(version: string) {
-			this.Version = version;
+			this.version = version;
 		}
 
 	}

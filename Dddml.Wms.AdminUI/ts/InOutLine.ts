@@ -2,254 +2,254 @@ namespace Dddml.Wms.Domain {
 
 	export class InOutLine {
 
-		private SkuId: SkuId;
+		private skuId: SkuId;
 
 		getSkuId(): SkuId {
-			return this.SkuId;
+			return this.skuId;
 		}
 
 		setSkuId(skuId: SkuId) {
-			this.SkuId = skuId;
+			this.skuId = skuId;
 		}
 
-		private LineNumber: string;
+		private lineNumber: string;
 
 		getLineNumber(): string {
-			return this.LineNumber;
+			return this.lineNumber;
 		}
 
 		setLineNumber(lineNumber: string) {
-			this.LineNumber = lineNumber;
+			this.lineNumber = lineNumber;
 		}
 
-		private Description: string;
+		private description: string;
 
 		getDescription(): string {
-			return this.Description;
+			return this.description;
 		}
 
 		setDescription(description: string) {
-			this.Description = description;
+			this.description = description;
 		}
 
-		private LocatorId: string;
+		private locatorId: string;
 
 		getLocatorId(): string {
-			return this.LocatorId;
+			return this.locatorId;
 		}
 
 		setLocatorId(locatorId: string) {
-			this.LocatorId = locatorId;
+			this.locatorId = locatorId;
 		}
 
-		private Product: string;
+		private product: string;
 
 		getProduct(): string {
-			return this.Product;
+			return this.product;
 		}
 
 		setProduct(product: string) {
-			this.Product = product;
+			this.product = product;
 		}
 
-		private UomId: string;
+		private uomId: string;
 
 		getUomId(): string {
-			return this.UomId;
+			return this.uomId;
 		}
 
 		setUomId(uomId: string) {
-			this.UomId = uomId;
+			this.uomId = uomId;
 		}
 
-		private MovementQuantity: string;
+		private movementQuantity: string;
 
 		getMovementQuantity(): string {
-			return this.MovementQuantity;
+			return this.movementQuantity;
 		}
 
 		setMovementQuantity(movementQuantity: string) {
-			this.MovementQuantity = movementQuantity;
+			this.movementQuantity = movementQuantity;
 		}
 
-		private ConfirmedQuantity: string;
+		private confirmedQuantity: string;
 
 		getConfirmedQuantity(): string {
-			return this.ConfirmedQuantity;
+			return this.confirmedQuantity;
 		}
 
 		setConfirmedQuantity(confirmedQuantity: string) {
-			this.ConfirmedQuantity = confirmedQuantity;
+			this.confirmedQuantity = confirmedQuantity;
 		}
 
-		private ScrappedQuantity: string;
+		private scrappedQuantity: string;
 
 		getScrappedQuantity(): string {
-			return this.ScrappedQuantity;
+			return this.scrappedQuantity;
 		}
 
 		setScrappedQuantity(scrappedQuantity: string) {
-			this.ScrappedQuantity = scrappedQuantity;
+			this.scrappedQuantity = scrappedQuantity;
 		}
 
-		private TargetQuantity: string;
+		private targetQuantity: string;
 
 		getTargetQuantity(): string {
-			return this.TargetQuantity;
+			return this.targetQuantity;
 		}
 
 		setTargetQuantity(targetQuantity: string) {
-			this.TargetQuantity = targetQuantity;
+			this.targetQuantity = targetQuantity;
 		}
 
-		private PickedQuantity: string;
+		private pickedQuantity: string;
 
 		getPickedQuantity(): string {
-			return this.PickedQuantity;
+			return this.pickedQuantity;
 		}
 
 		setPickedQuantity(pickedQuantity: string) {
-			this.PickedQuantity = pickedQuantity;
+			this.pickedQuantity = pickedQuantity;
 		}
 
-		private IsInvoiced: boolean;
+		private isInvoiced: boolean;
 
 		getIsInvoiced(): boolean {
-			return this.IsInvoiced;
+			return this.isInvoiced;
 		}
 
 		setIsInvoiced(isInvoiced: boolean) {
-			this.IsInvoiced = isInvoiced;
+			this.isInvoiced = isInvoiced;
 		}
 
-		private AttributeSetInstanceId: string;
+		private attributeSetInstanceId: string;
 
 		getAttributeSetInstanceId(): string {
-			return this.AttributeSetInstanceId;
+			return this.attributeSetInstanceId;
 		}
 
 		setAttributeSetInstanceId(attributeSetInstanceId: string) {
-			this.AttributeSetInstanceId = attributeSetInstanceId;
+			this.attributeSetInstanceId = attributeSetInstanceId;
 		}
 
-		private IsDescription: boolean;
+		private isDescription: boolean;
 
 		getIsDescription(): boolean {
-			return this.IsDescription;
+			return this.isDescription;
 		}
 
 		setIsDescription(isDescription: boolean) {
-			this.IsDescription = isDescription;
+			this.isDescription = isDescription;
 		}
 
-		private Processed: boolean;
+		private processed: boolean;
 
 		getProcessed(): boolean {
-			return this.Processed;
+			return this.processed;
 		}
 
 		setProcessed(processed: boolean) {
-			this.Processed = processed;
+			this.processed = processed;
 		}
 
-		private QuantityEntered: string;
+		private quantityEntered: string;
 
 		getQuantityEntered(): string {
-			return this.QuantityEntered;
+			return this.quantityEntered;
 		}
 
 		setQuantityEntered(quantityEntered: string) {
-			this.QuantityEntered = quantityEntered;
+			this.quantityEntered = quantityEntered;
 		}
 
-		private RmaLineNumber: string;
+		private rmaLineNumber: string;
 
 		getRmaLineNumber(): string {
-			return this.RmaLineNumber;
+			return this.rmaLineNumber;
 		}
 
 		setRmaLineNumber(rmaLineNumber: string) {
-			this.RmaLineNumber = rmaLineNumber;
+			this.rmaLineNumber = rmaLineNumber;
 		}
 
-		private ReversalLineNumber: string;
+		private reversalLineNumber: string;
 
 		getReversalLineNumber(): string {
-			return this.ReversalLineNumber;
+			return this.reversalLineNumber;
 		}
 
 		setReversalLineNumber(reversalLineNumber: string) {
-			this.ReversalLineNumber = reversalLineNumber;
+			this.reversalLineNumber = reversalLineNumber;
 		}
 
-		private Active: boolean;
+		private active: boolean;
 
 		getActive(): boolean {
-			return this.Active;
+			return this.active;
 		}
 
 		setActive(active: boolean) {
-			this.Active = active;
+			this.active = active;
 		}
 
-		private Version: string;
+		private version: string;
 
 		getVersion(): string {
-			return this.Version;
+			return this.version;
 		}
 
 		setVersion(version: string) {
-			this.Version = version;
+			this.version = version;
 		}
 
-		private InOutDocumentNumber: string;
+		private inOutDocumentNumber: string;
 
 		getInOutDocumentNumber(): string {
-			return this.InOutDocumentNumber;
+			return this.inOutDocumentNumber;
 		}
 
 		setInOutDocumentNumber(inOutDocumentNumber: string) {
-			this.InOutDocumentNumber = inOutDocumentNumber;
+			this.inOutDocumentNumber = inOutDocumentNumber;
 		}
 
-		private CreatedBy: string;
+		private createdBy: string;
 
 		getCreatedBy(): string {
-			return this.CreatedBy;
+			return this.createdBy;
 		}
 
 		setCreatedBy(createdBy: string) {
-			this.CreatedBy = createdBy;
+			this.createdBy = createdBy;
 		}
 
-		private CreatedAt: string;
+		private createdAt: string;
 
 		getCreatedAt(): string {
-			return this.CreatedAt;
+			return this.createdAt;
 		}
 
 		setCreatedAt(createdAt: string) {
-			this.CreatedAt = createdAt;
+			this.createdAt = createdAt;
 		}
 
-		private UpdatedBy: string;
+		private updatedBy: string;
 
 		getUpdatedBy(): string {
-			return this.UpdatedBy;
+			return this.updatedBy;
 		}
 
 		setUpdatedBy(updatedBy: string) {
-			this.UpdatedBy = updatedBy;
+			this.updatedBy = updatedBy;
 		}
 
-		private UpdatedAt: string;
+		private updatedAt: string;
 
 		getUpdatedAt(): string {
-			return this.UpdatedAt;
+			return this.updatedAt;
 		}
 
 		setUpdatedAt(updatedAt: string) {
-			this.UpdatedAt = updatedAt;
+			this.updatedAt = updatedAt;
 		}
 
 	}

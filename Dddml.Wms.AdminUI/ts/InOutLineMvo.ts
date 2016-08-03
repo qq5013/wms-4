@@ -2,654 +2,654 @@ namespace Dddml.Wms.Domain {
 
 	export class InOutLineMvo {
 
-		private InOutLineId: InOutLineId;
+		private inOutLineId: InOutLineId;
 
 		getInOutLineId(): InOutLineId {
-			return this.InOutLineId;
+			return this.inOutLineId;
 		}
 
 		setInOutLineId(inOutLineId: InOutLineId) {
-			this.InOutLineId = inOutLineId;
+			this.inOutLineId = inOutLineId;
 		}
 
-		private LineNumber: string;
+		private lineNumber: string;
 
 		getLineNumber(): string {
-			return this.LineNumber;
+			return this.lineNumber;
 		}
 
 		setLineNumber(lineNumber: string) {
-			this.LineNumber = lineNumber;
+			this.lineNumber = lineNumber;
 		}
 
-		private Description: string;
+		private description: string;
 
 		getDescription(): string {
-			return this.Description;
+			return this.description;
 		}
 
 		setDescription(description: string) {
-			this.Description = description;
+			this.description = description;
 		}
 
-		private LocatorId: string;
+		private locatorId: string;
 
 		getLocatorId(): string {
-			return this.LocatorId;
+			return this.locatorId;
 		}
 
 		setLocatorId(locatorId: string) {
-			this.LocatorId = locatorId;
+			this.locatorId = locatorId;
 		}
 
-		private Product: string;
+		private product: string;
 
 		getProduct(): string {
-			return this.Product;
+			return this.product;
 		}
 
 		setProduct(product: string) {
-			this.Product = product;
+			this.product = product;
 		}
 
-		private UomId: string;
+		private uomId: string;
 
 		getUomId(): string {
-			return this.UomId;
+			return this.uomId;
 		}
 
 		setUomId(uomId: string) {
-			this.UomId = uomId;
+			this.uomId = uomId;
 		}
 
-		private MovementQuantity: string;
+		private movementQuantity: string;
 
 		getMovementQuantity(): string {
-			return this.MovementQuantity;
+			return this.movementQuantity;
 		}
 
 		setMovementQuantity(movementQuantity: string) {
-			this.MovementQuantity = movementQuantity;
+			this.movementQuantity = movementQuantity;
 		}
 
-		private ConfirmedQuantity: string;
+		private confirmedQuantity: string;
 
 		getConfirmedQuantity(): string {
-			return this.ConfirmedQuantity;
+			return this.confirmedQuantity;
 		}
 
 		setConfirmedQuantity(confirmedQuantity: string) {
-			this.ConfirmedQuantity = confirmedQuantity;
+			this.confirmedQuantity = confirmedQuantity;
 		}
 
-		private ScrappedQuantity: string;
+		private scrappedQuantity: string;
 
 		getScrappedQuantity(): string {
-			return this.ScrappedQuantity;
+			return this.scrappedQuantity;
 		}
 
 		setScrappedQuantity(scrappedQuantity: string) {
-			this.ScrappedQuantity = scrappedQuantity;
+			this.scrappedQuantity = scrappedQuantity;
 		}
 
-		private TargetQuantity: string;
+		private targetQuantity: string;
 
 		getTargetQuantity(): string {
-			return this.TargetQuantity;
+			return this.targetQuantity;
 		}
 
 		setTargetQuantity(targetQuantity: string) {
-			this.TargetQuantity = targetQuantity;
+			this.targetQuantity = targetQuantity;
 		}
 
-		private PickedQuantity: string;
+		private pickedQuantity: string;
 
 		getPickedQuantity(): string {
-			return this.PickedQuantity;
+			return this.pickedQuantity;
 		}
 
 		setPickedQuantity(pickedQuantity: string) {
-			this.PickedQuantity = pickedQuantity;
+			this.pickedQuantity = pickedQuantity;
 		}
 
-		private IsInvoiced: boolean;
+		private isInvoiced: boolean;
 
 		getIsInvoiced(): boolean {
-			return this.IsInvoiced;
+			return this.isInvoiced;
 		}
 
 		setIsInvoiced(isInvoiced: boolean) {
-			this.IsInvoiced = isInvoiced;
+			this.isInvoiced = isInvoiced;
 		}
 
-		private AttributeSetInstanceId: string;
+		private attributeSetInstanceId: string;
 
 		getAttributeSetInstanceId(): string {
-			return this.AttributeSetInstanceId;
+			return this.attributeSetInstanceId;
 		}
 
 		setAttributeSetInstanceId(attributeSetInstanceId: string) {
-			this.AttributeSetInstanceId = attributeSetInstanceId;
+			this.attributeSetInstanceId = attributeSetInstanceId;
 		}
 
-		private IsDescription: boolean;
+		private isDescription: boolean;
 
 		getIsDescription(): boolean {
-			return this.IsDescription;
+			return this.isDescription;
 		}
 
 		setIsDescription(isDescription: boolean) {
-			this.IsDescription = isDescription;
+			this.isDescription = isDescription;
 		}
 
-		private Processed: boolean;
+		private processed: boolean;
 
 		getProcessed(): boolean {
-			return this.Processed;
+			return this.processed;
 		}
 
 		setProcessed(processed: boolean) {
-			this.Processed = processed;
+			this.processed = processed;
 		}
 
-		private QuantityEntered: string;
+		private quantityEntered: string;
 
 		getQuantityEntered(): string {
-			return this.QuantityEntered;
+			return this.quantityEntered;
 		}
 
 		setQuantityEntered(quantityEntered: string) {
-			this.QuantityEntered = quantityEntered;
+			this.quantityEntered = quantityEntered;
 		}
 
-		private RmaLineNumber: string;
+		private rmaLineNumber: string;
 
 		getRmaLineNumber(): string {
-			return this.RmaLineNumber;
+			return this.rmaLineNumber;
 		}
 
 		setRmaLineNumber(rmaLineNumber: string) {
-			this.RmaLineNumber = rmaLineNumber;
+			this.rmaLineNumber = rmaLineNumber;
 		}
 
-		private ReversalLineNumber: string;
+		private reversalLineNumber: string;
 
 		getReversalLineNumber(): string {
-			return this.ReversalLineNumber;
+			return this.reversalLineNumber;
 		}
 
 		setReversalLineNumber(reversalLineNumber: string) {
-			this.ReversalLineNumber = reversalLineNumber;
+			this.reversalLineNumber = reversalLineNumber;
 		}
 
-		private Version: string;
+		private version: string;
 
 		getVersion(): string {
-			return this.Version;
+			return this.version;
 		}
 
 		setVersion(version: string) {
-			this.Version = version;
+			this.version = version;
 		}
 
-		private Active: boolean;
+		private active: boolean;
 
 		getActive(): boolean {
-			return this.Active;
+			return this.active;
 		}
 
 		setActive(active: boolean) {
-			this.Active = active;
+			this.active = active;
 		}
 
-		private InOutIsSOTransaction: boolean;
+		private inOutIsSOTransaction: boolean;
 
 		getInOutIsSOTransaction(): boolean {
-			return this.InOutIsSOTransaction;
+			return this.inOutIsSOTransaction;
 		}
 
 		setInOutIsSOTransaction(inOutIsSOTransaction: boolean) {
-			this.InOutIsSOTransaction = inOutIsSOTransaction;
+			this.inOutIsSOTransaction = inOutIsSOTransaction;
 		}
 
-		private InOutDocumentStatus: string;
+		private inOutDocumentStatus: string;
 
 		getInOutDocumentStatus(): string {
-			return this.InOutDocumentStatus;
+			return this.inOutDocumentStatus;
 		}
 
 		setInOutDocumentStatus(inOutDocumentStatus: string) {
-			this.InOutDocumentStatus = inOutDocumentStatus;
+			this.inOutDocumentStatus = inOutDocumentStatus;
 		}
 
-		private InOutPosted: boolean;
+		private inOutPosted: boolean;
 
 		getInOutPosted(): boolean {
-			return this.InOutPosted;
+			return this.inOutPosted;
 		}
 
 		setInOutPosted(inOutPosted: boolean) {
-			this.InOutPosted = inOutPosted;
+			this.inOutPosted = inOutPosted;
 		}
 
-		private InOutProcessing: boolean;
+		private inOutProcessing: boolean;
 
 		getInOutProcessing(): boolean {
-			return this.InOutProcessing;
+			return this.inOutProcessing;
 		}
 
 		setInOutProcessing(inOutProcessing: boolean) {
-			this.InOutProcessing = inOutProcessing;
+			this.inOutProcessing = inOutProcessing;
 		}
 
-		private InOutProcessed: boolean;
+		private inOutProcessed: boolean;
 
 		getInOutProcessed(): boolean {
-			return this.InOutProcessed;
+			return this.inOutProcessed;
 		}
 
 		setInOutProcessed(inOutProcessed: boolean) {
-			this.InOutProcessed = inOutProcessed;
+			this.inOutProcessed = inOutProcessed;
 		}
 
-		private InOutDocumentType: number;
+		private inOutDocumentType: number;
 
 		getInOutDocumentType(): number {
-			return this.InOutDocumentType;
+			return this.inOutDocumentType;
 		}
 
 		setInOutDocumentType(inOutDocumentType: number) {
-			this.InOutDocumentType = inOutDocumentType;
+			this.inOutDocumentType = inOutDocumentType;
 		}
 
-		private InOutDescription: string;
+		private inOutDescription: string;
 
 		getInOutDescription(): string {
-			return this.InOutDescription;
+			return this.inOutDescription;
 		}
 
 		setInOutDescription(inOutDescription: string) {
-			this.InOutDescription = inOutDescription;
+			this.inOutDescription = inOutDescription;
 		}
 
-		private InOutOrderNumber: string;
+		private inOutOrderNumber: string;
 
 		getInOutOrderNumber(): string {
-			return this.InOutOrderNumber;
+			return this.inOutOrderNumber;
 		}
 
 		setInOutOrderNumber(inOutOrderNumber: string) {
-			this.InOutOrderNumber = inOutOrderNumber;
+			this.inOutOrderNumber = inOutOrderNumber;
 		}
 
-		private InOutDateOrdered: string;
+		private inOutDateOrdered: string;
 
 		getInOutDateOrdered(): string {
-			return this.InOutDateOrdered;
+			return this.inOutDateOrdered;
 		}
 
 		setInOutDateOrdered(inOutDateOrdered: string) {
-			this.InOutDateOrdered = inOutDateOrdered;
+			this.inOutDateOrdered = inOutDateOrdered;
 		}
 
-		private InOutIsPrinted: boolean;
+		private inOutIsPrinted: boolean;
 
 		getInOutIsPrinted(): boolean {
-			return this.InOutIsPrinted;
+			return this.inOutIsPrinted;
 		}
 
 		setInOutIsPrinted(inOutIsPrinted: boolean) {
-			this.InOutIsPrinted = inOutIsPrinted;
+			this.inOutIsPrinted = inOutIsPrinted;
 		}
 
-		private InOutMovementType: string;
+		private inOutMovementType: string;
 
 		getInOutMovementType(): string {
-			return this.InOutMovementType;
+			return this.inOutMovementType;
 		}
 
 		setInOutMovementType(inOutMovementType: string) {
-			this.InOutMovementType = inOutMovementType;
+			this.inOutMovementType = inOutMovementType;
 		}
 
-		private InOutMovementDate: string;
+		private inOutMovementDate: string;
 
 		getInOutMovementDate(): string {
-			return this.InOutMovementDate;
+			return this.inOutMovementDate;
 		}
 
 		setInOutMovementDate(inOutMovementDate: string) {
-			this.InOutMovementDate = inOutMovementDate;
+			this.inOutMovementDate = inOutMovementDate;
 		}
 
-		private InOutBusinessPartnerId: string;
+		private inOutBusinessPartnerId: string;
 
 		getInOutBusinessPartnerId(): string {
-			return this.InOutBusinessPartnerId;
+			return this.inOutBusinessPartnerId;
 		}
 
 		setInOutBusinessPartnerId(inOutBusinessPartnerId: string) {
-			this.InOutBusinessPartnerId = inOutBusinessPartnerId;
+			this.inOutBusinessPartnerId = inOutBusinessPartnerId;
 		}
 
-		private InOutWarehouseId: string;
+		private inOutWarehouseId: string;
 
 		getInOutWarehouseId(): string {
-			return this.InOutWarehouseId;
+			return this.inOutWarehouseId;
 		}
 
 		setInOutWarehouseId(inOutWarehouseId: string) {
-			this.InOutWarehouseId = inOutWarehouseId;
+			this.inOutWarehouseId = inOutWarehouseId;
 		}
 
-		private InOutPOReference: string;
+		private inOutPOReference: string;
 
 		getInOutPOReference(): string {
-			return this.InOutPOReference;
+			return this.inOutPOReference;
 		}
 
 		setInOutPOReference(inOutPOReference: string) {
-			this.InOutPOReference = inOutPOReference;
+			this.inOutPOReference = inOutPOReference;
 		}
 
-		private InOutFreightAmount: Money;
+		private inOutFreightAmount: Money;
 
 		getInOutFreightAmount(): Money {
-			return this.InOutFreightAmount;
+			return this.inOutFreightAmount;
 		}
 
 		setInOutFreightAmount(inOutFreightAmount: Money) {
-			this.InOutFreightAmount = inOutFreightAmount;
+			this.inOutFreightAmount = inOutFreightAmount;
 		}
 
-		private InOutShipperId: string;
+		private inOutShipperId: string;
 
 		getInOutShipperId(): string {
-			return this.InOutShipperId;
+			return this.inOutShipperId;
 		}
 
 		setInOutShipperId(inOutShipperId: string) {
-			this.InOutShipperId = inOutShipperId;
+			this.inOutShipperId = inOutShipperId;
 		}
 
-		private InOutChargeAmount: Money;
+		private inOutChargeAmount: Money;
 
 		getInOutChargeAmount(): Money {
-			return this.InOutChargeAmount;
+			return this.inOutChargeAmount;
 		}
 
 		setInOutChargeAmount(inOutChargeAmount: Money) {
-			this.InOutChargeAmount = inOutChargeAmount;
+			this.inOutChargeAmount = inOutChargeAmount;
 		}
 
-		private InOutDatePrinted: string;
+		private inOutDatePrinted: string;
 
 		getInOutDatePrinted(): string {
-			return this.InOutDatePrinted;
+			return this.inOutDatePrinted;
 		}
 
 		setInOutDatePrinted(inOutDatePrinted: string) {
-			this.InOutDatePrinted = inOutDatePrinted;
+			this.inOutDatePrinted = inOutDatePrinted;
 		}
 
-		private InOutSalesRepresentative: string;
+		private inOutSalesRepresentative: string;
 
 		getInOutSalesRepresentative(): string {
-			return this.InOutSalesRepresentative;
+			return this.inOutSalesRepresentative;
 		}
 
 		setInOutSalesRepresentative(inOutSalesRepresentative: string) {
-			this.InOutSalesRepresentative = inOutSalesRepresentative;
+			this.inOutSalesRepresentative = inOutSalesRepresentative;
 		}
 
-		private InOutNumberOfPackages: number;
+		private inOutNumberOfPackages: number;
 
 		getInOutNumberOfPackages(): number {
-			return this.InOutNumberOfPackages;
+			return this.inOutNumberOfPackages;
 		}
 
 		setInOutNumberOfPackages(inOutNumberOfPackages: number) {
-			this.InOutNumberOfPackages = inOutNumberOfPackages;
+			this.inOutNumberOfPackages = inOutNumberOfPackages;
 		}
 
-		private InOutPickDate: string;
+		private inOutPickDate: string;
 
 		getInOutPickDate(): string {
-			return this.InOutPickDate;
+			return this.inOutPickDate;
 		}
 
 		setInOutPickDate(inOutPickDate: string) {
-			this.InOutPickDate = inOutPickDate;
+			this.inOutPickDate = inOutPickDate;
 		}
 
-		private InOutShipDate: string;
+		private inOutShipDate: string;
 
 		getInOutShipDate(): string {
-			return this.InOutShipDate;
+			return this.inOutShipDate;
 		}
 
 		setInOutShipDate(inOutShipDate: string) {
-			this.InOutShipDate = inOutShipDate;
+			this.inOutShipDate = inOutShipDate;
 		}
 
-		private InOutTrackingNumber: string;
+		private inOutTrackingNumber: string;
 
 		getInOutTrackingNumber(): string {
-			return this.InOutTrackingNumber;
+			return this.inOutTrackingNumber;
 		}
 
 		setInOutTrackingNumber(inOutTrackingNumber: string) {
-			this.InOutTrackingNumber = inOutTrackingNumber;
+			this.inOutTrackingNumber = inOutTrackingNumber;
 		}
 
-		private InOutDateReceived: string;
+		private inOutDateReceived: string;
 
 		getInOutDateReceived(): string {
-			return this.InOutDateReceived;
+			return this.inOutDateReceived;
 		}
 
 		setInOutDateReceived(inOutDateReceived: string) {
-			this.InOutDateReceived = inOutDateReceived;
+			this.inOutDateReceived = inOutDateReceived;
 		}
 
-		private InOutIsInTransit: boolean;
+		private inOutIsInTransit: boolean;
 
 		getInOutIsInTransit(): boolean {
-			return this.InOutIsInTransit;
+			return this.inOutIsInTransit;
 		}
 
 		setInOutIsInTransit(inOutIsInTransit: boolean) {
-			this.InOutIsInTransit = inOutIsInTransit;
+			this.inOutIsInTransit = inOutIsInTransit;
 		}
 
-		private InOutIsApproved: boolean;
+		private inOutIsApproved: boolean;
 
 		getInOutIsApproved(): boolean {
-			return this.InOutIsApproved;
+			return this.inOutIsApproved;
 		}
 
 		setInOutIsApproved(inOutIsApproved: boolean) {
-			this.InOutIsApproved = inOutIsApproved;
+			this.inOutIsApproved = inOutIsApproved;
 		}
 
-		private InOutIsInDispute: boolean;
+		private inOutIsInDispute: boolean;
 
 		getInOutIsInDispute(): boolean {
-			return this.InOutIsInDispute;
+			return this.inOutIsInDispute;
 		}
 
 		setInOutIsInDispute(inOutIsInDispute: boolean) {
-			this.InOutIsInDispute = inOutIsInDispute;
+			this.inOutIsInDispute = inOutIsInDispute;
 		}
 
-		private InOutVolume: string;
+		private inOutVolume: string;
 
 		getInOutVolume(): string {
-			return this.InOutVolume;
+			return this.inOutVolume;
 		}
 
 		setInOutVolume(inOutVolume: string) {
-			this.InOutVolume = inOutVolume;
+			this.inOutVolume = inOutVolume;
 		}
 
-		private InOutWeight: string;
+		private inOutWeight: string;
 
 		getInOutWeight(): string {
-			return this.InOutWeight;
+			return this.inOutWeight;
 		}
 
 		setInOutWeight(inOutWeight: string) {
-			this.InOutWeight = inOutWeight;
+			this.inOutWeight = inOutWeight;
 		}
 
-		private InOutRmaNumber: string;
+		private inOutRmaNumber: string;
 
 		getInOutRmaNumber(): string {
-			return this.InOutRmaNumber;
+			return this.inOutRmaNumber;
 		}
 
 		setInOutRmaNumber(inOutRmaNumber: string) {
-			this.InOutRmaNumber = inOutRmaNumber;
+			this.inOutRmaNumber = inOutRmaNumber;
 		}
 
-		private InOutReversalNumber: string;
+		private inOutReversalNumber: string;
 
 		getInOutReversalNumber(): string {
-			return this.InOutReversalNumber;
+			return this.inOutReversalNumber;
 		}
 
 		setInOutReversalNumber(inOutReversalNumber: string) {
-			this.InOutReversalNumber = inOutReversalNumber;
+			this.inOutReversalNumber = inOutReversalNumber;
 		}
 
-		private InOutIsDropShip: boolean;
+		private inOutIsDropShip: boolean;
 
 		getInOutIsDropShip(): boolean {
-			return this.InOutIsDropShip;
+			return this.inOutIsDropShip;
 		}
 
 		setInOutIsDropShip(inOutIsDropShip: boolean) {
-			this.InOutIsDropShip = inOutIsDropShip;
+			this.inOutIsDropShip = inOutIsDropShip;
 		}
 
-		private InOutDropShipBusinessPartnerId: string;
+		private inOutDropShipBusinessPartnerId: string;
 
 		getInOutDropShipBusinessPartnerId(): string {
-			return this.InOutDropShipBusinessPartnerId;
+			return this.inOutDropShipBusinessPartnerId;
 		}
 
 		setInOutDropShipBusinessPartnerId(inOutDropShipBusinessPartnerId: string) {
-			this.InOutDropShipBusinessPartnerId = inOutDropShipBusinessPartnerId;
+			this.inOutDropShipBusinessPartnerId = inOutDropShipBusinessPartnerId;
 		}
 
-		private InOutCreatedBy: string;
+		private inOutCreatedBy: string;
 
 		getInOutCreatedBy(): string {
-			return this.InOutCreatedBy;
+			return this.inOutCreatedBy;
 		}
 
 		setInOutCreatedBy(inOutCreatedBy: string) {
-			this.InOutCreatedBy = inOutCreatedBy;
+			this.inOutCreatedBy = inOutCreatedBy;
 		}
 
-		private InOutCreatedAt: string;
+		private inOutCreatedAt: string;
 
 		getInOutCreatedAt(): string {
-			return this.InOutCreatedAt;
+			return this.inOutCreatedAt;
 		}
 
 		setInOutCreatedAt(inOutCreatedAt: string) {
-			this.InOutCreatedAt = inOutCreatedAt;
+			this.inOutCreatedAt = inOutCreatedAt;
 		}
 
-		private InOutUpdatedBy: string;
+		private inOutUpdatedBy: string;
 
 		getInOutUpdatedBy(): string {
-			return this.InOutUpdatedBy;
+			return this.inOutUpdatedBy;
 		}
 
 		setInOutUpdatedBy(inOutUpdatedBy: string) {
-			this.InOutUpdatedBy = inOutUpdatedBy;
+			this.inOutUpdatedBy = inOutUpdatedBy;
 		}
 
-		private InOutUpdatedAt: string;
+		private inOutUpdatedAt: string;
 
 		getInOutUpdatedAt(): string {
-			return this.InOutUpdatedAt;
+			return this.inOutUpdatedAt;
 		}
 
 		setInOutUpdatedAt(inOutUpdatedAt: string) {
-			this.InOutUpdatedAt = inOutUpdatedAt;
+			this.inOutUpdatedAt = inOutUpdatedAt;
 		}
 
-		private InOutActive: boolean;
+		private inOutActive: boolean;
 
 		getInOutActive(): boolean {
-			return this.InOutActive;
+			return this.inOutActive;
 		}
 
 		setInOutActive(inOutActive: boolean) {
-			this.InOutActive = inOutActive;
+			this.inOutActive = inOutActive;
 		}
 
-		private InOutDeleted: boolean;
+		private inOutDeleted: boolean;
 
 		getInOutDeleted(): boolean {
-			return this.InOutDeleted;
+			return this.inOutDeleted;
 		}
 
 		setInOutDeleted(inOutDeleted: boolean) {
-			this.InOutDeleted = inOutDeleted;
+			this.inOutDeleted = inOutDeleted;
 		}
 
-		private InOutVersion: string;
+		private inOutVersion: string;
 
 		getInOutVersion(): string {
-			return this.InOutVersion;
+			return this.inOutVersion;
 		}
 
 		setInOutVersion(inOutVersion: string) {
-			this.InOutVersion = inOutVersion;
+			this.inOutVersion = inOutVersion;
 		}
 
-		private CreatedBy: string;
+		private createdBy: string;
 
 		getCreatedBy(): string {
-			return this.CreatedBy;
+			return this.createdBy;
 		}
 
 		setCreatedBy(createdBy: string) {
-			this.CreatedBy = createdBy;
+			this.createdBy = createdBy;
 		}
 
-		private CreatedAt: string;
+		private createdAt: string;
 
 		getCreatedAt(): string {
-			return this.CreatedAt;
+			return this.createdAt;
 		}
 
 		setCreatedAt(createdAt: string) {
-			this.CreatedAt = createdAt;
+			this.createdAt = createdAt;
 		}
 
-		private UpdatedBy: string;
+		private updatedBy: string;
 
 		getUpdatedBy(): string {
-			return this.UpdatedBy;
+			return this.updatedBy;
 		}
 
 		setUpdatedBy(updatedBy: string) {
-			this.UpdatedBy = updatedBy;
+			this.updatedBy = updatedBy;
 		}
 
-		private UpdatedAt: string;
+		private updatedAt: string;
 
 		getUpdatedAt(): string {
-			return this.UpdatedAt;
+			return this.updatedAt;
 		}
 
 		setUpdatedAt(updatedAt: string) {
-			this.UpdatedAt = updatedAt;
+			this.updatedAt = updatedAt;
 		}
 
 	}

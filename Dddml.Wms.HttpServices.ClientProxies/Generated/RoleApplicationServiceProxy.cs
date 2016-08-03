@@ -48,7 +48,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(CreateRoleDto c)
         {
-            var idObj = ((c as ICreateRole).RoleId);
+            var idObj = (c as ICreateRole).RoleId;
             var uriParameters = new RoleUriParameters();
             uriParameters.Id = idObj;
 
@@ -65,7 +65,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(MergePatchRoleDto c)
         {
-            var idObj = ((c as IMergePatchRole).RoleId);
+            var idObj = (c as IMergePatchRole).RoleId;
             var uriParameters = new RoleUriParameters();
             uriParameters.Id = idObj;
 
@@ -81,7 +81,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(DeleteRoleDto c)
         {
-            var idObj = ((c as IDeleteRole).RoleId);
+            var idObj = (c as IDeleteRole).RoleId;
             var uriParameters = new RoleUriParameters();
             uriParameters.Id = idObj;
 
@@ -120,7 +120,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         public async Task<IRoleState> GetAsync(string roleId)
         {
             IRoleState state = null;
-            var idObj = (roleId);
+            var idObj = roleId;
             var uriParameters = new RoleUriParameters();
             uriParameters.Id = idObj;
 
@@ -247,7 +247,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task<IRoleStateEvent> GetStateEventAsync(string roleId, long version)
         {
-            var idObj = (roleId);
+            var idObj = roleId;
             var uriParameters = new RoleStateEventUriParameters();
             uriParameters.Id = idObj;
             uriParameters.Version = version.ToString();
@@ -262,6 +262,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         {
             return GetStateEventAsync(roleId, version).GetAwaiter().GetResult();
         }
+
 
         protected virtual string QueryFieldValueSeparator
         {

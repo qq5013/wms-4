@@ -242,14 +242,14 @@ public abstract class AbstractUserClaimState implements UserClaimState
     {
         String stateEntityIdUserId = this.getUserClaimId().getUserId();
         String eventEntityIdUserId = stateEvent.getStateEventId().getUserId();
-        if (stateEntityIdUserId != eventEntityIdUserId)
+        if (!stateEntityIdUserId.equals(eventEntityIdUserId))
         {
             throw DomainError.named("mutateWrongEntity", "Entity Id UserId %1$s in state but entity id UserId %2$s in event", stateEntityIdUserId, eventEntityIdUserId);
         }
 
         Integer stateEntityIdClaimId = this.getUserClaimId().getClaimId();
         Integer eventEntityIdClaimId = stateEvent.getStateEventId().getClaimId();
-        if (stateEntityIdClaimId != eventEntityIdClaimId)
+        if (!stateEntityIdClaimId.equals(eventEntityIdClaimId))
         {
             throw DomainError.named("mutateWrongEntity", "Entity Id ClaimId %1$s in state but entity id ClaimId %2$s in event", stateEntityIdClaimId, eventEntityIdClaimId);
         }

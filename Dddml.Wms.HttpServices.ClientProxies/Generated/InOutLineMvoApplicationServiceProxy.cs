@@ -264,6 +264,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
             return GetStateEventAsync(inOutLineId, version).GetAwaiter().GetResult();
         }
 
+
         protected virtual string QueryFieldValueSeparator
         {
             get { return ","; }

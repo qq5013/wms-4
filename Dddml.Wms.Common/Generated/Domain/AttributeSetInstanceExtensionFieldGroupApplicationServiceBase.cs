@@ -127,6 +127,11 @@ namespace Dddml.Wms.Domain
             return e;
         }
 
+        public virtual IAttributeSetInstanceExtensionFieldState GetAttributeSetInstanceExtensionField(string groupId, string index)
+        {
+            return StateRepository.GetAttributeSetInstanceExtensionField(groupId, index);
+        }
+
 
 		public abstract IAttributeSetInstanceExtensionFieldGroupAggregate GetAttributeSetInstanceExtensionFieldGroupAggregate(IAttributeSetInstanceExtensionFieldGroupState state);
 

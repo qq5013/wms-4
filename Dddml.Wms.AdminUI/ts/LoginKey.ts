@@ -2,24 +2,24 @@ namespace Dddml.Wms.Domain {
 
 	export class LoginKey {
 
-		private LoginProvider: string;
+		private loginProvider: string;
 
 		getLoginProvider(): string {
-			return this.LoginProvider;
+			return this.loginProvider;
 		}
 
 		setLoginProvider(loginProvider: string) {
-			this.LoginProvider = loginProvider;
+			this.loginProvider = loginProvider;
 		}
 
-		private ProviderKey: string;
+		private providerKey: string;
 
 		getProviderKey(): string {
-			return this.ProviderKey;
+			return this.providerKey;
 		}
 
 		setProviderKey(providerKey: string) {
-			this.ProviderKey = providerKey;
+			this.providerKey = providerKey;
 		}
 
 	}

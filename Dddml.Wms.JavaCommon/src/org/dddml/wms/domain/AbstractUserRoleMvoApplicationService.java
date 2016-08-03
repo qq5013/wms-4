@@ -75,8 +75,12 @@ public abstract class AbstractUserRoleMvoApplicationService implements UserRoleM
     }
 
     public UserRoleMvoStateEvent getStateEvent(UserRoleId userRoleId, long version) {
-        throw new UnsupportedOperationException(); //todo
+        UserRoleMvoStateEvent e = (UserRoleMvoStateEvent)getEventStore().getStateEvent(toEventStoreAggregateId(userRoleId), version);
+        if (e != null)
+        { e.setStateEventReadOnly(true); }
+        return e;
     }
+
 
     public UserRoleMvoAggregate getUserRoleMvoAggregate(UserRoleMvoState state)
     {

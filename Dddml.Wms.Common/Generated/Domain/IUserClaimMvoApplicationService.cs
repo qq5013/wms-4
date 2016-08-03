@@ -36,6 +36,7 @@ namespace Dddml.Wms.Domain
 
         IUserClaimMvoStateEvent GetStateEvent(UserClaimId userClaimId, long version);
 
+
 	}
 
 }

@@ -75,8 +75,12 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldMvoApplicationSe
     }
 
     public AttributeSetInstanceExtensionFieldMvoStateEvent getStateEvent(AttributeSetInstanceExtensionFieldId attributeSetInstanceExtensionFieldId, long version) {
-        throw new UnsupportedOperationException(); //todo
+        AttributeSetInstanceExtensionFieldMvoStateEvent e = (AttributeSetInstanceExtensionFieldMvoStateEvent)getEventStore().getStateEvent(toEventStoreAggregateId(attributeSetInstanceExtensionFieldId), version);
+        if (e != null)
+        { e.setStateEventReadOnly(true); }
+        return e;
     }
+
 
     public AttributeSetInstanceExtensionFieldMvoAggregate getAttributeSetInstanceExtensionFieldMvoAggregate(AttributeSetInstanceExtensionFieldMvoState state)
     {

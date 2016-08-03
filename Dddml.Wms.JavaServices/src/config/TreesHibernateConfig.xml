@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="treeLocatorStateRepository" class="org.dddml.wms.domain.hibernate.HibernateTreeLocatorStateRepository">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="locatorTreeRepository" class="org.dddml.wms.domain.hibernate.HibernateLocatorTreeRepository">
+    <property name="locatorStateRepository" ref="treeLocatorStateRepository"/>
+  </bean>
+
+  <bean id="treeOrganizationStructureStateRepository" class="org.dddml.wms.domain.hibernate.HibernateTreeOrganizationStructureStateRepository">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="organizationTreeRepository" class="org.dddml.wms.domain.hibernate.HibernateOrganizationTreeRepository">
+    <property name="organizationStateRepository" ref="organizationStateRepository"/>
+    <property name="organizationStructureStateRepository" ref="treeOrganizationStructureStateRepository"/>
+  </bean>
+
+  <bean id="treePermissionStateRepository" class="org.dddml.wms.domain.hibernate.HibernateTreePermissionStateRepository">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="permissionTreeRepository" class="org.dddml.wms.domain.hibernate.HibernatePermissionTreeRepository">
+    <property name="permissionStateRepository" ref="treePermissionStateRepository"/>
+  </bean>
+
+</beans>
+

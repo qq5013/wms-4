@@ -86,6 +86,8 @@
 		"Dddml.Wms.HttpServices.JsonConverters.LongConverter",
 		"Dddml.Wms.HttpServices.JsonConverters.DecimalConverter",
 	});
+	
+	boundedContext.SetHttpServiceJsonContractResolver("Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver");
 
 #>
 <#+

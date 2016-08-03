@@ -75,8 +75,12 @@ public abstract class AbstractPermissionApplicationService implements Permission
     }
 
     public PermissionStateEvent getStateEvent(String permissionId, long version) {
-        throw new UnsupportedOperationException(); //todo
+        PermissionStateEvent e = (PermissionStateEvent)getEventStore().getStateEvent(toEventStoreAggregateId(permissionId), version);
+        if (e != null)
+        { e.setStateEventReadOnly(true); }
+        return e;
     }
+
 
     public PermissionAggregate getPermissionAggregate(PermissionState state)
     {

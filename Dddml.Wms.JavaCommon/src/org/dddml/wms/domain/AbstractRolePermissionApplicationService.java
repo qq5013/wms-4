@@ -75,8 +75,12 @@ public abstract class AbstractRolePermissionApplicationService implements RolePe
     }
 
     public RolePermissionStateEvent getStateEvent(RolePermissionId id, long version) {
-        throw new UnsupportedOperationException(); //todo
+        RolePermissionStateEvent e = (RolePermissionStateEvent)getEventStore().getStateEvent(toEventStoreAggregateId(id), version);
+        if (e != null)
+        { e.setStateEventReadOnly(true); }
+        return e;
     }
+
 
     public RolePermissionAggregate getRolePermissionAggregate(RolePermissionState state)
     {

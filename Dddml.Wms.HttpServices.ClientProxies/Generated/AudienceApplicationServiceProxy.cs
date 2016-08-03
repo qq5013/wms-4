@@ -48,7 +48,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(CreateAudienceDto c)
         {
-            var idObj = ((c as ICreateAudience).ClientId);
+            var idObj = (c as ICreateAudience).ClientId;
             var uriParameters = new AudienceUriParameters();
             uriParameters.Id = idObj;
 
@@ -65,7 +65,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(MergePatchAudienceDto c)
         {
-            var idObj = ((c as IMergePatchAudience).ClientId);
+            var idObj = (c as IMergePatchAudience).ClientId;
             var uriParameters = new AudienceUriParameters();
             uriParameters.Id = idObj;
 
@@ -81,7 +81,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(DeleteAudienceDto c)
         {
-            var idObj = ((c as IDeleteAudience).ClientId);
+            var idObj = (c as IDeleteAudience).ClientId;
             var uriParameters = new AudienceUriParameters();
             uriParameters.Id = idObj;
 
@@ -120,7 +120,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         public async Task<IAudienceState> GetAsync(string clientId)
         {
             IAudienceState state = null;
-            var idObj = (clientId);
+            var idObj = clientId;
             var uriParameters = new AudienceUriParameters();
             uriParameters.Id = idObj;
 
@@ -247,7 +247,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task<IAudienceStateEvent> GetStateEventAsync(string clientId, long version)
         {
-            var idObj = (clientId);
+            var idObj = clientId;
             var uriParameters = new AudienceStateEventUriParameters();
             uriParameters.Id = idObj;
             uriParameters.Version = version.ToString();
@@ -262,6 +262,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         {
             return GetStateEventAsync(clientId, version).GetAwaiter().GetResult();
         }
+
 
         protected virtual string QueryFieldValueSeparator
         {

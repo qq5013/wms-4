@@ -37,6 +37,9 @@ namespace Dddml.Wms.Domain
 
         IInOutStateEvent GetStateEvent(string documentNumber, long version);
 
+        IInOutLineState GetInOutLine(string inOutDocumentNumber, SkuId skuId);
+
+
 	}
 
 }

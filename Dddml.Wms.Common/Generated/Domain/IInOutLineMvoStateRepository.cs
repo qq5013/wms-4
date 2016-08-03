@@ -33,6 +33,7 @@ namespace Dddml.Wms.Domain
         long GetCount(IEnumerable<KeyValuePair<string, object>> filter);
 
         long GetCount(ICriterion filter);
+
 	}
 
 }

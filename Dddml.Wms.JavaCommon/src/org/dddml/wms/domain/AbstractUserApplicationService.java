@@ -75,8 +75,28 @@ public abstract class AbstractUserApplicationService implements UserApplicationS
     }
 
     public UserStateEvent getStateEvent(String userId, long version) {
-        throw new UnsupportedOperationException(); //todo
+        UserStateEvent e = (UserStateEvent)getEventStore().getStateEvent(toEventStoreAggregateId(userId), version);
+        if (e != null)
+        { e.setStateEventReadOnly(true); }
+        return e;
     }
+
+    public UserRoleState getUserRole(String userId, String roleId) {
+        return getStateRepository().getUserRole(userId, roleId);
+    }
+
+    public UserClaimState getUserClaim(String userId, Integer claimId) {
+        return getStateRepository().getUserClaim(userId, claimId);
+    }
+
+    public UserPermissionState getUserPermission(String userId, String permissionId) {
+        return getStateRepository().getUserPermission(userId, permissionId);
+    }
+
+    public UserLoginState getUserLogin(String userId, LoginKey loginKey) {
+        return getStateRepository().getUserLogin(userId, loginKey);
+    }
+
 
     public UserAggregate getUserAggregate(UserState state)
     {

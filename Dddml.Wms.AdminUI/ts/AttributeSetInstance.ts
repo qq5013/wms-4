@@ -2,84 +2,84 @@ namespace Dddml.Wms.Domain {
 
 	export class AttributeSetInstance {
 
-		private AttributeSetInstanceId: string;
+		private attributeSetInstanceId: string;
 
 		getAttributeSetInstanceId(): string {
-			return this.AttributeSetInstanceId;
+			return this.attributeSetInstanceId;
 		}
 
 		setAttributeSetInstanceId(attributeSetInstanceId: string) {
-			this.AttributeSetInstanceId = attributeSetInstanceId;
+			this.attributeSetInstanceId = attributeSetInstanceId;
 		}
 
-		private AttributeSetId: string;
+		private attributeSetId: string;
 
 		getAttributeSetId(): string {
-			return this.AttributeSetId;
+			return this.attributeSetId;
 		}
 
 		setAttributeSetId(attributeSetId: string) {
-			this.AttributeSetId = attributeSetId;
+			this.attributeSetId = attributeSetId;
 		}
 
-		private OrganizationId: string;
+		private organizationId: string;
 
 		getOrganizationId(): string {
-			return this.OrganizationId;
+			return this.organizationId;
 		}
 
 		setOrganizationId(organizationId: string) {
-			this.OrganizationId = organizationId;
+			this.organizationId = organizationId;
 		}
 
-		private ReferenceId: string;
+		private referenceId: string;
 
 		getReferenceId(): string {
-			return this.ReferenceId;
+			return this.referenceId;
 		}
 
 		setReferenceId(referenceId: string) {
-			this.ReferenceId = referenceId;
+			this.referenceId = referenceId;
 		}
 
-		private SerialNumber: string;
+		private serialNumber: string;
 
 		getSerialNumber(): string {
-			return this.SerialNumber;
+			return this.serialNumber;
 		}
 
 		setSerialNumber(serialNumber: string) {
-			this.SerialNumber = serialNumber;
+			this.serialNumber = serialNumber;
 		}
 
-		private Lot: string;
+		private lot: string;
 
 		getLot(): string {
-			return this.Lot;
+			return this.lot;
 		}
 
 		setLot(lot: string) {
-			this.Lot = lot;
+			this.lot = lot;
 		}
 
-		private Description: string;
+		private description: string;
 
 		getDescription(): string {
-			return this.Description;
+			return this.description;
 		}
 
 		setDescription(description: string) {
-			this.Description = description;
+			this.description = description;
 		}
 
-		private Hash: string;
+		private hash: string;
 
 		getHash(): string {
-			return this.Hash;
+			return this.hash;
 		}
 
 		setHash(hash: string) {
-			this.Hash = hash;
+			this.hash = hash;
 		}
 
 		private _F_B_0_: boolean;
@@ -4632,64 +4632,64 @@ namespace Dddml.Wms.Domain {
 			this._F_C50_49_ = _F_C50_49_;
 		}
 
-		private Active: boolean;
+		private active: boolean;
 
 		getActive(): boolean {
-			return this.Active;
+			return this.active;
 		}
 
 		setActive(active: boolean) {
-			this.Active = active;
+			this.active = active;
 		}
 
-		private Version: string;
+		private version: string;
 
 		getVersion(): string {
-			return this.Version;
+			return this.version;
 		}
 
 		setVersion(version: string) {
-			this.Version = version;
+			this.version = version;
 		}
 
-		private CreatedBy: string;
+		private createdBy: string;
 
 		getCreatedBy(): string {
-			return this.CreatedBy;
+			return this.createdBy;
 		}
 
 		setCreatedBy(createdBy: string) {
-			this.CreatedBy = createdBy;
+			this.createdBy = createdBy;
 		}
 
-		private CreatedAt: string;
+		private createdAt: string;
 
 		getCreatedAt(): string {
-			return this.CreatedAt;
+			return this.createdAt;
 		}
 
 		setCreatedAt(createdAt: string) {
-			this.CreatedAt = createdAt;
+			this.createdAt = createdAt;
 		}
 
-		private UpdatedBy: string;
+		private updatedBy: string;
 
 		getUpdatedBy(): string {
-			return this.UpdatedBy;
+			return this.updatedBy;
 		}
 
 		setUpdatedBy(updatedBy: string) {
-			this.UpdatedBy = updatedBy;
+			this.updatedBy = updatedBy;
 		}
 
-		private UpdatedAt: string;
+		private updatedAt: string;
 
 		getUpdatedAt(): string {
-			return this.UpdatedAt;
+			return this.updatedAt;
 		}
 
 		setUpdatedAt(updatedAt: string) {
-			this.UpdatedAt = updatedAt;
+			this.updatedAt = updatedAt;
 		}
 
 	}

@@ -2,24 +2,24 @@ namespace Dddml.Wms.Domain {
 
 	export class AttributeSetInstanceStateEventId {
 
-		private AttributeSetInstanceId: string;
+		private attributeSetInstanceId: string;
 
 		getAttributeSetInstanceId(): string {
-			return this.AttributeSetInstanceId;
+			return this.attributeSetInstanceId;
 		}
 
 		setAttributeSetInstanceId(attributeSetInstanceId: string) {
-			this.AttributeSetInstanceId = attributeSetInstanceId;
+			this.attributeSetInstanceId = attributeSetInstanceId;
 		}
 
-		private Version: string;
+		private version: string;
 
 		getVersion(): string {
-			return this.Version;
+			return this.version;
 		}
 
 		setVersion(version: string) {
-			this.Version = version;
+			this.version = version;
 		}
 
 	}

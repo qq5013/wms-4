@@ -5,6 +5,7 @@ namespace Wms\Domain\Metadata;
 
 class InOutLineMetadata
 {
+    const ID           = 'skuId';
     const VERSION      = 'version';
     const ACTIVE       = 'active';
     const DELETED      = 'deleted';

@@ -2,24 +2,24 @@ namespace Dddml.Wms.Domain {
 
 	export class UserRoleId {
 
-		private UserId: string;
+		private userId: string;
 
 		getUserId(): string {
-			return this.UserId;
+			return this.userId;
 		}
 
 		setUserId(userId: string) {
-			this.UserId = userId;
+			this.userId = userId;
 		}
 
-		private RoleId: string;
+		private roleId: string;
 
 		getRoleId(): string {
-			return this.RoleId;
+			return this.roleId;
 		}
 
 		setRoleId(roleId: string) {
-			this.RoleId = roleId;
+			this.roleId = roleId;
 		}
 
 	}

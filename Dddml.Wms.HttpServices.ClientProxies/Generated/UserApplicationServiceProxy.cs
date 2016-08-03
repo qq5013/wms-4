@@ -48,7 +48,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(CreateUserDto c)
         {
-            var idObj = ((c as ICreateUser).UserId);
+            var idObj = (c as ICreateUser).UserId;
             var uriParameters = new UserUriParameters();
             uriParameters.Id = idObj;
 
@@ -65,7 +65,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(MergePatchUserDto c)
         {
-            var idObj = ((c as IMergePatchUser).UserId);
+            var idObj = (c as IMergePatchUser).UserId;
             var uriParameters = new UserUriParameters();
             uriParameters.Id = idObj;
 
@@ -81,7 +81,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task WhenAsync(DeleteUserDto c)
         {
-            var idObj = ((c as IDeleteUser).UserId);
+            var idObj = (c as IDeleteUser).UserId;
             var uriParameters = new UserUriParameters();
             uriParameters.Id = idObj;
 
@@ -120,7 +120,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         public async Task<IUserState> GetAsync(string userId)
         {
             IUserState state = null;
-            var idObj = (userId);
+            var idObj = userId;
             var uriParameters = new UserUriParameters();
             uriParameters.Id = idObj;
 
@@ -247,7 +247,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies
 
         public async Task<IUserStateEvent> GetStateEventAsync(string userId, long version)
         {
-            var idObj = (userId);
+            var idObj = userId;
             var uriParameters = new UserStateEventUriParameters();
             uriParameters.Id = idObj;
             uriParameters.Version = version.ToString();
@@ -262,6 +262,75 @@ namespace Dddml.Wms.HttpServices.ClientProxies
         {
             return GetStateEventAsync(userId, version).GetAwaiter().GetResult();
         }
+
+        public async virtual Task<IUserRoleState> GetUserRoleAsync(string userId, string roleId)
+        {
+            var uriParameters = new UserRoleUriParameters();
+            uriParameters.UserId = userId;
+            uriParameters.RoleId = roleId;
+
+            var req = new UserRoleGetRequest(uriParameters);
+            var resp = await _ramlClient.UserRole.Get(req);
+            UserProxyUtils.ThrowOnHttpResponseError(resp);
+            return resp.Content;
+        }
+
+        public virtual IUserRoleState GetUserRole(string userId, string roleId)
+        {
+            return GetUserRoleAsync(userId, roleId).GetAwaiter().GetResult();
+        }
+
+        public async virtual Task<IUserClaimState> GetUserClaimAsync(string userId, int claimId)
+        {
+            var uriParameters = new UserClaimUriParameters();
+            uriParameters.UserId = userId;
+            uriParameters.ClaimId = claimId;
+
+            var req = new UserClaimGetRequest(uriParameters);
+            var resp = await _ramlClient.UserClaim.Get(req);
+            UserProxyUtils.ThrowOnHttpResponseError(resp);
+            return resp.Content;
+        }
+
+        public virtual IUserClaimState GetUserClaim(string userId, int claimId)
+        {
+            return GetUserClaimAsync(userId, claimId).GetAwaiter().GetResult();
+        }
+
+        public async virtual Task<IUserPermissionState> GetUserPermissionAsync(string userId, string permissionId)
+        {
+            var uriParameters = new UserPermissionUriParameters();
+            uriParameters.UserId = userId;
+            uriParameters.PermissionId = permissionId;
+
+            var req = new UserPermissionGetRequest(uriParameters);
+            var resp = await _ramlClient.UserPermission.Get(req);
+            UserProxyUtils.ThrowOnHttpResponseError(resp);
+            return resp.Content;
+        }
+
+        public virtual IUserPermissionState GetUserPermission(string userId, string permissionId)
+        {
+            return GetUserPermissionAsync(userId, permissionId).GetAwaiter().GetResult();
+        }
+
+        public async virtual Task<IUserLoginState> GetUserLoginAsync(string userId, LoginKey loginKey)
+        {
+            var uriParameters = new UserLoginUriParameters();
+            uriParameters.UserId = userId;
+            uriParameters.LoginKey = (new LoginKeyFlattenedDtoFormatter()).ToString(new LoginKeyFlattenedDto(loginKey));
+
+            var req = new UserLoginGetRequest(uriParameters);
+            var resp = await _ramlClient.UserLogin.Get(req);
+            UserProxyUtils.ThrowOnHttpResponseError(resp);
+            return resp.Content;
+        }
+
+        public virtual IUserLoginState GetUserLogin(string userId, LoginKey loginKey)
+        {
+            return GetUserLoginAsync(userId, loginKey).GetAwaiter().GetResult();
+        }
+
 
         protected virtual string QueryFieldValueSeparator
         {

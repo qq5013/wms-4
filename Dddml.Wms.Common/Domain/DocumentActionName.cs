@@ -14,7 +14,7 @@ namespace Dddml.Wms.Domain
 
         public const string Void = "Void";
 
-        public const string Close = "Closes";
+        public const string Close = "Close";
 
         public const string Reverse = "Reverse";
 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="locatorTreeApplicationService" class="org.dddml.wms.domain.AbstractLocatorTreeApplicationService$SimpleLocatorTreeApplicationService">
+    <property name="locatorTreeRepository" ref="locatorTreeRepository"/>
+  </bean>
+
+  <bean id="organizationTreeApplicationService" class="org.dddml.wms.domain.AbstractOrganizationTreeApplicationService$SimpleOrganizationTreeApplicationService">
+    <property name="organizationTreeRepository" ref="organizationTreeRepository"/>
+  </bean>
+
+  <bean id="permissionTreeApplicationService" class="org.dddml.wms.domain.AbstractPermissionTreeApplicationService$SimplePermissionTreeApplicationService">
+    <property name="permissionTreeRepository" ref="permissionTreeRepository"/>
+  </bean>
+
+
+</beans>
+

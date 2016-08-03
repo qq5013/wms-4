@@ -75,8 +75,12 @@ public abstract class AbstractUserLoginMvoApplicationService implements UserLogi
     }
 
     public UserLoginMvoStateEvent getStateEvent(UserLoginId userLoginId, long version) {
-        throw new UnsupportedOperationException(); //todo
+        UserLoginMvoStateEvent e = (UserLoginMvoStateEvent)getEventStore().getStateEvent(toEventStoreAggregateId(userLoginId), version);
+        if (e != null)
+        { e.setStateEventReadOnly(true); }
+        return e;
     }
+
 
     public UserLoginMvoAggregate getUserLoginMvoAggregate(UserLoginMvoState state)
     {

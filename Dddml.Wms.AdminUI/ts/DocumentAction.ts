@@ -2,14 +2,14 @@ namespace Dddml.Wms.Domain {
 
 	export class DocumentAction {
 
-		private Name: string;
+		private name: string;
 
 		getName(): string {
-			return this.Name;
+			return this.name;
 		}
 
 		setName(name: string) {
-			this.Name = name;
+			this.name = name;
 		}
 
 	}

@@ -29,5 +29,7 @@ public interface InOutStateRepository
 
     long getCount(Criterion filter);
 
+    InOutLineState getInOutLine(String inOutDocumentNumber, SkuId skuId);
+
 }
 

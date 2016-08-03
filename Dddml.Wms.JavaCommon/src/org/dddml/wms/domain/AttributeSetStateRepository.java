@@ -27,5 +27,7 @@ public interface AttributeSetStateRepository
 
     long getCount(Criterion filter);
 
+    AttributeUseState getAttributeUse(String attributeSetId, String attributeId);
+
 }
 

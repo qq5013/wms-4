@@ -2,144 +2,144 @@ namespace Dddml.Wms.Domain {
 
 	export class AttributeSet {
 
-		private AttributeSetId: string;
+		private attributeSetId: string;
 
 		getAttributeSetId(): string {
-			return this.AttributeSetId;
+			return this.attributeSetId;
 		}
 
 		setAttributeSetId(attributeSetId: string) {
-			this.AttributeSetId = attributeSetId;
+			this.attributeSetId = attributeSetId;
 		}
 
-		private Name: string;
+		private name: string;
 
 		getName(): string {
-			return this.Name;
+			return this.name;
 		}
 
 		setName(name: string) {
-			this.Name = name;
+			this.name = name;
 		}
 
-		private OrganizationId: string;
+		private organizationId: string;
 
 		getOrganizationId(): string {
-			return this.OrganizationId;
+			return this.organizationId;
 		}
 
 		setOrganizationId(organizationId: string) {
-			this.OrganizationId = organizationId;
+			this.organizationId = organizationId;
 		}
 
-		private Description: string;
+		private description: string;
 
 		getDescription(): string {
-			return this.Description;
+			return this.description;
 		}
 
 		setDescription(description: string) {
-			this.Description = description;
+			this.description = description;
 		}
 
-		private SerialNumberAttributeId: string;
+		private serialNumberAttributeId: string;
 
 		getSerialNumberAttributeId(): string {
-			return this.SerialNumberAttributeId;
+			return this.serialNumberAttributeId;
 		}
 
 		setSerialNumberAttributeId(serialNumberAttributeId: string) {
-			this.SerialNumberAttributeId = serialNumberAttributeId;
+			this.serialNumberAttributeId = serialNumberAttributeId;
 		}
 
-		private LotAttributeId: string;
+		private lotAttributeId: string;
 
 		getLotAttributeId(): string {
-			return this.LotAttributeId;
+			return this.lotAttributeId;
 		}
 
 		setLotAttributeId(lotAttributeId: string) {
-			this.LotAttributeId = lotAttributeId;
+			this.lotAttributeId = lotAttributeId;
 		}
 
-		private ReferenceId: string;
+		private referenceId: string;
 
 		getReferenceId(): string {
-			return this.ReferenceId;
+			return this.referenceId;
 		}
 
 		setReferenceId(referenceId: string) {
-			this.ReferenceId = referenceId;
+			this.referenceId = referenceId;
 		}
 
-		private Active: boolean;
+		private active: boolean;
 
 		getActive(): boolean {
-			return this.Active;
+			return this.active;
 		}
 
 		setActive(active: boolean) {
-			this.Active = active;
+			this.active = active;
 		}
 
-		private Version: string;
+		private version: string;
 
 		getVersion(): string {
-			return this.Version;
+			return this.version;
 		}
 
 		setVersion(version: string) {
-			this.Version = version;
+			this.version = version;
 		}
 
-		private CreatedBy: string;
+		private createdBy: string;
 
 		getCreatedBy(): string {
-			return this.CreatedBy;
+			return this.createdBy;
 		}
 
 		setCreatedBy(createdBy: string) {
-			this.CreatedBy = createdBy;
+			this.createdBy = createdBy;
 		}
 
-		private CreatedAt: string;
+		private createdAt: string;
 
 		getCreatedAt(): string {
-			return this.CreatedAt;
+			return this.createdAt;
 		}
 
 		setCreatedAt(createdAt: string) {
-			this.CreatedAt = createdAt;
+			this.createdAt = createdAt;
 		}
 
-		private UpdatedBy: string;
+		private updatedBy: string;
 
 		getUpdatedBy(): string {
-			return this.UpdatedBy;
+			return this.updatedBy;
 		}
 
 		setUpdatedBy(updatedBy: string) {
-			this.UpdatedBy = updatedBy;
+			this.updatedBy = updatedBy;
 		}
 
-		private UpdatedAt: string;
+		private updatedAt: string;
 
 		getUpdatedAt(): string {
-			return this.UpdatedAt;
+			return this.updatedAt;
 		}
 
 		setUpdatedAt(updatedAt: string) {
-			this.UpdatedAt = updatedAt;
+			this.updatedAt = updatedAt;
 		}
 
-		private AttributeUses: Array<AttributeUse>;
+		private attributeUses: Array<AttributeUse>;
 
 		getAttributeUses() {
-			return this.AttributeUses;
+			return this.attributeUses;
 		}
 	
 		setAttributeUses(attributeUses: Array<AttributeUse>){
-			this.AttributeUses = attributeUses;
+			this.attributeUses = attributeUses;
 		}
 
 	}

@@ -2,24 +2,24 @@ namespace Dddml.Wms.Domain {
 
 	export class LocatorStateEventId {
 
-		private LocatorId: string;
+		private locatorId: string;
 
 		getLocatorId(): string {
-			return this.LocatorId;
+			return this.locatorId;
 		}
 
 		setLocatorId(locatorId: string) {
-			this.LocatorId = locatorId;
+			this.locatorId = locatorId;
 		}
 
-		private Version: string;
+		private version: string;
 
 		getVersion(): string {
-			return this.Version;
+			return this.version;
 		}
 
 		setVersion(version: string) {
-			this.Version = version;
+			this.version = version;
 		}
 
 	}

@@ -2,224 +2,224 @@ namespace Dddml.Wms.Domain {
 
 	export class User {
 
-		private UserId: string;
+		private userId: string;
 
 		getUserId(): string {
-			return this.UserId;
+			return this.userId;
 		}
 
 		setUserId(userId: string) {
-			this.UserId = userId;
+			this.userId = userId;
 		}
 
-		private UserName: string;
+		private userName: string;
 
 		getUserName(): string {
-			return this.UserName;
+			return this.userName;
 		}
 
 		setUserName(userName: string) {
-			this.UserName = userName;
+			this.userName = userName;
 		}
 
-		private AccessFailedCount: number;
+		private accessFailedCount: number;
 
 		getAccessFailedCount(): number {
-			return this.AccessFailedCount;
+			return this.accessFailedCount;
 		}
 
 		setAccessFailedCount(accessFailedCount: number) {
-			this.AccessFailedCount = accessFailedCount;
+			this.accessFailedCount = accessFailedCount;
 		}
 
-		private Email: string;
+		private email: string;
 
 		getEmail(): string {
-			return this.Email;
+			return this.email;
 		}
 
 		setEmail(email: string) {
-			this.Email = email;
+			this.email = email;
 		}
 
-		private EmailConfirmed: boolean;
+		private emailConfirmed: boolean;
 
 		getEmailConfirmed(): boolean {
-			return this.EmailConfirmed;
+			return this.emailConfirmed;
 		}
 
 		setEmailConfirmed(emailConfirmed: boolean) {
-			this.EmailConfirmed = emailConfirmed;
+			this.emailConfirmed = emailConfirmed;
 		}
 
-		private LockoutEnabled: boolean;
+		private lockoutEnabled: boolean;
 
 		getLockoutEnabled(): boolean {
-			return this.LockoutEnabled;
+			return this.lockoutEnabled;
 		}
 
 		setLockoutEnabled(lockoutEnabled: boolean) {
-			this.LockoutEnabled = lockoutEnabled;
+			this.lockoutEnabled = lockoutEnabled;
 		}
 
-		private LockoutEndDateUtc: string;
+		private lockoutEndDateUtc: string;
 
 		getLockoutEndDateUtc(): string {
-			return this.LockoutEndDateUtc;
+			return this.lockoutEndDateUtc;
 		}
 
 		setLockoutEndDateUtc(lockoutEndDateUtc: string) {
-			this.LockoutEndDateUtc = lockoutEndDateUtc;
+			this.lockoutEndDateUtc = lockoutEndDateUtc;
 		}
 
-		private PasswordHash: string;
+		private passwordHash: string;
 
 		getPasswordHash(): string {
-			return this.PasswordHash;
+			return this.passwordHash;
 		}
 
 		setPasswordHash(passwordHash: string) {
-			this.PasswordHash = passwordHash;
+			this.passwordHash = passwordHash;
 		}
 
-		private PhoneNumber: string;
+		private phoneNumber: string;
 
 		getPhoneNumber(): string {
-			return this.PhoneNumber;
+			return this.phoneNumber;
 		}
 
 		setPhoneNumber(phoneNumber: string) {
-			this.PhoneNumber = phoneNumber;
+			this.phoneNumber = phoneNumber;
 		}
 
-		private PhoneNumberConfirmed: boolean;
+		private phoneNumberConfirmed: boolean;
 
 		getPhoneNumberConfirmed(): boolean {
-			return this.PhoneNumberConfirmed;
+			return this.phoneNumberConfirmed;
 		}
 
 		setPhoneNumberConfirmed(phoneNumberConfirmed: boolean) {
-			this.PhoneNumberConfirmed = phoneNumberConfirmed;
+			this.phoneNumberConfirmed = phoneNumberConfirmed;
 		}
 
-		private TwoFactorEnabled: boolean;
+		private twoFactorEnabled: boolean;
 
 		getTwoFactorEnabled(): boolean {
-			return this.TwoFactorEnabled;
+			return this.twoFactorEnabled;
 		}
 
 		setTwoFactorEnabled(twoFactorEnabled: boolean) {
-			this.TwoFactorEnabled = twoFactorEnabled;
+			this.twoFactorEnabled = twoFactorEnabled;
 		}
 
-		private SecurityStamp: string;
+		private securityStamp: string;
 
 		getSecurityStamp(): string {
-			return this.SecurityStamp;
+			return this.securityStamp;
 		}
 
 		setSecurityStamp(securityStamp: string) {
-			this.SecurityStamp = securityStamp;
+			this.securityStamp = securityStamp;
 		}
 
-		private Active: boolean;
+		private active: boolean;
 
 		getActive(): boolean {
-			return this.Active;
+			return this.active;
 		}
 
 		setActive(active: boolean) {
-			this.Active = active;
+			this.active = active;
 		}
 
-		private Version: string;
+		private version: string;
 
 		getVersion(): string {
-			return this.Version;
+			return this.version;
 		}
 
 		setVersion(version: string) {
-			this.Version = version;
+			this.version = version;
 		}
 
-		private CreatedBy: string;
+		private createdBy: string;
 
 		getCreatedBy(): string {
-			return this.CreatedBy;
+			return this.createdBy;
 		}
 
 		setCreatedBy(createdBy: string) {
-			this.CreatedBy = createdBy;
+			this.createdBy = createdBy;
 		}
 
-		private CreatedAt: string;
+		private createdAt: string;
 
 		getCreatedAt(): string {
-			return this.CreatedAt;
+			return this.createdAt;
 		}
 
 		setCreatedAt(createdAt: string) {
-			this.CreatedAt = createdAt;
+			this.createdAt = createdAt;
 		}
 
-		private UpdatedBy: string;
+		private updatedBy: string;
 
 		getUpdatedBy(): string {
-			return this.UpdatedBy;
+			return this.updatedBy;
 		}
 
 		setUpdatedBy(updatedBy: string) {
-			this.UpdatedBy = updatedBy;
+			this.updatedBy = updatedBy;
 		}
 
-		private UpdatedAt: string;
+		private updatedAt: string;
 
 		getUpdatedAt(): string {
-			return this.UpdatedAt;
+			return this.updatedAt;
 		}
 
 		setUpdatedAt(updatedAt: string) {
-			this.UpdatedAt = updatedAt;
+			this.updatedAt = updatedAt;
 		}
 
-		private UserRoles: Array<UserRole>;
+		private userRoles: Array<UserRole>;
 
 		getUserRoles() {
-			return this.UserRoles;
+			return this.userRoles;
 		}
 	
 		setUserRoles(userRoles: Array<UserRole>){
-			this.UserRoles = userRoles;
+			this.userRoles = userRoles;
 		}
 
-		private UserClaims: Array<UserClaim>;
+		private userClaims: Array<UserClaim>;
 
 		getUserClaims() {
-			return this.UserClaims;
+			return this.userClaims;
 		}
 	
 		setUserClaims(userClaims: Array<UserClaim>){
-			this.UserClaims = userClaims;
+			this.userClaims = userClaims;
 		}
 
-		private UserPermissions: Array<UserPermission>;
+		private userPermissions: Array<UserPermission>;
 
 		getUserPermissions() {
-			return this.UserPermissions;
+			return this.userPermissions;
 		}
 	
 		setUserPermissions(userPermissions: Array<UserPermission>){
-			this.UserPermissions = userPermissions;
+			this.userPermissions = userPermissions;
 		}
 
-		private UserLogins: Array<UserLogin>;
+		private userLogins: Array<UserLogin>;
 
 		getUserLogins() {
-			return this.UserLogins;
+			return this.userLogins;
 		}
 	
 		setUserLogins(userLogins: Array<UserLogin>){
-			this.UserLogins = userLogins;
+			this.userLogins = userLogins;
 		}
 
 	}

@@ -5,6 +5,7 @@ namespace Wms\Domain\Metadata;
 
 class AttributeValueMetadata
 {
+    const ID           = 'value';
     const VERSION      = 'version';
     const ACTIVE       = 'active';
     const DELETED      = 'deleted';

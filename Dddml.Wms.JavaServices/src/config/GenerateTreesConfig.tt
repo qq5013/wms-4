@@ -1,0 +1,16 @@
+<#@ template language="C#" debug="True" #>
+<#@ output extension="txt" #>
+<#@ import namespace="Dddml.Core.Domain" #>
+<#@ include file="T4Toolbox.tt" #>
+<#@ include file="%DddmlDotNetToolsSolutionDir%\Dddml.T4.Templates.Java\Hibernate\Spring\TreesHibernateSpringConfigGenerator.tt" #>
+<#@ include file="%DddmlDotNetToolsSolutionDir%\Dddml.T4.Templates.Java\Spring\TreesSpringConfigGenerator.tt" #>
+<#@ include file="$(SolutionDir)Dddml.Wms.JavaCommon\src\org\dddml\wms\LoadBoundedContext.tt" #>
+<#
+	var TreesHibernateSpringConfigGenerator = new TreesHibernateSpringConfigGenerator(boundedContext.Trees.Values);
+	TreesHibernateSpringConfigGenerator.Run();  
+
+	var TreesSpringConfigGenerator = new TreesSpringConfigGenerator(boundedContext.Trees.Values);
+	TreesSpringConfigGenerator.Run();  
+
+#> 
+

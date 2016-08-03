@@ -11,9 +11,9 @@ use Dddml\Serializer\Handler\DateHandler;
 use Dddml\Serializer\Handler\DecimalHandler;
 use Dddml\Serializer\Handler\LongHandler;
 use Dddml\Serializer\Handler\MoneyHandler;
-use Dddml\Serializer\Naming\DddmlStrategy;
 use GuzzleHttp\Client;
 use JMS\Serializer\Handler\HandlerRegistry;
+use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
 use JMS\Serializer\Naming\SerializedNameAnnotationStrategy;
 use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
@@ -76,8 +76,8 @@ abstract class AbstractExecutor
         $this->setBaseUri($baseUri);
 
         if (!$serializer) {
-            $cs   = new DddmlStrategy();
-            $snas = new SerializedNameAnnotationStrategy($cs);
+            $ipns   = new IdenticalPropertyNamingStrategy();
+            $snas = new SerializedNameAnnotationStrategy($ipns);
 
             $serializer = SerializerBuilder::create()
                 ->setPropertyNamingStrategy($snas)

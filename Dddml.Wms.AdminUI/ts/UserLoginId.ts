@@ -2,27 +2,27 @@ namespace Dddml.Wms.Domain {
 
 	export class UserLoginId {
 
-		private UserId: string;
+		private userId: string;
 
 		getUserId(): string {
-			return this.UserId;
+			return this.userId;
 		}
 
 		setUserId(userId: string) {
-			this.UserId = userId;
+			this.userId = userId;
 		}
 
-		private LoginKey: LoginKey;
+		private loginKey: LoginKey;
 
 		getLoginKey(): LoginKey {
-			if(!this.LoginKey) {
-				this.LoginKey = new LoginKey(); 
+			if(!this.loginKey) {
+				this.loginKey = new LoginKey(); 
 			}
-			return this.LoginKey;
+			return this.loginKey;
 		}
 
 		setLoginKey(loginKey: LoginKey) {
-			this.LoginKey = loginKey;
+			this.loginKey = loginKey;
 		}
 
 	}

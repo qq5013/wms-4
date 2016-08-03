@@ -2,37 +2,37 @@ namespace Dddml.Wms.Domain {
 
 	export class InOutLineStateEventId {
 
-		private InOutDocumentNumber: string;
+		private inOutDocumentNumber: string;
 
 		getInOutDocumentNumber(): string {
-			return this.InOutDocumentNumber;
+			return this.inOutDocumentNumber;
 		}
 
 		setInOutDocumentNumber(inOutDocumentNumber: string) {
-			this.InOutDocumentNumber = inOutDocumentNumber;
+			this.inOutDocumentNumber = inOutDocumentNumber;
 		}
 
-		private SkuId: SkuId;
+		private skuId: SkuId;
 
 		getSkuId(): SkuId {
-			if(!this.SkuId) {
-				this.SkuId = new SkuId(); 
+			if(!this.skuId) {
+				this.skuId = new SkuId(); 
 			}
-			return this.SkuId;
+			return this.skuId;
 		}
 
 		setSkuId(skuId: SkuId) {
-			this.SkuId = skuId;
+			this.skuId = skuId;
 		}
 
-		private InOutVersion: string;
+		private inOutVersion: string;
 
 		getInOutVersion(): string {
-			return this.InOutVersion;
+			return this.inOutVersion;
 		}
 
 		setInOutVersion(inOutVersion: string) {
-			this.InOutVersion = inOutVersion;
+			this.inOutVersion = inOutVersion;
 		}
 
 	}

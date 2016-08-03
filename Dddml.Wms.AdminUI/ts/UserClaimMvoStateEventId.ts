@@ -2,27 +2,27 @@ namespace Dddml.Wms.Domain {
 
 	export class UserClaimMvoStateEventId {
 
-		private UserClaimId: UserClaimId;
+		private userClaimId: UserClaimId;
 
 		getUserClaimId(): UserClaimId {
-			if(!this.UserClaimId) {
-				this.UserClaimId = new UserClaimId(); 
+			if(!this.userClaimId) {
+				this.userClaimId = new UserClaimId(); 
 			}
-			return this.UserClaimId;
+			return this.userClaimId;
 		}
 
 		setUserClaimId(userClaimId: UserClaimId) {
-			this.UserClaimId = userClaimId;
+			this.userClaimId = userClaimId;
 		}
 
-		private UserVersion: string;
+		private userVersion: string;
 
 		getUserVersion(): string {
-			return this.UserVersion;
+			return this.userVersion;
 		}
 
 		setUserVersion(userVersion: string) {
-			this.UserVersion = userVersion;
+			this.userVersion = userVersion;
 		}
 
 	}

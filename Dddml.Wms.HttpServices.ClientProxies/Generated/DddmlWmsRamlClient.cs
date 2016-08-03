@@ -9221,6 +9221,7 @@ namespace Dddml.Wms.HttpServices.ClientProxies.Raml
             formatter.SerializerSettings.DateFormatHandling = DateFormatHandling.IsoDateFormat;
             formatter.SerializerSettings.Converters.Add(new Dddml.Wms.HttpServices.JsonConverters.LongConverter());
             formatter.SerializerSettings.Converters.Add(new Dddml.Wms.HttpServices.JsonConverters.DecimalConverter());
+            formatter.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver();
             return formatter;
         }
 

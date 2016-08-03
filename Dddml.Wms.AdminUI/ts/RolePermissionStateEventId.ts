@@ -2,27 +2,27 @@ namespace Dddml.Wms.Domain {
 
 	export class RolePermissionStateEventId {
 
-		private Id: RolePermissionId;
+		private id: RolePermissionId;
 
 		getId(): RolePermissionId {
-			if(!this.Id) {
-				this.Id = new RolePermissionId(); 
+			if(!this.id) {
+				this.id = new RolePermissionId(); 
 			}
-			return this.Id;
+			return this.id;
 		}
 
 		setId(id: RolePermissionId) {
-			this.Id = id;
+			this.id = id;
 		}
 
-		private Version: string;
+		private version: string;
 
 		getVersion(): string {
-			return this.Version;
+			return this.version;
 		}
 
 		setVersion(version: string) {
-			this.Version = version;
+			this.version = version;
 		}
 
 	}

@@ -2,274 +2,274 @@ namespace Dddml.Wms.Domain {
 
 	export class AttributeValueMvo {
 
-		private AttributeValueId: AttributeValueId;
+		private attributeValueId: AttributeValueId;
 
 		getAttributeValueId(): AttributeValueId {
-			return this.AttributeValueId;
+			return this.attributeValueId;
 		}
 
 		setAttributeValueId(attributeValueId: AttributeValueId) {
-			this.AttributeValueId = attributeValueId;
+			this.attributeValueId = attributeValueId;
 		}
 
-		private Name: string;
+		private name: string;
 
 		getName(): string {
-			return this.Name;
+			return this.name;
 		}
 
 		setName(name: string) {
-			this.Name = name;
+			this.name = name;
 		}
 
-		private Description: string;
+		private description: string;
 
 		getDescription(): string {
-			return this.Description;
+			return this.description;
 		}
 
 		setDescription(description: string) {
-			this.Description = description;
+			this.description = description;
 		}
 
-		private ReferenceId: string;
+		private referenceId: string;
 
 		getReferenceId(): string {
-			return this.ReferenceId;
+			return this.referenceId;
 		}
 
 		setReferenceId(referenceId: string) {
-			this.ReferenceId = referenceId;
+			this.referenceId = referenceId;
 		}
 
-		private Version: string;
+		private version: string;
 
 		getVersion(): string {
-			return this.Version;
+			return this.version;
 		}
 
 		setVersion(version: string) {
-			this.Version = version;
+			this.version = version;
 		}
 
-		private Active: boolean;
+		private active: boolean;
 
 		getActive(): boolean {
-			return this.Active;
+			return this.active;
 		}
 
 		setActive(active: boolean) {
-			this.Active = active;
+			this.active = active;
 		}
 
-		private AttributeName: string;
+		private attributeName: string;
 
 		getAttributeName(): string {
-			return this.AttributeName;
+			return this.attributeName;
 		}
 
 		setAttributeName(attributeName: string) {
-			this.AttributeName = attributeName;
+			this.attributeName = attributeName;
 		}
 
-		private AttributeOrganizationId: string;
+		private attributeOrganizationId: string;
 
 		getAttributeOrganizationId(): string {
-			return this.AttributeOrganizationId;
+			return this.attributeOrganizationId;
 		}
 
 		setAttributeOrganizationId(attributeOrganizationId: string) {
-			this.AttributeOrganizationId = attributeOrganizationId;
+			this.attributeOrganizationId = attributeOrganizationId;
 		}
 
-		private AttributeDescription: string;
+		private attributeDescription: string;
 
 		getAttributeDescription(): string {
-			return this.AttributeDescription;
+			return this.attributeDescription;
 		}
 
 		setAttributeDescription(attributeDescription: string) {
-			this.AttributeDescription = attributeDescription;
+			this.attributeDescription = attributeDescription;
 		}
 
-		private AttributeIsMandatory: boolean;
+		private attributeIsMandatory: boolean;
 
 		getAttributeIsMandatory(): boolean {
-			return this.AttributeIsMandatory;
+			return this.attributeIsMandatory;
 		}
 
 		setAttributeIsMandatory(attributeIsMandatory: boolean) {
-			this.AttributeIsMandatory = attributeIsMandatory;
+			this.attributeIsMandatory = attributeIsMandatory;
 		}
 
-		private AttributeIsInstanceAttribute: boolean;
+		private attributeIsInstanceAttribute: boolean;
 
 		getAttributeIsInstanceAttribute(): boolean {
-			return this.AttributeIsInstanceAttribute;
+			return this.attributeIsInstanceAttribute;
 		}
 
 		setAttributeIsInstanceAttribute(attributeIsInstanceAttribute: boolean) {
-			this.AttributeIsInstanceAttribute = attributeIsInstanceAttribute;
+			this.attributeIsInstanceAttribute = attributeIsInstanceAttribute;
 		}
 
-		private AttributeAttributeValueType: string;
+		private attributeAttributeValueType: string;
 
 		getAttributeAttributeValueType(): string {
-			return this.AttributeAttributeValueType;
+			return this.attributeAttributeValueType;
 		}
 
 		setAttributeAttributeValueType(attributeAttributeValueType: string) {
-			this.AttributeAttributeValueType = attributeAttributeValueType;
+			this.attributeAttributeValueType = attributeAttributeValueType;
 		}
 
-		private AttributeAttributeValueLength: number;
+		private attributeAttributeValueLength: number;
 
 		getAttributeAttributeValueLength(): number {
-			return this.AttributeAttributeValueLength;
+			return this.attributeAttributeValueLength;
 		}
 
 		setAttributeAttributeValueLength(attributeAttributeValueLength: number) {
-			this.AttributeAttributeValueLength = attributeAttributeValueLength;
+			this.attributeAttributeValueLength = attributeAttributeValueLength;
 		}
 
-		private AttributeIsList: boolean;
+		private attributeIsList: boolean;
 
 		getAttributeIsList(): boolean {
-			return this.AttributeIsList;
+			return this.attributeIsList;
 		}
 
 		setAttributeIsList(attributeIsList: boolean) {
-			this.AttributeIsList = attributeIsList;
+			this.attributeIsList = attributeIsList;
 		}
 
-		private AttributeFieldName: string;
+		private attributeFieldName: string;
 
 		getAttributeFieldName(): string {
-			return this.AttributeFieldName;
+			return this.attributeFieldName;
 		}
 
 		setAttributeFieldName(attributeFieldName: string) {
-			this.AttributeFieldName = attributeFieldName;
+			this.attributeFieldName = attributeFieldName;
 		}
 
-		private AttributeReferenceId: string;
+		private attributeReferenceId: string;
 
 		getAttributeReferenceId(): string {
-			return this.AttributeReferenceId;
+			return this.attributeReferenceId;
 		}
 
 		setAttributeReferenceId(attributeReferenceId: string) {
-			this.AttributeReferenceId = attributeReferenceId;
+			this.attributeReferenceId = attributeReferenceId;
 		}
 
-		private AttributeCreatedBy: string;
+		private attributeCreatedBy: string;
 
 		getAttributeCreatedBy(): string {
-			return this.AttributeCreatedBy;
+			return this.attributeCreatedBy;
 		}
 
 		setAttributeCreatedBy(attributeCreatedBy: string) {
-			this.AttributeCreatedBy = attributeCreatedBy;
+			this.attributeCreatedBy = attributeCreatedBy;
 		}
 
-		private AttributeCreatedAt: string;
+		private attributeCreatedAt: string;
 
 		getAttributeCreatedAt(): string {
-			return this.AttributeCreatedAt;
+			return this.attributeCreatedAt;
 		}
 
 		setAttributeCreatedAt(attributeCreatedAt: string) {
-			this.AttributeCreatedAt = attributeCreatedAt;
+			this.attributeCreatedAt = attributeCreatedAt;
 		}
 
-		private AttributeUpdatedBy: string;
+		private attributeUpdatedBy: string;
 
 		getAttributeUpdatedBy(): string {
-			return this.AttributeUpdatedBy;
+			return this.attributeUpdatedBy;
 		}
 
 		setAttributeUpdatedBy(attributeUpdatedBy: string) {
-			this.AttributeUpdatedBy = attributeUpdatedBy;
+			this.attributeUpdatedBy = attributeUpdatedBy;
 		}
 
-		private AttributeUpdatedAt: string;
+		private attributeUpdatedAt: string;
 
 		getAttributeUpdatedAt(): string {
-			return this.AttributeUpdatedAt;
+			return this.attributeUpdatedAt;
 		}
 
 		setAttributeUpdatedAt(attributeUpdatedAt: string) {
-			this.AttributeUpdatedAt = attributeUpdatedAt;
+			this.attributeUpdatedAt = attributeUpdatedAt;
 		}
 
-		private AttributeActive: boolean;
+		private attributeActive: boolean;
 
 		getAttributeActive(): boolean {
-			return this.AttributeActive;
+			return this.attributeActive;
 		}
 
 		setAttributeActive(attributeActive: boolean) {
-			this.AttributeActive = attributeActive;
+			this.attributeActive = attributeActive;
 		}
 
-		private AttributeDeleted: boolean;
+		private attributeDeleted: boolean;
 
 		getAttributeDeleted(): boolean {
-			return this.AttributeDeleted;
+			return this.attributeDeleted;
 		}
 
 		setAttributeDeleted(attributeDeleted: boolean) {
-			this.AttributeDeleted = attributeDeleted;
+			this.attributeDeleted = attributeDeleted;
 		}
 
-		private AttributeVersion: string;
+		private attributeVersion: string;
 
 		getAttributeVersion(): string {
-			return this.AttributeVersion;
+			return this.attributeVersion;
 		}
 
 		setAttributeVersion(attributeVersion: string) {
-			this.AttributeVersion = attributeVersion;
+			this.attributeVersion = attributeVersion;
 		}
 
-		private CreatedBy: string;
+		private createdBy: string;
 
 		getCreatedBy(): string {
-			return this.CreatedBy;
+			return this.createdBy;
 		}
 
 		setCreatedBy(createdBy: string) {
-			this.CreatedBy = createdBy;
+			this.createdBy = createdBy;
 		}
 
-		private CreatedAt: string;
+		private createdAt: string;
 
 		getCreatedAt(): string {
-			return this.CreatedAt;
+			return this.createdAt;
 		}
 
 		setCreatedAt(createdAt: string) {
-			this.CreatedAt = createdAt;
+			this.createdAt = createdAt;
 		}
 
-		private UpdatedBy: string;
+		private updatedBy: string;
 
 		getUpdatedBy(): string {
-			return this.UpdatedBy;
+			return this.updatedBy;
 		}
 
 		setUpdatedBy(updatedBy: string) {
-			this.UpdatedBy = updatedBy;
+			this.updatedBy = updatedBy;
 		}
 
-		private UpdatedAt: string;
+		private updatedAt: string;
 
 		getUpdatedAt(): string {
-			return this.UpdatedAt;
+			return this.updatedAt;
 		}
 
 		setUpdatedAt(updatedAt: string) {
-			this.UpdatedAt = updatedAt;
+			this.updatedAt = updatedAt;
 		}
 
 	}

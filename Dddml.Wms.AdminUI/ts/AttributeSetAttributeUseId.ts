@@ -2,24 +2,24 @@ namespace Dddml.Wms.Domain {
 
 	export class AttributeSetAttributeUseId {
 
-		private AttributeSetId: string;
+		private attributeSetId: string;
 
 		getAttributeSetId(): string {
-			return this.AttributeSetId;
+			return this.attributeSetId;
 		}
 
 		setAttributeSetId(attributeSetId: string) {
-			this.AttributeSetId = attributeSetId;
+			this.attributeSetId = attributeSetId;
 		}
 
-		private AttributeId: string;
+		private attributeId: string;
 
 		getAttributeId(): string {
-			return this.AttributeId;
+			return this.attributeId;
 		}
 
 		setAttributeId(attributeId: string) {
-			this.AttributeId = attributeId;
+			this.attributeId = attributeId;
 		}
 
 	}

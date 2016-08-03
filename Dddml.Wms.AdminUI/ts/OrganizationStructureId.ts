@@ -2,34 +2,34 @@ namespace Dddml.Wms.Domain {
 
 	export class OrganizationStructureId {
 
-		private OrganizationStructureTypeId: string;
+		private organizationStructureTypeId: string;
 
 		getOrganizationStructureTypeId(): string {
-			return this.OrganizationStructureTypeId;
+			return this.organizationStructureTypeId;
 		}
 
 		setOrganizationStructureTypeId(organizationStructureTypeId: string) {
-			this.OrganizationStructureTypeId = organizationStructureTypeId;
+			this.organizationStructureTypeId = organizationStructureTypeId;
 		}
 
-		private ParentId: string;
+		private parentId: string;
 
 		getParentId(): string {
-			return this.ParentId;
+			return this.parentId;
 		}
 
 		setParentId(parentId: string) {
-			this.ParentId = parentId;
+			this.parentId = parentId;
 		}
 
-		private SubsidiaryId: string;
+		private subsidiaryId: string;
 
 		getSubsidiaryId(): string {
-			return this.SubsidiaryId;
+			return this.subsidiaryId;
 		}
 
 		setSubsidiaryId(subsidiaryId: string) {
-			this.SubsidiaryId = subsidiaryId;
+			this.subsidiaryId = subsidiaryId;
 		}
 
 	}

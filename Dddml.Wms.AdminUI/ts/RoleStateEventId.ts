@@ -2,24 +2,24 @@ namespace Dddml.Wms.Domain {
 
 	export class RoleStateEventId {
 
-		private RoleId: string;
+		private roleId: string;
 
 		getRoleId(): string {
-			return this.RoleId;
+			return this.roleId;
 		}
 
 		setRoleId(roleId: string) {
-			this.RoleId = roleId;
+			this.roleId = roleId;
 		}
 
-		private Version: string;
+		private version: string;
 
 		getVersion(): string {
-			return this.Version;
+			return this.version;
 		}
 
 		setVersion(version: string) {
-			this.Version = version;
+			this.version = version;
 		}
 
 	}

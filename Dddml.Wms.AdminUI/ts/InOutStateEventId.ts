@@ -2,24 +2,24 @@ namespace Dddml.Wms.Domain {
 
 	export class InOutStateEventId {
 
-		private DocumentNumber: string;
+		private documentNumber: string;
 
 		getDocumentNumber(): string {
-			return this.DocumentNumber;
+			return this.documentNumber;
 		}
 
 		setDocumentNumber(documentNumber: string) {
-			this.DocumentNumber = documentNumber;
+			this.documentNumber = documentNumber;
 		}
 
-		private Version: string;
+		private version: string;
 
 		getVersion(): string {
-			return this.Version;
+			return this.version;
 		}
 
 		setVersion(version: string) {
-			this.Version = version;
+			this.version = version;
 		}
 
 	}

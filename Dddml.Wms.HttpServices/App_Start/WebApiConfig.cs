@@ -28,7 +28,7 @@ namespace Dddml.Wms.HttpServices
             config.Formatters.JsonFormatter.SerializerSettings.DateFormatHandling = DateFormatHandling.IsoDateFormat;
             config.Formatters.JsonFormatter.SerializerSettings.Converters.Add(new LongConverter());
             config.Formatters.JsonFormatter.SerializerSettings.Converters.Add(new DecimalConverter());
-            //config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 
             // Web API 路由
             config.MapHttpAttributeRoutes();

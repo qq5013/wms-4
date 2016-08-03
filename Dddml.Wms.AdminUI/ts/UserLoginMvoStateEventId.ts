@@ -2,27 +2,27 @@ namespace Dddml.Wms.Domain {
 
 	export class UserLoginMvoStateEventId {
 
-		private UserLoginId: UserLoginId;
+		private userLoginId: UserLoginId;
 
 		getUserLoginId(): UserLoginId {
-			if(!this.UserLoginId) {
-				this.UserLoginId = new UserLoginId(); 
+			if(!this.userLoginId) {
+				this.userLoginId = new UserLoginId(); 
 			}
-			return this.UserLoginId;
+			return this.userLoginId;
 		}
 
 		setUserLoginId(userLoginId: UserLoginId) {
-			this.UserLoginId = userLoginId;
+			this.userLoginId = userLoginId;
 		}
 
-		private UserVersion: string;
+		private userVersion: string;
 
 		getUserVersion(): string {
-			return this.UserVersion;
+			return this.userVersion;
 		}
 
 		setUserVersion(userVersion: string) {
-			this.UserVersion = userVersion;
+			this.userVersion = userVersion;
 		}
 
 	}

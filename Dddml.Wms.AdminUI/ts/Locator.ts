@@ -2,154 +2,154 @@ namespace Dddml.Wms.Domain {
 
 	export class Locator {
 
-		private LocatorId: string;
+		private locatorId: string;
 
 		getLocatorId(): string {
-			return this.LocatorId;
+			return this.locatorId;
 		}
 
 		setLocatorId(locatorId: string) {
-			this.LocatorId = locatorId;
+			this.locatorId = locatorId;
 		}
 
-		private WarehouseId: string;
+		private warehouseId: string;
 
 		getWarehouseId(): string {
-			return this.WarehouseId;
+			return this.warehouseId;
 		}
 
 		setWarehouseId(warehouseId: string) {
-			this.WarehouseId = warehouseId;
+			this.warehouseId = warehouseId;
 		}
 
-		private ParentLocatorId: string;
+		private parentLocatorId: string;
 
 		getParentLocatorId(): string {
-			return this.ParentLocatorId;
+			return this.parentLocatorId;
 		}
 
 		setParentLocatorId(parentLocatorId: string) {
-			this.ParentLocatorId = parentLocatorId;
+			this.parentLocatorId = parentLocatorId;
 		}
 
-		private LocatorType: string;
+		private locatorType: string;
 
 		getLocatorType(): string {
-			return this.LocatorType;
+			return this.locatorType;
 		}
 
 		setLocatorType(locatorType: string) {
-			this.LocatorType = locatorType;
+			this.locatorType = locatorType;
 		}
 
-		private PriorityNumber: string;
+		private priorityNumber: string;
 
 		getPriorityNumber(): string {
-			return this.PriorityNumber;
+			return this.priorityNumber;
 		}
 
 		setPriorityNumber(priorityNumber: string) {
-			this.PriorityNumber = priorityNumber;
+			this.priorityNumber = priorityNumber;
 		}
 
-		private IsDefault: boolean;
+		private isDefault: boolean;
 
 		getIsDefault(): boolean {
-			return this.IsDefault;
+			return this.isDefault;
 		}
 
 		setIsDefault(isDefault: boolean) {
-			this.IsDefault = isDefault;
+			this.isDefault = isDefault;
 		}
 
-		private X: string;
+		private x: string;
 
 		getX(): string {
-			return this.X;
+			return this.x;
 		}
 
 		setX(x: string) {
-			this.X = x;
+			this.x = x;
 		}
 
-		private Y: string;
+		private y: string;
 
 		getY(): string {
-			return this.Y;
+			return this.y;
 		}
 
 		setY(y: string) {
-			this.Y = y;
+			this.y = y;
 		}
 
-		private Z: string;
+		private z: string;
 
 		getZ(): string {
-			return this.Z;
+			return this.z;
 		}
 
 		setZ(z: string) {
-			this.Z = z;
+			this.z = z;
 		}
 
-		private Active: boolean;
+		private active: boolean;
 
 		getActive(): boolean {
-			return this.Active;
+			return this.active;
 		}
 
 		setActive(active: boolean) {
-			this.Active = active;
+			this.active = active;
 		}
 
-		private Version: string;
+		private version: string;
 
 		getVersion(): string {
-			return this.Version;
+			return this.version;
 		}
 
 		setVersion(version: string) {
-			this.Version = version;
+			this.version = version;
 		}
 
-		private CreatedBy: string;
+		private createdBy: string;
 
 		getCreatedBy(): string {
-			return this.CreatedBy;
+			return this.createdBy;
 		}
 
 		setCreatedBy(createdBy: string) {
-			this.CreatedBy = createdBy;
+			this.createdBy = createdBy;
 		}
 
-		private CreatedAt: string;
+		private createdAt: string;
 
 		getCreatedAt(): string {
-			return this.CreatedAt;
+			return this.createdAt;
 		}
 
 		setCreatedAt(createdAt: string) {
-			this.CreatedAt = createdAt;
+			this.createdAt = createdAt;
 		}
 
-		private UpdatedBy: string;
+		private updatedBy: string;
 
 		getUpdatedBy(): string {
-			return this.UpdatedBy;
+			return this.updatedBy;
 		}
 
 		setUpdatedBy(updatedBy: string) {
-			this.UpdatedBy = updatedBy;
+			this.updatedBy = updatedBy;
 		}
 
-		private UpdatedAt: string;
+		private updatedAt: string;
 
 		getUpdatedAt(): string {
-			return this.UpdatedAt;
+			return this.updatedAt;
 		}
 
 		setUpdatedAt(updatedAt: string) {
-			this.UpdatedAt = updatedAt;
+			this.updatedAt = updatedAt;
 		}
 
 	}

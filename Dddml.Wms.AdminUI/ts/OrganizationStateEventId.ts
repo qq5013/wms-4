@@ -2,24 +2,24 @@ namespace Dddml.Wms.Domain {
 
 	export class OrganizationStateEventId {
 
-		private OrganizationId: string;
+		private organizationId: string;
 
 		getOrganizationId(): string {
-			return this.OrganizationId;
+			return this.organizationId;
 		}
 
 		setOrganizationId(organizationId: string) {
-			this.OrganizationId = organizationId;
+			this.organizationId = organizationId;
 		}
 
-		private Version: string;
+		private version: string;
 
 		getVersion(): string {
-			return this.Version;
+			return this.version;
 		}
 
 		setVersion(version: string) {
-			this.Version = version;
+			this.version = version;
 		}
 
 	}

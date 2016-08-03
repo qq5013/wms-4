@@ -2,27 +2,27 @@ namespace Dddml.Wms.Domain {
 
 	export class AttributeSetInstanceExtensionFieldMvoStateEventId {
 
-		private AttributeSetInstanceExtensionFieldId: AttributeSetInstanceExtensionFieldId;
+		private attributeSetInstanceExtensionFieldId: AttributeSetInstanceExtensionFieldId;
 
 		getAttributeSetInstanceExtensionFieldId(): AttributeSetInstanceExtensionFieldId {
-			if(!this.AttributeSetInstanceExtensionFieldId) {
-				this.AttributeSetInstanceExtensionFieldId = new AttributeSetInstanceExtensionFieldId(); 
+			if(!this.attributeSetInstanceExtensionFieldId) {
+				this.attributeSetInstanceExtensionFieldId = new AttributeSetInstanceExtensionFieldId(); 
 			}
-			return this.AttributeSetInstanceExtensionFieldId;
+			return this.attributeSetInstanceExtensionFieldId;
 		}
 
 		setAttributeSetInstanceExtensionFieldId(attributeSetInstanceExtensionFieldId: AttributeSetInstanceExtensionFieldId) {
-			this.AttributeSetInstanceExtensionFieldId = attributeSetInstanceExtensionFieldId;
+			this.attributeSetInstanceExtensionFieldId = attributeSetInstanceExtensionFieldId;
 		}
 
-		private AttrSetInstEFGroupVersion: string;
+		private attrSetInstEFGroupVersion: string;
 
 		getAttrSetInstEFGroupVersion(): string {
-			return this.AttrSetInstEFGroupVersion;
+			return this.attrSetInstEFGroupVersion;
 		}
 
 		setAttrSetInstEFGroupVersion(attrSetInstEFGroupVersion: string) {
-			this.AttrSetInstEFGroupVersion = attrSetInstEFGroupVersion;
+			this.attrSetInstEFGroupVersion = attrSetInstEFGroupVersion;
 		}
 
 	}

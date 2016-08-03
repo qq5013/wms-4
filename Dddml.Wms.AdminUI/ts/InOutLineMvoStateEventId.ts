@@ -2,27 +2,27 @@ namespace Dddml.Wms.Domain {
 
 	export class InOutLineMvoStateEventId {
 
-		private InOutLineId: InOutLineId;
+		private inOutLineId: InOutLineId;
 
 		getInOutLineId(): InOutLineId {
-			if(!this.InOutLineId) {
-				this.InOutLineId = new InOutLineId(); 
+			if(!this.inOutLineId) {
+				this.inOutLineId = new InOutLineId(); 
 			}
-			return this.InOutLineId;
+			return this.inOutLineId;
 		}
 
 		setInOutLineId(inOutLineId: InOutLineId) {
-			this.InOutLineId = inOutLineId;
+			this.inOutLineId = inOutLineId;
 		}
 
-		private InOutVersion: string;
+		private inOutVersion: string;
 
 		getInOutVersion(): string {
-			return this.InOutVersion;
+			return this.inOutVersion;
 		}
 
 		setInOutVersion(inOutVersion: string) {
-			this.InOutVersion = inOutVersion;
+			this.inOutVersion = inOutVersion;
 		}
 
 	}

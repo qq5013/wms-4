@@ -2,24 +2,24 @@ namespace Dddml.Wms.Domain {
 
 	export class PermissionStateEventId {
 
-		private PermissionId: string;
+		private permissionId: string;
 
 		getPermissionId(): string {
-			return this.PermissionId;
+			return this.permissionId;
 		}
 
 		setPermissionId(permissionId: string) {
-			this.PermissionId = permissionId;
+			this.permissionId = permissionId;
 		}
 
-		private Version: string;
+		private version: string;
 
 		getVersion(): string {
-			return this.Version;
+			return this.version;
 		}
 
 		setVersion(version: string) {
-			this.Version = version;
+			this.version = version;
 		}
 
 	}

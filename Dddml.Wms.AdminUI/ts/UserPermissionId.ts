@@ -2,24 +2,24 @@ namespace Dddml.Wms.Domain {
 
 	export class UserPermissionId {
 
-		private UserId: string;
+		private userId: string;
 
 		getUserId(): string {
-			return this.UserId;
+			return this.userId;
 		}
 
 		setUserId(userId: string) {
-			this.UserId = userId;
+			this.userId = userId;
 		}
 
-		private PermissionId: string;
+		private permissionId: string;
 
 		getPermissionId(): string {
-			return this.PermissionId;
+			return this.permissionId;
 		}
 
 		setPermissionId(permissionId: string) {
-			this.PermissionId = permissionId;
+			this.permissionId = permissionId;
 		}
 
 	}

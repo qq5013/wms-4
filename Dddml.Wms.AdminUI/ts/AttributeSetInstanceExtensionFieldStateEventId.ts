@@ -2,34 +2,34 @@ namespace Dddml.Wms.Domain {
 
 	export class AttributeSetInstanceExtensionFieldStateEventId {
 
-		private GroupId: string;
+		private groupId: string;
 
 		getGroupId(): string {
-			return this.GroupId;
+			return this.groupId;
 		}
 
 		setGroupId(groupId: string) {
-			this.GroupId = groupId;
+			this.groupId = groupId;
 		}
 
-		private Index: string;
+		private index: string;
 
 		getIndex(): string {
-			return this.Index;
+			return this.index;
 		}
 
 		setIndex(index: string) {
-			this.Index = index;
+			this.index = index;
 		}
 
-		private AttributeSetInstanceExtensionFieldGroupVersion: string;
+		private attributeSetInstanceExtensionFieldGroupVersion: string;
 
 		getAttributeSetInstanceExtensionFieldGroupVersion(): string {
-			return this.AttributeSetInstanceExtensionFieldGroupVersion;
+			return this.attributeSetInstanceExtensionFieldGroupVersion;
 		}
 
 		setAttributeSetInstanceExtensionFieldGroupVersion(attributeSetInstanceExtensionFieldGroupVersion: string) {
-			this.AttributeSetInstanceExtensionFieldGroupVersion = attributeSetInstanceExtensionFieldGroupVersion;
+			this.attributeSetInstanceExtensionFieldGroupVersion = attributeSetInstanceExtensionFieldGroupVersion;
 		}
 
 	}

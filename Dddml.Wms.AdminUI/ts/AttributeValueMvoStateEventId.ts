@@ -2,27 +2,27 @@ namespace Dddml.Wms.Domain {
 
 	export class AttributeValueMvoStateEventId {
 
-		private AttributeValueId: AttributeValueId;
+		private attributeValueId: AttributeValueId;
 
 		getAttributeValueId(): AttributeValueId {
-			if(!this.AttributeValueId) {
-				this.AttributeValueId = new AttributeValueId(); 
+			if(!this.attributeValueId) {
+				this.attributeValueId = new AttributeValueId(); 
 			}
-			return this.AttributeValueId;
+			return this.attributeValueId;
 		}
 
 		setAttributeValueId(attributeValueId: AttributeValueId) {
-			this.AttributeValueId = attributeValueId;
+			this.attributeValueId = attributeValueId;
 		}
 
-		private AttributeVersion: string;
+		private attributeVersion: string;
 
 		getAttributeVersion(): string {
-			return this.AttributeVersion;
+			return this.attributeVersion;
 		}
 
 		setAttributeVersion(attributeVersion: string) {
-			this.AttributeVersion = attributeVersion;
+			this.attributeVersion = attributeVersion;
 		}
 
 	}

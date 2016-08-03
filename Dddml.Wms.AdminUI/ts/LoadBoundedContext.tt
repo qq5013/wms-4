@@ -79,7 +79,7 @@
 	//boundedContext.SetSerializationAnnotationTypes(GetSerializationAnnotationTypes());
 	
 	boundedContext.SetTypeScriptTypes(GetTypeScriptTypes());
-
+	boundedContext.SetTypeScriptJsonUsingCamelCasePropertyName(true);
 #>
 <#+
 	

@@ -2,24 +2,24 @@ namespace Dddml.Wms.Domain {
 
 	export class WarehouseStateEventId {
 
-		private WarehouseId: string;
+		private warehouseId: string;
 
 		getWarehouseId(): string {
-			return this.WarehouseId;
+			return this.warehouseId;
 		}
 
 		setWarehouseId(warehouseId: string) {
-			this.WarehouseId = warehouseId;
+			this.warehouseId = warehouseId;
 		}
 
-		private Version: string;
+		private version: string;
 
 		getVersion(): string {
-			return this.Version;
+			return this.version;
 		}
 
 		setVersion(version: string) {
-			this.Version = version;
+			this.version = version;
 		}
 
 	}

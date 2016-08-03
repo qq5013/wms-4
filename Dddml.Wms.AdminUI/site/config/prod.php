@@ -14,3 +14,7 @@ $app['api.auth.username'] = 'test@dddml.org';
 $app['api.auth.password'] = '123456Abc!';
 $app['api.auth.clientId'] = '54fa1208384f4762a3ace231dbdbe88d';
 $app['serializer.src']    = __DIR__ . "/../vendor/jms/serializer/src";
+
+$app['form.path'] = __DIR__ . '/../form';
+
+$app['locale'] = 'zh_CN';

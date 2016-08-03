@@ -20,8 +20,14 @@ class RoleControllerProvider implements ControllerProviderInterface
 
         $controllers->get('/', [$this, 'roles'])
             ->bind('roles');
+
+        $controllers->match('/new', [$this, 'create'])
+            ->method('GET|POST')
+            ->bind('create_role');
+
         $controllers->get('/{id}', [$this, 'role'])
             ->bind('role');
+
 
         return $controllers;
     }
@@ -58,6 +64,15 @@ class RoleControllerProvider implements ControllerProviderInterface
 
         return $app->render('roles/role.twig', [
             'entity' => $entity,
+        ]);
+    }
+
+    public function create(Application $app, Request $request)
+    {
+        $form = require $app['form.path'] . '/role_form.php';
+
+        return $app->render('roles/create.twig', [
+            'form' => $form->createView(),
         ]);
     }
 }

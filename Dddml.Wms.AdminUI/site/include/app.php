@@ -3,6 +3,7 @@ use Application\Application;
 use Application\EventListenerProvider\JsonProxyListenerProvider;
 use Application\ServiceProvider\DddmlServiceProvider;
 use Silex\Provider\AssetServiceProvider;
+use Silex\Provider\FormServiceProvider;
 use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\ServiceControllerServiceProvider;
 use Silex\Provider\HttpFragmentServiceProvider;
@@ -18,6 +19,8 @@ $app['twig'] = $app->extend('twig', function ($twig, $app) {
     return $twig;
 });
 
+$app->register(new FormServiceProvider());
+$app->register(new Silex\Provider\TranslationServiceProvider());
 $app->register(new DddmlServiceProvider());
 $app->register(new JsonProxyListenerProvider());
 

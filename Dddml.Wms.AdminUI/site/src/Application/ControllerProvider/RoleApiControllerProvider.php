@@ -6,13 +6,13 @@
  */
 namespace Application\ControllerProvider;
 
+use Dddml\Wms\HttpClient\CreateRoleRequest;
+use Dddml\Wms\HttpClient\RoleQueryRequest;
+use Dddml\Wms\HttpClient\RolesQueryRequest;
 use Silex\Api\ControllerProviderInterface;
 use Silex\Application;
 use Silex\ControllerCollection;
 use Symfony\Component\HttpFoundation\Request;
-use Wms\HttpClient\CreateRoleRequest;
-use Wms\HttpClient\RoleQueryRequest;
-use Wms\HttpClient\RolesQueryRequest;
 
 class RoleApiControllerProvider implements ControllerProviderInterface
 {

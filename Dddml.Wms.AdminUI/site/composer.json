@@ -34,7 +34,7 @@
         "psr-4": {
             "": "src/",
             "Dddml\\": "../../Dddml.Wms.HttpServices.PhpClient/src/Dddml/",
-            "Wms\\": "../../Dddml.Wms.HttpServices.PhpClient/Wms/"
+            "Dddml\\Wms\\": "../../Dddml.Wms.HttpServices.PhpClient/Dddml/Wms/"
         }
     },
     "extra": {

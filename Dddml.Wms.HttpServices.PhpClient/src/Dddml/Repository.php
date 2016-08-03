@@ -10,7 +10,7 @@ use ICanBoogie\Inflector;
 
 class Repository
 {
-    public    $baseNamespace = 'Wms\\HttpClient\\';
+    public    $baseNamespace = 'Dddml\\Wms\\HttpClient\\';
     protected $name;
     protected $entityManager;
     protected $queryExecutor;

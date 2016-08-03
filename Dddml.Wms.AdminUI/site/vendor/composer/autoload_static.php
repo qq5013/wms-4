@@ -20,10 +20,6 @@ class ComposerStaticInit9001c896d4b5cae3c3a3862f84451521
     );
 
     public static $prefixLengthsPsr4 = array (
-        'W' => 
-        array (
-            'Wms\\' => 4,
-        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Util\\' => 22,
@@ -81,15 +77,12 @@ class ComposerStaticInit9001c896d4b5cae3c3a3862f84451521
         'D' => 
         array (
             'Doctrine\\Instantiator\\' => 22,
+            'Dddml\\Wms\\' => 10,
             'Dddml\\' => 6,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Wms\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/../../Dddml.Wms.HttpServices.PhpClient/Wms',
-        ),
         'Symfony\\Polyfill\\Util\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-util',
@@ -249,6 +242,10 @@ class ComposerStaticInit9001c896d4b5cae3c3a3862f84451521
         'Doctrine\\Instantiator\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
+        ),
+        'Dddml\\Wms\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/../../Dddml.Wms.HttpServices.PhpClient/Dddml/Wms',
         ),
         'Dddml\\' => 
         array (

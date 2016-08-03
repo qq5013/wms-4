@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Wms\\' => array($baseDir . '/../../Dddml.Wms.HttpServices.PhpClient/Wms'),
     'Symfony\\Polyfill\\Util\\' => array($vendorDir . '/symfony/polyfill-util'),
     'Symfony\\Polyfill\\Php70\\' => array($vendorDir . '/symfony/polyfill-php70'),
     'Symfony\\Polyfill\\Php56\\' => array($vendorDir . '/symfony/polyfill-php56'),
@@ -47,6 +46,7 @@ return array(
     'GuzzleHttp\\Promise\\' => array($vendorDir . '/guzzlehttp/promises/src'),
     'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),
     'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
+    'Dddml\\Wms\\' => array($baseDir . '/../../Dddml.Wms.HttpServices.PhpClient/Dddml/Wms'),
     'Dddml\\' => array($baseDir . '/../../Dddml.Wms.HttpServices.PhpClient/src/Dddml'),
     '' => array($baseDir . '/src'),
 );

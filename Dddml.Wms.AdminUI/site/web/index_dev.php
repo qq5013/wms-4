@@ -14,7 +14,7 @@ if (isset($_SERVER['HTTP_CLIENT_IP'])
 
 require_once __DIR__.'/../vendor/autoload.php';
 
-Debug::enable();
+Debug::enable(E_ALL & ~E_NOTICE);
 
 $app = require __DIR__.'/../include/app.php';
 require __DIR__.'/../config/dev.php';

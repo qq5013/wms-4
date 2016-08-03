@@ -91,11 +91,8 @@ class DateHandler implements SubscribingHandlerInterface
     {
         $timezone = isset($type['params'][1]) ? new \DateTimeZone($type['params'][1]) : $this->defaultTimezone;
         $format   = $this->getFormat($type);
-        $datetime = \DateTime::createFromFormat($format, (string)$data, $timezone);
 
-        if (false === $datetime) {
-            $datetime = \DateTime::createFromFormat('Y-m-d\TH:i:s', (string)$data, $timezone);
-        }
+        $datetime = new \DateTime($data, $timezone);
 
         if (false === $datetime) {
             throw new RuntimeException(sprintf('Invalid datetime "%s", expected format %s.', $data, $format));

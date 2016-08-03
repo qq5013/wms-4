@@ -60,6 +60,10 @@ class ComposerStaticInit9001c896d4b5cae3c3a3862f84451521
             'Symfony\\Bridge\\Monolog\\' => 23,
             'Silex\\' => 6,
         ),
+        'R' => 
+        array (
+            'Ramsey\\Uuid\\' => 12,
+        ),
         'P' => 
         array (
             'Psr\\Http\\Message\\' => 17,
@@ -217,6 +221,10 @@ class ComposerStaticInit9001c896d4b5cae3c3a3862f84451521
         'Silex\\' => 
         array (
             0 => __DIR__ . '/..' . '/silex/silex/src/Silex',
+        ),
+        'Ramsey\\Uuid\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ramsey/uuid/src',
         ),
         'Psr\\Http\\Message\\' => 
         array (

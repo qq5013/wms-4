@@ -5,6 +5,7 @@ namespace Wms\Domain\Metadata;
 
 class UserMetadata
 {
+    const ID           = 'userId';
     const VERSION      = 'version';
     const ACTIVE       = 'active';
     const DELETED      = 'deleted';

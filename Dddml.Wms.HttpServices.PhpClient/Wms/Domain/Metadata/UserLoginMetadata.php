@@ -5,6 +5,7 @@ namespace Wms\Domain\Metadata;
 
 class UserLoginMetadata
 {
+    const ID           = 'loginKey';
     const VERSION      = 'version';
     const ACTIVE       = 'active';
     const DELETED      = 'deleted';

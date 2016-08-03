@@ -5,6 +5,7 @@ namespace Wms\Domain\Metadata;
 
 class LocatorMetadata
 {
+    const ID           = 'locatorId';
     const VERSION      = 'version';
     const ACTIVE       = 'active';
     const DELETED      = 'deleted';

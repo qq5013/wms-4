@@ -5,6 +5,7 @@ namespace Wms\Domain\Metadata;
 
 class InOutMetadata
 {
+    const ID           = 'documentNumber';
     const VERSION      = 'version';
     const ACTIVE       = 'active';
     const DELETED      = 'deleted';

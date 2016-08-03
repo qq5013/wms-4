@@ -5,6 +5,7 @@ namespace Wms\Domain\Metadata;
 
 class PermissionMetadata
 {
+    const ID           = 'permissionId';
     const VERSION      = 'version';
     const ACTIVE       = 'active';
     const DELETED      = 'deleted';

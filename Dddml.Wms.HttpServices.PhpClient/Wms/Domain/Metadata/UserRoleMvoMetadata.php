@@ -5,6 +5,7 @@ namespace Wms\Domain\Metadata;
 
 class UserRoleMvoMetadata
 {
+    const ID           = 'userRoleId';
     const VERSION      = 'userVersion';
     const ACTIVE       = 'active';
     const DELETED      = 'deleted';

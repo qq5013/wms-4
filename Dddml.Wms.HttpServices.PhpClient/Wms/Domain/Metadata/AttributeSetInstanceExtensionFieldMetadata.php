@@ -5,6 +5,7 @@ namespace Wms\Domain\Metadata;
 
 class AttributeSetInstanceExtensionFieldMetadata
 {
+    const ID           = 'index';
     const VERSION      = 'version';
     const ACTIVE       = 'active';
     const DELETED      = 'deleted';

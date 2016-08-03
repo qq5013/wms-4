@@ -5,6 +5,7 @@ namespace Wms\Domain\Metadata;
 
 class AudienceMetadata
 {
+    const ID           = 'clientId';
     const VERSION      = 'version';
     const ACTIVE       = 'active';
     const DELETED      = 'deleted';

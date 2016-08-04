@@ -6,31 +6,31 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 return $app['form.factory']->createBuilder(FormType::class, $data)
     ->add('documentNumber', TextType::class, [
         'required' => true,
-        'label'    => 'DocumentNumber',
+        'label'    => 'Document Number',
     ])
-    ->add('isSOTransaction', ChoiceType::class, [
+    ->add('isSOTransaction', CheckboxType::class, [
         'required' => false,
-        'label'    => 'IsSOTransaction',
+        'label'    => 'Is SO Transaction',
     ])
     ->add('documentStatus', TextType::class, [
         'required' => false,
-        'label'    => 'DocumentStatus',
+        'label'    => 'Document Status',
     ])
-    ->add('posted', ChoiceType::class, [
+    ->add('posted', CheckboxType::class, [
         'required' => false,
         'label'    => 'Posted',
     ])
-    ->add('processing', ChoiceType::class, [
+    ->add('processing', CheckboxType::class, [
         'required' => false,
         'label'    => 'Processing',
     ])
-    ->add('processed', ChoiceType::class, [
+    ->add('processed', CheckboxType::class, [
         'required' => false,
         'label'    => 'Processed',
     ])
     ->add('documentType', IntegerType::class, [
         'required' => false,
-        'label'    => 'DocumentType',
+        'label'    => 'Document Type',
     ])
     ->add('description', TextType::class, [
         'required' => false,
@@ -38,87 +38,87 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
     ])
     ->add('orderNumber', TextType::class, [
         'required' => false,
-        'label'    => 'OrderNumber',
+        'label'    => 'Order Number',
     ])
     ->add('dateOrdered', DateTimeType::class, [
         'required' => false,
-        'label'    => 'DateOrdered',
+        'label'    => 'Date Ordered',
     ])
-    ->add('isPrinted', ChoiceType::class, [
+    ->add('isPrinted', CheckboxType::class, [
         'required' => false,
-        'label'    => 'IsPrinted',
+        'label'    => 'Is Printed',
     ])
     ->add('movementType', TextType::class, [
         'required' => false,
-        'label'    => 'MovementType',
+        'label'    => 'Movement Type',
     ])
     ->add('movementDate', DateTimeType::class, [
         'required' => false,
-        'label'    => 'MovementDate',
+        'label'    => 'Movement Date',
     ])
     ->add('businessPartnerId', TextType::class, [
         'required' => false,
-        'label'    => 'BusinessPartnerId',
+        'label'    => 'Business Partner Id',
     ])
     ->add('warehouseId', TextType::class, [
         'required' => false,
-        'label'    => 'WarehouseId',
+        'label'    => 'Warehouse Id',
     ])
     ->add('poReference', TextType::class, [
         'required' => false,
-        'label'    => 'POReference',
+        'label'    => 'PO Reference',
     ])
     ->add('freightAmount', MoneyType::class, [
         'required' => false,
-        'label'    => 'FreightAmount',
+        'label'    => 'Freight Amount',
     ])
     ->add('shipperId', TextType::class, [
         'required' => false,
-        'label'    => 'ShipperId',
+        'label'    => 'Shipper Id',
     ])
     ->add('chargeAmount', MoneyType::class, [
         'required' => false,
-        'label'    => 'ChargeAmount',
+        'label'    => 'Charge Amount',
     ])
     ->add('datePrinted', DateTimeType::class, [
         'required' => false,
-        'label'    => 'DatePrinted',
+        'label'    => 'Date Printed',
     ])
     ->add('salesRepresentative', TextType::class, [
         'required' => false,
-        'label'    => 'SalesRepresentative',
+        'label'    => 'Sales Representative',
     ])
     ->add('numberOfPackages', IntegerType::class, [
         'required' => false,
-        'label'    => 'NumberOfPackages',
+        'label'    => 'Number Of Packages',
     ])
     ->add('pickDate', DateTimeType::class, [
         'required' => false,
-        'label'    => 'PickDate',
+        'label'    => 'Pick Date',
     ])
     ->add('shipDate', DateTimeType::class, [
         'required' => false,
-        'label'    => 'ShipDate',
+        'label'    => 'Ship Date',
     ])
     ->add('trackingNumber', TextType::class, [
         'required' => false,
-        'label'    => 'TrackingNumber',
+        'label'    => 'Tracking Number',
     ])
     ->add('dateReceived', DateTimeType::class, [
         'required' => false,
-        'label'    => 'DateReceived',
+        'label'    => 'Date Received',
     ])
-    ->add('isInTransit', ChoiceType::class, [
+    ->add('isInTransit', CheckboxType::class, [
         'required' => false,
-        'label'    => 'IsInTransit',
+        'label'    => 'Is In Transit',
     ])
-    ->add('isApproved', ChoiceType::class, [
+    ->add('isApproved', CheckboxType::class, [
         'required' => false,
-        'label'    => 'IsApproved',
+        'label'    => 'Is Approved',
     ])
-    ->add('isInDispute', ChoiceType::class, [
+    ->add('isInDispute', CheckboxType::class, [
         'required' => false,
-        'label'    => 'IsInDispute',
+        'label'    => 'Is In Dispute',
     ])
     ->add('volume', NumberType::class, [
         'required' => false,
@@ -130,21 +130,21 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
     ])
     ->add('rmaNumber', TextType::class, [
         'required' => false,
-        'label'    => 'RmaNumber',
+        'label'    => 'Rma Number',
     ])
     ->add('reversalNumber', TextType::class, [
         'required' => false,
-        'label'    => 'ReversalNumber',
+        'label'    => 'Reversal Number',
     ])
-    ->add('isDropShip', ChoiceType::class, [
+    ->add('isDropShip', CheckboxType::class, [
         'required' => false,
-        'label'    => 'IsDropShip',
+        'label'    => 'Is Drop Ship',
     ])
     ->add('dropShipBusinessPartnerId', TextType::class, [
         'required' => false,
-        'label'    => 'DropShipBusinessPartnerId',
+        'label'    => 'Drop Ship Business Partner Id',
     ])
-    ->add('active', ChoiceType::class, [
+    ->add('active', CheckboxType::class, [
         'required' => false,
         'label'    => 'Active',
     ])
@@ -154,19 +154,19 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
     ])
     ->add('createdBy', TextType::class, [
         'required' => false,
-        'label'    => 'CreatedBy',
+        'label'    => 'Created By',
     ])
     ->add('createdAt', DateTimeType::class, [
         'required' => false,
-        'label'    => 'CreatedAt',
+        'label'    => 'Created At',
     ])
     ->add('updatedBy', TextType::class, [
         'required' => false,
-        'label'    => 'UpdatedBy',
+        'label'    => 'Updated By',
     ])
     ->add('updatedAt', DateTimeType::class, [
         'required' => false,
-        'label'    => 'UpdatedAt',
+        'label'    => 'Updated At',
     ])
     ->getForm();
 

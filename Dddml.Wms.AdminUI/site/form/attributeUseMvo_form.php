@@ -6,83 +6,83 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 return $app['form.factory']->createBuilder(FormType::class, $data)
     ->add('sequenceNumber', IntegerType::class, [
         'required' => false,
-        'label'    => 'SequenceNumber',
+        'label'    => 'Sequence Number',
     ])
     ->add('version', IntegerType::class, [
         'required' => false,
         'label'    => 'Version',
     ])
-    ->add('active', ChoiceType::class, [
+    ->add('active', CheckboxType::class, [
         'required' => false,
         'label'    => 'Active',
     ])
     ->add('attributeSetName', TextType::class, [
         'required' => false,
-        'label'    => 'AttributeSetName',
+        'label'    => 'Attribute Set Name',
     ])
     ->add('attributeSetOrganizationId', TextType::class, [
         'required' => false,
-        'label'    => 'AttributeSetOrganizationId',
+        'label'    => 'Attribute Set Organization Id',
     ])
     ->add('attributeSetDescription', TextType::class, [
         'required' => false,
-        'label'    => 'AttributeSetDescription',
+        'label'    => 'Attribute Set Description',
     ])
     ->add('attributeSetSerialNumberAttributeId', TextType::class, [
         'required' => false,
-        'label'    => 'AttributeSetSerialNumberAttributeId',
+        'label'    => 'Attribute Set Serial Number Attribute Id',
     ])
     ->add('attributeSetLotAttributeId', TextType::class, [
         'required' => false,
-        'label'    => 'AttributeSetLotAttributeId',
+        'label'    => 'Attribute Set Lot Attribute Id',
     ])
     ->add('attributeSetReferenceId', TextType::class, [
         'required' => false,
-        'label'    => 'AttributeSetReferenceId',
+        'label'    => 'Attribute Set Reference Id',
     ])
     ->add('attributeSetCreatedBy', TextType::class, [
         'required' => false,
-        'label'    => 'AttributeSetCreatedBy',
+        'label'    => 'Attribute Set Created By',
     ])
     ->add('attributeSetCreatedAt', DateTimeType::class, [
         'required' => false,
-        'label'    => 'AttributeSetCreatedAt',
+        'label'    => 'Attribute Set Created At',
     ])
     ->add('attributeSetUpdatedBy', TextType::class, [
         'required' => false,
-        'label'    => 'AttributeSetUpdatedBy',
+        'label'    => 'Attribute Set Updated By',
     ])
     ->add('attributeSetUpdatedAt', DateTimeType::class, [
         'required' => false,
-        'label'    => 'AttributeSetUpdatedAt',
+        'label'    => 'Attribute Set Updated At',
     ])
-    ->add('attributeSetActive', ChoiceType::class, [
+    ->add('attributeSetActive', CheckboxType::class, [
         'required' => false,
-        'label'    => 'AttributeSetActive',
+        'label'    => 'Attribute Set Active',
     ])
-    ->add('attributeSetDeleted', ChoiceType::class, [
+    ->add('attributeSetDeleted', CheckboxType::class, [
         'required' => false,
-        'label'    => 'AttributeSetDeleted',
+        'label'    => 'Attribute Set Deleted',
     ])
     ->add('attributeSetVersion', IntegerType::class, [
         'required' => false,
-        'label'    => 'AttributeSetVersion',
+        'label'    => 'Attribute Set Version',
     ])
     ->add('createdBy', TextType::class, [
         'required' => false,
-        'label'    => 'CreatedBy',
+        'label'    => 'Created By',
     ])
     ->add('createdAt', DateTimeType::class, [
         'required' => false,
-        'label'    => 'CreatedAt',
+        'label'    => 'Created At',
     ])
     ->add('updatedBy', TextType::class, [
         'required' => false,
-        'label'    => 'UpdatedBy',
+        'label'    => 'Updated By',
     ])
     ->add('updatedAt', DateTimeType::class, [
         'required' => false,
-        'label'    => 'UpdatedAt',
+        'label'    => 'Updated At',
     ])
     ->getForm();
 

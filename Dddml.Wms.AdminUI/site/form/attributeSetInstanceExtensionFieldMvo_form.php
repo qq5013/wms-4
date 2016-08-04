@@ -28,73 +28,73 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'Version',
     ])
-    ->add('active', ChoiceType::class, [
+    ->add('active', CheckboxType::class, [
         'required' => false,
         'label'    => 'Active',
     ])
     ->add('attrSetInstEFGroupFieldType', TextType::class, [
         'required' => false,
-        'label'    => 'AttrSetInstEFGroupFieldType',
+        'label'    => 'Attr Set Inst EF Group Field Type',
     ])
     ->add('attrSetInstEFGroupFieldLength', IntegerType::class, [
         'required' => false,
-        'label'    => 'AttrSetInstEFGroupFieldLength',
+        'label'    => 'Attr Set Inst EF Group Field Length',
     ])
     ->add('attrSetInstEFGroupFieldCount', IntegerType::class, [
         'required' => false,
-        'label'    => 'AttrSetInstEFGroupFieldCount',
+        'label'    => 'Attr Set Inst EF Group Field Count',
     ])
     ->add('attrSetInstEFGroupNameFormat', TextType::class, [
         'required' => false,
-        'label'    => 'AttrSetInstEFGroupNameFormat',
+        'label'    => 'Attr Set Inst EF Group Name Format',
     ])
     ->add('attrSetInstEFGroupDescription', TextType::class, [
         'required' => false,
-        'label'    => 'AttrSetInstEFGroupDescription',
+        'label'    => 'Attr Set Inst EF Group Description',
     ])
     ->add('attrSetInstEFGroupCreatedBy', TextType::class, [
         'required' => false,
-        'label'    => 'AttrSetInstEFGroupCreatedBy',
+        'label'    => 'Attr Set Inst EF Group Created By',
     ])
     ->add('attrSetInstEFGroupCreatedAt', DateTimeType::class, [
         'required' => false,
-        'label'    => 'AttrSetInstEFGroupCreatedAt',
+        'label'    => 'Attr Set Inst EF Group Created At',
     ])
     ->add('attrSetInstEFGroupUpdatedBy', TextType::class, [
         'required' => false,
-        'label'    => 'AttrSetInstEFGroupUpdatedBy',
+        'label'    => 'Attr Set Inst EF Group Updated By',
     ])
     ->add('attrSetInstEFGroupUpdatedAt', DateTimeType::class, [
         'required' => false,
-        'label'    => 'AttrSetInstEFGroupUpdatedAt',
+        'label'    => 'Attr Set Inst EF Group Updated At',
     ])
-    ->add('attrSetInstEFGroupActive', ChoiceType::class, [
+    ->add('attrSetInstEFGroupActive', CheckboxType::class, [
         'required' => false,
-        'label'    => 'AttrSetInstEFGroupActive',
+        'label'    => 'Attr Set Inst EF Group Active',
     ])
-    ->add('attrSetInstEFGroupDeleted', ChoiceType::class, [
+    ->add('attrSetInstEFGroupDeleted', CheckboxType::class, [
         'required' => false,
-        'label'    => 'AttrSetInstEFGroupDeleted',
+        'label'    => 'Attr Set Inst EF Group Deleted',
     ])
     ->add('attrSetInstEFGroupVersion', IntegerType::class, [
         'required' => false,
-        'label'    => 'AttrSetInstEFGroupVersion',
+        'label'    => 'Attr Set Inst EF Group Version',
     ])
     ->add('createdBy', TextType::class, [
         'required' => false,
-        'label'    => 'CreatedBy',
+        'label'    => 'Created By',
     ])
     ->add('createdAt', DateTimeType::class, [
         'required' => false,
-        'label'    => 'CreatedAt',
+        'label'    => 'Created At',
     ])
     ->add('updatedBy', TextType::class, [
         'required' => false,
-        'label'    => 'UpdatedBy',
+        'label'    => 'Updated By',
     ])
     ->add('updatedAt', DateTimeType::class, [
         'required' => false,
-        'label'    => 'UpdatedAt',
+        'label'    => 'Updated At',
     ])
     ->getForm();
 

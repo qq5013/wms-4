@@ -129,8 +129,8 @@
 	private IDictionary<string, string> GetSymfonyFieldTypes()
 	{
 		var dict = new Dictionary<string, string>();
-		dict.Add("bool", "ChoiceType");
-		dict.Add("bool?", "ChoiceType");
+		dict.Add("bool", "CheckboxType");
+		dict.Add("bool?", "CheckboxType");
 		dict.Add("DateTime", "DateTimeType");
 		dict.Add("DateTime?", "DateTimeType");
 		dict.Add("decimal", "NumberType");

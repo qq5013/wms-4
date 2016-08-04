@@ -6,7 +6,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 return $app['form.factory']->createBuilder(FormType::class, $data)
     ->add('permissionId', TextType::class, [
         'required' => true,
-        'label'    => 'PermissionId',
+        'label'    => 'Permission Id',
     ])
     ->add('name', TextType::class, [
         'required' => false,
@@ -14,13 +14,13 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
     ])
     ->add('parentPermissionId', TextType::class, [
         'required' => false,
-        'label'    => 'ParentPermissionId',
+        'label'    => 'Parent Permission Id',
     ])
     ->add('description', TextType::class, [
         'required' => false,
         'label'    => 'Description',
     ])
-    ->add('active', ChoiceType::class, [
+    ->add('active', CheckboxType::class, [
         'required' => false,
         'label'    => 'Active',
     ])
@@ -30,19 +30,19 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
     ])
     ->add('createdBy', TextType::class, [
         'required' => false,
-        'label'    => 'CreatedBy',
+        'label'    => 'Created By',
     ])
     ->add('createdAt', DateTimeType::class, [
         'required' => false,
-        'label'    => 'CreatedAt',
+        'label'    => 'Created At',
     ])
     ->add('updatedBy', TextType::class, [
         'required' => false,
-        'label'    => 'UpdatedBy',
+        'label'    => 'Updated By',
     ])
     ->add('updatedAt', DateTimeType::class, [
         'required' => false,
-        'label'    => 'UpdatedAt',
+        'label'    => 'Updated At',
     ])
     ->getForm();
 

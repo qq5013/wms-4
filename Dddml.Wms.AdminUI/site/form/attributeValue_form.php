@@ -18,9 +18,9 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
     ])
     ->add('referenceId', TextType::class, [
         'required' => false,
-        'label'    => 'ReferenceId',
+        'label'    => 'Reference Id',
     ])
-    ->add('active', ChoiceType::class, [
+    ->add('active', CheckboxType::class, [
         'required' => false,
         'label'    => 'Active',
     ])
@@ -30,23 +30,23 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
     ])
     ->add('attributeId', TextType::class, [
         'required' => false,
-        'label'    => 'AttributeId',
+        'label'    => 'Attribute Id',
     ])
     ->add('createdBy', TextType::class, [
         'required' => false,
-        'label'    => 'CreatedBy',
+        'label'    => 'Created By',
     ])
     ->add('createdAt', DateTimeType::class, [
         'required' => false,
-        'label'    => 'CreatedAt',
+        'label'    => 'Created At',
     ])
     ->add('updatedBy', TextType::class, [
         'required' => false,
-        'label'    => 'UpdatedBy',
+        'label'    => 'Updated By',
     ])
     ->add('updatedAt', DateTimeType::class, [
         'required' => false,
-        'label'    => 'UpdatedAt',
+        'label'    => 'Updated At',
     ])
     ->getForm();
 

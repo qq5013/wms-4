@@ -6,7 +6,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 return $app['form.factory']->createBuilder(FormType::class, $data)
     ->add('lineNumber', IntegerType::class, [
         'required' => false,
-        'label'    => 'LineNumber',
+        'label'    => 'Line Number',
     ])
     ->add('description', TextType::class, [
         'required' => false,
@@ -14,7 +14,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
     ])
     ->add('locatorId', TextType::class, [
         'required' => false,
-        'label'    => 'LocatorId',
+        'label'    => 'Locator Id',
     ])
     ->add('product', TextType::class, [
         'required' => false,
@@ -22,57 +22,57 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
     ])
     ->add('uomId', TextType::class, [
         'required' => false,
-        'label'    => 'UomId',
+        'label'    => 'Uom Id',
     ])
     ->add('movementQuantity', NumberType::class, [
         'required' => false,
-        'label'    => 'MovementQuantity',
+        'label'    => 'Movement Quantity',
     ])
     ->add('confirmedQuantity', NumberType::class, [
         'required' => false,
-        'label'    => 'ConfirmedQuantity',
+        'label'    => 'Confirmed Quantity',
     ])
     ->add('scrappedQuantity', NumberType::class, [
         'required' => false,
-        'label'    => 'ScrappedQuantity',
+        'label'    => 'Scrapped Quantity',
     ])
     ->add('targetQuantity', NumberType::class, [
         'required' => false,
-        'label'    => 'TargetQuantity',
+        'label'    => 'Target Quantity',
     ])
     ->add('pickedQuantity', NumberType::class, [
         'required' => false,
-        'label'    => 'PickedQuantity',
+        'label'    => 'Picked Quantity',
     ])
-    ->add('isInvoiced', ChoiceType::class, [
+    ->add('isInvoiced', CheckboxType::class, [
         'required' => false,
-        'label'    => 'IsInvoiced',
+        'label'    => 'Is Invoiced',
     ])
     ->add('attributeSetInstanceId', TextType::class, [
         'required' => false,
-        'label'    => 'AttributeSetInstanceId',
+        'label'    => 'Attribute Set Instance Id',
     ])
-    ->add('isDescription', ChoiceType::class, [
+    ->add('isDescription', CheckboxType::class, [
         'required' => false,
-        'label'    => 'IsDescription',
+        'label'    => 'Is Description',
     ])
-    ->add('processed', ChoiceType::class, [
+    ->add('processed', CheckboxType::class, [
         'required' => false,
         'label'    => 'Processed',
     ])
     ->add('quantityEntered', NumberType::class, [
         'required' => false,
-        'label'    => 'QuantityEntered',
+        'label'    => 'Quantity Entered',
     ])
     ->add('rmaLineNumber', IntegerType::class, [
         'required' => false,
-        'label'    => 'RmaLineNumber',
+        'label'    => 'Rma Line Number',
     ])
     ->add('reversalLineNumber', IntegerType::class, [
         'required' => false,
-        'label'    => 'ReversalLineNumber',
+        'label'    => 'Reversal Line Number',
     ])
-    ->add('active', ChoiceType::class, [
+    ->add('active', CheckboxType::class, [
         'required' => false,
         'label'    => 'Active',
     ])
@@ -82,23 +82,23 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
     ])
     ->add('inOutDocumentNumber', TextType::class, [
         'required' => false,
-        'label'    => 'InOutDocumentNumber',
+        'label'    => 'In Out Document Number',
     ])
     ->add('createdBy', TextType::class, [
         'required' => false,
-        'label'    => 'CreatedBy',
+        'label'    => 'Created By',
     ])
     ->add('createdAt', DateTimeType::class, [
         'required' => false,
-        'label'    => 'CreatedAt',
+        'label'    => 'Created At',
     ])
     ->add('updatedBy', TextType::class, [
         'required' => false,
-        'label'    => 'UpdatedBy',
+        'label'    => 'Updated By',
     ])
     ->add('updatedAt', DateTimeType::class, [
         'required' => false,
-        'label'    => 'UpdatedAt',
+        'label'    => 'Updated At',
     ])
     ->getForm();
 

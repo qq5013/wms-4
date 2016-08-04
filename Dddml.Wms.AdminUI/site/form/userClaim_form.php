@@ -6,17 +6,17 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 return $app['form.factory']->createBuilder(FormType::class, $data)
     ->add('claimId', IntegerType::class, [
         'required' => true,
-        'label'    => 'ClaimId',
+        'label'    => 'Claim Id',
     ])
     ->add('claimType', TextType::class, [
         'required' => false,
-        'label'    => 'ClaimType',
+        'label'    => 'Claim Type',
     ])
     ->add('claimValue', TextType::class, [
         'required' => false,
-        'label'    => 'ClaimValue',
+        'label'    => 'Claim Value',
     ])
-    ->add('active', ChoiceType::class, [
+    ->add('active', CheckboxType::class, [
         'required' => false,
         'label'    => 'Active',
     ])
@@ -26,23 +26,23 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
     ])
     ->add('userId', TextType::class, [
         'required' => false,
-        'label'    => 'UserId',
+        'label'    => 'User Id',
     ])
     ->add('createdBy', TextType::class, [
         'required' => false,
-        'label'    => 'CreatedBy',
+        'label'    => 'Created By',
     ])
     ->add('createdAt', DateTimeType::class, [
         'required' => false,
-        'label'    => 'CreatedAt',
+        'label'    => 'Created At',
     ])
     ->add('updatedBy', TextType::class, [
         'required' => false,
-        'label'    => 'UpdatedBy',
+        'label'    => 'Updated By',
     ])
     ->add('updatedAt', DateTimeType::class, [
         'required' => false,
-        'label'    => 'UpdatedAt',
+        'label'    => 'Updated At',
     ])
     ->getForm();
 

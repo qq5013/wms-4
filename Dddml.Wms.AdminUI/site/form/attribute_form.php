@@ -6,7 +6,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 return $app['form.factory']->createBuilder(FormType::class, $data)
     ->add('attributeId', TextType::class, [
         'required' => true,
-        'label'    => 'AttributeId',
+        'label'    => 'Attribute Id',
     ])
     ->add('name', TextType::class, [
         'required' => false,
@@ -14,41 +14,41 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
     ])
     ->add('organizationId', TextType::class, [
         'required' => false,
-        'label'    => 'OrganizationId',
+        'label'    => 'Organization Id',
     ])
     ->add('description', TextType::class, [
         'required' => false,
         'label'    => 'Description',
     ])
-    ->add('isMandatory', ChoiceType::class, [
+    ->add('isMandatory', CheckboxType::class, [
         'required' => false,
-        'label'    => 'IsMandatory',
+        'label'    => 'Is Mandatory',
     ])
-    ->add('isInstanceAttribute', ChoiceType::class, [
+    ->add('isInstanceAttribute', CheckboxType::class, [
         'required' => false,
-        'label'    => 'IsInstanceAttribute',
+        'label'    => 'Is Instance Attribute',
     ])
     ->add('attributeValueType', TextType::class, [
         'required' => false,
-        'label'    => 'AttributeValueType',
+        'label'    => 'Attribute Value Type',
     ])
     ->add('attributeValueLength', IntegerType::class, [
         'required' => false,
-        'label'    => 'AttributeValueLength',
+        'label'    => 'Attribute Value Length',
     ])
-    ->add('isList', ChoiceType::class, [
+    ->add('isList', CheckboxType::class, [
         'required' => false,
-        'label'    => 'IsList',
+        'label'    => 'Is List',
     ])
     ->add('fieldName', TextType::class, [
         'required' => false,
-        'label'    => 'FieldName',
+        'label'    => 'Field Name',
     ])
     ->add('referenceId', TextType::class, [
         'required' => false,
-        'label'    => 'ReferenceId',
+        'label'    => 'Reference Id',
     ])
-    ->add('active', ChoiceType::class, [
+    ->add('active', CheckboxType::class, [
         'required' => false,
         'label'    => 'Active',
     ])
@@ -58,19 +58,19 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
     ])
     ->add('createdBy', TextType::class, [
         'required' => false,
-        'label'    => 'CreatedBy',
+        'label'    => 'Created By',
     ])
     ->add('createdAt', DateTimeType::class, [
         'required' => false,
-        'label'    => 'CreatedAt',
+        'label'    => 'Created At',
     ])
     ->add('updatedBy', TextType::class, [
         'required' => false,
-        'label'    => 'UpdatedBy',
+        'label'    => 'Updated By',
     ])
     ->add('updatedAt', DateTimeType::class, [
         'required' => false,
-        'label'    => 'UpdatedAt',
+        'label'    => 'Updated At',
     ])
     ->getForm();
 

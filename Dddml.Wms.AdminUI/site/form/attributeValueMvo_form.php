@@ -14,99 +14,99 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
     ])
     ->add('referenceId', TextType::class, [
         'required' => false,
-        'label'    => 'ReferenceId',
+        'label'    => 'Reference Id',
     ])
     ->add('version', IntegerType::class, [
         'required' => false,
         'label'    => 'Version',
     ])
-    ->add('active', ChoiceType::class, [
+    ->add('active', CheckboxType::class, [
         'required' => false,
         'label'    => 'Active',
     ])
     ->add('attributeName', TextType::class, [
         'required' => false,
-        'label'    => 'AttributeName',
+        'label'    => 'Attribute Name',
     ])
     ->add('attributeOrganizationId', TextType::class, [
         'required' => false,
-        'label'    => 'AttributeOrganizationId',
+        'label'    => 'Attribute Organization Id',
     ])
     ->add('attributeDescription', TextType::class, [
         'required' => false,
-        'label'    => 'AttributeDescription',
+        'label'    => 'Attribute Description',
     ])
-    ->add('attributeIsMandatory', ChoiceType::class, [
+    ->add('attributeIsMandatory', CheckboxType::class, [
         'required' => false,
-        'label'    => 'AttributeIsMandatory',
+        'label'    => 'Attribute Is Mandatory',
     ])
-    ->add('attributeIsInstanceAttribute', ChoiceType::class, [
+    ->add('attributeIsInstanceAttribute', CheckboxType::class, [
         'required' => false,
-        'label'    => 'AttributeIsInstanceAttribute',
+        'label'    => 'Attribute Is Instance Attribute',
     ])
     ->add('attributeAttributeValueType', TextType::class, [
         'required' => false,
-        'label'    => 'AttributeAttributeValueType',
+        'label'    => 'Attribute Attribute Value Type',
     ])
     ->add('attributeAttributeValueLength', IntegerType::class, [
         'required' => false,
-        'label'    => 'AttributeAttributeValueLength',
+        'label'    => 'Attribute Attribute Value Length',
     ])
-    ->add('attributeIsList', ChoiceType::class, [
+    ->add('attributeIsList', CheckboxType::class, [
         'required' => false,
-        'label'    => 'AttributeIsList',
+        'label'    => 'Attribute Is List',
     ])
     ->add('attributeFieldName', TextType::class, [
         'required' => false,
-        'label'    => 'AttributeFieldName',
+        'label'    => 'Attribute Field Name',
     ])
     ->add('attributeReferenceId', TextType::class, [
         'required' => false,
-        'label'    => 'AttributeReferenceId',
+        'label'    => 'Attribute Reference Id',
     ])
     ->add('attributeCreatedBy', TextType::class, [
         'required' => false,
-        'label'    => 'AttributeCreatedBy',
+        'label'    => 'Attribute Created By',
     ])
     ->add('attributeCreatedAt', DateTimeType::class, [
         'required' => false,
-        'label'    => 'AttributeCreatedAt',
+        'label'    => 'Attribute Created At',
     ])
     ->add('attributeUpdatedBy', TextType::class, [
         'required' => false,
-        'label'    => 'AttributeUpdatedBy',
+        'label'    => 'Attribute Updated By',
     ])
     ->add('attributeUpdatedAt', DateTimeType::class, [
         'required' => false,
-        'label'    => 'AttributeUpdatedAt',
+        'label'    => 'Attribute Updated At',
     ])
-    ->add('attributeActive', ChoiceType::class, [
+    ->add('attributeActive', CheckboxType::class, [
         'required' => false,
-        'label'    => 'AttributeActive',
+        'label'    => 'Attribute Active',
     ])
-    ->add('attributeDeleted', ChoiceType::class, [
+    ->add('attributeDeleted', CheckboxType::class, [
         'required' => false,
-        'label'    => 'AttributeDeleted',
+        'label'    => 'Attribute Deleted',
     ])
     ->add('attributeVersion', IntegerType::class, [
         'required' => false,
-        'label'    => 'AttributeVersion',
+        'label'    => 'Attribute Version',
     ])
     ->add('createdBy', TextType::class, [
         'required' => false,
-        'label'    => 'CreatedBy',
+        'label'    => 'Created By',
     ])
     ->add('createdAt', DateTimeType::class, [
         'required' => false,
-        'label'    => 'CreatedAt',
+        'label'    => 'Created At',
     ])
     ->add('updatedBy', TextType::class, [
         'required' => false,
-        'label'    => 'UpdatedBy',
+        'label'    => 'Updated By',
     ])
     ->add('updatedAt', DateTimeType::class, [
         'required' => false,
-        'label'    => 'UpdatedAt',
+        'label'    => 'Updated At',
     ])
     ->getForm();
 

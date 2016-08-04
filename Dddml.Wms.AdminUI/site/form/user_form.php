@@ -6,53 +6,53 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 return $app['form.factory']->createBuilder(FormType::class, $data)
     ->add('userId', TextType::class, [
         'required' => true,
-        'label'    => 'UserId',
+        'label'    => 'User Id',
     ])
     ->add('userName', TextType::class, [
         'required' => false,
-        'label'    => 'UserName',
+        'label'    => 'User Name',
     ])
     ->add('accessFailedCount', IntegerType::class, [
         'required' => false,
-        'label'    => 'AccessFailedCount',
+        'label'    => 'Access Failed Count',
     ])
     ->add('email', TextType::class, [
         'required' => false,
         'label'    => 'Email',
     ])
-    ->add('emailConfirmed', ChoiceType::class, [
+    ->add('emailConfirmed', CheckboxType::class, [
         'required' => false,
-        'label'    => 'EmailConfirmed',
+        'label'    => 'Email Confirmed',
     ])
-    ->add('lockoutEnabled', ChoiceType::class, [
+    ->add('lockoutEnabled', CheckboxType::class, [
         'required' => false,
-        'label'    => 'LockoutEnabled',
+        'label'    => 'Lockout Enabled',
     ])
     ->add('lockoutEndDateUtc', DateTimeType::class, [
         'required' => false,
-        'label'    => 'LockoutEndDateUtc',
+        'label'    => 'Lockout End Date Utc',
     ])
     ->add('passwordHash', TextType::class, [
         'required' => false,
-        'label'    => 'PasswordHash',
+        'label'    => 'Password Hash',
     ])
     ->add('phoneNumber', TextType::class, [
         'required' => false,
-        'label'    => 'PhoneNumber',
+        'label'    => 'Phone Number',
     ])
-    ->add('phoneNumberConfirmed', ChoiceType::class, [
+    ->add('phoneNumberConfirmed', CheckboxType::class, [
         'required' => false,
-        'label'    => 'PhoneNumberConfirmed',
+        'label'    => 'Phone Number Confirmed',
     ])
-    ->add('twoFactorEnabled', ChoiceType::class, [
+    ->add('twoFactorEnabled', CheckboxType::class, [
         'required' => false,
-        'label'    => 'TwoFactorEnabled',
+        'label'    => 'Two Factor Enabled',
     ])
     ->add('securityStamp', TextType::class, [
         'required' => false,
-        'label'    => 'SecurityStamp',
+        'label'    => 'Security Stamp',
     ])
-    ->add('active', ChoiceType::class, [
+    ->add('active', CheckboxType::class, [
         'required' => false,
         'label'    => 'Active',
     ])
@@ -62,19 +62,19 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
     ])
     ->add('createdBy', TextType::class, [
         'required' => false,
-        'label'    => 'CreatedBy',
+        'label'    => 'Created By',
     ])
     ->add('createdAt', DateTimeType::class, [
         'required' => false,
-        'label'    => 'CreatedAt',
+        'label'    => 'Created At',
     ])
     ->add('updatedBy', TextType::class, [
         'required' => false,
-        'label'    => 'UpdatedBy',
+        'label'    => 'Updated By',
     ])
     ->add('updatedAt', DateTimeType::class, [
         'required' => false,
-        'label'    => 'UpdatedAt',
+        'label'    => 'Updated At',
     ])
     ->getForm();
 

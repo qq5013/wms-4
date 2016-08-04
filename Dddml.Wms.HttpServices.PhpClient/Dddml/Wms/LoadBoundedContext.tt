@@ -112,7 +112,7 @@
 			dict.Add("int?", "integer");
 			dict.Add("long", "Long");
 			dict.Add("long?", "Long");
-			//dict.Add("Money", "_MONEY_");
+			dict.Add("Money", "Money");
 			dict.Add("string", "string");
 			
 			return dict;
@@ -121,7 +121,7 @@
 	private IDictionary<string, string> GetTypeNamespaces()
 	{
 		var typeNamespaces = new Dictionary<string, string>();
-		typeNamespaces.Add("Money", "NodaMoney");
+		//typeNamespaces.Add("Money", "NodaMoney");
 		return typeNamespaces;
 	}
 

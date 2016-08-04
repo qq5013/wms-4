@@ -9,7 +9,6 @@ use JMS\Serializer\Annotation\Type;
 use Symfony\Component\Routing\Route;
 use Dddml\Serializer\Type\Long;
 use Dddml\Serializer\Type\Decimal;
-use NodaMoney\Money;
 use Dddml\Serializer\Type\Money;
 use Dddml\Wms\Domain\CreateOrMergePatchInOutLineMvo;
 

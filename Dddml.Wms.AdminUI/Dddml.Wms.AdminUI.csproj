@@ -42,6 +42,49 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="site\form\GenerateAggregatesSymfonyForms.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GenerateAggregatesSymfonyForms.txt</LastGenOutput>
+      <LastOutputs>
+.\attribute_form.php
+.\attributeSet_form.php
+.\attributeSetInstance_form.php
+.\attributeSetInstanceExtensionField_form.php
+.\attributeSetInstanceExtensionFieldGroup_form.php
+.\attributeSetInstanceExtensionFieldMvo_form.php
+.\attributeUse_form.php
+.\attributeUseMvo_form.php
+.\attributeValue_form.php
+.\attributeValueMvo_form.php
+.\audience_form.php
+.\GenerateAggregatesSymfonyForms.txt
+.\inOut_form.php
+.\inOutLine_form.php
+.\inOutLineMvo_form.php
+.\locator_form.php
+.\organization_form.php
+.\organizationStructure_form.php
+.\organizationStructureType_form.php
+.\permission_form.php
+.\role_form.php
+.\rolePermission_form.php
+.\user_form.php
+.\userClaim_form.php
+.\userClaimMvo_form.php
+.\userLogin_form.php
+.\userLoginMvo_form.php
+.\userPermission_form.php
+.\userPermissionMvo_form.php
+.\userRole_form.php
+.\userRoleMvo_form.php
+.\warehouse_form.php
+</LastOutputs>
+    </Content>
+    <Content Include="site\form\GenerateAggregatesSymfonyForms.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </Content>
     <Content Include="ts\GenerateBoundedContextDomain.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GenerateBoundedContextDomain.txt</LastGenOutput>
@@ -381,6 +424,101 @@
     <TypeScriptCompile Include="ts\WarehouseStateEventId.ts">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="site\form\attributeSetInstanceExtensionFieldGroup_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\attributeSetInstanceExtensionFieldMvo_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\attributeSetInstanceExtensionField_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\attributeSetInstance_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\attributeSet_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\attributeUseMvo_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\attributeUse_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\attributeValueMvo_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\attributeValue_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\attribute_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\audience_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\inOutLineMvo_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\inOutLine_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\inOut_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\locator_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\organizationStructureType_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\organizationStructure_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\organization_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\permission_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\rolePermission_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\role_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\userClaimMvo_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\userClaim_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\userLoginMvo_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\userLogin_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\userPermissionMvo_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\userPermission_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\userRoleMvo_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\userRole_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\user_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\warehouse_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -91,21 +91,21 @@
 
 	private IDictionary<string, string> GetJavaTypes()
 	{
-            var dict = new Dictionary<string, string>();
-           
-                dict.Add("bool", "Boolean");
-                dict.Add("bool?", "Boolean");
-                dict.Add("DateTime", "Date");
-                dict.Add("DateTime?", "Date");
-                dict.Add("decimal", "BigDecimal");
-                dict.Add("decimal?", "BigDecimal");
-                dict.Add("int", "Integer");
-                dict.Add("int?", "Integer");
-                dict.Add("long", "Long");
-                dict.Add("long?", "Long");
-                dict.Add("Money", "Money");
-                dict.Add("string", "String");
-                dict.Add("String", "String");
+			var dict = new Dictionary<string, string>();
+		   
+			dict.Add("bool", "Boolean");
+			dict.Add("bool?", "Boolean");
+			dict.Add("DateTime", "Date");
+			dict.Add("DateTime?", "Date");
+			dict.Add("decimal", "BigDecimal");
+			dict.Add("decimal?", "BigDecimal");
+			dict.Add("int", "Integer");
+			dict.Add("int?", "Integer");
+			dict.Add("long", "Long");
+			dict.Add("long?", "Long");
+			dict.Add("Money", "Money");
+			dict.Add("string", "String");
+			dict.Add("String", "String");
 			
 			return dict;
 	}

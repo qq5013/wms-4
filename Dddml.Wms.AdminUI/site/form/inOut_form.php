@@ -8,7 +8,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => true,
         'label'    => 'DocumentNumber',
     ])
-    ->add('isSOTransaction', TextType::class, [
+    ->add('isSOTransaction', ChoiceType::class, [
         'required' => false,
         'label'    => 'IsSOTransaction',
     ])
@@ -16,19 +16,19 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'DocumentStatus',
     ])
-    ->add('posted', TextType::class, [
+    ->add('posted', ChoiceType::class, [
         'required' => false,
         'label'    => 'Posted',
     ])
-    ->add('processing', TextType::class, [
+    ->add('processing', ChoiceType::class, [
         'required' => false,
         'label'    => 'Processing',
     ])
-    ->add('processed', TextType::class, [
+    ->add('processed', ChoiceType::class, [
         'required' => false,
         'label'    => 'Processed',
     ])
-    ->add('documentType', TextType::class, [
+    ->add('documentType', IntegerType::class, [
         'required' => false,
         'label'    => 'DocumentType',
     ])
@@ -40,11 +40,11 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'OrderNumber',
     ])
-    ->add('dateOrdered', TextType::class, [
+    ->add('dateOrdered', DateTimeType::class, [
         'required' => false,
         'label'    => 'DateOrdered',
     ])
-    ->add('isPrinted', TextType::class, [
+    ->add('isPrinted', ChoiceType::class, [
         'required' => false,
         'label'    => 'IsPrinted',
     ])
@@ -52,7 +52,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'MovementType',
     ])
-    ->add('movementDate', TextType::class, [
+    ->add('movementDate', DateTimeType::class, [
         'required' => false,
         'label'    => 'MovementDate',
     ])
@@ -68,7 +68,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'POReference',
     ])
-    ->add('freightAmount', TextType::class, [
+    ->add('freightAmount', MoneyType::class, [
         'required' => false,
         'label'    => 'FreightAmount',
     ])
@@ -76,11 +76,11 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'ShipperId',
     ])
-    ->add('chargeAmount', TextType::class, [
+    ->add('chargeAmount', MoneyType::class, [
         'required' => false,
         'label'    => 'ChargeAmount',
     ])
-    ->add('datePrinted', TextType::class, [
+    ->add('datePrinted', DateTimeType::class, [
         'required' => false,
         'label'    => 'DatePrinted',
     ])
@@ -88,15 +88,15 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'SalesRepresentative',
     ])
-    ->add('numberOfPackages', TextType::class, [
+    ->add('numberOfPackages', IntegerType::class, [
         'required' => false,
         'label'    => 'NumberOfPackages',
     ])
-    ->add('pickDate', TextType::class, [
+    ->add('pickDate', DateTimeType::class, [
         'required' => false,
         'label'    => 'PickDate',
     ])
-    ->add('shipDate', TextType::class, [
+    ->add('shipDate', DateTimeType::class, [
         'required' => false,
         'label'    => 'ShipDate',
     ])
@@ -104,27 +104,27 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'TrackingNumber',
     ])
-    ->add('dateReceived', TextType::class, [
+    ->add('dateReceived', DateTimeType::class, [
         'required' => false,
         'label'    => 'DateReceived',
     ])
-    ->add('isInTransit', TextType::class, [
+    ->add('isInTransit', ChoiceType::class, [
         'required' => false,
         'label'    => 'IsInTransit',
     ])
-    ->add('isApproved', TextType::class, [
+    ->add('isApproved', ChoiceType::class, [
         'required' => false,
         'label'    => 'IsApproved',
     ])
-    ->add('isInDispute', TextType::class, [
+    ->add('isInDispute', ChoiceType::class, [
         'required' => false,
         'label'    => 'IsInDispute',
     ])
-    ->add('volume', TextType::class, [
+    ->add('volume', NumberType::class, [
         'required' => false,
         'label'    => 'Volume',
     ])
-    ->add('weight', TextType::class, [
+    ->add('weight', NumberType::class, [
         'required' => false,
         'label'    => 'Weight',
     ])
@@ -136,7 +136,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'ReversalNumber',
     ])
-    ->add('isDropShip', TextType::class, [
+    ->add('isDropShip', ChoiceType::class, [
         'required' => false,
         'label'    => 'IsDropShip',
     ])
@@ -144,11 +144,11 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'DropShipBusinessPartnerId',
     ])
-    ->add('active', TextType::class, [
+    ->add('active', ChoiceType::class, [
         'required' => false,
         'label'    => 'Active',
     ])
-    ->add('version', TextType::class, [
+    ->add('version', IntegerType::class, [
         'required' => false,
         'label'    => 'Version',
     ])
@@ -156,7 +156,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'CreatedBy',
     ])
-    ->add('createdAt', TextType::class, [
+    ->add('createdAt', DateTimeType::class, [
         'required' => false,
         'label'    => 'CreatedAt',
     ])
@@ -164,7 +164,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'UpdatedBy',
     ])
-    ->add('updatedAt', TextType::class, [
+    ->add('updatedAt', DateTimeType::class, [
         'required' => false,
         'label'    => 'UpdatedAt',
     ])

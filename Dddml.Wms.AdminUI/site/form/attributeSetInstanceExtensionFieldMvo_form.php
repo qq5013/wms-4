@@ -12,7 +12,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'Type',
     ])
-    ->add('length', TextType::class, [
+    ->add('length', IntegerType::class, [
         'required' => false,
         'label'    => 'Length',
     ])
@@ -24,11 +24,11 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'Description',
     ])
-    ->add('version', TextType::class, [
+    ->add('version', IntegerType::class, [
         'required' => false,
         'label'    => 'Version',
     ])
-    ->add('active', TextType::class, [
+    ->add('active', ChoiceType::class, [
         'required' => false,
         'label'    => 'Active',
     ])
@@ -36,11 +36,11 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'AttrSetInstEFGroupFieldType',
     ])
-    ->add('attrSetInstEFGroupFieldLength', TextType::class, [
+    ->add('attrSetInstEFGroupFieldLength', IntegerType::class, [
         'required' => false,
         'label'    => 'AttrSetInstEFGroupFieldLength',
     ])
-    ->add('attrSetInstEFGroupFieldCount', TextType::class, [
+    ->add('attrSetInstEFGroupFieldCount', IntegerType::class, [
         'required' => false,
         'label'    => 'AttrSetInstEFGroupFieldCount',
     ])
@@ -56,7 +56,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'AttrSetInstEFGroupCreatedBy',
     ])
-    ->add('attrSetInstEFGroupCreatedAt', TextType::class, [
+    ->add('attrSetInstEFGroupCreatedAt', DateTimeType::class, [
         'required' => false,
         'label'    => 'AttrSetInstEFGroupCreatedAt',
     ])
@@ -64,19 +64,19 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'AttrSetInstEFGroupUpdatedBy',
     ])
-    ->add('attrSetInstEFGroupUpdatedAt', TextType::class, [
+    ->add('attrSetInstEFGroupUpdatedAt', DateTimeType::class, [
         'required' => false,
         'label'    => 'AttrSetInstEFGroupUpdatedAt',
     ])
-    ->add('attrSetInstEFGroupActive', TextType::class, [
+    ->add('attrSetInstEFGroupActive', ChoiceType::class, [
         'required' => false,
         'label'    => 'AttrSetInstEFGroupActive',
     ])
-    ->add('attrSetInstEFGroupDeleted', TextType::class, [
+    ->add('attrSetInstEFGroupDeleted', ChoiceType::class, [
         'required' => false,
         'label'    => 'AttrSetInstEFGroupDeleted',
     ])
-    ->add('attrSetInstEFGroupVersion', TextType::class, [
+    ->add('attrSetInstEFGroupVersion', IntegerType::class, [
         'required' => false,
         'label'    => 'AttrSetInstEFGroupVersion',
     ])
@@ -84,7 +84,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'CreatedBy',
     ])
-    ->add('createdAt', TextType::class, [
+    ->add('createdAt', DateTimeType::class, [
         'required' => false,
         'label'    => 'CreatedAt',
     ])
@@ -92,7 +92,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'UpdatedBy',
     ])
-    ->add('updatedAt', TextType::class, [
+    ->add('updatedAt', DateTimeType::class, [
         'required' => false,
         'label'    => 'UpdatedAt',
     ])

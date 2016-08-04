@@ -20,11 +20,11 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'Description',
     ])
-    ->add('isMandatory', TextType::class, [
+    ->add('isMandatory', ChoiceType::class, [
         'required' => false,
         'label'    => 'IsMandatory',
     ])
-    ->add('isInstanceAttribute', TextType::class, [
+    ->add('isInstanceAttribute', ChoiceType::class, [
         'required' => false,
         'label'    => 'IsInstanceAttribute',
     ])
@@ -32,11 +32,11 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'AttributeValueType',
     ])
-    ->add('attributeValueLength', TextType::class, [
+    ->add('attributeValueLength', IntegerType::class, [
         'required' => false,
         'label'    => 'AttributeValueLength',
     ])
-    ->add('isList', TextType::class, [
+    ->add('isList', ChoiceType::class, [
         'required' => false,
         'label'    => 'IsList',
     ])
@@ -48,11 +48,11 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'ReferenceId',
     ])
-    ->add('active', TextType::class, [
+    ->add('active', ChoiceType::class, [
         'required' => false,
         'label'    => 'Active',
     ])
-    ->add('version', TextType::class, [
+    ->add('version', IntegerType::class, [
         'required' => false,
         'label'    => 'Version',
     ])
@@ -60,7 +60,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'CreatedBy',
     ])
-    ->add('createdAt', TextType::class, [
+    ->add('createdAt', DateTimeType::class, [
         'required' => false,
         'label'    => 'CreatedAt',
     ])
@@ -68,7 +68,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'UpdatedBy',
     ])
-    ->add('updatedAt', TextType::class, [
+    ->add('updatedAt', DateTimeType::class, [
         'required' => false,
         'label'    => 'UpdatedAt',
     ])

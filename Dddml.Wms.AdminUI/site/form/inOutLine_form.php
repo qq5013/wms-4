@@ -4,7 +4,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 return $app['form.factory']->createBuilder(FormType::class, $data)
-    ->add('lineNumber', TextType::class, [
+    ->add('lineNumber', IntegerType::class, [
         'required' => false,
         'label'    => 'LineNumber',
     ])
@@ -24,27 +24,27 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'UomId',
     ])
-    ->add('movementQuantity', TextType::class, [
+    ->add('movementQuantity', NumberType::class, [
         'required' => false,
         'label'    => 'MovementQuantity',
     ])
-    ->add('confirmedQuantity', TextType::class, [
+    ->add('confirmedQuantity', NumberType::class, [
         'required' => false,
         'label'    => 'ConfirmedQuantity',
     ])
-    ->add('scrappedQuantity', TextType::class, [
+    ->add('scrappedQuantity', NumberType::class, [
         'required' => false,
         'label'    => 'ScrappedQuantity',
     ])
-    ->add('targetQuantity', TextType::class, [
+    ->add('targetQuantity', NumberType::class, [
         'required' => false,
         'label'    => 'TargetQuantity',
     ])
-    ->add('pickedQuantity', TextType::class, [
+    ->add('pickedQuantity', NumberType::class, [
         'required' => false,
         'label'    => 'PickedQuantity',
     ])
-    ->add('isInvoiced', TextType::class, [
+    ->add('isInvoiced', ChoiceType::class, [
         'required' => false,
         'label'    => 'IsInvoiced',
     ])
@@ -52,31 +52,31 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'AttributeSetInstanceId',
     ])
-    ->add('isDescription', TextType::class, [
+    ->add('isDescription', ChoiceType::class, [
         'required' => false,
         'label'    => 'IsDescription',
     ])
-    ->add('processed', TextType::class, [
+    ->add('processed', ChoiceType::class, [
         'required' => false,
         'label'    => 'Processed',
     ])
-    ->add('quantityEntered', TextType::class, [
+    ->add('quantityEntered', NumberType::class, [
         'required' => false,
         'label'    => 'QuantityEntered',
     ])
-    ->add('rmaLineNumber', TextType::class, [
+    ->add('rmaLineNumber', IntegerType::class, [
         'required' => false,
         'label'    => 'RmaLineNumber',
     ])
-    ->add('reversalLineNumber', TextType::class, [
+    ->add('reversalLineNumber', IntegerType::class, [
         'required' => false,
         'label'    => 'ReversalLineNumber',
     ])
-    ->add('active', TextType::class, [
+    ->add('active', ChoiceType::class, [
         'required' => false,
         'label'    => 'Active',
     ])
-    ->add('version', TextType::class, [
+    ->add('version', IntegerType::class, [
         'required' => false,
         'label'    => 'Version',
     ])
@@ -88,7 +88,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'CreatedBy',
     ])
-    ->add('createdAt', TextType::class, [
+    ->add('createdAt', DateTimeType::class, [
         'required' => false,
         'label'    => 'CreatedAt',
     ])
@@ -96,7 +96,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'UpdatedBy',
     ])
-    ->add('updatedAt', TextType::class, [
+    ->add('updatedAt', DateTimeType::class, [
         'required' => false,
         'label'    => 'UpdatedAt',
     ])

@@ -4,11 +4,11 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 return $app['form.factory']->createBuilder(FormType::class, $data)
-    ->add('version', TextType::class, [
+    ->add('version', IntegerType::class, [
         'required' => false,
         'label'    => 'Version',
     ])
-    ->add('active', TextType::class, [
+    ->add('active', ChoiceType::class, [
         'required' => false,
         'label'    => 'Active',
     ])
@@ -16,7 +16,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'UserUserName',
     ])
-    ->add('userAccessFailedCount', TextType::class, [
+    ->add('userAccessFailedCount', IntegerType::class, [
         'required' => false,
         'label'    => 'UserAccessFailedCount',
     ])
@@ -24,15 +24,15 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'UserEmail',
     ])
-    ->add('userEmailConfirmed', TextType::class, [
+    ->add('userEmailConfirmed', ChoiceType::class, [
         'required' => false,
         'label'    => 'UserEmailConfirmed',
     ])
-    ->add('userLockoutEnabled', TextType::class, [
+    ->add('userLockoutEnabled', ChoiceType::class, [
         'required' => false,
         'label'    => 'UserLockoutEnabled',
     ])
-    ->add('userLockoutEndDateUtc', TextType::class, [
+    ->add('userLockoutEndDateUtc', DateTimeType::class, [
         'required' => false,
         'label'    => 'UserLockoutEndDateUtc',
     ])
@@ -44,11 +44,11 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'UserPhoneNumber',
     ])
-    ->add('userPhoneNumberConfirmed', TextType::class, [
+    ->add('userPhoneNumberConfirmed', ChoiceType::class, [
         'required' => false,
         'label'    => 'UserPhoneNumberConfirmed',
     ])
-    ->add('userTwoFactorEnabled', TextType::class, [
+    ->add('userTwoFactorEnabled', ChoiceType::class, [
         'required' => false,
         'label'    => 'UserTwoFactorEnabled',
     ])
@@ -60,7 +60,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'UserCreatedBy',
     ])
-    ->add('userCreatedAt', TextType::class, [
+    ->add('userCreatedAt', DateTimeType::class, [
         'required' => false,
         'label'    => 'UserCreatedAt',
     ])
@@ -68,19 +68,19 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'UserUpdatedBy',
     ])
-    ->add('userUpdatedAt', TextType::class, [
+    ->add('userUpdatedAt', DateTimeType::class, [
         'required' => false,
         'label'    => 'UserUpdatedAt',
     ])
-    ->add('userActive', TextType::class, [
+    ->add('userActive', ChoiceType::class, [
         'required' => false,
         'label'    => 'UserActive',
     ])
-    ->add('userDeleted', TextType::class, [
+    ->add('userDeleted', ChoiceType::class, [
         'required' => false,
         'label'    => 'UserDeleted',
     ])
-    ->add('userVersion', TextType::class, [
+    ->add('userVersion', IntegerType::class, [
         'required' => false,
         'label'    => 'UserVersion',
     ])
@@ -88,7 +88,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'CreatedBy',
     ])
-    ->add('createdAt', TextType::class, [
+    ->add('createdAt', DateTimeType::class, [
         'required' => false,
         'label'    => 'CreatedAt',
     ])
@@ -96,7 +96,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'UpdatedBy',
     ])
-    ->add('updatedAt', TextType::class, [
+    ->add('updatedAt', DateTimeType::class, [
         'required' => false,
         'label'    => 'UpdatedAt',
     ])

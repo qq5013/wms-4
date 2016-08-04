@@ -79,7 +79,8 @@
 	boundedContext.SetSerializationAnnotationTypes(GetSerializationAnnotationTypes());
 	
 	boundedContext.SetPhpTypes(GetPhpTypes());
-
+	
+	boundedContext.SetSymfonyFieldTypes(GetSymfonyFieldTypes());
 #>
 <#+
 	
@@ -125,18 +126,23 @@
 		return typeNamespaces;
 	}
 
-	//private IDictionary<string, NHibernateType> GetNHibernateTypes()
-	//{
-		//var nhibernateTypes = new Dictionary<string, NHibernateType>();
-		//var nodaMoneyNHibernateType = new NHibernateType() {
-				//ActualTypeName = "Money", 
-				//AssemblyQualifiedName = "Dddml.Wms.Services.Domain.NHibernate.NodaMoneyType, Dddml.Wms.Services",
-				//PropertyNames = new string[] { "Amount", "Currency" }, 
-				//PropertyClrTypes = new string[] { "decimal", "string" }
-			//};
-		//nhibernateTypes.Add(nodaMoneyNHibernateType.ActualTypeName, nodaMoneyNHibernateType);
-		//return nhibernateTypes;
-	//}
+	private IDictionary<string, string> GetSymfonyFieldTypes()
+	{
+		var dict = new Dictionary<string, string>();
+		dict.Add("bool", "ChoiceType");
+		dict.Add("bool?", "ChoiceType");
+		dict.Add("DateTime", "DateTimeType");
+		dict.Add("DateTime?", "DateTimeType");
+		dict.Add("decimal", "NumberType");
+		dict.Add("decimal?", "NumberType");
+		dict.Add("int", "IntegerType");
+		dict.Add("int?", "IntegerType");
+		dict.Add("long", "IntegerType");
+		dict.Add("long?", "IntegerType");
+		dict.Add("string", "TextType");
+		dict.Add("Money", "MoneyType");
+		return dict;
+	}
 
 	//private string[] GetClrValueTypes()
 	//{

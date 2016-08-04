@@ -12,7 +12,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'UserName',
     ])
-    ->add('accessFailedCount', TextType::class, [
+    ->add('accessFailedCount', IntegerType::class, [
         'required' => false,
         'label'    => 'AccessFailedCount',
     ])
@@ -20,15 +20,15 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'Email',
     ])
-    ->add('emailConfirmed', TextType::class, [
+    ->add('emailConfirmed', ChoiceType::class, [
         'required' => false,
         'label'    => 'EmailConfirmed',
     ])
-    ->add('lockoutEnabled', TextType::class, [
+    ->add('lockoutEnabled', ChoiceType::class, [
         'required' => false,
         'label'    => 'LockoutEnabled',
     ])
-    ->add('lockoutEndDateUtc', TextType::class, [
+    ->add('lockoutEndDateUtc', DateTimeType::class, [
         'required' => false,
         'label'    => 'LockoutEndDateUtc',
     ])
@@ -40,11 +40,11 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'PhoneNumber',
     ])
-    ->add('phoneNumberConfirmed', TextType::class, [
+    ->add('phoneNumberConfirmed', ChoiceType::class, [
         'required' => false,
         'label'    => 'PhoneNumberConfirmed',
     ])
-    ->add('twoFactorEnabled', TextType::class, [
+    ->add('twoFactorEnabled', ChoiceType::class, [
         'required' => false,
         'label'    => 'TwoFactorEnabled',
     ])
@@ -52,11 +52,11 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'SecurityStamp',
     ])
-    ->add('active', TextType::class, [
+    ->add('active', ChoiceType::class, [
         'required' => false,
         'label'    => 'Active',
     ])
-    ->add('version', TextType::class, [
+    ->add('version', IntegerType::class, [
         'required' => false,
         'label'    => 'Version',
     ])
@@ -64,7 +64,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'CreatedBy',
     ])
-    ->add('createdAt', TextType::class, [
+    ->add('createdAt', DateTimeType::class, [
         'required' => false,
         'label'    => 'CreatedAt',
     ])
@@ -72,7 +72,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'UpdatedBy',
     ])
-    ->add('updatedAt', TextType::class, [
+    ->add('updatedAt', DateTimeType::class, [
         'required' => false,
         'label'    => 'UpdatedAt',
     ])

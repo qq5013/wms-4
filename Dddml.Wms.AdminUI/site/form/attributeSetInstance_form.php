@@ -36,23 +36,23 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'Hash',
     ])
-    ->add('_F_B_0_', TextType::class, [
+    ->add('_F_B_0_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_0_',
     ])
-    ->add('_F_I_0_', TextType::class, [
+    ->add('_F_I_0_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_0_',
     ])
-    ->add('_F_L_0_', TextType::class, [
+    ->add('_F_L_0_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_0_',
     ])
-    ->add('_F_DT_0_', TextType::class, [
+    ->add('_F_DT_0_', DateTimeType::class, [
         'required' => false,
         'label'    => '_F_DT_0_',
     ])
-    ->add('_F_N_0_', TextType::class, [
+    ->add('_F_N_0_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_0_',
     ])
@@ -88,23 +88,23 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C1000_0_',
     ])
-    ->add('_F_B_1_', TextType::class, [
+    ->add('_F_B_1_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_1_',
     ])
-    ->add('_F_I_1_', TextType::class, [
+    ->add('_F_I_1_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_1_',
     ])
-    ->add('_F_L_1_', TextType::class, [
+    ->add('_F_L_1_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_1_',
     ])
-    ->add('_F_DT_1_', TextType::class, [
+    ->add('_F_DT_1_', DateTimeType::class, [
         'required' => false,
         'label'    => '_F_DT_1_',
     ])
-    ->add('_F_N_1_', TextType::class, [
+    ->add('_F_N_1_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_1_',
     ])
@@ -140,23 +140,23 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C1000_1_',
     ])
-    ->add('_F_B_2_', TextType::class, [
+    ->add('_F_B_2_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_2_',
     ])
-    ->add('_F_I_2_', TextType::class, [
+    ->add('_F_I_2_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_2_',
     ])
-    ->add('_F_L_2_', TextType::class, [
+    ->add('_F_L_2_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_2_',
     ])
-    ->add('_F_DT_2_', TextType::class, [
+    ->add('_F_DT_2_', DateTimeType::class, [
         'required' => false,
         'label'    => '_F_DT_2_',
     ])
-    ->add('_F_N_2_', TextType::class, [
+    ->add('_F_N_2_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_2_',
     ])
@@ -192,23 +192,23 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C1000_2_',
     ])
-    ->add('_F_B_3_', TextType::class, [
+    ->add('_F_B_3_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_3_',
     ])
-    ->add('_F_I_3_', TextType::class, [
+    ->add('_F_I_3_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_3_',
     ])
-    ->add('_F_L_3_', TextType::class, [
+    ->add('_F_L_3_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_3_',
     ])
-    ->add('_F_DT_3_', TextType::class, [
+    ->add('_F_DT_3_', DateTimeType::class, [
         'required' => false,
         'label'    => '_F_DT_3_',
     ])
-    ->add('_F_N_3_', TextType::class, [
+    ->add('_F_N_3_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_3_',
     ])
@@ -244,23 +244,23 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C1000_3_',
     ])
-    ->add('_F_B_4_', TextType::class, [
+    ->add('_F_B_4_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_4_',
     ])
-    ->add('_F_I_4_', TextType::class, [
+    ->add('_F_I_4_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_4_',
     ])
-    ->add('_F_L_4_', TextType::class, [
+    ->add('_F_L_4_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_4_',
     ])
-    ->add('_F_DT_4_', TextType::class, [
+    ->add('_F_DT_4_', DateTimeType::class, [
         'required' => false,
         'label'    => '_F_DT_4_',
     ])
-    ->add('_F_N_4_', TextType::class, [
+    ->add('_F_N_4_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_4_',
     ])
@@ -296,23 +296,23 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C1000_4_',
     ])
-    ->add('_F_B_5_', TextType::class, [
+    ->add('_F_B_5_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_5_',
     ])
-    ->add('_F_I_5_', TextType::class, [
+    ->add('_F_I_5_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_5_',
     ])
-    ->add('_F_L_5_', TextType::class, [
+    ->add('_F_L_5_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_5_',
     ])
-    ->add('_F_DT_5_', TextType::class, [
+    ->add('_F_DT_5_', DateTimeType::class, [
         'required' => false,
         'label'    => '_F_DT_5_',
     ])
-    ->add('_F_N_5_', TextType::class, [
+    ->add('_F_N_5_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_5_',
     ])
@@ -344,23 +344,23 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C500_5_',
     ])
-    ->add('_F_B_6_', TextType::class, [
+    ->add('_F_B_6_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_6_',
     ])
-    ->add('_F_I_6_', TextType::class, [
+    ->add('_F_I_6_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_6_',
     ])
-    ->add('_F_L_6_', TextType::class, [
+    ->add('_F_L_6_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_6_',
     ])
-    ->add('_F_DT_6_', TextType::class, [
+    ->add('_F_DT_6_', DateTimeType::class, [
         'required' => false,
         'label'    => '_F_DT_6_',
     ])
-    ->add('_F_N_6_', TextType::class, [
+    ->add('_F_N_6_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_6_',
     ])
@@ -392,23 +392,23 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C500_6_',
     ])
-    ->add('_F_B_7_', TextType::class, [
+    ->add('_F_B_7_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_7_',
     ])
-    ->add('_F_I_7_', TextType::class, [
+    ->add('_F_I_7_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_7_',
     ])
-    ->add('_F_L_7_', TextType::class, [
+    ->add('_F_L_7_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_7_',
     ])
-    ->add('_F_DT_7_', TextType::class, [
+    ->add('_F_DT_7_', DateTimeType::class, [
         'required' => false,
         'label'    => '_F_DT_7_',
     ])
-    ->add('_F_N_7_', TextType::class, [
+    ->add('_F_N_7_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_7_',
     ])
@@ -440,23 +440,23 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C500_7_',
     ])
-    ->add('_F_B_8_', TextType::class, [
+    ->add('_F_B_8_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_8_',
     ])
-    ->add('_F_I_8_', TextType::class, [
+    ->add('_F_I_8_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_8_',
     ])
-    ->add('_F_L_8_', TextType::class, [
+    ->add('_F_L_8_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_8_',
     ])
-    ->add('_F_DT_8_', TextType::class, [
+    ->add('_F_DT_8_', DateTimeType::class, [
         'required' => false,
         'label'    => '_F_DT_8_',
     ])
-    ->add('_F_N_8_', TextType::class, [
+    ->add('_F_N_8_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_8_',
     ])
@@ -488,23 +488,23 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C500_8_',
     ])
-    ->add('_F_B_9_', TextType::class, [
+    ->add('_F_B_9_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_9_',
     ])
-    ->add('_F_I_9_', TextType::class, [
+    ->add('_F_I_9_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_9_',
     ])
-    ->add('_F_L_9_', TextType::class, [
+    ->add('_F_L_9_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_9_',
     ])
-    ->add('_F_DT_9_', TextType::class, [
+    ->add('_F_DT_9_', DateTimeType::class, [
         'required' => false,
         'label'    => '_F_DT_9_',
     ])
-    ->add('_F_N_9_', TextType::class, [
+    ->add('_F_N_9_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_9_',
     ])
@@ -536,23 +536,23 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C500_9_',
     ])
-    ->add('_F_B_10_', TextType::class, [
+    ->add('_F_B_10_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_10_',
     ])
-    ->add('_F_I_10_', TextType::class, [
+    ->add('_F_I_10_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_10_',
     ])
-    ->add('_F_L_10_', TextType::class, [
+    ->add('_F_L_10_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_10_',
     ])
-    ->add('_F_DT_10_', TextType::class, [
+    ->add('_F_DT_10_', DateTimeType::class, [
         'required' => false,
         'label'    => '_F_DT_10_',
     ])
-    ->add('_F_N_10_', TextType::class, [
+    ->add('_F_N_10_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_10_',
     ])
@@ -580,23 +580,23 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C200_10_',
     ])
-    ->add('_F_B_11_', TextType::class, [
+    ->add('_F_B_11_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_11_',
     ])
-    ->add('_F_I_11_', TextType::class, [
+    ->add('_F_I_11_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_11_',
     ])
-    ->add('_F_L_11_', TextType::class, [
+    ->add('_F_L_11_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_11_',
     ])
-    ->add('_F_DT_11_', TextType::class, [
+    ->add('_F_DT_11_', DateTimeType::class, [
         'required' => false,
         'label'    => '_F_DT_11_',
     ])
-    ->add('_F_N_11_', TextType::class, [
+    ->add('_F_N_11_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_11_',
     ])
@@ -624,23 +624,23 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C200_11_',
     ])
-    ->add('_F_B_12_', TextType::class, [
+    ->add('_F_B_12_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_12_',
     ])
-    ->add('_F_I_12_', TextType::class, [
+    ->add('_F_I_12_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_12_',
     ])
-    ->add('_F_L_12_', TextType::class, [
+    ->add('_F_L_12_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_12_',
     ])
-    ->add('_F_DT_12_', TextType::class, [
+    ->add('_F_DT_12_', DateTimeType::class, [
         'required' => false,
         'label'    => '_F_DT_12_',
     ])
-    ->add('_F_N_12_', TextType::class, [
+    ->add('_F_N_12_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_12_',
     ])
@@ -668,23 +668,23 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C200_12_',
     ])
-    ->add('_F_B_13_', TextType::class, [
+    ->add('_F_B_13_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_13_',
     ])
-    ->add('_F_I_13_', TextType::class, [
+    ->add('_F_I_13_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_13_',
     ])
-    ->add('_F_L_13_', TextType::class, [
+    ->add('_F_L_13_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_13_',
     ])
-    ->add('_F_DT_13_', TextType::class, [
+    ->add('_F_DT_13_', DateTimeType::class, [
         'required' => false,
         'label'    => '_F_DT_13_',
     ])
-    ->add('_F_N_13_', TextType::class, [
+    ->add('_F_N_13_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_13_',
     ])
@@ -712,23 +712,23 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C200_13_',
     ])
-    ->add('_F_B_14_', TextType::class, [
+    ->add('_F_B_14_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_14_',
     ])
-    ->add('_F_I_14_', TextType::class, [
+    ->add('_F_I_14_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_14_',
     ])
-    ->add('_F_L_14_', TextType::class, [
+    ->add('_F_L_14_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_14_',
     ])
-    ->add('_F_DT_14_', TextType::class, [
+    ->add('_F_DT_14_', DateTimeType::class, [
         'required' => false,
         'label'    => '_F_DT_14_',
     ])
-    ->add('_F_N_14_', TextType::class, [
+    ->add('_F_N_14_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_14_',
     ])
@@ -756,23 +756,23 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C200_14_',
     ])
-    ->add('_F_B_15_', TextType::class, [
+    ->add('_F_B_15_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_15_',
     ])
-    ->add('_F_I_15_', TextType::class, [
+    ->add('_F_I_15_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_15_',
     ])
-    ->add('_F_L_15_', TextType::class, [
+    ->add('_F_L_15_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_15_',
     ])
-    ->add('_F_DT_15_', TextType::class, [
+    ->add('_F_DT_15_', DateTimeType::class, [
         'required' => false,
         'label'    => '_F_DT_15_',
     ])
-    ->add('_F_N_15_', TextType::class, [
+    ->add('_F_N_15_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_15_',
     ])
@@ -800,23 +800,23 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C200_15_',
     ])
-    ->add('_F_B_16_', TextType::class, [
+    ->add('_F_B_16_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_16_',
     ])
-    ->add('_F_I_16_', TextType::class, [
+    ->add('_F_I_16_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_16_',
     ])
-    ->add('_F_L_16_', TextType::class, [
+    ->add('_F_L_16_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_16_',
     ])
-    ->add('_F_DT_16_', TextType::class, [
+    ->add('_F_DT_16_', DateTimeType::class, [
         'required' => false,
         'label'    => '_F_DT_16_',
     ])
-    ->add('_F_N_16_', TextType::class, [
+    ->add('_F_N_16_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_16_',
     ])
@@ -844,23 +844,23 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C200_16_',
     ])
-    ->add('_F_B_17_', TextType::class, [
+    ->add('_F_B_17_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_17_',
     ])
-    ->add('_F_I_17_', TextType::class, [
+    ->add('_F_I_17_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_17_',
     ])
-    ->add('_F_L_17_', TextType::class, [
+    ->add('_F_L_17_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_17_',
     ])
-    ->add('_F_DT_17_', TextType::class, [
+    ->add('_F_DT_17_', DateTimeType::class, [
         'required' => false,
         'label'    => '_F_DT_17_',
     ])
-    ->add('_F_N_17_', TextType::class, [
+    ->add('_F_N_17_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_17_',
     ])
@@ -888,23 +888,23 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C200_17_',
     ])
-    ->add('_F_B_18_', TextType::class, [
+    ->add('_F_B_18_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_18_',
     ])
-    ->add('_F_I_18_', TextType::class, [
+    ->add('_F_I_18_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_18_',
     ])
-    ->add('_F_L_18_', TextType::class, [
+    ->add('_F_L_18_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_18_',
     ])
-    ->add('_F_DT_18_', TextType::class, [
+    ->add('_F_DT_18_', DateTimeType::class, [
         'required' => false,
         'label'    => '_F_DT_18_',
     ])
-    ->add('_F_N_18_', TextType::class, [
+    ->add('_F_N_18_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_18_',
     ])
@@ -932,23 +932,23 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C200_18_',
     ])
-    ->add('_F_B_19_', TextType::class, [
+    ->add('_F_B_19_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_19_',
     ])
-    ->add('_F_I_19_', TextType::class, [
+    ->add('_F_I_19_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_19_',
     ])
-    ->add('_F_L_19_', TextType::class, [
+    ->add('_F_L_19_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_19_',
     ])
-    ->add('_F_DT_19_', TextType::class, [
+    ->add('_F_DT_19_', DateTimeType::class, [
         'required' => false,
         'label'    => '_F_DT_19_',
     ])
-    ->add('_F_N_19_', TextType::class, [
+    ->add('_F_N_19_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_19_',
     ])
@@ -976,19 +976,19 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C200_19_',
     ])
-    ->add('_F_B_20_', TextType::class, [
+    ->add('_F_B_20_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_20_',
     ])
-    ->add('_F_I_20_', TextType::class, [
+    ->add('_F_I_20_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_20_',
     ])
-    ->add('_F_L_20_', TextType::class, [
+    ->add('_F_L_20_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_20_',
     ])
-    ->add('_F_N_20_', TextType::class, [
+    ->add('_F_N_20_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_20_',
     ])
@@ -1008,19 +1008,19 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_20_',
     ])
-    ->add('_F_B_21_', TextType::class, [
+    ->add('_F_B_21_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_21_',
     ])
-    ->add('_F_I_21_', TextType::class, [
+    ->add('_F_I_21_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_21_',
     ])
-    ->add('_F_L_21_', TextType::class, [
+    ->add('_F_L_21_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_21_',
     ])
-    ->add('_F_N_21_', TextType::class, [
+    ->add('_F_N_21_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_21_',
     ])
@@ -1040,19 +1040,19 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_21_',
     ])
-    ->add('_F_B_22_', TextType::class, [
+    ->add('_F_B_22_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_22_',
     ])
-    ->add('_F_I_22_', TextType::class, [
+    ->add('_F_I_22_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_22_',
     ])
-    ->add('_F_L_22_', TextType::class, [
+    ->add('_F_L_22_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_22_',
     ])
-    ->add('_F_N_22_', TextType::class, [
+    ->add('_F_N_22_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_22_',
     ])
@@ -1072,19 +1072,19 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_22_',
     ])
-    ->add('_F_B_23_', TextType::class, [
+    ->add('_F_B_23_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_23_',
     ])
-    ->add('_F_I_23_', TextType::class, [
+    ->add('_F_I_23_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_23_',
     ])
-    ->add('_F_L_23_', TextType::class, [
+    ->add('_F_L_23_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_23_',
     ])
-    ->add('_F_N_23_', TextType::class, [
+    ->add('_F_N_23_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_23_',
     ])
@@ -1104,19 +1104,19 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_23_',
     ])
-    ->add('_F_B_24_', TextType::class, [
+    ->add('_F_B_24_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_24_',
     ])
-    ->add('_F_I_24_', TextType::class, [
+    ->add('_F_I_24_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_24_',
     ])
-    ->add('_F_L_24_', TextType::class, [
+    ->add('_F_L_24_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_24_',
     ])
-    ->add('_F_N_24_', TextType::class, [
+    ->add('_F_N_24_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_24_',
     ])
@@ -1136,19 +1136,19 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_24_',
     ])
-    ->add('_F_B_25_', TextType::class, [
+    ->add('_F_B_25_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_25_',
     ])
-    ->add('_F_I_25_', TextType::class, [
+    ->add('_F_I_25_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_25_',
     ])
-    ->add('_F_L_25_', TextType::class, [
+    ->add('_F_L_25_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_25_',
     ])
-    ->add('_F_N_25_', TextType::class, [
+    ->add('_F_N_25_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_25_',
     ])
@@ -1168,19 +1168,19 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_25_',
     ])
-    ->add('_F_B_26_', TextType::class, [
+    ->add('_F_B_26_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_26_',
     ])
-    ->add('_F_I_26_', TextType::class, [
+    ->add('_F_I_26_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_26_',
     ])
-    ->add('_F_L_26_', TextType::class, [
+    ->add('_F_L_26_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_26_',
     ])
-    ->add('_F_N_26_', TextType::class, [
+    ->add('_F_N_26_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_26_',
     ])
@@ -1200,19 +1200,19 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_26_',
     ])
-    ->add('_F_B_27_', TextType::class, [
+    ->add('_F_B_27_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_27_',
     ])
-    ->add('_F_I_27_', TextType::class, [
+    ->add('_F_I_27_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_27_',
     ])
-    ->add('_F_L_27_', TextType::class, [
+    ->add('_F_L_27_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_27_',
     ])
-    ->add('_F_N_27_', TextType::class, [
+    ->add('_F_N_27_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_27_',
     ])
@@ -1232,19 +1232,19 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_27_',
     ])
-    ->add('_F_B_28_', TextType::class, [
+    ->add('_F_B_28_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_28_',
     ])
-    ->add('_F_I_28_', TextType::class, [
+    ->add('_F_I_28_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_28_',
     ])
-    ->add('_F_L_28_', TextType::class, [
+    ->add('_F_L_28_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_28_',
     ])
-    ->add('_F_N_28_', TextType::class, [
+    ->add('_F_N_28_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_28_',
     ])
@@ -1264,19 +1264,19 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_28_',
     ])
-    ->add('_F_B_29_', TextType::class, [
+    ->add('_F_B_29_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_29_',
     ])
-    ->add('_F_I_29_', TextType::class, [
+    ->add('_F_I_29_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_29_',
     ])
-    ->add('_F_L_29_', TextType::class, [
+    ->add('_F_L_29_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_L_29_',
     ])
-    ->add('_F_N_29_', TextType::class, [
+    ->add('_F_N_29_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_29_',
     ])
@@ -1296,15 +1296,15 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_29_',
     ])
-    ->add('_F_B_30_', TextType::class, [
+    ->add('_F_B_30_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_30_',
     ])
-    ->add('_F_I_30_', TextType::class, [
+    ->add('_F_I_30_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_30_',
     ])
-    ->add('_F_N_30_', TextType::class, [
+    ->add('_F_N_30_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_30_',
     ])
@@ -1324,15 +1324,15 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_30_',
     ])
-    ->add('_F_B_31_', TextType::class, [
+    ->add('_F_B_31_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_31_',
     ])
-    ->add('_F_I_31_', TextType::class, [
+    ->add('_F_I_31_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_31_',
     ])
-    ->add('_F_N_31_', TextType::class, [
+    ->add('_F_N_31_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_31_',
     ])
@@ -1352,15 +1352,15 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_31_',
     ])
-    ->add('_F_B_32_', TextType::class, [
+    ->add('_F_B_32_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_32_',
     ])
-    ->add('_F_I_32_', TextType::class, [
+    ->add('_F_I_32_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_32_',
     ])
-    ->add('_F_N_32_', TextType::class, [
+    ->add('_F_N_32_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_32_',
     ])
@@ -1380,15 +1380,15 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_32_',
     ])
-    ->add('_F_B_33_', TextType::class, [
+    ->add('_F_B_33_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_33_',
     ])
-    ->add('_F_I_33_', TextType::class, [
+    ->add('_F_I_33_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_33_',
     ])
-    ->add('_F_N_33_', TextType::class, [
+    ->add('_F_N_33_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_33_',
     ])
@@ -1408,15 +1408,15 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_33_',
     ])
-    ->add('_F_B_34_', TextType::class, [
+    ->add('_F_B_34_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_34_',
     ])
-    ->add('_F_I_34_', TextType::class, [
+    ->add('_F_I_34_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_34_',
     ])
-    ->add('_F_N_34_', TextType::class, [
+    ->add('_F_N_34_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_34_',
     ])
@@ -1436,15 +1436,15 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_34_',
     ])
-    ->add('_F_B_35_', TextType::class, [
+    ->add('_F_B_35_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_35_',
     ])
-    ->add('_F_I_35_', TextType::class, [
+    ->add('_F_I_35_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_35_',
     ])
-    ->add('_F_N_35_', TextType::class, [
+    ->add('_F_N_35_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_35_',
     ])
@@ -1464,15 +1464,15 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_35_',
     ])
-    ->add('_F_B_36_', TextType::class, [
+    ->add('_F_B_36_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_36_',
     ])
-    ->add('_F_I_36_', TextType::class, [
+    ->add('_F_I_36_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_36_',
     ])
-    ->add('_F_N_36_', TextType::class, [
+    ->add('_F_N_36_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_36_',
     ])
@@ -1492,15 +1492,15 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_36_',
     ])
-    ->add('_F_B_37_', TextType::class, [
+    ->add('_F_B_37_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_37_',
     ])
-    ->add('_F_I_37_', TextType::class, [
+    ->add('_F_I_37_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_37_',
     ])
-    ->add('_F_N_37_', TextType::class, [
+    ->add('_F_N_37_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_37_',
     ])
@@ -1520,15 +1520,15 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_37_',
     ])
-    ->add('_F_B_38_', TextType::class, [
+    ->add('_F_B_38_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_38_',
     ])
-    ->add('_F_I_38_', TextType::class, [
+    ->add('_F_I_38_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_38_',
     ])
-    ->add('_F_N_38_', TextType::class, [
+    ->add('_F_N_38_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_38_',
     ])
@@ -1548,15 +1548,15 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_38_',
     ])
-    ->add('_F_B_39_', TextType::class, [
+    ->add('_F_B_39_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_39_',
     ])
-    ->add('_F_I_39_', TextType::class, [
+    ->add('_F_I_39_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_39_',
     ])
-    ->add('_F_N_39_', TextType::class, [
+    ->add('_F_N_39_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_39_',
     ])
@@ -1576,15 +1576,15 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_39_',
     ])
-    ->add('_F_B_40_', TextType::class, [
+    ->add('_F_B_40_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_40_',
     ])
-    ->add('_F_I_40_', TextType::class, [
+    ->add('_F_I_40_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_40_',
     ])
-    ->add('_F_N_40_', TextType::class, [
+    ->add('_F_N_40_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_40_',
     ])
@@ -1604,15 +1604,15 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_40_',
     ])
-    ->add('_F_B_41_', TextType::class, [
+    ->add('_F_B_41_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_41_',
     ])
-    ->add('_F_I_41_', TextType::class, [
+    ->add('_F_I_41_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_41_',
     ])
-    ->add('_F_N_41_', TextType::class, [
+    ->add('_F_N_41_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_41_',
     ])
@@ -1632,15 +1632,15 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_41_',
     ])
-    ->add('_F_B_42_', TextType::class, [
+    ->add('_F_B_42_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_42_',
     ])
-    ->add('_F_I_42_', TextType::class, [
+    ->add('_F_I_42_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_42_',
     ])
-    ->add('_F_N_42_', TextType::class, [
+    ->add('_F_N_42_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_42_',
     ])
@@ -1660,15 +1660,15 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_42_',
     ])
-    ->add('_F_B_43_', TextType::class, [
+    ->add('_F_B_43_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_43_',
     ])
-    ->add('_F_I_43_', TextType::class, [
+    ->add('_F_I_43_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_43_',
     ])
-    ->add('_F_N_43_', TextType::class, [
+    ->add('_F_N_43_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_43_',
     ])
@@ -1688,15 +1688,15 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_43_',
     ])
-    ->add('_F_B_44_', TextType::class, [
+    ->add('_F_B_44_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_44_',
     ])
-    ->add('_F_I_44_', TextType::class, [
+    ->add('_F_I_44_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_44_',
     ])
-    ->add('_F_N_44_', TextType::class, [
+    ->add('_F_N_44_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_44_',
     ])
@@ -1716,15 +1716,15 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_44_',
     ])
-    ->add('_F_B_45_', TextType::class, [
+    ->add('_F_B_45_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_45_',
     ])
-    ->add('_F_I_45_', TextType::class, [
+    ->add('_F_I_45_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_45_',
     ])
-    ->add('_F_N_45_', TextType::class, [
+    ->add('_F_N_45_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_45_',
     ])
@@ -1744,15 +1744,15 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_45_',
     ])
-    ->add('_F_B_46_', TextType::class, [
+    ->add('_F_B_46_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_46_',
     ])
-    ->add('_F_I_46_', TextType::class, [
+    ->add('_F_I_46_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_46_',
     ])
-    ->add('_F_N_46_', TextType::class, [
+    ->add('_F_N_46_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_46_',
     ])
@@ -1772,15 +1772,15 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_46_',
     ])
-    ->add('_F_B_47_', TextType::class, [
+    ->add('_F_B_47_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_47_',
     ])
-    ->add('_F_I_47_', TextType::class, [
+    ->add('_F_I_47_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_47_',
     ])
-    ->add('_F_N_47_', TextType::class, [
+    ->add('_F_N_47_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_47_',
     ])
@@ -1800,15 +1800,15 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_47_',
     ])
-    ->add('_F_B_48_', TextType::class, [
+    ->add('_F_B_48_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_48_',
     ])
-    ->add('_F_I_48_', TextType::class, [
+    ->add('_F_I_48_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_48_',
     ])
-    ->add('_F_N_48_', TextType::class, [
+    ->add('_F_N_48_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_48_',
     ])
@@ -1828,15 +1828,15 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_48_',
     ])
-    ->add('_F_B_49_', TextType::class, [
+    ->add('_F_B_49_', ChoiceType::class, [
         'required' => false,
         'label'    => '_F_B_49_',
     ])
-    ->add('_F_I_49_', TextType::class, [
+    ->add('_F_I_49_', IntegerType::class, [
         'required' => false,
         'label'    => '_F_I_49_',
     ])
-    ->add('_F_N_49_', TextType::class, [
+    ->add('_F_N_49_', NumberType::class, [
         'required' => false,
         'label'    => '_F_N_49_',
     ])
@@ -1856,11 +1856,11 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => '_F_C50_49_',
     ])
-    ->add('active', TextType::class, [
+    ->add('active', ChoiceType::class, [
         'required' => false,
         'label'    => 'Active',
     ])
-    ->add('version', TextType::class, [
+    ->add('version', IntegerType::class, [
         'required' => false,
         'label'    => 'Version',
     ])
@@ -1868,7 +1868,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'CreatedBy',
     ])
-    ->add('createdAt', TextType::class, [
+    ->add('createdAt', DateTimeType::class, [
         'required' => false,
         'label'    => 'CreatedAt',
     ])
@@ -1876,7 +1876,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'UpdatedBy',
     ])
-    ->add('updatedAt', TextType::class, [
+    ->add('updatedAt', DateTimeType::class, [
         'required' => false,
         'label'    => 'UpdatedAt',
     ])

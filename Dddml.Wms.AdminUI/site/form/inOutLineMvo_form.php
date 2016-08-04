@@ -4,7 +4,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 return $app['form.factory']->createBuilder(FormType::class, $data)
-    ->add('lineNumber', TextType::class, [
+    ->add('lineNumber', IntegerType::class, [
         'required' => false,
         'label'    => 'LineNumber',
     ])
@@ -24,27 +24,27 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'UomId',
     ])
-    ->add('movementQuantity', TextType::class, [
+    ->add('movementQuantity', NumberType::class, [
         'required' => false,
         'label'    => 'MovementQuantity',
     ])
-    ->add('confirmedQuantity', TextType::class, [
+    ->add('confirmedQuantity', NumberType::class, [
         'required' => false,
         'label'    => 'ConfirmedQuantity',
     ])
-    ->add('scrappedQuantity', TextType::class, [
+    ->add('scrappedQuantity', NumberType::class, [
         'required' => false,
         'label'    => 'ScrappedQuantity',
     ])
-    ->add('targetQuantity', TextType::class, [
+    ->add('targetQuantity', NumberType::class, [
         'required' => false,
         'label'    => 'TargetQuantity',
     ])
-    ->add('pickedQuantity', TextType::class, [
+    ->add('pickedQuantity', NumberType::class, [
         'required' => false,
         'label'    => 'PickedQuantity',
     ])
-    ->add('isInvoiced', TextType::class, [
+    ->add('isInvoiced', ChoiceType::class, [
         'required' => false,
         'label'    => 'IsInvoiced',
     ])
@@ -52,35 +52,35 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'AttributeSetInstanceId',
     ])
-    ->add('isDescription', TextType::class, [
+    ->add('isDescription', ChoiceType::class, [
         'required' => false,
         'label'    => 'IsDescription',
     ])
-    ->add('processed', TextType::class, [
+    ->add('processed', ChoiceType::class, [
         'required' => false,
         'label'    => 'Processed',
     ])
-    ->add('quantityEntered', TextType::class, [
+    ->add('quantityEntered', NumberType::class, [
         'required' => false,
         'label'    => 'QuantityEntered',
     ])
-    ->add('rmaLineNumber', TextType::class, [
+    ->add('rmaLineNumber', IntegerType::class, [
         'required' => false,
         'label'    => 'RmaLineNumber',
     ])
-    ->add('reversalLineNumber', TextType::class, [
+    ->add('reversalLineNumber', IntegerType::class, [
         'required' => false,
         'label'    => 'ReversalLineNumber',
     ])
-    ->add('version', TextType::class, [
+    ->add('version', IntegerType::class, [
         'required' => false,
         'label'    => 'Version',
     ])
-    ->add('active', TextType::class, [
+    ->add('active', ChoiceType::class, [
         'required' => false,
         'label'    => 'Active',
     ])
-    ->add('inOutIsSOTransaction', TextType::class, [
+    ->add('inOutIsSOTransaction', ChoiceType::class, [
         'required' => false,
         'label'    => 'InOutIsSOTransaction',
     ])
@@ -88,19 +88,19 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'InOutDocumentStatus',
     ])
-    ->add('inOutPosted', TextType::class, [
+    ->add('inOutPosted', ChoiceType::class, [
         'required' => false,
         'label'    => 'InOutPosted',
     ])
-    ->add('inOutProcessing', TextType::class, [
+    ->add('inOutProcessing', ChoiceType::class, [
         'required' => false,
         'label'    => 'InOutProcessing',
     ])
-    ->add('inOutProcessed', TextType::class, [
+    ->add('inOutProcessed', ChoiceType::class, [
         'required' => false,
         'label'    => 'InOutProcessed',
     ])
-    ->add('inOutDocumentType', TextType::class, [
+    ->add('inOutDocumentType', IntegerType::class, [
         'required' => false,
         'label'    => 'InOutDocumentType',
     ])
@@ -112,11 +112,11 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'InOutOrderNumber',
     ])
-    ->add('inOutDateOrdered', TextType::class, [
+    ->add('inOutDateOrdered', DateTimeType::class, [
         'required' => false,
         'label'    => 'InOutDateOrdered',
     ])
-    ->add('inOutIsPrinted', TextType::class, [
+    ->add('inOutIsPrinted', ChoiceType::class, [
         'required' => false,
         'label'    => 'InOutIsPrinted',
     ])
@@ -124,7 +124,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'InOutMovementType',
     ])
-    ->add('inOutMovementDate', TextType::class, [
+    ->add('inOutMovementDate', DateTimeType::class, [
         'required' => false,
         'label'    => 'InOutMovementDate',
     ])
@@ -140,7 +140,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'InOutPOReference',
     ])
-    ->add('inOutFreightAmount', TextType::class, [
+    ->add('inOutFreightAmount', MoneyType::class, [
         'required' => false,
         'label'    => 'InOutFreightAmount',
     ])
@@ -148,11 +148,11 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'InOutShipperId',
     ])
-    ->add('inOutChargeAmount', TextType::class, [
+    ->add('inOutChargeAmount', MoneyType::class, [
         'required' => false,
         'label'    => 'InOutChargeAmount',
     ])
-    ->add('inOutDatePrinted', TextType::class, [
+    ->add('inOutDatePrinted', DateTimeType::class, [
         'required' => false,
         'label'    => 'InOutDatePrinted',
     ])
@@ -160,15 +160,15 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'InOutSalesRepresentative',
     ])
-    ->add('inOutNumberOfPackages', TextType::class, [
+    ->add('inOutNumberOfPackages', IntegerType::class, [
         'required' => false,
         'label'    => 'InOutNumberOfPackages',
     ])
-    ->add('inOutPickDate', TextType::class, [
+    ->add('inOutPickDate', DateTimeType::class, [
         'required' => false,
         'label'    => 'InOutPickDate',
     ])
-    ->add('inOutShipDate', TextType::class, [
+    ->add('inOutShipDate', DateTimeType::class, [
         'required' => false,
         'label'    => 'InOutShipDate',
     ])
@@ -176,27 +176,27 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'InOutTrackingNumber',
     ])
-    ->add('inOutDateReceived', TextType::class, [
+    ->add('inOutDateReceived', DateTimeType::class, [
         'required' => false,
         'label'    => 'InOutDateReceived',
     ])
-    ->add('inOutIsInTransit', TextType::class, [
+    ->add('inOutIsInTransit', ChoiceType::class, [
         'required' => false,
         'label'    => 'InOutIsInTransit',
     ])
-    ->add('inOutIsApproved', TextType::class, [
+    ->add('inOutIsApproved', ChoiceType::class, [
         'required' => false,
         'label'    => 'InOutIsApproved',
     ])
-    ->add('inOutIsInDispute', TextType::class, [
+    ->add('inOutIsInDispute', ChoiceType::class, [
         'required' => false,
         'label'    => 'InOutIsInDispute',
     ])
-    ->add('inOutVolume', TextType::class, [
+    ->add('inOutVolume', NumberType::class, [
         'required' => false,
         'label'    => 'InOutVolume',
     ])
-    ->add('inOutWeight', TextType::class, [
+    ->add('inOutWeight', NumberType::class, [
         'required' => false,
         'label'    => 'InOutWeight',
     ])
@@ -208,7 +208,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'InOutReversalNumber',
     ])
-    ->add('inOutIsDropShip', TextType::class, [
+    ->add('inOutIsDropShip', ChoiceType::class, [
         'required' => false,
         'label'    => 'InOutIsDropShip',
     ])
@@ -220,7 +220,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'InOutCreatedBy',
     ])
-    ->add('inOutCreatedAt', TextType::class, [
+    ->add('inOutCreatedAt', DateTimeType::class, [
         'required' => false,
         'label'    => 'InOutCreatedAt',
     ])
@@ -228,19 +228,19 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'InOutUpdatedBy',
     ])
-    ->add('inOutUpdatedAt', TextType::class, [
+    ->add('inOutUpdatedAt', DateTimeType::class, [
         'required' => false,
         'label'    => 'InOutUpdatedAt',
     ])
-    ->add('inOutActive', TextType::class, [
+    ->add('inOutActive', ChoiceType::class, [
         'required' => false,
         'label'    => 'InOutActive',
     ])
-    ->add('inOutDeleted', TextType::class, [
+    ->add('inOutDeleted', ChoiceType::class, [
         'required' => false,
         'label'    => 'InOutDeleted',
     ])
-    ->add('inOutVersion', TextType::class, [
+    ->add('inOutVersion', IntegerType::class, [
         'required' => false,
         'label'    => 'InOutVersion',
     ])
@@ -248,7 +248,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'CreatedBy',
     ])
-    ->add('createdAt', TextType::class, [
+    ->add('createdAt', DateTimeType::class, [
         'required' => false,
         'label'    => 'CreatedAt',
     ])
@@ -256,7 +256,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'UpdatedBy',
     ])
-    ->add('updatedAt', TextType::class, [
+    ->add('updatedAt', DateTimeType::class, [
         'required' => false,
         'label'    => 'UpdatedAt',
     ])

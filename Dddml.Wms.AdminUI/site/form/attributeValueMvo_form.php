@@ -16,11 +16,11 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'ReferenceId',
     ])
-    ->add('version', TextType::class, [
+    ->add('version', IntegerType::class, [
         'required' => false,
         'label'    => 'Version',
     ])
-    ->add('active', TextType::class, [
+    ->add('active', ChoiceType::class, [
         'required' => false,
         'label'    => 'Active',
     ])
@@ -36,11 +36,11 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'AttributeDescription',
     ])
-    ->add('attributeIsMandatory', TextType::class, [
+    ->add('attributeIsMandatory', ChoiceType::class, [
         'required' => false,
         'label'    => 'AttributeIsMandatory',
     ])
-    ->add('attributeIsInstanceAttribute', TextType::class, [
+    ->add('attributeIsInstanceAttribute', ChoiceType::class, [
         'required' => false,
         'label'    => 'AttributeIsInstanceAttribute',
     ])
@@ -48,11 +48,11 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'AttributeAttributeValueType',
     ])
-    ->add('attributeAttributeValueLength', TextType::class, [
+    ->add('attributeAttributeValueLength', IntegerType::class, [
         'required' => false,
         'label'    => 'AttributeAttributeValueLength',
     ])
-    ->add('attributeIsList', TextType::class, [
+    ->add('attributeIsList', ChoiceType::class, [
         'required' => false,
         'label'    => 'AttributeIsList',
     ])
@@ -68,7 +68,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'AttributeCreatedBy',
     ])
-    ->add('attributeCreatedAt', TextType::class, [
+    ->add('attributeCreatedAt', DateTimeType::class, [
         'required' => false,
         'label'    => 'AttributeCreatedAt',
     ])
@@ -76,19 +76,19 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'AttributeUpdatedBy',
     ])
-    ->add('attributeUpdatedAt', TextType::class, [
+    ->add('attributeUpdatedAt', DateTimeType::class, [
         'required' => false,
         'label'    => 'AttributeUpdatedAt',
     ])
-    ->add('attributeActive', TextType::class, [
+    ->add('attributeActive', ChoiceType::class, [
         'required' => false,
         'label'    => 'AttributeActive',
     ])
-    ->add('attributeDeleted', TextType::class, [
+    ->add('attributeDeleted', ChoiceType::class, [
         'required' => false,
         'label'    => 'AttributeDeleted',
     ])
-    ->add('attributeVersion', TextType::class, [
+    ->add('attributeVersion', IntegerType::class, [
         'required' => false,
         'label'    => 'AttributeVersion',
     ])
@@ -96,7 +96,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'CreatedBy',
     ])
-    ->add('createdAt', TextType::class, [
+    ->add('createdAt', DateTimeType::class, [
         'required' => false,
         'label'    => 'CreatedAt',
     ])
@@ -104,7 +104,7 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'UpdatedBy',
     ])
-    ->add('updatedAt', TextType::class, [
+    ->add('updatedAt', DateTimeType::class, [
         'required' => false,
         'label'    => 'UpdatedAt',
     ])

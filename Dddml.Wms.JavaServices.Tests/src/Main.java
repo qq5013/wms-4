@@ -133,6 +133,7 @@ public class Main {
         inOut.setDocumentAction(new DocumentAction(DocumentActionName.DRAFT));// 不能这样写：inOut.DocumentStatus = DocumentStatus.DRAFTED
         inOut.setChargeAmount(Money.of(CurrencyUnit.getInstance("CNY"), 10000));
         inOut.setFreightAmount(Money.of(CurrencyUnit.getInstance("CNY"), 400));
+        inOut.setPOReference("test_PO_reference_yeah");
         inOutApplicationService.when(inOut);
 
         InOutState inOutState1 = inOutApplicationService.get(documentNumber);

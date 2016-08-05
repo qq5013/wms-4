@@ -1,12 +1,12 @@
-﻿<?php
+<?php
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 return $app['form.factory']->createBuilder(FormType::class, $data)
-    ->add('roleId', TextType::class, [
+    ->add('organizationId', TextType::class, [
         'required' => true,
-        'label'    => 'Role Id',
+        'label'    => 'Organization Id',
     ])
     ->add('name', TextType::class, [
         'required' => false,
@@ -15,6 +15,14 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
     ->add('description', TextType::class, [
         'required' => false,
         'label'    => 'Description',
+    ])
+    ->add('type', TextType::class, [
+        'required' => false,
+        'label'    => 'Type',
+    ])
+    ->add('isSummary', CheckboxType::class, [
+        'required' => false,
+        'label'    => 'Is Summary',
     ])
     ->add('active', CheckboxType::class, [
         'required' => false,

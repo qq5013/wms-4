@@ -1,16 +1,28 @@
-﻿<?php
+<?php
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 return $app['form.factory']->createBuilder(FormType::class, $data)
-    ->add('roleId', TextType::class, [
+    ->add('id', TextType::class, [
         'required' => true,
-        'label'    => 'Role Id',
+        'label'    => 'Id',
     ])
-    ->add('name', TextType::class, [
+    ->add('fieldType', TextType::class, [
         'required' => false,
-        'label'    => 'Name',
+        'label'    => 'Field Type',
+    ])
+    ->add('fieldLength', IntegerType::class, [
+        'required' => false,
+        'label'    => 'Field Length',
+    ])
+    ->add('fieldCount', IntegerType::class, [
+        'required' => false,
+        'label'    => 'Field Count',
+    ])
+    ->add('nameFormat', TextType::class, [
+        'required' => false,
+        'label'    => 'Name Format',
     ])
     ->add('description', TextType::class, [
         'required' => false,

@@ -3,7 +3,6 @@
 namespace Dddml\Wms\Domain;
 
 use JMS\Serializer\Annotation\Type;
-use NodaMoney\Money;
 use Dddml\Serializer\Type\Money;
 use Dddml\Serializer\Type\Decimal;
 use Dddml\Serializer\Type\Long;

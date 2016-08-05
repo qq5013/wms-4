@@ -1,20 +1,44 @@
-﻿<?php
+<?php
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 return $app['form.factory']->createBuilder(FormType::class, $data)
-    ->add('roleId', TextType::class, [
+    ->add('locatorId', TextType::class, [
         'required' => true,
-        'label'    => 'Role Id',
+        'label'    => 'Locator Id',
     ])
-    ->add('name', TextType::class, [
-        'required' => false,
-        'label'    => 'Name',
+    ->add('warehouseId', TextType::class, [
+        'required' => true,
+        'label'    => 'Warehouse Id',
     ])
-    ->add('description', TextType::class, [
+    ->add('parentLocatorId', TextType::class, [
         'required' => false,
-        'label'    => 'Description',
+        'label'    => 'Parent Locator Id',
+    ])
+    ->add('locatorType', TextType::class, [
+        'required' => false,
+        'label'    => 'Locator Type',
+    ])
+    ->add('priorityNumber', TextType::class, [
+        'required' => false,
+        'label'    => 'Priority Number',
+    ])
+    ->add('isDefault', CheckboxType::class, [
+        'required' => false,
+        'label'    => 'Is Default',
+    ])
+    ->add('x', TextType::class, [
+        'required' => false,
+        'label'    => 'X',
+    ])
+    ->add('y', TextType::class, [
+        'required' => false,
+        'label'    => 'Y',
+    ])
+    ->add('z', TextType::class, [
+        'required' => false,
+        'label'    => 'Z',
     ])
     ->add('active', CheckboxType::class, [
         'required' => false,

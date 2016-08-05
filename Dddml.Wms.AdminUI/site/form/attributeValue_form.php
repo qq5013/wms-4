@@ -1,12 +1,12 @@
-﻿<?php
+<?php
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 return $app['form.factory']->createBuilder(FormType::class, $data)
-    ->add('roleId', TextType::class, [
+    ->add('value', TextType::class, [
         'required' => true,
-        'label'    => 'Role Id',
+        'label'    => 'Value',
     ])
     ->add('name', TextType::class, [
         'required' => false,
@@ -16,6 +16,10 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
         'required' => false,
         'label'    => 'Description',
     ])
+    ->add('referenceId', TextType::class, [
+        'required' => false,
+        'label'    => 'Reference Id',
+    ])
     ->add('active', CheckboxType::class, [
         'required' => false,
         'label'    => 'Active',
@@ -23,6 +27,10 @@ return $app['form.factory']->createBuilder(FormType::class, $data)
     ->add('version', IntegerType::class, [
         'required' => false,
         'label'    => 'Version',
+    ])
+    ->add('attributeId', TextType::class, [
+        'required' => false,
+        'label'    => 'Attribute Id',
     ])
     ->add('createdBy', TextType::class, [
         'required' => false,

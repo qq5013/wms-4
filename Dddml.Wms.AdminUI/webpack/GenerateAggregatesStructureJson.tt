@@ -1,0 +1,14 @@
+<#@ template language="C#" debug="True" #>
+<#@ output extension="txt" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="Dddml.Core.Domain" #>
+<#@ include file="T4Toolbox.tt" #>
+<#@ include file="%DddmlDotNetToolsSolutionDir%\Dddml.T4.Templates.Php\Domain\AggregatesStructureJsonGenerator.tt" #>
+<#@ include file="$(SolutionDir)Dddml.Wms.HttpServices.PhpClient\Dddml\Wms\LoadBoundedContext.tt" #>
+<#
+
+    var generator = new AggregatesStructureJsonGenerator(boundedContext.Aggregates.Values.ToList());
+
+    generator.Run();
+
+#>

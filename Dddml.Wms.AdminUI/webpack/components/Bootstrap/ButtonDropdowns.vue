@@ -9,7 +9,7 @@
         </button>
         <ul class="dropdown-menu">
             <li v-for="link in links">
-                <a href="{{link.href}}" target="{{link.target ? link.target : '_self'}}">{{link.text}}</a>
+                <a href="{{link.href}}" target="{{link.target | default '_self'}}">{{link.text}}</a>
             </li>
         </ul>
     </div>

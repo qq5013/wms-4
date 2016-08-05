@@ -25,14 +25,14 @@
                             <!-- User Account: style can be found in dropdown.less -->
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="{{userImg}}" class="user-image" alt="User Image">
+                                    <img :src="userImg" class="user-image" alt="User Image">
                                     <!--<img src="css/admin-lte/img/user2-160x160.jpg" class="user-image" alt="User Image">-->
                                     <span class="hidden-xs">张三</span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- User image -->
                                     <li class="user-header">
-                                        <img src="{{userImg}}" class="img-circle"
+                                        <img :src="userImg" class="img-circle"
                                              alt="User Image">
 
                                         <p>
@@ -64,7 +64,7 @@
                     <!-- Sidebar user panel -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src="{{userImg}}" class="img-circle" alt="User Image">
+                            <img :src="userImg" class="img-circle" alt="User Image">
                         </div>
                         <div class="pull-left info">
                             <p>张三</p>
@@ -77,7 +77,7 @@
                         <li class="header">聚合</li>
                         <li>
                             <a href="pages/widgets.html">
-                                <i class="fa fa-th"></i> <span>nOut</span>
+                                <i class="fa fa-th"></i> <span>InOut</span>
                             </a>
                         </li>
                     </ul>

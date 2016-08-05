@@ -9,7 +9,7 @@
         </thead>
         <tbody>
         <tr v-for="row in rows">
-            <td v-for="field in row">{{field}}</td>
+            <td v-for="field in row.fields">{{field}}</td>
             <td>
                 <a href="{{row.showLink}}" class="btn btn-sm bg-light-blue" target="_blank">查看</a>
                 <a href="{{row.editLink}}" class="btn btn-sm bg-orange">编辑</a>

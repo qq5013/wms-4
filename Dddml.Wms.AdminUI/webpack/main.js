@@ -1,9 +1,9 @@
 import Vue from 'vue'
-import vTable from './components/bootstrap/table.vue'
+import App from './components/App.vue'
 
 new Vue({
     el: 'body',
     components: {
-        vTable
+        App
     }
 });

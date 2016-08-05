@@ -8,7 +8,6 @@ namespace Dddml\Silex;
 
 use Dddml\Executor\Http\AbstractCommandRequest;
 use Dddml\Executor\Http\CommandExecutor;
-use Dddml\Executor\Http\CommandRequestInterface;
 use Dddml\Executor\Http\QueryCountRequestInterface;
 use Dddml\Executor\Http\QueryExecutor;
 use Dddml\Executor\Http\QueryRequestInterface;
@@ -67,12 +66,7 @@ class JsonProxy
         $event = new JsonProxyEvent($response);
         $this->app['dispatcher']->dispatch(JsonProxyEvent::JSON_PROXY_COUNT, $event);
 
-        return new JsonResponse(
-            $json,
-            $response->getStatusCode(),
-            $response->getHeaders(),
-            true
-        );
+        return $json;
     }
 
     public function create(AbstractCommandRequest $commandRequest, Request $httpRequest, $id)

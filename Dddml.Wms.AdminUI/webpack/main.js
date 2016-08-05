@@ -1,9 +1,9 @@
 import Vue from 'vue'
-import buttonDropdowns from './components/bootstrap/buttonDropdowns.vue'
+import vTable from './components/bootstrap/table.vue'
 
 new Vue({
     el: 'body',
     components: {
-        buttonDropdowns
+        vTable
     }
 });

@@ -8,6 +8,7 @@ $app['twig.options'] = [
     'strict_variables' => false,
 ];
 
+$app['api.rememberAuth'] = false;
 $app['api.baseUri']       = 'http://testtenant1.wms.dddml.org:63078/api';
 $app['api.auth.url']      = 'http://testtenant1.wms.dddml.org:58760/oauth2/token';
 $app['api.auth.username'] = 'test@dddml.org';

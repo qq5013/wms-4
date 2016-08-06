@@ -64,7 +64,7 @@ class DddmlServiceProvider implements ServiceProviderInterface, BootableProvider
             );
         };
 
-        $app['api.json.proxy'] = function ($app) {
+        $app['api.proxy'] = function ($app) {
             return new ApiProxy($app);
         };
 

@@ -33,7 +33,7 @@ class ApiControllerProvider implements ControllerProviderInterface
         $entity    = Inflector::singularize($entities);
         $className = 'Dddml\Wms\HttpClient\\' . $entity . 'QueryRequest';
 
-        $response = $app['api.json.proxy']->get(new $className(), $request, ['id' => $id,]);
+        $response = $app['api.proxy']->get(new $className(), $request, ['id' => $id,]);
 
         return $response;
     }
@@ -42,7 +42,7 @@ class ApiControllerProvider implements ControllerProviderInterface
     {
         $className = 'Dddml\Wms\HttpClient\\' . $entities . 'QueryRequest';
 
-        $response = $app['api.json.proxy']->get(new $className(), $request);
+        $response = $app['api.proxy']->get(new $className(), $request);
 
         return $response;
     }
@@ -51,7 +51,7 @@ class ApiControllerProvider implements ControllerProviderInterface
     {
         $className = 'Dddml\Wms\HttpClient\\' . $entities . 'QueryRequest';
 
-        $response = $app['api.json.proxy']->count(new $className(), $request);
+        $response = $app['api.proxy']->count(new $className(), $request);
 
         return $response;
     }

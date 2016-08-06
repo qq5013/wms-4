@@ -11,8 +11,6 @@ return array(
     'Collator' => $vendorDir . '/symfony/intl/Resources/stubs/Collator.php',
     'DivisionByZeroError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/DivisionByZeroError.php',
     'Error' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/Error.php',
-    'ICanBoogie\\Inflections' => $vendorDir . '/icanboogie/inflector/lib/inflections.php',
-    'ICanBoogie\\Inflector' => $vendorDir . '/icanboogie/inflector/lib/inflector.php',
     'IntlDateFormatter' => $vendorDir . '/symfony/intl/Resources/stubs/IntlDateFormatter.php',
     'Locale' => $vendorDir . '/symfony/intl/Resources/stubs/Locale.php',
     'NumberFormatter' => $vendorDir . '/symfony/intl/Resources/stubs/NumberFormatter.php',

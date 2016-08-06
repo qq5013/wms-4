@@ -6,7 +6,7 @@
  */
 namespace Dddml;
 
-use ICanBoogie\Inflector;
+use Doctrine\Common\Inflector\Inflector;
 
 class Repository
 {
@@ -52,10 +52,8 @@ class Repository
 
     public function findBy(array $query = [])
     {
-        $inflector = Inflector::get('en');
-
         $className = $this->baseNamespace .
-            $inflector->pluralize($this->name) .
+            Inflector::pluralize($this->name) .
             'QueryRequest';
 
         $entities = $this->entityManager
@@ -69,10 +67,8 @@ class Repository
 
     public function count()
     {
-        $inflector = Inflector::get('en');
-
         $className = $this->baseNamespace .
-            $inflector->pluralize($this->name) .
+            Inflector::pluralize($this->name) .
             'QueryRequest';
 
         $count = $this->entityManager

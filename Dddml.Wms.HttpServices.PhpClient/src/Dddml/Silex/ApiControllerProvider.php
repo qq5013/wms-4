@@ -6,7 +6,7 @@
  */
 namespace Dddml\Silex;
 
-use ICanBoogie\Inflector;
+use Doctrine\Common\Inflector\Inflector;
 use Silex\Api\ControllerProviderInterface;
 use Silex\Application;
 use Silex\ControllerCollection;
@@ -30,8 +30,7 @@ class ApiControllerProvider implements ControllerProviderInterface
 
     public function getEntity(Application $app, Request $request, $entities, $id)
     {
-        $inflector = Inflector::get('en');
-        $entity    = $inflector->singularize($entities);
+        $entity    = Inflector::singularize($entities);
         $className = 'Dddml\Wms\HttpClient\\' . $entity . 'QueryRequest';
 
         $response = $app['api.json.proxy']->get(new $className(), $request, ['id' => $id,]);
@@ -61,8 +60,7 @@ class ApiControllerProvider implements ControllerProviderInterface
     {
         $json = $request->getContent();
 
-        $inflector = Inflector::get('en');
-        $entity    = $inflector->singularize($entities);
+        $entity = Inflector::singularize($entities);
 
         $className = 'Dddml\Wms\HttpClient\\Create' . $entity . 'Request';
 
@@ -89,7 +87,6 @@ class ApiControllerProvider implements ControllerProviderInterface
 
     public function mergePatchEntity(Application $app, Request $request, $entities, $id)
     {
-
     }
 
     public function deleteRole(Application $app, Request $request, $entities, $id)

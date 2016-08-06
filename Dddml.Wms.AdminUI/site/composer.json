@@ -25,9 +25,9 @@
         "jms/serializer": "^1.1",
         "guzzlehttp/guzzle": "^6.2",
         "symfony/routing": "^3.0",
-        "icanboogie/inflector": "^1.4",
         "symfony/var-dumper": "^3.1",
-        "ramsey/uuid": "^3.5"
+        "ramsey/uuid": "^3.5",
+        "doctrine/inflector": "^1.1"
     },
     "autoload": {
         "psr-0": { "": "include/" },

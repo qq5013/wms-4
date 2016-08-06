@@ -37,6 +37,9 @@ class JsonProxy
         $json = $executor->executeJson($queryRequest, [
             'parameters' => $params,
             'query'      => $httpRequest->query->all(),
+            'headers'    => [
+                'Authorization' => $httpRequest->headers->get('Authorization'),
+            ],
         ]);
 
         $response = $executor->getLastResponse();
@@ -58,7 +61,10 @@ class JsonProxy
         $executor = $this->app['api.query.executor'];
 
         $json = trim($executor->count($queryRequest, [
-            'query' => $httpRequest->query->all(),
+            'query'   => $httpRequest->query->all(),
+            'headers' => [
+                'Authorization' => $httpRequest->headers->get('Authorization'),
+            ],
         ]), "\"");
 
         $response = $executor->getLastResponse();
@@ -81,6 +87,9 @@ class JsonProxy
         $response = $executor->execute($commandRequest, [
             'parameters' => [
                 'id' => $id,
+            ],
+            'headers'    => [
+                'Authorization' => $httpRequest->headers->get('Authorization'),
             ],
         ]);
 

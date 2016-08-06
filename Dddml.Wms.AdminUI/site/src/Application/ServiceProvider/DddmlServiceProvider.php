@@ -10,7 +10,7 @@ use Dddml\Auth;
 use Dddml\EntityManager;
 use Dddml\Executor\Http\CommandExecutor;
 use Dddml\Executor\Http\QueryExecutor;
-use Dddml\Silex\JsonProxy;
+use Dddml\Silex\ApiProxy;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
@@ -65,7 +65,7 @@ class DddmlServiceProvider implements ServiceProviderInterface, BootableProvider
         };
 
         $app['api.json.proxy'] = function ($app) {
-            return new JsonProxy($app);
+            return new ApiProxy($app);
         };
 
         $app['api.entity.manager'] = function ($app) {

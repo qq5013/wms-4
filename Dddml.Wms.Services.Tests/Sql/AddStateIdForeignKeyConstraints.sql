@@ -1,4 +1,12 @@
-﻿alter TABLE `AttributeValues` add
+﻿alter TABLE `AttributeSetInstanceExtensionFields` add
+  CONSTRAINT `FK_AttributeSetInstanceExtensionField_AttrSetInstEFGroup_StateId` 
+  FOREIGN KEY 
+    (`AttributeSetInstanceExtensionFieldIdGroupId`) 
+  REFERENCES `AttributeSetInstanceExtensionFieldGroups` 
+    (`Id`) 
+  ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+alter TABLE `AttributeValues` add
   CONSTRAINT `FK_AttributeValue_Attribute_StateId` 
   FOREIGN KEY 
     (`AttributeValueIdAttributeId`) 
@@ -12,22 +20,6 @@ alter TABLE `AttributeUses` add
     (`AttributeSetAttributeUseIdAttributeSetId`) 
   REFERENCES `AttributeSets` 
     (`AttributeSetId`) 
-  ON DELETE NO ACTION ON UPDATE NO ACTION;
-
-alter TABLE `AttributeSetInstanceExtensionFields` add
-  CONSTRAINT `FK_AttributeSetInstanceExtensionField_AttrSetInstEFGroup_StateId` 
-  FOREIGN KEY 
-    (`AttributeSetInstanceExtensionFieldIdGroupId`) 
-  REFERENCES `AttributeSetInstanceExtensionFieldGroups` 
-    (`Id`) 
-  ON DELETE NO ACTION ON UPDATE NO ACTION;
-
-alter TABLE `InOutLines` add
-  CONSTRAINT `FK_InOutLine_InOut_StateId` 
-  FOREIGN KEY 
-    (`InOutLineIdInOutDocumentNumber`) 
-  REFERENCES `InOuts` 
-    (`DocumentNumber`) 
   ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 alter TABLE `UserRoles` add
@@ -60,5 +52,13 @@ alter TABLE `UserLogins` add
     (`UserLoginIdUserId`) 
   REFERENCES `Users` 
     (`UserId`) 
+  ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+alter TABLE `InOutLines` add
+  CONSTRAINT `FK_InOutLine_InOut_StateId` 
+  FOREIGN KEY 
+    (`InOutLineIdInOutDocumentNumber`) 
+  REFERENCES `InOuts` 
+    (`DocumentNumber`) 
   ON DELETE NO ACTION ON UPDATE NO ACTION;
 

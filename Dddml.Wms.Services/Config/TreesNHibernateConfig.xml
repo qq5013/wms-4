@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <objects xmlns="http://www.springframework.net">
 
-  <object id="locatorTreeRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateLocatorTreeRepository, Dddml.Wms.Services">
-    <property name="LocatorStateRepository" ref="locatorStateRepository"/>
+  <object id="permissionTreeRepository" type="Dddml.Wms.Domain.NHibernate.NHibernatePermissionTreeRepository, Dddml.Wms.Services">
+    <property name="PermissionStateRepository" ref="permissionStateRepository"/>
   </object>
 
   <object id="organizationTreeRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateOrganizationTreeRepository, Dddml.Wms.Services">
@@ -10,8 +10,8 @@
     <property name="OrganizationStructureStateRepository" ref="organizationStructureStateRepository"/>
   </object>
 
-  <object id="permissionTreeRepository" type="Dddml.Wms.Domain.NHibernate.NHibernatePermissionTreeRepository, Dddml.Wms.Services">
-    <property name="PermissionStateRepository" ref="permissionStateRepository"/>
+  <object id="locatorTreeRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateLocatorTreeRepository, Dddml.Wms.Services">
+    <property name="LocatorStateRepository" ref="locatorStateRepository"/>
   </object>
 
 

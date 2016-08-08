@@ -1,4 +1,69 @@
-﻿CREATE VIEW `AttributeValue_RV` AS
+﻿CREATE VIEW `AttributeSetInstanceExtensionField_RV` AS
+    SELECT 
+
+        `AttributeSetInstanceExtensionFields`.`AttributeSetInstanceExtensionFieldIdGroupId`,
+
+        `AttributeSetInstanceExtensionFields`.`AttributeSetInstanceExtensionFieldIdIndex`,
+
+        `AttributeSetInstanceExtensionFields`.`Name`,
+
+        `AttributeSetInstanceExtensionFields`.`Type`,
+
+        `AttributeSetInstanceExtensionFields`.`Length`,
+
+        `AttributeSetInstanceExtensionFields`.`Alias`,
+
+        `AttributeSetInstanceExtensionFields`.`Description`,
+
+        `AttributeSetInstanceExtensionFields`.`Version`,
+
+        `AttributeSetInstanceExtensionFields`.`CreatedBy`,
+
+        `AttributeSetInstanceExtensionFields`.`CreatedAt`,
+
+        `AttributeSetInstanceExtensionFields`.`UpdatedBy`,
+
+        `AttributeSetInstanceExtensionFields`.`UpdatedAt`,
+
+        `AttributeSetInstanceExtensionFields`.`Active`,
+
+        `AttributeSetInstanceExtensionFields`.`Deleted`,
+
+        `AttributeSetInstanceExtensionFieldGroups`.`FieldType` AS `AttrSetInstEFGroupFieldType`,
+
+        `AttributeSetInstanceExtensionFieldGroups`.`FieldLength` AS `AttrSetInstEFGroupFieldLength`,
+
+        `AttributeSetInstanceExtensionFieldGroups`.`FieldCount` AS `AttrSetInstEFGroupFieldCount`,
+
+        `AttributeSetInstanceExtensionFieldGroups`.`NameFormat` AS `AttrSetInstEFGroupNameFormat`,
+
+        `AttributeSetInstanceExtensionFieldGroups`.`Description` AS `AttrSetInstEFGroupDescription`,
+
+        `AttributeSetInstanceExtensionFieldGroups`.`Version` AS `AttrSetInstEFGroupVersion`,
+
+        `AttributeSetInstanceExtensionFieldGroups`.`CreatedBy` AS `AttrSetInstEFGroupCreatedBy`,
+
+        `AttributeSetInstanceExtensionFieldGroups`.`CreatedAt` AS `AttrSetInstEFGroupCreatedAt`,
+
+        `AttributeSetInstanceExtensionFieldGroups`.`UpdatedBy` AS `AttrSetInstEFGroupUpdatedBy`,
+
+        `AttributeSetInstanceExtensionFieldGroups`.`UpdatedAt` AS `AttrSetInstEFGroupUpdatedAt`,
+
+        `AttributeSetInstanceExtensionFieldGroups`.`Active` AS `AttrSetInstEFGroupActive`,
+
+        `AttributeSetInstanceExtensionFieldGroups`.`Deleted` AS `AttrSetInstEFGroupDeleted`
+
+    FROM
+        (`AttributeSetInstanceExtensionFields`
+
+            JOIN `AttributeSetInstanceExtensionFieldGroups` ON ( 1=1 
+
+                and (`AttributeSetInstanceExtensionFields`.`AttributeSetInstanceExtensionFieldIdGroupId` = `AttributeSetInstanceExtensionFieldGroups`.`Id`)
+            )
+        );
+
+
+CREATE VIEW `AttributeValue_RV` AS
     SELECT 
 
         `AttributeValues`.`AttributeValueIdAttributeId`,
@@ -124,224 +189,6 @@ CREATE VIEW `AttributeUse_RV` AS
             JOIN `AttributeSets` ON ( 1=1 
 
                 and (`AttributeUses`.`AttributeSetAttributeUseIdAttributeSetId` = `AttributeSets`.`AttributeSetId`)
-            )
-        );
-
-
-CREATE VIEW `AttributeSetInstanceExtensionField_RV` AS
-    SELECT 
-
-        `AttributeSetInstanceExtensionFields`.`AttributeSetInstanceExtensionFieldIdGroupId`,
-
-        `AttributeSetInstanceExtensionFields`.`AttributeSetInstanceExtensionFieldIdIndex`,
-
-        `AttributeSetInstanceExtensionFields`.`Name`,
-
-        `AttributeSetInstanceExtensionFields`.`Type`,
-
-        `AttributeSetInstanceExtensionFields`.`Length`,
-
-        `AttributeSetInstanceExtensionFields`.`Alias`,
-
-        `AttributeSetInstanceExtensionFields`.`Description`,
-
-        `AttributeSetInstanceExtensionFields`.`Version`,
-
-        `AttributeSetInstanceExtensionFields`.`CreatedBy`,
-
-        `AttributeSetInstanceExtensionFields`.`CreatedAt`,
-
-        `AttributeSetInstanceExtensionFields`.`UpdatedBy`,
-
-        `AttributeSetInstanceExtensionFields`.`UpdatedAt`,
-
-        `AttributeSetInstanceExtensionFields`.`Active`,
-
-        `AttributeSetInstanceExtensionFields`.`Deleted`,
-
-        `AttributeSetInstanceExtensionFieldGroups`.`FieldType` AS `AttrSetInstEFGroupFieldType`,
-
-        `AttributeSetInstanceExtensionFieldGroups`.`FieldLength` AS `AttrSetInstEFGroupFieldLength`,
-
-        `AttributeSetInstanceExtensionFieldGroups`.`FieldCount` AS `AttrSetInstEFGroupFieldCount`,
-
-        `AttributeSetInstanceExtensionFieldGroups`.`NameFormat` AS `AttrSetInstEFGroupNameFormat`,
-
-        `AttributeSetInstanceExtensionFieldGroups`.`Description` AS `AttrSetInstEFGroupDescription`,
-
-        `AttributeSetInstanceExtensionFieldGroups`.`Version` AS `AttrSetInstEFGroupVersion`,
-
-        `AttributeSetInstanceExtensionFieldGroups`.`CreatedBy` AS `AttrSetInstEFGroupCreatedBy`,
-
-        `AttributeSetInstanceExtensionFieldGroups`.`CreatedAt` AS `AttrSetInstEFGroupCreatedAt`,
-
-        `AttributeSetInstanceExtensionFieldGroups`.`UpdatedBy` AS `AttrSetInstEFGroupUpdatedBy`,
-
-        `AttributeSetInstanceExtensionFieldGroups`.`UpdatedAt` AS `AttrSetInstEFGroupUpdatedAt`,
-
-        `AttributeSetInstanceExtensionFieldGroups`.`Active` AS `AttrSetInstEFGroupActive`,
-
-        `AttributeSetInstanceExtensionFieldGroups`.`Deleted` AS `AttrSetInstEFGroupDeleted`
-
-    FROM
-        (`AttributeSetInstanceExtensionFields`
-
-            JOIN `AttributeSetInstanceExtensionFieldGroups` ON ( 1=1 
-
-                and (`AttributeSetInstanceExtensionFields`.`AttributeSetInstanceExtensionFieldIdGroupId` = `AttributeSetInstanceExtensionFieldGroups`.`Id`)
-            )
-        );
-
-
-CREATE VIEW `InOutLine_RV` AS
-    SELECT 
-
-        `InOutLines`.`InOutLineIdInOutDocumentNumber`,
-
-        `InOutLines`.`InOutLineIdSkuIdProductId`,
-
-        `InOutLines`.`InOutLineIdSkuIdAttributeSetInstanceId`,
-
-        `InOutLines`.`LineNumber`,
-
-        `InOutLines`.`Description`,
-
-        `InOutLines`.`LocatorId`,
-
-        `InOutLines`.`Product`,
-
-        `InOutLines`.`UomId`,
-
-        `InOutLines`.`MovementQuantity`,
-
-        `InOutLines`.`ConfirmedQuantity`,
-
-        `InOutLines`.`ScrappedQuantity`,
-
-        `InOutLines`.`TargetQuantity`,
-
-        `InOutLines`.`PickedQuantity`,
-
-        `InOutLines`.`IsInvoiced`,
-
-        `InOutLines`.`AttributeSetInstanceId`,
-
-        `InOutLines`.`IsDescription`,
-
-        `InOutLines`.`Processed`,
-
-        `InOutLines`.`QuantityEntered`,
-
-        `InOutLines`.`RmaLineNumber`,
-
-        `InOutLines`.`ReversalLineNumber`,
-
-        `InOutLines`.`Version`,
-
-        `InOutLines`.`CreatedBy`,
-
-        `InOutLines`.`CreatedAt`,
-
-        `InOutLines`.`UpdatedBy`,
-
-        `InOutLines`.`UpdatedAt`,
-
-        `InOutLines`.`Active`,
-
-        `InOutLines`.`Deleted`,
-
-        `InOuts`.`IsSOTransaction` AS `InOutIsSOTransaction`,
-
-        `InOuts`.`DocumentStatus` AS `InOutDocumentStatus`,
-
-        `InOuts`.`Posted` AS `InOutPosted`,
-
-        `InOuts`.`Processing` AS `InOutProcessing`,
-
-        `InOuts`.`Processed` AS `InOutProcessed`,
-
-        `InOuts`.`DocumentType` AS `InOutDocumentType`,
-
-        `InOuts`.`Description` AS `InOutDescription`,
-
-        `InOuts`.`OrderNumber` AS `InOutOrderNumber`,
-
-        `InOuts`.`DateOrdered` AS `InOutDateOrdered`,
-
-        `InOuts`.`IsPrinted` AS `InOutIsPrinted`,
-
-        `InOuts`.`MovementType` AS `InOutMovementType`,
-
-        `InOuts`.`MovementDate` AS `InOutMovementDate`,
-
-        `InOuts`.`BusinessPartnerId` AS `InOutBusinessPartnerId`,
-
-        `InOuts`.`WarehouseId` AS `InOutWarehouseId`,
-
-        `InOuts`.`POReference` AS `InOutPOReference`,
-
-        `InOuts`.`FreightAmountAmount` AS `InOutFreightAmountAmount`,
-
-        `InOuts`.`FreightAmountCurrency` AS `InOutFreightAmountCurrency`,
-
-        `InOuts`.`ShipperId` AS `InOutShipperId`,
-
-        `InOuts`.`ChargeAmountAmount` AS `InOutChargeAmountAmount`,
-
-        `InOuts`.`ChargeAmountCurrency` AS `InOutChargeAmountCurrency`,
-
-        `InOuts`.`DatePrinted` AS `InOutDatePrinted`,
-
-        `InOuts`.`SalesRepresentative` AS `InOutSalesRepresentative`,
-
-        `InOuts`.`NumberOfPackages` AS `InOutNumberOfPackages`,
-
-        `InOuts`.`PickDate` AS `InOutPickDate`,
-
-        `InOuts`.`ShipDate` AS `InOutShipDate`,
-
-        `InOuts`.`TrackingNumber` AS `InOutTrackingNumber`,
-
-        `InOuts`.`DateReceived` AS `InOutDateReceived`,
-
-        `InOuts`.`IsInTransit` AS `InOutIsInTransit`,
-
-        `InOuts`.`IsApproved` AS `InOutIsApproved`,
-
-        `InOuts`.`IsInDispute` AS `InOutIsInDispute`,
-
-        `InOuts`.`Volume` AS `InOutVolume`,
-
-        `InOuts`.`Weight` AS `InOutWeight`,
-
-        `InOuts`.`RmaNumber` AS `InOutRmaNumber`,
-
-        `InOuts`.`ReversalNumber` AS `InOutReversalNumber`,
-
-        `InOuts`.`IsDropShip` AS `InOutIsDropShip`,
-
-        `InOuts`.`DropShipBusinessPartnerId` AS `InOutDropShipBusinessPartnerId`,
-
-        `InOuts`.`Version` AS `InOutVersion`,
-
-        `InOuts`.`CreatedBy` AS `InOutCreatedBy`,
-
-        `InOuts`.`CreatedAt` AS `InOutCreatedAt`,
-
-        `InOuts`.`UpdatedBy` AS `InOutUpdatedBy`,
-
-        `InOuts`.`UpdatedAt` AS `InOutUpdatedAt`,
-
-        `InOuts`.`Active` AS `InOutActive`,
-
-        `InOuts`.`Deleted` AS `InOutDeleted`
-
-    FROM
-        (`InOutLines`
-
-            JOIN `InOuts` ON ( 1=1 
-
-                and (`InOutLines`.`InOutLineIdInOutDocumentNumber` = `InOuts`.`DocumentNumber`)
             )
         );
 
@@ -616,6 +463,159 @@ CREATE VIEW `UserLogin_RV` AS
             JOIN `Users` ON ( 1=1 
 
                 and (`UserLogins`.`UserLoginIdUserId` = `Users`.`UserId`)
+            )
+        );
+
+
+CREATE VIEW `InOutLine_RV` AS
+    SELECT 
+
+        `InOutLines`.`InOutLineIdInOutDocumentNumber`,
+
+        `InOutLines`.`InOutLineIdSkuIdProductId`,
+
+        `InOutLines`.`InOutLineIdSkuIdAttributeSetInstanceId`,
+
+        `InOutLines`.`LineNumber`,
+
+        `InOutLines`.`Description`,
+
+        `InOutLines`.`LocatorId`,
+
+        `InOutLines`.`Product`,
+
+        `InOutLines`.`UomId`,
+
+        `InOutLines`.`MovementQuantity`,
+
+        `InOutLines`.`ConfirmedQuantity`,
+
+        `InOutLines`.`ScrappedQuantity`,
+
+        `InOutLines`.`TargetQuantity`,
+
+        `InOutLines`.`PickedQuantity`,
+
+        `InOutLines`.`IsInvoiced`,
+
+        `InOutLines`.`AttributeSetInstanceId`,
+
+        `InOutLines`.`IsDescription`,
+
+        `InOutLines`.`Processed`,
+
+        `InOutLines`.`QuantityEntered`,
+
+        `InOutLines`.`RmaLineNumber`,
+
+        `InOutLines`.`ReversalLineNumber`,
+
+        `InOutLines`.`Version`,
+
+        `InOutLines`.`CreatedBy`,
+
+        `InOutLines`.`CreatedAt`,
+
+        `InOutLines`.`UpdatedBy`,
+
+        `InOutLines`.`UpdatedAt`,
+
+        `InOutLines`.`Active`,
+
+        `InOutLines`.`Deleted`,
+
+        `InOuts`.`IsSOTransaction` AS `InOutIsSOTransaction`,
+
+        `InOuts`.`DocumentStatus` AS `InOutDocumentStatus`,
+
+        `InOuts`.`Posted` AS `InOutPosted`,
+
+        `InOuts`.`Processing` AS `InOutProcessing`,
+
+        `InOuts`.`Processed` AS `InOutProcessed`,
+
+        `InOuts`.`DocumentType` AS `InOutDocumentType`,
+
+        `InOuts`.`Description` AS `InOutDescription`,
+
+        `InOuts`.`OrderNumber` AS `InOutOrderNumber`,
+
+        `InOuts`.`DateOrdered` AS `InOutDateOrdered`,
+
+        `InOuts`.`IsPrinted` AS `InOutIsPrinted`,
+
+        `InOuts`.`MovementType` AS `InOutMovementType`,
+
+        `InOuts`.`MovementDate` AS `InOutMovementDate`,
+
+        `InOuts`.`BusinessPartnerId` AS `InOutBusinessPartnerId`,
+
+        `InOuts`.`WarehouseId` AS `InOutWarehouseId`,
+
+        `InOuts`.`POReference` AS `InOutPOReference`,
+
+        `InOuts`.`FreightAmountAmount` AS `InOutFreightAmountAmount`,
+
+        `InOuts`.`FreightAmountCurrency` AS `InOutFreightAmountCurrency`,
+
+        `InOuts`.`ShipperId` AS `InOutShipperId`,
+
+        `InOuts`.`ChargeAmountAmount` AS `InOutChargeAmountAmount`,
+
+        `InOuts`.`ChargeAmountCurrency` AS `InOutChargeAmountCurrency`,
+
+        `InOuts`.`DatePrinted` AS `InOutDatePrinted`,
+
+        `InOuts`.`SalesRepresentative` AS `InOutSalesRepresentative`,
+
+        `InOuts`.`NumberOfPackages` AS `InOutNumberOfPackages`,
+
+        `InOuts`.`PickDate` AS `InOutPickDate`,
+
+        `InOuts`.`ShipDate` AS `InOutShipDate`,
+
+        `InOuts`.`TrackingNumber` AS `InOutTrackingNumber`,
+
+        `InOuts`.`DateReceived` AS `InOutDateReceived`,
+
+        `InOuts`.`IsInTransit` AS `InOutIsInTransit`,
+
+        `InOuts`.`IsApproved` AS `InOutIsApproved`,
+
+        `InOuts`.`IsInDispute` AS `InOutIsInDispute`,
+
+        `InOuts`.`Volume` AS `InOutVolume`,
+
+        `InOuts`.`Weight` AS `InOutWeight`,
+
+        `InOuts`.`RmaNumber` AS `InOutRmaNumber`,
+
+        `InOuts`.`ReversalNumber` AS `InOutReversalNumber`,
+
+        `InOuts`.`IsDropShip` AS `InOutIsDropShip`,
+
+        `InOuts`.`DropShipBusinessPartnerId` AS `InOutDropShipBusinessPartnerId`,
+
+        `InOuts`.`Version` AS `InOutVersion`,
+
+        `InOuts`.`CreatedBy` AS `InOutCreatedBy`,
+
+        `InOuts`.`CreatedAt` AS `InOutCreatedAt`,
+
+        `InOuts`.`UpdatedBy` AS `InOutUpdatedBy`,
+
+        `InOuts`.`UpdatedAt` AS `InOutUpdatedAt`,
+
+        `InOuts`.`Active` AS `InOutActive`,
+
+        `InOuts`.`Deleted` AS `InOutDeleted`
+
+    FROM
+        (`InOutLines`
+
+            JOIN `InOuts` ON ( 1=1 
+
+                and (`InOutLines`.`InOutLineIdInOutDocumentNumber` = `InOuts`.`DocumentNumber`)
             )
         );
 

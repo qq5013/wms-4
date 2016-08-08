@@ -23,20 +23,36 @@
     {
         string projectFile = TransformationContext.Current.GetPropertyValue("MSBuildProjectFullPath");
 		string projectDir = System.IO.Path.GetDirectoryName(projectFile);
-        string filePath1 = System.IO.Path.Combine(projectDir, "../dddml/AttributeSet.yaml");
-		string filePath2 = System.IO.Path.Combine(projectDir, "../Dddml.Wms.Metadata/AttributeSetInstanceDddml.yaml");
-		string filePath3 = System.IO.Path.Combine(projectDir, "../Dddml.Wms.Metadata/AttributeSetInstanceExtensionFieldGroupDddml.yaml");
-        string filePath4 = System.IO.Path.Combine(projectDir, "../dddml/InOut.yaml");
-		string filePath5 = System.IO.Path.Combine(projectDir, "../dddml/Warehouse.yaml");
-		string filePath6 = System.IO.Path.Combine(projectDir, "../dddml/Organization.yaml");
-		string filePath7 = System.IO.Path.Combine(projectDir, "../dddml/IdentityManagement.yaml");
-		string filePath8 = System.IO.Path.Combine(projectDir, "../dddml/AccessManagement.yaml");
-		string filePath9 = System.IO.Path.Combine(projectDir, "../dddml/Audience.yaml");
-
-        BoundedContext boundedContext = BoundedContextUtils.LoadFromFiles(new string[]{ 
-			filePath1, filePath2, filePath3, filePath4, filePath5, filePath6, filePath7, filePath8, filePath9,
+		string filePath1 = System.IO.Path.Combine(projectDir, "../Dddml.Wms.Metadata/AttributeSetInstanceDddml.yaml");
+		string filePath2 = System.IO.Path.Combine(projectDir, "../Dddml.Wms.Metadata/AttributeSetInstanceExtensionFieldGroupDddml.yaml");
+		var files = new List<string>();
+		files.Add(filePath1);
+		files.Add(filePath2);
+		var excludedFiles = new List<string>();
+		foreach(var f in System.IO.Directory.GetFiles(System.IO.Path.Combine(projectDir, "..\\dddml"), "*.yaml"))
+		{
+			if(!excludedFiles.Contains(System.IO.Path.GetFileName(f)))
+			{
+				files.Add(f);
+			}
+			else
+			{
+				//System.Diagnostics.Debug.WriteLine(f + " is excluded.");
+			}
+		}
+		BoundedContext boundedContext = BoundedContextUtils.LoadFromFiles(files);
+        //string filePath3 = System.IO.Path.Combine(projectDir, "../dddml/AttributeSet.yaml");
+        //string filePath4 = System.IO.Path.Combine(projectDir, "../dddml/InOut.yaml");
+		//string filePath5 = System.IO.Path.Combine(projectDir, "../dddml/Warehouse.yaml");
+		//string filePath6 = System.IO.Path.Combine(projectDir, "../dddml/Organization.yaml");
+		//string filePath7 = System.IO.Path.Combine(projectDir, "../dddml/IdentityManagement.yaml");
+		//string filePath8 = System.IO.Path.Combine(projectDir, "../dddml/AccessManagement.yaml");
+		//string filePath9 = System.IO.Path.Combine(projectDir, "../dddml/Audience.yaml");
+        //BoundedContext boundedContext = BoundedContextUtils.LoadFromFiles(new string[]{ 
+			//filePath1, filePath2, filePath3, filePath4, filePath5, filePath6, filePath7, filePath8, filePath9,
 			//@"C:\Users\Yang\Documents\GitHub\dddml-spec\examples\Person.yaml"
-			});
+			//});
+
         boundedContext.DefaultModule = "Dddml.Wms";
         return boundedContext; 
     }

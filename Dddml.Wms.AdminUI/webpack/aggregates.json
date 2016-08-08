@@ -1,5 +1,43 @@
 [
   {
+    "name": "AttributeSetInstance",
+    "plural": "AttributeSetInstances",
+    "title": "Attribute Set Instance",
+    "id": "attributeSetInstanceId"
+  },
+  {
+    "name": "AttributeSetInstanceExtensionFieldGroup",
+    "plural": "AttributeSetInstanceExtensionFieldGroups",
+    "title": "Attribute Set Instance Extension Field Group",
+    "id": "id"
+    ,"entities": [
+      {
+        "name": "AttributeSetInstanceExtensionField",
+        "plural": "AttributeSetInstanceExtensionFields",
+        "title": "Attribute Set Instance Extension Field",
+        "id": "index"
+      }
+    ]
+  },
+  {
+    "name": "Role",
+    "plural": "Roles",
+    "title": "Role",
+    "id": "roleId"
+  },
+  {
+    "name": "Permission",
+    "plural": "Permissions",
+    "title": "Permission",
+    "id": "permissionId"
+  },
+  {
+    "name": "RolePermission",
+    "plural": "RolePermissions",
+    "title": "Role Permission",
+    "id": "id"
+  },
+  {
     "name": "Attribute",
     "plural": "Attributes",
     "title": "Attribute",
@@ -28,68 +66,10 @@
     ]
   },
   {
-    "name": "AttributeSetInstance",
-    "plural": "AttributeSetInstances",
-    "title": "Attribute Set Instance",
-    "id": "attributeSetInstanceId"
-  },
-  {
-    "name": "AttributeSetInstanceExtensionFieldGroup",
-    "plural": "AttributeSetInstanceExtensionFieldGroups",
-    "title": "Attribute Set Instance Extension Field Group",
-    "id": "id"
-    ,"entities": [
-      {
-        "name": "AttributeSetInstanceExtensionField",
-        "plural": "AttributeSetInstanceExtensionFields",
-        "title": "Attribute Set Instance Extension Field",
-        "id": "index"
-      }
-    ]
-  },
-  {
-    "name": "InOut",
-    "plural": "InOuts",
-    "title": "In Out",
-    "id": "documentNumber"
-    ,"entities": [
-      {
-        "name": "InOutLine",
-        "plural": "InOutLines",
-        "title": "In Out Line",
-        "id": "skuId"
-      }
-    ]
-  },
-  {
-    "name": "Warehouse",
-    "plural": "Warehouses",
-    "title": "Warehouse",
-    "id": "warehouseId"
-  },
-  {
-    "name": "Locator",
-    "plural": "Locators",
-    "title": "Locator",
-    "id": "locatorId"
-  },
-  {
-    "name": "Organization",
-    "plural": "Organizations",
-    "title": "Organization",
-    "id": "organizationId"
-  },
-  {
-    "name": "OrganizationStructureType",
-    "plural": "OrganizationStructureTypes",
-    "title": "Organization Structure Type",
-    "id": "id"
-  },
-  {
-    "name": "OrganizationStructure",
-    "plural": "OrganizationStructures",
-    "title": "Organization Structure",
-    "id": "id"
+    "name": "Audience",
+    "plural": "Audiences",
+    "title": "Audience",
+    "id": "clientId"
   },
   {
     "name": "User",
@@ -124,28 +104,54 @@
     ]
   },
   {
-    "name": "Role",
-    "plural": "Roles",
-    "title": "Role",
-    "id": "roleId"
+    "name": "InOut",
+    "plural": "InOuts",
+    "title": "In Out",
+    "id": "documentNumber"
+    ,"entities": [
+      {
+        "name": "InOutLine",
+        "plural": "InOutLines",
+        "title": "In Out Line",
+        "id": "skuId"
+      }
+    ]
   },
   {
-    "name": "Permission",
-    "plural": "Permissions",
-    "title": "Permission",
-    "id": "permissionId"
+    "name": "Organization",
+    "plural": "Organizations",
+    "title": "Organization",
+    "id": "organizationId"
   },
   {
-    "name": "RolePermission",
-    "plural": "RolePermissions",
-    "title": "Role Permission",
+    "name": "OrganizationStructureType",
+    "plural": "OrganizationStructureTypes",
+    "title": "Organization Structure Type",
     "id": "id"
   },
   {
-    "name": "Audience",
-    "plural": "Audiences",
-    "title": "Audience",
-    "id": "clientId"
+    "name": "OrganizationStructure",
+    "plural": "OrganizationStructures",
+    "title": "Organization Structure",
+    "id": "id"
+  },
+  {
+    "name": "Warehouse",
+    "plural": "Warehouses",
+    "title": "Warehouse",
+    "id": "warehouseId"
+  },
+  {
+    "name": "Locator",
+    "plural": "Locators",
+    "title": "Locator",
+    "id": "locatorId"
+  },
+  {
+    "name": "AttributeSetInstanceExtensionFieldMvo",
+    "plural": "AttributeSetInstanceExtensionFieldMvoes",
+    "title": "Attribute Set Instance Extension Field Mvo",
+    "id": "attributeSetInstanceExtensionFieldId"
   },
   {
     "name": "AttributeValueMvo",
@@ -158,18 +164,6 @@
     "plural": "AttributeUseMvoes",
     "title": "Attribute Use Mvo",
     "id": "attributeSetAttributeUseId"
-  },
-  {
-    "name": "AttributeSetInstanceExtensionFieldMvo",
-    "plural": "AttributeSetInstanceExtensionFieldMvoes",
-    "title": "Attribute Set Instance Extension Field Mvo",
-    "id": "attributeSetInstanceExtensionFieldId"
-  },
-  {
-    "name": "InOutLineMvo",
-    "plural": "InOutLineMvoes",
-    "title": "In Out Line Mvo",
-    "id": "inOutLineId"
   },
   {
     "name": "UserRoleMvo",
@@ -194,6 +188,12 @@
     "plural": "UserLoginMvoes",
     "title": "User Login Mvo",
     "id": "userLoginId"
+  },
+  {
+    "name": "InOutLineMvo",
+    "plural": "InOutLineMvoes",
+    "title": "In Out Line Mvo",
+    "id": "inOutLineId"
   }
 ]
 

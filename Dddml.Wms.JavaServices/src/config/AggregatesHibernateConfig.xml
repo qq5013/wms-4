@@ -5,6 +5,84 @@
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+
+  <bean id="attributeSetInstanceStateRepository" class="org.dddml.wms.domain.hibernate.HibernateAttributeSetInstanceStateRepository">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="attributeSetInstanceEventStore" class="org.dddml.wms.domain.hibernate.HibernateAttributeSetInstanceEventStore">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="attributeSetInstanceApplicationService" class="org.dddml.wms.domain.AbstractAttributeSetInstanceApplicationService$SimpleAttributeSetInstanceApplicationService">
+    <constructor-arg ref="attributeSetInstanceEventStore"/>
+    <constructor-arg ref="attributeSetInstanceStateRepository"/>
+  </bean>
+
+  <bean id="attributeSetInstanceExtensionFieldStateDao" class="org.dddml.wms.domain.hibernate.HibernateAttributeSetInstanceExtensionFieldStateDao">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="attributeSetInstanceExtensionFieldStateEventDao" class="org.dddml.wms.domain.hibernate.HibernateAttributeSetInstanceExtensionFieldStateEventDao">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+
+  <bean id="attributeSetInstanceExtensionFieldGroupStateRepository" class="org.dddml.wms.domain.hibernate.HibernateAttributeSetInstanceExtensionFieldGroupStateRepository">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="attributeSetInstanceExtensionFieldGroupEventStore" class="org.dddml.wms.domain.hibernate.HibernateAttributeSetInstanceExtensionFieldGroupEventStore">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="attributeSetInstanceExtensionFieldGroupApplicationService" class="org.dddml.wms.domain.AbstractAttributeSetInstanceExtensionFieldGroupApplicationService$SimpleAttributeSetInstanceExtensionFieldGroupApplicationService">
+    <constructor-arg ref="attributeSetInstanceExtensionFieldGroupEventStore"/>
+    <constructor-arg ref="attributeSetInstanceExtensionFieldGroupStateRepository"/>
+  </bean>
+
+
+  <bean id="roleStateRepository" class="org.dddml.wms.domain.hibernate.HibernateRoleStateRepository">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="roleEventStore" class="org.dddml.wms.domain.hibernate.HibernateRoleEventStore">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="roleApplicationService" class="org.dddml.wms.domain.AbstractRoleApplicationService$SimpleRoleApplicationService">
+    <constructor-arg ref="roleEventStore"/>
+    <constructor-arg ref="roleStateRepository"/>
+  </bean>
+
+
+  <bean id="permissionStateRepository" class="org.dddml.wms.domain.hibernate.HibernatePermissionStateRepository">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="permissionEventStore" class="org.dddml.wms.domain.hibernate.HibernatePermissionEventStore">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="permissionApplicationService" class="org.dddml.wms.domain.AbstractPermissionApplicationService$SimplePermissionApplicationService">
+    <constructor-arg ref="permissionEventStore"/>
+    <constructor-arg ref="permissionStateRepository"/>
+  </bean>
+
+
+  <bean id="rolePermissionStateRepository" class="org.dddml.wms.domain.hibernate.HibernateRolePermissionStateRepository">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="rolePermissionEventStore" class="org.dddml.wms.domain.hibernate.HibernateRolePermissionEventStore">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="rolePermissionApplicationService" class="org.dddml.wms.domain.AbstractRolePermissionApplicationService$SimpleRolePermissionApplicationService">
+    <constructor-arg ref="rolePermissionEventStore"/>
+    <constructor-arg ref="rolePermissionStateRepository"/>
+  </bean>
+
   <bean id="attributeValueStateDao" class="org.dddml.wms.domain.hibernate.HibernateAttributeValueStateDao">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
   </bean>
@@ -50,131 +128,17 @@
   </bean>
 
 
-  <bean id="attributeSetInstanceStateRepository" class="org.dddml.wms.domain.hibernate.HibernateAttributeSetInstanceStateRepository">
+  <bean id="audienceStateRepository" class="org.dddml.wms.domain.hibernate.HibernateAudienceStateRepository">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
   </bean>
 
-  <bean id="attributeSetInstanceEventStore" class="org.dddml.wms.domain.hibernate.HibernateAttributeSetInstanceEventStore">
+  <bean id="audienceEventStore" class="org.dddml.wms.domain.hibernate.HibernateAudienceEventStore">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
   </bean>
 
-  <bean id="attributeSetInstanceApplicationService" class="org.dddml.wms.domain.AbstractAttributeSetInstanceApplicationService$SimpleAttributeSetInstanceApplicationService">
-    <constructor-arg ref="attributeSetInstanceEventStore"/>
-    <constructor-arg ref="attributeSetInstanceStateRepository"/>
-  </bean>
-
-  <bean id="attributeSetInstanceExtensionFieldStateDao" class="org.dddml.wms.domain.hibernate.HibernateAttributeSetInstanceExtensionFieldStateDao">
-    <property name="sessionFactory" ref="hibernateSessionFactory"/>
-  </bean>
-
-  <bean id="attributeSetInstanceExtensionFieldStateEventDao" class="org.dddml.wms.domain.hibernate.HibernateAttributeSetInstanceExtensionFieldStateEventDao">
-    <property name="sessionFactory" ref="hibernateSessionFactory"/>
-  </bean>
-
-
-  <bean id="attributeSetInstanceExtensionFieldGroupStateRepository" class="org.dddml.wms.domain.hibernate.HibernateAttributeSetInstanceExtensionFieldGroupStateRepository">
-    <property name="sessionFactory" ref="hibernateSessionFactory"/>
-  </bean>
-
-  <bean id="attributeSetInstanceExtensionFieldGroupEventStore" class="org.dddml.wms.domain.hibernate.HibernateAttributeSetInstanceExtensionFieldGroupEventStore">
-    <property name="sessionFactory" ref="hibernateSessionFactory"/>
-  </bean>
-
-  <bean id="attributeSetInstanceExtensionFieldGroupApplicationService" class="org.dddml.wms.domain.AbstractAttributeSetInstanceExtensionFieldGroupApplicationService$SimpleAttributeSetInstanceExtensionFieldGroupApplicationService">
-    <constructor-arg ref="attributeSetInstanceExtensionFieldGroupEventStore"/>
-    <constructor-arg ref="attributeSetInstanceExtensionFieldGroupStateRepository"/>
-  </bean>
-
-  <bean id="inOutLineStateDao" class="org.dddml.wms.domain.hibernate.HibernateInOutLineStateDao">
-    <property name="sessionFactory" ref="hibernateSessionFactory"/>
-  </bean>
-
-  <bean id="inOutLineStateEventDao" class="org.dddml.wms.domain.hibernate.HibernateInOutLineStateEventDao">
-    <property name="sessionFactory" ref="hibernateSessionFactory"/>
-  </bean>
-
-
-  <bean id="inOutStateRepository" class="org.dddml.wms.domain.hibernate.HibernateInOutStateRepository">
-    <property name="sessionFactory" ref="hibernateSessionFactory"/>
-  </bean>
-
-  <bean id="inOutEventStore" class="org.dddml.wms.domain.hibernate.HibernateInOutEventStore">
-    <property name="sessionFactory" ref="hibernateSessionFactory"/>
-  </bean>
-
-  <bean id="inOutApplicationService" class="org.dddml.wms.domain.AbstractInOutApplicationService$SimpleInOutApplicationService">
-    <constructor-arg ref="inOutEventStore"/>
-    <constructor-arg ref="inOutStateRepository"/>
-  </bean>
-
-
-  <bean id="warehouseStateRepository" class="org.dddml.wms.domain.hibernate.HibernateWarehouseStateRepository">
-    <property name="sessionFactory" ref="hibernateSessionFactory"/>
-  </bean>
-
-  <bean id="warehouseEventStore" class="org.dddml.wms.domain.hibernate.HibernateWarehouseEventStore">
-    <property name="sessionFactory" ref="hibernateSessionFactory"/>
-  </bean>
-
-  <bean id="warehouseApplicationService" class="org.dddml.wms.domain.AbstractWarehouseApplicationService$SimpleWarehouseApplicationService">
-    <constructor-arg ref="warehouseEventStore"/>
-    <constructor-arg ref="warehouseStateRepository"/>
-  </bean>
-
-
-  <bean id="locatorStateRepository" class="org.dddml.wms.domain.hibernate.HibernateLocatorStateRepository">
-    <property name="sessionFactory" ref="hibernateSessionFactory"/>
-  </bean>
-
-  <bean id="locatorEventStore" class="org.dddml.wms.domain.hibernate.HibernateLocatorEventStore">
-    <property name="sessionFactory" ref="hibernateSessionFactory"/>
-  </bean>
-
-  <bean id="locatorApplicationService" class="org.dddml.wms.domain.AbstractLocatorApplicationService$SimpleLocatorApplicationService">
-    <constructor-arg ref="locatorEventStore"/>
-    <constructor-arg ref="locatorStateRepository"/>
-  </bean>
-
-
-  <bean id="organizationStateRepository" class="org.dddml.wms.domain.hibernate.HibernateOrganizationStateRepository">
-    <property name="sessionFactory" ref="hibernateSessionFactory"/>
-  </bean>
-
-  <bean id="organizationEventStore" class="org.dddml.wms.domain.hibernate.HibernateOrganizationEventStore">
-    <property name="sessionFactory" ref="hibernateSessionFactory"/>
-  </bean>
-
-  <bean id="organizationApplicationService" class="org.dddml.wms.domain.AbstractOrganizationApplicationService$SimpleOrganizationApplicationService">
-    <constructor-arg ref="organizationEventStore"/>
-    <constructor-arg ref="organizationStateRepository"/>
-  </bean>
-
-
-  <bean id="organizationStructureTypeStateRepository" class="org.dddml.wms.domain.hibernate.HibernateOrganizationStructureTypeStateRepository">
-    <property name="sessionFactory" ref="hibernateSessionFactory"/>
-  </bean>
-
-  <bean id="organizationStructureTypeEventStore" class="org.dddml.wms.domain.hibernate.HibernateOrganizationStructureTypeEventStore">
-    <property name="sessionFactory" ref="hibernateSessionFactory"/>
-  </bean>
-
-  <bean id="organizationStructureTypeApplicationService" class="org.dddml.wms.domain.AbstractOrganizationStructureTypeApplicationService$SimpleOrganizationStructureTypeApplicationService">
-    <constructor-arg ref="organizationStructureTypeEventStore"/>
-    <constructor-arg ref="organizationStructureTypeStateRepository"/>
-  </bean>
-
-
-  <bean id="organizationStructureStateRepository" class="org.dddml.wms.domain.hibernate.HibernateOrganizationStructureStateRepository">
-    <property name="sessionFactory" ref="hibernateSessionFactory"/>
-  </bean>
-
-  <bean id="organizationStructureEventStore" class="org.dddml.wms.domain.hibernate.HibernateOrganizationStructureEventStore">
-    <property name="sessionFactory" ref="hibernateSessionFactory"/>
-  </bean>
-
-  <bean id="organizationStructureApplicationService" class="org.dddml.wms.domain.AbstractOrganizationStructureApplicationService$SimpleOrganizationStructureApplicationService">
-    <constructor-arg ref="organizationStructureEventStore"/>
-    <constructor-arg ref="organizationStructureStateRepository"/>
+  <bean id="audienceApplicationService" class="org.dddml.wms.domain.AbstractAudienceApplicationService$SimpleAudienceApplicationService">
+    <constructor-arg ref="audienceEventStore"/>
+    <constructor-arg ref="audienceStateRepository"/>
   </bean>
 
   <bean id="userRoleStateDao" class="org.dddml.wms.domain.hibernate.HibernateUserRoleStateDao">
@@ -223,60 +187,110 @@
     <constructor-arg ref="userStateRepository"/>
   </bean>
 
-
-  <bean id="roleStateRepository" class="org.dddml.wms.domain.hibernate.HibernateRoleStateRepository">
+  <bean id="inOutLineStateDao" class="org.dddml.wms.domain.hibernate.HibernateInOutLineStateDao">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
   </bean>
 
-  <bean id="roleEventStore" class="org.dddml.wms.domain.hibernate.HibernateRoleEventStore">
+  <bean id="inOutLineStateEventDao" class="org.dddml.wms.domain.hibernate.HibernateInOutLineStateEventDao">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
   </bean>
 
-  <bean id="roleApplicationService" class="org.dddml.wms.domain.AbstractRoleApplicationService$SimpleRoleApplicationService">
-    <constructor-arg ref="roleEventStore"/>
-    <constructor-arg ref="roleStateRepository"/>
-  </bean>
 
-
-  <bean id="permissionStateRepository" class="org.dddml.wms.domain.hibernate.HibernatePermissionStateRepository">
+  <bean id="inOutStateRepository" class="org.dddml.wms.domain.hibernate.HibernateInOutStateRepository">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
   </bean>
 
-  <bean id="permissionEventStore" class="org.dddml.wms.domain.hibernate.HibernatePermissionEventStore">
+  <bean id="inOutEventStore" class="org.dddml.wms.domain.hibernate.HibernateInOutEventStore">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
   </bean>
 
-  <bean id="permissionApplicationService" class="org.dddml.wms.domain.AbstractPermissionApplicationService$SimplePermissionApplicationService">
-    <constructor-arg ref="permissionEventStore"/>
-    <constructor-arg ref="permissionStateRepository"/>
+  <bean id="inOutApplicationService" class="org.dddml.wms.domain.AbstractInOutApplicationService$SimpleInOutApplicationService">
+    <constructor-arg ref="inOutEventStore"/>
+    <constructor-arg ref="inOutStateRepository"/>
   </bean>
 
 
-  <bean id="rolePermissionStateRepository" class="org.dddml.wms.domain.hibernate.HibernateRolePermissionStateRepository">
+  <bean id="organizationStateRepository" class="org.dddml.wms.domain.hibernate.HibernateOrganizationStateRepository">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
   </bean>
 
-  <bean id="rolePermissionEventStore" class="org.dddml.wms.domain.hibernate.HibernateRolePermissionEventStore">
+  <bean id="organizationEventStore" class="org.dddml.wms.domain.hibernate.HibernateOrganizationEventStore">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
   </bean>
 
-  <bean id="rolePermissionApplicationService" class="org.dddml.wms.domain.AbstractRolePermissionApplicationService$SimpleRolePermissionApplicationService">
-    <constructor-arg ref="rolePermissionEventStore"/>
-    <constructor-arg ref="rolePermissionStateRepository"/>
+  <bean id="organizationApplicationService" class="org.dddml.wms.domain.AbstractOrganizationApplicationService$SimpleOrganizationApplicationService">
+    <constructor-arg ref="organizationEventStore"/>
+    <constructor-arg ref="organizationStateRepository"/>
   </bean>
 
 
-  <bean id="audienceStateRepository" class="org.dddml.wms.domain.hibernate.HibernateAudienceStateRepository">
+  <bean id="organizationStructureTypeStateRepository" class="org.dddml.wms.domain.hibernate.HibernateOrganizationStructureTypeStateRepository">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
   </bean>
 
-  <bean id="audienceEventStore" class="org.dddml.wms.domain.hibernate.HibernateAudienceEventStore">
+  <bean id="organizationStructureTypeEventStore" class="org.dddml.wms.domain.hibernate.HibernateOrganizationStructureTypeEventStore">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
   </bean>
 
-  <bean id="audienceApplicationService" class="org.dddml.wms.domain.AbstractAudienceApplicationService$SimpleAudienceApplicationService">
-    <constructor-arg ref="audienceEventStore"/>
-    <constructor-arg ref="audienceStateRepository"/>
+  <bean id="organizationStructureTypeApplicationService" class="org.dddml.wms.domain.AbstractOrganizationStructureTypeApplicationService$SimpleOrganizationStructureTypeApplicationService">
+    <constructor-arg ref="organizationStructureTypeEventStore"/>
+    <constructor-arg ref="organizationStructureTypeStateRepository"/>
+  </bean>
+
+
+  <bean id="organizationStructureStateRepository" class="org.dddml.wms.domain.hibernate.HibernateOrganizationStructureStateRepository">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="organizationStructureEventStore" class="org.dddml.wms.domain.hibernate.HibernateOrganizationStructureEventStore">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="organizationStructureApplicationService" class="org.dddml.wms.domain.AbstractOrganizationStructureApplicationService$SimpleOrganizationStructureApplicationService">
+    <constructor-arg ref="organizationStructureEventStore"/>
+    <constructor-arg ref="organizationStructureStateRepository"/>
+  </bean>
+
+
+  <bean id="warehouseStateRepository" class="org.dddml.wms.domain.hibernate.HibernateWarehouseStateRepository">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="warehouseEventStore" class="org.dddml.wms.domain.hibernate.HibernateWarehouseEventStore">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="warehouseApplicationService" class="org.dddml.wms.domain.AbstractWarehouseApplicationService$SimpleWarehouseApplicationService">
+    <constructor-arg ref="warehouseEventStore"/>
+    <constructor-arg ref="warehouseStateRepository"/>
+  </bean>
+
+
+  <bean id="locatorStateRepository" class="org.dddml.wms.domain.hibernate.HibernateLocatorStateRepository">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="locatorEventStore" class="org.dddml.wms.domain.hibernate.HibernateLocatorEventStore">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="locatorApplicationService" class="org.dddml.wms.domain.AbstractLocatorApplicationService$SimpleLocatorApplicationService">
+    <constructor-arg ref="locatorEventStore"/>
+    <constructor-arg ref="locatorStateRepository"/>
+  </bean>
+
+
+  <bean id="attributeSetInstanceExtensionFieldMvoStateRepository" class="org.dddml.wms.domain.hibernate.HibernateAttributeSetInstanceExtensionFieldMvoStateRepository">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="attributeSetInstanceExtensionFieldMvoEventStore" class="org.dddml.wms.domain.hibernate.HibernateAttributeSetInstanceExtensionFieldMvoEventStore">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="attributeSetInstanceExtensionFieldMvoApplicationService" class="org.dddml.wms.domain.AbstractAttributeSetInstanceExtensionFieldMvoApplicationService$SimpleAttributeSetInstanceExtensionFieldMvoApplicationService">
+    <constructor-arg ref="attributeSetInstanceExtensionFieldMvoEventStore"/>
+    <constructor-arg ref="attributeSetInstanceExtensionFieldMvoStateRepository"/>
   </bean>
 
 
@@ -305,34 +319,6 @@
   <bean id="attributeUseMvoApplicationService" class="org.dddml.wms.domain.AbstractAttributeUseMvoApplicationService$SimpleAttributeUseMvoApplicationService">
     <constructor-arg ref="attributeUseMvoEventStore"/>
     <constructor-arg ref="attributeUseMvoStateRepository"/>
-  </bean>
-
-
-  <bean id="attributeSetInstanceExtensionFieldMvoStateRepository" class="org.dddml.wms.domain.hibernate.HibernateAttributeSetInstanceExtensionFieldMvoStateRepository">
-    <property name="sessionFactory" ref="hibernateSessionFactory"/>
-  </bean>
-
-  <bean id="attributeSetInstanceExtensionFieldMvoEventStore" class="org.dddml.wms.domain.hibernate.HibernateAttributeSetInstanceExtensionFieldMvoEventStore">
-    <property name="sessionFactory" ref="hibernateSessionFactory"/>
-  </bean>
-
-  <bean id="attributeSetInstanceExtensionFieldMvoApplicationService" class="org.dddml.wms.domain.AbstractAttributeSetInstanceExtensionFieldMvoApplicationService$SimpleAttributeSetInstanceExtensionFieldMvoApplicationService">
-    <constructor-arg ref="attributeSetInstanceExtensionFieldMvoEventStore"/>
-    <constructor-arg ref="attributeSetInstanceExtensionFieldMvoStateRepository"/>
-  </bean>
-
-
-  <bean id="inOutLineMvoStateRepository" class="org.dddml.wms.domain.hibernate.HibernateInOutLineMvoStateRepository">
-    <property name="sessionFactory" ref="hibernateSessionFactory"/>
-  </bean>
-
-  <bean id="inOutLineMvoEventStore" class="org.dddml.wms.domain.hibernate.HibernateInOutLineMvoEventStore">
-    <property name="sessionFactory" ref="hibernateSessionFactory"/>
-  </bean>
-
-  <bean id="inOutLineMvoApplicationService" class="org.dddml.wms.domain.AbstractInOutLineMvoApplicationService$SimpleInOutLineMvoApplicationService">
-    <constructor-arg ref="inOutLineMvoEventStore"/>
-    <constructor-arg ref="inOutLineMvoStateRepository"/>
   </bean>
 
 
@@ -389,6 +375,20 @@
   <bean id="userLoginMvoApplicationService" class="org.dddml.wms.domain.AbstractUserLoginMvoApplicationService$SimpleUserLoginMvoApplicationService">
     <constructor-arg ref="userLoginMvoEventStore"/>
     <constructor-arg ref="userLoginMvoStateRepository"/>
+  </bean>
+
+
+  <bean id="inOutLineMvoStateRepository" class="org.dddml.wms.domain.hibernate.HibernateInOutLineMvoStateRepository">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="inOutLineMvoEventStore" class="org.dddml.wms.domain.hibernate.HibernateInOutLineMvoEventStore">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="inOutLineMvoApplicationService" class="org.dddml.wms.domain.AbstractInOutLineMvoApplicationService$SimpleInOutLineMvoApplicationService">
+    <constructor-arg ref="inOutLineMvoEventStore"/>
+    <constructor-arg ref="inOutLineMvoStateRepository"/>
   </bean>
 
 </beans>

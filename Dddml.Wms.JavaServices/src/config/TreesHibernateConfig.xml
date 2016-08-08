@@ -5,12 +5,12 @@
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-  <bean id="treeLocatorStateRepository" class="org.dddml.wms.domain.hibernate.HibernateTreeLocatorStateRepository">
+  <bean id="treePermissionStateRepository" class="org.dddml.wms.domain.hibernate.HibernateTreePermissionStateRepository">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
   </bean>
 
-  <bean id="locatorTreeRepository" class="org.dddml.wms.domain.hibernate.HibernateLocatorTreeRepository">
-    <property name="locatorStateRepository" ref="treeLocatorStateRepository"/>
+  <bean id="permissionTreeRepository" class="org.dddml.wms.domain.hibernate.HibernatePermissionTreeRepository">
+    <property name="permissionStateRepository" ref="treePermissionStateRepository"/>
   </bean>
 
   <bean id="treeOrganizationStructureStateRepository" class="org.dddml.wms.domain.hibernate.HibernateTreeOrganizationStructureStateRepository">
@@ -22,12 +22,12 @@
     <property name="organizationStructureStateRepository" ref="treeOrganizationStructureStateRepository"/>
   </bean>
 
-  <bean id="treePermissionStateRepository" class="org.dddml.wms.domain.hibernate.HibernateTreePermissionStateRepository">
+  <bean id="treeLocatorStateRepository" class="org.dddml.wms.domain.hibernate.HibernateTreeLocatorStateRepository">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
   </bean>
 
-  <bean id="permissionTreeRepository" class="org.dddml.wms.domain.hibernate.HibernatePermissionTreeRepository">
-    <property name="permissionStateRepository" ref="treePermissionStateRepository"/>
+  <bean id="locatorTreeRepository" class="org.dddml.wms.domain.hibernate.HibernateLocatorTreeRepository">
+    <property name="locatorStateRepository" ref="treeLocatorStateRepository"/>
   </bean>
 
 </beans>

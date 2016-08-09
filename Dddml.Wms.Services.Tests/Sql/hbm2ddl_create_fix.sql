@@ -1,15 +1,17 @@
-set @var=if((SELECT true FROM information_schema.TABLE_CONSTRAINTS WHERE
+set @fkConstraintName = (SELECT CONSTRAINT_NAME FROM information_schema.TABLE_CONSTRAINTS WHERE
             CONSTRAINT_SCHEMA = DATABASE() AND
             TABLE_NAME        = 'AttributeSetInstanceStateEventRemovedProperties' AND
-            CONSTRAINT_NAME   = 'FK9C8A405747E4A019' AND
-            CONSTRAINT_TYPE   = 'FOREIGN KEY') = true,'ALTER TABLE AttributeSetInstanceStateEventRemovedProperties
-            drop foreign key FK9C8A405747E4A019','select 1');
-
-prepare stmt from @var;
+            CONSTRAINT_TYPE   = 'FOREIGN KEY');
+set @sqlVar = if(@fkConstraintName is not null, 
+			concat('ALTER TABLE AttributeSetInstanceStateEventRemovedProperties drop foreign key ', @fkConstraintName),
+            'select 1');
+prepare stmt from @sqlVar;
 execute stmt;
 deallocate prepare stmt;
-    
+
 #alter table AttributeSetInstanceStateEventRemovedProperties  drop foreign key FK9C8A405747E4A019;
+
+############################################
 
     drop table if exists Attributes;
 

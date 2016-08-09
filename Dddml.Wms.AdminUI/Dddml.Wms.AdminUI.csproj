@@ -194,11 +194,14 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Content>
+    <Content Include="webpack\aggregates.js">
+      <DependentUpon>GenerateAggregatesStructureJson.tt</DependentUpon>
+    </Content>
     <Content Include="webpack\GenerateAggregatesStructureJson.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GenerateAggregatesStructureJson.txt</LastGenOutput>
       <LastOutputs>
-.\aggregates.json
+.\aggregates.js
 .\GenerateAggregatesStructureJson.txt
 </LastOutputs>
     </Content>
@@ -531,9 +534,6 @@
     </None>
     <None Include="site\form\warehouse_form.php">
       <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
-    </None>
-    <None Include="webpack\aggregates.json">
-      <DependentUpon>GenerateAggregatesStructureJson.tt</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

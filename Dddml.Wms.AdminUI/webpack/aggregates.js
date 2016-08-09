@@ -1,4 +1,4 @@
-[
+export default [
   {
     "name": "AttributeSetInstance",
     "plural": "AttributeSetInstances",
@@ -149,49 +149,49 @@
   },
   {
     "name": "AttributeSetInstanceExtensionFieldMvo",
-    "plural": "AttributeSetInstanceExtensionFieldMvoes",
+    "plural": "AttributeSetInstanceExtensionFieldMvos",
     "title": "Attribute Set Instance Extension Field Mvo",
     "id": "attributeSetInstanceExtensionFieldId"
   },
   {
     "name": "AttributeValueMvo",
-    "plural": "AttributeValueMvoes",
+    "plural": "AttributeValueMvos",
     "title": "Attribute Value Mvo",
     "id": "attributeValueId"
   },
   {
     "name": "AttributeUseMvo",
-    "plural": "AttributeUseMvoes",
+    "plural": "AttributeUseMvos",
     "title": "Attribute Use Mvo",
     "id": "attributeSetAttributeUseId"
   },
   {
     "name": "UserRoleMvo",
-    "plural": "UserRoleMvoes",
+    "plural": "UserRoleMvos",
     "title": "User Role Mvo",
     "id": "userRoleId"
   },
   {
     "name": "UserClaimMvo",
-    "plural": "UserClaimMvoes",
+    "plural": "UserClaimMvos",
     "title": "User Claim Mvo",
     "id": "userClaimId"
   },
   {
     "name": "UserPermissionMvo",
-    "plural": "UserPermissionMvoes",
+    "plural": "UserPermissionMvos",
     "title": "User Permission Mvo",
     "id": "userPermissionId"
   },
   {
     "name": "UserLoginMvo",
-    "plural": "UserLoginMvoes",
+    "plural": "UserLoginMvos",
     "title": "User Login Mvo",
     "id": "userLoginId"
   },
   {
     "name": "InOutLineMvo",
-    "plural": "InOutLineMvoes",
+    "plural": "InOutLineMvos",
     "title": "In Out Line Mvo",
     "id": "inOutLineId"
   }

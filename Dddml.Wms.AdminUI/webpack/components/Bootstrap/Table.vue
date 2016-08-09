@@ -1,5 +1,5 @@
 <template>
-    <table class="table table-bordered">
+    <table class="table table-bordered" v-on:click="output">
         <thead>
         <tr>
             <th v-for="column in columns">{{column}}</th>
@@ -9,7 +9,7 @@
         </thead>
         <tbody>
         <tr v-for="row in rows">
-            <td v-for="field in row.fields">{{field}}</td>
+            <td v-for="field in row">{{field}}</td>
             <td>
                 <a href="{{row.showLink}}" class="btn btn-sm bg-light-blue" target="_blank">查看</a>
                 <a href="{{row.editLink}}" class="btn btn-sm bg-orange">编辑</a>
@@ -29,7 +29,7 @@
 <style>
 </style>
 <script>
-    import buttonDropdowns from './buttonDropdowns.vue'
+    import ButtonDropdowns from './buttonDropdowns.vue'
     export default{
         data(){
             return {}
@@ -39,7 +39,12 @@
             rows: Array
         },
         components: {
-            buttonDropdowns
+            ButtonDropdowns
+        },
+        methods: {
+            output(){
+                console.log(this.rows);
+            }
         }
     }
 </script>

@@ -25,14 +25,16 @@
                             <!-- User Account: style can be found in dropdown.less -->
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img :src="userImg" class="user-image" alt="User Image">
+                                    <img :src="userImg | default 'css/admin-lte/img/user2-160x160.jpg'"
+                                         class="user-image" alt="User Image">
                                     <!--<img src="css/admin-lte/img/user2-160x160.jpg" class="user-image" alt="User Image">-->
                                     <span class="hidden-xs">张三</span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- User image -->
                                     <li class="user-header">
-                                        <img :src="userImg" class="img-circle"
+                                        <img :src="userImg | default 'css/admin-lte/img/user2-160x160.jpg'"
+                                             class="img-circle"
                                              alt="User Image">
 
                                         <p>
@@ -64,7 +66,8 @@
                     <!-- Sidebar user panel -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img :src="userImg" class="img-circle" alt="User Image">
+                            <img :src="userImg | default 'css/admin-lte/img/user2-160x160.jpg'" class="img-circle"
+                                 alt="User Image">
                         </div>
                         <div class="pull-left info">
                             <p>张三</p>
@@ -75,9 +78,10 @@
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul id="main-menu" class="sidebar-menu">
                         <li class="header">聚合</li>
-                        <li>
-                            <a href="pages/widgets.html">
-                                <i class="fa fa-th"></i> <span>InOut</span>
+                        <li v-for="aggregate in aggregates">
+                            <a v-link="{ name: 'aggregate', params: { name: aggregate.name } }"
+                               v-on:click="changeAggregate(aggregate)">
+                                <i class="fa fa-th"></i> <span>{{aggregate.title}}</span>
                             </a>
                         </li>
                     </ul>
@@ -86,42 +90,7 @@
 
             <!-- =============================================== -->
 
-            <!-- Content Wrapper. Contains page content -->
-            <div class="content-wrapper">
-                <!-- Content Header (Page header) -->
-                <section class="content-header">
-                    <h1>
-                        InOuts
-                    </h1>
-                    <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> 聚合</a></li>
-                        <li class="active">InOuts</li>
-                    </ol>
-                </section>
-
-                <!-- Main content -->
-                <section class="content">
-
-                    <!-- Default box -->
-                    <div class="box">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">标题</h3>
-                        </div>
-                        <div class="box-body no-padding">
-                            <v-table></v-table>
-                        </div>
-                        <!-- /.box-body -->
-                        <div class="box-footer">
-                            脚部
-                        </div>
-                        <!-- /.box-footer-->
-                    </div>
-                    <!-- /.box -->
-
-                </section>
-                <!-- /.content -->
-            </div>
-            <!-- /.content-wrapper -->
+            <router-view :aggregate="currentAggregate"></router-view>
 
             <footer class="main-footer">
                 <div class="pull-right hidden-xs">
@@ -136,16 +105,31 @@
 <style>
 </style>
 <script>
-    import vTable from './Bootstrap/Table.vue'
+    import aggregates from './../aggregates';
     export default{
         data(){
-            return {}
-        },
-        components: {
-            vTable
+            return {
+                aggregates: aggregates,
+                currentAggregate: {}
+            }
         },
         props: {
             userImg: String
+        },
+        methods: {
+            changeAggregate: function (aggregate) {
+                this.currentAggregate = aggregate;
+//                console.log(this.currentAggregate);
+            }
+        },
+        ready(){
+            this.currentAggregate = {'a': 111};
+            for (let i = 0; i < this.aggregates.length; i++) {
+                if (this.aggregates[i].name == this.$route.params.name) {
+                    this.currentAggregate = this.aggregates[i];
+                    break;
+                }
+            }
         }
     }
 </script>

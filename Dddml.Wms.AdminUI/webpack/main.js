@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import App from './components/App.vue'
+import VueRouter from 'vue-router'
+import VueResource from 'vue-resource'
+import route from './routes'
 
 Vue.filter('default', function (value, defaultValue) {
     if (!value) {
@@ -9,9 +12,12 @@ Vue.filter('default', function (value, defaultValue) {
     return value;
 });
 
-new Vue({
-    el: 'body',
-    components: {
-        App
-    }
-});
+Vue.use(VueResource);
+Vue.http.options.root = '/api';
+
+Vue.use(VueRouter);
+var router = new VueRouter();
+
+router.map(route);
+
+router.start(App, '#app');

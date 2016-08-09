@@ -40,7 +40,7 @@ class ApiControllerProvider implements ControllerProviderInterface
 
     public function getEntities(Application $app, Request $request, $entities)
     {
-        $className = 'Dddml\Wms\HttpClient\\' . $entities . 'QueryRequest';
+        $className = 'Dddml\Wms\HttpClient\\' . $entities . 'QueryRequest';echo $className;
 
         $response = $app['api.proxy']->get(new $className(), $request);
 

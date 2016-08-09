@@ -53,7 +53,6 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool AttrSetInstEFGroupDeleted { get; set; }
 
-
         protected virtual void InitializeProperties()
         { 
         }

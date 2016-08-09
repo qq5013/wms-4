@@ -1,5 +1,6 @@
 package org.dddml.wms.domain;
 
+import java.util.*;
 import org.joda.money.Money;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -161,7 +162,6 @@ public interface InOutStateEvent extends Event
 
     void setActive(Boolean active);
 
-    
 
     interface InOutStateCreated extends InOutStateEvent
     {

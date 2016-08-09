@@ -18,7 +18,6 @@ namespace Dddml.Wms.Domain
 		IActive, 
 		IVersioned<long>
 	{
-		
 
 		void When(IUserPermissionMvoStateCreated e);
 

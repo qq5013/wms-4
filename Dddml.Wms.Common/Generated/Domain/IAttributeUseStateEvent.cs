@@ -25,7 +25,6 @@ namespace Dddml.Wms.Domain
 		// Outer Id:
 		//string AttributeSetId { get; set; }
 
-
 	}
 
 	public interface IAttributeUseStateCreated : IAttributeUseStateEvent//, IAttributeUseStateProperties

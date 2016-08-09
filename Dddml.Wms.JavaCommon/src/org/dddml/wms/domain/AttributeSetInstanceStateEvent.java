@@ -1,5 +1,6 @@
 package org.dddml.wms.domain;
 
+import java.util.*;
 import java.math.BigDecimal;
 import java.util.Date;
 import org.dddml.wms.specialization.Event;
@@ -1872,7 +1873,6 @@ public interface AttributeSetInstanceStateEvent extends Event
 
     void setActive(Boolean active);
 
-    
 
     interface AttributeSetInstanceStateCreated extends AttributeSetInstanceStateEvent
     {

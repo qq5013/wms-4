@@ -24,7 +24,6 @@ namespace Dddml.Wms.Domain
 
 		bool? Active { get; set; }
 
-
 	}
 
 	public interface IPermissionStateCreated : IPermissionStateEvent//, IPermissionStateProperties

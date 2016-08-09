@@ -22,7 +22,6 @@ namespace Dddml.Wms.Domain
 
 		bool? Active { get; set; }
 
-
 	}
 
 	public interface IRoleStateCreated : IRoleStateEvent//, IRoleStateProperties

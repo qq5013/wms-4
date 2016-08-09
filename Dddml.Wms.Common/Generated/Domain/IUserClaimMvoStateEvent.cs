@@ -58,7 +58,6 @@ namespace Dddml.Wms.Domain
 
 		bool? UserDeleted { get; set; }
 
-
 	}
 
 	public interface IUserClaimMvoStateCreated : IUserClaimMvoStateEvent//, IUserClaimMvoStateProperties

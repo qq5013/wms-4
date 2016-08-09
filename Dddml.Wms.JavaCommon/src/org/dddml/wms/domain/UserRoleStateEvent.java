@@ -1,5 +1,6 @@
 package org.dddml.wms.domain;
 
+import java.util.*;
 import java.util.Date;
 import org.dddml.wms.specialization.Event;
 
@@ -31,7 +32,6 @@ public interface UserRoleStateEvent extends Event
 
     void setUserId(String userId);
 
-    
 
     interface UserRoleStateCreated extends UserRoleStateEvent
     {

@@ -29,7 +29,6 @@ namespace Dddml.Wms.Domain
 
 		public virtual string AttributeId { get; set; }
 
-
         protected virtual void InitializeProperties()
         { 
         }

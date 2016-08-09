@@ -26,7 +26,6 @@ namespace Dddml.Wms.Domain
 
 		bool? Active { get; set; }
 
-
 	}
 
 	public interface IOrganizationStateCreated : IOrganizationStateEvent//, IOrganizationStateProperties

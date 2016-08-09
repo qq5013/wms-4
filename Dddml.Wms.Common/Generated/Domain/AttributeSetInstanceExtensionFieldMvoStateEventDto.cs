@@ -52,7 +52,6 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? AttrSetInstEFGroupDeleted { get; set; }
 
-
 		public virtual string CreatedBy { get; set; }
 
 		public virtual DateTime CreatedAt { get; set; }

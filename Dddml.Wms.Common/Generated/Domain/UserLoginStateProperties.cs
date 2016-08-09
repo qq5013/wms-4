@@ -23,7 +23,6 @@ namespace Dddml.Wms.Domain
 
 		public virtual string UserId { get; set; }
 
-
         protected virtual void InitializeProperties()
         { 
         }

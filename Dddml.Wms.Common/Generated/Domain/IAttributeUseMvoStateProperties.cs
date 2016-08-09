@@ -47,7 +47,6 @@ namespace Dddml.Wms.Domain
 
 		bool AttributeSetDeleted { get; set; }
 
-
 	}
 
 }

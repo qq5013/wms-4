@@ -58,7 +58,6 @@ namespace Dddml.Wms.Domain
 		// Outer Id:
 		//string InOutDocumentNumber { get; set; }
 
-
 	}
 
 	public interface IInOutLineStateCreated : IInOutLineStateEvent//, IInOutLineStateProperties

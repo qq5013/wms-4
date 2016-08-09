@@ -25,7 +25,6 @@ namespace Dddml.Wms.Domain
 
 		bool Active { get; set; }
 
-
 	}
 
 }

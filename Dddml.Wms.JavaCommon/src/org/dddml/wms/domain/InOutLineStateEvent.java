@@ -1,5 +1,6 @@
 package org.dddml.wms.domain;
 
+import java.util.*;
 import java.math.BigDecimal;
 import java.util.Date;
 import org.dddml.wms.specialization.Event;
@@ -100,7 +101,6 @@ public interface InOutLineStateEvent extends Event
 
     void setInOutDocumentNumber(String inOutDocumentNumber);
 
-    
 
     interface InOutLineStateCreated extends InOutLineStateEvent
     {

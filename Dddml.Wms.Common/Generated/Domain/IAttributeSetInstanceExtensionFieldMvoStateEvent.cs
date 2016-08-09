@@ -52,7 +52,6 @@ namespace Dddml.Wms.Domain
 
 		bool? AttrSetInstEFGroupDeleted { get; set; }
 
-
 	}
 
 	public interface IAttributeSetInstanceExtensionFieldMvoStateCreated : IAttributeSetInstanceExtensionFieldMvoStateEvent//, IAttributeSetInstanceExtensionFieldMvoStateProperties

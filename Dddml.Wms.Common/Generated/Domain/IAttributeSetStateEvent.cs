@@ -30,7 +30,6 @@ namespace Dddml.Wms.Domain
 
 		bool? Active { get; set; }
 
-
 	}
 
 	public interface IAttributeSetStateCreated : IAttributeSetStateEvent//, IAttributeSetStateProperties

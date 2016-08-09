@@ -1,5 +1,6 @@
 package org.dddml.wms.domain;
 
+import java.util.*;
 import java.util.Date;
 import org.dddml.wms.specialization.Event;
 
@@ -91,7 +92,6 @@ public interface AttributeSetInstanceExtensionFieldMvoStateEvent extends Event
 
     void setAttrSetInstEFGroupDeleted(Boolean attrSetInstEFGroupDeleted);
 
-    
 
     interface AttributeSetInstanceExtensionFieldMvoStateCreated extends AttributeSetInstanceExtensionFieldMvoStateEvent
     {

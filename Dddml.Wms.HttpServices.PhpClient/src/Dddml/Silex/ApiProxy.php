@@ -34,12 +34,16 @@ class ApiProxy
         /** @var QueryExecutor $executor */
         $executor = $this->app['api.query.executor'];
 
+        if ($httpRequest->headers->get('Authorization')) {
+            $headers = [
+                'Authorization' => $httpRequest->headers->get('Authorization'),
+            ];
+        }
+
         $json = $executor->executeJson($queryRequest, [
             'parameters' => $params,
             'query'      => $httpRequest->query->all(),
-            'headers'    => [
-                'Authorization' => $httpRequest->headers->get('Authorization'),
-            ],
+            'headers'    => $headers,
         ]);
 
         $response = $executor->getLastResponse();

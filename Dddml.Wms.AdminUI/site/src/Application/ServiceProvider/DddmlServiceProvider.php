@@ -32,7 +32,7 @@ class DddmlServiceProvider implements ServiceProviderInterface, BootableProvider
 
         $app['api.command.executor'] = function ($app) {
             $executor = new CommandExecutor($app['api.baseUri']);
-            if($app['api.rememberAuth']){
+            if ($app['api.rememberAuth']) {
                 $executor->setAuth($app['api.auth']);
             }
 
@@ -41,7 +41,9 @@ class DddmlServiceProvider implements ServiceProviderInterface, BootableProvider
 
         $app['api.query.executor'] = function ($app) {
             $executor = new QueryExecutor($app['api.baseUri']);
-            $executor->setAuth($app['api.auth']);
+            if ($app['api.rememberAuth']) {
+                $executor->setAuth($app['api.auth']);
+            }
 
             return $executor;
         };

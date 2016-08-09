@@ -1,4 +1,4 @@
-[
+export default [
   {
     "name": "AttributeSetInstance",
     "plural": "AttributeSetInstances",

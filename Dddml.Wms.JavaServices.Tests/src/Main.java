@@ -1,11 +1,10 @@
-import jdk.nashorn.internal.runtime.arrays.IteratorAction;
 import org.dddml.wms.domain.*;
 import org.dddml.wms.specialization.ApplicationContext;
 import org.dddml.wms.specialization.spring.SpringApplicationContext;
 import org.hibernate.HibernateException;
-import org.hibernate.SessionFactory;
-import org.hibernate.Session;
 import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.metadata.ClassMetadata;
 import org.hibernate.service.ServiceRegistry;
@@ -13,11 +12,11 @@ import org.hibernate.service.ServiceRegistryBuilder;
 import org.joda.money.CurrencyUnit;
 import org.joda.money.Money;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.util.Assert;
 import org.squirrelframework.foundation.component.SquirrelProvider;
 import org.squirrelframework.foundation.fsm.DotVisitor;
 
-import java.util.*;
+import java.util.Map;
+import java.util.UUID;
 
 public class Main {
 

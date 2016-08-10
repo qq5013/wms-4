@@ -35,7 +35,7 @@ export default [
     "name": "RolePermission",
     "plural": "RolePermissions",
     "title": "Role Permission",
-    "id": "id"
+    "id": { "name":"id", "properties": ["roleId", "permissionId"] }
   },
   {
     "name": "Attribute",
@@ -133,7 +133,7 @@ export default [
     "name": "OrganizationStructure",
     "plural": "OrganizationStructures",
     "title": "Organization Structure",
-    "id": "id"
+    "id": { "name":"id", "properties": ["organizationStructureTypeId", "parentId", "subsidiaryId"] }
   },
   {
     "name": "Warehouse",
@@ -151,49 +151,49 @@ export default [
     "name": "AttributeSetInstanceExtensionFieldMvo",
     "plural": "AttributeSetInstanceExtensionFieldMvos",
     "title": "Attribute Set Instance Extension Field Mvo",
-    "id": "attributeSetInstanceExtensionFieldId"
+    "id": { "name":"attributeSetInstanceExtensionFieldId", "properties": ["groupId", "index"] }
   },
   {
     "name": "AttributeValueMvo",
     "plural": "AttributeValueMvos",
     "title": "Attribute Value Mvo",
-    "id": "attributeValueId"
+    "id": { "name":"attributeValueId", "properties": ["attributeId", "value"] }
   },
   {
     "name": "AttributeUseMvo",
     "plural": "AttributeUseMvos",
     "title": "Attribute Use Mvo",
-    "id": "attributeSetAttributeUseId"
+    "id": { "name":"attributeSetAttributeUseId", "properties": ["attributeSetId", "attributeId"] }
   },
   {
     "name": "UserRoleMvo",
     "plural": "UserRoleMvos",
     "title": "User Role Mvo",
-    "id": "userRoleId"
+    "id": { "name":"userRoleId", "properties": ["userId", "roleId"] }
   },
   {
     "name": "UserClaimMvo",
     "plural": "UserClaimMvos",
     "title": "User Claim Mvo",
-    "id": "userClaimId"
+    "id": { "name":"userClaimId", "properties": ["userId", "claimId"] }
   },
   {
     "name": "UserPermissionMvo",
     "plural": "UserPermissionMvos",
     "title": "User Permission Mvo",
-    "id": "userPermissionId"
+    "id": { "name":"userPermissionId", "properties": ["userId", "permissionId"] }
   },
   {
     "name": "UserLoginMvo",
     "plural": "UserLoginMvos",
     "title": "User Login Mvo",
-    "id": "userLoginId"
+    "id": { "name":"userLoginId", "properties": ["userId", "loginKeyLoginProvider", "loginKeyProviderKey"] }
   },
   {
     "name": "InOutLineMvo",
     "plural": "InOutLineMvos",
     "title": "In Out Line Mvo",
-    "id": "inOutLineId"
+    "id": { "name":"inOutLineId", "properties": ["inOutDocumentNumber", "skuIdProductId", "skuIdAttributeSetInstanceId"] }
   }
 ]
 

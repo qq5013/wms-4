@@ -123,7 +123,6 @@
             }
         },
         ready(){
-            this.currentAggregate = {'a': 111};
             for (let i = 0; i < this.aggregates.length; i++) {
                 if (this.aggregates[i].name == this.$route.params.name) {
                     this.currentAggregate = this.aggregates[i];

@@ -3,11 +3,13 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                {{aggregate.title}}
+                空白页面演示
+                <small>最基本的结构模板</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> 聚合</a></li>
-                <li class="active">{{aggregate.title}}</li>
+                <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+                <li><a href="#">页面演示</a></li>
+                <li class="active">空白页面</li>
             </ol>
         </section>
 
@@ -17,10 +19,15 @@
             <!-- Default box -->
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">{{aggregate.title}}</h3>
+                    <h3 class="box-title">标题</h3>
                 </div>
-                <div class="box-body no-padding table-responsive">
-                    <v-table :columns="tableColumns" :rows="tableData"></v-table>
+                <div class="box-body form-horizontal" v-for="field in fields">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">{{ field }}</label>
+                        <div class="col-sm-10">
+                            <span class="form-control">{{entity[field]}}</span>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer">
@@ -31,25 +38,20 @@
             <!-- /.box -->
 
         </section>
-        <!-- /.content -->
     </div>
 </template>
 <style>
 </style>
 <script>
-    import VTable from './Bootstrap/Table.vue'
     export default{
         data(){
-            return {
-                tableData: [],
-                tableColumns: []
+            return{
+                msg:'hello vue'
             }
         },
-        components: {
-            VTable
-        },
-        props: {
-            aggregate: Object
+        components:{
+            'other-component':OtherComponent,
+            HeaderComponent,
         },
         route: {
             data() {
@@ -64,6 +66,5 @@
                     // error callback
                 });
             }
-        }
-    };
+    }
 </script>

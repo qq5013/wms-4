@@ -55,14 +55,10 @@
             data() {
                 this.$http.get(this.aggregate.plural).then((response) => {
                     this.tableData = response.data;
-                    if (this.tableData[0]) {
-//                        this.tableColumns = Object.keys(this.tableData[0]);
-                        for(let key in this.tableData[0]){
-                            if(!(this.tableData[0][key] instanceof Array)){
-                                this.tableColumns.push(key);
-                            }
-                        }
-                    }
+
+                    this.tableColumns = this.aggregate.fields;
+                    this.tableColumns.unshift(this.aggregate.id.name);
+
                     for (let i = 0; i < this.tableData.length; i++) {
                         let id;
                         if ((typeof this.aggregate.id) == 'string') {

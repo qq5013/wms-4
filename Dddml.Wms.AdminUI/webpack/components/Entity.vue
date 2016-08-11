@@ -7,7 +7,9 @@
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
-                <li><a v-link="{ name: 'aggregate', params: { name: $route.params.name } }">{{$route.params.name}}</a></li>
+                <li>
+                    <a v-link="{ name: 'aggregate', params: { name: $route.params.name } }">{{$route.params.name}}</a>
+                </li>
                 <li class="active">{{$route.params.id}}</li>
             </ol>
         </section>
@@ -76,18 +78,18 @@
 //                    this.entity = response.data;
                     let data = {};
                     let children = {};
-                    for(let key in response.data){
-                        if(!(response.data[key] instanceof Array)){
+                    for (let key in response.data) {
+                        if (!(response.data[key] instanceof Array)) {
                             data[key] = response.data[key];
-                        }else{
+                        } else {
                             children[key] = {
 //                                columns: [],
 //                                data: {}
                             };
                             let row = response.data[key][0];
-                            if(row){
+                            if (row) {
                                 let columns = [];
-                                for(let key in row){
+                                for (let key in row) {
                                     columns.push(key);
                                 }
                                 children[key].columns = columns;

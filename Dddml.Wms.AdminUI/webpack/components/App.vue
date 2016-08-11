@@ -81,7 +81,7 @@
                         <li v-for="aggregate in aggregates">
                             <a v-link="{ name: 'aggregate', params: { name: aggregate.plural } }"
                                v-on:click="changeAggregate(aggregate)">
-                                <i class="fa fa-th"></i> <span>{{aggregate.title}}</span>
+                                <i class="fa fa-th"></i> <span>{{aggregate.collectionLabel}}</span>
                             </a>
                         </li>
                     </ul>

@@ -79,7 +79,7 @@
                     <ul id="main-menu" class="sidebar-menu">
                         <li class="header">聚合</li>
                         <li v-for="aggregate in aggregates">
-                            <a v-link="{ name: 'aggregate', params: { name: aggregate.name } }"
+                            <a v-link="{ name: 'aggregate', params: { name: aggregate.plural } }"
                                v-on:click="changeAggregate(aggregate)">
                                 <i class="fa fa-th"></i> <span>{{aggregate.title}}</span>
                             </a>
@@ -124,7 +124,7 @@
         },
         ready(){
             for (let i = 0; i < this.aggregates.length; i++) {
-                if (this.aggregates[i].name == this.$route.params.name) {
+                if (this.aggregates[i].plural == this.$route.params.name) {
                     this.currentAggregate = this.aggregates[i];
                     break;
                 }

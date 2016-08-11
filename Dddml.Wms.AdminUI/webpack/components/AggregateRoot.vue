@@ -54,16 +54,35 @@
         route: {
             data() {
                 this.$http.get(this.aggregate.plural).then((response) => {
-//                    console.log(response);
                     this.tableData = response.data;
                     if (this.tableData[0]) {
                         this.tableColumns = Object.keys(this.tableData[0]);
-//                        console.log(this.tableColumns)
+                    }
+                    for (let i = 0; i < this.tableData.length; i++) {
+                        let id;
+                        if ((typeof this.aggregate.id) == 'string') {
+                            id = this.tableData[i][this.aggregate.id];
+                        } else {
+                            let properties = [];
+                            for (let j = 0; j < this.aggregate.id.properties.length; j++) {
+                                properties.push(this.tableData[i][this.aggregate.id.name][this.aggregate.id.properties[j]]);
+                            }
+                            id = properties.join(',');
+                        }
+
+                        this.tableData[i].detailRoute = {
+                            name: 'entity',
+                            params: {
+                                name: this.aggregate.plural,
+                                id: encodeURI(id)
+                            }
+                        };
                     }
                 }, (response) => {
                     // error callback
                 });
+
             }
-        }
+        },
     };
 </script>

@@ -13,7 +13,7 @@ Vue.filter('default', function (value, defaultValue) {
 });
 
 Vue.use(VueResource);
-Vue.http.options.root = '/api';
+Vue.http.options.root = '/index_dev.php/api';
 
 Vue.use(VueRouter);
 var router = new VueRouter();

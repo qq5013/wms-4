@@ -10,7 +10,7 @@
         <tr v-for="row in rows">
             <td v-for="column in columns">{{row[column]}}</td>
             <td>
-                <a href="{{row.showLink}}" class="btn btn-sm bg-light-blue" target="_blank">查看</a>
+                <a v-link="row.detailRoute" class="btn btn-sm bg-light-blue">查看</a>
                 <a href="{{row.editLink}}" class="btn btn-sm bg-orange">编辑</a>
                 <a href="{{row.delLink}}" class="btn btn-sm bg-red delete">删除</a>
             </td>

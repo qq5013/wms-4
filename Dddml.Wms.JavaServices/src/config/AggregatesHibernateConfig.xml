@@ -6,6 +6,7 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
+
   <bean id="attributeSetInstanceStateRepository" class="org.dddml.wms.domain.hibernate.HibernateAttributeSetInstanceStateRepository">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
   </bean>
@@ -18,6 +19,7 @@
     <constructor-arg ref="attributeSetInstanceEventStore"/>
     <constructor-arg ref="attributeSetInstanceStateRepository"/>
   </bean>
+
 
   <bean id="attributeSetInstanceExtensionFieldStateDao" class="org.dddml.wms.domain.hibernate.HibernateAttributeSetInstanceExtensionFieldStateDao">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
@@ -42,6 +44,7 @@
   </bean>
 
 
+
   <bean id="roleStateRepository" class="org.dddml.wms.domain.hibernate.HibernateRoleStateRepository">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
   </bean>
@@ -54,6 +57,7 @@
     <constructor-arg ref="roleEventStore"/>
     <constructor-arg ref="roleStateRepository"/>
   </bean>
+
 
 
   <bean id="permissionStateRepository" class="org.dddml.wms.domain.hibernate.HibernatePermissionStateRepository">
@@ -70,6 +74,7 @@
   </bean>
 
 
+
   <bean id="rolePermissionStateRepository" class="org.dddml.wms.domain.hibernate.HibernateRolePermissionStateRepository">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
   </bean>
@@ -82,6 +87,7 @@
     <constructor-arg ref="rolePermissionEventStore"/>
     <constructor-arg ref="rolePermissionStateRepository"/>
   </bean>
+
 
   <bean id="attributeValueStateDao" class="org.dddml.wms.domain.hibernate.HibernateAttributeValueStateDao">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
@@ -104,6 +110,7 @@
     <constructor-arg ref="attributeEventStore"/>
     <constructor-arg ref="attributeStateRepository"/>
   </bean>
+
 
   <bean id="attributeUseStateDao" class="org.dddml.wms.domain.hibernate.HibernateAttributeUseStateDao">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
@@ -128,6 +135,7 @@
   </bean>
 
 
+
   <bean id="audienceStateRepository" class="org.dddml.wms.domain.hibernate.HibernateAudienceStateRepository">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
   </bean>
@@ -140,6 +148,7 @@
     <constructor-arg ref="audienceEventStore"/>
     <constructor-arg ref="audienceStateRepository"/>
   </bean>
+
 
   <bean id="userRoleStateDao" class="org.dddml.wms.domain.hibernate.HibernateUserRoleStateDao">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
@@ -187,6 +196,7 @@
     <constructor-arg ref="userStateRepository"/>
   </bean>
 
+
   <bean id="inOutLineStateDao" class="org.dddml.wms.domain.hibernate.HibernateInOutLineStateDao">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
   </bean>
@@ -210,6 +220,7 @@
   </bean>
 
 
+
   <bean id="organizationStateRepository" class="org.dddml.wms.domain.hibernate.HibernateOrganizationStateRepository">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
   </bean>
@@ -222,6 +233,7 @@
     <constructor-arg ref="organizationEventStore"/>
     <constructor-arg ref="organizationStateRepository"/>
   </bean>
+
 
 
   <bean id="organizationStructureTypeStateRepository" class="org.dddml.wms.domain.hibernate.HibernateOrganizationStructureTypeStateRepository">
@@ -238,6 +250,7 @@
   </bean>
 
 
+
   <bean id="organizationStructureStateRepository" class="org.dddml.wms.domain.hibernate.HibernateOrganizationStructureStateRepository">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
   </bean>
@@ -250,6 +263,7 @@
     <constructor-arg ref="organizationStructureEventStore"/>
     <constructor-arg ref="organizationStructureStateRepository"/>
   </bean>
+
 
 
   <bean id="warehouseStateRepository" class="org.dddml.wms.domain.hibernate.HibernateWarehouseStateRepository">
@@ -266,6 +280,7 @@
   </bean>
 
 
+
   <bean id="locatorStateRepository" class="org.dddml.wms.domain.hibernate.HibernateLocatorStateRepository">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
   </bean>
@@ -278,6 +293,7 @@
     <constructor-arg ref="locatorEventStore"/>
     <constructor-arg ref="locatorStateRepository"/>
   </bean>
+
 
 
   <bean id="attributeSetInstanceExtensionFieldMvoStateRepository" class="org.dddml.wms.domain.hibernate.HibernateAttributeSetInstanceExtensionFieldMvoStateRepository">
@@ -294,6 +310,7 @@
   </bean>
 
 
+
   <bean id="attributeValueMvoStateRepository" class="org.dddml.wms.domain.hibernate.HibernateAttributeValueMvoStateRepository">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
   </bean>
@@ -306,6 +323,7 @@
     <constructor-arg ref="attributeValueMvoEventStore"/>
     <constructor-arg ref="attributeValueMvoStateRepository"/>
   </bean>
+
 
 
   <bean id="attributeUseMvoStateRepository" class="org.dddml.wms.domain.hibernate.HibernateAttributeUseMvoStateRepository">
@@ -322,6 +340,7 @@
   </bean>
 
 
+
   <bean id="userRoleMvoStateRepository" class="org.dddml.wms.domain.hibernate.HibernateUserRoleMvoStateRepository">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
   </bean>
@@ -334,6 +353,7 @@
     <constructor-arg ref="userRoleMvoEventStore"/>
     <constructor-arg ref="userRoleMvoStateRepository"/>
   </bean>
+
 
 
   <bean id="userClaimMvoStateRepository" class="org.dddml.wms.domain.hibernate.HibernateUserClaimMvoStateRepository">
@@ -350,6 +370,7 @@
   </bean>
 
 
+
   <bean id="userPermissionMvoStateRepository" class="org.dddml.wms.domain.hibernate.HibernateUserPermissionMvoStateRepository">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
   </bean>
@@ -364,6 +385,7 @@
   </bean>
 
 
+
   <bean id="userLoginMvoStateRepository" class="org.dddml.wms.domain.hibernate.HibernateUserLoginMvoStateRepository">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
   </bean>
@@ -376,6 +398,7 @@
     <constructor-arg ref="userLoginMvoEventStore"/>
     <constructor-arg ref="userLoginMvoStateRepository"/>
   </bean>
+
 
 
   <bean id="inOutLineMvoStateRepository" class="org.dddml.wms.domain.hibernate.HibernateInOutLineMvoStateRepository">

@@ -116,8 +116,9 @@ public abstract class AbstractUserRoleMvoApplicationService implements UserRoleM
         if (command.getUserVersion() == null) { command.setUserVersion(UserRoleMvoState.VERSION_NULL); }
         if (state.getUserVersion() != null && state.getUserVersion() > command.getUserVersion())
         {
-            Event lastEvent = getEventStore().findLastEvent(UserRoleMvoStateEvent.class, eventStoreAggregateId, command.getUserVersion());
-            if (lastEvent != null && lastEvent instanceof AbstractStateEvent && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))
+            Event lastEvent = getEventStore().findLastEvent(AbstractUserRoleMvoStateEvent.class, eventStoreAggregateId, command.getUserVersion());
+            if (lastEvent != null && lastEvent instanceof AbstractStateEvent
+               && command.getCommandId() != null && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))
             {
                 repeated = true;
             }

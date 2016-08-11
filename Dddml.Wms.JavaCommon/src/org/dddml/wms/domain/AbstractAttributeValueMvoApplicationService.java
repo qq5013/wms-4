@@ -116,8 +116,9 @@ public abstract class AbstractAttributeValueMvoApplicationService implements Att
         if (command.getAttributeVersion() == null) { command.setAttributeVersion(AttributeValueMvoState.VERSION_NULL); }
         if (state.getAttributeVersion() != null && state.getAttributeVersion() > command.getAttributeVersion())
         {
-            Event lastEvent = getEventStore().findLastEvent(AttributeValueMvoStateEvent.class, eventStoreAggregateId, command.getAttributeVersion());
-            if (lastEvent != null && lastEvent instanceof AbstractStateEvent && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))
+            Event lastEvent = getEventStore().findLastEvent(AbstractAttributeValueMvoStateEvent.class, eventStoreAggregateId, command.getAttributeVersion());
+            if (lastEvent != null && lastEvent instanceof AbstractStateEvent
+               && command.getCommandId() != null && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))
             {
                 repeated = true;
             }

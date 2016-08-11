@@ -118,8 +118,9 @@ public abstract class AbstractInOutLineMvoApplicationService implements InOutLin
         if (command.getInOutVersion() == null) { command.setInOutVersion(InOutLineMvoState.VERSION_NULL); }
         if (state.getInOutVersion() != null && state.getInOutVersion() > command.getInOutVersion())
         {
-            Event lastEvent = getEventStore().findLastEvent(InOutLineMvoStateEvent.class, eventStoreAggregateId, command.getInOutVersion());
-            if (lastEvent != null && lastEvent instanceof AbstractStateEvent && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))
+            Event lastEvent = getEventStore().findLastEvent(AbstractInOutLineMvoStateEvent.class, eventStoreAggregateId, command.getInOutVersion());
+            if (lastEvent != null && lastEvent instanceof AbstractStateEvent
+               && command.getCommandId() != null && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))
             {
                 repeated = true;
             }

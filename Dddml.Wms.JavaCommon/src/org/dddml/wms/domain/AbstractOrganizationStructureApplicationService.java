@@ -116,8 +116,9 @@ public abstract class AbstractOrganizationStructureApplicationService implements
         if (command.getVersion() == null) { command.setVersion(OrganizationStructureState.VERSION_NULL); }
         if (state.getVersion() != null && state.getVersion() > command.getVersion())
         {
-            Event lastEvent = getEventStore().findLastEvent(OrganizationStructureStateEvent.class, eventStoreAggregateId, command.getVersion());
-            if (lastEvent != null && lastEvent instanceof AbstractStateEvent && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))
+            Event lastEvent = getEventStore().findLastEvent(AbstractOrganizationStructureStateEvent.class, eventStoreAggregateId, command.getVersion());
+            if (lastEvent != null && lastEvent instanceof AbstractStateEvent
+               && command.getCommandId() != null && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))
             {
                 repeated = true;
             }

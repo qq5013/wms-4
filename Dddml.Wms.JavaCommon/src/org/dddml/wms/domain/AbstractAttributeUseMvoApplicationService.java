@@ -116,8 +116,9 @@ public abstract class AbstractAttributeUseMvoApplicationService implements Attri
         if (command.getAttributeSetVersion() == null) { command.setAttributeSetVersion(AttributeUseMvoState.VERSION_NULL); }
         if (state.getAttributeSetVersion() != null && state.getAttributeSetVersion() > command.getAttributeSetVersion())
         {
-            Event lastEvent = getEventStore().findLastEvent(AttributeUseMvoStateEvent.class, eventStoreAggregateId, command.getAttributeSetVersion());
-            if (lastEvent != null && lastEvent instanceof AbstractStateEvent && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))
+            Event lastEvent = getEventStore().findLastEvent(AbstractAttributeUseMvoStateEvent.class, eventStoreAggregateId, command.getAttributeSetVersion());
+            if (lastEvent != null && lastEvent instanceof AbstractStateEvent
+               && command.getCommandId() != null && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))
             {
                 repeated = true;
             }

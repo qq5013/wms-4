@@ -116,8 +116,9 @@ public abstract class AbstractUserPermissionMvoApplicationService implements Use
         if (command.getUserVersion() == null) { command.setUserVersion(UserPermissionMvoState.VERSION_NULL); }
         if (state.getUserVersion() != null && state.getUserVersion() > command.getUserVersion())
         {
-            Event lastEvent = getEventStore().findLastEvent(UserPermissionMvoStateEvent.class, eventStoreAggregateId, command.getUserVersion());
-            if (lastEvent != null && lastEvent instanceof AbstractStateEvent && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))
+            Event lastEvent = getEventStore().findLastEvent(AbstractUserPermissionMvoStateEvent.class, eventStoreAggregateId, command.getUserVersion());
+            if (lastEvent != null && lastEvent instanceof AbstractStateEvent
+               && command.getCommandId() != null && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))
             {
                 repeated = true;
             }

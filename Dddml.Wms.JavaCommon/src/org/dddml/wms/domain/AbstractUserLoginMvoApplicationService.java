@@ -116,8 +116,9 @@ public abstract class AbstractUserLoginMvoApplicationService implements UserLogi
         if (command.getUserVersion() == null) { command.setUserVersion(UserLoginMvoState.VERSION_NULL); }
         if (state.getUserVersion() != null && state.getUserVersion() > command.getUserVersion())
         {
-            Event lastEvent = getEventStore().findLastEvent(UserLoginMvoStateEvent.class, eventStoreAggregateId, command.getUserVersion());
-            if (lastEvent != null && lastEvent instanceof AbstractStateEvent && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))
+            Event lastEvent = getEventStore().findLastEvent(AbstractUserLoginMvoStateEvent.class, eventStoreAggregateId, command.getUserVersion());
+            if (lastEvent != null && lastEvent instanceof AbstractStateEvent
+               && command.getCommandId() != null && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))
             {
                 repeated = true;
             }

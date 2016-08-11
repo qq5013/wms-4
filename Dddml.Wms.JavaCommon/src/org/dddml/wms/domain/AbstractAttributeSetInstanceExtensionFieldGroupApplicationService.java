@@ -120,8 +120,9 @@ public abstract class AbstractAttributeSetInstanceExtensionFieldGroupApplication
         if (command.getVersion() == null) { command.setVersion(AttributeSetInstanceExtensionFieldGroupState.VERSION_NULL); }
         if (state.getVersion() != null && state.getVersion() > command.getVersion())
         {
-            Event lastEvent = getEventStore().findLastEvent(AttributeSetInstanceExtensionFieldGroupStateEvent.class, eventStoreAggregateId, command.getVersion());
-            if (lastEvent != null && lastEvent instanceof AbstractStateEvent && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))
+            Event lastEvent = getEventStore().findLastEvent(AbstractAttributeSetInstanceExtensionFieldGroupStateEvent.class, eventStoreAggregateId, command.getVersion());
+            if (lastEvent != null && lastEvent instanceof AbstractStateEvent
+               && command.getCommandId() != null && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))
             {
                 repeated = true;
             }

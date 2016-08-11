@@ -27,7 +27,6 @@ namespace Dddml.Wms.Domain
 		// Outer Id:
 		//string UserId { get; set; }
 
-
 	}
 
 	public interface IUserClaimStateCreated : IUserClaimStateEvent//, IUserClaimStateProperties

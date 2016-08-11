@@ -33,7 +33,6 @@ namespace Dddml.Wms.Domain
 
 		public virtual string GroupId { get; set; }
 
-
         protected virtual void InitializeProperties()
         { 
         }

@@ -33,7 +33,6 @@ namespace Dddml.Wms.Domain
 
 		string GroupId { get; set; }
 
-
 	}
 
 }

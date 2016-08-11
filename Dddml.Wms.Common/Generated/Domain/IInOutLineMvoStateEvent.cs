@@ -135,7 +135,6 @@ namespace Dddml.Wms.Domain
 
 		bool? InOutDeleted { get; set; }
 
-
 	}
 
 	public interface IInOutLineMvoStateCreated : IInOutLineMvoStateEvent//, IInOutLineMvoStateProperties

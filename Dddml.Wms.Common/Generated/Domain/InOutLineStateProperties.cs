@@ -58,7 +58,6 @@ namespace Dddml.Wms.Domain
 
 		public virtual string InOutDocumentNumber { get; set; }
 
-
         protected virtual void InitializeProperties()
         { 
         }

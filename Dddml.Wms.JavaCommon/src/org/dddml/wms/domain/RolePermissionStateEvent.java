@@ -1,5 +1,6 @@
 package org.dddml.wms.domain;
 
+import java.util.*;
 import java.util.Date;
 import org.dddml.wms.specialization.Event;
 
@@ -23,7 +24,6 @@ public interface RolePermissionStateEvent extends Event
 
     void setActive(Boolean active);
 
-    
 
     interface RolePermissionStateCreated extends RolePermissionStateEvent
     {

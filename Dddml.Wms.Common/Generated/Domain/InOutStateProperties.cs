@@ -88,7 +88,6 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool Active { get; set; }
 
-
         protected virtual void InitializeProperties()
         { 
         }

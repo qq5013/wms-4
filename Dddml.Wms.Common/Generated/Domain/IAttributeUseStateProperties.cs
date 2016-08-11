@@ -25,7 +25,6 @@ namespace Dddml.Wms.Domain
 
 		string AttributeSetId { get; set; }
 
-
 	}
 
 }

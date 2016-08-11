@@ -136,7 +136,6 @@ namespace Dddml.Wms.Domain
 
 		bool InOutDeleted { get; set; }
 
-
 	}
 
 }

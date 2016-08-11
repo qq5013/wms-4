@@ -46,7 +46,6 @@ namespace Dddml.Wms.Domain
 
 		bool? AttributeSetDeleted { get; set; }
 
-
 	}
 
 	public interface IAttributeUseMvoStateCreated : IAttributeUseMvoStateEvent//, IAttributeUseMvoStateProperties

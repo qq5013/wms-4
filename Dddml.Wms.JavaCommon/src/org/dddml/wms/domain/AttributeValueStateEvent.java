@@ -1,5 +1,6 @@
 package org.dddml.wms.domain;
 
+import java.util.*;
 import java.util.Date;
 import org.dddml.wms.specialization.Event;
 
@@ -43,7 +44,6 @@ public interface AttributeValueStateEvent extends Event
 
     void setAttributeId(String attributeId);
 
-    
 
     interface AttributeValueStateCreated extends AttributeValueStateEvent
     {

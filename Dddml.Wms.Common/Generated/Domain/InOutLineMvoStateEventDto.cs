@@ -135,7 +135,6 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool? InOutDeleted { get; set; }
 
-
 		public virtual string CreatedBy { get; set; }
 
 		public virtual DateTime CreatedAt { get; set; }

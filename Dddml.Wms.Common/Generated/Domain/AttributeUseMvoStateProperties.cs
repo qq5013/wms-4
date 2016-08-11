@@ -47,7 +47,6 @@ namespace Dddml.Wms.Domain
 
 		public virtual bool AttributeSetDeleted { get; set; }
 
-
         protected virtual void InitializeProperties()
         { 
         }

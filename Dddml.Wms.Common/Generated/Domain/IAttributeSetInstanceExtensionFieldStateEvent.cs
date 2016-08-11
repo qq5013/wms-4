@@ -33,7 +33,6 @@ namespace Dddml.Wms.Domain
 		// Outer Id:
 		//string GroupId { get; set; }
 
-
 	}
 
 	public interface IAttributeSetInstanceExtensionFieldStateCreated : IAttributeSetInstanceExtensionFieldStateEvent//, IAttributeSetInstanceExtensionFieldStateProperties

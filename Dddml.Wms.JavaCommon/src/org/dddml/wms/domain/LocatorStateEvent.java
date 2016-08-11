@@ -1,5 +1,6 @@
 package org.dddml.wms.domain;
 
+import java.util.*;
 import java.util.Date;
 import org.dddml.wms.specialization.Event;
 
@@ -55,7 +56,6 @@ public interface LocatorStateEvent extends Event
 
     void setActive(Boolean active);
 
-    
 
     interface LocatorStateCreated extends LocatorStateEvent
     {

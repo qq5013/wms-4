@@ -54,7 +54,6 @@ namespace Dddml.Wms.Domain
 
 		bool? UserDeleted { get; set; }
 
-
 	}
 
 	public interface IUserPermissionMvoStateCreated : IUserPermissionMvoStateEvent//, IUserPermissionMvoStateProperties

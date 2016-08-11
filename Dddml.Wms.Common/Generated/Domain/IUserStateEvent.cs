@@ -40,7 +40,6 @@ namespace Dddml.Wms.Domain
 
 		bool? Active { get; set; }
 
-
 	}
 
 	public interface IUserStateCreated : IUserStateEvent//, IUserStateProperties

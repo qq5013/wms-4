@@ -27,7 +27,6 @@ namespace Dddml.Wms.Domain
 
 		string UserId { get; set; }
 
-
 	}
 
 }

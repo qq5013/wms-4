@@ -58,7 +58,6 @@ namespace Dddml.Wms.Domain
 
 		string InOutDocumentNumber { get; set; }
 
-
 	}
 
 }

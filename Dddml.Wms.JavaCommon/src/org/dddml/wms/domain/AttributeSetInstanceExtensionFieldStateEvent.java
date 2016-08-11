@@ -1,5 +1,6 @@
 package org.dddml.wms.domain;
 
+import java.util.*;
 import java.util.Date;
 import org.dddml.wms.specialization.Event;
 
@@ -51,7 +52,6 @@ public interface AttributeSetInstanceExtensionFieldStateEvent extends Event
 
     void setGroupId(String groupId);
 
-    
 
     interface AttributeSetInstanceExtensionFieldStateCreated extends AttributeSetInstanceExtensionFieldStateEvent
     {

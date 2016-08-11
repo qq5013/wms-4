@@ -1,5 +1,6 @@
 package org.dddml.wms.domain;
 
+import java.util.*;
 import java.util.Date;
 import org.dddml.wms.specialization.Event;
 
@@ -39,7 +40,6 @@ public interface OrganizationStateEvent extends Event
 
     void setActive(Boolean active);
 
-    
 
     interface OrganizationStateCreated extends OrganizationStateEvent
     {

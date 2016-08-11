@@ -1,5 +1,6 @@
 package org.dddml.wms.domain;
 
+import java.util.*;
 import java.util.Date;
 import org.dddml.wms.specialization.Event;
 
@@ -95,7 +96,6 @@ public interface UserLoginMvoStateEvent extends Event
 
     void setUserDeleted(Boolean userDeleted);
 
-    
 
     interface UserLoginMvoStateCreated extends UserLoginMvoStateEvent
     {

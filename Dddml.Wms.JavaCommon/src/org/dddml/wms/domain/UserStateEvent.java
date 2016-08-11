@@ -1,5 +1,6 @@
 package org.dddml.wms.domain;
 
+import java.util.*;
 import java.util.Date;
 import org.dddml.wms.specialization.Event;
 
@@ -67,7 +68,6 @@ public interface UserStateEvent extends Event
 
     void setActive(Boolean active);
 
-    
 
     interface UserStateCreated extends UserStateEvent
     {

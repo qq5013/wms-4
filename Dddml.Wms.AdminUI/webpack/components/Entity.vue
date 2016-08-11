@@ -35,31 +35,68 @@
                 <!-- /.box-footer-->
             </div>
             <!-- /.box -->
-
+            <div class="box">
+                <div class="box-header with-border nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                        <li role="presentation" data-toggle="tab" v-for="(key, item) in children">
+                            <a href="javascript:;" v-on:click="changeChild(key)">{{key}}</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="box-body">
+                    <v-table :columns="currentChild.columns" :rows="currentChild.data"></v-table>
+                </div>
+            </div>
         </section>
     </div>
 </template>
 <style>
 </style>
 <script>
+    import VTable from './Bootstrap/Table.vue'
     export default{
         data(){
             return {
-                entity: {}
+                entity: {},
+                children: {},
+                currentChild: {}
             }
         },
-        components: {},
+        components: {
+            VTable
+        },
+        methods: {
+            changeChild(key){
+                this.currentChild = this.children[key];
+            }
+        },
         route: {
             data(){
                 this.$http.get(this.$route.params.name + '/' + this.$route.params.id).then((response) => {
 //                    this.entity = response.data;
                     let data = {};
+                    let children = {};
                     for(let key in response.data){
                         if(!(response.data[key] instanceof Array)){
                             data[key] = response.data[key];
+                        }else{
+                            children[key] = {
+//                                columns: [],
+//                                data: {}
+                            };
+                            let row = response.data[key][0];
+                            if(row){
+                                let columns = [];
+                                for(let key in row){
+                                    columns.push(key);
+                                }
+                                children[key].columns = columns;
+                                children[key].data = response.data[key];
+                            }
                         }
                     }
                     this.entity = data;
+                    this.children = children;
                 }, (response) => {
                     // error callback
                 });

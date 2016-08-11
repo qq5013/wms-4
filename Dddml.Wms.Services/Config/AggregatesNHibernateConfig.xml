@@ -2,6 +2,7 @@
 <objects xmlns="http://www.springframework.net">
 
 
+
   <object id="attributeSetInstanceStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeSetInstanceStateRepository, Dddml.Wms.Services">
     <property name="SessionFactory" ref="NHibernateSessionFactory"/>
   </object>
@@ -14,6 +15,7 @@
     <constructor-arg ref="attributeSetInstanceEventStore"/>
     <constructor-arg ref="attributeSetInstanceStateRepository"/>
   </object>
+
 
   <object id="attributeSetInstanceExtensionFieldStateDao" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeSetInstanceExtensionFieldStateDao, Dddml.Wms.Services">
     <property name="SessionFactory" ref="NHibernateSessionFactory"/>
@@ -38,6 +40,7 @@
   </object>
 
 
+
   <object id="roleStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateRoleStateRepository, Dddml.Wms.Services">
     <property name="SessionFactory" ref="NHibernateSessionFactory"/>
   </object>
@@ -50,6 +53,7 @@
     <constructor-arg ref="roleEventStore"/>
     <constructor-arg ref="roleStateRepository"/>
   </object>
+
 
 
   <object id="permissionStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernatePermissionStateRepository, Dddml.Wms.Services">
@@ -66,6 +70,7 @@
   </object>
 
 
+
   <object id="rolePermissionStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateRolePermissionStateRepository, Dddml.Wms.Services">
     <property name="SessionFactory" ref="NHibernateSessionFactory"/>
   </object>
@@ -78,6 +83,7 @@
     <constructor-arg ref="rolePermissionEventStore"/>
     <constructor-arg ref="rolePermissionStateRepository"/>
   </object>
+
 
   <object id="attributeValueStateDao" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeValueStateDao, Dddml.Wms.Services">
     <property name="SessionFactory" ref="NHibernateSessionFactory"/>
@@ -100,6 +106,7 @@
     <constructor-arg ref="attributeEventStore"/>
     <constructor-arg ref="attributeStateRepository"/>
   </object>
+
 
   <object id="attributeUseStateDao" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeUseStateDao, Dddml.Wms.Services">
     <property name="SessionFactory" ref="NHibernateSessionFactory"/>
@@ -124,6 +131,7 @@
   </object>
 
 
+
   <object id="audienceStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateAudienceStateRepository, Dddml.Wms.Services">
     <property name="SessionFactory" ref="NHibernateSessionFactory"/>
   </object>
@@ -136,6 +144,7 @@
     <constructor-arg ref="audienceEventStore"/>
     <constructor-arg ref="audienceStateRepository"/>
   </object>
+
 
   <object id="userRoleStateDao" type="Dddml.Wms.Domain.NHibernate.NHibernateUserRoleStateDao, Dddml.Wms.Services">
     <property name="SessionFactory" ref="NHibernateSessionFactory"/>
@@ -183,6 +192,7 @@
     <constructor-arg ref="userStateRepository"/>
   </object>
 
+
   <object id="inOutLineStateDao" type="Dddml.Wms.Domain.NHibernate.NHibernateInOutLineStateDao, Dddml.Wms.Services">
     <property name="SessionFactory" ref="NHibernateSessionFactory"/>
   </object>
@@ -206,6 +216,7 @@
   </object>
 
 
+
   <object id="organizationStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateOrganizationStateRepository, Dddml.Wms.Services">
     <property name="SessionFactory" ref="NHibernateSessionFactory"/>
   </object>
@@ -218,6 +229,7 @@
     <constructor-arg ref="organizationEventStore"/>
     <constructor-arg ref="organizationStateRepository"/>
   </object>
+
 
 
   <object id="organizationStructureTypeStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateOrganizationStructureTypeStateRepository, Dddml.Wms.Services">
@@ -234,6 +246,7 @@
   </object>
 
 
+
   <object id="organizationStructureStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateOrganizationStructureStateRepository, Dddml.Wms.Services">
     <property name="SessionFactory" ref="NHibernateSessionFactory"/>
   </object>
@@ -246,6 +259,7 @@
     <constructor-arg ref="organizationStructureEventStore"/>
     <constructor-arg ref="organizationStructureStateRepository"/>
   </object>
+
 
 
   <object id="warehouseStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateWarehouseStateRepository, Dddml.Wms.Services">
@@ -262,6 +276,7 @@
   </object>
 
 
+
   <object id="locatorStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateLocatorStateRepository, Dddml.Wms.Services">
     <property name="SessionFactory" ref="NHibernateSessionFactory"/>
   </object>
@@ -274,6 +289,7 @@
     <constructor-arg ref="locatorEventStore"/>
     <constructor-arg ref="locatorStateRepository"/>
   </object>
+
 
 
   <object id="attributeSetInstanceExtensionFieldMvoStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeSetInstanceExtensionFieldMvoStateRepository, Dddml.Wms.Services">
@@ -290,6 +306,7 @@
   </object>
 
 
+
   <object id="attributeValueMvoStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeValueMvoStateRepository, Dddml.Wms.Services">
     <property name="SessionFactory" ref="NHibernateSessionFactory"/>
   </object>
@@ -302,6 +319,7 @@
     <constructor-arg ref="attributeValueMvoEventStore"/>
     <constructor-arg ref="attributeValueMvoStateRepository"/>
   </object>
+
 
 
   <object id="attributeUseMvoStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeUseMvoStateRepository, Dddml.Wms.Services">
@@ -318,6 +336,7 @@
   </object>
 
 
+
   <object id="userRoleMvoStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateUserRoleMvoStateRepository, Dddml.Wms.Services">
     <property name="SessionFactory" ref="NHibernateSessionFactory"/>
   </object>
@@ -330,6 +349,7 @@
     <constructor-arg ref="userRoleMvoEventStore"/>
     <constructor-arg ref="userRoleMvoStateRepository"/>
   </object>
+
 
 
   <object id="userClaimMvoStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateUserClaimMvoStateRepository, Dddml.Wms.Services">
@@ -346,6 +366,7 @@
   </object>
 
 
+
   <object id="userPermissionMvoStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateUserPermissionMvoStateRepository, Dddml.Wms.Services">
     <property name="SessionFactory" ref="NHibernateSessionFactory"/>
   </object>
@@ -360,6 +381,7 @@
   </object>
 
 
+
   <object id="userLoginMvoStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateUserLoginMvoStateRepository, Dddml.Wms.Services">
     <property name="SessionFactory" ref="NHibernateSessionFactory"/>
   </object>
@@ -372,6 +394,7 @@
     <constructor-arg ref="userLoginMvoEventStore"/>
     <constructor-arg ref="userLoginMvoStateRepository"/>
   </object>
+
 
 
   <object id="inOutLineMvoStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateInOutLineMvoStateRepository, Dddml.Wms.Services">

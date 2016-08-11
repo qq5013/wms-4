@@ -116,8 +116,9 @@ public abstract class AbstractUserClaimMvoApplicationService implements UserClai
         if (command.getUserVersion() == null) { command.setUserVersion(UserClaimMvoState.VERSION_NULL); }
         if (state.getUserVersion() != null && state.getUserVersion() > command.getUserVersion())
         {
-            Event lastEvent = getEventStore().findLastEvent(UserClaimMvoStateEvent.class, eventStoreAggregateId, command.getUserVersion());
-            if (lastEvent != null && lastEvent instanceof AbstractStateEvent && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))
+            Event lastEvent = getEventStore().findLastEvent(AbstractUserClaimMvoStateEvent.class, eventStoreAggregateId, command.getUserVersion());
+            if (lastEvent != null && lastEvent instanceof AbstractStateEvent
+               && command.getCommandId() != null && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))
             {
                 repeated = true;
             }

@@ -116,8 +116,9 @@ public abstract class AbstractLocatorApplicationService implements LocatorApplic
         if (command.getVersion() == null) { command.setVersion(LocatorState.VERSION_NULL); }
         if (state.getVersion() != null && state.getVersion() > command.getVersion())
         {
-            Event lastEvent = getEventStore().findLastEvent(LocatorStateEvent.class, eventStoreAggregateId, command.getVersion());
-            if (lastEvent != null && lastEvent instanceof AbstractStateEvent && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))
+            Event lastEvent = getEventStore().findLastEvent(AbstractLocatorStateEvent.class, eventStoreAggregateId, command.getVersion());
+            if (lastEvent != null && lastEvent instanceof AbstractStateEvent
+               && command.getCommandId() != null && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))
             {
                 repeated = true;
             }

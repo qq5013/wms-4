@@ -116,8 +116,9 @@ public abstract class AbstractRolePermissionApplicationService implements RolePe
         if (command.getVersion() == null) { command.setVersion(RolePermissionState.VERSION_NULL); }
         if (state.getVersion() != null && state.getVersion() > command.getVersion())
         {
-            Event lastEvent = getEventStore().findLastEvent(RolePermissionStateEvent.class, eventStoreAggregateId, command.getVersion());
-            if (lastEvent != null && lastEvent instanceof AbstractStateEvent && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))
+            Event lastEvent = getEventStore().findLastEvent(AbstractRolePermissionStateEvent.class, eventStoreAggregateId, command.getVersion());
+            if (lastEvent != null && lastEvent instanceof AbstractStateEvent
+               && command.getCommandId() != null && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))
             {
                 repeated = true;
             }

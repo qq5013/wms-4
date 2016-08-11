@@ -116,8 +116,9 @@ public abstract class AbstractOrganizationStructureTypeApplicationService implem
         if (command.getVersion() == null) { command.setVersion(OrganizationStructureTypeState.VERSION_NULL); }
         if (state.getVersion() != null && state.getVersion() > command.getVersion())
         {
-            Event lastEvent = getEventStore().findLastEvent(OrganizationStructureTypeStateEvent.class, eventStoreAggregateId, command.getVersion());
-            if (lastEvent != null && lastEvent instanceof AbstractStateEvent && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))
+            Event lastEvent = getEventStore().findLastEvent(AbstractOrganizationStructureTypeStateEvent.class, eventStoreAggregateId, command.getVersion());
+            if (lastEvent != null && lastEvent instanceof AbstractStateEvent
+               && command.getCommandId() != null && command.getCommandId().equals(((AbstractStateEvent) lastEvent).getCommandId()))
             {
                 repeated = true;
             }

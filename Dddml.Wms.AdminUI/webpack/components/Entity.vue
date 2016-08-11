@@ -20,8 +20,8 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">标题</h3>
                 </div>
-                <div class="box-body form-horizontal" v-for="(key, field) in entity">
-                    <div class="form-group">
+                <div class="box-body form-horizontal">
+                    <div class="form-group" v-for="(key, field) in entity">
                         <label class="col-sm-2 control-label">{{ key }}</label>
                         <div class="col-sm-10">
                             <span class="form-control">{{field}}</span>
@@ -52,7 +52,14 @@
         route: {
             data(){
                 this.$http.get(this.$route.params.name + '/' + this.$route.params.id).then((response) => {
-                    this.entity = response.data;
+//                    this.entity = response.data;
+                    let data = {};
+                    for(let key in response.data){
+                        if(!(response.data[key] instanceof Array)){
+                            data[key] = response.data[key];
+                        }
+                    }
+                    this.entity = data;
                 }, (response) => {
                     // error callback
                 });

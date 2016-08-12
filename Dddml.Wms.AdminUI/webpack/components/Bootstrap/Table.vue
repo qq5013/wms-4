@@ -2,13 +2,15 @@
     <table class="table table-bordered">
         <thead>
         <tr>
-            <th v-for="column in columns">{{column}}</th>
+            <th>{{tableData.id}}</th>
+            <th v-for="column in tableData.columns">{{column}}</th>
             <th>操作</th>
         </tr>
         </thead>
         <tbody>
-        <tr v-for="row in rows">
-            <td v-for="column in columns">{{row[column]}}</td>
+        <tr v-for="row in tableData.rows">
+            <td>{{row[tableData.id]}}</td>
+            <td v-for="column in tableData.columns">{{row[column]}}</td>
             <td>
                 <a v-link="row.detailRoute" class="btn btn-sm bg-light-blue">查看</a>
                 <a href="{{row.editLink}}" class="btn btn-sm bg-orange">编辑</a>
@@ -21,17 +23,13 @@
 <style>
 </style>
 <script>
-    import ButtonDropdowns from './buttonDropdowns.vue'
     export default{
         data(){
             return {}
         },
         props: {
-            columns: Array,
-            rows: Array
+            tableData: Object
         },
-        components: {
-            ButtonDropdowns
-        }
+        components: {}
     }
 </script>

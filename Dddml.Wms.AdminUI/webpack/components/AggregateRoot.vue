@@ -3,11 +3,11 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                {{aggregate.title}}
+                {{metadata.collectionLabel}}
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> 聚合</a></li>
-                <li class="active">{{aggregate.title}}</li>
+                <li class="active">{{metadata.collectionLabel}}</li>
             </ol>
         </section>
 
@@ -17,10 +17,10 @@
             <!-- Default box -->
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">{{aggregate.title}}</h3>
+                    <h3 class="box-title">{{metadata.collectionLabel}}</h3>
                 </div>
                 <div class="box-body no-padding table-responsive">
-                    <v-table :columns="tableColumns" :rows="tableData"></v-table>
+                    <v-table :table-data="table"></v-table>
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer">
@@ -37,53 +37,37 @@
 <style>
 </style>
 <script>
-    import VTable from './Bootstrap/Table.vue'
+    import VTable from './Bootstrap/Table.vue';
+    import Table from '../src/Table';
+    import Aggregate from '../src/Aggregate';
+    import AggregateCollection from '../src/AggregateCollection';
+
     export default{
         data(){
             return {
-                tableData: [],
-                tableColumns: []
+                table: new Table(null, null, null)
             }
         },
         components: {
             VTable
         },
         props: {
-            aggregate: Object
+            metadata: Object
         },
         route: {
             data() {
-                this.$http.get(this.aggregate.plural).then((response) => {
-                    this.tableData = response.data;
+                this.$http.get(this.metadata.plural).then((response) => {
+                    let aggregateCollection = new AggregateCollection(
+                            response.data,
+                            this.metadata
+                    );
 
-                    this.tableColumns = this.aggregate.fields;
-                    this.tableColumns.unshift(this.aggregate.id.name);
-
-                    for (let i = 0; i < this.tableData.length; i++) {
-                        let id;
-                        if ((typeof this.aggregate.id) == 'string') {
-                            id = this.tableData[i][this.aggregate.id];
-                        } else {
-                            let properties = [];
-                            for (let j = 0; j < this.aggregate.id.properties.length; j++) {
-                                properties.push(this.tableData[i][this.aggregate.id.name][this.aggregate.id.properties[j]]);
-                            }
-                            id = properties.join(',');
-                        }
-
-                        this.tableData[i].detailRoute = {
-                            name: 'entity',
-                            params: {
-                                name: this.aggregate.plural,
-                                id: encodeURI(id)
-                            }
-                        };
-                    }
+                    this.table = aggregateCollection.toTable();
                 }, (response) => {
                     // error callback
                 });
 
             }
-        },
+        }
     };
 </script>

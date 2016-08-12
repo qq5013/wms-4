@@ -1,4 +1,4 @@
-<template>
+<template xmlns:v-on="http://www.w3.org/1999/xhtml">
     <div>
         <div class="wrapper">
 
@@ -78,8 +78,8 @@
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul id="main-menu" class="sidebar-menu">
                         <li class="header">聚合</li>
-                        <li v-for="aggregate in aggregates">
-                            <a v-link="{ name: 'aggregate', params: { name: aggregate.plural } }"
+                        <li v-for="aggregate in metadata.data">
+                            <a v-link="{ name: 'entities', params: { name: aggregate.plural } }"
                                v-on:click="changeAggregate(aggregate)">
                                 <i class="fa fa-th"></i> <span>{{aggregate.collectionLabel}}</span>
                             </a>
@@ -90,7 +90,7 @@
 
             <!-- =============================================== -->
 
-            <router-view :aggregate="currentAggregate"></router-view>
+            <router-view :metadata="current"></router-view>
 
             <footer class="main-footer">
                 <div class="pull-right hidden-xs">
@@ -105,30 +105,28 @@
 <style>
 </style>
 <script>
-    import aggregates from './../aggregates';
+    import data from './../aggregates';
+    import Metadata from '../src/MetaData';
+
     export default{
         data(){
             return {
-                aggregates: aggregates,
-                currentAggregate: {}
+                metadata: new Metadata(data),
+                current: {}
             }
         },
         props: {
             userImg: String
         },
         methods: {
-            changeAggregate: function (aggregate) {
-                this.currentAggregate = aggregate;
-//                console.log(this.currentAggregate);
+            changeAggregate(aggregate){
+                this.current = aggregate
             }
         },
         ready(){
-            for (let i = 0; i < this.aggregates.length; i++) {
-                if (this.aggregates[i].plural == this.$route.params.name) {
-                    this.currentAggregate = this.aggregates[i];
-                    break;
-                }
-            }
+            this.current = this.metadata.getAggregateByPlural(
+                    this.$route.params.name
+            );
         }
     }
 </script>

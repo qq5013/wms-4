@@ -6,7 +6,7 @@ export default {
         component: Index
     },
     '/:name/': {
-        name: 'aggregate',
+        name: 'entities',
         component: AggregateRoot
     },
     '/:name/:id/': {

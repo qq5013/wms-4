@@ -56,12 +56,13 @@
 </style>
 <script>
     import VTable from './Bootstrap/Table.vue'
+    import Table from '../src/Table';
     export default{
         data(){
             return {
                 entity: {},
                 children: {},
-                currentChild: {}
+                currentChild: new Table(null, null, null)
             }
         },
         components: {
@@ -75,6 +76,9 @@
         route: {
             data(){
                 this.$http.get(this.$route.params.name + '/' + this.$route.params.id).then((response) => {
+
+                    /////////////////////
+
 //                    this.entity = response.data;
                     let data = {};
                     let children = {};

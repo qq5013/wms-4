@@ -13,7 +13,7 @@ export default [
     "label": "Attribute Set Instance Extension Field Group",
     "collectionLabel": "Attribute Set Instance Extension Field Groups",
     "id": { "name": "id" },
-    "fields": ["fieldType", "fieldLength", "fieldCount", "nameFormat", "description", "fields", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted"]
+    "fields": ["fieldType", "fieldLength", "fieldCount", "nameFormat", "description", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted"]
     ,"entities": [
       {
         "name": "AttributeSetInstanceExtensionField",
@@ -55,7 +55,7 @@ export default [
     "label": "Attribute",
     "collectionLabel": "Attributes",
     "id": { "name": "attributeId" },
-    "fields": ["name", "organizationId", "description", "isMandatory", "isInstanceAttribute", "attributeValueType", "attributeValueLength", "isList", "fieldName", "referenceId", "attributeValues", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted"]
+    "fields": ["name", "organizationId", "description", "isMandatory", "isInstanceAttribute", "attributeValueType", "attributeValueLength", "isList", "fieldName", "referenceId", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted"]
     ,"entities": [
       {
         "name": "AttributeValue",
@@ -73,7 +73,7 @@ export default [
     "label": "Attribute Set",
     "collectionLabel": "Attribute Sets",
     "id": { "name": "attributeSetId" },
-    "fields": ["name", "organizationId", "description", "serialNumberAttributeId", "lotAttributeId", "referenceId", "attributeUses", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted"]
+    "fields": ["name", "organizationId", "description", "serialNumberAttributeId", "lotAttributeId", "referenceId", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted"]
     ,"entities": [
       {
         "name": "AttributeUse",
@@ -99,7 +99,7 @@ export default [
     "label": "User",
     "collectionLabel": "Users",
     "id": { "name": "userId" },
-    "fields": ["userName", "accessFailedCount", "email", "emailConfirmed", "lockoutEnabled", "lockoutEndDateUtc", "passwordHash", "phoneNumber", "phoneNumberConfirmed", "twoFactorEnabled", "securityStamp", "userRoles", "userClaims", "userPermissions", "userLogins", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted"]
+    "fields": ["userName", "accessFailedCount", "email", "emailConfirmed", "lockoutEnabled", "lockoutEndDateUtc", "passwordHash", "phoneNumber", "phoneNumberConfirmed", "twoFactorEnabled", "securityStamp", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted"]
     ,"entities": [
       {
         "name": "UserRole",
@@ -141,7 +141,7 @@ export default [
     "label": "In Out",
     "collectionLabel": "In Outs",
     "id": { "name": "documentNumber" },
-    "fields": ["isSOTransaction", "documentStatus", "posted", "processing", "processed", "documentType", "description", "orderNumber", "dateOrdered", "isPrinted", "movementType", "movementDate", "businessPartnerId", "warehouseId", "poReference", "freightAmount", "shipperId", "chargeAmount", "datePrinted", "salesRepresentative", "numberOfPackages", "pickDate", "shipDate", "trackingNumber", "dateReceived", "isInTransit", "isApproved", "isInDispute", "volume", "weight", "rmaNumber", "reversalNumber", "isDropShip", "dropShipBusinessPartnerId", "inOutLines", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted"]
+    "fields": ["isSOTransaction", "documentStatus", "posted", "processing", "processed", "documentType", "description", "orderNumber", "dateOrdered", "isPrinted", "movementType", "movementDate", "businessPartnerId", "warehouseId", "poReference", "freightAmount", "shipperId", "chargeAmount", "datePrinted", "salesRepresentative", "numberOfPackages", "pickDate", "shipDate", "trackingNumber", "dateReceived", "isInTransit", "isApproved", "isInDispute", "volume", "weight", "rmaNumber", "reversalNumber", "isDropShip", "dropShipBusinessPartnerId", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted"]
     ,"entities": [
       {
         "name": "InOutLine",
@@ -199,7 +199,7 @@ export default [
     "label": "Attribute Set Instance Extension Field Mvo",
     "collectionLabel": "Attribute Set Instance Extension Field Mvos",
     "id": { "name": "attributeSetInstanceExtensionFieldId", "properties": ["groupId", "index"] },
-    "fields": ["name", "type", "length", "alias", "description", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted", "attrSetInstEFGroupFieldType", "attrSetInstEFGroupFieldLength", "attrSetInstEFGroupFieldCount", "attrSetInstEFGroupNameFormat", "attrSetInstEFGroupDescription", "attrSetInstEFGroupFields", "attrSetInstEFGroupVersion", "attrSetInstEFGroupCreatedBy", "attrSetInstEFGroupCreatedAt", "attrSetInstEFGroupUpdatedBy", "attrSetInstEFGroupUpdatedAt", "attrSetInstEFGroupActive", "attrSetInstEFGroupDeleted"]
+    "fields": ["name", "type", "length", "alias", "description", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted", "attrSetInstEFGroupFieldType", "attrSetInstEFGroupFieldLength", "attrSetInstEFGroupFieldCount", "attrSetInstEFGroupNameFormat", "attrSetInstEFGroupDescription", "attrSetInstEFGroupVersion", "attrSetInstEFGroupCreatedBy", "attrSetInstEFGroupCreatedAt", "attrSetInstEFGroupUpdatedBy", "attrSetInstEFGroupUpdatedAt", "attrSetInstEFGroupActive", "attrSetInstEFGroupDeleted"]
   },
   {
     "name": "AttributeValueMvo",
@@ -207,7 +207,7 @@ export default [
     "label": "Attribute Value Mvo",
     "collectionLabel": "Attribute Value Mvos",
     "id": { "name": "attributeValueId", "properties": ["attributeId", "value"] },
-    "fields": ["name", "description", "referenceId", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted", "attributeName", "attributeOrganizationId", "attributeDescription", "attributeIsMandatory", "attributeIsInstanceAttribute", "attributeAttributeValueType", "attributeAttributeValueLength", "attributeIsList", "attributeFieldName", "attributeReferenceId", "attributeAttributeValues", "attributeVersion", "attributeCreatedBy", "attributeCreatedAt", "attributeUpdatedBy", "attributeUpdatedAt", "attributeActive", "attributeDeleted"]
+    "fields": ["name", "description", "referenceId", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted", "attributeName", "attributeOrganizationId", "attributeDescription", "attributeIsMandatory", "attributeIsInstanceAttribute", "attributeAttributeValueType", "attributeAttributeValueLength", "attributeIsList", "attributeFieldName", "attributeReferenceId", "attributeVersion", "attributeCreatedBy", "attributeCreatedAt", "attributeUpdatedBy", "attributeUpdatedAt", "attributeActive", "attributeDeleted"]
   },
   {
     "name": "AttributeUseMvo",
@@ -215,7 +215,7 @@ export default [
     "label": "Attribute Use Mvo",
     "collectionLabel": "Attribute Use Mvos",
     "id": { "name": "attributeSetAttributeUseId", "properties": ["attributeSetId", "attributeId"] },
-    "fields": ["sequenceNumber", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted", "attributeSetName", "attributeSetOrganizationId", "attributeSetDescription", "attributeSetSerialNumberAttributeId", "attributeSetLotAttributeId", "attributeSetReferenceId", "attributeSetAttributeUses", "attributeSetVersion", "attributeSetCreatedBy", "attributeSetCreatedAt", "attributeSetUpdatedBy", "attributeSetUpdatedAt", "attributeSetActive", "attributeSetDeleted"]
+    "fields": ["sequenceNumber", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted", "attributeSetName", "attributeSetOrganizationId", "attributeSetDescription", "attributeSetSerialNumberAttributeId", "attributeSetLotAttributeId", "attributeSetReferenceId", "attributeSetVersion", "attributeSetCreatedBy", "attributeSetCreatedAt", "attributeSetUpdatedBy", "attributeSetUpdatedAt", "attributeSetActive", "attributeSetDeleted"]
   },
   {
     "name": "UserRoleMvo",
@@ -223,7 +223,7 @@ export default [
     "label": "User Role Mvo",
     "collectionLabel": "User Role Mvos",
     "id": { "name": "userRoleId", "properties": ["userId", "roleId"] },
-    "fields": ["version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted", "userUserName", "userAccessFailedCount", "userEmail", "userEmailConfirmed", "userLockoutEnabled", "userLockoutEndDateUtc", "userPasswordHash", "userPhoneNumber", "userPhoneNumberConfirmed", "userTwoFactorEnabled", "userSecurityStamp", "userUserRoles", "userUserClaims", "userUserPermissions", "userUserLogins", "userVersion", "userCreatedBy", "userCreatedAt", "userUpdatedBy", "userUpdatedAt", "userActive", "userDeleted"]
+    "fields": ["version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted", "userUserName", "userAccessFailedCount", "userEmail", "userEmailConfirmed", "userLockoutEnabled", "userLockoutEndDateUtc", "userPasswordHash", "userPhoneNumber", "userPhoneNumberConfirmed", "userTwoFactorEnabled", "userSecurityStamp", "userVersion", "userCreatedBy", "userCreatedAt", "userUpdatedBy", "userUpdatedAt", "userActive", "userDeleted"]
   },
   {
     "name": "UserClaimMvo",
@@ -231,7 +231,7 @@ export default [
     "label": "User Claim Mvo",
     "collectionLabel": "User Claim Mvos",
     "id": { "name": "userClaimId", "properties": ["userId", "claimId"] },
-    "fields": ["claimType", "claimValue", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted", "userUserName", "userAccessFailedCount", "userEmail", "userEmailConfirmed", "userLockoutEnabled", "userLockoutEndDateUtc", "userPasswordHash", "userPhoneNumber", "userPhoneNumberConfirmed", "userTwoFactorEnabled", "userSecurityStamp", "userUserRoles", "userUserClaims", "userUserPermissions", "userUserLogins", "userVersion", "userCreatedBy", "userCreatedAt", "userUpdatedBy", "userUpdatedAt", "userActive", "userDeleted"]
+    "fields": ["claimType", "claimValue", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted", "userUserName", "userAccessFailedCount", "userEmail", "userEmailConfirmed", "userLockoutEnabled", "userLockoutEndDateUtc", "userPasswordHash", "userPhoneNumber", "userPhoneNumberConfirmed", "userTwoFactorEnabled", "userSecurityStamp", "userVersion", "userCreatedBy", "userCreatedAt", "userUpdatedBy", "userUpdatedAt", "userActive", "userDeleted"]
   },
   {
     "name": "UserPermissionMvo",
@@ -239,7 +239,7 @@ export default [
     "label": "User Permission Mvo",
     "collectionLabel": "User Permission Mvos",
     "id": { "name": "userPermissionId", "properties": ["userId", "permissionId"] },
-    "fields": ["version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted", "userUserName", "userAccessFailedCount", "userEmail", "userEmailConfirmed", "userLockoutEnabled", "userLockoutEndDateUtc", "userPasswordHash", "userPhoneNumber", "userPhoneNumberConfirmed", "userTwoFactorEnabled", "userSecurityStamp", "userUserRoles", "userUserClaims", "userUserPermissions", "userUserLogins", "userVersion", "userCreatedBy", "userCreatedAt", "userUpdatedBy", "userUpdatedAt", "userActive", "userDeleted"]
+    "fields": ["version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted", "userUserName", "userAccessFailedCount", "userEmail", "userEmailConfirmed", "userLockoutEnabled", "userLockoutEndDateUtc", "userPasswordHash", "userPhoneNumber", "userPhoneNumberConfirmed", "userTwoFactorEnabled", "userSecurityStamp", "userVersion", "userCreatedBy", "userCreatedAt", "userUpdatedBy", "userUpdatedAt", "userActive", "userDeleted"]
   },
   {
     "name": "UserLoginMvo",
@@ -247,7 +247,7 @@ export default [
     "label": "User Login Mvo",
     "collectionLabel": "User Login Mvos",
     "id": { "name": "userLoginId", "properties": ["userId", "loginKeyLoginProvider", "loginKeyProviderKey"] },
-    "fields": ["version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted", "userUserName", "userAccessFailedCount", "userEmail", "userEmailConfirmed", "userLockoutEnabled", "userLockoutEndDateUtc", "userPasswordHash", "userPhoneNumber", "userPhoneNumberConfirmed", "userTwoFactorEnabled", "userSecurityStamp", "userUserRoles", "userUserClaims", "userUserPermissions", "userUserLogins", "userVersion", "userCreatedBy", "userCreatedAt", "userUpdatedBy", "userUpdatedAt", "userActive", "userDeleted"]
+    "fields": ["version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted", "userUserName", "userAccessFailedCount", "userEmail", "userEmailConfirmed", "userLockoutEnabled", "userLockoutEndDateUtc", "userPasswordHash", "userPhoneNumber", "userPhoneNumberConfirmed", "userTwoFactorEnabled", "userSecurityStamp", "userVersion", "userCreatedBy", "userCreatedAt", "userUpdatedBy", "userUpdatedAt", "userActive", "userDeleted"]
   },
   {
     "name": "InOutLineMvo",
@@ -255,7 +255,7 @@ export default [
     "label": "In Out Line Mvo",
     "collectionLabel": "In Out Line Mvos",
     "id": { "name": "inOutLineId", "properties": ["inOutDocumentNumber", "skuIdProductId", "skuIdAttributeSetInstanceId"] },
-    "fields": ["lineNumber", "description", "locatorId", "product", "uomId", "movementQuantity", "confirmedQuantity", "scrappedQuantity", "targetQuantity", "pickedQuantity", "isInvoiced", "attributeSetInstanceId", "isDescription", "processed", "quantityEntered", "rmaLineNumber", "reversalLineNumber", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted", "inOutIsSOTransaction", "inOutDocumentStatus", "inOutPosted", "inOutProcessing", "inOutProcessed", "inOutDocumentType", "inOutDescription", "inOutOrderNumber", "inOutDateOrdered", "inOutIsPrinted", "inOutMovementType", "inOutMovementDate", "inOutBusinessPartnerId", "inOutWarehouseId", "inOutPOReference", "inOutFreightAmount", "inOutShipperId", "inOutChargeAmount", "inOutDatePrinted", "inOutSalesRepresentative", "inOutNumberOfPackages", "inOutPickDate", "inOutShipDate", "inOutTrackingNumber", "inOutDateReceived", "inOutIsInTransit", "inOutIsApproved", "inOutIsInDispute", "inOutVolume", "inOutWeight", "inOutRmaNumber", "inOutReversalNumber", "inOutIsDropShip", "inOutDropShipBusinessPartnerId", "inOutInOutLines", "inOutVersion", "inOutCreatedBy", "inOutCreatedAt", "inOutUpdatedBy", "inOutUpdatedAt", "inOutActive", "inOutDeleted"]
+    "fields": ["lineNumber", "description", "locatorId", "product", "uomId", "movementQuantity", "confirmedQuantity", "scrappedQuantity", "targetQuantity", "pickedQuantity", "isInvoiced", "attributeSetInstanceId", "isDescription", "processed", "quantityEntered", "rmaLineNumber", "reversalLineNumber", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted", "inOutIsSOTransaction", "inOutDocumentStatus", "inOutPosted", "inOutProcessing", "inOutProcessed", "inOutDocumentType", "inOutDescription", "inOutOrderNumber", "inOutDateOrdered", "inOutIsPrinted", "inOutMovementType", "inOutMovementDate", "inOutBusinessPartnerId", "inOutWarehouseId", "inOutPOReference", "inOutFreightAmount", "inOutShipperId", "inOutChargeAmount", "inOutDatePrinted", "inOutSalesRepresentative", "inOutNumberOfPackages", "inOutPickDate", "inOutShipDate", "inOutTrackingNumber", "inOutDateReceived", "inOutIsInTransit", "inOutIsApproved", "inOutIsInDispute", "inOutVolume", "inOutWeight", "inOutRmaNumber", "inOutReversalNumber", "inOutIsDropShip", "inOutDropShipBusinessPartnerId", "inOutVersion", "inOutCreatedBy", "inOutCreatedAt", "inOutUpdatedBy", "inOutUpdatedAt", "inOutActive", "inOutDeleted"]
   }
 ]
 

@@ -8,7 +8,7 @@
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
                 <li>
-                    <a v-link="{ name: 'aggregate', params: { name: $route.params.name } }">{{$route.params.name}}</a>
+                    <a v-link="{ name: 'entities', params: { name: $route.params.name } }">{{$route.params.name}}</a>
                 </li>
                 <li class="active">{{$route.params.id}}</li>
             </ol>
@@ -23,10 +23,16 @@
                     <h3 class="box-title">标题</h3>
                 </div>
                 <div class="box-body form-horizontal">
-                    <div class="form-group" v-for="(key, field) in entity">
-                        <label class="col-sm-2 control-label">{{ key }}</label>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">{{metadata.id.name}}</label>
                         <div class="col-sm-10">
-                            <span class="form-control">{{field}}</span>
+                            <span class="form-control">{{entity.data[metadata.id.name]}}</span>
+                        </div>
+                    </div>
+                    <div class="form-group" v-for="field in entity.getFields()">
+                        <label class="col-sm-2 control-label">{{ field }}</label>
+                        <div class="col-sm-10">
+                            <span class="form-control">{{entity.data[field]}}</span>
                         </div>
                     </div>
                 </div>
@@ -40,13 +46,13 @@
             <div class="box">
                 <div class="box-header with-border nav-tabs-custom">
                     <ul class="nav nav-tabs">
-                        <li role="presentation" data-toggle="tab" v-for="(key, item) in children">
-                            <a href="javascript:;" v-on:click="changeChild(key)">{{key}}</a>
+                        <li role="presentation" data-toggle="tab" v-for="item in entity.getChildEntityMetadataNames()">
+                            <a href="javascript:;" v-on:click="changeChild(item)">{{item}}</a>
                         </li>
                     </ul>
                 </div>
-                <div class="box-body">
-                    <v-table :columns="currentChild.columns" :rows="currentChild.data"></v-table>
+                <div class="box-body no-padding table-responsive">
+                    <v-table :table-data="currentChild"></v-table>
                 </div>
             </div>
         </section>
@@ -57,16 +63,23 @@
 <script>
     import VTable from './Bootstrap/Table.vue'
     import Table from '../src/Table';
+    import AggregateCollection from '../src/AggregateCollection';
+    import Aggregate from '../src/Aggregate';
+    import StringHelper from '../src/StringHelper';
+
     export default{
         data(){
             return {
-                entity: {},
+                entity: new Aggregate({}, {}),
                 children: {},
-                currentChild: new Table(null, null, null)
+                currentChild: new Table()
             }
         },
         components: {
             VTable
+        },
+        props: {
+            metadata: Object
         },
         methods: {
             changeChild(key){
@@ -76,32 +89,20 @@
         route: {
             data(){
                 this.$http.get(this.$route.params.name + '/' + this.$route.params.id).then((response) => {
-
-                    /////////////////////
-
-//                    this.entity = response.data;
-                    let data = {};
                     let children = {};
-                    for (let key in response.data) {
-                        if (!(response.data[key] instanceof Array)) {
-                            data[key] = response.data[key];
-                        } else {
-                            children[key] = {
-//                                columns: [],
-//                                data: {}
-                            };
-                            let row = response.data[key][0];
-                            if (row) {
-                                let columns = [];
-                                for (let key in row) {
-                                    columns.push(key);
-                                }
-                                children[key].columns = columns;
-                                children[key].data = response.data[key];
-                            }
-                        }
+                    this.entity = new Aggregate(response.data, this.metadata);
+
+                    let names = this.entity.getChildEntityMetadataNames();
+
+                    for (let i = 0; i < names.length; i++) {
+                        let name = names[i];
+                        let entities = new AggregateCollection(
+                                this.entity.data[StringHelper.lcfirst(name)],
+                                this.entity.getChildEntityMetadata(name)
+                        );
+                        children[name] = entities.toTable();
                     }
-                    this.entity = data;
+
                     this.children = children;
                 }, (response) => {
                     // error callback

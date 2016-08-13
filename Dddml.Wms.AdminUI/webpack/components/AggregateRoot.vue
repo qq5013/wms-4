@@ -45,7 +45,7 @@
     export default{
         data(){
             return {
-                table: new Table(null, null, null)
+                table: new Table()
             }
         },
         components: {

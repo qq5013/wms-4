@@ -2,6 +2,7 @@ export default class Aggregate {
     constructor(data, metadata) {
         this.data = data;
         this.metadata = metadata;
+        this.childMetadatas = {};
     }
 
     getStringId(encode = true) {
@@ -22,5 +23,29 @@ export default class Aggregate {
         }
 
         return encode ? encodeURI(id) : id;
+    }
+
+    getFields() {
+        return this.metadata.fields;
+    }
+
+    getChildEntityMetadata(name = null) {
+        if (!this.childMetadatas.length && this.metadata.entities) {
+            let entities = this.metadata.entities;
+            for (let i = 0; i < entities.length; i++) {
+                this.childMetadatas[entities[i].plural] = entities[i];
+            }
+        }
+        if (name) {
+            return this.childMetadatas[name];
+        }
+
+        return this.childMetadatas;
+    }
+
+    getChildEntityMetadataNames() {
+        let metadata = this.getChildEntityMetadata();
+
+        return Object.keys(metadata);
     }
 }

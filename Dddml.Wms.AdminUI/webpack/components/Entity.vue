@@ -3,7 +3,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                {{$route.params.name}}:{{$route.params.id}}
+                {{metadata.label}}
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
@@ -20,7 +20,7 @@
             <!-- Default box -->
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">标题</h3>
+                    <h3 class="box-title">{{metadata.label}}</h3>
                 </div>
                 <div class="box-body form-horizontal">
                     <div class="form-group">

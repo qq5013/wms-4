@@ -1,3 +1,6 @@
+import StringHelper from '../src/StringHelper';
+import AggregateCollection from '../src/AggregateCollection';
+
 export default class Aggregate {
     constructor(data, metadata) {
         this.data = data;
@@ -47,5 +50,21 @@ export default class Aggregate {
         let metadata = this.getChildEntityMetadata();
 
         return Object.keys(metadata);
+    }
+
+    getChildEntities() {
+        let children = {};
+        let names = this.getChildEntityMetadataNames();
+
+        for (let i = 0; i < names.length; i++) {
+            let name = names[i];
+            let entities = new AggregateCollection(
+                this.data[StringHelper.lcfirst(name)],
+                this.getChildEntityMetadata(name)
+            );
+            children[name] = entities;
+        }
+
+        return children;
     }
 }

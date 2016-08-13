@@ -89,18 +89,12 @@
         route: {
             data(){
                 this.$http.get(this.$route.params.name + '/' + this.$route.params.id).then((response) => {
-                    let children = {};
                     this.entity = new Aggregate(response.data, this.metadata);
+                    let entitiesList = this.entity.getChildEntities();
+                    let children = [];
 
-                    let names = this.entity.getChildEntityMetadataNames();
-
-                    for (let i = 0; i < names.length; i++) {
-                        let name = names[i];
-                        let entities = new AggregateCollection(
-                                this.entity.data[StringHelper.lcfirst(name)],
-                                this.entity.getChildEntityMetadata(name)
-                        );
-                        children[name] = entities.toTable();
+                    for (let name in entitiesList) {
+                        children[name] = entitiesList[name].toTable();
                     }
 
                     this.children = children;

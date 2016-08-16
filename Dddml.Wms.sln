@@ -21,8 +21,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dddml.Support.Criterion", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorizationServer", "AuthorizationServer\AuthorizationServer.csproj", "{583C1001-7568-406E-9444-8CAD43DDA3EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorizationServer.Tests", "AuthorizationServer.Tests\AuthorizationServer.Tests.csproj", "{5EE9E787-A9D9-4DA7-8ED5-6CEE4AEE0836}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dddml.Wms.AspNet.Identity", "Dddml.Wms.AspNet.Identity\Dddml.Wms.AspNet.Identity.csproj", "{CEE62887-53FB-4291-8543-651C171D528A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dddml.Support.NHibernate", "..\dddml-dotnet-tools\Dddml.Support.NHibernate\Dddml.Support.NHibernate.csproj", "{449E9FCD-F535-4D02-947F-22B0DA756187}"
@@ -88,10 +86,6 @@ Global
 		{583C1001-7568-406E-9444-8CAD43DDA3EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{583C1001-7568-406E-9444-8CAD43DDA3EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{583C1001-7568-406E-9444-8CAD43DDA3EC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5EE9E787-A9D9-4DA7-8ED5-6CEE4AEE0836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5EE9E787-A9D9-4DA7-8ED5-6CEE4AEE0836}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5EE9E787-A9D9-4DA7-8ED5-6CEE4AEE0836}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5EE9E787-A9D9-4DA7-8ED5-6CEE4AEE0836}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CEE62887-53FB-4291-8543-651C171D528A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CEE62887-53FB-4291-8543-651C171D528A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEE62887-53FB-4291-8543-651C171D528A}.Release|Any CPU.ActiveCfg = Release|Any CPU

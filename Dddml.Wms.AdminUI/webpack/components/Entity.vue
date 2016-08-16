@@ -5,13 +5,7 @@
             <h1>
                 {{metadata.label}}
             </h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
-                <li>
-                    <a v-link="{ name: 'entities', params: { name: $route.params.name } }">{{$route.params.name}}</a>
-                </li>
-                <li class="active">{{$route.params.id}}</li>
-            </ol>
+            <navigator :navigator="$root.navigator"></navigator>
         </section>
 
         <!-- Main content -->
@@ -63,9 +57,8 @@
 <script>
     import VTable from './Bootstrap/Table.vue'
     import Table from '../src/Table';
-    import AggregateCollection from '../src/AggregateCollection';
     import Aggregate from '../src/Aggregate';
-    import StringHelper from '../src/StringHelper';
+    import Navigator from './Bootstrap/Navigator.vue';
 
     export default{
         data(){
@@ -76,7 +69,8 @@
             }
         },
         components: {
-            VTable
+            VTable,
+            Navigator
         },
         props: {
             metadata: Object
@@ -101,6 +95,8 @@
                 }, (response) => {
                     // error callback
                 });
+
+                this.$root.navigator.build(this.$route);
             }
         }
     }

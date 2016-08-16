@@ -6,11 +6,7 @@
                 空白页面演示
                 <small>最基本的结构模板</small>
             </h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
-                <li><a href="#">页面演示</a></li>
-                <li class="active">空白页面</li>
-            </ol>
+            <navigator :navigator="$root.navigator"></navigator>
         </section>
 
         <!-- Main content -->
@@ -39,10 +35,19 @@
 <style>
 </style>
 <script>
+    import Navigator from './Bootstrap/Navigator.vue';
+
     export default{
         data(){
-            return{
+            return {}
+        },
+        route: {
+            data(){
+                this.$root.navigator.reset();
             }
-        }
+        },
+        components: {
+            Navigator
+        },
     }
 </script>

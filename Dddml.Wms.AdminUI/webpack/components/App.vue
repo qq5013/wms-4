@@ -107,12 +107,16 @@
 <script>
     import data from './../aggregates';
     import Metadata from '../src/MetaData';
+    import Navigator from '../src/Navigator/Navigator';
+
+    let metadata = new Metadata(data);
 
     export default{
         data(){
             return {
-                metadata: new Metadata(data),
-                current: {}
+                metadata: metadata,
+                current: {},
+                navigator: new Navigator(metadata)
             }
         },
         props: {

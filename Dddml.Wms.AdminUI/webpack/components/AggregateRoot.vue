@@ -5,10 +5,7 @@
             <h1>
                 {{metadata.collectionLabel}}
             </h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> 聚合</a></li>
-                <li class="active">{{metadata.collectionLabel}}</li>
-            </ol>
+            <navigator :navigator="$root.navigator"></navigator>
         </section>
 
         <!-- Main content -->
@@ -41,15 +38,17 @@
     import Table from '../src/Table';
     import Aggregate from '../src/Aggregate';
     import AggregateCollection from '../src/AggregateCollection';
+    import Navigator from './Bootstrap/Navigator.vue';
 
     export default{
         data(){
             return {
-                table: new Table()
+                table: new Table(),
             }
         },
         components: {
-            VTable
+            VTable,
+            Navigator
         },
         props: {
             metadata: Object
@@ -67,6 +66,7 @@
                     // error callback
                 });
 
+                this.$root.navigator.build(this.$route);
             }
         }
     };

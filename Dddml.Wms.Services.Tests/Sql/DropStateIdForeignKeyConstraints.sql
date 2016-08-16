@@ -86,3 +86,36 @@ prepare stmt from @var;
 execute stmt;
 deallocate prepare stmt;
 
+set @var=if((SELECT true FROM information_schema.TABLE_CONSTRAINTS WHERE
+            CONSTRAINT_SCHEMA = DATABASE() AND
+            TABLE_NAME        = 'YearPlans' AND
+            CONSTRAINT_NAME   = 'FK_YearPlan_Person_StateId' AND
+            CONSTRAINT_TYPE   = 'FOREIGN KEY') = true,'ALTER TABLE YearPlans
+            drop foreign key FK_YearPlan_Person_StateId','select 1');
+
+prepare stmt from @var;
+execute stmt;
+deallocate prepare stmt;
+
+set @var=if((SELECT true FROM information_schema.TABLE_CONSTRAINTS WHERE
+            CONSTRAINT_SCHEMA = DATABASE() AND
+            TABLE_NAME        = 'MonthPlans' AND
+            CONSTRAINT_NAME   = 'FK_MonthPlan_YearPlan_StateId' AND
+            CONSTRAINT_TYPE   = 'FOREIGN KEY') = true,'ALTER TABLE MonthPlans
+            drop foreign key FK_MonthPlan_YearPlan_StateId','select 1');
+
+prepare stmt from @var;
+execute stmt;
+deallocate prepare stmt;
+
+set @var=if((SELECT true FROM information_schema.TABLE_CONSTRAINTS WHERE
+            CONSTRAINT_SCHEMA = DATABASE() AND
+            TABLE_NAME        = 'DayPlans' AND
+            CONSTRAINT_NAME   = 'FK_DayPlan_MonthPlan_StateId' AND
+            CONSTRAINT_TYPE   = 'FOREIGN KEY') = true,'ALTER TABLE DayPlans
+            drop foreign key FK_DayPlan_MonthPlan_StateId','select 1');
+
+prepare stmt from @var;
+execute stmt;
+deallocate prepare stmt;
+

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="AbstractTeamStateEvent" table="TeamStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="stateEventId" class="org.dddml.wms.domain.TeamStateEventId">
+		<key-property name="teamName" column="TeamName" length="50"/>
+		<key-property name="version" column="Version" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="string" />
+
+	<property name="description" ></property>
+
+	<property name="active" ></property>
+
+      <set name="players" table="TeamStateEventPlayers" lazy="false">
+        <key>
+          <column name="TeamName" />
+          <column name="Version" />
+        </key>
+				<composite-element class="org.dddml.wms.domain.PersonalName">
+					<property name="firstName" length="50" not-null="true"/>
+					<property name="lastName" length="50" not-null="true"/>
+				</composite-element>
+      </set>
+
+      <set name="mascots" table="TeamStateEventMascots" lazy="false">
+        <key>
+          <column name="TeamName" />
+          <column name="Version" />
+        </key>
+				<element column="MascotsItem" type="string" not-null="true" />
+      </set>
+
+
+    <property name="createdBy" />
+
+    <property name="createdAt" />
+
+    <property name="commandId" />
+
+
+    <subclass name="AbstractTeamStateEvent$SimpleTeamStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="AbstractTeamStateEvent$SimpleTeamStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="isPropertyDescriptionRemoved" />
+
+        <property name="isPropertyActiveRemoved" />
+
+
+    </subclass>
+
+    <subclass name="AbstractTeamStateEvent$SimpleTeamStateDeleted"  discriminator-value="Deleted">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

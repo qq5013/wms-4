@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+				   assembly="Dddml.Wms.Common" 
+				   namespace="Dddml.Wms.Domain">
+  
+  <class name="Dddml.Wms.Domain.DayPlanMvoState" table="DayPlan_RV">
+
+	<composite-id name="DayPlanId" class="Dddml.Wms.Domain.DayPlanId">
+		<key-property name="PersonalNameFirstName" column="DayPlanIdPersonalNameFirstName" length="50"/>
+		<key-property name="PersonalNameLastName" column="DayPlanIdPersonalNameLastName" length="50"/>
+		<key-property name="Year" column="DayPlanIdYear" />
+		<key-property name="Month" column="DayPlanIdMonth" />
+		<key-property name="Day" column="DayPlanIdDay" />
+	</composite-id>
+
+	<version name="PersonVersion" type="long" unsaved-value="0"/>
+
+	<property name="Description" length="500"></property>
+
+	<property name="Version" ></property>
+
+	<property name="CreatedBy" ></property>
+
+	<property name="CreatedAt" ></property>
+
+	<property name="UpdatedBy" ></property>
+
+	<property name="UpdatedAt" ></property>
+
+	<property name="Active" ></property>
+
+	<property name="Deleted" ></property>
+
+	<property name="MonthPlanDescription" length="500"></property>
+
+	<property name="MonthPlanVersion" ></property>
+
+	<property name="MonthPlanCreatedBy" ></property>
+
+	<property name="MonthPlanCreatedAt" ></property>
+
+	<property name="MonthPlanUpdatedBy" ></property>
+
+	<property name="MonthPlanUpdatedAt" ></property>
+
+	<property name="MonthPlanActive" ></property>
+
+	<property name="MonthPlanDeleted" ></property>
+
+	<property name="YearPlanDescription" length="500"></property>
+
+	<property name="YearPlanVersion" ></property>
+
+	<property name="YearPlanCreatedBy" ></property>
+
+	<property name="YearPlanCreatedAt" ></property>
+
+	<property name="YearPlanUpdatedBy" ></property>
+
+	<property name="YearPlanUpdatedAt" ></property>
+
+	<property name="YearPlanActive" ></property>
+
+	<property name="YearPlanDeleted" ></property>
+
+	<property name="PersonBirthDate" ></property>
+
+	<component name="PersonLoves" class="Dddml.Wms.Domain.PersonalName">
+		<property name="FirstName" column="PersonLovesFirstName" length="50"/>
+		<property name="LastName" column="PersonLovesLastName" length="50"/>
+	</component>
+
+	<property name="PersonCreatedBy" ></property>
+
+	<property name="PersonCreatedAt" ></property>
+
+	<property name="PersonUpdatedBy" ></property>
+
+	<property name="PersonUpdatedAt" ></property>
+
+	<property name="PersonActive" ></property>
+
+	<property name="PersonDeleted" ></property>
+
+
+  </class>
+  
+</hibernate-mapping>
+

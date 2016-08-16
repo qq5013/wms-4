@@ -267,6 +267,45 @@
     <Content Include="src\org\dddml\wms\domain\AbstractCommand.java">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractDayPlanCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractDayPlanCommandDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractDayPlanMvoAggregate.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractDayPlanMvoApplicationService.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractDayPlanMvoCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractDayPlanMvoCommandDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractDayPlanMvoState.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractDayPlanMvoStateCommandConverter.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractDayPlanMvoStateEvent.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractDayPlanState.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractDayPlanStateCommandConverter.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractDayPlanStateEvent.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractDayPlanStates.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractInOutAggregate.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
@@ -350,6 +389,45 @@
     </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractLocatorTreeApplicationService.java">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractMonthPlanCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractMonthPlanCommandDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractMonthPlanMvoAggregate.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractMonthPlanMvoApplicationService.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractMonthPlanMvoCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractMonthPlanMvoCommandDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractMonthPlanMvoState.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractMonthPlanMvoStateCommandConverter.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractMonthPlanMvoStateEvent.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractMonthPlanState.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractMonthPlanStateCommandConverter.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractMonthPlanStateEvent.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractMonthPlanStates.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractOrganizationAggregate.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
@@ -441,6 +519,27 @@
     <Content Include="src\org\dddml\wms\domain\AbstractPermissionTreeApplicationService.java">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractPersonAggregate.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractPersonApplicationService.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractPersonCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractPersonCommandDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractPersonState.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractPersonStateCommandConverter.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractPersonStateEvent.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractRoleAggregate.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
@@ -485,6 +584,27 @@
     </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractStateEvent.java">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractTeamAggregate.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractTeamApplicationService.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractTeamCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractTeamCommandDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractTeamState.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractTeamStateCommandConverter.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractTeamStateEvent.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractUserAggregate.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
@@ -682,6 +802,45 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\AbstractWarehouseStateEvent.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractYearPlanCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractYearPlanCommandDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractYearPlanMvoAggregate.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractYearPlanMvoApplicationService.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractYearPlanMvoCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractYearPlanMvoCommandDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractYearPlanMvoState.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractYearPlanMvoStateCommandConverter.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractYearPlanMvoStateEvent.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractYearPlanState.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractYearPlanStateCommandConverter.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractYearPlanStateEvent.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\AbstractYearPlanStates.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\AttributeAggregate.java">
@@ -1110,6 +1269,12 @@
     <Content Include="src\org\dddml\wms\domain\CreateOrMergePatchAudienceDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\CreateOrMergePatchDayPlanDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\CreateOrMergePatchDayPlanMvoDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\CreateOrMergePatchInOutDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
@@ -1120,6 +1285,12 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\CreateOrMergePatchLocatorDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\CreateOrMergePatchMonthPlanDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\CreateOrMergePatchMonthPlanMvoDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\CreateOrMergePatchOrganizationDto.java">
@@ -1134,10 +1305,16 @@
     <Content Include="src\org\dddml\wms\domain\CreateOrMergePatchPermissionDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\CreateOrMergePatchPersonDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\CreateOrMergePatchRoleDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\CreateOrMergePatchRolePermissionDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\CreateOrMergePatchTeamDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\CreateOrMergePatchUserClaimDto.java">
@@ -1170,6 +1347,87 @@
     <Content Include="src\org\dddml\wms\domain\CreateOrMergePatchWarehouseDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\CreateOrMergePatchYearPlanDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\CreateOrMergePatchYearPlanMvoDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\DayPlanCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\DayPlanId.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\DayPlanIdDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\DayPlanIdFlattenedDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\DayPlanMvoAggregate.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\DayPlanMvoApplicationService.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\DayPlanMvoCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\DayPlanMvoState.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\DayPlanMvoStateDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\DayPlanMvoStateEvent.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\DayPlanMvoStateEventDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\DayPlanMvoStateEventId.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\DayPlanMvoStateEventIdDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\DayPlanMvoStateEventIdFlattenedDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\DayPlanMvoStateRepository.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\DayPlanState.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\DayPlanStateDao.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\DayPlanStateDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\DayPlanStateEvent.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\DayPlanStateEventDao.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\DayPlanStateEventDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\DayPlanStateEventId.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\DayPlanStateEventIdDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\DayPlanStateEventIdFlattenedDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\DayPlanStates.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\DeleteAttributeDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
@@ -1194,6 +1452,9 @@
     <Content Include="src\org\dddml\wms\domain\DeleteAudienceDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\DeleteDayPlanMvoDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\DeleteInOutDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
@@ -1201,6 +1462,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\DeleteLocatorDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\DeleteMonthPlanMvoDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\DeleteOrganizationDto.java">
@@ -1215,10 +1479,16 @@
     <Content Include="src\org\dddml\wms\domain\DeletePermissionDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\DeletePersonDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\DeleteRoleDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\DeleteRolePermissionDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\DeleteTeamDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\DeleteUserClaimMvoDto.java">
@@ -1237,6 +1507,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\DeleteWarehouseDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\DeleteYearPlanMvoDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\DocumentAction.java">
@@ -1270,6 +1543,9 @@
 .\PermissionTree.java
 .\PermissionTreeApplicationService.java
 .\PermissionTreeRepository.java
+.\PersonalName.java
+.\PersonalNameDto.java
+.\PersonalNameFlattenedDto.java
 .\RolePermissionId.java
 .\RolePermissionIdDto.java
 .\RolePermissionIdFlattenedDto.java
@@ -1361,6 +1637,19 @@
 .\AbstractAudienceState.java
 .\AbstractAudienceStateCommandConverter.java
 .\AbstractAudienceStateEvent.java
+.\AbstractDayPlanCommand.java
+.\AbstractDayPlanCommandDto.java
+.\AbstractDayPlanMvoAggregate.java
+.\AbstractDayPlanMvoApplicationService.java
+.\AbstractDayPlanMvoCommand.java
+.\AbstractDayPlanMvoCommandDto.java
+.\AbstractDayPlanMvoState.java
+.\AbstractDayPlanMvoStateCommandConverter.java
+.\AbstractDayPlanMvoStateEvent.java
+.\AbstractDayPlanState.java
+.\AbstractDayPlanStateCommandConverter.java
+.\AbstractDayPlanStateEvent.java
+.\AbstractDayPlanStates.java
 .\AbstractInOutAggregate.java
 .\AbstractInOutApplicationService.java
 .\AbstractInOutCommand.java
@@ -1388,6 +1677,19 @@
 .\AbstractLocatorState.java
 .\AbstractLocatorStateCommandConverter.java
 .\AbstractLocatorStateEvent.java
+.\AbstractMonthPlanCommand.java
+.\AbstractMonthPlanCommandDto.java
+.\AbstractMonthPlanMvoAggregate.java
+.\AbstractMonthPlanMvoApplicationService.java
+.\AbstractMonthPlanMvoCommand.java
+.\AbstractMonthPlanMvoCommandDto.java
+.\AbstractMonthPlanMvoState.java
+.\AbstractMonthPlanMvoStateCommandConverter.java
+.\AbstractMonthPlanMvoStateEvent.java
+.\AbstractMonthPlanState.java
+.\AbstractMonthPlanStateCommandConverter.java
+.\AbstractMonthPlanStateEvent.java
+.\AbstractMonthPlanStates.java
 .\AbstractOrganizationAggregate.java
 .\AbstractOrganizationApplicationService.java
 .\AbstractOrganizationCommand.java
@@ -1416,6 +1718,13 @@
 .\AbstractPermissionState.java
 .\AbstractPermissionStateCommandConverter.java
 .\AbstractPermissionStateEvent.java
+.\AbstractPersonAggregate.java
+.\AbstractPersonApplicationService.java
+.\AbstractPersonCommand.java
+.\AbstractPersonCommandDto.java
+.\AbstractPersonState.java
+.\AbstractPersonStateCommandConverter.java
+.\AbstractPersonStateEvent.java
 .\AbstractRoleAggregate.java
 .\AbstractRoleApplicationService.java
 .\AbstractRoleCommand.java
@@ -1430,6 +1739,13 @@
 .\AbstractRoleState.java
 .\AbstractRoleStateCommandConverter.java
 .\AbstractRoleStateEvent.java
+.\AbstractTeamAggregate.java
+.\AbstractTeamApplicationService.java
+.\AbstractTeamCommand.java
+.\AbstractTeamCommandDto.java
+.\AbstractTeamState.java
+.\AbstractTeamStateCommandConverter.java
+.\AbstractTeamStateEvent.java
 .\AbstractUserAggregate.java
 .\AbstractUserApplicationService.java
 .\AbstractUserClaimCommand.java
@@ -1496,6 +1812,19 @@
 .\AbstractWarehouseState.java
 .\AbstractWarehouseStateCommandConverter.java
 .\AbstractWarehouseStateEvent.java
+.\AbstractYearPlanCommand.java
+.\AbstractYearPlanCommandDto.java
+.\AbstractYearPlanMvoAggregate.java
+.\AbstractYearPlanMvoApplicationService.java
+.\AbstractYearPlanMvoCommand.java
+.\AbstractYearPlanMvoCommandDto.java
+.\AbstractYearPlanMvoState.java
+.\AbstractYearPlanMvoStateCommandConverter.java
+.\AbstractYearPlanMvoStateEvent.java
+.\AbstractYearPlanState.java
+.\AbstractYearPlanStateCommandConverter.java
+.\AbstractYearPlanStateEvent.java
+.\AbstractYearPlanStates.java
 .\AttributeAggregate.java
 .\AttributeApplicationService.java
 .\AttributeCommand.java
@@ -1637,16 +1966,22 @@
 .\CreateOrMergePatchAttributeValueDto.java
 .\CreateOrMergePatchAttributeValueMvoDto.java
 .\CreateOrMergePatchAudienceDto.java
+.\CreateOrMergePatchDayPlanDto.java
+.\CreateOrMergePatchDayPlanMvoDto.java
 .\CreateOrMergePatchInOutDto.java
 .\CreateOrMergePatchInOutLineDto.java
 .\CreateOrMergePatchInOutLineMvoDto.java
 .\CreateOrMergePatchLocatorDto.java
+.\CreateOrMergePatchMonthPlanDto.java
+.\CreateOrMergePatchMonthPlanMvoDto.java
 .\CreateOrMergePatchOrganizationDto.java
 .\CreateOrMergePatchOrganizationStructureDto.java
 .\CreateOrMergePatchOrganizationStructureTypeDto.java
 .\CreateOrMergePatchPermissionDto.java
+.\CreateOrMergePatchPersonDto.java
 .\CreateOrMergePatchRoleDto.java
 .\CreateOrMergePatchRolePermissionDto.java
+.\CreateOrMergePatchTeamDto.java
 .\CreateOrMergePatchUserClaimDto.java
 .\CreateOrMergePatchUserClaimMvoDto.java
 .\CreateOrMergePatchUserDto.java
@@ -1657,6 +1992,33 @@
 .\CreateOrMergePatchUserRoleDto.java
 .\CreateOrMergePatchUserRoleMvoDto.java
 .\CreateOrMergePatchWarehouseDto.java
+.\CreateOrMergePatchYearPlanDto.java
+.\CreateOrMergePatchYearPlanMvoDto.java
+.\DayPlanCommand.java
+.\DayPlanId.java
+.\DayPlanIdDto.java
+.\DayPlanIdFlattenedDto.java
+.\DayPlanMvoAggregate.java
+.\DayPlanMvoApplicationService.java
+.\DayPlanMvoCommand.java
+.\DayPlanMvoState.java
+.\DayPlanMvoStateDto.java
+.\DayPlanMvoStateEvent.java
+.\DayPlanMvoStateEventDto.java
+.\DayPlanMvoStateEventId.java
+.\DayPlanMvoStateEventIdDto.java
+.\DayPlanMvoStateEventIdFlattenedDto.java
+.\DayPlanMvoStateRepository.java
+.\DayPlanState.java
+.\DayPlanStateDao.java
+.\DayPlanStateDto.java
+.\DayPlanStateEvent.java
+.\DayPlanStateEventDao.java
+.\DayPlanStateEventDto.java
+.\DayPlanStateEventId.java
+.\DayPlanStateEventIdDto.java
+.\DayPlanStateEventIdFlattenedDto.java
+.\DayPlanStates.java
 .\DeleteAttributeDto.java
 .\DeleteAttributeSetDto.java
 .\DeleteAttributeSetInstanceDto.java
@@ -1665,21 +2027,26 @@
 .\DeleteAttributeUseMvoDto.java
 .\DeleteAttributeValueMvoDto.java
 .\DeleteAudienceDto.java
+.\DeleteDayPlanMvoDto.java
 .\DeleteInOutDto.java
 .\DeleteInOutLineMvoDto.java
 .\DeleteLocatorDto.java
+.\DeleteMonthPlanMvoDto.java
 .\DeleteOrganizationDto.java
 .\DeleteOrganizationStructureDto.java
 .\DeleteOrganizationStructureTypeDto.java
 .\DeletePermissionDto.java
+.\DeletePersonDto.java
 .\DeleteRoleDto.java
 .\DeleteRolePermissionDto.java
+.\DeleteTeamDto.java
 .\DeleteUserClaimMvoDto.java
 .\DeleteUserDto.java
 .\DeleteUserLoginMvoDto.java
 .\DeleteUserPermissionMvoDto.java
 .\DeleteUserRoleMvoDto.java
 .\DeleteWarehouseDto.java
+.\DeleteYearPlanMvoDto.java
 .\GenerateBoundedContextDomainAggregates.txt
 .\InOutAggregate.java
 .\InOutApplicationService.java
@@ -1731,6 +2098,31 @@
 .\LoginKey.java
 .\LoginKeyDto.java
 .\LoginKeyFlattenedDto.java
+.\MonthPlanCommand.java
+.\MonthPlanId.java
+.\MonthPlanIdDto.java
+.\MonthPlanIdFlattenedDto.java
+.\MonthPlanMvoAggregate.java
+.\MonthPlanMvoApplicationService.java
+.\MonthPlanMvoCommand.java
+.\MonthPlanMvoState.java
+.\MonthPlanMvoStateDto.java
+.\MonthPlanMvoStateEvent.java
+.\MonthPlanMvoStateEventDto.java
+.\MonthPlanMvoStateEventId.java
+.\MonthPlanMvoStateEventIdDto.java
+.\MonthPlanMvoStateEventIdFlattenedDto.java
+.\MonthPlanMvoStateRepository.java
+.\MonthPlanState.java
+.\MonthPlanStateDao.java
+.\MonthPlanStateDto.java
+.\MonthPlanStateEvent.java
+.\MonthPlanStateEventDao.java
+.\MonthPlanStateEventDto.java
+.\MonthPlanStateEventId.java
+.\MonthPlanStateEventIdDto.java
+.\MonthPlanStateEventIdFlattenedDto.java
+.\MonthPlanStates.java
 .\OrganizationAggregate.java
 .\OrganizationApplicationService.java
 .\OrganizationCommand.java
@@ -1775,14 +2167,28 @@
 .\PermissionStateEventIdDto.java
 .\PermissionStateEventIdFlattenedDto.java
 .\PermissionStateRepository.java
+.\PersonAggregate.java
+.\PersonApplicationService.java
+.\PersonCommand.java
+.\PersonState.java
+.\PersonStateDto.java
+.\PersonStateEvent.java
+.\PersonStateEventDto.java
+.\PersonStateEventId.java
+.\PersonStateEventIdDto.java
+.\PersonStateEventIdFlattenedDto.java
+.\PersonStateRepository.java
 .\RemoveAttributeSetInstanceExtensionFieldDto.java
 .\RemoveAttributeUseDto.java
 .\RemoveAttributeValueDto.java
+.\RemoveDayPlanDto.java
 .\RemoveInOutLineDto.java
+.\RemoveMonthPlanDto.java
 .\RemoveUserClaimDto.java
 .\RemoveUserLoginDto.java
 .\RemoveUserPermissionDto.java
 .\RemoveUserRoleDto.java
+.\RemoveYearPlanDto.java
 .\RoleAggregate.java
 .\RoleApplicationService.java
 .\RoleCommand.java
@@ -1805,6 +2211,17 @@
 .\RoleStateEventIdDto.java
 .\RoleStateEventIdFlattenedDto.java
 .\RoleStateRepository.java
+.\TeamAggregate.java
+.\TeamApplicationService.java
+.\TeamCommand.java
+.\TeamState.java
+.\TeamStateDto.java
+.\TeamStateEvent.java
+.\TeamStateEventDto.java
+.\TeamStateEventId.java
+.\TeamStateEventIdDto.java
+.\TeamStateEventIdFlattenedDto.java
+.\TeamStateRepository.java
 .\TreeLocatorStateRepository.java
 .\TreeOrganizationStructureStateRepository.java
 .\TreePermissionStateRepository.java
@@ -1930,6 +2347,31 @@
 .\WarehouseStateEventIdDto.java
 .\WarehouseStateEventIdFlattenedDto.java
 .\WarehouseStateRepository.java
+.\YearPlanCommand.java
+.\YearPlanId.java
+.\YearPlanIdDto.java
+.\YearPlanIdFlattenedDto.java
+.\YearPlanMvoAggregate.java
+.\YearPlanMvoApplicationService.java
+.\YearPlanMvoCommand.java
+.\YearPlanMvoState.java
+.\YearPlanMvoStateDto.java
+.\YearPlanMvoStateEvent.java
+.\YearPlanMvoStateEventDto.java
+.\YearPlanMvoStateEventId.java
+.\YearPlanMvoStateEventIdDto.java
+.\YearPlanMvoStateEventIdFlattenedDto.java
+.\YearPlanMvoStateRepository.java
+.\YearPlanState.java
+.\YearPlanStateDao.java
+.\YearPlanStateDto.java
+.\YearPlanStateEvent.java
+.\YearPlanStateEventDao.java
+.\YearPlanStateEventDto.java
+.\YearPlanStateEventId.java
+.\YearPlanStateEventIdDto.java
+.\YearPlanStateEventIdFlattenedDto.java
+.\YearPlanStates.java
 </LastOutputs>
     </Content>
     <Content Include="src\org\dddml\wms\domain\GenerateBoundedContextDomainAggregates.txt">
@@ -2165,6 +2607,18 @@
     <Content Include="src\org\dddml\wms\domain\meta\BoundedContextMetadata.java">
       <DependentUpon>GenerateBoundedContextMetadata.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\DayPlanFilteringProperties.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\DayPlanMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\DayPlanMvoFilteringProperties.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\DayPlanMvoMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\meta\GenerateBoundedContextDomainAggregatesMetadata.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GenerateBoundedContextDomainAggregatesMetadata.txt</LastGenOutput>
@@ -2191,6 +2645,10 @@
 .\AttributeValueMvoMetadata.java
 .\AudienceFilteringProperties.java
 .\AudienceMetadata.java
+.\DayPlanFilteringProperties.java
+.\DayPlanMetadata.java
+.\DayPlanMvoFilteringProperties.java
+.\DayPlanMvoMetadata.java
 .\GenerateBoundedContextDomainAggregatesMetadata.txt
 .\InOutFilteringProperties.java
 .\InOutLineFilteringProperties.java
@@ -2200,6 +2658,10 @@
 .\InOutMetadata.java
 .\LocatorFilteringProperties.java
 .\LocatorMetadata.java
+.\MonthPlanFilteringProperties.java
+.\MonthPlanMetadata.java
+.\MonthPlanMvoFilteringProperties.java
+.\MonthPlanMvoMetadata.java
 .\OrganizationFilteringProperties.java
 .\OrganizationMetadata.java
 .\OrganizationStructureFilteringProperties.java
@@ -2208,10 +2670,14 @@
 .\OrganizationStructureTypeMetadata.java
 .\PermissionFilteringProperties.java
 .\PermissionMetadata.java
+.\PersonFilteringProperties.java
+.\PersonMetadata.java
 .\RoleFilteringProperties.java
 .\RoleMetadata.java
 .\RolePermissionFilteringProperties.java
 .\RolePermissionMetadata.java
+.\TeamFilteringProperties.java
+.\TeamMetadata.java
 .\UserClaimFilteringProperties.java
 .\UserClaimMetadata.java
 .\UserClaimMvoFilteringProperties.java
@@ -2232,6 +2698,10 @@
 .\UserRoleMvoMetadata.java
 .\WarehouseFilteringProperties.java
 .\WarehouseMetadata.java
+.\YearPlanFilteringProperties.java
+.\YearPlanMetadata.java
+.\YearPlanMvoFilteringProperties.java
+.\YearPlanMvoMetadata.java
 </LastOutputs>
     </Content>
     <Content Include="src\org\dddml\wms\domain\meta\GenerateBoundedContextDomainAggregatesMetadata.txt">
@@ -2276,6 +2746,18 @@
     <Content Include="src\org\dddml\wms\domain\meta\LocatorMetadata.java">
       <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\MonthPlanFilteringProperties.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\MonthPlanMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\MonthPlanMvoFilteringProperties.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\MonthPlanMvoMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\meta\OrganizationFilteringProperties.java">
       <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
     </Content>
@@ -2300,6 +2782,12 @@
     <Content Include="src\org\dddml\wms\domain\meta\PermissionMetadata.java">
       <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\PersonFilteringProperties.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\PersonMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\meta\RoleFilteringProperties.java">
       <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
     </Content>
@@ -2310,6 +2798,12 @@
       <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\meta\RolePermissionMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\TeamFilteringProperties.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\TeamMetadata.java">
       <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\meta\UserClaimFilteringProperties.java">
@@ -2371,6 +2865,93 @@
     </Content>
     <Content Include="src\org\dddml\wms\domain\meta\WarehouseMetadata.java">
       <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\YearPlanFilteringProperties.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\YearPlanMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\YearPlanMvoFilteringProperties.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\meta\YearPlanMvoMetadata.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\MonthPlanCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\MonthPlanId.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\MonthPlanIdDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\MonthPlanIdFlattenedDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\MonthPlanMvoAggregate.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\MonthPlanMvoApplicationService.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\MonthPlanMvoCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\MonthPlanMvoState.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\MonthPlanMvoStateDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\MonthPlanMvoStateEvent.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\MonthPlanMvoStateEventDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\MonthPlanMvoStateEventId.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\MonthPlanMvoStateEventIdDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\MonthPlanMvoStateEventIdFlattenedDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\MonthPlanMvoStateRepository.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\MonthPlanState.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\MonthPlanStateDao.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\MonthPlanStateDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\MonthPlanStateEvent.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\MonthPlanStateEventDao.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\MonthPlanStateEventDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\MonthPlanStateEventId.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\MonthPlanStateEventIdDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\MonthPlanStateEventIdFlattenedDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\MonthPlanStates.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\OrganizationAggregate.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
@@ -2531,6 +3112,48 @@
     <Content Include="src\org\dddml\wms\domain\PermissionTreeRepository.java">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\PersonAggregate.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\PersonalName.java">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\PersonalNameDto.java">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\PersonalNameFlattenedDto.java">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\PersonApplicationService.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\PersonCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\PersonState.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\PersonStateDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\PersonStateEvent.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\PersonStateEventDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\PersonStateEventId.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\PersonStateEventIdDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\PersonStateEventIdFlattenedDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\PersonStateRepository.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\RemoveAttributeSetInstanceExtensionFieldDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
@@ -2540,7 +3163,13 @@
     <Content Include="src\org\dddml\wms\domain\RemoveAttributeValueDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
+    <Content Include="src\org\dddml\wms\domain\RemoveDayPlanDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
     <Content Include="src\org\dddml\wms\domain\RemoveInOutLineDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\RemoveMonthPlanDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\RemoveUserClaimDto.java">
@@ -2553,6 +3182,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\RemoveUserRoleDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\RemoveYearPlanDto.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\RoleAggregate.java">
@@ -2638,6 +3270,39 @@
     </Content>
     <Content Include="src\org\dddml\wms\domain\SkuIdFlattenedDto.java">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\TeamAggregate.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\TeamApplicationService.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\TeamCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\TeamState.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\TeamStateDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\TeamStateEvent.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\TeamStateEventDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\TeamStateEventId.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\TeamStateEventIdDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\TeamStateEventIdFlattenedDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\TeamStateRepository.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\TreeLocatorStateRepository.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
@@ -3012,6 +3677,81 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\domain\WarehouseStateRepository.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\YearPlanCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\YearPlanId.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\YearPlanIdDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\YearPlanIdFlattenedDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\YearPlanMvoAggregate.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\YearPlanMvoApplicationService.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\YearPlanMvoCommand.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\YearPlanMvoState.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\YearPlanMvoStateDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\YearPlanMvoStateEvent.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\YearPlanMvoStateEventDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\YearPlanMvoStateEventId.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\YearPlanMvoStateEventIdDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\YearPlanMvoStateEventIdFlattenedDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\YearPlanMvoStateRepository.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\YearPlanState.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\YearPlanStateDao.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\YearPlanStateDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\YearPlanStateEvent.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\YearPlanStateEventDao.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\YearPlanStateEventDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\YearPlanStateEventId.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\YearPlanStateEventIdDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\YearPlanStateEventIdFlattenedDto.java">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Content>
+    <Content Include="src\org\dddml\wms\domain\YearPlanStates.java">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Content>
     <Content Include="src\org\dddml\wms\LoadBoundedContext.tt">

@@ -644,6 +644,114 @@
     <Compile Include="Generated\Domain\AudienceStateProperties.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\DayPlanCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanCommandDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanIdFlattenedDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanIdFlattenedDtoFormatter.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanMvoAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanMvoApplicationServiceBase.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanMvoApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanMvoCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanMvoCommandDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanMvoState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanMvoStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanMvoStateDtoExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanMvoStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanMvoStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanMvoStateEventId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanMvoStateEventIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanMvoStateEventIdFlattenedDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanMvoStateEventIdFlattenedDtoFormatter.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanMvoStateExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanMvoStateInterfaceExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanMvoStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanStateDtoExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanStateEventId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanStateEventIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanStateEventIdFlattenedDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanStateEventIdFlattenedDtoFormatter.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanStateExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanStateInterfaceExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\DayPlanStates.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\DocumentAction.cs">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </Compile>
@@ -905,6 +1013,51 @@
     <Compile Include="Generated\Domain\IAudienceStateRepository.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\IDayPlanCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IDayPlanMvoAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IDayPlanMvoApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IDayPlanMvoApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IDayPlanMvoCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IDayPlanMvoState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IDayPlanMvoStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IDayPlanMvoStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IDayPlanMvoStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IDayPlanState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IDayPlanStateDao.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IDayPlanStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IDayPlanStateEventDao.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IDayPlanStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IDayPlanStates.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\IInOutAggregate.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -1006,6 +1159,51 @@
     </Compile>
     <Compile Include="Generated\Domain\ILocatorTreeApplicationService.cs">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IMonthPlanCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IMonthPlanMvoAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IMonthPlanMvoApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IMonthPlanMvoApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IMonthPlanMvoCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IMonthPlanMvoState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IMonthPlanMvoStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IMonthPlanMvoStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IMonthPlanMvoStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IMonthPlanState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IMonthPlanStateDao.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IMonthPlanStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IMonthPlanStateEventDao.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IMonthPlanStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IMonthPlanStates.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\InOutAggregate.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
@@ -1280,6 +1478,30 @@
     <Compile Include="Generated\Domain\IPermissionTreeApplicationService.cs">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\IPersonAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IPersonApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IPersonApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IPersonCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IPersonState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IPersonStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IPersonStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IPersonStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\IRoleAggregate.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -1326,6 +1548,30 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\IRoleStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\ITeamAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\ITeamApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\ITeamApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\ITeamCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\ITeamState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\ITeamStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\ITeamStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\ITeamStateRepository.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\IUserAggregate.cs">
@@ -1556,6 +1802,51 @@
     <Compile Include="Generated\Domain\IWarehouseStateRepository.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\IYearPlanCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IYearPlanMvoAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IYearPlanMvoApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IYearPlanMvoApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IYearPlanMvoCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IYearPlanMvoState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IYearPlanMvoStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IYearPlanMvoStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IYearPlanMvoStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IYearPlanState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IYearPlanStateDao.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IYearPlanStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IYearPlanStateEventDao.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IYearPlanStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\IYearPlanStates.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\LocatorAggregate.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -1655,6 +1946,12 @@
     <Compile Include="Generated\Domain\Metadata\AudienceMetadata.cs">
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\Metadata\DayPlanMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\Metadata\DayPlanMvoMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\Metadata\InOutLineMetadata.cs">
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
     </Compile>
@@ -1665,6 +1962,12 @@
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\Metadata\LocatorMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\Metadata\MonthPlanMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\Metadata\MonthPlanMvoMetadata.cs">
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\Metadata\OrganizationMetadata.cs">
@@ -1679,10 +1982,16 @@
     <Compile Include="Generated\Domain\Metadata\PermissionMetadata.cs">
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\Metadata\PersonMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\Metadata\RoleMetadata.cs">
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\Metadata\RolePermissionMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\Metadata\TeamMetadata.cs">
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\Metadata\UserClaimMetadata.cs">
@@ -1714,6 +2023,120 @@
     </Compile>
     <Compile Include="Generated\Domain\Metadata\WarehouseMetadata.cs">
       <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\Metadata\YearPlanMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\Metadata\YearPlanMvoMetadata.cs">
+      <DependentUpon>GenerateDomainMetadata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanCommandDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanIdFlattenedDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanIdFlattenedDtoFormatter.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanMvoAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanMvoApplicationServiceBase.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanMvoApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanMvoCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanMvoCommandDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanMvoState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanMvoStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanMvoStateDtoExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanMvoStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanMvoStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanMvoStateEventId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanMvoStateEventIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanMvoStateEventIdFlattenedDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanMvoStateEventIdFlattenedDtoFormatter.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanMvoStateExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanMvoStateInterfaceExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanMvoStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanStateDtoExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanStateEventId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanStateEventIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanStateEventIdFlattenedDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanStateEventIdFlattenedDtoFormatter.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanStateExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanStateInterfaceExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\MonthPlanStates.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\OrganizationAggregate.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
@@ -1937,6 +2360,69 @@
     <Compile Include="Generated\Domain\PermissionTree.cs">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\PersonAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\PersonalName.cs">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\PersonalNameDto.cs">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\PersonalNameFlattenedDto.cs">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\PersonalNameFlattenedDtoFormatter.cs">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\PersonApplicationServiceBase.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\PersonApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\PersonCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\PersonCommandDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\PersonState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\PersonStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\PersonStateDtoExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\PersonStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\PersonStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\PersonStateEventId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\PersonStateEventIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\PersonStateEventIdFlattenedDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\PersonStateEventIdFlattenedDtoFormatter.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\PersonStateExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\PersonStateInterfaceExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\PersonStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\RoleAggregate.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
@@ -2062,6 +2548,57 @@
     </Compile>
     <Compile Include="Generated\Domain\SkuIdFlattenedDtoFormatter.cs">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\TeamAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\TeamApplicationServiceBase.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\TeamApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\TeamCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\TeamCommandDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\TeamState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\TeamStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\TeamStateDtoExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\TeamStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\TeamStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\TeamStateEventId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\TeamStateEventIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\TeamStateEventIdFlattenedDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\TeamStateEventIdFlattenedDtoFormatter.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\TeamStateExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\TeamStateInterfaceExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\TeamStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\UserAggregate.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
@@ -2597,6 +3134,114 @@
     <Compile Include="Generated\Domain\WarehouseStateProperties.cs">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\YearPlanCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanCommandDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanIdFlattenedDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanIdFlattenedDtoFormatter.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanMvoAggregate.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanMvoApplicationServiceBase.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanMvoApplicationServiceFactory.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanMvoCommand.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanMvoCommandDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanMvoState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanMvoStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanMvoStateDtoExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanMvoStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanMvoStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanMvoStateEventId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanMvoStateEventIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanMvoStateEventIdFlattenedDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanMvoStateEventIdFlattenedDtoFormatter.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanMvoStateExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanMvoStateInterfaceExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanMvoStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanState.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanStateDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanStateDtoExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanStateEvent.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanStateEventDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanStateEventId.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanStateEventIdDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanStateEventIdFlattenedDto.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanStateEventIdFlattenedDtoFormatter.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanStateExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanStateInterfaceExtensions.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanStateProperties.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\YearPlanStates.cs">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Specialization\AggregateBase.cs" />
     <Compile Include="Specialization\DefaultTypeConverter.cs" />
     <Compile Include="Specialization\DynamicObjectMapperBase.cs" />
@@ -2891,6 +3536,42 @@
 .\AudienceStateExtensions.cs
 .\AudienceStateInterfaceExtensions.cs
 .\AudienceStateProperties.cs
+.\DayPlanCommand.cs
+.\DayPlanCommandDto.cs
+.\DayPlanId.cs
+.\DayPlanIdDto.cs
+.\DayPlanIdFlattenedDto.cs
+.\DayPlanIdFlattenedDtoFormatter.cs
+.\DayPlanMvoAggregate.cs
+.\DayPlanMvoApplicationServiceBase.cs
+.\DayPlanMvoApplicationServiceFactory.cs
+.\DayPlanMvoCommand.cs
+.\DayPlanMvoCommandDto.cs
+.\DayPlanMvoState.cs
+.\DayPlanMvoStateDto.cs
+.\DayPlanMvoStateDtoExtensions.cs
+.\DayPlanMvoStateEvent.cs
+.\DayPlanMvoStateEventDto.cs
+.\DayPlanMvoStateEventId.cs
+.\DayPlanMvoStateEventIdDto.cs
+.\DayPlanMvoStateEventIdFlattenedDto.cs
+.\DayPlanMvoStateEventIdFlattenedDtoFormatter.cs
+.\DayPlanMvoStateExtensions.cs
+.\DayPlanMvoStateInterfaceExtensions.cs
+.\DayPlanMvoStateProperties.cs
+.\DayPlanState.cs
+.\DayPlanStateDto.cs
+.\DayPlanStateDtoExtensions.cs
+.\DayPlanStateEvent.cs
+.\DayPlanStateEventDto.cs
+.\DayPlanStateEventId.cs
+.\DayPlanStateEventIdDto.cs
+.\DayPlanStateEventIdFlattenedDto.cs
+.\DayPlanStateEventIdFlattenedDtoFormatter.cs
+.\DayPlanStateExtensions.cs
+.\DayPlanStateInterfaceExtensions.cs
+.\DayPlanStateProperties.cs
+.\DayPlanStates.cs
 .\GenerateBoundedContextDomainAggregates.txt
 .\IAttributeAggregate.cs
 .\IAttributeApplicationService.cs
@@ -2977,6 +3658,21 @@
 .\IAudienceStateEvent.cs
 .\IAudienceStateProperties.cs
 .\IAudienceStateRepository.cs
+.\IDayPlanCommand.cs
+.\IDayPlanMvoAggregate.cs
+.\IDayPlanMvoApplicationService.cs
+.\IDayPlanMvoApplicationServiceFactory.cs
+.\IDayPlanMvoCommand.cs
+.\IDayPlanMvoState.cs
+.\IDayPlanMvoStateEvent.cs
+.\IDayPlanMvoStateProperties.cs
+.\IDayPlanMvoStateRepository.cs
+.\IDayPlanState.cs
+.\IDayPlanStateDao.cs
+.\IDayPlanStateEvent.cs
+.\IDayPlanStateEventDao.cs
+.\IDayPlanStateProperties.cs
+.\IDayPlanStates.cs
 .\IInOutAggregate.cs
 .\IInOutApplicationService.cs
 .\IInOutApplicationServiceFactory.cs
@@ -3009,6 +3705,21 @@
 .\ILocatorStateProperties.cs
 .\ILocatorStateRepository.cs
 .\ILocatorStateRepositoryLocatorTree.cs
+.\IMonthPlanCommand.cs
+.\IMonthPlanMvoAggregate.cs
+.\IMonthPlanMvoApplicationService.cs
+.\IMonthPlanMvoApplicationServiceFactory.cs
+.\IMonthPlanMvoCommand.cs
+.\IMonthPlanMvoState.cs
+.\IMonthPlanMvoStateEvent.cs
+.\IMonthPlanMvoStateProperties.cs
+.\IMonthPlanMvoStateRepository.cs
+.\IMonthPlanState.cs
+.\IMonthPlanStateDao.cs
+.\IMonthPlanStateEvent.cs
+.\IMonthPlanStateEventDao.cs
+.\IMonthPlanStateProperties.cs
+.\IMonthPlanStates.cs
 .\InOutAggregate.cs
 .\InOutApplicationServiceBase.cs
 .\InOutApplicationServiceFactory.cs
@@ -3096,6 +3807,14 @@
 .\IPermissionStateProperties.cs
 .\IPermissionStateRepository.cs
 .\IPermissionStateRepositoryPermissionTree.cs
+.\IPersonAggregate.cs
+.\IPersonApplicationService.cs
+.\IPersonApplicationServiceFactory.cs
+.\IPersonCommand.cs
+.\IPersonState.cs
+.\IPersonStateEvent.cs
+.\IPersonStateProperties.cs
+.\IPersonStateRepository.cs
 .\IRoleAggregate.cs
 .\IRoleApplicationService.cs
 .\IRoleApplicationServiceFactory.cs
@@ -3112,6 +3831,14 @@
 .\IRoleStateEvent.cs
 .\IRoleStateProperties.cs
 .\IRoleStateRepository.cs
+.\ITeamAggregate.cs
+.\ITeamApplicationService.cs
+.\ITeamApplicationServiceFactory.cs
+.\ITeamCommand.cs
+.\ITeamState.cs
+.\ITeamStateEvent.cs
+.\ITeamStateProperties.cs
+.\ITeamStateRepository.cs
 .\IUserAggregate.cs
 .\IUserApplicationService.cs
 .\IUserApplicationServiceFactory.cs
@@ -3188,6 +3915,21 @@
 .\IWarehouseStateEvent.cs
 .\IWarehouseStateProperties.cs
 .\IWarehouseStateRepository.cs
+.\IYearPlanCommand.cs
+.\IYearPlanMvoAggregate.cs
+.\IYearPlanMvoApplicationService.cs
+.\IYearPlanMvoApplicationServiceFactory.cs
+.\IYearPlanMvoCommand.cs
+.\IYearPlanMvoState.cs
+.\IYearPlanMvoStateEvent.cs
+.\IYearPlanMvoStateProperties.cs
+.\IYearPlanMvoStateRepository.cs
+.\IYearPlanState.cs
+.\IYearPlanStateDao.cs
+.\IYearPlanStateEvent.cs
+.\IYearPlanStateEventDao.cs
+.\IYearPlanStateProperties.cs
+.\IYearPlanStates.cs
 .\LocatorAggregate.cs
 .\LocatorApplicationServiceBase.cs
 .\LocatorApplicationServiceFactory.cs
@@ -3209,6 +3951,42 @@
 .\LoginKeyDto.cs
 .\LoginKeyFlattenedDto.cs
 .\LoginKeyFlattenedDtoFormatter.cs
+.\MonthPlanCommand.cs
+.\MonthPlanCommandDto.cs
+.\MonthPlanId.cs
+.\MonthPlanIdDto.cs
+.\MonthPlanIdFlattenedDto.cs
+.\MonthPlanIdFlattenedDtoFormatter.cs
+.\MonthPlanMvoAggregate.cs
+.\MonthPlanMvoApplicationServiceBase.cs
+.\MonthPlanMvoApplicationServiceFactory.cs
+.\MonthPlanMvoCommand.cs
+.\MonthPlanMvoCommandDto.cs
+.\MonthPlanMvoState.cs
+.\MonthPlanMvoStateDto.cs
+.\MonthPlanMvoStateDtoExtensions.cs
+.\MonthPlanMvoStateEvent.cs
+.\MonthPlanMvoStateEventDto.cs
+.\MonthPlanMvoStateEventId.cs
+.\MonthPlanMvoStateEventIdDto.cs
+.\MonthPlanMvoStateEventIdFlattenedDto.cs
+.\MonthPlanMvoStateEventIdFlattenedDtoFormatter.cs
+.\MonthPlanMvoStateExtensions.cs
+.\MonthPlanMvoStateInterfaceExtensions.cs
+.\MonthPlanMvoStateProperties.cs
+.\MonthPlanState.cs
+.\MonthPlanStateDto.cs
+.\MonthPlanStateDtoExtensions.cs
+.\MonthPlanStateEvent.cs
+.\MonthPlanStateEventDto.cs
+.\MonthPlanStateEventId.cs
+.\MonthPlanStateEventIdDto.cs
+.\MonthPlanStateEventIdFlattenedDto.cs
+.\MonthPlanStateEventIdFlattenedDtoFormatter.cs
+.\MonthPlanStateExtensions.cs
+.\MonthPlanStateInterfaceExtensions.cs
+.\MonthPlanStateProperties.cs
+.\MonthPlanStates.cs
 .\OrganizationAggregate.cs
 .\OrganizationApplicationServiceBase.cs
 .\OrganizationApplicationServiceFactory.cs
@@ -3277,6 +4055,23 @@
 .\PermissionStateExtensions.cs
 .\PermissionStateInterfaceExtensions.cs
 .\PermissionStateProperties.cs
+.\PersonAggregate.cs
+.\PersonApplicationServiceBase.cs
+.\PersonApplicationServiceFactory.cs
+.\PersonCommand.cs
+.\PersonCommandDto.cs
+.\PersonState.cs
+.\PersonStateDto.cs
+.\PersonStateDtoExtensions.cs
+.\PersonStateEvent.cs
+.\PersonStateEventDto.cs
+.\PersonStateEventId.cs
+.\PersonStateEventIdDto.cs
+.\PersonStateEventIdFlattenedDto.cs
+.\PersonStateEventIdFlattenedDtoFormatter.cs
+.\PersonStateExtensions.cs
+.\PersonStateInterfaceExtensions.cs
+.\PersonStateProperties.cs
 .\RoleAggregate.cs
 .\RoleApplicationServiceBase.cs
 .\RoleApplicationServiceFactory.cs
@@ -3311,6 +4106,23 @@
 .\RoleStateExtensions.cs
 .\RoleStateInterfaceExtensions.cs
 .\RoleStateProperties.cs
+.\TeamAggregate.cs
+.\TeamApplicationServiceBase.cs
+.\TeamApplicationServiceFactory.cs
+.\TeamCommand.cs
+.\TeamCommandDto.cs
+.\TeamState.cs
+.\TeamStateDto.cs
+.\TeamStateDtoExtensions.cs
+.\TeamStateEvent.cs
+.\TeamStateEventDto.cs
+.\TeamStateEventId.cs
+.\TeamStateEventIdDto.cs
+.\TeamStateEventIdFlattenedDto.cs
+.\TeamStateEventIdFlattenedDtoFormatter.cs
+.\TeamStateExtensions.cs
+.\TeamStateInterfaceExtensions.cs
+.\TeamStateProperties.cs
 .\UserAggregate.cs
 .\UserApplicationServiceBase.cs
 .\UserApplicationServiceFactory.cs
@@ -3489,6 +4301,42 @@
 .\WarehouseStateExtensions.cs
 .\WarehouseStateInterfaceExtensions.cs
 .\WarehouseStateProperties.cs
+.\YearPlanCommand.cs
+.\YearPlanCommandDto.cs
+.\YearPlanId.cs
+.\YearPlanIdDto.cs
+.\YearPlanIdFlattenedDto.cs
+.\YearPlanIdFlattenedDtoFormatter.cs
+.\YearPlanMvoAggregate.cs
+.\YearPlanMvoApplicationServiceBase.cs
+.\YearPlanMvoApplicationServiceFactory.cs
+.\YearPlanMvoCommand.cs
+.\YearPlanMvoCommandDto.cs
+.\YearPlanMvoState.cs
+.\YearPlanMvoStateDto.cs
+.\YearPlanMvoStateDtoExtensions.cs
+.\YearPlanMvoStateEvent.cs
+.\YearPlanMvoStateEventDto.cs
+.\YearPlanMvoStateEventId.cs
+.\YearPlanMvoStateEventIdDto.cs
+.\YearPlanMvoStateEventIdFlattenedDto.cs
+.\YearPlanMvoStateEventIdFlattenedDtoFormatter.cs
+.\YearPlanMvoStateExtensions.cs
+.\YearPlanMvoStateInterfaceExtensions.cs
+.\YearPlanMvoStateProperties.cs
+.\YearPlanState.cs
+.\YearPlanStateDto.cs
+.\YearPlanStateDtoExtensions.cs
+.\YearPlanStateEvent.cs
+.\YearPlanStateEventDto.cs
+.\YearPlanStateEventId.cs
+.\YearPlanStateEventIdDto.cs
+.\YearPlanStateEventIdFlattenedDto.cs
+.\YearPlanStateEventIdFlattenedDtoFormatter.cs
+.\YearPlanStateExtensions.cs
+.\YearPlanStateInterfaceExtensions.cs
+.\YearPlanStateProperties.cs
+.\YearPlanStates.cs
 </LastOutputs>
       <LastGenOutput>GenerateBoundedContextDomainAggregates.txt</LastGenOutput>
     </Content>
@@ -3512,6 +4360,10 @@
 .\OrganizationStructureIdFlattenedDtoFormatter.cs
 .\OrganizationTree.cs
 .\PermissionTree.cs
+.\PersonalName.cs
+.\PersonalNameDto.cs
+.\PersonalNameFlattenedDto.cs
+.\PersonalNameFlattenedDtoFormatter.cs
 .\RolePermissionId.cs
 .\RolePermissionIdDto.cs
 .\RolePermissionIdFlattenedDto.cs
@@ -3547,17 +4399,23 @@
 .\AttributeValueMetadata.cs
 .\AttributeValueMvoMetadata.cs
 .\AudienceMetadata.cs
+.\DayPlanMetadata.cs
+.\DayPlanMvoMetadata.cs
 .\GenerateDomainMetadata.txt
 .\InOutLineMetadata.cs
 .\InOutLineMvoMetadata.cs
 .\InOutMetadata.cs
 .\LocatorMetadata.cs
+.\MonthPlanMetadata.cs
+.\MonthPlanMvoMetadata.cs
 .\OrganizationMetadata.cs
 .\OrganizationStructureMetadata.cs
 .\OrganizationStructureTypeMetadata.cs
 .\PermissionMetadata.cs
+.\PersonMetadata.cs
 .\RoleMetadata.cs
 .\RolePermissionMetadata.cs
+.\TeamMetadata.cs
 .\UserClaimMetadata.cs
 .\UserClaimMvoMetadata.cs
 .\UserLoginMetadata.cs
@@ -3568,6 +4426,8 @@
 .\UserRoleMetadata.cs
 .\UserRoleMvoMetadata.cs
 .\WarehouseMetadata.cs
+.\YearPlanMetadata.cs
+.\YearPlanMvoMetadata.cs
 </LastOutputs>
     </Content>
     <Content Include="Generated\Domain\Metadata\GenerateDomainMetadata.txt">

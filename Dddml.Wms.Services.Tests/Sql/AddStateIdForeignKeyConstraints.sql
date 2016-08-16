@@ -62,3 +62,27 @@ alter TABLE `InOutLines` add
     (`DocumentNumber`) 
   ON DELETE NO ACTION ON UPDATE NO ACTION;
 
+alter TABLE `YearPlans` add
+  CONSTRAINT `FK_YearPlan_Person_StateId` 
+  FOREIGN KEY 
+    (`YearPlanIdPersonalNameFirstName`, `YearPlanIdPersonalNameLastName`) 
+  REFERENCES `People` 
+    (`PersonalNameFirstName`, `PersonalNameLastName`) 
+  ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+alter TABLE `MonthPlans` add
+  CONSTRAINT `FK_MonthPlan_YearPlan_StateId` 
+  FOREIGN KEY 
+    (`MonthPlanIdPersonalNameFirstName`, `MonthPlanIdPersonalNameLastName`, `MonthPlanIdYear`) 
+  REFERENCES `YearPlans` 
+    (`YearPlanIdPersonalNameFirstName`, `YearPlanIdPersonalNameLastName`, `YearPlanIdYear`) 
+  ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+alter TABLE `DayPlans` add
+  CONSTRAINT `FK_DayPlan_MonthPlan_StateId` 
+  FOREIGN KEY 
+    (`DayPlanIdPersonalNameFirstName`, `DayPlanIdPersonalNameLastName`, `DayPlanIdYear`, `DayPlanIdMonth`) 
+  REFERENCES `MonthPlans` 
+    (`MonthPlanIdPersonalNameFirstName`, `MonthPlanIdPersonalNameLastName`, `MonthPlanIdYear`, `MonthPlanIdMonth`) 
+  ON DELETE NO ACTION ON UPDATE NO ACTION;
+

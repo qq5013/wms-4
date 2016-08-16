@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="AbstractYearPlanStateEvent" table="YearPlanStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="stateEventId" class="org.dddml.wms.domain.YearPlanStateEventId">
+		<key-property name="personalNameFirstName" column="YearPlanIdPersonalNameFirstName" length="50"/>
+		<key-property name="personalNameLastName" column="YearPlanIdPersonalNameLastName" length="50"/>
+		<key-property name="year" column="YearPlanIdYear" />
+		<key-property name="personVersion" column="PersonVersion" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="string" />
+
+	<property name="description" length="500"></property>
+
+	<property name="active" ></property>
+
+
+    <property name="createdBy" />
+
+    <property name="createdAt" />
+
+    <property name="commandId" />
+
+    <property name="version" not-null="true" />
+
+
+    <subclass name="AbstractYearPlanStateEvent$SimpleYearPlanStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="AbstractYearPlanStateEvent$SimpleYearPlanStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="isPropertyDescriptionRemoved" />
+
+        <property name="isPropertyActiveRemoved" />
+
+
+    </subclass>
+
+    <subclass name="AbstractYearPlanStateEvent$SimpleYearPlanStateRemoved"  discriminator-value="Removed">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

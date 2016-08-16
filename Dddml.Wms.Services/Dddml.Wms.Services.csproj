@@ -111,6 +111,9 @@
     <Compile Include="Generated\Domain\NHibernate\AudienceApplicationService.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\NHibernate\DayPlanMvoApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\NHibernate\InOutApplicationService.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
@@ -118,6 +121,9 @@
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\NHibernate\LocatorApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\MonthPlanMvoApplicationService.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\NHibernate\NHibernateAttributeEventStore.cs">
@@ -186,6 +192,18 @@
     <Compile Include="Generated\Domain\NHibernate\NHibernateAudienceStateRepository.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateDayPlanMvoEventStore.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateDayPlanMvoStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateDayPlanStateDao.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateDayPlanStateEventDao.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\NHibernate\NHibernateInOutEventStore.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
@@ -215,6 +233,18 @@
     </Compile>
     <Compile Include="Generated\Domain\NHibernate\NHibernateLocatorTreeRepository.cs">
       <DependentUpon>GenerateNHibernateTrees.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateMonthPlanMvoEventStore.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateMonthPlanMvoStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateMonthPlanStateDao.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateMonthPlanStateEventDao.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\NHibernate\NHibernateOrganizationEventStore.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
@@ -252,6 +282,12 @@
     <Compile Include="Generated\Domain\NHibernate\NHibernatePermissionTreeRepository.cs">
       <DependentUpon>GenerateNHibernateTrees.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernatePersonEventStore.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernatePersonStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\NHibernate\NHibernateRoleEventStore.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
@@ -262,6 +298,12 @@
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\NHibernate\NHibernateRoleStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateTeamEventStore.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateTeamStateRepository.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\NHibernate\NHibernateUserClaimMvoEventStore.cs">
@@ -324,6 +366,18 @@
     <Compile Include="Generated\Domain\NHibernate\NHibernateWarehouseStateRepository.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateYearPlanMvoEventStore.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateYearPlanMvoStateRepository.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateYearPlanStateDao.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\NHibernateYearPlanStateEventDao.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\NHibernate\OrganizationApplicationService.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
@@ -336,10 +390,16 @@
     <Compile Include="Generated\Domain\NHibernate\PermissionApplicationService.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Domain\NHibernate\PersonApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Domain\NHibernate\RoleApplicationService.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\NHibernate\RolePermissionApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\TeamApplicationService.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\NHibernate\UserApplicationService.cs">
@@ -358,6 +418,9 @@
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\NHibernate\WarehouseApplicationService.cs">
+      <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Domain\NHibernate\YearPlanMvoApplicationService.cs">
       <DependentUpon>GenerateBoundedContextDomainNHibernateAggregates.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Domain\OrganizationTreeApplicationService.cs">
@@ -504,6 +567,18 @@
     <EmbeddedResource Include="Generated\NHibernate\Mappings\AudienceStateEvent.hbm.xml">
       <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\DayPlanState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\DayPlanStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\DayPlanMvoState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\DayPlanMvoStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
     <Content Include="Generated\NHibernate\Mappings\GenerateAggregatesHbm.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GenerateAggregatesHbm.txt</LastGenOutput>
@@ -530,6 +605,10 @@
 .\AttributeValueStateEvent.hbm.xml
 .\AudienceState.hbm.xml
 .\AudienceStateEvent.hbm.xml
+.\DayPlanMvoState.hbm.xml
+.\DayPlanMvoStateEvent.hbm.xml
+.\DayPlanState.hbm.xml
+.\DayPlanStateEvent.hbm.xml
 .\GenerateAggregatesHbm.txt
 .\InOutLineMvoState.hbm.xml
 .\InOutLineMvoStateEvent.hbm.xml
@@ -539,6 +618,10 @@
 .\InOutStateEvent.hbm.xml
 .\LocatorState.hbm.xml
 .\LocatorStateEvent.hbm.xml
+.\MonthPlanMvoState.hbm.xml
+.\MonthPlanMvoStateEvent.hbm.xml
+.\MonthPlanState.hbm.xml
+.\MonthPlanStateEvent.hbm.xml
 .\OrganizationState.hbm.xml
 .\OrganizationStateEvent.hbm.xml
 .\OrganizationStructureState.hbm.xml
@@ -547,10 +630,14 @@
 .\OrganizationStructureTypeStateEvent.hbm.xml
 .\PermissionState.hbm.xml
 .\PermissionStateEvent.hbm.xml
+.\PersonState.hbm.xml
+.\PersonStateEvent.hbm.xml
 .\RolePermissionState.hbm.xml
 .\RolePermissionStateEvent.hbm.xml
 .\RoleState.hbm.xml
 .\RoleStateEvent.hbm.xml
+.\TeamState.hbm.xml
+.\TeamStateEvent.hbm.xml
 .\UserClaimMvoState.hbm.xml
 .\UserClaimMvoStateEvent.hbm.xml
 .\UserClaimState.hbm.xml
@@ -571,6 +658,10 @@
 .\UserStateEvent.hbm.xml
 .\WarehouseState.hbm.xml
 .\WarehouseStateEvent.hbm.xml
+.\YearPlanMvoState.hbm.xml
+.\YearPlanMvoStateEvent.hbm.xml
+.\YearPlanState.hbm.xml
+.\YearPlanStateEvent.hbm.xml
 </LastOutputs>
     </Content>
     <Content Include="Generated\NHibernate\Mappings\GenerateAggregatesHbm.txt">
@@ -701,6 +792,42 @@
     <EmbeddedResource Include="Generated\NHibernate\Mappings\UserLoginMvoStateEvent.hbm.xml">
       <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\PersonState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\PersonStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\YearPlanState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\YearPlanStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\MonthPlanState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\MonthPlanStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\TeamState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\TeamStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\YearPlanMvoState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\YearPlanMvoStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\MonthPlanMvoState.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generated\NHibernate\Mappings\MonthPlanMvoStateEvent.hbm.xml">
+      <DependentUpon>GenerateAggregatesHbm.tt</DependentUpon>
+    </EmbeddedResource>
     <Content Include="LoadBoundedContext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>LoadBoundedContext.txt</LastGenOutput>
@@ -736,10 +863,12 @@
 .\AttributeUseMvoApplicationService.cs
 .\AttributeValueMvoApplicationService.cs
 .\AudienceApplicationService.cs
+.\DayPlanMvoApplicationService.cs
 .\GenerateBoundedContextDomainNHibernateAggregates.txt
 .\InOutApplicationService.cs
 .\InOutLineMvoApplicationService.cs
 .\LocatorApplicationService.cs
+.\MonthPlanMvoApplicationService.cs
 .\NHibernateAttributeEventStore.cs
 .\NHibernateAttributeSetEventStore.cs
 .\NHibernateAttributeSetInstanceEventStore.cs
@@ -762,6 +891,10 @@
 .\NHibernateAttributeValueStateEventDao.cs
 .\NHibernateAudienceEventStore.cs
 .\NHibernateAudienceStateRepository.cs
+.\NHibernateDayPlanMvoEventStore.cs
+.\NHibernateDayPlanMvoStateRepository.cs
+.\NHibernateDayPlanStateDao.cs
+.\NHibernateDayPlanStateEventDao.cs
 .\NHibernateInOutEventStore.cs
 .\NHibernateInOutLineMvoEventStore.cs
 .\NHibernateInOutLineMvoStateRepository.cs
@@ -771,6 +904,10 @@
 .\NHibernateLocatorEventStore.cs
 .\NHibernateLocatorStateRepository.cs
 .\NHibernateLocatorStateRepositoryLocatorTree.cs
+.\NHibernateMonthPlanMvoEventStore.cs
+.\NHibernateMonthPlanMvoStateRepository.cs
+.\NHibernateMonthPlanStateDao.cs
+.\NHibernateMonthPlanStateEventDao.cs
 .\NHibernateOrganizationEventStore.cs
 .\NHibernateOrganizationStateRepository.cs
 .\NHibernateOrganizationStructureEventStore.cs
@@ -781,10 +918,14 @@
 .\NHibernatePermissionEventStore.cs
 .\NHibernatePermissionStateRepository.cs
 .\NHibernatePermissionStateRepositoryPermissionTree.cs
+.\NHibernatePersonEventStore.cs
+.\NHibernatePersonStateRepository.cs
 .\NHibernateRoleEventStore.cs
 .\NHibernateRolePermissionEventStore.cs
 .\NHibernateRolePermissionStateRepository.cs
 .\NHibernateRoleStateRepository.cs
+.\NHibernateTeamEventStore.cs
+.\NHibernateTeamStateRepository.cs
 .\NHibernateUserClaimMvoEventStore.cs
 .\NHibernateUserClaimMvoStateRepository.cs
 .\NHibernateUserClaimStateDao.cs
@@ -805,18 +946,25 @@
 .\NHibernateUserStateRepository.cs
 .\NHibernateWarehouseEventStore.cs
 .\NHibernateWarehouseStateRepository.cs
+.\NHibernateYearPlanMvoEventStore.cs
+.\NHibernateYearPlanMvoStateRepository.cs
+.\NHibernateYearPlanStateDao.cs
+.\NHibernateYearPlanStateEventDao.cs
 .\OrganizationApplicationService.cs
 .\OrganizationStructureApplicationService.cs
 .\OrganizationStructureTypeApplicationService.cs
 .\PermissionApplicationService.cs
+.\PersonApplicationService.cs
 .\RoleApplicationService.cs
 .\RolePermissionApplicationService.cs
+.\TeamApplicationService.cs
 .\UserApplicationService.cs
 .\UserClaimMvoApplicationService.cs
 .\UserLoginMvoApplicationService.cs
 .\UserPermissionMvoApplicationService.cs
 .\UserRoleMvoApplicationService.cs
 .\WarehouseApplicationService.cs
+.\YearPlanMvoApplicationService.cs
 </LastOutputs>
     </Content>
     <Content Include="Generated\Domain\NHibernate\GenerateBoundedContextDomainNHibernateAggregates.txt">

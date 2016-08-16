@@ -58,6 +58,16 @@
         <mapping resource="org/dddml/wms/domain/hbm/WarehouseStateEvent.hbm.xml"/>
         <mapping resource="org/dddml/wms/domain/hbm/LocatorState.hbm.xml"/>
         <mapping resource="org/dddml/wms/domain/hbm/LocatorStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/PersonState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/PersonStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/YearPlanState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/YearPlanStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/MonthPlanState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/MonthPlanStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/DayPlanState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/DayPlanStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/TeamState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/TeamStateEvent.hbm.xml"/>
         <mapping resource="org/dddml/wms/domain/hbm/AttributeSetInstanceExtensionFieldMvoState.hbm.xml"/>
         <mapping resource="org/dddml/wms/domain/hbm/AttributeSetInstanceExtensionFieldMvoStateEvent.hbm.xml"/>
         <mapping resource="org/dddml/wms/domain/hbm/AttributeValueMvoState.hbm.xml"/>
@@ -74,3 +84,9 @@
         <mapping resource="org/dddml/wms/domain/hbm/UserLoginMvoStateEvent.hbm.xml"/>
         <mapping resource="org/dddml/wms/domain/hbm/InOutLineMvoState.hbm.xml"/>
         <mapping resource="org/dddml/wms/domain/hbm/InOutLineMvoStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/YearPlanMvoState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/YearPlanMvoStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/MonthPlanMvoState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/MonthPlanMvoStateEvent.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/DayPlanMvoState.hbm.xml"/>
+        <mapping resource="org/dddml/wms/domain/hbm/DayPlanMvoStateEvent.hbm.xml"/>

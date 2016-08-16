@@ -40,6 +40,7 @@
 				//System.Diagnostics.Debug.WriteLine(f + " is excluded.");
 			}
 		}
+		files.Add(@"C:\Users\Yang\Documents\GitHub\dddml-spec\examples\Person.yaml");
 		BoundedContext boundedContext = BoundedContextUtils.LoadFromFiles(files);
         //string filePath3 = System.IO.Path.Combine(projectDir, "../dddml/AttributeSet.yaml");
         //string filePath4 = System.IO.Path.Combine(projectDir, "../dddml/InOut.yaml");

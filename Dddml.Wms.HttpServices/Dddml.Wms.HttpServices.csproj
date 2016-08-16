@@ -301,6 +301,9 @@
     <Compile Include="Generated\Controllers\AudiencesController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Controllers\DayPlanMvosController.cs">
+      <DependentUpon>GenerateControllers.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Controllers\InOutLineMvosController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
@@ -312,6 +315,9 @@
     </Compile>
     <Compile Include="Generated\Controllers\LocatorTreesController.cs">
       <DependentUpon>GenerateTreeControllers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Controllers\MonthPlanMvosController.cs">
+      <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Controllers\OrganizationsController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
@@ -325,6 +331,9 @@
     <Compile Include="Generated\Controllers\OrganizationTreesController.cs">
       <DependentUpon>GenerateTreeControllers.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Controllers\PeopleController.cs">
+      <DependentUpon>GenerateControllers.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Controllers\PermissionsController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
@@ -335,6 +344,9 @@
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Controllers\RolesController.cs">
+      <DependentUpon>GenerateControllers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Controllers\TeamsController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Controllers\UserClaimMvosController.cs">
@@ -353,6 +365,9 @@
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\Controllers\WarehousesController.cs">
+      <DependentUpon>GenerateControllers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Controllers\YearPlanMvosController.cs">
       <DependentUpon>GenerateControllers.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
@@ -412,22 +427,27 @@
 .\AttributeUseMvosController.cs
 .\AttributeValueMvosController.cs
 .\AudiencesController.cs
+.\DayPlanMvosController.cs
 .\GenerateControllers.txt
 .\InOutLineMvosController.cs
 .\InOutsController.cs
 .\LocatorsController.cs
+.\MonthPlanMvosController.cs
 .\OrganizationsController.cs
 .\OrganizationStructuresController.cs
 .\OrganizationStructureTypesController.cs
+.\PeopleController.cs
 .\PermissionsController.cs
 .\RolePermissionsController.cs
 .\RolesController.cs
+.\TeamsController.cs
 .\UserClaimMvosController.cs
 .\UserLoginMvosController.cs
 .\UserPermissionMvosController.cs
 .\UserRoleMvosController.cs
 .\UsersController.cs
 .\WarehousesController.cs
+.\YearPlanMvosController.cs
 </LastOutputs>
     </Content>
     <Content Include="Generated\Controllers\GenerateControllers.txt">

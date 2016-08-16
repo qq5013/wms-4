@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+                   assembly="Dddml.Wms.Common" 
+                   namespace="Dddml.Wms.Domain">
+  
+  <class name="PersonStateEventBase" table="PersonStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="StateEventId" class="Dddml.Wms.Domain.PersonStateEventId">
+		<key-property name="PersonalNameFirstName" column="PersonalNameFirstName" length="50"/>
+		<key-property name="PersonalNameLastName" column="PersonalNameLastName" length="50"/>
+		<key-property name="Version" column="Version" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="String" />
+
+	<property name="BirthDate" ></property>
+
+	<component name="Loves" class="Dddml.Wms.Domain.PersonalName">
+		<property name="FirstName" column="LovesFirstName" length="50"/>
+		<property name="LastName" column="LovesLastName" length="50"/>
+	</component>
+
+	<property name="Active" ></property>
+
+
+    <property name="CreatedBy" />
+
+    <property name="CreatedAt" />
+
+    <property name="CommandId" />
+
+
+    <subclass name="PersonStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="PersonStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="IsPropertyBirthDateRemoved" />
+
+        <property name="IsPropertyLovesRemoved" />
+
+        <property name="IsPropertyActiveRemoved" />
+
+
+    </subclass>
+
+    <subclass name="PersonStateDeleted"  discriminator-value="Deleted">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

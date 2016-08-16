@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="org.dddml.wms.domain.AbstractTeamState$SimpleTeamState" table="Teams">
+
+	<id name="teamName" length="50">
+		<generator class="assigned"/>
+	</id>
+
+	<version name="version" type="long" />
+
+	<property name="description" ></property>
+
+	<property name="createdBy" ></property>
+
+	<property name="createdAt" ></property>
+
+	<property name="updatedBy" ></property>
+
+	<property name="updatedAt" ></property>
+
+	<property name="active" ></property>
+
+	<property name="deleted" ></property>
+
+      <set name="players" table="TeamPlayers" lazy="false">
+        <key column="TeamName" />
+				<composite-element class="org.dddml.wms.domain.PersonalName">
+					<property name="firstName" length="50" not-null="true"/>
+					<property name="lastName" length="50" not-null="true"/>
+				</composite-element>
+      </set>
+
+      <set name="mascots" table="TeamMascots" lazy="false">
+        <key column="TeamName" />
+				<element column="MascotsItem" type="string" not-null="true" />
+      </set>
+
+
+  </class>
+  
+</hibernate-mapping>
+

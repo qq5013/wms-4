@@ -291,6 +291,60 @@
   </object>
 
 
+  <object id="yearPlanStateDao" type="Dddml.Wms.Domain.NHibernate.NHibernateYearPlanStateDao, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="yearPlanStateEventDao" type="Dddml.Wms.Domain.NHibernate.NHibernateYearPlanStateEventDao, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="monthPlanStateDao" type="Dddml.Wms.Domain.NHibernate.NHibernateMonthPlanStateDao, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="monthPlanStateEventDao" type="Dddml.Wms.Domain.NHibernate.NHibernateMonthPlanStateEventDao, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="dayPlanStateDao" type="Dddml.Wms.Domain.NHibernate.NHibernateDayPlanStateDao, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="dayPlanStateEventDao" type="Dddml.Wms.Domain.NHibernate.NHibernateDayPlanStateEventDao, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+
+  <object id="personStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernatePersonStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="personEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernatePersonEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="personApplicationService" type="Dddml.Wms.Domain.NHibernate.PersonApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="personEventStore"/>
+    <constructor-arg ref="personStateRepository"/>
+  </object>
+
+
+
+  <object id="teamStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateTeamStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="teamEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateTeamEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="teamApplicationService" type="Dddml.Wms.Domain.NHibernate.TeamApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="teamEventStore"/>
+    <constructor-arg ref="teamStateRepository"/>
+  </object>
+
+
 
   <object id="attributeSetInstanceExtensionFieldMvoStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateAttributeSetInstanceExtensionFieldMvoStateRepository, Dddml.Wms.Services">
     <property name="SessionFactory" ref="NHibernateSessionFactory"/>
@@ -408,6 +462,51 @@
   <object id="inOutLineMvoApplicationService" type="Dddml.Wms.Domain.NHibernate.InOutLineMvoApplicationService, Dddml.Wms.Services">
     <constructor-arg ref="inOutLineMvoEventStore"/>
     <constructor-arg ref="inOutLineMvoStateRepository"/>
+  </object>
+
+
+
+  <object id="yearPlanMvoStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateYearPlanMvoStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="yearPlanMvoEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateYearPlanMvoEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="yearPlanMvoApplicationService" type="Dddml.Wms.Domain.NHibernate.YearPlanMvoApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="yearPlanMvoEventStore"/>
+    <constructor-arg ref="yearPlanMvoStateRepository"/>
+  </object>
+
+
+
+  <object id="monthPlanMvoStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateMonthPlanMvoStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="monthPlanMvoEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateMonthPlanMvoEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="monthPlanMvoApplicationService" type="Dddml.Wms.Domain.NHibernate.MonthPlanMvoApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="monthPlanMvoEventStore"/>
+    <constructor-arg ref="monthPlanMvoStateRepository"/>
+  </object>
+
+
+
+  <object id="dayPlanMvoStateRepository" type="Dddml.Wms.Domain.NHibernate.NHibernateDayPlanMvoStateRepository, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="dayPlanMvoEventStore" type="Dddml.Wms.Domain.NHibernate.NHibernateDayPlanMvoEventStore, Dddml.Wms.Services">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="dayPlanMvoApplicationService" type="Dddml.Wms.Domain.NHibernate.DayPlanMvoApplicationService, Dddml.Wms.Services">
+    <constructor-arg ref="dayPlanMvoEventStore"/>
+    <constructor-arg ref="dayPlanMvoStateRepository"/>
   </object>
 
 </objects>

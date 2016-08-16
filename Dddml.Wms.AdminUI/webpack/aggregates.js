@@ -194,6 +194,52 @@ export default [
     "fields": ["warehouseId", "parentLocatorId", "locatorType", "priorityNumber", "isDefault", "x", "y", "z", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted"]
   },
   {
+    "name": "Person",
+    "plural": "People",
+    "label": "Person",
+    "collectionLabel": "People",
+    "id": { "name": "personalName", "properties": ["firstName", "lastName"] },
+    "fields": ["birthDate", "loves", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted"]
+    ,"entities": [
+      {
+        "name": "YearPlan",
+        "plural": "YearPlans",
+        "label": "Year Plan",
+        "collectionLabel": "Year Plans",
+        "id": { "name": "year" },
+        "fields": ["description", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted"]
+        ,"entities": [
+          {
+            "name": "MonthPlan",
+            "plural": "MonthPlans",
+            "label": "Month Plan",
+            "collectionLabel": "Month Plans",
+            "id": { "name": "month" },
+            "fields": ["description", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted"]
+            ,"entities": [
+              {
+                "name": "DayPlan",
+                "plural": "DayPlans",
+                "label": "Day Plan",
+                "collectionLabel": "Day Plans",
+                "id": { "name": "day" },
+                "fields": ["description", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted"]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Team",
+    "plural": "Teams",
+    "label": "Team",
+    "collectionLabel": "Teams",
+    "id": { "name": "teamName" },
+    "fields": ["description", "players", "mascots", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted"]
+  },
+  {
     "name": "AttributeSetInstanceExtensionFieldMvo",
     "plural": "AttributeSetInstanceExtensionFieldMvos",
     "label": "Attribute Set Instance Extension Field Mvo",
@@ -256,6 +302,30 @@ export default [
     "collectionLabel": "In Out Line Mvos",
     "id": { "name": "inOutLineId", "properties": ["inOutDocumentNumber", "skuIdProductId", "skuIdAttributeSetInstanceId"] },
     "fields": ["lineNumber", "description", "locatorId", "product", "uomId", "movementQuantity", "confirmedQuantity", "scrappedQuantity", "targetQuantity", "pickedQuantity", "isInvoiced", "attributeSetInstanceId", "isDescription", "processed", "quantityEntered", "rmaLineNumber", "reversalLineNumber", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted", "inOutIsSOTransaction", "inOutDocumentStatus", "inOutPosted", "inOutProcessing", "inOutProcessed", "inOutDocumentType", "inOutDescription", "inOutOrderNumber", "inOutDateOrdered", "inOutIsPrinted", "inOutMovementType", "inOutMovementDate", "inOutBusinessPartnerId", "inOutWarehouseId", "inOutPOReference", "inOutFreightAmount", "inOutShipperId", "inOutChargeAmount", "inOutDatePrinted", "inOutSalesRepresentative", "inOutNumberOfPackages", "inOutPickDate", "inOutShipDate", "inOutTrackingNumber", "inOutDateReceived", "inOutIsInTransit", "inOutIsApproved", "inOutIsInDispute", "inOutVolume", "inOutWeight", "inOutRmaNumber", "inOutReversalNumber", "inOutIsDropShip", "inOutDropShipBusinessPartnerId", "inOutVersion", "inOutCreatedBy", "inOutCreatedAt", "inOutUpdatedBy", "inOutUpdatedAt", "inOutActive", "inOutDeleted"]
+  },
+  {
+    "name": "YearPlanMvo",
+    "plural": "YearPlanMvos",
+    "label": "Year Plan Mvo",
+    "collectionLabel": "Year Plan Mvos",
+    "id": { "name": "yearPlanId", "properties": ["personalNameFirstName", "personalNameLastName", "year"] },
+    "fields": ["description", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted", "personBirthDate", "personLoves", "personVersion", "personCreatedBy", "personCreatedAt", "personUpdatedBy", "personUpdatedAt", "personActive", "personDeleted"]
+  },
+  {
+    "name": "MonthPlanMvo",
+    "plural": "MonthPlanMvos",
+    "label": "Month Plan Mvo",
+    "collectionLabel": "Month Plan Mvos",
+    "id": { "name": "monthPlanId", "properties": ["personalNameFirstName", "personalNameLastName", "year", "month"] },
+    "fields": ["description", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted", "yearPlanDescription", "yearPlanVersion", "yearPlanCreatedBy", "yearPlanCreatedAt", "yearPlanUpdatedBy", "yearPlanUpdatedAt", "yearPlanActive", "yearPlanDeleted", "personBirthDate", "personLoves", "personVersion", "personCreatedBy", "personCreatedAt", "personUpdatedBy", "personUpdatedAt", "personActive", "personDeleted"]
+  },
+  {
+    "name": "DayPlanMvo",
+    "plural": "DayPlanMvos",
+    "label": "Day Plan Mvo",
+    "collectionLabel": "Day Plan Mvos",
+    "id": { "name": "dayPlanId", "properties": ["personalNameFirstName", "personalNameLastName", "year", "month", "day"] },
+    "fields": ["description", "version", "createdBy", "createdAt", "updatedBy", "updatedAt", "active", "deleted", "monthPlanDescription", "monthPlanVersion", "monthPlanCreatedBy", "monthPlanCreatedAt", "monthPlanUpdatedBy", "monthPlanUpdatedAt", "monthPlanActive", "monthPlanDeleted", "yearPlanDescription", "yearPlanVersion", "yearPlanCreatedBy", "yearPlanCreatedAt", "yearPlanUpdatedBy", "yearPlanUpdatedAt", "yearPlanActive", "yearPlanDeleted", "personBirthDate", "personLoves", "personVersion", "personCreatedBy", "personCreatedAt", "personUpdatedBy", "personUpdatedAt", "personActive", "personDeleted"]
   }
 ]
 

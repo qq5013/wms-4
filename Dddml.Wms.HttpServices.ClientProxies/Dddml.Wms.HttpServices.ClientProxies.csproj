@@ -95,6 +95,9 @@
     <Compile Include="Generated\AudienceApplicationServiceProxy.cs">
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\DayPlanMvoApplicationServiceProxy.cs">
+      <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\DddmlWmsRamlClient.cs">
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
@@ -108,6 +111,9 @@
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\LocatorTreeApplicationServiceProxy.cs">
+      <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\MonthPlanMvoApplicationServiceProxy.cs">
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\OrganizationApplicationServiceProxy.cs">
@@ -128,10 +134,16 @@
     <Compile Include="Generated\PermissionTreeApplicationServiceProxy.cs">
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\PersonApplicationServiceProxy.cs">
+      <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
+    </Compile>
     <Compile Include="Generated\RoleApplicationServiceProxy.cs">
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\RolePermissionApplicationServiceProxy.cs">
+      <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TeamApplicationServiceProxy.cs">
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
     <Compile Include="Generated\UserApplicationServiceProxy.cs">
@@ -152,6 +164,9 @@
     <Compile Include="Generated\WarehouseApplicationServiceProxy.cs">
       <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generated\YearPlanMvoApplicationServiceProxy.cs">
+      <DependentUpon>GenerateRamlClientProxies.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -167,26 +182,31 @@
 .\AttributeUseMvoApplicationServiceProxy.cs
 .\AttributeValueMvoApplicationServiceProxy.cs
 .\AudienceApplicationServiceProxy.cs
+.\DayPlanMvoApplicationServiceProxy.cs
 .\DddmlWmsRamlClient.cs
 .\GenerateRamlClientProxies.txt
 .\InOutApplicationServiceProxy.cs
 .\InOutLineMvoApplicationServiceProxy.cs
 .\LocatorApplicationServiceProxy.cs
 .\LocatorTreeApplicationServiceProxy.cs
+.\MonthPlanMvoApplicationServiceProxy.cs
 .\OrganizationApplicationServiceProxy.cs
 .\OrganizationStructureApplicationServiceProxy.cs
 .\OrganizationStructureTypeApplicationServiceProxy.cs
 .\OrganizationTreeApplicationServiceProxy.cs
 .\PermissionApplicationServiceProxy.cs
 .\PermissionTreeApplicationServiceProxy.cs
+.\PersonApplicationServiceProxy.cs
 .\RoleApplicationServiceProxy.cs
 .\RolePermissionApplicationServiceProxy.cs
+.\TeamApplicationServiceProxy.cs
 .\UserApplicationServiceProxy.cs
 .\UserClaimMvoApplicationServiceProxy.cs
 .\UserLoginMvoApplicationServiceProxy.cs
 .\UserPermissionMvoApplicationServiceProxy.cs
 .\UserRoleMvoApplicationServiceProxy.cs
 .\WarehouseApplicationServiceProxy.cs
+.\YearPlanMvoApplicationServiceProxy.cs
 </LastOutputs>
     </Content>
     <Content Include="Generated\GenerateRamlClientProxies.txt">

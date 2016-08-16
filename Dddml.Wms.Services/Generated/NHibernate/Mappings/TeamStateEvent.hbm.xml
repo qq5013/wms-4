@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+                   assembly="Dddml.Wms.Common" 
+                   namespace="Dddml.Wms.Domain">
+  
+  <class name="TeamStateEventBase" table="TeamStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="StateEventId" class="Dddml.Wms.Domain.TeamStateEventId">
+		<key-property name="TeamName" column="TeamName" length="50"/>
+		<key-property name="Version" column="Version" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="String" />
+
+	<property name="Description" ></property>
+
+	<property name="Active" ></property>
+
+      <set name="Players" table="TeamStateEventPlayers" lazy="false">
+        <key>
+          <column name="TeamName" />
+          <column name="Version" />
+        </key>
+				<composite-element class="Dddml.Wms.Domain.PersonalName">
+					<property name="FirstName" length="50" not-null="true"/>
+					<property name="LastName" length="50" not-null="true"/>
+				</composite-element>
+      </set>
+
+      <set name="Mascots" table="TeamStateEventMascots" lazy="false">
+        <key>
+          <column name="TeamName" />
+          <column name="Version" />
+        </key>
+				<element column="MascotsItem" type="string" not-null="true" />
+      </set>
+
+
+    <property name="CreatedBy" />
+
+    <property name="CreatedAt" />
+
+    <property name="CommandId" />
+
+
+    <subclass name="TeamStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="TeamStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="IsPropertyDescriptionRemoved" />
+
+        <property name="IsPropertyActiveRemoved" />
+
+
+    </subclass>
+
+    <subclass name="TeamStateDeleted"  discriminator-value="Deleted">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

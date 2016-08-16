@@ -620,3 +620,257 @@ CREATE VIEW `InOutLine_RV` AS
         );
 
 
+CREATE VIEW `YearPlan_RV` AS
+    SELECT 
+
+        `YearPlans`.`YearPlanIdPersonalNameFirstName`,
+
+        `YearPlans`.`YearPlanIdPersonalNameLastName`,
+
+        `YearPlans`.`YearPlanIdYear`,
+
+        `YearPlans`.`Description`,
+
+        `YearPlans`.`Version`,
+
+        `YearPlans`.`CreatedBy`,
+
+        `YearPlans`.`CreatedAt`,
+
+        `YearPlans`.`UpdatedBy`,
+
+        `YearPlans`.`UpdatedAt`,
+
+        `YearPlans`.`Active`,
+
+        `YearPlans`.`Deleted`,
+
+        `People`.`BirthDate` AS `PersonBirthDate`,
+
+        `People`.`LovesFirstName` AS `PersonLovesFirstName`,
+
+        `People`.`LovesLastName` AS `PersonLovesLastName`,
+
+        `People`.`Version` AS `PersonVersion`,
+
+        `People`.`CreatedBy` AS `PersonCreatedBy`,
+
+        `People`.`CreatedAt` AS `PersonCreatedAt`,
+
+        `People`.`UpdatedBy` AS `PersonUpdatedBy`,
+
+        `People`.`UpdatedAt` AS `PersonUpdatedAt`,
+
+        `People`.`Active` AS `PersonActive`,
+
+        `People`.`Deleted` AS `PersonDeleted`
+
+    FROM
+        (`YearPlans`
+
+            JOIN `People` ON ( 1=1 
+
+                and (`YearPlans`.`YearPlanIdPersonalNameFirstName` = `People`.`PersonalNameFirstName`)
+
+                and (`YearPlans`.`YearPlanIdPersonalNameLastName` = `People`.`PersonalNameLastName`)
+            )
+        );
+
+
+CREATE VIEW `MonthPlan_RV` AS
+    SELECT 
+
+        `MonthPlans`.`MonthPlanIdPersonalNameFirstName`,
+
+        `MonthPlans`.`MonthPlanIdPersonalNameLastName`,
+
+        `MonthPlans`.`MonthPlanIdYear`,
+
+        `MonthPlans`.`MonthPlanIdMonth`,
+
+        `MonthPlans`.`Description`,
+
+        `MonthPlans`.`Version`,
+
+        `MonthPlans`.`CreatedBy`,
+
+        `MonthPlans`.`CreatedAt`,
+
+        `MonthPlans`.`UpdatedBy`,
+
+        `MonthPlans`.`UpdatedAt`,
+
+        `MonthPlans`.`Active`,
+
+        `MonthPlans`.`Deleted`,
+
+        `YearPlans`.`Description` AS `YearPlanDescription`,
+
+        `YearPlans`.`Version` AS `YearPlanVersion`,
+
+        `YearPlans`.`CreatedBy` AS `YearPlanCreatedBy`,
+
+        `YearPlans`.`CreatedAt` AS `YearPlanCreatedAt`,
+
+        `YearPlans`.`UpdatedBy` AS `YearPlanUpdatedBy`,
+
+        `YearPlans`.`UpdatedAt` AS `YearPlanUpdatedAt`,
+
+        `YearPlans`.`Active` AS `YearPlanActive`,
+
+        `YearPlans`.`Deleted` AS `YearPlanDeleted`,
+
+        `People`.`BirthDate` AS `PersonBirthDate`,
+
+        `People`.`LovesFirstName` AS `PersonLovesFirstName`,
+
+        `People`.`LovesLastName` AS `PersonLovesLastName`,
+
+        `People`.`Version` AS `PersonVersion`,
+
+        `People`.`CreatedBy` AS `PersonCreatedBy`,
+
+        `People`.`CreatedAt` AS `PersonCreatedAt`,
+
+        `People`.`UpdatedBy` AS `PersonUpdatedBy`,
+
+        `People`.`UpdatedAt` AS `PersonUpdatedAt`,
+
+        `People`.`Active` AS `PersonActive`,
+
+        `People`.`Deleted` AS `PersonDeleted`
+
+    FROM
+        (`MonthPlans`
+
+            JOIN `YearPlans` ON ( 1=1 
+
+                and (`MonthPlans`.`MonthPlanIdPersonalNameFirstName` = `YearPlans`.`YearPlanIdPersonalNameFirstName`)
+
+                and (`MonthPlans`.`MonthPlanIdPersonalNameLastName` = `YearPlans`.`YearPlanIdPersonalNameLastName`)
+
+                and (`MonthPlans`.`MonthPlanIdYear` = `YearPlans`.`YearPlanIdYear`)
+            )
+
+            JOIN `People` ON ( 1=1 
+
+                and (`MonthPlans`.`MonthPlanIdPersonalNameFirstName` = `People`.`PersonalNameFirstName`)
+
+                and (`MonthPlans`.`MonthPlanIdPersonalNameLastName` = `People`.`PersonalNameLastName`)
+            )
+        );
+
+
+CREATE VIEW `DayPlan_RV` AS
+    SELECT 
+
+        `DayPlans`.`DayPlanIdPersonalNameFirstName`,
+
+        `DayPlans`.`DayPlanIdPersonalNameLastName`,
+
+        `DayPlans`.`DayPlanIdYear`,
+
+        `DayPlans`.`DayPlanIdMonth`,
+
+        `DayPlans`.`DayPlanIdDay`,
+
+        `DayPlans`.`Description`,
+
+        `DayPlans`.`Version`,
+
+        `DayPlans`.`CreatedBy`,
+
+        `DayPlans`.`CreatedAt`,
+
+        `DayPlans`.`UpdatedBy`,
+
+        `DayPlans`.`UpdatedAt`,
+
+        `DayPlans`.`Active`,
+
+        `DayPlans`.`Deleted`,
+
+        `MonthPlans`.`Description` AS `MonthPlanDescription`,
+
+        `MonthPlans`.`Version` AS `MonthPlanVersion`,
+
+        `MonthPlans`.`CreatedBy` AS `MonthPlanCreatedBy`,
+
+        `MonthPlans`.`CreatedAt` AS `MonthPlanCreatedAt`,
+
+        `MonthPlans`.`UpdatedBy` AS `MonthPlanUpdatedBy`,
+
+        `MonthPlans`.`UpdatedAt` AS `MonthPlanUpdatedAt`,
+
+        `MonthPlans`.`Active` AS `MonthPlanActive`,
+
+        `MonthPlans`.`Deleted` AS `MonthPlanDeleted`,
+
+        `YearPlans`.`Description` AS `YearPlanDescription`,
+
+        `YearPlans`.`Version` AS `YearPlanVersion`,
+
+        `YearPlans`.`CreatedBy` AS `YearPlanCreatedBy`,
+
+        `YearPlans`.`CreatedAt` AS `YearPlanCreatedAt`,
+
+        `YearPlans`.`UpdatedBy` AS `YearPlanUpdatedBy`,
+
+        `YearPlans`.`UpdatedAt` AS `YearPlanUpdatedAt`,
+
+        `YearPlans`.`Active` AS `YearPlanActive`,
+
+        `YearPlans`.`Deleted` AS `YearPlanDeleted`,
+
+        `People`.`BirthDate` AS `PersonBirthDate`,
+
+        `People`.`LovesFirstName` AS `PersonLovesFirstName`,
+
+        `People`.`LovesLastName` AS `PersonLovesLastName`,
+
+        `People`.`Version` AS `PersonVersion`,
+
+        `People`.`CreatedBy` AS `PersonCreatedBy`,
+
+        `People`.`CreatedAt` AS `PersonCreatedAt`,
+
+        `People`.`UpdatedBy` AS `PersonUpdatedBy`,
+
+        `People`.`UpdatedAt` AS `PersonUpdatedAt`,
+
+        `People`.`Active` AS `PersonActive`,
+
+        `People`.`Deleted` AS `PersonDeleted`
+
+    FROM
+        (`DayPlans`
+
+            JOIN `MonthPlans` ON ( 1=1 
+
+                and (`DayPlans`.`DayPlanIdPersonalNameFirstName` = `MonthPlans`.`MonthPlanIdPersonalNameFirstName`)
+
+                and (`DayPlans`.`DayPlanIdPersonalNameLastName` = `MonthPlans`.`MonthPlanIdPersonalNameLastName`)
+
+                and (`DayPlans`.`DayPlanIdYear` = `MonthPlans`.`MonthPlanIdYear`)
+
+                and (`DayPlans`.`DayPlanIdMonth` = `MonthPlans`.`MonthPlanIdMonth`)
+            )
+
+            JOIN `YearPlans` ON ( 1=1 
+
+                and (`DayPlans`.`DayPlanIdPersonalNameFirstName` = `YearPlans`.`YearPlanIdPersonalNameFirstName`)
+
+                and (`DayPlans`.`DayPlanIdPersonalNameLastName` = `YearPlans`.`YearPlanIdPersonalNameLastName`)
+
+                and (`DayPlans`.`DayPlanIdYear` = `YearPlans`.`YearPlanIdYear`)
+            )
+
+            JOIN `People` ON ( 1=1 
+
+                and (`DayPlans`.`DayPlanIdPersonalNameFirstName` = `People`.`PersonalNameFirstName`)
+
+                and (`DayPlans`.`DayPlanIdPersonalNameLastName` = `People`.`PersonalNameLastName`)
+            )
+        );
+
+

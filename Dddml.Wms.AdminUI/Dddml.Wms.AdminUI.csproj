@@ -57,17 +57,23 @@
 .\attributeValue_form.php
 .\attributeValueMvo_form.php
 .\audience_form.php
+.\dayPlan_form.php
+.\dayPlanMvo_form.php
 .\GenerateAggregatesSymfonyForms.txt
 .\inOut_form.php
 .\inOutLine_form.php
 .\inOutLineMvo_form.php
 .\locator_form.php
+.\monthPlan_form.php
+.\monthPlanMvo_form.php
 .\organization_form.php
 .\organizationStructure_form.php
 .\organizationStructureType_form.php
 .\permission_form.php
+.\person_form.php
 .\role_form.php
 .\rolePermission_form.php
+.\team_form.php
 .\user_form.php
 .\userClaim_form.php
 .\userClaimMvo_form.php
@@ -78,6 +84,8 @@
 .\userRole_form.php
 .\userRoleMvo_form.php
 .\warehouse_form.php
+.\yearPlan_form.php
+.\yearPlanMvo_form.php
 </LastOutputs>
     </Content>
     <Content Include="site\form\GenerateAggregatesSymfonyForms.txt">
@@ -92,6 +100,7 @@
 .\DocumentAction.ts
 .\GenerateBoundedContextDomain.txt
 .\OrganizationStructureId.ts
+.\PersonalName.ts
 .\RolePermissionId.ts
 .\SkuId.ts
 </LastOutputs>
@@ -130,6 +139,11 @@
 .\AttributeValueStateEventId.ts
 .\Audience.ts
 .\AudienceStateEventId.ts
+.\DayPlan.ts
+.\DayPlanId.ts
+.\DayPlanMvo.ts
+.\DayPlanMvoStateEventId.ts
+.\DayPlanStateEventId.ts
 .\GenerateBoundedContextDomainAggregates.txt
 .\InOut.ts
 .\InOutLine.ts
@@ -141,6 +155,11 @@
 .\Locator.ts
 .\LocatorStateEventId.ts
 .\LoginKey.ts
+.\MonthPlan.ts
+.\MonthPlanId.ts
+.\MonthPlanMvo.ts
+.\MonthPlanMvoStateEventId.ts
+.\MonthPlanStateEventId.ts
 .\Organization.ts
 .\OrganizationStateEventId.ts
 .\OrganizationStructure.ts
@@ -149,10 +168,14 @@
 .\OrganizationStructureTypeStateEventId.ts
 .\Permission.ts
 .\PermissionStateEventId.ts
+.\Person.ts
+.\PersonStateEventId.ts
 .\Role.ts
 .\RolePermission.ts
 .\RolePermissionStateEventId.ts
 .\RoleStateEventId.ts
+.\Team.ts
+.\TeamStateEventId.ts
 .\User.ts
 .\UserClaim.ts
 .\UserClaimId.ts
@@ -177,6 +200,11 @@
 .\UserStateEventId.ts
 .\Warehouse.ts
 .\WarehouseStateEventId.ts
+.\YearPlan.ts
+.\YearPlanId.ts
+.\YearPlanMvo.ts
+.\YearPlanMvoStateEventId.ts
+.\YearPlanStateEventId.ts
 </LastOutputs>
     </Content>
     <Content Include="ts\GenerateBoundedContextDomainAggregates.txt">
@@ -290,6 +318,21 @@
     <TypeScriptCompile Include="ts\AudienceStateEventId.ts">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\DayPlan.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\DayPlanId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\DayPlanMvo.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\DayPlanMvoStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\DayPlanStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="ts\DocumentAction.ts">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
     </TypeScriptCompile>
@@ -323,6 +366,21 @@
     <TypeScriptCompile Include="ts\LoginKey.ts">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\MonthPlan.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\MonthPlanId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\MonthPlanMvo.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\MonthPlanMvoStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\MonthPlanStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="ts\Organization.ts">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </TypeScriptCompile>
@@ -350,6 +408,15 @@
     <TypeScriptCompile Include="ts\PermissionStateEventId.ts">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\Person.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\PersonalName.ts">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\PersonStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="ts\Role.ts">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </TypeScriptCompile>
@@ -367,6 +434,12 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="ts\SkuId.ts">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\Team.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\TeamStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="ts\User.ts">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
@@ -440,6 +513,21 @@
     <TypeScriptCompile Include="ts\WarehouseStateEventId.ts">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\YearPlan.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\YearPlanId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\YearPlanMvo.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\YearPlanMvoStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ts\YearPlanStateEventId.ts">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="site\form\attributeSetInstanceExtensionFieldGroup_form.php">
@@ -475,6 +563,12 @@
     <None Include="site\form\audience_form.php">
       <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
     </None>
+    <None Include="site\form\dayPlanMvo_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\dayPlan_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
     <None Include="site\form\inOutLineMvo_form.php">
       <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
     </None>
@@ -485,6 +579,12 @@
       <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
     </None>
     <None Include="site\form\locator_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\monthPlanMvo_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\monthPlan_form.php">
       <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
     </None>
     <None Include="site\form\organizationStructureType_form.php">
@@ -499,10 +599,16 @@
     <None Include="site\form\permission_form.php">
       <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
     </None>
+    <None Include="site\form\person_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
     <None Include="site\form\rolePermission_form.php">
       <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
     </None>
     <None Include="site\form\role_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\team_form.php">
       <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
     </None>
     <None Include="site\form\userClaimMvo_form.php">
@@ -533,6 +639,12 @@
       <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
     </None>
     <None Include="site\form\warehouse_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\yearPlanMvo_form.php">
+      <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
+    </None>
+    <None Include="site\form\yearPlan_form.php">
       <DependentUpon>GenerateAggregatesSymfonyForms.tt</DependentUpon>
     </None>
   </ItemGroup>

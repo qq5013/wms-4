@@ -51,6 +51,8 @@
 .\GenerateBoundedContextDomain.txt
 .\OrganizationStructureId.php
 .\OrganizationStructureIdFlattenedDto.php
+.\PersonalName.php
+.\PersonalNameFlattenedDto.php
 .\RolePermissionId.php
 .\RolePermissionIdFlattenedDto.php
 .\SkuId.php
@@ -76,16 +78,22 @@
 .\AbstractAttributeValueCommand.php
 .\AbstractAttributeValueMvoCommand.php
 .\AbstractAudienceCommand.php
+.\AbstractDayPlanCommand.php
+.\AbstractDayPlanMvoCommand.php
 .\AbstractInOutCommand.php
 .\AbstractInOutLineCommand.php
 .\AbstractInOutLineMvoCommand.php
 .\AbstractLocatorCommand.php
+.\AbstractMonthPlanCommand.php
+.\AbstractMonthPlanMvoCommand.php
 .\AbstractOrganizationCommand.php
 .\AbstractOrganizationStructureCommand.php
 .\AbstractOrganizationStructureTypeCommand.php
 .\AbstractPermissionCommand.php
+.\AbstractPersonCommand.php
 .\AbstractRoleCommand.php
 .\AbstractRolePermissionCommand.php
+.\AbstractTeamCommand.php
 .\AbstractUserClaimCommand.php
 .\AbstractUserClaimMvoCommand.php
 .\AbstractUserCommand.php
@@ -96,6 +104,8 @@
 .\AbstractUserRoleCommand.php
 .\AbstractUserRoleMvoCommand.php
 .\AbstractWarehouseCommand.php
+.\AbstractYearPlanCommand.php
+.\AbstractYearPlanMvoCommand.php
 .\Attribute.php
 .\AttributeIsPropertyRemovedTrait.php
 .\AttributeSet.php
@@ -168,16 +178,22 @@
 .\CreateOrMergePatchAttributeValue.php
 .\CreateOrMergePatchAttributeValueMvo.php
 .\CreateOrMergePatchAudience.php
+.\CreateOrMergePatchDayPlan.php
+.\CreateOrMergePatchDayPlanMvo.php
 .\CreateOrMergePatchInOut.php
 .\CreateOrMergePatchInOutLine.php
 .\CreateOrMergePatchInOutLineMvo.php
 .\CreateOrMergePatchLocator.php
+.\CreateOrMergePatchMonthPlan.php
+.\CreateOrMergePatchMonthPlanMvo.php
 .\CreateOrMergePatchOrganization.php
 .\CreateOrMergePatchOrganizationStructure.php
 .\CreateOrMergePatchOrganizationStructureType.php
 .\CreateOrMergePatchPermission.php
+.\CreateOrMergePatchPerson.php
 .\CreateOrMergePatchRole.php
 .\CreateOrMergePatchRolePermission.php
+.\CreateOrMergePatchTeam.php
 .\CreateOrMergePatchUser.php
 .\CreateOrMergePatchUserClaim.php
 .\CreateOrMergePatchUserClaimMvo.php
@@ -188,6 +204,20 @@
 .\CreateOrMergePatchUserRole.php
 .\CreateOrMergePatchUserRoleMvo.php
 .\CreateOrMergePatchWarehouse.php
+.\CreateOrMergePatchYearPlan.php
+.\CreateOrMergePatchYearPlanMvo.php
+.\DayPlan.php
+.\DayPlanId.php
+.\DayPlanIdFlattenedDto.php
+.\DayPlanIsPropertyRemovedTrait.php
+.\DayPlanMvo.php
+.\DayPlanMvoIsPropertyRemovedTrait.php
+.\DayPlanMvoStateEventId.php
+.\DayPlanMvoStateEventIdFlattenedDto.php
+.\DayPlanMvoStatePropertiesTrait.php
+.\DayPlanStateEventId.php
+.\DayPlanStateEventIdFlattenedDto.php
+.\DayPlanStatePropertiesTrait.php
 .\DeleteAttribute.php
 .\DeleteAttributeSet.php
 .\DeleteAttributeSetInstance.php
@@ -196,21 +226,26 @@
 .\DeleteAttributeUseMvo.php
 .\DeleteAttributeValueMvo.php
 .\DeleteAudience.php
+.\DeleteDayPlanMvo.php
 .\DeleteInOut.php
 .\DeleteInOutLineMvo.php
 .\DeleteLocator.php
+.\DeleteMonthPlanMvo.php
 .\DeleteOrganization.php
 .\DeleteOrganizationStructure.php
 .\DeleteOrganizationStructureType.php
 .\DeletePermission.php
+.\DeletePerson.php
 .\DeleteRole.php
 .\DeleteRolePermission.php
+.\DeleteTeam.php
 .\DeleteUser.php
 .\DeleteUserClaimMvo.php
 .\DeleteUserLoginMvo.php
 .\DeleteUserPermissionMvo.php
 .\DeleteUserRoleMvo.php
 .\DeleteWarehouse.php
+.\DeleteYearPlanMvo.php
 .\GenerateBoundedContextDomainAggregates.txt
 .\InOut.php
 .\InOutIsPropertyRemovedTrait.php
@@ -235,6 +270,18 @@
 .\LocatorStateEventIdFlattenedDto.php
 .\LocatorStatePropertiesTrait.php
 .\LoginKey.php
+.\MonthPlan.php
+.\MonthPlanId.php
+.\MonthPlanIdFlattenedDto.php
+.\MonthPlanIsPropertyRemovedTrait.php
+.\MonthPlanMvo.php
+.\MonthPlanMvoIsPropertyRemovedTrait.php
+.\MonthPlanMvoStateEventId.php
+.\MonthPlanMvoStateEventIdFlattenedDto.php
+.\MonthPlanMvoStatePropertiesTrait.php
+.\MonthPlanStateEventId.php
+.\MonthPlanStateEventIdFlattenedDto.php
+.\MonthPlanStatePropertiesTrait.php
 .\Organization.php
 .\OrganizationIsPropertyRemovedTrait.php
 .\OrganizationStateEventId.php
@@ -255,14 +302,22 @@
 .\PermissionStateEventId.php
 .\PermissionStateEventIdFlattenedDto.php
 .\PermissionStatePropertiesTrait.php
+.\Person.php
+.\PersonIsPropertyRemovedTrait.php
+.\PersonStateEventId.php
+.\PersonStateEventIdFlattenedDto.php
+.\PersonStatePropertiesTrait.php
 .\RemoveAttributeSetInstanceExtensionField.php
 .\RemoveAttributeUse.php
 .\RemoveAttributeValue.php
+.\RemoveDayPlan.php
 .\RemoveInOutLine.php
+.\RemoveMonthPlan.php
 .\RemoveUserClaim.php
 .\RemoveUserLogin.php
 .\RemoveUserPermission.php
 .\RemoveUserRole.php
+.\RemoveYearPlan.php
 .\Role.php
 .\RoleIsPropertyRemovedTrait.php
 .\RolePermission.php
@@ -273,6 +328,11 @@
 .\RoleStateEventId.php
 .\RoleStateEventIdFlattenedDto.php
 .\RoleStatePropertiesTrait.php
+.\Team.php
+.\TeamIsPropertyRemovedTrait.php
+.\TeamStateEventId.php
+.\TeamStateEventIdFlattenedDto.php
+.\TeamStatePropertiesTrait.php
 .\User.php
 .\UserClaim.php
 .\UserClaimId.php
@@ -331,6 +391,18 @@
 .\WarehouseStateEventId.php
 .\WarehouseStateEventIdFlattenedDto.php
 .\WarehouseStatePropertiesTrait.php
+.\YearPlan.php
+.\YearPlanId.php
+.\YearPlanIdFlattenedDto.php
+.\YearPlanIsPropertyRemovedTrait.php
+.\YearPlanMvo.php
+.\YearPlanMvoIsPropertyRemovedTrait.php
+.\YearPlanMvoStateEventId.php
+.\YearPlanMvoStateEventIdFlattenedDto.php
+.\YearPlanMvoStatePropertiesTrait.php
+.\YearPlanStateEventId.php
+.\YearPlanStateEventIdFlattenedDto.php
+.\YearPlanStatePropertiesTrait.php
 </LastOutputs>
     </Content>
     <Content Include="Dddml\Wms\Domain\GenerateBoundedContextDomainAggregates.txt">
@@ -366,17 +438,23 @@
 .\AttributeValueMetadata.php
 .\AttributeValueMvoMetadata.php
 .\AudienceMetadata.php
+.\DayPlanMetadata.php
+.\DayPlanMvoMetadata.php
 .\GenerateBoundedContextDomainAggregatesMetadata.txt
 .\InOutLineMetadata.php
 .\InOutLineMvoMetadata.php
 .\InOutMetadata.php
 .\LocatorMetadata.php
+.\MonthPlanMetadata.php
+.\MonthPlanMvoMetadata.php
 .\OrganizationMetadata.php
 .\OrganizationStructureMetadata.php
 .\OrganizationStructureTypeMetadata.php
 .\PermissionMetadata.php
+.\PersonMetadata.php
 .\RoleMetadata.php
 .\RolePermissionMetadata.php
+.\TeamMetadata.php
 .\UserClaimMetadata.php
 .\UserClaimMvoMetadata.php
 .\UserLoginMetadata.php
@@ -387,6 +465,8 @@
 .\UserRoleMetadata.php
 .\UserRoleMvoMetadata.php
 .\WarehouseMetadata.php
+.\YearPlanMetadata.php
+.\YearPlanMvoMetadata.php
 </LastOutputs>
     </Content>
     <Content Include="Dddml\Wms\Domain\Metadata\GenerateBoundedContextMetadata.txt">
@@ -446,21 +526,30 @@
 .\CreateAttributeUseMvoRequest.php
 .\CreateAttributeValueMvoRequest.php
 .\CreateAudienceRequest.php
+.\CreateDayPlanMvoRequest.php
 .\CreateInOutLineMvoRequest.php
 .\CreateInOutRequest.php
 .\CreateLocatorRequest.php
+.\CreateMonthPlanMvoRequest.php
 .\CreateOrganizationRequest.php
 .\CreateOrganizationStructureRequest.php
 .\CreateOrganizationStructureTypeRequest.php
 .\CreatePermissionRequest.php
+.\CreatePersonRequest.php
 .\CreateRolePermissionRequest.php
 .\CreateRoleRequest.php
+.\CreateTeamRequest.php
 .\CreateUserClaimMvoRequest.php
 .\CreateUserLoginMvoRequest.php
 .\CreateUserPermissionMvoRequest.php
 .\CreateUserRequest.php
 .\CreateUserRoleMvoRequest.php
 .\CreateWarehouseRequest.php
+.\CreateYearPlanMvoRequest.php
+.\DayPlanFilteringFieldsTrait.php
+.\DayPlanMvoFilteringFieldsTrait.php
+.\DayPlanMvoQueryRequest.php
+.\DayPlanMvosQueryRequest.php
 .\DeleteAttributeRequest.php
 .\DeleteAttributeSetInstanceExtensionFieldGroupRequest.php
 .\DeleteAttributeSetInstanceExtensionFieldMvoRequest.php
@@ -469,21 +558,26 @@
 .\DeleteAttributeUseMvoRequest.php
 .\DeleteAttributeValueMvoRequest.php
 .\DeleteAudienceRequest.php
+.\DeleteDayPlanMvoRequest.php
 .\DeleteInOutLineMvoRequest.php
 .\DeleteInOutRequest.php
 .\DeleteLocatorRequest.php
+.\DeleteMonthPlanMvoRequest.php
 .\DeleteOrganizationRequest.php
 .\DeleteOrganizationStructureRequest.php
 .\DeleteOrganizationStructureTypeRequest.php
 .\DeletePermissionRequest.php
+.\DeletePersonRequest.php
 .\DeleteRolePermissionRequest.php
 .\DeleteRoleRequest.php
+.\DeleteTeamRequest.php
 .\DeleteUserClaimMvoRequest.php
 .\DeleteUserLoginMvoRequest.php
 .\DeleteUserPermissionMvoRequest.php
 .\DeleteUserRequest.php
 .\DeleteUserRoleMvoRequest.php
 .\DeleteWarehouseRequest.php
+.\DeleteYearPlanMvoRequest.php
 .\GenerateAggregatesRequests.txt
 .\InOutFilteringFieldsTrait.php
 .\InOutLineFilteringFieldsTrait.php
@@ -503,21 +597,30 @@
 .\MergePatchAttributeUseMvoRequest.php
 .\MergePatchAttributeValueMvoRequest.php
 .\MergePatchAudienceRequest.php
+.\MergePatchDayPlanMvoRequest.php
 .\MergePatchInOutLineMvoRequest.php
 .\MergePatchInOutRequest.php
 .\MergePatchLocatorRequest.php
+.\MergePatchMonthPlanMvoRequest.php
 .\MergePatchOrganizationRequest.php
 .\MergePatchOrganizationStructureRequest.php
 .\MergePatchOrganizationStructureTypeRequest.php
 .\MergePatchPermissionRequest.php
+.\MergePatchPersonRequest.php
 .\MergePatchRolePermissionRequest.php
 .\MergePatchRoleRequest.php
+.\MergePatchTeamRequest.php
 .\MergePatchUserClaimMvoRequest.php
 .\MergePatchUserLoginMvoRequest.php
 .\MergePatchUserPermissionMvoRequest.php
 .\MergePatchUserRequest.php
 .\MergePatchUserRoleMvoRequest.php
 .\MergePatchWarehouseRequest.php
+.\MergePatchYearPlanMvoRequest.php
+.\MonthPlanFilteringFieldsTrait.php
+.\MonthPlanMvoFilteringFieldsTrait.php
+.\MonthPlanMvoQueryRequest.php
+.\MonthPlanMvosQueryRequest.php
 .\OrganizationFilteringFieldsTrait.php
 .\OrganizationQueryRequest.php
 .\OrganizationsQueryRequest.php
@@ -527,15 +630,21 @@
 .\OrganizationStructureTypeFilteringFieldsTrait.php
 .\OrganizationStructureTypeQueryRequest.php
 .\OrganizationStructureTypesQueryRequest.php
+.\PeopleQueryRequest.php
 .\PermissionFilteringFieldsTrait.php
 .\PermissionQueryRequest.php
 .\PermissionsQueryRequest.php
+.\PersonFilteringFieldsTrait.php
+.\PersonQueryRequest.php
 .\RoleFilteringFieldsTrait.php
 .\RolePermissionFilteringFieldsTrait.php
 .\RolePermissionQueryRequest.php
 .\RolePermissionsQueryRequest.php
 .\RoleQueryRequest.php
 .\RolesQueryRequest.php
+.\TeamFilteringFieldsTrait.php
+.\TeamQueryRequest.php
+.\TeamsQueryRequest.php
 .\UserClaimFilteringFieldsTrait.php
 .\UserClaimMvoFilteringFieldsTrait.php
 .\UserClaimMvoQueryRequest.php
@@ -558,6 +667,10 @@
 .\WarehouseFilteringFieldsTrait.php
 .\WarehouseQueryRequest.php
 .\WarehousesQueryRequest.php
+.\YearPlanFilteringFieldsTrait.php
+.\YearPlanMvoFilteringFieldsTrait.php
+.\YearPlanMvoQueryRequest.php
+.\YearPlanMvosQueryRequest.php
 </LastOutputs>
     </Content>
     <Content Include="Dddml\Wms\HttpClient\GenerateBoundedContextRequests.txt">
@@ -613,6 +726,12 @@
     <None Include="Dddml\Wms\Domain\AbstractAudienceCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
+    <None Include="Dddml\Wms\Domain\AbstractDayPlanCommand.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\AbstractDayPlanMvoCommand.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
     <None Include="Dddml\Wms\Domain\AbstractInOutCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
@@ -623,6 +742,12 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\Domain\AbstractLocatorCommand.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\AbstractMonthPlanCommand.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\AbstractMonthPlanMvoCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\Domain\AbstractOrganizationCommand.php">
@@ -637,10 +762,16 @@
     <None Include="Dddml\Wms\Domain\AbstractPermissionCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
+    <None Include="Dddml\Wms\Domain\AbstractPersonCommand.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
     <None Include="Dddml\Wms\Domain\AbstractRoleCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\Domain\AbstractRolePermissionCommand.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\AbstractTeamCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\Domain\AbstractUserClaimCommand.php">
@@ -671,6 +802,12 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\Domain\AbstractWarehouseCommand.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\AbstractYearPlanCommand.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\AbstractYearPlanMvoCommand.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\Domain\Attribute.php">
@@ -892,6 +1029,12 @@
     <None Include="Dddml\Wms\Domain\CreateOrMergePatchAudience.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
+    <None Include="Dddml\Wms\Domain\CreateOrMergePatchDayPlan.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\CreateOrMergePatchDayPlanMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
     <None Include="Dddml\Wms\Domain\CreateOrMergePatchInOut.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
@@ -902,6 +1045,12 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\Domain\CreateOrMergePatchLocator.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\CreateOrMergePatchMonthPlan.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\CreateOrMergePatchMonthPlanMvo.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\Domain\CreateOrMergePatchOrganization.php">
@@ -916,10 +1065,16 @@
     <None Include="Dddml\Wms\Domain\CreateOrMergePatchPermission.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
+    <None Include="Dddml\Wms\Domain\CreateOrMergePatchPerson.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
     <None Include="Dddml\Wms\Domain\CreateOrMergePatchRole.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\Domain\CreateOrMergePatchRolePermission.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\CreateOrMergePatchTeam.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\Domain\CreateOrMergePatchUser.php">
@@ -952,6 +1107,48 @@
     <None Include="Dddml\Wms\Domain\CreateOrMergePatchWarehouse.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
+    <None Include="Dddml\Wms\Domain\CreateOrMergePatchYearPlan.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\CreateOrMergePatchYearPlanMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\DayPlan.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\DayPlanId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\DayPlanIdFlattenedDto.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\DayPlanIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\DayPlanMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\DayPlanMvoIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\DayPlanMvoStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\DayPlanMvoStateEventIdFlattenedDto.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\DayPlanMvoStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\DayPlanStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\DayPlanStateEventIdFlattenedDto.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\DayPlanStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
     <None Include="Dddml\Wms\Domain\DeleteAttribute.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
@@ -976,6 +1173,9 @@
     <None Include="Dddml\Wms\Domain\DeleteAudience.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
+    <None Include="Dddml\Wms\Domain\DeleteDayPlanMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
     <None Include="Dddml\Wms\Domain\DeleteInOut.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
@@ -983,6 +1183,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\Domain\DeleteLocator.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\DeleteMonthPlanMvo.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\Domain\DeleteOrganization.php">
@@ -997,10 +1200,16 @@
     <None Include="Dddml\Wms\Domain\DeletePermission.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
+    <None Include="Dddml\Wms\Domain\DeletePerson.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
     <None Include="Dddml\Wms\Domain\DeleteRole.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\Domain\DeleteRolePermission.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\DeleteTeam.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\Domain\DeleteUser.php">
@@ -1019,6 +1228,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\Domain\DeleteWarehouse.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\DeleteYearPlanMvo.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\Domain\DocumentAction.php">
@@ -1129,6 +1341,12 @@
     <None Include="Dddml\Wms\Domain\Metadata\BoundedContextMetadata.php">
       <DependentUpon>GenerateBoundedContextMetadata.tt</DependentUpon>
     </None>
+    <None Include="Dddml\Wms\Domain\Metadata\DayPlanMetadata.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\Metadata\DayPlanMvoMetadata.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </None>
     <None Include="Dddml\Wms\Domain\Metadata\InOutLineMetadata.php">
       <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
     </None>
@@ -1139,6 +1357,12 @@
       <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\Domain\Metadata\LocatorMetadata.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\Metadata\MonthPlanMetadata.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\Metadata\MonthPlanMvoMetadata.php">
       <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\Domain\Metadata\OrganizationMetadata.php">
@@ -1153,10 +1377,16 @@
     <None Include="Dddml\Wms\Domain\Metadata\PermissionMetadata.php">
       <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
     </None>
+    <None Include="Dddml\Wms\Domain\Metadata\PersonMetadata.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </None>
     <None Include="Dddml\Wms\Domain\Metadata\RoleMetadata.php">
       <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\Domain\Metadata\RolePermissionMetadata.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\Metadata\TeamMetadata.php">
       <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\Domain\Metadata\UserClaimMetadata.php">
@@ -1188,6 +1418,48 @@
     </None>
     <None Include="Dddml\Wms\Domain\Metadata\WarehouseMetadata.php">
       <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\Metadata\YearPlanMetadata.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\Metadata\YearPlanMvoMetadata.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregatesMetadata.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\MonthPlan.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\MonthPlanId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\MonthPlanIdFlattenedDto.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\MonthPlanIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\MonthPlanMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\MonthPlanMvoIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\MonthPlanMvoStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\MonthPlanMvoStateEventIdFlattenedDto.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\MonthPlanMvoStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\MonthPlanStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\MonthPlanStateEventIdFlattenedDto.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\MonthPlanStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\Domain\Organization.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
@@ -1255,6 +1527,27 @@
     <None Include="Dddml\Wms\Domain\PermissionStatePropertiesTrait.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
+    <None Include="Dddml\Wms\Domain\Person.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\PersonalName.php">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\PersonalNameFlattenedDto.php">
+      <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\PersonIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\PersonStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\PersonStateEventIdFlattenedDto.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\PersonStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
     <None Include="Dddml\Wms\Domain\RemoveAttributeSetInstanceExtensionField.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
@@ -1264,7 +1557,13 @@
     <None Include="Dddml\Wms\Domain\RemoveAttributeValue.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
+    <None Include="Dddml\Wms\Domain\RemoveDayPlan.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
     <None Include="Dddml\Wms\Domain\RemoveInOutLine.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\RemoveMonthPlan.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\Domain\RemoveUserClaim.php">
@@ -1277,6 +1576,9 @@
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\Domain\RemoveUserRole.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\RemoveYearPlan.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\Domain\Role.php">
@@ -1317,6 +1619,21 @@
     </None>
     <None Include="Dddml\Wms\Domain\SkuId.php">
       <DependentUpon>GenerateBoundedContextDomain.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\Team.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\TeamIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\TeamStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\TeamStateEventIdFlattenedDto.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\TeamStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\Domain\User.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
@@ -1492,6 +1809,42 @@
     <None Include="Dddml\Wms\Domain\WarehouseStatePropertiesTrait.php">
       <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
     </None>
+    <None Include="Dddml\Wms\Domain\YearPlan.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\YearPlanId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\YearPlanIdFlattenedDto.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\YearPlanIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\YearPlanMvo.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\YearPlanMvoIsPropertyRemovedTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\YearPlanMvoStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\YearPlanMvoStateEventIdFlattenedDto.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\YearPlanMvoStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\YearPlanStateEventId.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\YearPlanStateEventIdFlattenedDto.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\Domain\YearPlanStatePropertiesTrait.php">
+      <DependentUpon>GenerateBoundedContextDomainAggregates.tt</DependentUpon>
+    </None>
     <None Include="Dddml\Wms\HttpClient\AbstractQueryRequest.php">
       <DependentUpon>GenerateBoundedContextRequests.tt</DependentUpon>
     </None>
@@ -1600,6 +1953,9 @@
     <None Include="Dddml\Wms\HttpClient\CreateAudienceRequest.php">
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
+    <None Include="Dddml\Wms\HttpClient\CreateDayPlanMvoRequest.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
     <None Include="Dddml\Wms\HttpClient\CreateInOutLineMvoRequest.php">
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
@@ -1607,6 +1963,9 @@
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\HttpClient\CreateLocatorRequest.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\HttpClient\CreateMonthPlanMvoRequest.php">
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\HttpClient\CreateOrganizationRequest.php">
@@ -1621,10 +1980,16 @@
     <None Include="Dddml\Wms\HttpClient\CreatePermissionRequest.php">
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
+    <None Include="Dddml\Wms\HttpClient\CreatePersonRequest.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
     <None Include="Dddml\Wms\HttpClient\CreateRolePermissionRequest.php">
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\HttpClient\CreateRoleRequest.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\HttpClient\CreateTeamRequest.php">
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\HttpClient\CreateUserClaimMvoRequest.php">
@@ -1643,6 +2008,21 @@
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\HttpClient\CreateWarehouseRequest.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\HttpClient\CreateYearPlanMvoRequest.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\HttpClient\DayPlanFilteringFieldsTrait.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\HttpClient\DayPlanMvoFilteringFieldsTrait.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\HttpClient\DayPlanMvoQueryRequest.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\HttpClient\DayPlanMvosQueryRequest.php">
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\HttpClient\DeleteAttributeRequest.php">
@@ -1669,6 +2049,9 @@
     <None Include="Dddml\Wms\HttpClient\DeleteAudienceRequest.php">
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
+    <None Include="Dddml\Wms\HttpClient\DeleteDayPlanMvoRequest.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
     <None Include="Dddml\Wms\HttpClient\DeleteInOutLineMvoRequest.php">
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
@@ -1676,6 +2059,9 @@
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\HttpClient\DeleteLocatorRequest.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\HttpClient\DeleteMonthPlanMvoRequest.php">
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\HttpClient\DeleteOrganizationRequest.php">
@@ -1690,10 +2076,16 @@
     <None Include="Dddml\Wms\HttpClient\DeletePermissionRequest.php">
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
+    <None Include="Dddml\Wms\HttpClient\DeletePersonRequest.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
     <None Include="Dddml\Wms\HttpClient\DeleteRolePermissionRequest.php">
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\HttpClient\DeleteRoleRequest.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\HttpClient\DeleteTeamRequest.php">
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\HttpClient\DeleteUserClaimMvoRequest.php">
@@ -1712,6 +2104,9 @@
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\HttpClient\DeleteWarehouseRequest.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\HttpClient\DeleteYearPlanMvoRequest.php">
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\HttpClient\InOutFilteringFieldsTrait.php">
@@ -1768,6 +2163,9 @@
     <None Include="Dddml\Wms\HttpClient\MergePatchAudienceRequest.php">
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
+    <None Include="Dddml\Wms\HttpClient\MergePatchDayPlanMvoRequest.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
     <None Include="Dddml\Wms\HttpClient\MergePatchInOutLineMvoRequest.php">
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
@@ -1775,6 +2173,9 @@
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\HttpClient\MergePatchLocatorRequest.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\HttpClient\MergePatchMonthPlanMvoRequest.php">
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\HttpClient\MergePatchOrganizationRequest.php">
@@ -1789,10 +2190,16 @@
     <None Include="Dddml\Wms\HttpClient\MergePatchPermissionRequest.php">
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
+    <None Include="Dddml\Wms\HttpClient\MergePatchPersonRequest.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
     <None Include="Dddml\Wms\HttpClient\MergePatchRolePermissionRequest.php">
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\HttpClient\MergePatchRoleRequest.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\HttpClient\MergePatchTeamRequest.php">
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\HttpClient\MergePatchUserClaimMvoRequest.php">
@@ -1811,6 +2218,21 @@
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\HttpClient\MergePatchWarehouseRequest.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\HttpClient\MergePatchYearPlanMvoRequest.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\HttpClient\MonthPlanFilteringFieldsTrait.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\HttpClient\MonthPlanMvoFilteringFieldsTrait.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\HttpClient\MonthPlanMvoQueryRequest.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\HttpClient\MonthPlanMvosQueryRequest.php">
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\HttpClient\OrganizationFilteringFieldsTrait.php">
@@ -1840,6 +2262,9 @@
     <None Include="Dddml\Wms\HttpClient\OrganizationStructureTypesQueryRequest.php">
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
+    <None Include="Dddml\Wms\HttpClient\PeopleQueryRequest.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
     <None Include="Dddml\Wms\HttpClient\PermissionFilteringFieldsTrait.php">
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
@@ -1847,6 +2272,12 @@
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\HttpClient\PermissionsQueryRequest.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\HttpClient\PersonFilteringFieldsTrait.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\HttpClient\PersonQueryRequest.php">
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\HttpClient\RoleFilteringFieldsTrait.php">
@@ -1865,6 +2296,15 @@
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\HttpClient\RolesQueryRequest.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\HttpClient\TeamFilteringFieldsTrait.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\HttpClient\TeamQueryRequest.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\HttpClient\TeamsQueryRequest.php">
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\HttpClient\UserClaimFilteringFieldsTrait.php">
@@ -1931,6 +2371,18 @@
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
     <None Include="Dddml\Wms\HttpClient\WarehousesQueryRequest.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\HttpClient\YearPlanFilteringFieldsTrait.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\HttpClient\YearPlanMvoFilteringFieldsTrait.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\HttpClient\YearPlanMvoQueryRequest.php">
+      <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
+    </None>
+    <None Include="Dddml\Wms\HttpClient\YearPlanMvosQueryRequest.php">
       <DependentUpon>GenerateAggregatesRequests.tt</DependentUpon>
     </None>
   </ItemGroup>

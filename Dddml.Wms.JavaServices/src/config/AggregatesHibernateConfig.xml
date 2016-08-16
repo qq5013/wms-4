@@ -295,6 +295,60 @@
   </bean>
 
 
+  <bean id="yearPlanStateDao" class="org.dddml.wms.domain.hibernate.HibernateYearPlanStateDao">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="yearPlanStateEventDao" class="org.dddml.wms.domain.hibernate.HibernateYearPlanStateEventDao">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="monthPlanStateDao" class="org.dddml.wms.domain.hibernate.HibernateMonthPlanStateDao">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="monthPlanStateEventDao" class="org.dddml.wms.domain.hibernate.HibernateMonthPlanStateEventDao">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="dayPlanStateDao" class="org.dddml.wms.domain.hibernate.HibernateDayPlanStateDao">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="dayPlanStateEventDao" class="org.dddml.wms.domain.hibernate.HibernateDayPlanStateEventDao">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+
+  <bean id="personStateRepository" class="org.dddml.wms.domain.hibernate.HibernatePersonStateRepository">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="personEventStore" class="org.dddml.wms.domain.hibernate.HibernatePersonEventStore">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="personApplicationService" class="org.dddml.wms.domain.AbstractPersonApplicationService$SimplePersonApplicationService">
+    <constructor-arg ref="personEventStore"/>
+    <constructor-arg ref="personStateRepository"/>
+  </bean>
+
+
+
+  <bean id="teamStateRepository" class="org.dddml.wms.domain.hibernate.HibernateTeamStateRepository">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="teamEventStore" class="org.dddml.wms.domain.hibernate.HibernateTeamEventStore">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="teamApplicationService" class="org.dddml.wms.domain.AbstractTeamApplicationService$SimpleTeamApplicationService">
+    <constructor-arg ref="teamEventStore"/>
+    <constructor-arg ref="teamStateRepository"/>
+  </bean>
+
+
 
   <bean id="attributeSetInstanceExtensionFieldMvoStateRepository" class="org.dddml.wms.domain.hibernate.HibernateAttributeSetInstanceExtensionFieldMvoStateRepository">
     <property name="sessionFactory" ref="hibernateSessionFactory"/>
@@ -412,6 +466,51 @@
   <bean id="inOutLineMvoApplicationService" class="org.dddml.wms.domain.AbstractInOutLineMvoApplicationService$SimpleInOutLineMvoApplicationService">
     <constructor-arg ref="inOutLineMvoEventStore"/>
     <constructor-arg ref="inOutLineMvoStateRepository"/>
+  </bean>
+
+
+
+  <bean id="yearPlanMvoStateRepository" class="org.dddml.wms.domain.hibernate.HibernateYearPlanMvoStateRepository">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="yearPlanMvoEventStore" class="org.dddml.wms.domain.hibernate.HibernateYearPlanMvoEventStore">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="yearPlanMvoApplicationService" class="org.dddml.wms.domain.AbstractYearPlanMvoApplicationService$SimpleYearPlanMvoApplicationService">
+    <constructor-arg ref="yearPlanMvoEventStore"/>
+    <constructor-arg ref="yearPlanMvoStateRepository"/>
+  </bean>
+
+
+
+  <bean id="monthPlanMvoStateRepository" class="org.dddml.wms.domain.hibernate.HibernateMonthPlanMvoStateRepository">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="monthPlanMvoEventStore" class="org.dddml.wms.domain.hibernate.HibernateMonthPlanMvoEventStore">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="monthPlanMvoApplicationService" class="org.dddml.wms.domain.AbstractMonthPlanMvoApplicationService$SimpleMonthPlanMvoApplicationService">
+    <constructor-arg ref="monthPlanMvoEventStore"/>
+    <constructor-arg ref="monthPlanMvoStateRepository"/>
+  </bean>
+
+
+
+  <bean id="dayPlanMvoStateRepository" class="org.dddml.wms.domain.hibernate.HibernateDayPlanMvoStateRepository">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="dayPlanMvoEventStore" class="org.dddml.wms.domain.hibernate.HibernateDayPlanMvoEventStore">
+    <property name="sessionFactory" ref="hibernateSessionFactory"/>
+  </bean>
+
+  <bean id="dayPlanMvoApplicationService" class="org.dddml.wms.domain.AbstractDayPlanMvoApplicationService$SimpleDayPlanMvoApplicationService">
+    <constructor-arg ref="dayPlanMvoEventStore"/>
+    <constructor-arg ref="dayPlanMvoStateRepository"/>
   </bean>
 
 </beans>

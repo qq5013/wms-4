@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="org.dddml.wms.domain.AbstractYearPlanMvoState$SimpleYearPlanMvoState" table="YearPlan_RV">
+
+	<composite-id name="yearPlanId" class="org.dddml.wms.domain.YearPlanId">
+		<key-property name="personalNameFirstName" column="YearPlanIdPersonalNameFirstName" length="50"/>
+		<key-property name="personalNameLastName" column="YearPlanIdPersonalNameLastName" length="50"/>
+		<key-property name="year" column="YearPlanIdYear" />
+	</composite-id>
+
+	<version name="personVersion" type="long" />
+
+	<property name="description" length="500"></property>
+
+	<property name="version" ></property>
+
+	<property name="createdBy" ></property>
+
+	<property name="createdAt" ></property>
+
+	<property name="updatedBy" ></property>
+
+	<property name="updatedAt" ></property>
+
+	<property name="active" ></property>
+
+	<property name="deleted" ></property>
+
+	<property name="personBirthDate" ></property>
+
+	<component name="personLoves" class="org.dddml.wms.domain.PersonalName">
+		<property name="firstName" column="personLovesFirstName" length="50"/>
+		<property name="lastName" column="personLovesLastName" length="50"/>
+	</component>
+
+	<property name="personCreatedBy" ></property>
+
+	<property name="personCreatedAt" ></property>
+
+	<property name="personUpdatedBy" ></property>
+
+	<property name="personUpdatedAt" ></property>
+
+	<property name="personActive" ></property>
+
+	<property name="personDeleted" ></property>
+
+
+  </class>
+  
+</hibernate-mapping>
+

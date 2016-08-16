@@ -1,0 +1,187 @@
+<?php
+
+namespace Dddml\Wms\Domain;
+
+use JMS\Serializer\Annotation\Type;
+use Dddml\Serializer\Type\Long;
+use Dddml\FlattenedDtoInterface;
+
+class DayPlanStateEventIdFlattenedDto implements FlattenedDtoInterface
+{
+
+    const PROPERTIES = [
+            'personalNameFirstName' => 'string',
+            'personalNameLastName' => 'string',
+            'year' => 'integer',
+            'month' => 'integer',
+            'day' => 'integer',
+            'personVersion' => 'Long',
+        ];
+
+    public static function getPropertyNames()
+    {
+        return array_keys(static::PROPERTIES);
+    }
+
+    public static function getPropertyTypes()
+    {
+        return array_values(static::PROPERTIES);
+    }
+
+	
+    /**
+     * @var DayPlanStateEventId
+     */
+    private $value;
+
+    /**
+     * @param DayPlanStateEventId $value
+     */
+    public function __construct(DayPlanStateEventId $value = null)
+    {
+        if ($value) {
+            $this->value = $value;
+        } else {
+            $this->value = new DayPlanStateEventId();
+        }
+    }
+
+    /**
+     * @return DayPlanStateEventId
+     */
+    public function toDayPlanStateEventId()
+    {
+        return $this->value;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPersonalNameFirstName()
+    {
+        return $this->value->getPersonalName()->getFirstName();
+    }
+
+    /**
+     * @param string $personalNameFirstName
+     */
+    public function setPersonalNameFirstName($personalNameFirstName)
+    {
+        $this->value->getPersonalName()->setFirstName($personalNameFirstName);
+    }
+
+    /**
+     * @return string
+     */
+    public function getPersonalNameLastName()
+    {
+        return $this->value->getPersonalName()->getLastName();
+    }
+
+    /**
+     * @param string $personalNameLastName
+     */
+    public function setPersonalNameLastName($personalNameLastName)
+    {
+        $this->value->getPersonalName()->setLastName($personalNameLastName);
+    }
+
+    /**
+     * @return integer
+     */
+    public function getYear()
+    {
+        return $this->value->getYear();
+    }
+
+    /**
+     * @param integer $year
+     */
+    public function setYear($year)
+    {
+        $this->value->setYear($year);
+    }
+
+    /**
+     * @return integer
+     */
+    public function getMonth()
+    {
+        return $this->value->getMonth();
+    }
+
+    /**
+     * @param integer $month
+     */
+    public function setMonth($month)
+    {
+        $this->value->setMonth($month);
+    }
+
+    /**
+     * @return integer
+     */
+    public function getDay()
+    {
+        return $this->value->getDay();
+    }
+
+    /**
+     * @param integer $day
+     */
+    public function setDay($day)
+    {
+        $this->value->setDay($day);
+    }
+
+    /**
+     * @return Long
+     */
+    public function getPersonVersion()
+    {
+        return $this->value->getPersonVersion();
+    }
+
+    /**
+     * @param Long $personVersion
+     */
+    public function setPersonVersion($personVersion)
+    {
+        $this->value->setPersonVersion($personVersion);
+    }
+
+    /**
+     * @return string
+     */
+    public function toString()
+    {
+        $pValues = [
+            $this->getPersonalNameFirstName(),
+            $this->getPersonalNameLastName(),
+            $this->getYear(),
+            $this->getMonth(),
+            $this->getDay(),
+            $this->getPersonVersion(),
+        ];
+        return implode(',', $pValues);
+    }
+
+    /**
+     * @param string $data
+     *
+     * @return DayPlanStateEventIdFlattenedDto
+     */
+    public function fromString($data)
+    {
+        $pValues = explode(',', $data);
+        $this->setPersonalNameFirstName($pValues[0]);
+        $this->setPersonalNameLastName($pValues[1]);
+        $this->setYear($pValues[2]);
+        $this->setMonth($pValues[3]);
+        $this->setDay($pValues[4]);
+        $this->setPersonVersion($pValues[5]);
+        return $this;
+    }
+
+}
+

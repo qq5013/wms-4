@@ -1,0 +1,156 @@
+﻿<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.dddml.wms.domain">
+  
+  <class name="AbstractDayPlanMvoStateEvent" table="DayPlanMvoStateEvents" mutable="false" abstract="true">
+
+	<composite-id name="stateEventId" class="org.dddml.wms.domain.DayPlanMvoStateEventId">
+		<key-property name="dayPlanIdPersonalNameFirstName" column="DayPlanIdPersonalNameFirstName" length="50"/>
+		<key-property name="dayPlanIdPersonalNameLastName" column="DayPlanIdPersonalNameLastName" length="50"/>
+		<key-property name="dayPlanIdYear" column="DayPlanIdYear" />
+		<key-property name="dayPlanIdMonth" column="DayPlanIdMonth" />
+		<key-property name="dayPlanIdDay" column="DayPlanIdDay" />
+		<key-property name="personVersion" column="PersonVersion" />
+	</composite-id>
+
+    <discriminator column="StateEventType" type="string" />
+
+	<property name="description" length="500"></property>
+
+	<property name="version" ></property>
+
+	<property name="active" ></property>
+
+	<property name="monthPlanDescription" length="500"></property>
+
+	<property name="monthPlanVersion" ></property>
+
+	<property name="monthPlanCreatedBy" ></property>
+
+	<property name="monthPlanCreatedAt" ></property>
+
+	<property name="monthPlanUpdatedBy" ></property>
+
+	<property name="monthPlanUpdatedAt" ></property>
+
+	<property name="monthPlanActive" ></property>
+
+	<property name="monthPlanDeleted" ></property>
+
+	<property name="yearPlanDescription" length="500"></property>
+
+	<property name="yearPlanVersion" ></property>
+
+	<property name="yearPlanCreatedBy" ></property>
+
+	<property name="yearPlanCreatedAt" ></property>
+
+	<property name="yearPlanUpdatedBy" ></property>
+
+	<property name="yearPlanUpdatedAt" ></property>
+
+	<property name="yearPlanActive" ></property>
+
+	<property name="yearPlanDeleted" ></property>
+
+	<property name="personBirthDate" ></property>
+
+	<component name="personLoves" class="org.dddml.wms.domain.PersonalName">
+		<property name="firstName" column="personLovesFirstName" length="50"/>
+		<property name="lastName" column="personLovesLastName" length="50"/>
+	</component>
+
+	<property name="personCreatedBy" ></property>
+
+	<property name="personCreatedAt" ></property>
+
+	<property name="personUpdatedBy" ></property>
+
+	<property name="personUpdatedAt" ></property>
+
+	<property name="personActive" ></property>
+
+	<property name="personDeleted" ></property>
+
+
+    <property name="createdBy" />
+
+    <property name="createdAt" />
+
+    <property name="commandId" />
+
+
+    <subclass name="AbstractDayPlanMvoStateEvent$SimpleDayPlanMvoStateCreated" discriminator-value="Created">
+    	
+    </subclass>
+
+    <subclass name="AbstractDayPlanMvoStateEvent$SimpleDayPlanMvoStateMergePatched"  discriminator-value="MergePatched">
+
+        <property name="isPropertyDescriptionRemoved" />
+
+        <property name="isPropertyVersionRemoved" />
+
+        <property name="isPropertyActiveRemoved" />
+
+        <property name="isPropertyMonthPlanDescriptionRemoved" />
+
+        <property name="isPropertyMonthPlanVersionRemoved" />
+
+        <property name="isPropertyMonthPlanCreatedByRemoved" />
+
+        <property name="isPropertyMonthPlanCreatedAtRemoved" />
+
+        <property name="isPropertyMonthPlanUpdatedByRemoved" />
+
+        <property name="isPropertyMonthPlanUpdatedAtRemoved" />
+
+        <property name="isPropertyMonthPlanActiveRemoved" />
+
+        <property name="isPropertyMonthPlanDeletedRemoved" />
+
+        <property name="isPropertyYearPlanDescriptionRemoved" />
+
+        <property name="isPropertyYearPlanVersionRemoved" />
+
+        <property name="isPropertyYearPlanCreatedByRemoved" />
+
+        <property name="isPropertyYearPlanCreatedAtRemoved" />
+
+        <property name="isPropertyYearPlanUpdatedByRemoved" />
+
+        <property name="isPropertyYearPlanUpdatedAtRemoved" />
+
+        <property name="isPropertyYearPlanActiveRemoved" />
+
+        <property name="isPropertyYearPlanDeletedRemoved" />
+
+        <property name="isPropertyPersonBirthDateRemoved" />
+
+        <property name="isPropertyPersonLovesRemoved" />
+
+        <property name="isPropertyPersonCreatedByRemoved" />
+
+        <property name="isPropertyPersonCreatedAtRemoved" />
+
+        <property name="isPropertyPersonUpdatedByRemoved" />
+
+        <property name="isPropertyPersonUpdatedAtRemoved" />
+
+        <property name="isPropertyPersonActiveRemoved" />
+
+        <property name="isPropertyPersonDeletedRemoved" />
+
+
+    </subclass>
+
+    <subclass name="AbstractDayPlanMvoStateEvent$SimpleDayPlanMvoStateDeleted"  discriminator-value="Deleted">
+
+    </subclass>
+
+  </class>
+  
+</hibernate-mapping>

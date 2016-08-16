@@ -1,16 +1,18 @@
 import Index from './components/Index.vue';
 import AggregateRoot from './components/AggregateRoot.vue';
 import Entity from './components/Entity.vue';
+import CreateEntity from './components/CreateEntity.vue';
+
 export default {
     '/': {
         name: 'index',
         component: Index
     },
-    '/:name/': {
+    '/get/:name/': {
         name: 'entities',
         component: AggregateRoot
     },
-    '/:name/:id/': {
+    '/get/:name/:id/': {
         name: 'entity',
         component: Entity
     },
@@ -22,4 +24,8 @@ export default {
     //     name: 'embedEntity',
     //     component: Entity
     // },
+    '/create/:name/': {
+        name: 'createEntity',
+        component: CreateEntity
+    }
 };

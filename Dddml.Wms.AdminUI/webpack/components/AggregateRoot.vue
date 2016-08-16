@@ -10,11 +10,13 @@
 
         <!-- Main content -->
         <section class="content">
-
             <!-- Default box -->
             <div class="box">
                 <div class="box-header with-border">
                     <h3 class="box-title">{{metadata.collectionLabel}}</h3>
+                    <div class="box-tools">
+                        <a v-link="{name:'createEntity', params:{name: metadata.plural}}" class="btn btn-block btn-warning">创建</a>
+                    </div>
                 </div>
                 <div class="box-body no-padding table-responsive">
                     <v-table :table-data="table"></v-table>
@@ -26,7 +28,6 @@
                 <!-- /.box-footer-->
             </div>
             <!-- /.box -->
-
         </section>
         <!-- /.content -->
     </div>

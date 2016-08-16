@@ -15,7 +15,7 @@ namespace Dddml.Wms.HttpServices
     {
         public static void Register(HttpConfiguration config)
         {
-			RAML.WebApiExplorer.DocumentationProviderConfig.IncludeXmlComments();
+			
             // Web API 配置和服务
             // 将 Web API 配置为仅使用不记名令牌身份验证。
             config.SuppressDefaultHostAuthentication();

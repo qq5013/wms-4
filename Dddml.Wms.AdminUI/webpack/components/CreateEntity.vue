@@ -25,7 +25,6 @@
         data(){
             return {
                 form: new FormCls(this.metadata.plural),
-                formData: {}
             }
         },
         components: {

@@ -27,7 +27,6 @@
 </style>
 <script>
     import FormElement from './FormElement.vue';
-    import ObjectHelper from '../../src/Helper/ObjectHelper';
 
     export default{
         data(){

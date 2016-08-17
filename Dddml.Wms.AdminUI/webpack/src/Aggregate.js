@@ -1,4 +1,4 @@
-import StringHelper from '../src/StringHelper';
+import StringHelper from './Helper/StringHelper';
 import AggregateCollection from '../src/AggregateCollection';
 
 export default class Aggregate {

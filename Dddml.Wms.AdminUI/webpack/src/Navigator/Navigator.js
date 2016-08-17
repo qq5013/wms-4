@@ -20,13 +20,24 @@ export default class Navigator {
             })
         );
 
-        if (route.params.id) {
+        if (route.name == 'entity') {
             this.addItem(
                 new NavItem(metadata.label, {
                     name: 'entity',
                     params: {
                         name: route.params.name,
                         id: route.params.id
+                    }
+                })
+            );
+        }
+
+        if (route.name == 'createEntity') {
+            this.addItem(
+                new NavItem('创建 ' + metadata.label, {
+                    name: 'createEntity',
+                    params: {
+                        name: route.params.name
                     }
                 })
             );

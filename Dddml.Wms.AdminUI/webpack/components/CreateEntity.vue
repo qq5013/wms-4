@@ -24,7 +24,8 @@
     export default{
         data(){
             return {
-                form: new FormCls(this.metadata.plural)
+                form: new FormCls(this.metadata.plural),
+                formData: {}
             }
         },
         components: {
@@ -34,8 +35,20 @@
         props: {
             metadata: Object
         },
+        events: {
+            submit(form){
+                let json = form.toJson();
+                console.log(json);
+            }
+        },
         route: {
             data(){
+                this.form.addElement(
+                        new FormElementCls(
+                                this.metadata.id.name,
+                                this.metadata.id.name
+                        )
+                );
                 for (let i = 0; i < this.metadata.fields.length; i++) {
                     this.form.addElement(
                             new FormElementCls(
@@ -44,7 +57,7 @@
                             )
                     )
                 }
-//                console.log(this.form);
+                this.$root.navigator.build(this.$route);
             }
         }
     }

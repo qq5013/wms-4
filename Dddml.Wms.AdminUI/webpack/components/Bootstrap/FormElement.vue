@@ -2,7 +2,8 @@
     <div class="form-group">
         <label class="col-sm-2 control-label">{{element.label}}</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" name="{{element.elementName}}" id="{{element.elementName}}">
+            <input type="text" class="form-control" v-model="element.value" name="{{element.elementName}}"
+                   id="{{element.elementName}}">
         </div>
     </div>
 </template>
@@ -15,7 +16,10 @@
         },
         components: {},
         props: {
-            element: Object
+            element: {
+                type: Object,
+                twoWay: true
+            }
         }
     }
 </script>

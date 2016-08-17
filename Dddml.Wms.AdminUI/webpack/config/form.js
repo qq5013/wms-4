@@ -1,6 +1,6 @@
 export default {
     Role: {
-        displayFields: {
+        displayableFields: {
             roleId: 'text',
             name: 'text',
             description: 'text',

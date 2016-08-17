@@ -1,21 +1,32 @@
 import FormElement from "./FormElement";
+import ObjectHelper from '../Helper/ObjectHelper';
 
 export default class Form {
     constructor(metadata, config) {
         this.formName = metadata.name;
         this.elements = [];
-        this.displaiedElements = []
-        this.config = config;
-
-        //TODO 判断 config 中的 displayFields 中的键，是否是数据字段，不存在就忽略
+        this.displayableElements = [];
+        this.config = config || {};
     }
 
     addElement(element) {
         this.elements.push(element);
     }
 
-    _addDisplayedElement(element) {
-        this.displaiedElements.push(element);
+    addDisplayableElement(element) {
+        this.displayableElements.push(element);
+    }
+
+    hasDisplayableField(fieldName) {
+        return this.hasDisplayableFields() &&
+            this.config.displayableFields[fieldName];
+    }
+
+    hasDisplayableFields() {
+        let fields = this.config.displayableFields;
+
+        return (fields instanceof Object) &&
+            ObjectHelper.isNotEmpty(fields)
     }
 
     getData() {
@@ -40,7 +51,12 @@ export default class Form {
         );
 
         form.addElement(idElement);
-        form._addDisplayedElement(idElement);
+
+        if (form.hasDisplayableFields()) {
+            form.addDisplayableElement(idElement);
+        } else {
+            form.displayableElements = form.elements;
+        }
 
         for (let i = 0; i < metadata.fields.length; i++) {
             let element = new FormElement(
@@ -50,8 +66,8 @@ export default class Form {
 
             form.addElement(element);
 
-            if (form.config.displayFields[metadata.fields[i]]) {
-                form._addDisplayedElement(element);
+            if (form.hasDisplayableField(metadata.fields[i])) {
+                form.addDisplayableElement(element);
             }
         }
 

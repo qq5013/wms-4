@@ -5,4 +5,8 @@ export default class ObjectHelper {
         }
         return true;
     }
+
+    static isNotEmpty(obj) {
+        return !ObjectHelper.isEmpty(obj);
+    }
 }

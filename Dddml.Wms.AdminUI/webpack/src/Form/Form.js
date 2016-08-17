@@ -1,6 +1,8 @@
+import FormElement from "./FormElement";
+
 export default class Form {
-    constructor(name) {
-        this.formName = name;
+    constructor(metadata) {
+        this.formName = metadata.plural;
         this.elements = [];
     }
 
@@ -8,16 +10,38 @@ export default class Form {
         this.elements.push(element);
     }
 
-    getData(){
+    getData() {
         let data = {};
-        for(let i=0; i< this.elements.length; i++){
+        for (let i = 0; i < this.elements.length; i++) {
             data[this.elements[i].elementName] = this.elements[i].value;
         }
 
         return data;
     }
 
-    toJson(){
+    toJson() {
         return JSON.stringify(this.getData());
+    }
+
+    static createForm(metadata) {
+        let form = new Form(metadata);
+
+        form.addElement(
+            new FormElement(
+                metadata.id.name,
+                metadata.id.name
+            )
+        );
+
+        for (let i = 0; i < metadata.fields.length; i++) {
+            form.addElement(
+                new FormElement(
+                    metadata.fields[i],
+                    metadata.fields[i]
+                )
+            )
+        }
+
+        return form;
     }
 }

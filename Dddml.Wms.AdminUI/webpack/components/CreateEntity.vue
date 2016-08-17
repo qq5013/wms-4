@@ -18,13 +18,12 @@
 <script>
     import VForm from './Bootstrap/Form.vue'
     import FormCls from '../src/Form/Form';
-    import FormElementCls from '../src/Form/FormElement';
     import Navigator from './Bootstrap/Navigator.vue';
 
     export default{
         data(){
             return {
-                form: new FormCls(this.metadata.plural),
+                form: FormCls.createForm(this.metadata)
             }
         },
         components: {
@@ -42,20 +41,6 @@
         },
         route: {
             data(){
-                this.form.addElement(
-                        new FormElementCls(
-                                this.metadata.id.name,
-                                this.metadata.id.name
-                        )
-                );
-                for (let i = 0; i < this.metadata.fields.length; i++) {
-                    this.form.addElement(
-                            new FormElementCls(
-                                    this.metadata.fields[i],
-                                    this.metadata.fields[i]
-                            )
-                    )
-                }
                 this.$root.navigator.build(this.$route);
             }
         }

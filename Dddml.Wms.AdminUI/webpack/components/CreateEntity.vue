@@ -19,11 +19,12 @@
     import VForm from './Bootstrap/Form.vue'
     import FormCls from '../src/Form/Form';
     import Navigator from './Bootstrap/Navigator.vue';
+    import formConfig from '../config/form';
 
     export default{
         data(){
             return {
-                form: FormCls.createForm(this.metadata)
+                form: FormCls.createForm(this.metadata, formConfig[this.metadata.name])
             }
         },
         components: {

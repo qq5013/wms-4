@@ -3,7 +3,7 @@
         <!-- Default box -->
         <div class="box">
             <div class="box-body">
-                <template v-for="element in form.elements">
+                <template v-for="element in form.displaiedElements">
                     <form-element :element.sync="element"></form-element>
                 </template>
             </div>

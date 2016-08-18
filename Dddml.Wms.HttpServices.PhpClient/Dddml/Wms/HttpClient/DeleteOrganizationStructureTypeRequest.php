@@ -14,11 +14,6 @@ class DeleteOrganizationStructureTypeRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var DeleteOrganizationStructureType
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\DeleteOrganizationStructureType';
 
     public function __construct(CommandExecutor $executor)

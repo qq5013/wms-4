@@ -17,11 +17,6 @@ class CreateInOutLineMvoRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var  CreateOrMergePatchInOutLineMvo
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\CreateOrMergePatchInOutLineMvo';
 
     public function __construct(CommandExecutor $executor)

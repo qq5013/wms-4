@@ -14,11 +14,6 @@ class DeletePermissionRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var DeletePermission
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\DeletePermission';
 
     public function __construct(CommandExecutor $executor)

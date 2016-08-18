@@ -15,11 +15,6 @@ class DeleteAttributeSetInstanceRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var DeleteAttributeSetInstance
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\DeleteAttributeSetInstance';
 
     public function __construct(CommandExecutor $executor)

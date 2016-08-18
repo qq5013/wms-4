@@ -16,11 +16,6 @@ class DeleteInOutRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var DeleteInOut
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\DeleteInOut';
 
     public function __construct(CommandExecutor $executor)

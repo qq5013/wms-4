@@ -14,11 +14,6 @@ class DeleteAttributeSetInstanceExtensionFieldGroupRequest extends AbstractComma
 {
     use RouteTrait;
 
-    /**
-     * @var DeleteAttributeSetInstanceExtensionFieldGroup
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\DeleteAttributeSetInstanceExtensionFieldGroup';
 
     public function __construct(CommandExecutor $executor)

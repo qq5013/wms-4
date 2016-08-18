@@ -14,11 +14,6 @@ class MergePatchUserLoginMvoRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var  CreateOrMergePatchUserLoginMvo
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\CreateOrMergePatchUserLoginMvo';
 
     public function __construct(CommandExecutor $executor)

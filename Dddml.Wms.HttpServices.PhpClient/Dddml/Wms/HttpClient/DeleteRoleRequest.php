@@ -14,11 +14,6 @@ class DeleteRoleRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var DeleteRole
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\DeleteRole';
 
     public function __construct(CommandExecutor $executor)

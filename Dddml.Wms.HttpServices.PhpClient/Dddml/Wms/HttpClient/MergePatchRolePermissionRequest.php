@@ -14,11 +14,6 @@ class MergePatchRolePermissionRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var  CreateOrMergePatchRolePermission
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\CreateOrMergePatchRolePermission';
 
     public function __construct(CommandExecutor $executor)

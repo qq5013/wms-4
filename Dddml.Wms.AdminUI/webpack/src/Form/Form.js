@@ -7,6 +7,7 @@ export default class Form {
         this.elements = [];
         this.displayableElements = [];
         this.config = config || {};
+        this.idElement = {};
     }
 
     addElement(element) {
@@ -50,6 +51,7 @@ export default class Form {
             metadata.id.name
         );
 
+        form.idElement = idElement;
         form.addElement(idElement);
 
         if (form.hasDisplayableFields()) {

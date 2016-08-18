@@ -14,7 +14,7 @@ abstract class AbstractCommandRequest implements CommandRequestInterface
     private $executor;
 
     /** @var  CommandInterface */
-    private $command;
+    protected $command;
 
     public static $commandType = 'null';
 
@@ -23,6 +23,11 @@ abstract class AbstractCommandRequest implements CommandRequestInterface
         $this->executor = $executor;
     }
 
+    /**
+     * @param $json
+     *
+     * @return array|CommandInterface|\JMS\Serializer\scalar|mixed|object
+     */
     public function getCommandFromJson($json)
     {
         $serializer = $this->executor->getSerializer();

@@ -22,7 +22,7 @@ class ApiControllerProvider implements ControllerProviderInterface
         $controllers->get('{entities}/_count', [$this, 'getCount'])->bind('api_get_entities_count');
         $controllers->get('{entities}/{id}', [$this, 'getEntity'])->bind('api_get_entity');
         $controllers->get('{entities}', [$this, 'getEntities'])->bind('api_get_entities');
-        $controllers->put('{entities}/{id}', [$this, 'createEntity'])->bind('api_create_entities');
+        $controllers->put('{entities}/{id}', [$this, 'createEntity'])->bind('api_create_entity');
         $controllers->patch('{entities}/{id}', [$this, 'mergePatchEntity'])->bind('api_merge_patch_entity');
 
         return $controllers;
@@ -58,31 +58,11 @@ class ApiControllerProvider implements ControllerProviderInterface
 
     public function createEntity(Application $app, Request $request, $entities, $id)
     {
-        $json = $request->getContent();
+        $entityName = Inflector::singularize($entities);
 
-        $entity = Inflector::singularize($entities);
+        $response = $app['api.proxy']->create($entityName, $id, $request);
 
-        $className = 'Dddml\Wms\HttpClient\\Create' . $entity . 'Request';
-
-        $createRequest = new $className(
-            $app['api.command.executor']
-        );
-
-        $command = $createRequest->getCommandFromJson($json);
-
-        //设置 $command
-        //...
-
-        $response = $app['api.command.executor']->execute($createRequest, [
-            'parameters' => [
-                'id' => $id,
-            ],
-        ]);
-
-        return $app->jsonProxy(
-            $json,
-            $response
-        );
+        return $response;
     }
 
     public function mergePatchEntity(Application $app, Request $request, $entities, $id)

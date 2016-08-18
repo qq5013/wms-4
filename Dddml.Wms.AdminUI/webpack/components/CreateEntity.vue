@@ -36,8 +36,13 @@
         },
         events: {
             submit(form){
-                let json = form.toJson();
-                console.log(json);
+                let jsonData = form.toJson();
+
+                this.$http.put(this.$route.params.name + '/' + form.idElement.value, jsonData).then((response) => {
+                    console.log(response.data);
+                }, (response) => {
+                    // error callback
+                });
             }
         },
         route: {

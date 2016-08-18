@@ -12,6 +12,7 @@ use Dddml\Executor\Http\QueryCountRequestInterface;
 use Dddml\Executor\Http\QueryExecutor;
 use Dddml\Executor\Http\QueryRequestInterface;
 use Dddml\Silex\Event\JsonProxyEvent;
+use Ramsey\Uuid\Uuid;
 use Silex\Application;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -34,16 +35,10 @@ class ApiProxy
         /** @var QueryExecutor $executor */
         $executor = $this->app['api.query.executor'];
 
-        if ($httpRequest->headers->get('Authorization')) {
-            $headers = [
-                'Authorization' => $httpRequest->headers->get('Authorization'),
-            ];
-        }
-
         $json = $executor->executeJson($queryRequest, [
             'parameters' => $params,
             'query'      => $httpRequest->query->all(),
-            'headers'    => $headers,
+            'headers'    => $this->getHeaders($httpRequest),
         ]);
 
         $response = $executor->getLastResponse();
@@ -79,23 +74,27 @@ class ApiProxy
         return $json;
     }
 
-    public function create(AbstractCommandRequest $commandRequest, Request $httpRequest, $id)
+    public function create($entityName, $id, Request $httpRequest)
     {
-        /** @var CommandExecutor $executor */
-        $executor = $this->app['api.command.executor'];
+        $className = 'Dddml\Wms\HttpClient\\Create' . $entityName . 'Request';
+
+        /** @var AbstractCommandRequest $createRequest */
+        $createRequest = new $className(
+            $this->app['api.command.executor']
+        );
 
         $json = $httpRequest->getContent();
 
-        $command = $commandRequest->getCommandFromJson($json);
+        $command = $createRequest->getCommandFromJson($json);
 
-        $response = $executor->execute($commandRequest, [
-            'parameters' => [
-                'id' => $id,
-            ],
-            'headers'    => [
-                'Authorization' => $httpRequest->headers->get('Authorization'),
-            ],
-        ]);
+        $uuid = Uuid::uuid4();
+        $command->setCommandId($uuid->toString());
+
+        $response = $this->app['api.command.executor']
+            ->execute($createRequest, [
+                'parameters' => ['id' => $id,],
+                'headers'    => $this->getHeaders($httpRequest),
+            ]);
 
         return new JsonResponse(
             '',
@@ -108,5 +107,22 @@ class ApiProxy
     {
         /** @var CommandExecutor $executor */
         $executor = $this->app['api.command.executor'];
+    }
+
+    /**
+     * @param Request $request
+     *
+     * @return array
+     */
+    protected function getHeaders(Request $request)
+    {
+        $headers = [];
+        if ($request->headers->get('Authorization')) {
+            $headers = [
+                'Authorization' => $request->headers->get('Authorization'),
+            ];
+        }
+
+        return $headers;
     }
 }

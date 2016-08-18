@@ -15,11 +15,6 @@ class MergePatchAttributeSetInstanceRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var  CreateOrMergePatchAttributeSetInstance
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\CreateOrMergePatchAttributeSetInstance';
 
     public function __construct(CommandExecutor $executor)

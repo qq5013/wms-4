@@ -16,11 +16,6 @@ class MergePatchInOutRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var  CreateOrMergePatchInOut
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\CreateOrMergePatchInOut';
 
     public function __construct(CommandExecutor $executor)

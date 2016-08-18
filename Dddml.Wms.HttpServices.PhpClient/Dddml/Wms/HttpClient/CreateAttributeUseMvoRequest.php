@@ -15,11 +15,6 @@ class CreateAttributeUseMvoRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var  CreateOrMergePatchAttributeUseMvo
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\CreateOrMergePatchAttributeUseMvo';
 
     public function __construct(CommandExecutor $executor)

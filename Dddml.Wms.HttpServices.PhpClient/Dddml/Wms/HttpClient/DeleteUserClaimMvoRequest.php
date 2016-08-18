@@ -14,11 +14,6 @@ class DeleteUserClaimMvoRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var DeleteUserClaimMvo
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\DeleteUserClaimMvo';
 
     public function __construct(CommandExecutor $executor)

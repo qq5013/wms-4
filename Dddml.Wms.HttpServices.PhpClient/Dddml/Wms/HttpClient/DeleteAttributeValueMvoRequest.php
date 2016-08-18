@@ -14,11 +14,6 @@ class DeleteAttributeValueMvoRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var DeleteAttributeValueMvo
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\DeleteAttributeValueMvo';
 
     public function __construct(CommandExecutor $executor)

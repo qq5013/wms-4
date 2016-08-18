@@ -14,11 +14,6 @@ class MergePatchAttributeSetInstanceExtensionFieldMvoRequest extends AbstractCom
 {
     use RouteTrait;
 
-    /**
-     * @var  CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo';
 
     public function __construct(CommandExecutor $executor)

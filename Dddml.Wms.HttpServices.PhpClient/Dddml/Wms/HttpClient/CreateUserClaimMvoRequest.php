@@ -15,11 +15,6 @@ class CreateUserClaimMvoRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var  CreateOrMergePatchUserClaimMvo
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\CreateOrMergePatchUserClaimMvo';
 
     public function __construct(CommandExecutor $executor)

@@ -16,11 +16,6 @@ class DeleteInOutLineMvoRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var DeleteInOutLineMvo
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\DeleteInOutLineMvo';
 
     public function __construct(CommandExecutor $executor)

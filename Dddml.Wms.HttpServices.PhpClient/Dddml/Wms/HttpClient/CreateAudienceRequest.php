@@ -15,11 +15,6 @@ class CreateAudienceRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var  CreateOrMergePatchAudience
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\CreateOrMergePatchAudience';
 
     public function __construct(CommandExecutor $executor)

@@ -14,11 +14,6 @@ class MergePatchMonthPlanMvoRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var  CreateOrMergePatchMonthPlanMvo
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\CreateOrMergePatchMonthPlanMvo';
 
     public function __construct(CommandExecutor $executor)

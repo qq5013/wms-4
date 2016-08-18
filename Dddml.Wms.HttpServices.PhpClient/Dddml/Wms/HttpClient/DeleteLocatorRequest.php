@@ -14,11 +14,6 @@ class DeleteLocatorRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var DeleteLocator
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\DeleteLocator';
 
     public function __construct(CommandExecutor $executor)

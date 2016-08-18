@@ -14,11 +14,6 @@ class MergePatchPersonRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var  CreateOrMergePatchPerson
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\CreateOrMergePatchPerson';
 
     public function __construct(CommandExecutor $executor)

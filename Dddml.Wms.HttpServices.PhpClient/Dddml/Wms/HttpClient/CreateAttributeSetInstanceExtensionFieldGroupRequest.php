@@ -15,11 +15,6 @@ class CreateAttributeSetInstanceExtensionFieldGroupRequest extends AbstractComma
 {
     use RouteTrait;
 
-    /**
-     * @var  CreateOrMergePatchAttributeSetInstanceExtensionFieldGroup
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\CreateOrMergePatchAttributeSetInstanceExtensionFieldGroup';
 
     public function __construct(CommandExecutor $executor)

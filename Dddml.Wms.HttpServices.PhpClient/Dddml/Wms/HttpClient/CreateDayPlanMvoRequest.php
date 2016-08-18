@@ -15,11 +15,6 @@ class CreateDayPlanMvoRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var  CreateOrMergePatchDayPlanMvo
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\CreateOrMergePatchDayPlanMvo';
 
     public function __construct(CommandExecutor $executor)

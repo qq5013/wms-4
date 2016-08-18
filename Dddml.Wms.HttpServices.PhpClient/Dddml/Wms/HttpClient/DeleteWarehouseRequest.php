@@ -14,11 +14,6 @@ class DeleteWarehouseRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var DeleteWarehouse
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\DeleteWarehouse';
 
     public function __construct(CommandExecutor $executor)

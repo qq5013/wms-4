@@ -15,11 +15,6 @@ class CreateWarehouseRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var  CreateOrMergePatchWarehouse
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\CreateOrMergePatchWarehouse';
 
     public function __construct(CommandExecutor $executor)

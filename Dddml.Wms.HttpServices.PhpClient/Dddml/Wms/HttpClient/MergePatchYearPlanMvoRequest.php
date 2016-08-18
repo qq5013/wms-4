@@ -14,11 +14,6 @@ class MergePatchYearPlanMvoRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var  CreateOrMergePatchYearPlanMvo
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\CreateOrMergePatchYearPlanMvo';
 
     public function __construct(CommandExecutor $executor)

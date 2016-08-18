@@ -15,11 +15,6 @@ class CreateUserPermissionMvoRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var  CreateOrMergePatchUserPermissionMvo
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\CreateOrMergePatchUserPermissionMvo';
 
     public function __construct(CommandExecutor $executor)

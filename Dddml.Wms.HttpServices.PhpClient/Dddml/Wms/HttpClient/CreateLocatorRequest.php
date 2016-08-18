@@ -15,11 +15,6 @@ class CreateLocatorRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var  CreateOrMergePatchLocator
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\CreateOrMergePatchLocator';
 
     public function __construct(CommandExecutor $executor)

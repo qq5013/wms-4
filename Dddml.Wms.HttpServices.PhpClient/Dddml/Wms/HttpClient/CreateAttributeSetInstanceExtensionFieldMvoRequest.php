@@ -15,11 +15,6 @@ class CreateAttributeSetInstanceExtensionFieldMvoRequest extends AbstractCommand
 {
     use RouteTrait;
 
-    /**
-     * @var  CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\CreateOrMergePatchAttributeSetInstanceExtensionFieldMvo';
 
     public function __construct(CommandExecutor $executor)

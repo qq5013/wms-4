@@ -14,11 +14,6 @@ class MergePatchOrganizationRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var  CreateOrMergePatchOrganization
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\CreateOrMergePatchOrganization';
 
     public function __construct(CommandExecutor $executor)

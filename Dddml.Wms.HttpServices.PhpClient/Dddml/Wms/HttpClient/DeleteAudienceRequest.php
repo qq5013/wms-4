@@ -14,11 +14,6 @@ class DeleteAudienceRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var DeleteAudience
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\DeleteAudience';
 
     public function __construct(CommandExecutor $executor)

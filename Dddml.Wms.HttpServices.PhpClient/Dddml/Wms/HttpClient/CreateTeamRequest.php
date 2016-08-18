@@ -15,11 +15,6 @@ class CreateTeamRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var  CreateOrMergePatchTeam
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\CreateOrMergePatchTeam';
 
     public function __construct(CommandExecutor $executor)

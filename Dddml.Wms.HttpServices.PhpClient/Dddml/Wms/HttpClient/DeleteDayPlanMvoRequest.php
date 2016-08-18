@@ -14,11 +14,6 @@ class DeleteDayPlanMvoRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var DeleteDayPlanMvo
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\DeleteDayPlanMvo';
 
     public function __construct(CommandExecutor $executor)

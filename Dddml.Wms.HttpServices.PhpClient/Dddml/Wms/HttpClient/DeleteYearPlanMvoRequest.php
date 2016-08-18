@@ -14,11 +14,6 @@ class DeleteYearPlanMvoRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var DeleteYearPlanMvo
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\DeleteYearPlanMvo';
 
     public function __construct(CommandExecutor $executor)

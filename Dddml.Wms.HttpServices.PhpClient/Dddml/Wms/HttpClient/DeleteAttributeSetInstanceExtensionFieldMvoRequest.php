@@ -14,11 +14,6 @@ class DeleteAttributeSetInstanceExtensionFieldMvoRequest extends AbstractCommand
 {
     use RouteTrait;
 
-    /**
-     * @var DeleteAttributeSetInstanceExtensionFieldMvo
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\DeleteAttributeSetInstanceExtensionFieldMvo';
 
     public function __construct(CommandExecutor $executor)

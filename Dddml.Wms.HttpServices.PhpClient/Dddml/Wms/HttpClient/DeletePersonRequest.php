@@ -14,11 +14,6 @@ class DeletePersonRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var DeletePerson
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\DeletePerson';
 
     public function __construct(CommandExecutor $executor)

@@ -15,11 +15,6 @@ class CreateUserRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var  CreateOrMergePatchUser
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\CreateOrMergePatchUser';
 
     public function __construct(CommandExecutor $executor)

@@ -14,11 +14,6 @@ class DeleteTeamRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var DeleteTeam
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\DeleteTeam';
 
     public function __construct(CommandExecutor $executor)

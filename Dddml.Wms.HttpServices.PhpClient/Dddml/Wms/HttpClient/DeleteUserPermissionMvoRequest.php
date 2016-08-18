@@ -14,11 +14,6 @@ class DeleteUserPermissionMvoRequest extends AbstractCommandRequest
 {
     use RouteTrait;
 
-    /**
-     * @var DeleteUserPermissionMvo
-     */
-    private $command;
-
     public static $commandType = 'Dddml\Wms\Domain\DeleteUserPermissionMvo';
 
     public function __construct(CommandExecutor $executor)
